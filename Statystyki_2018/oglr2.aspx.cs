@@ -1,0 +1,992 @@
+﻿using System;
+using System.Data;
+using System.Globalization;
+using System.IO;
+using System.Web.UI;
+using System.Web.UI.WebControls;
+using OfficeOpenXml;
+
+namespace stat2018
+{
+    public partial class oglr2 : System.Web.UI.Page
+    {
+        public Class1 cl = new Class1();
+        public common cm = new common();
+        public tabele tabela = new tabele();
+        public dataReaders dr = new dataReaders();
+        const string tenPlik = "oglr2.aspx";
+
+
+        int storid = 0;
+        int rowIndex = 1;
+
+        protected void Page_Load(object sender, EventArgs e)
+        {
+            try
+            {
+                string idWydzial = Request.QueryString["w"];
+                if (idWydzial != null)
+                {
+                    Session["id_dzialu"] = idWydzial;
+                }
+                else
+                {
+                    return;
+                }
+                DateTime dTime = DateTime.Now;
+                dTime = dTime.AddMonths(-1);
+                if (Date1.Text.Length == 0)
+                {
+                    Date1.Text = dTime.Year.ToString() + "-" + dTime.Month.ToString("D2") + "-01";
+                    Date1.Date = DateTime.Parse(Date1.Text);
+                }
+                if (Date2.Text.Length == 0)
+                {
+                    Date2.Text = dTime.Year.ToString() + "-" + dTime.Month.ToString("D2") + "-" + DateTime.DaysInMonth(dTime.Year, dTime.Month).ToString("D2");
+                    Date2.Date = DateTime.Parse(Date2.Text);
+                }
+
+                Session["data_1"] = Date1.Text.Trim();
+                Session["data_2"] = Date2.Text.Trim();
+            }
+            catch
+            { }
+            Session["data_1"] = Date1.Text;
+            Session["data_2"] = Date2.Text;
+            clearHedersSession();
+            makeHeaders();
+            try
+            {
+                string user = (string)Session["userIdNum"];
+                string dzial = (string)Session["id_dzialu"];
+                bool dost = cm.dostep(dzial, user);
+                if (!dost)
+                {
+                    Server.Transfer("default.aspx?info='Użytkownik " + user + " nie praw do działu nr " + dzial + "'");
+                }
+                else
+                {
+                    if (!IsPostBack)
+                    {
+                        var fileContents = System.IO.File.ReadAllText(Server.MapPath(@"~//version.txt"));    // file read with version
+                        this.Title = "Statystyki " + fileContents.ToString().Trim();
+                    }
+                }
+                przemiel();
+                makeLabels();
+            }
+            catch (Exception ex)
+            {
+                 Server.Transfer("default.aspx");
+            }
+        }// end of Page_Load
+
+        protected void clearHedersSession()
+        {
+            Session["header_01"] = null;
+            Session["header_02"] = null;
+            Session["header_03"] = null;
+            Session["header_04"] = null;
+            Session["header_05"] = null;
+            Session["header_06"] = null;
+            Session["header_07"] = null;
+            Session["header_08"] = null;
+        }
+
+
+
+
+        protected void przemiel()
+        {
+            Session["sesja"] = "s3030";
+            try
+            {
+                DateTime dTime = DateTime.Now;
+                dTime = dTime.AddMonths(-1);
+                if (Date1.Text.Length == 0)
+                {
+                    Date1.Text = dTime.Year.ToString() + "-" + dTime.Month.ToString("D2") + "-01";
+                    Date1.Date = DateTime.Parse(Date1.Text);
+                }
+                if (Date2.Text.Length == 0)
+                {
+                    Date2.Text = dTime.Year.ToString() + "-" + dTime.Month.ToString("D2") + "-" + DateTime.DaysInMonth(dTime.Year, dTime.Month).ToString("D2");
+                    Date2.Date = DateTime.Parse(Date2.Text);
+                }
+
+                Session["data_1"] = Date1.Text.Trim();
+                Session["data_2"] = Date2.Text.Trim();
+            }
+            catch
+            { }
+            string idDzialu = (string)Session["id_dzialu"];
+            string txt = string.Empty; 
+            
+            DataTable tabelkaGW1 = new DataTable();
+            DataTable tabelkaGW2 = new DataTable();
+            DataTable tabelkaGW3 = new DataTable();
+            DataTable tabelkaGW4 = new DataTable();
+            DataTable tabelkaGW5 = new DataTable();
+            DataTable tabelkaGW6 = new DataTable();
+            DataTable tabelkaGW7 = new DataTable();
+            DataTable tabelkaGW8 = new DataTable();
+
+            
+            try
+            {
+                cm.log.Info("OGLR2: wczytywanie danych do tabeli 1");
+                tabelkaGW1 =  dr .generuj_dane_do_tabeli_sedziowskiej_2018(int.Parse((string)Session["id_dzialu"]), 1, DateTime.Parse(Date1.Text), DateTime.Parse(Date2.Text), 30,tenPlik);
+                Session["tabelkaGW001"] = tabelkaGW1;
+                Tabela1.DataSource = null;
+                Tabela1.DataSourceID = null;
+                Tabela1.DataSource = tabelkaGW1;
+                Tabela1.DataBind();
+
+                cm.log.Info("OGLR2: wczytywanie danych do tabeli 2");
+                tabelkaGW2 = dr.generuj_dane_do_tabeli_sedziowskiej_2018(int.Parse((string)Session["id_dzialu"]), 2, DateTime.Parse(Date1.Text), DateTime.Parse(Date2.Text), 30,tenPlik);
+                Session["tabelkaGW002"] = tabelkaGW2;
+                Gridview2.DataSource = null;
+                Gridview2.DataSourceID = null;
+                Gridview2.DataSource = tabelkaGW2;
+                Gridview2.DataBind();
+
+                cm.log.Info("OGLR2: wczytywanie danych do tabeli 3");
+                tabelkaGW3 = dr.generuj_dane_do_tabeli_sedziowskiej_2018(int.Parse((string)Session["id_dzialu"]), 3, DateTime.Parse(Date1.Text), DateTime.Parse(Date2.Text), 30,tenPlik);
+                Session["tabelkaGW003"] = tabelkaGW3;
+                Gridview3.DataSource = null;
+                Gridview3.DataSourceID = null;
+                Gridview3.DataSource = tabelkaGW3;
+                Gridview3.DataBind();
+                 try
+                {
+                    cm.log.Info("OGLR2: wczytywanie danych do tabeli 4");
+                    tabelkaGW4 = dr.generuj_dane_do_tabeli_wierszy2018(   DateTime.Parse(Date1.Text), DateTime.Parse(Date2.Text), (string)Session["id_dzialu"], 4,1,8,tenPlik);
+                    Session["tabelkaGW004"] = tabelkaGW4;
+              
+                    tab_05_w01_c1.Text = tabelkaGW4.Rows[0][1].ToString().Trim();
+                    tab_05_w01_c2.Text = tabelkaGW4.Rows[0][2].ToString().Trim();
+                    tab_05_w01_c3.Text = tabelkaGW4.Rows[0][3].ToString().Trim();
+                    tab_05_w01_c4.Text = tabelkaGW4.Rows[0][4].ToString().Trim();
+                    tab_05_w01_c5.Text = tabelkaGW4.Rows[0][5].ToString().Trim();
+                    tab_05_w01_c6.Text = tabelkaGW4.Rows[0][6].ToString().Trim();
+                    tab_05_w01_c7.Text = tabelkaGW4.Rows[0][7].ToString().Trim();
+
+                }
+                catch
+                { }
+                try
+                {
+                    cm.log.Info("OGLR2: wczytywanie danych do tabeli 5");
+                    tabelkaGW5 = dr.generuj_dane_do_tabeli_wierszy2018(DateTime.Parse(Date1.Text), DateTime.Parse(Date2.Text), (string)Session["id_dzialu"], 5, 8, 2, tenPlik);
+
+                    Session["tabelkaGW005"] = tabelkaGW5;
+                    tab_06_w01_c01.Text = tabelkaGW5.Rows[0][1].ToString().Trim();
+                    tab_06_w02_c01.Text = tabelkaGW5.Rows[1][1].ToString().Trim();
+                    tab_06_w03_c01.Text = tabelkaGW5.Rows[2][1].ToString().Trim();
+                    tab_06_w04_c01.Text = tabelkaGW5.Rows[3][1].ToString().Trim();
+                    tab_06_w05_c01.Text = tabelkaGW5.Rows[4][1].ToString().Trim();
+                    tab_06_w06_c01.Text = tabelkaGW5.Rows[5][1].ToString().Trim();
+                    tab_06_w07_c01.Text = tabelkaGW5.Rows[6][1].ToString().Trim();
+
+                }
+                catch (Exception ex)
+                {
+
+                    cm.log.Error("OGLR2: " + ex.Message);
+
+                }
+
+                try
+                {
+                    cm.log.Info("OGLR2: wczytywanie danych do tabeli 6");
+                    tabelkaGW6 = dr.generuj_dane_do_tabeli_sedziowskiej_2018(int.Parse((string)Session["id_dzialu"]), 6, DateTime.Parse(Date1.Text), DateTime.Parse(Date2.Text), 30, tenPlik);
+                    Session["tabelkaGW006"] = tabelkaGW6;
+                    Gridview6.DataSource = null;
+                    Gridview6.DataSourceID = null;
+                    Gridview6.DataSource = tabelkaGW6;
+                    Gridview6.DataBind();
+
+                }
+                catch (Exception ex)
+                {
+
+                    cm.log.Error("OGLR2: " + ex.Message);
+
+                }
+
+                cm.log.Info("OGLR2: wczytywanie danych do tabeli 7");
+                tabelkaGW7 = cl.generuj_dane_do_tabeli_typ2_new(int.Parse((string)Session["id_dzialu"]), 7, DateTime.Parse(Date1.Text), DateTime.Parse(Date2.Text), 33);
+                Session["tabelkaGW007"] = tabelkaGW7;
+                Gridview7.DataSource = null;
+                Gridview7.DataSourceID = null;
+                Gridview7.DataSource = tabelkaGW7;
+                Gridview7.DataBind();
+
+                
+
+            }
+            catch (Exception ex)
+            {
+                cm.log.Error("OGLR2: " + ex.Message);
+            }
+
+
+            // dopasowanie opisów
+            makeLabels();
+
+           
+            try
+            {
+                Label11.Visible = cl.debug(int.Parse(idDzialu));
+                infoLabel2.Visible = cl.debug(int.Parse(idDzialu ));
+
+                infoLabel3.Visible = cl.debug(int.Parse(idDzialu));
+                infoLabel4.Visible = cl.debug(int.Parse(idDzialu));
+                infoLabel5.Visible = cl.debug(int.Parse(idDzialu));
+                infoLabel5.Visible = cl.debug(int.Parse(idDzialu));
+                infoLabel7.Visible = cl.debug(int.Parse(idDzialu));
+                infoLabel8.Visible = cl.debug(int.Parse(idDzialu));
+
+            }
+            catch
+            {
+                Label11.Visible = false;
+                infoLabel2.Visible = false;
+                infoLabel3.Visible = false;
+                infoLabel4.Visible = false;
+                infoLabel5.Visible = false;
+
+                infoLabel6.Visible = false;
+                infoLabel7.Visible = false;
+                infoLabel8.Visible = false;
+
+            }
+
+            Label11.Text = txt;
+            Label3.Text = cl.nazwaSadu((string)Session["id_dzialu"]);
+
+
+        }
+
+
+        #region "nagłowki tabel"
+        protected void makeHeaders()
+        {
+
+            System.Web.UI.WebControls.GridView sn = new System.Web.UI.WebControls.GridView();
+
+
+
+            #region tabela  1 (wierszowa)
+
+
+            DataTable dT_01 = new DataTable();
+            dT_01.Columns.Clear();
+            dT_01.Columns.Add("Column1", typeof(string));
+            dT_01.Columns.Add("Column2", typeof(string));
+            dT_01.Columns.Add("Column3", typeof(string));
+            dT_01.Columns.Add("Column4", typeof(string));
+            dT_01.Columns.Add("Column5", typeof(string));
+            dT_01.Columns.Add("Column6", typeof(string));
+
+            DataTable dT_02 = new DataTable();
+            dT_02.Columns.Clear();
+            dT_02.Columns.Add("Column1", typeof(string));
+            dT_02.Columns.Add("Column2", typeof(string));
+            dT_02.Columns.Add("Column3", typeof(string));
+            dT_02.Columns.Add("Column4", typeof(string));
+            dT_02.Columns.Add("Column5", typeof(string));
+            dT_02.Columns.Add("Column6", typeof(string));
+            DataTable dT_03 = new DataTable();
+            dT_03.Columns.Clear();
+            dT_03.Columns.Add("Column1", typeof(string));
+            dT_03.Columns.Add("Column2", typeof(string));
+            dT_03.Columns.Add("Column3", typeof(string));
+            dT_03.Columns.Add("Column4", typeof(string));
+            dT_03.Columns.Add("Column5", typeof(string));
+            dT_03.Columns.Add("Column6", typeof(string));
+            DataTable dT_04 = new DataTable();
+            dT_04.Columns.Clear();
+            dT_04.Columns.Add("Column1", typeof(string));
+            dT_04.Columns.Add("Column2", typeof(string));
+            dT_04.Columns.Add("Column3", typeof(string));
+            dT_04.Columns.Add("Column4", typeof(string));
+            dT_04.Columns.Add("Column5", typeof(string));
+            dT_04.Columns.Add("Column6", typeof(string));
+
+            DataTable dT_05 = new DataTable();
+            dT_05.Columns.Clear();
+            dT_05.Columns.Add("Column1", typeof(string));
+            dT_05.Columns.Add("Column2", typeof(string));
+            dT_05.Columns.Add("Column3", typeof(string));
+            dT_05.Columns.Add("Column4", typeof(string));
+            dT_05.Columns.Add("Column5", typeof(string));
+            dT_05.Columns.Add("Column6", typeof(string));
+
+            DataTable dT_07 = new DataTable();
+            dT_07.Columns.Clear();
+            dT_07.Columns.Add("Column1", typeof(string));
+            dT_07.Columns.Add("Column2", typeof(string));
+            dT_07.Columns.Add("Column3", typeof(string));
+            dT_07.Columns.Add("Column4", typeof(string));
+            dT_07.Columns.Add("Column5", typeof(string));
+            dT_07.Columns.Add("Column6", typeof(string));
+
+            DataTable dT_08 = new DataTable();
+            dT_08.Columns.Clear();
+            dT_08.Columns.Add("Column1", typeof(string));
+            dT_08.Columns.Add("Column2", typeof(string));
+            dT_08.Columns.Add("Column3", typeof(string));
+            dT_08.Columns.Add("Column4", typeof(string));
+            dT_08.Columns.Add("Column5", typeof(string));
+            dT_08.Columns.Add("Column6", typeof(string));
+
+
+            dT_01.Clear();
+            for (int i = 0; i < 8; i++)
+            {
+                dT_01.Rows.Add(new Object[] { "1", "Na roz-<br/>prawach", "1", "1" });
+                dT_01.Rows.Add(new Object[] { "1", "Na posie-<br/>dzeniach", "1", "1" });
+            }
+
+            dT_01.Rows.Add(new Object[] { "2", "Rozpraw", "1", "2" });
+            dT_01.Rows.Add(new Object[] { "2", "posiedzeń", "1", "2" });
+            dT_01.Rows.Add(new Object[] { "2", "Razem", "1", "2" });
+            dT_01.Rows.Add(new Object[] { "2", "Na roz-<br.>prawach", "1", "2" });
+            dT_01.Rows.Add(new Object[] { "2", "Na posie-<br/>dzeniach", "1", "2" });
+
+            dT_01.Rows.Add(new Object[] { "2", "RC", "2", "1" });
+            dT_01.Rows.Add(new Object[] { "2", "RNs", "2", "1" });
+            dT_01.Rows.Add(new Object[] { "2", "Nsm", "2", "1" });
+            dT_01.Rows.Add(new Object[] { "2", "Rco", "2", "1" });
+            dT_01.Rows.Add(new Object[] { "2", "Nmo", "2", "1" });
+            dT_01.Rows.Add(new Object[] { "2", "RCps", "2", "1" });
+            dT_01.Rows.Add(new Object[] { "2", "Nkd", "2", "1" });
+
+            
+
+            dT_01.Rows.Add(new Object[] { "3", "L.p.", "1", "3" });
+
+            dT_01.Rows.Add(new Object[] { "3", "Sędzia", "1", "3" });
+            dT_01.Rows.Add(new Object[] { "3", "Pozostałość na początek okresu kontrolnego", "1", "3" });
+            dT_01.Rows.Add(new Object[] { "3", "Wpływ", "1", "3" });
+            dT_01.Rows.Add(new Object[] { "3", "Średni miesięczny wpływ (w faktycznym czasie pracy)", "1", "3" });
+            dT_01.Rows.Add(new Object[] { "3", "Efektywny czas pracy", "1", "3" });
+
+            dT_01.Rows.Add(new Object[] { "3", "Ilość sesji", "3", "1" });
+            dT_01.Rows.Add(new Object[] { "3", "Ilośc wyznaczonych spraw", "2", "1" });
+            dT_01.Rows.Add(new Object[] { "3", "Ilość spraw odroczonych z rozpraw (bez publikacji!!!)", "1", "3" });
+            dT_01.Rows.Add(new Object[] { "3", "Wskaźnik odroczeń", "1", "3" });
+            dT_01.Rows.Add(new Object[] { "3", "Załatwienia", "14", "1" });
+
+            dT_01.Rows.Add(new Object[] { "3", "Razem", "2", "1" });
+
+            dT_01.Rows.Add(new Object[] { "3", "Średnio-<br/>miesięczne załatwienia w efektywnym czasie pracy", "1", "3" });
+            dT_01.Rows.Add(new Object[] { "3", "Pozostałość na koniec okresu kontrolnego", "1", "3" });
+            dT_01.Rows.Add(new Object[] { "3", "Wielokrotna", "1", "3" });
+            Session["header_01"] = dT_01;
+
+            #endregion
+
+
+            #region tabela  2 ()
+
+            dT_02.Clear();
+
+
+            dT_02.Rows.Add(new Object[] { "1", "Alk", "1", "1", "h", "60" });//
+            dT_02.Rows.Add(new Object[] { "1", "Op", "1", "1", "h", "60" });//
+            dT_02.Rows.Add(new Object[] { "1", "Opm", "1", "1", "h", "60" });//
+            dT_02.Rows.Add(new Object[] { "1", "Nw", "1", "1", "h", "60" });//
+
+
+
+            dT_02.Rows.Add(new Object[] { "2", "Sędzia", "1", "2", "h" });
+            dT_02.Rows.Add(new Object[] { "2", "Liczba spraw na ostatni dzień okresu sprawozdawczego", "4", "1", "h" });
+            dT_02.Rows.Add(new Object[] { "2", "Łącznie", "1", "2", "h" });
+           
+            
+            dT_02.Rows.Add(new Object[] { "3", "L.p.", "1", "3", "h", "60" });//
+            dT_02.Rows.Add(new Object[] { "3", "Postępowanie wykonawcze", "6", "1", "h", "60" });//
+
+            Session["header_02"] = dT_02;
+
+
+
+            #endregion
+            #region tabela  3 ()
+
+            dT_03.Clear();
+
+
+            
+                dT_03.Rows.Add(new Object[] { "1", "1-14 dni", "1", "1", "h" });
+                dT_03.Rows.Add(new Object[] { "1", "w tym nieusprawiedniwione", "1", "1", "h" });
+
+            dT_03.Rows.Add(new Object[] { "1", "15-30 dni", "1", "1", "h" });
+            dT_03.Rows.Add(new Object[] { "1", "w tym nieusprawiedniwione", "1", "1", "h" });
+
+            dT_03.Rows.Add(new Object[] { "1", "pow.1 do 3 mies.", "1", "1", "h" });
+            dT_03.Rows.Add(new Object[] { "1", "w tym nieusprawiedniwione", "1", "1", "h" });
+
+            dT_03.Rows.Add(new Object[] { "1", "Ponad 3 mies.", "1", "1", "h" });
+            dT_03.Rows.Add(new Object[] { "1", "w tym nieusprawiedniwione", "1", "1", "h" });
+
+
+       
+           
+
+            dT_03.Rows.Add(new Object[] { "2", "ogółem", "1", "2", "h" });
+
+            dT_03.Rows.Add(new Object[] { "2", "w terminie ustawowym ", "1", "2", "h" });
+            dT_03.Rows.Add(new Object[] { "2", "po upływie terminu ustawowego (czyli 14dni+) ", "8", "1", "h" });
+
+
+            dT_03.Rows.Add(new Object[] { "3", "L.p.", "1", "3", "h" });
+
+            dT_03.Rows.Add(new Object[] { "3", "Sędzia/referntarz", "1", "3", "h" });
+            dT_03.Rows.Add(new Object[] { "3", "Liczba sporządzonych uzasadnień", "10", "1", "h" });
+
+            dT_03.Rows.Add(new Object[] { "4", "Terminowość sporządzania uzasadnień", "12", "1", "h" });
+
+            Session["header_03"] = dT_03;
+
+            #endregion
+
+            #region tabela  3 ()
+
+            dT_04.Clear();
+
+
+
+            dT_04.Rows.Add(new Object[] { "1", "1-14 dni", "1", "1", "h" });
+            dT_04.Rows.Add(new Object[] { "1", "w tym nieusprawiedniwione", "1", "1", "h" });
+
+            dT_04.Rows.Add(new Object[] { "1", "15-30 dni", "1", "1", "h" });
+            dT_04.Rows.Add(new Object[] { "1", "w tym nieusprawiedniwione", "1", "1", "h" });
+
+            dT_04.Rows.Add(new Object[] { "1", "pow.1 do 3 mies.", "1", "1", "h" });
+            dT_04.Rows.Add(new Object[] { "1", "w tym nieusprawiedniwione", "1", "1", "h" });
+
+            dT_04.Rows.Add(new Object[] { "1", "Ponad 3 mies.", "1", "1", "h" });
+            dT_04.Rows.Add(new Object[] { "1", "w tym nieusprawiedniwione", "1", "1", "h" });
+
+
+
+
+
+            dT_04.Rows.Add(new Object[] { "2", "ogółem", "1", "2", "h" });
+
+            dT_04.Rows.Add(new Object[] { "2", "w terminie ustawowym ", "1", "2", "h" });
+            dT_04.Rows.Add(new Object[] { "2", "po upływie terminu ustawowego (czyli 14dni+) ", "8", "1", "h" });
+
+
+            dT_04.Rows.Add(new Object[] { "3", "L.p.", "1", "3", "h" });
+
+            dT_04.Rows.Add(new Object[] { "3", "Sędzia/referntarz", "1", "3", "h" });
+            dT_04.Rows.Add(new Object[] { "3", "Liczba sporządzonych uzasadnień", "10", "1", "h" });
+
+            dT_04.Rows.Add(new Object[] { "4", "Terminowość sporządzania uzasadnień", "12", "1", "h" });
+
+            Session["header_04"] = dT_04;
+
+            #endregion
+
+
+
+            #region tabela  7 ()
+
+            dT_07.Clear();
+
+            for (int i = 0; i < 8; i++)
+            {
+                dT_07.Rows.Add(new Object[] { "1", "wpływi", "1", "1", "h" });
+                dT_07.Rows.Add(new Object[] { "1", "pozostałość", "1", "1", "h" });
+
+            }
+
+
+
+            dT_07.Rows.Add(new Object[]{ "2", "L.p.", "1", "2", "h" });
+
+            dT_07.Rows.Add(new Object[]{ "2", "Sędzia", "1", "2", "h" });
+            dT_07.Rows.Add(new Object[]{ "2", "RC", "2", "1", "h" });
+            dT_07.Rows.Add(new Object[]{ "2", "RNs", "2", "1", "h" });
+            dT_07.Rows.Add(new Object[]{ "2", "Nsm", "2", "1", "h" });
+            dT_07.Rows.Add(new Object[]{ "2", "Rco", "2", "1", "h" });
+            dT_07.Rows.Add(new Object[]{ "2", "Nmo", "2", "1", "h" });
+            dT_07.Rows.Add(new Object[]{ "2", "RCps", "2", "1", "h" });
+            dT_07.Rows.Add(new Object[]{ "2", "Nkd", "2", "1", "h" });
+            dT_07.Rows.Add(new Object[]{ "2", "Razem", "2", "1", "h" });
+
+            dT_07.Rows.Add(new Object[] { "3", "Wielkośći stan referantów (przy czym wiekość odpowiada liczbie spraw, które wpłynęły do referatu w okresie objętym notatką, a stan liczbę pozostałości)", "18", "1", "h" });
+
+            Session["header_07"] = dT_07;
+
+            #endregion
+
+            #region tabela  8 ()
+
+            dT_08.Clear();
+
+
+            dT_08.Rows.Add(new Object[] { "1", "L.p.", "1", "1", "h" });
+
+            dT_08.Rows.Add(new Object[] { "1", "Sędzia", "1", "1", "h" });
+            dT_08.Rows.Add(new Object[] { "1", "Od 3 do 5 lat", "1", "1", "h" });
+            dT_08.Rows.Add(new Object[] { "1", "W tym zawieszone", "1", "1", "h" });
+            dT_08.Rows.Add(new Object[] { "1", "Od 5 do 8 lay", "1", "1", "h" });
+            dT_08.Rows.Add(new Object[] { "1", "W tym zawieszone", "1", "1", "h" });
+            dT_08.Rows.Add(new Object[] { "1", "powyżej 8 lat", "1", "1", "h" });
+            dT_08.Rows.Add(new Object[] { "1", "W tym zawieszone", "1", "1", "h" });
+            dT_08.Rows.Add(new Object[] { "1", "razem", "1", "1", "h" });
+
+            dT_08.Rows.Add(new Object[] { "2", "Ilość spraw cywilnych w których postępowanie toczy się powyżej 3 lat (na koniec wrzesnia i marca kolejnych lat)", "9", "1", "h" });
+            
+            Session["header_08"] = dT_08;
+
+            #endregion
+
+
+
+        }
+
+
+
+
+
+        #endregion "nagłowki tabel"
+
+
+
+        protected void makeLabels()
+        {
+            try
+            {
+                string User_id = string.Empty;
+                string domain = string.Empty;
+                try
+                {
+                    User_id = (string)Session["user_id"];
+                    domain = (string)Session["damain"];
+                }
+                catch
+                { }
+                Label3.Text = cl.nazwaSadu((string)Session["id_dzialu"]);
+
+
+                //	id_dzialu.Text = (string)Session["txt_dzialu"];
+                Label28.Text = cl.podajUzytkownika(User_id, domain);
+                Label29.Text = DateTime.Now.ToLongDateString();
+                try
+                {
+                    Label30.Text = System.IO.File.ReadAllText(Server.MapPath(@"~//version.txt")).ToString().Trim();
+                }
+                catch
+                { }
+
+
+                string strMonthName = CultureInfo.CurrentCulture.DateTimeFormat.GetMonthName(DateTime.Parse(Date2.Text).Month);
+                int last_day = DateTime.DaysInMonth(DateTime.Parse(Date2.Text).Year, DateTime.Parse(Date2.Text).Month);
+                if (((DateTime.Parse(Date1.Text).Day == 1) && (DateTime.Parse(Date2.Text).Day == last_day)) && ((DateTime.Parse(Date1.Text).Month == DateTime.Parse(Date2.Text).Month)))
+                {
+                    // cały miesiąc
+                    tabela2Label.Text = "Wydajność sędziów orzekających w Wydziale w za miesiąc " + strMonthName + " " + DateTime.Parse(Date2.Text).Year.ToString() + " roku.";
+                    lbTabela2Title.Text = "Postępowanie wykonawcze za miesiąc " + strMonthName + " " + DateTime.Parse(Date2.Text).Year.ToString() + " roku.";
+                    lbTabela3Title.Text = "Terminowość sporządzania uzasadnień za miesiąc " + strMonthName + " " + DateTime.Parse(Date2.Text).Year.ToString() + " roku.";
+
+                    lbTabela4Title.Text = "Sprawność postępowania międzyinstancyjnego w okresach wskazanych we wstępnej części pisma za miesiąc " + strMonthName + " " + DateTime.Parse(Date2.Text).Year.ToString() + " roku.";
+
+                    lbTabela5Title.Text = "Sprawy Zawieszone za miesiąc " + strMonthName + " " + DateTime.Parse(Date2.Text).Year.ToString() + " roku.";
+                    lbTabela6Title.Text = "Wielkość i stan referatów (przy czym wielkość odpowiada liczbie spraw, które wpłynęły do referatu w okresie objętym notatką, a stan liczbę pozostałości). za miesiąc " + strMonthName + " " + DateTime.Parse(Date2.Text).Year.ToString() + " roku.";
+                    lbTabela7Title.Text = "Ilość spraw cywilnych w których postępowanie toczy się powyżej 3 lat (na koniec września i marca kolejnych lat): za miesiąc " + strMonthName + " " + DateTime.Parse(Date2.Text).Year.ToString() + " roku.";
+                }
+                else
+                {
+                    tabela2Label.Text = "Wydajność sędziów orzekających w Wydziale za okres od " + Date1.Text + " do  " + Date2.Text;
+                    lbTabela2Title.Text = "Postępowanie wykonawcze za okres od" + Date1.Text + " do  " + Date2.Text;
+                    lbTabela3Title.Text = "Terminowość sporządzania uzasadnień za okres od" + Date1.Text + " do  " + Date2.Text;
+
+                    lbTabela4Title.Text = "Sprawność postępowania międzyinstancyjnego w okresach wskazanych we wstępnej części pisma za okres od" + Date1.Text + " do  " + Date2.Text;
+                    lbTabela5Title.Text = "Sprawy Zawieszone za okres od" + Date1.Text + " do  " + Date2.Text;
+                    lbTabela6Title.Text = "Wielkość i stan referatów (przy czym wielkość odpowiada liczbie spraw, które wpłynęły do referatu w okresie objętym notatką, a stan liczbę pozostałości). za okres od" + Date1.Text + " do  " + Date2.Text;
+                    lbTabela7Title.Text = "Ilość spraw cywilnych w których postępowanie toczy się powyżej 3 lat (na koniec września i marca kolejnych lat): za okres od" + Date1.Text + " do  " + Date2.Text;
+                }
+            }
+            catch
+            {
+
+            }
+
+        }
+
+        protected void Button1_Click(object sender, EventArgs e)
+        {
+            przemiel();
+            ScriptManager.RegisterStartupScript(this.Page, Page.GetType(), "print2", "JavaScript: window.print();", true);
+            // ScriptManager.RegisterStartupScript(this.Page, Page.GetType(), "print", "window.open('raport_01_print.aspx', '')", true);
+        }
+
+        protected void Button3_Click(object sender, EventArgs e)
+        {
+            string path = Server.MapPath("Template") + "\\oglr2.xlsx";
+            FileInfo existingFile = new FileInfo(path);
+
+            string download = Server.MapPath("Template") + @"\oglr2";
+
+            FileInfo fNewFile = new FileInfo(download + "_.xlsx");
+
+            // pierwsza tabelka
+
+
+
+
+            using (ExcelPackage MyExcel = new ExcelPackage(existingFile))
+            {
+                // pierwsza
+
+                int rowik = 0;
+
+
+
+
+                ExcelWorksheet MyWorksheet1 = MyExcel.Workbook.Worksheets[1];
+                DataTable table = (DataTable)Session["tabelkaGW001"];
+                table.Columns.Remove("id");
+                table.Columns.Remove("id_sedziego");
+                table.Columns.Remove("stanowisko");
+                table.Columns.Remove("funkcja");
+                table.Columns.Remove("id_tabeli");
+                MyWorksheet1 = tabela.tworzArkuszwExcle(MyExcel.Workbook.Worksheets[1], table, 32, 1, 5, false,false,false,false,false);
+
+                //druga
+
+
+                ExcelWorksheet MyWorksheet2 = MyExcel.Workbook.Worksheets[2];
+                
+                table = (DataTable)Session["tabelkaGW002"];
+                table.Columns.Remove("id");
+                table.Columns.Remove("id_sedziego");
+                table.Columns.Remove("stanowisko");
+                table.Columns.Remove("funkcja");
+                table.Columns.Remove("id_tabeli");
+
+                MyWorksheet2 = tabela.tworzArkuszwExcle(MyExcel.Workbook.Worksheets[2], table, 7, 1, 4, false, false, false, false, false);
+
+                //traeci
+
+
+                ExcelWorksheet MyWorksheet3 = MyExcel.Workbook.Worksheets[3];
+
+                table = (DataTable)Session["tabelkaGW003"];
+                table.Columns.Remove("id");
+                table.Columns.Remove("id_sedziego");
+                table.Columns.Remove("stanowisko");
+                table.Columns.Remove("funkcja");
+                table.Columns.Remove("id_tabeli");
+
+                MyWorksheet3 = tabela.tworzArkuszwExcle(MyExcel.Workbook.Worksheets[3], table, 12, 1, 5, false, false, false, false, false);
+
+                // czwarta statyczna
+                DataTable dane = (DataTable)Session["tabelkaGW005"];
+                ExcelWorksheet MyWorksheet4 = MyExcel.Workbook.Worksheets[4];
+                try
+                {
+                    MyWorksheet4.Cells[1, 7].Style.Border.BorderAround(OfficeOpenXml.Style.ExcelBorderStyle.Thin, System.Drawing.Color.Black);
+                    MyWorksheet4.Cells[1, 7].Value = dane.Rows[0][0];
+                    MyWorksheet4.Cells[2, 7].Style.Border.BorderAround(OfficeOpenXml.Style.ExcelBorderStyle.Thin, System.Drawing.Color.Black);
+                    MyWorksheet4.Cells[2, 7].Value = dane.Rows[0][1];
+                    MyWorksheet4.Cells[3, 7].Style.Border.BorderAround(OfficeOpenXml.Style.ExcelBorderStyle.Thin, System.Drawing.Color.Black);
+                    MyWorksheet4.Cells[3, 7].Value = dane.Rows[0][2];
+                    MyWorksheet4.Cells[4, 7].Style.Border.BorderAround(OfficeOpenXml.Style.ExcelBorderStyle.Thin, System.Drawing.Color.Black);
+                    MyWorksheet4.Cells[4, 7].Value = dane.Rows[0][4];
+
+                }
+                catch (Exception)
+                {
+                    
+                }
+             
+
+
+                //piata statyczna
+                DataTable dane2 = (DataTable)Session["tabelkaGW005"];
+                ExcelWorksheet MyWorksheet5 = MyExcel.Workbook.Worksheets[5];
+                try
+                {
+                    MyWorksheet5.Cells[3, 2].Value = dane2.Rows[0][0];
+                    MyWorksheet5.Cells[4, 2].Value = dane2.Rows[0][1];
+                    MyWorksheet5.Cells[5, 2].Value = dane2.Rows[0][2];
+                    MyWorksheet5.Cells[6, 2].Value = dane2.Rows[0][4];
+
+                }
+                catch (Exception)
+                {
+
+                }
+
+
+
+                // szósta
+
+                ExcelWorksheet MyWorksheet6 = MyExcel.Workbook.Worksheets[6];
+
+                table = (DataTable)Session["tabelkaGW006"];
+                table.Columns.Remove("id");
+                table.Columns.Remove("id_sedziego");
+                table.Columns.Remove("stanowisko");
+                table.Columns.Remove("funkcja");
+                table.Columns.Remove("id_tabeli");
+
+                MyWorksheet6 = tabela.tworzArkuszwExcle(MyExcel.Workbook.Worksheets[6], table, 18, 1, 5, false, true, false, false, false);
+
+                // siódma
+
+                ExcelWorksheet MyWorksheet7 = MyExcel.Workbook.Worksheets[7];
+
+                table = (DataTable)Session["tabelkaGW007"];
+                table.Columns.Remove("id");
+                table.Columns.Remove("id_sedziego");
+                table.Columns.Remove("stanowisko");
+                table.Columns.Remove("funkcja");
+                table.Columns.Remove("id_tabeli");
+
+                MyWorksheet7 = tabela.tworzArkuszwExcle(MyExcel.Workbook.Worksheets[7], table, 9, 1, 3, false, false, false, false, false);
+
+                // ósma
+                
+                try
+                {
+                    MyExcel.SaveAs(fNewFile);
+
+                    this.Response.Clear();
+                    this.Response.ContentType = "application/vnd.ms-excel";
+                    this.Response.AddHeader("Content-Disposition", "attachment;filename=" + fNewFile.Name);
+                    this.Response.WriteFile(fNewFile.FullName);
+                    this.Response.End();
+
+                }
+                catch (Exception ex)
+                {
+                    //  Label31.Text = Label31.Text + "Save Error massage " + ex.Message + "<br/>";
+
+                }
+
+            }//end of using
+
+            przemiel();
+        }
+
+
+        protected void LinkButton54_Click(object sender, EventArgs e)
+        {
+            przemiel();
+        }
+
+        protected void LinkButton55_Click(object sender, EventArgs e)
+        {
+            makeLabels();
+            przemiel();
+            ScriptManager.RegisterStartupScript(this.Page, Page.GetType(), "print2", "JavaScript: window.print();", true);
+            makeLabels();
+        }
+
+        
+
+
+        protected void makeSumRow(DataTable table, GridViewRowEventArgs e)
+        {
+
+            object sumObject;
+            int ilKolumn = e.Row.Cells.Count;
+            e.Row.Cells[1].Text = "Ogółem";
+            for (int i = 1; i < e.Row.Cells.Count; i++)
+            {
+                try
+                {
+                    sumObject = table.Compute("Sum(" + "d_" + (i - 1).ToString("D2") + ")", "");
+                    e.Row.Cells[i].Text = sumObject.ToString();
+                }
+                catch (Exception)
+                { }
+            }
+
+        }
+        protected void Gridview1_RowDataBound(object sender, GridViewRowEventArgs e)
+        {
+
+            if (e.Row.RowType == DataControlRowType.Footer)
+            {
+                DataTable table = ((DataView)daneDoTabeli1.Select(DataSourceSelectArguments.Empty)).ToTable();
+
+                makeSumRow(table, e);
+
+            }
+            if (e.Row.RowType == DataControlRowType.DataRow)
+            {
+                storid = Convert.ToInt32(DataBinder.Eval(e.Row.DataItem, "id").ToString());
+
+            }
+
+        }
+
+   
+        protected void Gridview2_RowCreated(object sender, GridViewRowEventArgs e)
+        {
+            if (e.Row.RowType == DataControlRowType.Header)
+            {
+                System.Web.UI.WebControls.GridView sn = new System.Web.UI.WebControls.GridView();
+                DataTable dT = (DataTable)Session["header_02"];
+                tabela.makeHeader(sn, dT,Gridview2);
+            }
+
+        }
+
+        protected void Gridview2_RowDataBound(object sender, GridViewRowEventArgs e)
+        {
+
+
+        }
+
+        protected void Gridview1_RowCreated1(object sender, GridViewRowEventArgs e)
+        {
+            if (e.Row.RowType == DataControlRowType.Header)
+            {
+                System.Web.UI.WebControls.GridView sn = new System.Web.UI.WebControls.GridView();
+                DataTable dT = (DataTable)Session["header_01"];
+                tabela.makeHeader(sn, dT, Tabela1);
+            }
+            else
+            {
+
+                if ((storid > 0) && (DataBinder.Eval(e.Row.DataItem, "id") == null))
+                {
+                    rowIndex = 0;
+                    //AddNewRow(sender, e);
+                }
+            }
+        }
+
+        protected void Gridview1_RowDataBound1(object sender, GridViewRowEventArgs e)
+        {
+           
+            if (e.Row.RowType == DataControlRowType.DataRow)
+            {
+                storid = Convert.ToInt32(DataBinder.Eval(e.Row.DataItem, "id").ToString());
+            }
+        }
+
+        protected void naglowekTabeli_Tabela1(object sender, GridViewRowEventArgs e)
+        {
+            if (e.Row.RowType == DataControlRowType.Header)
+            {
+                System.Web.UI.WebControls.GridView sn = new System.Web.UI.WebControls.GridView();
+                DataTable dT = (DataTable)Session["header_01"];
+                tabela.makeHeader(sn, dT, Tabela1);
+            }
+            else
+            {
+
+                if ((storid > 0) && (DataBinder.Eval(e.Row.DataItem, "id") == null))
+                {
+                    rowIndex = 0;
+                  //  AddNewRow(sender, e);
+                }
+            }
+        }
+
+        protected void stopkaTabeli_Tabela1(object sender, GridViewRowEventArgs e)
+        {
+            if (e.Row.RowType == DataControlRowType.Footer)
+            {
+                DataTable table =(DataTable)Session["tabelkaGW001"];
+                tabela.makeSumRow(table, e);
+
+            }
+        }
+
+        protected void naglowekTabeli2(object sender, GridViewRowEventArgs e)
+        {
+            if (e.Row.RowType == DataControlRowType.Header)
+            {
+                System.Web.UI.WebControls.GridView sn = new System.Web.UI.WebControls.GridView();
+                DataTable dT = (DataTable)Session["header_02"];
+                tabela.makeHeader(sn, dT, Gridview2);
+            }
+
+        }
+
+        protected void naglowekTabela3(object sender, GridViewRowEventArgs e)
+        {
+            if (e.Row.RowType == DataControlRowType.Header)
+            {
+                System.Web.UI.WebControls.GridView sn = new System.Web.UI.WebControls.GridView();
+                DataTable dT = (DataTable)Session["header_03"];
+                tabela.makeHeader(sn, dT, Gridview3);
+            }
+        }
+
+        protected void NaglowekTabela7(object sender, GridViewRowEventArgs e)
+        {
+            if (e.Row.RowType == DataControlRowType.Header)
+            {
+                System.Web.UI.WebControls.GridView sn = new System.Web.UI.WebControls.GridView();
+                DataTable dT = (DataTable)Session["header_07"];
+                tabela.makeHeader(sn, dT, Gridview6);
+            }
+
+        }
+
+        protected void stopkaTabeli2(object sender, GridViewRowEventArgs e)
+        {
+            if (e.Row.RowType == DataControlRowType.Footer)
+            {
+                DataTable table = (DataTable)Session["tabelkaGW002"];
+                tabela.makeSumRow(table, e);
+
+            }
+        }
+
+        protected void Gridview3_RowDataBound(object sender, GridViewRowEventArgs e)
+        {
+            if (e.Row.RowType == DataControlRowType.Footer)
+            {
+                DataTable table = (DataTable)Session["tabelkaGW003"];
+                tabela.makeSumRow(table, e);
+
+            }
+        }
+
+   
+       protected void naglowekTabeli8(object sender, GridViewRowEventArgs e)
+        {
+            if (e.Row.RowType == DataControlRowType.Header)
+            {
+                System.Web.UI.WebControls.GridView sn = new System.Web.UI.WebControls.GridView();
+                DataTable dT = (DataTable)Session["header_08"];
+                tabela.makeHeader(sn, dT, Gridview7);
+            }
+
+        }
+
+        protected void stopkaTabeli8(object sender, GridViewRowEventArgs e)
+        {
+            if (e.Row.RowType == DataControlRowType.Footer)
+            {
+                DataTable table = (DataTable)Session["tabelkaGW007"];
+                tabela.makeSumRow(table, e);
+
+            }
+        }
+
+        protected void Gridview6_RowDataBound(object sender, GridViewRowEventArgs e)
+        {
+            if (e.Row.RowType == DataControlRowType.Footer)
+            {
+                DataTable table = (DataTable)Session["tabelkaGW006"];
+                tabela.makeSumRow(table, e);
+
+            }
+        }
+    }
+}
