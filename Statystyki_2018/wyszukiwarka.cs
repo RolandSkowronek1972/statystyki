@@ -14,38 +14,6 @@ namespace stat2018
 
 
 
-        public bool isLicence(string idWydzial)
-        {
-            bool result = false;
-
-
-            var conn = new SqlConnection(con_str);
-            using (SqlCommand sqlCmd = new SqlCommand("SELECT DISTINCT licencja FROM   wydzialy WHERE        (ident = @idWydzial)", conn))
-            {
-                try
-                {
-                    conn.Open();
-                    sqlCmd.Parameters.AddWithValue("@idWydzial", idWydzial);
-
-                    if (sqlCmd.ExecuteScalar().ToString().Trim() == "1")
-                    {
-                        result = true;
-                    }
-                    conn.Close();
-
-                }
-                catch (Exception ex)
-                {
-                    conn.Close();
-                }
-            } // end of using
-
-
-
-            return result;
-        }
-
-
         public string PobierzDana(string klucz)
         {
             string result = string.Empty;
@@ -75,9 +43,21 @@ namespace stat2018
             return result;
         }
 
+        public string PobierzDana(string klucz, int ident)
+        {
+            DataTable parameters = cm.makeParameterTable();
+            parameters.Rows.Add("@klucz", klucz);
+            parameters.Rows.Add("@ident", ident);
+            return cm.getQuerryValue("SELECT [wartosc]  FROM [konfig] where klucz=@klucz and ident=@ident", con_str, parameters);
+        }
+        
         public string PobierzDana2(string klucz)
         {
-            string result = string.Empty;
+            DataTable parametry = cm.makeParameterTable();
+            parametry.Rows.Add("@klucz", klucz);
+            return cm.getQuerryValue("SELECT [wartosc]  FROM [konfig] where rtrim(opis)=@klucz ", con_str, cm.makeParameterTable());
+
+         /*   string result = string.Empty;
             string kwerenda = "SELECT [wartosc]  FROM [konfig] where rtrim(opis)=@klucz ";
             DataTable parameters = new DataTable();
 
@@ -101,15 +81,20 @@ namespace stat2018
                 }
             } // end of using
 
-            return result;
+            return result;*/
         }
-
+        
         public string PobierzConnectionString(string klucz)
         {
             string result = string.Empty;
             string kwerenda = "SELECT [ConnectionString]  FROM [konfig] where rtrim(opis) =@klucz ";
             DataTable parameters = new DataTable();
 
+            DataTable parametry = cm.makeParameterTable();
+            parametry.Rows.Add("@klucz", klucz);
+            return cm.getQuerryValue(kwerenda, con_str, cm.makeParameterTable());
+
+            /*
             SqlCommand sqlCmd;
             var conn = new SqlConnection(con_str);
             using (sqlCmd = new SqlCommand())
@@ -130,7 +115,7 @@ namespace stat2018
                 }
             } // end of using
 
-            return result;
+            return result;*/
         }
         public DataTable PobierzKwerendy(string connStr)
         {
@@ -143,15 +128,7 @@ namespace stat2018
         }
 
 
-        public string PobierzDana(string klucz, int ident)
-        {
-            DataTable parameters = cm.makeParameterTable();
-            parameters.Rows.Add("@klucz", klucz);
-            parameters.Rows.Add("@ident", ident);
-            return cm.getQuerryValue("SELECT [wartosc]  FROM [konfig] where klucz=@klucz and ident=@ident", con_str, parameters);
-        }
-
-
+     
         public DataTable PobierzDane(string klucz)
         {
             string kwerenda = "SELECT [wartosc]  FROM [konfig] where klucz=@klucz ";
@@ -174,32 +151,26 @@ namespace stat2018
 
         public DataTable listaDniPracownika(string idPracownika, DateTime data1, DateTime data2, string kwerenda, string connectionString)
         {
-            DataTable result = new DataTable();
-
-
+           
             DataTable parameters = cm.makeParameterTable();
 
             parameters.Rows.Add("@idPracownika", idPracownika);
             parameters.Rows.Add("@data1", data1);
             parameters.Rows.Add("@data2", data2);
-            result = cm.getDataTable(kwerenda, connectionString, parameters);
+            return  cm.getDataTable(kwerenda, connectionString, parameters);
 
-            return result;
+          
 
         }
 
         public DataTable PobierzOpisy(string klucz)
         {
-            string connectionString = con_str;
-            DataTable result = new DataTable();
+           
             string kwerenda = "SELECT [opis],ident  FROM [konfig] where klucz=@klucz ";
             DataTable parameters = cm.makeParameterTable();
             parameters.Rows.Add("@klucz", klucz);
 
-            result = cm.getDataTable(kwerenda, connectionString, parameters);
-
-
-            return result;
+            return   cm.getDataTable(kwerenda, con_str, parameters);
         }
 
         public string DaneNaDzien(string kwerenda, string connectionString, string data, string idPracownika)
@@ -210,8 +181,7 @@ namespace stat2018
             parameters.Rows.Add("@data", data);
 
             return cm.getQuerryValue ("insert into tbl_statystyki_tbl_x5 (imie,nazwisko,funkcja,stanowisko,id_sedziego,id_dzialu) values (@imie,@nazwisko,@funkcja,@stanowisko,@id_sedziego,@id_dzialu)", con_str, parameters);
-            
-
+  
         }
 
     }

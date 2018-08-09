@@ -18,7 +18,7 @@ namespace stat2018
 
 
         int storid = 0;
-        int rowIndex = 1;
+      
 
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -856,15 +856,7 @@ namespace stat2018
                 DataTable dT = (DataTable)Session["header_01"];
                 tabela.makeHeader(sn, dT, Tabela1);
             }
-            else
-            {
-
-                if ((storid > 0) && (DataBinder.Eval(e.Row.DataItem, "id") == null))
-                {
-                    rowIndex = 0;
-                    //AddNewRow(sender, e);
-                }
-            }
+           
         }
 
         protected void Gridview1_RowDataBound1(object sender, GridViewRowEventArgs e)
@@ -884,15 +876,7 @@ namespace stat2018
                 DataTable dT = (DataTable)Session["header_01"];
                 tabela.makeHeader(sn, dT, Tabela1);
             }
-            else
-            {
-
-                if ((storid > 0) && (DataBinder.Eval(e.Row.DataItem, "id") == null))
-                {
-                    rowIndex = 0;
-                  //  AddNewRow(sender, e);
-                }
-            }
+            
         }
 
         protected void stopkaTabeli_Tabela1(object sender, GridViewRowEventArgs e)

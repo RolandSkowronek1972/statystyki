@@ -51,9 +51,9 @@ namespace stat2018
                     }
                 }
             }
-            catch (Exception ex)
+            catch 
             {
-                // Server.Transfer("default.aspx");
+                 Server.Transfer("default.aspx");
             }
         }// end of Page_Load
 
@@ -176,7 +176,7 @@ namespace stat2018
 
                 }
             }
-            catch (Exception ex)
+            catch 
             { } // end of try
         }
 
@@ -486,8 +486,7 @@ namespace stat2018
 
 
                 MyWorksheet.Cells[1, 4].Value = "Ruch spraw w referatach sędziów za okres od " + Date1.Text + " do " + Date2.Text;
-                int rowik = 1;
-
+                
                 robArkusz(MyExcel, 1, view, 6, 106);
 
 
@@ -502,21 +501,13 @@ namespace stat2018
                     this.Response.End();
 
                 }
-                catch (Exception ex)
+                catch 
                 {
                     //  Label31.Text = Label31.Text + "Save Error massage " + ex.Message + "<br/>";
                 }
 
 
-                try
-                {
-                    File.Delete(fNewFile.FullName);
-                }
-                catch (Exception ex)
-                {
-
-                }
-
+               
             }
             przemiel();
         }
@@ -556,7 +547,7 @@ namespace stat2018
                     manageCells(MyWorksheet8, rowik + rowikPlus, i + 2, sumObject.ToString());
                 }
             }
-            catch (Exception ex)
+            catch 
             { }
 
 

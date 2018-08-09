@@ -17,9 +17,7 @@ namespace stat2018
         public common cm = new common();
         public tabele tabela = new tabele();
         public dataReaders dr = new dataReaders();
-        int storid = 0;
-        int rowIndex = 1;
-
+       
         protected void Page_Load(object sender, EventArgs e)
         {
             string idWydzial = Request.QueryString["w"];
@@ -57,9 +55,9 @@ namespace stat2018
                     }
                 }
             }
-            catch (Exception ex)
+            catch
             {
-                // Server.Transfer("default.aspx");
+                 Server.Transfer("default.aspx");
             }
         }// end of Page_Load
 
@@ -681,7 +679,6 @@ namespace stat2018
 
       
 
-
         protected void makeLabels()
         {
             try
@@ -785,7 +782,7 @@ namespace stat2018
 
                             MyWorksheet1.Cells[ 3 + j, i].Value = table.Rows[j][i].ToString();
                         }
-                        catch (Exception ex)
+                        catch
                         { }
 
                     }
@@ -824,7 +821,7 @@ namespace stat2018
                     this.Response.End();
 
                 }
-                catch (Exception ex)
+                catch 
                 {
                     //  Label31.Text = Label31.Text + "Save Error massage " + ex.Message + "<br/>";
 
@@ -832,23 +829,7 @@ namespace stat2018
 
             }//end of using
 
-
-
-
-
-
-            /*        string filename = "statystykiWydzialCywilny.xls";
-                    Response.ContentType = "application/vnd.ms-excel";
-                    Response.AddHeader("Content-Disposition", string.Format("attachment;filename={0}", filename));
-
-                    Response.Clear();
-
-                    InitializeWorkbook();
-                    generate_my_data();
-                    Response.BinaryWrite(WriteToStream().GetBuffer());
-
-                    Response.End();
-        */
+            
         }
 
 

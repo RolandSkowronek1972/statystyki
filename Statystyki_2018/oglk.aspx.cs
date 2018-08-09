@@ -471,10 +471,14 @@ namespace stat2018
             dT_05.Rows.Add(new Object[] { "1", "R", "1", "1", "h" });
             dT_05.Rows.Add(new Object[] { "1", "P", "1", "1", "h" });
             dT_05.Rows.Add(new Object[] { "1", "razem", "1", "1", "h" });
-            dT_05.Rows.Add(new Object[] { "1", "razem", "1", "1", "h" });
 
             dT_05.Rows.Add(new Object[] { "1", "K", "1", "1", "h" });
+            dT_05.Rows.Add(new Object[] { "1", "Kop", "1", "1", "h" });
+            dT_05.Rows.Add(new Object[] { "1", "Ko", "1", "1", "h" });
+            dT_05.Rows.Add(new Object[] { "1", "Kp", "1", "1", "h" });
             dT_05.Rows.Add(new Object[] { "1", "W", "1", "1", "h" });
+            dT_05.Rows.Add(new Object[] { "1", "Razem", "1", "1", "h" });
+
             dT_05.Rows.Add(new Object[] { "1", "K", "1", "1", "h" });
             dT_05.Rows.Add(new Object[] { "1", "W", "1", "1", "h" });
             dT_05.Rows.Add(new Object[] { "1", "K", "1", "1", "h" });
@@ -492,15 +496,14 @@ namespace stat2018
             dT_05.Rows.Add(new Object[] { "2", "Imie i nazwisko sędziego", "1", "2", "h" });
             dT_05.Rows.Add(new Object[] { "2", "Efektywny okres oczekiwania", "1", "2", "h" });
             dT_05.Rows.Add(new Object[] { "2", "Ilość sesji ", "3", "1", "H" });
-            dT_05.Rows.Add(new Object[] { "2", "Ilość wyznaczonych ", "3", "1", "H" });
+            dT_05.Rows.Add(new Object[] { "2", "Ilość wyznaczonych ", "6", "1", "H" });
             dT_05.Rows.Add(new Object[] { "2", "Ilość odroczeń ", "2", "1", "H" });
 
             dT_05.Rows.Add(new Object[] { "2", "Ilość przewr ", "2", "1", "H" });
             dT_05.Rows.Add(new Object[] { "2", "Załatwienia ", "6", "1", "H" });
             dT_05.Rows.Add(new Object[] { "2", "Średnio miesię- cznie ", "1", "2", "H" });
             dT_05.Rows.Add(new Object[] { "2", "Średnio miesię- cznie K", "1", "2", "H" });
-         //   dT_05.Rows.Add(new Object[] { "2", "Stan referatów ", "6", "1", "H" });
-
+       
 
             Session["header_05"] = dT_05;
 
@@ -810,56 +813,8 @@ namespace stat2018
                 ExcelWorksheet MyWorksheet5 = MyExcel.Workbook.Worksheets[4];
                 DataView view4 = (DataView)tabela_5.Select(DataSourceSelectArguments.Empty);
                 DataTable table4 = view2.ToTable();
-                table4.Columns.Remove("ident");
-                table4.Columns.Remove("id_sedziego");
-                table4.Columns.Remove("stanowisko");
-                table4.Columns.Remove("funkcja");
-
-
-                rowik = 1;
-                foreach (DataRow dR in table4.Rows)
-                {
-                    MyWorksheet5.Cells[rowik + 2, 1].Value = dR[1].ToString().Trim() + " " + dR[2].ToString().Trim();
-                    MyWorksheet5.Cells[rowik + 2, 1].Style.Border.BorderAround(OfficeOpenXml.Style.ExcelBorderStyle.Thin, System.Drawing.Color.Black);
-                    for (int i = 3; i < 28; i++)
-                    {
-                        MyWorksheet5.Cells[rowik + 2, i - 1].Style.ShrinkToFit = true;
-                        MyWorksheet5.Cells[rowik + 2, i - 1].Style.Border.BorderAround(OfficeOpenXml.Style.ExcelBorderStyle.Thin, System.Drawing.Color.Black);
-                        try
-                        {
-                            MyWorksheet5.Cells[rowik + 2, i - 1].Value = double.Parse(dR[i].ToString().Trim());
-                        }
-                        catch (Exception)
-                        {
-                            MyWorksheet5.Cells[rowik + 2, i - 1].Value = dR[i].ToString().Trim();
-                        }
-                    }
-                    rowik++;
-                }
-                MyWorksheet5.Cells[rowik + 2, 1].Value = "Razem";
-                for (int i = 3; i < 28; i++)
-                {
-                    object sumObject;
-                    string txt = "d_";
-                    string digit = i.ToString("D2");
-                    txt = txt + digit;
-                    sumObject = null;
-
-                    try
-                    {
-                        MyWorksheet5.Cells[rowik + 2, i - 1].Value = double.Parse(sumObject.ToString());
-                    }
-                    catch (Exception)
-                    {
-                        try
-                        {
-                            MyWorksheet5.Cells[rowik + 2, i - 1].Value = sumObject.ToString();
-                        }
-                        catch (Exception)
-                        { }
-                    }
-                }
-
+                MyWorksheet5 = tb.tworzArkuszwExcle(MyExcel.Workbook.Worksheets[4], table4, 28, 0, 3, false, true,false,false,false);
+               
                 try
                 {
                     MyExcel.SaveAs(fNewFile);

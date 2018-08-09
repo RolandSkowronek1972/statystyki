@@ -18,8 +18,7 @@ namespace stat2018
 
 
         int storid = 0;
-        int rowIndex = 1;
-
+        
         protected void Page_Load(object sender, EventArgs e)
         {
             try
@@ -59,7 +58,7 @@ namespace stat2018
                 }
                 przemiel();
             }
-            catch (Exception ex)
+            catch 
             {
               //   Server.Transfer("default.aspx");
             }
@@ -436,11 +435,6 @@ namespace stat2018
             {
                 // pierwsza
 
-                int rowik = 0;
-
-
-
-
                 ExcelWorksheet MyWorksheet1 = MyExcel.Workbook.Worksheets[1];
 
 
@@ -575,7 +569,7 @@ namespace stat2018
                     this.Response.End();
 
                 }
-                catch (Exception ex)
+                catch 
                 {
                     //  Label31.Text = Label31.Text + "Save Error massage " + ex.Message + "<br/>";
 

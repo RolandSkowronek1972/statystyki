@@ -43,14 +43,14 @@
                        <dx:aspxdateedit ID="Date2" runat="server" Theme="Moderno">
                 </dx:aspxdateedit></td>
             <td style="width:auto;padding-left:5px;" >
-                <asp:LinkButton ID="LinkButton54" runat="server" class="ax_box" OnClick="LinkButton54_Click">  Odśwież</asp:LinkButton>
+                <asp:LinkButton ID="LinkButton54" runat="server" CssClass="ax_box" OnClick="LinkButton54_Click">  Odśwież</asp:LinkButton>
             </td>
             <td style="width:auto;padding-left:5px;">
-                  <asp:LinkButton ID="LinkButton55" runat="server"  class="ax_box" OnClick="LinkButton55_Click" CssClass="ax_box"> Drukuj </asp:LinkButton>
+                  <asp:LinkButton ID="LinkButton55" runat="server"   OnClick="LinkButton55_Click" CssClass="ax_box"> Drukuj </asp:LinkButton>
             </td>
             <td style="width:auto;padding-left:5px;">
                 
-                <asp:LinkButton ID="LinkButton56" runat="server" OnClick="Button1_Click" CssClass="ax_box" Visible="False">DRUKUJ</asp:LinkButton>
+             
             </td>
             <td style="width:auto;padding-left:5px;">
                  <asp:LinkButton ID="LinkButton57" runat="server" CssClass="ax_box" OnClick="Button3_Click">Zapisz do Excel</asp:LinkButton>
@@ -1578,7 +1578,7 @@
         <br />
         </div>
 
-       <div id="Div11"  class="page-break"> 
+       <div id="Div12"  class="page-break"> 
     &nbsp;<asp:Label ID="tabela6Label" runat="server"></asp:Label>
 &nbsp;
     &nbsp;<asp:Label ID="infoLabel6" runat="server" Text="Tabela 6 \/" Visible="False"></asp:Label>
@@ -1675,8 +1675,7 @@
         Raport statystyczny 
                     <asp:Label ID="Label27" runat="server"></asp:Label>
                 &nbsp;Sporzadzone dn.
-            <asp:Label ID="Label29" runat="server"></asp:Label>
-&nbsp;<np. 21 czerwca 2015>przez
+            <asp:Label ID="Label29" runat="server"></asp:Label>&nbsp;przez&nbsp;
             <asp:Label ID="Label28" runat="server"></asp:Label>
 &nbsp;<asp:Label ID="Label30" runat="server"></asp:Label>
         <br />

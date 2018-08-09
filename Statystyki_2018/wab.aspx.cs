@@ -65,7 +65,7 @@ namespace stat2018
                     }
                 }
             }
-            catch (Exception ex)
+            catch 
             {
                  Server.Transfer("default.aspx");
             }

@@ -428,9 +428,6 @@ namespace stat2018
                 }
               
               
-
-
-
                 try
                 {
                     MyExcel.SaveAs(fNewFile);
@@ -517,7 +514,6 @@ namespace stat2018
         }
 
 
-
         GridViewRow wierszTabela2(DataTable tabelka01, int idWiersza, string idtabeli, string tekst)
         {
             // nowy wiersz
@@ -532,12 +528,8 @@ namespace stat2018
             }
           
             return NewTotalRow;
-
-
         }
 
-
-   
 
         public void AddNewRow(object sender, GridViewRowEventArgs e)
         {
@@ -548,7 +540,7 @@ namespace stat2018
             GridView GridView1 = (GridView)sender;
             GridViewRow NewTotalRow = new GridViewRow(0, 0, DataControlRowType.DataRow, DataControlRowState.Insert);
 
-            GridView1.Controls[0].Controls.AddAt(e.Row.RowIndex + rowIndex,tb.PodsumowanieTabeli (tabelka02,16, "normal borderAll center"));
+            GridView1.Controls[0].Controls.AddAt(e.Row.RowIndex + rowIndex,tb.PodsumowanieTabeli (tabelka02,15, "normal borderAll center"));
 
             string idtabeli = "2";
          

@@ -2,7 +2,6 @@
 
 <%@ Register assembly="DevExpress.Web.v17.1, Version=17.1.10.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" namespace="DevExpress.Web" tagprefix="dx" %>
 
-
 <asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
    
    <style>
@@ -373,8 +372,8 @@
         Raport statystyczny 
                     <asp:Label ID="Label27" runat="server"></asp:Label>
                 Sporzadzone dn.
-            <asp:Label ID="Label29" runat="server"></asp:Label>
-          <np. 21 czerwca 2015>przez
+            <asp:Label ID="Label29" runat="server"></asp:Label>&nbsp;przez&nbsp;
+          &nbsp;
             <asp:Label ID="Label28" runat="server"></asp:Label>
           <asp:Label ID="Label30" runat="server"></asp:Label>
         <br />

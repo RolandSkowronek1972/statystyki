@@ -752,7 +752,7 @@
     <div id="wyznaczenia"  class="page-break"> 
         <asp:Label ID="Label17" runat="server"></asp:Label>
     <asp:GridView ID="GridView3" runat="server" AutoGenerateColumns="False" 
-        DataSourceID="tabela_3" onrowcreated="GridView3_RowCreated" Width="100%" ShowHeader="False" OnSelectedIndexChanged="GridView3_SelectedIndexChanged" OnRowDataBound="GridView3_RowDataBound" ShowFooter="True">
+        DataSourceID="tabela_3" onrowcreated="GridView3_RowCreated" Width="100%" ShowHeader="False" OnRowDataBound="GridView3_RowDataBound" ShowFooter="True">
         <Columns>
             <asp:BoundField DataField="id" HeaderText="L.p." SortExpression="id">
             <ItemStyle Width="15px" />
@@ -1187,8 +1187,8 @@
         Raport statystyczny 
                     <asp:Label ID="Label27" runat="server"></asp:Label>
                 &nbsp;Sporzadzone dn.
-            <asp:Label ID="Label29" runat="server"></asp:Label>
-&nbsp;<np. 21 czerwca 2015>przez
+            <asp:Label ID="Label29" runat="server"></asp:Label>&nbsp;przez&nbsp;
+&nbsp;&nbsp;
             <asp:Label ID="Label28" runat="server"></asp:Label>
 &nbsp;<asp:Label ID="Label30" runat="server"></asp:Label>
         <br />

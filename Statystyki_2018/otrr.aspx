@@ -550,7 +550,7 @@ ORDER BY id_">
                     <asp:Label ID="Label27" runat="server"></asp:Label>
                 &nbsp;Sporzadzone dn.
             <asp:Label ID="Label29" runat="server" Text="Label"></asp:Label>
-&nbsp;<np. 21 czerwca 2015>przez
+&nbsp;&nbsp;
             <asp:Label ID="Label28" runat="server" Text="Label"></asp:Label>
 &nbsp;<uzytkownik.imie><uzytkownik.nazwisko>(ver. 15.0621)<br />
             <br />

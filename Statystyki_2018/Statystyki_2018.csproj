@@ -113,8 +113,12 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="aglc.aspx" />
+    <Content Include="mss1o.aspx" />
+    <Content Include="mss19o2.aspx" />
+    <Content Include="oktkr.aspx" />
     <Content Include="oktp.aspx" />
     <Content Include="oktr.aspx" />
+    <Content Include="mss19o.aspx" />
     <Content Include="template.aspx" />
     <Content Include="oktg.aspx" />
     <Content Include="temp.aspx" />
@@ -281,6 +285,7 @@
     <Content Include="Template\okrp.xlsx" />
     <Content Include="Template\oktp.xlsx" />
     <Content Include="Template\aglc.xlsx" />
+    <Content Include="Template\oktkr.xlsx" />
     <None Include="Web.config.Debug.old">
       <DependentUpon>Web.config.old</DependentUpon>
     </None>
@@ -312,6 +317,27 @@
     <Compile Include="aglc.aspx.designer.cs">
       <DependentUpon>aglc.aspx</DependentUpon>
     </Compile>
+    <Compile Include="mss1o.aspx.cs">
+      <DependentUpon>mss1o.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="mss1o.aspx.designer.cs">
+      <DependentUpon>mss1o.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="mss19o2.aspx.cs">
+      <DependentUpon>mss19o2.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="mss19o2.aspx.designer.cs">
+      <DependentUpon>mss19o2.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="oktkr.aspx.cs">
+      <DependentUpon>oktkr.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="oktkr.aspx.designer.cs">
+      <DependentUpon>oktkr.aspx</DependentUpon>
+    </Compile>
     <Compile Include="oktp.aspx.cs">
       <DependentUpon>oktp.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -325,6 +351,13 @@
     </Compile>
     <Compile Include="oktr.aspx.designer.cs">
       <DependentUpon>oktr.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="mss19o.aspx.cs">
+      <DependentUpon>mss19o.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="mss19o.aspx.designer.cs">
+      <DependentUpon>mss19o.aspx</DependentUpon>
     </Compile>
     <Compile Include="template.aspx.cs">
       <DependentUpon>template.aspx</DependentUpon>

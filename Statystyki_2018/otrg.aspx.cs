@@ -21,9 +21,7 @@ namespace stat2018
         public dataReaders dr = new dataReaders();
         const string tenPlik = "otrg.aspx";
 
-        int storid = 0;
-        int rowIndex = 1;
-
+        
         protected void Page_Load(object sender, EventArgs e)
         {
             string idWydzial = Request.QueryString["w"];
@@ -60,9 +58,9 @@ namespace stat2018
                     }
                 }
             }
-            catch (Exception ex)
+            catch 
             {
-                // Server.Transfer("default.aspx");
+                 Server.Transfer("default.aspx");
             }
         }// end of Page_Load
 

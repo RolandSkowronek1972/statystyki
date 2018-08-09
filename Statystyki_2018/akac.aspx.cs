@@ -67,7 +67,7 @@ namespace stat2018
                     }
                 }
             }
-            catch (Exception ex)
+            catch 
             {
                 // Server.Transfer("default.aspx");
             }
@@ -1234,7 +1234,7 @@ namespace stat2018
                     this.Response.End();
 
                 }
-                catch (Exception ex)
+                catch 
                 {
                     //  Label31.Text = Label31.Text + "Save Error massage " + ex.Message + "<br/>";
 

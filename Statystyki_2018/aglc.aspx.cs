@@ -65,9 +65,9 @@ namespace stat2018
                     }
                 }
             }
-            catch (Exception ex)
+            catch
             {
-                // Server.Transfer("default.aspx");
+                 Server.Transfer("default.aspx");
             }
         }// end of Page_Load
 
@@ -1145,7 +1145,6 @@ namespace stat2018
                 tab_2_w01_c40.Text = tabela02.Rows[0][40].ToString().Trim();
                 tab_2_w01_c41.Text = tabela02.Rows[0][41].ToString().Trim();
                 tab_2_w01_c42.Text = tabela02.Rows[0][42].ToString().Trim();
-                tab_2_w01_c43.Text = tabela02.Rows[0][43].ToString().Trim();
                 //  wiersz 2
                 tab_2_w02_c01.Text = tabela02.Rows[1][1].ToString().Trim();
                 tab_2_w02_c02.Text = tabela02.Rows[1][2].ToString().Trim();
@@ -1227,7 +1226,6 @@ namespace stat2018
                 tab_2_w03_c40.Text = tabela02.Rows[2][40].ToString().Trim();
                 tab_2_w03_c41.Text = tabela02.Rows[2][41].ToString().Trim();
                 tab_2_w03_c42.Text = tabela02.Rows[2][42].ToString().Trim();
-                tab_2_w03_c43.Text = tabela02.Rows[2][43].ToString().Trim();
                 //  wiersz 4
                 tab_2_w04_c01.Text = tabela02.Rows[3][1].ToString().Trim();
                 tab_2_w04_c02.Text = tabela02.Rows[3][2].ToString().Trim();
@@ -1309,7 +1307,6 @@ namespace stat2018
                 tab_2_w05_c40.Text = tabela02.Rows[4][40].ToString().Trim();
                 tab_2_w05_c41.Text = tabela02.Rows[4][41].ToString().Trim();
                 tab_2_w05_c42.Text = tabela02.Rows[4][42].ToString().Trim();
-                tab_2_w05_c43.Text = tabela02.Rows[4][43].ToString().Trim();
                 //  wiersz 6
                 tab_2_w06_c01.Text = tabela02.Rows[5][1].ToString().Trim();
                 tab_2_w06_c02.Text = tabela02.Rows[5][2].ToString().Trim();
@@ -1391,7 +1388,6 @@ namespace stat2018
                 tab_2_w07_c40.Text = tabela02.Rows[6][40].ToString().Trim();
                 tab_2_w07_c41.Text = tabela02.Rows[6][41].ToString().Trim();
                 tab_2_w07_c42.Text = tabela02.Rows[6][42].ToString().Trim();
-                tab_2_w07_c43.Text = tabela02.Rows[6][43].ToString().Trim();
                 //  wiersz 8
                 tab_2_w08_c01.Text = tabela02.Rows[7][1].ToString().Trim();
                 tab_2_w08_c02.Text = tabela02.Rows[7][2].ToString().Trim();
@@ -1473,7 +1469,6 @@ namespace stat2018
                 tab_2_w09_c40.Text = tabela02.Rows[8][40].ToString().Trim();
                 tab_2_w09_c41.Text = tabela02.Rows[8][41].ToString().Trim();
                 tab_2_w09_c42.Text = tabela02.Rows[8][42].ToString().Trim();
-                tab_2_w09_c43.Text = tabela02.Rows[8][43].ToString().Trim();
                 //  wiersz 10
                 tab_2_w10_c01.Text = tabela02.Rows[9][1].ToString().Trim();
                 tab_2_w10_c02.Text = tabela02.Rows[9][2].ToString().Trim();
@@ -1555,7 +1550,6 @@ namespace stat2018
                 tab_2_w11_c40.Text = tabela02.Rows[10][40].ToString().Trim();
                 tab_2_w11_c41.Text = tabela02.Rows[10][41].ToString().Trim();
                 tab_2_w11_c42.Text = tabela02.Rows[10][42].ToString().Trim();
-                tab_2_w11_c43.Text = tabela02.Rows[10][43].ToString().Trim();
                 //  wiersz 12
                 tab_2_w12_c01.Text = tabela02.Rows[11][1].ToString().Trim();
                 tab_2_w12_c02.Text = tabela02.Rows[11][2].ToString().Trim();
@@ -1637,7 +1631,6 @@ namespace stat2018
                 tab_2_w13_c40.Text = tabela02.Rows[12][40].ToString().Trim();
                 tab_2_w13_c41.Text = tabela02.Rows[12][41].ToString().Trim();
                 tab_2_w13_c42.Text = tabela02.Rows[12][42].ToString().Trim();
-                tab_2_w13_c43.Text = tabela02.Rows[12][43].ToString().Trim();
                 //  wiersz 14
                 tab_2_w14_c01.Text = tabela02.Rows[13][1].ToString().Trim();
                 tab_2_w14_c02.Text = tabela02.Rows[13][2].ToString().Trim();
@@ -1719,7 +1712,6 @@ namespace stat2018
                 tab_2_w15_c40.Text = tabela02.Rows[14][40].ToString().Trim();
                 tab_2_w15_c41.Text = tabela02.Rows[14][41].ToString().Trim();
                 tab_2_w15_c42.Text = tabela02.Rows[14][42].ToString().Trim();
-                tab_2_w15_c43.Text = tabela02.Rows[14][43].ToString().Trim();
                 //  wiersz 16
                 tab_2_w16_c01.Text = tabela02.Rows[15][1].ToString().Trim();
                 tab_2_w16_c02.Text = tabela02.Rows[15][2].ToString().Trim();
@@ -1801,7 +1793,6 @@ namespace stat2018
                 tab_2_w17_c40.Text = tabela02.Rows[16][40].ToString().Trim();
                 tab_2_w17_c41.Text = tabela02.Rows[16][41].ToString().Trim();
                 tab_2_w17_c42.Text = tabela02.Rows[16][42].ToString().Trim();
-                tab_2_w17_c43.Text = tabela02.Rows[16][43].ToString().Trim();
                 //  wiersz 18
                 tab_2_w18_c01.Text = tabela02.Rows[17][1].ToString().Trim();
                 tab_2_w18_c02.Text = tabela02.Rows[17][2].ToString().Trim();
@@ -1883,7 +1874,6 @@ namespace stat2018
                 tab_2_w19_c40.Text = tabela02.Rows[18][40].ToString().Trim();
                 tab_2_w19_c41.Text = tabela02.Rows[18][41].ToString().Trim();
                 tab_2_w19_c42.Text = tabela02.Rows[18][42].ToString().Trim();
-                tab_2_w19_c43.Text = tabela02.Rows[18][43].ToString().Trim();
                 //  wiersz 20
                 tab_2_w20_c01.Text = tabela02.Rows[19][1].ToString().Trim();
                 tab_2_w20_c02.Text = tabela02.Rows[19][2].ToString().Trim();
@@ -1965,7 +1955,6 @@ namespace stat2018
                 tab_2_w21_c40.Text = tabela02.Rows[20][40].ToString().Trim();
                 tab_2_w21_c41.Text = tabela02.Rows[20][41].ToString().Trim();
                 tab_2_w21_c42.Text = tabela02.Rows[20][42].ToString().Trim();
-                tab_2_w21_c43.Text = tabela02.Rows[20][43].ToString().Trim();
                 //  wiersz 22
                 tab_2_w22_c01.Text = tabela02.Rows[21][1].ToString().Trim();
                 tab_2_w22_c02.Text = tabela02.Rows[21][2].ToString().Trim();
@@ -2047,7 +2036,6 @@ namespace stat2018
                 tab_2_w23_c40.Text = tabela02.Rows[22][40].ToString().Trim();
                 tab_2_w23_c41.Text = tabela02.Rows[22][41].ToString().Trim();
                 tab_2_w23_c42.Text = tabela02.Rows[22][42].ToString().Trim();
-                tab_2_w23_c43.Text = tabela02.Rows[22][43].ToString().Trim();
                 //  wiersz 24
                 tab_2_w24_c01.Text = tabela02.Rows[23][1].ToString().Trim();
                 tab_2_w24_c02.Text = tabela02.Rows[23][2].ToString().Trim();

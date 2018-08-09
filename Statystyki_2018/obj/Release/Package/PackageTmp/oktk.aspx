@@ -2,7 +2,6 @@
 
 <%@ Register assembly="DevExpress.Web.v17.1, Version=17.1.10.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" namespace="DevExpress.Web" tagprefix="dx" %>
 
-
 <asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
    
    <style>
@@ -90,7 +89,7 @@
      
        <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" 
         DataSourceID="tabela_1" OnRowCreated="GridView1_RowCreated" 
-        Width="100%" ShowHeader="False" OnRowDataBound="GridView1_RowDataBound" ShowFooter="True">
+        Width="100%" ShowHeader="False" OnRowDataBound="GridView1_RowDataBound" OnSelectedIndexChanged="GridView1_SelectedIndexChanged" ShowFooter="True">
         <Columns>
             <asp:BoundField DataField="id" HeaderText="L.p." SortExpression="id">
             <ItemStyle Width="15px" />
@@ -181,14 +180,15 @@
                   <ItemStyle  CssClass="col_37" />
             </asp:TemplateField>
 
-               <asp:TemplateField HeaderText="d_07" SortExpression="d_07">
-                <ItemTemplate>
-                <a href="javascript:openPopup('popup.aspx?sesja=<%# Eval("id_sedziego")+ "!"+Eval("id_tabeli") +"!11!2"%>')"><asp:Label ID="Label211" runat="server" Text='<%# Eval("d_11")%>' CssClass="normal"></asp:Label> </a>    
-                </ItemTemplate>
-                  <ItemStyle  CssClass="col_37" />
-            </asp:TemplateField>
+              
 
         
+<asp:TemplateField HeaderText = "d_15" SortExpression = "d_01" > 
+                <ItemTemplate>
+                    <asp:TextBox ID="TextBox1" runat="server" Width="100%"></asp:TextBox>
+                </ItemTemplate>
+                   <ItemStyle  CssClass = "col_37"/>
+                </asp:TemplateField>
              
         </Columns>
            <FooterStyle Font-Bold="True" HorizontalAlign="Center" />
@@ -372,8 +372,8 @@
         Raport statystyczny 
                     <asp:Label ID="Label27" runat="server"></asp:Label>
                 Sporzadzone dn.
-            <asp:Label ID="Label29" runat="server"></asp:Label>
-          <np. 21 czerwca 2015>przez
+            <asp:Label ID="Label29" runat="server"></asp:Label>&nbsp;przez&nbsp;
+          &nbsp;
             <asp:Label ID="Label28" runat="server"></asp:Label>
           <asp:Label ID="Label30" runat="server"></asp:Label>
         <br />

@@ -52,9 +52,9 @@ namespace stat2018
                     }
                 }
             }
-            catch (Exception ex)
+            catch 
             {
-                //  Server.Transfer("default.aspx");
+                  Server.Transfer("default.aspx");
             }
         }// end of Page_Load
 
@@ -754,8 +754,7 @@ namespace stat2018
 
         private void generate_my_data()
         {
-            String FONT_ARIAL = "Arial";
-
+            
             DataView view = (DataView)dane_do_tabeli_1.Select(DataSourceSelectArguments.Empty);
 
             DataTable table = view.ToTable();

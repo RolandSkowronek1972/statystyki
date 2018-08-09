@@ -43,10 +43,10 @@
                        <dx:aspxdateedit ID="Date2" runat="server" Theme="Moderno">
                 </dx:aspxdateedit></td>
             <td style="width:auto;padding-left:5px;" >
-                <asp:LinkButton ID="LinkButton54" runat="server" class="ax_box" OnClick="LinkButton54_Click">  Odśwież</asp:LinkButton>
+                <asp:LinkButton ID="LinkButton54" runat="server" CssClass="ax_box" OnClick="LinkButton54_Click">  Odśwież</asp:LinkButton>
             </td>
             <td style="width:auto;padding-left:5px;">
-                  <asp:LinkButton ID="LinkButton55" runat="server"  class="ax_box" OnClick="LinkButton55_Click" CssClass="ax_box"> Drukuj </asp:LinkButton>
+                  <asp:LinkButton ID="LinkButton55" runat="server"  CssClass="ax_box" OnClick="LinkButton55_Click" > Drukuj </asp:LinkButton>
             </td>
             <td style="width:auto;padding-left:5px;">
                 
@@ -214,14 +214,16 @@
                   <ItemStyle  CssClass="col_45" />
             </asp:TemplateField>
           
-               <asp:TemplateField HeaderText="d_07" SortExpression="d_07">
+             
+        
+<asp:TemplateField HeaderText = "d_15" SortExpression = "d_01" > 
                 <ItemTemplate>
-                      <a href="javascript:openPopup('popup.aspx?sesja=<%# Eval("id_sedziego")+ "!"+Eval("id_tabeli") +"!15!2"%>')"><asp:Label ID="Label215" runat="server" Text='<%# Eval("d_15")%>' CssClass="normal"></asp:Label> </a> 
-          
-                      
+                    <asp:TextBox ID="TextBox1" runat="server" Width="100%"></asp:TextBox>
                 </ItemTemplate>
-                  <ItemStyle  CssClass="col_45" />
-            </asp:TemplateField>
+                   <ItemStyle  CssClass = "col_37"/>
+                </asp:TemplateField>
+             
+             
             
               
             
@@ -250,8 +252,8 @@
         Raport statystyczny 
                      <asp:Label ID="Label27" runat="server"></asp:Label>
                 &nbsp;Sporzadzone dn.
-            <asp:Label ID="Label29" runat="server"></asp:Label>
-&nbsp;<np. 21 czerwca 2015>przez
+            <asp:Label ID="Label29" runat="server"></asp:Label>&nbsp;przez&nbsp;
+&nbsp;przez&nbsp;
             <asp:Label ID="Label28" runat="server"></asp:Label>
 &nbsp;<asp:Label ID="Label30" runat="server"></asp:Label>
         <br />

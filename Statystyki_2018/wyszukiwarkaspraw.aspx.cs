@@ -98,7 +98,7 @@ namespace stat2018
 
                     domain = (string)Session["damain"];
                 }
-                catch (Exception ex)
+                catch 
                 {    }
 
                 string pozwolenie = cl.czy_dostepny(user, id.ToString(), domain);
@@ -153,7 +153,7 @@ namespace stat2018
                 listaSpraw.Columns.Clear();
                 listaSpraw.DataBind();
             }
-            catch (Exception ex)
+            catch 
             {
 
 

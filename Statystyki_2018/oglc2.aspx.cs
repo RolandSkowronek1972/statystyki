@@ -18,7 +18,7 @@ namespace stat2018
 
 
         int storid = 0;
-        int rowIndex = 1;
+       
 
         protected void Page_Load(object sender, EventArgs e)
         {

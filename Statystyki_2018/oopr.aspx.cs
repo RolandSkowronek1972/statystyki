@@ -52,9 +52,9 @@ namespace stat2018
                     }
                 }
             }
-            catch (Exception ex)
+            catch 
             {
-                // Server.Transfer("default.aspx");
+                 Server.Transfer("default.aspx");
             }
         }// end of Page_Load
 
@@ -1549,14 +1549,7 @@ namespace stat2018
             string download = Server.MapPath("Template") + @"\oopr";
 
             FileInfo fNewFile = new FileInfo(download + "_.xlsx");
-            try
-            {
-                File.Delete(fNewFile.FullName);
-            }
-            catch (Exception ex)
-            {
-                //      Label31.Text = "Delete error massage: " + ex.Message + "<br/>";       
-            }
+           
             using (ExcelPackage MyExcel = new ExcelPackage(existingFile))
             {
                 ExcelWorksheet MyWorksheet = MyExcel.Workbook.Worksheets[1];
@@ -1577,7 +1570,7 @@ namespace stat2018
                     this.Response.End();
 
                 }
-                catch (Exception ex)
+                catch 
                 {
                     //  Label31.Text = Label31.Text + "Save Error massage " + ex.Message + "<br/>";
 

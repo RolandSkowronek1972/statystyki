@@ -28,7 +28,7 @@ namespace stat2018
                     }
                     cm.log.Info("Site1.Master: Identyfikatora uzytkownika: " + IdentyfikatorUzytkownika);
                 }
-                catch (Exception ex)
+                catch 
                 {
                     cm.log.Error("Site1.Master: Nie przypisanoe identyfikatora użytkownika");
                 }

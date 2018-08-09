@@ -5,9 +5,7 @@ using System.Web.UI.WebControls;
 using System.IO;
 using System.Data;
 using OfficeOpenXml;
-using OfficeOpenXml.Table;
-using OfficeOpenXml.Style; 
-    
+
 using System.Reflection;
 
 namespace stat2018
@@ -33,7 +31,7 @@ namespace stat2018
                 DataRow dr = foundRows[0];
                 result = dr[4].ToString();
             }
-            catch (Exception ex)
+            catch 
             { }
             return result;
 
@@ -89,7 +87,7 @@ namespace stat2018
                     }
                     // jezeli dane sa to
                     DataRow wierszDanych = teksty.NewRow();
-                    int value = 0;
+                  
                     wierszDanych["wiersz"] = int.Parse(worksheet.Cells[i, wiersz].Text.Trim());
                     wierszDanych["kolumna"] = int.Parse(worksheet.Cells[i, kolumna].Text.Trim());
                     wierszDanych["text"] = worksheet.Cells[i, tekst].Text.Trim();

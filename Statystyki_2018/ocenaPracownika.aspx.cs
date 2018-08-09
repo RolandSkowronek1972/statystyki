@@ -157,11 +157,8 @@ namespace stat2018
                 }
 
             }
-            catch (Exception ex)
-            {
-
-
-            }
+            catch
+            {            }
 
 
         }
@@ -169,10 +166,7 @@ namespace stat2018
 
         protected void ASPxComboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
-
             zapelnijTabeleLudzi();
-
-
         }
 
         protected void LinkButton54_Click(object sender, EventArgs e)

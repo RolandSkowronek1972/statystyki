@@ -1853,7 +1853,7 @@ namespace stat2018
                     manageCells(MyWorksheet8, rowik + rowikPlus, i + 3, sumObject.ToString());
                 }
             }
-            catch (Exception ex)
+            catch
             { }
 
 

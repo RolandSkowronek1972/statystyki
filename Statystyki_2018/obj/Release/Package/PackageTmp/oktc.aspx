@@ -1,8 +1,5 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site1.Master" AutoEventWireup="true" CodeBehind="oktc.aspx.cs" Inherits="stat2018.oktc" %>
-
 <%@ Register assembly="DevExpress.Web.v17.1, Version=17.1.10.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" namespace="DevExpress.Web" tagprefix="dx" %>
-
-
 
 
 <asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
@@ -238,13 +235,16 @@
                 </ItemTemplate>
                   <ItemStyle  CssClass="col_37" />
             </asp:TemplateField>
-           <asp:TemplateField HeaderText="d_07" SortExpression="d_07">
-                <ItemTemplate>
-                <a href="javascript:openPopup('popup.aspx?sesja=<%# Eval("id_sedziego")+ "!"+Eval("id_tabeli") +"!19!2"%>')"><asp:Label ID="Label219" runat="server" Text='<%# Eval("d_19") %>' CssClass="normal"></asp:Label> </a>    
-                </ItemTemplate>
-                  <ItemStyle  CssClass="col_37" />
-            </asp:TemplateField>
+                      
 
+        
+<asp:TemplateField HeaderText = "d_15" SortExpression = "d_01" > 
+                <ItemTemplate>
+                    <asp:TextBox ID="TextBox1" runat="server" Width="100%"></asp:TextBox>
+                </ItemTemplate>
+                   <ItemStyle  CssClass = "col_37"/>
+                </asp:TemplateField>
+             
              
         </Columns>
            <FooterStyle Font-Bold="True" HorizontalAlign="Center" />
@@ -1048,8 +1048,8 @@
         Raport statystyczny 
                     <asp:Label ID="Label27" runat="server"></asp:Label>
                 Sporzadzone dn.
-            <asp:Label ID="Label29" runat="server"></asp:Label>
-          <np. 21 czerwca 2015>przez
+            <asp:Label ID="Label29" runat="server"></asp:Label>&nbsp;przez&nbsp;
+          &nbsp;
             <asp:Label ID="Label28" runat="server"></asp:Label>
           <asp:Label ID="Label30" runat="server"></asp:Label>
         <br />

@@ -1390,7 +1390,7 @@
                   <asp:Label CssClass="normal" ID="Label27" runat="server"></asp:Label>
                 &nbsp;Sporzadzone dn.
           <asp:Label CssClass="normal" ID="Label29" runat="server"></asp:Label>
-&nbsp;<np. 21 czerwca 2015>przez
+&nbsp;&nbsp;
           <asp:Label CssClass="normal" ID="Label28" runat="server"></asp:Label>
 &nbsp;<asp:Label CssClass="normal" ID="Label30" runat="server"></asp:Label>
         <br />

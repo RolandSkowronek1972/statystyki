@@ -2406,7 +2406,7 @@
         Raport statystyczny 
                     <asp:Label ID="Label27" runat="server"></asp:Label>
                 &nbsp;Sporzadzone dn.
-            <asp:Label ID="Label29" runat="server"></asp:Label>
+            <asp:Label ID="Label29" runat="server"></asp:Label>&nbsp;przez&nbsp;
 &nbsp; przez
             <asp:Label ID="Label28" runat="server"></asp:Label>
 &nbsp;<asp:Label ID="Label30" runat="server"></asp:Label>

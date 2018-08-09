@@ -157,7 +157,6 @@ namespace stat2018
         public string podajCSWcyw()
         {
             return con_str_wcyw;
-
         }//end of podajCS
         public string podajCS()
         {
@@ -166,9 +165,7 @@ namespace stat2018
         }//end of podajCS
         public string PobierzConnectionString(int id_dzialu)
         {
-
             return podajConnectionString(id_dzialu);
-
         }
         public string podajCS(string nazwa)
         {
@@ -177,7 +174,6 @@ namespace stat2018
             return Common.getQuerryValue("SELECT distinct   [cs]  FROM [wydzialy] where nazwa=@nazwa", con_str, parameters);
 
         }//end of podajCS
-
 
         public double pobierzDanePracownika(string idPracownika, string data, int kolumna, string ConnectionString)
         {
@@ -207,8 +203,7 @@ namespace stat2018
             { }
             return result;
         }// end of wyciagnij_kwerende
-        
-    
+            
         public DataSet pod_tabela(string cs, string kwerenda, string poczatek, string koniec, string id_sedziego)
         {
             var conn = new SqlConnection(cs);
@@ -246,6 +241,16 @@ namespace stat2018
         public string podajKwerende_wiersza(int id_dzialu, int id_wiersza, int id_tabeli, int id_kolumny)
         {
             //xxx
+            DataTable parametry = Common.makeParameterTable();
+            parametry.Rows.Add("@id_wydzial", id_dzialu);
+            parametry.Rows.Add("@id_kolumny", id_kolumny);
+            parametry.Rows.Add("@id_wiersza", id_wiersza);
+            parametry.Rows.Add("@id_tabeli", id_tabeli);
+
+            
+            return Common.getQuerryValue("SELECT distinct kwerenda FROM kwerendy where id_wydzial=@id_wydzial and id_tabeli=@id_tabeli and id_kolumny=@id_kolumny and id_wiersza=@id_wiersza ", con_str, parametry);
+
+            /*
             var conn = new SqlConnection(con_str);
             SqlCommand sqlCmd = new SqlCommand();
             string result = string.Empty;
@@ -273,7 +278,7 @@ namespace stat2018
                 }
             }
 
-            return result;
+            return result;*/
         }
 
         public string podajKwerende_wiersza_przestawnego(int id_dzialu, int id_wiersza, int id_tabeli, int id_kolumny, int pozycja)
@@ -416,7 +421,6 @@ namespace stat2018
         public string wyciagnijDaneNt(string kw, DateTime poczatek, DateTime koniec, string cs)
         {
             string result = string.Empty;
-
 
             if ((!string.IsNullOrEmpty(cs)) && (!string.IsNullOrEmpty(kw)))
             {

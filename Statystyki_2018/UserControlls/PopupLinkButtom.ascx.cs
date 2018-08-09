@@ -121,7 +121,7 @@ namespace stat2018.UserControlls
                 px.Visible = true;
                 GridView55.Visible = true;
             }
-            catch (Exception ex)
+            catch 
             {
                 GridView55.DataSource = null;
                 GridView55.DataSourceID = null;
