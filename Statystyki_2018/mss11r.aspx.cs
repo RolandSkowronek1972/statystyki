@@ -35,11 +35,7 @@ namespace stat2018
                 try
                 {
                     string ccc = (string)Session["user_id"];
-                 /*   bool license = ms.isLicence((string)Session["id_dzialu"]);
-                    if (!license)// && (!string.IsNullOrEmpty((string)Session["user_id"]))))
-                    {
-                        Server.Transfer("default.aspx");
-                    }*/
+                
                     // file read with version
                     var fileContents = System.IO.File.ReadAllText(Server.MapPath(@"~//version.txt"));
                     this.Title = "Statystyki " + fileContents.ToString().Trim();

@@ -637,6 +637,12 @@ namespace stat2018
                 }
                 catch
                 { }
+                try
+                {
+                    Label30.Text = System.IO.File.ReadAllText(Server.MapPath(@"~//version.txt")).ToString().Trim();
+                }
+                catch
+                { }
             }
             catch
             {

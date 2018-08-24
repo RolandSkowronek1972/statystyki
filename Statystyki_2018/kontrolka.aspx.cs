@@ -5,7 +5,7 @@ using System.IO;
 using DevExpress.XtraPrinting;
 using System.Web;
 using System.Net.Mime;
-
+using System.Drawing;
 
 namespace stat2018
 {
@@ -25,7 +25,8 @@ namespace stat2018
                 //
                 string kw = string.Empty;
                 string cs = string.Empty;
-
+                int szerokoscKolumny = 0;
+                int rozmiarCzcionki = 0;
                 string value = Request.QueryString["id"];
                 string errorMessage = Request.QueryString["info"];
                 try
@@ -47,6 +48,25 @@ namespace stat2018
                     parameters.Rows.Add("@ident", value);
                     kw = cm.getQuerryValue("SELECT wartosc FROM            konfig  WHERE        (ident = @ident)", cm.con_str, parameters);
                     cs = cm.getQuerryValue("SELECT ConnectionString FROM            konfig  WHERE        (ident = @ident)", cm.con_str, parameters);
+                    try
+                    {
+                        szerokoscKolumny = int.Parse ( cm.getQuerryValue("SELECT szerokoscKolumny FROM            konfig  WHERE        (ident = @ident)", cm.con_str, parameters));
+
+                    }
+                    catch 
+                    {  }
+                    try
+                    {
+                        rozmiarCzcionki = int.Parse (cm.getQuerryValue("SELECT rozmiarczcionki FROM            konfig  WHERE        (ident = @ident)", cm.con_str, parameters));
+
+                    }
+                    catch (Exception)
+                    {
+
+                      
+                    }
+                    Session["rozmiarCzcionki"] = rozmiarCzcionki;
+                    Session["szerokoscKolumny"] = szerokoscKolumny;
                     Session["cs"] = cs;
                     Session["kw"] = kw;
                 }
@@ -148,7 +168,41 @@ namespace stat2018
                     //  ASPxGridView1.KeyFieldName = ASPxGridView1.Columns[0].Name;
 
                 }
+                int szerokoscKolumny = 0;
                 ASPxGridView1.DataBind();
+                try
+                {
+                     szerokoscKolumny = (int)Session["szerokoscKolumny"];
+                }
+                catch 
+                {  }
+
+
+                int rozmiarczcionki = 0;
+                try
+                {
+                    rozmiarczcionki = (int)Session["rozmiarczcionki"];
+                }
+                catch 
+                {
+                    
+                }
+                if (rozmiarczcionki>0)
+                {
+                    for (int i = 0; i < ASPxGridView1.Columns.Count; i++)
+                    {
+                        ASPxGridView1.Columns[i].CellStyle.Font.Size = rozmiarczcionki;
+                    }
+                }
+                if (szerokoscKolumny>0)
+                {
+                    for (int i = 0; i < ASPxGridView1.Columns.Count; i++)
+                    {
+                        ASPxGridView1.Columns[i].Width= szerokoscKolumny;
+                    }
+                }
+       
+
             }
             catch (Exception ex)
             {
@@ -180,13 +234,18 @@ namespace stat2018
             {
                     PrintableComponentLink pcl = new PrintableComponentLink(new PrintingSystem());
                     ASPxGridViewExporter1.FileName = "Kontrolka.pdf";
+                    Font newfont = new Font(FontFamily.GenericSerif, 12, FontStyle.Bold | FontStyle.Underline);
+                    
+                   
                     pcl.Component = ASPxGridViewExporter1;
-
+                    
                     pcl.Margins.Left = pcl.Margins.Right = 50;
+                    
                     pcl.Landscape = true;
                     pcl.CreateDocument(false);
-                    pcl.PrintingSystem.Document.AutoFitToPagesWidth = 1;
-                    pcl.ExportToPdf(ms);
+                    pcl.PrintingSystem.Document.AutoFitToPagesWidth = 0;
+                    
+                   pcl.ExportToPdf(ms);
                     WriteResponse(this.Response, ms.ToArray(), System.Net.Mime.DispositionTypeNames.Inline.ToString());
                 }
                 /*

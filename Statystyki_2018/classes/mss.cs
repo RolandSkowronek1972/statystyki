@@ -16,8 +16,6 @@ namespace stat2018
         public bool isLicence(string idWydzial)
         {
             bool result = false;
-
-
             var conn = new SqlConnection(con_str);
             using (SqlCommand sqlCmd = new SqlCommand("SELECT DISTINCT licencja FROM   wydzialy_mss WHERE       (ident = @idWydzial)", conn))
             {
@@ -59,13 +57,11 @@ namespace stat2018
 
         public string PobierzDana(string klucz)
         {
-            string result = string.Empty;
+            
             DataTable parameters = cm.makeParameterTable();
             parameters.Rows.Add("@klucz", klucz);
             string kwerenda = "SELECT [wartosc]  FROM [konfig] where klucz=@klucz";
-            result = getQuerryValue(kwerenda, con_str, parameters);
-            return result;
-
+            return cm.getQuerryValue(kwerenda, con_str, parameters);
         }
 
         public string czyIstniejeWpiswKOF(string idSprawy)
@@ -74,7 +70,7 @@ namespace stat2018
             DataTable parameters = cm.makeParameterTable();
             parameters.Rows.Add("@idSprawy", idSprawy);
             string kwerenda = "SELECT count (*) FROM kof where id_sprawy=@idSprawy";
-            result = getQuerryValue(kwerenda, con_str, parameters);
+            result = cm.getQuerryValue(kwerenda, con_str, parameters);
             return result;
 
         }
@@ -86,7 +82,7 @@ namespace stat2018
             DataTable parameters = cm.makeParameterTable();
             parameters.Rows.Add("@klucz", klucz);
             string kwerenda = "SELECT [ConnectionString]  FROM [konfig] where klucz=@klucz";
-            result = getQuerryValue(kwerenda, con_str, parameters);
+            result = cm.getQuerryValue(kwerenda, con_str, parameters);
             return result;
 
         }
@@ -297,7 +293,7 @@ namespace stat2018
                 parameters.Rows.Add("@id_dzialu", id_dzialu);
                 parameters.Rows.Add("@data_1", poczatek);
                 parameters.Rows.Add("@data_2", koniec);
-                string wartosc = getQuerryValue(kwerendaN, cs, parameters);
+                string wartosc = cm.getQuerryValue(kwerendaN, cs, parameters);
              
                 resultRow[0] = idWydzial.Trim();
                 resultRow[1] = idTabeli.Trim();
@@ -316,20 +312,20 @@ namespace stat2018
         public string PobierzConnectionStringMSS(int id_dzialu)
         {
 
-            DataTable parameters = parametry();
+            DataTable parameters =cm.makeParameterTable();
             parameters.Rows.Add("@ident", id_dzialu);
 
-            return getQuerryValue("SELECT cs  FROM wydzialy_mss where ident=@ident ", con_str, parameters);
+            return cm.getQuerryValue("SELECT cs  FROM wydzialy_mss where ident=@ident ", con_str, parameters);
 
         }
 
         public bool debug(int wydzial)
         {
             bool result = false;
-            DataTable parameters = parametry();
+            DataTable parameters = cm.makeParameterTable();
             parameters.Rows.Add("@ident", wydzial);
 
-            if (getQuerryValue("SELECT debug  FROM wydzialy_mss where ident=@ident ", con_str, parameters) == "1")
+            if (cm.getQuerryValue("SELECT debug  FROM wydzialy_mss where ident=@ident ", con_str, parameters) == "1")
             {
                 result = true;
             }
@@ -339,30 +335,30 @@ namespace stat2018
 
         public string nazwaSadu(string id_sadu)
         {
-            DataTable parameters = parametry();
+            DataTable parameters = cm.makeParameterTable();
             parameters.Rows.Add("@ident", id_sadu);
 
-            return getQuerryValue("SELECT sad  FROM wydzialy_mss where ident=@ident ", con_str, parameters);
+            return cm.getQuerryValue("SELECT sad  FROM wydzialy_mss where ident=@ident ", con_str, parameters);
 
         }// end of nazwaSadu
 
         public string podajKwerendePodgladu(int id_dzialu, int id_wiersza, int id_kolumny, string id_tabeli)
         {
 
-            DataTable parameters = parametry();
+            DataTable parameters = cm.makeParameterTable();
             parameters.Rows.Add("@id_tabeli", id_tabeli);
             parameters.Rows.Add("@id_wydzial", id_dzialu);
             parameters.Rows.Add("@id_kolumny", id_kolumny);
             parameters.Rows.Add("@id_wiersza", id_wiersza);
 
-            return getQuerryValue("SELECT distinct podglad FROM kwerenda_mss where id_wydzial=@id_wydzial and id_tabeli=@id_tabeli and id_kolumny=@id_kolumny and id_wiersza=@id_wiersza ", con_str, parameters);
+            return cm.getQuerryValue("SELECT distinct podglad FROM kwerenda_mss where id_wydzial=@id_wydzial and id_tabeli=@id_tabeli and id_kolumny=@id_kolumny and id_wiersza=@id_wiersza ", con_str, parameters);
 
         }
 
         public DataTable pod_tabela(string cs, string kwerenda, string poczatek, string koniec, string id_sedziego)
         {
 
-            DataTable parameters = parametry();
+            DataTable parameters = cm.makeParameterTable();
 
             parameters.Rows.Add("@data_1", poczatek);
             parameters.Rows.Add("@data_2", koniec);
@@ -428,24 +424,14 @@ namespace stat2018
                             {
                                 result.AppendLine(line);
                             }
-
-
                         }
                     }
-
-
                 }
-
             }
             catch (Exception ex)
             {
-
-
                 result.AppendLine(ex.Message);
             }
-
-
-
             return result;
 
         } //end of raportTXT
@@ -483,46 +469,7 @@ namespace stat2018
 
 
         }// end of wyciagnij_kwerende
-         ///////// common
-        DataTable parametry()
-        {
-
-            DataTable parameters = new DataTable();
-            parameters.Columns.Add("name", typeof(String));
-            parameters.Columns.Add("value", typeof(String));
-            return parameters;
-        }
-        public string getQuerryValue(string kwerenda, string connStr, DataTable parameters)
-        {
-            string result = string.Empty;
-            SqlCommand sqlCmd;
-            var conn = new SqlConnection(connStr);
-
-            using (sqlCmd = new SqlCommand())
-            {
-                sqlCmd = new SqlCommand(kwerenda, conn);
-                try
-                {
-                    conn.Open();
-                    if (parameters != null)
-                    {
-                        foreach (DataRow row in parameters.Rows)
-                        {
-                            sqlCmd.Parameters.AddWithValue(row[0].ToString().Trim(), row[1].ToString().Trim());
-                        }
-                    }
-                    result = sqlCmd.ExecuteScalar().ToString();
-                    conn.Close();
-                }
-                catch (Exception ex)
-                {
-                    conn.Close();
-                }
-            } // end of using
-            return result;
-
-        }// end of getQuerryValue
-  
-
+        
+        
     }
 }

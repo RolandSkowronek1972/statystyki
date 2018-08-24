@@ -537,36 +537,14 @@ min-height: 65px;
  text-align:center;
 }
 
-
-.col_80 {
-        width:80px;
- text-align:center;
-}
-
-.col_82 {
-        width:82px;
- text-align:center;
-}
-
-.col_85 {
-        width:85px;
- text-align:center;
-}
-
-.col_89 {
-        width:89px;
- text-align:center;
-}
-
-
-.col_88 {
-        width:88px;
- text-align:center;
-}
-
 .col_90 {
         width:90px;
  text-align:center;
+}
+.col_90_min {
+        width:180px;
+ text-align:center;
+ min-width:180px;
 }
 .col_91 {
         width:91px;

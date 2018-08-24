@@ -14,6 +14,7 @@ namespace stat2018
         public Class1 cl = new Class1();
         public string con_str = ConfigurationManager.ConnectionStrings["wap"].ConnectionString;
         public string con_str_wcyw = ConfigurationManager.ConnectionStrings["wcywConnectionString"].ConnectionString;
+        public log4net.ILog log = log4net.LogManager.GetLogger(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
         public string[] splitData(string arg)
         {
             string[] stringSeparators = new string[] { "#" };
@@ -213,6 +214,7 @@ namespace stat2018
             for (int i = 1; i <= iloscKolumn+1; i++)
             {
                 outputTable.Columns.Add("d"+i.ToString ("D2").Trim (), typeof(string));
+                outputTable.Columns["d" + i.ToString("D2").Trim()].DefaultValue = "0";
             }
             
             DataTable kwerendy = new DataTable();
@@ -240,11 +242,20 @@ namespace stat2018
                         string selectString = "id_wiersza=" + i + " and " + "id_kolumny=" + j;
                         DataRow[] foundRows;
                         foundRows = ddT.Select(selectString);
-                        DataRow dr = foundRows[0];
-                        string kw = dr[2].ToString();
-                        //wpisanie danych
-                        
-                        dR[j] = wyciagnijDaneNt(kw, poczatek, koniec, cs);
+                        if (foundRows.Count()!=0)
+                     /*   {
+                            dR[j] = "0";
+                        }
+                        else*/
+                        {
+                            DataRow dr = foundRows[0];
+                            string kw = dr[2].ToString();
+                            //wpisanie danych
+
+                            dR[j] = wyciagnijDaneNt(kw, poczatek, koniec, cs);
+                        }
+                       
+                       
                     }
                     catch (Exception ex)
                     {
@@ -1485,9 +1496,6 @@ namespace stat2018
 
             }
             return outputTable;
-
-
-
         }
         
 
@@ -1509,6 +1517,29 @@ namespace stat2018
             }
             return sedzia;
         }
-       #endregion
+        #endregion
+
+
+        public string wyciagnijWartosc(DataTable ddT, string selectString, string tenPlik)
+        {
+            string result = "0";
+            try
+            {
+                DataRow[] foundRows;
+                foundRows = ddT.Select(selectString);
+                if (foundRows.Count() != 0)
+                {
+                    DataRow dr = foundRows[0];
+                    result = dr[4].ToString();
+                }
+            }
+            catch (Exception ex)
+            {
+                log.Error(tenPlik + " - wyciagnij wartosc -  " + ex.Message);
+            }
+            return result;
+        }
+
+
     } // end of class
 }

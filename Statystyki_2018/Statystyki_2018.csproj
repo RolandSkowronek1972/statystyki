@@ -59,7 +59,6 @@
     <Reference Include="DevExpress.RichEdit.v17.1.Core, Version=17.1.10.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.Utils.v17.1, Version=17.1.10.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.Web.ASPxThemes.v17.1, Version=17.1.10.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
-    <Reference Include="DevExpress.Web.Bootstrap.v17.1, Version=17.1.10.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.Web.Resources.v17.1, Version=17.1.10.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.Web.Resources.v17.1.resources">
     </Reference>
@@ -99,7 +98,6 @@
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="System.DirectoryServices.AccountManagement" />
     <Reference Include="System.Web.DynamicData" />
-    <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System" />
@@ -108,11 +106,12 @@
     <Reference Include="System.Drawing" />
     <Reference Include="System.Web" />
     <Reference Include="System.Configuration" />
-    <Reference Include="System.EnterpriseServices" />
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="aglg.aspx" />
     <Content Include="aglc.aspx" />
+    <Content Include="agl.aspx" />
     <Content Include="mss1o.aspx" />
     <Content Include="mss19o2.aspx" />
     <Content Include="oktkr.aspx" />
@@ -284,8 +283,9 @@
     <Content Include="Template\oktr.xlsx" />
     <Content Include="Template\okrp.xlsx" />
     <Content Include="Template\oktp.xlsx" />
-    <Content Include="Template\aglc.xlsx" />
+    <Content Include="Template\agl.xlsx" />
     <Content Include="Template\oktkr.xlsx" />
+    <Content Include="Template\aglc.xlsx" />
     <None Include="Web.config.Debug.old">
       <DependentUpon>Web.config.old</DependentUpon>
     </None>
@@ -309,13 +309,27 @@
     <None Include="Web.config.old" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="classes\dataReaders.cs" />
+    <Compile Include="aglg.aspx.cs">
+      <DependentUpon>aglg.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="aglg.aspx.designer.cs">
+      <DependentUpon>aglg.aspx</DependentUpon>
+    </Compile>
     <Compile Include="aglc.aspx.cs">
       <DependentUpon>aglc.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="aglc.aspx.designer.cs">
       <DependentUpon>aglc.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="classes\dataReaders.cs" />
+    <Compile Include="agl.aspx.cs">
+      <DependentUpon>agl.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="agl.aspx.designer.cs">
+      <DependentUpon>agl.aspx</DependentUpon>
     </Compile>
     <Compile Include="mss1o.aspx.cs">
       <DependentUpon>mss1o.aspx</DependentUpon>

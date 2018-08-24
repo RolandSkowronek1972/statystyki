@@ -9,8 +9,14 @@ by editing this MSBuild file. In order to learn more about this please visit htt
     <_PublishTargetUrl>C:\test\publish</_PublishTargetUrl>
   </PropertyGroup>
   <ItemGroup>
+    <File Include="agl.aspx">
+      <publishTime>08/21/2018 12:38:45</publishTime>
+    </File>
     <File Include="aglc.aspx">
-      <publishTime>08/07/2018 21:03:44</publishTime>
+      <publishTime>08/22/2018 09:22:35</publishTime>
+    </File>
+    <File Include="aglg.aspx">
+      <publishTime>08/22/2018 09:22:35</publishTime>
     </File>
     <File Include="akac.aspx">
       <publishTime>08/07/2018 16:40:09</publishTime>
@@ -544,7 +550,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>03/13/2018 11:20:50</publishTime>
     </File>
     <File Include="bin/stat2018.dll">
-      <publishTime>08/08/2018 06:40:12</publishTime>
+      <publishTime>08/23/2018 09:50:01</publishTime>
     </File>
     <File Include="default.aspx">
       <publishTime>03/13/2018 21:40:39</publishTime>
@@ -643,16 +649,16 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>08/07/2018 16:40:09</publishTime>
     </File>
     <File Include="mss16r.aspx">
-      <publishTime>08/08/2018 07:40:30</publishTime>
+      <publishTime>08/23/2018 05:55:22</publishTime>
     </File>
     <File Include="mss19o.aspx">
-      <publishTime>08/08/2018 06:38:20</publishTime>
+      <publishTime>08/23/2018 09:09:39</publishTime>
     </File>
     <File Include="mss19o2.aspx">
-      <publishTime>08/08/2018 06:15:59</publishTime>
+      <publishTime>08/23/2018 03:18:34</publishTime>
     </File>
     <File Include="mss1o.aspx">
-      <publishTime>08/08/2018 11:17:31</publishTime>
+      <publishTime>08/23/2018 06:43:41</publishTime>
     </File>
     <File Include="mss1r.aspx">
       <publishTime>08/07/2018 16:40:10</publishTime>
@@ -721,7 +727,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>08/07/2018 16:40:10</publishTime>
     </File>
     <File Include="oktkr.aspx">
-      <publishTime>08/07/2018 16:40:10</publishTime>
+      <publishTime>08/21/2018 12:37:07</publishTime>
     </File>
     <File Include="oktp.aspx">
       <publishTime>08/07/2018 16:40:11</publishTime>
@@ -847,7 +853,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>01/25/2018 15:25:00</publishTime>
     </File>
     <File Include="style/new.css">
-      <publishTime>03/29/2018 13:38:09</publishTime>
+      <publishTime>08/21/2018 14:26:02</publishTime>
     </File>
     <File Include="style/popup.css">
       <publishTime>01/05/2018 16:57:44</publishTime>
@@ -862,7 +868,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>02/09/2018 00:10:14</publishTime>
     </File>
     <File Include="style/Tables.css">
-      <publishTime>07/15/2018 19:03:11</publishTime>
+      <publishTime>08/21/2018 19:35:22</publishTime>
     </File>
     <File Include="temp.aspx">
       <publishTime>08/07/2018 16:40:11</publishTime>
@@ -870,8 +876,11 @@ by editing this MSBuild file. In order to learn more about this please visit htt
     <File Include="template.aspx">
       <publishTime>08/07/2018 16:40:11</publishTime>
     </File>
-    <File Include="Template/aglc.xlsx">
+    <File Include="Template/agl.xlsx">
       <publishTime>08/06/2018 08:52:28</publishTime>
+    </File>
+    <File Include="Template/aglc.xlsx">
+      <publishTime>08/19/2018 23:25:30</publishTime>
     </File>
     <File Include="Template/akac.xlsx">
       <publishTime>01/10/2018 18:29:12</publishTime>
@@ -1027,7 +1036,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>03/26/2018 12:15:38</publishTime>
     </File>
     <File Include="version.txt">
-      <publishTime>08/08/2018 08:04:25</publishTime>
+      <publishTime>08/23/2018 10:13:37</publishTime>
     </File>
     <File Include="wab.aspx">
       <publishTime>08/07/2018 16:40:11</publishTime>
