@@ -68,7 +68,7 @@ namespace stat2018
             }
             catch (Exception ex)
             {
-                // Server.Transfer("default.aspx");
+                  cm.log.Error(tenPlik + " " + ex.Message );
             }
         }// end of Page_Load
 

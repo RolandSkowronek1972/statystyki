@@ -61,7 +61,7 @@ namespace stat2018
             }
             catch (Exception ex)
             {
-                // Server.Transfer("default.aspx");
+                  cm.log.Error(tenPlik + " " + ex.Message );
             }
         }// end of Page_Load
 
@@ -768,7 +768,7 @@ namespace stat2018
                 //piąta
                 DataTable table6 = (DataTable)Session["tabelkaGW002"];
 
-                  MyWorksheet2 = tabela.tworzArkuszwExcleBezSedziow(MyExcel.Workbook.Worksheets[6], table6,5, 22, 2, 4);
+                  MyWorksheet2 = tabela.tworzArkuszwExcleBezSedziow(MyExcel.Workbook.Worksheets[6], table6,5, 22, 2, 4 ,false);
                 try
                 {
                     MyExcel.SaveAs(fNewFile);
@@ -782,7 +782,7 @@ namespace stat2018
                 }
                 catch (Exception ex)
                 {
-                    //  Label31.Text = Label31.Text + "Save Error massage " + ex.Message + "<br/>";
+                       cm.log.Error(tenPlik + " " + ex.Message );
 
                 }
 

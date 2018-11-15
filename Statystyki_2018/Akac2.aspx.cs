@@ -28,9 +28,7 @@ namespace stat2018
             }
             else
             {
-
                 return;
-
             }
             cm.log.Debug("otwarcie formularza: " + tenPlik);
             Session["data_1"] = Date1.Text;
@@ -447,7 +445,6 @@ namespace stat2018
             Label11.Text = txt;
             Label3.Text = cl.nazwaSadu((string)Session["id_dzialu"]);
 
-
         }
 
 
@@ -457,11 +454,9 @@ namespace stat2018
 
             System.Web.UI.WebControls.GridView sn = new System.Web.UI.WebControls.GridView();
 
-
-
+            
             #region tabela  1 (wierszowa)
-
-
+            
             DataTable dT_01 = new DataTable();
             dT_01.Columns.Clear();
             dT_01.Columns.Add("Column1", typeof(string));
@@ -513,7 +508,7 @@ namespace stat2018
             dT_01.Rows.Add(new Object[] { "2", "Ruch spraw", "1", "2" });
             dT_01.Rows.Add(new Object[] { "2", "sprawy wg. repertoriów lub wykazów", "8", "1" });
             Session["header_01"] = dT_01;
-            //  makeHeader2(sn, dT_01);
+           
             #endregion
 
 
@@ -570,8 +565,7 @@ namespace stat2018
 
 
             Session["header_02"] = dT_02;
-            //  makeHeader1(sn, dT_02);
-
+    
 
             #endregion
             #region tabela  3 ()
@@ -620,13 +614,10 @@ namespace stat2018
             dT_03.Rows.Add(new Object[] { "3", "Liczba załatwionych spraw na posiedzeniach", "10", "1", "h" });
             dT_03.Rows.Add(new Object[] { "3", "Załatwiono spraw ogółem (r.9+22)", "1", "3", "v" });
 
-
-
-
-
+            
 
             Session["header_03"] = dT_03;
-            //  makeHeader3(sn, dT_03);
+          
             #endregion
 
 
@@ -937,7 +928,7 @@ namespace stat2018
             }
             catch (Exception ex)
             {
-                //      Label31.Text = "Delete error massage: " + ex.Message + "<br/>";       
+                                cm.log.Error(tenPlik + " " + ex.Message );    
             }
 
             // pierwsza tabelka
@@ -1245,7 +1236,7 @@ namespace stat2018
                 }
                 catch (Exception ex)
                 {
-                    //  Label31.Text = Label31.Text + "Save Error massage " + ex.Message + "<br/>";
+                       cm.log.Error(tenPlik + " " + ex.Message );
 
                 }
 

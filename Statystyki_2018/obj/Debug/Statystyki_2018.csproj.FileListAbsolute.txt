@@ -134,7 +134,6 @@ C:\projekts\Statystyki_2018\Statystyki_2018\bin\stat2018.pdb
 C:\projekts\Statystyki_2018\Statystyki_2018\bin\AjaxControlToolkit.dll
 C:\projekts\Statystyki_2018\Statystyki_2018\bin\AjaxMin.dll
 C:\projekts\Statystyki_2018\Statystyki_2018\bin\DevExpress.Data.v17.1.dll
-C:\projekts\Statystyki_2018\Statystyki_2018\bin\DevExpress.Office.v17.1.Core.dll
 C:\projekts\Statystyki_2018\Statystyki_2018\bin\DevExpress.Printing.v17.1.Core.dll
 C:\projekts\Statystyki_2018\Statystyki_2018\bin\DevExpress.RichEdit.v17.1.Core.dll
 C:\projekts\Statystyki_2018\Statystyki_2018\bin\DevExpress.Utils.v17.1.dll
@@ -145,6 +144,7 @@ C:\projekts\Statystyki_2018\Statystyki_2018\bin\DevExpress.XtraPrinting.v17.1.dl
 C:\projekts\Statystyki_2018\Statystyki_2018\bin\itextsharp.dll
 C:\projekts\Statystyki_2018\Statystyki_2018\bin\Microsoft.Data.Edm.dll
 C:\projekts\Statystyki_2018\Statystyki_2018\bin\DevExpress.Pdf.v17.1.Core.dll
+C:\projekts\Statystyki_2018\Statystyki_2018\bin\DevExpress.Office.v17.1.Core.dll
 C:\projekts\Statystyki_2018\Statystyki_2018\bin\DevExpress.XtraBars.v17.1.dll
 C:\projekts\Statystyki_2018\Statystyki_2018\bin\DevExpress.XtraEditors.v17.1.dll
 C:\projekts\Statystyki_2018\Statystyki_2018\bin\DevExpress.XtraTreeList.v17.1.dll
@@ -152,13 +152,13 @@ C:\projekts\Statystyki_2018\Statystyki_2018\bin\DevExpress.XtraLayout.v17.1.dll
 C:\projekts\Statystyki_2018\Statystyki_2018\bin\DevExpress.Sparkline.v17.1.Core.dll
 C:\projekts\Statystyki_2018\Statystyki_2018\bin\DevExpress.Data.v17.1.xml
 C:\projekts\Statystyki_2018\Statystyki_2018\bin\DevExpress.Printing.v17.1.Core.xml
-C:\projekts\Statystyki_2018\Statystyki_2018\bin\DevExpress.Office.v17.1.Core.xml
 C:\projekts\Statystyki_2018\Statystyki_2018\bin\DevExpress.RichEdit.v17.1.Core.xml
 C:\projekts\Statystyki_2018\Statystyki_2018\bin\DevExpress.Utils.v17.1.xml
 C:\projekts\Statystyki_2018\Statystyki_2018\bin\DevExpress.Web.v17.1.xml
 C:\projekts\Statystyki_2018\Statystyki_2018\bin\DevExpress.XtraPrinting.v17.1.xml
 C:\projekts\Statystyki_2018\Statystyki_2018\bin\Microsoft.Data.Edm.xml
 C:\projekts\Statystyki_2018\Statystyki_2018\bin\DevExpress.Pdf.v17.1.Core.xml
+C:\projekts\Statystyki_2018\Statystyki_2018\bin\DevExpress.Office.v17.1.Core.xml
 C:\projekts\Statystyki_2018\Statystyki_2018\bin\DevExpress.Sparkline.v17.1.Core.xml
 C:\projekts\Statystyki_2018\Statystyki_2018\bin\de\DevExpress.Data.v17.1.resources.dll
 C:\projekts\Statystyki_2018\Statystyki_2018\bin\es\DevExpress.Data.v17.1.resources.dll
@@ -168,10 +168,6 @@ C:\projekts\Statystyki_2018\Statystyki_2018\bin\de\DevExpress.Printing.v17.1.Cor
 C:\projekts\Statystyki_2018\Statystyki_2018\bin\es\DevExpress.Printing.v17.1.Core.resources.dll
 C:\projekts\Statystyki_2018\Statystyki_2018\bin\ja\DevExpress.Printing.v17.1.Core.resources.dll
 C:\projekts\Statystyki_2018\Statystyki_2018\bin\ru\DevExpress.Printing.v17.1.Core.resources.dll
-C:\projekts\Statystyki_2018\Statystyki_2018\bin\de\DevExpress.Office.v17.1.Core.resources.dll
-C:\projekts\Statystyki_2018\Statystyki_2018\bin\es\DevExpress.Office.v17.1.Core.resources.dll
-C:\projekts\Statystyki_2018\Statystyki_2018\bin\ja\DevExpress.Office.v17.1.Core.resources.dll
-C:\projekts\Statystyki_2018\Statystyki_2018\bin\ru\DevExpress.Office.v17.1.Core.resources.dll
 C:\projekts\Statystyki_2018\Statystyki_2018\bin\de\DevExpress.RichEdit.v17.1.Core.resources.dll
 C:\projekts\Statystyki_2018\Statystyki_2018\bin\es\DevExpress.RichEdit.v17.1.Core.resources.dll
 C:\projekts\Statystyki_2018\Statystyki_2018\bin\ja\DevExpress.RichEdit.v17.1.Core.resources.dll
@@ -196,6 +192,10 @@ C:\projekts\Statystyki_2018\Statystyki_2018\bin\de\DevExpress.Pdf.v17.1.Core.res
 C:\projekts\Statystyki_2018\Statystyki_2018\bin\es\DevExpress.Pdf.v17.1.Core.resources.dll
 C:\projekts\Statystyki_2018\Statystyki_2018\bin\ja\DevExpress.Pdf.v17.1.Core.resources.dll
 C:\projekts\Statystyki_2018\Statystyki_2018\bin\ru\DevExpress.Pdf.v17.1.Core.resources.dll
+C:\projekts\Statystyki_2018\Statystyki_2018\bin\de\DevExpress.Office.v17.1.Core.resources.dll
+C:\projekts\Statystyki_2018\Statystyki_2018\bin\es\DevExpress.Office.v17.1.Core.resources.dll
+C:\projekts\Statystyki_2018\Statystyki_2018\bin\ja\DevExpress.Office.v17.1.Core.resources.dll
+C:\projekts\Statystyki_2018\Statystyki_2018\bin\ru\DevExpress.Office.v17.1.Core.resources.dll
 C:\projekts\Statystyki_2018\Statystyki_2018\bin\de\DevExpress.XtraBars.v17.1.resources.dll
 C:\projekts\Statystyki_2018\Statystyki_2018\bin\es\DevExpress.XtraBars.v17.1.resources.dll
 C:\projekts\Statystyki_2018\Statystyki_2018\bin\ja\DevExpress.XtraBars.v17.1.resources.dll

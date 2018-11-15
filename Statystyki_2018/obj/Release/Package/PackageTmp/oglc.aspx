@@ -260,7 +260,6 @@
         </SelectParameters>
     </asp:SqlDataSource>
        <br />
-       <br />
        </div>
     <div id="wyznaczenia"  class="page-break"> 
         <asp:Label ID="Label17" runat="server"></asp:Label>

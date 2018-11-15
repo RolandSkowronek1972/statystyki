@@ -88,7 +88,9 @@ namespace stat2018
                     id = 100 + int.Parse(ident);
                 }
                 catch (Exception ex)
-                { }
+                {
+                    //cm.log.Error("Wyszukiwarka spraw " + ex.Message);
+                }
                 //user
                 string user = string.Empty;
                 string domain = string.Empty;
@@ -132,7 +134,10 @@ namespace stat2018
 
             Session["imie"] = imie.Text.Trim();
             Session["nazwisko"] = Nazwisko.Text.Trim();
-
+            if (string.IsNullOrEmpty (kwerenda))
+            {
+                return;
+            }
             SqlDataSource1.SelectCommand = kwerenda;
 
 

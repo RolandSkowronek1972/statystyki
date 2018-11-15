@@ -17,8 +17,6 @@ namespace stat2018
 
         const string tenPlik = "oktkr.aspx";
 
-        int storid = 0;
-      
 
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -289,7 +287,7 @@ namespace stat2018
 
             dT_01.Rows.Add(new Object[] { "3", "w postępowaniu rozpozawczym", "2", "1" });
             dT_01.Rows.Add(new Object[] { "3", "w sprawach o rozwód lub separację", "2", "1" });
-            dT_01.Rows.Add(new Object[] { "3", "w sprawach o rozwód lub separację", "2", "1" });
+            dT_01.Rows.Add(new Object[] { "3", "w postępowaniu wykonawczym", "2", "1" });
 
             dT_01.Rows.Add(new Object[] { "4", "Nazwisko i imię kuratora", "2", "3" });
             dT_01.Rows.Add(new Object[] { "4", "Liczba spraw wykonywanych przez kuratorów", "3", "1" });
@@ -306,7 +304,6 @@ namespace stat2018
             #region tabela  2 ()
 
             dT_02.Clear();
-
 
             dT_02.Rows.Add(new Object[] { "1", "o umorzenie postępowania opiekuńczego ", "1", "1", "h", "60" });//
             dT_02.Rows.Add(new Object[] { "1", "o zmianę sposobu ograniczenia władzy rodzicielskiej (art. 109 § 1 i 2 kro)", "1", "1", "h", "60" });//
@@ -438,10 +435,7 @@ namespace stat2018
                 }
             }
             catch
-            {
-
-            }
-
+            { }
         }
 
         protected void Button1_Click(object sender, EventArgs e)
@@ -491,9 +485,9 @@ namespace stat2018
                     this.Response.End();
 
                 }
-                catch 
+                catch (Exception ex)
                 {
-                    //  Label31.Text = Label31.Text + "Save Error massage " + ex.Message + "<br/>";
+                       cm.log.Error(tenPlik + " " + ex.Message );
 
                 }
 

@@ -51,7 +51,8 @@ namespace stat2018
                             Session["manu2"] = naglowek.daneDoManuKontrolek(IdentyfikatorUzytkownika);
                             Session["manu3"] = naglowek.daneDoManuMSS(IdentyfikatorUzytkownika);
                             Session["manu4"] = naglowek.daneDoManuInne(IdentyfikatorUzytkownika);
-                            wypelnijMenu();
+                            Session["manu5"] = naglowek.wyloguj();
+                            wypelnijMenu(); 
                         }
                     }
                 }
@@ -73,6 +74,8 @@ namespace stat2018
             ASPxPopupMenu1.RootItem.Items.Add((DevExpress.Web.MenuItem)Session["manu2"]);
             ASPxPopupMenu1.RootItem.Items.Add((DevExpress.Web.MenuItem)Session["manu3"]);
             ASPxPopupMenu1.RootItem.Items.Add((DevExpress.Web.MenuItem)Session["manu4"]);
+            ASPxPopupMenu1.RootItem.Items.Add((DevExpress.Web.MenuItem)Session["manu5"]);
+
         }
 
         protected void ASPxPopupMenu1_ItemClick(object source, DevExpress.Web.MenuItemEventArgs e)

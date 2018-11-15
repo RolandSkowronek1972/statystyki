@@ -53,10 +53,7 @@
             <td style="width:auto;padding-left:5px;">
                   <asp:LinkButton ID="LinkButton55" runat="server"  class="ax_box" OnClick="LinkButton55_Click" CssClass="ax_box"> Drukuj </asp:LinkButton>
             </td>
-            <td style="width:auto;padding-left:5px;">
-                
-                <asp:LinkButton ID="LinkButton56" runat="server" OnClick="Button1_Click" CssClass="ax_box" Visible="False">DRUKUJ</asp:LinkButton>
-            </td>
+           
             <td style="width:auto;padding-left:5px;">
                  <asp:LinkButton ID="LinkButton57" runat="server" CssClass="ax_box" OnClick="Button3_Click">Zapisz do Excel</asp:LinkButton>
             </td>

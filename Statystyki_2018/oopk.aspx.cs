@@ -501,9 +501,9 @@ namespace stat2018
                     this.Response.End();
 
                 }
-                catch 
+                catch (Exception ex)
                 {
-                    //  Label31.Text = Label31.Text + "Save Error massage " + ex.Message + "<br/>";
+                       cm.log.Error(tenPlik + " " + ex.Message );
                 }
 
 

@@ -1,7 +1,4 @@
 ﻿using System;
-using NPOI.HPSF;
-using NPOI.HSSF.UserModel;
-using NPOI.SS.UserModel;
 using System.Data;
 using System.Globalization;
 using System.IO;
@@ -16,7 +13,6 @@ public partial class onsc : System.Web.UI.Page
     {
 
         public Class1 cl = new Class1();
-        private HSSFWorkbook hssfworkbook;
         public common cm = new common();
         private dataReaders dr = new dataReaders();
         private tabele tb = new tabele();
@@ -339,6 +335,7 @@ public partial class onsc : System.Web.UI.Page
             try
             {
                 DataTable tabela1 = dr.generuj_dane_do_tabeli_wierszy2018(DateTime.Parse(Date1.Text), DateTime.Parse(Date2.Text), yyx, 1, 11, 6, tenPlik);
+                Session["tabela01"] = tabela1;
                 tab_01_w01_c01.Text = tabela1.Rows[0][1].ToString().Trim();
                 tab_01_w01_c02.Text = tabela1.Rows[0][2].ToString().Trim();
                 tab_01_w01_c03.Text = tabela1.Rows[0][3].ToString().Trim();
@@ -730,21 +727,9 @@ public partial class onsc : System.Web.UI.Page
             //  excell();
             string path = Server.MapPath("Template") + "\\onsc.xlsx";
             FileInfo existingFile = new FileInfo(path);
-
             string download = Server.MapPath("Template") + @"\onsc";
-
-            FileInfo fNewFile = new FileInfo(download + ".xlsx");
-
-            /* 
-                    try
-                    {
-                       // File.Delete(fNewFile.FullName);
-                    }
-                    catch (Exception ex)
-                    {
-                        Label11.Text = "Delete error massage: " + ex.Message + "<br/>";
-                    }
-                    */
+            FileInfo fNewFile = new FileInfo(download + "_.xlsx");
+            
             using (ExcelPackage MyExcel = new ExcelPackage(existingFile))
             {
 
@@ -753,153 +738,78 @@ public partial class onsc : System.Web.UI.Page
                 ExcelWorksheet MyWorksheet = MyExcel.Workbook.Worksheets[1];
 
                 DataView view = (DataView)dane_do_tabeli_1.Select(DataSourceSelectArguments.Empty);
-
-                DataTable table = view.ToTable();
-                // table.Columns.Remove("ident");
-                table.Columns.Remove("id_");
-                table.Columns.Remove("id_tabeli");
-
+                
+                DataTable table =(DataTable)Session["tabela01"];
+                
+             
+              
                 int rowik = 1;
                 foreach (DataRow dR in table.Rows)
                 {
-                    for (int i = 1; i < 9; i++)
+                    for (int i = 1; i <7; i++)
                     {
-                        MyWorksheet.Cells[rowik + 2, i].Value = dR[i - 1].ToString().Trim();
-                        MyWorksheet.Cells[rowik + 2, i].Style.ShrinkToFit = true;
+                        MyWorksheet.Cells[rowik + 2, i+1].Value = dR[i].ToString().Trim();
+                        MyWorksheet.Cells[rowik + 2, i+1].Style.ShrinkToFit = true;
                     }
                     rowik++;
                 }
+
+                // druga 
 
 
                 ExcelWorksheet MyWorksheet2 = MyExcel.Workbook.Worksheets[2];
-
                 view = null;
                 table = null;
+                 view = (DataView)statystyki .Select(DataSourceSelectArguments.Empty);
 
-                view = (DataView)statystyki.Select(DataSourceSelectArguments.Empty);
-                table = view.ToTable();
-                // table.Columns.Remove("ident");
-                // table.Columns.Remove("id");
-                table.Columns.Remove("ident");
-                table.Columns.Remove("funkcja");
-                table.Columns.Remove("Stanowisko");
-                rowik = 1;
-                foreach (DataRow dR in table.Rows)
-                {
-                    for (int i = 1; i < 14; i++)
-                    {
-                        MyWorksheet2.Cells[rowik + 2, i].Value = dR[i - 1].ToString().Trim();
-                        MyWorksheet2.Cells[rowik + 2, i].Style.ShrinkToFit = true;
-                    }
-                    rowik++;
-                }
+                DataTable table2 = view.ToTable();
 
+                MyWorksheet2 = tb.tworzArkuszwExcle(MyExcel.Workbook.Worksheets[2], table2, 11, 0, 3, true, false, false, false, true);
 
-                MyWorksheet2 = MyExcel.Workbook.Worksheets[3];
+                //trzecia
 
                 view = null;
-                table = null;
-
-                view = (DataView)statystyki.Select(DataSourceSelectArguments.Empty);
-                table = view.ToTable();
-                // table.Columns.Remove("ident");
-                // table.Columns.Remove("id");
-                table.Columns.Remove("ident");
-                table.Columns.Remove("funkcja");
-                table.Columns.Remove("Stanowisko");
-                rowik = 1;
-                foreach (DataRow dR in table.Rows)
-                {
-                    for (int i = 1; i < 11; i++)
-                    {
-                        MyWorksheet2.Cells[rowik + 3, i].Value = dR[i - 1].ToString().Trim();
-                        MyWorksheet2.Cells[rowik + 3, i].Style.ShrinkToFit = true;
-                    }
-                    rowik++;
-                }
-
-
-                MyWorksheet2 = MyExcel.Workbook.Worksheets[4];
-
-                view = null;
-                table = null;
-
+                table2 = null;
                 view = (DataView)tabela_3.Select(DataSourceSelectArguments.Empty);
-                table = view.ToTable();
-                // table.Columns.Remove("ident");
-                // table.Columns.Remove("id");
-                table.Columns.Remove("ident");
-                table.Columns.Remove("funkcja");
-                table.Columns.Remove("Stanowisko");
-                rowik = 1;
-                foreach (DataRow dR in table.Rows)
-                {
-                    for (int i = 1; i < 11; i++)
-                    {
-                        MyWorksheet2.Cells[rowik + 3, i].Value = dR[i - 1].ToString().Trim();
-                        MyWorksheet2.Cells[rowik + 3, i].Style.ShrinkToFit = true;
-                    }
-                    rowik++;
-                }
+                table2 = view.ToTable();
+                MyWorksheet2 = tb.tworzArkuszwExcle(MyExcel.Workbook.Worksheets[3], table2, 8, 0, 4, true, false, false, false, true);
+                //czwarta
 
+                
+                view = null;
+                table2 = null;
 
+                view = (DataView)tabela_4.Select(DataSourceSelectArguments.Empty);
+                table2 = view.ToTable();
+                MyWorksheet2 = tb.tworzArkuszwExcle(MyExcel.Workbook.Worksheets[4], table2, 9, 0, 4, true, false, false, false, true);
 
                 MyWorksheet2 = MyExcel.Workbook.Worksheets[5];
 
                 view = null;
-                table = null;
+                table2 = null;
 
-                view = (DataView)tabela_4.Select(DataSourceSelectArguments.Empty);
-                table = view.ToTable();
-                // table.Columns.Remove("ident");
-                // table.Columns.Remove("id");
-                table.Columns.Remove("ident");
-                table.Columns.Remove("funkcja");
-                table.Columns.Remove("Stanowisko");
-                rowik = 1;
-                foreach (DataRow dR in table.Rows)
-                {
-                    for (int i = 1; i < 11; i++)
-                    {
-                        MyWorksheet2.Cells[rowik + 3, i].Value = dR[i - 1].ToString().Trim();
-                        MyWorksheet2.Cells[rowik + 3, i].Style.ShrinkToFit = true;
-                    }
-                    rowik++;
-                }
+                view = (DataView)tabela_5.Select(DataSourceSelectArguments.Empty);
+                table2 = view.ToTable();
 
-                //Add additional info here
+                //piata
+               
+                MyWorksheet2 = tb.tworzArkuszwExcle(MyExcel.Workbook.Worksheets[5], table2, 9, 0, 4, true, false, false, false, true);
+
+
+
                 try
                 {
-
-
-                    //==========================
-
-
                     MyExcel.SaveAs(fNewFile);
-
-
-
                     this.Response.Clear();
                     this.Response.ContentType = "application/vnd.ms-excel";
                     this.Response.AddHeader("Content-Disposition", "attachment;filename=" + fNewFile.Name);
                     this.Response.WriteFile(fNewFile.FullName);
                     this.Response.End();
 
-
                 }
                 catch (Exception ex)
                 {
                     Label11.Text = Label11.Text + "Save Error massage " + ex.Message + "<br/>";
-
-                }
-                try
-                {
-                    //  System.Diagnostics.Process.Start(fNewFile.FullName.ToString());
-                }
-                catch (Exception ex)
-                {
-
-                    Label11.Text = Label11.Text + "Run Excell Error massage " + ex.Message;
                 }
 
             }
@@ -912,369 +822,6 @@ public partial class onsc : System.Web.UI.Page
         {
             newPrint();
 
-            // execel begin
-            string filename = "statystykiWydzialCywilny.xls";
-            Response.ContentType = "application/vnd.ms-excel";
-            Response.AddHeader("Content-Disposition", string.Format("attachment;filename={0}", filename));
-
-            Response.Clear();
-
-            InitializeWorkbook();
-            generate_my_data();
-            Response.BinaryWrite(WriteToStream().GetBuffer());
-
-            Response.End();
-        }
-
-        private void InitializeWorkbook()
-        {
-            hssfworkbook = new HSSFWorkbook();
-
-            SummaryInformation si = PropertySetFactory.CreateSummaryInformation();
-            si.Subject = "";
-            si.Title = "statystyki";
-            hssfworkbook.SummaryInformation = si;
-        }
-
-
-
-        private MemoryStream WriteToStream()
-        {
-            //Write the stream data of workbook to the root directory
-            MemoryStream file = new MemoryStream();
-
-            hssfworkbook.Write(file);
-            return file;
-        }
-
-        private void generate_my_data()
-        {
-            ISheet sheet0 = hssfworkbook.CreateSheet("Ruch spraw");
-
-
-            DataView view = (DataView)dane_do_tabeli_1.Select(DataSourceSelectArguments.Empty);
-
-            DataTable table = view.ToTable();
-
-
-
-
-            IRow row0 = sheet0.CreateRow(0);
-            table.TableName = "Załatwienia";
-            table.Columns.Remove("id_");
-            table.Columns.Remove("id_tabeli");
-
-            row0.CreateCell(0).SetCellValue("Opis");
-            row0.CreateCell(1).SetCellValue("Sprawy według repetoriów i wykazów");
-
-            var crs = new NPOI.SS.Util.CellRangeAddress(0, 1, 0, 0);
-            sheet0.AddMergedRegion(crs);
-            crs = new NPOI.SS.Util.CellRangeAddress(0, 0, 1, 7);
-            sheet0.AddMergedRegion(crs);
-
-
-
-            row0 = sheet0.CreateRow(1);
-
-            row0.CreateCell(1).SetCellValue("C");
-            row0.CreateCell(2).SetCellValue("Ns");
-            row0.CreateCell(3).SetCellValue("Nc");
-            row0.CreateCell(4).SetCellValue("Co");
-            row0.CreateCell(5).SetCellValue("Cps");
-            row0.CreateCell(6).SetCellValue("Łącznie");
-
-            int rol = 2;
-            foreach (DataRow rowik in table.Rows)
-            {
-                row0 = sheet0.CreateRow(rol);
-                for (int i = 0; i < 7; i++)
-                {
-                    try
-                    {
-                        int ji = int.Parse(rowik[i].ToString().Trim());
-                        ICellStyle cellStyle = hssfworkbook.CreateCellStyle();
-                        cellStyle.DataFormat = HSSFDataFormat.GetBuiltinFormat("0");
-                        row0.CreateCell(i).SetCellValue(ji);
-                        row0.Cells[i].CellStyle = cellStyle;
-                    }
-                    catch (Exception)
-                    {
-                        row0.CreateCell(i).SetCellValue(rowik[i].ToString().Trim());
-                    }
-                }
-                rol++;
-            }// end foreach
-
-            // druga tabela
-            view = (DataView)statystyki.Select(DataSourceSelectArguments.Empty);
-
-            table = view.ToTable();
-
-            table = view.ToTable();
-            table.TableName = "Załatwienia";
-            table.Columns.Remove("ident");
-            table.Columns.Remove("sesja");
-            table.Columns.Remove("id_sedziego");
-            table.Columns.Remove("id_tabeli");
-            table.Columns.Remove("id_dzialu");
-            //table.Columns.Remove("d_13");
-            table.Columns.Remove("d_14");
-            table.Columns.Remove("d_15");
-            table.Columns.Remove("d_16");
-            table.Columns.Remove("d_17");
-            table.Columns.Remove("d_18");
-            table.Columns.Remove("d_19");
-            table.Columns.Remove("d_20");
-            table.Columns.Remove("d_21");
-            table.Columns.Remove("d_22");
-            //
-            //robienie
-            int ro = 2;
-
-            //-----------------
-
-            IDataFormat format = hssfworkbook.CreateDataFormat();
-
-            //-----------------
-
-            ISheet sheet1 = hssfworkbook.CreateSheet("Załatwienia");
-
-            IRow row2 = sheet1.CreateRow(0);
-            row2.CreateCell(0).SetCellValue("L.p.");
-            crs = new NPOI.SS.Util.CellRangeAddress(0, 1, 0, 0);
-            sheet1.AddMergedRegion(crs);
-
-            row2.CreateCell(1).SetCellValue("Nazwisko");
-            crs = new NPOI.SS.Util.CellRangeAddress(0, 1, 1, 1);
-            sheet1.AddMergedRegion(crs);
-
-            row2.CreateCell(2).SetCellValue("Imię");
-            crs = new NPOI.SS.Util.CellRangeAddress(0, 1, 2, 2);
-            sheet1.AddMergedRegion(crs);
-
-
-
-            row2.CreateCell(3).SetCellValue("Liczba sesji");
-            crs = new NPOI.SS.Util.CellRangeAddress(0, 0, 3, 4);
-
-            sheet1.AddMergedRegion(crs);
-
-            row2.CreateCell(4).SetCellValue("Załatwienia");
-            crs = new NPOI.SS.Util.CellRangeAddress(0, 0, 5, 13);
-            sheet1.AddMergedRegion(crs);
-
-            row2.CreateCell(14).SetCellValue("Il. sporządzonych uzasadnień");
-            crs = new NPOI.SS.Util.CellRangeAddress(0, 1, 14, 14);
-            sheet1.AddMergedRegion(crs);
-
-            row2.CreateCell(15).SetCellValue("Nieobecności");
-            crs = new NPOI.SS.Util.CellRangeAddress(0, 0, 15, 16);
-            sheet1.AddMergedRegion(crs);
-
-            row2 = sheet1.CreateRow(1);
-
-            row2.CreateCell(5).SetCellValue("rozprawy");
-            row2.CreateCell(6).SetCellValue("posiedzenia");
-            row2.CreateCell(7).SetCellValue("C");
-            row2.CreateCell(8).SetCellValue("C-GC");
-            row2.CreateCell(9).SetCellValue("Ns");
-            row2.CreateCell(10).SetCellValue("Nc");
-            row2.CreateCell(11).SetCellValue("Co");
-            row2.CreateCell(12).SetCellValue("Cps");
-            row2.CreateCell(13).SetCellValue("WSC");
-            row2.CreateCell(14).SetCellValue("Razem");
-            row2.CreateCell(16).SetCellValue("Urlopy");
-            row2.CreateCell(17).SetCellValue("Zwolnienia");
-
-            foreach (DataRow rowik in table.Rows)
-            {
-                row2 = sheet1.CreateRow(ro);
-                for (int i = 0; i < rowik.ItemArray.Length; i++)
-                {
-                    try
-                    {
-                        int ji = int.Parse(rowik[i].ToString().Trim());
-                        ICellStyle cellStyle = hssfworkbook.CreateCellStyle();
-                        cellStyle.DataFormat = HSSFDataFormat.GetBuiltinFormat("0");
-                        row2.CreateCell(i).SetCellValue(ji);
-                        row2.Cells[i].CellStyle = cellStyle;
-                    }
-                    catch (Exception)
-                    {
-                        row2.CreateCell(i).SetCellValue(rowik[i].ToString().Trim());
-                    }
-                }
-                ro++;
-            }// end foreach
-             // trzeci sheet
-
-            view = (DataView)tabela_3.Select(DataSourceSelectArguments.Empty);
-
-            table = view.ToTable();
-
-            table.Columns.Remove("ident");
-            table.Columns.Remove("sesja");
-            table.Columns.Remove("id_sedziego");
-            table.Columns.Remove("id_tabeli");
-            table.Columns.Remove("id_dzialu");
-            table.Columns.Remove("d_10");
-            table.Columns.Remove("d_11");
-            table.Columns.Remove("d_12");
-            table.Columns.Remove("d_13");
-            table.Columns.Remove("d_14");
-            table.Columns.Remove("d_15");
-            table.Columns.Remove("d_16");
-            table.Columns.Remove("d_17");
-            table.Columns.Remove("d_18");
-            table.Columns.Remove("d_19");
-            table.Columns.Remove("d_20");
-            table.Columns.Remove("d_21");
-            table.Columns.Remove("d_22");
-
-            sheet1.AutoSizeColumn(0, true);
-            sheet1.AutoSizeColumn(1, true);
-
-            ISheet sheet2 = hssfworkbook.CreateSheet("Wyznaczenia");
-
-            row2 = sheet2.CreateRow(0);
-            row2.CreateCell(0).SetCellValue("L.p.");
-            row2.CreateCell(1).SetCellValue("Nazwisko");
-            row2.CreateCell(2).SetCellValue("Imię");
-            row2.CreateCell(3).SetCellValue("Funkcja");
-            row2.CreateCell(4).SetCellValue("Stanowisko");
-
-            crs = new NPOI.SS.Util.CellRangeAddress(0, 1, 0, 0);
-            sheet2.AddMergedRegion(crs);
-            crs = new NPOI.SS.Util.CellRangeAddress(0, 1, 1, 1);
-            sheet2.AddMergedRegion(crs);
-            crs = new NPOI.SS.Util.CellRangeAddress(0, 1, 2, 2);
-            sheet2.AddMergedRegion(crs);
-            crs = new NPOI.SS.Util.CellRangeAddress(0, 1, 3, 3);
-            sheet2.AddMergedRegion(crs);
-            crs = new NPOI.SS.Util.CellRangeAddress(0, 1, 4, 4);
-            sheet2.AddMergedRegion(crs);
-
-            row2.CreateCell(5).SetCellValue("Wyznaczenia");
-            crs = new NPOI.SS.Util.CellRangeAddress(0, 0, 5, 12);
-            sheet2.AddMergedRegion(crs);
-
-            row2 = sheet2.CreateRow(1);
-
-            row2.CreateCell(5).SetCellValue("C");
-            row2.CreateCell(6).SetCellValue("C-GC");
-            row2.CreateCell(7).SetCellValue("Ns");
-            row2.CreateCell(8).SetCellValue("Nc");
-            row2.CreateCell(9).SetCellValue("Co");
-            row2.CreateCell(10).SetCellValue("Cps");
-            row2.CreateCell(11).SetCellValue("WSC");
-            row2.CreateCell(12).SetCellValue("Razem");
-            row2.CreateCell(13).SetCellValue("Odroczenia liczba spraw odroczonych");
-            ro = 2;
-
-            foreach (DataRow rowik in table.Rows)
-            {
-                row2 = sheet2.CreateRow(ro);
-                for (int i = 0; i < rowik.ItemArray.Length; i++)
-                {
-                    try
-                    {
-                        int ji = int.Parse(rowik[i].ToString().Trim());
-                        ICellStyle cellStyle = hssfworkbook.CreateCellStyle();
-                        cellStyle.DataFormat = HSSFDataFormat.GetBuiltinFormat("0");
-                        row2.CreateCell(i).SetCellValue(ji);
-                        row2.Cells[i].CellStyle = cellStyle;
-                    }
-                    catch (Exception)
-                    {
-                        row2.CreateCell(i).SetCellValue(rowik[i].ToString().Trim());
-                    }
-                }
-                ro++;
-            }// end foreach
-
-            // czwarty sheet
-
-            view = (DataView)tabela_4.Select(DataSourceSelectArguments.Empty);
-
-            table = view.ToTable();
-
-            table.Columns.Remove("ident");
-            table.Columns.Remove("sesja");
-            table.Columns.Remove("id_sedziego");
-            //        table.Columns.Remove("id_tabeli");
-            //       table.Columns.Remove("id_dzialu");
-            table.Columns.Remove("d_09");
-            table.Columns.Remove("d_10");
-            table.Columns.Remove("d_11");
-            table.Columns.Remove("d_12");
-            table.Columns.Remove("d_13");
-            table.Columns.Remove("d_14");
-            table.Columns.Remove("d_15");
-            table.Columns.Remove("d_16");
-            table.Columns.Remove("d_17");
-            table.Columns.Remove("d_18");
-            table.Columns.Remove("d_19");
-            table.Columns.Remove("d_20");
-            table.Columns.Remove("d_21");
-            table.Columns.Remove("d_22");
-
-            ISheet sheet3 = hssfworkbook.CreateSheet("Stan referatów sędziów");
-
-            row2 = sheet3.CreateRow(0);
-            row2.CreateCell(0).SetCellValue("L.p.");
-            row2.CreateCell(1).SetCellValue("Nazwisko");
-            row2.CreateCell(2).SetCellValue("Imię");
-            row2.CreateCell(3).SetCellValue("Funkcja");
-            row2.CreateCell(4).SetCellValue("Stanowisko");
-
-            crs = new NPOI.SS.Util.CellRangeAddress(0, 1, 0, 0);
-            sheet3.AddMergedRegion(crs);
-            crs = new NPOI.SS.Util.CellRangeAddress(0, 1, 1, 1);
-            sheet3.AddMergedRegion(crs);
-            crs = new NPOI.SS.Util.CellRangeAddress(0, 1, 2, 2);
-            sheet3.AddMergedRegion(crs);
-            crs = new NPOI.SS.Util.CellRangeAddress(0, 1, 3, 3);
-            sheet3.AddMergedRegion(crs);
-            crs = new NPOI.SS.Util.CellRangeAddress(0, 1, 4, 4);
-            sheet3.AddMergedRegion(crs);
-
-            row2.CreateCell(5).SetCellValue("Pozostało w referatach spraw kategorii");
-            crs = new NPOI.SS.Util.CellRangeAddress(0, 0, 5, 12);
-            sheet3.AddMergedRegion(crs);
-
-            row2 = sheet3.CreateRow(1);
-
-            row2.CreateCell(5).SetCellValue("C");
-            row2.CreateCell(6).SetCellValue("C-GC");
-            row2.CreateCell(7).SetCellValue("Ns");
-            row2.CreateCell(8).SetCellValue("Nc");
-            row2.CreateCell(9).SetCellValue("Co");
-            row2.CreateCell(10).SetCellValue("Cps");
-            row2.CreateCell(11).SetCellValue("WSC");
-            row2.CreateCell(12).SetCellValue("Razem");
-            // row2.CreateCell(12).SetCellValue("Odroczenia liczba spraw odroczonych");
-            ro = 2;
-
-            foreach (DataRow rowik in table.Rows)
-            {
-                row2 = sheet3.CreateRow(ro);
-                for (int i = 0; i < rowik.ItemArray.Length; i++)
-                {
-                    try
-                    {
-                        int ji = int.Parse(rowik[i].ToString().Trim());
-                        ICellStyle cellStyle = hssfworkbook.CreateCellStyle();
-                        cellStyle.DataFormat = HSSFDataFormat.GetBuiltinFormat("0");
-                        row2.CreateCell(i).SetCellValue(ji);
-                        row2.Cells[i].CellStyle = cellStyle;
-                    }
-                    catch (Exception)
-                    {
-                        row2.CreateCell(i).SetCellValue(rowik[i].ToString().Trim());
-                    }
-                }
-                ro++;
-            }// end foreach
         }
 
         protected void LinkButton54_Click(object sender, EventArgs e)

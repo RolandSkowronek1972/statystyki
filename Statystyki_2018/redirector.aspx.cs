@@ -7,7 +7,7 @@ namespace stat2018
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            
+            /*
             try
             {
                 AppSettingsReader app = new AppSettingsReader();
@@ -28,7 +28,7 @@ namespace stat2018
             }
             catch 
             { }
-        
+        */
         }
     }
 }

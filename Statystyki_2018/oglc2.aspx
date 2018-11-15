@@ -88,7 +88,7 @@
        <asp:Label ID="infoLabel2" runat="server" Text="Tabela 1\/" Visible="False"></asp:Label>
        <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" 
         DataSourceID="tabela_1" OnRowCreated="GridView1_RowCreated" 
-        Width="1150px" ShowHeader="False" OnRowDataBound="GridView1_RowDataBound">
+        Width="1150px" ShowHeader="False" OnRowDataBound="GridView1_RowDataBound" ShowFooter="True">
         <Columns>
             <asp:BoundField DataField="id" HeaderText="L.p." SortExpression="id">
             <ItemStyle  CssClass="col_25" />
@@ -96,10 +96,11 @@
             <asp:TemplateField HeaderText="imie" SortExpression="imie">
               
                 <ItemTemplate>
-                    <asp:Label ID="Label10" runat="server" Text='<%# Eval("nazwisko") %>'></asp:Label></br>
+                    <asp:Label ID="Label10" runat="server" Text='<%# Eval("nazwisko") %>'></asp:Label>
+                    
                     &nbsp;<asp:Label ID="Label1" runat="server" Text='<%# Bind("imie") %>'></asp:Label>
                 </ItemTemplate>
-                <ItemStyle  CssClass="col_130" />
+                <ItemStyle  CssClass="col_185_min wciecie" />
             </asp:TemplateField>
            
                  <asp:TemplateField HeaderText="d_02" SortExpression="d_02">

@@ -16,11 +16,48 @@
     <link href="style/Tables.css" rel="stylesheet" type="text/css" />
    
     <link href="style/style.css" rel="stylesheet" type="text/css" />
-   
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js">
+</script>
+    <script>
+        initCountdownValue = 300;
+var inactivityCountdown = initCountdownValue;
+$(document).ready(function() {
+
+  $(document).delegate("#login", "click", function(e) {
+    location.reload();
+  });
+
+  function Logout() {
+     window.location.href="/default.aspx?logout=true"; 
+  }
+
+  var intervalid = window.setInterval(function Redirect() {
+    inactivityCountdown--;
+  
+    if (inactivityCountdown < 1) {
+      clearInterval(intervalid);
+      Logout();
+     
+    }
+  }, 1 * 1000);
+
+  $(document).delegate(":input", "click change keydown", function() {
+    inactivityCountdown = initCountdownValue;
+  });
+
+});
+
+    </script>
+
 </head>
 <body>
     <form id="form1" runat="server">
-        <div style="top:0px;">
+       
+<div id="loggedout" style="display:none">
+  You are logged out. To login, click <a id="login" href="#">here</a>
+</div>
+
+        <div style="top:0px;" class="noprint">
              
 
                     <div id="menuHolder" class="menuHolder">

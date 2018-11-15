@@ -36,6 +36,7 @@ namespace stat2018
                 }
                 catch (Exception ex)
                 {
+                    cm.log.Error( "Wyszukiwarka  " + ex.Message);
                     conn.Close();
                 }
             } // end of using
@@ -55,33 +56,7 @@ namespace stat2018
         {
             DataTable parametry = cm.makeParameterTable();
             parametry.Rows.Add("@klucz", klucz);
-            return cm.getQuerryValue("SELECT [wartosc]  FROM [konfig] where rtrim(opis)=@klucz ", con_str, cm.makeParameterTable());
-
-         /*   string result = string.Empty;
-            string kwerenda = "SELECT [wartosc]  FROM [konfig] where rtrim(opis)=@klucz ";
-            DataTable parameters = new DataTable();
-
-            SqlCommand sqlCmd;
-            var conn = new SqlConnection(con_str);
-            using (sqlCmd = new SqlCommand())
-            {
-                sqlCmd = new SqlCommand(kwerenda, conn);
-                try
-                {
-                    conn.Open();
-                    sqlCmd.Parameters.AddWithValue("@klucz", klucz);
-
-                    result = sqlCmd.ExecuteScalar().ToString();
-                    conn.Close();
-
-                }
-                catch (Exception ex)
-                {
-                    conn.Close();
-                }
-            } // end of using
-
-            return result;*/
+            return cm.getQuerryValue("SELECT [wartosc]  FROM [konfig] where rtrim(opis)=@klucz ", con_str, parametry);
         }
         
         public string PobierzConnectionString(string klucz)
@@ -92,30 +67,7 @@ namespace stat2018
 
             DataTable parametry = cm.makeParameterTable();
             parametry.Rows.Add("@klucz", klucz);
-            return cm.getQuerryValue(kwerenda, con_str, cm.makeParameterTable());
-
-            /*
-            SqlCommand sqlCmd;
-            var conn = new SqlConnection(con_str);
-            using (sqlCmd = new SqlCommand())
-            {
-                sqlCmd = new SqlCommand(kwerenda, conn);
-                try
-                {
-                    conn.Open();
-                    sqlCmd.Parameters.AddWithValue("@klucz", klucz.Trim());
-
-                    result = sqlCmd.ExecuteScalar().ToString();
-                    conn.Close();
-
-                }
-                catch (Exception ex)
-                {
-                    conn.Close();
-                }
-            } // end of using
-
-            return result;*/
+            return cm.getQuerryValue(kwerenda, con_str, parametry);
         }
         public DataTable PobierzKwerendy(string connStr)
         {

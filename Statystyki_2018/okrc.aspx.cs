@@ -75,7 +75,7 @@ namespace stat2018
                     }
                 }
             }
-            catch (Exception ex)
+            catch 
             {
                 cm.log.Error(tenPlik + " Próba dostępu bez uprawnień - przekierowanie do strony logowania");
                  Server.Transfer("default.aspx");
@@ -699,7 +699,7 @@ namespace stat2018
                 }
                 catch (Exception ex)
                 {
-                    //  Label31.Text = Label31.Text + "Save Error massage " + ex.Message + "<br/>";
+                       cm.log.Error(tenPlik + " " + ex.Message );
 
                 }
 

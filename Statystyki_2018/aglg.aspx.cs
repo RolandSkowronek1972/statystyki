@@ -331,7 +331,7 @@ namespace stat2018
            
 
             dT_01.Rows.Add(new Object[] { "2", "GC", "3", "1", "h" });
-            dT_01.Rows.Add(new Object[] { "2", "GNs", "3", "1", "h" });
+            dT_01.Rows.Add(new Object[] { "2", "GNc", "3", "1", "h" });
             dT_01.Rows.Add(new Object[] { "2", "GCo I inst.", "3", "1", "h" });
             dT_01.Rows.Add(new Object[] { "2", "Ga", "3", "1", "h" });
             dT_01.Rows.Add(new Object[] { "2", "Gz", "3", "1", "h" });
@@ -363,7 +363,7 @@ namespace stat2018
 
 
             dT_03.Rows.Add(new Object[] { "2", "GC", "2", "1", "h" });
-            dT_03.Rows.Add(new Object[] { "2", "GNs", "2", "1", "h" });
+            dT_03.Rows.Add(new Object[] { "2", "GNc", "2", "1", "h" });
             dT_03.Rows.Add(new Object[] { "2", "GCo I insta", "2", "1", "h" });
             dT_03.Rows.Add(new Object[] { "2", "Ga", "2", "1", "h" });
             dT_03.Rows.Add(new Object[] { "2", "Gz", "2", "1", "h" });

@@ -95,12 +95,8 @@ namespace stat2018
             Session["header_08"] = null;
         }
 
-
-
-
         protected void przemiel()
         {
-            Session["sesja"] = "s3030";
             try
             {
                 DateTime dTime = DateTime.Now;
@@ -184,14 +180,12 @@ namespace stat2018
 
 
         }
-
-
+        
         #region "nagłowki tabel"
         protected void makeHeader()
         {
 
             System.Web.UI.WebControls.GridView sn = new System.Web.UI.WebControls.GridView();
-
 
 
             #region tabela  1 (wierszowa)
@@ -453,7 +447,6 @@ namespace stat2018
 
         }
 
-
         protected void GridView3_RowCreated(object sender, GridViewRowEventArgs e)
         {
             if (e.Row.RowType == DataControlRowType.Header)
@@ -463,8 +456,6 @@ namespace stat2018
              cl.makeHeader(sn, dT, GridView3);
             }
         }
-
-
 
         protected void GridView5_RowCreated(object sender, GridViewRowEventArgs e)
         {
@@ -527,12 +518,9 @@ namespace stat2018
                 }
             }
             catch
-            {
-
-            }
+            {  }
 
         }
-
         protected void Button1_Click(object sender, EventArgs e)
         {
             przemiel();
@@ -663,7 +651,7 @@ namespace stat2018
                 }
                 catch (Exception ex)
                 {
-                    //  Label31.Text = Label31.Text + "Save Error massage " + ex.Message + "<br/>";
+                       cm.log.Error(tenPlik + " " + ex.Message );
 
                 }
 
@@ -710,10 +698,6 @@ namespace stat2018
             if (e.Row.RowType == DataControlRowType.DataRow)
             {
                 storid = Convert.ToInt32(DataBinder.Eval(e.Row.DataItem, "id").ToString());
-            }
-            if (e.Row.RowType == DataControlRowType.Footer)
-            {
-              
             }
         }
 
@@ -770,23 +754,6 @@ namespace stat2018
         }
         // podtabela
 
-        GridViewRow wierszTabeli2(int idWiersza, string idtabeli, string tekst)
-        {
-            // nowy wiersz
-
-            DataTable tabelka01 = (DataTable)Session["tabelka001"];
-            GridViewRow NewTotalRow = new GridViewRow(0, 0, DataControlRowType.DataRow, DataControlRowState.Insert);
-            NewTotalRow.Cells.Add(tb.cela("zaległość", 7, 2, "borderTopLeft col_260"));
-            NewTotalRow.Cells.Add(tb.cela(tekst, 1, 1, "borderTopLeft  "));
-            for (int i = 1; i < 17; i++)
-            {
-                NewTotalRow.Cells.Add(tb.cela("<a class='normal' href=\"javascript: openPopup('popup.aspx?sesja=" + idWiersza.ToString().Trim() + "!2!" + i.ToString().Trim() + "!3')\">" + tabelka01.Rows[idWiersza][i].ToString().Trim() + "</a>", 1, 1, "borderTopLeft"));
-            }
-
-            return NewTotalRow;
-
-
-        }
 
 
         public void AddNewRow(object sender, GridViewRowEventArgs e)
@@ -799,74 +766,51 @@ namespace stat2018
 
             string idtabeli = "2";
             DataTable table = ((DataView)tabela_1.Select(DataSourceSelectArguments.Empty)).ToTable();
-         /*   DataTable posrednia = new DataTable();
-            for (int i = 0; i < 18; i++)
-            {
-                posrednia.Columns.Add("d_" + i.ToString("D2"), typeof(string));
-            }
-            string kw = "id_tabeli=1";
-            DataRow[] foundRows;
-            foundRows = table.Select(kw);
-
-            foreach (DataRow row in foundRows)
-            {
-                DataRow newRow = posrednia .NewRow();
-                for (int i = 0; i < 18; i++)
-                {
-                    newRow["d_"+i.ToString ("Date2")] = row["d_" + i.ToString("Date2")];
-                }
-                
-                posrednia .Rows.Add(newRow);
-            }*/
+        
             DataTable cos = makeSumRow(table, 18);
-           
-
-
-
-            GridView1.Controls[0].Controls.AddAt(e.Row.RowIndex + rowIndex, tb.wierszTabeli(cos, 18, 1, idtabeli, "ogółem",2, 1, "borderTopLeft col_180", "borderTopLeft col_60"));
+    
+            GridView1.Controls[0].Controls.AddAt(e.Row.RowIndex + rowIndex, tb.wierszTabeli(cos, 18, 1, idtabeli, "ogółem",2, 1, "normal", "borderTopLeft col_60"));
 
             // nowy wiersz
             int idWiersza = 1;
 
-            GridView1.Controls[0].Controls.AddAt(e.Row.RowIndex + rowIndex, tb.wierszTabeli(tabelka01, 17, idWiersza, idtabeli, "Zaległość z poprzedniego miesiąca", 3 , 1, "borderTopLeft col_180", "borderTopLeft col_60"));
-            //GridView1.Controls[0].Controls.AddAt(e.Row.RowIndex + rowIndex, wierszTabeli1(idWiersza, idtabeli, "Zaległość z poprzedniego miesiąca",3,1, "borderTopLeft col_180", "borderTopLeft col_60"));
-
+            GridView1.Controls[0].Controls.AddAt(e.Row.RowIndex + rowIndex, tb.wierszTabeli(tabelka01, 17, idWiersza, idtabeli, "Zaległość z poprzedniego miesiąca", 3 , 1, "normal", "borderTopLeft col_60"));
+        
             idWiersza = 2;
-            GridView1.Controls[0].Controls.AddAt(e.Row.RowIndex + rowIndex, tb.wierszTabeli(tabelka01, 17, idWiersza, idtabeli, "Wpływ", 3, 1, "borderTopLeft col_180", "borderTopLeft col_60"));
+            GridView1.Controls[0].Controls.AddAt(e.Row.RowIndex + rowIndex, tb.wierszTabeli(tabelka01, 17, idWiersza, idtabeli, "Wpływ", 3, 1, "normal", "borderTopLeft col_60"));
 
             // nowy wiersz
             idWiersza = 3;
-            GridView1.Controls[0].Controls.AddAt(e.Row.RowIndex + rowIndex, tb.wierszTabeli(tabelka01, 17, idWiersza, idtabeli, "Załatwienia", 3, 1, "borderTopLeft col_180", "borderTopLeft col_60"));
+            GridView1.Controls[0].Controls.AddAt(e.Row.RowIndex + rowIndex, tb.wierszTabeli(tabelka01, 17, idWiersza, idtabeli, "Załatwienia", 3, 1, "normal", "borderTopLeft col_60"));
 
             // nowy wiersz
             idWiersza = 4;
-            GridView1.Controls[0].Controls.AddAt(e.Row.RowIndex + rowIndex, tb.wierszTabeli(tabelka01, 17, idWiersza, idtabeli, "Pozostałość na następny miesiąc", 3, 1, "borderTopLeft col_180", "borderTopLeft col_60"));
-
-
+            GridView1.Controls[0].Controls.AddAt(e.Row.RowIndex + rowIndex, tb.wierszTabeli(tabelka01, 17, idWiersza, idtabeli, "Pozostałość na następny miesiąc", 3, 1, "normal", "borderTopLeft col_60"));
+            
             // nowy wiersz
             idWiersza = 5;
-          GridView1.Controls[0].Controls.AddAt(e.Row.RowIndex + rowIndex, wierszTabeli2(idWiersza, idtabeli, "Odroczono"));
-
+            GridView1.Controls[0].Controls.AddAt(e.Row.RowIndex + rowIndex, tb.wierszTabeli(tabelka01, 17, idWiersza, idtabeli, "Odroczono", 1, 1, "normal", "borderTopLeft col_60", "Zaległość", 7 , 2, "borderTopLeft col_60" ));
+      
             // nowy wiersz
-               idWiersza = 6;
-            GridView1.Controls[0].Controls.AddAt(e.Row.RowIndex + rowIndex, tb.wierszTabeli(tabelka01, 17, idWiersza, idtabeli, "3-6 </br>miesięcy ", 1, 1, "borderTopLeft col_180", "borderTopLeft col_60"));
+            idWiersza = 6;
+            GridView1.Controls[0].Controls.AddAt(e.Row.RowIndex + rowIndex, tb.wierszTabeli(tabelka01, 17, idWiersza, idtabeli, "3-6 </br>miesięcy ", 1, 1, "normal", "borderTopLeft col_60"));
 
             // nowy wiersz
             idWiersza = 7;
-           GridView1.Controls[0].Controls.AddAt(e.Row.RowIndex + rowIndex, tb.wierszTabeli(tabelka01, 17, idWiersza, idtabeli, "6-12 </br>miesięcy ", 1, 1, "borderTopLeft col_180", "borderTopLeft col_60"));
+           GridView1.Controls[0].Controls.AddAt(e.Row.RowIndex + rowIndex, tb.wierszTabeli(tabelka01, 17, idWiersza, idtabeli, "6-12 </br>miesięcy ", 1, 1, "normal", "borderTopLeft col_60"));
 
             // nowy wiersz
             idWiersza = 8;
-            GridView1.Controls[0].Controls.AddAt(e.Row.RowIndex + rowIndex, tb.wierszTabeli(tabelka01, 17, idWiersza, idtabeli, "12-24 </br>miesięcy</br> (do 2 lat)", 1, 1, "borderTopLeft col_180", "borderTopLeft col_60"));
+            GridView1.Controls[0].Controls.AddAt(e.Row.RowIndex + rowIndex, tb.wierszTabeli(tabelka01, 17, idWiersza, idtabeli, "12-24 </br>miesięcy</br> (do 2 lat)", 1, 1, "normal", "borderTopLeft col_60"));
 
             idWiersza = 9;
-            GridView1.Controls[0].Controls.AddAt(e.Row.RowIndex + rowIndex, tb.wierszTabeli(tabelka01, 17, idWiersza, idtabeli, "24-36 </br>miesięcy </br>(2-3 lat))", 1, 1, "borderTopLeft col_180", "borderTopLeft col_60"));
+            GridView1.Controls[0].Controls.AddAt(e.Row.RowIndex + rowIndex, tb.wierszTabeli(tabelka01, 17, idWiersza, idtabeli, "24-36 </br>miesięcy </br>(2-3 lat))", 1, 1, "normal", "borderTopLeft col_60"));
 
             idWiersza = 10;
-            GridView1.Controls[0].Controls.AddAt(e.Row.RowIndex + rowIndex, tb.wierszTabeli(tabelka01, 17, idWiersza, idtabeli, "36-60 </br>miesięcy </br>(3-5 lat)", 1, 1, "borderTopLeft col_180", "borderTopLeft col_60"));
+            GridView1.Controls[0].Controls.AddAt(e.Row.RowIndex + rowIndex, tb.wierszTabeli(tabelka01, 17, idWiersza, idtabeli, "36-60 </br>miesięcy </br>(3-5 lat)", 1, 1, "normal", "borderTopLeft col_60"));
 
            idWiersza = 11;
-            GridView1.Controls[0].Controls.AddAt(e.Row.RowIndex + rowIndex, tb.wierszTabeli(tabelka01, 17, idWiersza, idtabeli, "Powyżej </br>60 miesięcy </br>(powyżej</br> 5 lat)", 1, 1, "borderTopLeft col_180", "borderTopLeft col_60"));
+            GridView1.Controls[0].Controls.AddAt(e.Row.RowIndex + rowIndex, tb.wierszTabeli(tabelka01, 17, idWiersza, idtabeli, "Powyżej </br>60 miesięcy </br>(powyżej</br> 5 lat)", 1, 1, "normal", "borderTopLeft col_60"));
             
         }
 

@@ -773,7 +773,7 @@ namespace stat2018
                 DataTable dane = (DataTable)Session["tabelkaGW002"];
                 for (int i = 0; i < 10; i++)
                 {
-                    for (int j = 0; j < 9; j++)
+                    for (int j = 0; j < 10; j++)
                     {
                         try
                         {
@@ -821,9 +821,9 @@ namespace stat2018
                     this.Response.End();
 
                 }
-                catch 
+                catch (Exception ex)
                 {
-                    //  Label31.Text = Label31.Text + "Save Error massage " + ex.Message + "<br/>";
+                       cm.log.Error(tenPlik + " " + ex.Message );
 
                 }
 

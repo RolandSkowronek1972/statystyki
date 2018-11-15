@@ -161,5 +161,22 @@ namespace stat2018
             return mm1;
 
         }
+
+        public DevExpress.Web.MenuItem wyloguj()
+        {
+            //czy admin
+            cm.log.Info("Header: Rozpoczęcie procedury tworzenia elementów menu wyloguj");
+
+            DevExpress.Web.MenuItem mm1 = new DevExpress.Web.MenuItem("Wylogowanie");
+            DevExpress.Web.MenuItem mm2 = new DevExpress.Web.MenuItem();
+
+            mm2 = new DevExpress.Web.MenuItem("Wyloguj", "", "", "default.aspx?logout=true", "_self");
+            mm2.ItemStyle.Width = 300;
+            mm2.ItemStyle.Paddings.PaddingLeft = 30;
+
+            mm1.Items.Add(mm2);
+            return mm1;
+
+        }
     }
 }

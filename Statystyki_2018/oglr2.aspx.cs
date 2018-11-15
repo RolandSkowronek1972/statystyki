@@ -77,7 +77,8 @@ namespace stat2018
             }
             catch (Exception ex)
             {
-                 Server.Transfer("default.aspx");
+                cm.log.Error(tenPlik + " " + ex.Message);
+                Server.Transfer("default.aspx");
             }
         }// end of Page_Load
 
@@ -644,12 +645,7 @@ namespace stat2018
             using (ExcelPackage MyExcel = new ExcelPackage(existingFile))
             {
                 // pierwsza
-
-                int rowik = 0;
-
-
-
-
+                
                 ExcelWorksheet MyWorksheet1 = MyExcel.Workbook.Worksheets[1];
                 DataTable table = (DataTable)Session["tabelkaGW001"];
                 table.Columns.Remove("id");
@@ -768,7 +764,7 @@ namespace stat2018
                 }
                 catch (Exception ex)
                 {
-                    //  Label31.Text = Label31.Text + "Save Error massage " + ex.Message + "<br/>";
+                       cm.log.Error(tenPlik + " " + ex.Message );
 
                 }
 

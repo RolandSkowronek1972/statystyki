@@ -3873,7 +3873,7 @@ namespace stat2018
             }
             catch (Exception ex)
             {
-
+                cm.log.Error(tenPlik + " " + ex.Message);
             }
 
             // dopasowanie opisów

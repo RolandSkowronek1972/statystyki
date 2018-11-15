@@ -131,14 +131,12 @@ C:\projekts\Statystyki_2018\Statystyki_2018\bin\roslyn\VBCSCompiler.exe.config
 C:\projekts\Statystyki_2018\Statystyki_2018\bin\stat2018.dll.config
 C:\projekts\Statystyki_2018\Statystyki_2018\bin\stat2018.dll
 C:\projekts\Statystyki_2018\Statystyki_2018\bin\stat2018.pdb
-C:\projekts\Statystyki_2018\Statystyki_2018\bin\AjaxControlToolkit.resources.dll
 C:\projekts\Statystyki_2018\Statystyki_2018\bin\DevExpress.Data.v17.1.dll
 C:\projekts\Statystyki_2018\Statystyki_2018\bin\DevExpress.Office.v17.1.Core.dll
 C:\projekts\Statystyki_2018\Statystyki_2018\bin\DevExpress.Printing.v17.1.Core.dll
 C:\projekts\Statystyki_2018\Statystyki_2018\bin\DevExpress.RichEdit.v17.1.Core.dll
 C:\projekts\Statystyki_2018\Statystyki_2018\bin\DevExpress.Utils.v17.1.dll
 C:\projekts\Statystyki_2018\Statystyki_2018\bin\DevExpress.Web.ASPxThemes.v17.1.dll
-C:\projekts\Statystyki_2018\Statystyki_2018\bin\DevExpress.Web.Bootstrap.v17.1.dll
 C:\projekts\Statystyki_2018\Statystyki_2018\bin\DevExpress.Web.Resources.v17.1.dll
 C:\projekts\Statystyki_2018\Statystyki_2018\bin\DevExpress.Web.v17.1.dll
 C:\projekts\Statystyki_2018\Statystyki_2018\bin\DevExpress.XtraPrinting.v17.1.dll
@@ -219,3 +217,6 @@ C:\projekts\Statystyki_2018\Statystyki_2018\bin\ru\DevExpress.Sparkline.v17.1.Co
 C:\projekts\Statystyki_2018\Statystyki_2018\obj\Release\stat2018.dll.licenses
 C:\projekts\Statystyki_2018\Statystyki_2018\obj\Release\stat2018.dll
 C:\projekts\Statystyki_2018\Statystyki_2018\obj\Release\stat2018.pdb
+C:\projekts\Statystyki_2018\Statystyki_2018\bin\AjaxControlToolkit.dll
+C:\projekts\Statystyki_2018\Statystyki_2018\bin\AjaxMin.dll
+C:\projekts\Statystyki_2018\Statystyki_2018\obj\Release\Statystyki_2018.csprojResolveAssemblyReference.cache

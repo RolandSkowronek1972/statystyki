@@ -14,6 +14,21 @@ namespace stat2018
         {
 
             string value = Request.QueryString["logout"];
+            if (value!=null)
+            {
+                if (value=="true")
+                {
+                    Session["user_id"] = null;
+                    Session["id_dzialu"] = null;
+                    Session["data_1"] = null;
+                    Session["data_2"] = null;
+                    Session["userIdNum"] = null;
+                    
+
+
+
+                }
+            }
             string errorMessage = Request.QueryString["info"];
             if (errorMessage != null)
             {

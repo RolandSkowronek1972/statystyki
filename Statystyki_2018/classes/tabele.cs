@@ -3,7 +3,9 @@ using System.Web.UI.WebControls;
 using System.Data;
 using OfficeOpenXml;
 using System.Linq;
-using System.Text.RegularExpressions;
+using System.Collections.Generic;
+using System.IO;
+
 namespace stat2018
 {
     public class tabele
@@ -47,7 +49,12 @@ namespace stat2018
                         GridView HeaderGrid = (GridView)GridViewName;
                         HeaderGridRow = Grw(GridViewName);
                         row = int.Parse(dR[0].ToString().Trim());
-                        hv = dR[4].ToString().Trim();
+                        try
+                        {
+                            hv = dR[4].ToString().Trim();
+                        }
+                        catch 
+                        {}
                     }
                     if (hv == "v")
                     {
@@ -70,7 +77,9 @@ namespace stat2018
                 }
             }
             catch (Exception ex)
-            { } // end of try
+            {
+                cm.log.Error("tabele.dll->makeHeader: " + ex.Message);
+            } // end of try
         }
      public   DataTable tabellaLiczbowa(DataTable tabelaWejsciowa)
         {
@@ -126,7 +135,6 @@ namespace stat2018
                 {
                     cm.log.Error("sumowanie w stopce : " + ex.Message);
                 }
-
             }
 
         }
@@ -150,8 +158,7 @@ namespace stat2018
                     cm.log.Error("sumowanie w stopce : " + ex.Message);
 
                 }
-
-            }
+                            }
 
         }
 
@@ -205,11 +212,10 @@ namespace stat2018
             {
                 try
                 {
-                    NewTotalRow.Cells.Add(cela("<a class='normal' href=\"javascript: openPopup('popup.aspx?sesja=" + idWiersza.ToString().Trim() + "!" + idtabeli.ToString().Trim() + "!" + i.ToString().Trim() + "!3')\">" + dane.Rows[idWiersza - 1][i].ToString().Trim() + "</a>", 1, 1, cssStyleDlaTabeli));
+                    NewTotalRow.Cells.Add(cela("<a class='"+ CssStyleDlaTekstu + "' href=\"javascript: openPopup('popup.aspx?sesja=" + idWiersza.ToString().Trim() + "!" + idtabeli.ToString().Trim() + "!" + i.ToString().Trim() + "!3')\">" + dane.Rows[idWiersza - 1][i].ToString().Trim() + "</a>", 1, 1, cssStyleDlaTabeli));
                 }
-                catch (Exception ex)
+                catch 
                 {}
-               
             }
             return NewTotalRow;
         }// end of 
@@ -222,7 +228,7 @@ namespace stat2018
             {
                 try
                 {
-                    NewTotalRow.Cells.Add(cela("<a class='normal' href=\"javascript: openPopup('popup.aspx?sesja=" + idWiersza.ToString().Trim() + "!" + idtabeli.ToString().Trim() + "!" + i.ToString().Trim() + "!3')\">" + dane.Rows[idWiersza - 1][i].ToString().Trim() + "</a>", 1, 1, cssStyleDlaTabeli));
+                    NewTotalRow.Cells.Add(cela("<a class='"+ CssStyleDlaTekstu + "' href=\"javascript: openPopup('popup.aspx?sesja=" + idWiersza.ToString().Trim() + "!" + idtabeli.ToString().Trim() + "!" + i.ToString().Trim() + "!3')\">" + dane.Rows[idWiersza - 1][i].ToString().Trim() + "</a>", 1, 1, cssStyleDlaTabeli));
                 }
                 catch (Exception ex)
                 { }
@@ -293,7 +299,7 @@ namespace stat2018
                 }
                 wiersz++;
             }
-            // tu dodać sumę
+          
             return Arkusz;
 
 
@@ -344,114 +350,144 @@ namespace stat2018
 
         public ExcelWorksheet tworzArkuszwExcle(ExcelWorksheet Arkusz, DataTable daneDoArkusza, int iloscKolumn, int przesunięcieX, int przesuniecieY, bool lp, bool suma,bool stanowisko,bool funkcja, bool nazwiskoiImeieOsobno)
         {
-           
-            int wiersz = przesuniecieY;
-           
-            foreach (DataRow dR in daneDoArkusza.Rows)
+            try
             {
-                int dodatek = 0;
-                if (lp)
+                int wiersz = przesuniecieY;
+                int dod = 0;
+                foreach (DataRow dR in daneDoArkusza.Rows)
                 {
-                    dodatek++;
-                    Arkusz.Cells[wiersz, przesunięcieX +dodatek].Style.ShrinkToFit = true;
-                    Arkusz.Cells[wiersz, przesunięcieX + dodatek].Style.Border.BorderAround(OfficeOpenXml.Style.ExcelBorderStyle.Thin, System.Drawing.Color.Black);
-                    Arkusz.Cells[wiersz, przesunięcieX + dodatek].Value = wiersz - przesuniecieY + 1;
-                   
-                }
-                if (stanowisko )
-                {
-                    dodatek++;
-                    Arkusz.Cells[wiersz, przesunięcieX + dodatek].Style.ShrinkToFit = true;
-                    Arkusz.Cells[wiersz, przesunięcieX + dodatek].Style.Border.BorderAround(OfficeOpenXml.Style.ExcelBorderStyle.Thin, System.Drawing.Color.Black);
-                    try
-                    {
-                        string value = (dR["stanowisko"].ToString().Trim());
-                        Arkusz.Cells[wiersz, przesunięcieX + dodatek].Value = value;
-                    }
-                    catch (Exception)
-                    {
-                        Arkusz.Cells[wiersz, przesunięcieX + dodatek].Value = "";
-                    }
-                }
-                if (funkcja)
-                {
-                    dodatek++;
-                    Arkusz.Cells[wiersz, przesunięcieX+dodatek ].Style.ShrinkToFit = true;
-                    Arkusz.Cells[wiersz, przesunięcieX+ dodatek].Style.Border.BorderAround(OfficeOpenXml.Style.ExcelBorderStyle.Thin, System.Drawing.Color.Green);
-                    try
-                    {
-                        string value = (dR["funkcja"].ToString().Trim());
-                        Arkusz.Cells[wiersz, przesunięcieX + dodatek].Value = value;
-                    }
-                    catch (Exception)
-                    {
-                        Arkusz.Cells[wiersz, przesunięcieX + dodatek].Value = "";
-                    }
-
-                }
-                if (nazwiskoiImeieOsobno )
-                {
-                    dodatek++;
-                    try
-                    {
-                        Arkusz.Cells[wiersz, przesunięcieX + dodatek].Style.ShrinkToFit = true;
-                        Arkusz.Cells[wiersz, przesunięcieX + dodatek].Style.Border.BorderAround(OfficeOpenXml.Style.ExcelBorderStyle.Thin, System.Drawing.Color.Green);
-                        string value = (dR["nazwisko"].ToString().Trim());
-                        Arkusz.Cells[wiersz, przesunięcieX + dodatek].Value = value;
-                        dodatek++;
-                        Arkusz.Cells[wiersz, przesunięcieX + dodatek].Style.ShrinkToFit = true;
-                        Arkusz.Cells[wiersz, przesunięcieX + dodatek].Style.Border.BorderAround(OfficeOpenXml.Style.ExcelBorderStyle.Thin, System.Drawing.Color.Green);
-                        value = (dR["imie"].ToString().Trim());
-                        Arkusz.Cells[wiersz, przesunięcieX + dodatek].Value = value;
-                    }
-                    catch (Exception)
-                    {
-                        Arkusz.Cells[wiersz, przesunięcieX + dodatek].Value = "";
-                    }
-                }
-                else
-                {
-                    try
+                    int dodatek = 0;
+                    if (lp)
                     {
                         dodatek++;
-                        string value = dR["imie"].ToString().Trim() + " " + dR["nazwisko"].ToString().Trim();
-                        Arkusz.Cells[wiersz, przesunięcieX +dodatek].Value = value;
                         Arkusz.Cells[wiersz, przesunięcieX + dodatek].Style.ShrinkToFit = true;
                         Arkusz.Cells[wiersz, przesunięcieX + dodatek].Style.Border.BorderAround(OfficeOpenXml.Style.ExcelBorderStyle.Thin, System.Drawing.Color.Black);
+                        Arkusz.Cells[wiersz, przesunięcieX + dodatek].Value = wiersz - przesuniecieY + 1;
                     }
-                    catch 
-                    {}
-                }
-                
-                for (int i = 0; i < iloscKolumn ; i++)
-                {
-                    try
+                    if (stanowisko)
                     {
-                        string colunmName = "d_" + i .ToString("D2");
+                        dodatek++;
+                        Arkusz.Cells[wiersz, przesunięcieX + dodatek].Style.ShrinkToFit = true;
+                        Arkusz.Cells[wiersz, przesunięcieX + dodatek].Style.Border.BorderAround(OfficeOpenXml.Style.ExcelBorderStyle.Thin, System.Drawing.Color.Black);
                         try
                         {
-                            
-                            double value = double.Parse(dR[colunmName].ToString().Trim());
-                            Arkusz.Cells[wiersz, i + przesunięcieX+dodatek].Value = value;
+                            string value = (dR["stanowisko"].ToString().Trim());
+                            Arkusz.Cells[wiersz, przesunięcieX + dodatek].Value = value;
+                        }
+                        catch (Exception)
+                        {
+                            Arkusz.Cells[wiersz, przesunięcieX + dodatek].Value = "";
+                        }
+                    }
+                    if (funkcja)
+                    {
+                        dodatek++;
+                        Arkusz.Cells[wiersz, przesunięcieX + dodatek].Style.ShrinkToFit = true;
+                        Arkusz.Cells[wiersz, przesunięcieX + dodatek].Style.Border.BorderAround(OfficeOpenXml.Style.ExcelBorderStyle.Thin, System.Drawing.Color.Green);
+                        try
+                        {
+                            string value = (dR["funkcja"].ToString().Trim());
+                            Arkusz.Cells[wiersz, przesunięcieX + dodatek].Value = value;
+                        }
+                        catch (Exception)
+                        {
+                            Arkusz.Cells[wiersz, przesunięcieX + dodatek].Value = "";
+                        }
+
+                    }
+                    if (nazwiskoiImeieOsobno)
+                    {
+                        dodatek++;
+                        try
+                        {
+                            Arkusz.Cells[wiersz, przesunięcieX + dodatek].Style.ShrinkToFit = true;
+                            Arkusz.Cells[wiersz, przesunięcieX + dodatek].Style.Border.BorderAround(OfficeOpenXml.Style.ExcelBorderStyle.Thin, System.Drawing.Color.Green);
+                            string value = (dR["nazwisko"].ToString().Trim());
+                            Arkusz.Cells[wiersz, przesunięcieX + dodatek].Value = value;
+                            dodatek++;
+                            Arkusz.Cells[wiersz, przesunięcieX + dodatek].Style.ShrinkToFit = true;
+                            Arkusz.Cells[wiersz, przesunięcieX + dodatek].Style.Border.BorderAround(OfficeOpenXml.Style.ExcelBorderStyle.Thin, System.Drawing.Color.Green);
+                            value = (dR["imie"].ToString().Trim());
+                            Arkusz.Cells[wiersz, przesunięcieX + dodatek].Value = value;
+                        }
+                        catch (Exception)
+                        {
+                            Arkusz.Cells[wiersz, przesunięcieX + dodatek].Value = "";
+                        }
+                    }
+                    else
+                    {
+                        try
+                        {
+                            dodatek++;
+                            string value = dR["imie"].ToString().Trim() + " " + dR["nazwisko"].ToString().Trim();
+                            Arkusz.Cells[wiersz, przesunięcieX + dodatek].Value = value;
+                            Arkusz.Cells[wiersz, przesunięcieX + dodatek].Style.ShrinkToFit = true;
+                            Arkusz.Cells[wiersz, przesunięcieX + dodatek].Style.Border.BorderAround(OfficeOpenXml.Style.ExcelBorderStyle.Thin, System.Drawing.Color.Black);
                         }
                         catch
-                        {
-                           
-                            Arkusz.Cells[wiersz, i + przesunięcieX + dodatek].Value = (dR[colunmName].ToString().Trim());
-                        }
-                        Arkusz.Cells[wiersz, przesunięcieX + dodatek+i].Style.Border.BorderAround(OfficeOpenXml.Style.ExcelBorderStyle.Thin, System.Drawing.Color.Black);
+                        { }
                     }
-                    catch (Exception ex)
+
+
+                    for (int i = 0; i < iloscKolumn; i++)
                     {
-                        cm.log.Error("Excell " + ex.Message);
+                        try
+                        {
+                            string colunmName = "d_" + i.ToString("D2");
+                            try
+                            {
+                                double value = double.Parse(dR[colunmName].ToString().Trim());
+                                Arkusz.Cells[wiersz, i + przesunięcieX + dodatek].Value = value;
+                            }
+                            catch
+                            {
+                                Arkusz.Cells[wiersz, i + przesunięcieX + dodatek].Value = (dR[colunmName].ToString().Trim());
+                            }
+                            Arkusz.Cells[wiersz, przesunięcieX + dodatek + i].Style.Border.BorderAround(OfficeOpenXml.Style.ExcelBorderStyle.Thin, System.Drawing.Color.Black);
+                        }
+                        catch (Exception ex)
+                        {
+                            cm.log.Error("Excell " + ex.Message);
+                        }
+                    }
+                    wiersz++;
+                    dod = dodatek;
+                }
+
+                // tu dodać sumę
+                if (suma)
+                {
+                    DataTable tabelka = tabellaLiczbowa(daneDoArkusza);
+                    object sumObject;
+                   
+                   
+                    Arkusz.Cells[wiersz, przesunięcieX + dod ].Value = "Razem";
+                    Arkusz.Cells[wiersz, przesunięcieX + dod ].Style.Border.BorderAround(OfficeOpenXml.Style.ExcelBorderStyle.Thin, System.Drawing.Color.Black);
+                    for (int i = 1; i < iloscKolumn ; i++)
+                    {
+                       
+                        try
+                        {
+                            string idkolumny = "d_" + (i).ToString("D2");
+                            sumObject = tabelka.Compute("Sum(" + idkolumny + ")", "");
+                            Arkusz.Cells[wiersz, i + przesunięcieX + dod].Style.Border.BorderAround(OfficeOpenXml.Style.ExcelBorderStyle.Thin, System.Drawing.Color.Black);
+                            Arkusz.Cells[wiersz, i + przesunięcieX + dod].Value = (sumObject.ToString());
+                        }
+                        catch (Exception ecx)
+                        {
+                            string mes = ecx.Message;
+                            Arkusz.Cells[wiersz, i + przesunięcieX+dod].Value = mes;
+                        }
                     }
                 }
-                wiersz++;
             }
-            // tu dodać sumę
-            return Arkusz;
+            catch (Exception ex)
+            {
+                cm.log.Error("Excell " + ex.Message);
+            }
            
-
+            return Arkusz;
         }
 
         public ExcelWorksheet tworzArkuszwExcelPrzestawiony(ExcelWorksheet Arkusz, DataTable daneDoArkusza, int iloscKolumn, int przesunięcieX, int przesuniecieY, bool lp, bool suma, bool stanowisko, bool funkcja, bool nazwiskoiImeieOsobno)
@@ -566,34 +602,7 @@ namespace stat2018
 
 
         }
-
-        public ExcelWorksheet tworzArkuszwExcleBezSedziow(ExcelWorksheet Arkusz, DataTable daneDoArkusza,int iloscwierszy, int iloscKolumn, int przesunięcieX, int przesuniecieY)
-        {
-
-            int wiersz = przesuniecieY;
-            for (int i = 0; i < iloscwierszy; i++)
-            {
-                for (int j = 0; j < iloscKolumn; j++)
-                {
-                    Arkusz.Cells[i+przesuniecieY , przesunięcieX + j].Style.ShrinkToFit = true;
-                    Arkusz.Cells[i + przesuniecieY, przesunięcieX + j].Style.Border.BorderAround(OfficeOpenXml.Style.ExcelBorderStyle.Thin, System.Drawing.Color.Black);
-                    try
-                    {
-                        string value = daneDoArkusza.Rows[i][j].ToString().Trim();
-                        Arkusz.Cells[i + przesuniecieY, przesunięcieX + j].Value = value;
-                    }
-                    catch (Exception)
-                    {
-
-                        Arkusz.Cells[i + przesuniecieY, przesunięcieX + j].Value = "";
-                    }
-
-                }
-            }
-            return Arkusz;
-
-
-        }
+   
         public ExcelWorksheet tworzArkuszwExcleBezSedziow(ExcelWorksheet Arkusz, DataTable daneDoArkusza, int iloscwierszy, int iloscKolumn, int przesunięcieX, int przesuniecieY, bool zerowaKolumna)
         {
             int startowaKolumna = 0;
@@ -618,10 +627,7 @@ namespace stat2018
                     }
                     catch (Exception)
                     {
-                        
                             Arkusz.Cells[i + przesuniecieY, przesunięcieX + j].Value = "";
-                        
-                        
                     }
 
                 }
@@ -639,11 +645,8 @@ namespace stat2018
                 {
                     Arkusz.Cells[wiersz, kolumna, wiersz + rowSpan, kolumna + colSpan].Merge = true;
                 }
-                catch (Exception)
-                {
-
-                    
-                }
+                catch 
+                {}
             }
             Arkusz.Cells[wiersz, kolumna].Style.ShrinkToFit = true;
             Arkusz.Cells[wiersz, kolumna].Style.Border.BorderAround(OfficeOpenXml.Style.ExcelBorderStyle.Thin, System.Drawing.Color.Black);
@@ -651,5 +654,162 @@ namespace stat2018
             Arkusz.Cells[wiersz, kolumna].Value = tekst;
 
         }
+
+
+
+       public DataTable naglowek(string plik, int numerArkusza)
+        {
+            //  string path = Server.MapPath("\\template\\otrc.xlsx");
+         
+            IList<string> komorki = new List<string>();
+            DataTable schematNaglowka = new DataTable();
+            schematNaglowka.Columns.Add("wiersz", typeof(int));
+            schematNaglowka.Columns.Add("kolumna", typeof(int));
+            schematNaglowka.Columns.Add("text", typeof(string));
+            schematNaglowka.Columns.Add("rowSpan", typeof(int));
+            schematNaglowka.Columns.Add("colSpan", typeof(int));
+
+            var package = new ExcelPackage(new FileInfo(plik));
+
+            using (package)
+            {
+                ExcelWorksheet worksheet = package.Workbook.Worksheets[numerArkusza];
+
+                int rows = worksheet.Dimension.End.Row;
+                int columns = worksheet.Dimension.End.Column;
+
+                for (int i = 1; i <= rows; i++)
+                {
+                    for (int j = 1; j <= columns; j++)
+                    {
+                        object baseE = worksheet.Cells[i, j];
+                        ExcelCellBase celka = (ExcelCellBase)baseE;
+
+                        bool polaczony = (bool)celka.GetType().GetProperty("Merge").GetValue(celka, null);
+                        var kolumny = celka.GetType().GetProperty("Columns").GetValue(celka, null);
+                        var wiersze = celka.GetType().GetProperty("Rows").GetValue(celka, null);
+                        var text = celka.GetType().GetProperty("Value").GetValue(celka, null);
+
+                        DataRow komorka = schematNaglowka.NewRow();
+                        if (polaczony && text != null)
+                        {
+                            IList<int> lista = okreslKomorke(i, j, rows, columns, worksheet);
+
+                            komorka["wiersz"] = i;
+                            komorka["kolumna"] = j;
+                            komorka["text"] = text;
+                            komorka["colSpan"] = lista[0].ToString();
+                            komorka["rowSpan"] = lista[1].ToString();
+                            schematNaglowka.Rows.Add(komorka);
+                            int k = lista[1];
+                            if (k > 1)
+                            {
+                                j = j + k;
+                            }
+                        }
+                        else
+                        {
+                            komorka["wiersz"] = i;
+                            komorka["kolumna"] = j;
+                            komorka["text"] = text;
+                            komorka["colSpan"] = 1;
+                            komorka["rowSpan"] = 1;
+                            if (text != null)
+                            {
+                                schematNaglowka.Rows.Add(komorka);
+                            }
+                        }
+                    }
+                }
+            }
+
+            DataTable dT_01 = new DataTable();
+            dT_01.Columns.Clear();
+            dT_01.Columns.Add("Column1", typeof(string));
+            dT_01.Columns.Add("Column2", typeof(string));
+            dT_01.Columns.Add("Column3", typeof(string));
+            dT_01.Columns.Add("Column4", typeof(string));
+            dT_01.Columns.Add("Column5", typeof(string));
+
+            // max ilosc wierszy
+            var max = schematNaglowka.Rows.OfType<DataRow>().Skip(5).Select(row => row["wiersz"]).Max();
+            int wiersz = 0;
+            for (int i = (int)max; i >= 0; i--)
+            {
+                wiersz++;
+                //wyciągnij dane tylko z wierszem
+                string selectString = "wiersz=" + i.ToString();
+                DataRow[] jedenWiersz = schematNaglowka.Select(selectString);
+                foreach (var komorka in jedenWiersz)
+                {
+                    dT_01.Rows.Add(new Object[] { wiersz.ToString(), komorka["text"], komorka["rowSpan"], komorka["colSpan"], "h" });
+                }
+            }
+            return dT_01;
+        }
+
+        protected IList<int> okreslKomorke(int wierszPoczatkowy, int kolumnaPoczatkowa, int iloscWierszy, int iloscKolumn, ExcelWorksheet worksheet)
+        {
+            IList<int> wyniki = new List<int>();
+            int rowSpan = 0;
+            int colSpan = 0;
+
+            bool mergedY = false;
+
+            for (int i = wierszPoczatkowy; i <= iloscWierszy; i++)
+            {
+                object baseE = worksheet.Cells[i, kolumnaPoczatkowa];
+
+                ExcelCellBase celka = (ExcelCellBase)baseE;
+                bool polaczony = (bool)celka.GetType().GetProperty("Merge").GetValue(celka, null);
+                var text = celka.GetType().GetProperty("Value").GetValue(celka, null);
+                if (!polaczony)
+                {
+                    break;
+                }
+                else
+                {
+                    if (mergedY)
+                    {
+                        if (text != null)
+                        {
+                            break;
+                        }
+                    }
+                    mergedY = true;
+                }
+                rowSpan++;
+            }
+            bool mergedX = false;
+            for (int j = kolumnaPoczatkowa; j <= iloscKolumn; j++)
+            {
+                object baseE = worksheet.Cells[wierszPoczatkowy, j];
+
+                ExcelCellBase celka = (ExcelCellBase)baseE;
+                bool polaczony = (bool)celka.GetType().GetProperty("Merge").GetValue(celka, null);
+                var text = celka.GetType().GetProperty("Value").GetValue(celka, null);
+                if (!polaczony)
+                {
+                    break;
+                }
+                else
+                {
+                    if (mergedX)
+                    {
+                        if (text != null)
+                        {
+                            break;
+                        }
+                    }
+                    mergedX = true;
+                }
+                colSpan++;
+            }
+            wyniki.Add(rowSpan);
+            wyniki.Add(colSpan);
+            return wyniki;
+        }
+
+
     }
 }

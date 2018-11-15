@@ -58,7 +58,7 @@ namespace stat2018
             }
             catch (Exception ex)
             {
-                // Server.Transfer("default.aspx");
+                  cm.log.Error(tenPlik + " " + ex.Message );
             }
         }// end of Page_Load
 
@@ -318,7 +318,7 @@ namespace stat2018
             }
             catch (Exception ex)
             {
-
+                cm.log.Error(tenPlik + " " + ex.Message);
             }
 
             // dopasowanie opisów
@@ -893,7 +893,7 @@ namespace stat2018
             }
             catch (Exception ex)
             {
-                //      Label31.Text = "Delete error massage: " + ex.Message + "<br/>";       
+                                cm.log.Error(tenPlik + " " + ex.Message );    
             }
 
             // pierwsza tabelka
@@ -969,7 +969,7 @@ namespace stat2018
                     }
                     catch (Exception ex)
                     {
-                        //  Label31.Text = Label31.Text + "Save Error massage " + ex.Message + "<br/>";
+                           cm.log.Error(tenPlik + " " + ex.Message );
                     }
 
                 }//end of using
@@ -977,11 +977,8 @@ namespace stat2018
             }
             catch (Exception ex)
             {
-
+                cm.log.Error(tenPlik + " " + ex.Message);
             }
-
-
-
         }
 
 

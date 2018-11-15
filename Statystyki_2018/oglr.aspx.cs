@@ -71,7 +71,7 @@ namespace stat2018
             }
             catch (Exception ex)
             {
-                // Server.Transfer("default.aspx");
+                  cm.log.Error(tenPlik + " " + ex.Message );
             }
         }// end of Page_Load
 
@@ -733,7 +733,7 @@ namespace stat2018
                 }
                 catch (Exception ex)
                 {
-                    //  Label31.Text = Label31.Text + "Save Error massage " + ex.Message + "<br/>";
+                       cm.log.Error(tenPlik + " " + ex.Message );
 
                 }
 
@@ -850,12 +850,9 @@ namespace stat2018
                 }
                 catch (Exception ex)
                 {
-
-                    
+                    cm.log.Error(tenPlik + " " + ex.Message);
                 }
-                
             }
-
             return NewTotalRow;
         }
 
@@ -875,9 +872,9 @@ namespace stat2018
                     string txt = tabelka01.Rows[idWiersza - 1][i].ToString().Trim();
                     NewTotalRow.Cells.Add(tabela.cela("<a class='normal' href=\"javascript: openPopup('popup.aspx?sesja=" + (idWiersza + 1).ToString().Trim() + "!2!" + i.ToString().Trim() + "!3')\">" + tabelka01.Rows[idWiersza][i].ToString().Trim() + "</a>", 1, 1, "borderTopLeft"));
                 }
-                catch (Exception)
+                catch (Exception ex)
                 {
-                    
+                    cm.log.Error(tenPlik + " " + ex.Message);
                 }
                 
             }

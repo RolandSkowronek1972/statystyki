@@ -77,7 +77,8 @@ namespace stat2018
             }
             catch (Exception ex)
             {
-                 Server.Transfer("default.aspx");
+                cm.log.Error(tenPlik + " " + ex.Message);
+                Server.Transfer("default.aspx");
             }
         }// end of Page_Load
 
@@ -690,7 +691,7 @@ namespace stat2018
                 }
                 catch (Exception ex)
                 {
-                    //  Label31.Text = Label31.Text + "Save Error massage " + ex.Message + "<br/>";
+                       cm.log.Error(tenPlik + " " + ex.Message );
 
                 }
 
@@ -729,27 +730,21 @@ namespace stat2018
         
         protected void GridView1_RowDataBound(object sender, GridViewRowEventArgs e)
         {
-
             if (e.Row.RowType == DataControlRowType.Footer)
             {
                 DataTable table = ((DataView)tabela_1.Select(DataSourceSelectArguments.Empty)).ToTable();
-
                 tabela.makeSumRow(table, e);
-
             }
             if (e.Row.RowType == DataControlRowType.DataRow)
             {
                 storid = Convert.ToInt32(DataBinder.Eval(e.Row.DataItem, "id").ToString());
-
             }
-
         }
 
 
 
         protected void GridView3_RowDataBound(object sender, GridViewRowEventArgs e)
         {
-
             if (e.Row.RowType == DataControlRowType.Footer)
             {
                 DataTable table = ((DataView)tabela_2.Select(DataSourceSelectArguments.Empty)).ToTable();

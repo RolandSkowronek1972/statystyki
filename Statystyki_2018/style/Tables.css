@@ -194,6 +194,12 @@ min-height: 65px;
     text-decoration: none;
     color:Black;
 }
+.smallFt
+{
+    font-size: 0.7em;
+    text-decoration: none;
+    color:Black;
+}
 
 .bold_x
 {
@@ -537,6 +543,12 @@ min-height: 65px;
  text-align:center;
 }
 
+
+.col_82 {
+        width:82px;
+ text-align:center;
+}
+
 .col_90 {
         width:90px;
  text-align:center;
@@ -574,6 +586,8 @@ min-height: 65px;
     min-height:100%;
         width:100px;
  text-align:center;
+ word-wrap: break-word;
+
 }
 
 .col_103 {
@@ -742,11 +756,14 @@ min-height: 65px;
 }
 
 .col_492 {
-        width:1492px;
+        width:492px;
  text-align:center;
 }
 
+.col_500 {
+        width:492px;
 
+}
 h1 {
   text-align: center;
   font-family: Tahoma, Arial, sans-serif;

@@ -17,7 +17,7 @@ namespace stat2018
         public Class1 cl = new Class1();
         private HSSFWorkbook hssfworkbook;
         public common cm = new common();
-
+        public string tenPlik = "otrp.aspx";
         protected void Page_Load(object sender, EventArgs e)
         {
             string idWydzial = Request.QueryString["w"];
@@ -56,7 +56,7 @@ namespace stat2018
             }
             catch (Exception ex)
             {
-                //  Server.Transfer("default.aspx");
+                cm.log.Error(tenPlik + " " + ex.Message);
             }
         }// end of Page_Load
 

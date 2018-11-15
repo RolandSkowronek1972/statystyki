@@ -194,6 +194,12 @@ min-height: 65px;
     text-decoration: none;
     color:Black;
 }
+.smallFt
+{
+    font-size: 0.7em;
+    text-decoration: none;
+    color:Black;
+}
 
 .bold_x
 {
@@ -534,6 +540,12 @@ min-height: 65px;
 
 .col_76 {
         width:76px;
+ text-align:center;
+}
+
+
+.col_82 {
+        width:82px;
  text-align:center;
 }
 

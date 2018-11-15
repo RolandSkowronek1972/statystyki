@@ -75,7 +75,7 @@ namespace stat2018
                 przemiel();
                 makeLabels();
             }
-            catch (Exception ex)
+            catch 
             {
                  Server.Transfer("default.aspx");
             }
@@ -493,11 +493,10 @@ namespace stat2018
                             MyWorksheet1.Cells[rowik + 6+j, 4+i].Value = dane.Rows[i][j].ToString();
                         }
                         catch (Exception ex)
-                        {  }
-
+                        {
+                            cm.log.Error(tenPlik + " " + ex.Message);
+                        }
                     }
-
-
                 }
 
                 //druga
@@ -525,7 +524,7 @@ namespace stat2018
                 }
                 catch (Exception ex)
                 {
-                    //  Label31.Text = Label31.Text + "Save Error massage " + ex.Message + "<br/>";
+                       cm.log.Error(tenPlik + " " + ex.Message );
 
                 }
 

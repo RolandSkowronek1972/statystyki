@@ -2,8 +2,11 @@
 using System.Data;
 using System.Data.SqlClient;
 using System.Configuration;
-using System.Web.UI.WebControls;
+using System.Web;
 using System.Linq;
+using System.IO;
+using OfficeOpenXml;
+using System.Collections.Generic;
 
 namespace stat2018
 {
@@ -40,8 +43,6 @@ namespace stat2018
         }
         //====================================================================================================================================
   
-
-        
     
         public DataSet pod_tabela(string cs, string kwerenda, string poczatek, string koniec, string id_sedziego)
         {
@@ -68,8 +69,6 @@ namespace stat2018
             return null;
         }
 
-       
-    
    
         public string podajKwerende_wiersza_przestawnego(int id_dzialu, int id_wiersza, int id_tabeli, int id_kolumny, int pozycja)
         {
@@ -133,7 +132,6 @@ namespace stat2018
         }
 
   
-
         public string wyciagnijDaneNt(string kw, DateTime poczatek, DateTime koniec, string cs)
         {
             DataTable parameters = Common.makeParameterTable();
@@ -144,8 +142,6 @@ namespace stat2018
             
         }
 
-
- 
         public void updateWiersz(int kolumna, int id, string opis, int id_tabeli)
         {
             var conn = new SqlConnection(con_str);
@@ -194,9 +190,6 @@ namespace stat2018
             }
 
         }// end of deleteRowTable
-
-      
-   
     
         public DataTable generuj_dane_do_tabeli_wierszy2018(DateTime poczatek, DateTime koniec, string id_dzialu, int id_tabeli,int iloscWierszy,int iloscKolumn,string tenPlik)
 
@@ -267,8 +260,7 @@ namespace stat2018
             return outputTable;
 
         }// end of generuj_dane_do_tabeli
-
-     
+        
         public DataTable generuj_dane_do_tabeli_przestawnych(int id_dzialu, int id_tabeli, DateTime poczatek, DateTime koniec)
         {
 
@@ -1133,8 +1125,6 @@ namespace stat2018
 
         }// end of generuj_dane_do_tabeli_3
 
-
-
         public DataTable generuj_dane_do_tabeli_typ2_new(int id_dzialu, int id_tabeli, DateTime poczatek, DateTime koniec, int il_kolumn)
         {
             string status = string.Empty;
@@ -1290,9 +1280,7 @@ namespace stat2018
 
         }// end of generuj_dane_do_tabeli_5
 
-   
-
-        public DataTable generuj_dane_do_tabeli_XXL_new(int id_dzialu, int id_tabeli, DateTime poczatek, DateTime koniec, int il_kolumn)
+           public DataTable generuj_dane_do_tabeli_XXL_new(int id_dzialu, int id_tabeli, DateTime poczatek, DateTime koniec, int il_kolumn)
         {
             string status = string.Empty;
             status = status + "pompowanie danch do tabeli: " + id_tabeli.ToString() + "<br>";
@@ -1498,7 +1486,6 @@ namespace stat2018
             return outputTable;
         }
         
-
         private DataTable  danejednegoSedziego(DataTable daneSedziow, int idSedziego)
         {
             DataRow[] daneSedziego;
@@ -1540,6 +1527,164 @@ namespace stat2018
             return result;
         }
 
+       public DataTable naglowek(string plik, int numerArkusza)
+        {
+            //  string path = Server.MapPath("\\template\\otrc.xlsx");
+            string path = HttpContext.Current.Server.MapPath(plik);
+            FileInfo fileInfo = new FileInfo(path);
+            if (!fileInfo.Exists)
+            {
+                return null;
+            }
+            IList<string> komorki = new List<string>();
+            DataTable schematNaglowka = new DataTable();
+            schematNaglowka.Columns.Add("wiersz", typeof(int));
+            schematNaglowka.Columns.Add("kolumna", typeof(int));
+            schematNaglowka.Columns.Add("text", typeof(string));
+            schematNaglowka.Columns.Add("rowSpan", typeof(int));
+            schematNaglowka.Columns.Add("colSpan", typeof(int));
+
+            var package = new ExcelPackage(new FileInfo(path));
+
+            using (package)
+            {
+                ExcelWorksheet worksheet = package.Workbook.Worksheets[numerArkusza];
+
+                int rows = worksheet.Dimension.End.Row;
+                int columns = worksheet.Dimension.End.Column;
+
+                for (int i = 1; i <= rows; i++)
+                {
+                    for (int j = 1; j <= columns; j++)
+                    {
+                        object baseE = worksheet.Cells[i, j];
+                        ExcelCellBase celka = (ExcelCellBase)baseE;
+
+                        bool polaczony = (bool)celka.GetType().GetProperty("Merge").GetValue(celka, null);
+                        var kolumny = celka.GetType().GetProperty("Columns").GetValue(celka, null);
+                        var wiersze = celka.GetType().GetProperty("Rows").GetValue(celka, null);
+                        var text = celka.GetType().GetProperty("Value").GetValue(celka, null);
+
+                        DataRow komorka = schematNaglowka.NewRow();
+                        if (polaczony && text != null)
+                        {
+                            IList<int> lista = okreslKomorke(i, j, rows, columns, worksheet);
+                            if (text != null)
+                            {
+                                komorka["wiersz"] = i;
+                                komorka["kolumna"] = j;
+                                komorka["text"] = text;
+                                komorka["colSpan"] = lista[0].ToString();
+                                komorka["rowSpan"] = lista[1].ToString();
+                                schematNaglowka.Rows.Add(komorka);
+                            }
+                            int k = lista[1];
+                            if (k > 1)
+                            {
+                                j = j + k;
+                            }
+                        }
+                        else
+                        {
+                            if (text != null)
+                            {
+                                komorka["wiersz"] = i;
+                                komorka["kolumna"] = j;
+                                komorka["text"] = text;
+                                komorka["colSpan"] = 1;
+                                komorka["rowSpan"] = 1;
+                                schematNaglowka.Rows.Add(komorka);
+                            }
+                        }
+                    }
+                }
+            }
+
+            DataTable dT_01 = new DataTable();
+            dT_01.Columns.Clear();
+            dT_01.Columns.Add("Column1", typeof(string));
+            dT_01.Columns.Add("Column2", typeof(string));
+            dT_01.Columns.Add("Column3", typeof(string));
+            dT_01.Columns.Add("Column4", typeof(string));
+            dT_01.Columns.Add("Column5", typeof(string));
+
+            // max ilosc wierszy
+            var max = schematNaglowka.Rows.OfType<DataRow>().Select(row => row["wiersz"]).Max();
+            int wiersz = 0;
+            for (int i = (int)max; i >= 0; i--)
+            {
+                wiersz++;
+                //wyciągnij dane tylko z wierszem
+                var selectString = "wiersz=" + i.ToString();
+                DataRow[] jedenWiersz = schematNaglowka.Select(selectString);
+                foreach (var komorka in jedenWiersz)
+                {
+                    dT_01.Rows.Add(new Object[] { wiersz.ToString(), komorka["text"],   komorka["rowSpan"], komorka["colSpan"], "h" });
+                }
+            }
+            return dT_01;
+        }
+        protected IList<int> okreslKomorke(int wierszPoczatkowy, int kolumnaPoczatkowa, int iloscWierszy, int iloscKolumn, ExcelWorksheet worksheet)
+        {
+            IList<int> wyniki = new List<int>();
+            int rowSpan = 0;
+            int colSpan = 0;
+
+            bool mergedY = false;
+
+            for (int i = wierszPoczatkowy; i <= iloscWierszy; i++)
+            {
+                object baseE = worksheet.Cells[i, kolumnaPoczatkowa];
+
+                ExcelCellBase celka = (ExcelCellBase)baseE;
+                bool polaczony = (bool)celka.GetType().GetProperty("Merge").GetValue(celka, null);
+                var text = celka.GetType().GetProperty("Value").GetValue(celka, null);
+                if (!polaczony)
+                {
+                    break;
+                }
+                else
+                {
+                    if (mergedY)
+                    {
+                        if (text != null)
+                        {
+                            break;
+                        }
+                    }
+                    mergedY = true;
+                }
+                rowSpan++;
+            }
+            bool mergedX = false;
+            for (int j = kolumnaPoczatkowa; j <= iloscKolumn; j++)
+            {
+                object baseE = worksheet.Cells[wierszPoczatkowy, j];
+
+                ExcelCellBase celka = (ExcelCellBase)baseE;
+                bool polaczony = (bool)celka.GetType().GetProperty("Merge").GetValue(celka, null);
+                var text = celka.GetType().GetProperty("Value").GetValue(celka, null);
+                if (!polaczony)
+                {
+                    break;
+                }
+                else
+                {
+                    if (mergedX)
+                    {
+                        if (text != null)
+                        {
+                            break;
+                        }
+                    }
+                    mergedX = true;
+                }
+                colSpan++;
+            }
+            wyniki.Add(rowSpan);
+            wyniki.Add(colSpan);
+            return wyniki;
+        }
 
     } // end of class
 }

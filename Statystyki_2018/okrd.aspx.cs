@@ -18,7 +18,7 @@ namespace stat2018
         public tabele tabela = new tabele();
         public dataReaders dr = new dataReaders();
         int storid = 0;
-        int rowIndex = 1;
+       
 
         public static string tenPlik = "okrd.aspx";
 
@@ -71,7 +71,7 @@ namespace stat2018
             }
             catch (Exception ex)
             {
-                // Server.Transfer("default.aspx");
+                  cm.log.Error(tenPlik + " " + ex.Message );
             }
         }// end of Page_Load
 
@@ -421,7 +421,7 @@ namespace stat2018
                 }
                 catch (Exception ex)
                 {
-                    //  Label31.Text = Label31.Text + "Save Error massage " + ex.Message + "<br/>";
+                       cm.log.Error(tenPlik + " " + ex.Message );
 
                 }
 

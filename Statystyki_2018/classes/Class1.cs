@@ -76,7 +76,7 @@ namespace stat2018
 
             return Common.getQuerryValue("SELECT  opis FROM  kwerendy where id_tabeli=@tabela and id_kolumny=@kolumna and id_wydzial=@dzial", con_str, parameters);
 
-        }// end of wyciagnij_kwerende
+        }// end of wyciagnij_tytul
 
         public string wyciagnij_tytul(string tabela, string kolumna, string id_dzialu, string id_wiersza)
         {
@@ -88,6 +88,17 @@ namespace stat2018
             parameters.Rows.Add("@id_wiersza", id_wiersza.Trim());
 
             return Common.getQuerryValue("SELECT  opis FROM  kwerendy where id_tabeli=@tabela and id_kolumny=@kolumna and id_wydzial=@dzial and id_wiersza=@id_wiersza", con_str, parameters);
+
+
+        }// end of wyciagnij_kwerende
+
+        public string podajFunkcjeSedziegol(int idFunkcji)
+        {
+
+            DataTable parameters = Common.makeParameterTable();
+            parameters.Rows.Add("@ident", idFunkcji);
+           
+            return Common.getQuerryValue("SELECT nazwa  FROM funkcje where ident=@ident", con_str, parameters);
 
 
         }// end of wyciagnij_kwerende

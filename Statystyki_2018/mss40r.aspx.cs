@@ -1616,7 +1616,9 @@ namespace stat2018
                 result = dr[4].ToString();
             }
             catch (Exception ex)
-            { }
+            {
+                cm.log.Error(tenPlik + " " + ex.Message);
+            }
             return result;
 
         }
