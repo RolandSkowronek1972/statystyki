@@ -392,7 +392,7 @@
                    <td class="borderTopLeft col_36">1</td>
                    <td align="center" class="borderTopLeft">  <a href="javascript:openPopup('popup.aspx?sesja=1!4!1!3')"><asp:Label CssClass="normal" ID="tab_4_w01_c01" runat="server" Text="0"></asp:Label></a></td>
       
-                   <td align="center" class="borderTopLeft">  <a href="javascript:openPopup('popup.aspx?sesja=1!4!1!3')"><asp:Label CssClass="normal" ID="tab_4_w01_c02" runat="server" Text="0"></asp:Label></a></td>
+                   <td align="center" class="borderTopLeft">  <a href="javascript:openPopup('popup.aspx?sesja=1!4!2!3')"><asp:Label CssClass="normal" ID="tab_4_w01_c02" runat="server" Text="0"></asp:Label></a></td>
               </tr>
                <tr>
                    <td class="borderTopLeft wciecie">Sprawy karne ogółem (suma wierszy 3,4,6,9,10)</td>

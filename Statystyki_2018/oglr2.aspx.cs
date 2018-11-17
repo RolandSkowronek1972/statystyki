@@ -188,7 +188,7 @@ namespace stat2018
                     tab_06_w05_c01.Text = tabelkaGW5.Rows[4][1].ToString().Trim();
                     tab_06_w06_c01.Text = tabelkaGW5.Rows[5][1].ToString().Trim();
                     tab_06_w07_c01.Text = tabelkaGW5.Rows[6][1].ToString().Trim();
-
+                    
                 }
                 catch (Exception ex)
                 {

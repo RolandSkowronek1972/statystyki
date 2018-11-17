@@ -279,7 +279,6 @@
                       </SelectParameters>
                   </asp:SqlDataSource>
 
-       <br />
  <br />
        </div>
     <div id="wyznaczenia"  class="page-break"> 
@@ -342,7 +341,6 @@
             <asp:SessionParameter Name="id_dzialu" SessionField="id_dzialu" />
         </SelectParameters>
     </asp:SqlDataSource>
-        <br />
         </div>
     
     <div id="wyznaczenia0"  class="page-break"> 
@@ -510,12 +508,12 @@
                 <td class="borderAll center" colspan="3">Sprawy Zawieszone</td>
             </tr>
             <tr>
-                <td class="borderAll col_325">&nbsp;</td>
+                <td class="borderAll col_325">Podstawa prawna zawieszenia </td>
                 <td class="borderAll col_325">Liczba spraw </td>
                 <td class="borderAll col_325">Terminy czynności nadzorczych Przewodniczącego Wydziału </td>
             </tr>
             <tr>
-                <td class="borderAll col_325">Podstawa prawna zawieszenia </td>
+                <td class="borderAll col_325">art. 445 § 2 k. p. c. </td>
                 <td class="borderAll col_325 center">
                        <a href="javascript:openPopup('popup.aspx?sesja=1!5!1!3')"><asp:Label ID="tab_06_w01_c01" runat="server" Text="0"></asp:Label></a>
          
@@ -523,55 +521,48 @@
                 <td class="borderAll col_325">co 3 miesiące </td>
             </tr>
             <tr>
-                <td class="borderAll col_325">art. 445 § 2 k. p. c. </td>
+                <td class="borderAll col_325">art. 177 § 1 pkt. 6 kpc </td>
                 <td class="borderAll col_325 center">
                        <a href="javascript:openPopup('popup.aspx?sesja=2!5!1!3')"><asp:Label ID="tab_06_w02_c01" runat="server" Text="0"></asp:Label></a>
                 </td>
                 <td class="borderAll col_325">co 3 miesiące </td>
             </tr>
             <tr>
-                <td class="borderAll col_325">art. 177 § 1 pkt. 6 kpc </td>
+                <td class="borderAll col_325">art. 177 § 1 pkt. 5 kpc </td>
                 <td class="borderAll col_325 center">
                        <a href="javascript:openPopup('popup.aspx?sesja=3!5!1!3')"><asp:Label ID="tab_06_w03_c01" runat="server" Text="0"></asp:Label></a>
                 </td>
                 <td class="borderAll col_325">co 3 miesiące </td>
             </tr>
             <tr>
-                <td class="borderAll col_325">art. 177 § 1 pkt. 5 kpc </td>
+                <td class="borderAll col_325">art. 177 § 1 pkt. 1 i 2 kpc </td>
                 <td class="borderAll col_325 center">
                        <a href="javascript:openPopup('popup.aspx?sesja=4!5!1!3')"><asp:Label ID="tab_06_w04_c01" runat="server" Text="0"></asp:Label></a>
                 </td>
                 <td class="borderAll col_325">co 3 miesiące </td>
             </tr>
             <tr>
-                <td class="borderAll col_325">art. 177 § 1 pkt. 1 i 2 kpc </td>
+                <td class="borderAll col_325">art. 174 § 1 pkt 1 i 2 kpc </td>
                 <td class="borderAll col_325 center">
                        <a href="javascript:openPopup('popup.aspx?sesja=5!5!1!3')"><asp:Label ID="tab_06_w05_c01" runat="server" Text="0"></asp:Label></a>
                 </td>
                 <td class="borderAll col_325">co 3 miesiące </td>
             </tr>
             <tr>
-                <td class="borderAll col_325">art. 174 § 1 pkt 1 i 2 kpc </td>
-                <td class="borderAll col_325 center">
-                       <a href="javascript:openPopup('popup.aspx?sesja=6!5!1!3')"><asp:Label ID="tab_06_w06_c01" runat="server" Text="0"></asp:Label></a>
-                </td>
-                <td class="borderAll col_325">co 3 miesiące </td>
-            </tr>
-            <tr>
                 <td class="borderAll col_325">art. 177 § 1 pkt 3 kpc</td>
                 <td class="borderAll col_325 center">
-                       <a href="javascript:openPopup('popup.aspx?sesja=7!5!1!3')"><asp:Label ID="tab_06_w07_c01" runat="server" Text="0"></asp:Label></a>
+                       <a href="javascript:openPopup('popup.aspx?sesja=6!5!1!3')"><asp:Label ID="tab_06_w06_c01" runat="server" Text="0"></asp:Label></a>
                 </td>
                 <td class="borderAll col_325">kal. 1 rok</td>
             </tr>
             <tr>
                 <td class="borderAll col_325">Razem</td>
                 <td class="borderAll col_325 center">
-                    <asp:Label ID="tab_06_w08_c01" runat="server" Text="0"></asp:Label>
+                       <a href="javascript:openPopup('popup.aspx?sesja=7!5!1!3')"><asp:Label ID="tab_06_w07_c01" runat="server" Text="0"></asp:Label></a>
                 </td>
-                <td class="borderAll col_325">co 3 miesiące </td>
+                <td class="borderAll col_325">&nbsp;</td>
             </tr>
-        </table>
+            </table>
         <br />
         <br />
         </div>
@@ -691,7 +682,6 @@
                 </asp:TemplateField>
         </Columns>
     </asp:GridView>
-        <br />
     <asp:SqlDataSource ID="tabela_6" runat="server" 
         ConnectionString="<%$ ConnectionStrings:wap %>" 
         
@@ -777,27 +767,7 @@
         <br />
         </div>
     
-    <div id="wyznaczenia5"  class="page-break"> 
-        <asp:Label ID="lbTabela8Title" runat="server"></asp:Label>
-    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-        <asp:Label ID="infoLabel9" runat="server" Text="Tabela 8 \/" Visible="False"></asp:Label>
-        <br />
-        <br />
-    <asp:SqlDataSource ID="tabela_8" runat="server" 
-        ConnectionString="<%$ ConnectionStrings:wap %>" 
-        
-        SelectCommand="SELECT ROW_NUMBER() OVER( ORDER BY ident ) AS id,  ident, imie, nazwisko, funkcja, stanowisko, d_01, d_02, d_03, d_04, d_05, d_06, d_07, d_08, d_09, d_10, d_11, d_12, d_13, d_14, d_15, d_16, d_17, d_18, d_19, d_20, d_21, d_22,d_23, d_24,d_24,d_25,d_26,d_27,d_28,d_29,d_30, sesja, id_sedziego, id_dzialu, id_tabeli FROM tbl_statystyki_tbl_02 WHERE (id_tabeli = 3) AND (id_dzialu = @id_dzialu) ORDER BY id">
-        <SelectParameters>
-            <asp:SessionParameter Name="id_dzialu" SessionField="id_dzialu" />
-        </SelectParameters>
-    </asp:SqlDataSource>
-        <br />
-        </div>
-    
-    <br />
-
     <div id="debag" >
-          <br />
      <br />
         Raport statystyczny 
                      <asp:Label ID="Label27" runat="server"></asp:Label>

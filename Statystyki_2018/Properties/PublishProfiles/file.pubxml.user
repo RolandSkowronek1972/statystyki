@@ -25,13 +25,13 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>08/07/2018 16:47:40</publishTime>
     </File>
     <File Include="akak.aspx">
-      <publishTime>08/07/2018 16:40:09</publishTime>
+      <publishTime>11/16/2018 02:06:33</publishTime>
     </File>
     <File Include="akak2.aspx">
       <publishTime>08/07/2018 17:01:58</publishTime>
     </File>
     <File Include="akap.aspx">
-      <publishTime>08/07/2018 16:37:19</publishTime>
+      <publishTime>11/04/2018 09:04:00</publishTime>
     </File>
     <File Include="akap2.aspx">
       <publishTime>08/07/2018 16:40:09</publishTime>
@@ -40,10 +40,10 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>08/07/2018 16:40:09</publishTime>
     </File>
     <File Include="ansc.aspx">
-      <publishTime>08/07/2018 16:40:09</publishTime>
+      <publishTime>11/16/2018 02:03:32</publishTime>
     </File>
     <File Include="ansk.aspx">
-      <publishTime>08/07/2018 16:40:09</publishTime>
+      <publishTime>11/16/2018 02:06:33</publishTime>
     </File>
     <File Include="ansp.aspx">
       <publishTime>08/07/2018 16:40:09</publishTime>
@@ -550,7 +550,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>03/13/2018 11:20:50</publishTime>
     </File>
     <File Include="bin/stat2018.dll">
-      <publishTime>10/22/2018 05:58:17</publishTime>
+      <publishTime>11/17/2018 04:21:13</publishTime>
     </File>
     <File Include="default.aspx">
       <publishTime>03/13/2018 21:40:39</publishTime>
@@ -675,11 +675,20 @@ by editing this MSBuild file. In order to learn more about this please visit htt
     <File Include="msstabele/mss5r.xlsx">
       <publishTime>05/23/2018 00:07:07</publishTime>
     </File>
+    <File Include="obbc.aspx">
+      <publishTime>11/17/2018 04:20:44</publishTime>
+    </File>
+    <File Include="obbk.aspx">
+      <publishTime>11/17/2018 04:20:32</publishTime>
+    </File>
+    <File Include="obbr.aspx">
+      <publishTime>11/17/2018 04:20:42</publishTime>
+    </File>
     <File Include="ocenaPracownika.aspx">
       <publishTime>03/13/2018 19:33:38</publishTime>
     </File>
     <File Include="oglc.aspx">
-      <publishTime>09/12/2018 11:54:55</publishTime>
+      <publishTime>11/16/2018 04:35:29</publishTime>
     </File>
     <File Include="oglc2.aspx">
       <publishTime>10/14/2018 20:14:48</publishTime>
@@ -688,22 +697,22 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>03/13/2018 19:33:24</publishTime>
     </File>
     <File Include="oglk.aspx">
-      <publishTime>08/07/2018 22:35:38</publishTime>
+      <publishTime>11/16/2018 00:45:02</publishTime>
     </File>
     <File Include="oglk2.aspx">
-      <publishTime>08/07/2018 16:40:10</publishTime>
+      <publishTime>11/16/2018 00:45:02</publishTime>
     </File>
     <File Include="oglr.aspx">
       <publishTime>09/13/2018 23:52:05</publishTime>
     </File>
     <File Include="oglr2.aspx">
-      <publishTime>08/07/2018 16:40:10</publishTime>
+      <publishTime>11/16/2018 17:36:27</publishTime>
     </File>
     <File Include="okrc.aspx">
-      <publishTime>08/07/2018 16:40:10</publishTime>
+      <publishTime>11/16/2018 06:23:59</publishTime>
     </File>
     <File Include="okrd.aspx">
-      <publishTime>08/07/2018 16:40:10</publishTime>
+      <publishTime>11/16/2018 04:35:41</publishTime>
     </File>
     <File Include="okrk.aspx">
       <publishTime>08/07/2018 16:40:10</publishTime>
@@ -712,7 +721,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>08/07/2018 16:40:10</publishTime>
     </File>
     <File Include="okrr.aspx">
-      <publishTime>08/07/2018 16:40:10</publishTime>
+      <publishTime>11/16/2018 06:11:52</publishTime>
     </File>
     <File Include="oksr.aspx">
       <publishTime>08/07/2018 16:40:10</publishTime>
@@ -748,7 +757,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>08/07/2018 16:40:11</publishTime>
     </File>
     <File Include="onsr.aspx">
-      <publishTime>08/07/2018 16:40:11</publishTime>
+      <publishTime>11/16/2018 03:04:37</publishTime>
     </File>
     <File Include="onsu.aspx">
       <publishTime>08/07/2018 16:40:11</publishTime>
@@ -769,7 +778,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>08/07/2018 16:40:11</publishTime>
     </File>
     <File Include="otrc.aspx">
-      <publishTime>09/12/2018 09:45:47</publishTime>
+      <publishTime>11/16/2018 02:57:35</publishTime>
     </File>
     <File Include="otrg.aspx">
       <publishTime>08/07/2018 16:37:22</publishTime>
@@ -793,7 +802,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>01/05/2018 16:33:00</publishTime>
     </File>
     <File Include="popup.aspx">
-      <publishTime>01/10/2018 16:33:48</publishTime>
+      <publishTime>11/16/2018 01:03:41</publishTime>
     </File>
     <File Include="redirector.aspx">
       <publishTime>05/08/2018 07:50:45</publishTime>
@@ -844,7 +853,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>01/13/2018 06:28:44</publishTime>
     </File>
     <File Include="Site1.Master">
-      <publishTime>10/22/2018 05:03:54</publishTime>
+      <publishTime>11/16/2018 06:10:55</publishTime>
     </File>
     <File Include="style/login.css">
       <publishTime>01/11/2018 04:59:48</publishTime>
@@ -868,7 +877,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>02/09/2018 00:10:14</publishTime>
     </File>
     <File Include="style/Tables.css">
-      <publishTime>10/21/2018 13:59:22</publishTime>
+      <publishTime>11/15/2018 07:33:26</publishTime>
     </File>
     <File Include="temp.aspx">
       <publishTime>08/07/2018 16:40:11</publishTime>
@@ -908,6 +917,15 @@ by editing this MSBuild file. In order to learn more about this please visit htt
     </File>
     <File Include="Template/akap_.xlsx">
       <publishTime>01/10/2018 18:29:12</publishTime>
+    </File>
+    <File Include="Template/obbc.xlsx">
+      <publishTime>11/20/2018 16:59:56</publishTime>
+    </File>
+    <File Include="Template/obbk.xlsx">
+      <publishTime>11/16/2018 10:00:39</publishTime>
+    </File>
+    <File Include="Template/obbr.xlsx">
+      <publishTime>11/17/2018 01:53:53</publishTime>
     </File>
     <File Include="Template/oglc.xlsx">
       <publishTime>01/10/2018 18:29:12</publishTime>
@@ -1029,6 +1047,9 @@ by editing this MSBuild file. In order to learn more about this please visit htt
     <File Include="Template/wab.xlsx">
       <publishTime>04/06/2018 05:05:46</publishTime>
     </File>
+    <File Include="Template/wizc_aspx.xlsx">
+      <publishTime>11/15/2018 12:04:13</publishTime>
+    </File>
     <File Include="test.aspx">
       <publishTime>08/28/2018 17:45:46</publishTime>
     </File>
@@ -1039,7 +1060,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>03/26/2018 12:15:38</publishTime>
     </File>
     <File Include="version.txt">
-      <publishTime>10/22/2018 03:41:45</publishTime>
+      <publishTime>11/16/2018 18:21:11</publishTime>
     </File>
     <File Include="wab.aspx">
       <publishTime>08/07/2018 16:40:11</publishTime>
@@ -1052,6 +1073,9 @@ by editing this MSBuild file. In order to learn more about this please visit htt
     </File>
     <File Include="WebForm2.aspx">
       <publishTime>03/13/2018 19:33:46</publishTime>
+    </File>
+    <File Include="wizytacjaCywilny.aspx">
+      <publishTime>11/15/2018 21:06:35</publishTime>
     </File>
     <File Include="wyszukiwarkaspraw.aspx">
       <publishTime>03/13/2018 19:33:46</publishTime>

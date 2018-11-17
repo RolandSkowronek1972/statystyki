@@ -32,7 +32,7 @@
         <hr>
     
     </div>
-        <asp:GridView ID="GridView1" runat="server" CellPadding="2" ForeColor="#333333" GridLines="None" Width="100%">
+        <asp:GridView ID="GridView1" runat="server" CellPadding="2" ForeColor="#333333" GridLines="None" Width="100%" CellSpacing="2">
             <AlternatingRowStyle BackColor="White" />
             <EditRowStyle BackColor="#2461BF" />
             <FooterStyle BackColor="#507CD1" Font-Bold="True" ForeColor="White" />

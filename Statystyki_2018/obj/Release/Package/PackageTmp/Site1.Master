@@ -17,8 +17,11 @@
    
     <link href="style/style.css" rel="stylesheet" type="text/css" />
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js">
+
 </script>
+              <script src="Scripts/jquery-1.8.3.js"></script>
     <script>
+    
         initCountdownValue = 300;
 var inactivityCountdown = initCountdownValue;
 $(document).ready(function() {
@@ -41,7 +44,7 @@ $(document).ready(function() {
     }
   }, 1 * 1000);
 
-  $(document).delegate(":input", "click change keydown", function() {
+  $(document).delegate(":input", "click change keydown mousemove", function () {
     inactivityCountdown = initCountdownValue;
   });
 
@@ -54,7 +57,7 @@ $(document).ready(function() {
     <form id="form1" runat="server">
        
 <div id="loggedout" style="display:none">
-  You are logged out. To login, click <a id="login" href="#">here</a>
+  Kliknij proszę  <a id="login" href="#">TUTAJ</a> aby przejsc do strony logowania.
 </div>
 
         <div style="top:0px;" class="noprint">

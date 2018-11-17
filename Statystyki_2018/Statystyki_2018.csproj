@@ -113,6 +113,8 @@
     <Content Include="agl.aspx" />
     <Content Include="mss1o.aspx" />
     <Content Include="mss19o2.aspx" />
+    <Content Include="obbr.aspx" />
+    <Content Include="obbk.aspx" />
     <Content Include="oktkr.aspx" />
     <Content Include="oktp.aspx" />
     <Content Include="oktr.aspx" />
@@ -210,6 +212,7 @@
     <Content Include="Scripts\jquery-1.8.3.min.js" />
     <Content Include="WebForm1.aspx" />
     <Content Include="WebForm2.aspx" />
+    <Content Include="obbc.aspx" />
     <Content Include="wizytacjaCywilny.aspx" />
     <Content Include="wyszukiwarkaspraw.aspx" />
     <Content Include="msstabele\mss5r.xlsx" />
@@ -288,6 +291,9 @@
     <Content Include="Template\aglc.xlsx" />
     <Content Include="Template\oopr.xlsx" />
     <Content Include="Template\wizc_aspx.xlsx" />
+    <Content Include="Template\obbc.xlsx" />
+    <Content Include="Template\obbk.xlsx" />
+    <Content Include="Template\obbr.xlsx" />
     <None Include="Web.config.Debug.old">
       <DependentUpon>Web.config.old</DependentUpon>
     </None>
@@ -346,6 +352,20 @@
     </Compile>
     <Compile Include="mss19o2.aspx.designer.cs">
       <DependentUpon>mss19o2.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="obbr.aspx.cs">
+      <DependentUpon>obbr.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="obbr.aspx.designer.cs">
+      <DependentUpon>obbr.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="obbk.aspx.cs">
+      <DependentUpon>obbk.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="obbk.aspx.designer.cs">
+      <DependentUpon>obbk.aspx</DependentUpon>
     </Compile>
     <Compile Include="oktkr.aspx.cs">
       <DependentUpon>oktkr.aspx</DependentUpon>
@@ -843,6 +863,13 @@
     </Compile>
     <Compile Include="WebForm2.aspx.designer.cs">
       <DependentUpon>WebForm2.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="obbc.aspx.cs">
+      <DependentUpon>obbc.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="obbc.aspx.designer.cs">
+      <DependentUpon>obbc.aspx</DependentUpon>
     </Compile>
     <Compile Include="wizytacjaCywilny.aspx.cs">
       <DependentUpon>wizytacjaCywilny.aspx</DependentUpon>

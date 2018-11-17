@@ -68,10 +68,6 @@
    <div style="width:1150px; margin: 0 auto 0 auto; position:relative;top:60px; z-index:11;" class="content">
 
           <div id="tabela1"  style="z-index:10; "> 
-        <div style="margin-left:auto;margin-right:auto;text-align: center; width:auto; "> 
-            <asp:Label ID="Label6" runat="server" Text="Sąd " style="font-weight: 700"></asp:Label>
-     <br />
-         </div> 
          <div style="margin-left:auto;margin-right:auto;text-align: center; width:auto; "> 
              <asp:label runat="server" ID="Label9" Visible="False"></asp:label></div> 
   &nbsp;</div>

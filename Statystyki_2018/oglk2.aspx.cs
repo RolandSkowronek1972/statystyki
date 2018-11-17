@@ -265,7 +265,8 @@ namespace stat2018
             // dziewiąta
             try
             {
-                DataTable Tabela4 = dr.generuj_dane_do_tabeli_wierszy2018(DateTime.Parse(Date1.Text), DateTime.Parse(Date2.Text), id_dzialu, 9, 3, 4, tenPlik);
+                DataTable Tabela4 = new DataTable();
+                Tabela4 = dr.generuj_dane_do_tabeli_wierszy2018(DateTime.Parse(Date1.Text), DateTime.Parse(Date2.Text), id_dzialu, 9, 3, 4, tenPlik);
                 Session["tabelka003"] = Tabela4;
                 tab_09_w01_c01.Text = Tabela4.Rows[0][1].ToString().Trim();
                 tab_09_w01_c02.Text = Tabela4.Rows[0][2].ToString().Trim();

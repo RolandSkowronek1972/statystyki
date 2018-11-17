@@ -1147,7 +1147,7 @@ namespace stat2018
             if (e.Row.RowType == DataControlRowType.Footer)
             {
                 DataTable table = ((DataView)tabela_2.Select(DataSourceSelectArguments.Empty)).ToTable();
-                tabela.makeSumRow(table, e,3);
+                tabela.makeSumRow(table, e,4);
             }
 
         }

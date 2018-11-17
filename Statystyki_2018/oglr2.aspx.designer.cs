@@ -355,15 +355,6 @@ namespace stat2018 {
         protected global::System.Web.UI.WebControls.Label tab_06_w07_c01;
         
         /// <summary>
-        /// tab_06_w08_c01 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label tab_06_w08_c01;
-        
-        /// <summary>
         /// lbTabela6Title control.
         /// </summary>
         /// <remarks>
@@ -434,33 +425,6 @@ namespace stat2018 {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.SqlDataSource tabela_7;
-        
-        /// <summary>
-        /// lbTabela8Title control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lbTabela8Title;
-        
-        /// <summary>
-        /// infoLabel9 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label infoLabel9;
-        
-        /// <summary>
-        /// tabela_8 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.SqlDataSource tabela_8;
         
         /// <summary>
         /// Label27 control.

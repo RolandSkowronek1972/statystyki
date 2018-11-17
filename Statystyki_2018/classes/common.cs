@@ -13,6 +13,21 @@ namespace stat2018
         public string con_str_wcyw = ConfigurationManager.ConnectionStrings["wcywConnectionString"].ConnectionString;
         public log4net.ILog log = log4net.LogManager.GetLogger(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
 
+        public void makeLog(string type, string info, bool make)
+        {
+            if (!make)
+            {
+                return;
+            }
+            switch (type.ToUpper ())
+            {
+                case "INFO": log.Info(info); break;
+                case "ERROR": log.Error(info); break;
+                default:
+                    break;
+            }
+
+        }
         public string[] splitData(string arg)
         {
             string[] stringSeparators = new string[] { "#" };
