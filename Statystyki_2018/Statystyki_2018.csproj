@@ -113,6 +113,8 @@
     <Content Include="agl.aspx" />
     <Content Include="mss1o.aspx" />
     <Content Include="mss19o2.aspx" />
+    <Content Include="obbp.aspx" />
+    <Content Include="aglg2.aspx" />
     <Content Include="obbr.aspx" />
     <Content Include="obbk.aspx" />
     <Content Include="oktkr.aspx" />
@@ -241,7 +243,6 @@
     <None Include="Properties\PublishProfiles\file.pubxml" />
     <Content Include="Template\akac.xlsx" />
     <Content Include="Template\akac2.xlsx" />
-    <Content Include="Template\akac2_.xlsx" />
     <Content Include="Template\akac_.xlsx" />
     <Content Include="Template\akap.xlsx" />
     <Content Include="Template\akap2.xlsx" />
@@ -259,8 +260,6 @@
     <Content Include="Template\onsc.xlsx" />
     <Content Include="Template\oopc.xlsx" />
     <Content Include="Template\oopc_.xlsx" />
-    <Content Include="Template\oopk.xlsx" />
-    <Content Include="Template\oopk_.xlsx" />
     <Content Include="Template\oopp.xlsx" />
     <Content Include="Template\oopp_.xlsx" />
     <Content Include="Template\oopr_old.xlsx" />
@@ -294,6 +293,9 @@
     <Content Include="Template\obbc.xlsx" />
     <Content Include="Template\obbk.xlsx" />
     <Content Include="Template\obbr.xlsx" />
+    <Content Include="Template\obbp.xlsx" />
+    <Content Include="Template\aglg2.xlsx" />
+    <Content Include="Template\oopk.xlsx" />
     <None Include="Web.config.Debug.old">
       <DependentUpon>Web.config.old</DependentUpon>
     </None>
@@ -352,6 +354,20 @@
     </Compile>
     <Compile Include="mss19o2.aspx.designer.cs">
       <DependentUpon>mss19o2.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="obbp.aspx.cs">
+      <DependentUpon>obbp.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="obbp.aspx.designer.cs">
+      <DependentUpon>obbp.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="aglg2.aspx.cs">
+      <DependentUpon>aglg2.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="aglg2.aspx.designer.cs">
+      <DependentUpon>aglg2.aspx</DependentUpon>
     </Compile>
     <Compile Include="obbr.aspx.cs">
       <DependentUpon>obbr.aspx</DependentUpon>

@@ -239,7 +239,7 @@ namespace stat2018
             try
             {
                 DataTable Tabela4 = dr.generuj_dane_do_tabeli_wierszy2018(DateTime.Parse(Date1.Text), DateTime.Parse(Date2.Text), id_dzialu, 8, 4, 3, tenPlik);
-                Session["tabelka003"] = Tabela4;
+                Session["tabelka008"] = Tabela4;
                 tab_08_w01_c01.Text = Tabela4.Rows[0][1].ToString().Trim();
                 tab_08_w01_c02.Text = Tabela4.Rows[0][2].ToString().Trim();
                 tab_08_w01_c03.Text = Tabela4.Rows[0][3].ToString().Trim();
@@ -267,7 +267,7 @@ namespace stat2018
             {
                 DataTable Tabela4 = new DataTable();
                 Tabela4 = dr.generuj_dane_do_tabeli_wierszy2018(DateTime.Parse(Date1.Text), DateTime.Parse(Date2.Text), id_dzialu, 9, 3, 4, tenPlik);
-                Session["tabelka003"] = Tabela4;
+                Session["tabelka009"] = Tabela4;
                 tab_09_w01_c01.Text = Tabela4.Rows[0][1].ToString().Trim();
                 tab_09_w01_c02.Text = Tabela4.Rows[0][2].ToString().Trim();
                 
@@ -1101,7 +1101,7 @@ namespace stat2018
 
                 }
 
-                MyWorksheet3 = tabela.tworzArkuszwExcle(MyExcel.Workbook.Worksheets[3], table, 12, 1, 5, false);
+                MyWorksheet3 = tabela.tworzArkuszwExcle(MyExcel.Workbook.Worksheets[3], table, 12, 1, 5, false,false);
 
                 rowik = 3;
                 przesuniecieX = -3;

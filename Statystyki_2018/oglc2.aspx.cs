@@ -547,7 +547,7 @@ namespace stat2018
                 {
 
                 }
-                MyWorksheet1 = tabela.tworzArkuszwExcle(MyExcel.Workbook.Worksheets[1], table, 19, 1, 4, false);
+                MyWorksheet1 = tabela.tworzArkuszwExcle(MyExcel.Workbook.Worksheets[1], table, 19, 1, 4, false,false);
                 rowik = table.Rows.Count-3;
                 MyWorksheet1.Cells[rowik + 7, 1, rowik + 7, 4].Merge = true;
                 MyWorksheet1.Cells[rowik + 7, 1].Value = "Zaległość z poprzedniego miesiąca";
@@ -613,7 +613,7 @@ namespace stat2018
                 table2.Columns.Remove("stanowisko");
                 table2.Columns.Remove("funkcja");
 
-                MyWorksheet2 = tabela.tworzArkuszwExcle(MyExcel.Workbook.Worksheets[2], table2, 9, 1, 3, false);
+                MyWorksheet2 = tabela.tworzArkuszwExcle(MyExcel.Workbook.Worksheets[2], table2, 9, 1, 3, false,false);
 
               
                 // czwarta 

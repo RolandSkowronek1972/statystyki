@@ -555,7 +555,7 @@ namespace stat2018
                 table.Columns.Remove("stanowisko");
                 table.Columns.Remove("funkcja");
 
-                MyWorksheet1 = tb.tworzArkuszwExcle(MyExcel.Workbook.Worksheets[1], table, 19, 3, 8, false);
+                MyWorksheet1 = tb.tworzArkuszwExcle(MyExcel.Workbook.Worksheets[1], table, 19, 3, 8, false,false);
 
                 //   MyWorksheet2.Cells[1, 3].Value = "Ruch spraw w referatach sędziów za okres od " + Date1.Text + " do " + Date2.Text;
                 rowik = table.Rows.Count+1 ;

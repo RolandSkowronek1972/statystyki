@@ -182,6 +182,25 @@ namespace stat2018
 
 
         }
+        protected void tabela_5()
+        {
+            if (Session["id_dzialu"] == null)
+            {
+                return;
+            }
+
+            string idDzialu = (string)Session["id_dzialu"];
+            if (cl.debug(int.Parse(idDzialu)))
+            {
+                cm.log.Info(tenPlik + ": rozpoczęcie tworzenia tabeli 3");
+            }
+            DataTable tabelka01 = dr.generuj_dane_do_tabeli_sedziowskiej_2018(int.Parse(idDzialu), 3, DateTime.Parse(Date1.Text), DateTime.Parse(Date2.Text), 23, tenPlik);
+            Session["tabelka003"] = tabelka01;
+            GridView5.DataSource = null;
+            GridView5.DataSourceID = null;
+            GridView5.DataSource = tabelka01;
+            GridView5.DataBind();
+        }
 
 
         #region "nagłowki tabel"
@@ -731,7 +750,7 @@ namespace stat2018
                 table4.Columns.Remove("stanowisko");
                 table4.Columns.Remove("funkcja");
 
-                MyWorksheet2 = tabela.tworzArkuszwExcle(MyExcel.Workbook.Worksheets[3], table4, 12, 1, 5, false);
+                MyWorksheet2 = tabela.tworzArkuszwExcle(MyExcel.Workbook.Worksheets[3], table4, 12, 1, 5, false,false);
                 // piąta 
 
                 
@@ -799,26 +818,7 @@ namespace stat2018
         }
 
 
-        protected void makeSumRow(DataTable table, GridViewRowEventArgs e)
-        {
-
-            object sumObject;
-            int ilKolumn = e.Row.Cells.Count;
-            e.Row.Cells[1].Text = "Ogółem";
-            for (int i = 1; i < e.Row.Cells.Count; i++)
-            {
-                try
-                {
-                    sumObject = table.Compute("Sum(" + "d_" + (i - 1).ToString("D2") + ")", "");
-                    e.Row.Cells[i].Text = sumObject.ToString();
-                }
-                catch (Exception)
-                { }
-
-            }
-
-        }
-        protected void GridView1_RowDataBound(object sender, GridViewRowEventArgs e)
+         protected void GridView1_RowDataBound(object sender, GridViewRowEventArgs e)
         {
 
             if (e.Row.RowType == DataControlRowType.Footer)
@@ -839,11 +839,10 @@ namespace stat2018
 
         protected void GridView3_RowDataBound(object sender, GridViewRowEventArgs e)
         {
-
             if (e.Row.RowType == DataControlRowType.Footer)
             { 
                 DataTable table = ((DataView)tabela_3.Select(DataSourceSelectArguments.Empty)).ToTable();
-                makeSumRow(table, e);
+                tabela.makeSumRow (table, e,2 );
             }
         }
 
@@ -853,7 +852,7 @@ namespace stat2018
             if (e.Row.RowType == DataControlRowType.Footer)
             {
                 DataTable table = ((DataView)tabela_4.Select(DataSourceSelectArguments.Empty)).ToTable();
-                makeSumRow(table, e);
+                tabela.makeSumRow(table, e);
             }
         }
 
@@ -866,20 +865,19 @@ namespace stat2018
             NewTotalRow.Cells.Add(tabela.cela("Razem", 12, 3, "borderTopLeft "));
             NewTotalRow.Cells.Add(tabela.cela(tekst, 1, 9, "borderTopLeft  "));
             //podwojna komorka pod K
-            NewTotalRow.Cells.Add(tabela.cela("<a class='normal' href=\"javascript: openPopup('popup.aspx?sesja=" + (idWiersza).ToString().Trim() + "!" + idtabeli.ToString() + "!1!3')\">" + tabelka01.Rows[idWiersza][1].ToString().Trim() + "</a>", 1, 2, "borderTopLeft")); //trzy pojedyncze
+            NewTotalRow.Cells.Add(tabela.cela("<a class='normal' href=\"javascript: openPopup('popup.aspx?sesja=" + (idWiersza).ToString().Trim() + "!" + idtabeli.ToString() + "!1!3')\">" + tabelka01.Rows[idWiersza-1][1].ToString().Trim() + "</a>", 1, 2, "borderTopLeft")); //trzy pojedyncze
             //trzy pojedyncze
             for (int i = 2; i < 5; i++)
             {
-                NewTotalRow.Cells.Add(tabela.cela("<a class='normal' href=\"javascript: openPopup('popup.aspx?sesja=" + (idWiersza).ToString().Trim() + "!" + idtabeli.ToString() + "!" + i.ToString().Trim() + "!3')\">" + tabelka01.Rows[idWiersza][i].ToString().Trim() + "</a>", 1, 1, "borderTopLeft"));
+                NewTotalRow.Cells.Add(tabela.cela("<a class='normal' href=\"javascript: openPopup('popup.aspx?sesja=" + (idWiersza).ToString().Trim() + "!" + idtabeli.ToString() + "!" + i.ToString().Trim() + "!3')\">" + tabelka01.Rows[idWiersza - 1][i].ToString().Trim() + "</a>", 1, 1, "borderTopLeft"));
             }
             //podwojna komorka pod w
-            NewTotalRow.Cells.Add(tabela.cela("<a class='normal' href=\"javascript: openPopup('popup.aspx?sesja=" + (idWiersza).ToString().Trim() + "!" + idtabeli.ToString() + "!6!3')\">" + tabelka01.Rows[idWiersza][6].ToString().Trim() + "</a>", 1, 2, "borderTopLeft")); //trzy pojedyncze
+            NewTotalRow.Cells.Add(tabela.cela("<a class='normal' href=\"javascript: openPopup('popup.aspx?sesja=" + (idWiersza).ToString().Trim() + "!" + idtabeli.ToString() + "!6!3')\">" + tabelka01.Rows[idWiersza - 1][6].ToString().Trim() + "</a>", 1, 2, "borderTopLeft")); //trzy pojedyncze
             //trzy pojedyncze
             for (int i = 6; i < 9; i++)
             {
-                NewTotalRow.Cells.Add(tabela.cela("<a class='normal' href=\"javascript: openPopup('popup.aspx?sesja=" + (idWiersza).ToString().Trim() + "!" + idtabeli.ToString() + "!" + i.ToString().Trim() + "!3')\">" + tabelka01.Rows[idWiersza][i].ToString().Trim() + "</a>", 1, 1, "borderTopLeft"));
+                NewTotalRow.Cells.Add(tabela.cela("<a class='normal' href=\"javascript: openPopup('popup.aspx?sesja=" + (idWiersza).ToString().Trim() + "!" + idtabeli.ToString() + "!" + i.ToString().Trim() + "!3')\">" + tabelka01.Rows[idWiersza - 1][i].ToString().Trim() + "</a>", 1, 1, "borderTopLeft"));
             }
-
 
             return NewTotalRow;
 
@@ -1035,7 +1033,7 @@ namespace stat2018
             if (e.Row.RowType == DataControlRowType.Footer)
             {
                 DataTable table = ((DataView)Tabela_5.Select(DataSourceSelectArguments.Empty)).ToTable();
-                makeSumRow(table, e);
+               tabela. makeSumRow(table, e);
             }
 
         }

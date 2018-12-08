@@ -117,7 +117,7 @@ namespace stat2018
           
             //odswiezenie danych
             tabela_1();
-            tabela2();
+          
             tabela_3();
             tabela_4();
             tabela_5();
@@ -150,9 +150,55 @@ namespace stat2018
                 DataTable table1 = (DataTable)Session["tabelka001"];
                 MyWorksheet1 = tb.tworzArkuszwExcle(MyExcel.Workbook.Worksheets[1], table1,13, 0, 3,false,false,false,false,false);
 
+                //pod tabela
+                int rowik = table1.Rows.Count - 4;
+                MyWorksheet1.Cells[rowik + 7, 1, rowik + 7, 5].Merge = true;
+                MyWorksheet1.Cells[rowik + 7, 1].Value = "Zaległość z poprzedniego miesiąca";
+                MyWorksheet1.Cells[rowik + 8, 1, rowik + 8, 5].Merge = true;
+                MyWorksheet1.Cells[rowik + 8, 1].Value = "Wpływ";
+                MyWorksheet1.Cells[rowik + 9, 1, rowik + 9, 5].Merge = true;
+                MyWorksheet1.Cells[rowik + 9, 1].Value = "Wpływ";
+                MyWorksheet1.Cells[rowik + 10, 1, rowik + 10, 5].Merge = true;
+                MyWorksheet1.Cells[rowik + 10, 1].Value = "Załatwienia";
+                MyWorksheet1.Cells[rowik + 11, 1, rowik + 11, 5].Merge = true;
+                MyWorksheet1.Cells[rowik + 11, 1].Value = " Pozostało na następny miesiąc";
+                MyWorksheet1.Cells[rowik + 12, 1, rowik + 12, 5].Merge = true;
+
+                MyWorksheet1.Cells[rowik + 12, 1].Value = " 3-6 miesięcy";
+                MyWorksheet1.Cells[rowik + 13, 1, rowik + 13, 5].Merge = true;
+
+                MyWorksheet1.Cells[rowik + 13, 1].Value = " 6-12 miesięcy";
+                MyWorksheet1.Cells[rowik + 14, 1, rowik + 14, 5].Merge = true;
+
+                MyWorksheet1.Cells[rowik + 14, 1].Value = "ponad 12 miesięcy";
+                DataTable tabelka001 = (DataTable)Session["tabelka002"];
+
+                foreach (DataRow dR in tabelka001.Rows)
+                {
+                    for (int i = 2; i < 10; i++)
+                    {
+                        
+                        try
+                        {
+                            MyWorksheet1.Cells[rowik + 7, i + 4].Value = double.Parse(dR[i - 1].ToString().Trim());
+                        }
+                        catch
+                        {
+
+                            MyWorksheet1.Cells[rowik + 7, i + 4].Value = dR[i - 1].ToString().Trim();
+                        }
+
+                        MyWorksheet1.Cells[rowik + 7, i + 4].Style.ShrinkToFit = true;
+                        MyWorksheet1.Cells[rowik + 7, i + 4].Style.Border.BorderAround(OfficeOpenXml.Style.ExcelBorderStyle.Thin, System.Drawing.Color.Black);
+
+                    }
+                    rowik++;
+                }
+
+
+
                 DataTable table2 = (DataTable)Session["tabelka003"];
-              //  MyWorksheet1 = tb.tworzArkuszwExcle(MyExcel.Workbook.Worksheets[2], table1, 6, 0, 3, false, false, false, false, false);
-                 MyWorksheet1 = tb.tworzArkuszwExcleBezSedziow(MyExcel.Workbook.Worksheets[2], table2, 5, 6, 2, 4, false);
+                 MyWorksheet1 = tb.tworzArkuszwExcleBezSedziow(MyExcel.Workbook.Worksheets[2], table2, 5,7,  1, 5, false);
 
                 // trzecia
 
@@ -163,7 +209,7 @@ namespace stat2018
                 // czwarta
 
                 DataTable table4 = (DataTable)Session["tabelka005"];
-                 MyWorksheet1 = tb.tworzArkuszwExcleBezSedziow(MyExcel.Workbook.Worksheets[4], table4, 2, 6, 2, 4, false);
+                MyWorksheet1 = tb.tworzArkuszwExcle(MyExcel.Workbook.Worksheets[4], table4, 9, 0, 3, false, false, false, false, false);
 
                 try
                 {
@@ -302,23 +348,27 @@ namespace stat2018
                 cm.makeLog("error", tenPlik + " " + ex.Message, cl.debug(int.Parse((string)Session["id_dzialu"])));
             }
         }
-        protected void tabela2()
+       
+
+        DataTable tabela_2()
         {
             //dane do tabeli sumującej po tabelą nr 1
+            DataTable tabelka01 = new DataTable();
             try
             {
 
-                DataTable tabelka01 = dr.generuj_dane_do_tabeli_wierszy2018(DateTime.Parse(Date1.Text), DateTime.Parse(Date2.Text), (string)Session["id_dzialu"], 2, 20, 20, tenPlik);
+                tabelka01 = dr.generuj_dane_do_tabeli_wierszy2018(DateTime.Parse(Date1.Text), DateTime.Parse(Date2.Text), (string)Session["id_dzialu"], 2, 8, 8, tenPlik);
                 Session["tabelka002"] = tabelka01;
                 //row 1
-         
+
             }
             catch (Exception ex)
             {
                 cm.makeLog("error", tenPlik + " " + ex.Message, cl.debug(int.Parse((string)Session["id_dzialu"])));
             }
-
+            return tabelka01;
         }
+
 
         protected void naglowekTabeli_gwTabela1(object sender, GridViewRowEventArgs e)
         {
@@ -372,8 +422,12 @@ namespace stat2018
 
         public void AddNewRow(object sender, GridViewRowEventArgs e)
         {
-            DataTable tabelka01 = (DataTable)Session["tabelka002"];
-
+            
+            DataTable tabelka01 = tabela_2();
+            if (tabelka01==null)
+            {
+                return;
+            }
 
             GridView GridView1 = (GridView)sender;
             GridViewRow NewTotalRow = new GridViewRow(0, 0, DataControlRowType.DataRow, DataControlRowState.Insert);

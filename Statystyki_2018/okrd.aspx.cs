@@ -228,23 +228,25 @@ namespace stat2018
             dT_01.Rows.Add(new Object[] { "2", "dni wokandy", "1", "1" });
 
             dT_01.Rows.Add(new Object[] { "2", "Dni pracy bez wokandy", "1", "1" });
-            dT_01.Rows.Add(new Object[] { "2", "wysłana poczta I", "1", "1" });
+            dT_01.Rows.Add(new Object[] { "2", "wysłana poczta ", "1", "1" });
             dT_01.Rows.Add(new Object[] { "2", "ilość poczty na dni bez wokandy", "1", "1" });
-            dT_01.Rows.Add(new Object[] { "2", "ilość czynności I", "1", "1" });
+            dT_01.Rows.Add(new Object[] { "2", "ilość czynności ", "1", "1" });
             dT_01.Rows.Add(new Object[] { "2", "ilość czynności na dni bez wokand", "1", "1" });
 
             dT_01.Rows.Add(new Object[] { "2", "ilość poczty na jedną czynność wykonaną", "1", "1" });
-            dT_01.Rows.Add(new Object[] { "2", "ilość czynności I", "1", "1" });
+            dT_01.Rows.Add(new Object[] { "2", "ilość czynności ", "1", "1" });
             dT_01.Rows.Add(new Object[] { "2", "ilość czynności na dni bez wokand", "1", "1" });
             dT_01.Rows.Add(new Object[] { "2", "suma czynności", "1", "1" });
             dT_01.Rows.Add(new Object[] { "2", "ilość czynności na dni bez wokand", "1", "1" });
-            dT_01.Rows.Add(new Object[] { "2", "ilość czynności zakreśłonych bez daty wykonania I", "1", "1" });
+            dT_01.Rows.Add(new Object[] { "2", "ilość czynności zakreśłonych bez daty wykonania ", "1", "1" });
    
 
 
             dT_01.Rows.Add(new Object[] { "3", "", "4", "1" });
             dT_01.Rows.Add(new Object[] { "3", dataWyswietlana , "2", "1" });
-            dT_01.Rows.Add(new Object[] { "3", ilDniwMiesiącu, "1", "1" });
+            dT_01.Rows.Add(new Object[] { "3", "", "1", "1" });
+//            dT_01.Rows.Add(new Object[] { "3", ilDniwMiesiącu, "1", "1" });
+
             dT_01.Rows.Add(new Object[] { "3", "", "3", "1" });
             dT_01.Rows.Add(new Object[] { "3", "POCZTA", "2", "1" });
             dT_01.Rows.Add(new Object[] { "3", "", "3", "1" });
@@ -404,7 +406,7 @@ namespace stat2018
                 {
                     
                 }
-                MyWorksheet1 = tabela.tworzArkuszwExcle(MyExcel.Workbook.Worksheets[1], table, 20, 1,4, false);
+                MyWorksheet1 = tabela.tworzArkuszwExcle(MyExcel.Workbook.Worksheets[1], table, 20, 1,4, false,false);
 
 
                 

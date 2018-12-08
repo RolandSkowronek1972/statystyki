@@ -219,4 +219,3 @@ C:\projekts\Statystyki_2018\Statystyki_2018\bin\ru\DevExpress.Sparkline.v17.1.Co
 C:\projekts\Statystyki_2018\Statystyki_2018\obj\Debug\stat2018.dll.licenses
 C:\projekts\Statystyki_2018\Statystyki_2018\obj\Debug\stat2018.dll
 C:\projekts\Statystyki_2018\Statystyki_2018\obj\Debug\stat2018.pdb
-C:\projekts\Statystyki_2018\Statystyki_2018\obj\Debug\Statystyki_2018.csprojResolveAssemblyReference.cache

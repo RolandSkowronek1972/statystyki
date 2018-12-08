@@ -114,7 +114,7 @@ namespace stat2018
           
             //odswiezenie danych
             tabela_1();
-            tabela2();
+          
             tabela_3();
             tabela_4();
             tabela_5();
@@ -283,22 +283,23 @@ namespace stat2018
                 cm.makeLog("error", tenPlik + " " + ex.Message, cl.debug(int.Parse((string)Session["id_dzialu"])));
             }
         }
-        protected void tabela2()
+        DataTable tabela_2()
         {
             //dane do tabeli sumującej po tabelą nr 1
+            DataTable tabelka01 = new DataTable();
             try
             {
 
-                DataTable tabelka01 = dr.generuj_dane_do_tabeli_wierszy2018(DateTime.Parse(Date1.Text), DateTime.Parse(Date2.Text), (string)Session["id_dzialu"], 2, 20, 20, tenPlik);
+                tabelka01 = dr.generuj_dane_do_tabeli_wierszy2018(DateTime.Parse(Date1.Text), DateTime.Parse(Date2.Text), (string)Session["id_dzialu"], 2, 8, 8, tenPlik);
                 Session["tabelka002"] = tabelka01;
                 //row 1
-         
+
             }
             catch (Exception ex)
             {
                 cm.makeLog("error", tenPlik + " " + ex.Message, cl.debug(int.Parse((string)Session["id_dzialu"])));
             }
-
+            return tabelka01;
         }
 
         protected void naglowekTabeli_gwTabela1(object sender, GridViewRowEventArgs e)
@@ -356,7 +357,7 @@ namespace stat2018
 
         public void AddNewRow(object sender, GridViewRowEventArgs e)
         {
-            DataTable tabelka01 = (DataTable)Session["tabelka002"];
+            DataTable tabelka01 = tabela_2();
 
 
             GridView GridView1 = (GridView)sender;

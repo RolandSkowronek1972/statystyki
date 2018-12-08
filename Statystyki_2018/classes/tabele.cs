@@ -161,6 +161,38 @@ namespace stat2018
                             }
 
         }
+        public void makeSumRow(DataTable table, GridViewRowEventArgs e, int przesuniecie,int polaczenie)
+        {
+            DataTable tabelka = tabellaLiczbowa(table);
+            object sumObject;
+            int ilKolumn = e.Row.Cells.Count;
+            e.Row.Cells[0].ColumnSpan = polaczenie;
+            e.Row.Cells[0].Text = "Ogółem";
+            try
+            {
+                for (int i = 1; i < polaczenie; i++)
+                {
+                    e.Row.Cells.RemoveAt(1);
+                }
+            }
+            catch
+            { }
+            for (int i = 1; i < e.Row.Cells.Count; i++)
+            {
+                try
+                {
+                    string idkolumny = "d_" + (i).ToString("D2");
+                    sumObject = tabelka.Compute("Sum(" + idkolumny + ")", "");
+                    e.Row.Cells[i ].Text = sumObject.ToString();
+                    e.Row.Cells[i ].CssClass = "center normal";
+                }
+                catch (Exception ex)
+                {
+                    cm.log.Error("sumowanie w stopce : " + ex.Message);
+                }
+            }
+        }
+
 
         public GridViewRow PodsumowanieTabeli(DataTable dane, int iloscKolumn,   string cssStyleDlaTabeli)
         {
@@ -206,6 +238,10 @@ namespace stat2018
         }
         public GridViewRow wierszTabeli(DataTable dane,int iloscKolumn, int idWiersza, string idtabeli, string tekst, int colSpan, int rowSpan, string CssStyleDlaTekstu, string cssStyleDlaTabeli)
         {
+            if (dane==null)
+            {
+                return null;
+            }
             GridViewRow NewTotalRow = new GridViewRow(0, 0, DataControlRowType.DataRow, DataControlRowState.Insert);
             NewTotalRow.Cells.Add(cela(tekst, rowSpan, colSpan, CssStyleDlaTekstu));
             for (int i = 1; i < iloscKolumn; i++)
@@ -263,7 +299,7 @@ namespace stat2018
         }
 
         //   tworzenie arkusza excela
-
+/*
         public ExcelWorksheet tworzArkuszwExcle(ExcelWorksheet Arkusz, DataTable daneDoArkusza, int iloscKolumn, int przesunięcieX, int przesuniecieY, bool lp)
         {
             if (daneDoArkusza.Rows == null)
@@ -315,17 +351,17 @@ namespace stat2018
 
 
         }
-
+*/
         public ExcelWorksheet tworzArkuszwExcle(ExcelWorksheet Arkusz, DataTable daneDoArkusza, int iloscKolumn, int przesunięcieX, int przesuniecieY, bool lp,bool suma)
         {
             if (daneDoArkusza.Rows == null)
             {
                 return null;
             }
-            tworzArkuszwExcle(Arkusz, daneDoArkusza, iloscKolumn, przesunięcieX, przesuniecieY, lp);
+            tworzArkuszwExcle(Arkusz, daneDoArkusza, iloscKolumn, przesunięcieX, przesuniecieY, lp,false);
             // tu dodać sumę
           
-            ExcelWorksheet tymczasowy=   tworzArkuszwExcle(Arkusz, daneDoArkusza, iloscKolumn, przesunięcieX, przesuniecieY, lp);
+            ExcelWorksheet tymczasowy=   tworzArkuszwExcle(Arkusz, daneDoArkusza, iloscKolumn, przesunięcieX, przesuniecieY, lp,false);
 
            int rowik = daneDoArkusza.Rows.Count + 4;
             tymczasowy.Cells[rowik + 2, 1].Value = "Łącznie";
@@ -445,11 +481,11 @@ namespace stat2018
                     }
 
 
-                    for (int i = 0; i < iloscKolumn; i++)
+                    for (int i = 1; i < iloscKolumn; i++)
                     {
                         try
                         {
-                            string colunmName = "d_" + i.ToString("D2");
+                            string colunmName = "d_" + (i).ToString("D2");
                             try
                             {
                                 double value = double.Parse(dR[colunmName].ToString().Trim());
@@ -684,7 +720,10 @@ namespace stat2018
        public DataTable naglowek(string plik, int numerArkusza)
         {
 
-         
+            if (string.IsNullOrEmpty ( plik.Trim()))
+            {
+                return null;
+            }
             IList<string> komorki = new List<string>();
             DataTable schematNaglowka = new DataTable();
             schematNaglowka.Columns.Add("wiersz", typeof(int));
