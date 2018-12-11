@@ -61,7 +61,72 @@ namespace stat2018
             odswiez();
             debug();
         }
+        protected void clearHedersSession()
+        {
+            Session["makeHeader"] = null;
+         
+        }
 
+        protected DataTable makeHeader()
+        {
+
+
+           
+            DataTable dT_04 = new DataTable();
+            dT_04.Columns.Clear();
+            dT_04.Columns.Add("Column1", typeof(string));
+            dT_04.Columns.Add("Column2", typeof(string));
+            dT_04.Columns.Add("Column3", typeof(string));
+            dT_04.Columns.Add("Column4", typeof(string));
+
+
+
+            #region tabela  1 ()
+
+            dT_04.Clear();
+
+            dT_04.Rows.Add(new Object[] { "1", "Rozpraw", "1", "1" });
+            dT_04.Rows.Add(new Object[] { "1", "Posiedzeń", "1", "1" });
+            dT_04.Rows.Add(new Object[] { "1", "Razem", "1", "1" });
+            dT_04.Rows.Add(new Object[] { "1", "GC", "1", "1" });
+            dT_04.Rows.Add(new Object[] { "1", "Ga", "1", "1" });
+            dT_04.Rows.Add(new Object[] { "1", "Razem I i II instancja", "1", "1" });
+            dT_04.Rows.Add(new Object[] { "1", "GC", "1", "1" });
+            dT_04.Rows.Add(new Object[] { "1", "Ga", "1", "1" });
+            dT_04.Rows.Add(new Object[] { "1", "Razem I i II instancja", "1", "1" });
+
+            dT_04.Rows.Add(new Object[] { "1", "%odroczeń / wyznaczeń GC", "1", "1" });
+            dT_04.Rows.Add(new Object[] { "1", "% odrczeń / wyzn.Ga", "1", "1" });
+            dT_04.Rows.Add(new Object[] { "1", "śr. Ilość spraw na rozprawie", "1", "1" });
+
+            dT_04.Rows.Add(new Object[] { "1", "GC", "1", "1" });
+            dT_04.Rows.Add(new Object[] { "1", "GNc", "1", "1" });
+            dT_04.Rows.Add(new Object[] { "1", "GCo", "1", "1" });
+            dT_04.Rows.Add(new Object[] { "1", "Ga", "1", "1" });
+            dT_04.Rows.Add(new Object[] { "1", "Gz", "1", "1" });
+            dT_04.Rows.Add(new Object[] { "1", "GCo", "1", "1" });
+            dT_04.Rows.Add(new Object[] { "1", "GS", "1", "1" });
+            dT_04.Rows.Add(new Object[] { "1", "WSC", "1", "1" });
+            
+
+            dT_04.Rows.Add(new Object[] { "2", "Sędzia", "1", "2" });
+            dT_04.Rows.Add(new Object[] { "2", "Efektywny czas pracy", "1", "2" });
+            dT_04.Rows.Add(new Object[] { "2", "Ilość sesji", "3", "1" });
+            dT_04.Rows.Add(new Object[] { "2", "Ilość wyznaczonych spraw na rozprawie", "3", "1" });
+            dT_04.Rows.Add(new Object[] { "2", "Ilość odroczonych spraw", "3", "1" });
+            dT_04.Rows.Add(new Object[] { "2", "Wydajność sędziów", "3", "1" });
+            dT_04.Rows.Add(new Object[] { "2", "Załatwienia", "8", "1" });
+            dT_04.Rows.Add(new Object[] { "2", "Razem załatwienia ", "1", "2" });
+            dT_04.Rows.Add(new Object[] { "2", "Średnia miesięczna łączna liczba załatwień w efektywnym czasie pracy", "1", "2" });
+
+           return dT_04;
+         
+
+            #endregion
+
+
+
+        }
         private void debug()
         {
 
@@ -77,7 +142,7 @@ namespace stat2018
                 }
                 catch
                 { }
-                Label3.Text = cl.nazwaSadu((string)Session["id_dzialu"]);
+              //  Label3.Text = cl.nazwaSadu((string)Session["id_dzialu"]);
                 Label28.Text = cl.podajUzytkownika(User_id, domain);
                 Label29.Text = DateTime.Now.ToLongDateString();
                 Label30.Text = System.IO.File.ReadAllText(Server.MapPath(@"~//version.txt")).ToString().Trim();
@@ -90,27 +155,47 @@ namespace stat2018
             {
                 string idDzialu = (string)Session["id_dzialu"];
                 infoLabel1.Visible = cl.debug(int.Parse(idDzialu));
+                infoLabel2.Visible = cl.debug(int.Parse(idDzialu));
                 infoLabel3.Visible = cl.debug(int.Parse(idDzialu));
                 infoLabel4.Visible = cl.debug(int.Parse(idDzialu));
-            
                 infoLabel5.Visible = cl.debug(int.Parse(idDzialu));
-                
+                infoLabel6.Visible = cl.debug(int.Parse(idDzialu));
+                infoLabel7.Visible = cl.debug(int.Parse(idDzialu));
+                infoLabel8.Visible = cl.debug(int.Parse(idDzialu));
+                infoLabel9.Visible = cl.debug(int.Parse(idDzialu));
+                infoLabel10.Visible = cl.debug(int.Parse(idDzialu));
+                infoLabel11.Visible = cl.debug(int.Parse(idDzialu));
+                infoLabel12.Visible = cl.debug(int.Parse(idDzialu));
+                infoLabel13.Visible = cl.debug(int.Parse(idDzialu));
+                infoLabel14.Visible = cl.debug(int.Parse(idDzialu));
             }
             catch
             {
-               
-                infoLabel3.Visible = false;
                 infoLabel1.Visible = false;
+                infoLabel2.Visible = false;
+                infoLabel3.Visible = false;
                 infoLabel4.Visible = false;
                 infoLabel5.Visible = false;
+                infoLabel6.Visible = false;
+                infoLabel7.Visible = false;
+                infoLabel8.Visible = false;
+                infoLabel9.Visible = false;
+                infoLabel10.Visible = false;
 
-               
+
+                infoLabel11.Visible = false;
+                infoLabel12.Visible = false;
+                infoLabel13.Visible = false;
+                infoLabel14.Visible = false;
+              
 
             }
         }
 
         protected void Odswiez(object sender, EventArgs e)
         {
+            clearHedersSession();
+            makeHeader();
             odswiez();
         }
         protected void odswiez()
@@ -406,7 +491,7 @@ namespace stat2018
             DataTable tabelka01 = dr.generuj_dane_do_tabeli_wierszy2018(DateTime.Parse(Date1.Text), DateTime.Parse(Date2.Text), (string)Session["id_dzialu"], 14,4,  13, tenPlik);
             Session["tabelka014"] = tabelka01;
 
-            pisz("tab_14_", 3, 11, tabelka01);
+            pisz("tab_14_", 3, 12, tabelka01);
 
         }
 
@@ -417,16 +502,13 @@ namespace stat2018
             {
               
                 System.Web.UI.WebControls.GridView sn = new System.Web.UI.WebControls.GridView();
-                string path = Server.MapPath("\\template\\"+tenPlikNazwa+".xlsx");
-                DataTable dT = tb.naglowek(path, 1);
-                tb.makeHeader(sn, dT, gwTabela1);
+                tb.makeHeader(sn, makeHeader(), gwTabela1);
             }
             else
             {
                 if ((storid > 0) && (DataBinder.Eval(e.Row.DataItem, "id") == null))
                 {
                     rowIndex = 0;
-                    //AddNewRow(sender, e);
                 }
             }
         }
@@ -583,7 +665,7 @@ namespace stat2018
         {
             if (e.Row.RowType == DataControlRowType.Footer)
             {
-                DataTable table = (DataTable)Session["tabelka008"];
+                DataTable table = (DataTable)Session["tabelka007"];
                 tb.makeSumRow(table, e,0);
             }
 

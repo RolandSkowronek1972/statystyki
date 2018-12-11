@@ -111,6 +111,7 @@
     <Content Include="aglg.aspx" />
     <Content Include="aglc.aspx" />
     <Content Include="agl.aspx" />
+    <Content Include="oglk3.aspx" />
     <Content Include="mss1o.aspx" />
     <Content Include="mss19o2.aspx" />
     <Content Include="obbp.aspx" />
@@ -246,7 +247,6 @@
     <Content Include="Template\akac_.xlsx" />
     <Content Include="Template\akap.xlsx" />
     <Content Include="Template\akap2.xlsx" />
-    <Content Include="Template\akap2_.xlsx" />
     <Content Include="Template\akape.xls" />
     <Content Include="Template\akap_.xlsx" />
     <Content Include="Template\oglc.xlsx" />
@@ -254,7 +254,6 @@
     <Content Include="Template\oglk.xlsx" />
     <Content Include="Template\oglk_.xlsx" />
     <Content Include="Template\oglr.xlsx" />
-    <Content Include="Template\oglr_.xlsx" />
     <Content Include="Template\oktk.xlsx" />
     <Content Include="Template\oktk_.xlsx" />
     <Content Include="Template\onsc.xlsx" />
@@ -294,8 +293,9 @@
     <Content Include="Template\obbk.xlsx" />
     <Content Include="Template\obbr.xlsx" />
     <Content Include="Template\obbp.xlsx" />
-    <Content Include="Template\aglg2.xlsx" />
     <Content Include="Template\oopk.xlsx" />
+    <Content Include="Template\aglg2.xlsx" />
+    <Content Include="Template\oglk3.xlsx" />
     <None Include="Web.config.Debug.old">
       <DependentUpon>Web.config.old</DependentUpon>
     </None>
@@ -332,6 +332,13 @@
     </Compile>
     <Compile Include="aglc.aspx.designer.cs">
       <DependentUpon>aglc.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="oglk3.aspx.cs">
+      <DependentUpon>oglk3.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="oglk3.aspx.designer.cs">
+      <DependentUpon>oglk3.aspx</DependentUpon>
     </Compile>
     <Compile Include="classes\dataReaders.cs" />
     <Compile Include="agl.aspx.cs">

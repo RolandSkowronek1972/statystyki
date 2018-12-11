@@ -143,7 +143,7 @@ namespace stat2018
             DataTable tabelka = tabellaLiczbowa(table);
             object sumObject;
             int ilKolumn = e.Row.Cells.Count;
-            e.Row.Cells[1].Text = "Ogółem";
+            e.Row.Cells[0+przesuniecie].Text = "Ogółem";
             for (int i = 1; i < e.Row.Cells.Count; i++)
             {
                 try
@@ -716,7 +716,6 @@ namespace stat2018
         }
 
 
-
        public DataTable naglowek(string plik, int numerArkusza)
         {
 
@@ -733,57 +732,61 @@ namespace stat2018
             schematNaglowka.Columns.Add("colSpan", typeof(int));
 
             var package = new ExcelPackage(new FileInfo(plik));
-
             using (package)
             {
-                ExcelWorksheet worksheet = package.Workbook.Worksheets[numerArkusza];
-
-                int rows = worksheet.Dimension.End.Row;
-                int columns = worksheet.Dimension.End.Column;
-
-                for (int i = 1; i <= rows; i++)
+                int iloscZakladek = package.Workbook.Worksheets.Count;
+                if (iloscZakladek>=numerArkusza)
                 {
-                    for (int j = 1; j <= columns; j++)
+                    ExcelWorksheet worksheet = package.Workbook.Worksheets[numerArkusza];
+
+                    int rows = worksheet.Dimension.End.Row;
+                    int columns = worksheet.Dimension.End.Column;
+
+                    for (int i = 1; i <= rows; i++)
                     {
-                        object baseE = worksheet.Cells[i, j];
-                        ExcelCellBase celka = (ExcelCellBase)baseE;
-
-                        bool polaczony = (bool)celka.GetType().GetProperty("Merge").GetValue(celka, null);
-                        var kolumny = celka.GetType().GetProperty("Columns").GetValue(celka, null);
-                        var wiersze = celka.GetType().GetProperty("Rows").GetValue(celka, null);
-                        var text = celka.GetType().GetProperty("Value").GetValue(celka, null);
-
-                        DataRow komorka = schematNaglowka.NewRow();
-                        if (polaczony && text != null)
+                        for (int j = 1; j <= columns; j++)
                         {
-                            IList<int> lista = okreslKomorke(i, j, rows, columns, worksheet);
+                            object baseE = worksheet.Cells[i, j];
+                            ExcelCellBase celka = (ExcelCellBase)baseE;
 
-                            komorka["wiersz"] = i;
-                            komorka["kolumna"] = j;
-                            komorka["text"] = text;
-                            komorka["colSpan"] = lista[0].ToString();
-                            komorka["rowSpan"] = lista[1].ToString();
-                            schematNaglowka.Rows.Add(komorka);
-                            int k = lista[1];
-                            if (k > 1)
+                            bool polaczony = (bool)celka.GetType().GetProperty("Merge").GetValue(celka, null);
+                            var kolumny = celka.GetType().GetProperty("Columns").GetValue(celka, null);
+                            var wiersze = celka.GetType().GetProperty("Rows").GetValue(celka, null);
+                            var text = celka.GetType().GetProperty("Value").GetValue(celka, null);
+
+                            DataRow komorka = schematNaglowka.NewRow();
+                            if (polaczony && text != null)
                             {
-                                j = (j + k)-1;
-                            }
-                        }
-                        else
-                        {
-                            komorka["wiersz"] = i;
-                            komorka["kolumna"] = j;
-                            komorka["text"] = text;
-                            komorka["colSpan"] = 1;
-                            komorka["rowSpan"] = 1;
-                            if (text != null)
-                            {
+                                IList<int> lista = okreslKomorke(i, j, rows, columns, worksheet);
+
+                                komorka["wiersz"] = i;
+                                komorka["kolumna"] = j;
+                                komorka["text"] = text;
+                                komorka["colSpan"] = lista[0].ToString();
+                                komorka["rowSpan"] = lista[1].ToString();
                                 schematNaglowka.Rows.Add(komorka);
+                                int k = lista[1];
+                                if (k > 1)
+                                {
+                                    j = (j + k) - 1;
+                                }
+                            }
+                            else
+                            {
+                                komorka["wiersz"] = i;
+                                komorka["kolumna"] = j;
+                                komorka["text"] = text;
+                                komorka["colSpan"] = 1;
+                                komorka["rowSpan"] = 1;
+                                if (text != null)
+                                {
+                                    schematNaglowka.Rows.Add(komorka);
+                                }
                             }
                         }
                     }
                 }
+                
             }
 
             DataTable dT_01 = new DataTable();

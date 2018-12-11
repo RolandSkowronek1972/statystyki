@@ -210,18 +210,8 @@
                                    </ItemTemplate>
                    <ItemStyle  CssClass = "col_60"/>
                 </asp:TemplateField>
-       <asp:TemplateField HeaderText = "d_24" SortExpression = "d_01" > 
-                <ItemTemplate >
-          <a href = "javascript:openPopup('popup.aspx?sesja=<%# Eval("id_sedziego")+ "!"+Eval("id_tabeli") +"!24!2"%>')" ><asp:Label ID = "Label_gwTabela1124" runat = "server" Text = '<%# Eval("d_24")%>' CssClass = "normal" ></asp:Label> </a>
-                                   </ItemTemplate>
-                   <ItemStyle  CssClass = "col_60"/>
-                </asp:TemplateField>
-       <asp:TemplateField HeaderText = "d_25" SortExpression = "d_01" > 
-                <ItemTemplate >
-          <a href = "javascript:openPopup('popup.aspx?sesja=<%# Eval("id_sedziego")+ "!"+Eval("id_tabeli") +"!25!2"%>')" ><asp:Label ID = "Label_gwTabela1125" runat = "server" Text = '<%# Eval("d_25")%>' CssClass = "normal" ></asp:Label> </a>
-                                   </ItemTemplate>
-                   <ItemStyle  CssClass = "col_60"/>
-                </asp:TemplateField>
+     
+     
         </Columns>
     </asp:GridView>
 
@@ -236,7 +226,7 @@
            <div class="page-break">
 &nbsp;<asp:Label ID="Label7" runat="server" Text="efektywny czas pracy sędziów funkcyjnych "></asp:Label>
            &nbsp;&nbsp;&nbsp;
-           <asp:Label ID="infoLabel5" runat="server" Text="tabela 2" Visible="False"></asp:Label>
+           <asp:Label ID="infoLabel2" runat="server" Text="tabela 2" Visible="False"></asp:Label>
            <br />
         
 
@@ -313,9 +303,9 @@
 
                </div>
            <div class="page-break">
-&nbsp;<asp:Label ID="Label6" runat="server" Text="efektywny czas pracy sędziów funkcyjnych "></asp:Label>
+&nbsp;<asp:Label ID="Label6" runat="server" Text="Efektywny czas pracy sędziów funkcyjnych "></asp:Label>
            &nbsp;&nbsp;&nbsp;
-           <asp:Label ID="Label8" runat="server" Text="tabela 3" Visible="False"></asp:Label>
+           <asp:Label ID="infoLabel3" runat="server" Text="tabela 3" Visible="False"></asp:Label>
            <br />
         
 
@@ -399,7 +389,7 @@
                </div>
            <div class="page-break">
 &nbsp;<asp:Label ID="Label10" runat="server" Text="Informacja w zakresie długości postępowania międzyinstancyjnego       "></asp:Label>
-           &nbsp;&nbsp;&nbsp;&nbsp;<asp:Label ID="infoLabel3" runat="server" Text="tabela 4  \/\/\/" Visible="False"></asp:Label>
+           &nbsp;&nbsp;&nbsp;&nbsp;<asp:Label ID="infoLabel4" runat="server" Text="tabela 4  \/\/\/" Visible="False"></asp:Label>
 &nbsp;<br />
         
 
@@ -493,7 +483,7 @@
               <div class="page-break">
 &nbsp;<asp:Label ID="Label3" runat="server"></asp:Label>
            &nbsp;&nbsp;&nbsp;
-           <asp:Label ID="infoLabel4" runat="server" Text="tabela 5  \/\/\/" Visible="False"></asp:Label>
+           <asp:Label ID="infoLabel5" runat="server" Text="tabela 5  \/\/\/" Visible="False"></asp:Label>
            <br />
         
 
@@ -578,9 +568,8 @@
 
 
            <div class="page-break">
-&nbsp;<asp:Label ID="Label9" runat="server"></asp:Label>
-          6
-           <asp:Label ID="Label12" runat="server" Text="tabela 6  \/\/\/" Visible="False"></asp:Label>
+&nbsp;<asp:Label ID="Label9" runat="server">ość spraw Ga, w których postępowanie toczy się powyżej 3 miesięcy od daty wpływu akt do Sądu II instancji</asp:Label>
+          &nbsp;<asp:Label ID="infoLabel6" runat="server" Text="tabela 6  \/\/\/" Visible="False"></asp:Label>
            <br />
         
 
@@ -649,9 +638,9 @@
                </div>
                  
 <div class="page-break">
-&nbsp;<asp:Label ID="Label13" runat="server"></asp:Label>
-          7
-           <asp:Label ID="Label14" runat="server" Text="tabela 7  \/\/\/" Visible="False"></asp:Label>
+&nbsp;<asp:Label ID="Label13" runat="server">Stan referatów - I instancja</asp:Label>
+          &nbsp;
+           <asp:Label ID="infoLabel7" runat="server" Text="tabela 7  \/\/\/" Visible="False"></asp:Label>
            <br />
         
 
@@ -742,9 +731,8 @@
            
            
            <div class="page-break">
-&nbsp;<asp:Label ID="Label15" runat="server"></asp:Label>
-          8
-           <asp:Label ID="Label16" runat="server" Text="tabela 8  \/\/\/" Visible="False"></asp:Label>
+&nbsp;<asp:Label ID="Label15" runat="server">Wskaźnik pozostałości</asp:Label>
+          &nbsp;<asp:Label ID="infoLabel8" runat="server" Text="tabela 8  \/\/\/" Visible="False"></asp:Label>
            <br />
         
 
@@ -819,9 +807,8 @@
                </div>
                  
 <div class="page-break">
-&nbsp;<asp:Label ID="Label17" runat="server">zawieszenia </asp:Label>
-          9
-           <asp:Label ID="Label18" runat="server" Text="tabela 9  \/\/\/" Visible="False"></asp:Label>
+&nbsp;<asp:Label ID="Label17" runat="server">Zawieszenia </asp:Label>
+          &nbsp;<asp:Label ID="infoLabel9" runat="server" Text="tabela 9  \/\/\/" Visible="False"></asp:Label>
            <br />
         <table style="width:100%;">
             <tr>
@@ -925,9 +912,8 @@
                </div>
   
            <div class="page-break">
-&nbsp;<asp:Label ID="Label19" runat="server"></asp:Label>
-          10
-           <asp:Label ID="Label20" runat="server" Text="tabela 10  \/\/\/" Visible="False"></asp:Label>
+&nbsp;<asp:Label ID="Label19" runat="server">Uzasadnienia GC I instancja</asp:Label>
+          &nbsp;<asp:Label ID="infoLabel10" runat="server" Text="tabela 10  \/\/\/" Visible="False"></asp:Label>
            <br />
         
                <asp:GridView ID="gwTabela10" runat="server" OnRowCreated="naglowekTabeli_gwTabela10"  AutoGenerateColumns="False"  OnRowDataBound="stopkaTabeli_gwTabela10"  Width = "100%" ShowHeader = "False" ShowFooter = "True"  >
@@ -1061,9 +1047,8 @@
  
                            
 <div class="page-break">
-&nbsp;<asp:Label ID="Label39" runat="server"></asp:Label>
-          11
-           <asp:Label ID="infoLabel12" runat="server" Text="tabela 12  \/\/\/" Visible="False"></asp:Label>
+&nbsp;<asp:Label ID="Label39" runat="server">Odroczone sprawy Ga</asp:Label>
+          &nbsp;<asp:Label ID="infoLabel12" runat="server" Text="tabela 12  \/\/\/" Visible="False"></asp:Label>
            <br />
         
 
@@ -1118,7 +1103,7 @@
     </asp:GridView>
  
                    <br />
-       &nbsp;
+       &nbsp;Odroczone sprawy Ga
            <asp:Label ID="infoLabel13" runat="server" Text="tabela 13  \/\/\/" Visible="False"></asp:Label>
            <br />
         
@@ -1298,7 +1283,9 @@
                  <td class="col_90 center borderAll">
                     <a href="javascript:openPopup('popup.aspx?sesja=1!14!11!3')"><asp:Label CssClass="normal" ID="tab_14_w01_c11" runat="server" Text="0"></asp:Label></a>
                 </td>
-              
+ <td class="col_90 center borderAll">
+                    <a href="javascript:openPopup('popup.aspx?sesja=1!14!12!3')"><asp:Label CssClass="normal" ID="tab_14_w01_c12" runat="server" Text="0"></asp:Label></a>
+                </td>
                        </tr>
                        <tr>
                            <td class="borderAll center">I I</td>
@@ -1335,7 +1322,9 @@
                  <td class="col_90 center borderAll">
                     <a href="javascript:openPopup('popup.aspx?sesja=2!14!11!3')"><asp:Label CssClass="normal" ID="tab_14_w02_c11" runat="server" Text="0"></asp:Label></a>
                 </td>
-              
+                <td class="col_90 center borderAll">
+                    <a href="javascript:openPopup('popup.aspx?sesja=2!14!12!3')"><asp:Label CssClass="normal" ID="tab_14_w02_c12" runat="server" Text="0"></asp:Label></a>
+                </td>
                        </tr>
                        <tr>
                            <td class="borderAll center">RAZEM</td>
@@ -1372,7 +1361,9 @@
                  <td class="col_90 center borderAll">
                     <a href="javascript:openPopup('popup.aspx?sesja=3!14!11!3')"><asp:Label CssClass="normal" ID="tab_14_w03_c11" runat="server" Text="0"></asp:Label></a>
                 </td>
-              
+                <td class="col_90 center borderAll">
+                    <a href="javascript:openPopup('popup.aspx?sesja=3!14!12!3')"><asp:Label CssClass="normal" ID="tab_14_w03_c12" runat="server" Text="0"></asp:Label></a>
+                </td>
                        </tr>
     </table>
                    <br />
