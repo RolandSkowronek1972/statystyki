@@ -54,8 +54,10 @@
       <HintPath>..\..\wab_x\bin\AjaxMin.dll</HintPath>
     </Reference>
     <Reference Include="DevExpress.Data.v17.1, Version=17.1.10.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Docs.v17.1, Version=17.1.10.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.Printing.v17.1.Core, Version=17.1.10.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.RichEdit.v17.1.Core, Version=17.1.10.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Spreadsheet.v17.1.Core, Version=17.1.10.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.Utils.v17.1, Version=17.1.10.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.Web.ASPxThemes.v17.1, Version=17.1.10.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.Web.Resources.v17.1, Version=17.1.10.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
@@ -67,6 +69,7 @@
     <Reference Include="DevExpress.Web.v17.1.resources">
     </Reference>
     <Reference Include="DevExpress.XtraPrinting.v17.1, Version=17.1.10.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraSpreadsheet.v17.1, Version=17.1.10.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="EPPlus">
       <HintPath>..\..\statystyki-popup\Bin\EPPlus.dll</HintPath>
     </Reference>
@@ -85,6 +88,9 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\statystyki-popup\Bin\Microsoft.Data.Edm.dll</HintPath>
     </Reference>
+    <Reference Include="Microsoft.Office.Tools.Excel, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
     <Reference Include="NPOI">
       <HintPath>..\..\statystyki-popup\Bin\NPOI.dll</HintPath>
     </Reference>
@@ -93,6 +99,9 @@
     </Reference>
     <Reference Include="NPOI.OpenXmlFormats">
       <HintPath>..\..\statystyki-popup\Bin\NPOI.OpenXmlFormats.dll</HintPath>
+    </Reference>
+    <Reference Include="Office, Version=14.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
+      <EmbedInteropTypes>True</EmbedInteropTypes>
     </Reference>
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="System.DirectoryServices.AccountManagement" />
@@ -111,6 +120,11 @@
     <Content Include="aglg.aspx" />
     <Content Include="aglc.aspx" />
     <Content Include="agl.aspx" />
+    <Content Include="akrg.aspx" />
+    <Content Include="akrp.aspx" />
+    <Content Include="akrk.aspx" />
+    <Content Include="kontrolkaDruk.aspx" />
+    <Content Include="akrc.aspx" />
     <Content Include="oglk3.aspx" />
     <Content Include="mss1o.aspx" />
     <Content Include="mss19o2.aspx" />
@@ -172,7 +186,6 @@
     <Content Include="img\zamknij.jpg" />
     <Content Include="kof.aspx" />
     <Content Include="kontrolka.aspx" />
-    <Content Include="kontrolkaX.aspx" />
     <Content Include="mss10r.aspx" />
     <Content Include="mss11r.aspx" />
     <Content Include="mss16r.aspx" />
@@ -244,18 +257,13 @@
     <None Include="Properties\PublishProfiles\file.pubxml" />
     <Content Include="Template\akac.xlsx" />
     <Content Include="Template\akac2.xlsx" />
-    <Content Include="Template\akac_.xlsx" />
     <Content Include="Template\akap.xlsx" />
     <Content Include="Template\akap2.xlsx" />
     <Content Include="Template\akape.xls" />
-    <Content Include="Template\akap_.xlsx" />
     <Content Include="Template\oglc.xlsx" />
-    <Content Include="Template\oglc_.xlsx" />
     <Content Include="Template\oglk.xlsx" />
-    <Content Include="Template\oglk_.xlsx" />
     <Content Include="Template\oglr.xlsx" />
     <Content Include="Template\oktk.xlsx" />
-    <Content Include="Template\oktk_.xlsx" />
     <Content Include="Template\onsc.xlsx" />
     <Content Include="Template\oopc.xlsx" />
     <Content Include="Template\oopc_.xlsx" />
@@ -296,6 +304,10 @@
     <Content Include="Template\oopk.xlsx" />
     <Content Include="Template\aglg2.xlsx" />
     <Content Include="Template\oglk3.xlsx" />
+    <Content Include="Template\akrc.xlsx" />
+    <Content Include="Template\akrk.xlsx" />
+    <Content Include="Template\akrg.xlsx" />
+    <Content Include="Template\akrp.xlsx" />
     <None Include="Web.config.Debug.old">
       <DependentUpon>Web.config.old</DependentUpon>
     </None>
@@ -332,6 +344,42 @@
     </Compile>
     <Compile Include="aglc.aspx.designer.cs">
       <DependentUpon>aglc.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="akrg.aspx.cs">
+      <DependentUpon>akrg.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="akrg.aspx.designer.cs">
+      <DependentUpon>akrg.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="akrp.aspx.cs">
+      <DependentUpon>akrp.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="akrp.aspx.designer.cs">
+      <DependentUpon>akrp.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="akrk.aspx.cs">
+      <DependentUpon>akrk.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="akrk.aspx.designer.cs">
+      <DependentUpon>akrk.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="classes\log_4_net.cs" />
+    <Compile Include="kontrolkaDruk.aspx.cs">
+      <DependentUpon>kontrolkaDruk.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="kontrolkaDruk.aspx.designer.cs">
+      <DependentUpon>kontrolkaDruk.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="akrc.aspx.cs">
+      <DependentUpon>akrc.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="akrc.aspx.designer.cs">
+      <DependentUpon>akrc.aspx</DependentUpon>
     </Compile>
     <Compile Include="oglk3.aspx.cs">
       <DependentUpon>oglk3.aspx</DependentUpon>
@@ -605,13 +653,6 @@
     </Compile>
     <Compile Include="kontrolka.aspx.designer.cs">
       <DependentUpon>kontrolka.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="kontrolkaX.aspx.cs">
-      <DependentUpon>kontrolkaX.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="kontrolkaX.aspx.designer.cs">
-      <DependentUpon>kontrolkaX.aspx</DependentUpon>
     </Compile>
     <Compile Include="mss10r.aspx.cs">
       <DependentUpon>mss10r.aspx</DependentUpon>
@@ -914,6 +955,7 @@
     <Folder Include="App_Data\" />
     <Folder Include="App_GlobalResources\" />
     <Folder Include="classes\App_LocalResources\" />
+    <Folder Include="pdf\" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Properties\licenses.licx" />

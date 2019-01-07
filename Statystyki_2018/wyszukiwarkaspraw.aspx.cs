@@ -89,7 +89,7 @@ namespace stat2018
                 }
                 catch (Exception ex)
                 {
-                    //cm.log.Error("Wyszukiwarka spraw " + ex.Message);
+                    ////cm.log.Error("Wyszukiwarka spraw " + ex.Message);
                 }
                 //user
                 string user = string.Empty;

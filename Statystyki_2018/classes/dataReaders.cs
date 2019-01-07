@@ -202,7 +202,7 @@ namespace stat2018
             */
             string kod = " DR0003";
 
-            Common.log.Info(tenPlik + kod +"-> : rozpoczęcie tworzenia tabeli z danymi");
+            //Common.log.Info(tenPlik + kod +"-> : rozpoczęcie tworzenia tabeli z danymi");
             DataTable outputTable = new DataTable();
             for (int i = 1; i <= iloscKolumn+1; i++)
             {
@@ -217,11 +217,11 @@ namespace stat2018
             parameters.Rows.Add("@id_wydzial", id_dzialu);
             parameters.Rows.Add("@id_tabeli", id_tabeli);
 
-            Common.log.Info(tenPlik + kod + "-> : odczyt kwerend");
+            //Common.log.Info(tenPlik + kod + "-> : odczyt kwerend");
             DataTable ddT = Common.getDataTable("SELECT id_wiersza, id_kolumny, kwerenda  FROM kwerendy  where id_wiersza>0 and id_kolumny>0 and id_wydzial=@id_wydzial and  id_tabeli=@id_tabeli", con_str, parameters);
             if (ddT.Rows.Count==0)
             {
-                Common.log.Info(tenPlik + kod + "-> : odczyt kwerend: brak kwerend do doczytu danych");
+                //Common.log.Info(tenPlik + kod + "-> : odczyt kwerend: brak kwerend do doczytu danych");
                 return null;
             }
             string cs = cl.podajConnectionString(int.Parse(id_dzialu));
@@ -244,8 +244,13 @@ namespace stat2018
                             DataRow dr = foundRows[0];
                             string kw = dr[2].ToString();
                             //wpisanie danych
-
-                            dR[j] = wyciagnijDaneNt(kw, poczatek, koniec, cs);
+                            try
+                            {
+                                dR[j] = wyciagnijDaneNt(kw, poczatek, koniec, cs);
+                            }
+                            catch
+                            {  }
+                          
                         }
                        
                        
@@ -603,16 +608,16 @@ namespace stat2018
         public string generuj_dane_do_tabeli_(int id_dzialu, int id_tabeli, DateTime poczatek, DateTime koniec, string plik)
         {
 
-            Common.log.Debug("Początek przetwarzania danych w pliku" + plik + " identyfikator tabeli: " + id_tabeli);
+            //Common.log.Debug("Początek przetwarzania danych w pliku" + plik + " identyfikator tabeli: " + id_tabeli);
             string odp = generuj_dane_do_tabeli_(id_dzialu, id_tabeli, poczatek, koniec);
-            Common.log.Debug("Koniec przetwarzania danych w pliku" + plik + " identyfikator tabeli: " + id_tabeli);
+            //Common.log.Debug("Koniec przetwarzania danych w pliku" + plik + " identyfikator tabeli: " + id_tabeli);
             return odp;
         }
         public string generuj_dane_do_tabeli_(int id_dzialu, int id_tabeli, DateTime poczatek, DateTime koniec)
         {
             string kod = "Dr00001 ";
             string status = string.Empty;
-            Common.log.Info(kod + "pompowanie danch do tabeli: " + id_tabeli.ToString());
+            //Common.log.Info(kod + "pompowanie danch do tabeli: " + id_tabeli.ToString());
             var conn = new SqlConnection(con_str);
             string kwerenda = string.Empty;
             DataTable parameters = Common.makeParameterTable();
@@ -626,12 +631,12 @@ namespace stat2018
             if (ddT.Rows.Count == 0)
             {
                 // brak kwerend odcztującch
-                Common.log.Info(kod + "brak kwerend odcztujących" );
+                //Common.log.Info(kod + "brak kwerend odcztujących" );
                 return "";
             }
 
             // sa kwerendy
-            Common.log.Info("są kwerendy odcztujące, il: " + ddT.Rows.Count.ToString());
+            //Common.log.Info("są kwerendy odcztujące, il: " + ddT.Rows.Count.ToString());
                 //getTable
             try
                 {
@@ -705,14 +710,12 @@ namespace stat2018
                 }
                 catch (Exception ex)
                 {
-                Common.log.Error(kod + " "+ex.Message);
+                //Common.log.Error(kod + " "+ex.Message);
 
             }//end of try
             return status;
 
         }// end of generuj_dane_do_tabeli_3
-
-
 
         public string generuj_dane_do_tabeli_XXL(int id_dzialu, int id_tabeli, DateTime poczatek, DateTime koniec)
         {
@@ -892,21 +895,21 @@ namespace stat2018
         public DataTable generuj_dane_do_tabeli_sedziowskiej_2018(int id_dzialu, int id_tabeli, DateTime poczatek, DateTime koniec, int il_kolumn,string tenplik)
         {
             string status = string.Empty;
-            Common.log.Info(tenplik + " :Generowanie tabeli danych: Rozpoczęcie");
+            //Common.log.Info(tenplik + " :Generowanie tabeli danych: Rozpoczęcie");
         
             DataTable dTable = new DataTable();
-            Common.log.Info(tenplik + " :Generowanie tabeli danych: Pobieranie connectionstringa");
+            //Common.log.Info(tenplik + " :Generowanie tabeli danych: Pobieranie connectionstringa");
 
             string cs = cl.PobierzConnectionString(id_dzialu);
 
             DataTable parameters = Common.makeParameterTable();
             parameters.Rows.Add("@id_tabeli", id_tabeli);
             parameters.Rows.Add("@id_dzialu", id_dzialu);
-            Common.log.Info(tenplik + " :Generowanie tabeli danych: Wyciądnięcie kwerend dla tabeli :"+id_tabeli);
+            //Common.log.Info(tenplik + " :Generowanie tabeli danych: Wyciądnięcie kwerend dla tabeli :"+id_tabeli);
             DataTable dT1 = Common.getDataTable("SELECT id_kolumny,kwerenda FROM kwerendy where id_wiersza=0 and id_tabeli=@id_tabeli and id_wydzial=@id_dzialu order by id_kolumny", con_str, parameters);
             if (dT1.Rows.Count==0)
             {
-                Common.log.Info(tenplik + " :Generowanie tabeli danych: Brak kwerend dla tabeli : " + id_tabeli);
+                //Common.log.Info(tenplik + " :Generowanie tabeli danych: Brak kwerend dla tabeli : " + id_tabeli);
                 return null;
             }
             
@@ -928,7 +931,7 @@ namespace stat2018
                     column.ColumnName = getColumnName(i);
                     column.DefaultValue = "0";
                     dTable.Columns.Add(column);
-                //Common.log.Info(tenplik + " :Generowanie tabeli danych: Ilosć kwerend dla tabeli : " + id_tabeli+ " : "+ il_wierszy.ToString());
+                ////Common.log.Info(tenplik + " :Generowanie tabeli danych: Ilosć kwerend dla tabeli : " + id_tabeli+ " : "+ il_wierszy.ToString());
             }
 
             // sa kwerendy
@@ -936,18 +939,18 @@ namespace stat2018
             DataRow[] kwerendySedziow = dT1.Select("id_kolumny=0");
             if (kwerendySedziow.Length==0 )
             {
-                Common.log.Info(tenplik + " :Generowanie tabeli danych: Brak kwerend wyciągających sedziów dla tabeli : " + id_tabeli );
+                //Common.log.Info(tenplik + " :Generowanie tabeli danych: Brak kwerend wyciągających sedziów dla tabeli : " + id_tabeli );
                 return null;
             }
             DataRow[] kwerendyDanych = dT1.Select("id_kolumny>0");
             if (kwerendyDanych.Length == 0)
             {
-                Common.log.Info(tenplik + " :Generowanie tabeli danych: ilość kwerend wyciągających dane  dla tabeli : " + id_tabeli + "=" +kwerendyDanych.Length  );
+                //Common.log.Info(tenplik + " :Generowanie tabeli danych: ilość kwerend wyciągających dane  dla tabeli : " + id_tabeli + "=" +kwerendyDanych.Length  );
             }
             // ladowanie danych sedziów
             try
             {
-                Common.log.Info(tenplik + " :Generowanie tabeli danych: Wpisywanie danych sedziów dla tabeli : " + id_tabeli );
+                //Common.log.Info(tenplik + " :Generowanie tabeli danych: Wpisywanie danych sedziów dla tabeli : " + id_tabeli );
                 int i = 1;
                 foreach (var wiersz in kwerendySedziow)
                 {
@@ -974,7 +977,7 @@ namespace stat2018
             catch (Exception ex)
             {
 
-                Common.log.Error(tenplik + " :Generowanie tabeli danych: Wpisywanie danych sedziów dla tabeli : " + id_tabeli+ " " +ex.Message );
+                //Common.log.Error(tenplik + " :Generowanie tabeli danych: Wpisywanie danych sedziów dla tabeli : " + id_tabeli+ " " +ex.Message );
                 
             }
             // wpisywanie danych dla sedziów            
@@ -1063,13 +1066,13 @@ namespace stat2018
             {
                 // brak kwerend odcztującch
 
-                Common.log.Warn(tenPlik + " brak kwerend odcztujących");
+                //Common.log.Warn(tenPlik + " brak kwerend odcztujących");
                 return null;
             }
             string cs = cl.PobierzConnectionString(id_dzialu);
 
             // sa kwerendy
-            Common.log.Info(tenPlik + " Są kwerendy odcztujące, il: " + ddT.Rows.Count.ToString());
+            //Common.log.Info(tenPlik + " Są kwerendy odcztujące, il: " + ddT.Rows.Count.ToString());
             //getTable
             int rowId = 0;
             try
@@ -1529,7 +1532,7 @@ namespace stat2018
 
        public DataTable naglowek(string plik, int numerArkusza)
         {
-            //  string path = Server.MapPath("\\template\\otrc.xlsx");
+            //  string path = Server.MapPath("\\Template\\otrc.xlsx");
             string path = HttpContext.Current.Server.MapPath(plik);
             FileInfo fileInfo = new FileInfo(path);
             if (!fileInfo.Exists)

@@ -18,14 +18,14 @@ namespace stat2018
         protected void Page_Load(object sender, EventArgs e)
         {
            
-            cm.log.Debug("otwarcie formularza: " + tenPlik);
+            //cm.log.Debug("otwarcie formularza: " + tenPlik);
             Session["data_1"] = Date1.Text;
             Session["data_2"] = Date2.Text;
             string idWydzial = Request.QueryString["w"];
             if (idWydzial != null)
             {
                 Session["id_dzialu"] = idWydzial;
-                cm.log.Info(tenPlik + ": id wydzialu=" + idWydzial);
+                //cm.log.Info(tenPlik + ": id wydzialu=" + idWydzial);
             }
             else
             {
@@ -6656,7 +6656,7 @@ namespace stat2018
             }
             catch (Exception ex)
             {
-                cm.log.Error(tenPlik + " " +ex.Message);
+                //cm.log.Error(tenPlik + " " +ex.Message);
             }
 
         }
@@ -6683,7 +6683,7 @@ namespace stat2018
             }
             catch (Exception ex)
             {
-                cm.log.Error(tenPlik + " - wyciagnij wartosc -  " + ex.Message);
+                //cm.log.Error(tenPlik + " - wyciagnij wartosc -  " + ex.Message);
             }
             return result;
         }
@@ -6739,7 +6739,7 @@ namespace stat2018
             catch (Exception ex)
             {
 
-                cm.log.Error(tenPlik + " generowanie pliku .csv " + ex.Message);
+                //cm.log.Error(tenPlik + " generowanie pliku .csv " + ex.Message);
 
             }
 

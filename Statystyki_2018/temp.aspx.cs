@@ -103,7 +103,7 @@ namespace stat2018
             
             try
             {
-                cm.log.Info("OGLR2: wczytywanie danych do tabeli 1");
+                //cm.log.Info("OGLR2: wczytywanie danych do tabeli 1");
           //      tabelkaGW1 =  dr .generuj_dane_do_tabeli_sedziowskiej_2018(int.Parse((string)Session["id_dzialu"]), 1, DateTime.Parse(Date1.Text), DateTime.Parse(Date2.Text), 30,tenPlik);
                 Session["tabelkaGW001"] = tabelkaGW1;
              
@@ -111,7 +111,7 @@ namespace stat2018
             }
             catch (Exception ex)
             {
-                cm.log.Error("OGLR2: " + ex.Message);
+                //cm.log.Error("OGLR2: " + ex.Message);
             }
 
 
@@ -571,7 +571,7 @@ namespace stat2018
                 }
                 catch (Exception ex)
                 {
-                       cm.log.Error(tenPlik + " " + ex.Message );
+                       //cm.log.Error(tenPlik + " " + ex.Message );
 
                 }
 

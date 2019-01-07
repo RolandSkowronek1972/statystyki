@@ -222,7 +222,7 @@ namespace stat2018
                 }
                 catch (Exception ex)
                 {
-                    cm.makeLog("error", tenPlik + " " + ex.Message, cl.debug(int.Parse((string)Session["id_dzialu"])));
+                    cm.log.Error(tenPlik + " " + ex.Message);
                 }
 
             }//end of using
@@ -240,7 +240,7 @@ namespace stat2018
                 string idDzialu = (string)Session["id_dzialu"];
                 if (cl.debug(int.Parse(idDzialu)))
                 {
-                    cm.log.Info(tenPlik + ": rozpoczęcie tworzenia tabeli 1");
+                    //cm.log.Info(tenPlik + ": rozpoczęcie tworzenia tabeli 1");
                 }
                 DataTable tabelka01 = dr.generuj_dane_do_tabeli_sedziowskiej_2018(int.Parse(idDzialu), 1, DateTime.Parse(Date1.Text), DateTime.Parse(Date2.Text), 15, tenPlik);
                 Session["tabelka001"] = tabelka01;
@@ -262,7 +262,7 @@ namespace stat2018
         string idDzialu =  (string)Session["id_dzialu"];
             if (cl.debug(int.Parse(idDzialu)))
             {
-                cm.log.Info(tenPlik + ": rozpoczęcie tworzenia tabeli 3");
+                //cm.log.Info(tenPlik + ": rozpoczęcie tworzenia tabeli 3");
             }
             DataTable tabelka01 = dr.generuj_dane_do_tabeli_sedziowskiej_2018(int.Parse(idDzialu), 4, DateTime.Parse(Date1.Text), DateTime.Parse(Date2.Text), 23, tenPlik);
             Session["tabelka004"] = tabelka01;
@@ -281,7 +281,7 @@ namespace stat2018
             string idDzialu = (string)Session["id_dzialu"];
             if (cl.debug(int.Parse(idDzialu)))
             {
-                cm.log.Info(tenPlik + ": rozpoczęcie tworzenia tabeli 4");
+                //cm.log.Info(tenPlik + ": rozpoczęcie tworzenia tabeli 4");
             }
             DataTable tabelka01 = dr.generuj_dane_do_tabeli_sedziowskiej_2018(int.Parse(idDzialu), 5, DateTime.Parse(Date1.Text), DateTime.Parse(Date2.Text), 23, tenPlik);
             Session["tabelka005"] = tabelka01;
@@ -345,7 +345,7 @@ namespace stat2018
             }
             catch (Exception ex)
             {
-                cm.makeLog("error", tenPlik + " " + ex.Message, cl.debug(int.Parse((string)Session["id_dzialu"])));
+                cm.log.Error(tenPlik + " " + ex.Message);
             }
         }
        
@@ -359,12 +359,11 @@ namespace stat2018
 
                 tabelka01 = dr.generuj_dane_do_tabeli_wierszy2018(DateTime.Parse(Date1.Text), DateTime.Parse(Date2.Text), (string)Session["id_dzialu"], 2, 8, 8, tenPlik);
                 Session["tabelka002"] = tabelka01;
-                //row 1
-
+               
             }
             catch (Exception ex)
             {
-                cm.makeLog("error", tenPlik + " " + ex.Message, cl.debug(int.Parse((string)Session["id_dzialu"])));
+                cm.log.Error(tenPlik + " " + ex.Message);
             }
             return tabelka01;
         }
@@ -376,7 +375,7 @@ namespace stat2018
             {
               
                 System.Web.UI.WebControls.GridView sn = new System.Web.UI.WebControls.GridView();
-                string path = Server.MapPath("\\template\\obbr.xlsx");
+                string path = Server.MapPath("\\Template\\obbr.xlsx");
                 DataTable dT = tb.naglowek(path, 1);
                 tb.makeHeader(sn, dT, gwTabela1);
             }
@@ -395,7 +394,7 @@ namespace stat2018
             if (e.Row.RowType == DataControlRowType.Header)
             {
                 System.Web.UI.WebControls.GridView sn = new System.Web.UI.WebControls.GridView();
-                string path = Server.MapPath("\\template\\obbr.xlsx");
+                string path = Server.MapPath("\\Template\\obbr.xlsx");
                 DataTable dT = tb.naglowek(path, 3);
                 tb.makeHeader(sn, dT, gwTabela4);
             }
@@ -407,7 +406,7 @@ namespace stat2018
             if (e.Row.RowType == DataControlRowType.Header)
             {
                 System.Web.UI.WebControls.GridView sn = new System.Web.UI.WebControls.GridView();
-                string path = Server.MapPath("\\template\\obbr.xlsx") ;
+                string path = Server.MapPath("\\Template\\obbr.xlsx") ;
                 DataTable dT = tb.naglowek(path, 4);
                 tb.makeHeader(sn, dT, gwTabela5);
             }

@@ -78,7 +78,7 @@ namespace stat2018
             }
             catch (Exception ex)
             {
-                cm.log.Error("tabele.dll->makeHeader: " + ex.Message);
+                //cm.log.Error("tabele.dll->makeHeader: " + ex.Message);
             } // end of try
         }
      public   DataTable tabellaLiczbowa(DataTable tabelaWejsciowa)
@@ -133,7 +133,7 @@ namespace stat2018
                 }
                 catch (Exception ex)
                 {
-                    cm.log.Error("sumowanie w stopce : " + ex.Message);
+                    //cm.log.Error("sumowanie w stopce : " + ex.Message);
                 }
             }
 
@@ -155,7 +155,7 @@ namespace stat2018
                 }
                 catch (Exception ex)
                 {
-                    cm.log.Error("sumowanie w stopce : " + ex.Message);
+                    //cm.log.Error("sumowanie w stopce : " + ex.Message);
 
                 }
                             }
@@ -188,7 +188,7 @@ namespace stat2018
                 }
                 catch (Exception ex)
                 {
-                    cm.log.Error("sumowanie w stopce : " + ex.Message);
+                    //cm.log.Error("sumowanie w stopce : " + ex.Message);
                 }
             }
         }
@@ -298,63 +298,10 @@ namespace stat2018
             return HeaderCell;
         }
 
-        //   tworzenie arkusza excela
-/*
-        public ExcelWorksheet tworzArkuszwExcle(ExcelWorksheet Arkusz, DataTable daneDoArkusza, int iloscKolumn, int przesunięcieX, int przesuniecieY, bool lp)
-        {
-            if (daneDoArkusza.Rows == null)
-            {
-                return null;
-            }
-
-            int wiersz = przesuniecieY;
-            if (lp)
-            {
-                przesunięcieX = przesunięcieX + 1;
-            }
-            foreach (DataRow dR in daneDoArkusza.Rows)
-            {
-                Arkusz.Cells[wiersz, przesunięcieX].Style.Border.BorderAround(OfficeOpenXml.Style.ExcelBorderStyle.Thin, System.Drawing.Color.Black);
-                Arkusz.Cells[wiersz, przesunięcieX].Value = dR[1].ToString().Trim() + " " + dR[2].ToString().Trim();
-                if (lp)
-                {
-                    Arkusz.Cells[wiersz, przesunięcieX - 1].Style.ShrinkToFit = true;
-                    Arkusz.Cells[wiersz, przesunięcieX -1 ].Style.Border.BorderAround(OfficeOpenXml.Style.ExcelBorderStyle.Thin, System.Drawing.Color.Green);
-
-                    Arkusz.Cells[wiersz, przesunięcieX - 1].Value = wiersz - przesuniecieY+1;
-                }
-                for (int i = 3; i < iloscKolumn + przesunięcieX; i++)
-                {
-                    Arkusz.Cells[wiersz, i-2+ przesunięcieX].Style.ShrinkToFit = true;
-                    Arkusz.Cells[wiersz, i-2+ przesunięcieX].Style.Border.BorderAround(OfficeOpenXml.Style.ExcelBorderStyle.Thin, System.Drawing.Color.Black);
-                    try
-                    {
-                        try
-                        {
-                            double value = double.Parse(dR[i].ToString().Trim());
-                            Arkusz.Cells[wiersz, i - 2 + przesunięcieX].Value = value;
-                        }
-                        catch 
-                        {
-                            Arkusz.Cells[wiersz, i].Value = (dR[i].ToString().Trim());
-                        }
-                    }
-                    catch (Exception ex)
-                    {
-                        cm.log.Error("Excell " + ex.Message);  
-                    }
-                }
-                wiersz++;
-            }
-          
-            return Arkusz;
-
-
-        }
-*/
+        
         public ExcelWorksheet tworzArkuszwExcle(ExcelWorksheet Arkusz, DataTable daneDoArkusza, int iloscKolumn, int przesunięcieX, int przesuniecieY, bool lp,bool suma)
         {
-            if (daneDoArkusza.Rows == null)
+            if (daneDoArkusza == null)
             {
                 return null;
             }
@@ -499,7 +446,7 @@ namespace stat2018
                         }
                         catch (Exception ex)
                         {
-                            cm.log.Error("Excell " + ex.Message);
+                            //cm.log.Error("Excell " + ex.Message);
                         }
                     }
                     wiersz++;
@@ -535,7 +482,7 @@ namespace stat2018
             }
             catch (Exception ex)
             {
-                cm.log.Error("Excell " + ex.Message);
+                //cm.log.Error("Excell " + ex.Message);
             }
            
             return Arkusz;
@@ -645,7 +592,7 @@ namespace stat2018
                         }
                         catch (Exception ex)
                         {
-                            cm.log.Error("Excell " + ex.Message);
+                            //cm.log.Error("Excell " + ex.Message);
                         }
                     }
                     wiersz++;
@@ -704,6 +651,10 @@ namespace stat2018
                 try
                 {
                     Arkusz.Cells[wiersz, kolumna, wiersz + rowSpan, kolumna + colSpan].Merge = true;
+                    Arkusz.Cells[wiersz, kolumna, wiersz + rowSpan, kolumna + colSpan].Style.Border.BorderAround(OfficeOpenXml.Style.ExcelBorderStyle.Thin, System.Drawing.Color.Black);
+
+                    Arkusz.Cells[wiersz, kolumna].Style.Border.BorderAround(OfficeOpenXml.Style.ExcelBorderStyle.Thin, System.Drawing.Color.Black);
+
                 }
                 catch 
                 {}
@@ -764,6 +715,7 @@ namespace stat2018
                                 komorka["text"] = text;
                                 komorka["colSpan"] = lista[0].ToString();
                                 komorka["rowSpan"] = lista[1].ToString();
+                                
                                 schematNaglowka.Rows.Add(komorka);
                                 int k = lista[1];
                                 if (k > 1)

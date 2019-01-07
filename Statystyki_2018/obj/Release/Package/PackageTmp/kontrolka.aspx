@@ -13,17 +13,13 @@
     right: 0;
 }
          .gridviewWidth {
-             width:100%;
-             max-width:1150px;
+           /*  width:100%;
+             max-width:1150px;*/
          }
          </style>
 
   
    
-
-       <script src="Scripts/jquery-1.8.3.js"></script>
-
-
     <script src="Scripts/rls.js"></script>
 
       
@@ -63,9 +59,9 @@
 
     
 
-        <div  width:100%">
+        <div >
       
-          <dx:ASPxGridView ID="ASPxGridView1" runat="server" ClientInstanceName="grid"  AutoGenerateColumns="False" Theme="Moderno" Width="1150px" EnableCallbackAnimation="True" OnDataBinding="GridDataBinding" EnableViewState="False" ViewStateMode="Disabled" CssClass="gridviewWidth">
+          <dx:ASPxGridView ID="ASPxGridView1" runat="server" ClientInstanceName="grid"  AutoGenerateColumns="False" Theme="Moderno" EnableCallbackAnimation="True" OnDataBinding="GridDataBinding" ViewStateMode="Disabled" >
               <SettingsPager AlwaysShowPager="True" NumericButtonCount="200" PageSize="1000">
               </SettingsPager>
             <Settings ShowFilterRow="True" EnableFilterControlPopupMenuScrolling="True" ShowFilterBar="Auto" ShowFilterRowMenu="True" ShowGroupFooter="VisibleAlways"/>
@@ -73,13 +69,19 @@
               <Styles>
                   <Header Wrap="True">
                   </Header>
+                  <Cell Wrap="False">
+                  </Cell>
               </Styles>
         </dx:ASPxGridView>
         
             <asp:SqlDataSource ID="SqlDataSource1" runat="server" CancelSelectOnNullParameter="False" ConnectionString="<%$ ConnectionStrings:wap %>" SelectCommand="SELECT TOP (0) ident, nazwa, rodzaj FROM funkcje"></asp:SqlDataSource>
 
          
-                   <dx:ASPxGridViewExporter ID="ASPxGridViewExporter1" runat="server" GridViewID="ASPxGridView1" PaperKind="A4" ExportedRowType="All">
+                   <dx:ASPxGridViewExporter ID="ASPxGridViewExporter1" runat="server" GridViewID="ASPxGridView1" PaperKind="A4" ExportedRowType="All" PrintSelectCheckBox="True">
+                       <Styles>
+                           <Header Wrap="True">
+                           </Header>
+                       </Styles>
             </dx:ASPxGridViewExporter>
 
             

@@ -20,11 +20,8 @@
     right: 0;
 }
 
-
     </style>
-      <script src="Scripts/jquery-1.8.3.js"></script>
-
-
+ 
     <script src="Scripts/rls.js"></script>
       
      <div class="noprint" >  

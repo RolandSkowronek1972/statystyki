@@ -24,7 +24,7 @@ public partial class onsc : System.Web.UI.Page
             if (idWydzial != null)
             {
                 Session["id_dzialu"] = idWydzial;
-                cm.log.Info(tenPlik + ": id wydzialu=" + idWydzial);
+                //cm.log.Info(tenPlik + ": id wydzialu=" + idWydzial);
             }
             else
             {
@@ -56,7 +56,7 @@ public partial class onsc : System.Web.UI.Page
             }
             catch (Exception ex)
             {
-                cm.log.Error(tenPlik + " " + ex.Message);
+                //cm.log.Error(tenPlik + " " + ex.Message);
                 Server.Transfer("default.aspx");
             }
         }// end of Page_Load
@@ -419,7 +419,7 @@ public partial class onsc : System.Web.UI.Page
             }
             catch (Exception ex)
             {
-                cm.log.Error(tenPlik + " : Ładowanie danych do tabeli 1 : " + ex.Message);
+                //cm.log.Error(tenPlik + " : Ładowanie danych do tabeli 1 : " + ex.Message);
             }
             try
             {
@@ -464,7 +464,7 @@ public partial class onsc : System.Web.UI.Page
             }
             catch (Exception ex)
             {
-                cm.log.Error(tenPlik+" : Ładowanie danych do tabeli 7 : "+ex.Message);
+                //cm.log.Error(tenPlik+" : Ładowanie danych do tabeli 7 : "+ex.Message);
             }
 
             try
@@ -480,7 +480,7 @@ public partial class onsc : System.Web.UI.Page
             }
             catch (Exception ex)
             {
-                cm.log.Error(tenPlik + " : Ładowanie danych do tabel 2-6 : " + ex.Message);
+                //cm.log.Error(tenPlik + " : Ładowanie danych do tabel 2-6 : " + ex.Message);
             }
         
             //  

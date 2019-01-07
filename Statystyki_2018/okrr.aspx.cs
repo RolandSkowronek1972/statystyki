@@ -33,7 +33,7 @@ namespace stat2018
              
                return;
             }
-            cm.log.Debug("otwarcie formularza: " + tenPlik);
+            //cm.log.Debug("otwarcie formularza: " + tenPlik);
             DateTime dTime = DateTime.Now;
             dTime = dTime.AddMonths(-1);
            
@@ -72,7 +72,7 @@ namespace stat2018
             }
             catch (Exception ex)
             {
-                cm.log.Error(tenPlik + " " + ex.Message);
+                //cm.log.Error(tenPlik + " " + ex.Message);
 
             }
         }// end of Page_Load
@@ -128,16 +128,16 @@ namespace stat2018
                 Session["tabelka001"] = tabelka01;
             
 
-                cm.log.Info(tenPlik + ": rozpoczęcie tworzenia tabeli 1");
+                //cm.log.Info(tenPlik + ": rozpoczęcie tworzenia tabeli 1");
                 txt = txt + cl.generuj_dane_do_tabeli_(int.Parse((string)Session["id_dzialu"]), 1, DateTime.Parse(Date1.Text), DateTime.Parse(Date2.Text));
                
-                cm.log.Info(tenPlik + ": rozpoczęcie tworzenia tabeli 3");
+                //cm.log.Info(tenPlik + ": rozpoczęcie tworzenia tabeli 3");
                 txt = txt + cl.generuj_dane_do_tabeli_(int.Parse((string)Session["id_dzialu"]), 3, DateTime.Parse(Date1.Text), DateTime.Parse(Date2.Text));
-                cm.log.Info(tenPlik + ": rozpoczęcie tworzenia tabeli 4");
+                //cm.log.Info(tenPlik + ": rozpoczęcie tworzenia tabeli 4");
                 txt = txt + cl.generuj_dane_do_tabeli_(int.Parse((string)Session["id_dzialu"]), 4, DateTime.Parse(Date1.Text), DateTime.Parse(Date2.Text));
-                cm.log.Info(tenPlik + ": rozpoczęcie tworzenia tabeli 5");
+                //cm.log.Info(tenPlik + ": rozpoczęcie tworzenia tabeli 5");
                 txt = txt + cl.generuj_dane_do_tabeli_(int.Parse((string)Session["id_dzialu"]), 5, DateTime.Parse(Date1.Text), DateTime.Parse(Date2.Text));
-                cm.log.Info(tenPlik + ": rozpoczęcie tworzenia tabeli 7");
+                //cm.log.Info(tenPlik + ": rozpoczęcie tworzenia tabeli 7");
                 txt = txt + cl.generuj_dane_do_tabeli_(int.Parse((string)Session["id_dzialu"]), 7, DateTime.Parse(Date1.Text), DateTime.Parse(Date2.Text));
                 cl.uzupelnij_statusy();
             }
@@ -864,7 +864,7 @@ namespace stat2018
                 }
                 catch (Exception ex)
                 {
-                       cm.log.Error(tenPlik + " " + ex.Message );
+                       //cm.log.Error(tenPlik + " " + ex.Message );
 
                 }
 

@@ -1,11 +1,4 @@
 ﻿
-html,body {
-    margin:0;
-    padding:0;
-     font-size: .80em;
-    font-family: "Helvetica Neue", "Lucida Grande", "Segoe UI", Arial, Helvetica, Verdana, sans-serif;
-}
-
 .menuHolder {
    clear:both;
     height: 36px;
@@ -5621,8 +5614,12 @@ ul.dx
 {
 	background-position: right top;
 }
-.dxm-vertical
-{
+.dxm-item:hover {
+    background-color:cornflowerblue;
+}
+
+
+.dxm-vertical{
     display: table;
     border-spacing: 0;
 }
@@ -5688,6 +5685,7 @@ ul.dx
 {
 	line-height: 0;
 }
+
 .dxm-content.dxm-hasText
 {
 	line-height: 100%;

@@ -2,18 +2,18 @@
 using System.Data;
 using System.Data.SqlClient;
 using System.Configuration;
-using System.Web.UI.WebControls;
 
 namespace stat2018
 {
+   
+
     public class common
     {
-
+       
         public string con_str = ConfigurationManager.ConnectionStrings["wap"].ConnectionString;
         public string con_str_wcyw = ConfigurationManager.ConnectionStrings["wcywConnectionString"].ConnectionString;
-        public log4net.ILog log = log4net.LogManager.GetLogger(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
-
-        public void makeLog(string type, string info, bool make)
+        public log_4_net log = new log_4_net();
+      /*  public void makeLog(string type, string info, bool make)
         {
             if (!make)
             {
@@ -21,13 +21,13 @@ namespace stat2018
             }
             switch (type.ToUpper ())
             {
-                case "INFO": log.Info(info); break;
-                case "ERROR": log.Error(info); break;
+            //    case "INFO": //log.Info(info); break;
+              //  case "ERROR": //log.Error(info); break;
                 default:
                     break;
             }
 
-        }
+        }*/
         public string[] splitData(string arg)
         {
             string[] stringSeparators = new string[] { "#" };
@@ -59,25 +59,48 @@ namespace stat2018
         }
         public DataTable getDataTable(string kwerenda, string connStr, DataTable parameters)
         {
-            log.Info("Start getDataTable");
+            DataSet dataSet = new DataSet();
+            using (SqlDataAdapter dataAdapter  = new SqlDataAdapter(kwerenda, connStr))
+            {
+                foreach (DataRow row in parameters.Rows)
+                {
+                    dataAdapter.SelectCommand.Parameters.AddWithValue(row[0].ToString().Trim(), row[1].ToString().Trim());
+                }     
+                dataAdapter.Fill(dataSet);
+            }
+          return dataSet.Tables[0];
+        }
+        public DataTable getDataTableAAAAA(string kwerenda, string connStr, DataTable parameters)
+        {
+            //log.Info("Start getDataTable");
             DataTable result = new DataTable();
             var conn = new SqlConnection(connStr);
 
             DataSet dsKwerendy = new DataSet();
             dsKwerendy = new DataSet();
-             try
+            SqlDataAdapter daMenu = new SqlDataAdapter();
+            try
             {
-                log.Info("Open DB connection");
+                //log.Info("Open DB connection");
                 conn.Open();
-                log.Info("DB connection is open");
-                SqlDataAdapter daMenu = new SqlDataAdapter();
+                //log.Info("DB connection is open");
+               
                 daMenu.SelectCommand = new SqlCommand(kwerenda, conn);
                 foreach (DataRow row in parameters.Rows)
                 {
                     daMenu.SelectCommand.Parameters.AddWithValue(row[0].ToString().Trim(), row[1].ToString().Trim());
                 }
                 log.Info("Executing querry");
-                daMenu.Fill(dsKwerendy);
+                try
+                {
+                    if (dsKwerendy!=null)
+                    {
+                        daMenu.Fill(dsKwerendy);
+                    }
+                   
+                }
+                catch 
+                { }
                 log.Info("Querry is executed");
 
                 conn.Close();
@@ -87,7 +110,7 @@ namespace stat2018
             }
             catch (Exception ex)
             {
-                log.Error("Error : " + ex.Message);
+                //log.Error("Error : " + ex.Message);
                 conn.Close();
             }
 
@@ -96,7 +119,7 @@ namespace stat2018
 
         public DataTable getDataTable(string kwerenda, string connStr)
         {
-            log.Info("Start getDataTable");
+            //log.Info("Start getDataTable");
             DataTable result = new DataTable();
             var conn = new SqlConnection(connStr);
 
@@ -104,23 +127,23 @@ namespace stat2018
             dsKwerendy = new DataSet();
             try
             {
-                log.Info("Open DB connection");
+                //log.Info("Open DB connection");
                 conn.Open();
-                log.Info("DB connection is open");
+                //log.Info("DB connection is open");
                 SqlDataAdapter daMenu = new SqlDataAdapter();
                 daMenu.SelectCommand = new SqlCommand(kwerenda, conn);
-                log.Info("Executing querry");
+                //log.Info("Executing querry");
                 daMenu.Fill(dsKwerendy);
-                log.Info("Querry is executed");
+                //log.Info("Querry is executed");
 
                 conn.Close();
-                log.Info("DB  is closed");
+                //log.Info("DB  is closed");
 
                 result = dsKwerendy.Tables[0];
             }
             catch (Exception ex)
             {
-                log.Error("Error : " + ex.Message);
+                //log.Error("Error : " + ex.Message);
                 conn.Close();
             }
 
@@ -129,16 +152,16 @@ namespace stat2018
 
         public void runQuerry(string kwerenda, string connStr, DataTable parameters)
         {
-            log.Info("runQuerry is started");
+            //log.Info("runQuerry is started");
 
             var conn = new SqlConnection(connStr);
             using (SqlCommand sqlCmd = new SqlCommand(kwerenda, conn))
             {
                 try
                 {
-                    log.Info("Open DB connection");
+                    //log.Info("Open DB connection");
                     conn.Open();
-                    log.Info("DB connection is open");
+                    //log.Info("DB connection is open");
                     if (parameters != null)
                     {
                         foreach (DataRow row in parameters.Rows)
@@ -146,15 +169,15 @@ namespace stat2018
                             sqlCmd.Parameters.AddWithValue(row[0].ToString().Trim(), row[1].ToString().Trim());
                         }
                     }
-                    log.Info("Start querry execution");
+                    //log.Info("Start querry execution");
                     sqlCmd.ExecuteScalar();
-                    log.Info("Execution done. ");
+                    //log.Info("Execution done. ");
                     conn.Close();
-                    log.Info("Close DB connection");
+                    //log.Info("Close DB connection");
                 }
                 catch (Exception ex)
                 {
-                    log.Error("Error : " + ex.Message);
+                    //log.Error("Error : " + ex.Message);
                     conn.Close();
                 }
             } // end of using
@@ -162,25 +185,25 @@ namespace stat2018
 
         public void runQuerry(string kwerenda, string connStr)
         {
-            log.Info("runQuerry is started");
+            //log.Info("runQuerry is started");
 
             var conn = new SqlConnection(connStr);
             using (SqlCommand sqlCmd = new SqlCommand(kwerenda, conn))
             {
                 try
                 {
-                    log.Info("Open DB connection");
+                    //log.Info("Open DB connection");
                     conn.Open();
-                    log.Info("DB connection is open");
-                    log.Info("Start querry execution");
+                    //log.Info("DB connection is open");
+                    //log.Info("Start querry execution");
                     sqlCmd.ExecuteScalar();
-                    log.Info("Execution done. ");
+                    //log.Info("Execution done. ");
                     conn.Close();
-                    log.Info("Close DB connection");
+                    //log.Info("Close DB connection");
                 }
                 catch (Exception ex)
                 {
-                    log.Error("Error : " + ex.Message);
+                    //log.Error("Error : " + ex.Message);
                     conn.Close();
                 }
             } // end of using
@@ -188,15 +211,15 @@ namespace stat2018
 
         public string getQuerryValue(string kwerenda, string connStr, DataTable parameters)
         {
-            log.Info("Start getQuerryValue");
+            //log.Info("Start getQuerryValue");
             string result = string.Empty;
             using (SqlCommand sqlCmd = new SqlCommand(kwerenda, new SqlConnection(connStr)))
             {
                 try
                 {
-                    log.Info("Open DB connection");
+                    //log.Info("Open DB connection");
                     sqlCmd.Connection.Open();
-                    log.Info("DB connection is open");
+                    //log.Info("DB connection is open");
                     if (parameters != null)
                     {
                         foreach (DataRow row in parameters.Rows)
@@ -204,15 +227,15 @@ namespace stat2018
                             sqlCmd.Parameters.AddWithValue(row[0].ToString().Trim(), row[1].ToString().Trim());
                         }
                     }
-                    log.Info("Start querry execution");
+                    //log.Info("Start querry execution");
                     result = sqlCmd.ExecuteScalar().ToString();
-                    log.Info("Execution done, result is: " + result);
+                    //log.Info("Execution done, result is: " + result);
                     sqlCmd.Connection.Close();
-                    log.Info("Close DB connection");
+                    //log.Info("Close DB connection");
                 }
                 catch (Exception ex)
                 {
-                    log.Error("Error : " + ex.Message);
+                    //log.Error("Error : " + ex.Message);
                     sqlCmd.Connection.Close();
                 }
             } // end of using
@@ -263,8 +286,8 @@ namespace stat2018
             DataTable parameters = makeParameterTable();
             parameters.Rows.Add("@id_wydzialu", id_wydzialu.Trim());
             parameters.Rows.Add("@user_id", userId);
-            log.Debug("dostęp User: " + userId);
-            log.Debug("dostęp id_wydzialu: " + id_wydzialu.Trim());
+            //log.Debug("dostęp User: " + userId);
+            //log.Debug("dostęp id_wydzialu: " + id_wydzialu.Trim());
             string odp = getQuerryValue("SELECT COUNT(*) FROM  uprawnienia WHERE  (id_uzytkownika = @user_id) AND (id_wydzialu =@id_wydzialu)", con_str, parameters);
             try
             {
@@ -275,7 +298,7 @@ namespace stat2018
             }
             catch (Exception ex)
             {
-                log.Error("dostęp - bład " + ex.Message);
+                //log.Error("dostęp - bład " + ex.Message);
             }
             return false;
         }

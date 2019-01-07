@@ -19,21 +19,21 @@ namespace stat2018
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            cm.log.Debug(tenPlik + " Ładowanie strony: start ver.v 1.180824.4");
+            //cm.log.Debug(tenPlik + " Ładowanie strony: start ver.v 1.180824.4");
             try
             {
                     string idWydzial = Request.QueryString["w"];
                 if (idWydzial != null)
                 {
-                    cm.log.Debug(tenPlik + " Ładowanie strony: odczyt działu ");
+                    //cm.log.Debug(tenPlik + " Ładowanie strony: odczyt działu ");
                     Session["id_dzialu"] = idWydzial;
                 }
                 else
                 {
-                    cm.log.Debug(tenPlik + " Ładowanie strony: brak odczytu działu");
+                    //cm.log.Debug(tenPlik + " Ładowanie strony: brak odczytu działu");
                     return;
                 }
-                cm.log.Debug(tenPlik + " Ładowanie strony: ustawienie dat ");
+                //cm.log.Debug(tenPlik + " Ładowanie strony: ustawienie dat ");
                 DateTime dTime = DateTime.Now;
                 dTime = dTime.AddMonths(-1);
                 if (Date1.Text.Length == 0)
@@ -52,7 +52,7 @@ namespace stat2018
             }
             catch (Exception ex)
             {
-                cm.log.Error(tenPlik + " Ładowanie strony " + ex.Message);
+                //cm.log.Error(tenPlik + " Ładowanie strony " + ex.Message);
             }
             Session["data_1"] = Date1.Text;
             Session["data_2"] = Date2.Text;
@@ -69,34 +69,34 @@ namespace stat2018
                 catch (Exception ex )
                 {
 
-                    cm.log.Error(tenPlik + " Ładowanie strony: odczyt danych dostępowych "+ ex.Message);
+                    //cm.log.Error(tenPlik + " Ładowanie strony: odczyt danych dostępowych "+ ex.Message);
                 }
-                cm.log.Debug(tenPlik + " Ładowanie strony: odczyt danych dostępowych Dział: "+ dzialDigit.ToString());
+                //cm.log.Debug(tenPlik + " Ładowanie strony: odczyt danych dostępowych Dział: "+ dzialDigit.ToString());
                 bool dost = cm.dostep(dzialDigit.ToString(), user);
                 dost = true;
-                cm.log.Debug(tenPlik + " Ładowanie strony: status dostępu: " +dost.ToString());
+                //cm.log.Debug(tenPlik + " Ładowanie strony: status dostępu: " +dost.ToString());
                 if (!dost)
                 {
-                    cm.log.Info(tenPlik + "Użytkownik " + user + " nie praw do działu nr " + dzial + "'");
+                    //cm.log.Info(tenPlik + "Użytkownik " + user + " nie praw do działu nr " + dzial + "'");
                     Server.Transfer("default.aspx?info='Użytkownik " + user + " nie praw do działu nr " + dzial + "'");
                 }
                 else
                 {
                     if (!IsPostBack)
                     {
-                        cm.log.Info(tenPlik + "Użytkownik " + user + "  ma prawa do działu nr " + dzial + "'");
+                        //cm.log.Info(tenPlik + "Użytkownik " + user + "  ma prawa do działu nr " + dzial + "'");
                         var fileContents = System.IO.File.ReadAllText(Server.MapPath(@"~//version.txt"));    // file read with version
                         this.Title = "Statystyki " + fileContents.ToString().Trim();
                     }
                 }
-                cm.log.Debug(tenPlik + " Ładowanie strony : start odczytu danych i wypełniania tabel");
+                //cm.log.Debug(tenPlik + " Ładowanie strony : start odczytu danych i wypełniania tabel");
                 przemiel();
                
             }
             catch (Exception ex)
 
             {
-                cm.log.Error(tenPlik + " Ładowanie strony: błąd  " + ex.Message);
+                //cm.log.Error(tenPlik + " Ładowanie strony: błąd  " + ex.Message);
                  Server.Transfer("default.aspx");
             }
         }// end of Page_Load
@@ -5541,7 +5541,7 @@ namespace stat2018
             }
             catch (Exception ex)
             {
-                cm.log.Error(tenPlik+ " generowanie pliku CSV "+ex.Message);
+                //cm.log.Error(tenPlik+ " generowanie pliku CSV "+ex.Message);
             }
 
         }

@@ -16,14 +16,14 @@ namespace stat2018
         private HSSFWorkbook hssfworkbook;
         public common cm = new common();
         const string fileId = "otrr";
-
+        const string tenPlik = "otrr.aspx";
         protected void Page_Load(object sender, EventArgs e)
         {
             string idWydzial = Request.QueryString["w"];
             if (idWydzial != null)
             {
                 Session["id_dzialu"] = idWydzial;
-            //    cm.log.Info(tenPlik + ": id wydzialu=" + idWydzial);
+                cm.log.Info(tenPlik + ": id wydzialu=" + idWydzial);
             }
             else
             {

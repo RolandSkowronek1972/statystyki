@@ -24,7 +24,7 @@ namespace stat2018
             if (idWydzial != null)
             {
                 Session["id_dzialu"] = idWydzial;
-                cm.log.Info(tenPlik + ": id wydzialu=" + idWydzial);
+                //cm.log.Info(tenPlik + ": id wydzialu=" + idWydzial);
             }
             else
             {
@@ -56,7 +56,7 @@ namespace stat2018
             }
             catch (Exception ex)
             {
-                  cm.log.Error(tenPlik + " " + ex.Message );
+                  //cm.log.Error(tenPlik + " " + ex.Message );
             }
         }// end of Page_Load
 
@@ -103,13 +103,13 @@ namespace stat2018
 
             try
             {
-                cm.log.Info("OKTC: wczytywanie danych do tabeli 2");
+                //cm.log.Info("OKTC: wczytywanie danych do tabeli 2");
                 DataTable tabelka01 = dr.generuj_dane_do_tabeli_wierszy2018(DateTime.Parse(Date1.Text), DateTime.Parse(Date2.Text), (string)Session["id_dzialu"], 2,20,20,tenPlik );
                 Session["tabelka001"] = tabelka01;
-                cm.log.Info("OKTC: wczytywanie danych do tabeli 4");
+                //cm.log.Info("OKTC: wczytywanie danych do tabeli 4");
                 DataTable tabelka02 = dr.generuj_dane_do_tabeli_wierszy2018(DateTime.Parse(Date1.Text), DateTime.Parse(Date2.Text), (string)Session["id_dzialu"], 4, 20, 20, tenPlik);
                 Session["tabelka002"] = tabelka02;
-                cm.log.Info("OKTC: wczytywanie danych do tabeli 6");
+                //cm.log.Info("OKTC: wczytywanie danych do tabeli 6");
                 DataTable tabelka03 = dr.generuj_dane_do_tabeli_wierszy2018(DateTime.Parse(Date1.Text), DateTime.Parse(Date2.Text), (string)Session["id_dzialu"], 6, 20, 20, tenPlik);
                 Session["tabelka003"] = tabelka03;
 
@@ -408,7 +408,7 @@ namespace stat2018
             }
             catch (Exception ex)
             {
-                cm.log.Error("OKTC: " + ex.Message);
+                //cm.log.Error("OKTC: " + ex.Message);
             }
                 
 
@@ -416,13 +416,13 @@ namespace stat2018
 
             {
                 cl.clear_maim_db();
-                cm.log.Info("OKTC: wczytywanie danych do tabeli 1");
+                //cm.log.Info("OKTC: wczytywanie danych do tabeli 1");
                 txt = txt + cl.generuj_dane_do_tabeli_(int.Parse((string)Session["id_dzialu"]), 1, DateTime.Parse(Date1.Text), DateTime.Parse(Date2.Text));
 
-                cm.log.Info("OKTC: wczytywanie danych do tabeli 4");
+                //cm.log.Info("OKTC: wczytywanie danych do tabeli 4");
                 txt = txt + cl.generuj_dane_do_tabeli_(int.Parse((string)Session["id_dzialu"]), 3, DateTime.Parse(Date1.Text), DateTime.Parse(Date2.Text));
 
-                cm.log.Info("OKTC: wczytywanie danych do tabeli 5");
+                //cm.log.Info("OKTC: wczytywanie danych do tabeli 5");
                 txt = txt + cl.generuj_dane_do_tabeli_(int.Parse((string)Session["id_dzialu"]), 5, DateTime.Parse(Date1.Text), DateTime.Parse(Date2.Text));
 
 
@@ -430,7 +430,7 @@ namespace stat2018
             }
             catch (Exception ex)
             {
-                cm.log.Error("OKTC: " + ex.Message);
+                //cm.log.Error("OKTC: " + ex.Message);
             }
 
 
@@ -847,7 +847,7 @@ namespace stat2018
                 }
                 catch (Exception ex)
                 {
-                       cm.log.Error(tenPlik + " " + ex.Message );
+                       //cm.log.Error(tenPlik + " " + ex.Message );
 
                 }
 

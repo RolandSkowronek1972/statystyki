@@ -3,9 +3,6 @@
 
 <%@ Register assembly="DevExpress.Web.v17.1, Version=17.1.10.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" namespace="DevExpress.Web" tagprefix="dx" %>
 
-
-
-
 <asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
 
  <style>
@@ -22,9 +19,7 @@
 
 
     </style>
-      <script src="Scripts/jquery-1.8.3.js"></script>
-
-
+  
     <script src="Scripts/rls.js"></script>
       
      <div class="noprint" >  

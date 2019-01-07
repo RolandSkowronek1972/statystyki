@@ -29,7 +29,7 @@ namespace stat2018
             if (idWydzial != null)
             {
                 Session["id_dzialu"] = idWydzial;
-                cm.log.Info(tenPlik + ": id wydzialu=" + idWydzial);
+                //cm.log.Info(tenPlik + ": id wydzialu=" + idWydzial);
             }
             else
             {
@@ -61,7 +61,7 @@ namespace stat2018
             }
             catch (Exception ex)
             {
-                  cm.log.Error(tenPlik + " " + ex.Message );
+                  //cm.log.Error(tenPlik + " " + ex.Message );
             }
         }// end of Page_Load
 
@@ -308,7 +308,7 @@ namespace stat2018
 
             try
             {
-                cm.log.Info("OGLR2: wczytywanie danych do tabeli 6");
+                //cm.log.Info("OGLR2: wczytywanie danych do tabeli 6");
                 DataTable tabela1 = dr.generuj_dane_do_tabeli_wierszy2018(DateTime.Parse(Date1.Text), DateTime.Parse(Date2.Text), (string)Session["id_dzialu"], 6, 6, 23, tenPlik);
                 Session["tabelkaGW002"] = tabela1;
 
@@ -458,7 +458,7 @@ namespace stat2018
             }
             catch (Exception ex)
             {
-                cm.log.Error(tenPlik + "  " + ex.Message);
+                //cm.log.Error(tenPlik + "  " + ex.Message);
             }
 
             try
@@ -782,7 +782,7 @@ namespace stat2018
                 }
                 catch (Exception ex)
                 {
-                       cm.log.Error(tenPlik + " " + ex.Message );
+                       //cm.log.Error(tenPlik + " " + ex.Message );
 
                 }
 

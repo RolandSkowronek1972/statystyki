@@ -173,7 +173,7 @@ namespace stat2018
                 }
                 catch (Exception ex)
                 {
-                    cm.makeLog("error", tenPlik + " " + ex.Message, cl.debug(int.Parse((string)Session["id_dzialu"])));
+                    cm.log.Error(tenPlik + " " + ex.Message);
                 }
 
             }//end of using
@@ -191,7 +191,7 @@ namespace stat2018
                 string idDzialu = (string)Session["id_dzialu"];
                 if (cl.debug(int.Parse(idDzialu)))
                 {
-                    cm.log.Info(tenPlik + ": rozpoczęcie tworzenia tabeli 1");
+                    //cm.log.Info(tenPlik + ": rozpoczęcie tworzenia tabeli 1");
                 }
                 DataTable tabelka01 = dr.generuj_dane_do_tabeli_sedziowskiej_2018(int.Parse(idDzialu), 1, DateTime.Parse(Date1.Text), DateTime.Parse(Date2.Text), 15, tenPlik);
                 Session["tabelka001"] = tabelka01;
@@ -213,7 +213,7 @@ namespace stat2018
         string idDzialu =  (string)Session["id_dzialu"];
             if (cl.debug(int.Parse(idDzialu)))
             {
-                cm.log.Info(tenPlik + ": rozpoczęcie tworzenia tabeli 3");
+                //cm.log.Info(tenPlik + ": rozpoczęcie tworzenia tabeli 3");
             }
             DataTable tabelka01 = dr.generuj_dane_do_tabeli_sedziowskiej_2018(int.Parse(idDzialu), 3, DateTime.Parse(Date1.Text), DateTime.Parse(Date2.Text), 23, tenPlik);
             Session["tabelka003"] = tabelka01;
@@ -232,7 +232,7 @@ namespace stat2018
             string idDzialu = (string)Session["id_dzialu"];
             if (cl.debug(int.Parse(idDzialu)))
             {
-                cm.log.Info(tenPlik + ": rozpoczęcie tworzenia tabeli 4");
+                //cm.log.Info(tenPlik + ": rozpoczęcie tworzenia tabeli 4");
             }
             DataTable tabelka01 = dr.generuj_dane_do_tabeli_sedziowskiej_2018(int.Parse(idDzialu), 4, DateTime.Parse(Date1.Text), DateTime.Parse(Date2.Text), 23, tenPlik);
             Session["tabelka004"] = tabelka01;
@@ -280,7 +280,7 @@ namespace stat2018
             }
             catch (Exception ex)
             {
-                cm.makeLog("error", tenPlik + " " + ex.Message, cl.debug(int.Parse((string)Session["id_dzialu"])));
+                cm.log.Error(tenPlik + " " + ex.Message);
             }
         }
         DataTable tabela_2()
@@ -297,7 +297,7 @@ namespace stat2018
             }
             catch (Exception ex)
             {
-                cm.makeLog("error", tenPlik + " " + ex.Message, cl.debug(int.Parse((string)Session["id_dzialu"])));
+                cm.log.Error(tenPlik + " " + ex.Message);
             }
             return tabelka01;
         }
@@ -308,7 +308,7 @@ namespace stat2018
             {
               
                 System.Web.UI.WebControls.GridView sn = new System.Web.UI.WebControls.GridView();
-                string path = Server.MapPath("\\template\\obbK.xlsx");
+                string path = Server.MapPath("\\Template\\obbK.xlsx");
                 DataTable dT = tb.naglowek(path, 1);
                 tb.makeHeader(sn, dT, gwTabela1);
             }
@@ -330,7 +330,7 @@ namespace stat2018
                 // DataTable dT = (DataTable)Session["header_03"];
                 //  tb.makeHeader(sn, dT, gwTabela3_2);
                 System.Web.UI.WebControls.GridView sn = new System.Web.UI.WebControls.GridView();
-                string path = Server.MapPath("\\template\\obbk.xlsx");
+                string path = Server.MapPath("\\Template\\obbk.xlsx");
                 DataTable dT = tb.naglowek(path, 2);
                 tb.makeHeader(sn, dT, gwTabela2);
             }
@@ -342,7 +342,7 @@ namespace stat2018
             if (e.Row.RowType == DataControlRowType.Header)
             {
                 System.Web.UI.WebControls.GridView sn = new System.Web.UI.WebControls.GridView();
-                string path = Server.MapPath("\\template\\obbk.xlsx");
+                string path = Server.MapPath("\\Template\\obbk.xlsx");
                 DataTable dT = tb.naglowek(path, 3);
                 tb.makeHeader(sn, dT, gwTabela3);
             }

@@ -24,7 +24,7 @@ namespace stat2018
             if (idWydzial != null)
             {
                 Session["id_dzialu"] = idWydzial;
-                cm.log.Info(tenPlik + ": id wydzialu=" + idWydzial);
+                //cm.log.Info(tenPlik + ": id wydzialu=" + idWydzial);
             }
             else
             {
@@ -56,7 +56,7 @@ namespace stat2018
             }
             catch (Exception ex)
             {
-                  cm.log.Error(tenPlik + " " + ex.Message );
+                  //cm.log.Error(tenPlik + " " + ex.Message );
             }
         }// end of Page_Load
 
@@ -101,10 +101,10 @@ namespace stat2018
             txt = txt + cl.clear_maim_db();
             try
             {
-                cm.log.Info(tenPlik + " generowanie danych do tabeli 2");
+                //cm.log.Info(tenPlik + " generowanie danych do tabeli 2");
                 DataTable tabelka01 = dr.generuj_dane_do_tabeli_wierszy2018(DateTime.Parse(Date1.Text), DateTime.Parse(Date2.Text), (string)Session["id_dzialu"], 2, 20, 20, tenPlik);
                 Session["tabelka001"] = tabelka01;
-                cm.log.Info(tenPlik + " wypełnianie danymi tabeli 2");
+                //cm.log.Info(tenPlik + " wypełnianie danymi tabeli 2");
                 //row 1
                 tab_1_w01_col01.Text = tabelka01.Rows[0][1].ToString().Trim();
                 tab_1_w01_col02.Text = tabelka01.Rows[0][2].ToString().Trim();
@@ -226,25 +226,25 @@ namespace stat2018
             }
             catch (Exception ex)
             {
-                cm.log.Error(tenPlik+ " "+ex.Message );
+                //cm.log.Error(tenPlik+ " "+ex.Message );
             }
             try
             {
-                cm.log.Info(tenPlik + " Generowanie danych do tabeli 1");
+                //cm.log.Info(tenPlik + " Generowanie danych do tabeli 1");
                 //    tabelka2 = cl.generuj_dane_do_tabeli_typ2_new(int.Parse((string)Session["id_dzialu"]), 3, DateTime.Parse(Date1.Text), DateTime.Parse(Date2.Text), 15);
-                cm.log.Info(tenPlik + ": rozpoczęcie tworzenia tabeli 1");
+                //cm.log.Info(tenPlik + ": rozpoczęcie tworzenia tabeli 1");
                 txt = txt + cl.generuj_dane_do_tabeli_(int.Parse((string)Session["id_dzialu"]), 1, DateTime.Parse(Date1.Text), DateTime.Parse(Date2.Text));
             }
             catch (Exception ex)
             {
 
-                cm.log.Error(tenPlik + " " + ex.Message);
+                //cm.log.Error(tenPlik + " " + ex.Message);
             }
             // dopasowanie opisów
             makeLabels();
 
             GridView1.DataBind();
-            cm.log.Info (tenPlik+ " Tabela danych -  liczba wierszy: " + tabelka2.Rows.Count.ToString());
+            //cm.log.Info (tenPlik+ " Tabela danych -  liczba wierszy: " + tabelka2.Rows.Count.ToString());
             txt = txt + "Tabela danych -  liczba wierszy: " + tabelka2.Rows.Count.ToString() + Environment.NewLine;
 
             txt = txt + "GridView1 liczba wierszy: " + GridView1.Rows.Count.ToString() + Environment.NewLine;
@@ -508,7 +508,7 @@ namespace stat2018
             }
             catch (Exception ex)
             {
-                                cm.log.Error(tenPlik + " " + ex.Message );    
+                                //cm.log.Error(tenPlik + " " + ex.Message );    
             }
 
             // pierwsza tabelka
@@ -582,7 +582,7 @@ namespace stat2018
                     }
                     catch (Exception ex)
                     {
-                        cm.log.Error(tenPlik + " " + ex.Message);
+                        //cm.log.Error(tenPlik + " " + ex.Message);
                     }
 
                     MyWorksheet.Cells[rowik, i + 2].Value = result;
@@ -661,7 +661,7 @@ namespace stat2018
                 }
                 catch (Exception ex)
                 {
-                       cm.log.Error(tenPlik + " " + ex.Message );
+                       //cm.log.Error(tenPlik + " " + ex.Message );
 
                 }
 

@@ -27,31 +27,14 @@ namespace stat2018
 
         protected void przemiel()
         {
-            Session["sesja"] = "s3030";
-           
-            string id_dzialu = (string)Session["id_dzialu"];
-            string txt = string.Empty;
+            string tenPlikNazwa = "aglg2";
+            Label2.Text = "";
+            string path = Server.MapPath("\\Template\\" + tenPlikNazwa + ".xlsx");
 
-           // txt = txt + cl.clear_maim_db();
-            //tabela 1
-            try
-            {
-                DataTable Tabela2 = dr.generuj_dane_do_tabeli_sedziowskiej_2018(10, 1, DateTime.Now.Date , DateTime.Now.Date, 28, "test");
-                Session["tabelka001"] = Tabela2;
-                gwTabela1.DataSource = null;
-                gwTabela1.DataSourceID = null;
-                gwTabela1.DataSource = Tabela2;
-                gwTabela1.DataBind();
-
-            }
-            catch (Exception ex)
-            {
-                //cm.log.Error(tenPlik + " " + ex.Message);
-            }
-        
-
-
-        
+          Label2.Text= File.Exists(path) ? (Label2.Text = Label2.Text + "Plik: " + path + " istnieje ." + Environment.NewLine):( Label2.Text = Label2.Text + " Plik " + path + " nie istnieje. " + Environment.NewLine);
+            path = Server.MapPath("~\\Template\\" + tenPlikNazwa + ".xlsx");
+            string tzxt = File.Exists(path) ? (Label3.Text = Label3.Text + "Plik: " + path + " istnieje ." + Environment.NewLine) : (Label3.Text = Label3.Text + " Plik " + path + " nie istnieje. " + Environment.NewLine);
+            Label3.Text =  tzxt;
 
 
         }
@@ -299,15 +282,15 @@ namespace stat2018
             if (e.Row.RowType == DataControlRowType.Header)
             {
                 System.Web.UI.WebControls.GridView sn = new System.Web.UI.WebControls.GridView();
-                DataTable dT = naglowek("\\template\\otrc.xlsx", 1);
-                tb.makeHeader(sn, dT, gwTabela1);
+                DataTable dT = naglowek("\\Template\\otrc.xlsx", 1);
+              //  tb.makeHeader(sn, dT, gwTabela1);
             }
         }
 
 
         DataTable naglowek(string plik, int numerArkusza)
         {
-          //  string path = Server.MapPath("\\template\\otrc.xlsx");
+          //  string path = Server.MapPath("\\Template\\otrc.xlsx");
             string path = Server.MapPath(plik);
             IList<string> komorki = new List<string>();
             DataTable schematNaglowka = new DataTable();

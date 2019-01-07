@@ -10,7 +10,7 @@
 namespace stat2018 {
     
     
-    public partial class template {
+    public partial class Template {
         
         /// <summary>
         /// Label4 control.

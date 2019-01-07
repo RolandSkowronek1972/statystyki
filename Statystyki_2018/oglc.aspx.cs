@@ -78,7 +78,7 @@ namespace stat2018
             }
             catch (Exception ex)
             {
-                cm.log.Error(tenPlik + " Próba dostępu bez uprawnień - przekierowanie do strony logowania");
+                //cm.log.Error(tenPlik + " Próba dostępu bez uprawnień - przekierowanie do strony logowania");
                  Server.Transfer("default.aspx");
             }
         }// end of Page_Load
@@ -129,25 +129,20 @@ namespace stat2018
                 DataTable tabelka01 = dr.generuj_dane_do_tabeli_wierszy2018(DateTime.Parse(Date1.Text), DateTime.Parse(Date2.Text), (string)Session["id_dzialu"], 2, 20, 20, tenPlik);
                 Session["tabelka001"] = tabelka01;
                 //row 1
-                cm.log.Info(tenPlik + ": rozpoczęcie tworzenia tabeli 1");
+                //cm.log.Info(tenPlik + ": rozpoczęcie tworzenia tabeli 1");
 
                 txt = txt + cl.generuj_dane_do_tabeli_(int.Parse((string)Session["id_dzialu"]), 1, DateTime.Parse(Date1.Text), DateTime.Parse(Date2.Text));
-                cm.log.Info(tenPlik + ": rozpoczęcie tworzenia tabeli 3");
-
-                txt = txt + cl.generuj_dane_do_tabeli_(int.Parse((string)Session["id_dzialu"]), 3, DateTime.Parse(Date1.Text), DateTime.Parse(Date2.Text));
-                cm.log.Info(tenPlik + ": rozpoczęcie tworzenia tabeli 4");
-
-                txt = txt + cl.generuj_dane_do_tabeli_(int.Parse((string)Session["id_dzialu"]), 4, DateTime.Parse(Date1.Text), DateTime.Parse(Date2.Text));
-                cm.log.Info(tenPlik + ": rozpoczęcie tworzenia tabeli 4");
+                //cm.log.Info(tenPlik + ": rozpoczęcie tworzenia tabeli 3");
+                tabela_3();
+                tabela_4();
 
 
                 GridView1.DataBind();
-                GridView3.DataBind();
-                GridView4.DataBind();
+             
             }
             catch (Exception ex)
             {
-                cm.log.Error(tenPlik + " " + ex.Message);
+                //cm.log.Error(tenPlik + " " + ex.Message);
             }
 
             // dopasowanie opisów
@@ -180,7 +175,37 @@ namespace stat2018
 
 
         }
-        
+        protected void tabela_3()
+        {
+            string idDzialu = (string)Session["id_dzialu"];
+            if (cl.debug(int.Parse(idDzialu)))
+            {
+                cm.log.Info(tenPlik + ": rozpoczęcie tworzenia tabeli 2");
+            }
+            DataTable tabelka01 = dr.generuj_dane_do_tabeli_sedziowskiej_2018(int.Parse(idDzialu), 3, DateTime.Parse(Date1.Text), DateTime.Parse(Date2.Text), 35, tenPlik);
+            Session["tabelka003"] = tabelka01;
+            gwTabela3.DataSource = null;
+            gwTabela3.DataSourceID = null;
+            gwTabela3.DataSource = tabelka01;
+            gwTabela3.DataBind();
+
+        }
+
+        protected void tabela_4()
+        {
+            string idDzialu = (string)Session["id_dzialu"];
+            if (cl.debug(int.Parse(idDzialu)))
+            {
+                //cm.log.Info(tenPlik + ": rozpoczęcie tworzenia tabeli 4");
+            }
+            DataTable tabelka01 = dr.generuj_dane_do_tabeli_sedziowskiej_2018(int.Parse(idDzialu), 4, DateTime.Parse(Date1.Text), DateTime.Parse(Date2.Text), 23, tenPlik);
+            Session["tabelka004"] = tabelka01;
+            gwTabela4.DataSource = null;
+            gwTabela4.DataSourceID = null;
+            gwTabela4.DataSource = tabelka01;
+            gwTabela4.DataBind();
+        }
+
         #region "nagłowki tabel"
         protected void makeHeader()
         {
@@ -453,7 +478,7 @@ namespace stat2018
             {
                 System.Web.UI.WebControls.GridView sn = new System.Web.UI.WebControls.GridView();
                 DataTable dT = (DataTable)Session["header_03"];
-             cl.makeHeader(sn, dT, GridView3);
+             cl.makeHeader(sn, dT, gwTabela3);
             }
         }
 
@@ -463,7 +488,7 @@ namespace stat2018
             {
                 System.Web.UI.WebControls.GridView sn = new System.Web.UI.WebControls.GridView();
                 DataTable dT = (DataTable)Session["header_04"];
-                cl.makeHeader(sn, dT, GridView4);
+                cl.makeHeader(sn, dT, gwTabela4);
             }
         }
 
@@ -610,34 +635,9 @@ namespace stat2018
                 // druga 
 
 
-                ExcelWorksheet MyWorksheet2 = MyExcel.Workbook.Worksheets[2];
+                MyWorksheet1 = tb.tworzArkuszwExcle(MyExcel.Workbook.Worksheets[3], (DataTable)Session["tabelka003"], 13, 0, 5, false, false, false, false, false);
+                MyWorksheet1 = tb.tworzArkuszwExcle(MyExcel.Workbook.Worksheets[4], (DataTable)Session["tabelka004"], 14, 0, 4, false, false, false, false, false);
 
-                DataView view2 = (DataView)tabela_3.Select(DataSourceSelectArguments.Empty);
-
-                DataTable table2 = view2.ToTable();
-                table2.Columns.Remove("ident");
-                table2.Columns.Remove("id_sedziego");
-                table2.Columns.Remove("stanowisko");
-                table2.Columns.Remove("funkcja");
-
-                MyWorksheet2 = tb.tworzArkuszwExcle(MyExcel.Workbook.Worksheets[2], table2, 32, 1, 7, false,true);
-                
-             
-
-                // czwarta 
-
-
-
-
-                ExcelWorksheet MyWorksheet3 = MyExcel.Workbook.Worksheets[3];
-                DataView view4 = (DataView)tabela_4.Select(DataSourceSelectArguments.Empty);
-                DataTable table4 = view2.ToTable();
-                table4.Columns.Remove("ident");
-                table4.Columns.Remove("id_sedziego");
-                table4.Columns.Remove("stanowisko");
-                table4.Columns.Remove("funkcja");
-
-                MyWorksheet3 = tb.tworzArkuszwExcle(MyExcel.Workbook.Worksheets[3], table2, 5, 1, 6, true, true);
                 try
                 {
                     MyExcel.SaveAs(fNewFile);
@@ -651,7 +651,7 @@ namespace stat2018
                 }
                 catch (Exception ex)
                 {
-                       cm.log.Error(tenPlik + " " + ex.Message );
+                       //cm.log.Error(tenPlik + " " + ex.Message );
 
                 }
 
@@ -707,8 +707,7 @@ namespace stat2018
 
             if (e.Row.RowType == DataControlRowType.Footer)
             {
-                DataTable table = ((DataView)tabela_3.Select(DataSourceSelectArguments.Empty)).ToTable();
-                tb.makeSumRow(table, e);
+                tb.makeSumRow((DataTable)Session["tabelka003"], e);
             }
         }
 
@@ -717,8 +716,7 @@ namespace stat2018
         {
             if (e.Row.RowType == DataControlRowType.Footer)
             {
-                DataTable table = ((DataView)tabela_4.Select(DataSourceSelectArguments.Empty)).ToTable();
-                tb.makeSumRow(table, e);
+                tb.makeSumRow((DataTable)Session["tabelka004"], e);
             }
         }
         public DataTable makeSumRow(DataTable table, int ilKolumn)
@@ -745,7 +743,7 @@ namespace stat2018
                 }
                 catch (Exception ex)
                 {
-                    cm.log.Error("sumowanie w stopce : " + ex.Message);
+                    //cm.log.Error("sumowanie w stopce : " + ex.Message);
                 }
 
             }

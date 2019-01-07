@@ -77,7 +77,7 @@ namespace stat2018
             }
             catch 
             {
-                cm.log.Error(tenPlik + " Próba dostępu bez uprawnień - przekierowanie do strony logowania");
+                //cm.log.Error(tenPlik + " Próba dostępu bez uprawnień - przekierowanie do strony logowania");
                  Server.Transfer("default.aspx");
             }
         }// end of Page_Load
@@ -121,12 +121,12 @@ namespace stat2018
             string txt = string.Empty; //
             try
             {
-                cm.log.Info(tenPlik + ": rozpoczęcie tworzenia tabeli 2");
+                //cm.log.Info(tenPlik + ": rozpoczęcie tworzenia tabeli 2");
 
                 DataTable tabelka02 = dr.generuj_dane_do_tabeli_wierszy2018(DateTime.Parse(Date1.Text), DateTime.Parse(Date2.Text), (string)Session["id_dzialu"], 2, 11, 22, tenPlik);
                 Session["tabelka002"] = tabelka02;
 
-                cm.log.Info(tenPlik + ": rozpoczęcie tworzenia tabeli 1");
+                //cm.log.Info(tenPlik + ": rozpoczęcie tworzenia tabeli 1");
 
                 DataTable tabelka01 = dr.generuj_dane_do_tabeli_sedziowskiej_2018 (int.Parse (idDzialu),1, DateTime.Parse(Date1.Text), DateTime.Parse(Date2.Text), 23, tenPlik);
                 Session["tabelka001"] = tabelka01;
@@ -139,7 +139,7 @@ namespace stat2018
             }
             catch (Exception ex)
             {
-                cm.log.Error(tenPlik + " " + ex.Message);
+                //cm.log.Error(tenPlik + " " + ex.Message);
             }
 
             // dopasowanie opisów
@@ -699,7 +699,7 @@ namespace stat2018
                 }
                 catch (Exception ex)
                 {
-                       cm.log.Error(tenPlik + " " + ex.Message );
+                       //cm.log.Error(tenPlik + " " + ex.Message );
 
                 }
 

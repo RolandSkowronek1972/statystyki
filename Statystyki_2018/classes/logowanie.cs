@@ -10,18 +10,18 @@ namespace stat2018
         public common cm = new common();
         public string loguj(string user_, string haslo)
         {
-            cm.log.Info("Logowanie: Rozpoczęcie procedury logowania dla użytkownika: "+user_);
+            //cm.log.Info("Logowanie: Rozpoczęcie procedury logowania dla użytkownika: "+user_);
             DataTable parameters = cm.makeParameterTable();
             parameters.Rows.Add("@login", user_);
             parameters.Rows.Add("@passwd", haslo);
             string odp= cm.getQuerryValue("SELECT ident FROM uzytkownik where rtrim(login)=@login and rtrim(password)=@passwd ", cm.con_str, parameters);
-            cm.log.Debug("Logowanie: identyfikator użytkownika: " + user_ + " to " + odp);
+            //cm.log.Debug("Logowanie: identyfikator użytkownika: " + user_ + " to " + odp);
             return odp;
 
         } // end of loguj
         public string PodajDaneUzytkownika(string user_)
         {
-            cm.log.Info("Rozpoczęcie procedury odczytu danych uzytkownika "+ user_);
+            //cm.log.Info("Rozpoczęcie procedury odczytu danych uzytkownika "+ user_);
             DataTable parameters = cm.makeParameterTable();
             parameters.Rows.Add("@login", user_);
            
@@ -31,7 +31,7 @@ namespace stat2018
 
         public string CzyJestUzytkownikwBazie(string user_)
         {
-            cm.log.Info("Rozpoczęcie procedury sprawdzania istnienia uzytkownika " + user_ +" wbazie danych");
+            //cm.log.Info("Rozpoczęcie procedury sprawdzania istnienia uzytkownika " + user_ +" wbazie danych");
             DataTable parameters = cm.makeParameterTable();
             parameters.Rows.Add("@login", user_);
 
@@ -40,7 +40,7 @@ namespace stat2018
         } // end of loguj
         public string podajIdUzytkownikaDomenowego(string user_)
         {
-            cm.log.Info("Rozpoczęcie procedury pobierania danych użytkownika domenowego: " + user_ );
+            //cm.log.Info("Rozpoczęcie procedury pobierania danych użytkownika domenowego: " + user_ );
             DataTable parameters = cm.makeParameterTable();
             parameters.Rows.Add("@login", user_);
 

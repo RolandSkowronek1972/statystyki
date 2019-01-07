@@ -21,12 +21,12 @@ namespace stat2018
         protected void Page_Load(object sender, EventArgs e)
         {
            
-            cm.log.Debug("otwarcie formularza: " + tenPlik);
+            //cm.log.Debug("otwarcie formularza: " + tenPlik);
             string idWydzial = Request.QueryString["w"];
             if (idWydzial != null)
             {
                 Session["id_dzialu"] = idWydzial;
-                cm.log.Info(tenPlik + ": id wydzialu=" + idWydzial);
+                //cm.log.Info(tenPlik + ": id wydzialu=" + idWydzial);
             }
             else
             {
@@ -58,7 +58,7 @@ namespace stat2018
             }
             catch (Exception ex)
             {
-                cm.log.Error(tenPlik + " " + ex.Message);
+                //cm.log.Error(tenPlik + " " + ex.Message);
             }
         }// end of Page_Load
 
@@ -1230,7 +1230,7 @@ namespace stat2018
             }
             catch (Exception ex)
             {
-                                cm.log.Error(tenPlik + " " + ex.Message );    
+                                //cm.log.Error(tenPlik + " " + ex.Message );    
             }
 
             // pierwsza tabelka
@@ -1302,7 +1302,7 @@ namespace stat2018
                     }
                     catch (Exception ex)
                     {
-                        cm.log.Error(tenPlik + " " + ex.Message);
+                        //cm.log.Error(tenPlik + " " + ex.Message);
                     }
                 }//end of using
                 przemiel();

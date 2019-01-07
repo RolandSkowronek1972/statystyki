@@ -20,14 +20,14 @@ namespace stat2018
         protected void Page_Load(object sender, EventArgs e)
         {
            
-            cm.log.Debug("otwarcie formularza: " + tenPlik);
+            //cm.log.Debug("otwarcie formularza: " + tenPlik);
             Session["data_1"] = Date1.Text;
             Session["data_2"] = Date2.Text;
             string idWydzial = Request.QueryString["w"];
             if (idWydzial != null)
             {
                 Session["id_dzialu"] = idWydzial;
-                cm.log.Info(tenPlik + ": id wydzialu=" + idWydzial);
+                //cm.log.Info(tenPlik + ": id wydzialu=" + idWydzial);
             }
             else
             {
@@ -51,14 +51,14 @@ namespace stat2018
             makeLabels();
         }// end of Page_Load
 
-        protected void pisz(string template, int iloscWierszy, int iloscKolumn, DataTable dane, string idTabeli,string idWydzialu)
+        protected void pisz(string Template, int iloscWierszy, int iloscKolumn, DataTable dane, string idTabeli,string idWydzialu)
         {
 
             for (int wiersz = 1; wiersz <= iloscWierszy; wiersz++)
             {
                 for (int kolumna = 1; kolumna <= iloscKolumn; kolumna++)
                 {
-                    string controlName = template + "w" + wiersz .ToString("D2") + "_c" + kolumna .ToString("D2");
+                    string controlName = Template + "w" + wiersz .ToString("D2") + "_c" + kolumna .ToString("D2");
                     Label tb = (Label)this.Master.FindControl("ContentPlaceHolder1").FindControl(controlName);
                     if (tb != null)
                     {

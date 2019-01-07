@@ -20,14 +20,14 @@ namespace stat2018
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            cm.log.Debug("otwarcie formularza: " + tenPlik);
+            //cm.log.Debug("otwarcie formularza: " + tenPlik);
             try
             {
                 string idWydzial = Request.QueryString["w"];
                 if (idWydzial != null)
                 {
                     Session["id_dzialu"] = idWydzial;
-                    cm.log.Info(tenPlik + ": id wydzialu=" + idWydzial);
+                    //cm.log.Info(tenPlik + ": id wydzialu=" + idWydzial);
                 }
                 else
                 {
@@ -60,12 +60,12 @@ namespace stat2018
             {
                 string user = (string)Session["userIdNum"];
                 string dzial = (string)Session["id_dzialu"];
-                cm.log.Debug(tenPlik + " Start logowania użytkownika  " + user + " działu nr " + dzial);
+                //cm.log.Debug(tenPlik + " Start logowania użytkownika  " + user + " działu nr " + dzial);
                 bool dost = cm.dostep(dzial, user);
                 if (!dost)
                 {
                     Server.Transfer("default.aspx?info='Użytkownik " + user + " nie praw do działu nr " + dzial + "'");
-                    cm.log.Error(tenPlik + " Użytkownik " + user + " nie praw do działu nr " + dzial);
+                    //cm.log.Error(tenPlik + " Użytkownik " + user + " nie praw do działu nr " + dzial);
                 }
                 else
                 {
@@ -81,7 +81,7 @@ namespace stat2018
             catch (Exception ex)
             {
 
-                cm.log.Error(tenPlik + " Bład : " + ex.Message);
+                //cm.log.Error(tenPlik + " Bład : " + ex.Message);
             }
         }// end of Page_Load
 
@@ -381,7 +381,7 @@ namespace stat2018
             }
             catch (Exception ex)
             {
-                cm.log.Error(tenPlik + " " + ex.Message );
+                //cm.log.Error(tenPlik + " " + ex.Message );
             }
 
             // dopasowanie opisów
@@ -1102,7 +1102,7 @@ namespace stat2018
             }
             catch (Exception ex)
             {
-                                cm.log.Error(tenPlik + " " + ex.Message );    
+                                //cm.log.Error(tenPlik + " " + ex.Message );    
             }
 
             // pierwsza tabelka
@@ -1307,7 +1307,7 @@ namespace stat2018
                 }
                 catch (Exception ex)
                 {
-                    cm.log.Error(tenPlik + " " + ex.Message);
+                    //cm.log.Error(tenPlik + " " + ex.Message);
                 }
 
             }//end of using

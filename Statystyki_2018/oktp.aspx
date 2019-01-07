@@ -15,30 +15,28 @@
     right: 0;
 }
 
-            @media print {
-                @page {
-                    size: A4 landscape;
-                    max-height: 90%;
-                    max-width: 90%;
-                }
 
+          @media print {
+              @page {
+                  size: 29cm 21.7cm;
+                  margin: 5mm 5mm 5mm 5mm; /* change the margins as you want them to be. */
+              }
 
-                div.landscape {
-                  
-                    transform: rotate(270deg) translate(-266mm, 0) scale(0.85);
-                    transform-origin:0 0;
-               /*     -webkit-transform: scale(0.85);  /* Saf3.1+, Chrome */
-         /*     -moz-transform: scale(0.85);  /* FF3.5+ */
-       /*       -ms-transform: scale(0.85);  /* IE9 */
-       /*       -o-transform: scale(0.85);  /* Opera 10.5+ */
-       /*       transform: scale(0.85);*/
-                }
-            }
-
+              div {
+                   transform: translate(-10mm, 0) scale(0.9);
+                  -webkit-transform: translate(-10mm, 0 ) scale(0.9); /* Saf3.1+, Chrome */
+                  -moz-transform: translate(-10mm, 0) scale(0.9); /* FF3.5+ */
+              }
+              
+          }
+     
 
     </style>
-      <script src="Scripts/jquery-1.8.3.js"></script>
-
+    <script>
+function myFunction() {
+    window.print();
+}
+        </script>
 
     <script src="Scripts/rls.js"></script>
   
@@ -55,8 +53,6 @@
                 <dx:aspxdateedit ID="Date1" runat="server" Theme="Moderno">
                 </dx:aspxdateedit>
               
-
-
             </td>
             <td style="width:auto;padding-left:5px;">
                
@@ -65,13 +61,10 @@
             <td style="width:auto;padding-left:5px;" >
                 <asp:LinkButton ID="LinkButton54" runat="server" CssClass="ax_box" OnClick="LinkButton54_Click">  Odśwież</asp:LinkButton>
             </td>
-            <td style="width:auto;padding-left:5px;">
-                  <asp:LinkButton ID="LinkButton55" runat="server"  CssClass="ax_box" OnClick="LinkButton55_Click" > Drukuj </asp:LinkButton>
-            </td>
+           
             <td style="width:auto;padding-left:5px;">
                 
-                <asp:LinkButton ID="LinkButton56" runat="server" OnClick="Button1_Click" CssClass="ax_box" Visible="False">DRUKUJ</asp:LinkButton>
-            </td>
+                <input id="Button1" class="ax_box" style="border-style: none; padding: 0px;"  type="button" onclick="window.print();" value="Drukuj" /></td>
             <td style="width:auto;padding-left:5px;">
                  <asp:LinkButton ID="LinkButton57" runat="server" CssClass="ax_box" OnClick="Button3_Click">Zapisz do Excel</asp:LinkButton>
             </td>
@@ -83,7 +76,7 @@
      </div>  
     
 
-   <div style="width:1150px; margin: 0 auto 0 auto; position:relative;top:30px;" class="content landscape">
+   <div style="width:1150px; margin: 0 auto 0 auto; position:relative;top:30px;" class="content">
 
 
 

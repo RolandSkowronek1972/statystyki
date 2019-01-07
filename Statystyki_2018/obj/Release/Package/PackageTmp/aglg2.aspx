@@ -41,7 +41,7 @@
                        <dx:ASPxDateEdit ID="Date2" runat="server" Theme="Moderno">
                 </dx:ASPxDateEdit></td>
             <td style="width:auto;padding-left:5px;" >
-                <asp:LinkButton ID="LinkButton54" runat="server" class="ax_box" OnClick="Odswiez">  Odśwież</asp:LinkButton>
+                <asp:LinkButton ID="LinkButton54" runat="server" class="ax_box" OnClick="Odswiez"> Odśwież</asp:LinkButton>
             </td>
             <td style="width:auto;padding-left:5px;">
                   <asp:LinkButton ID="LinkButton55" runat="server"  class="ax_box" CssClass="ax_box"> Drukuj </asp:LinkButton>
@@ -55,6 +55,9 @@
     </table>
       </div>
        <div style="width:1150px; margin: 0 auto 0 auto; position:relative;top:30px;" class="content landscape">
+           <div class="center">
+               <asp:Label ID="infoSad" runat="server"></asp:Label>
+           </div>
            <br />
                <div class="page-break">
 &nbsp;<asp:Label ID="Label1" runat="server" Text="Wydajność sędziów "></asp:Label>
@@ -144,74 +147,7 @@
                                    </ItemTemplate>
                    <ItemStyle  CssClass = "col_60"/>
                 </asp:TemplateField>
-       <asp:TemplateField HeaderText = "d_13" SortExpression = "d_01" > 
-                <ItemTemplate >
-          <a href = "javascript:openPopup('popup.aspx?sesja=<%# Eval("id_sedziego")+ "!"+Eval("id_tabeli") +"!13!2"%>')" ><asp:Label ID = "Label_gwTabela1113" runat = "server" Text = '<%# Eval("d_13")%>' CssClass = "normal" ></asp:Label> </a>
-                                   </ItemTemplate>
-                   <ItemStyle  CssClass = "col_60"/>
-                </asp:TemplateField>
-       <asp:TemplateField HeaderText = "d_14" SortExpression = "d_01" > 
-                <ItemTemplate >
-          <a href = "javascript:openPopup('popup.aspx?sesja=<%# Eval("id_sedziego")+ "!"+Eval("id_tabeli") +"!14!2"%>')" ><asp:Label ID = "Label_gwTabela1114" runat = "server" Text = '<%# Eval("d_14")%>' CssClass = "normal" ></asp:Label> </a>
-                                   </ItemTemplate>
-                   <ItemStyle  CssClass = "col_60"/>
-                </asp:TemplateField>
-       <asp:TemplateField HeaderText = "d_15" SortExpression = "d_01" > 
-                <ItemTemplate >
-          <a href = "javascript:openPopup('popup.aspx?sesja=<%# Eval("id_sedziego")+ "!"+Eval("id_tabeli") +"!15!2"%>')" ><asp:Label ID = "Label_gwTabela1115" runat = "server" Text = '<%# Eval("d_15")%>' CssClass = "normal" ></asp:Label> </a>
-                                   </ItemTemplate>
-                   <ItemStyle  CssClass = "col_60"/>
-                </asp:TemplateField>
-       <asp:TemplateField HeaderText = "d_16" SortExpression = "d_01" > 
-                <ItemTemplate >
-          <a href = "javascript:openPopup('popup.aspx?sesja=<%# Eval("id_sedziego")+ "!"+Eval("id_tabeli") +"!16!2"%>')" ><asp:Label ID = "Label_gwTabela1116" runat = "server" Text = '<%# Eval("d_16")%>' CssClass = "normal" ></asp:Label> </a>
-                                   </ItemTemplate>
-                   <ItemStyle  CssClass = "col_60"/>
-                </asp:TemplateField>
-       <asp:TemplateField HeaderText = "d_17" SortExpression = "d_01" > 
-                <ItemTemplate >
-          <a href = "javascript:openPopup('popup.aspx?sesja=<%# Eval("id_sedziego")+ "!"+Eval("id_tabeli") +"!17!2"%>')" ><asp:Label ID = "Label_gwTabela1117" runat = "server" Text = '<%# Eval("d_17")%>' CssClass = "normal" ></asp:Label> </a>
-                                   </ItemTemplate>
-                   <ItemStyle  CssClass = "col_60"/>
-                </asp:TemplateField>
-       <asp:TemplateField HeaderText = "d_18" SortExpression = "d_01" > 
-                <ItemTemplate >
-          <a href = "javascript:openPopup('popup.aspx?sesja=<%# Eval("id_sedziego")+ "!"+Eval("id_tabeli") +"!18!2"%>')" ><asp:Label ID = "Label_gwTabela1118" runat = "server" Text = '<%# Eval("d_18")%>' CssClass = "normal" ></asp:Label> </a>
-                                   </ItemTemplate>
-                   <ItemStyle  CssClass = "col_60"/>
-                </asp:TemplateField>
-       <asp:TemplateField HeaderText = "d_19" SortExpression = "d_01" > 
-                <ItemTemplate >
-          <a href = "javascript:openPopup('popup.aspx?sesja=<%# Eval("id_sedziego")+ "!"+Eval("id_tabeli") +"!19!2"%>')" ><asp:Label ID = "Label_gwTabela1119" runat = "server" Text = '<%# Eval("d_19")%>' CssClass = "normal" ></asp:Label> </a>
-                                   </ItemTemplate>
-                   <ItemStyle  CssClass = "col_60"/>
-                </asp:TemplateField>
-       <asp:TemplateField HeaderText = "d_20" SortExpression = "d_01" > 
-                <ItemTemplate >
-          <a href = "javascript:openPopup('popup.aspx?sesja=<%# Eval("id_sedziego")+ "!"+Eval("id_tabeli") +"!20!2"%>')" ><asp:Label ID = "Label_gwTabela1120" runat = "server" Text = '<%# Eval("d_20")%>' CssClass = "normal" ></asp:Label> </a>
-                                   </ItemTemplate>
-                   <ItemStyle  CssClass = "col_60"/>
-                </asp:TemplateField>
-       <asp:TemplateField HeaderText = "d_21" SortExpression = "d_01" > 
-                <ItemTemplate >
-          <a href = "javascript:openPopup('popup.aspx?sesja=<%# Eval("id_sedziego")+ "!"+Eval("id_tabeli") +"!21!2"%>')" ><asp:Label ID = "Label_gwTabela1121" runat = "server" Text = '<%# Eval("d_21")%>' CssClass = "normal" ></asp:Label> </a>
-                                   </ItemTemplate>
-                   <ItemStyle  CssClass = "col_60"/>
-                </asp:TemplateField>
-       <asp:TemplateField HeaderText = "d_22" SortExpression = "d_01" > 
-                <ItemTemplate >
-          <a href = "javascript:openPopup('popup.aspx?sesja=<%# Eval("id_sedziego")+ "!"+Eval("id_tabeli") +"!22!2"%>')" ><asp:Label ID = "Label_gwTabela1122" runat = "server" Text = '<%# Eval("d_22")%>' CssClass = "normal" ></asp:Label> </a>
-                                   </ItemTemplate>
-                   <ItemStyle  CssClass = "col_60"/>
-                </asp:TemplateField>
-       <asp:TemplateField HeaderText = "d_23" SortExpression = "d_01" > 
-                <ItemTemplate >
-          <a href = "javascript:openPopup('popup.aspx?sesja=<%# Eval("id_sedziego")+ "!"+Eval("id_tabeli") +"!23!2"%>')" ><asp:Label ID = "Label_gwTabela1123" runat = "server" Text = '<%# Eval("d_23")%>' CssClass = "normal" ></asp:Label> </a>
-                                   </ItemTemplate>
-                   <ItemStyle  CssClass = "col_60"/>
-                </asp:TemplateField>
-     
-     
+      
         </Columns>
     </asp:GridView>
 
@@ -224,7 +160,7 @@
                </div>
            <br />
            <div class="page-break">
-&nbsp;<asp:Label ID="Label7" runat="server" Text="efektywny czas pracy sędziów funkcyjnych "></asp:Label>
+&nbsp;<asp:Label ID="Label7" runat="server" Text="Efektywny czas pracy sędziów funkcyjnych "></asp:Label>
            &nbsp;&nbsp;&nbsp;
            <asp:Label ID="infoLabel2" runat="server" Text="tabela 2" Visible="False"></asp:Label>
            <br />
@@ -279,19 +215,6 @@
                                    </ItemTemplate>
                    <ItemStyle  CssClass = "col_60"/>
                 </asp:TemplateField>
-       <asp:TemplateField HeaderText = "d_07" SortExpression = "d_01" > 
-                <ItemTemplate >
-          <a href = "javascript:openPopup('popup.aspx?sesja=<%# Eval("id_sedziego")+ "!"+Eval("id_tabeli") +"!3!2"%>')" ><asp:Label ID = "Label_gwTabela2117" runat = "server" Text = '<%# Eval("d_07")%>' CssClass = "normal" ></asp:Label> </a>
-                                   </ItemTemplate>
-                   <ItemStyle  CssClass = "col_60"/>
-                </asp:TemplateField>
-     
-      <asp:TemplateField HeaderText = "d_07" SortExpression = "d_01" > 
-                <ItemTemplate >
-          <a href = "javascript:openPopup('popup.aspx?sesja=<%# Eval("id_sedziego")+ "!"+Eval("id_tabeli") +"!8!2"%>')" ><asp:Label ID = "Label_gwTabela2118" runat = "server" Text = '<%# Eval("d_08")%>' CssClass = "normal" ></asp:Label> </a>
-                                   </ItemTemplate>
-                   <ItemStyle  CssClass = "col_60"/>
-                </asp:TemplateField>
      
         </Columns>
     </asp:GridView>
@@ -303,7 +226,7 @@
 
                </div>
            <div class="page-break">
-&nbsp;<asp:Label ID="Label6" runat="server" Text="Efektywny czas pracy sędziów funkcyjnych "></asp:Label>
+&nbsp;<asp:Label ID="Label6" runat="server" Text="Ilość spraw GC,w których postępowanie toczy się powyżej 2 lat"></asp:Label>
            &nbsp;&nbsp;&nbsp;
            <asp:Label ID="infoLabel3" runat="server" Text="tabela 3" Visible="False"></asp:Label>
            <br />
@@ -358,25 +281,7 @@
                                    </ItemTemplate>
                    <ItemStyle  CssClass = "col_60"/>
                 </asp:TemplateField>
-       <asp:TemplateField HeaderText = "d_07" SortExpression = "d_01" > 
-                <ItemTemplate >
-          <a href = "javascript:openPopup('popup.aspx?sesja=<%# Eval("id_sedziego")+ "!"+Eval("id_tabeli") +"!3!2"%>')" ><asp:Label ID = "Label_gwTabela2117" runat = "server" Text = '<%# Eval("d_07")%>' CssClass = "normal" ></asp:Label> </a>
-                                   </ItemTemplate>
-                   <ItemStyle  CssClass = "col_60"/>
-                </asp:TemplateField>
      
-      <asp:TemplateField HeaderText = "d_07" SortExpression = "d_01" > 
-                <ItemTemplate >
-          <a href = "javascript:openPopup('popup.aspx?sesja=<%# Eval("id_sedziego")+ "!"+Eval("id_tabeli") +"!8!2"%>')" ><asp:Label ID = "Label_gwTabela2118" runat = "server" Text = '<%# Eval("d_08")%>' CssClass = "normal" ></asp:Label> </a>
-                                   </ItemTemplate>
-                   <ItemStyle  CssClass = "col_60"/>
-                </asp:TemplateField>
-     <asp:TemplateField HeaderText = "d_07" SortExpression = "d_01" > 
-                <ItemTemplate >
-          <a href = "javascript:openPopup('popup.aspx?sesja=<%# Eval("id_sedziego")+ "!"+Eval("id_tabeli") +"!9!2"%>')" ><asp:Label ID = "Label_gwTabela2119" runat = "server" Text = '<%# Eval("d_09")%>' CssClass = "normal" ></asp:Label> </a>
-                                   </ItemTemplate>
-                   <ItemStyle  CssClass = "col_60"/>
-                </asp:TemplateField>
      
         </Columns>
     </asp:GridView>
@@ -388,7 +293,7 @@
 
                </div>
            <div class="page-break">
-&nbsp;<asp:Label ID="Label10" runat="server" Text="Informacja w zakresie długości postępowania międzyinstancyjnego       "></asp:Label>
+&nbsp;<asp:Label ID="Label10" runat="server" Text="Ilość spraw Ga, w których postępowanie toczy się powyżej 3 miesięcy od daty wpływu akt do Sądu II instancj"></asp:Label>
            &nbsp;&nbsp;&nbsp;&nbsp;<asp:Label ID="infoLabel4" runat="server" Text="tabela 4  \/\/\/" Visible="False"></asp:Label>
 &nbsp;<br />
         
@@ -469,11 +374,6 @@
 
 
                    <br />
-               <br />
-
-
-  
-                   <br />
         
 
 
@@ -481,7 +381,7 @@
 
                </div>
               <div class="page-break">
-&nbsp;<asp:Label ID="Label3" runat="server"></asp:Label>
+&nbsp;<asp:Label ID="Label3" runat="server">Stan referatów</asp:Label>
            &nbsp;&nbsp;&nbsp;
            <asp:Label ID="infoLabel5" runat="server" Text="tabela 5  \/\/\/" Visible="False"></asp:Label>
            <br />
@@ -568,7 +468,7 @@
 
 
            <div class="page-break">
-&nbsp;<asp:Label ID="Label9" runat="server">ość spraw Ga, w których postępowanie toczy się powyżej 3 miesięcy od daty wpływu akt do Sądu II instancji</asp:Label>
+&nbsp;<asp:Label ID="Label9" runat="server">Wskaźnik pozostałości</asp:Label>
           &nbsp;<asp:Label ID="infoLabel6" runat="server" Text="tabela 6  \/\/\/" Visible="False"></asp:Label>
            <br />
         
@@ -818,75 +718,75 @@
             </tr>
              <tr> 
   <td class="borderAll col_200 center"> 
-  <a href="javascript: openPopup('popup.aspx?sesja=1!9!1!3')"><asp:TextBox CssClass="normal" ID="tab_9_w01_c01" runat="server" Text="0"></asp:TextBox></a></td>
+  <a href="javascript: openPopup('popup.aspx?sesja=1!9!1!3')"><asp:TextBox CssClass="normal" ID="tab_9_w01_c01" runat="server" Text="0" BorderStyle="None"></asp:TextBox></a></td>
   <td class="borderAll col_200 center"> 
-  <a href="javascript: openPopup('popup.aspx?sesja=1!9!2!3')"><asp:TextBox CssClass="normal" ID="tab_9_w01_c02" runat="server" Text="0"></asp:TextBox></a></td>
+  <a href="javascript: openPopup('popup.aspx?sesja=1!9!2!3')"><asp:TextBox CssClass="normal" ID="tab_9_w01_c02" runat="server" Text="0" BorderStyle="None"></asp:TextBox></a></td>
   <td class="borderAll col_200 center"> 
-  <a href="javascript: openPopup('popup.aspx?sesja=1!9!3!3')"><asp:TextBox CssClass="normal" ID="tab_9_w01_c03" runat="server" Text="0"></asp:TextBox></a></td>
+  <a href="javascript: openPopup('popup.aspx?sesja=1!9!3!3')"><asp:TextBox CssClass="normal" ID="tab_9_w01_c03" runat="server" Text="0" BorderStyle="None"></asp:TextBox></a></td>
    </tr> 
    <tr> 
   <td class="borderAll col_200 center"> 
-  <a href="javascript: openPopup('popup.aspx?sesja=2!9!1!3')"><asp:TextBox CssClass="normal" ID="tab_9_w02_c01" runat="server" Text="0"></asp:TextBox></a></td>
+  <a href="javascript: openPopup('popup.aspx?sesja=2!9!1!3')"><asp:TextBox CssClass="normal" ID="tab_9_w02_c01" runat="server" Text="0" BorderStyle="None"></asp:TextBox></a></td>
   <td class="borderAll col_200 center"> 
-  <a href="javascript: openPopup('popup.aspx?sesja=2!9!2!3')"><asp:TextBox CssClass="normal" ID="tab_9_w02_c02" runat="server" Text="0"></asp:TextBox></a></td>
+  <a href="javascript: openPopup('popup.aspx?sesja=2!9!2!3')"><asp:TextBox CssClass="normal" ID="tab_9_w02_c02" runat="server" Text="0" BorderStyle="None"></asp:TextBox></a></td>
   <td class="borderAll col_200 center"> 
-  <a href="javascript: openPopup('popup.aspx?sesja=2!9!3!3')"><asp:TextBox CssClass="normal" ID="tab_9_w02_c03" runat="server" Text="0"></asp:TextBox></a></td>
+  <a href="javascript: openPopup('popup.aspx?sesja=2!9!3!3')"><asp:TextBox CssClass="normal" ID="tab_9_w02_c03" runat="server" Text="0" BorderStyle="None"></asp:TextBox></a></td>
    </tr> 
    <tr> 
   <td class="borderAll col_200 center"> 
-  <a href="javascript: openPopup('popup.aspx?sesja=3!9!1!3')"><asp:TextBox CssClass="normal" ID="tab_9_w03_c01" runat="server" Text="0"></asp:TextBox></a></td>
+  <a href="javascript: openPopup('popup.aspx?sesja=3!9!1!3')"><asp:TextBox CssClass="normal" ID="tab_9_w03_c01" runat="server" Text="0" BorderStyle="None"></asp:TextBox></a></td>
   <td class="borderAll col_200 center"> 
-  <a href="javascript: openPopup('popup.aspx?sesja=3!9!2!3')"><asp:TextBox CssClass="normal" ID="tab_9_w03_c02" runat="server" Text="0"></asp:TextBox></a></td>
+  <a href="javascript: openPopup('popup.aspx?sesja=3!9!2!3')"><asp:TextBox CssClass="normal" ID="tab_9_w03_c02" runat="server" Text="0" BorderStyle="None"></asp:TextBox></a></td>
   <td class="borderAll col_200 center"> 
-  <a href="javascript: openPopup('popup.aspx?sesja=3!9!3!3')"><asp:TextBox CssClass="normal" ID="tab_9_w03_c03" runat="server" Text="0"></asp:TextBox></a></td>
+  <a href="javascript: openPopup('popup.aspx?sesja=3!9!3!3')"><asp:TextBox CssClass="normal" ID="tab_9_w03_c03" runat="server" Text="0" BorderStyle="None"></asp:TextBox></a></td>
    </tr> 
    <tr> 
   <td class="borderAll col_200 center"> 
-  <a href="javascript: openPopup('popup.aspx?sesja=4!9!1!3')"><asp:TextBox CssClass="normal" ID="tab_9_w04_c01" runat="server" Text="0"></asp:TextBox></a></td>
+  <a href="javascript: openPopup('popup.aspx?sesja=4!9!1!3')"><asp:TextBox CssClass="normal" ID="tab_9_w04_c01" runat="server" Text="0" BorderStyle="None"></asp:TextBox></a></td>
   <td class="borderAll col_200 center"> 
-  <a href="javascript: openPopup('popup.aspx?sesja=4!9!2!3')"><asp:TextBox CssClass="normal" ID="tab_9_w04_c02" runat="server" Text="0"></asp:TextBox></a></td>
+  <a href="javascript: openPopup('popup.aspx?sesja=4!9!2!3')"><asp:TextBox CssClass="normal" ID="tab_9_w04_c02" runat="server" Text="0" BorderStyle="None"></asp:TextBox></a></td>
   <td class="borderAll col_200 center"> 
-  <a href="javascript: openPopup('popup.aspx?sesja=4!9!3!3')"><asp:TextBox CssClass="normal" ID="tab_9_w04_c03" runat="server" Text="0"></asp:TextBox></a></td>
+  <a href="javascript: openPopup('popup.aspx?sesja=4!9!3!3')"><asp:TextBox CssClass="normal" ID="tab_9_w04_c03" runat="server" Text="0" BorderStyle="None"></asp:TextBox></a></td>
    </tr> 
    <tr> 
   <td class="borderAll col_200 center"> 
-  <a href="javascript: openPopup('popup.aspx?sesja=5!9!1!3')"><asp:TextBox CssClass="normal" ID="tab_9_w05_c01" runat="server" Text="0"></asp:TextBox></a></td>
+  <a href="javascript: openPopup('popup.aspx?sesja=5!9!1!3')"><asp:TextBox CssClass="normal" ID="tab_9_w05_c01" runat="server" Text="0" BorderStyle="None"></asp:TextBox></a></td>
   <td class="borderAll col_200 center"> 
-  <a href="javascript: openPopup('popup.aspx?sesja=5!9!2!3')"><asp:TextBox CssClass="normal" ID="tab_9_w05_c02" runat="server" Text="0"></asp:TextBox></a></td>
+  <a href="javascript: openPopup('popup.aspx?sesja=5!9!2!3')"><asp:TextBox CssClass="normal" ID="tab_9_w05_c02" runat="server" Text="0" BorderStyle="None"></asp:TextBox></a></td>
   <td class="borderAll col_200 center"> 
-  <a href="javascript: openPopup('popup.aspx?sesja=5!9!3!3')"><asp:TextBox CssClass="normal" ID="tab_9_w05_c03" runat="server" Text="0"></asp:TextBox></a></td>
+  <a href="javascript: openPopup('popup.aspx?sesja=5!9!3!3')"><asp:TextBox CssClass="normal" ID="tab_9_w05_c03" runat="server" Text="0" BorderStyle="None"></asp:TextBox></a></td>
    </tr> 
    <tr> 
   <td class="borderAll col_200 center"> 
-  <a href="javascript: openPopup('popup.aspx?sesja=6!9!1!3')"><asp:TextBox CssClass="normal" ID="tab_9_w06_c01" runat="server" Text="0"></asp:TextBox></a></td>
+  <a href="javascript: openPopup('popup.aspx?sesja=6!9!1!3')"><asp:TextBox CssClass="normal" ID="tab_9_w06_c01" runat="server" Text="0" BorderStyle="None"></asp:TextBox></a></td>
   <td class="borderAll col_200 center"> 
-  <a href="javascript: openPopup('popup.aspx?sesja=6!9!2!3')"><asp:TextBox CssClass="normal" ID="tab_9_w06_c02" runat="server" Text="0"></asp:TextBox></a></td>
+  <a href="javascript: openPopup('popup.aspx?sesja=6!9!2!3')"><asp:TextBox CssClass="normal" ID="tab_9_w06_c02" runat="server" Text="0" BorderStyle="None"></asp:TextBox></a></td>
   <td class="borderAll col_200 center"> 
-  <a href="javascript: openPopup('popup.aspx?sesja=6!9!3!3')"><asp:TextBox CssClass="normal" ID="tab_9_w06_c03" runat="server" Text="0"></asp:TextBox></a></td>
+  <a href="javascript: openPopup('popup.aspx?sesja=6!9!3!3')"><asp:TextBox CssClass="normal" ID="tab_9_w06_c03" runat="server" Text="0" BorderStyle="None"></asp:TextBox></a></td>
    </tr> 
    <tr> 
   <td class="borderAll col_200 center"> 
-  <a href="javascript: openPopup('popup.aspx?sesja=7!9!1!3')"><asp:TextBox CssClass="normal" ID="tab_9_w07_c01" runat="server" Text="0"></asp:TextBox></a></td>
+  <a href="javascript: openPopup('popup.aspx?sesja=7!9!1!3')"><asp:TextBox CssClass="normal" ID="tab_9_w07_c01" runat="server" Text="0" BorderStyle="None"></asp:TextBox></a></td>
   <td class="borderAll col_200 center"> 
-  <a href="javascript: openPopup('popup.aspx?sesja=7!9!2!3')"><asp:TextBox CssClass="normal" ID="tab_9_w07_c02" runat="server" Text="0"></asp:TextBox></a></td>
+  <a href="javascript: openPopup('popup.aspx?sesja=7!9!2!3')"><asp:TextBox CssClass="normal" ID="tab_9_w07_c02" runat="server" Text="0" BorderStyle="None"></asp:TextBox></a></td>
   <td class="borderAll col_200 center"> 
-  <a href="javascript: openPopup('popup.aspx?sesja=7!9!3!3')"><asp:TextBox CssClass="normal" ID="tab_9_w07_c03" runat="server" Text="0"></asp:TextBox></a></td>
+  <a href="javascript: openPopup('popup.aspx?sesja=7!9!3!3')"><asp:TextBox CssClass="normal" ID="tab_9_w07_c03" runat="server" Text="0" BorderStyle="None"></asp:TextBox></a></td>
    </tr> 
    <tr> 
   <td class="borderAll col_200 center"> 
-  <a href="javascript: openPopup('popup.aspx?sesja=8!9!1!3')"><asp:TextBox CssClass="normal" ID="tab_9_w08_c01" runat="server" Text="0"></asp:TextBox></a></td>
+  <a href="javascript: openPopup('popup.aspx?sesja=8!9!1!3')"><asp:TextBox CssClass="normal" ID="tab_9_w08_c01" runat="server" Text="0" BorderStyle="None"></asp:TextBox></a></td>
   <td class="borderAll col_200 center"> 
-  <a href="javascript: openPopup('popup.aspx?sesja=8!9!2!3')"><asp:TextBox CssClass="normal" ID="tab_9_w08_c02" runat="server" Text="0"></asp:TextBox></a></td>
+  <a href="javascript: openPopup('popup.aspx?sesja=8!9!2!3')"><asp:TextBox CssClass="normal" ID="tab_9_w08_c02" runat="server" Text="0" BorderStyle="None"></asp:TextBox></a></td>
   <td class="borderAll col_200 center"> 
-  <a href="javascript: openPopup('popup.aspx?sesja=8!9!3!3')"><asp:TextBox CssClass="normal" ID="tab_9_w08_c03" runat="server" Text="0"></asp:TextBox></a></td>
+  <a href="javascript: openPopup('popup.aspx?sesja=8!9!3!3')"><asp:TextBox CssClass="normal" ID="tab_9_w08_c03" runat="server" Text="0" BorderStyle="None"></asp:TextBox></a></td>
    </tr> 
    <tr> 
   <td class="borderAll col_200 center"> 
-  <a href="javascript: openPopup('popup.aspx?sesja=9!9!1!3')"><asp:TextBox CssClass="normal" ID="tab_9_w09_c01" runat="server" Text="0"></asp:TextBox></a></td>
+  <a href="javascript: openPopup('popup.aspx?sesja=9!9!1!3')"><asp:TextBox CssClass="normal" ID="tab_9_w09_c01" runat="server" Text="0" BorderStyle="None"></asp:TextBox></a></td>
   <td class="borderAll col_200 center"> 
-  <a href="javascript: openPopup('popup.aspx?sesja=9!9!2!3')"><asp:TextBox CssClass="normal" ID="tab_9_w09_c02" runat="server" Text="0"></asp:TextBox></a></td>
+  <a href="javascript: openPopup('popup.aspx?sesja=9!9!2!3')"><asp:TextBox CssClass="normal" ID="tab_9_w09_c02" runat="server" Text="0" BorderStyle="None"></asp:TextBox></a></td>
   <td class="borderAll col_200 center"> 
-  <a href="javascript: openPopup('popup.aspx?sesja=9!9!3!3')"><asp:TextBox CssClass="normal" ID="tab_9_w09_c03" runat="server" Text="0"></asp:TextBox></a></td>
+  <a href="javascript: openPopup('popup.aspx?sesja=9!9!3!3')"><asp:TextBox CssClass="normal" ID="tab_9_w09_c03" runat="server" Text="0" BorderStyle="None"></asp:TextBox></a></td>
    </tr> 
     </table>
 
@@ -895,11 +795,6 @@
 
                    <br />
 
-
-
-
-               <br />
-         
 
 
 
@@ -1217,8 +1112,7 @@
                  
 <div class="page-break">
 &nbsp;<asp:Label ID="Label43" runat="server">Terminowość przyznawania wynagrodzeń i wypłaty biegłym i tłumaczom</asp:Label>
-          11
-           <asp:Label ID="infoLabel14" runat="server" Text="tabela 14  \/\/\/" Visible="False"></asp:Label>
+          &nbsp;<asp:Label ID="infoLabel14" runat="server" Text="tabela 14  \/\/\/" Visible="False"></asp:Label>
            <br />
         
 
@@ -1381,8 +1275,7 @@
         Raport statystyczny 
                      <asp:Label ID="Label27" runat="server"></asp:Label>
                 &nbsp;Sporzadzone dn.
-            <asp:Label ID="Label29" runat="server"></asp:Label>&nbsp;przez&nbsp;
-&nbsp;&nbsp;
+            <asp:Label ID="Label29" runat="server"></asp:Label>&nbsp;przez&nbsp;&nbsp;
             <asp:Label ID="Label28" runat="server"></asp:Label>
 &nbsp;<asp:Label ID="Label30" runat="server"></asp:Label>
         <br />

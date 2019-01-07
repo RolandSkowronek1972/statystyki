@@ -77,7 +77,7 @@ namespace stat2018
             }
             catch (Exception ex)
             {
-                cm.log.Error(tenPlik + " " + ex.Message);
+                //cm.log.Error(tenPlik + " " + ex.Message);
                 Server.Transfer("default.aspx");
             }
         }// end of Page_Load
@@ -128,7 +128,7 @@ namespace stat2018
             txt = txt + cl.clear_maim_db();
             try
             {
-                cm.log.Info(tenPlik + ": rozpoczęcie tworzenia tabeli 2");
+                //cm.log.Info(tenPlik + ": rozpoczęcie tworzenia tabeli 2");
 
                 DataTable tabelka01 = dr.generuj_dane_do_tabeli_wierszy2018(DateTime.Parse(Date1.Text), DateTime.Parse(Date2.Text), (string)Session["id_dzialu"], 2,20,20,tenPlik);
                 Session["tabelka001"] = tabelka01;
@@ -141,30 +141,30 @@ namespace stat2018
             try
             {
 
-                cm.log.Info(tenPlik + ": rozpoczęcie tworzenia tabeli 1");
+                //cm.log.Info(tenPlik + ": rozpoczęcie tworzenia tabeli 1");
                 txt = txt + cl.generuj_dane_do_tabeli_(int.Parse((string)Session["id_dzialu"]), 1, DateTime.Parse(Date1.Text), DateTime.Parse(Date2.Text));
 
 
-                cm.log.Info(tenPlik + ": rozpoczęcie tworzenia tabeli 3");
+                //cm.log.Info(tenPlik + ": rozpoczęcie tworzenia tabeli 3");
 
                 txt = txt + cl.generuj_dane_do_tabeli_(int.Parse((string)Session["id_dzialu"]), 3, DateTime.Parse(Date1.Text), DateTime.Parse(Date2.Text));
 
-                cm.log.Info(tenPlik + ": rozpoczęcie tworzenia tabeli 4");
+                //cm.log.Info(tenPlik + ": rozpoczęcie tworzenia tabeli 4");
                 txt = txt + cl.generuj_dane_do_tabeli_(int.Parse((string)Session["id_dzialu"]), 4, DateTime.Parse(Date1.Text), DateTime.Parse(Date2.Text));
             }
             catch (Exception ex)
             {
-                cm.log.Error(tenPlik + " " + ex.Message);
+                //cm.log.Error(tenPlik + " " + ex.Message);
 
             }
             try
                 {
 
-                cm.log.Info(tenPlik + ": rozpoczęcie tworzenia tabeli 5");
+                //cm.log.Info(tenPlik + ": rozpoczęcie tworzenia tabeli 5");
                 DataTable tabelka04 = dr.generuj_dane_do_tabeli_wierszy2018(DateTime.Parse(Date1.Text), DateTime.Parse(Date2.Text), (string)Session["id_dzialu"], 5,20,20,tenPlik);
                 Session["tabelka004"] = tabelka04;
                 
-                cm.log.Info(tenPlik + ": rozpoczęcie tworzenia tabeli 6");
+                //cm.log.Info(tenPlik + ": rozpoczęcie tworzenia tabeli 6");
                 txt = txt + cl.generuj_dane_do_tabeli_(int.Parse((string)Session["id_dzialu"]), 6, DateTime.Parse(Date1.Text), DateTime.Parse(Date2.Text));
 
                
@@ -181,7 +181,7 @@ namespace stat2018
             }
             catch (Exception ex)
             {
-                cm.log.Error(tenPlik + " " +ex.Message );
+                //cm.log.Error(tenPlik + " " +ex.Message );
             }
 
             // dopasowanie opisów
@@ -691,7 +691,7 @@ namespace stat2018
                 }
                 catch (Exception ex)
                 {
-                       cm.log.Error(tenPlik + " " + ex.Message );
+                       //cm.log.Error(tenPlik + " " + ex.Message );
 
                 }
 

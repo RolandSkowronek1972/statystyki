@@ -139,22 +139,13 @@ namespace stat2018 {
         protected global::System.Web.UI.WebControls.Label infoLabel3;
         
         /// <summary>
-        /// GridView3 control.
+        /// gwTabela3 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.GridView GridView3;
-        
-        /// <summary>
-        /// tabela_3 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.SqlDataSource tabela_3;
+        protected global::System.Web.UI.WebControls.GridView gwTabela3;
         
         /// <summary>
         /// Label15 control.
@@ -175,22 +166,13 @@ namespace stat2018 {
         protected global::System.Web.UI.WebControls.Label infoLabel5;
         
         /// <summary>
-        /// GridView4 control.
+        /// gwTabela4 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.GridView GridView4;
-        
-        /// <summary>
-        /// tabela_4 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.SqlDataSource tabela_4;
+        protected global::System.Web.UI.WebControls.GridView gwTabela4;
         
         /// <summary>
         /// Label27 control.

@@ -78,7 +78,7 @@ namespace stat2018
         {
             //wczytanie danych KOF
             string log = ms.uzupelnijDaneDoKOF();
-            cm.log.Info("KOF " + log);
+            //cm.log.Info("KOF " + log);
             ASPxGridView1.DataBind();
             ASPxGridView2.DataBind();
             ASPxGridView3.DataBind();

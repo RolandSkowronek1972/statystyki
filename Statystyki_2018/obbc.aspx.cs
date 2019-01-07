@@ -210,7 +210,7 @@ namespace stat2018
             tabela4();
             tabela5();
             debug();
-
+            Label9.Text = cl.nazwaSadu((string)Session["id_dzialu"]);
         }
 
         private void debug()
@@ -226,7 +226,7 @@ namespace stat2018
                 }
                 catch
                 { }
-                Label3.Text = cl.nazwaSadu((string)Session["id_dzialu"]);
+               
                 Label28.Text = cl.podajUzytkownika(User_id, domain);
                 Label29.Text = DateTime.Now.ToLongDateString();
                 Label30.Text = System.IO.File.ReadAllText(Server.MapPath(@"~//version.txt")).ToString().Trim();
@@ -271,7 +271,7 @@ namespace stat2018
             }
             catch (Exception ex)
             {
-                cm.makeLog("error", tenPlik + " " + ex.Message, cl.debug(int.Parse((string)Session["id_dzialu"])));
+                cm.log.Error(tenPlik + " " + ex.Message);
             }
             return tabelka01;
         }
@@ -313,7 +313,7 @@ namespace stat2018
             }
             catch (Exception ex)
             {
-                cm.makeLog("error", tenPlik + " " + ex.Message, cl.debug(int.Parse((string)Session["id_dzialu"])));
+                cm.log.Error(tenPlik + " " + ex.Message);
             }
 
         }
@@ -414,7 +414,7 @@ namespace stat2018
                 }
                 catch (Exception ex)
                 {
-                    cm.makeLog("error", tenPlik + " " + ex.Message, cl.debug(int.Parse((string)Session["id_dzialu"])));
+                    cm.log.Error(tenPlik + " " + ex.Message);
                 }
 
             }//end of using
@@ -432,7 +432,7 @@ namespace stat2018
             string idDzialu = (string)Session["id_dzialu"];
             if (cl.debug(int.Parse(idDzialu)))
             {
-                cm.log.Info(tenPlik + ": rozpoczęcie tworzenia tabeli 1");
+                //cm.log.Info(tenPlik + ": rozpoczęcie tworzenia tabeli 1");
             }
             DataTable tabelka01 = dr.generuj_dane_do_tabeli_sedziowskiej_2018(int.Parse(idDzialu),1, DateTime.Parse(Date1.Text), DateTime.Parse(Date2.Text), 15, tenPlik);
             Session["tabelka001"] = tabelka01;
@@ -451,7 +451,7 @@ namespace stat2018
             string idDzialu = (string)Session["id_dzialu"];
             if (cl.debug(int.Parse(idDzialu)))
             {
-                cm.log.Info(tenPlik + ": rozpoczęcie tworzenia tabeli 4");
+                //cm.log.Info(tenPlik + ": rozpoczęcie tworzenia tabeli 4");
             }
             DataTable tabelka01 = dr.generuj_dane_do_tabeli_sedziowskiej_2018(int.Parse(idDzialu), 4, DateTime.Parse(Date1.Text), DateTime.Parse(Date2.Text), 23, tenPlik);
             Session["tabelka004"] = tabelka01;
@@ -470,7 +470,7 @@ namespace stat2018
             string idDzialu =  (string)Session["id_dzialu"];
             if (cl.debug(int.Parse(idDzialu)))
             {
-                cm.log.Info(tenPlik + ": rozpoczęcie tworzenia tabeli 5");
+                //cm.log.Info(tenPlik + ": rozpoczęcie tworzenia tabeli 5");
             }
             DataTable tabelka01 = dr.generuj_dane_do_tabeli_sedziowskiej_2018(int.Parse(idDzialu), 5, DateTime.Parse(Date1.Text), DateTime.Parse(Date2.Text), 23, tenPlik);
             Session["tabelka004"] = tabelka01;
@@ -514,7 +514,7 @@ namespace stat2018
             if (e.Row.RowType == DataControlRowType.Header)
             {
                 System.Web.UI.WebControls.GridView sn = new System.Web.UI.WebControls.GridView();
-                string path = Server.MapPath("\\template\\obbc.xlsx");
+                string path = Server.MapPath("~\\Template\\obbc.xlsx");
                 DataTable dT = tb.naglowek(path, 4);
                 tb.makeHeader(sn, dT, gwTabela5);
             }

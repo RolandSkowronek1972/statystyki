@@ -6,6 +6,7 @@ using DevExpress.XtraPrinting;
 using System.Web;
 using System.Net.Mime;
 using System.Drawing;
+using System.Web.UI;
 
 namespace stat2018
 {
@@ -22,21 +23,20 @@ namespace stat2018
 
             if (!IsPostBack && !IsCallback )
             {
-                //
+                
                 string kw = string.Empty;
                 string cs = string.Empty;
                 int szerokoscKolumny = 0;
                 int rozmiarCzcionki = 0;
+                int szerokosctabeli = 0;
                 string value = Request.QueryString["id"];
                 string errorMessage = Request.QueryString["info"];
                 try
                 {
-                    
                     ASPxGridView1.SettingsPager.PageSize = int.Parse (cm.odczytajWartosc("kontrolka_wiersze"));
                 }
                 catch 
                 {
-
                     ASPxGridView1.SettingsPager.PageSize = 500;
                 }
                 
@@ -51,22 +51,26 @@ namespace stat2018
                     try
                     {
                         szerokoscKolumny = int.Parse ( cm.getQuerryValue("SELECT szerokoscKolumny FROM            konfig  WHERE        (ident = @ident)", cm.con_str, parameters));
-
                     }
                     catch 
                     {  }
                     try
                     {
                         rozmiarCzcionki = int.Parse (cm.getQuerryValue("SELECT rozmiarczcionki FROM            konfig  WHERE        (ident = @ident)", cm.con_str, parameters));
-
                     }
                     catch (Exception)
+                    {   }
+                    try
                     {
-
-                      
+                        szerokosctabeli = int.Parse(cm.getQuerryValue("SELECT szerokosctabeli FROM            konfig  WHERE        (ident = @ident)", cm.con_str, parameters));
                     }
+                    catch (Exception)
+                    { }
+
                     Session["rozmiarCzcionki"] = rozmiarCzcionki;
                     Session["szerokoscKolumny"] = szerokoscKolumny;
+                    Session["szerokosctabeli"] = szerokosctabeli;
+
                     Session["cs"] = cs;
                     Session["kw"] = kw;
                 }
@@ -101,7 +105,7 @@ namespace stat2018
                     data2.Text = DateTime.Now.ToShortDateString();
                 }
                
-                cm.log.Debug("Kontrolka uruchomienie przeliczania formularza ");
+                cm.log.Info("Kontrolka uruchomienie przeliczania formularza ");
                 makeGrid(cs, kw);
             }
             else
@@ -165,7 +169,7 @@ namespace stat2018
 
                 if (ASPxGridView1.Columns.Count > 0)
                 {
-                    //  ASPxGridView1.KeyFieldName = ASPxGridView1.Columns[0].Name;
+                     ASPxGridView1.KeyFieldName = ASPxGridView1.Columns[0].Name;
 
                 }
                 int szerokoscKolumny = 0;
@@ -199,9 +203,23 @@ namespace stat2018
                     for (int i = 0; i < ASPxGridView1.Columns.Count; i++)
                     {
                         ASPxGridView1.Columns[i].Width= szerokoscKolumny;
+                        ASPxGridView1.Style.Add("width", szerokoscKolumny.ToString());
                     }
                 }
-       
+                try
+                {
+                    int szerokoscTabeli = (int)Session["szerokosctabeli"];
+                    if (szerokoscTabeli >0)
+                    {
+                        ASPxGridView1.Width = szerokoscTabeli;
+
+                    }
+                }
+                catch 
+                {
+
+                    ASPxGridView1.Width = 1150;
+                }
 
             }
             catch (Exception ex)
@@ -227,7 +245,9 @@ namespace stat2018
 
         protected void Druk(object sender, EventArgs e)
         {
-            try
+            Session["exporter"] = ASPxGridViewExporter1;
+            ScriptManager.RegisterStartupScript(Page, Page.GetType(), "print2", "JavaScript:window.open('kontrolkaDruk.aspx')", true);
+         /*   try
             {
 
                 using (MemoryStream ms = new MemoryStream())
@@ -255,12 +275,12 @@ namespace stat2018
                */ 
 
 
-            }
+           /* }
             catch (Exception ex)
             {
                // cm.log.Error("Kontrolka : generowanie pdf :" + ex.Message);
 
-            }
+            }*/
 
         }
 

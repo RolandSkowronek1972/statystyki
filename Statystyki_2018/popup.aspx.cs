@@ -33,7 +33,7 @@ namespace stat2018
                         string id_tabeli = stTab[1].ToString().Trim();
                         string kolumna = stTab[2].ToString().Trim();
                         string typ = stTab[3].ToString().Trim();
-                        cm.log.Info("POPUP: Wczytano dane : id tabeli "+id_tabeli +" id kolumny "+ kolumna +" typ: "+typ);
+                        //cm.log.Info("POPUP: Wczytano dane : id tabeli "+id_tabeli +" id kolumny "+ kolumna +" typ: "+typ);
                         switch (typ)
                         {
 
@@ -68,7 +68,7 @@ namespace stat2018
                     catch (Exception ex)
                     {
 
-                        cm.log.Error("POPUP: Wczytywanie danych : " + ex.Message );
+                        //cm.log.Error("POPUP: Wczytywanie danych : " + ex.Message );
 
                     }
                 }
@@ -111,7 +111,7 @@ namespace stat2018
             }
             catch (Exception ex)
             {
-                cm.log.Error("popup  " + ex.Message);
+                //cm.log.Error("popup  " + ex.Message);
                 GridView1.DataSource = null;
                 GridView1.DataSourceID = null;
                 GridView1.Visible = false;
@@ -122,7 +122,7 @@ namespace stat2018
 
         protected void tabelaMSS(int id_wiersza, string id_tabeli, int id_kolumny)
         {
-            cm.log.Info("POPUP: Tworzenie tabeli do popupu MSS, tabela: " + id_tabeli + " ,kolumna " + id_kolumny.ToString() + " ,wiersz : " + id_wiersza.ToString());
+            //cm.log.Info("POPUP: Tworzenie tabeli do popupu MSS, tabela: " + id_tabeli + " ,kolumna " + id_kolumny.ToString() + " ,wiersz : " + id_wiersza.ToString());
 
             string kw = string.Empty;
             string cs = string.Empty;
@@ -140,7 +140,7 @@ namespace stat2018
                 kw = ms.podajKwerendePodgladu(int.Parse(id_dzialu), id_wiersza, id_kolumny, id_tabeli);
 
             }
-            cm.log.Info("POPUP: Tworzenie tabeli do popupu MSS, kwerenda: " + kw );
+            //cm.log.Info("POPUP: Tworzenie tabeli do popupu MSS, kwerenda: " + kw );
 
             GridView1.DataSource = null;
             GridView1.DataSourceID = null;
@@ -161,7 +161,7 @@ namespace stat2018
             }
             catch (Exception ex)
             {
-                cm.log.Error("POPUP: Bład odczytu tabeli do popupu MSS, kwerenda: " + kw + " ,bład " + ex.Message);
+                //cm.log.Error("POPUP: Bład odczytu tabeli do popupu MSS, kwerenda: " + kw + " ,bład " + ex.Message);
 
                 GridView1.DataSource = null;
                 GridView1.DataSourceID = null;
@@ -209,7 +209,7 @@ namespace stat2018
             }
             catch (Exception ex)
             {
-                cm.log.Error("popup " + ex.Message);
+                //cm.log.Error("popup " + ex.Message);
                 GridView1.DataSource = null;
                 GridView1.DataSourceID = null;
                 GridView1.Visible = false;
@@ -255,7 +255,7 @@ namespace stat2018
             }
             catch (Exception ex)
             {
-                cm.log.Error( "popup " + ex.Message);
+                //cm.log.Error( "popup " + ex.Message);
                 GridView1.DataSource = null;
                 GridView1.DataSourceID = null;
                 GridView1.Visible = false;

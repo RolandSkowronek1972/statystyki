@@ -8,7 +8,7 @@ using OfficeOpenXml;
 
 namespace stat2018
 {
-    public partial class template : System.Web.UI.Page
+    public partial class Template : System.Web.UI.Page
     {
         public Class1 cl = new Class1();
         public common cm = new common();
@@ -77,7 +77,7 @@ namespace stat2018
             }
             catch (Exception ex)
             {
-                cm.log.Error(tenPlik + " " + ex.Message);
+                //cm.log.Error(tenPlik + " " + ex.Message);
                 Server.Transfer("default.aspx");
             }
         }// end of Page_Load
@@ -129,18 +129,18 @@ namespace stat2018
 
             try
             {
-                cm.log.Info("OGLR2: wczytywanie danych do tabeli 2");
+                //cm.log.Info("OGLR2: wczytywanie danych do tabeli 2");
                 tabelkaGW2 = dr.generuj_dane_do_tabeli_wierszy2018(DateTime.Parse(Date1.Text), DateTime.Parse(Date2.Text), (string)Session["id_dzialu"], 2, 11, 8, tenPlik);
                 Session["tabelkaGW002"] = tabelkaGW2;
             }
             catch (Exception ex)
             {
-                cm.log.Error(tenPlik + "  " + ex.Message);
+                //cm.log.Error(tenPlik + "  " + ex.Message);
             }
 
             try
             {
-                cm.log.Info(tenPlik + ": wczytywanie danych do tabeli 1");
+                //cm.log.Info(tenPlik + ": wczytywanie danych do tabeli 1");
                 tabelkaGW1 = dr.generuj_dane_do_tabeli_sedziowskiej_2018(int.Parse((string)Session["id_dzialu"]), 1, DateTime.Parse(Date1.Text), DateTime.Parse(Date2.Text), 30, tenPlik);
                 Session["tabelkaGW001"] = tabelkaGW1;
                 Tabela1.DataSource = null;
@@ -150,13 +150,13 @@ namespace stat2018
             }
             catch (Exception ex)
             {
-                cm.log.Error(tenPlik + "  " + ex.Message);
+                //cm.log.Error(tenPlik + "  " + ex.Message);
             }
            
 
             try
             {
-                    cm.log.Info(tenPlik+": wczytywanie danych do tabeli 3");
+                    //cm.log.Info(tenPlik+": wczytywanie danych do tabeli 3");
                     tabelkaGW3 = dr.generuj_dane_do_tabeli_sedziowskiej_2018(int.Parse((string)Session["id_dzialu"]), 3, DateTime.Parse(Date1.Text), DateTime.Parse(Date2.Text), 30, tenPlik);
                     Session["tabelkaGW003"] = tabelkaGW3;
                     Gridview3.DataSource = null;
@@ -168,7 +168,7 @@ namespace stat2018
                 catch (Exception ex)
                 {
 
-                    cm.log.Error("OGLR2: " + ex.Message);
+                    //cm.log.Error("OGLR2: " + ex.Message);
 
                 }
             

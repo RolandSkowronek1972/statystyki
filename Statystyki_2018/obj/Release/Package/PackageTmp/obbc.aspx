@@ -15,7 +15,6 @@
     left: 0;
     right: 0;
 }
-
               </style>
       <script src="Scripts/rls.js"></script>
   
@@ -55,6 +54,11 @@
     </table>
       </div>
        <div style="width:1150px; margin: 0 auto 0 auto; position:relative;top:30px;" class="content landscape">
+            <div id="tabela1"  style="z-index:10; "> 
+         <div style="margin-left:auto;margin-right:auto;text-align: center; width:auto; "> 
+             <strong> 
+             <asp:label runat="server" ID="Label9"></asp:label></strong></div> 
+  &nbsp;</div>
            <br />
                <div class="page-break">
 &nbsp;<asp:Label ID="Label1" runat="server" Text="Informacja statystyczna o ruchu spraw "></asp:Label>
@@ -227,7 +231,7 @@
 
                </div>
               <div class="page-break">
-&nbsp;<asp:Label ID="Label3" runat="server"></asp:Label>
+&nbsp;<asp:Label ID="Label3" runat="server">Dane za miesiąc</asp:Label>
            &nbsp;&nbsp;&nbsp;
            <asp:Label ID="infoLabel3" runat="server" Text="tabela 4  \/\/\/" Visible="False"></asp:Label>
            <br />

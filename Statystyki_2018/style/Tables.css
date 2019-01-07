@@ -1,4 +1,7 @@
-﻿.rotate {
+﻿.noWrap {
+ white-space: nowrap;
+}
+.rotate {
      -moz-transform: rotate(-90.0deg);  /* FF3.5+ */
        -o-transform: rotate(-90.0deg);  /* Opera 10.5 */
   -webkit-transform: rotate(-90.0deg);  /* Saf3.1+, Chrome */
@@ -200,7 +203,9 @@ min-height: 65px;
     text-decoration: none;
     color:Black;
 }
-
+.wrapText {
+word-wrap: break-word;
+}
 .bold_x
 {
     font-size: 1.2em;
@@ -891,9 +896,9 @@ h1 {
 #Menu1  li ul li.sub.on.exception ul li.on>a{margin:0;padding:10px 12px 10px 29px;width:207px;border-top:1px solid #e9e9e9;border-bottom:1px solid #e9e9e9;border-right:1px solid #fff}
 #Menu1  li ul li.sub.on.exception ul li.on.last-item>a{border-bottom:1px solid #fff}
 
-a{color:#0071bf;text-decoration:none}
+a{color:Black;text-decoration:none}
 a:hover{color:#000}
-a:active{color:#292929}
+a:active{color:Black}
 #Menu1  .navbutton{display:none;width:41px;height:50px;float:left;font-size:0;text-align:center;line-height:11px;color:#fff;text-transform:uppercase;letter-spacing:-1px;overflow:hidden}
 #Menu1  .navbutton.on{color:#000;background:#fff}
 #Menu1  .navbutton:hover{color:#d0d0d0}

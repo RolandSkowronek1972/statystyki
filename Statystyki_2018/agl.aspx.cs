@@ -22,7 +22,7 @@ namespace stat2018
             if (idWydzial != null)
             {
                 Session["id_dzialu"] = idWydzial;
-                cm.log.Info(tenPlik + ": id wydzialu=" + idWydzial);
+                //cm.log.Info(tenPlik + ": id wydzialu=" + idWydzial);
             }
             else
             {
@@ -1092,7 +1092,7 @@ namespace stat2018
             }
             catch (Exception ex)
             {
-                cm.log.Error(tenPlik +" " +ex.Message);   
+                //cm.log.Error(tenPlik +" " +ex.Message);   
             }
             //tabela 2
             try
@@ -2075,7 +2075,7 @@ namespace stat2018
             }
             catch (Exception ex)
             {
-                cm.log.Error(tenPlik + " " + ex.Message);
+                //cm.log.Error(tenPlik + " " + ex.Message);
             }
             //tabela 3
             try
@@ -2424,15 +2424,15 @@ namespace stat2018
             }
             catch (Exception ex)
             {
-                cm.log.Error(tenPlik + " " + ex.Message);
+                //cm.log.Error(tenPlik + " " + ex.Message);
             }
 
             //tabela 4
             try
             {
-                cm.log.Info(tenPlik + " generowanie danych do tabeli 4");
+                //cm.log.Info(tenPlik + " generowanie danych do tabeli 4");
                DataTable tabela04 = dr.generuj_dane_do_tabeli_wierszy2018(DateTime.Parse(Date1.Text), DateTime.Parse(Date2.Text), ((string)Session["id_dzialu"]), 4, 24, 50, tenPlik);
-                cm.log.Info(tenPlik + " wypełnianie danych w tabeli 4");
+                //cm.log.Info(tenPlik + " wypełnianie danych w tabeli 4");
                 Session["tabelka004"] = tabela04;
                 //  wiersz 1
                
@@ -3543,7 +3543,7 @@ namespace stat2018
             }
             catch (Exception ex)
             {
-                cm.log.Error(tenPlik + " " + ex.Message);
+                //cm.log.Error(tenPlik + " " + ex.Message);
             }
 
             //tabela 5
@@ -3783,7 +3783,7 @@ namespace stat2018
             }
             catch (Exception ex)
             {
-                cm.log.Error(tenPlik + " " + ex.Message);
+                //cm.log.Error(tenPlik + " " + ex.Message);
             }
 
 
@@ -3893,7 +3893,7 @@ namespace stat2018
                 }
                 catch (Exception ex)
                 {
-                    cm.log.Error(tenPlik + " " + ex.Message);
+                    //cm.log.Error(tenPlik + " " + ex.Message);
 
                 }
 

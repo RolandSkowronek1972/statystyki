@@ -17,13 +17,13 @@ namespace stat2018
         protected void Page_Load(object sender, EventArgs e)
         {
            
-            cm.log.Debug("Otwarcie formularza: " + tenPlik);
+            //cm.log.Debug("Otwarcie formularza: " + tenPlik);
             DateTime dTime = DateTime.Now.AddMonths(-1);
             string idWydzial = Request.QueryString["w"];
             if (idWydzial != null)
             {
                 Session["id_dzialu"] = idWydzial;
-                //   cm.log.Info(tenPlik + ": id wydzialu=" + idWydzial);
+                //   //cm.log.Info(tenPlik + ": id wydzialu=" + idWydzial);
             }
             else
             {
@@ -59,7 +59,7 @@ namespace stat2018
                 }
                 catch (Exception ex)
                 {
-                    cm.log.Error(tenPlik+": " + ex.Message);
+                    //cm.log.Error(tenPlik+": " + ex.Message);
                     Server.Transfer("default.aspx");
                 }
             }

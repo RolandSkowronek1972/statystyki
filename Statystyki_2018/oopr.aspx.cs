@@ -24,7 +24,7 @@ namespace stat2018
             if (idWydzial != null)
             {
                 Session["id_dzialu"] = idWydzial;
-                cm.log.Info(tenPlik + ": id wydzialu=" + idWydzial);
+                //cm.log.Info(tenPlik + ": id wydzialu=" + idWydzial);
             }
             else
             {
@@ -56,7 +56,7 @@ namespace stat2018
             }
             catch (Exception ex)
             {
-                cm.log.Error(tenPlik + " " + ex.Message);
+                //cm.log.Error(tenPlik + " " + ex.Message);
                 Server.Transfer("default.aspx");
             }
         }// end of Page_Load
@@ -314,7 +314,7 @@ namespace stat2018
             {
                 System.Web.UI.WebControls.GridView sn = new System.Web.UI.WebControls.GridView();
                 makeHeader();
-                DataTable dT =(DataTable)Session["header_01"];//dr.naglowek("\\template\\oopr.xlsx", 1); //
+                DataTable dT =(DataTable)Session["header_01"];//dr.naglowek("\\Template\\oopr.xlsx", 1); //
                 tb.makeHeader(sn, dT, GridView1);
             }
         }
@@ -410,7 +410,7 @@ namespace stat2018
                 }
                 catch (Exception ex)
                 {
-                       cm.log.Error(tenPlik + " " + ex.Message );
+                       //cm.log.Error(tenPlik + " " + ex.Message );
 
                 }
 
@@ -438,7 +438,7 @@ namespace stat2018
 
             if (e.Row.RowType == DataControlRowType.Footer)
             {
-                e.Row.Cells[3].Text = "Razem";
+                e.Row.Cells[2].Text = "Razem";
 
 
                 DataView view = (DataView)statystyki.Select(DataSourceSelectArguments.Empty);
@@ -453,12 +453,12 @@ namespace stat2018
                         string digit = i.ToString("D2");
                         txt = txt + digit;
                         sumObject = table.Compute("Sum(" + txt + ")", "");
-                        e.Row.Cells[3 + i].Text = sumObject.ToString();
+                        e.Row.Cells[2 + i].Text = sumObject.ToString();
                     }
                 }
                 catch (Exception ex)
                 {
-                    cm.log.Error(tenPlik + " " + ex.Message);
+                    //cm.log.Error(tenPlik + " " + ex.Message);
                 }
             }
         }

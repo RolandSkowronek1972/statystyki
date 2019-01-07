@@ -3,12 +3,28 @@ using System.Data;
 using System.Data.SqlClient;
 using System.Configuration;
 using System.Web.UI.WebControls;
+using System.Configuration;
+using iTextSharp.text;
+using DevExpress.Web;
+using System.Collections;
+using iTextSharp.text.pdf;
 
 namespace stat2018
 {
 
     public class Class1
     {
+        public static BaseFont NewFont = BaseFont.CreateFont(Environment.GetEnvironmentVariable("SystemRoot") + "\\fonts\\sylfaen.ttf", BaseFont.IDENTITY_H, BaseFont.EMBEDDED);
+
+        //  static BaseFont NewFont = BaseFont.CreateFont(BaseFont.HELVETICA,BaseFont.CP1257 , BaseFont.EMBEDDED);
+        private Font fontPL1 = new Font(NewFont, 10f, Font.NORMAL, BaseColor.BLACK);
+
+        public Font plFont1 = new Font(NewFont, 10f, Font.NORMAL, BaseColor.BLACK);
+        public Font plFont = new Font(NewFont, 10f, Font.NORMAL, BaseColor.BLACK);
+        public Font plFont2 = new Font(NewFont, 10f, Font.NORMAL, BaseColor.BLACK);
+        public Font plFontBIG = new Font(NewFont, 15, Font.NORMAL, BaseColor.BLACK);
+        public Font plFont3 = new Font(NewFont, 15, Font.NORMAL, BaseColor.BLACK);
+
         public common Common = new common();
 
         public string con_str = ConfigurationManager.ConnectionStrings["wap"].ConnectionString;
@@ -1227,9 +1243,9 @@ namespace stat2018
         public string generuj_dane_do_tabeli_(int id_dzialu, int id_tabeli, DateTime poczatek, DateTime koniec, string plik)
         {
 
-            Common.log.Debug("Początek przetwarzania danych w pliku" + plik + " identyfikator tabeli: " + id_tabeli);
+            //Common.log.Debug("Początek przetwarzania danych w pliku" + plik + " identyfikator tabeli: " + id_tabeli);
             string odp = generuj_dane_do_tabeli_(id_dzialu, id_tabeli, poczatek, koniec);
-            Common.log.Debug("Koniec przetwarzania danych w pliku" + plik + " identyfikator tabeli: " + id_tabeli);
+            //Common.log.Debug("Koniec przetwarzania danych w pliku" + plik + " identyfikator tabeli: " + id_tabeli);
             return odp;
         }
         public string generuj_dane_do_tabeli_(int id_dzialu, int id_tabeli, DateTime poczatek, DateTime koniec)
@@ -1547,12 +1563,12 @@ namespace stat2018
         public DataTable generuj_dane_do_tabeli_typ2_new2018(int id_dzialu, int id_tabeli, DateTime poczatek, DateTime koniec, int il_kolumn,string tenplik)
         {
             string status = string.Empty;
-            Common.log.Info(tenplik + " :Generowanie tabeli danych: Rozpoczęcie");
+            //Common.log.Info(tenplik + " :Generowanie tabeli danych: Rozpoczęcie");
             var conn = new SqlConnection(con_str);
 
 
             DataTable dTable = new DataTable();
-            Common.log.Info(tenplik + " :Generowanie tabeli danych: Pobieranie connectionstringa");
+            //Common.log.Info(tenplik + " :Generowanie tabeli danych: Pobieranie connectionstringa");
 
             string cs = PobierzConnectionString(id_dzialu);
 
@@ -1561,7 +1577,7 @@ namespace stat2018
             DataTable parameters = Common.makeParameterTable();
             parameters.Rows.Add("@id_tabeli", id_tabeli);
             parameters.Rows.Add("@id_dzialu", id_dzialu);
-            Common.log.Info(tenplik + " :Generowanie tabeli danych: Wyciądnięcie kwerend dla tabeli :"+id_tabeli);
+            //Common.log.Info(tenplik + " :Generowanie tabeli danych: Wyciądnięcie kwerend dla tabeli :"+id_tabeli);
             DataTable dT1 = Common.getDataTable("SELECT id_kolumny,[kwerenda] FROM [kwerendy] where id_tabeli=@id_tabeli and id_wydzial=@id_dzialu order by id_kolumny", con_str, parameters);
 
             // zaladowanie do tabeli
@@ -1574,7 +1590,7 @@ namespace stat2018
 
             if (il_wierszy == 0)
             {
-                Common.log.Info(tenplik + " :Generowanie tabeli danych: Brak kwerend dla tabeli : "+ id_tabeli);
+                //Common.log.Info(tenplik + " :Generowanie tabeli danych: Brak kwerend dla tabeli : "+ id_tabeli);
                 return null;
             }
             
@@ -1596,7 +1612,7 @@ namespace stat2018
                     column.ColumnName = getColumnName(i);
                     column.DefaultValue = "0";
                     dTable.Columns.Add(column);
-                Common.log.Info(tenplik + " :Generowanie tabeli danych: Ilosć kwerend dla tabeli : " + id_tabeli+ " : "+ il_wierszy.ToString());
+                //Common.log.Info(tenplik + " :Generowanie tabeli danych: Ilosć kwerend dla tabeli : " + id_tabeli+ " : "+ il_wierszy.ToString());
             }
 
             // sa kwerendy
@@ -1604,13 +1620,13 @@ namespace stat2018
             DataRow[] kwerendySedziow = dT1.Select("id_kolumny=0");
             if (kwerendySedziow.Length==0 )
             {
-                Common.log.Info(tenplik + " :Generowanie tabeli danych: Brak kwerend wyciągających sedziów dla tabeli : " + id_tabeli );
+                //Common.log.Info(tenplik + " :Generowanie tabeli danych: Brak kwerend wyciągających sedziów dla tabeli : " + id_tabeli );
                 return null;
             }
             DataRow[] kwerendyDanych = dT1.Select("id_kolumny>0");
             if (kwerendyDanych.Length == 0)
             {
-                Common.log.Info(tenplik + " :Generowanie tabeli danych: ilość kwerend wyciągających dane  dla tabeli : " + id_tabeli + "=" +kwerendyDanych.Length  );
+                //Common.log.Info(tenplik + " :Generowanie tabeli danych: ilość kwerend wyciągających dane  dla tabeli : " + id_tabeli + "=" +kwerendyDanych.Length  );
             }
             /*
              dTable.Columns.Add("id", typeof(int));
@@ -1624,7 +1640,7 @@ namespace stat2018
             // ladowanie danych sedziów
             try
             {
-                Common.log.Info(tenplik + " :Generowanie tabeli danych: Wpisywanie danych sedziów dla tabeli : " + id_tabeli );
+                //Common.log.Info(tenplik + " :Generowanie tabeli danych: Wpisywanie danych sedziów dla tabeli : " + id_tabeli );
                 int i = 1;
                 foreach (var wiersz in kwerendySedziow)
                 {
@@ -1647,7 +1663,7 @@ namespace stat2018
             catch (Exception ex)
             {
 
-                Common.log.Error(tenplik + " :Generowanie tabeli danych: Wpisywanie danych sedziów dla tabeli : " + id_tabeli+ " " +ex.Message );
+                //Common.log.Error(tenplik + " :Generowanie tabeli danych: Wpisywanie danych sedziów dla tabeli : " + id_tabeli+ " " +ex.Message );
                 
             }
             // wpisywanie danych dla sedziów            

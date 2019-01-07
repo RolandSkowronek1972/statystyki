@@ -16,7 +16,9 @@
 }
 
 
-            </style><script src="Scripts/jquery-1.8.3.js"></script><script src="Scripts/rls.js"></script><div class="noprint" >  
+            </style>
+    <script src="Scripts/rls.js"></script>
+    <div class="noprint" >  
        <div id="menu" style="background-color: #f7f7f7;z-index:9999">
         <div class="manu_back" style="height: 40px; margin: 0 auto 0 auto; position:relative;  width: 1050px;    left: 0px;">               
    <table >
@@ -104,13 +106,13 @@
                 </asp:TemplateField>
 <asp:TemplateField HeaderText = "d_03" SortExpression = "d_01" > 
                 <ItemTemplate >
-          <a href = "javascript:openPopup('popup.aspx?sesja=<%# Eval("id_sedziego")+ "!"+Eval("id_tabeli") +"!3!2"%>')" ><asp:Label ID = "Label_Tabela1103" runat = "server" Text = '<%# Eval("d_03")%>' CssClass = "normal" ></asp:Label> </a>
+         <asp:TextBox ID = "Label_Tabela1103" Width="30px" runat = "server" Text = '<%# Eval("d_03")%>' CssClass = "normal center" ></asp:TextBox> 
                                    </ItemTemplate>
                    <ItemStyle  CssClass = "col_30"/>
                 </asp:TemplateField>
 <asp:TemplateField HeaderText = "d_04" SortExpression = "d_01" > 
                 <ItemTemplate >
-          <a href = "javascript:openPopup('popup.aspx?sesja=<%# Eval("id_sedziego")+ "!"+Eval("id_tabeli") +"!4!2"%>')" ><asp:Label ID = "Label_Tabela1104" runat = "server" Text = '<%# Eval("d_04")%>' CssClass = "normal" ></asp:Label> </a>
+          <asp:TextBox ID = "Label_Tabela1104" Width="30px" runat = "server" Text = '<%# Eval("d_04")%>' CssClass = "normal center" ></asp:TextBox>
                                    </ItemTemplate>
                    <ItemStyle  CssClass = "col_30"/>
                 </asp:TemplateField>
@@ -152,7 +154,7 @@
                 </asp:TemplateField>
 <asp:TemplateField HeaderText = "d_11" SortExpression = "d_01" > 
                 <ItemTemplate >
-          <a href = "javascript:openPopup('popup.aspx?sesja=<%# Eval("id_sedziego")+ "!"+Eval("id_tabeli") +"!11!2"%>')" ><asp:Label ID = "Label_Tabela1111" runat = "server" Text = '<%# Eval("d_11")%>' CssClass = "normal" ></asp:Label> </a>
+          <asp:TextBox ID = "Label_Tabela1111" Width="30px" runat = "server" Text = '<%# Eval("d_11")%>' CssClass = "normal center" ></asp:TextBox> 
                                    </ItemTemplate>
                    <ItemStyle  CssClass = "col_30"/>
                 </asp:TemplateField>
@@ -254,7 +256,7 @@
                 </asp:TemplateField>
 <asp:TemplateField HeaderText = "d_28" SortExpression = "d_01" > 
                 <ItemTemplate >
-          <a href = "javascript:openPopup('popup.aspx?sesja=<%# Eval("id_sedziego")+ "!"+Eval("id_tabeli") +"!28!2"%>')" ><asp:Label ID = "Label_Tabela1128" runat = "server" Text = '<%# Eval("d_28")%>' CssClass = "normal" ></asp:Label> </a>
+         <asp:TextBox ID = "Label_Tabela1128" Width="30px" runat = "server" Text = '<%# Eval("d_28")%>' CssClass = "normal center" ></asp:TextBox> 
                                    </ItemTemplate>
                    <ItemStyle  CssClass = "col_30"/>
                 </asp:TemplateField>
@@ -266,7 +268,7 @@
                 </asp:TemplateField>
             <asp:TemplateField HeaderText = "d_29" SortExpression = "d_01" > 
                 <ItemTemplate >
-          <a href = "javascript:openPopup('popup.aspx?sesja=<%# Eval("id_sedziego")+ "!"+Eval("id_tabeli") +"!30!2"%>')" ><asp:Label ID = "Label_Tabela1130" runat = "server" Text = '<%# Eval("d_30")%>' CssClass = "normal" ></asp:Label> </a>
+        <asp:TextBox ID = "Label_Tabela1130" Width="30px" runat = "server" Text = '<%# Eval("d_30")%>' CssClass = "normal center" ></asp:TextBox> 
                                    </ItemTemplate>
                    <ItemStyle  CssClass = "col_30"/>
                 </asp:TemplateField>
@@ -699,7 +701,7 @@
         <asp:Label ID="infoLabel8" runat="server" Text="Tabela 7 \/" Visible="False"></asp:Label>
         <br />
         <br />
-        <asp:GridView ID="Gridview7" runat="server" AutoGenerateColumns="False" DataSourceID = "tabela_8"  Width = "100%" ShowHeader = "False" ShowFooter = "True" OnRowCreated="naglowekTabeli8" OnRowDataBound="stopkaTabeli8"  >
+        <asp:GridView ID="Gridview7" runat="server" AutoGenerateColumns="False" DataSourceID = "tabela_7"  Width = "100%" ShowHeader = "False" ShowFooter = "True" OnRowCreated="naglowekTabeli8" OnRowDataBound="stopkaTabeli8"  >
         <Columns>
     <asp:BoundField DataField = "id" HeaderText = "L.p." SortExpression = "id" >
                 <ItemStyle Width = "15px" />

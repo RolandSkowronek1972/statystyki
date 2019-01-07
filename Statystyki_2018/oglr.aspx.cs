@@ -5,11 +5,21 @@ using System.IO;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using OfficeOpenXml;
-
+using DevExpress.Docs;
+using DevExpress.Spreadsheet;
+using DevExpress.SpreadsheetSource;	
+using DevExpress.XtraPrinting;
+using System.Web;
+using System.Net.Mime;
+using iTextSharp.text;
+using iTextSharp.text.pdf;
+using System.Net;
 
 namespace stat2018
 {
-   
+
+ 
+
     public partial class oglr : System.Web.UI.Page
     {
 
@@ -25,10 +35,11 @@ namespace stat2018
         protected void Page_Load(object sender, EventArgs e)
         {
             string idWydzial = Request.QueryString["w"];
+            idWydzial = "10";
             if (idWydzial != null)
             {
                 Session["id_dzialu"] = idWydzial;
-                cm.log.Info(tenPlik + ": id wydzialu=" + idWydzial);
+                //cm.log.Info(tenPlik + ": id wydzialu=" + idWydzial);
             }
             else
             {
@@ -73,6 +84,7 @@ namespace stat2018
             {
                   cm.log.Error(tenPlik + " " + ex.Message );
             }
+           
         }// end of Page_Load
 
         protected void clearHedersSession()
@@ -118,31 +130,31 @@ namespace stat2018
 
                 DataTable tabelka01 = dr.generuj_dane_do_tabeli_wierszy2018(DateTime.Parse(Date1.Text), DateTime.Parse(Date2.Text), (string)Session["id_dzialu"], 2, 20, 23, tenPlik);
                 Session["tabelka001"] = tabelka01;
-                cm.log.Info(tenPlik + " : Wygenerowano dal tabeli 2" + tabelka01.Rows.Count.ToString() + " wierszy");
+                //cm.log.Info(tenPlik + " : Wygenerowano dal tabeli 2" + tabelka01.Rows.Count.ToString() + " wierszy");
             }
             catch (Exception ex)
             {
-                cm.log.Error(tenPlik + " : " + ex.Message);
+                //cm.log.Error(tenPlik + " : " + ex.Message);
             }
 
             try
             {
                 txt = cl.generuj_dane_do_tabeli_(int.Parse((string)Session["id_dzialu"]), 1, DateTime.Parse(Date1.Text), DateTime.Parse(Date2.Text));
-                cm.log.Info(tenPlik + " : " + txt);
+                //cm.log.Info(tenPlik + " : " + txt);
             }
             catch (Exception ex)
             {
-                cm.log.Error(tenPlik + " : " + ex.Message);
+                //cm.log.Error(tenPlik + " : " + ex.Message);
             }
 
             try
             {
                 txt = txt + cl.generuj_dane_do_tabeli_(int.Parse((string)Session["id_dzialu"]), 4, DateTime.Parse(Date1.Text), DateTime.Parse(Date2.Text));
-                cm.log.Info(tenPlik + " : " + txt);
+                //cm.log.Info(tenPlik + " : " + txt);
             }
             catch (Exception ex)
             {
-                cm.log.Error(tenPlik + " : " + ex.Message);
+                //cm.log.Error(tenPlik + " : " + ex.Message);
             }
 
 
@@ -151,7 +163,7 @@ namespace stat2018
             try
             {
                 DataTable tabela3 = dr.generuj_dane_do_tabeli_sedziowskiej_2018(int.Parse(id_dzialu), 3, DateTime.Parse(Date1.Text), DateTime.Parse(Date2.Text), 31, tenPlik);
-                cm.log.Info(tenPlik + " : Wygenerowano dal tabeli 3" + tabela3.Rows.Count.ToString() + " wierszy");
+                //cm.log.Info(tenPlik + " : Wygenerowano dal tabeli 3" + tabela3.Rows.Count.ToString() + " wierszy");
                 GridView3.DataSource = null;
                 GridView3.DataSourceID = null;
                 GridView3.DataSource = tabela3;
@@ -160,7 +172,7 @@ namespace stat2018
             }
             catch (Exception ex)
             {
-                cm.log.Error(tenPlik + " : " + ex.Message);
+                //cm.log.Error(tenPlik + " : " + ex.Message);
             }
 
             // dopasowanie opisów
@@ -174,7 +186,7 @@ namespace stat2018
             }
             catch (Exception ex)
             {
-                cm.log.Error(tenPlik + " : " + ex.Message);
+                //cm.log.Error(tenPlik + " : " + ex.Message);
             }
             
             try
@@ -370,8 +382,8 @@ namespace stat2018
             dT_03.Rows.Add(new Object[] { "2", "Posiedzeń", "1", "2", "h" });
 
             dT_03.Rows.Add(new Object[] { "2", "Razem", "1", "2", "h" });
-            dT_03.Rows.Add(new Object[] { "2", "Na rozprawach", "1", "2", "h" });
-            dT_03.Rows.Add(new Object[] { "2", "Na posiedzeniach", "1", "2", "h" });
+            dT_03.Rows.Add(new Object[] { "2", "Na roz-prawach", "1", "2", "h" });
+            dT_03.Rows.Add(new Object[] { "2", "Na posie-dzeniach", "1", "2", "h" });
 
             //RC		RNs		Nsm		Rco		Nmo		RCps		Nkd	
 
@@ -440,7 +452,6 @@ namespace stat2018
 
             dT_05.Clear();
 
-            dT_05.Rows.Add(new Object[] { "1", "R", "1", "1", "h" });
             dT_05.Rows.Add(new Object[] { "1", "P", "1", "1", "h" });
             dT_05.Rows.Add(new Object[] { "1", "razem", "1", "1", "h" });
             dT_05.Rows.Add(new Object[] { "1", "razem", "1", "1", "h" });
@@ -719,29 +730,61 @@ namespace stat2018
             
 
                 MyWorksheet2 = tabela.tworzArkuszwExcle(MyExcel.Workbook.Worksheets[3], table4, 6,0, 7, false, false, false, false, false);
-             
+                string filepdf = path+  ".pdf";
                 try
                 {
                     MyExcel.SaveAs(fNewFile);
-
+                   
+                   
+                    using (FileStream pdfFileStream = new FileStream(filepdf, FileMode.Create))
+                    {
+                        Workbook workbook = new Workbook();
+                        workbook.LoadDocument(MyExcel.File.FullName );
+                        workbook.ExportToPdf(pdfFileStream);
+                    }
+                 /*   MyExcel.SaveAs(fNewFile);
+                    
                     this.Response.Clear();
                     this.Response.ContentType = "application/vnd.ms-excel";
                     this.Response.AddHeader("Content-Disposition", "attachment;filename=" + fNewFile.Name);
                     this.Response.WriteFile(fNewFile.FullName);
                     this.Response.End();
-
+                    */
                 }
                 catch (Exception ex)
                 {
                        cm.log.Error(tenPlik + " " + ex.Message );
 
                 }
-
+                using (FileStream pdfFileStream = new FileStream(filepdf, FileMode.Create))
+                {
+                    Workbook workbook = new Workbook();
+                    workbook.LoadDocument(fNewFile.ToString ());
+                    workbook.ExportToPdf(pdfFileStream);
+                }
             }//end of using
-
+           
             przemiel();
         }
+        private MemoryStream ConvertXls(MemoryStream inStream, DevExpress.Spreadsheet.DocumentFormat format)
+        {
 
+            MemoryStream outStream = new MemoryStream();
+            DevExpress.Spreadsheet.   Workbook workbook = new Workbook();
+
+            //Register required services. 
+        //    workbook.AddService(typeof(IChartControllerFactoryService), new ChartControllerFactoryService());
+         //   workbook.AddService(typeof(IChartImageService), new ChartImageService());
+
+            inStream.Position = 0;
+            workbook.LoadDocument(inStream, format);
+
+            workbook.ExportToPdf(outStream);
+
+            outStream.Seek(0, SeekOrigin.Begin);
+
+            return outStream;
+        }
 
         protected void LinkButton54_Click(object sender, EventArgs e)
         {
@@ -850,7 +893,7 @@ namespace stat2018
                 }
                 catch (Exception ex)
                 {
-                    cm.log.Error(tenPlik + " " + ex.Message);
+                    //cm.log.Error(tenPlik + " " + ex.Message);
                 }
             }
             return NewTotalRow;
@@ -874,7 +917,7 @@ namespace stat2018
                 }
                 catch (Exception ex)
                 {
-                    cm.log.Error(tenPlik + " " + ex.Message);
+                    //cm.log.Error(tenPlik + " " + ex.Message);
                 }
                 
             }
@@ -939,6 +982,90 @@ namespace stat2018
             GridView1.Controls[0].Controls.AddAt(e.Row.RowIndex + rowIndex, wierszTabeli3(idWiersza, idtabeli, "36-60 miesięcy (3-5 lat) "));
             idWiersza = 10;
             GridView1.Controls[0].Controls.AddAt(e.Row.RowIndex + rowIndex, wierszTabeli3(idWiersza, idtabeli, "Powyżej 60 miesięcy (powyżej 5 lat) "));
+        }
+
+       
+        protected void PdfDoDruku(object sender, EventArgs e)
+        {
+      
+        //generowanie pdf\a
+        iTextSharp.text.Document pdfDoc = new iTextSharp.text.Document(PageSize.A4, 10f, 10f, 10f, 0f);
+           
+            string path = Server.MapPath(@"~//pdf"); //Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments );
+            string fileName = path + "//oglr_" + DateTime.Now.ToString().Replace(":", "-") + ".pdf";
+            PdfWriter writer = PdfWriter.GetInstance(pdfDoc, new FileStream(fileName, FileMode.Create));
+            pdfDoc.Open();
+
+
+            PdfPCell cell = new PdfPCell();
+            pdfDoc.NewPage();
+
+            PdfPTable tab = new PdfPTable(27);
+
+            DataView view = (DataView)tabela_1.Select(DataSourceSelectArguments.Empty);
+            System.Data.DataTable table = view.ToTable();
+            float[] szerokoscitabeli1 = new float[27];
+            szerokoscitabeli1[0] = 30;
+            szerokoscitabeli1[1] = 330;
+            for (int runs = 2; runs < 27; runs++)
+            {
+                szerokoscitabeli1[runs] = 30;
+            }
+            tab.SetWidths(szerokoscitabeli1);
+
+            //header
+            DataTable dT = (DataTable)Session["header_02"];
+            foreach (DataRow wiersznaglowka in dT.Rows)
+            {
+                //dT_05.Rows.Add(new Object[] { "1", "R", "1", "1", "h" });
+             //   int wiersz =int.Parse ( wiersznaglowka[0].ToString());
+                string text = wiersznaglowka[1].ToString();
+                int colSpan = int.Parse(wiersznaglowka[2].ToString());
+                int rowSpan = int.Parse(wiersznaglowka[3].ToString());
+               
+                    cell.Rowspan = rowSpan;
+                    cell.Colspan = colSpan;
+                    cell = new PdfPCell(new Paragraph(text, cl.plFontBIG));
+               
+                tab.AddCell(cell);
+            }
+           
+           
+
+
+           
+          
+            int lp = 1;
+            foreach (System.Data.DataRow  dataRow in table.Rows)
+            {
+                string txt = "";
+                cell = new PdfPCell(new Paragraph(lp.ToString (), cl.plFontBIG));
+                tab.AddCell(cell);
+                cell = new PdfPCell(new Paragraph(dataRow["imie"]+" "+ dataRow["nazwisko"], cl.plFontBIG));
+                tab.AddCell(cell);
+                for (int i = 1; i < 26; i++)
+                {
+                    string numer = "d_" + i.ToString("D2");
+                    txt = dataRow[numer].ToString ();
+                    cell = new PdfPCell(new Paragraph(txt, cl.plFontBIG));
+                    tab.AddCell(cell);
+                }
+                lp++;
+            }
+            pdfDoc.Add(tab);
+            pdfDoc.Close();
+            //      int[] tblWidth2 = { 10, 80, 10 };
+            WebClient client = new WebClient();
+            
+            Byte[] buffer = client.DownloadData(fileName);
+            if (buffer != null)
+            {
+                Response.ContentType = "application/pdf";
+                Response.AddHeader("content-lenght", buffer.Length.ToString());
+                Response.BinaryWrite(buffer);
+            }
+
+
         }
     }
 }

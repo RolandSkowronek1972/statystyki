@@ -30,7 +30,7 @@ namespace stat2018
             {
                 return;
             }
-            cm.log.Debug("otwarcie formularza: " + tenPlik);
+            //cm.log.Debug("otwarcie formularza: " + tenPlik);
             Session["data_1"] = Date1.Text;
             Session["data_2"] = Date2.Text;
             clearHedersSession();
@@ -928,7 +928,7 @@ namespace stat2018
             }
             catch (Exception ex)
             {
-                                cm.log.Error(tenPlik + " " + ex.Message );    
+                                //cm.log.Error(tenPlik + " " + ex.Message );    
             }
 
             // pierwsza tabelka
@@ -1236,7 +1236,7 @@ namespace stat2018
                 }
                 catch (Exception ex)
                 {
-                       cm.log.Error(tenPlik + " " + ex.Message );
+                       //cm.log.Error(tenPlik + " " + ex.Message );
 
                 }
 

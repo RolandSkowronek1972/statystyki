@@ -11,11 +11,11 @@ namespace stat2018
 
         public DevExpress.Web.MenuItem daneDoManuKontrolek(string identyfikatorUzytkownika)
         {
-            cm.log.Info("Header: Rozpoczęcie procedury tworzenia elementów meny kontrolek");
+            //cm.log.Info("Header: Rozpoczęcie procedury tworzenia elementów meny kontrolek");
             DevExpress.Web.MenuItem mm1 = new DevExpress.Web.MenuItem("Kontrolka");
    
             //czy admin
-            cm.log.Info("Header: Rozpoczęcie procedury tworzenia elementów menu kontrolka");
+            //cm.log.Info("Header: Rozpoczęcie procedury tworzenia elementów menu kontrolka");
 
             DataTable parametry = cm.makeParameterTable();
             parametry.Rows.Add("@identyfikatorUzytkownika", identyfikatorUzytkownika);
@@ -40,7 +40,7 @@ namespace stat2018
 
             }
        
-            cm.log.Info("Header: zakonczenie procedury tworzenia elementów meny kontrolek");
+            //cm.log.Info("Header: zakonczenie procedury tworzenia elementów meny kontrolek");
 
             return mm1;
         }
@@ -48,26 +48,26 @@ namespace stat2018
         public DevExpress.Web.MenuItem daneDoManuMiesieczne(string identyfikatorUzytkownika)
         {
             //czy admin
-            cm.log.Info("Header: Rozpoczęcie procedury tworzenia elementów menu statystyk miesięcznych dla użytkownika: " + identyfikatorUzytkownika);
+            //cm.log.Info("Header: Rozpoczęcie procedury tworzenia elementów menu statystyk miesięcznych dla użytkownika: " + identyfikatorUzytkownika);
 
             DevExpress.Web.MenuItem item = new DevExpress.Web.MenuItem("Statystyka");
 
             string admin = string.Empty;
             DataTable parametry = cm.makeParameterTable();
             parametry.Rows.Add("@identyfikatorUzytkownika", identyfikatorUzytkownika);
-            cm.log.Info("Header: Sprawdz czy użytkownik " + identyfikatorUzytkownika + " ma parawa administratora" );
+            //cm.log.Info("Header: Sprawdz czy użytkownik " + identyfikatorUzytkownika + " ma parawa administratora" );
 
             try
             {
                
                 admin = cm.getQuerryValue("select admin from uzytkownik where ident =@identyfikatorUzytkownika", cm.con_str, parametry);
-                cm.log.Info("Header: Użytkownik ma prawa administracyjne");
+                //cm.log.Info("Header: Użytkownik ma prawa administracyjne");
 
             }
             catch
             {
                 admin = "0";
-                cm.log.Info("Header: Użytkownik nie ma praw administracyjnych");
+                //cm.log.Info("Header: Użytkownik nie ma praw administracyjnych");
             }
             string kwerenda = string.Empty;
 
@@ -82,9 +82,9 @@ namespace stat2018
                 kwerenda = "SELECT DISTINCT uprawnienia.id_wydzialu, wydzialy.nazwa, wydzialy.plik FROM uprawnienia LEFT OUTER JOIN  wydzialy ON uprawnienia.id_wydzialu = wydzialy.ident WHERE(uprawnienia.id_uzytkownika = @identyfikatorUzytkownika) AND(uprawnienia.id_wydzialu < 100) and rtrim(wydzialy.plik)<>''";
                 //kwerenda = "SELECT distinct uprawnienia.id_wydzialu, wydzialy.nazwa, wydzialy.plik FROM uprawnienia RIGHT OUTER JOIN   wydzialy ON uprawnienia.id_wydzialu = wydzialy.ident   where uprawnienia.id_uzytkownika = @identyfikatorUzytkownika";
             }
-            cm.log.Info("Header: odczyt działów przypisanych do uzytkownika id= "+ identyfikatorUzytkownika);
+            //cm.log.Info("Header: odczyt działów przypisanych do uzytkownika id= "+ identyfikatorUzytkownika);
             DataTable dTable = cm.getDataTable(kwerenda, cm.con_str, parametry);
-            cm.log.Info("Header: Uzytkownika id= " + identyfikatorUzytkownika+ " ma prawa do "+dTable.Rows.Count.ToString () +" wydziałów");
+            //cm.log.Info("Header: Uzytkownika id= " + identyfikatorUzytkownika+ " ma prawa do "+dTable.Rows.Count.ToString () +" wydziałów");
 
             foreach (DataRow dRow in dTable.Rows)
             {
@@ -92,7 +92,7 @@ namespace stat2018
                 //mm2.ItemStyle.Width = 300;
                 mm2.ItemStyle.Paddings.PaddingLeft = 30;
                 item.Items.Add(mm2);
-                cm.log.Info("Header: dodano wydzial " + dRow[1].ToString().Trim() + " do menu ");
+                //cm.log.Info("Header: dodano wydzial " + dRow[1].ToString().Trim() + " do menu ");
 
             }
             return item;
@@ -102,7 +102,7 @@ namespace stat2018
         public DevExpress.Web.MenuItem daneDoManuMSS(string identyfikatorUzytkownika)
         {
             //czy admin
-            cm.log.Info("Header: Rozpoczęcie procedury tworzenia elementów menu statystyk MS-S");
+            //cm.log.Info("Header: Rozpoczęcie procedury tworzenia elementów menu statystyk MS-S");
 
             DevExpress.Web.MenuItem item = new DevExpress.Web.MenuItem("MS-S");
 
@@ -136,7 +136,7 @@ namespace stat2018
         public DevExpress.Web.MenuItem daneDoManuInne(string identyfikatorUzytkownika)
         {
             //czy admin
-            cm.log.Info("Header: Rozpoczęcie procedury tworzenia elementów menu statystyk MS-S");
+            //cm.log.Info("Header: Rozpoczęcie procedury tworzenia elementów menu statystyk MS-S");
 
             DevExpress.Web.MenuItem mm1 = new DevExpress.Web.MenuItem("Inne");
             DevExpress.Web.MenuItem mm2 = new DevExpress.Web.MenuItem();
@@ -165,7 +165,7 @@ namespace stat2018
         public DevExpress.Web.MenuItem wyloguj()
         {
             //czy admin
-            cm.log.Info("Header: Rozpoczęcie procedury tworzenia elementów menu wyloguj");
+            //cm.log.Info("Header: Rozpoczęcie procedury tworzenia elementów menu wyloguj");
 
             DevExpress.Web.MenuItem mm1 = new DevExpress.Web.MenuItem("Wylogowanie");
             DevExpress.Web.MenuItem mm2 = new DevExpress.Web.MenuItem();

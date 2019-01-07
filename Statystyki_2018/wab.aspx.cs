@@ -26,7 +26,7 @@ namespace stat2018
             if (idWydzial != null)
             {
                 Session["id_dzialu"] = idWydzial;
-                cm.log.Info(tenPlik + ": id wydzialu=" + idWydzial);
+                //cm.log.Info(tenPlik + ": id wydzialu=" + idWydzial);
             }
             else
             {
@@ -117,7 +117,7 @@ namespace stat2018
             }
             catch (Exception ex)
             {
-                cm.log.Error(tenPlik + " " + ex);
+                //cm.log.Error(tenPlik + " " + ex);
             }
 
             try
@@ -145,7 +145,7 @@ namespace stat2018
             }
             catch (Exception ex)
             {
-                cm.log.Error(tenPlik + " " + ex);
+                //cm.log.Error(tenPlik + " " + ex);
             }
 
             try
@@ -167,7 +167,7 @@ namespace stat2018
             }
             catch (Exception ex)
             {
-                cm.log.Error(tenPlik + " " + ex);
+                //cm.log.Error(tenPlik + " " + ex);
             }
             // dopasowanie opisów
             makeLabels();
@@ -265,7 +265,7 @@ namespace stat2018
                 }
                 catch (Exception ex)
                 {
-                    cm.log.Error(tenPlik + " Generowanie pliku Excell " + ex.Message);
+                    //cm.log.Error(tenPlik + " Generowanie pliku Excell " + ex.Message);
                 }
 
                 //druga 
@@ -280,7 +280,7 @@ namespace stat2018
                 }
                 catch (Exception ex)
                 {
-                    cm.log.Error(tenPlik + " Generowanie pliku Excell " + ex.Message);
+                    //cm.log.Error(tenPlik + " Generowanie pliku Excell " + ex.Message);
                 }
 
                 //trzecoa 
@@ -298,7 +298,7 @@ namespace stat2018
                 }
                 catch (Exception ex)
                 {
-                    cm.log.Error(tenPlik + " Generowanie pliku Excell " + ex.Message);
+                    //cm.log.Error(tenPlik + " Generowanie pliku Excell " + ex.Message);
                 }
 
                 try
@@ -314,7 +314,7 @@ namespace stat2018
                 }
                 catch (Exception ex)
                 {
-                    cm.log.Error(tenPlik + " Generowanie pliku Excell " + ex.Message);
+                    //cm.log.Error(tenPlik + " Generowanie pliku Excell " + ex.Message);
                 }
 
             }//end of using

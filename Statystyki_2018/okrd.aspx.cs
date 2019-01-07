@@ -28,7 +28,7 @@ namespace stat2018
             if (idWydzial != null)
             {
                 Session["id_dzialu"] = idWydzial;
-                cm.log.Info(tenPlik + ": id wydzialu=" + idWydzial);
+                //cm.log.Info(tenPlik + ": id wydzialu=" + idWydzial);
             }
             else
             {
@@ -71,7 +71,7 @@ namespace stat2018
             }
             catch (Exception ex)
             {
-                  cm.log.Error(tenPlik + " " + ex.Message );
+                  //cm.log.Error(tenPlik + " " + ex.Message );
             }
         }// end of Page_Load
 
@@ -222,7 +222,7 @@ namespace stat2018
 
             dT_01.Rows.Add(new Object[] { "2", "Etat", "1", "1" });
             dT_01.Rows.Add(new Object[] { "2", "nieob.", "1", "1" });
-            dT_01.Rows.Add(new Object[] { "2", "Obsany", "1", "1" });
+            dT_01.Rows.Add(new Object[] { "2", "Obsady", "1", "1" });
             dT_01.Rows.Add(new Object[] { "2", "Dni pracy", "1", "1" });
             dT_01.Rows.Add(new Object[] { "2", "czas na wokandzie", "1", "1" });
             dT_01.Rows.Add(new Object[] { "2", "dni wokandy", "1", "1" });
@@ -423,7 +423,7 @@ namespace stat2018
                 }
                 catch (Exception ex)
                 {
-                       cm.log.Error(tenPlik + " " + ex.Message );
+                       //cm.log.Error(tenPlik + " " + ex.Message );
 
                 }
 
