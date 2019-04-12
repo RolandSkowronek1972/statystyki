@@ -16,72 +16,53 @@ namespace stat2018
         public Class1 cl = new Class1();
         public pdfTables pdfT = new pdfTables();
         public common cm = new common();
+        public tabele tb = new tabele();
+
         public static string tenPlik = "akak.aspx";
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            //cm.log.Debug("otwarcie formularza: " + tenPlik);
+            string idWydzial = Request.QueryString["w"];
             try
             {
-                string idWydzial = Request.QueryString["w"];
-                if (idWydzial != null)
+                if (idWydzial == null)
                 {
-                    Session["id_dzialu"] = idWydzial;
-                    //cm.log.Info(tenPlik + ": id wydzialu=" + idWydzial);
-                }
-                else
-                {
-
                     return;
-
                 }
-               
-                DateTime dTime = DateTime.Now;
-                dTime = dTime.AddMonths(-1);
-                if (Date1.Text.Length == 0)
-                {
-                    Date1.Text = dTime.Year.ToString() + "-" + dTime.Month.ToString("D2") + "-01";
-                    Date1.Date = DateTime.Parse(Date1.Text );
-                }
-                if (Date2.Text.Length == 0)
-                {
-                    Date2.Text = dTime.Year.ToString() + "-" + dTime.Month.ToString("D2") + "-" + DateTime.DaysInMonth(dTime.Year, dTime.Month).ToString("D2");
-                    Date2.Date = DateTime.Parse(Date2.Text);
-                }
-
-                Session["data_1"] = Date1.Text.Trim();
-                Session["data_2"] = Date2.Text.Trim();
-            }
-            catch
-            { }
-            clearHedersSession();
-            makeHeader();
-            try
-            {
-                string user = (string)Session["userIdNum"];
-                string dzial = (string)Session["id_dzialu"];
-                //cm.log.Debug(tenPlik + " Start logowania użytkownika  " + user + " działu nr " + dzial);
-                bool dost = cm.dostep(dzial, user);
+                bool dost = cm.dostep(idWydzial, (string)Session["identyfikatorUzytkownika"]);
                 if (!dost)
                 {
-                    Server.Transfer("default.aspx?info='Użytkownik " + user + " nie praw do działu nr " + dzial + "'");
-                    //cm.log.Error(tenPlik + " Użytkownik " + user + " nie praw do działu nr " + dzial);
+                    Server.Transfer("default.aspx?info='Użytkownik " + (string)Session["identyfikatorUzytkownika"] + " nie praw do działu nr " + idWydzial + "'");
                 }
                 else
                 {
+                    CultureInfo newCulture = (CultureInfo)CultureInfo.CurrentCulture.Clone();
+                    newCulture.DateTimeFormat = CultureInfo.GetCultureInfo("PL").DateTimeFormat;
+                    System.Threading.Thread.CurrentThread.CurrentCulture = newCulture;
+                    System.Threading.Thread.CurrentThread.CurrentUICulture = newCulture;
+                    DateTime dTime = DateTime.Now.AddMonths(-1); ;
+
+                    if (Date1.Text.Length == 0) Date1.Date = DateTime.Parse(dTime.Year.ToString() + "-" + dTime.Month.ToString("D2") + "-01");
+                    if (Date2.Text.Length == 0) Date2.Date = DateTime.Parse(dTime.Year.ToString() + "-" + dTime.Month.ToString("D2") + "-" + DateTime.DaysInMonth(dTime.Year, dTime.Month).ToString("D2"));
+                    Session["id_dzialu"] = idWydzial;
+                    Session["data_1"] = Date1.Date.ToShortDateString();
+                    Session["data_2"] = Date2.Date.ToShortDateString();
+
+
                     if (!IsPostBack)
                     {
                         var fileContents = System.IO.File.ReadAllText(Server.MapPath(@"~//version.txt"));    // file read with version
                         this.Title = "Statystyki " + fileContents.ToString().Trim();
+                        clearHedersSession();
+                        makeHeader();
                         przemiel();
                         makeLabels();
                     }
                 }
             }
-            catch (Exception ex)
+            catch
             {
-
-                //cm.log.Error(tenPlik + " Bład : " + ex.Message);
+                Server.Transfer("default.aspx");
             }
         }// end of Page_Load
 
@@ -100,25 +81,7 @@ namespace stat2018
 
         protected void przemiel()
         {
-            Session["sesja"] = "s3030";
-            try
-            {
-                DateTime dTime = DateTime.Now;
-                dTime = dTime.AddMonths(-1);
-                if (Date1.Text.Length == 0)
-                {
-                    Date1.Text = dTime.Year.ToString() + "-" + dTime.Month.ToString("D2") + "-01";
-                }
-                if (Date2.Text.Length == 0)
-                {
-                    Date2.Text = dTime.Year.ToString() + "-" + dTime.Month.ToString("D2") + "-" + DateTime.DaysInMonth(dTime.Year, dTime.Month).ToString("D2");
-                }
-
-                Session["data_1"] = Date1.Text.Trim();
-                Session["data_2"] = Date2.Text.Trim();
-            }
-            catch
-            { }
+           
 
             string yyx = (string)Session["id_dzialu"];
             id_dzialu.Text = (string)Session["txt_dzialu"];
@@ -129,7 +92,7 @@ namespace stat2018
             try
             {
 
-                DataTable tabelka01 = dr.generuj_dane_do_tabeli_wierszy2018(DateTime.Parse(Date1.Text), DateTime.Parse(Date2.Text), (string)Session["id_dzialu"], 1,20,20,tenPlik);
+                DataTable tabelka01 = dr. generuj_dane_do_tabeli_wierszy2018(Date1.Date, Date2.Date, (string)Session["id_dzialu"], 1,20,20,tenPlik);
                 Session["tabelka001"] = tabelka01;
                 //row 1
                 LB_12.Text = tabelka01.Rows[0][1].ToString().Trim();
@@ -371,17 +334,17 @@ namespace stat2018
                 LB_1416.Text = tabelka01.Rows[13][15].ToString().Trim();
 
 
-                txt = txt + cl.generuj_dane_do_tabeli_(int.Parse((string)Session["id_dzialu"]), 2, DateTime.Parse(Date1.Text), DateTime.Parse(Date2.Text));
-                txt = txt + cl.generuj_dane_do_tabeli_(int.Parse((string)Session["id_dzialu"]), 3, DateTime.Parse(Date1.Text), DateTime.Parse(Date2.Text));
-                txt = txt + cl.generuj_dane_do_tabeli_(int.Parse((string)Session["id_dzialu"]), 4, DateTime.Parse(Date1.Text), DateTime.Parse(Date2.Text));
-                txt = txt + cl.generuj_dane_do_tabeli_(int.Parse((string)Session["id_dzialu"]), 5, DateTime.Parse(Date1.Text), DateTime.Parse(Date2.Text));
-                txt = txt + cl.generuj_dane_do_tabeli_(int.Parse((string)Session["id_dzialu"]), 7, DateTime.Parse(Date1.Text), DateTime.Parse(Date2.Text));
+                txt = txt + cl.generuj_dane_do_tabeli_(int.Parse((string)Session["id_dzialu"]), 2, Date1.Date, Date2.Date);
+                txt = txt + cl.generuj_dane_do_tabeli_(int.Parse((string)Session["id_dzialu"]), 3, Date1.Date, Date2.Date);
+                txt = txt + cl.generuj_dane_do_tabeli_(int.Parse((string)Session["id_dzialu"]), 4, Date1.Date, Date2.Date);
+                txt = txt + cl.generuj_dane_do_tabeli_(int.Parse((string)Session["id_dzialu"]), 5, Date1.Date, Date2.Date);
+                txt = txt + cl.generuj_dane_do_tabeli_(int.Parse((string)Session["id_dzialu"]), 7, Date1.Date, Date2.Date);
                
 
             }
             catch (Exception ex)
             {
-                //cm.log.Error(tenPlik + " " + ex.Message );
+                cm.log.Error(tenPlik + " " + ex.Message );
             }
 
             // dopasowanie opisów
@@ -784,92 +747,8 @@ namespace stat2018
             { } // end of try
         }
 
-        protected void makeHeader2(System.Web.UI.WebControls.GridView sender, DataTable dT)
-        {
-            try
-            {
-                int row = 0;
-                TableCell HeaderCell = new TableCell();
-                GridViewRow HeaderGridRow = null;
-                string hv = "h";
-                Style stl = new Style();
-                foreach (DataRow dR in dT.Rows)
-                {
-                    if (int.Parse(dR[0].ToString().Trim()) > row)
-                    {
-                        GridView HeaderGrid = (GridView)sender;
-                        HeaderGridRow = Grw(sender);
-                        row = int.Parse(dR[0].ToString().Trim());
-                        //  hv = dR[4].ToString().Trim();
-                    }
-
-                    if (hv == "v")
-                    {
-
-                        stl.CssClass = "verticaltext";
-
-                    }
-                    else
-                    {
-                        stl.CssClass = "horizontaltext";
-
-                    }
-
-                    HeaderCell = new TableCell();
-                    HeaderCell.Text = dR[1].ToString().Trim();
-                    HeaderCell.Style.Clear();
-                    HeaderCell.ApplyStyle(stl);
-                    HeaderCell.ColumnSpan = int.Parse(dR[2].ToString().Trim());
-                    HeaderCell.RowSpan = int.Parse(dR[3].ToString().Trim());
-                    HeaderGridRow.Cells.Add(HeaderCell);
-
-
-                    GridView1.Controls[0].Controls.AddAt(0, HeaderGridRow);
-
-                }
-            }
-            catch (Exception ex)
-            { } // end of try
-        }
-
-        protected void makeHeader3(System.Web.UI.WebControls.GridView sender, DataTable dT)
-        {
-            try
-            {
-                int row = 0;
-                string hv = "h";
-                Style stl = new Style();
-                TableCell HeaderCell = new TableCell();
-                GridViewRow HeaderGridRow = null;
-                foreach (DataRow dR in dT.Rows)
-                {
-                    if (int.Parse(dR[0].ToString().Trim()) > row)
-                    {
-                        GridView HeaderGrid = (GridView)sender;
-                        HeaderGridRow = Grw(sender);
-                        row = int.Parse(dR[0].ToString().Trim());
-                    }
-                    if (hv == "v")
-                    {
-
-                        stl.CssClass = "verticaltext";
-
-                    }
-                    else
-                    {
-                        stl.CssClass = "horizontaltext";
-
-                    }
-                    HeaderCell.Style.Clear();
-                    HeaderCell.ApplyStyle(stl);
-                    HeaderGridRow.Cells.Add(HeaderCell_(dR[1].ToString().Trim(), int.Parse(dR[2].ToString().Trim()), int.Parse(dR[3].ToString().Trim())));
-                    GridView3.Controls[0].Controls.AddAt(0, HeaderGridRow);
-                }
-            }
-            catch
-            { } // end of try
-        }
-
+      
+      
         protected void makeHeader4(System.Web.UI.WebControls.GridView sender, DataTable dT)
         {
             try
@@ -900,7 +779,7 @@ namespace stat2018
                     }
                     HeaderCell.Style.Clear();
                     HeaderCell.ApplyStyle(stl);
-                    HeaderGridRow.Cells.Add(HeaderCell_(dR[1].ToString().Trim(), int.Parse(dR[2].ToString().Trim()), int.Parse(dR[3].ToString().Trim())));
+                    HeaderGridRow.Cells.Add(tb.HeaderCell_(dR[1].ToString().Trim(), int.Parse(dR[2].ToString().Trim()), int.Parse(dR[3].ToString().Trim())));
                     GridView4.Controls[0].Controls.AddAt(0, HeaderGridRow);
                 }
             }
@@ -938,7 +817,7 @@ namespace stat2018
                     }
                     HeaderCell.Style.Clear();
                     HeaderCell.ApplyStyle(stl);
-                    HeaderGridRow.Cells.Add(HeaderCell_(dR[1].ToString().Trim(), int.Parse(dR[2].ToString().Trim()), int.Parse(dR[3].ToString().Trim())));
+                    HeaderGridRow.Cells.Add(tb.HeaderCell_(dR[1].ToString().Trim(), int.Parse(dR[2].ToString().Trim()), int.Parse(dR[3].ToString().Trim())));
                     GridView5.Controls[0].Controls.AddAt(0, HeaderGridRow);
                 }
             }
@@ -949,46 +828,23 @@ namespace stat2018
 
 
 
-
-
-        TableCell HeaderCell_(string text, int columns, int rows)
-        {
-            TableCell HeaderCell = new TableCell();
-            HeaderCell.Text = text;
-            HeaderCell.ColumnSpan = columns;
-            HeaderCell.RowSpan = rows;
-            return HeaderCell;
-
-
-        }
-
         protected void GridView2_RowCreated(object sender, GridViewRowEventArgs e)
         {
             if (e.Row.RowType == DataControlRowType.Header)
             {
-                System.Web.UI.WebControls.GridView sn = new System.Web.UI.WebControls.GridView();
-                DataTable dT = (DataTable)Session["header_01"];
-                makeHeader2(sn, dT);
+               
+                tb.makeHeader((DataTable)Session["header_01"], GridView2);
+               
             }
         }
 
-        protected void grvMergeHeader_RowCreated(object sender, GridViewRowEventArgs e)
-        {
-            if (e.Row.RowType == DataControlRowType.Header)
-            {
-                System.Web.UI.WebControls.GridView sn = new System.Web.UI.WebControls.GridView();
-                DataTable dT = (DataTable)Session["header_01"];
-                makeHeader2(sn, dT);
-            }
-        } //end of grvMergeHeader_RowCreated
+      
 
         protected void GridView3_RowCreated(object sender, GridViewRowEventArgs e)
         {
             if (e.Row.RowType == DataControlRowType.Header)
             {
-                System.Web.UI.WebControls.GridView sn = new System.Web.UI.WebControls.GridView();
-                DataTable dT = (DataTable)Session["header_03"];
-                makeHeader3(sn, dT);
+                tb.makeHeader((DataTable)Session["header_03"], GridView3);
             }
         }
 
@@ -1051,17 +907,17 @@ namespace stat2018
                 { }
 
 
-                string strMonthName = CultureInfo.CurrentCulture.DateTimeFormat.GetMonthName(DateTime.Parse(Date2.Text).Month);
-                int last_day = DateTime.DaysInMonth(DateTime.Parse(Date2.Text).Year, DateTime.Parse(Date2.Text).Month);
-                if (((DateTime.Parse(Date1.Text).Day == 1) && (DateTime.Parse(Date2.Text).Day == last_day)) && ((DateTime.Parse(Date1.Text).Month == DateTime.Parse(Date2.Text).Month)))
+                string strMonthName = CultureInfo.CurrentCulture.DateTimeFormat.GetMonthName(Date2.Date.Month);
+                int last_day = DateTime.DaysInMonth(Date2.Date.Year, Date2.Date.Month);
+                if (((Date1.Date.Day == 1) && (Date2.Date.Day == last_day)) && ((Date1.Date.Month == Date2.Date.Month)))
                 {
                     // cały miesiąc
-                    Label19.Text = " Liczba sesji i wyznaczonych spraw za miesiąc " + strMonthName + " " + DateTime.Parse(Date2.Text).Year.ToString() + " roku.";
-                    Label17.Text = "Liczba odbytych sesji i załatwionych spraw za miesiąc " + strMonthName + " " + DateTime.Parse(Date2.Text).Year.ToString() + " roku.";
+                    Label19.Text = " Liczba sesji i wyznaczonych spraw za miesiąc " + strMonthName + " " + Date2.Date.Year.ToString() + " roku.";
+                    Label17.Text = "Liczba odbytych sesji i załatwionych spraw za miesiąc " + strMonthName + " " + Date2.Date.Year.ToString() + " roku.";
                     //Stan referatów sędziów na koniec miesiąca
-                    Label15.Text = "Załatwienia na koniec miesiąca " + strMonthName + " " + DateTime.Parse(Date2.Text).Year.ToString() + " roku.";
+                    Label15.Text = "Załatwienia na koniec miesiąca " + strMonthName + " " + Date2.Date.Year.ToString() + " roku.";
                     //Informacje o ruchu sprawa za miesiąc: 
-                    Label5.Text = "Informacja statystyczna z ruchu spraw  karnych za miesiąc:  " + strMonthName + " " + DateTime.Parse(Date2.Text).Year.ToString() + " roku.";
+                    Label5.Text = "Informacja statystyczna z ruchu spraw  karnych za miesiąc:  " + strMonthName + " " + Date2.Date.Year.ToString() + " roku.";
                     //Pozostało z ubieglego miesiąca
                     Label2.Text = "V.Liczba załatwionych spraw od początku roku";
                 }
@@ -1102,7 +958,7 @@ namespace stat2018
             }
             catch (Exception ex)
             {
-                                //cm.log.Error(tenPlik + " " + ex.Message );    
+                                cm.log.Error(tenPlik + " " + ex.Message );    
             }
 
             // pierwsza tabelka
@@ -1307,7 +1163,7 @@ namespace stat2018
                 }
                 catch (Exception ex)
                 {
-                    //cm.log.Error(tenPlik + " " + ex.Message);
+                    cm.log.Error(tenPlik + " " + ex.Message);
                 }
 
             }//end of using

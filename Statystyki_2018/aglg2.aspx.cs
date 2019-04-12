@@ -1,15 +1,17 @@
 ﻿/*
 Last Update:
-    - version 1.181219
+    - version 1.190123
 Creation date: 2018-11-21
 
 */
+
+using OfficeOpenXml;
 using System;
 using System.Data;
 using System.IO;
 using System.Web.UI;
 using System.Web.UI.WebControls;
-using OfficeOpenXml;
+using System.Globalization;
 
 namespace stat2018
 {
@@ -20,76 +22,91 @@ namespace stat2018
         public tabele tb = new tabele();
         public dataReaders dr = new dataReaders();
 
-        const string tenPlik = "aglg2.aspx";
-        const string tenPlikNazwa = "aglg2";
-        string path = "";
-        int storid = 0;
-        int rowIndex = 1;
+        private const string tenPlik = "aglg2.aspx";
+        private const string tenPlikNazwa = "aglg2";
+        private string path = "";
+        private int storid = 0;
+        private int rowIndex = 1;
 
         protected void Page_Load(object sender, EventArgs e)
         {
+            string idWydzial = Request.QueryString["w"];
             try
             {
-                string idWydzial = Request.QueryString["w"];
-                if (idWydzial != null)
-                {
-                    Session["id_dzialu"] = idWydzial;
-                }
-                else
+                if (idWydzial == null)
                 {
                     return;
                 }
-                path = Server.MapPath("~\\Template\\" + tenPlikNazwa + ".xlsx");
-                DateTime dTime = DateTime.Now;
-                dTime = dTime.AddMonths(-1);
-                if (Date1.Text.Length == 0)
+
+                Session["id_dzialu"] = idWydzial;
+                bool dost = cm.dostep(idWydzial, (string)Session["identyfikatorUzytkownika"]);
+                if (!dost)
                 {
-                    Date1.Text = dTime.Year.ToString() + "-" + dTime.Month.ToString("D2") + "-01";
-                    Date1.Date = DateTime.Parse(Date1.Text);
-                }
-                if (Date2.Text.Length == 0)
-                {
-                    Date2.Text = dTime.Year.ToString() + "-" + dTime.Month.ToString("D2") + "-" + DateTime.DaysInMonth(dTime.Year, dTime.Month).ToString("D2");
-                    Date2.Date = DateTime.Parse(Date2.Text);
+                    Server.Transfer("default.aspx?info='Użytkownik " + (string)Session["identyfikatorUzytkownika"] + " nie praw do działu nr " + idWydzial + "'");
                 }
 
-                Session["data_1"] = Date1.Text.Trim();
-                Session["data_2"] = Date2.Text.Trim();
+                path = Server.MapPath("~\\Template\\" + tenPlikNazwa + ".xlsx");
+
+                CultureInfo newCulture = (CultureInfo)CultureInfo.CurrentCulture.Clone();
+                newCulture.DateTimeFormat = CultureInfo.GetCultureInfo("PL").DateTimeFormat;
+                System.Threading.Thread.CurrentThread.CurrentCulture = newCulture;
+                System.Threading.Thread.CurrentThread.CurrentUICulture = newCulture;
+                DateTime dTime = DateTime.Now.AddMonths(-1); ;
+
+                if (Date1.Text.Length == 0) Date1.Date = DateTime.Parse(dTime.Year.ToString() + "-" + dTime.Month.ToString("D2") + "-01");
+                if (Date2.Text.Length == 0) Date2.Date = DateTime.Parse(dTime.Year.ToString() + "-" + dTime.Month.ToString("D2") + "-" + DateTime.DaysInMonth(dTime.Year, dTime.Month).ToString("D2"));
+                Session["id_dzialu"] = idWydzial;
+                Session["data_1"] = Date1.Date.ToShortDateString();
+                Session["data_2"] = Date2.Date.ToShortDateString();
+
             }
             catch
             { }
             odswiez();
             debug();
-        }
+        }// end of Page_Load
+
         protected void clearHedersSession()
         {
             Session["makeHeader"] = null;
-         
         }
 
         protected DataTable makeHeader_01()
         {
-            DataTable dT_01 = new DataTable();
-            dT_01.Columns.Clear();
-            dT_01.Columns.Add("Column1", typeof(string));
-            dT_01.Columns.Add("Column2", typeof(string));
-            dT_01.Columns.Add("Column3", typeof(string));
-            dT_01.Columns.Add("Column4", typeof(string));
-
-
-            DataTable dT_04 = new DataTable();
-            dT_04.Columns.Clear();
-            dT_04.Columns.Add("Column1", typeof(string));
-            dT_04.Columns.Add("Column2", typeof(string));
-            dT_04.Columns.Add("Column3", typeof(string));
-            dT_04.Columns.Add("Column4", typeof(string));
-
-            #region tabela  4 ()
+            DataTable dT_01 = tb.SchematTabelinaglowkowej();
 
             dT_01.Clear();
 
-         
-         
+            dT_01.Rows.Add(new Object[] { "1", "Rozpraw", "1", "1" });
+            dT_01.Rows.Add(new Object[] { "1", "Posiedzeń", "1", "1" });
+            dT_01.Rows.Add(new Object[] { "1", "Razem", "1", "1" });
+            dT_01.Rows.Add(new Object[] { "1", "GC", "1", "1" });
+            dT_01.Rows.Add(new Object[] { "1", "Ga", "1", "1" });
+            dT_01.Rows.Add(new Object[] { "1", "Razem I i II instancja", "1", "1" });
+            dT_01.Rows.Add(new Object[] { "1", "GC", "1", "1" });
+            dT_01.Rows.Add(new Object[] { "1", "Ga", "1", "1" });
+            dT_01.Rows.Add(new Object[] { "1", "Razem I i II instancja", "1", "1" });
+
+            dT_01.Rows.Add(new Object[] { "1", "%odroczeń/wyznaczeń GC", "1", "1" });
+            dT_01.Rows.Add(new Object[] { "1", "% odrczeń/ wyzn.Ga", "1", "1" });
+            dT_01.Rows.Add(new Object[] { "1", "śr. Ilość spraw na rozprawie", "1", "1" });
+
+            dT_01.Rows.Add(new Object[] { "2", "Sędzia", "1", "2" });
+            dT_01.Rows.Add(new Object[] { "2", "Efektywny czas pracy", "1", "2" });
+
+            dT_01.Rows.Add(new Object[] { "2", "Ilość sesji", "3", "1" });
+            dT_01.Rows.Add(new Object[] { "2", "Ilość wyznaczonych spraw na rozprawie", "3", "1" });
+            dT_01.Rows.Add(new Object[] { "2", "Ilość odroczonych spraw", "3", "1" });
+
+            return dT_01;
+        }
+
+        protected DataTable makeHeader_02()
+        {
+            DataTable dT_01 = tb.SchematTabelinaglowkowej();
+
+            dT_01.Clear();
+
             dT_01.Rows.Add(new Object[] { "1", "GC", "1", "1" });
             dT_01.Rows.Add(new Object[] { "1", "GNc", "1", "1" });
             dT_01.Rows.Add(new Object[] { "1", "Gu", "1", "1" });
@@ -100,83 +117,230 @@ namespace stat2018
             dT_01.Rows.Add(new Object[] { "1", "GS", "1", "1" });
             dT_01.Rows.Add(new Object[] { "1", "WSC", "1", "1" });
 
-
             dT_01.Rows.Add(new Object[] { "2", "Sędzia", "1", "2" });
             dT_01.Rows.Add(new Object[] { "2", "Efektywny czas pracy", "1", "2" });
-    
+
             dT_01.Rows.Add(new Object[] { "2", "Załatwienia", "9", "1" });
             dT_01.Rows.Add(new Object[] { "2", "Razem załatwienia ", "1", "2" });
             dT_01.Rows.Add(new Object[] { "2", "Średnia miesięczna łączna liczba załatwień w efektywnym czasie pracy", "1", "2" });
 
             return dT_01;
-
-
-            #endregion
         }
 
+        protected DataTable makeHeader_03()
+        {
+            DataTable dT_01 = tb.SchematTabelinaglowkowej();
+
+            dT_01.Clear();
+            dT_01.Rows.Add(new Object[] { "1", "Sędziowie funkcyjni", "1", "1" });
+            dT_01.Rows.Add(new Object[] { "1", "ilość dni pracy w okresie", "1", "1" });
+            dT_01.Rows.Add(new Object[] { "1", "nieobecność", "1", "1" });
+            dT_01.Rows.Add(new Object[] { "1", "obecność", "1", "1" });
+            dT_01.Rows.Add(new Object[] { "1", "ilość dni", "1", "1" });
+            dT_01.Rows.Add(new Object[] { "1", "wynik", "1", "1" });
+            dT_01.Rows.Add(new Object[] { "1", "efekt. okres w miesiącach", "1", "1" });
+            return dT_01;
+        }
 
         protected DataTable makeHeader_04()
         {
-       
-            DataTable dT_04 = new DataTable();
-            dT_04.Columns.Clear();
-            dT_04.Columns.Add("Column1", typeof(string));
-            dT_04.Columns.Add("Column2", typeof(string));
-            dT_04.Columns.Add("Column3", typeof(string));
-            dT_04.Columns.Add("Column4", typeof(string));
+            DataTable dT_01 = tb.SchematTabelinaglowkowej();
 
+            dT_01.Clear();
+            dT_01.Rows.Add(new Object[] { "1", "Sędziowie liniowi", "1", "1" });
+            dT_01.Rows.Add(new Object[] { "1", "ilość dni pracy w okresie", "1", "1" });
+            dT_01.Rows.Add(new Object[] { "1", "nieobecność", "1", "1" });
+            dT_01.Rows.Add(new Object[] { "1", "obecność", "1", "1" });
+            dT_01.Rows.Add(new Object[] { "1", "ilość dni", "1", "1" });
+            dT_01.Rows.Add(new Object[] { "1", "wynik", "1", "1" });
+            dT_01.Rows.Add(new Object[] { "1", "efekt. okres w miesiącach", "1", "1" });
+            return dT_01;
+        }
 
-            #region tabela  4 ()
+        protected DataTable makeHeader_05()
+        {
+            //spr.>2 lata I ins
+            DataTable dT_01 = tb.SchematTabelinaglowkowej();
 
-            dT_04.Clear();
+            dT_01.Clear();
+            dT_01.Rows.Add(new Object[] { "1", "Sędzia", "1", "1" });
+            dT_01.Rows.Add(new Object[] { "1", "od 2 do 3 lat", "1", "1" });
+            dT_01.Rows.Add(new Object[] { "1", "w tym zawieszone", "1", "1" });
+            dT_01.Rows.Add(new Object[] { "1", "od 3 do 5 lat", "1", "1" });
+            dT_01.Rows.Add(new Object[] { "1", "w tym zawieszone", "1", "1" });
+            dT_01.Rows.Add(new Object[] { "1", "od  5 do 8 lat", "1", "1" });
+            dT_01.Rows.Add(new Object[] { "1", "w tym zawieszone", "1", "1" });
+            dT_01.Rows.Add(new Object[] { "1", "pow. 8 lat", "1", "1" });
+            dT_01.Rows.Add(new Object[] { "1", "w tym zawieszone", "1", "1" });
+            dT_01.Rows.Add(new Object[] { "1", "Razem", "1", "1" });
+            return dT_01;
+        }
 
-            dT_04.Rows.Add(new Object[] { "1", "Rozpraw", "1", "1" });
-            dT_04.Rows.Add(new Object[] { "1", "Posiedzeń", "1", "1" });
-            dT_04.Rows.Add(new Object[] { "1", "Razem", "1", "1" });
-            dT_04.Rows.Add(new Object[] { "1", "GC", "1", "1" });
-            dT_04.Rows.Add(new Object[] { "1", "Ga", "1", "1" });
-            dT_04.Rows.Add(new Object[] { "1", "Razem I i II instancja", "1", "1" });
-            dT_04.Rows.Add(new Object[] { "1", "GC", "1", "1" });
-            dT_04.Rows.Add(new Object[] { "1", "Ga", "1", "1" });
-            dT_04.Rows.Add(new Object[] { "1", "Razem I i II instancja", "1", "1" });
+        protected DataTable makeHeader_06()
+        {
+            DataTable dT_01 = tb.SchematTabelinaglowkowej();
 
-            dT_04.Rows.Add(new Object[] { "1", "%odroczeń / wyznaczeń GC", "1", "1" });
-            dT_04.Rows.Add(new Object[] { "1", "% odrczeń / wyzn.Ga", "1", "1" });
-            dT_04.Rows.Add(new Object[] { "1", "śr. Ilość spraw na rozprawie", "1", "1" });
+            dT_01.Clear();
+            dT_01.Rows.Add(new Object[] { "1", "Sędzia", "1", "1" });
+            dT_01.Rows.Add(new Object[] { "1", "od 2 do 3 lat", "1", "1" });
+            dT_01.Rows.Add(new Object[] { "1", "w tym zawieszone", "1", "1" });
+            dT_01.Rows.Add(new Object[] { "1", "od 3 do 5 lat", "1", "1" });
+            dT_01.Rows.Add(new Object[] { "1", "w tym zawieszone", "1", "1" });
+            dT_01.Rows.Add(new Object[] { "1", "od  5 do 8 lat", "1", "1" });
+            dT_01.Rows.Add(new Object[] { "1", "w tym zawieszone", "1", "1" });
+            dT_01.Rows.Add(new Object[] { "1", "pow. 8 lat", "1", "1" });
+            dT_01.Rows.Add(new Object[] { "1", "w tym zawieszone", "1", "1" });
+            dT_01.Rows.Add(new Object[] { "1", "Razem", "1", "1" });
+            return dT_01;
+        }
 
-            dT_04.Rows.Add(new Object[] { "1", "GC", "1", "1" });
-            dT_04.Rows.Add(new Object[] { "1", "GNc", "1", "1" });
-            dT_04.Rows.Add(new Object[] { "1", "GCo", "1", "1" });
-            dT_04.Rows.Add(new Object[] { "1", "Ga", "1", "1" });
-            dT_04.Rows.Add(new Object[] { "1", "Gz", "1", "1" });
-            dT_04.Rows.Add(new Object[] { "1", "GCo", "1", "1" });
-            dT_04.Rows.Add(new Object[] { "1", "GS", "1", "1" });
-            dT_04.Rows.Add(new Object[] { "1", "WSC", "1", "1" });
+        protected DataTable makeHeader_07()
+        {
+            DataTable dT_01 = tb.SchematTabelinaglowkowej();
 
+            dT_01.Clear();
+            dT_01.Rows.Add(new Object[] { "1", "Sędzia", "1", "1" });
+            dT_01.Rows.Add(new Object[] { "1", "od 3 do 6 miesięcy", "1", "1" });
+            dT_01.Rows.Add(new Object[] { "1", "w tym zawieszone", "1", "1" });
+            dT_01.Rows.Add(new Object[] { "1", "od  6 do 12 miesięcy", "1", "1" });
+            dT_01.Rows.Add(new Object[] { "1", "w tym zawieszone", "1", "1" });
+            dT_01.Rows.Add(new Object[] { "1", "pow. 12 miesięcy", "1", "1" });
+            dT_01.Rows.Add(new Object[] { "1", "w tym zawieszone", "1", "1" });
+            dT_01.Rows.Add(new Object[] { "1", "Razem", "1", "1" });
+            return dT_01;
+        }
 
-            dT_04.Rows.Add(new Object[] { "2", "Sędzia", "1", "2" });
-            dT_04.Rows.Add(new Object[] { "2", "Efektywny czas pracy", "1", "2" });
-            dT_04.Rows.Add(new Object[] { "2", "Ilość sesji", "3", "1" });
-            dT_04.Rows.Add(new Object[] { "2", "Ilość wyznaczonych spraw na rozprawie", "3", "1" });
-            dT_04.Rows.Add(new Object[] { "2", "Ilość odroczonych spraw", "3", "1" });
-            dT_04.Rows.Add(new Object[] { "2", "Wydajność sędziów", "3", "1" });
-            dT_04.Rows.Add(new Object[] { "2", "Załatwienia", "8", "1" });
-            dT_04.Rows.Add(new Object[] { "2", "Razem załatwienia ", "1", "2" });
-            dT_04.Rows.Add(new Object[] { "2", "Średnia miesięczna łączna liczba załatwień w efektywnym czasie pracy", "1", "2" });
+        protected DataTable makeHeader_08()
+        {
+            DataTable dT_01 = tb.SchematTabelinaglowkowej();
 
-            return dT_04;
+            dT_01.Clear();
+            dT_01.Rows.Add(new Object[] { "1", "Sędzia", "1", "1" });
+            dT_01.Rows.Add(new Object[] { "1", "GC", "1", "1" });
+            dT_01.Rows.Add(new Object[] { "1", "GNc", "1", "1" });
+            dT_01.Rows.Add(new Object[] { "1", "GNs", "1", "1" });
+            dT_01.Rows.Add(new Object[] { "1", "GCo", "1", "1" });
+            dT_01.Rows.Add(new Object[] { "1", "Razem", "1", "1" });
+            return dT_01;
+        }
 
+        protected DataTable makeHeader_09()
+        {
+            DataTable dT_01 = tb.SchematTabelinaglowkowej();
+            dT_01.Clear();
+            dT_01.Rows.Add(new Object[] { "1", "Sędzia", "1", "1" });
+            dT_01.Rows.Add(new Object[] { "1", "Ga", "1", "1" });
+            dT_01.Rows.Add(new Object[] { "1", "Gz", "1", "1" });
+            dT_01.Rows.Add(new Object[] { "1", "Gco", "1", "1" });
+            dT_01.Rows.Add(new Object[] { "1", "WSC", "1", "1" });
+            dT_01.Rows.Add(new Object[] { "1", "Razem", "1", "1" });
+            return dT_01;
+        }
 
-            #endregion
+        protected DataTable makeHeader_10()
+        {
+            DataTable dT_01 = tb.SchematTabelinaglowkowej();
+            dT_01.Clear();
+            dT_01.Rows.Add(new Object[] { "1", "wpływ", "1", "1" });
+            dT_01.Rows.Add(new Object[] { "1", "załatwienia", "1", "1" });
+            dT_01.Rows.Add(new Object[] { "1", "pozostałość", "1", "1" });
+            dT_01.Rows.Add(new Object[] { "1", "wskaźnik pozostałości", "1", "1" });
 
+            dT_01.Rows.Add(new Object[] { "1", "wpływ", "1", "1" });
+            dT_01.Rows.Add(new Object[] { "1", "załatwienia", "1", "1" });
+            dT_01.Rows.Add(new Object[] { "1", "pozostałość", "1", "1" });
+            dT_01.Rows.Add(new Object[] { "1", "wskaźnik pozostałości", "1", "1" });
 
+            dT_01.Rows.Add(new Object[] { "2", "Sędzia", "1", "2" });
+            dT_01.Rows.Add(new Object[] { "2", "CG", "4", "1" });
+            dT_01.Rows.Add(new Object[] { "2", "Ga", "4", "1" });
+            return dT_01;
+        }
 
+        protected DataTable makeHeader_13()
+        {
+            DataTable dT_01 = tb.SchematTabelinaglowkowej();
+            dT_01.Clear();
+            dT_01.Rows.Add(new Object[] { "1", "1-14 dni", "1", "1" });
+            dT_01.Rows.Add(new Object[] { "1", "w tym nieusprawiedliwione", "1", "1" });
+            dT_01.Rows.Add(new Object[] { "1", "15-30 dni", "1", "1" });
+            dT_01.Rows.Add(new Object[] { "1", "w tym nieusprawiedliwione ", "1", "1" });
+            dT_01.Rows.Add(new Object[] { "1", "pow. 1 do 3 mies.", "1", "1" });
+            dT_01.Rows.Add(new Object[] { "1", "w tym nieusprawiedliwione ", "1", "1" });
+            dT_01.Rows.Add(new Object[] { "1", "ponad 3 mies.", "1", "1" });
+            dT_01.Rows.Add(new Object[] { "1", "w tym nieusprawiedliwione ", "1", "1" });
+
+            dT_01.Rows.Add(new Object[] { "2", "ogółem", "1", "2" });
+            dT_01.Rows.Add(new Object[] { "2", "w terminie ustawowym", "1", "2" });
+
+            dT_01.Rows.Add(new Object[] { "2", "po upływie terminu ustawowego (czyli 14 dni+)", "8", "1" });
+
+            dT_01.Rows.Add(new Object[] { "3", "Sędzia", "1", "3" });
+            dT_01.Rows.Add(new Object[] { "3", "liczba sporządzonych uzasadnień", "10", "1" });
+
+            return dT_01;
+        }
+
+        protected DataTable makeHeader_14()
+        {
+            DataTable dT_01 = tb.SchematTabelinaglowkowej();
+            dT_01.Clear();
+            dT_01.Rows.Add(new Object[] { "1", "1-14 dni", "1", "1" });
+            dT_01.Rows.Add(new Object[] { "1", "w tym nieusprawiedliwione", "1", "1" });
+            dT_01.Rows.Add(new Object[] { "1", "15-30 dni", "1", "1" });
+            dT_01.Rows.Add(new Object[] { "1", "w tym nieusprawiedliwione ", "1", "1" });
+            dT_01.Rows.Add(new Object[] { "1", "pow. 1 do 3 mies.", "1", "1" });
+            dT_01.Rows.Add(new Object[] { "1", "w tym nieusprawiedliwione ", "1", "1" });
+            dT_01.Rows.Add(new Object[] { "1", "ponad 3 mies.", "1", "1" });
+            dT_01.Rows.Add(new Object[] { "1", "w tym nieusprawiedliwione ", "1", "1" });
+
+            dT_01.Rows.Add(new Object[] { "2", "ogółem", "1", "2" });
+            dT_01.Rows.Add(new Object[] { "2", "w terminie ustawowym", "1", "2" });
+
+            dT_01.Rows.Add(new Object[] { "2", "po upływie terminu ustawowego (czyli 14 dni+)", "8", "1" });
+
+            dT_01.Rows.Add(new Object[] { "3", "Sędzia", "1", "3" });
+            dT_01.Rows.Add(new Object[] { "3", "liczba sporządzonych uzasadnień", "10", "1" });
+
+            return dT_01;
+        }
+
+        protected DataTable makeHeader_16()
+        {
+            DataTable dT_01 = tb.SchematTabelinaglowkowej();
+            dT_01.Clear();
+            int miesiac = Date1.Date.Month;
+            for (int i = 0; i < 6; i++)
+            {
+                int miech = miesiac + i;
+                if (miech > 12)
+                {
+                    miech = miech - 12;
+                }
+                string rzymski = cm.podajMiesiacRzymski(miech);
+
+                dT_01.Rows.Add(new Object[] { "1", "wyznaczonych <br/>" + rzymski, "1", "1" });
+                dT_01.Rows.Add(new Object[] { "1", "odroczonych <br/>" + rzymski, "1", "1" });
+            }
+
+            dT_01.Rows.Add(new Object[] { "1", "wyznaczonych", "1", "1" });
+            dT_01.Rows.Add(new Object[] { "1", "odroczonych", "1", "1" });
+
+            dT_01.Rows.Add(new Object[] { "2", "Sędzia", "1", "2" });
+            dT_01.Rows.Add(new Object[] { "2", "ogółem", "1", "2" });
+
+            for (int i = 0; i < 6; i++)
+            {
+                dT_01.Rows.Add(new Object[] { "2", "Ilość spraw", "2", "1" });
+            }
+
+            dT_01.Rows.Add(new Object[] { "2", "Razem ilość spraw ", "2", "1" });
+
+            return dT_01;
         }
 
         private void debug()
         {
-
-
             try
             {
                 string User_id = string.Empty;
@@ -188,11 +352,10 @@ namespace stat2018
                 }
                 catch
                 { }
-              //  Label3.Text = cl.nazwaSadu((string)Session["id_dzialu"]);
+                //  Label3.Text = cl.nazwaSadu((string)Session["id_dzialu"]);
                 Label28.Text = cl.podajUzytkownika(User_id, domain);
                 Label29.Text = DateTime.Now.ToLongDateString();
                 Label30.Text = System.IO.File.ReadAllText(Server.MapPath(@"~//version.txt")).ToString().Trim();
-
             }
             catch
             { }
@@ -228,13 +391,10 @@ namespace stat2018
                 infoLabel9.Visible = false;
                 infoLabel10.Visible = false;
 
-
                 infoLabel11.Visible = false;
                 infoLabel12.Visible = false;
                 infoLabel13.Visible = false;
                 infoLabel14.Visible = false;
-              
-
             }
         }
 
@@ -243,6 +403,7 @@ namespace stat2018
             clearHedersSession();
             odswiez();
         }
+
         protected void odswiez()
         {
             if (Session["id_dzialu"] == null)
@@ -250,7 +411,7 @@ namespace stat2018
                 return;
             }
             //odswiezenie danych
-           
+
             tabela_1();
             tabela_2();
             tabela_3();
@@ -265,40 +426,41 @@ namespace stat2018
             tabela_12();
             tabela_13();
             tabela_14();
+            tabela_15();
+            tabela_16();
+            tabela_17();
+            tabela_18();
         }
 
         protected void tworzPlikExcell(object sender, EventArgs e)
         {
-            
             // execel begin
-            string path = Server.MapPath("Template") + "\\"+tenPlikNazwa+".xlsx";
+            string path = Server.MapPath("Template") + "\\" + tenPlikNazwa + ".xlsx";
             FileInfo existingFile = new FileInfo(path);
-            if (!existingFile.Exists )
+            if (!existingFile.Exists)
             {
                 return;
             }
-            string download = Server.MapPath("Template") + @"\"+tenPlikNazwa+"";
+            string download = Server.MapPath("Template") + @"\" + tenPlikNazwa + "";
 
             FileInfo fNewFile = new FileInfo(download + "_.xlsx");
 
             // pierwsza tabelka
 
-
             using (ExcelPackage MyExcel = new ExcelPackage(existingFile))
             {
-                
                 ExcelWorksheet MyWorksheet1 = MyExcel.Workbook.Worksheets[1];
 
                 // pierwsza
-                MyWorksheet1 = tb.tworzArkuszwExcle(MyExcel.Workbook.Worksheets[1], (DataTable)Session["tabelka001"], 25, 0, 4,false,false,false,false,false);
-                MyWorksheet1 = tb.tworzArkuszwExcle(MyExcel.Workbook.Worksheets[2], (DataTable)Session["tabelka002"], 7, 0, 3, false, false, false, false, false);
-                MyWorksheet1 = tb.tworzArkuszwExcle(MyExcel.Workbook.Worksheets[3], (DataTable)Session["tabelka003"], 7, 0, 3, false, false, false, false, false);
+                MyWorksheet1 = tb.tworzArkuszwExcle(MyExcel.Workbook.Worksheets[1], (DataTable)Session["tabelka001"], 13, 0, 6, false, false, false, false, false);
+                MyWorksheet1 = tb.tworzArkuszwExcle(MyExcel.Workbook.Worksheets[2], (DataTable)Session["tabelka002"], 13, 0, 5, false, false, false, false, false);
+                MyWorksheet1 = tb.tworzArkuszwExcle(MyExcel.Workbook.Worksheets[3], (DataTable)Session["tabelka003"], 7, 0, 6, false, false, false, false, false);
                 MyWorksheet1 = tb.tworzArkuszwExcle(MyExcel.Workbook.Worksheets[4], (DataTable)Session["tabelka004"], 10, 0, 3, false, false, false, false, false);
                 MyWorksheet1 = tb.tworzArkuszwExcle(MyExcel.Workbook.Worksheets[5], (DataTable)Session["tabelka005"], 10, 0, 3, false, false, false, false, false);
-                MyWorksheet1 = tb.tworzArkuszwExcle(MyExcel.Workbook.Worksheets[6], (DataTable)Session["tabelka006"], 8, 0, 3, false, false, false, false, false);
-                MyWorksheet1 = tb.tworzArkuszwExcle(MyExcel.Workbook.Worksheets[7], (DataTable)Session["tabelka007"], 12, 0, 3, false, false, false, false, false);
-                MyWorksheet1 = tb.tworzArkuszwExcle(MyExcel.Workbook.Worksheets[8], (DataTable)Session["tabelka008"], 9, 0, 4, false, false, false, false, false);
-                MyWorksheet1 = tb.tworzArkuszwExcle(MyExcel.Workbook.Worksheets[9], (DataTable)Session["tabelka009"], 13, 0, 4, false, false, false, false, false);
+                MyWorksheet1 = tb.tworzArkuszwExcle(MyExcel.Workbook.Worksheets[6], (DataTable)Session["tabelka006"], 8, 0, 6, false, false, false, false, false);
+                MyWorksheet1 = tb.tworzArkuszwExcle(MyExcel.Workbook.Worksheets[7], (DataTable)Session["tabelka007"], 12, 0, 4, false, false, false, false, false);
+                MyWorksheet1 = tb.tworzArkuszwExcle(MyExcel.Workbook.Worksheets[8], (DataTable)Session["tabelka008"], 9, 0, 5, false, false, false, false, false);
+                MyWorksheet1 = tb.tworzArkuszwExcle(MyExcel.Workbook.Worksheets[9], (DataTable)Session["tabelka009"], 13, 0, 5, false, false, false, false, false);
                 MyWorksheet1 = tb.tworzArkuszwExcle(MyExcel.Workbook.Worksheets[10], (DataTable)Session["tabelka010"], 11, 0, 5, false, false, false, false, false);
                 MyWorksheet1 = tb.tworzArkuszwExcle(MyExcel.Workbook.Worksheets[11], (DataTable)Session["tabelka011"], 13, 0, 4, false, false, false, false, false);
                 MyWorksheet1 = tb.tworzArkuszwExcle(MyExcel.Workbook.Worksheets[12], (DataTable)Session["tabelka012"], 13, 0, 4, false, false, false, false, false);
@@ -318,68 +480,63 @@ namespace stat2018
                 catch (Exception ex)
                 {
                     cm.log.Error(tenPlik + " " + ex.Message);
-                 
                 }
-
             }//end of using
-
-
-
         }
+
         protected void tabela_1()
         {
-                string idDzialu = (string)Session["id_dzialu"];
-                if (cl.debug(int.Parse(idDzialu)))
-                {
-                    //cm.log.Info(tenPlik + ": rozpoczęcie tworzenia tabeli 1");
-                }
-                DataTable tabelka01 = dr.generuj_dane_do_tabeli_sedziowskiej_2018(int.Parse(idDzialu), 1, DateTime.Parse(Date1.Text), DateTime.Parse(Date2.Text), 35, tenPlik);
-                Session["tabelka001"] = tabelka01;
-                gwTabela1.DataSource = null;
-                gwTabela1.DataSourceID = null;
-                gwTabela1.DataSource = tabelka01;
-                gwTabela1.DataBind();
-           
+            string idDzialu = (string)Session["id_dzialu"];
+            if (cl.debug(int.Parse(idDzialu)))
+            {
+                cm.log.Info(tenPlik + ": rozpoczęcie tworzenia tabeli 1");
+            }
+            DataTable tabelka01 = dr.generuj_dane_do_tabeli_sedziowskiej_2018(int.Parse(idDzialu), 1, Date1.Date, Date2.Date, 35, tenPlik);
+            Session["tabelka001"] = tabelka01;
+            gwTabela1.DataSource = null;
+            gwTabela1.DataSourceID = null;
+            gwTabela1.DataSource = tabelka01;
+            gwTabela1.DataBind();
         }
+
         protected void tabela_2()
         {
             string idDzialu = (string)Session["id_dzialu"];
             if (cl.debug(int.Parse(idDzialu)))
             {
-                //cm.log.Info(tenPlik + ": rozpoczęcie tworzenia tabeli 2");
+                cm.log.Info(tenPlik + ": rozpoczęcie tworzenia tabeli 2");
             }
-            DataTable tabelka01 = dr.generuj_dane_do_tabeli_sedziowskiej_2018(int.Parse(idDzialu), 2, DateTime.Parse(Date1.Text), DateTime.Parse(Date2.Text), 15, tenPlik);
+            DataTable tabelka01 = dr.generuj_dane_do_tabeli_sedziowskiej_2018(int.Parse(idDzialu), 2, Date1.Date, Date2.Date, 15, tenPlik);
             Session["tabelka002"] = tabelka01;
             gwTabela2.DataSource = null;
             gwTabela2.DataSourceID = null;
             gwTabela2.DataSource = tabelka01;
             gwTabela2.DataBind();
-
         }
+
         protected void tabela_3()
         {
             string idDzialu = (string)Session["id_dzialu"];
             if (cl.debug(int.Parse(idDzialu)))
             {
-                //cm.log.Info(tenPlik + ": rozpoczęcie tworzenia tabeli 2");
+                cm.log.Info(tenPlik + ": rozpoczęcie tworzenia tabeli 2");
             }
-            DataTable tabelka01 = dr.generuj_dane_do_tabeli_sedziowskiej_2018(int.Parse(idDzialu), 3, DateTime.Parse(Date1.Text), DateTime.Parse(Date2.Text), 15, tenPlik);
+            DataTable tabelka01 = dr.generuj_dane_do_tabeli_sedziowskiej_2018(int.Parse(idDzialu), 3, Date1.Date, Date2.Date, 15, tenPlik);
             Session["tabelka003"] = tabelka01;
             gwTabela3.DataSource = null;
             gwTabela3.DataSourceID = null;
             gwTabela3.DataSource = tabelka01;
             gwTabela3.DataBind();
-
         }
 
         protected void tabela_4()
         {
-        string idDzialu =  (string)Session["id_dzialu"];
+            string idDzialu = (string)Session["id_dzialu"];
             if (cl.debug(int.Parse(idDzialu)))
             {
-                //cm.log.Info(tenPlik + ": rozpoczęcie tworzenia tabeli 4");
+                cm.log.Info(tenPlik + ": rozpoczęcie tworzenia tabeli 4");
             }
-            DataTable tabelka01 = dr.generuj_dane_do_tabeli_sedziowskiej_2018(int.Parse(idDzialu), 4, DateTime.Parse(Date1.Text), DateTime.Parse(Date2.Text), 23, tenPlik);
+            DataTable tabelka01 = dr.generuj_dane_do_tabeli_sedziowskiej_2018(int.Parse(idDzialu), 4, Date1.Date, Date2.Date, 23, tenPlik);
             Session["tabelka004"] = tabelka01;
             gwTabela4.DataSource = null;
             gwTabela4.DataSourceID = null;
@@ -389,13 +546,12 @@ namespace stat2018
 
         protected void tabela_5()
         {
-            
             string idDzialu = (string)Session["id_dzialu"];
             if (cl.debug(int.Parse(idDzialu)))
             {
-                //cm.log.Info(tenPlik + ": rozpoczęcie tworzenia tabeli 5");
+                cm.log.Info(tenPlik + ": rozpoczęcie tworzenia tabeli 5");
             }
-            DataTable tabelka01 = dr.generuj_dane_do_tabeli_sedziowskiej_2018(int.Parse(idDzialu), 5, DateTime.Parse(Date1.Text), DateTime.Parse(Date2.Text), 23, tenPlik);
+            DataTable tabelka01 = dr.generuj_dane_do_tabeli_sedziowskiej_2018(int.Parse(idDzialu), 5, Date1.Date, Date2.Date, 23, tenPlik);
             Session["tabelka005"] = tabelka01;
             gwTabela5.DataSource = null;
             gwTabela5.DataSourceID = null;
@@ -408,9 +564,9 @@ namespace stat2018
             string idDzialu = (string)Session["id_dzialu"];
             if (cl.debug(int.Parse(idDzialu)))
             {
-                //cm.log.Info(tenPlik + ": rozpoczęcie tworzenia tabeli 6");
+                cm.log.Info(tenPlik + ": rozpoczęcie tworzenia tabeli 6");
             }
-            DataTable tabelka01 = dr.generuj_dane_do_tabeli_sedziowskiej_2018(int.Parse(idDzialu), 6, DateTime.Parse(Date1.Text), DateTime.Parse(Date2.Text), 23, tenPlik);
+            DataTable tabelka01 = dr.generuj_dane_do_tabeli_sedziowskiej_2018(int.Parse(idDzialu), 6, Date1.Date, Date2.Date, 23, tenPlik);
             Session["tabelka006"] = tabelka01;
             gwTabela6.DataSource = null;
             gwTabela6.DataSourceID = null;
@@ -423,9 +579,9 @@ namespace stat2018
             string idDzialu = (string)Session["id_dzialu"];
             if (cl.debug(int.Parse(idDzialu)))
             {
-                //cm.log.Info(tenPlik + ": rozpoczęcie tworzenia tabeli 7");
+                cm.log.Info(tenPlik + ": rozpoczęcie tworzenia tabeli 7");
             }
-            DataTable tabelka01 = dr.generuj_dane_do_tabeli_sedziowskiej_2018(int.Parse(idDzialu), 7, DateTime.Parse(Date1.Text), DateTime.Parse(Date2.Text), 23, tenPlik);
+            DataTable tabelka01 = dr.generuj_dane_do_tabeli_sedziowskiej_2018(int.Parse(idDzialu), 7, Date1.Date, Date2.Date, 23, tenPlik);
             Session["tabelka007"] = tabelka01;
             gwTabela7.DataSource = null;
             gwTabela7.DataSourceID = null;
@@ -438,9 +594,9 @@ namespace stat2018
             string idDzialu = (string)Session["id_dzialu"];
             if (cl.debug(int.Parse(idDzialu)))
             {
-                //cm.log.Info(tenPlik + ": rozpoczęcie tworzenia tabeli 8");
+                cm.log.Info(tenPlik + ": rozpoczęcie tworzenia tabeli 8");
             }
-            DataTable tabelka01 = dr.generuj_dane_do_tabeli_sedziowskiej_2018(int.Parse(idDzialu), 8, DateTime.Parse(Date1.Text), DateTime.Parse(Date2.Text), 23, tenPlik);
+            DataTable tabelka01 = dr.generuj_dane_do_tabeli_sedziowskiej_2018(int.Parse(idDzialu), 8, Date1.Date, Date2.Date, 10, tenPlik);
             Session["tabelka008"] = tabelka01;
             gwTabela8.DataSource = null;
             gwTabela8.DataSourceID = null;
@@ -453,13 +609,14 @@ namespace stat2018
             string idDzialu = (string)Session["id_dzialu"];
             if (cl.debug(int.Parse(idDzialu)))
             {
-                //cm.log.Info(tenPlik + ": rozpoczęcie tworzenia tabeli 9");
+                cm.log.Info(tenPlik + ": rozpoczęcie tworzenia tabeli 9");
             }
-            
-            DataTable tabelka01 = dr.generuj_dane_do_tabeli_wierszy2018(DateTime.Parse(Date1.Text), DateTime.Parse(Date2.Text), (string)Session["id_dzialu"], 9,9 , 3, tenPlik);
+            DataTable tabelka01 = dr.generuj_dane_do_tabeli_sedziowskiej_2018(int.Parse(idDzialu), 9, Date1.Date, Date2.Date, 10, tenPlik);
             Session["tabelka009"] = tabelka01;
-            pisztb("tab_9_", 9, 3, tabelka01);
-
+            gwTabela9.DataSource = null;
+            gwTabela9.DataSourceID = null;
+            gwTabela9.DataSource = tabelka01;
+            gwTabela9.DataBind();
         }
 
         protected void tabela_10()
@@ -467,9 +624,9 @@ namespace stat2018
             string idDzialu = (string)Session["id_dzialu"];
             if (cl.debug(int.Parse(idDzialu)))
             {
-                //cm.log.Info(tenPlik + ": rozpoczęcie tworzenia tabeli 10");
+                cm.log.Info(tenPlik + ": rozpoczęcie tworzenia tabeli 10");
             }
-            DataTable tabelka01 = dr.generuj_dane_do_tabeli_sedziowskiej_2018(int.Parse(idDzialu), 10, DateTime.Parse(Date1.Text), DateTime.Parse(Date2.Text), 23, tenPlik);
+            DataTable tabelka01 = dr.generuj_dane_do_tabeli_sedziowskiej_2018(int.Parse(idDzialu), 10, Date1.Date, Date2.Date, 23, tenPlik);
             Session["tabelka010"] = tabelka01;
             gwTabela10.DataSource = null;
             gwTabela10.DataSourceID = null;
@@ -482,13 +639,12 @@ namespace stat2018
             string idDzialu = (string)Session["id_dzialu"];
             if (cl.debug(int.Parse(idDzialu)))
             {
-                //cm.log.Info(tenPlik + ": rozpoczęcie tworzenia tabeli 11");
+                cm.log.Info(tenPlik + ": rozpoczęcie tworzenia tabeli 11");
             }
-            DataTable tabelka01 = dr.generuj_dane_do_tabeli_wierszy2018(DateTime.Parse(Date1.Text), DateTime.Parse(Date2.Text), (string)Session["id_dzialu"],11 ,2, 8, tenPlik);
+            DataTable tabelka01 = dr. generuj_dane_do_tabeli_wierszy2018(Date1.Date, Date2.Date, (string)Session["id_dzialu"], 11, 10, 4, tenPlik);
             Session["tabelka011"] = tabelka01;
-
-            pisz("tab_11_",1, 7, tabelka01);
-
+            
+            pisztb("tab_11_", 10, 3, tabelka01);
         }
 
         protected void tabela_12()
@@ -496,15 +652,11 @@ namespace stat2018
             string idDzialu = (string)Session["id_dzialu"];
             if (cl.debug(int.Parse(idDzialu)))
             {
-                //cm.log.Info(tenPlik + ": rozpoczęcie tworzenia tabeli 12");
+                cm.log.Info(tenPlik + ": rozpoczęcie tworzenia tabeli 12");
             }
-            DataTable tabelka01 = dr.generuj_dane_do_tabeli_sedziowskiej_2018(int.Parse(idDzialu), 12, DateTime.Parse(Date1.Text), DateTime.Parse(Date2.Text), 23, tenPlik);
+            DataTable tabelka01 = dr. generuj_dane_do_tabeli_wierszy2018(Date1.Date, Date2.Date, (string)Session["id_dzialu"], 12, 7, 4, tenPlik);
             Session["tabelka012"] = tabelka01;
-            gwTabela12.DataSource = null;
-            gwTabela12.DataSourceID = null;
-            gwTabela12.DataSource = tabelka01;
-            gwTabela12.DataBind();
-
+            pisztb("tab_12_", 7, 3, tabelka01);
         }
 
         protected void tabela_13()
@@ -512,9 +664,9 @@ namespace stat2018
             string idDzialu = (string)Session["id_dzialu"];
             if (cl.debug(int.Parse(idDzialu)))
             {
-                //cm.log.Info(tenPlik + ": rozpoczęcie tworzenia tabeli 10");
+                cm.log.Info(tenPlik + ": rozpoczęcie tworzenia tabeli 13");
             }
-            DataTable tabelka01 = dr.generuj_dane_do_tabeli_sedziowskiej_2018(int.Parse(idDzialu), 13, DateTime.Parse(Date1.Text), DateTime.Parse(Date2.Text), 23, tenPlik);
+            DataTable tabelka01 = dr.generuj_dane_do_tabeli_sedziowskiej_2018(int.Parse(idDzialu), 13, Date1.Date, Date2.Date, 23, tenPlik);
             Session["tabelka013"] = tabelka01;
             gwTabela13.DataSource = null;
             gwTabela13.DataSourceID = null;
@@ -527,23 +679,75 @@ namespace stat2018
             string idDzialu = (string)Session["id_dzialu"];
             if (cl.debug(int.Parse(idDzialu)))
             {
-                //cm.log.Info(tenPlik + ": rozpoczęcie tworzenia tabeli 14");
+                cm.log.Info(tenPlik + ": rozpoczęcie tworzenia tabeli 10");
             }
-            DataTable tabelka01 = dr.generuj_dane_do_tabeli_wierszy2018(DateTime.Parse(Date1.Text), DateTime.Parse(Date2.Text), (string)Session["id_dzialu"], 14,4,  13, tenPlik);
+            DataTable tabelka01 = dr.generuj_dane_do_tabeli_sedziowskiej_2018(int.Parse(idDzialu), 14, Date1.Date, Date2.Date, 23, tenPlik);
             Session["tabelka014"] = tabelka01;
-
-            pisz("tab_14_", 3, 12, tabelka01);
-
+            gwTabela14.DataSource = null;
+            gwTabela14.DataSourceID = null;
+            gwTabela14.DataSource = tabelka01;
+            gwTabela14.DataBind(); ;
         }
 
-    
-    protected void naglowekTabeli_gwTabela1(object sender, GridViewRowEventArgs e)
+        protected void tabela_15()
+        {
+            string idDzialu = (string)Session["id_dzialu"];
+            if (cl.debug(int.Parse(idDzialu)))
+            {
+                cm.log.Info(tenPlik + ": rozpoczęcie tworzenia tabeli 15");
+            }
+            DataTable tabelka01 = dr. generuj_dane_do_tabeli_wierszy2018(Date1.Date, Date2.Date, (string)Session["id_dzialu"], 15, 7, 1, tenPlik);
+            Session["tabelka015"] = tabelka01;
+            pisz("tab_15_", 1, 7, tabelka01);
+        }
+
+        protected void tabela_16()
+        {
+            string idDzialu = (string)Session["id_dzialu"];
+            if (cl.debug(int.Parse(idDzialu)))
+            {
+                cm.log.Info(tenPlik + ": rozpoczęcie tworzenia tabeli 16");
+            }
+            DataTable tabelka01 = dr.generuj_dane_do_tabeli_sedziowskiej_2018(int.Parse(idDzialu), 16, Date1.Date, Date2.Date, 23, tenPlik);
+            Session["tabelka016"] = tabelka01;
+            gwTabela16.DataSource = null;
+            gwTabela16.DataSourceID = null;
+            gwTabela16.DataSource = tabelka01;
+            gwTabela16.DataBind(); ;
+        }
+
+        protected void tabela_17()
+        {
+            string idDzialu = (string)Session["id_dzialu"];
+            if (cl.debug(int.Parse(idDzialu)))
+            {
+                cm.log.Info(tenPlik + ": rozpoczęcie tworzenia tabeli 17");
+            }
+            DataTable tabelka01 = dr.generuj_dane_do_tabeli_sedziowskiej_2018(int.Parse(idDzialu), 17, Date1.Date, Date2.Date, 23, tenPlik);
+            Session["tabelka017"] = tabelka01;
+            gwTabela17.DataSource = null;
+            gwTabela17.DataSourceID = null;
+            gwTabela17.DataSource = tabelka01;
+            gwTabela17.DataBind(); ;
+        }
+
+        protected void tabela_18()
+        {
+            string idDzialu = (string)Session["id_dzialu"];
+            if (cl.debug(int.Parse(idDzialu)))
+            {
+                cm.log.Info(tenPlik + ": rozpoczęcie tworzenia tabeli 18");
+            }
+            DataTable tabelka01 = dr. generuj_dane_do_tabeli_wierszy2018(Date1.Date, Date2.Date, (string)Session["id_dzialu"], 18, 3, 11, tenPlik);
+            Session["tabelka018"] = tabelka01;
+            pisz("tab_18_", 11, 3, tabelka01);
+        }
+
+        protected void naglowekTabeli_gwTabela1(object sender, GridViewRowEventArgs e)
         {
             if (e.Row.RowType == DataControlRowType.Header)
             {
-              
-                System.Web.UI.WebControls.GridView sn = new System.Web.UI.WebControls.GridView();
-                tb.makeHeader(sn, makeHeader_01(), gwTabela1);
+                tb.makeHeader(makeHeader_01(), gwTabela1);
             }
             else
             {
@@ -558,33 +762,23 @@ namespace stat2018
         {
             if (e.Row.RowType == DataControlRowType.Header)
             {
-                System.Web.UI.WebControls.GridView sn = new System.Web.UI.WebControls.GridView();
-               // string path = Server.MapPath("~\\Template\\" + tenPlikNazwa + ".xlsx");
-                DataTable dT = tb.naglowek(path, 2);
-                tb.makeHeader(sn, dT, gwTabela2);
+                tb.makeHeader(makeHeader_02(), gwTabela2);
             }
         }
 
-      
         protected void naglowekTabeli_gwTabela3(object sender, GridViewRowEventArgs e)
         {
             if (e.Row.RowType == DataControlRowType.Header)
             {
-                System.Web.UI.WebControls.GridView sn = new System.Web.UI.WebControls.GridView();
-              //  string path = Server.MapPath("~\\Template" + tenPlikNazwa + ".xlsx");
-                DataTable dT = tb.naglowek(path, 3);
-                tb.makeHeader(sn, dT, gwTabela3);
+                tb.makeHeader(makeHeader_03(), gwTabela3);
             }
         }
-
 
         protected void naglowekTabeli_gwTabela4(object sender, GridViewRowEventArgs e)
         {
             if (e.Row.RowType == DataControlRowType.Header)
             {
-                System.Web.UI.WebControls.GridView sn = new System.Web.UI.WebControls.GridView();
-                DataTable dT = tb.naglowek(path,4);
-                tb.makeHeader(sn, dT, gwTabela4);
+                tb.makeHeader(makeHeader_04(), gwTabela4);
             }
         }
 
@@ -592,22 +786,15 @@ namespace stat2018
         {
             if (e.Row.RowType == DataControlRowType.Header)
             {
-                System.Web.UI.WebControls.GridView sn = new System.Web.UI.WebControls.GridView();
-                DataTable dT = tb.naglowek(path, 5);
-                tb.makeHeader(sn, dT, gwTabela5);
+                tb.makeHeader(makeHeader_05(), gwTabela5);
             }
         }
-
-
-
 
         protected void naglowekTabeli_gwTabela6(object sender, GridViewRowEventArgs e)
         {
             if (e.Row.RowType == DataControlRowType.Header)
             {
-                System.Web.UI.WebControls.GridView sn = new System.Web.UI.WebControls.GridView();
-                DataTable dT = tb.naglowek(path, 6);
-                tb.makeHeader(sn, dT, gwTabela6);
+                tb.makeHeader(makeHeader_06(), gwTabela6);
             }
         }
 
@@ -615,9 +802,7 @@ namespace stat2018
         {
             if (e.Row.RowType == DataControlRowType.Header)
             {
-                System.Web.UI.WebControls.GridView sn = new System.Web.UI.WebControls.GridView();
-                DataTable dT = tb.naglowek(path, 7);
-                tb.makeHeader(sn, dT, gwTabela7);
+                tb.makeHeader(makeHeader_07(), gwTabela7);
             }
         }
 
@@ -625,9 +810,15 @@ namespace stat2018
         {
             if (e.Row.RowType == DataControlRowType.Header)
             {
-                System.Web.UI.WebControls.GridView sn = new System.Web.UI.WebControls.GridView();
-                DataTable dT = tb.naglowek(path, 8);
-                tb.makeHeader(sn, dT, gwTabela8);
+                tb.makeHeader(makeHeader_08(), gwTabela8);
+            }
+        }
+
+        protected void naglowekTabeli_gwTabela9(object sender, GridViewRowEventArgs e)
+        {
+            if (e.Row.RowType == DataControlRowType.Header)
+            {
+                tb.makeHeader(makeHeader_09(), gwTabela9);
             }
         }
 
@@ -635,9 +826,7 @@ namespace stat2018
         {
             if (e.Row.RowType == DataControlRowType.Header)
             {
-                System.Web.UI.WebControls.GridView sn = new System.Web.UI.WebControls.GridView();
-                DataTable dT = tb.naglowek(path, 10);
-                tb.makeHeader(sn, dT, gwTabela10);
+                tb.makeHeader(makeHeader_10(), gwTabela10);
             }
         }
 
@@ -645,31 +834,35 @@ namespace stat2018
         {
             if (e.Row.RowType == DataControlRowType.Header)
             {
-                System.Web.UI.WebControls.GridView sn = new System.Web.UI.WebControls.GridView();
-                DataTable dT = tb.naglowek(path, 13);
-                tb.makeHeader(sn, dT, gwTabela13);
+                tb.makeHeader(makeHeader_13(), gwTabela13);
             }
-
         }
 
-
-        protected void naglowekTabeli_gwTabela12(object sender, GridViewRowEventArgs e)
+        protected void naglowekTabeli_gwTabela14(object sender, GridViewRowEventArgs e)
         {
             if (e.Row.RowType == DataControlRowType.Header)
             {
-                System.Web.UI.WebControls.GridView sn = new System.Web.UI.WebControls.GridView();
-                DataTable dT = tb.naglowek(path, 12);
-                tb.makeHeader(sn, dT, gwTabela12);
+                tb.makeHeader(makeHeader_14(), gwTabela14);
             }
         }
-  
+
+        protected void stopkaTabeli_gwTabela14(object sender, GridViewRowEventArgs e)
+        {
+            //podsumowanie tab 14
+            if (e.Row.RowType == DataControlRowType.Footer)
+            {
+                DataTable table = (DataTable)Session["tabelka014"];
+                tb.makeSumRow(table, e, 0, "Razem");
+            }
+        }
+
         protected void stopkaTabeli_gwTabela13(object sender, GridViewRowEventArgs e)
         {
             //podsumowanie tab 13
             if (e.Row.RowType == DataControlRowType.Footer)
             {
                 DataTable table = (DataTable)Session["tabelka013"];
-                tb.makeSumRow(table, e,0);
+                tb.makeSumRow(table, e, 0);
             }
         }
 
@@ -678,9 +871,8 @@ namespace stat2018
             if (e.Row.RowType == DataControlRowType.Footer)
             {
                 DataTable table = (DataTable)Session["tabelka012"];
-                tb.makeSumRow(table, e,0);
+                tb.makeSumRow(table, e, 0);
             }
-
         }
 
         protected void stopkaTabeli_gwTabela10(object sender, GridViewRowEventArgs e)
@@ -688,9 +880,8 @@ namespace stat2018
             if (e.Row.RowType == DataControlRowType.Footer)
             {
                 DataTable table = (DataTable)Session["tabelka010"];
-                tb.makeSumRow(table, e,0);
+                tb.makeSumRow(table, e, 0);
             }
-
         }
 
         protected void stopkaTabeli_gwTabela8(object sender, GridViewRowEventArgs e)
@@ -698,9 +889,16 @@ namespace stat2018
             if (e.Row.RowType == DataControlRowType.Footer)
             {
                 DataTable table = (DataTable)Session["tabelka008"];
-                tb.makeSumRow(table, e,0);
+                tb.makeSumRow(table, e, 0);
             }
+        }
 
+        protected void stopkaTabeli_gwTabela9(object sender, GridViewRowEventArgs e)
+        {
+            if (e.Row.RowType == DataControlRowType.Footer)
+            {
+                tb.makeSumRow((DataTable)Session["tabelka009"], e, 0);
+            }
         }
 
         protected void stopkaTabeli_gwTabela7(object sender, GridViewRowEventArgs e)
@@ -708,9 +906,8 @@ namespace stat2018
             if (e.Row.RowType == DataControlRowType.Footer)
             {
                 DataTable table = (DataTable)Session["tabelka007"];
-                tb.makeSumRow(table, e,0);
+                tb.makeSumRow(table, e, 0);
             }
-
         }
 
         protected void stopkaTabeli_gwTabela6(object sender, GridViewRowEventArgs e)
@@ -718,9 +915,8 @@ namespace stat2018
             if (e.Row.RowType == DataControlRowType.Footer)
             {
                 DataTable table = (DataTable)Session["tabelka006"];
-                tb.makeSumRow(table, e,0);
+                tb.makeSumRow(table, e, 0);
             }
-
         }
 
         protected void stopkaTabeli_gwTabela5(object sender, GridViewRowEventArgs e)
@@ -728,9 +924,8 @@ namespace stat2018
             if (e.Row.RowType == DataControlRowType.Footer)
             {
                 DataTable table = (DataTable)Session["tabelka005"];
-                tb.makeSumRow(table, e,0);
+                tb.makeSumRow(table, e, 0);
             }
-
         }
 
         protected void stopkaTabeli_gwTabela4(object sender, GridViewRowEventArgs e)
@@ -738,9 +933,8 @@ namespace stat2018
             if (e.Row.RowType == DataControlRowType.Footer)
             {
                 DataTable table = (DataTable)Session["tabelka004"];
-                tb.makeSumRow(table, e,0);
+                tb.makeSumRow(table, e, 0);
             }
-
         }
 
         protected void stopkaTabeli_gwTabela3(object sender, GridViewRowEventArgs e)
@@ -748,9 +942,8 @@ namespace stat2018
             if (e.Row.RowType == DataControlRowType.Footer)
             {
                 DataTable table = (DataTable)Session["tabelka003"];
-                tb.makeSumRow(table, e,0);
+                tb.makeSumRow(table, e, 0);
             }
-
         }
 
         protected void stopkaTabeli_gwTabela2(object sender, GridViewRowEventArgs e)
@@ -758,9 +951,8 @@ namespace stat2018
             if (e.Row.RowType == DataControlRowType.Footer)
             {
                 DataTable table = (DataTable)Session["tabelka002"];
-                tb.makeSumRow(table, e,0);
+                tb.makeSumRow(table, e, 0);
             }
-
         }
 
         protected void stopkaTabeli_gwTabela1(object sender, GridViewRowEventArgs e)
@@ -768,18 +960,16 @@ namespace stat2018
             if (e.Row.RowType == DataControlRowType.Footer)
             {
                 DataTable table = (DataTable)Session["tabelka001"];
-                tb.makeSumRow(table, e,0);
+                tb.makeSumRow(table, e, 0);
             }
-
         }
 
         protected void gwTabela13_SelectedIndexChanged(object sender, EventArgs e)
         {
-
         }
+
         protected void pisz(string Template, int iloscWierszy, int iloscKolumn, DataTable dane)
         {
-
             for (int wiersz = 1; wiersz <= iloscWierszy; wiersz++)
             {
                 for (int kolumna = 1; kolumna <= iloscKolumn; kolumna++)
@@ -791,19 +981,16 @@ namespace stat2018
                         try
                         {
                             tb.Text = dane.Rows[wiersz - 1][kolumna].ToString().Trim();
-
                         }
-                        catch 
-                        {
-                        }
-                        //tb.Text = dr.wyciagnijWartosc(dane, "idWydzial=" + idWydzialu + " and idTabeli=" + idTabeli + " and idWiersza ='" + wiersz + "' and idkolumny='" + kolumna + "'", tenPlik);
+                        catch
+                        { }
                     }
                 }
             }
         }// end of pisz
+
         protected void pisztb(string Template, int iloscWierszy, int iloscKolumn, DataTable dane)
         {
-
             for (int wiersz = 1; wiersz <= iloscWierszy; wiersz++)
             {
                 for (int kolumna = 1; kolumna <= iloscKolumn; kolumna++)
@@ -815,18 +1002,50 @@ namespace stat2018
                         try
                         {
                             tb.Text = dane.Rows[wiersz - 1][kolumna].ToString().Trim();
-
                         }
-                        catch                        {
-
-                           
-                        }
-                        //tb.Text = dr.wyciagnijWartosc(dane, "idWydzial=" + idWydzialu + " and idTabeli=" + idTabeli + " and idWiersza ='" + wiersz + "' and idkolumny='" + kolumna + "'", tenPlik);
+                        catch { }
                     }
                 }
             }
         }// end of pisz
 
+        protected void gwTabela5_SelectedIndexChanged(object sender, EventArgs e)
+        {
+        }
 
+        protected void naglowekTabeli_gwTabela16(object sender, GridViewRowEventArgs e)
+        {
+            if (e.Row.RowType == DataControlRowType.Header)
+            {
+                tb.makeHeader(makeHeader_16(), gwTabela16);
+            }
+        }
+
+        protected void stopkaTabeli_gwTabela16(object sender, GridViewRowEventArgs e)
+        {
+            //podsumowanie tab 16
+            if (e.Row.RowType == DataControlRowType.Footer)
+            {
+                DataTable table = (DataTable)Session["tabelka016"];
+                tb.makeSumRow(table, e, 1);
+            }
+        }
+
+        protected void naglowekTabeli_gwTabela17(object sender, GridViewRowEventArgs e)
+        {
+            if (e.Row.RowType == DataControlRowType.Header)
+            {
+                tb.makeHeader(makeHeader_16(), gwTabela17);
+            }
+        }
+
+        protected void stopkaTabeli_gwTabela17(object sender, GridViewRowEventArgs e)
+        {
+            if (e.Row.RowType == DataControlRowType.Footer)
+            {
+                DataTable table = (DataTable)Session["tabelka017"];
+                tb.makeSumRow(table, e, 1);
+            }
+        }
     }
 }

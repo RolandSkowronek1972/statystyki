@@ -36,7 +36,7 @@ namespace stat2018
                 }
                 catch (Exception ex)
                 {
-                    //cm.log.Error( "Wyszukiwarka  " + ex.Message);
+                    cm.log.Error( "Wyszukiwarka  " + ex.Message);
                     conn.Close();
                 }
             } // end of using

@@ -18,42 +18,32 @@ namespace stat2018
 
         protected void Page_Load(object sender, EventArgs e)
         {
+            CultureInfo newCulture = (CultureInfo)CultureInfo.CurrentCulture.Clone();
+            newCulture.DateTimeFormat = CultureInfo.GetCultureInfo("PL").DateTimeFormat;
+            System.Threading.Thread.CurrentThread.CurrentCulture = newCulture;
+            System.Threading.Thread.CurrentThread.CurrentUICulture = newCulture;
             string idWydzial = Request.QueryString["w"];
-            if (idWydzial != null)
-            {
-                Session["id_dzialu"] = idWydzial;
-                //cm.log.Info(tenPlik + ": id wydzialu=" + idWydzial);
-            }
-            else
-            {
-                return;
-            }
-            DateTime dTime = DateTime.Now;
-            dTime = dTime.AddMonths(-1);
-
-            if (Date1.Date.Year == 1)
-            {
-                Date1.Date = DateTime.Parse(dTime.Year.ToString() + "-" + dTime.Month.ToString("D2") + "-01");
-            }
-            if (Date2.Date.Year == 1)
-            {
-                Date2.Date = DateTime.Parse(dTime.Year.ToString() + "-" + dTime.Month.ToString("D2") + "-" + DateTime.DaysInMonth(dTime.Year, dTime.Month).ToString("D2"));
-            }
-            Session["data_1"] = Date1.Text;
-            Session["data_2"] = Date2.Text;
-           
             try
             {
-               
-                string user = (string)Session["identyfikatorUzytkownika"];
-                string dzial = (string)Session["id_dzialu"];
-                bool dost = cm.dostep(dzial, user);
+                if (idWydzial == null)
+                {
+                    return;
+                }
+                bool dost = cm.dostep(idWydzial, (string)Session["identyfikatorUzytkownika"]);
                 if (!dost)
                 {
-                    Server.Transfer("default.aspx?info='Użytkownik " + user + " nie praw do działu nr " + dzial + "'");
+                    Server.Transfer("default.aspx?info='Użytkownik " + (string)Session["identyfikatorUzytkownika"] + " nie praw do działu nr " + idWydzial + "'");
                 }
                 else
                 {
+                    DateTime dTime = DateTime.Now.AddMonths(-1); ;
+
+                    if (Date1.Text.Length == 0) Date1.Date = DateTime.Parse(dTime.Year.ToString() + "-" + dTime.Month.ToString("D2") + "-01");
+                    if (Date2.Text.Length == 0) Date2.Date = DateTime.Parse(dTime.Year.ToString() + "-" + dTime.Month.ToString("D2") + "-" + DateTime.DaysInMonth(dTime.Year, dTime.Month).ToString("D2"));
+                    Session["id_dzialu"] = idWydzial;
+                    Session["data_1"] = Date1.Date.ToShortDateString();
+                    Session["data_2"] = Date2.Date.ToShortDateString();
+
                     if (!IsPostBack)
                     {
                         var fileContents = System.IO.File.ReadAllText(Server.MapPath(@"~//version.txt"));    // file read with version
@@ -72,27 +62,7 @@ namespace stat2018
 
         protected void przemiel()
         {
-            Session["sesja"] = "s3030";
-            try
-            {
-                DateTime dTime = DateTime.Now;
-                dTime = dTime.AddMonths(-1);
-                string data = Date1.Date.ToString();
-               
-                if (Date1.Text.Length == 0)
-                {
-                    Date1.Text = dTime.Year.ToString() + "-" + dTime.Month.ToString("D2") + "-01";
-                }
-                if (Date2.Text.Length == 0)
-                {
-                    Date2.Text = dTime.Year.ToString() + "-" + dTime.Month.ToString("D2") + "-" + DateTime.DaysInMonth(dTime.Year, dTime.Month).ToString("D2");
-                }
-
-                Session["data_1"] = Date1.Text.Trim();
-                Session["data_2"] = Date2.Text.Trim();
-            }
-            catch
-            { }
+           
             string id_dzialu = (string)Session["id_dzialu"];
             string txt = string.Empty; 
          
@@ -100,7 +70,7 @@ namespace stat2018
             //tabela 1
             try
             {
-                DataTable tabela01 = dr.generuj_dane_do_tabeli_wierszy2018(DateTime.Parse(Date1.Text), DateTime.Parse(Date2.Text), ((string)Session["id_dzialu"]), 1,24,43, tenPlik);
+                DataTable tabela01 = dr. generuj_dane_do_tabeli_wierszy2018(Date1.Date, Date2.Date, ((string)Session["id_dzialu"]), 1,24,43, tenPlik);
 
                 Session["tabelka001"] = tabela01;
                 //  wiersz 1
@@ -1092,12 +1062,12 @@ namespace stat2018
             }
             catch (Exception ex)
             {
-                //cm.log.Error(tenPlik +" " +ex.Message);   
+                cm.log.Error(tenPlik +" " +ex.Message);   
             }
             //tabela 2
             try
             {
-                DataTable tabela02 = dr.generuj_dane_do_tabeli_wierszy2018(DateTime.Parse(Date1.Text), DateTime.Parse(Date2.Text), ((string)Session["id_dzialu"]), 2, 24, 43, tenPlik);
+                DataTable tabela02 = dr. generuj_dane_do_tabeli_wierszy2018(Date1.Date, Date2.Date, ((string)Session["id_dzialu"]), 2, 24, 43, tenPlik);
 
                 Session["tabelka002"] = tabela02;
                 //  wiersz 1
@@ -2075,12 +2045,12 @@ namespace stat2018
             }
             catch (Exception ex)
             {
-                //cm.log.Error(tenPlik + " " + ex.Message);
+                cm.log.Error(tenPlik + " " + ex.Message);
             }
             //tabela 3
             try
             {
-                DataTable tabela03 = dr.generuj_dane_do_tabeli_wierszy2018(DateTime.Parse(Date1.Text), DateTime.Parse(Date2.Text), ((string)Session["id_dzialu"]), 3, 24, 13, tenPlik);
+                DataTable tabela03 = dr. generuj_dane_do_tabeli_wierszy2018(Date1.Date, Date2.Date, ((string)Session["id_dzialu"]), 3, 24, 13, tenPlik);
 
                 Session["tabelka003"] = tabela03;
                 //  wiersz 1
@@ -2424,14 +2394,14 @@ namespace stat2018
             }
             catch (Exception ex)
             {
-                //cm.log.Error(tenPlik + " " + ex.Message);
+                cm.log.Error(tenPlik + " " + ex.Message);
             }
 
             //tabela 4
             try
             {
                 //cm.log.Info(tenPlik + " generowanie danych do tabeli 4");
-               DataTable tabela04 = dr.generuj_dane_do_tabeli_wierszy2018(DateTime.Parse(Date1.Text), DateTime.Parse(Date2.Text), ((string)Session["id_dzialu"]), 4, 24, 50, tenPlik);
+               DataTable tabela04 = dr. generuj_dane_do_tabeli_wierszy2018(Date1.Date, Date2.Date, ((string)Session["id_dzialu"]), 4, 24, 50, tenPlik);
                 //cm.log.Info(tenPlik + " wypełnianie danych w tabeli 4");
                 Session["tabelka004"] = tabela04;
                 //  wiersz 1
@@ -3543,13 +3513,13 @@ namespace stat2018
             }
             catch (Exception ex)
             {
-                //cm.log.Error(tenPlik + " " + ex.Message);
+                cm.log.Error(tenPlik + " " + ex.Message);
             }
 
             //tabela 5
             try
             {
-                DataTable tabela05 = dr.generuj_dane_do_tabeli_wierszy2018(DateTime.Parse(Date1.Text), DateTime.Parse(Date2.Text), ((string)Session["id_dzialu"]), 5, 24, 10, tenPlik);
+                DataTable tabela05 = dr. generuj_dane_do_tabeli_wierszy2018(Date1.Date, Date2.Date, ((string)Session["id_dzialu"]), 5, 24, 10, tenPlik);
 
                 Session["tabelka005"] = tabela05;
                 //  wiersz 1
@@ -3783,7 +3753,7 @@ namespace stat2018
             }
             catch (Exception ex)
             {
-                //cm.log.Error(tenPlik + " " + ex.Message);
+                cm.log.Error(tenPlik + " " + ex.Message);
             }
 
 
@@ -3818,14 +3788,14 @@ namespace stat2018
                 { }
 
 
-                string strMonthName = CultureInfo.CurrentCulture.DateTimeFormat.GetMonthName(DateTime.Parse(Date2.Text).Month);
-                int last_day = DateTime.DaysInMonth(DateTime.Parse(Date2.Text).Year, DateTime.Parse(Date2.Text).Month);
-                lbTabela1.Text = "Miesięczny ruch spraw w " + DateTime.Parse(Date2.Text).Year.ToString() + " roku.";
+                string strMonthName = CultureInfo.CurrentCulture.DateTimeFormat.GetMonthName(Date2.Date.Month);
+                int last_day = DateTime.DaysInMonth(Date2.Date.Year, Date2.Date.Month);
+                lbTabela1.Text = "Miesięczny ruch spraw w " + Date2.Date.Year.ToString() + " roku.";
 
-                lbTabela2.Text = "Miesięczny ruch spraw w " + DateTime.Parse(Date2.Text).Year.ToString() + " roku.";
-                lbTabela3.Text = "Miesięczny ruch spraw w " + DateTime.Parse(Date2.Text).Year.ToString() + " roku.";
-                lbTabela4.Text = "Miesięczny ruch spraw w " + DateTime.Parse(Date2.Text).Year.ToString() + " roku.";
-                lbTabela5.Text = "Miesięczny ruch spraw w " + DateTime.Parse(Date2.Text).Year.ToString() + " roku.";
+                lbTabela2.Text = "Miesięczny ruch spraw w " + Date2.Date.Year.ToString() + " roku.";
+                lbTabela3.Text = "Miesięczny ruch spraw w " + Date2.Date.Year.ToString() + " roku.";
+                lbTabela4.Text = "Miesięczny ruch spraw w " + Date2.Date.Year.ToString() + " roku.";
+                lbTabela5.Text = "Miesięczny ruch spraw w " + Date2.Date.Year.ToString() + " roku.";
 
 
             }
@@ -3893,7 +3863,7 @@ namespace stat2018
                 }
                 catch (Exception ex)
                 {
-                    //cm.log.Error(tenPlik + " " + ex.Message);
+                    cm.log.Error(tenPlik + " " + ex.Message);
 
                 }
 

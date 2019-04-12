@@ -97,7 +97,7 @@ namespace stat2018
             try
             {
                 
-                DataTable tabelka01 = dr.generuj_dane_do_tabeli_wierszy2018(DateTime.Parse(Date1.Text), DateTime.Parse(Date2.Text), (string)Session["id_dzialu"], 1,1,12,tenPlik);
+                DataTable tabelka01 = dr. generuj_dane_do_tabeli_wierszy2018(Date1.Date, Date2.Date, (string)Session["id_dzialu"], 1,1,12,tenPlik);
                 Session["tabelka002"] = tabelka01;
                 //row 1
                 tab_01_w01_c01.Text = tabelka01.Rows[0][1].ToString();
@@ -117,13 +117,13 @@ namespace stat2018
             }
             catch (Exception ex)
             {
-                //cm.log.Error(tenPlik + " " + ex);
+                cm.log.Error(tenPlik + " " + ex);
             }
 
             try
             {
 
-                DataTable tabelka01 = dr.generuj_dane_do_tabeli_wierszy2018(DateTime.Parse(Date1.Text), DateTime.Parse(Date2.Text), (string)Session["id_dzialu"],2, 1, 12, tenPlik);
+                DataTable tabelka01 = dr. generuj_dane_do_tabeli_wierszy2018(Date1.Date, Date2.Date, (string)Session["id_dzialu"],2, 1, 12, tenPlik);
                 Session["tabelka001"] = tabelka01;
                 //row 1
                 tab_02_w01_c01.Text = tabelka01.Rows[0][1].ToString();
@@ -145,13 +145,13 @@ namespace stat2018
             }
             catch (Exception ex)
             {
-                //cm.log.Error(tenPlik + " " + ex);
+                cm.log.Error(tenPlik + " " + ex);
             }
 
             try
             {
 
-                DataTable tabelka01 = dr.generuj_dane_do_tabeli_wierszy2018(DateTime.Parse(Date1.Text), DateTime.Parse(Date2.Text), (string)Session["id_dzialu"], 3, 1, 12, tenPlik);
+                DataTable tabelka01 = dr. generuj_dane_do_tabeli_wierszy2018(Date1.Date, Date2.Date, (string)Session["id_dzialu"], 3, 1, 12, tenPlik);
                 Session["tabelka003"] = tabelka01;
                 //row 1
                 tab_03_w01_c01.Text = tabelka01.Rows[0][1].ToString();
@@ -167,7 +167,7 @@ namespace stat2018
             }
             catch (Exception ex)
             {
-                //cm.log.Error(tenPlik + " " + ex);
+                cm.log.Error(tenPlik + " " + ex);
             }
             // dopasowanie opisów
             makeLabels();
@@ -211,11 +211,11 @@ namespace stat2018
                 catch
                 { }
 
-                string strMonthName = CultureInfo.CurrentCulture.DateTimeFormat.GetMonthName(DateTime.Parse(Date2.Text).Month);
-                int last_day = DateTime.DaysInMonth(DateTime.Parse(Date2.Text).Year, DateTime.Parse(Date2.Text).Month);
-                if (((DateTime.Parse(Date1.Text).Day == 1) && (DateTime.Parse(Date2.Text).Day == last_day)) && ((DateTime.Parse(Date1.Text).Month == DateTime.Parse(Date2.Text).Month)))
+                string strMonthName = CultureInfo.CurrentCulture.DateTimeFormat.GetMonthName(Date2.Date.Month);
+                int last_day = DateTime.DaysInMonth(Date2.Date.Year, Date2.Date.Month);
+                if (((Date1.Date.Day == 1) && (Date2.Date.Day == last_day)) && ((Date1.Date.Month == Date2.Date.Month)))
                 {
-                    lbTabela01.Text = "Tabela przedstawiająca terminowość przyznawania wynagrodzenia biegłym i tłumaczom oraz skierowania wydanych w tym zakresie orzeczeń do wykonania w sądownictwie powszechnym w miesiącu " + strMonthName + " " + DateTime.Parse(Date2.Text).Year.ToString() + " roku.";
+                    lbTabela01.Text = "Tabela przedstawiająca terminowość przyznawania wynagrodzenia biegłym i tłumaczom oraz skierowania wydanych w tym zakresie orzeczeń do wykonania w sądownictwie powszechnym w miesiącu " + strMonthName + " " + Date2.Date.Year.ToString() + " roku.";
                 }
                 else
                 {
@@ -265,7 +265,7 @@ namespace stat2018
                 }
                 catch (Exception ex)
                 {
-                    //cm.log.Error(tenPlik + " Generowanie pliku Excell " + ex.Message);
+                    cm.log.Error(tenPlik + " Generowanie pliku Excell " + ex.Message);
                 }
 
                 //druga 
@@ -280,7 +280,7 @@ namespace stat2018
                 }
                 catch (Exception ex)
                 {
-                    //cm.log.Error(tenPlik + " Generowanie pliku Excell " + ex.Message);
+                    cm.log.Error(tenPlik + " Generowanie pliku Excell " + ex.Message);
                 }
 
                 //trzecoa 
@@ -298,7 +298,7 @@ namespace stat2018
                 }
                 catch (Exception ex)
                 {
-                    //cm.log.Error(tenPlik + " Generowanie pliku Excell " + ex.Message);
+                    cm.log.Error(tenPlik + " Generowanie pliku Excell " + ex.Message);
                 }
 
                 try
@@ -314,7 +314,7 @@ namespace stat2018
                 }
                 catch (Exception ex)
                 {
-                    //cm.log.Error(tenPlik + " Generowanie pliku Excell " + ex.Message);
+                    cm.log.Error(tenPlik + " Generowanie pliku Excell " + ex.Message);
                 }
 
             }//end of using

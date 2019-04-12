@@ -6,8 +6,7 @@ using System.IO;
 using System.Data;
 using OfficeOpenXml;
 using System.Linq;
-
-using System.Reflection;
+using System.Text;
 
 namespace stat2018
 {
@@ -17,6 +16,7 @@ namespace stat2018
         tabele tb = new tabele();
         dataReaders dr = new dataReaders();
         public mss ms = new mss();
+       
         private const int wiersz = 1;
         private const int kolumna = 2;
         private const int tekst = 3;
@@ -74,11 +74,11 @@ namespace stat2018
             row1["D3"] = 3;
             row1["D4"] = 4;
             przykladowedane.Rows.Add(row1);
-            GridView1.DataSource = null;
+    /*        GridView1.DataSource = null;
             GridView1.DataSourceID = null;
             GridView1.AutoGenerateColumns = true;
             GridView1.DataSource = przykladowedane;
-            GridView1.DataBind();
+            GridView1.DataBind();*/
             //mss5r
 
       } /* 
@@ -199,7 +199,7 @@ namespace stat2018
         {
             if (e.Row.RowType == DataControlRowType.Footer )
             {
-                string path = Server.MapPath("\\msstabele\\mss5r.xlsx");
+               
                 //generujTabele("c:\\temp\\mss5r.xlsx", "1.1");
                 //generujTabele(path, "1.1");
             }
@@ -208,10 +208,29 @@ namespace stat2018
 
         protected void Button2_Click(object sender, EventArgs e)
         {
+            StringBuilder sText = new StringBuilder();
+            
             //read excell file 
-            
-            
-            przemiel();
+              string path = Server.MapPath("\\msstabele\\aopc2.xlsx");
+            DataTable dT = tb.naglowek(path, 1);
+            string row = string.Empty;
+            foreach (DataRow dR in dT.Rows)
+            {
+                
+                    
+                    row = dR[0].ToString().Trim();
+                   
+
+                
+                string Text = dR[1].ToString().Trim();
+                string ColumnSpan = dR[2].ToString().Trim();
+                string RowSpan = dR[3].ToString().Trim();
+                //tabelaNaglowkowa.Rows.Add(new Object[] { "5", "TEXT", "COLSPAN", "ROWSPAN", "h", "60" });
+                sText.AppendLine("tabelaNaglowkowa.Rows.Add(new Object[] { \"" + row + "\",\"" + Text + "\",\"" + colspan + "\",\"" + RowSpan + "\"});");
+                TextBox1.Text = sText.ToString();
+
+            }
+            //  przemiel();
         }
 
 

@@ -2,135 +2,73 @@
 using System.Text;
 using System.Data;
 using System.Linq;
-
+using System.Globalization;
 
 namespace stat2018
 {
     public partial class mss19o : System.Web.UI.Page
     {
+        const string tenPlik = "mss19o.aspx";
         public Class1 cl = new Class1();
         public common cm = new common();
         public tabele tabela = new tabele();
         public dataReaders dr = new dataReaders();
         public mss ms = new mss();
-        const string tenPlik = "mss19o.aspx";
+        public datyDoMSS datyMSS = new datyDoMSS();
 
 
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            //cm.log.Debug(tenPlik + " Ładowanie strony: start ver.v 1.180824.4");
-            try
+            string idWydzial = Request.QueryString["w"];
+            if (idWydzial != null)
             {
-                    string idWydzial = Request.QueryString["w"];
-                if (idWydzial != null)
-                {
-                    //cm.log.Debug(tenPlik + " Ładowanie strony: odczyt działu ");
-                    Session["id_dzialu"] = idWydzial;
-                }
-                else
-                {
-                    //cm.log.Debug(tenPlik + " Ładowanie strony: brak odczytu działu");
-                    return;
-                }
-                //cm.log.Debug(tenPlik + " Ładowanie strony: ustawienie dat ");
-                DateTime dTime = DateTime.Now;
-                dTime = dTime.AddMonths(-1);
-                if (Date1.Text.Length == 0)
-                {
-                    Date1.Text = dTime.Year.ToString() + "-" + dTime.Month.ToString("D2") + "-01";
-                    Date1.Date = DateTime.Parse(Date1.Text);
-                }
-                if (Date2.Text.Length == 0)
-                {
-                    Date2.Text = dTime.Year.ToString() + "-" + dTime.Month.ToString("D2") + "-" + DateTime.DaysInMonth(dTime.Year, dTime.Month).ToString("D2");
-                    Date2.Date = DateTime.Parse(Date2.Text);
-                }
-
-                Session["data_1"] = Date1.Text.Trim();
-                Session["data_2"] = Date2.Text.Trim();
+                Session["id_dzialu"] = idWydzial;
+                //cm.log.Info(tenPlik + ": id wydzialu=" + idWydzial);
             }
-            catch (Exception ex)
+            else
             {
-                //cm.log.Error(tenPlik + " Ładowanie strony " + ex.Message);
+                return;
             }
-            Session["data_1"] = Date1.Text;
-            Session["data_2"] = Date2.Text;
-        
-            try
+            if (!IsPostBack)
             {
-                string user = (string)Session["userIdNum"];
-                string dzial = (string)Session["id_dzialu"];
-                int dzialDigit = 0;
+                //cm.log.Debug("otwarcie formularza: " + tenPlik);
                 try
                 {
-                    dzialDigit = int.Parse(dzial) + 200;
+                    // file read with version
+                    var fileContents = System.IO.File.ReadAllText(Server.MapPath(@"~//version.txt"));
+                    this.Title = "Statystyki " + fileContents.ToString().Trim();
                 }
-                catch (Exception ex )
+                catch 
                 {
-
-                    //cm.log.Error(tenPlik + " Ładowanie strony: odczyt danych dostępowych "+ ex.Message);
+                    Server.Transfer("default.aspx");
                 }
-                //cm.log.Debug(tenPlik + " Ładowanie strony: odczyt danych dostępowych Dział: "+ dzialDigit.ToString());
-                bool dost = cm.dostep(dzialDigit.ToString(), user);
-                dost = true;
-                //cm.log.Debug(tenPlik + " Ładowanie strony: status dostępu: " +dost.ToString());
-                if (!dost)
-                {
-                    //cm.log.Info(tenPlik + "Użytkownik " + user + " nie praw do działu nr " + dzial + "'");
-                    Server.Transfer("default.aspx?info='Użytkownik " + user + " nie praw do działu nr " + dzial + "'");
-                }
-                else
-                {
-                    if (!IsPostBack)
-                    {
-                        //cm.log.Info(tenPlik + "Użytkownik " + user + "  ma prawa do działu nr " + dzial + "'");
-                        var fileContents = System.IO.File.ReadAllText(Server.MapPath(@"~//version.txt"));    // file read with version
-                        this.Title = "Statystyki " + fileContents.ToString().Trim();
-                    }
-                }
-                //cm.log.Debug(tenPlik + " Ładowanie strony : start odczytu danych i wypełniania tabel");
-                przemiel();
-               
             }
-            catch (Exception ex)
-
+            CultureInfo newCulture = (CultureInfo)CultureInfo.CurrentCulture.Clone();
+            newCulture.DateTimeFormat = CultureInfo.GetCultureInfo("PL").DateTimeFormat;
+            System.Threading.Thread.CurrentThread.CurrentCulture = newCulture;
+            System.Threading.Thread.CurrentThread.CurrentUICulture = newCulture;
+            if (Session["ustawDate19o"] == null)
             {
-                //cm.log.Error(tenPlik + " Ładowanie strony: błąd  " + ex.Message);
-                 Server.Transfer("default.aspx");
+                Date1.Date = DateTime.Parse(datyMSS.DataPoczatkowa());
+                Date2.Date = DateTime.Parse(datyMSS.DataKoncowa());
+                Session["ustawDate19o"] = "X";
             }
+            Session["data_1"] = Date1.Date.ToShortDateString();
+            Session["data_2"] = Date1.Date.ToShortDateString();
+            przemiel();
+        
         }// end of Page_Load
-       
+
 
         protected void przemiel()
         {
-            Session["sesja"] = "s3030";
-            try
-            {
-                DateTime dTime = DateTime.Now;
-                dTime = dTime.AddMonths(-1);
-                if (Date1.Text.Length == 0)
-                {
-                    Date1.Text = dTime.Year.ToString() + "-" + dTime.Month.ToString("D2") + "-01";
-                    Date1.Date = DateTime.Parse(Date1.Text);
-                }
-                if (Date2.Text.Length == 0)
-                {
-                    Date2.Text = dTime.Year.ToString() + "-" + dTime.Month.ToString("D2") + "-" + DateTime.DaysInMonth(dTime.Year, dTime.Month).ToString("D2");
-                    Date2.Date = DateTime.Parse(Date2.Text);
-                }
-
-                Session["data_1"] = Date1.Text.Trim();
-                Session["data_2"] = Date2.Text.Trim();
-            }
-            catch
-            { }
            
 
             string idTabeli = string.Empty;
             string idWiersza = string.Empty;
             string idWydzialu = (string)Session["id_dzialu"];
-            DataTable tabelaDanychMSS = ms.generuj_dane_do_tabeli_mss2(int.Parse((string)Session["id_dzialu"]), DateTime.Parse(Date1.Text), DateTime.Parse(Date2.Text), 21);
+            DataTable tabelaDanychMSS = ms.generuj_dane_do_tabeli_mss2(int.Parse((string)Session["id_dzialu"]), Date1.Date, Date2.Date, 21);
             //wypełnianie lebeli
 
             #region "1.1.a";
@@ -5512,7 +5450,7 @@ namespace stat2018
                 }
                 if (!string.IsNullOrEmpty(idWydzialu))
                 {
-                    DataTable tabela2 = ms.generuj_dane_do_tabeli_mss2(int.Parse((string)Session["id_dzialu"]), DateTime.Parse(Date1.Text), DateTime.Parse(Date2.Text), 21); //dane
+                    DataTable tabela2 = ms.generuj_dane_do_tabeli_mss2(int.Parse((string)Session["id_dzialu"]), Date1.Date, Date2.Date, 21); //dane
                     var distinctRows = (from DataRow dRow in tabela2.Rows select dRow["idTabeli"]).Distinct(); //lista tabelek
                     DataTable listaTabelek = new DataTable();
                     listaTabelek.Columns.Add("tabela", typeof(string));
@@ -5541,7 +5479,7 @@ namespace stat2018
             }
             catch (Exception ex)
             {
-                //cm.log.Error(tenPlik+ " generowanie pliku CSV "+ex.Message);
+                cm.log.Error(tenPlik+ " generowanie pliku CSV "+ex.Message);
             }
 
         }

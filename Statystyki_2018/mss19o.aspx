@@ -1,47 +1,43 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site1.Master" AutoEventWireup="true" CodeBehind="mss19o.aspx.cs" Inherits="stat2018.mss19o" %>
+﻿<%@ Page Title="" Language="C#" UICulture="pl" Culture="pl-PL" MasterPageFile="~/Site1.Master" AutoEventWireup="true" CodeBehind="mss19o.aspx.cs" Inherits="stat2018.mss19o" %>
 
-<%@ Register assembly="DevExpress.Web.v17.1, Version=17.1.10.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" namespace="DevExpress.Web" tagprefix="dx" %>
+<%@ Register assembly="DevExpress.Web.v17.1, Version=17.1.13.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" namespace="DevExpress.Web" tagprefix="dx" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
         <style>
-  
-#menu {
-    position:relative;
-}
-#menu.scrolling {
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-}
+            #menu {
+                position: relative;
+            }
 
+                #menu.scrolling {
+                    position: fixed;
+                    top: 0;
+                    left: 0;
+                    right: 0;
+                }
 
             .auto-style2 {
                 height: 2px;
             }
+
             .auto-style3 {
                 text-align: left;
             }
 
-
             .auto-style4 {
                 width: 100 %;
             }
+
             .auto-style5 {
                 font-family: "Segoe UI";
             }
-
-
-            </style>
-      <script src="Scripts/jquery-1.8.3.js"></script>
-
+        </style>
 
     <script src="Scripts/rls.js"></script>
-  
-     <div class="noprint" >
+
+     <div class="noprint">
        <div id="menu" style="background-color: #f7f7f7;z-index:9999">
-        <div class="manu_back" style="height: 43px; margin: 0 auto 0 auto; position:relative;  width: 1150px;    left: 0px;">         
-                  
+        <div class="manu_back" style="height: 43px; margin: 0 auto 0 auto; position:relative;  width: 1150px;    left: 0px;">
+
          <table class="tbl_manu">
 
         <tr>
@@ -51,50 +47,45 @@
                 <asp:Label ID="Label4" runat="server" Text="Zakres:"></asp:Label>
                   </td>
               <td style="width:80px;">
-              
+
                      <dx:aspxdateedit ID="Date1" runat="server" Theme="Moderno" Height="20px">
                 </dx:aspxdateedit>
                 </td>
               <td style="width:80px;">
                 <dx:aspxdateedit ID="Date2" runat="server" Theme="Moderno" AutoResizeWithContainer="True" Height="20px">
                 </dx:aspxdateedit>
-              
             </td>
-            <td style="width: 100px" >
+            <td style="width: 100px">
                 <asp:LinkButton ID="LinkButton54" runat="server" class="ax_box" OnClick="LinkButton54_Click">  Odśwież</asp:LinkButton>
             </td>
-           
+
             <td>
-                
+
                 Id. raportu</td>
             <td>
-                
+
                 <asp:TextBox ID="idRaportu" runat="server" ></asp:TextBox>
             </td>
             <td>
-                
+
                 Id. Sądu</td>
             <td>
-                
+
                 <asp:TextBox ID="idSad" runat="server" ></asp:TextBox>
             </td>
             <td>
                  <asp:Button ID="Button1" runat="server" Text="Twórz plik csv" OnClick="makeCSVFile" />
             </td>
         </tr>
-    
     </table>
     </div>
            </div>
       </div>
-    
 
    <div style="width:1150px; margin: 0 auto 0 auto; position:relative;top:60px;" class="content">
 
-
-
-     <div id="Div2"  style="z-index:10; "> 
-        <div style="margin-left:auto;margin-right:auto;text-align: center; width:auto; "> 
+     <div id="Div2"  style="z-index:10; ">
+        <div style="margin-left:auto;margin-right:auto;text-align: center; width:auto; ">
             <table border="1.a" bordercolor="#000000" cellpadding="5" cellspacing="0" style="page-break-before: always" width="100%">
                 <colgroup>
                     <col width="209" />
@@ -185,18 +176,15 @@ AR-SA;mso-bidi-font-weight:bold">zgodnie z PBSSP <span style="color: red; backgr
                 </tr>
             </table>
      <br />
-         </div> 
-  
+         </div>
 
          <br />
-
-
      </div>
-     
-        <div id='1.1.a' >
-     
+
+        <div id='1.1.a'>
+
        <strong>Dział 1.1.a.</strong> Pozwy zbiorowe rep. GC<br />
-    <table >
+    <table>
         <tr>
     <td  class="borderAll center" colspan="3">Wyszczególnienie </td>
     <td  class="borderAll center  center borderAll ">Liczby spraw</td>
@@ -235,9 +223,9 @@ AR-SA;mso-bidi-font-weight:bold">zgodnie z PBSSP <span style="color: red; backgr
     </table>
  </div>
         <br />
-        <div id='1.1.b' >
+        <div id='1.1.b'>
             <strong>Dział 1.1.b.</strong> (dział 1.1.1 wiersz 2 i 57 kolumna 4 lit. b)<br />
-    <table  >
+    <table>
         <tr>
     <td  class="borderAll center" colspan="3" rowspan="2">Wyszczególnienie </td>
     <td  class="center borderAll" colspan="2">Liczby spraw</td>
@@ -275,8 +263,7 @@ AR-SA;mso-bidi-font-weight:bold">zgodnie z PBSSP <span style="color: red; backgr
 
         <br />
        <strong>Dział 1.1.c. </strong>(dział 1.1.1 wiersz 108 + dział 1.1.2 wiersz 58 kolumna 3 lit. c) skarga o stwierdzenie niezgodności z prawem łącznie I i II instancja<br />
-       <div id='1.1.c' >
-
+       <div id='1.1.c'>
 
     <table cellpadding="0" cellspacing="0" class="auto-style4">
         <tr>
@@ -324,22 +311,21 @@ AR-SA;mso-bidi-font-weight:bold">zgodnie z PBSSP <span style="color: red; backgr
     </table>
  </div>
 
-
         <br />
-        <div id='1.1.d' >
+        <div id='1.1.d'>
 
             <strong>Dział 1.1.d.</strong> Zażalenia w ramach właściwości poziomej
             <br />
 
-    <table >
- <tr>    
+    <table>
+ <tr>
      <td class="borderAll" colspan="2">Zażalenia rozpoznane w trybie art. 3942§1 kpc w sprawach:</td>
 <td class="borderAll center col_100">Pozostało z ubiegłego roku</td>
 <td class="borderAll center col_100">Wpłynęło </td>
 <td class="borderAll center col_100">Załatwiono </td>
 <td class="borderAll center col_100">Pozostało na okres następny</td>
 </tr>
- <tr>    < td  class="center borderAll" colspan="3">0</td>    
+ <tr>    < td  class="center borderAll" colspan="3">0</td>
      <td class="borderAll center" colspan="2">0</td>
 <td class="borderAll center col_100">1</td>
 <td class="borderAll center col_100">2</td>
@@ -375,8 +361,8 @@ AR-SA;mso-bidi-font-weight:bold">zgodnie z PBSSP <span style="color: red; backgr
 
        <br />
 
-        <div id='1.1.e' >
- <strong> Dział 1.1.e</strong> (dział 1.1.2 wiersz 57 kolumna 3 lit. e) skarga kasacyjna<table >
+        <div id='1.1.e'>
+ <strong> Dział 1.1.e</strong> (dział 1.1.2 wiersz 57 kolumna 3 lit. e) skarga kasacyjna<table>
   <tr>
     <td  class="borderAll wciecie" colspan="3">Wyszczególnienie</td>
     <td  class="borderAll center center borderAll ">Liczby spraw</td>
@@ -435,15 +421,15 @@ AR-SA;mso-bidi-font-weight:bold">zgodnie z PBSSP <span style="color: red; backgr
  </div>
 
        <br />
-        <div id='1.1.f' >
+        <div id='1.1.f'>
  <strong> Dział 1.1.f</strong> Ustanowienie pełnomocnika z urzędu
     <table cellpadding="0" cellspacing="0" style="width: 100%; ">
- <tr>    <td  class="center borderAll" colspan="2">Repertorium lub wykaz</td>    
+ <tr>    <td  class="center borderAll" colspan="2">Repertorium lub wykaz</td>
 <td class="center borderAll">Liczba spraw w których doszło do ustanowienia pełnomocnika z urzędu (radca prawny, adwokat)</td>
 <td class="center borderAll">W tym liczba wyznaczonych pełnomocników w wyniku zwolnienia poprzedniego pełnomocnika (od I 2012)</td>
 <td class="center borderAll">W tym liczba wyznaczonych pełnomocników w wyniku zwolnienia poprzedniego pełnomocnika (od I 2012)</td>
 </tr>
- <tr>    <td  class="center borderAll" colspan="2">0</td>    
+ <tr>    <td  class="center borderAll" colspan="2">0</td>
 <td class="center borderAll">1</td>
 <td class="center borderAll">2</td>
 <td class="center borderAll">3</td>
@@ -466,17 +452,17 @@ AR-SA;mso-bidi-font-weight:bold">zgodnie z PBSSP <span style="color: red; backgr
  </div>
 
        <br />
-        <div id='1.1.g' >
+        <div id='1.1.g'>
  <strong> Dział 1.1.g</strong> Sprawy mediacyjne<table cellpadding="0" cellspacing="0" style="width: 100%; ">
- <tr>    <td  class="center borderAll" colspan="5" rowspan="2">Sądowe</td>    
+ <tr>    <td  class="center borderAll" colspan="5" rowspan="2">Sądowe</td>
 <td class="center borderAll" colspan="3">Sprawy</td>
 </tr>
- <tr>    
+ <tr>
 <td class="borderAll center col_60">razem </td>
 <td class="borderAll center col_60">w I instancji</td>
 <td class="borderAll center col_60">w II instancji</td>
 </tr>
- <tr>    <td  class="center borderAll" colspan="5">0</td>    
+ <tr>    <td  class="center borderAll" colspan="5">0</td>
 <td class="borderAll center col_60">1</td>
 <td class="borderAll center col_60">2</td>
 <td class="borderAll center col_60">3</td>
@@ -634,19 +620,19 @@ AR-SA;mso-bidi-font-weight:bold">zgodnie z PBSSP <span style="color: red; backgr
  </div>
 
         <br />
-        <div id='1.1.h' >
- <strong> Dział 1.1.h</strong> Ewidencja spraw ogółem i przyczyny ponownych wpisów oraz szczególne rodzaje załatwień spraw gospodarczych (dok.)<table >
- <tr>    <td  class="center borderAll" colspan="5" rowspan="3">Wyszczególnienie</td>    
+        <div id='1.1.h'>
+ <strong> Dział 1.1.h</strong> Ewidencja spraw ogółem i przyczyny ponownych wpisów oraz szczególne rodzaje załatwień spraw gospodarczych (dok.)<table>
+ <tr>    <td  class="center borderAll" colspan="5" rowspan="3">Wyszczególnienie</td>
 <td class="center borderAll" colspan="9">Repertorium/wykaz</td>
 </tr>
- <tr>    
+ <tr>
 <td class="center borderAll" rowspan="2">Ogółem I i II instancja </td>
 <td class="center borderAll" rowspan="2">Ogółem I instancja </td>
 <td class="center borderAll" colspan="4">w tym </td>
 <td class="center borderAll" rowspan="2">Ogółem II instancja </td>
 <td class="center borderAll" colspan="2">w tym</td>
 </tr>
- <tr>    
+ <tr>
 <td class="center borderAll">Gc</td>
 <td class="center borderAll">GNs</td>
 <td class="center borderAll">GNc</td>
@@ -654,7 +640,7 @@ AR-SA;mso-bidi-font-weight:bold">zgodnie z PBSSP <span style="color: red; backgr
 <td class="center borderAll">Ga</td>
 <td class="center borderAll">Gz</td>
 </tr>
- <tr>    <td  class="center borderAll" colspan="5">0</td>    
+ <tr>    <td  class="center borderAll" colspan="5">0</td>
 <td class="borderAll col_60 center">1</td>
 <td class="borderAll col_60 center">2</td>
 <td class="borderAll col_60 center">3</td>
@@ -1448,10 +1434,10 @@ AR-SA;mso-bidi-font-weight:bold">zgodnie z PBSSP <span style="color: red; backgr
  </div>
 
        <br />
-        <div id='1.1.i' >
+        <div id='1.1.i'>
  <strong> Dział 1.1.i</strong>
             w tym powództwo w następstwie decyzji organu ochrony konkurencji
-    <table >
+    <table>
  <tr>    <td  class="center borderAll" colspan="2">Wyszczególnienie </td>    <td class="center borderAll">Liczby spraw</td>
 </tr>
  <tr>    <td  class="center borderAll" colspan="2">0</td>    <td class="center col_150 borderAll">1</td>
@@ -1474,10 +1460,10 @@ AR-SA;mso-bidi-font-weight:bold">zgodnie z PBSSP <span style="color: red; backgr
     </table>
  </div>
 
-       <br/>
-      <div id='1.1.j' >
+       <br />
+      <div id='1.1.j'>
  <strong> Dział 1.1.j</strong> w tym powództwo w następstwie decyzji organu ochrony konkurencji
-    <table >
+    <table>
   <tr>
     <td  class="borderAll wciecie" colspan="3">Wyszczególnienie </td>
     <td  class="borderAll center col_90 center borderAll ">Liczby spraw</td>
@@ -1516,30 +1502,27 @@ AR-SA;mso-bidi-font-weight:bold">zgodnie z PBSSP <span style="color: red; backgr
  </div>
 
        <br />
-        <div id='1.1.k' >
-            
-        
+        <div id='1.1.k'>
+
             <table style="width:100%;">
                 <tr>
                     <td><strong>Dział 1.1.k.</strong> w tym: - liczba zażaleń na postanowienie o udzielenie zabezpieczenia (art. 33) (dz. 1.1.1. w. 105, k.4)</td>
                      <td  class="borderAll center col_90 center borderAll "><a href="javascript:openPopup('popup.aspx?sesja=1!1.1.k!1!4')"><asp:Label CssClass="normal" ID="tab_1_1_k_w01_c01" runat="server" Text="0"></asp:Label></a></td>
                 </tr>
             </table>
-            
-        
         </div>
        <br />
-        <div id='1.1.3' >
+        <div id='1.1.3'>
  <strong> Dział 1.1.3</strong> Skład orzekający w sprawach Ga
-    <table >
+    <table>
  <tr>    <td  class="center borderAll" colspan="2" rowspan="3"> Wyszczególnienie </td>    <td class="center borderAll" rowspan="3"> Liczba zakończonych spraw Ga (kol. 2+4)</td>
 <td class="center borderAll" colspan="4">W tym liczba zakończonych spraw Ga w składzie</td>
 </tr>
- <tr>    
+ <tr>
 <td class="center borderAll" colspan="2">3 sędziów</td>
 <td class="center borderAll" colspan="2">1 sędziego</td>
 </tr>
- <tr>    
+ <tr>
 <td class="borderAll center col_130">ogółem </td>
 <td class="borderAll center col_130">w tym załatwionych przez sędziów SO</td>
 <td class="borderAll center col_130">ogółem </td>
@@ -1565,9 +1548,9 @@ AR-SA;mso-bidi-font-weight:bold">zgodnie z PBSSP <span style="color: red; backgr
  </div>
 
        <br />
-      <div id='1.2.1' >
+      <div id='1.2.1'>
  <strong> Dział 1.2.1</strong> Liczba sesji i wyznaczonych spraw
-    <table >
+    <table>
  <tr>    <td  class="center borderAll" colspan="2" rowspan="4"> SPRAWY
      <br />
      według repertoriów i wykazów</td>    <td  class="center borderAll" rowspan="4"> L.p.</td>    <td class="center borderAll" rowspan="4"> Liczba sesji (rozprawy i posiedzenia) - wokandy </td>
@@ -1578,7 +1561,7 @@ AR-SA;mso-bidi-font-weight:bold">zgodnie z PBSSP <span style="color: red; backgr
 <td class="center borderAll" rowspan="4">Razem wyznaczonych na posiedzenie sędziów i referendarze (suma kol.23,35,39,40)</td>
 <td class="center borderAll" colspan="18">Liczba wyznaczonych spraw na posiedzenia, dotyczy:</td>
 </tr>
- <tr>    
+ <tr>
 <td class="center borderAll" colspan="12">Sędziowie SO</td>
 <td class="center borderAll" rowspan="3">Razem wyznaczonych na rozprawę sędziowie SR (suma kol. 18,19,20)</td>
 <td class="center borderAll" colspan="3">sędziowie SR</td>
@@ -1589,7 +1572,7 @@ AR-SA;mso-bidi-font-weight:bold">zgodnie z PBSSP <span style="color: red; backgr
 <td class="center borderAll" rowspan="3">inni sędziowie</td>
 <td class="center borderAll" rowspan="3">referndarze</td>
 </tr>
- <tr>    
+ <tr>
 <td class="center borderAll" rowspan="2">Razem wyznaczonych spraw na rozprawę sędziowie SO (suma kol.6,7,16)</td>
 <td class="center borderAll" rowspan="2">sędziów SO z wyłączeniem sędziów funkcyjnych</td>
 <td class="center borderAll" rowspan="2">sędziów funkcyjnych SO (suma kol. od 8 do 15)</td>
@@ -1604,7 +1587,7 @@ AR-SA;mso-bidi-font-weight:bold">zgodnie z PBSSP <span style="color: red; backgr
 <td class="center borderAll" colspan="8">z tego</td>
 <td class="center borderAll" rowspan="2">inni</td>
 </tr>
- <tr>    
+ <tr>
 <td class="center borderAll">prezesa</td>
 <td class="center borderAll">wiceprezesa </td>
 <td class="center borderAll">przewodniczącego wydziału</td>
@@ -2200,16 +2183,16 @@ AR-SA;mso-bidi-font-weight:bold">zgodnie z PBSSP <span style="color: red; backgr
 
        * Na podstawie ustawy z dnia 17 czerwca 2004 r. o skardze na naruszenie prawa strony do rozpoznania sprawy w postępowaniu przygotowawczym prowadzonym lub nadzorowanym przez prokuratora i postępowaniu sądowym bez nieuzasadnionej zwłoki (Dz. U. Nr 179, poz. 1843, z późn. zm.).<br />
        <br />
- <div id='1.2.2' >
+ <div id='1.2.2'>
  <strong> Dział 1.2.2</strong> Liczba odbytych sesji i załatwionych spraw
-    <table >
+    <table>
  <tr>    <td  class="center borderAll" colspan="4" rowspan="4"> RODZAJE SPRAW według repertoriów i wykazów</td>    <td  class="center borderAll" rowspan="4"> L.p.</td>    <td class="center borderAll" rowspan="4"> Liczba odbytych sesji (rozprawy i posiedzenia) - wokandy</td>
 <td class="center borderAll" rowspan="4">Łączna liczba dni w których odbyto sesje-wokandy</td>
 <td class="center borderAll" rowspan="4">Załatwienie1) ogółem (suma kol. 4, 22)</td>
 <td class="center borderAll" colspan="18">Liczba załatwionych spraw na rozprawie, dotyczy:</td>
 <td class="center borderAll" colspan="19">Liczba załatwionych spraw na posiedzeniach, dotyczy: </td>
 </tr>
- <tr>    
+ <tr>
 <td class="center borderAll" rowspan="3">Załatwienie razem (suma kol. 5, 17, 21)</td>
 <td class="center borderAll" colspan="12">sędziowie SO</td>
 <td class="center borderAll" rowspan="3">prezesawiceprezesa przewodniczącego wydziałuzastępcę przewodniczącego wydziałukierownika sekcjiwizytatorów innych funkcyjnych tego sądu z tego pionuinnych funkcyjnych tego sądu z innych pionów</td>
@@ -2223,7 +2206,7 @@ AR-SA;mso-bidi-font-weight:bold">zgodnie z PBSSP <span style="color: red; backgr
 <td class="center borderAll" rowspan="3">inni sędziowie</td>
 <td class="center borderAll" rowspan="3">referendarze</td>
 </tr>
- <tr>    
+ <tr>
 <td class="center borderAll" rowspan="2">Razem załatwionych spraw na rozprawie sędziowie SO (suma kol.6,7,16)</td>
 <td class="center borderAll" rowspan="2">sędziów SO z wyłączeniem sędziów funkcyjnych </td>
 <td class="center borderAll" rowspan="2">sędziów funkcyjnych SO(suma kol. od 8 do 15)</td>
@@ -2240,7 +2223,7 @@ AR-SA;mso-bidi-font-weight:bold">zgodnie z PBSSP <span style="color: red; backgr
      sędziów SR delegowanych w trybie art. 77 §1 usp na czas nieokreślony lub na czas określony, orzekających w niepełnym wymiarze<td class="center borderAll" rowspan="2">sędziów SR delegowanych w trybie art. 77 §1 usp na czas nieokreślony lub na czas określony, orzekających w niepełnym wymiarze</td>
 <td class="center borderAll" rowspan="2">sędziów SR delegowanych w trybie art. 77 § 9 usp</td>
 </tr>
- <tr>        
+ <tr>
 <td class="center borderAll">prezesa</td>
 <td class="center borderAll">wiceprezesa </td>
 <td class="center borderAll">przewodniczącego wydziału</td>
@@ -3805,9 +3788,9 @@ AR-SA;mso-bidi-font-weight:bold">zgodnie z PBSSP <span style="color: red; backgr
  </div>
 
        <br />
-       <div id='1.3.1' >
+       <div id='1.3.1'>
  <strong> Dział 1.3.1</strong> Załatwienie spraw przez referendarzy
-    <table >
+    <table>
  <tr>    <td  class="center borderAll" colspan="2" rowspan="2"> Wyszczególnienie</td>    <td class="center borderAll" colspan="6"> Liczba spraw załatwionych przez referendarzy</td>
 </tr>
  <tr>    <td class="col_90 borderAll center"> Ogółem (kol.od 2 do 6)</td>
@@ -3917,10 +3900,10 @@ AR-SA;mso-bidi-font-weight:bold">zgodnie z PBSSP <span style="color: red; backgr
     </table>
  </div>
 
-       <br/>
-        <div id='1.4' >
+       <br />
+        <div id='1.4'>
  <strong> Dział 1.4</strong> Terminowość sporządzania uzasadnień
-    <table >
+    <table>
  <tr>    <td  class="center borderAll" colspan="4" rowspan="3"> RODZAJE SRPAW wg repertoriów i wykazów</td>    <td class="center borderAll" colspan="10"> Terminowość sporządzania uzasadnień</td>
 <td class="center borderAll" rowspan="3">Uzasadnie-nia wygło-szone (art.328 § 1<sup>1</sup> kpc)</td>
 <td class="center borderAll" rowspan="3">Liczba spraw do których wpłynął wniosek o tran-skrypcję uzasad-nień wygłoszonych w trybie art.328 § 1<sup>1</sup> kpc </td>
@@ -3930,7 +3913,7 @@ AR-SA;mso-bidi-font-weight:bold">zgodnie z PBSSP <span style="color: red; backgr
 <td class="center borderAll" rowspan="2">w terminie ustawowym</td>
 <td class="center borderAll" colspan="8">po upływie terminu ustawowego <sup>1)</sup></td>
 </tr>
- <tr>    
+ <tr>
 <td class="center borderAll">1 – 14 dni</td>
 <td class="center borderAll">w tym nieuspra-wiedli-wione</td>
 <td class="center borderAll">15 – 30 dni</td>
@@ -4240,10 +4223,10 @@ AR-SA;mso-bidi-font-weight:bold">zgodnie z PBSSP <span style="color: red; backgr
     </table>
  </div>
 
-       <br/>
-         <div id='2.1.1' >
+       <br />
+         <div id='2.1.1'>
  <strong> Dział 2.1.1</strong> . Sprawy od dnia pierwotnego wpisu do repertorium  (łącznie z czasem trwania mediacji)
-    <table >
+    <table>
  <tr>    <td  class="center borderAll" colspan="2" rowspan="2"> SPRAWY wg repertoriów </td>    <td class="center borderAll" colspan="11"> Liczba spraw niezałatwionych pozostających od daty pierwszego wpływu do sądu (pozwu, wniosku, apelacji, zażalenia) </td>
 </tr>
  <tr>    <td class="center borderAll"> razem (kol.2+3) </td>
@@ -4364,9 +4347,9 @@ AR-SA;mso-bidi-font-weight:bold">zgodnie z PBSSP <span style="color: red; backgr
  </div>
 
         <br />
-         <div id='2.1.1.1' >
+         <div id='2.1.1.1'>
  <strong> Dział 2.1.1.1</strong> Sprawy od dnia pierwotnego wpisu do repertorium (bez czasu trwania mediacji w sprawach wszczętych po 1 stycznia 2016r.)
-    <table >
+    <table>
  <tr>    <td  class="center borderAll" colspan="2" rowspan="2"> SPRAWY wg repertoriów</td>    <td class="center borderAll" colspan="11"> Liczba spraw niezałatwionych pozostających od daty pierwszego wpływu do sądu (pozwu, wniosku, apelacji, zażalenia) </td>
 </tr>
  <tr>    <td class="center borderAll"> razem (kol.2+3) </td>
@@ -4489,7 +4472,7 @@ AR-SA;mso-bidi-font-weight:bold">zgodnie z PBSSP <span style="color: red; backgr
         <br />
         <div id="2.1.1.a">
             <strong>Dział 2.1.1.a</strong> Sprawy zawieszone nie zakreślone od dnia pierwotnego wpisu do repertorium (wykazane w dziale 2.1.1.) (łącznie z czasem trwania mediacji)
-            <table >
+            <table>
                 <tr>
                     <td  class="center borderAll" colspan="2" rowspan="2"> SPRAWY wg repertoriów</td>    <td class="center borderAll" colspan="11"> Liczba spraw niezałatwionych pozostających od daty pierwszego wpływu do sądu (pozwu, wniosku, apelacji, zażalenia) </td>
                 </tr>
@@ -4745,9 +4728,9 @@ AR-SA;mso-bidi-font-weight:bold">zgodnie z PBSSP <span style="color: red; backgr
             </table>
         </div>
         <br />
-        <div id='2.1.1.a.1' >
+        <div id='2.1.1.a.1'>
  <strong> Dział 2.1.1.a.1</strong> Sprawy zawieszone nie zakreślone od dnia pierwotnego wpisu do repertorium (wykazane w dziale 2.1.1.) (bez czasu trwania mediacji w sprawach wszczętych po 1 stycznia 2016r.)
-    <table >
+    <table>
         <tr>
                     <td  class="center borderAll" colspan="2" rowspan="2"> SPRAWY wg repertoriów</td>    <td class="center borderAll" colspan="11"> Liczba spraw niezałatwionych pozostających od daty pierwszego wpływu do sądu (pozwu, wniosku, apelacji, zażalenia) </td>
                 </tr>
@@ -4872,7 +4855,7 @@ AR-SA;mso-bidi-font-weight:bold">zgodnie z PBSSP <span style="color: red; backgr
         <br />
         <div id="2.1.2">
             <strong>Dział 2.1.2</strong> Liczba spraw zakreślonych w urządzeniu ewidencyjnym w wyniku zawieszenia postępowania(łącznie z czasem trwania mediacji)
-            <table >
+            <table>
                 <tr>
                     <td  class="center borderAll" colspan="2" rowspan="2"> SPRAWY wg repertoriów</td>    <td class="center borderAll" colspan="11"> Liczba spraw niezałatwionych pozostających od daty pierwszego wpływu do sądu (pozwu, wniosku, apelacji, zażalenia) </td>
                 </tr>
@@ -5130,7 +5113,7 @@ AR-SA;mso-bidi-font-weight:bold">zgodnie z PBSSP <span style="color: red; backgr
         <br />
         <div id="2.1.2.1">
             <strong>Dział 2.1.2.1</strong> Liczba spraw zakreślonych w urządzeniu ewidencyjnym w wyniku zawieszenia postępowania (bez czasu trwania mediacji w sprawach wszczętych po 1 stycznia 2016r.)
-            <table >
+            <table>
                 <tr>
                     <td  class="center borderAll" colspan="2" rowspan="2"> SPRAWY wg repertoriów</td>    <td class="center borderAll" colspan="11"> Liczba spraw niezałatwionych pozostających od daty pierwszego wpływu do sądu (pozwu, wniosku, apelacji, zażalenia) </td>
                 </tr>
@@ -5388,7 +5371,7 @@ AR-SA;mso-bidi-font-weight:bold">zgodnie z PBSSP <span style="color: red; backgr
         <br />
         <div id="2.2">
             <strong>Dział 2.2</strong> Czas trwania postępowania sądowego (w sądzie okręgowym I instancji - od dnia pierwszej rejestracji w sądzie I instancji do uprawomocnienia się sprawy w I instancji a w sądzie okręgowym II instancji od dnia pierwszej rejestracji w sądzie rejonowym (I instancji) do dnia wydania orzeczenia w sądzie okręgowym II instancji lub od dnia wpływu sprawy do sądu okręgowego (II instancji do dnia wydania orzeczenia w II instancji)) (łącznie z czasem trwania mediacji)
-            <table >
+            <table>
                 <tr>
                     <td class="center borderAll" colspan="2">Sprawy z repertorium </td>
                     <td class="center borderAll">L.p.</td>
@@ -6196,7 +6179,7 @@ AR-SA;mso-bidi-font-weight:bold">zgodnie z PBSSP <span style="color: red; backgr
         <br />
         <div id="2.2.a">
             <strong>Dział 2.2.a</strong> Czas trwania postępowania sądowego (w sądzie okręgowym I instancji - od dnia pierwszej rejestracji w sądzie I instancji do uprawomocnienia się sprawy mery-torycznie zakończonej (wyrokiem, orzeczeniem) w I instancji a w sądzie okręgowym II instancji od dnia pierwszej rejestracji w sądzie rejonowym (I instancji) do dnia wy-dania orzeczenia merytorycznie kończącego sprawę (wyrokiem, orzeczeniem) w sądzie okręgowym II instancji lub od dnia wpływu sprawy do sądu okręgowego (II in-stancji do dnia wydania orzeczenia w II instancji)) (łącznie z czasem trwania mediacji)
-            <table >
+            <table>
                 <tr>
                     <td class="center borderAll" colspan="2">Sprawy z repertorium </td>
                     <td class="center borderAll">L.p.</td>
@@ -7004,7 +6987,7 @@ AR-SA;mso-bidi-font-weight:bold">zgodnie z PBSSP <span style="color: red; backgr
         <br />
         <div id="2.2.1">
             <strong>Dział 2.2.1</strong> Czas trwania postępowania sądowego (w sądzie okręgowym I instancji - od dnia pierwszej rejestracji w sądzie I instancji do uprawomocnienia się sprawy w I instancji a w sądzie okręgowym II instancji od dnia pierwszej rejestracji w sądzie rejonowym (I instancji) do dnia wydania orzeczenia w sądzie okręgowym II instancji lub od dnia wpływu sprawy do sądu okręgowego (II instancji do dnia wydania orzeczenia w II instancji)) (bez czasu trwania mediacji w sprawach wszczętych po 1 stycznia 2016r.)
-            <table >
+            <table>
                 <tr>
                     <td class="center borderAll" colspan="2">Sprawy z repertorium </td>
                     <td class="center borderAll">L.p.</td>
@@ -7812,7 +7795,7 @@ AR-SA;mso-bidi-font-weight:bold">zgodnie z PBSSP <span style="color: red; backgr
         <br />
         <div id="2.2.1.a">
             <strong>Dział 2.2.1.a</strong> Czas trwania postępowania sądowego (w sądzie okręgowym I instancji - od dnia pierwszej rejestracji w sądzie I instancji do uprawomocnienia się sprawy mery-torycznie zakończonej (wyrokiem, orzeczeniem) w I instancji a w sądzie okręgowym II instancji od dnia pierwszej rejestracji w sądzie rejonowym (I instancji) do dnia wy-dania orzeczenia merytorycznie kończącego sprawę (wyrokiem, orzeczeniem) w sądzie okręgowym II instancji lub od dnia wpływu sprawy do sądu okręgowego (II in-stancji do dnia wydania orzeczenia w II instancji)) (bez czasu trwania mediacji w sprawach wszczętych po 1 stycznia 2016r.)
-            <table >
+            <table>
                 <tr>
                     <td class="center borderAll" colspan="2">Sprawy z repertorium </td>
                     <td class="center borderAll">L.p.</td>
@@ -8620,7 +8603,7 @@ AR-SA;mso-bidi-font-weight:bold">zgodnie z PBSSP <span style="color: red; backgr
         <br />
         <div id="2.3">
             <strong>Dział 2.3</strong> Czas trwania wszystkich mediacji w sprawie od dnia wydania postanowienia o skierowaniu stron do mediacji do dnia zakończenia mediacji
-            <table >
+            <table>
                 <tr>
                     <td class="center borderAll" colspan="2">Sprawy z repertorium </td>
                     <td class="center borderAll">L.p.</td>
@@ -8772,10 +8755,10 @@ AR-SA;mso-bidi-font-weight:bold">zgodnie z PBSSP <span style="color: red; backgr
             </table>
         </div>
         <br />
-      
+
         <div id="2.3.1">
             <strong>Dział 2.3.1</strong> Czas trwania mediacji niezakończonych w sprawie od dnia wydania postanowienia o skierowaniu stron do mediacji do ostatniego dnia okresu sprawozdawczego
-            <table >
+            <table>
                 <tr>
                     <td class="center borderAll" colspan="2">Sprawy z repertorium </td>
                     <td class="center borderAll">L.p.</td>
@@ -8927,9 +8910,9 @@ AR-SA;mso-bidi-font-weight:bold">zgodnie z PBSSP <span style="color: red; backgr
             </table>
         </div>
        <br />
-       <div id='3' >
- <strong> Dział 3</strong> Wyznaczenie pierwszej rozprawy / posiedzenia spraw 
-    <table cellpadding="0" cellspacing="0" >
+       <div id='3'>
+ <strong> Dział 3</strong> Wyznaczenie pierwszej rozprawy / posiedzenia spraw
+    <table cellpadding="0" cellspacing="0">
  <tr>    <td  class="center borderAll" colspan="3" rowspan="2"> Rodzaje spraw z repertorium </td>    <td class="center borderAll" colspan="8"> Od daty wpływu sprawy w danym lub poprzednim okresie sprawozdawczym do pierwszej rozprawy/posiedzenia w okresie sprawozdawczym upłynął okres</td>
 </tr>
  <tr>    <td class="center borderAll"> razem (kol. od 2 do 8)</td>
@@ -9006,7 +8989,7 @@ AR-SA;mso-bidi-font-weight:bold">zgodnie z PBSSP <span style="color: red; backgr
         <br />
         <div id="4.1.a">
             <strong>Dział 4.1.a</strong> Terminowość postępowania międzyinstancyjnego w pierwszej instancji
-            <table cellpadding="0" cellspacing="0" >
+            <table cellpadding="0" cellspacing="0">
                 <tr>
                     <td class="center borderAll" colspan="2" rowspan="2">Środki odwoławcze, które zostały
                         <br />
@@ -9087,7 +9070,7 @@ AR-SA;mso-bidi-font-weight:bold">zgodnie z PBSSP <span style="color: red; backgr
         <br />
         <div id="4.1.b">
             <strong>Dział 4.1.b</strong> Terminowość obiegu międzyinstancyjnego spraw odwoławczych
-            <table cellpadding="0" cellspacing="0" >
+            <table cellpadding="0" cellspacing="0">
                 <tr>
                     <td class="center borderAll" colspan="2" rowspan="2">Wpłynęło spraw</td>
                     <td class="center borderAll" rowspan="2">Ogółem (kol. 2 do 7) </td>
@@ -9166,7 +9149,7 @@ AR-SA;mso-bidi-font-weight:bold">zgodnie z PBSSP <span style="color: red; backgr
         <br />
         <div id="4.2">
             <strong>Dział 4.2</strong> Liczba spraw, w których po wydaniu orzeczenia sądu odwoławczego akta
-            <table cellpadding="0" cellspacing="0" >
+            <table cellpadding="0" cellspacing="0">
                 <tr>
                     <td class="center borderAll" colspan="2" rowspan="2">Rodzaje spraw
                         <br />
@@ -9241,7 +9224,7 @@ AR-SA;mso-bidi-font-weight:bold">zgodnie z PBSSP <span style="color: red; backgr
         <br />
         <div id="5.1">
             <strong>Dział 5.1</strong> Szczegółowe rozliczenie skargi (wykaz S)
-            <table cellpadding="0" cellspacing="0" >
+            <table cellpadding="0" cellspacing="0">
                 <tr>
                     <td class="center borderAll" colspan="4" rowspan="4">Wyszczególnienie</td>
                     <td class="center borderAll" rowspan="4">Pozostało z ubiegłego roku</td>
@@ -9831,7 +9814,7 @@ AR-SA;mso-bidi-font-weight:bold">zgodnie z PBSSP <span style="color: red; backgr
         <br />
         <div id="5.2">
             <strong>Dział 5.2</strong> Kontrolka skarg (w wydziale, którego sprawy skarga dotyczy) (§ 448<sup>5</sup> ust. 1 zarządzenia Ministra Sprawiedliwości z dnia 12 grudnia 2003 r.
-            <table cellpadding="0" cellspacing="0" >
+            <table cellpadding="0" cellspacing="0">
                 <tr>
                     <td class="center borderAll" colspan="2" rowspan="2">Wyszczególnienie </td>
                     <td class="center borderAll" rowspan="2">Wpłynęło </td>
@@ -9886,7 +9869,7 @@ AR-SA;mso-bidi-font-weight:bold">zgodnie z PBSSP <span style="color: red; backgr
         <br />
         <div id="6">
             <strong>Dział 6</strong> Sprawy gospodarcze wielotomowe
-            <table cellpadding="0" cellspacing="0" >
+            <table cellpadding="0" cellspacing="0">
                 <tr>
                     <td class="center borderAll" colspan="4" rowspan="2">SPRAWY z rep. </td>
                     <td class="center borderAll" colspan="7">Sprawy gospodarcze - Liczba spraw </td>
@@ -10294,7 +10277,7 @@ AR-SA;mso-bidi-font-weight:bold">zgodnie z PBSSP <span style="color: red; backgr
         <br />
         <div id="6.1">
             <strong>Dział 6.1</strong> Obsada Sądu (Wydziału)
-            <table cellpadding="0" cellspacing="0" >
+            <table cellpadding="0" cellspacing="0">
                 <tr>
                     <td class="center borderAll">Wyszczególnienie </td>
                     <td class="center borderAll">&nbsp;</td>
@@ -10345,7 +10328,7 @@ AR-SA;mso-bidi-font-weight:bold">zgodnie z PBSSP <span style="color: red; backgr
         <br />
          <div id="6.2">
              <strong>Dział 6.1</strong> Obsada Sądu (Wydziału)
-             <table cellpadding="0" cellspacing="0" >
+             <table cellpadding="0" cellspacing="0">
                  <tr>
                      <td class="center borderAll" colspan="2">Wyszczególnienie </td>
                      <td class="center borderAll">Liczba sędziów SO i wakujących stanowisk sędziowskich w ramach limitu (na ostatni dzień okresu statystycznego)</td>
@@ -10368,7 +10351,7 @@ AR-SA;mso-bidi-font-weight:bold">zgodnie z PBSSP <span style="color: red; backgr
                     <td class="center borderAll">Obsada sędziów SO delegowanych do pełnienia czynności orzeczniczych w niepełnym wymiarze czy też wykonujących czynności orzecznicze na mocy ustawy w SR </td>
                     <td class="center borderAll">Liczba sędziów SO delegowanych do pełnienia czynności orzeczniczych w niepełnym wymiarze czy też wykonujących czynności orzecznicze na mocy ustawy w SR</td>
                     <td class="center borderAll">Obsada sędziów danego SO delegowanych do pełnienia czynności orzeczniczych w pełnym wymiarze w innym SO</td>
-      
+
                      <td class="center borderAll">Liczba sędziów danego SO delegowanych do pełnienia czynności orzeczniczych w pełnym wymiarze w innym SO </td>
                      <td class="center borderAll">Obsada sędziów danego SO delegowanych do pełnienia czynności orzeczniczych w niepełnym wymiarze czy też wykonujących czynności orzecznicze na mocy ustawy w innym SO</td>
                      <td class="center borderAll">Liczba sędziów danego SO delegowanych do pełnienia czynności orzeczniczych w niepełnym wymiarze czy też wykonujących czynności orzecznicze na mocy ustawy w innym SO</td>
@@ -10778,7 +10761,7 @@ AR-SA;mso-bidi-font-weight:bold">zgodnie z PBSSP <span style="color: red; backgr
         <br />
         <div id="6.3">
             <strong>Dział 6.2</strong> Obsada Sądu (Wydziału)
-            <table cellpadding="0" cellspacing="0" >
+            <table cellpadding="0" cellspacing="0">
                 <tr>
                     <td class="center borderAll" colspan="3">Treść</td>
                     <td class="center borderAll" colspan="3">Liczba według limitu etatów na ostatni dzień okresu statystycznego</td>
@@ -11069,9 +11052,9 @@ AR-SA;mso-bidi-font-weight:bold">zgodnie z PBSSP <span style="color: red; backgr
         <br />
         W poniższych działach odnoszących się do biegłych i tłumaczy wykazujemy dane dotyczące opinii i tłumaczeń zleconych po 1 stycznia 2017r.
         <br />
-       <div id='7.1' >
+       <div id='7.1'>
  <strong> Dział 7.1</strong> Liczba biegłych/podmiotów wydających opinie w sprawach  (z wył. tłumaczy przysięgłych)
-    <table cellpadding="0" cellspacing="0" >
+    <table cellpadding="0" cellspacing="0">
  <tr>    <td  class="center borderAll" colspan="3" rowspan="2"> Sprawy wg repertoriów</td>    <td class="center borderAll" colspan="4"> Liczba powołanych biegłych</td>
 </tr>
  <tr>    <td class="center borderAll"> Razem (kol. 2-4)</td>
@@ -11136,11 +11119,10 @@ AR-SA;mso-bidi-font-weight:bold">zgodnie z PBSSP <span style="color: red; backgr
     </table>
  </div>
 
-
         <br />
         <div id="7.2">
             <strong>Dział 7.2</strong> Terminowość sporządzania opinii pisemnych (z wył. tłumaczy przysięgłych)
-            <table cellpadding="0" cellspacing="0" >
+            <table cellpadding="0" cellspacing="0">
                 <tr>
                     <td class="center borderAll" colspan="3" rowspan="3">Sprawy wg repertoriów</td>
                     <td class="center borderAll" colspan="8">Liczba sporządzonych opinii</td>
@@ -11343,9 +11325,9 @@ AR-SA;mso-bidi-font-weight:bold">zgodnie z PBSSP <span style="color: red; backgr
             W przypadku złożenia przez biegłego opinii w terminie przedłużonym przez sąd, uznaje się ją za sporządzoną w ustalonym terminie.
         </div>
         <br />
-         <div id='7.3' >
+         <div id='7.3'>
  <strong> Dział 7.3</strong> Terminowość przyznawania wynagrodzeń za sporządzenie opinii pisemnych i ustnych oraz za stawiennictwo (z wył. tłumaczy przysięgłych)
-    <table cellpadding="0" cellspacing="0" >
+    <table cellpadding="0" cellspacing="0">
  <tr>    <td  class="center borderAll" colspan="3" rowspan="2"> Sprawy wg repertoriów</td>    <td class="center borderAll" colspan="4"> Postanowienia o przyznaniu wynagrodzenia wg czasu od złożenia rachunku </td>
 <td class="center borderAll" colspan="4">Skierowanie rachunku do oddziału finansowego wg czasu od postanowienia o przyznaniu wynagrodzenia</td>
 </tr>
@@ -11441,7 +11423,7 @@ AR-SA;mso-bidi-font-weight:bold">zgodnie z PBSSP <span style="color: red; backgr
     <td  class="col_110 center borderAll "><a href="javascript:openPopup('popup.aspx?sesja=6!7.3!8!4')"><asp:Label CssClass="normal" ID="tab_7_3_w06_c08" runat="server" Text="0"></asp:Label></a></td>
   </tr>
     </table>
-             W przypadku wezwania biegłego do uzupełnienia rachunku, za datę złożenia rachunku uznaje się datę jego uzupełnienia. 
+             W przypadku wezwania biegłego do uzupełnienia rachunku, za datę złożenia rachunku uznaje się datę jego uzupełnienia.
  </div>
 
         <br />
@@ -11453,9 +11435,9 @@ AR-SA;mso-bidi-font-weight:bold">zgodnie z PBSSP <span style="color: red; backgr
             </tr>
         </table>
         <br />
-        <div id='8.2' >
- <strong> Dział 8.2</strong> Terminowość sporządzania tłumaczeń pisemnych 
-    <table >
+        <div id='8.2'>
+ <strong> Dział 8.2</strong> Terminowość sporządzania tłumaczeń pisemnych
+    <table>
  <tr>    <td class="center borderAll" colspan="8"> Liczba sporządzonych tłumaczeń pisemnych</td>
 </tr>
  <tr>    <td class="center borderAll" rowspan="2"> razem (kol.1= 2 do 5 = 6 do 8)</td>
@@ -11463,7 +11445,7 @@ AR-SA;mso-bidi-font-weight:bold">zgodnie z PBSSP <span style="color: red; backgr
 <td class="center borderAll" colspan="3">po ustalonym terminie</td>
 <td class="center borderAll" colspan="3">wg czasu wydania tłumaczenia</td>
 </tr>
- <tr>    
+ <tr>
 <td class="center borderAll">do 30 dni</td>
 <td class="center borderAll">pow. 1 do 3 miesięcy</td>
 <td class="center borderAll">pow. 3 miesięcy</td>
@@ -11496,7 +11478,7 @@ AR-SA;mso-bidi-font-weight:bold">zgodnie z PBSSP <span style="color: red; backgr
         <br />
         <div id="8.3">
             <strong>Dział 8.3</strong> Terminowość przyznawania wynagrodzeń za sporządzenie tłumaczeń pisemnych i ustnych oraz za stawiennictwo
-            <table >
+            <table>
                 <tr>
                     <td class="center borderAll" colspan="4">Postanowienia o przyznaniu wynagrodzenia wg czasu od złożenia rachunku</td>
                     <td class="center borderAll" colspan="4">Skierowanie rachunku do oddziału finansowego wg czasu od postanowienia o przyznaniu wynagrodzenia </td>
@@ -11555,8 +11537,7 @@ AR-SA;mso-bidi-font-weight:bold">zgodnie z PBSSP <span style="color: red; backgr
         <table style="width:100%;">
             <tr>
                 <td>Proszę podać czas (w minutach) przeznaczony na: </td>
-               
-                
+
                 <td>&nbsp;</td>
             </tr>
             <tr>
@@ -11566,20 +11547,11 @@ AR-SA;mso-bidi-font-weight:bold">zgodnie z PBSSP <span style="color: red; backgr
             <tr>
                 <td>&nbsp;&nbsp;&nbsp; wypełnienie formularza&nbsp;</td>
                 <td  class="col_125 center borderAll "><a href="javascript:openPopup('popup.aspx?sesja=2!9!1!4')"><asp:Label CssClass="normal" ID="tab_9_w02_c01" runat="server" Text="0"></asp:Label></a></td>
-                
             </tr>
         </table>
         <br />
-       <br/>
-  
-    
- 
+       <br />
+
     <br />
-       
   </div>
-
-    
-    
 </asp:Content>
-
-

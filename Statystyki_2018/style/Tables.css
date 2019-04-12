@@ -16,7 +16,10 @@
     background-size: 100% 100%, auto;
    
     }
-
+.doubleTopBorder {
+    /*border-style: double solid solid solid;*/
+    border-top-style: double;
+}
 .gray {
 
     background-color:lightgray;
@@ -147,6 +150,7 @@ height:90px;
 .horizontaltext
 
 {
+    clear ;
     /* Safari */
 -webkit-transform: rotate(-0deg);
 
@@ -162,7 +166,7 @@ height:90px;
 /* Internet Explorer */
 filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=0);
 
-min-height: 65px;
+  min-height: 65px;
   vertical-align: middle;
   text-anchor:middle;
 
@@ -176,7 +180,23 @@ min-height: 65px;
     padding-right:3px;
 
 }
+.spetialVertical {
+    /* Safari */
+    -webkit-transform: rotate(-90deg);
+    /* Firefox */
+    -moz-transform: rotate(-90deg);
+    /* IE */
+    -ms-transform: rotate(-90deg);
+    /* Opera */
+    -o-transform: rotate(-90deg);
+    /* Internet Explorer */
+    filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=3);
+    height: 90px;
+    vertical-align: middle;
+    text-anchor: middle;
+    max-width:25px;
 
+}
 .tx_funkcja {
     width:100px;
       background-color:aliceblue;
@@ -406,6 +426,15 @@ word-wrap: break-word;
 .col_30 {
         width:30px;
  text-align:center;
+ min-width:30px;
+}
+
+.col_30_min {
+    width: 29px;
+    text-align: center;
+    min-width: 29px;
+    max-width: 29px;
+    text-wrap: break-word;
 }
 
 .col_35 {
@@ -549,6 +578,25 @@ word-wrap: break-word;
 }
 
 
+.col_80 {
+    width: 80px;
+    text-align: center;
+}
+.col_80_fest {
+    width: 80px;
+    text-align: center;
+    min-width: 80px;
+}
+
+.col_80_fest_fest {
+    width: 80px;
+    text-align: center;
+    min-width: 80px;
+}
+.col_81 {
+    width: 81px;
+    text-align: center;
+}
 .col_82 {
         width:82px;
  text-align:center;
@@ -627,6 +675,10 @@ word-wrap: break-word;
  text-align:center;
 }
 
+.col_120 {
+    width: 120px;
+    text-align: center;
+}
 .col_121 {
         width:121px;
  text-align:center;
@@ -684,6 +736,12 @@ word-wrap: break-word;
         width:160px;
  text-align:center;
 }
+.col_160Fest {
+    width: 160px;
+    text-align: center;
+    min-width:250px;
+}
+
 .col_167 {
         width:167px;
  text-align:center;
@@ -700,8 +758,7 @@ word-wrap: break-word;
 }
 
 .col_180 {
-        width:180px;
- text-align:center;
+        text-align:center;
 }
 
 .col_185_min {

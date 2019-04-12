@@ -68,7 +68,7 @@ namespace stat2018
                     catch (Exception ex)
                     {
 
-                        //cm.log.Error("POPUP: Wczytywanie danych : " + ex.Message );
+                        cm.log.Error("POPUP: Wczytywanie danych : " + ex.Message );
 
                     }
                 }
@@ -111,7 +111,7 @@ namespace stat2018
             }
             catch (Exception ex)
             {
-                //cm.log.Error("popup  " + ex.Message);
+                cm.log.Error("popup  " + ex.Message);
                 GridView1.DataSource = null;
                 GridView1.DataSourceID = null;
                 GridView1.Visible = false;
@@ -161,7 +161,7 @@ namespace stat2018
             }
             catch (Exception ex)
             {
-                //cm.log.Error("POPUP: Bład odczytu tabeli do popupu MSS, kwerenda: " + kw + " ,bład " + ex.Message);
+                cm.log.Error("POPUP: Bład odczytu tabeli do popupu MSS, kwerenda: " + kw + " ,bład " + ex.Message);
 
                 GridView1.DataSource = null;
                 GridView1.DataSourceID = null;
@@ -209,7 +209,7 @@ namespace stat2018
             }
             catch (Exception ex)
             {
-                //cm.log.Error("popup " + ex.Message);
+                cm.log.Error("popup " + ex.Message);
                 GridView1.DataSource = null;
                 GridView1.DataSourceID = null;
                 GridView1.Visible = false;
@@ -255,7 +255,7 @@ namespace stat2018
             }
             catch (Exception ex)
             {
-                //cm.log.Error( "popup " + ex.Message);
+                cm.log.Error( "popup " + ex.Message);
                 GridView1.DataSource = null;
                 GridView1.DataSourceID = null;
                 GridView1.Visible = false;

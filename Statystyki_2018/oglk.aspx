@@ -1,7 +1,7 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site1.Master" AutoEventWireup="true" CodeBehind="oglk.aspx.cs" Inherits="stat2018.oglk" MaintainScrollPositionOnPostback="true" EnableEventValidation="false" %>
+﻿<%@ Page Title="" Language="C#" UICulture="pl" Culture="pl-PL" MasterPageFile="~/Site1.Master" AutoEventWireup="true" CodeBehind="oglk.aspx.cs" Inherits="stat2018.oglk" MaintainScrollPositionOnPostback="true" EnableEventValidation="false" %>
 
 
-<%@ Register assembly="DevExpress.Web.v17.1, Version=17.1.10.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" namespace="DevExpress.Web" tagprefix="dx" %>
+<%@ Register assembly="DevExpress.Web.v17.1, Version=17.1.13.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" namespace="DevExpress.Web" tagprefix="dx" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
       <style>
@@ -180,7 +180,7 @@
 
             <asp:TemplateField HeaderText="d_07" SortExpression="d_07">
                 <ItemTemplate>
-                      <a href="javascript:openPopup('popup.aspx?sesja=<%# Eval("id_sedziego")+ "!"+Eval("id_tabeli") +"!9!2"%>')"><asp:Label ID="Label209" runat="server" Text='<%# Eval("d_09")%>' CssClass="normal"></asp:Label> </a>
+                      <a href="javascript:openPopup('popup.aspx?sesja=<%# Eval("id_sedziego")+ "!"+Eval("id_tabeli") +"!7!2"%>')"><asp:Label ID="Label209" runat="server" Text='<%# Eval("d_09")%>' CssClass="normal"></asp:Label> </a>
                 </ItemTemplate>
                   <ItemStyle  CssClass="col_45" />
             </asp:TemplateField>
@@ -746,7 +746,7 @@
 <asp:TemplateField HeaderText="d_06" SortExpression="d_06">
                
                 <ItemTemplate>
-                        <a href="javascript:openPopup('popup.aspx?sesja=<%# Eval("id_sedziego")+ "!"+Eval("id_tabeli") +"!9!2"%>')"><asp:Label ID="Label609" runat="server" Text='<%# Eval("d_09")%>' CssClass="normal"></asp:Label> </a>
+                        <a href="javascript:openPopup('popup.aspx?sesja=<%# Eval("id_sedziego")+ "!"+Eval("id_tabeli") +"!7!2"%>')"><asp:Label ID="Label609" runat="server" Text='<%# Eval("d_09")%>' CssClass="normal"></asp:Label> </a>
                 </ItemTemplate>
                   <ItemStyle  CssClass="col_91" />
             </asp:TemplateField>

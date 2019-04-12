@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site1.Master" AutoEventWireup="true" CodeBehind="ansk.aspx.cs" Inherits="stat2018.ansk"  MaintainScrollPositionOnPostback="true" %>
+﻿<%@ Page Title="" Language="C#" UICulture="pl" Culture="pl-PL" MasterPageFile="~/Site1.Master" AutoEventWireup="true" CodeBehind="ansk.aspx.cs" Inherits="stat2018.ansk"  MaintainScrollPositionOnPostback="true" %>
 
 
 <%@ Register src="UserControlls/PopupLinkButtom.ascx" tagname="PopupLinkButtom" tagprefix="uc1" %>
@@ -7,7 +7,7 @@
 <%@ Register src="UserControlls/PopupLinkButtom2.ascx" tagname="PopupLinkButtom2" tagprefix="uc2" %>
 
 
-<%@ Register assembly="DevExpress.Web.v17.1, Version=17.1.10.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" namespace="DevExpress.Web" tagprefix="dx" %>
+<%@ Register assembly="DevExpress.Web.v17.1, Version=17.1.13.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" namespace="DevExpress.Web" tagprefix="dx" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
         <style>
@@ -85,9 +85,10 @@
         <Columns>
             <asp:TemplateField HeaderText="opis" SortExpression="opis">
                 <ItemTemplate>
-                      <ItemStyle  CssClass="t1_opis" />
+                     
                     <asp:Label ID="Label1" runat="server" Text='<%# Bind("opis") %>'></asp:Label>
                 </ItemTemplate>
+                 <ItemStyle  CssClass="t1_opis" />
             </asp:TemplateField>
             <asp:TemplateField HeaderText="d_01" SortExpression="d_01">
                 <ItemTemplate>
@@ -1000,9 +1001,10 @@
         <Columns>
             <asp:TemplateField HeaderText="opis" SortExpression="opis">
                 <ItemTemplate>
-                      <ItemStyle  CssClass="t1_opis" />
+                    
                     <asp:Label ID="Label37" runat="server" Text='<%# Bind("opis") %>'></asp:Label>
                 </ItemTemplate>
+                  <ItemStyle  CssClass="t1_opis" />
             </asp:TemplateField>
             <asp:TemplateField HeaderText="d_01" SortExpression="d_01">
                 <ItemTemplate>
@@ -1125,12 +1127,12 @@
         </div>
     
 
-      
+   <!--   
 <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
 <script src="http://ajax.aspnetcdn.com/ajax/jquery.ui/1.8.9/jquery-ui.js" type="text/javascript"></script>
 <link href="http://ajax.aspnetcdn.com/ajax/jquery.ui/1.8.9/themes/start/jquery-ui.css"
     rel="stylesheet" type="text/css" />
-
+       -->
     <br />
        
   </div>

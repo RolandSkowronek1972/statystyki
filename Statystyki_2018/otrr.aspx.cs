@@ -7,16 +7,17 @@ using System.Globalization;
 using System.IO;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+
 namespace stat2018
 {
-   
     public partial class otrr : System.Web.UI.Page
     {
         public Class1 cl = new Class1();
         private HSSFWorkbook hssfworkbook;
         public common cm = new common();
-        const string fileId = "otrr";
-        const string tenPlik = "otrr.aspx";
+        private const string fileId = "otrr";
+        private const string tenPlik = "otrr.aspx";
+
         protected void Page_Load(object sender, EventArgs e)
         {
             string idWydzial = Request.QueryString["w"];
@@ -29,8 +30,27 @@ namespace stat2018
             {
                 return;
             }
-            Session["data_1"] = Date1.Text;
-            Session["data_2"] = Date2.Text;
+            CultureInfo newCulture = (CultureInfo)CultureInfo.CurrentCulture.Clone();
+            newCulture.DateTimeFormat = CultureInfo.GetCultureInfo("PL").DateTimeFormat;
+            System.Threading.Thread.CurrentThread.CurrentCulture = newCulture;
+            System.Threading.Thread.CurrentThread.CurrentUICulture = newCulture;
+            DateTime dTime = DateTime.Now.AddMonths(-1); ;
+
+            if (Date1.Text.Length == 0)
+            {
+                Date1.Date = DateTime.Parse(dTime.Year.ToString() + "-" + dTime.Month.ToString("D2") + "-01");
+            }
+
+            if (Date2.Text.Length == 0)
+            {
+                Date2.Date = DateTime.Parse(dTime.Year.ToString() + "-" + dTime.Month.ToString("D2") + "-" + DateTime.DaysInMonth(dTime.Year, dTime.Month).ToString("D2"));
+            }
+
+            Session["data_1"] = Date1.Date.Year.ToString() + "-" + Date1.Date.Month.ToString("D2") + "-" + Date1.Date.Day.ToString("D2");
+            cm.log.Info(tenPlik + ": data początku okresy statystycznego w sesji dla popupów " + (string)Session["data_1"]);
+            Session["data_2"] = Date2.Date.Year.ToString() + "-" + Date2.Date.Month.ToString("D2") + "-" + Date2.Date.Day.ToString("D2");
+            cm.log.Info(tenPlik + ": data początku okresy statystycznego w sesji dla popupów " + (string)Session["data_"]);
+
             clearHedersSession();
             try
             {
@@ -52,9 +72,9 @@ namespace stat2018
                     }
                 }
             }
-            catch 
+            catch
             {
-                  Server.Transfer("default.aspx");
+                Server.Transfer("default.aspx");
             }
         }// end of Page_Load
 
@@ -70,43 +90,23 @@ namespace stat2018
             Session["header_08"] = null;
         }
 
-
         protected void przemiel()
         {
-            Session["sesja"] = "s3030";
-            try
-            {
-                DateTime dTime = DateTime.Now;
-                dTime = dTime.AddMonths(-1);
-                if (Date1.Text.Length == 0)
-                {
-                    Date1.Text = dTime.Year.ToString() + "-" + dTime.Month.ToString("D2") + "-01";
-                }
-                if (Date2.Text.Length == 0)
-                {
-                    Date2.Text = dTime.Year.ToString() + "-" + dTime.Month.ToString("D2") + "-" + DateTime.DaysInMonth(dTime.Year, dTime.Month).ToString("D2");
-                }
-
-                Session["data_1"] = Date1.Text.Trim();
-                Session["data_2"] = Date2.Text.Trim();
-            }
-            catch
-            { }
             string yyx = (string)Session["id_dzialu"];
             id_dzialu.Text = (string)Session["txt_dzialu"];
             string txt = string.Empty; //
             txt = txt + cl.clear_maim_db();
 
-            txt = txt + cl.generuj_dane_do_tabeli_wierszy(DateTime.Parse(Date1.Text), DateTime.Parse(Date2.Text), yyx, 1);
+            txt = txt + cl.generuj_dane_do_tabeli_wierszy(Date1.Date, Date2.Date, yyx, 1);
             GridView2.DataBind();
 
             try
             {
-                txt = txt + cl.generuj_dane_do_tabeli_(int.Parse((string)Session["id_dzialu"]), 2, DateTime.Parse(Date1.Text), DateTime.Parse(Date2.Text));
+                txt = txt + cl.generuj_dane_do_tabeli_(int.Parse((string)Session["id_dzialu"]), 2, Date1.Date, Date2.Date);
 
-                txt = txt + cl.generuj_dane_do_tabeli_(int.Parse((string)Session["id_dzialu"]), 3, DateTime.Parse(Date1.Text), DateTime.Parse(Date2.Text));
+                txt = txt + cl.generuj_dane_do_tabeli_(int.Parse((string)Session["id_dzialu"]), 3, Date1.Date, Date2.Date);
 
-                txt = txt + cl.generuj_dane_do_tabeli_(int.Parse((string)Session["id_dzialu"]), 4, DateTime.Parse(Date1.Text), DateTime.Parse(Date2.Text));
+                txt = txt + cl.generuj_dane_do_tabeli_(int.Parse((string)Session["id_dzialu"]), 4, Date1.Date, Date2.Date);
 
                 txt = txt + cl.uzupelnij_statusy();
             }
@@ -122,6 +122,7 @@ namespace stat2018
             /*Label11.Text = txt;*/
             Label3.Text = cl.nazwaSadu((string)Session["id_dzialu"]);
         }
+
         protected void makeLabels()
         {
             try
@@ -139,18 +140,18 @@ namespace stat2018
                 id_dzialu.Text = (string)Session["txt_dzialu"];
                 Label28.Text = cl.podajUzytkownika(User_id, domain);
                 Label29.Text = DateTime.Now.ToLongDateString();
-                string strMonthName = CultureInfo.CurrentCulture.DateTimeFormat.GetMonthName(DateTime.Parse(Date2.Text).Month);
-                int last_day = DateTime.DaysInMonth(DateTime.Parse(Date2.Text).Year, DateTime.Parse(Date2.Text).Month);
-                if (((DateTime.Parse(Date1.Text).Day == 1) && (DateTime.Parse(Date2.Text).Day == last_day)) && ((DateTime.Parse(Date1.Text).Month == DateTime.Parse(Date2.Text).Month)))
+                string strMonthName = CultureInfo.CurrentCulture.DateTimeFormat.GetMonthName(Date2.Date.Month);
+                int last_day = DateTime.DaysInMonth(Date2.Date.Year, Date2.Date.Month);
+                if (((Date1.Date.Day == 1) && (Date2.Date.Day == last_day)) && ((Date1.Date.Month == Date2.Date.Month)))
                 {
                     // cały miesiąc
-                    Label19.Text = "Załatwienia za miesiąc " + strMonthName + " " + DateTime.Parse(Date2.Text).Year.ToString() + " roku.";
-                    Label17.Text = "Wyznaczenia za miesiąc " + strMonthName + " " + DateTime.Parse(Date2.Text).Year.ToString() + " roku.";
+                    Label19.Text = "Załatwienia za miesiąc " + strMonthName + " " + Date2.Date.Year.ToString() + " roku.";
+                    Label17.Text = "Wyznaczenia za miesiąc " + strMonthName + " " + Date2.Date.Year.ToString() + " roku.";
                     //Stan referatów sędziów na koniec miesiąca
-                    Label15.Text = "Stan referatów sędziów na koniec miesiąca " + strMonthName + " " + DateTime.Parse(Date2.Text).Year.ToString() + " roku.";
+                    Label15.Text = "Stan referatów sędziów na koniec miesiąca " + strMonthName + " " + Date2.Date.Year.ToString() + " roku.";
                     //Informacje o ruchu sprawa za miesiąc: 
-                    Label5.Text = "Informacje o ruchu sprawa za miesiąc:  " + strMonthName + " " + DateTime.Parse(Date2.Text).Year.ToString() + " roku.";
-                    Label27.Text = "za miesiąc:  " + strMonthName + " " + DateTime.Parse(Date2.Text).Year.ToString() + " roku.";
+                    Label5.Text = "Informacje o ruchu sprawa za miesiąc:  " + strMonthName + " " + Date2.Date.Year.ToString() + " roku.";
+                    Label27.Text = "za miesiąc:  " + strMonthName + " " + Date2.Date.Year.ToString() + " roku.";
                 }
                 else
                 {
@@ -159,21 +160,17 @@ namespace stat2018
                     Label15.Text = "Stan referatów sędziów za okres od " + Date1.Text + " do  " + Date2.Text;
                     Label5.Text = "Informacje o ruchu sprawa za okres od:  " + Date1.Text + " do  " + Date2.Text;
                     Label27.Text = "za okres od:  " + Date1.Text + " do  " + Date2.Text;
-
-
                 }
                 Label29.Text = DateTime.Now.ToShortDateString();
                 try
                 {
                     Label28.Text = cl.podajUzytkownika(User_id, domain);
-
                 }
                 catch
                 { }
             }
             catch
             { }
-
         }
 
         #region "nagłowki tabel"
@@ -246,7 +243,6 @@ namespace stat2018
                 HeaderCell.ColumnSpan = 1;
                 HeaderGridRow.Cells.Add(HeaderCell);
                 GridView2.Controls[0].Controls.AddAt(0, HeaderGridRow);
-
 
                 HeaderCell = new TableCell();
                 HeaderCell.Text = "Łącznie";
@@ -358,7 +354,6 @@ namespace stat2018
                 HeaderGridRow.Cells.Add(HeaderCell);
                 GridView1.Controls[0].Controls.AddAt(0, HeaderGridRow);
 
-
                 HeaderCell = new TableCell();
                 HeaderCell.Text = "Razem";
                 HeaderCell.ColumnSpan = 1;
@@ -441,7 +436,6 @@ namespace stat2018
                 HeaderCell.RowSpan = 1;
                 HeaderGridRow.Cells.Add(HeaderCell);
                 GridView1.Controls[0].Controls.AddAt(0, HeaderGridRow);
-
             }
         }
 
@@ -512,7 +506,6 @@ namespace stat2018
                 HeaderCell.ColumnSpan = 1;
                 HeaderGridRow.Cells.Add(HeaderCell);
                 GridView3.Controls[0].Controls.AddAt(0, HeaderGridRow);
-
 
                 HeaderCell = new TableCell();
                 HeaderCell.Text = "Razem";
@@ -628,7 +621,6 @@ namespace stat2018
                 HeaderGridRow.Cells.Add(HeaderCell);
                 GridView4.Controls[0].Controls.AddAt(0, HeaderGridRow);
 
-
                 HeaderCell = new TableCell();
                 HeaderCell.Text = "WSC";
                 HeaderCell.ColumnSpan = 1;
@@ -641,8 +633,6 @@ namespace stat2018
                 HeaderGridRow.Cells.Add(HeaderCell);
                 GridView4.Controls[0].Controls.AddAt(0, HeaderGridRow);
                 HeaderCell = new TableCell();
-
-
 
                 HeaderCell = new TableCell();
                 HeaderCell.Text = "Razem";
@@ -704,10 +694,7 @@ namespace stat2018
             //    Label8.Text = GridView1.SelectedDataKey[1].ToString() + " " + GridView1.SelectedDataKey[2].ToString();
         }
 
-
         #endregion "obsługa oncommand  tabel z nazwiskami"
-
-
 
         protected void Button1_Click(object sender, EventArgs e)
         {
@@ -717,7 +704,6 @@ namespace stat2018
 
         protected void Button3_Click(object sender, EventArgs e)
         {
-
             // execel begin
             string filename = "statystykiWydzialRodzinny.xls";
             Response.ContentType = "application/vnd.ms-excel";
@@ -731,7 +717,6 @@ namespace stat2018
 
             Response.End();
         }
-
 
         private void InitializeWorkbook()
         {
@@ -754,7 +739,6 @@ namespace stat2018
 
         private void generate_my_data()
         {
-            
             DataView view = (DataView)dane_do_tabeli_1.Select(DataSourceSelectArguments.Empty);
 
             DataTable table = view.ToTable();
@@ -779,24 +763,20 @@ namespace stat2018
             string headerDate = string.Empty;
             try
             {
-                string strMonthName = CultureInfo.CurrentCulture.DateTimeFormat.GetMonthName(DateTime.Parse(Date2.Text).Month);
-                int last_day = DateTime.DaysInMonth(DateTime.Parse(Date2.Text).Year, DateTime.Parse(Date2.Text).Month);
-                if (((DateTime.Parse(Date1.Text).Day == 1) && (DateTime.Parse(Date2.Text).Day == last_day)) && ((DateTime.Parse(Date1.Text).Month == DateTime.Parse(Date2.Text).Month)))
+                string strMonthName = CultureInfo.CurrentCulture.DateTimeFormat.GetMonthName(Date2.Date.Month);
+                int last_day = DateTime.DaysInMonth(Date2.Date.Year, Date2.Date.Month);
+                if (((Date1.Date.Day == 1) && (Date2.Date.Day == last_day)) && ((Date1.Date.Month == Date2.Date.Month)))
                 {
-
-                    headerDate = "Informacje o ruchu sprawa za miesiąc:  " + strMonthName + " " + DateTime.Parse(Date2.Text).Year.ToString() + " roku.";
+                    headerDate = "Informacje o ruchu sprawa za miesiąc:  " + strMonthName + " " + Date2.Date.Year.ToString() + " roku.";
                 }
                 else
                 {
-
                     headerDate = "Informacje o ruchu sprawa za okres od:  " + Date1.Text + " do  " + Date2.Text;
                 }
             }
             catch
             {
             }
-
-
 
             IFont ff = hssfworkbook.CreateFont();
             ff.FontName = "Arial";
@@ -826,13 +806,8 @@ namespace stat2018
             crs = new NPOI.SS.Util.CellRangeAddress(2, 2, 0, 12);
             sheet0.AddMergedRegion(crs);
 
-
-
             // table
             row0 = sheet0.CreateRow(3);
-
-
-
 
             row0.CreateCell(0).SetCellValue("Opis");
             crs = new NPOI.SS.Util.CellRangeAddress(3, 4, 0, 0);
@@ -840,11 +815,8 @@ namespace stat2018
 
             row0.CreateCell(1).SetCellValue("Sprawy według repetoriów i wykazów");
 
-
-
             crs = new NPOI.SS.Util.CellRangeAddress(3, 3, 1, 12);
             sheet0.AddMergedRegion(crs);
-
 
             row0 = sheet0.CreateRow(4);
 
@@ -860,8 +832,6 @@ namespace stat2018
             row0.CreateCell(10).SetCellValue("Nk");
             row0.CreateCell(11).SetCellValue("Nkd*");
             row0.CreateCell(12).SetCellValue("Łącznie");
-
-
 
             int rol = 5;
             foreach (DataRow rowik in table.Rows)
@@ -921,8 +891,6 @@ namespace stat2018
 
             IRow row2 = sheet1.CreateRow(0);
 
-
-
             row2.CreateCell(0).SetCellValue(cl.nazwaSadu((string)Session["id_opisu"]));
             crs = new NPOI.SS.Util.CellRangeAddress(0, 0, 0, 22);
             row2.Cells[0].CellStyle = cellStyleHeader;
@@ -944,8 +912,6 @@ namespace stat2018
 
             crs = new NPOI.SS.Util.CellRangeAddress(2, 2, 0, 22);
             sheet1.AddMergedRegion(crs);
-
-
 
             // table
             row2 = sheet1.CreateRow(3);
@@ -1069,8 +1035,6 @@ namespace stat2018
             row2.CreateCell(18).SetCellValue("Odroczenia liczba spraw odroczonych");
             crs = new NPOI.SS.Util.CellRangeAddress(0, 1, 18, 18);
             sheet2.AddMergedRegion(crs);
-
-
 
             row2 = sheet2.CreateRow(1);
 
@@ -1210,14 +1174,10 @@ namespace stat2018
             makeLabels();
             ScriptManager.RegisterStartupScript(this.Page, Page.GetType(), "print2", "JavaScript: window.print();", true);
             makeLabels();
-
         }
-
-
 
         protected void GridView3_SelectedIndexChanged(object sender, EventArgs e)
         {
-
         }
     }
 }

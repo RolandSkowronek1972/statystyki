@@ -1,6 +1,6 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site1.Master" AutoEventWireup="true" CodeBehind="aglc.aspx.cs" Inherits="stat2018.aglc" %>
+﻿<%@ Page Title="" Language="C#" UICulture="pl" Culture="pl-PL" MasterPageFile="~/Site1.Master" AutoEventWireup="true" CodeBehind="aglc.aspx.cs" Inherits="stat2018.aglc" %>
 
-<%@ Register assembly="DevExpress.Web.v17.1, Version=17.1.10.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" namespace="DevExpress.Web" tagprefix="dx" %>
+<%@ Register assembly="DevExpress.Web.v17.1, Version=17.1.13.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" namespace="DevExpress.Web" tagprefix="dx" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
       <style>
@@ -255,6 +255,7 @@
                    <ItemStyle  CssClass = "col_60"/>
                 </asp:TemplateField>
         </Columns>
+         <FooterStyle CssClass="gray" />
     </asp:GridView>
                   <asp:SqlDataSource ID = "tabela1" runat = "server" ConnectionString = "<%$ ConnectionStrings:wap %>" 
             SelectCommand = "SELECT ROW_NUMBER() OVER( ORDER BY ident ) AS id, ident, imie, nazwisko, funkcja, stanowisko, d_01, d_02, d_03, d_04, d_05, d_06, d_07, d_08, d_09, d_10, d_11, d_12, d_13, d_14, d_15, d_16, d_17, d_18, d_19, d_20, d_21, d_22, d_23, d_24, d_25, d_26, d_27, d_28,d_29, d_30, d_31, sesja, id_sedziego, id_dzialu, id_tabeli FROM tbl_statystyki_tbl_02 WHERE (id_tabeli = 1) AND (id_dzialu = @id_dzialu) ORDER BY id" >
@@ -278,7 +279,7 @@
             <div id="TABELA6" class="page-break">
                 <table style="width: 100 %; ">
                     <tr>
-                        <td class="borderAll center">Repertorium </td>
+                        <td class="borderAll  col_250">Repertorium </td>
                         <td class="borderAll center">C</td>
                         <td class="borderAll center">Ns</td>
                         <td class="borderAll center">Co I inst.</td>
@@ -287,10 +288,10 @@
                         <td class="borderAll center">Co II&nbsp; inst.</td>
                         <td class="borderAll center">Wykaz S</td>
                         <td class="borderAll center">WSC </td>
-                        <td class="borderAll center">RAZEM</td>
+                        <td class="borderAll center gray">RAZEM</td>
                     </tr>
                     <tr>
-                        <td class="col_90 borderAll ">Pozostało z poprzedniego okresu </td>
+                        <td class="borderAll  col_250">Pozostało z poprzedniego okresu </td>
                         <td class="col_90 borderAll "><a href="javascript: openPopup('popup.aspx?sesja=1!2!1!3')">
                             <asp:Label ID="tab_tabela2_w01_c01" runat="server" CssClass="normal" Text="0"></asp:Label>
                             </a></td>
@@ -315,12 +316,12 @@
                         <td class="col_90 borderAll "><a href="javascript: openPopup('popup.aspx?sesja=1!2!8!3')">
                             <asp:Label ID="tab_tabela2_w01_c08" runat="server" CssClass="normal" Text="0"></asp:Label>
                             </a></td>
-                        <td class="col_90 borderAll "><a href="javascript: openPopup('popup.aspx?sesja=1!2!9!3')">
+                        <td class="col_90 borderAll gray"><a href="javascript: openPopup('popup.aspx?sesja=1!2!9!3')">
                             <asp:Label ID="tab_tabela2_w01_c09" runat="server" CssClass="normal" Text="0"></asp:Label>
                             </a></td>
                     </tr>
                     <tr>
-                        <td class="col_90 borderAll ">wpływ</td>
+                        <td class="borderAll  col_250">wpływ</td>
                         <td class="col_90 borderAll "><a href="javascript: openPopup('popup.aspx?sesja=2!2!1!3')">
                             <asp:Label ID="tab_tabela2_w02_c01" runat="server" CssClass="normal" Text="0"></asp:Label>
                             </a></td>
@@ -345,12 +346,12 @@
                         <td class="col_90 borderAll "><a href="javascript: openPopup('popup.aspx?sesja=2!2!8!3')">
                             <asp:Label ID="tab_tabela2_w02_c08" runat="server" CssClass="normal" Text="0"></asp:Label>
                             </a></td>
-                        <td class="col_90 borderAll "><a href="javascript: openPopup('popup.aspx?sesja=2!2!9!3')">
+                        <td class="col_90 borderAll gray"><a href="javascript: openPopup('popup.aspx?sesja=2!2!9!3')">
                             <asp:Label ID="tab_tabela2_w02_c09" runat="server" CssClass="normal" Text="0"></asp:Label>
                             </a></td>
                     </tr>
                     <tr>
-                        <td class="col_90 borderAll ">załatwiono</td>
+                        <td class="borderAll  col_250">załatwiono</td>
                         <td class="col_90 borderAll "><a href="javascript: openPopup('popup.aspx?sesja=3!2!1!3')">
                             <asp:Label ID="tab_tabela2_w03_c01" runat="server" CssClass="normal" Text="0"></asp:Label>
                             </a></td>
@@ -375,12 +376,12 @@
                         <td class="col_90 borderAll "><a href="javascript: openPopup('popup.aspx?sesja=3!2!8!3')">
                             <asp:Label ID="tab_tabela2_w03_c08" runat="server" CssClass="normal" Text="0"></asp:Label>
                             </a></td>
-                        <td class="col_90 borderAll "><a href="javascript: openPopup('popup.aspx?sesja=3!2!9!3')">
+                        <td class="col_90 borderAll gray"><a href="javascript: openPopup('popup.aspx?sesja=3!2!9!3')">
                             <asp:Label ID="tab_tabela2_w03_c09" runat="server" CssClass="normal" Text="0"></asp:Label>
                             </a></td>
                     </tr>
                     <tr>
-                        <td class="col_90 borderAll ">pozostało do załatwienia</td>
+                        <td class="borderAll  col_250">pozostało do załatwienia</td>
                         <td class="col_90 borderAll "><a href="javascript: openPopup('popup.aspx?sesja=4!2!1!3')">
                             <asp:Label ID="tab_tabela2_w04_c01" runat="server" CssClass="normal" Text="0"></asp:Label>
                             </a></td>
@@ -405,12 +406,12 @@
                         <td class="col_90 borderAll "><a href="javascript: openPopup('popup.aspx?sesja=4!2!8!3')">
                             <asp:Label ID="tab_tabela2_w04_c08" runat="server" CssClass="normal" Text="0"></asp:Label>
                             </a></td>
-                        <td class="col_90 borderAll "><a href="javascript: openPopup('popup.aspx?sesja=4!2!9!3')">
+                        <td class="col_90 borderAll gray"><a href="javascript: openPopup('popup.aspx?sesja=4!2!9!3')">
                             <asp:Label ID="tab_tabela2_w04_c09" runat="server" CssClass="normal" Text="0"></asp:Label>
                             </a></td>
                     </tr>
                     <tr>
-                        <td class="col_90 borderAll ">zaległość od 3 do 6 m-cy</td>
+                        <td class="borderAll  col_250">zaległość od 3 do 6 m-cy</td>
                         <td class="col_90 borderAll "><a href="javascript: openPopup('popup.aspx?sesja=5!2!1!3')">
                             <asp:Label ID="tab_tabela2_w05_c01" runat="server" CssClass="normal" Text="0"></asp:Label>
                             </a></td>
@@ -435,12 +436,12 @@
                         <td class="col_90 borderAll "><a href="javascript: openPopup('popup.aspx?sesja=5!2!8!3')">
                             <asp:Label ID="tab_tabela2_w05_c08" runat="server" CssClass="normal" Text="0"></asp:Label>
                             </a></td>
-                        <td class="col_90 borderAll "><a href="javascript: openPopup('popup.aspx?sesja=5!2!9!3')">
+                        <td class="col_90 borderAll gray"><a href="javascript: openPopup('popup.aspx?sesja=5!2!9!3')">
                             <asp:Label ID="tab_tabela2_w05_c09" runat="server" CssClass="normal" Text="0"></asp:Label>
                             </a></td>
                     </tr>
                     <tr>
-                        <td class="col_90 borderAll ">zaległość od 6 do 12 m-cy</td>
+                        <td class="borderAll  col_250">zaległość od 6 do 12 m-cy</td>
                         <td class="col_90 borderAll "><a href="javascript: openPopup('popup.aspx?sesja=6!2!1!3')">
                             <asp:Label ID="tab_tabela2_w06_c01" runat="server" CssClass="normal" Text="0"></asp:Label>
                             </a></td>
@@ -465,12 +466,12 @@
                         <td class="col_90 borderAll "><a href="javascript: openPopup('popup.aspx?sesja=6!2!8!3')">
                             <asp:Label ID="tab_tabela2_w06_c08" runat="server" CssClass="normal" Text="0"></asp:Label>
                             </a></td>
-                        <td class="col_90 borderAll "><a href="javascript: openPopup('popup.aspx?sesja=6!2!9!3')">
+                        <td class="col_90 borderAll gray"><a href="javascript: openPopup('popup.aspx?sesja=6!2!9!3')">
                             <asp:Label ID="tab_tabela2_w06_c09" runat="server" CssClass="normal" Text="0"></asp:Label>
                             </a></td>
                     </tr>
                     <tr>
-                        <td class="col_90 borderAll ">zaległość od 12 do 24 m-cy</td>
+                        <td class="borderAll  col_250">zaległość od 12 do 24 m-cy</td>
                         <td class="col_90 borderAll "><a href="javascript: openPopup('popup.aspx?sesja=7!2!1!3')">
                             <asp:Label ID="tab_tabela2_w07_c01" runat="server" CssClass="normal" Text="0"></asp:Label>
                             </a></td>
@@ -495,12 +496,12 @@
                         <td class="col_90 borderAll "><a href="javascript: openPopup('popup.aspx?sesja=7!2!8!3')">
                             <asp:Label ID="tab_tabela2_w07_c08" runat="server" CssClass="normal" Text="0"></asp:Label>
                             </a></td>
-                        <td class="col_90 borderAll "><a href="javascript: openPopup('popup.aspx?sesja=7!2!9!3')">
+                        <td class="col_90 borderAll gray"><a href="javascript: openPopup('popup.aspx?sesja=7!2!9!3')">
                             <asp:Label ID="tab_tabela2_w07_c09" runat="server" CssClass="normal" Text="0"></asp:Label>
                             </a></td>
                     </tr>
                     <tr>
-                        <td class="col_90 borderAll ">zaległość od 24 do 36 m-cy</td>
+                        <td class="borderAll  col_250">zaległość od 24 do 36 m-cy</td>
                         <td class="col_90 borderAll "><a href="javascript: openPopup('popup.aspx?sesja=8!2!1!3')">
                             <asp:Label ID="tab_tabela2_w08_c01" runat="server" CssClass="normal" Text="0"></asp:Label>
                             </a></td>
@@ -525,12 +526,12 @@
                         <td class="col_90 borderAll "><a href="javascript: openPopup('popup.aspx?sesja=8!2!8!3')">
                             <asp:Label ID="tab_tabela2_w08_c08" runat="server" CssClass="normal" Text="0"></asp:Label>
                             </a></td>
-                        <td class="col_90 borderAll "><a href="javascript: openPopup('popup.aspx?sesja=8!2!9!3')">
+                        <td class="col_90 borderAll gray"><a href="javascript: openPopup('popup.aspx?sesja=8!2!9!3')">
                             <asp:Label ID="tab_tabela2_w08_c09" runat="server" CssClass="normal" Text="0"></asp:Label>
                             </a></td>
                     </tr>
                     <tr>
-                        <td class="col_90 borderAll ">zaległość od 36 do 60 m-cy</td>
+                        <td class="borderAll  col_250">zaległość od 36 do 60 m-cy</td>
                         <td class="col_90 borderAll "><a href="javascript: openPopup('popup.aspx?sesja=9!2!1!3')">
                             <asp:Label ID="tab_tabela2_w09_c01" runat="server" CssClass="normal" Text="0"></asp:Label>
                             </a></td>
@@ -555,12 +556,12 @@
                         <td class="col_90 borderAll "><a href="javascript: openPopup('popup.aspx?sesja=9!2!8!3')">
                             <asp:Label ID="tab_tabela2_w09_c08" runat="server" CssClass="normal" Text="0"></asp:Label>
                             </a></td>
-                        <td class="col_90 borderAll "><a href="javascript: openPopup('popup.aspx?sesja=9!2!9!3')">
+                        <td class="col_90 borderAll gray"><a href="javascript: openPopup('popup.aspx?sesja=9!2!9!3')">
                             <asp:Label ID="tab_tabela2_w09_c09" runat="server" CssClass="normal" Text="0"></asp:Label>
                             </a></td>
                     </tr>
                     <tr>
-                        <td class="col_90 borderAll ">zaległość powyżej 60 m-cy </td>
+                        <td class="borderAll  col_250">zaległość powyżej 60 m-cy </td>
                         <td class="col_90 borderAll "><a href="javascript: openPopup('popup.aspx?sesja=10!2!1!3')">
                             <asp:Label ID="tab_tabela2_w10_c01" runat="server" CssClass="normal" Text="0"></asp:Label>
                             </a></td>
@@ -585,7 +586,7 @@
                         <td class="col_90 borderAll "><a href="javascript: openPopup('popup.aspx?sesja=10!2!8!3')">
                             <asp:Label ID="tab_tabela2_w10_c08" runat="server" CssClass="normal" Text="0"></asp:Label>
                             </a></td>
-                        <td class="col_90 borderAll "><a href="javascript: openPopup('popup.aspx?sesja=10!2!9!3')">
+                        <td class="col_90 borderAll gray"><a href="javascript: openPopup('popup.aspx?sesja=10!2!9!3')">
                             <asp:Label ID="tab_tabela2_w10_c09" runat="server" CssClass="normal" Text="0"></asp:Label>
                             </a></td>
                     </tr>
@@ -708,6 +709,7 @@
                    <ItemStyle  CssClass = "col_90"/>
                 </asp:TemplateField>
         </Columns>
+                <FooterStyle CssClass="gray" />
     </asp:GridView>
                   <asp:SqlDataSource ID = "tabela3" runat = "server" ConnectionString = "<%$ ConnectionStrings:wap %>" 
             SelectCommand = "SELECT ROW_NUMBER() OVER( ORDER BY ident ) AS id, ident, imie, nazwisko, funkcja, stanowisko, d_01, d_02, d_03, d_04, d_05, d_06, d_07, d_08, d_09, d_10, d_11, d_12, d_13, d_14, d_15, d_16, d_17, d_18, d_19, d_20, d_21, d_22, d_23,  sesja, id_sedziego, id_dzialu, id_tabeli FROM tbl_statystyki_tbl_02 WHERE (id_tabeli = 1) AND (id_dzialu = @id_dzialu) ORDER BY id" >

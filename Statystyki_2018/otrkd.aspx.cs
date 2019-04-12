@@ -33,6 +33,10 @@ namespace stat2018
             {
                 return;
             }
+            CultureInfo newCulture = (CultureInfo)CultureInfo.CurrentCulture.Clone();
+            newCulture.DateTimeFormat = CultureInfo.GetCultureInfo("PL").DateTimeFormat;
+            System.Threading.Thread.CurrentThread.CurrentCulture = newCulture;
+            System.Threading.Thread.CurrentThread.CurrentUICulture = newCulture;
             Session["data_1"] = Date1.Text;
             Session["data_2"] = Date2.Text;
             clearHedersSession();
@@ -59,7 +63,7 @@ namespace stat2018
             }
             catch (Exception ex)
             {
-                  //cm.log.Error(tenPlik + " " + ex.Message );
+                  cm.log.Error(tenPlik + " " + ex.Message );
             }
         }// end of Page_Load
 
@@ -286,24 +290,14 @@ namespace stat2018
                 { }
                 Label3x.Text = cl.nazwaSadu((string)Session["id_dzialu"]);
                 Label5.Text = cl.nazwaSadu((string)Session["id_dzialu"]);
-
                 Label3.Text = cl.nazwaSadu((string)Session["id_dzialu"]);
-
                 id_dzialu.Text = (string)Session["txt_dzialu"];
 
-                //  Label28.Text = cl.podajUzytkownika(User_id, domain);
-                //Label29.Text = DateTime.Now.ToLongDateString();
-                try
-                {
-                    //  Label30.Text = System.IO.File.ReadAllText(Server.MapPath(@"~//version.txt")).ToString().Trim();
-                }
-                catch
-                { }
-
-
+               
+               
                 string strMonthName = CultureInfo.CurrentCulture.DateTimeFormat.GetMonthName(DateTime.Parse(Date2.Text).Month);
                 int last_day = DateTime.DaysInMonth(DateTime.Parse(Date2.Text).Year, DateTime.Parse(Date2.Text).Month);
-                if (((DateTime.Parse(Date1.Text).Day == 1) && (DateTime.Parse(Date2.Text).Day == last_day)) && ((DateTime.Parse(Date1.Text).Month == DateTime.Parse(Date2.Text).Month)))
+                if (((DateTime.Parse(Date1.Text).Day == 1) && (DateTime.Parse(Date2.Text).Day == last_day)) && ((DateTime.Parse( Date1.Text).Month == DateTime.Parse(Date2.Text).Month)))
                 {
                     // cały miesiąc
                     Label19.Text = "stan za miesiąc " + strMonthName + " " + DateTime.Parse(Date2.Text).Year.ToString() + " roku.";

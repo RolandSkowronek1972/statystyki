@@ -24,13 +24,13 @@ namespace stat2018
                     }
                     catch 
                     {
-                        //cm.log.Error("Site1.Master:Brak przeniesienia z logowania identyfikatora numerycznego Użytkownika! ");
+                        cm.log.Error("Site1.Master:Brak przeniesienia z logowania identyfikatora numerycznego Użytkownika! ");
                     }
                     //cm.log.Info("Site1.Master: Identyfikatora uzytkownika: " + IdentyfikatorUzytkownika);
                 }
                 catch 
                 {
-                    //cm.log.Error("Site1.Master: Nie przypisanoe identyfikatora użytkownika");
+                    cm.log.Error("Site1.Master: Nie przypisanoe identyfikatora użytkownika");
                 }
 
                 //SPRAWDZENIE CZY POPRZEDNI I OBECNY UZYTKOWNIK SA TAKIE SAME
@@ -58,7 +58,7 @@ namespace stat2018
                 }
                 catch (Exception ex)
                 {
-                    //cm.log.Error(ex.Message);
+                    cm.log.Error(ex.Message);
                 }
 
 

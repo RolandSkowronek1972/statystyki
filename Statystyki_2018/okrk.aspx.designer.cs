@@ -112,15 +112,6 @@ namespace stat2018 {
         protected global::System.Web.UI.WebControls.GridView GridView1;
         
         /// <summary>
-        /// tabela_1 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.SqlDataSource tabela_1;
-        
-        /// <summary>
         /// tabela3Label control.
         /// </summary>
         /// <remarks>
@@ -146,15 +137,6 @@ namespace stat2018 {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.GridView GridView3;
-        
-        /// <summary>
-        /// tabela_3 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.SqlDataSource tabela_3;
         
         /// <summary>
         /// Tabela4label control.
@@ -184,15 +166,6 @@ namespace stat2018 {
         protected global::System.Web.UI.WebControls.GridView GridView4;
         
         /// <summary>
-        /// tabela_4 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.SqlDataSource tabela_4;
-        
-        /// <summary>
         /// Label2 control.
         /// </summary>
         /// <remarks>
@@ -218,15 +191,6 @@ namespace stat2018 {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.GridView GridView5;
-        
-        /// <summary>
-        /// Tabela_5 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.SqlDataSource Tabela_5;
         
         /// <summary>
         /// Label27 control.

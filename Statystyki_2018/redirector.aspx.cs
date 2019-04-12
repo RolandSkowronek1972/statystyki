@@ -1,5 +1,5 @@
 ﻿using System;
-using System.Configuration;
+using System.Globalization;
 
 namespace stat2018
 {
@@ -7,6 +7,10 @@ namespace stat2018
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            CultureInfo newCulture = (CultureInfo)CultureInfo.CurrentCulture.Clone();
+            newCulture.DateTimeFormat = CultureInfo.GetCultureInfo("PL").DateTimeFormat;
+            System.Threading.Thread.CurrentThread.CurrentCulture = newCulture;
+            System.Threading.Thread.CurrentThread.CurrentUICulture = newCulture;
             /*
             try
             {

@@ -7,6 +7,12 @@ using System.Globalization;
 using System.IO;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using System;
+using System.Data;
+using System.IO;
+using System.Web.UI.WebControls;
+using OfficeOpenXml;
+
 namespace stat2018
 {
 
@@ -30,6 +36,10 @@ namespace stat2018
             {
                 return;
             }
+            CultureInfo newCulture = (CultureInfo)CultureInfo.CurrentCulture.Clone();
+            newCulture.DateTimeFormat = CultureInfo.GetCultureInfo("PL").DateTimeFormat;
+            System.Threading.Thread.CurrentThread.CurrentCulture = newCulture;
+            System.Threading.Thread.CurrentThread.CurrentUICulture = newCulture;
             Session["data_1"] = Date1.Text;
             Session["data_2"] = Date2.Text;
             clearHedersSession();
@@ -50,13 +60,13 @@ namespace stat2018
                         var fileContents = System.IO.File.ReadAllText(Server.MapPath(@"~//version.txt"));    // file read with version
                         this.Title = "Statystyki " + fileContents.ToString().Trim();
                         przemiel();
-                        makeLabels();
+                        //makeLabels();
                     }
                 }
             }
             catch (Exception ex)
             {
-                //cm.log.Error(tenPlik + " " + ex.Message);
+                cm.log.Error(tenPlik + " " + ex.Message);
             }
         }// end of Page_Load
 
@@ -118,24 +128,17 @@ namespace stat2018
             catch
             {
             }
-            // dopasowanie opisów
-            makeLabels();
-
+        
             GridView1.DataBind();
-
             GridView3.DataBind();
             GridView4.DataBind();
             try
             {
                 Label11.Visible = cl.debug(int.Parse(yyx));
-
             }
             catch
-            {
-
-            }
+            { }
             Label11.Text = txt;
-
         }
 
         #region "nagłowki tabel"
@@ -581,14 +584,14 @@ namespace stat2018
         protected void GridView1_SelectedIndexChanged(object sender, EventArgs e)
         {
             //Label8.Text = GridView1.SelectedDataKey[1].ToString() + " " + GridView1.SelectedDataKey[2].ToString();
-            makeLabels();
+            //makeLabels();
         }
 
 
 
         #endregion "obsługa oncommand  tabel z nazwiskami"
 
-
+        /*
         protected void makeLabels()
         {
             try
@@ -605,21 +608,21 @@ namespace stat2018
                 string tst = (string)Session["id_dzialu"];
                 Label3.Text = cl.nazwaSadu((string)Session["id_dzialu"]);
                 //Label26.Text = cl.nazwaSadu((string)Session["id_dzialu"]);
-                Label29.Text = DateTime.Now.ToLongDateString();
+                Label29.Text =           DateTime.Now.ToLongDateString();
                 id_dzialu.Text = cl.nazwaSadu((string)Session["id_dzialu"]);// (string)Session["txt_dzialu"];
                 Label28.Text = cl.podajUzytkownika(User_id, domain);
-                string strMonthName = CultureInfo.CurrentCulture.DateTimeFormat.GetMonthName(DateTime.Parse(Date2.Text).Month);
-                int last_day = DateTime.DaysInMonth(DateTime.Parse(Date2.Text).Year, DateTime.Parse(Date2.Text).Month);
-                if (((DateTime.Parse(Date1.Text).Day == 1) && (DateTime.Parse(Date2.Text).Day == last_day)) && ((DateTime.Parse(Date1.Text).Month == DateTime.Parse(Date2.Text).Month)))
+                string strMonthName = CultureInfo.CurrentCulture.DateTimeFormat.GetMonthName(DateTime.Parse(Date2.Text)).Month;
+                int last_day = DateTime.DaysInMonth(DateTime.Parse(Date2.Text)).Year, DateTime.Parse(Date2.Text).Month;
+                if (((Date1.Date.Day == 1) && (DateTime.Parse(Date2.Text).Day == last_day)) && ((Date1.Date.Month == DateTime.Parse(Date2.Text)).Month));
                 {
                     // cały miesiąc
                     Label19.Text = "Załatwienia za miesiąc " + strMonthName + " " + DateTime.Parse(Date2.Text).Year.ToString() + " roku.";
-                    Label17.Text = "Wyznaczenia za miesiąc " + strMonthName + " " + DateTime.Parse(Date2.Text).Year.ToString() + " roku.";
+                    Label17.Text = "Wyznaczenia za miesiąc " + strMonthName + " " + Date2.Date.Year.ToString() + " roku.";
                     //Stan referatów sędziów na koniec miesiąca
-                    Label15.Text = "Stan referatów sędziów na koniec miesiąca " + strMonthName + " " + DateTime.Parse(Date2.Text).Year.ToString() + " roku.";
+                    Label15.Text = "Stan referatów sędziów na koniec miesiąca " + strMonthName + " " + Date2.Date.Year.ToString() + " roku.";
                     //Informacje o ruchu sprawa za miesiąc: 
-                    Label5.Text = "Informacje o ruchu sprawa za miesiąc:  " + strMonthName + " " + DateTime.Parse(Date2.Text).Year.ToString() + " roku.";
-                    Label27.Text = "za miesiąc:  " + strMonthName + " " + DateTime.Parse(Date2.Text).Year.ToString() + " roku.";
+                    Label5.Text = "Informacje o ruchu sprawa za miesiąc:  " + strMonthName + " " + Date2.Date.Year.ToString() + " roku.";
+                    Label27.Text = "za miesiąc:  " + strMonthName + " " + Date2.Date.Year.ToString() + " roku.";
                 }
                 else
                 {
@@ -650,7 +653,7 @@ namespace stat2018
             }
 
         }
-
+        */
         protected void Button1_Click(object sender, EventArgs e)
         {
             Session["date_1"] = Date1.Text.Trim();
@@ -963,9 +966,9 @@ namespace stat2018
 
         protected void LinkButton55_Click(object sender, EventArgs e)
         {
-            makeLabels();
+            
             ScriptManager.RegisterStartupScript(this.Page, Page.GetType(), "print2", "JavaScript: window.print();", true);
-            makeLabels();
+            //makeLabels();
 
         }
 

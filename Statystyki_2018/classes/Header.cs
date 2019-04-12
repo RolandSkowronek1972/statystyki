@@ -1,19 +1,16 @@
-﻿using System;
-using System.Data;
-
+﻿using System.Data;
 
 namespace stat2018
 {
     public class Header
     {
-
         public common cm = new common();
 
         public DevExpress.Web.MenuItem daneDoManuKontrolek(string identyfikatorUzytkownika)
         {
             //cm.log.Info("Header: Rozpoczęcie procedury tworzenia elementów meny kontrolek");
             DevExpress.Web.MenuItem mm1 = new DevExpress.Web.MenuItem("Kontrolka");
-   
+
             //czy admin
             //cm.log.Info("Header: Rozpoczęcie procedury tworzenia elementów menu kontrolka");
 
@@ -23,23 +20,22 @@ namespace stat2018
             // czy admin
             if (cm.getQuerryValue("select admin from uzytkownik where ident =@identyfikatorUzytkownika", cm.con_str, parametry) == "1")
             {
-                kwerenda = "SELECT ident, opis, wartosc FROM konfig  WHERE(klucz = 'kontrolka')";               // admin 
+                kwerenda = "SELECT ident, opis, wartosc FROM konfig  WHERE(klucz = 'kontrolka') order by opis";               // admin
             }
             else
             {
-                kwerenda = "SELECT DISTINCT konfig.ident, konfig.opis, konfig.wartosc, konfig.klucz FROM uprawnienia INNER JOIN konfig ON uprawnienia.id_wydzialu - 100 = konfig.ident WHERE        (uprawnienia.id_uzytkownika = @identyfikatorUzytkownika) AND (uprawnienia.id_wydzialu > 100) AND (uprawnienia.id_wydzialu < 200) AND (rtrim(konfig.klucz) = 'kontrolka')";
-             //   kwerenda = "SELECT ident, opis, wartosc FROM konfig  WHERE(klucz = 'kontrolka')";               // normalny użytkownik
+                kwerenda = "SELECT DISTINCT konfig.ident, konfig.opis, konfig.wartosc, konfig.klucz FROM uprawnienia INNER JOIN konfig ON uprawnienia.id_wydzialu - 100 = konfig.ident WHERE        (uprawnienia.id_uzytkownika = @identyfikatorUzytkownika) AND (uprawnienia.id_wydzialu > 100) AND (uprawnienia.id_wydzialu < 200) AND (rtrim(konfig.klucz) = 'kontrolka') order by konfig.opis";
+                //   kwerenda = "SELECT ident, opis, wartosc FROM konfig  WHERE(klucz = 'kontrolka')";               // normalny użytkownik
             }
             DataTable dTable = cm.getDataTable(kwerenda, cm.con_str, parametry);
             foreach (DataRow dRow in dTable.Rows)
             {
-                DevExpress.Web.MenuItem mm2 = new DevExpress.Web.MenuItem(dRow[1].ToString().Trim(), dRow[0].ToString().Trim(), "", "kontrolka.aspx?id=" + dRow[0].ToString().Trim( ),"_self");
+                DevExpress.Web.MenuItem mm2 = new DevExpress.Web.MenuItem(dRow[1].ToString().Trim(), dRow[0].ToString().Trim(), "", "nowa.aspx?id=" + dRow[0].ToString().Trim(), "_self");
                 //mm2.ItemStyle.Width = 300;
                 mm2.ItemStyle.Paddings.PaddingLeft = 30;
                 mm1.Items.Add(mm2);
-
             }
-       
+
             //cm.log.Info("Header: zakonczenie procedury tworzenia elementów meny kontrolek");
 
             return mm1;
@@ -56,30 +52,26 @@ namespace stat2018
             DataTable parametry = cm.makeParameterTable();
             parametry.Rows.Add("@identyfikatorUzytkownika", identyfikatorUzytkownika);
             //cm.log.Info("Header: Sprawdz czy użytkownik " + identyfikatorUzytkownika + " ma parawa administratora" );
+            admin = "0";
 
             try
             {
-               
                 admin = cm.getQuerryValue("select admin from uzytkownik where ident =@identyfikatorUzytkownika", cm.con_str, parametry);
                 //cm.log.Info("Header: Użytkownik ma prawa administracyjne");
-
             }
             catch
-            {
-                admin = "0";
-                //cm.log.Info("Header: Użytkownik nie ma praw administracyjnych");
-            }
+            {}
             string kwerenda = string.Empty;
 
             if (admin == "1")
             {
                 // admin
-                kwerenda = "SELECT ident,nazwa,plik  FROM wydzialy ";
+                kwerenda = "SELECT ident,nazwa,plik  FROM wydzialy order by nazwa";
             }
             else
             {
                 // normalny użytkownik
-                kwerenda = "SELECT DISTINCT uprawnienia.id_wydzialu, wydzialy.nazwa, wydzialy.plik FROM uprawnienia LEFT OUTER JOIN  wydzialy ON uprawnienia.id_wydzialu = wydzialy.ident WHERE(uprawnienia.id_uzytkownika = @identyfikatorUzytkownika) AND(uprawnienia.id_wydzialu < 100) and rtrim(wydzialy.plik)<>''";
+                kwerenda = "SELECT DISTINCT uprawnienia.id_wydzialu, wydzialy.nazwa, wydzialy.plik FROM uprawnienia LEFT OUTER JOIN  wydzialy ON uprawnienia.id_wydzialu = wydzialy.ident WHERE(uprawnienia.id_uzytkownika = @identyfikatorUzytkownika) AND(uprawnienia.id_wydzialu < 100) and rtrim(wydzialy.plik)<>'' order by wydzialy.nazwa";
                 //kwerenda = "SELECT distinct uprawnienia.id_wydzialu, wydzialy.nazwa, wydzialy.plik FROM uprawnienia RIGHT OUTER JOIN   wydzialy ON uprawnienia.id_wydzialu = wydzialy.ident   where uprawnienia.id_uzytkownika = @identyfikatorUzytkownika";
             }
             //cm.log.Info("Header: odczyt działów przypisanych do uzytkownika id= "+ identyfikatorUzytkownika);
@@ -88,15 +80,13 @@ namespace stat2018
 
             foreach (DataRow dRow in dTable.Rows)
             {
-                DevExpress.Web.MenuItem mm2 = new DevExpress.Web.MenuItem  ( dRow[1].ToString().Trim(), dRow[0].ToString().Trim(), "", dRow[2].ToString().Trim()+"?w=" + dRow[0].ToString().Trim(), "_self");
+                DevExpress.Web.MenuItem mm2 = new DevExpress.Web.MenuItem(dRow[1].ToString().Trim(), dRow[0].ToString().Trim(), "", dRow[2].ToString().Trim() + "?w=" + dRow[0].ToString().Trim(), "_self");
                 //mm2.ItemStyle.Width = 300;
                 mm2.ItemStyle.Paddings.PaddingLeft = 30;
                 item.Items.Add(mm2);
                 //cm.log.Info("Header: dodano wydzial " + dRow[1].ToString().Trim() + " do menu ");
-
             }
             return item;
-
         }
 
         public DevExpress.Web.MenuItem daneDoManuMSS(string identyfikatorUzytkownika)
@@ -112,14 +102,12 @@ namespace stat2018
             // czy admin
             if (cm.getQuerryValue("select admin from uzytkownik where ident =@identyfikatorUzytkownika", cm.con_str, parametry) == "1")
             {
-                kwerenda = "SELECT ident ,nazwa ,plik FROM wydzialy_mss";                                 // admin
+                kwerenda = "SELECT ident, nazwa, plik FROM wydzialy_mss order by nazwa";                                 // admin
             }
             else
             {
-                
-                kwerenda = "SELECT DISTINCT wydzialy_mss.ident as id_wydzialu, wydzialy_mss.nazwa, wydzialy_mss.plik FROM  uprawnienia LEFT OUTER JOIN wydzialy_mss ON uprawnienia.id_wydzialu = wydzialy_mss.ident + 200 WHERE        (uprawnienia.id_uzytkownika = @identyfikatorUzytkownika) AND (uprawnienia.id_wydzialu >= 200) AND (wydzialy_mss.ident IS NOT NULL)";
+                kwerenda = "SELECT DISTINCT wydzialy_mss.ident as id_wydzialu, wydzialy_mss.nazwa, wydzialy_mss.plik FROM  uprawnienia LEFT OUTER JOIN wydzialy_mss ON uprawnienia.id_wydzialu = wydzialy_mss.ident + 200 WHERE        (uprawnienia.id_uzytkownika = @identyfikatorUzytkownika) AND (uprawnienia.id_wydzialu >= 200) AND (wydzialy_mss.ident IS NOT NULL) order by wydzialy_mss.nazwa";
                 //SELECT DISTINCT wydzialy_mss.ident as id_wydzialu, wydzialy_mss.nazwa, wydzialy_mss.plik FROM  uprawnienia LEFT OUTER JOIN wydzialy_mss ON uprawnienia.id_wydzialu = wydzialy_mss.ident + 200 WHERE        (uprawnienia.id_uzytkownika = 8) AND (uprawnienia.id_wydzialu >= 200) AND (wydzialy_mss.ident IS NOT NULL)
-
             }
             DataTable dTable = cm.getDataTable(kwerenda, cm.con_str, parametry);
             foreach (DataRow dRow in dTable.Rows)
@@ -127,10 +115,8 @@ namespace stat2018
                 DevExpress.Web.MenuItem mm2 = new DevExpress.Web.MenuItem(dRow[1].ToString().Trim(), dRow[0].ToString().Trim(), "", dRow[2].ToString().Trim() + "?w=" + dRow[0].ToString().Trim(), "_self");
                 mm2.ItemStyle.Paddings.PaddingLeft = 30;
                 item.Items.Add(mm2);
-
             }
             return item;
-
         }
 
         public DevExpress.Web.MenuItem daneDoManuInne(string identyfikatorUzytkownika)
@@ -151,21 +137,18 @@ namespace stat2018
             mm2.ItemStyle.Paddings.PaddingLeft = 30;
             mm1.Items.Add(mm2);
 
-
             mm2 = new DevExpress.Web.MenuItem("Wyszukiwarka Spraw", "", "", "wyszukiwarkaSpraw.aspx", "_self");
             mm2.ItemStyle.Width = 300;
             mm2.ItemStyle.Paddings.PaddingLeft = 30;
             mm1.Items.Add(mm2);
 
-
             return mm1;
-
         }
 
         public DevExpress.Web.MenuItem wyloguj()
         {
             //czy admin
-            //cm.log.Info("Header: Rozpoczęcie procedury tworzenia elementów menu wyloguj");
+            cm.log.Info("Header: Rozpoczęcie procedury tworzenia elementów menu wyloguj");
 
             DevExpress.Web.MenuItem mm1 = new DevExpress.Web.MenuItem("Wylogowanie");
             DevExpress.Web.MenuItem mm2 = new DevExpress.Web.MenuItem();
@@ -176,7 +159,6 @@ namespace stat2018
 
             mm1.Items.Add(mm2);
             return mm1;
-
         }
     }
 }

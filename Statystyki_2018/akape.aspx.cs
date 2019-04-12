@@ -3,14 +3,11 @@ using System.Data;
 using System.Globalization;
 using System.Web.UI;
 using System.Web.UI.WebControls;
-using OfficeOpenXml;
-
 
 namespace stat2018
 {
     public partial class akape : System.Web.UI.Page
     {
-
         public Class1 cl = new Class1();
         public pdfTables pdfT = new pdfTables();
         public common cm = new common();
@@ -21,45 +18,54 @@ namespace stat2018
 
         protected void Page_Load(object sender, EventArgs e)
         {
-           
-            //cm.log.Debug("otwarcie formularza: " + tenPlik);
             string idWydzial = Request.QueryString["w"];
-            if (idWydzial != null)
-            {
-                Session["id_dzialu"] = idWydzial;
-                //cm.log.Info(tenPlik + ": id wydzialu=" + idWydzial);
-            }
-            else
-            {
-                return;
-            }
-            Session["data_1"] = Date1.Text;
-            Session["data_2"] = Date2.Text;
-            clearHedersSession();
-            makeHeader();
             try
             {
-                string user = (string)Session["userIdNum"];
-                string dzial = (string)Session["id_dzialu"];
-                bool dost = cm.dostep(dzial, user);
+                if (idWydzial == null)
+                {
+                    return;
+                }
+                bool dost = cm.dostep(idWydzial, (string)Session["identyfikatorUzytkownika"]);
                 if (!dost)
                 {
-                    Server.Transfer("default.aspx?info='Użytkownik " + user + " nie praw do działu nr " + dzial + "'");
+                    Server.Transfer("default.aspx?info='Użytkownik " + (string)Session["identyfikatorUzytkownika"] + " nie praw do działu nr " + idWydzial + "'");
                 }
                 else
                 {
+                    CultureInfo newCulture = (CultureInfo)CultureInfo.CurrentCulture.Clone();
+                    newCulture.DateTimeFormat = CultureInfo.GetCultureInfo("PL").DateTimeFormat;
+                    System.Threading.Thread.CurrentThread.CurrentCulture = newCulture;
+                    System.Threading.Thread.CurrentThread.CurrentUICulture = newCulture;
+                    DateTime dTime = DateTime.Now.AddMonths(-1); ;
+
+                    if (Date1.Text.Length == 0)
+                    {
+                        Date1.Date = DateTime.Parse(dTime.Year.ToString() + "-" + dTime.Month.ToString("D2") + "-01");
+                    }
+
+                    if (Date2.Text.Length == 0)
+                    {
+                        Date2.Date = DateTime.Parse(dTime.Year.ToString() + "-" + dTime.Month.ToString("D2") + "-" + DateTime.DaysInMonth(dTime.Year, dTime.Month).ToString("D2"));
+                    }
+
+                    Session["id_dzialu"] = idWydzial;
+                    Session["data_1"] = Date1.Date.ToShortDateString();
+                    Session["data_2"] = Date2.Date.ToShortDateString();
+
                     if (!IsPostBack)
                     {
                         var fileContents = System.IO.File.ReadAllText(Server.MapPath(@"~//version.txt"));    // file read with version
                         this.Title = "Statystyki " + fileContents.ToString().Trim();
+                        clearHedersSession();
+                        makeHeader();
                         przemiel();
                         makeLabels();
                     }
                 }
             }
-            catch (Exception ex)
+            catch
             {
-                  //cm.log.Error(tenPlik + " " + ex.Message );
+                Server.Transfer("default.aspx");
             }
         }// end of Page_Load
 
@@ -75,25 +81,8 @@ namespace stat2018
             Session["header_08"] = null;
         }
 
-
         protected void przemiel()
         {
-            Session["sesja"] = "s3030";
-            try
-            {
-                if (Date1.Text.Length == 0)
-                {
-                    Date1.Text = DateTime.Now.Year.ToString() + "-" + DateTime.Now.Month.ToString("D2") + "-01";
-                }
-                if (Date2.Text.Length == 0)
-                {
-                    Date2.Text = DateTime.Now.Year.ToString() + "-" + DateTime.Now.Month.ToString("D2") + "-" + DateTime.DaysInMonth(DateTime.Now.Year, DateTime.Now.Month).ToString("D2");
-                }
-                Session["data_1"] = Date1.Text.Trim();
-                Session["data_2"] = Date2.Text.Trim();
-            }
-            catch
-            { }
             string yyx = (string)Session["id_dzialu"];
             id_dzialu.Text = (string)Session["txt_dzialu"];
             string txt = string.Empty; //
@@ -102,8 +91,7 @@ namespace stat2018
             txt = txt + cl.clear_maim_db();
             try
             {
-
-                DataTable tabelka01 = dr.generuj_dane_do_tabeli_wierszy2018(DateTime.Parse(Date1.Text), DateTime.Parse(Date2.Text), (string)Session["id_dzialu"], 1,20,20,tenPlik);
+                DataTable tabelka01 = dr.generuj_dane_do_tabeli_wierszy2018(Date1.Date, Date2.Date, (string)Session["id_dzialu"], 1, 20, 20, tenPlik);
 
                 //row 1
                 LB_12.Text = tabelka01.Rows[0][1].ToString().Trim();
@@ -299,12 +287,11 @@ namespace stat2018
                     LB_1019.Text = tabelka01.Rows[9][18].ToString().Trim();
                     LB_1020.Text = tabelka01.Rows[9][19].ToString().Trim();*/
 
-                //row11 
+                //row11
                 LB_11_2.Text = tabelka01.Rows[10][1].ToString().Trim();
                 LB_11_3.Text = tabelka01.Rows[10][2].ToString().Trim();
                 LB_11_4.Text = tabelka01.Rows[10][3].ToString().Trim();
                 LB_11_5.Text = tabelka01.Rows[10][4].ToString().Trim();
-
 
                 //row12
                 LB_122.Text = tabelka01.Rows[11][1].ToString().Trim();
@@ -369,19 +356,15 @@ namespace stat2018
                       LB_1419.Text = tabelka01.Rows[13][18].ToString().Trim();
                       LB_1420.Text = tabelka01.Rows[13][19].ToString().Trim();*/
 
-
-
-                txt = txt + cl.generuj_dane_do_tabeli_(int.Parse((string)Session["id_dzialu"]), 2, DateTime.Parse(Date1.Text), DateTime.Parse(Date2.Text));
-                txt = txt + cl.generuj_dane_do_tabeli_(int.Parse((string)Session["id_dzialu"]), 3, DateTime.Parse(Date1.Text), DateTime.Parse(Date2.Text));
-                txt = txt + cl.generuj_dane_do_tabeli_(int.Parse((string)Session["id_dzialu"]), 4, DateTime.Parse(Date1.Text), DateTime.Parse(Date2.Text));
-                txt = txt + cl.generuj_dane_do_tabeli_(int.Parse((string)Session["id_dzialu"]), 5, DateTime.Parse(Date1.Text), DateTime.Parse(Date2.Text));
-                txt = txt + cl.generuj_dane_do_tabeli_(int.Parse((string)Session["id_dzialu"]), 7, DateTime.Parse(Date1.Text), DateTime.Parse(Date2.Text));
+                txt = txt + cl.generuj_dane_do_tabeli_(int.Parse((string)Session["id_dzialu"]), 2, Date1.Date, Date2.Date);
+                txt = txt + cl.generuj_dane_do_tabeli_(int.Parse((string)Session["id_dzialu"]), 3, Date1.Date, Date2.Date);
+                txt = txt + cl.generuj_dane_do_tabeli_(int.Parse((string)Session["id_dzialu"]), 4, Date1.Date, Date2.Date);
+                txt = txt + cl.generuj_dane_do_tabeli_(int.Parse((string)Session["id_dzialu"]), 5, Date1.Date, Date2.Date);
+                txt = txt + cl.generuj_dane_do_tabeli_(int.Parse((string)Session["id_dzialu"]), 7, Date1.Date, Date2.Date);
                 //txt = txt + cl.uzupelnij_statusy();
-
             }
             catch (Exception ex)
             {
-
             }
 
             // dopasowanie opisów
@@ -390,7 +373,6 @@ namespace stat2018
             GridView2.DataBind();
             GridView3.DataBind();
             //GridView4.DataBind();
-
 
             try
             {
@@ -403,21 +385,15 @@ namespace stat2018
 
             Label11.Text = txt;
             Label3.Text = cl.nazwaSadu((string)Session["id_dzialu"]);
-
-
         }
 
-
         #region "nagłowki tabel"
+
         protected void makeHeader()
         {
-
             System.Web.UI.WebControls.GridView sn = new System.Web.UI.WebControls.GridView();
 
-
-
             #region tabela  1 (wierszowa)
-
 
             DataTable dT_01 = new DataTable();
             dT_01.Columns.Clear();
@@ -470,8 +446,8 @@ namespace stat2018
             dT_01.Rows.Add(new Object[] { "2", "sprawy wg. repertoriów lub wykazów", "8", "1" });
             Session["header_01"] = dT_01;
             //  makeHeader2(sn, dT_01);
-            #endregion
 
+            #endregion tabela  1 (wierszowa)
 
             #region tabela  2 ()
 
@@ -519,19 +495,18 @@ namespace stat2018
             dT_02.Rows.Add(new Object[] { "3", "AAAA   ", "3", "1", "h" });//
             dT_02.Rows.Add(new Object[] { "3", "Liczba wyznaczonych sesji - wokandy", "2", "2", "h" });//
             dT_02.Rows.Add(new Object[] { "3", "Liczba wyznaczonych spraw na rozprawę", "9", "1", "h" });//
-            dT_02.Rows.Add(new Object[] { "3", "Ilość odroczeń", "3", "1", "h" });//  
+            dT_02.Rows.Add(new Object[] { "3", "Ilość odroczeń", "3", "1", "h" });//
 
             dT_02.Rows.Add(new Object[] { "3", "Liczba wyznaczonych spraw na posiedzenie", "11", "1", "h" });//
             dT_02.Rows.Add(new Object[] { "3", "Wyznaczono spraw ogólem", "1", "3", "h" });//
 
     */
 
-
             Session["header_02"] = dT_02;
             //  makeHeader1(sn, dT_02);
 
+            #endregion tabela  2 ()
 
-            #endregion
             #region tabela  3 ()
 
             dT_03.Clear();
@@ -558,7 +533,6 @@ namespace stat2018
             dT_03.Rows.Add(new Object[] { "2", "RAZEM (r.3-8)", "1", "2","v" });
             */
 
-
             dT_03.Rows.Add(new Object[] { "2", "L.p.", "1", "2", "h" });
             dT_03.Rows.Add(new Object[] { "2", "Imię i Nazwisko", "1", "2", "h" });
             dT_03.Rows.Add(new Object[] { "2", "Załatwienia od początku roku", "4", "1", "h" });
@@ -571,15 +545,10 @@ namespace stat2018
             dT_03.Rows.Add(new Object[] { "3", "Załatwiono spraw ogółem (r.9+22)", "1", "3", "v" });
             */
 
-
-
-
-
             Session["header_03"] = dT_03;
             //  makeHeader3(sn, dT_03);
-            #endregion
 
-
+            #endregion tabela  3 ()
 
             #region tabela  4 ()
 
@@ -597,12 +566,11 @@ namespace stat2018
             dT_05.Rows.Add(new Object[] { "2", "Imie i nazwisko sędziego", "1", "2" });
             dT_05.Rows.Add(new Object[] { "2", "Liczba załatwionych spraw od początku roku ", "6", "1" });
 
-
             Session["header_04"] = dT_05;
 
             //  makeHeader6(sn, dT_05);
 
-            #endregion
+            #endregion tabela  4 ()
 
             #region tabela  6 ()
 
@@ -633,7 +601,8 @@ namespace stat2018
             Session["header_07"] = dT_06;
 
             //     makeHeader7(sn, dT_06);
-            #endregion
+
+            #endregion tabela  6 ()
 
             #region tabela  8 ()
 
@@ -665,15 +634,11 @@ namespace stat2018
             //ILOŚĆ WOKAND ŁĄCZNIE
             Session["header_08"] = dT_08;
             //  makeHeader8(sn, dT_08);
-            #endregion
 
-
-
+            #endregion tabela  8 ()
         }
 
-
-
-        GridViewRow Grw(object sender)
+        private GridViewRow Grw(object sender)
         {
             GridViewRow HeaderGridRow = null;
             GridView HeaderGrid = (GridView)sender;
@@ -682,7 +647,6 @@ namespace stat2018
             HeaderGridRow.HorizontalAlign = HorizontalAlign.Center;
             HeaderGridRow.VerticalAlign = VerticalAlign.Top;
             return HeaderGridRow;
-
         }
 
         protected void makeHeader1(System.Web.UI.WebControls.GridView sender, DataTable dT)
@@ -701,21 +665,16 @@ namespace stat2018
                         GridView HeaderGrid = (GridView)sender;
                         HeaderGridRow = Grw(sender);
                         row = int.Parse(dR[0].ToString().Trim());
-
-
                     }
                     hv = dR[4].ToString().Trim();
 
                     if (hv == "v")
                     {
-
                         stl.CssClass = "verticaltext";
-
                     }
                     else
                     {
                         stl.CssClass = "horizontaltext";
-
                     }
 
                     HeaderCell = new TableCell();
@@ -725,7 +684,6 @@ namespace stat2018
                     HeaderCell.ColumnSpan = int.Parse(dR[2].ToString().Trim());
                     HeaderCell.RowSpan = int.Parse(dR[3].ToString().Trim());
                     HeaderGridRow.Cells.Add(HeaderCell);
-
 
                     GridView1.Controls[0].Controls.AddAt(0, HeaderGridRow);
                 }
@@ -755,14 +713,11 @@ namespace stat2018
 
                     if (hv == "v")
                     {
-
                         stl.CssClass = "verticaltext";
-
                     }
                     else
                     {
                         stl.CssClass = "horizontaltext";
-
                     }
 
                     HeaderCell = new TableCell();
@@ -773,12 +728,10 @@ namespace stat2018
                     HeaderCell.RowSpan = int.Parse(dR[3].ToString().Trim());
                     HeaderGridRow.Cells.Add(HeaderCell);
 
-
                     GridView1.Controls[0].Controls.AddAt(0, HeaderGridRow);
-
                 }
             }
-            catch (Exception ex)
+            catch
             { } // end of try
         }
 
@@ -801,14 +754,11 @@ namespace stat2018
                     }
                     if (hv == "v")
                     {
-
                         stl.CssClass = "verticaltext";
-
                     }
                     else
                     {
                         stl.CssClass = "horizontaltext";
-
                     }
                     HeaderCell.Style.Clear();
                     HeaderCell.ApplyStyle(stl);
@@ -820,19 +770,13 @@ namespace stat2018
             { } // end of try
         }
 
-
-
-
-
-        TableCell HeaderCell_(string text, int columns, int rows)
+        private TableCell HeaderCell_(string text, int columns, int rows)
         {
             TableCell HeaderCell = new TableCell();
             HeaderCell.Text = text;
             HeaderCell.ColumnSpan = columns;
             HeaderCell.RowSpan = rows;
             return HeaderCell;
-
-
         }
 
         protected void GridView2_RowCreated(object sender, GridViewRowEventArgs e)
@@ -865,28 +809,17 @@ namespace stat2018
             }
         }
 
-
-
-
-
-
         #endregion "nagłowki tabel"
 
         #region "obsługa oncommand  tabel z nazwiskami"
 
         protected void GridView1_SelectedIndexChanged(object sender, EventArgs e)
         {
-
             //Label8.Text = GridView1.SelectedDataKey[1].ToString() + " " + GridView1.SelectedDataKey[2].ToString();
             makeLabels();
         }
 
-
-
-
-
         #endregion "obsługa oncommand  tabel z nazwiskami"
-
 
         protected void makeLabels()
         {
@@ -903,7 +836,6 @@ namespace stat2018
                 { }
                 Label3.Text = cl.nazwaSadu((string)Session["id_dzialu"]);
 
-
                 id_dzialu.Text = (string)Session["txt_dzialu"];
                 Label28.Text = cl.podajUzytkownika(User_id, domain);
                 Label29.Text = DateTime.Now.ToLongDateString();
@@ -914,49 +846,39 @@ namespace stat2018
                 catch
                 { }
 
-
-                string strMonthName = CultureInfo.CurrentCulture.DateTimeFormat.GetMonthName(DateTime.Parse(Date2.Text).Month);
-                int last_day = DateTime.DaysInMonth(DateTime.Parse(Date2.Text).Year, DateTime.Parse(Date2.Text).Month);
-                if (((DateTime.Parse(Date1.Text).Day == 1) && (DateTime.Parse(Date2.Text).Day == last_day)) && ((DateTime.Parse(Date1.Text).Month == DateTime.Parse(Date2.Text).Month)))
+                string strMonthName = CultureInfo.CurrentCulture.DateTimeFormat.GetMonthName(Date2.Date.Month);
+                int last_day = DateTime.DaysInMonth(Date2.Date.Year, Date2.Date.Month);
+                if (((Date1.Date.Day == 1) && (Date2.Date.Day == last_day)) && ((Date1.Date.Month == Date2.Date.Month)))
                 {
                     // cały miesiąc Liczba sesji i wyznaczonych spraw za miesią
-                    Label19.Text = "Załatwienia za miesiąc " + strMonthName + " " + DateTime.Parse(Date2.Text).Year.ToString() + " roku.";
-                    Label17.Text = "Liczba odbytych sesji i załatwionych spraw za miesiąc " + strMonthName + " " + DateTime.Parse(Date2.Text).Year.ToString() + " roku.";
+                    Label19.Text = "Załatwienia za miesiąc " + strMonthName + " " + Date2.Date.Year.ToString() + " roku.";
+                    Label17.Text = "Liczba odbytych sesji i załatwionych spraw za miesiąc " + strMonthName + " " + Date2.Date.Year.ToString() + " roku.";
                     //Stan referatów sędziów na koniec miesiąca
-                    //	Label15.Text = "Załatwienia na koniec miesiąca " + strMonthName + " " + DateTime.Parse(Date2.Text).Year.ToString() + " roku.";
+                    //	Label15.Text = "Załatwienia na koniec miesiąca " + strMonthName + " " + Date2.Date.Year.ToString() + " roku.";
                     //Informacje o ruchu sprawa za miesiąc: 
-
                 }
                 else
                 {
                     Label19.Text = "Załatwienia za okres od " + Date1.Text + " do  " + Date2.Text;
                     Label17.Text = "Liczba odbytych sesji i załatwionych spraw  za okres od" + Date1.Text + " do  " + Date2.Text;
                     //  Label15.Text = "Załatwienia za okres od " + Date1.Text + " do  " + Date2.Text;
-
                 }
             }
             catch
             {
-
             }
-
         }
 
         protected void Button1_Click(object sender, EventArgs e)
         {
-
             ScriptManager.RegisterStartupScript(this.Page, Page.GetType(), "print2", "JavaScript: window.print();", true);
             // ScriptManager.RegisterStartupScript(this.Page, Page.GetType(), "print", "window.open('raport_01_print.aspx', '')", true);
         }
 
         protected void Button3_Click(object sender, EventArgs e)
         {
-
             // execel begin
-
         }
-
-
 
         protected void LinkButton54_Click(object sender, EventArgs e)
         {
@@ -971,11 +893,6 @@ namespace stat2018
             makeLabels();
         }
 
-
-
-
-
-
         protected void GridView1_RowCreated(object sender, GridViewRowEventArgs e)
         {
             if (e.Row.RowType == DataControlRowType.Header)
@@ -986,16 +903,13 @@ namespace stat2018
             }
         }
 
-
         protected void GridView1_RowDataBound(object sender, GridViewRowEventArgs e)
         {
-
             if (e.Row.RowType == DataControlRowType.Footer)
             {
                 DataTable table = ((DataView)tabela_2.Select(DataSourceSelectArguments.Empty)).ToTable();
 
                 tabela.makeSumRow(table, e);
-
             }
         }
 
@@ -1006,10 +920,7 @@ namespace stat2018
                 DataTable table = ((DataView)tabela_3.Select(DataSourceSelectArguments.Empty)).ToTable();
 
                 tabela.makeSumRow(table, e);
-
             }
-
-
         }
     }
 }

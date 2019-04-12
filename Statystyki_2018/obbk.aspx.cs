@@ -10,6 +10,7 @@ using System.IO;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using OfficeOpenXml;
+using System.Globalization;
 
 namespace stat2018
 {
@@ -25,41 +26,39 @@ namespace stat2018
         int storid = 0;
         int rowIndex = 1;
 
+        const string tenPlikNazwa = "obbk";
+        public string path = "";
+
+
+
         protected void Page_Load(object sender, EventArgs e)
         {
+            string idWydzial = Request.QueryString["w"];
             try
             {
-                string idWydzial = Request.QueryString["w"];
-                if (idWydzial != null)
-                {
-                    Session["id_dzialu"] = idWydzial;
-                }
-                else
-                {
-                    return;
-                }
+                if (idWydzial == null) return;
+                Session["id_dzialu"] = idWydzial;
+                bool dost = cm.dostep(idWydzial, (string)Session["identyfikatorUzytkownika"]);
+                if (!dost) Server.Transfer("default.aspx?info='Użytkownik " + (string)Session["identyfikatorUzytkownika"] + " nie praw do działu nr " + idWydzial + "'");
+                path = Server.MapPath("~\\Template\\" + tenPlikNazwa + ".xlsx");
+                CultureInfo newCulture = (CultureInfo)CultureInfo.CurrentCulture.Clone();
+                newCulture.DateTimeFormat = CultureInfo.GetCultureInfo("PL").DateTimeFormat;
+                System.Threading.Thread.CurrentThread.CurrentCulture = newCulture;
+                System.Threading.Thread.CurrentThread.CurrentUICulture = newCulture;
+                DateTime dTime = DateTime.Now.AddMonths(-1); ;
 
-                DateTime dTime = DateTime.Now;
-                dTime = dTime.AddMonths(-1);
-                if (Date1.Text.Length == 0)
-                {
-                    Date1.Text = dTime.Year.ToString() + "-" + dTime.Month.ToString("D2") + "-01";
-                    Date1.Date = DateTime.Parse(Date1.Text);
-                }
-                if (Date2.Text.Length == 0)
-                {
-                    Date2.Text = dTime.Year.ToString() + "-" + dTime.Month.ToString("D2") + "-" + DateTime.DaysInMonth(dTime.Year, dTime.Month).ToString("D2");
-                    Date2.Date = DateTime.Parse(Date2.Text);
-                }
+                if (Date1.Text.Length == 0) Date1.Date = DateTime.Parse(dTime.Year.ToString() + "-" + dTime.Month.ToString("D2") + "-01");
+                if (Date2.Text.Length == 0) Date2.Date = DateTime.Parse(dTime.Year.ToString() + "-" + dTime.Month.ToString("D2") + "-" + DateTime.DaysInMonth(dTime.Year, dTime.Month).ToString("D2"));
+                Session["id_dzialu"] = idWydzial;
+                Session["data_1"] = Date1.Date.ToShortDateString();
+                Session["data_2"] = Date2.Date.ToShortDateString();
 
-                Session["data_1"] = Date1.Text.Trim();
-                Session["data_2"] = Date2.Text.Trim();
             }
             catch
             { }
             odswiez();
             debug();
-        }
+        }// end of Page_Load
 
         private void debug()
         {
@@ -193,7 +192,7 @@ namespace stat2018
                 {
                     //cm.log.Info(tenPlik + ": rozpoczęcie tworzenia tabeli 1");
                 }
-                DataTable tabelka01 = dr.generuj_dane_do_tabeli_sedziowskiej_2018(int.Parse(idDzialu), 1, DateTime.Parse(Date1.Text), DateTime.Parse(Date2.Text), 15, tenPlik);
+                DataTable tabelka01 = dr.generuj_dane_do_tabeli_sedziowskiej_2018(int.Parse(idDzialu), 1, Date1.Date, Date2.Date, 15, tenPlik);
                 Session["tabelka001"] = tabelka01;
                 gwTabela1.DataSource = null;
                 gwTabela1.DataSourceID = null;
@@ -215,7 +214,7 @@ namespace stat2018
             {
                 //cm.log.Info(tenPlik + ": rozpoczęcie tworzenia tabeli 3");
             }
-            DataTable tabelka01 = dr.generuj_dane_do_tabeli_sedziowskiej_2018(int.Parse(idDzialu), 3, DateTime.Parse(Date1.Text), DateTime.Parse(Date2.Text), 23, tenPlik);
+            DataTable tabelka01 = dr.generuj_dane_do_tabeli_sedziowskiej_2018(int.Parse(idDzialu), 3, Date1.Date, Date2.Date, 23, tenPlik);
             Session["tabelka003"] = tabelka01;
             gwTabela2.DataSource = null;
             gwTabela2.DataSourceID = null;
@@ -234,7 +233,7 @@ namespace stat2018
             {
                 //cm.log.Info(tenPlik + ": rozpoczęcie tworzenia tabeli 4");
             }
-            DataTable tabelka01 = dr.generuj_dane_do_tabeli_sedziowskiej_2018(int.Parse(idDzialu), 4, DateTime.Parse(Date1.Text), DateTime.Parse(Date2.Text), 23, tenPlik);
+            DataTable tabelka01 = dr.generuj_dane_do_tabeli_sedziowskiej_2018(int.Parse(idDzialu), 4, Date1.Date, Date2.Date, 23, tenPlik);
             Session["tabelka004"] = tabelka01;
             gwTabela3.DataSource = null;
             gwTabela3.DataSourceID = null;
@@ -252,7 +251,7 @@ namespace stat2018
             try
             {
 
-                DataTable tabelka01 = dr.generuj_dane_do_tabeli_wierszy2018(DateTime.Parse(Date1.Text), DateTime.Parse(Date2.Text), (string)Session["id_dzialu"], 5, 20, 20, tenPlik);
+                DataTable tabelka01 = dr. generuj_dane_do_tabeli_wierszy2018(Date1.Date, Date2.Date, (string)Session["id_dzialu"], 5, 20, 20, tenPlik);
                 Session["tabelka005"] = tabelka01;
                 //row 1
                     tab_7_w01_c01.Text = tabelka01.Rows[0][1].ToString().Trim();
@@ -290,7 +289,7 @@ namespace stat2018
             try
             {
 
-                tabelka01 = dr.generuj_dane_do_tabeli_wierszy2018(DateTime.Parse(Date1.Text), DateTime.Parse(Date2.Text), (string)Session["id_dzialu"], 2, 8, 8, tenPlik);
+                tabelka01 = dr. generuj_dane_do_tabeli_wierszy2018(Date1.Date, Date2.Date, (string)Session["id_dzialu"], 2, 8, 8, tenPlik);
                 Session["tabelka002"] = tabelka01;
                 //row 1
 

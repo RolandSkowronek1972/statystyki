@@ -1,17 +1,16 @@
 ﻿using System;
+using System.Configuration;
 using System.Data;
 using System.Data.SqlClient;
-using System.Configuration;
-using System.Text;
 using System.Linq;
+using System.Text;
+
 namespace stat2018
 {
-
     public class mss
     {
         public common cm = new common();
         public string con_str = ConfigurationManager.ConnectionStrings["wap"].ConnectionString;
-        
 
         public bool isLicence(string idWydzial)
         {
@@ -40,9 +39,7 @@ namespace stat2018
 
         public string kofUpdate(string id, string nr)
         {
-
             string result = string.Empty;
-
 
             string kwerendaKOF = PobierzDana("kof");
             string ConnectionString = PobierzCS("kof");
@@ -52,12 +49,10 @@ namespace stat2018
             parameters.Rows.Add("@id", id);
             cm.runQuerry("update kof set numer_of = @nr where ident = @id", con_str, parameters);
             return result;
-
         }
 
         public string PobierzDana(string klucz)
         {
-            
             DataTable parameters = cm.makeParameterTable();
             parameters.Rows.Add("@klucz", klucz);
             string kwerenda = "SELECT [wartosc]  FROM [konfig] where klucz=@klucz";
@@ -72,9 +67,7 @@ namespace stat2018
             string kwerenda = "SELECT count (*) FROM kof where id_sprawy=@idSprawy";
             result = cm.getQuerryValue(kwerenda, con_str, parameters);
             return result;
-
         }
-
 
         public string PobierzCS(string klucz)
         {
@@ -84,9 +77,7 @@ namespace stat2018
             string kwerenda = "SELECT [ConnectionString]  FROM [konfig] where klucz=@klucz";
             result = cm.getQuerryValue(kwerenda, con_str, parameters);
             return result;
-
         }
-        
 
         public string uzupelnijDaneDoKOF()
         {
@@ -98,7 +89,6 @@ namespace stat2018
             DataTable kofGlowny = cm.getDataTable("select id_sprawy from kof", con_str);
             //cm.log.Info("KOF: Koniec odczytu danych z tabeli KOF: " + DateTime.Now.ToString());
 
-           
             //cm.log.Info("KOF: " + "start odczytu danych do KOF ");
             DataTable result = new DataTable();
             result.Columns.Add("kwerenda", typeof(string));
@@ -109,27 +99,26 @@ namespace stat2018
 
             DataTable KwerendyDoKOF = cm.getDataTable(kwerenda, con_str, parameters);
             //cm.log.Info("KOF: odczytano " + KwerendyDoKOF.Rows.Count.ToString() + " kwerend z tabeli konfig z kluczem kof.");
-            
+
             foreach (DataRow dRow in KwerendyDoKOF.Rows)
             {
-               
                 //cm.log.Info("KOF: kwerenda z tabeli konfig z kluczem KOF: " + dRow[0].ToString().Trim() + " Connectionstring z tabeli konfig z kluczem KOF: " + dRow[1].ToString().Trim());
                 DataTable dane = cm.getDataTable(dRow[0].ToString().Trim(), dRow[1].ToString().Trim());
-                if (dane.Rows.Count==0)
+                if (dane.Rows.Count == 0)
                 {
                     //cm.log.Info("KOF: Brak danych w imporcie danych : " + DateTime.Now.ToString());
                     continue;
                 }
                 //cm.log.Info("KOF: Usunięcie duplikatów między bazą kof a nowo zaimpoertowanymi danymi : " + DateTime.Now.ToString());
-                int licznik =0;
-                foreach (DataRow drow2 in from DataRow dRow1 in kofGlowny.Rows from DataRow drow2 in dane .Rows where dRow1[0] == drow2[0] select drow2)
+                int licznik = 0;
+                foreach (DataRow drow2 in from DataRow dRow1 in kofGlowny.Rows from DataRow drow2 in dane.Rows where dRow1[0] == drow2[0] select drow2)
                 {
                     dane.Rows.Remove(drow2);
                     licznik++;
                 }
-                
+
                 //cm.log.Info("KOF: Zakończono usuwanie duplikatów "+licznik.ToString() +" między bazą kof a nowo zaimportowanymi danymi : " + DateTime.Now.ToString());
-               
+
                 // mapowanie tabeli id_sprawy, wydzial, sygnatura, d_wplywu, strona, pelnomocnik, przeciwko, numer_of
 
                 DataColumn ident = new DataColumn("ident", typeof(Int32));
@@ -151,8 +140,7 @@ namespace stat2018
                 danenaSerwer.Columns.Add(numer_of);
                 //cm.log.Info("KOF: Do zaimportowania jest :" + dane.Rows.Count.ToString ()+ " wierszy.");
 
-
-                foreach (DataRow dRowN  in dane.Rows )
+                foreach (DataRow dRowN in dane.Rows)
                 {
                     DataRow rowNaSerwer = danenaSerwer.NewRow();
                     rowNaSerwer[0] = 0;
@@ -160,29 +148,29 @@ namespace stat2018
                     rowNaSerwer[2] = dRowN[1];
                     rowNaSerwer[3] = dRowN[2];
                     rowNaSerwer[4] = dRowN[3];
-                    rowNaSerwer[5] =  dRowN[4] ;
-                    rowNaSerwer[6] =  dRowN[5] ;
-                    rowNaSerwer[7] =  dRowN[6] ;
-                    
+                    rowNaSerwer[5] = dRowN[4];
+                    rowNaSerwer[6] = dRowN[5];
+                    rowNaSerwer[7] = dRowN[6];
+
                     danenaSerwer.Rows.Add(rowNaSerwer);
                 }
-                // Open the destination connection. In the real world you would 
-                // not use SqlBulkCopy to move data from one table to the other 
+                // Open the destination connection. In the real world you would
+                // not use SqlBulkCopy to move data from one table to the other
                 // in the same database. This is for demonstration purposes only.
                 using (SqlConnection destinationConnection =
                            new SqlConnection(con_str))
                 {
                     destinationConnection.Open();
 
-                    // Set up the bulk copy object. 
+                    // Set up the bulk copy object.
                     // Note that the column positions in the source
-                    // data reader match the column positions in 
+                    // data reader match the column positions in
                     // the destination table so there is no need to
                     // map columns.
                     using (SqlBulkCopy bulkCopy =
                                new SqlBulkCopy(destinationConnection))
                     {
-                        bulkCopy.DestinationTableName =  "kof";
+                        bulkCopy.DestinationTableName = "kof";
 
                         try
                         {
@@ -193,7 +181,7 @@ namespace stat2018
                         }
                         catch (Exception ex)
                         {
-                            //cm.log.Error("KOF: " + ex.Message);
+                            cm.log.Error("KOF: " + ex.Message);
                         }
                         finally
                         {
@@ -204,15 +192,13 @@ namespace stat2018
                         }
                     }
                 }
-
-               
             }
             return "";
         }
+
         public string uzupelnijDaneDoKOF2()
         {
             string result = string.Empty;
-
 
             string kwerendaKOF = PobierzDana("kof");
             string ConnectionString = PobierzCS("kof");
@@ -223,8 +209,6 @@ namespace stat2018
             foreach (DataRow dRow in dane.Rows)
             {
                 string idSprawy = dRow[0].ToString().Trim();
-
-
 
                 string wydzial = dRow[1].ToString().Trim();
                 string sygnatura = dRow[2].ToString().Trim();
@@ -246,29 +230,25 @@ namespace stat2018
                     parameters2.Rows.Add("pelnomocnik", pelnomocnik);
                     parameters2.Rows.Add("przeciwko", przeciwko);
                     cm.runQuerry("INSERT      INTO     kof( id_sprawy, wydzial, sygnatura, d_wplywu, strona, pelnomocnik, przeciwko) VALUES (@id_sprawy, @wydzial, @sygnatura, @d_wplywu, @strona, @pelnomocnik, @przeciwko)", con_str, parameters2);
-
-
                 }
-
-
             }
             return result;
         }
+
         public DataTable generuj_dane_do_tabeli_mss2(int id_dzialu, DateTime poczatek, DateTime koniec, int il_kolumn)
         {
-
             //cm.log.Info("mss: rozpoczęcie popmpowania danych");
             var conn = new SqlConnection(con_str);
             string cs = PobierzConnectionStringMSS(id_dzialu);
 
             string kwerenda = string.Empty;
-       
-            DataTable parameters = cm.makeParameterTable ();
+
+            DataTable parameters = cm.makeParameterTable();
             parameters.Rows.Add("@id_dzialu", id_dzialu);
             DataTable dT1 = cm.getDataTable("SELECT [id_wydzial] ,[id_tabeli] ,[id_kolumny],[id_wiersza] ,[kwerenda]  FROM kwerenda_mss where  id_wydzial=@id_dzialu order by id_kolumny", con_str, parameters);
             //cm.log.Info("mss: pobrano "+ dT1.Rows.Count + " kwerend odczytujących dane");
 
-            if (dT1.Rows.Count==0)
+            if (dT1.Rows.Count == 0)
             {
                 return null;
             }
@@ -283,7 +263,7 @@ namespace stat2018
             foreach (DataRow dRow in dT1.Rows)
             {
                 DataRow resultRow = dTResult.NewRow();
-                //wyciagnij zmienne daną 
+                //wyciagnij zmienne daną
                 string idWydzial = dRow[0].ToString().Trim();
                 string idTabeli = dRow[1].ToString().Trim();
                 string idKolumny = dRow[2].ToString().Trim();
@@ -294,29 +274,24 @@ namespace stat2018
                 parameters.Rows.Add("@data_1", poczatek);
                 parameters.Rows.Add("@data_2", koniec);
                 string wartosc = cm.getQuerryValue(kwerendaN, cs, parameters);
-             
+
                 resultRow[0] = idWydzial.Trim();
                 resultRow[1] = idTabeli.Trim();
                 resultRow[2] = idWiersza.Trim();
                 resultRow[3] = idKolumny.Trim();
                 resultRow[4] = wartosc;
                 dTResult.Rows.Add(resultRow);
-
             }
-            
+
             return dTResult;
-
         }// end of generuj_dane_do_tabeli_mss
-
 
         public string PobierzConnectionStringMSS(int id_dzialu)
         {
-
-            DataTable parameters =cm.makeParameterTable();
+            DataTable parameters = cm.makeParameterTable();
             parameters.Rows.Add("@ident", id_dzialu);
 
             return cm.getQuerryValue("SELECT cs  FROM wydzialy_mss where ident=@ident ", con_str, parameters);
-
         }
 
         public bool debug(int wydzial)
@@ -332,19 +307,16 @@ namespace stat2018
             return result;
         }// end of debug
 
-
         public string nazwaSadu(string id_sadu)
         {
             DataTable parameters = cm.makeParameterTable();
             parameters.Rows.Add("@ident", id_sadu);
 
             return cm.getQuerryValue("SELECT sad  FROM wydzialy_mss where ident=@ident ", con_str, parameters);
-
         }// end of nazwaSadu
 
         public string podajKwerendePodgladu(int id_dzialu, int id_wiersza, int id_kolumny, string id_tabeli)
         {
-
             DataTable parameters = cm.makeParameterTable();
             parameters.Rows.Add("@id_tabeli", id_tabeli);
             parameters.Rows.Add("@id_wydzial", id_dzialu);
@@ -352,12 +324,10 @@ namespace stat2018
             parameters.Rows.Add("@id_wiersza", id_wiersza);
 
             return cm.getQuerryValue("SELECT distinct podglad FROM kwerenda_mss where id_wydzial=@id_wydzial and id_tabeli=@id_tabeli and id_kolumny=@id_kolumny and id_wiersza=@id_wiersza ", con_str, parameters);
-
         }
 
         public DataTable pod_tabela(string cs, string kwerenda, string poczatek, string koniec, string id_sedziego)
         {
-
             DataTable parameters = cm.makeParameterTable();
 
             parameters.Rows.Add("@data_1", poczatek);
@@ -392,7 +362,7 @@ namespace stat2018
                             {
                                 druga = idRaportu.Substring(idRaportu.Length - 5, 5);
                             }
-                            catch (Exception ex)
+                            catch
                             { }
                             string czwarta = string.Empty;
                             try
@@ -408,13 +378,12 @@ namespace stat2018
                             string wartosc = dDR[4].ToString();
                             string line = string.Empty;
                             //output.AppendLine("Id formularza;Okres;Sąd;Wydział ;Dział;Wiersz;Kolumna;Liczba");
-                            //   string line = idRaportu.Text  + ";" + DateTime.Parse(Date1.Text).Year.ToString() + DateTime.Parse(Date1.Text).Month.ToString("D2") + ";" + idSad.Text.Trim() + ";" + idSad.Text.Trim() + (string)Session["id_dzialu"] + ";" + idTabeli + ";" + idWiersza + ";" + idKolumny + ";" + wartosc ;
+                            //   string line = idRaportu.Text  + ";" + Date1.Date.ToShortDateString().Year.ToString() + Date1.Date.Month.ToString("D2") + ";" + idSad.Text.Trim() + ";" + idSad.Text.Trim() + (string)Session["id_dzialu"] + ";" + idTabeli + ";" + idWiersza + ";" + idKolumny + ";" + wartosc ;
                             try
                             {
                                 if (int.Parse(wartosc) != 0)
                                 {
                                     line = idRaportu + ";" + druga + ";" + idsadu + ";" + idWydzialu + ";" + idTabeli + ";" + idWiersza + ";" + idKolumny + ";" + wartosc;
-
                                 }
                             }
                             catch
@@ -433,12 +402,10 @@ namespace stat2018
                 result.AppendLine(ex.Message);
             }
             return result;
-
         } //end of raportTXT
 
         public string wyciagnij_tytulMSS(string tabela, string kolumna, string id_dzialu, string id_wiersza)
         {
-
             var conn = new SqlConnection(con_str);
 
             SqlCommand sqlCmd;
@@ -456,7 +423,6 @@ namespace stat2018
                     sqlCmd.Parameters.AddWithValue("@id_wiersza", id_wiersza.Trim());
                     string odp = sqlCmd.ExecuteScalar().ToString();
 
-
                     conn.Close();
                     return odp;
                 }
@@ -466,10 +432,6 @@ namespace stat2018
                     return "";
                 }
             }
-
-
         }// end of wyciagnij_kwerende
-        
-        
     }
 }

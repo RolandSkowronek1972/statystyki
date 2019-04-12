@@ -21,57 +21,47 @@ namespace stat2018
         protected void Page_Load(object sender, EventArgs e)
         {
             string idWydzial = Request.QueryString["w"];
-            if (idWydzial != null)
-            {
-                Session["id_dzialu"] = idWydzial;
-                //cm.log.Info(tenPlik + ": id wydzialu=" + idWydzial);
-            }
-            else
-            {
-                return;
-            }
-            DateTime dTime = DateTime.Now;
-            dTime = dTime.AddMonths(-1);
-
-            if (Date1.Date.Year == 1)
-            {
-                Date1.Date = DateTime.Parse(dTime.Year.ToString() + "-" + dTime.Month.ToString("D2") + "-01");
-            }
-            if (Date2.Date.Year == 1)
-            {
-                Date2.Date = DateTime.Parse(dTime.Year.ToString() + "-" + dTime.Month.ToString("D2") + "-" + DateTime.DaysInMonth(dTime.Year, dTime.Month).ToString("D2"));
-            }
-            Session["data_1"] = Date1.Text;
-            Session["data_2"] = Date2.Text;
-            clearHedersSession();
-            makeHeader();
             try
             {
-               
-                string user = (string)Session["identyfikatorUzytkownika"];
-                string dzial = (string)Session["id_dzialu"];
-                bool dost = cm.dostep(dzial, user);
+                if (idWydzial == null)
+                {
+                    return;
+                }
+                bool dost = cm.dostep(idWydzial, (string)Session["identyfikatorUzytkownika"]);
                 if (!dost)
                 {
-                    Server.Transfer("default.aspx?info='Użytkownik " + user + " nie praw do działu nr " + dzial + "'");
+                    Server.Transfer("default.aspx?info='Użytkownik " + (string)Session["identyfikatorUzytkownika"] + " nie praw do działu nr " + idWydzial + "'");
                 }
                 else
                 {
+                    CultureInfo newCulture = (CultureInfo)CultureInfo.CurrentCulture.Clone();
+                    newCulture.DateTimeFormat = CultureInfo.GetCultureInfo("PL").DateTimeFormat;
+                    System.Threading.Thread.CurrentThread.CurrentCulture = newCulture;
+                    System.Threading.Thread.CurrentThread.CurrentUICulture = newCulture;
+                    DateTime dTime = DateTime.Now.AddMonths(-1); ;
+
+                    if (Date1.Text.Length == 0) Date1.Date = DateTime.Parse(dTime.Year.ToString() + "-" + dTime.Month.ToString("D2") + "-01");
+                    if (Date2.Text.Length == 0) Date2.Date = DateTime.Parse(dTime.Year.ToString() + "-" + dTime.Month.ToString("D2") + "-" + DateTime.DaysInMonth(dTime.Year, dTime.Month).ToString("D2"));
+                    Session["id_dzialu"] = idWydzial;
+                    Session["data_1"] = Date1.Date.ToShortDateString();
+                    Session["data_2"] = Date2.Date.ToShortDateString();
+
                     if (!IsPostBack)
                     {
                         var fileContents = System.IO.File.ReadAllText(Server.MapPath(@"~//version.txt"));    // file read with version
                         this.Title = "Statystyki " + fileContents.ToString().Trim();
+                        clearHedersSession();
+                        makeHeader();
                         przemiel();
                         makeLabels();
                     }
                 }
             }
-            catch (Exception ex)
+            catch
             {
-                  //cm.log.Error(tenPlik + " " + ex.Message );
+                Server.Transfer("default.aspx");
             }
         }// end of Page_Load
-
         protected void clearHedersSession()
         {
             Session["header_01"] = null;
@@ -89,27 +79,7 @@ namespace stat2018
 
         protected void przemiel()
         {
-            Session["sesja"] = "s3030";
-            try
-            {
-                DateTime dTime = DateTime.Now;
-                dTime = dTime.AddMonths(-1);
-                string data = Date1.Date.ToString();
-               
-                if (Date1.Text.Length == 0)
-                {
-                    Date1.Text = dTime.Year.ToString() + "-" + dTime.Month.ToString("D2") + "-01";
-                }
-                if (Date2.Text.Length == 0)
-                {
-                    Date2.Text = dTime.Year.ToString() + "-" + dTime.Month.ToString("D2") + "-" + DateTime.DaysInMonth(dTime.Year, dTime.Month).ToString("D2");
-                }
-
-                Session["data_1"] = Date1.Text.Trim();
-                Session["data_2"] = Date2.Text.Trim();
-            }
-            catch
-            { }
+            
             string id_dzialu = (string)Session["id_dzialu"];
             string txt = string.Empty; 
          
@@ -117,7 +87,7 @@ namespace stat2018
             //tabela 1
             try
             {
-                DataTable Tabela1 = dr.generuj_dane_do_tabeli_sedziowskiej_2018(int.Parse(id_dzialu), 1, DateTime.Parse(Date1.Text), DateTime.Parse(Date2.Text), 10, tenPlik);
+                DataTable Tabela1 = dr.generuj_dane_do_tabeli_sedziowskiej_2018(int.Parse(id_dzialu), 1, DateTime.Parse(Date1.Date .ToShortDateString()), Date2.Date, 10, tenPlik);
                 Session["tabelka001"] = Tabela1;
                 GridView1.DataSource = null;
                 GridView1.DataSourceID = null;
@@ -128,12 +98,12 @@ namespace stat2018
             }
             catch (Exception ex)
             {
-                //cm.log.Error(tenPlik +" " +ex.Message);   
+                cm.log.Error(tenPlik +" " +ex.Message);   
             }
             //tabela 2
             try
             {
-                DataTable Tabela2 = dr.generuj_dane_do_tabeli_sedziowskiej_2018(int.Parse(id_dzialu), 2, DateTime.Parse(Date1.Text), DateTime.Parse(Date2.Text), 4, tenPlik);
+                DataTable Tabela2 = dr.generuj_dane_do_tabeli_sedziowskiej_2018(int.Parse(id_dzialu), 2, Date1.Date, Date2.Date, 4, tenPlik);
                 Session["tabelka002"] = Tabela2;
                 GridView2.DataSource = null;
                 GridView2.DataSourceID = null;
@@ -143,12 +113,12 @@ namespace stat2018
             }
             catch (Exception ex)
             {
-                //cm.log.Error(tenPlik + " " + ex.Message);
+                cm.log.Error(tenPlik + " " + ex.Message);
             }
             //
             try
             {
-                DataTable Tabela3 = dr.generuj_dane_do_tabeli_sedziowskiej_2018(int.Parse(id_dzialu), 3, DateTime.Parse(Date1.Text), DateTime.Parse(Date2.Text), 8, tenPlik);
+                DataTable Tabela3 = dr.generuj_dane_do_tabeli_sedziowskiej_2018(int.Parse(id_dzialu), 3, Date1.Date, Date2.Date, 8, tenPlik);
                 Session["tabelka003"] = Tabela3;
                 GridView3.DataSource = null;
                 GridView3.DataSourceID = null;
@@ -158,13 +128,13 @@ namespace stat2018
             }
             catch (Exception ex)
             {
-                //cm.log.Error(tenPlik + " " + ex.Message);
+                cm.log.Error(tenPlik + " " + ex.Message);
             }
 
             // czwarta
             try
             {
-                DataTable Tabela4 = dr.generuj_dane_do_tabeli_wierszy2018( DateTime.Parse(Date1.Text), DateTime.Parse(Date2.Text),id_dzialu ,4,1, 6, tenPlik);
+                DataTable Tabela4 = dr.generuj_dane_do_tabeli_wierszy2018( Date1.Date, Date2.Date,id_dzialu ,4,1, 6, tenPlik);
                 Session["tabelka004"] = Tabela4;
                 tab_04_w01_c01.Text= Tabela4 .Rows[0][1].ToString().Trim();
                 tab_04_w01_c02.Text = Tabela4.Rows[0][2].ToString().Trim();
@@ -175,12 +145,12 @@ namespace stat2018
             }
             catch (Exception ex)
             {
-                //cm.log.Error(tenPlik + " " + ex.Message);
+                cm.log.Error(tenPlik + " " + ex.Message);
             }
             // czwarta
             try
             {
-                DataTable Tabela4 = dr.generuj_dane_do_tabeli_wierszy2018(DateTime.Parse(Date1.Text), DateTime.Parse(Date2.Text), id_dzialu, 5, 1, 8, tenPlik);
+                DataTable Tabela4 = dr. generuj_dane_do_tabeli_wierszy2018(Date1.Date, Date2.Date, id_dzialu, 5, 1, 8, tenPlik);
                 Session["tabelka005"] = Tabela4;
                 tab_05_w01_c01.Text = Tabela4.Rows[0][1].ToString().Trim();
                 tab_05_w01_c02.Text = Tabela4.Rows[0][2].ToString().Trim();
@@ -194,13 +164,13 @@ namespace stat2018
             }
             catch (Exception ex)
             {
-                //cm.log.Error(tenPlik + " " + ex.Message);
+                cm.log.Error(tenPlik + " " + ex.Message);
             }
 
             // szósta
             try
             {
-                DataTable Tabela6 = dr.generuj_dane_do_tabeli_sedziowskiej_2018(int.Parse(id_dzialu), 6, DateTime.Parse(Date1.Text), DateTime.Parse(Date2.Text), 8, tenPlik);
+                DataTable Tabela6 = dr.generuj_dane_do_tabeli_sedziowskiej_2018(int.Parse(id_dzialu), 6, Date1.Date, Date2.Date, 8, tenPlik);
                 Session["tabelka006"] = Tabela6;
                 GridView6.DataSource = null;
                 GridView6.DataSourceID = null;
@@ -210,14 +180,14 @@ namespace stat2018
             }
             catch (Exception ex)
             {
-                //cm.log.Error(tenPlik + " " + ex.Message);
+                cm.log.Error(tenPlik + " " + ex.Message);
             }
 
 
             // siódma
             try
             {
-                DataTable Tabela4 = dr.generuj_dane_do_tabeli_wierszy2018(DateTime.Parse(Date1.Text), DateTime.Parse(Date2.Text), id_dzialu, 7,4, 1,  tenPlik);
+                DataTable Tabela4 = dr. generuj_dane_do_tabeli_wierszy2018(Date1.Date, Date2.Date, id_dzialu, 7,4, 1,  tenPlik);
                 Session["tabelka007"] = Tabela4;
                 tab_07_w01_c01.Text = Tabela4.Rows[0][1].ToString().Trim();
                 tab_07_w02_c01.Text = Tabela4.Rows[1][1].ToString().Trim();
@@ -232,13 +202,13 @@ namespace stat2018
             }
             catch (Exception ex)
             {
-                //cm.log.Error(tenPlik + " " + ex.Message);
+                cm.log.Error(tenPlik + " " + ex.Message);
             }
 
             // ósma
             try
             {
-                DataTable Tabela4 = dr.generuj_dane_do_tabeli_wierszy2018(DateTime.Parse(Date1.Text), DateTime.Parse(Date2.Text), id_dzialu, 8, 4, 3, tenPlik);
+                DataTable Tabela4 = dr. generuj_dane_do_tabeli_wierszy2018(Date1.Date, Date2.Date, id_dzialu, 8, 4, 3, tenPlik);
                 Session["tabelka008"] = Tabela4;
                 tab_08_w01_c01.Text = Tabela4.Rows[0][1].ToString().Trim();
                 tab_08_w01_c02.Text = Tabela4.Rows[0][2].ToString().Trim();
@@ -259,14 +229,14 @@ namespace stat2018
             }
             catch (Exception ex)
             {
-                //cm.log.Error(tenPlik + " " + ex.Message);
+                cm.log.Error(tenPlik + " " + ex.Message);
             }
 
             // dziewiąta
             try
             {
                 DataTable Tabela4 = new DataTable();
-                Tabela4 = dr.generuj_dane_do_tabeli_wierszy2018(DateTime.Parse(Date1.Text), DateTime.Parse(Date2.Text), id_dzialu, 9, 3, 4, tenPlik);
+                Tabela4 = dr. generuj_dane_do_tabeli_wierszy2018(Date1.Date, Date2.Date, id_dzialu, 9, 3, 4, tenPlik);
                 Session["tabelka009"] = Tabela4;
                 tab_09_w01_c01.Text = Tabela4.Rows[0][1].ToString().Trim();
                 tab_09_w01_c02.Text = Tabela4.Rows[0][2].ToString().Trim();
@@ -281,13 +251,13 @@ namespace stat2018
             }
             catch (Exception ex)
             {
-                //cm.log.Error(tenPlik + " " + ex.Message);
+                cm.log.Error(tenPlik + " " + ex.Message);
             }
 
             // dziesiata
             try
             {
-                DataTable Tabela4 = dr.generuj_dane_do_tabeli_wierszy2018(DateTime.Parse(Date1.Text), DateTime.Parse(Date2.Text), id_dzialu, 10, 12, 8, tenPlik);
+                DataTable Tabela4 = dr. generuj_dane_do_tabeli_wierszy2018(Date1.Date, Date2.Date, id_dzialu, 10, 12, 8, tenPlik);
                 Session["tabelka010"] = Tabela4;
                 tab_10_w01_c01.Text = Tabela4.Rows[0][1].ToString().Trim();
                 tab_10_w01_c02.Text = Tabela4.Rows[0][2].ToString().Trim();
@@ -413,13 +383,13 @@ namespace stat2018
             }
             catch (Exception ex)
             {
-                //cm.log.Error(tenPlik + " " + ex.Message);
+                cm.log.Error(tenPlik + " " + ex.Message);
             }
 
             // jedenasta
             try
             {
-                DataTable Tabela4 = dr.generuj_dane_do_tabeli_wierszy2018(DateTime.Parse(Date1.Text), DateTime.Parse(Date2.Text), id_dzialu, 11, 12, 8, tenPlik);
+                DataTable Tabela4 = dr. generuj_dane_do_tabeli_wierszy2018(Date1.Date, Date2.Date, id_dzialu, 11, 12, 8, tenPlik);
                 Session["tabelka011"] = Tabela4;
                 tab_11_w01_c01.Text = Tabela4.Rows[0][1].ToString().Trim();
                 tab_11_w01_c02.Text = Tabela4.Rows[0][2].ToString().Trim();
@@ -461,13 +431,13 @@ namespace stat2018
             }
             catch (Exception ex)
             {
-                //cm.log.Error(tenPlik + " " + ex.Message);
+                cm.log.Error(tenPlik + " " + ex.Message);
             }
 
             // dwunasta
             try
             {
-                DataTable Tabela4 = dr.generuj_dane_do_tabeli_wierszy2018(DateTime.Parse(Date1.Text), DateTime.Parse(Date2.Text), id_dzialu, 12,4,2, tenPlik);
+                DataTable Tabela4 = dr. generuj_dane_do_tabeli_wierszy2018(Date1.Date, Date2.Date, id_dzialu, 12,4,2, tenPlik);
                 Session["tabelka012"] = Tabela4;
                 tab_12_w01_c01.Text = Tabela4.Rows[0][1].ToString().Trim();
                 tab_12_w01_c02.Text = Tabela4.Rows[0][2].ToString().Trim();
@@ -485,14 +455,14 @@ namespace stat2018
             }
             catch (Exception ex)
             {
-                //cm.log.Error(tenPlik + " " + ex.Message);
+                cm.log.Error(tenPlik + " " + ex.Message);
             }
 
 
             // trzynasta
             try
             {
-                DataTable Tabela4 = dr.generuj_dane_do_tabeli_wierszy2018(DateTime.Parse(Date1.Text), DateTime.Parse(Date2.Text), id_dzialu, 13, 12, 10, tenPlik);
+                DataTable Tabela4 = dr. generuj_dane_do_tabeli_wierszy2018(Date1.Date, Date2.Date, id_dzialu, 13, 12, 10, tenPlik);
                 Session["tabelka011"] = Tabela4;
                 tab_13_w01_c01.Text = Tabela4.Rows[0][1].ToString().Trim();
                 tab_13_w01_c02.Text = Tabela4.Rows[0][2].ToString().Trim();
@@ -618,7 +588,7 @@ namespace stat2018
             }
             catch (Exception ex)
             {
-                //cm.log.Error(tenPlik + " " + ex.Message);
+                cm.log.Error(tenPlik + " " + ex.Message);
             }
 
 
@@ -858,24 +828,24 @@ namespace stat2018
                 { }
 
 
-                string strMonthName = CultureInfo.CurrentCulture.DateTimeFormat.GetMonthName(DateTime.Parse(Date2.Text).Month);
-                int last_day = DateTime.DaysInMonth(DateTime.Parse(Date2.Text).Year, DateTime.Parse(Date2.Text).Month);
-                if (((DateTime.Parse(Date1.Text).Day == 1) && (DateTime.Parse(Date2.Text).Day == last_day)) && ((DateTime.Parse(Date1.Text).Month == DateTime.Parse(Date2.Text).Month)))
+                string strMonthName = CultureInfo.CurrentCulture.DateTimeFormat.GetMonthName(Date2.Date.Month);
+                int last_day = DateTime.DaysInMonth(Date2.Date.Year, Date2.Date.Month);
+                if (((Date1.Date.Day == 1) && (Date2.Date.Day == last_day)) && ((Date1.Date.Month == Date2.Date.Month)))
                 {
                     // cały miesiąc
-                    lbTabela1.Text = "Ilość spraw karnych, w których postępowanie toczy się powyżej 3 lat za miesiąc " + strMonthName + " " + DateTime.Parse(Date2.Text).Year.ToString() + " roku.";
-                    lbTabela2.Text = "Ilość spraw wykroczeniowych „W”, w których postępowanie toczy się powyżej 1 roku za miesiąc " + strMonthName + " " + DateTime.Parse(Date2.Text).Year.ToString() + " roku.";
-                    lbTabela3.Text = "Sprawy aresztowe na koniec miesiąca " + strMonthName + " " + DateTime.Parse(Date2.Text).Year.ToString() + " roku.";
-                    lbTabela4.Text = "Wykaz mediacji na koniec miesiąca " + strMonthName + " " + DateTime.Parse(Date2.Text).Year.ToString() + " roku.";
-                    lbTabela5.Text = "Informacja dot. pracy biegłych sądowych (WAB) na koniec miesiąca " + strMonthName + " " + DateTime.Parse(Date2.Text).Year.ToString() + " roku.";
-                    lbTabela6.Text = "Informacja z wpływu spraw na koniec miesiąca " + strMonthName + " " + DateTime.Parse(Date2.Text).Year.ToString() + " roku.";
-                    lbTabela7.Text = "Sparwy zawieszone na koniec miesiąca " + strMonthName + " " + DateTime.Parse(Date2.Text).Year.ToString() + " roku.";
-                    lbTabela8.Text = "Ilość spraw Kp dot. przesłuchania trybie art. 185 a-d kpk na koniec miesiąca " + strMonthName + " " + DateTime.Parse(Date2.Text).Year.ToString() + " roku.";
-                    lbTabela9.Text = "Ewidencja spraw odroczonych  na koniec miesiąca " + strMonthName + " " + DateTime.Parse(Date2.Text).Year.ToString() + " roku.";
-                    lbTabela10.Text = "TABELA 1- NALEŻNOŚCI SĄDOWE I ZALEGŁOŚCI WE WPŁYWACH DO BUDŻETU SKARBU PAŃSTWA  na koniec miesiąca " + strMonthName + " " + DateTime.Parse(Date2.Text).Year.ToString() + " roku.";
-                    lbTabela11.Text = "TABELA 2 - ILOŚĆ (KWOTA) KIEROWANYCH SPRAW DO EGZEKUCJI KOMORNICZYCH na koniec miesiąca " + strMonthName + " " + DateTime.Parse(Date2.Text).Year.ToString() + " roku.";
-                    lbTabela12.Text = "TABELA 3 - ILOŚĆ OSÓB (SPRAW PROBACYJNYCH na koniec miesiąca " + strMonthName + " " + DateTime.Parse(Date2.Text).Year.ToString() + " roku.";
-                    lbTabela13.Text = "INFORMACJA O REALIZACJI NALEŻNOŚCI na koniec miesiąca " + strMonthName + " " + DateTime.Parse(Date2.Text).Year.ToString() + " roku.";
+                    lbTabela1.Text = "Ilość spraw karnych, w których postępowanie toczy się powyżej 3 lat za miesiąc " + strMonthName + " " + Date2.Date.Year.ToString() + " roku.";
+                    lbTabela2.Text = "Ilość spraw wykroczeniowych „W”, w których postępowanie toczy się powyżej 1 roku za miesiąc " + strMonthName + " " + Date2.Date.Year.ToString() + " roku.";
+                    lbTabela3.Text = "Sprawy aresztowe na koniec miesiąca " + strMonthName + " " + Date2.Date.Year.ToString() + " roku.";
+                    lbTabela4.Text = "Wykaz mediacji na koniec miesiąca " + strMonthName + " " + Date2.Date.Year.ToString() + " roku.";
+                    lbTabela5.Text = "Informacja dot. pracy biegłych sądowych (WAB) na koniec miesiąca " + strMonthName + " " + Date2.Date.Year.ToString() + " roku.";
+                    lbTabela6.Text = "Informacja z wpływu spraw na koniec miesiąca " + strMonthName + " " + Date2.Date.Year.ToString() + " roku.";
+                    lbTabela7.Text = "Sparwy zawieszone na koniec miesiąca " + strMonthName + " " + Date2.Date.Year.ToString() + " roku.";
+                    lbTabela8.Text = "Ilość spraw Kp dot. przesłuchania trybie art. 185 a-d kpk na koniec miesiąca " + strMonthName + " " + Date2.Date.Year.ToString() + " roku.";
+                    lbTabela9.Text = "Ewidencja spraw odroczonych  na koniec miesiąca " + strMonthName + " " + Date2.Date.Year.ToString() + " roku.";
+                    lbTabela10.Text = "TABELA 1- NALEŻNOŚCI SĄDOWE I ZALEGŁOŚCI WE WPŁYWACH DO BUDŻETU SKARBU PAŃSTWA  na koniec miesiąca " + strMonthName + " " + Date2.Date.Year.ToString() + " roku.";
+                    lbTabela11.Text = "TABELA 2 - ILOŚĆ (KWOTA) KIEROWANYCH SPRAW DO EGZEKUCJI KOMORNICZYCH na koniec miesiąca " + strMonthName + " " + Date2.Date.Year.ToString() + " roku.";
+                    lbTabela12.Text = "TABELA 3 - ILOŚĆ OSÓB (SPRAW PROBACYJNYCH na koniec miesiąca " + strMonthName + " " + Date2.Date.Year.ToString() + " roku.";
+                    lbTabela13.Text = "INFORMACJA O REALIZACJI NALEŻNOŚCI na koniec miesiąca " + strMonthName + " " + Date2.Date.Year.ToString() + " roku.";
 
                 }
                 else
@@ -883,16 +853,16 @@ namespace stat2018
                     lbTabela1.Text = "Ilość spraw karnych, w których postępowanie toczy się powyżej 3 lat za okres od " + Date1.Text + " do  " + Date2.Text;
                     lbTabela2.Text = "Ilość spraw wykroczeniowych „W”, w których postępowanie toczy się powyżej 1 roku: za okres od" + Date1.Text + " do  " + Date2.Text;
                     lbTabela3.Text = "Sprawy aresztowe za okres od " + Date1.Text + " do  " + Date2.Text;
-                    lbTabela4.Text = "Wykaz mediacji na koniec miesiąca " + strMonthName + " " + DateTime.Parse(Date2.Text).Year.ToString() + " roku.";
-                    lbTabela5.Text = "Informacja dot. pracy biegłych sądowych (WAB) na koniec miesiąca " + strMonthName + " " + DateTime.Parse(Date2.Text).Year.ToString() + " roku.";
-                    lbTabela6.Text = "Informacja z wpływu spraw na koniec miesiąca " + strMonthName + " " + DateTime.Parse(Date2.Text).Year.ToString() + " roku.";
-                    lbTabela7.Text = "Sparwy zawieszone na koniec miesiąca " + strMonthName + " " + DateTime.Parse(Date2.Text).Year.ToString() + " roku.";
-                    lbTabela8.Text = "Ilość spraw Kp dot. przesłuchania trybie art. 185 a-d kpk na koniec miesiąca " + strMonthName + " " + DateTime.Parse(Date2.Text).Year.ToString() + " roku.";
-                    lbTabela9.Text = "Ewidencja spraw odroczonych  na koniec miesiąca " + strMonthName + " " + DateTime.Parse(Date2.Text).Year.ToString() + " roku.";
-                    lbTabela10.Text = "TABELA 1- NALEŻNOŚCI SĄDOWE I ZALEGŁOŚCI WE WPŁYWACH DO BUDŻETU SKARBU PAŃSTWA  na koniec miesiąca " + strMonthName + " " + DateTime.Parse(Date2.Text).Year.ToString() + " roku.";
-                    lbTabela11.Text = "TABELA 2 - ILOŚĆ (KWOTA) KIEROWANYCH SPRAW DO EGZEKUCJI KOMORNICZYCH na koniec miesiąca " + strMonthName + " " + DateTime.Parse(Date2.Text).Year.ToString() + " roku.";
-                    lbTabela12.Text = "TABELA 3 - ILOŚĆ OSÓB (SPRAW PROBACYJNYCH na koniec miesiąca " + strMonthName + " " + DateTime.Parse(Date2.Text).Year.ToString() + " roku.";
-                    lbTabela13.Text = "INFORMACJA O REALIZACJI NALEŻNOŚCI na koniec miesiąca " + strMonthName + " " + DateTime.Parse(Date2.Text).Year.ToString() + " roku.";
+                    lbTabela4.Text = "Wykaz mediacji na koniec miesiąca " + strMonthName + " " + Date2.Date.Year.ToString() + " roku.";
+                    lbTabela5.Text = "Informacja dot. pracy biegłych sądowych (WAB) na koniec miesiąca " + strMonthName + " " + Date2.Date.Year.ToString() + " roku.";
+                    lbTabela6.Text = "Informacja z wpływu spraw na koniec miesiąca " + strMonthName + " " + Date2.Date.Year.ToString() + " roku.";
+                    lbTabela7.Text = "Sparwy zawieszone na koniec miesiąca " + strMonthName + " " + Date2.Date.Year.ToString() + " roku.";
+                    lbTabela8.Text = "Ilość spraw Kp dot. przesłuchania trybie art. 185 a-d kpk na koniec miesiąca " + strMonthName + " " + Date2.Date.Year.ToString() + " roku.";
+                    lbTabela9.Text = "Ewidencja spraw odroczonych  na koniec miesiąca " + strMonthName + " " + Date2.Date.Year.ToString() + " roku.";
+                    lbTabela10.Text = "TABELA 1- NALEŻNOŚCI SĄDOWE I ZALEGŁOŚCI WE WPŁYWACH DO BUDŻETU SKARBU PAŃSTWA  na koniec miesiąca " + strMonthName + " " + Date2.Date.Year.ToString() + " roku.";
+                    lbTabela11.Text = "TABELA 2 - ILOŚĆ (KWOTA) KIEROWANYCH SPRAW DO EGZEKUCJI KOMORNICZYCH na koniec miesiąca " + strMonthName + " " + Date2.Date.Year.ToString() + " roku.";
+                    lbTabela12.Text = "TABELA 3 - ILOŚĆ OSÓB (SPRAW PROBACYJNYCH na koniec miesiąca " + strMonthName + " " + Date2.Date.Year.ToString() + " roku.";
+                    lbTabela13.Text = "INFORMACJA O REALIZACJI NALEŻNOŚCI na koniec miesiąca " + strMonthName + " " + Date2.Date.Year.ToString() + " roku.";
 
                 }
             }
@@ -1121,7 +1091,7 @@ namespace stat2018
                 }
                 catch (Exception ex)
                 {
-                    //cm.log.Error(tenPlik + " " + ex.Message);
+                    cm.log.Error(tenPlik + " " + ex.Message);
 
                 }
 

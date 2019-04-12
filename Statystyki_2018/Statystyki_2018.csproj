@@ -25,6 +25,7 @@
     <NuGetPackageImportStamp>
     </NuGetPackageImportStamp>
     <TargetFrameworkProfile />
+    <Use64BitIISExpress />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -36,6 +37,7 @@
     <WarningLevel>4</WarningLevel>
     <FilesToIncludeForPublish>AllFilesInTheProject</FilesToIncludeForPublish>
     <IncludeIisSettings>true</IncludeIisSettings>
+    <CodeAnalysisIgnoreGeneratedCode>false</CodeAnalysisIgnoreGeneratedCode>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
@@ -53,25 +55,28 @@
     <Reference Include="AjaxMin">
       <HintPath>..\..\wab_x\bin\AjaxMin.dll</HintPath>
     </Reference>
-    <Reference Include="DevExpress.Data.v17.1, Version=17.1.10.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
-    <Reference Include="DevExpress.Docs.v17.1, Version=17.1.10.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
-    <Reference Include="DevExpress.Printing.v17.1.Core, Version=17.1.10.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
-    <Reference Include="DevExpress.RichEdit.v17.1.Core, Version=17.1.10.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
-    <Reference Include="DevExpress.Spreadsheet.v17.1.Core, Version=17.1.10.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
-    <Reference Include="DevExpress.Utils.v17.1, Version=17.1.10.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
-    <Reference Include="DevExpress.Web.ASPxThemes.v17.1, Version=17.1.10.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
-    <Reference Include="DevExpress.Web.Resources.v17.1, Version=17.1.10.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Data.v17.1, Version=17.1.13.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Printing.v17.1.Core, Version=17.1.13.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Office.v17.1.Core, Version=17.1.13.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.RichEdit.v17.1.Core, Version=17.1.13.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Utils.v17.1, Version=17.1.13.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Web.ASPxThemes.v17.1, Version=17.1.13.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Web.Bootstrap.v17.1, Version=17.1.13.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Web.Resources.v17.1, Version=17.1.13.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.Web.Resources.v17.1.resources">
     </Reference>
-    <Reference Include="DevExpress.Web.v17.1, Version=17.1.10.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+    <Reference Include="DevExpress.Web.v17.1, Version=17.1.13.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
     </Reference>
     <Reference Include="DevExpress.Web.v17.1.resources">
     </Reference>
-    <Reference Include="DevExpress.XtraPrinting.v17.1, Version=17.1.10.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
-    <Reference Include="DevExpress.XtraSpreadsheet.v17.1, Version=17.1.10.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
-    <Reference Include="EPPlus">
-      <HintPath>..\..\statystyki-popup\Bin\EPPlus.dll</HintPath>
+    <Reference Include="DevExpress.XtraPrinting.v17.1, Version=17.1.13.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\DevExpress.XtraPrinting.v17.1.dll</HintPath>
+    </Reference>
+    <Reference Include="EPPlus, Version=4.0.5.0, Culture=neutral, PublicKeyToken=ea159fdaa78159a1, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\EPPlus.dll</HintPath>
     </Reference>
     <Reference Include="itextsharp">
       <HintPath>..\..\wab_x\bin\itextsharp.dll</HintPath>
@@ -88,11 +93,9 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\statystyki-popup\Bin\Microsoft.Data.Edm.dll</HintPath>
     </Reference>
-    <Reference Include="Microsoft.Office.Tools.Excel, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
-      <EmbedInteropTypes>True</EmbedInteropTypes>
-    </Reference>
-    <Reference Include="NPOI">
-      <HintPath>..\..\statystyki-popup\Bin\NPOI.dll</HintPath>
+    <Reference Include="NPOI, Version=2.0.6.0, Culture=neutral, PublicKeyToken=0df73ec7942b34e1, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\NPOI.dll</HintPath>
     </Reference>
     <Reference Include="NPOI.OOXML">
       <HintPath>..\..\statystyki-popup\Bin\NPOI.OOXML.dll</HintPath>
@@ -100,21 +103,17 @@
     <Reference Include="NPOI.OpenXmlFormats">
       <HintPath>..\..\statystyki-popup\Bin\NPOI.OpenXmlFormats.dll</HintPath>
     </Reference>
-    <Reference Include="Office, Version=14.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
-      <EmbedInteropTypes>True</EmbedInteropTypes>
-    </Reference>
+    <Reference Include="System" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="System.DirectoryServices.AccountManagement" />
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.ApplicationServices" />
-    <Reference Include="System.ComponentModel.DataAnnotations" />
-    <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Web.Extensions" />
     <Reference Include="System.Drawing" />
     <Reference Include="System.Web" />
     <Reference Include="System.Configuration" />
-    <Reference Include="System.Xml" />
+    <Reference Include="System.XML" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="aglg.aspx" />
@@ -123,11 +122,21 @@
     <Content Include="akrg.aspx" />
     <Content Include="akrp.aspx" />
     <Content Include="akrk.aspx" />
+    <Content Include="aopk.aspx" />
+    <Content Include="aopk2.aspx" />
+    <Content Include="aopc2.aspx" />
+    <Content Include="aoppe.aspx" />
+    <Content Include="aopp.aspx" />
+    <Content Include="nowa.aspx" />
+    <Content Include="kontrolkaExcell.aspx" />
     <Content Include="kontrolkaDruk.aspx" />
     <Content Include="akrc.aspx" />
+    <Content Include="mss11o.aspx" />
+    <Content Include="mss5o.aspx" />
+    <Content Include="oglc3.aspx" />
+    <Content Include="aopg.aspx" />
     <Content Include="oglk3.aspx" />
     <Content Include="mss1o.aspx" />
-    <Content Include="mss19o2.aspx" />
     <Content Include="obbp.aspx" />
     <Content Include="aglg2.aspx" />
     <Content Include="obbr.aspx" />
@@ -138,7 +147,6 @@
     <Content Include="mss19o.aspx" />
     <Content Include="template.aspx" />
     <Content Include="oktg.aspx" />
-    <Content Include="temp.aspx" />
     <Content Include="okrc.aspx" />
     <Content Include="okrd.aspx" />
     <Content Include="oglr2.aspx" />
@@ -226,12 +234,13 @@
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.8.3.js" />
     <Content Include="Scripts\jquery-1.8.3.min.js" />
-    <Content Include="WebForm1.aspx" />
-    <Content Include="WebForm2.aspx" />
     <Content Include="obbc.aspx" />
-    <Content Include="wizytacjaCywilny.aspx" />
+    <Content Include="wizc.aspx" />
     <Content Include="wyszukiwarkaspraw.aspx" />
     <Content Include="msstabele\mss5r.xlsx" />
+    <Content Include="Template\aopc2.xlsx" />
+    <Content Include="libman.json" />
+    <None Include="Properties\PublishProfiles\FolderProfile.pubxml" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -251,9 +260,10 @@
     <Content Include="UserControlls\PopupLinkButtom2.ascx" />
     <Content Include="UserControlls\PopupLinkButtom.ascx" />
     <Content Include="version.txt" />
-    <Content Include="Web.config">
+    <Content Include="Web.config" />
+    <None Include="Web.config.old">
       <SubType>Designer</SubType>
-    </Content>
+    </None>
     <None Include="Properties\PublishProfiles\file.pubxml" />
     <Content Include="Template\akac.xlsx" />
     <Content Include="Template\akac2.xlsx" />
@@ -269,7 +279,6 @@
     <Content Include="Template\oopc_.xlsx" />
     <Content Include="Template\oopp.xlsx" />
     <Content Include="Template\oopp_.xlsx" />
-    <Content Include="Template\oopr_old.xlsx" />
     <Content Include="Template\oopu.xlsx" />
     <Content Include="Template\oopu_.xlsx" />
     <Content Include="Template\RaportCywilny01.xlsx" />
@@ -308,6 +317,12 @@
     <Content Include="Template\akrk.xlsx" />
     <Content Include="Template\akrg.xlsx" />
     <Content Include="Template\akrp.xlsx" />
+    <Content Include="Template\aopg.xlsx" />
+    <Content Include="Template\aopp.xlsx" />
+    <Content Include="Template\aoppe.xlsx" />
+    <Content Include="Template\aopk2.xlsx" />
+    <Content Include="Template\aopk.xlsx" />
+    <Content Include="Template\oglc3.xlsx" />
     <None Include="Web.config.Debug.old">
       <DependentUpon>Web.config.old</DependentUpon>
     </None>
@@ -328,7 +343,6 @@
     <Content Include="style\ssrocena.css" />
     <Content Include="style\style.css" />
     <Content Include="style\Tables.css" />
-    <None Include="Web.config.old" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="aglg.aspx.cs">
@@ -366,7 +380,59 @@
     <Compile Include="akrk.aspx.designer.cs">
       <DependentUpon>akrk.aspx</DependentUpon>
     </Compile>
+    <Compile Include="aopk.aspx.cs">
+      <DependentUpon>aopk.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="aopk.aspx.designer.cs">
+      <DependentUpon>aopk.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="aopk2.aspx.cs">
+      <DependentUpon>aopk2.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="aopk2.aspx.designer.cs">
+      <DependentUpon>aopk2.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="aopc2.aspx.cs">
+      <DependentUpon>aopc2.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="aopc2.aspx.designer.cs">
+      <DependentUpon>aopc2.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="aoppe.aspx.cs">
+      <DependentUpon>aoppe.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="aoppe.aspx.designer.cs">
+      <DependentUpon>aoppe.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="aopp.aspx.cs">
+      <DependentUpon>aopp.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="aopp.aspx.designer.cs">
+      <DependentUpon>aopp.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="classes\datyDoMSS.cs" />
     <Compile Include="classes\log_4_net.cs" />
+    <Compile Include="classes\tabeleDoMSS.cs" />
+    <Compile Include="classes\tabeleMSS.cs" />
+    <Compile Include="nowa.aspx.cs">
+      <DependentUpon>nowa.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="nowa.aspx.designer.cs">
+      <DependentUpon>nowa.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="kontrolkaExcell.aspx.cs">
+      <DependentUpon>kontrolkaExcell.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="kontrolkaExcell.aspx.designer.cs">
+      <DependentUpon>kontrolkaExcell.aspx</DependentUpon>
+    </Compile>
     <Compile Include="kontrolkaDruk.aspx.cs">
       <DependentUpon>kontrolkaDruk.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -380,6 +446,34 @@
     </Compile>
     <Compile Include="akrc.aspx.designer.cs">
       <DependentUpon>akrc.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="mss11o.aspx.cs">
+      <DependentUpon>mss11o.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="mss11o.aspx.designer.cs">
+      <DependentUpon>mss11o.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="mss5o.aspx.cs">
+      <DependentUpon>mss5o.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="mss5o.aspx.designer.cs">
+      <DependentUpon>mss5o.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="oglc3.aspx.cs">
+      <DependentUpon>oglc3.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="oglc3.aspx.designer.cs">
+      <DependentUpon>oglc3.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="aopg.aspx.cs">
+      <DependentUpon>aopg.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="aopg.aspx.designer.cs">
+      <DependentUpon>aopg.aspx</DependentUpon>
     </Compile>
     <Compile Include="oglk3.aspx.cs">
       <DependentUpon>oglk3.aspx</DependentUpon>
@@ -402,13 +496,6 @@
     </Compile>
     <Compile Include="mss1o.aspx.designer.cs">
       <DependentUpon>mss1o.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="mss19o2.aspx.cs">
-      <DependentUpon>mss19o2.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="mss19o2.aspx.designer.cs">
-      <DependentUpon>mss19o2.aspx</DependentUpon>
     </Compile>
     <Compile Include="obbp.aspx.cs">
       <DependentUpon>obbp.aspx</DependentUpon>
@@ -479,13 +566,6 @@
     </Compile>
     <Compile Include="oktg.aspx.designer.cs">
       <DependentUpon>oktg.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="temp.aspx.cs">
-      <DependentUpon>temp.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="temp.aspx.designer.cs">
-      <DependentUpon>temp.aspx</DependentUpon>
     </Compile>
     <Compile Include="okrc.aspx.cs">
       <DependentUpon>okrc.aspx</DependentUpon>
@@ -914,20 +994,6 @@
     <Compile Include="UserControlls\PopupLinkButtom.ascx.designer.cs">
       <DependentUpon>PopupLinkButtom.ascx</DependentUpon>
     </Compile>
-    <Compile Include="WebForm1.aspx.cs">
-      <DependentUpon>WebForm1.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="WebForm1.aspx.designer.cs">
-      <DependentUpon>WebForm1.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="WebForm2.aspx.cs">
-      <DependentUpon>WebForm2.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="WebForm2.aspx.designer.cs">
-      <DependentUpon>WebForm2.aspx</DependentUpon>
-    </Compile>
     <Compile Include="obbc.aspx.cs">
       <DependentUpon>obbc.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -935,12 +1001,12 @@
     <Compile Include="obbc.aspx.designer.cs">
       <DependentUpon>obbc.aspx</DependentUpon>
     </Compile>
-    <Compile Include="wizytacjaCywilny.aspx.cs">
-      <DependentUpon>wizytacjaCywilny.aspx</DependentUpon>
+    <Compile Include="wizc.aspx.cs">
+      <DependentUpon>wizc.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="wizytacjaCywilny.aspx.designer.cs">
-      <DependentUpon>wizytacjaCywilny.aspx</DependentUpon>
+    <Compile Include="wizc.aspx.designer.cs">
+      <DependentUpon>wizc.aspx</DependentUpon>
     </Compile>
     <Compile Include="wyszukiwarka.cs" />
     <Compile Include="wyszukiwarkaspraw.aspx.cs">

@@ -1,31 +1,27 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site1.Master" AutoEventWireup="true" CodeBehind="mss16r.aspx.cs" Inherits="stat2018.mss16r" %>
+﻿<%@ Page Title="" Language="C#" UICulture="pl" Culture="pl-PL" MasterPageFile="~/Site1.Master" AutoEventWireup="true" CodeBehind="mss16r.aspx.cs" Inherits="stat2018.mss16r" %>
 
-<%@ Register Assembly="DevExpress.Web.v17.1, Version=17.1.10.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" Namespace="DevExpress.Web" TagPrefix="dx" %>
-
+<%@ Register Assembly="DevExpress.Web.v17.1, Version=17.1.13.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" Namespace="DevExpress.Web" TagPrefix="dx" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <style>
-  
-#menu {
-    position:relative;
-}
-#menu.scrolling {
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-}
+        #menu {
+            position: relative;
+        }
 
-
+            #menu.scrolling {
+                position: fixed;
+                top: 0;
+                left: 0;
+                right: 0;
+            }
     </style>
-      <script src="Scripts/jquery-1.8.3.js"></script>
+
        <script src="Scripts/rls.js"></script>
 
-  
-    <div class="noprint" >
+    <div class="noprint">
        <div id="menu" style="background-color: #f7f7f7;z-index:9999">
-        <div class="manu_back" style="height: 43px; margin: 0 auto 0 auto; position:relative;  width: 1150px;    left: 0px;">         
-                  
+        <div class="manu_back" style="height: 43px; margin: 0 auto 0 auto; position:relative;  width: 1150px;    left: 0px;">
+
          <table class="tbl_manu">
 
         <tr>
@@ -35,56 +31,53 @@
                 <asp:Label ID="Label4" runat="server" Text="Zakres:"></asp:Label>
                   </td>
               <td style="width:80px;">
-              
+
                      <dx:aspxdateedit ID="Date1" runat="server" Theme="Moderno" Height="20px">
                 </dx:aspxdateedit>
                 </td>
               <td style="width:80px;">
                 <dx:aspxdateedit ID="Date2" runat="server" Theme="Moderno" AutoResizeWithContainer="True" Height="20px">
                 </dx:aspxdateedit>
-              
             </td>
-            <td style="width: 100px" >
+            <td style="width: 100px">
                 <asp:LinkButton ID="LinkButton54" runat="server" class="ax_box" OnClick="LinkButton54_Click">  Odśwież</asp:LinkButton>
             </td>
-           
+
             <td>
-                
+
                 Id. raportu</td>
             <td>
-                
+
                 <asp:TextBox ID="idRaportu" runat="server" ></asp:TextBox>
             </td>
             <td>
-                
+
                 Id. Sądu</td>
             <td>
-                
+
                 <asp:TextBox ID="idSad" runat="server" ></asp:TextBox>
             </td>
             <td>
                  <asp:Button ID="Button1" runat="server" CssClass="ax_box" Text="Twórz plik csv" OnClick="makeCSVFile" />
             </td>
         </tr>
-    
     </table>
     </div>
            </div>
       </div>
-     
+
    <div style="width:1150px; margin: 0 auto 0 auto; position:relative;" class="content">
 
-          <div id="tabela1"  style="z-index:10; visibility:hidden;"> 
-        <div style="margin-left:auto;margin-right:auto;text-align: center; width:auto; "> 
+          <div id="tabela1"  style="z-index:10; visibility:hidden;">
+        <div style="margin-left:auto;margin-right:auto;text-align: center; width:auto; ">
             <asp:Label ID="Label6" runat="server" Text="Sąd " style="font-weight: 700"></asp:Label>
      <br />
-         </div> 
-         <div style="margin-left:auto;margin-right:auto;text-align: center; width:auto; "> 
-             <asp:label runat="server" ID="Label9" Visible="False"></asp:label></div> 
-  &nbsp;<asp:SqlDataSource ID="SqlDataSource2" runat="server" 
-        ConnectionString="<%$ ConnectionStrings:wap %>" 
-        
-        
+         </div>
+         <div style="margin-left:auto;margin-right:auto;text-align: center; width:auto; ">
+             <asp:label runat="server" ID="Label9" Visible="False"></asp:label></div>
+  &nbsp;<asp:SqlDataSource ID="SqlDataSource2" runat="server"
+        ConnectionString="<%$ ConnectionStrings:wap %>"
+
         SelectCommand="SELECT DISTINCT id_, opis, d_01, d_02, d_03, d_04, d_05, d_06, d_07, d_08, d_09, d_10, d_11, d_12, d_13, d_14, d_15,id_tabeli FROM tbl_statystyki_tbl_01 WHERE (id_dzialu = @id_dzialu) AND (id_tabeli = 1) ORDER BY id_">
         <SelectParameters>
             <asp:SessionParameter Name="id_dzialu" SessionField="id_dzialu" />
@@ -92,12 +85,9 @@
              </asp:SqlDataSource>
      </div>
 
-
-
-     <div id="Div2"  style="z-index:10; "> 
-         <div style="margin-left:auto;margin-right:auto;text-align: center; width:auto; ">  
-             <asp:label runat="server" ID="id_dzialu" Visible="False"></asp:label></div> 
-  
+     <div id="Div2"  style="z-index:10; ">
+         <div style="margin-left:auto;margin-right:auto;text-align: center; width:auto; ">
+             <asp:label runat="server" ID="id_dzialu" Visible="False"></asp:label></div>
 
          <br />
          <TABLE WIDTH="100%" BORDER=1 BORDERCOLOR="#000000" CELLPADDING=5 CELLSPACING=0 STYLE="page-break-before: always">
@@ -118,7 +108,6 @@
 			1. Rejonowy*</FONT></FONT><SUP><FONT FACE="Arial, sans-serif"><FONT SIZE=2 STYLE="font-size: 9pt">)</FONT></FONT></SUP></FONT></FONT></P>
 			<P CLASS="western">         <FONT FACE="Times New Roman, serif"><FONT SIZE=3><FONT FACE="Arial, sans-serif"><FONT SIZE=2 STYLE="font-size: 9pt">2.
 			Okręgowy*</FONT></FONT><SUP><FONT FACE="Arial, sans-serif"><FONT SIZE=2 STYLE="font-size: 9pt">)</FONT></FONT></SUP></FONT></FONT></P>
-			
 			</P>
 			<P CLASS="western"><FONT FACE="Arial, sans-serif"><FONT SIZE=2 STYLE="font-size: 9pt">w
 			.......................................................</FONT></FONT></P>
@@ -153,14 +142,12 @@
 	<TR VALIGN=TOP>
 		<TD ROWSPAN=2 WIDTH=209 HEIGHT=14>
 			<P CLASS="western"><FONT FACE="Arial, sans-serif"><FONT SIZE=2 STYLE="font-size: 9pt">Okręgowego</FONT></FONT></P>
-			
 			</P>
 			<P CLASS="western"><FONT FACE="Arial, sans-serif"><FONT SIZE=2 STYLE="font-size: 9pt">w
 			.................................</FONT></FONT></P>
 		</TD>
 		<TD ROWSPAN=2 WIDTH=191>
 			<P CLASS="western"><FONT FACE="Arial, sans-serif"><FONT SIZE=2 STYLE="font-size: 9pt">Apelacyjnego</FONT></FONT></P>
-			
 			</P>
 			<P CLASS="western"><FONT FACE="Arial, sans-serif"><FONT SIZE=2 STYLE="font-size: 9pt">w
 			.....................................</FONT></FONT></P>
@@ -175,21 +162,15 @@
 			z PBSSP 2017 r.</FONT></FONT></P>
 		</TD>
 	</TR>
-
 </TABLE>
 
          <br />
          <br />
-  
-
      </div>
-   <div id="zalatwienia"  class="page-break"> 
+   <div id="zalatwienia"  class="page-break">
     <br />
-    
-
 
          <asp:Label ID="tabela1Label" runat="server"></asp:Label>
-  
 
        <br />
        <table cellpadding="0" cellspacing="0" style="width:100%;">
@@ -224,21 +205,15 @@
        <br />
     <br />
        </div>
-    <div id="wyznaczenia"  class="page-break"> 
+    <div id="wyznaczenia"  class="page-break">
         <table style="width:100%;" cellpadding="0" cellspacing="0">
             <tr>
                 <td style="width: 1000px">
-    
 
-                    <strong>Dział 1.1.1.a.2.</strong> Liczba spraw o umieszczenie w szpitalu psychiatrycznym bez zgody, w których wydano zarządzenie o doprowadzeniu osoby pozostającej w szpitalu, a której postępowanie bezpośrednio dotyczy na rozprawę, stosownie do możliwości przewidzianej w przepisie art. 46 ust. 1a ustawy z dnia 19 sierpnia 1994 r. o ochronie zdrowia psychicznego (Dz. U. z 2017 r., poz. 882)    
-                    
-
-
-                   
+                    <strong>Dział 1.1.1.a.2.</strong> Liczba spraw o umieszczenie w szpitalu psychiatrycznym bez zgody, w których wydano zarządzenie o doprowadzeniu osoby pozostającej w szpitalu, a której postępowanie bezpośrednio dotyczy na rozprawę, stosownie do możliwości przewidzianej w przepisie art. 46 ust. 1a ustawy z dnia 19 sierpnia 1994 r. o ochronie zdrowia psychicznego (Dz. U. z 2017 r., poz. 882)
                 </td>
                  <td valign="top" align="center">
                     <a href="javascript:openPopup('popup.aspx?sesja=1!1.1.1.a.2!1!4')"> <asp:TextBox ID="tab_111a2_w01_col01" runat="server" ReadOnly="True" CssClass="col_155"></asp:TextBox></a>
-                   
                 </td>
             </tr>
         </table>
@@ -246,12 +221,10 @@
         <table style="width:100%;" cellpadding="0" cellspacing="0">
             <tr>
                 <td style="width: 1000px">
-    
 
                     <strong>Dział 1.1.1.b.</strong> w tym (dz. 1.1.1. w. 47 lit. b) orzeczono przysposobienie, na które rodzice wcześniej wyrazili zgodę</td>
                  <td valign="top" align="center">
                     <a href="javascript:openPopup('popup.aspx?sesja=1!1.1.1.b!1!4')"> <asp:TextBox ID="tab_111b_w01_col01" runat="server" ReadOnly="True" CssClass="col_155"></asp:TextBox></a>
-                   
                 </td>
             </tr>
         </table>
@@ -259,21 +232,18 @@
         <table style="width:100%;" cellpadding="0" cellspacing="0">
             <tr>
                 <td style="width: 1000px">
-    
 
                     <strong>Dział 1.1.1.c</strong>. w tym (dz. 1.1.1. w. 47 lit. c) przez osoby zamieszkałe za granicą</td>
                  <td valign="top" align="center">
                     <a href="javascript:openPopup('popup.aspx?sesja=1!1.1.1.c!1!4')"> <asp:TextBox ID="tab_111c_w01_col01" runat="server" ReadOnly="True" CssClass="col_155"></asp:TextBox></a>
-                   
                 </td>
             </tr>
         </table>
         <br />
-    
 
                     <strong>Dział 1.1.1.d</strong>. Przysposobienie według wieku małoletnich (liczby osób)<br />
         <br />
-         <div id='1.1.1.d' >
+         <div id='1.1.1.d'>
     <table cellpadding="0" cellspacing="0" style="width: 100 %; ">
   <tr>
     <td  class="borderAll center" colspan="2" rowspan="2">Małoletni według wieku </td>
@@ -412,10 +382,9 @@
     </table>
  </div>
 <br />
-        
 
                     <strong>Dział 1.1.1.e.</strong> Pozbawienie, zawieszenie, ograniczenie władzy rodzicielskiej
-         <div id='1.1.1.e' >
+         <div id='1.1.1.e'>
     <table cellpadding="0" cellspacing="0" style="width: 100 %; ">
   <tr>
     <td  class="borderAll center" colspan="3">Wyszczególnienia</td>
@@ -492,9 +461,8 @@
  </div>
 
         <br />
-    
 
-                    <strong>Dział 1.1.1.f.</strong> w tym (dz. 1.1.1. w. 48 lit. f)<div id='1.1.1.f' >
+                    <strong>Dział 1.1.1.f.</strong> w tym (dz. 1.1.1. w. 48 lit. f)<div id='1.1.1.f'>
     <table cellpadding="0" cellspacing="0" style="width: 100 %; ">
   <tr>
     <td  class="borderAll center" colspan="2">Wyszczególnienie</td>
@@ -538,8 +506,7 @@
  </div>
 
         <br />
-        <div id='1.1.1.g' >
-    
+        <div id='1.1.1.g'>
 
                     <strong>Dział 1.1.1.g. </strong>
             <h3 class="western"><font size="2">Rodzaje orzeczeń wydanych w okresie statystycznym w sprawach dotyczących wykonywania kontaktów z dzieckiem (art. 598</font><sup><font size="2">15 </font></sup>i nast. K.p.c.)</h3>
@@ -637,41 +604,36 @@
     <td  class="col_90 center borderAll "><a href="javascript:openPopup('popup.aspx?sesja=13!1.1.1.g!2!4')"><asp:Label CssClass="normal" ID="tab_111g_w13_c02" runat="server" Text="0"></asp:Label></a></td>
   </tr>
     </table>
- </div >
+ </div>
 
         <br />
         <table style="width:100%;" cellpadding="0" cellspacing="0">
             <tr>
                 <td style="width: 1000px">
-    
 
                     <strong>Dział 1.1.1.g.1</strong>. </td>
                  <td valign="top" align="center">
-                   
                 </td>
             </tr>
         </table>
         <table style="width:100%;" cellpadding="0" cellspacing="0">
             <tr>
                 <td style="width: 1000px" class="wciecie">
-    
 
                     Sprawy dotyczące wykonywania orzeczeń o odebranie osoby podlegającej władzy rodzicielskiej lub pozostającej pod opieką, wydanych na podstawie art. 5981- 5985 kpc </td>
                  <td valign="top" align="center">
-                   
+
                      <a href="javascript:openPopup('popup.aspx?sesja=1!1.1.1.g.1!1!4')"> <asp:TextBox ID="tab_111g1_w01_col01" runat="server" ReadOnly="True" CssClass="col_155"></asp:TextBox></a>
-                  
                 </td>
             </tr>
         </table>
         <table style="width:100%;" cellpadding="0" cellspacing="0">
             <tr>
                 <td style="width: 1000px" class="wciecie">
-    
 
                     Sprawy dotyczące wykonywania orzeczeń o odebranie osoby podlegającej władzy rodzicielskiej lub pozostającej pod opieką, wydanych na podstawie art. 5986- 59812 kpc w zw. z art. 59813 </td>
                  <td valign="top" align="center">
-                  <a href="javascript:openPopup('popup.aspx?sesja=1!1.1.1.g.1!1!4')"> <asp:TextBox ID="tab_111g1_w02_col01" runat="server" ReadOnly="True" CssClass="col_155"></asp:TextBox></a>    
+                  <a href="javascript:openPopup('popup.aspx?sesja=1!1.1.1.g.1!1!4')"> <asp:TextBox ID="tab_111g1_w02_col01" runat="server" ReadOnly="True" CssClass="col_155"></asp:TextBox></a>
                  </td>
             </tr>
         </table>
@@ -686,50 +648,43 @@
                 </td>
                 <td valign="bottom" align="center">
                     <a href="javascript:openPopup('popup.aspx?sesja=1!1.1.1.h!1!4')"> <asp:TextBox ID="tab_111h1_w01_col01" runat="server" ReadOnly="True" CssClass="col_155"></asp:TextBox></a>
-                   
                 </td>
             </tr>
             </table>
         <br />
         </div>
-       <div id="Div11"  class="page-break"> 
+       <div id="Div11"  class="page-break">
            <br />
         <table style="width:100%;">
             <tr>
                 <td style="width: 1000px">
-    
+
                         <font face="Arial, sans-serif"><font size="2" style="font-size: 11pt"><font size="2" style="font-size: 9pt"><b>Dział 1.1.1.i. Liczba spraw, w których orzeczono obniżenie alimentów wyłącznie z uwagi na okoliczność uzyskania świadczenia wychowawczego przez uprawniony podmiot na podstawie ustawy z dnia 11 lutego 2016 r. </b><i><b>O pomocy państwa w wychowaniu dzieci</b></i><b> (Dz. U. poz. 195) symbol 003o</b></font></font></font>
                 </td>
                 <td valign="bottom" align="center">
                          <a href="javascript:openPopup('popup.aspx?sesja=1!1.1.1.i!1!4')"> <asp:TextBox ID="tab_111i_w01_col01" runat="server" ReadOnly="True" CssClass="col_155"></asp:TextBox></a>
-                    
                 </td>
             </tr>
             <tr>
                 <td style="width: 1000px">
-                   
+
                         <font size="2" style="font-size: 9pt"><span class="auto-style4" >Dział 1.1.1.j. Liczba zarządzeń sędziego o natychmiastowe wypisanie ze szpitala psychiatrycznego i umorzenie postępowania</span></font>
                         <br class="auto-style3" />
-                        
+
                             <font face="Arial, sans-serif"><font size="2" style="font-size: 9pt"><font size="1"><span class="auto-style3" >[art. 45 ust. 2 ustawy z dnia 19 sierpnia 1994 r. o ochronie zdrowia psychicznego </span></font><font class="auto-style3"><font size="1" style="font-size: 6pt"><span >(Dz. U. z 2016 r., poz. 546</span></font><font size="1"><span >)]</span></font></font></font></font>
-                    
                 </td>
                 <td valign="bottom" align="center">
-                   
 
                        <a href="javascript:openPopup('popup.aspx?sesja=1!1.1.1.i!1!4')">  <asp:TextBox ID="tab_111j_w01_col01" runat="server" ReadOnly="True" CssClass="col_155"></asp:TextBox></a>
-                    
-
                 </td>
             </tr>
             </table>
     &nbsp;&nbsp;
     &nbsp;<br />
         </div>
-    
 
                         <strong>Dział 1.1.2</strong> Ewidencja spraw nieletnich<br />
-        <div id='1.1.2' >
+        <div id='1.1.2'>
     <table cellpadding="0" cellspacing="0" style="width: 100 %; ">
   <tr>
     <td  class="borderAll center" colspan="2" rowspan="2">Wyszczególnienia</td>
@@ -788,10 +743,9 @@
     </table>
  </div>
 
-
                         <strong>
           <br />
-          Dział 1.1.2.a </strong>&nbsp;Ewidencja popełnionych czynów karalnych przez nieletnich w odniesieniu do osób<div id='1.1.2.a' >
+          Dział 1.1.2.a </strong>&nbsp;Ewidencja popełnionych czynów karalnych przez nieletnich w odniesieniu do osób<div id='1.1.2.a'>
     <table cellpadding="0" cellspacing="0" style="width: 100 %; ">
   <tr>
     <td  class="col_100 borderAll " rowspan="4">Wyszczególnienia</td>
@@ -843,9 +797,8 @@
 
           <br />
 
-
                         <strong>
-          Dział 1.1.2.b </strong>&nbsp;Stwierdzone czyny karalne przypisane nieletniemu w orzeczeniu kończącym postępowanie <div id='1.1.2.b' >
+          Dział 1.1.2.b </strong>&nbsp;Stwierdzone czyny karalne przypisane nieletniemu w orzeczeniu kończącym postępowanie <div id='1.1.2.b'>
     <table cellpadding="0" cellspacing="0" style="width: 100 %; ">
   <tr>
     <td  class="borderAll center" colspan="4">Rodzaje czynów karalnych </td>
@@ -982,12 +935,11 @@
   </tr>
     </table>
  </div>
-   
+
           <br />
 
-
                         <strong>
-          Dział 1.1.2.c </strong>&nbsp;Załatwiono w odniesieniu do osób (z wyłączeniem orzeczeń zmienionych w czasie wykonywania orzeczeń) Rep. Nkd<div id='1.1.2.c' >
+          Dział 1.1.2.c </strong>&nbsp;Załatwiono w odniesieniu do osób (z wyłączeniem orzeczeń zmienionych w czasie wykonywania orzeczeń) Rep. Nkd<div id='1.1.2.c'>
     <table cellpadding="0" cellspacing="0" style="width: 100 %; ">
   <tr>
     <td  class="borderAll center" colspan="3">Wyszczególnienia</td>
@@ -1277,7 +1229,7 @@
           <br />
 
           <br />
-          <div id='1.1.4' >
+          <div id='1.1.4'>
  <strong> Dział 1.1.4</strong> Obciążenie kosztami postępowania we wszystkich sprawach  Nw, Nkd – łącznie (art. 32  ustawy)*)
     <table cellpadding="0" cellspacing="0" style="width: 100 %; ">
  <tr>    <td  class="center borderAll" colspan="2"> Wyszczególnienie </td>    <td class="center borderAll"> Liczba</td>
@@ -6838,9 +6790,7 @@
               </table>
           </div>
           <br />
-         	
 
-	
 <div id="2.1.1.a" class="page-break">
               <strong>Dział 2.1.1.a</strong> Sprawy zawieszone nie zakreślone od dnia pierwotnego wpisu do repertorium (wykazane w dziale 2.1.1.) (łącznie z czasem trwania mediacji)
               <table cellpadding="0" cellspacing="0" style="width: 100 %; ">
@@ -7034,7 +6984,7 @@
               </table>
           </div>
           <br />
-         
+
 <div id="2.1.2" class="page-break">
               <strong>Dział 2.1.2</strong> Liczba spraw zakreślonych w urządzeniu ewidencyjnym w wyniku zawieszenia postępowania (łącznie z czasem trwania mediacji)
               <table cellpadding="0" cellspacing="0" style="width: 100 %; ">
@@ -7388,17 +7338,14 @@
           <br />
 
         <br />
-          <div id="Div11"  class="page-break"> 
-    
-
+          <div id="Div11"  class="page-break">
 
            <asp:Label ID="tabela4Label" runat="server">2.2.a Czas trwania postępowania sądowego od dnia pierwszej rejestracji do dnia uprawomocnienia się sprawy merytorycznie zakończonej (wyrokiem, orzeczeniem) w I instancji (łącznie z czasem trwania mediacji)</asp:Label>
-    
+
         <table cellpadding="0" cellspacing="0" class="dxflInternalEditorTable_MaterialCompact">
             <tr>
                 <td align="center" colspan="2" style="border-style: solid; border-width: thin 0px 0px thin; border-color: #666666;" class="col_155">SPRAWY
 wg repertoriów
-
                 </td>
                 <td class="center borderAll">Razem<br />
                     (kol. 2 do 9)</td>
@@ -7411,7 +7358,7 @@ wg repertoriów
                     miesięcy.</td>
                 <td align="center" style="border-style: solid; border-width: thin 0px 0px thin; border-color: #666666;" class="col_112">Powyżej 12<br />
                     miesięcy do 2 lat</td>
-                <td align="center" style="border-style: solid; border-width: thin 0px 0px thin; border-color: #666666;" class="col_112">Powyżej 2 
+                <td align="center" style="border-style: solid; border-width: thin 0px 0px thin; border-color: #666666;" class="col_112">Powyżej 2
                     <br />
                     do&nbsp;3
                     lat.</td>
@@ -7489,20 +7436,17 @@ wg repertoriów
                 <td align="center" style="border-style: solid; border-width: thin; border-color: #666666 #666666 #000000 #666666;" class="col_112"><a href="javascript:openPopup('popup.aspx?sesja=4!2.2.a!9!4')"><asp:Label CssClass="normal" ID="tab_22a_w04_col09" runat="server" Text="0"></asp:Label></a></td>
             </tr>
         </table>
-    
-              <br />
-              <br />
-              <div id="Div11"  class="page-break"> 
-    
 
+              <br />
+              <br />
+              <div id="Div11"  class="page-break">
 
            <asp:Label ID="Label3" runat="server">2.2.1 </asp:Label>
-    
+
         <table cellpadding="0" cellspacing="0" class="dxflInternalEditorTable_MaterialCompact">
             <tr>
                 <td align="center" colspan="2" style="border-style: solid; border-width: thin 0px 0px thin; border-color: #666666;" class="col_155">SPRAWY
 wg repertoriów
-
                 </td>
                 <td class="center borderAll">Razem<br />
                     (kol. 2 do 9)</td>
@@ -7515,7 +7459,7 @@ wg repertoriów
                     miesięcy.</td>
                 <td align="center" style="border-style: solid; border-width: thin 0px 0px thin; border-color: #666666;" class="col_112">Powyżej 12<br />
                     miesięcy do 2 lat</td>
-                <td align="center" style="border-style: solid; border-width: thin 0px 0px thin; border-color: #666666;" class="col_112">Powyżej 2 
+                <td align="center" style="border-style: solid; border-width: thin 0px 0px thin; border-color: #666666;" class="col_112">Powyżej 2
                     <br />
                     do&nbsp;3
                     lat.</td>
@@ -7593,19 +7537,16 @@ wg repertoriów
                 <td align="center" style="border-style: solid; border-width: thin; border-color: #666666 #666666 #000000 #666666;" class="col_112"><a href="javascript:openPopup('popup.aspx?sesja=4!2.2.1!9!4')"><asp:Label CssClass="normal" ID="tab_2_2_1_w04_col09" runat="server" Text="0"></asp:Label></a></td>
             </tr>
         </table>
-    
-              <br />
-              <div id="Div11"  class="page-break"> 
-    
 
+              <br />
+              <div id="Div11"  class="page-break">
 
            <asp:Label ID="Label7" runat="server">2.2.1.a </asp:Label>
-    
+
         <table cellpadding="0" cellspacing="0" class="dxflInternalEditorTable_MaterialCompact">
             <tr>
                 <td align="center" colspan="2" style="border-style: solid; border-width: thin 0px 0px thin; border-color: #666666;" class="col_155">SPRAWY
 wg repertoriów
-
                 </td>
                 <td class="center borderAll">Razem<br />
                     (kol. 2 do 9)</td>
@@ -7618,7 +7559,7 @@ wg repertoriów
                     miesięcy.</td>
                 <td align="center" style="border-style: solid; border-width: thin 0px 0px thin; border-color: #666666;" class="col_112">Powyżej 12<br />
                     miesięcy do 2 lat</td>
-                <td align="center" style="border-style: solid; border-width: thin 0px 0px thin; border-color: #666666;" class="col_112">Powyżej 2 
+                <td align="center" style="border-style: solid; border-width: thin 0px 0px thin; border-color: #666666;" class="col_112">Powyżej 2
                     <br />
                     do&nbsp;3
                     lat.</td>
@@ -7696,10 +7637,10 @@ wg repertoriów
                 <td align="center" style="border-style: solid; border-width: thin; border-color: #666666 #666666 #000000 #666666;" class="col_112"><a href="javascript:openPopup('popup.aspx?sesja=4!2.2.1.a!9!4')"><asp:Label CssClass="normal" ID="tab_2_2_1_a_w04_col09" runat="server" Text="0"></asp:Label></a></td>
             </tr>
         </table>
-    
+
               <br />
-              <div id='2.3' class="page-break" >
- <strong> Dział 2.3</strong> Czas trwania wszystkich mediacji w sprawie od dnia wydania postanowienia o skierowaniu stron do mediacji do dnia zakończenia mediacji 
+              <div id='2.3' class="page-break">
+ <strong> Dział 2.3</strong> Czas trwania wszystkich mediacji w sprawie od dnia wydania postanowienia o skierowaniu stron do mediacji do dnia zakończenia mediacji
     <table cellpadding="0" cellspacing="0" style="width: 100 %; ">
  <tr>    <td  class="center borderAll" colspan="2"> SPRAWY wg repertoriów</td>    <td class="center borderAll"> Razem<br />
 &nbsp;(kol. 2 do 7)</td>
@@ -7743,14 +7684,12 @@ wg repertoriów
     </table>
  </div>
 
-
         <br />
         </div>
-
         </div>
         <br />
         </div>
-        <div id='2.3.1' class="page-break" >
+        <div id='2.3.1' class="page-break">
  <strong> Dział 2.3.1</strong> . Czas trwania mediacji niezakończonych w sprawie od dnia wydania postanowienia o skierowaniu stron do mediacji do ostatniego dnia okresu sprawozdawczego
     <table cellpadding="0" cellspacing="0" style="width: 100 %; ">
         <tr>
@@ -7797,12 +7736,12 @@ wg repertoriów
  </div>
 
        <br />
-        <div id='3' class="page-break" >
- <strong> Dział 3</strong> Wyznaczenie pierwszej rozprawy / posiedzenia spraw (od dnia wpływu/wpisu sprawy, wraz ze sprawami zawieszonymi poprzednio za-kreślonymi, do dnia, w którym odbyła się pierwsza rozprawa/posiedzenie). 
+        <div id='3' class="page-break">
+ <strong> Dział 3</strong> Wyznaczenie pierwszej rozprawy / posiedzenia spraw (od dnia wpływu/wpisu sprawy, wraz ze sprawami zawieszonymi poprzednio za-kreślonymi, do dnia, w którym odbyła się pierwsza rozprawa/posiedzenie).
     <table cellpadding="0" cellspacing="0" style="width: 100 %; ">
  <tr>    <td  class="center borderAll" colspan="2" rowspan="2"> Sprawy z repertorium</td>    <td class="center borderAll" colspan="8"> Od daty wpływu sprawy w danym lub poprzednim okresie sprawozdawczym do pierwszej rozprawy (posiedzenia) w okresie sprawozdawczym upłynął okres</td>
 </tr>
- <tr>    <td class="center borderAll"> razem 
+ <tr>    <td class="center borderAll"> razem
      <br />
      (kol. 2 do 8)</td>
 <td class="center borderAll">do 1 mies.</td>
@@ -7889,7 +7828,6 @@ wg repertoriów
                   <td class="col_36">&nbsp;</td>
                   <td>Zezwolono na wyjazd </td>
                       <td  class="col_90 center borderAll "><a href="javascript:openPopup('popup.aspx?sesja=2!4!1!4')"><asp:Label CssClass="normal" ID="tab_4_w02_c01" runat="server" Text="0"></asp:Label></a></td>
-
               </tr>
           </table>
           <br />
@@ -8714,7 +8652,7 @@ wg repertoriów
               </tr>
           </table>
           <br />
-          <div id="Div11_1"  class="page-break"> 
+          <div id="Div11_1"  class="page-break">
               &nbsp;<br />
      <asp:Label ID="tabela5Label" runat="server">Dział 11.1. Terminowość postępowania międzyinstancyjnego  w pierwszej instancji</asp:Label>
      <br />
@@ -8785,7 +8723,7 @@ normal"><span style="font-size:12.0pt;mso-fareast-font-family:Symbol"> Kontrolka
                 <td align="center" style="border-style: solid; border-width: thin 0px 0px thin; border-color: #666666;" colspan="3">Rozpoznanie skargi</td>
                 <td align="center" style="border-style: solid; border-width: thin 0px 0px thin; border-color: #666666;" rowspan="2">Zarządzono wypłatę przez Skarb Państwa</td>
                 <td align="center" style="border-style: solid; border-width: thin thin 0px thin; border-color: #666666;" rowspan="2">
-             
+
         Kwota
                     (w złotych)</td>
             </tr>
@@ -8818,10 +8756,9 @@ normal"><span style="font-size:12.0pt;mso-fareast-font-family:Symbol"> Kontrolka
             </table>
            <br />
            <br />
-
        </div>
 
-         <div id='12' class="page-break" >
+         <div id='12' class="page-break">
  <strong> Dział 12</strong> Terminowość postępowania międzyinstancyjnego  w pierwszej instancji
     <table cellpadding="0" cellspacing="0" style="width: 100 %; ">
  <tr>    <td  class="center borderAll" colspan="4" rowspan="2"> Sprawy z rep.</td>    <td class="center borderAll" colspan="4"> Sprawy rodzinne nieletnich wielotomowe - liczba spraw </td>
@@ -9076,7 +9013,7 @@ normal"><span style="font-size:12.0pt;mso-fareast-font-family:Symbol"> Kontrolka
  </div>
 
        <br />
-        <div id='13.1' class="page-break" >
+        <div id='13.1' class="page-break">
  <strong> Dział 13.1</strong> . Limity etatów i obsada Sądu (Wydziału)
     <table cellpadding="0" cellspacing="0" style="width: 100 %; ">
  <tr>    <td  class="center borderAll" colspan="2"> </td>    <td class="center borderAll"> Licz-ba sę-dziów SR i waku-ją-cych sta-no-wisk sę-dziowskich w ra-mach limitu (na ostatni dzień okre-su sta-ty-stycznego) </td>
@@ -9163,7 +9100,7 @@ normal"><span style="font-size:12.0pt;mso-fareast-font-family:Symbol"> Kontrolka
     </table>
  </div>
  <br />
-          <div id='13.2' class="page-break" >
+          <div id='13.2' class="page-break">
  <strong> Dział 13.2</strong> Obsada Sądu (Wydziału)
     <table cellpadding="0" cellspacing="0" style="width: 100 %; ">
  <tr>    <td  class="center borderAll" colspan="3"> Treść </td>    <td class="center borderAll"> Liczba według limitu etatów na ostatni dzień okresu statystycznego</td>
@@ -9229,7 +9166,7 @@ normal"><span style="font-size:12.0pt;mso-fareast-font-family:Symbol"> Kontrolka
            <br />
            <br />
        <div>
-          
+
            <asp:Label ID="tabela8Label" runat="server" Text="Dział 14.1. Liczba biegłych/podmiotów wydających opinie w sprawach  (z wył. tłumaczy przysięgłych)"></asp:Label>
 &nbsp;<br />
         <table cellpadding="0" cellspacing="0" style="width:100%;">
@@ -9302,14 +9239,11 @@ normal"><span style="font-size:12.0pt;mso-fareast-font-family:Symbol"> Kontrolka
             </tr>
         </table>
           <br />
-
        </div>
-       <div id="Div142"  class="page-break"> 
-    
-
+       <div id="Div142"  class="page-break">
 
            <asp:Label ID="Label1" runat="server">Dział 14.2. Terminowość sporządzania opinii pisemnych (z wył. tłumaczy przysięgłych</asp:Label>
-    
+
               <br />
         <table cellpadding="0" cellspacing="0" style="width:100%;">
             <tr>
@@ -9423,12 +9357,10 @@ normal"><span style="font-size:12.0pt;mso-fareast-font-family:Symbol"> Kontrolka
         <br />
         <br />
         </div>
-       <div id="14.3"  class="page-break"> 
-    
-
+       <div id="14.3"  class="page-break">
 
            <asp:Label ID="Label2" runat="server">Dział 14.3. Terminowość przyznawania wynagrodzeń za sporządzenie opinii pisemnych i ustnych oraz za stawiennictwo</asp:Label>
-    
+
               <br />
         <table cellpadding="0" cellspacing="0" style="width:100%;">
             <tr>
@@ -9538,9 +9470,7 @@ normal"><span style="font-size:12.0pt;mso-fareast-font-family:Symbol"> Kontrolka
         <br />
         </div>
 
-              <div id="15.1"  class="page-break"> 
-
-
+              <div id="15.1"  class="page-break">
 
                   <table style="width:100%;">
                       <tr>
@@ -9553,17 +9483,12 @@ normal"><span style="font-size:12.0pt;mso-fareast-font-family:Symbol"> Kontrolka
                       </tr>
                       </table>
                   <br />
-
-
-
                   </div>
 
-       <div id="Div11"  class="page-break"> 
-    
-
+       <div id="Div11"  class="page-break">
 
            <asp:Label ID="Label5" runat="server">Dział 15.2 Terminowość sporządzania tłumaczeń pisemnych </asp:Label>
-    
+
               <br />
         <table cellpadding="0" cellspacing="0" style="width:100%;">
             <tr>
@@ -9607,21 +9532,16 @@ normal"><span style="font-size:12.0pt;mso-fareast-font-family:Symbol"> Kontrolka
                 <td align="center" style="border-style: solid; border-width: thin 0px thin thin; border-color: #000000 #666666 #000000 #666666;" class="col_140"> <a href="javascript:openPopup('popup.aspx?sesja=1!15.2!7!4')"><asp:Label CssClass="normal" ID="tab_152_w01_c07" runat="server" Text="0"></asp:Label></a></td>
                 <td align="center" style="border-style: solid; border-width: thin; border-color: #000000 #666666 #666666 #666666;" class="col_140"> <a href="javascript:openPopup('popup.aspx?sesja=1!15.2!8!4')"><asp:Label CssClass="normal" ID="tab_152_w01_c08" runat="server" Text="0"></asp:Label></a></td>
             </tr>
-           
-          
         </table>
              <br />
 
         <br />
         </div>
 
-
-       <div id="Div11"  class="page-break"> 
-    
-
+       <div id="Div11"  class="page-break">
 
            <asp:Label ID="Label17" runat="server">Dział 15.3 Terminowość przyznawania wynagrodzeń za sporządzenie tłumaczeń pisemnych i ustnych oraz za stawiennictwo</asp:Label>
-    
+
               <br />
         <table cellpadding="0" cellspacing="0" style="width:100%;">
             <tr>
@@ -9660,17 +9580,16 @@ normal"><span style="font-size:12.0pt;mso-fareast-font-family:Symbol"> Kontrolka
                 <td align="center" style="border-style: solid; border-width: thin 0px thin thin; border-color: #000000 #666666 #000000 #666666;" class="col_140"> <a href="javascript:openPopup('popup.aspx?sesja=1!15.3!7!4')"><asp:Label CssClass="normal" ID="tab_153_w01_c07" runat="server" Text="0"></asp:Label></a></td>
                 <td align="center" style="border-style: solid; border-width: thin; border-color: #000000 #666666 #666666 #666666;" class="col_140"> <a href="javascript:openPopup('popup.aspx?sesja=1!15.3!8!4')"><asp:Label CssClass="normal" ID="tab_153_w01_c08" runat="server" Text="0"></asp:Label></a></td>
             </tr>
-     
         </table>
              <span style="font-size: xx-small; font-family: Arial, Helvetica, sans-serif">W przypadku wezwania biegłego do uzupełnienia rachunku, za datę złożenia rachunku uznaje się datę jego uzupełnienia</span><br />
 
         <br />
         <br />
         </div>
-    <div id="debag" >
-     
+    <div id="debag">
+
      <br />
-        Raport statystyczny 
+        Raport statystyczny
                     <asp:Label ID="Label27" runat="server"></asp:Label>
                 &nbsp;Sporzadzone dn.
             <asp:Label ID="Label29" runat="server"></asp:Label>&nbsp;przez&nbsp;
@@ -9680,14 +9599,8 @@ normal"><span style="font-size:12.0pt;mso-fareast-font-family:Symbol"> Kontrolka
         <br />
 
         <asp:Label ID="Label11" runat="server"></asp:Label>
-   
         </div>
-    
- 
+
     <br />
-       
   </div>
-
-    
 </asp:Content>
-

@@ -1,33 +1,17 @@
 ﻿using System;
+using System.Configuration;
 using System.Data;
 using System.Data.SqlClient;
-using System.Configuration;
 
 namespace stat2018
 {
-   
-
     public class common
     {
-       
         public string con_str = ConfigurationManager.ConnectionStrings["wap"].ConnectionString;
         public string con_str_wcyw = ConfigurationManager.ConnectionStrings["wcywConnectionString"].ConnectionString;
         public log_4_net log = new log_4_net();
-      /*  public void makeLog(string type, string info, bool make)
-        {
-            if (!make)
-            {
-                return;
-            }
-            switch (type.ToUpper ())
-            {
-            //    case "INFO": //log.Info(info); break;
-              //  case "ERROR": //log.Error(info); break;
-                default:
-                    break;
-            }
+       
 
-        }*/
         public string[] splitData(string arg)
         {
             string[] stringSeparators = new string[] { "#" };
@@ -35,6 +19,7 @@ namespace stat2018
             stTab = arg.Split(stringSeparators, StringSplitOptions.None);
             return stTab;
         }
+
         public string podajMiesiac(int numerMiesiaca)
         {
             switch (numerMiesiaca)
@@ -53,70 +38,53 @@ namespace stat2018
                 case 12: return "grudzień";
                 default:
                     return "";
-                    break;
+                  
             }
-
+        }
+        public string podajMiesiacRzymski(int numerMiesiaca)
+        {
+            switch (numerMiesiaca)
+            {
+                case 1: return "I";
+                case 2: return "II";
+                case 3: return "III";
+                case 4: return "IV";
+                case 5: return "V";
+                case 6: return "VI";
+                case 7: return "VII";
+                case 8: return "VIII";
+                case 9: return "IX";
+                case 10: return "X";
+                case 11: return "XI";
+                case 12: return "XII";
+                default:
+                    return "";
+                
+            }
         }
         public DataTable getDataTable(string kwerenda, string connStr, DataTable parameters)
         {
             DataSet dataSet = new DataSet();
-            using (SqlDataAdapter dataAdapter  = new SqlDataAdapter(kwerenda, connStr))
+            using (SqlDataAdapter dataAdapter = new SqlDataAdapter(kwerenda, connStr))
             {
                 foreach (DataRow row in parameters.Rows)
                 {
                     dataAdapter.SelectCommand.Parameters.AddWithValue(row[0].ToString().Trim(), row[1].ToString().Trim());
-                }     
-                dataAdapter.Fill(dataSet);
-            }
-          return dataSet.Tables[0];
-        }
-        public DataTable getDataTableAAAAA(string kwerenda, string connStr, DataTable parameters)
-        {
-            //log.Info("Start getDataTable");
-            DataTable result = new DataTable();
-            var conn = new SqlConnection(connStr);
-
-            DataSet dsKwerendy = new DataSet();
-            dsKwerendy = new DataSet();
-            SqlDataAdapter daMenu = new SqlDataAdapter();
-            try
-            {
-                //log.Info("Open DB connection");
-                conn.Open();
-                //log.Info("DB connection is open");
-               
-                daMenu.SelectCommand = new SqlCommand(kwerenda, conn);
-                foreach (DataRow row in parameters.Rows)
-                {
-                    daMenu.SelectCommand.Parameters.AddWithValue(row[0].ToString().Trim(), row[1].ToString().Trim());
                 }
-                log.Info("Executing querry");
                 try
                 {
-                    if (dsKwerendy!=null)
-                    {
-                        daMenu.Fill(dsKwerendy);
-                    }
-                   
+                    dataAdapter.Fill(dataSet);
                 }
                 catch 
-                { }
-                log.Info("Querry is executed");
-
-                conn.Close();
-                log.Info("DB  is closed");
-
-                result = dsKwerendy.Tables[0];
+                {}
             }
-            catch (Exception ex)
+            if (dataSet.Tables.Count !=0)
             {
-                //log.Error("Error : " + ex.Message);
-                conn.Close();
+                return dataSet.Tables[0];
             }
-
-            return result;
+            return null;
         } // end of getDataTable
-
+     
         public DataTable getDataTable(string kwerenda, string connStr)
         {
             //log.Info("Start getDataTable");
@@ -182,7 +150,6 @@ namespace stat2018
                 }
             } // end of using
         }
-
         public void runQuerry(string kwerenda, string connStr)
         {
             //log.Info("runQuerry is started");
@@ -241,9 +208,10 @@ namespace stat2018
             } // end of using
             return result;
         }// end of getQuerryValue
-        
+
         //==================================================
-        string getColumnName(int i)
+        /*
+        private string getColumnName(int i)
         {
             string txt = string.Empty;
             if (i < 10)
@@ -256,33 +224,26 @@ namespace stat2018
             }
             return txt;
         }
-
-
+        */
         public DataTable makeParameterTable()
         {
             DataTable parameters = new DataTable();
             parameters.Columns.Add("name", typeof(String));
             parameters.Columns.Add("value", typeof(String));
             return parameters;
-
         }
-      
 
         public string odczytajWartosc(string klucz)
         {
-
             DataTable parameters = makeParameterTable();
             parameters.Rows.Add("@klucz", klucz.Trim());
 
             return getQuerryValue("SELECT DISTINCT wartosc FROM  konfig WHERE klucz=rtrim(@klucz)", con_str, parameters);
-
         }
-      
 
         //====================================================================================================================================
         public bool dostep(string id_wydzialu, string userId)
         {
-         
             DataTable parameters = makeParameterTable();
             parameters.Rows.Add("@id_wydzialu", id_wydzialu.Trim());
             parameters.Rows.Add("@user_id", userId);
@@ -302,7 +263,5 @@ namespace stat2018
             }
             return false;
         }
-
-
     } // end of common
 }

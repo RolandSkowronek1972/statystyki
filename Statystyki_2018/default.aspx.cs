@@ -1,5 +1,4 @@
 ﻿using System;
-using log4net;
 using System.DirectoryServices.AccountManagement;
 
 namespace stat2018
@@ -7,26 +6,20 @@ namespace stat2018
     public partial class _default : System.Web.UI.Page
     {
         public logowanie Logowanie = new logowanie();
-
-      //  public ILog log = LogManager.GetLogger(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        public log_4_net log = new log_4_net();
 
         protected void Page_Load(object sender, EventArgs e)
         {
-
             string value = Request.QueryString["logout"];
-            if (value!=null)
+            if (value != null)
             {
-                if (value=="true")
+                if (value == "true")
                 {
                     Session["user_id"] = null;
                     Session["id_dzialu"] = null;
                     Session["data_1"] = null;
                     Session["data_2"] = null;
                     Session["userIdNum"] = null;
-                    
-
-
-
                 }
             }
             string errorMessage = Request.QueryString["info"];
@@ -37,9 +30,7 @@ namespace stat2018
             }
             else
             {
-
                 ErrorBox.Visible = false;
-
             }
             if (value == null)
             {
@@ -49,23 +40,21 @@ namespace stat2018
             {
                 Session["user_id"] = null;
             }
-
-          
         }
 
         protected void LinkButton1_Click(object sender, EventArgs e)
         {
-
             zaloguj();
         }
+
         protected void TextBox2_TextChanged(object sender, EventArgs e)
         {
             zaloguj();
         }
+
         protected void zaloguj()
         {
-          //log.Debug("uruchomienie logowania");
-
+            //log.Debug("uruchomienie logowania");
 
             bool result = true;
             try
@@ -74,13 +63,13 @@ namespace stat2018
                 {
                     try
                     {
-                      //log.Info("sprawdzanie logowania domenowego");
+                        //log.Info("sprawdzanie logowania domenowego");
                         result = pc.ValidateCredentials(TextBox1.Text.Trim(), TextBox2.Text.Trim());
                         if (result)
                         {
-                          //log.Info("Logowanie domenowe się powiodło");
+                            //log.Info("Logowanie domenowe się powiodło");
                             Session["damain"] = "1";
-                            string id= Logowanie.   podajIdUzytkownikaDomenowego(TextBox1.Text);
+                            string id = Logowanie.podajIdUzytkownikaDomenowego(TextBox1.Text);
                             Session["user_id"] = TextBox1.Text.Trim();
                             Session["userIdNum"] = id;
                             Session["identyfikatorUzytkownika"] = id;
@@ -89,28 +78,25 @@ namespace stat2018
                         else
                         {
                             Session["damain"] = "0";
-                          //log.Info("Logowanie użytkowników z bazy danych");
+                            //log.Info("Logowanie użytkowników z bazy danych");
                             string id = Logowanie.loguj(TextBox1.Text.Trim(), TextBox2.Text.Trim());
                             int ident = 0;
                             try
                             {
-                                 ident = int.Parse(id);
+                                ident = int.Parse(id);
                             }
-                            catch 
+                            catch
                             {
-                              //log.Error("Logowanie: bład odczytu uzytkownika z bazy danych ");
-                               string resutt= Logowanie.CzyJestUzytkownikwBazie(TextBox1.Text.Trim());
-                                if (resutt =="0")
+                                //log.Error("Logowanie: bład odczytu uzytkownika z bazy danych ");
+                                string resutt = Logowanie.CzyJestUzytkownikwBazie(TextBox1.Text.Trim());
+                                if (resutt == "0")
                                 {
-                                  //log.Error("Logowanie: uzytkownik: "+TextBox1.Text.Trim ()+" nie istnieje w bazie danych!!! ");
-                                    
+                                    //log.Error("Logowanie: uzytkownik: "+TextBox1.Text.Trim ()+" nie istnieje w bazie danych!!! ");
                                 }
-
                             }
                             if (ident > 0)
                             {
-
-                              //log.Info("Logowanie poprawne!!! identyfikator użytkownika: " + TextBox1.Text.Trim() + " identyfikator: " + id);
+                                //log.Info("Logowanie poprawne!!! identyfikator użytkownika: " + TextBox1.Text.Trim() + " identyfikator: " + id);
                                 result = true;
                                 Session["user_id"] = TextBox1.Text.Trim();
                                 Session["userIdNum"] = id;
@@ -119,29 +105,26 @@ namespace stat2018
                             }
                             else
                             {
-                              //log.Error("Logowanie nie poprawne!!! Użytkownik: " + TextBox1.Text.Trim() + " podał niepoprawne hasło lub nie istanieje na liście użytkowników");
+                                log.Error("Logowanie nie poprawne!!! Użytkownik: " + TextBox1.Text.Trim() + " podał niepoprawne hasło lub nie istanieje na liście użytkowników");
                             }
                         }
                     }
-                    catch (Exception ec)
+                    catch
                     {
-                      //log.Info("Logowanie niepoprawne !!! Użytkownik: " + TextBox1.Text.Trim() + " podał niepoprawne hasło lub nie istanieje na liście użytkowników");
-                       
+                        log.Info("Logowanie niepoprawne !!! Użytkownik: " + TextBox1.Text.Trim() + " podał niepoprawne hasło lub nie istanieje na liście użytkowników");
                     }
-
                 }
             }
             catch (Exception ex)
             {
-              //log.Error("Logowanie domenowe się nie powiodło");
+                //log.Error("Logowanie domenowe się nie powiodło");
                 Session["damain"] = "0";
-              //log.Info("Logowanie użytkowników z bazy danych");
+                //log.Info("Logowanie użytkowników z bazy danych");
 
                 string id = Logowanie.loguj(TextBox1.Text.Trim(), TextBox2.Text.Trim());
-                if (id != "" )
+                if (id != "")
                 {
-
-                  //log.Info("Logowanie poprawne!!! Nazwa uzytkownika: " + TextBox1.Text.Trim() + " identyfikator: " + id);
+                    //log.Info("Logowanie poprawne!!! Nazwa uzytkownika: " + TextBox1.Text.Trim() + " identyfikator: " + id);
                     result = true;
                     Session["user_id"] = TextBox1.Text.Trim();
                     Session["userIdNum"] = id;
@@ -152,11 +135,8 @@ namespace stat2018
                 {
                     result = false;
                 }
-               // Label3.Text = ex.Message; ;
-
+                // Label3.Text = ex.Message; ;
             }
-
-
 
             if (result)
             {
@@ -166,14 +146,12 @@ namespace stat2018
                 Session["manu4"] = null;
                 Session["user_id"] = TextBox1.Text.Trim();
                 Server.Transfer("redirector.aspx");
-
             }
             else
             {
                 ASPxPopupControl1.ShowOnPageLoad = true;
-                             //     Label3.Text = Label3.Text + " Wrong username or password";
+                //     Label3.Text = Label3.Text + " Wrong username or password";
             }
-
         }
     }
 }

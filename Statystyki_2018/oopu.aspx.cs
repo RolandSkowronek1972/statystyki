@@ -1,20 +1,15 @@
-﻿using System;
-    using System.Data;
-    using System.Globalization;
-    using System.IO;
-    using System.Web.UI;
-    using System.Web.UI.WebControls;
-    using OfficeOpenXml;
+﻿using OfficeOpenXml;
+using System;
+using System.Data;
+using System.Globalization;
+using System.IO;
+using System.Web.UI;
+using System.Web.UI.WebControls;
 
 namespace stat2018
 {
-    
-
-
-
     public partial class oopu : System.Web.UI.Page
     {
-
         public Class1 cl = new Class1();
         public common cm = new common();
         public const string tenPlik = "oopu.aspx";
@@ -31,8 +26,26 @@ namespace stat2018
             {
                 return;
             }
-            Session["data_1"] = Date1.Text;
-            Session["data_2"] = Date2.Text;
+            CultureInfo newCulture = (CultureInfo)CultureInfo.CurrentCulture.Clone();
+            newCulture.DateTimeFormat = CultureInfo.GetCultureInfo("PL").DateTimeFormat;
+            System.Threading.Thread.CurrentThread.CurrentCulture = newCulture;
+            System.Threading.Thread.CurrentThread.CurrentUICulture = newCulture;
+            DateTime dTime = DateTime.Now.AddMonths(-1); ;
+
+            if (Date1.Text.Length == 0)
+            {
+                Date1.Date = DateTime.Parse(dTime.Year.ToString() + "-" + dTime.Month.ToString("D2") + "-01");
+            }
+
+            if (Date2.Text.Length == 0)
+            {
+                Date2.Date = DateTime.Parse(dTime.Year.ToString() + "-" + dTime.Month.ToString("D2") + "-" + DateTime.DaysInMonth(dTime.Year, dTime.Month).ToString("D2"));
+            }
+
+            Session["id_dzialu"] = idWydzial;
+            Session["data_1"] = Date1.Date.ToShortDateString();
+            Session["data_2"] = Date2.Date.ToShortDateString();
+
             clearHedersSession();
 
             try
@@ -55,9 +68,9 @@ namespace stat2018
                     }
                 }
             }
-            catch 
+            catch
             {
-                 Server.Transfer("default.aspx");
+                Server.Transfer("default.aspx");
             }
         }// end of Page_Load
 
@@ -73,28 +86,8 @@ namespace stat2018
             Session["header_08"] = null;
         }
 
-
         protected void przemiel()
         {
-
-            try
-            {
-                DateTime dTime = DateTime.Now;
-                dTime = dTime.AddMonths(-1);
-                if (Date1.Text.Length == 0)
-                {
-                    Date1.Text = dTime.Year.ToString() + "-" + dTime.Month.ToString("D2") + "-01";
-                }
-                if (Date2.Text.Length == 0)
-                {
-                    Date2.Text = dTime.Year.ToString() + "-" + dTime.Month.ToString("D2") + "-" + DateTime.DaysInMonth(dTime.Year, dTime.Month).ToString("D2");
-                }
-
-                Session["data_1"] = Date1.Text.Trim();
-                Session["data_2"] = Date2.Text.Trim();
-            }
-            catch
-            { }
             string dzial = (string)Session["id_dzialu"];
             id_dzialu.Text = (string)Session["txt_dzialu"];
             string txt = string.Empty; //
@@ -104,12 +97,11 @@ namespace stat2018
             {
                 if (string.IsNullOrEmpty(dzial) != true)
                 {
-                    txt = txt + cl.generuj_dane_do_tabeli_XXL(int.Parse(dzial), 5, DateTime.Parse(Date1.Text), DateTime.Parse(Date2.Text));
+                    txt = txt + cl.generuj_dane_do_tabeli_XXL(int.Parse(dzial), 5, Date1.Date, Date2.Date);
                     txt = txt + cl.uzupelnij_statusy_Xl();
                 }
-
             }
-            catch 
+            catch
             { }
             // dopasowanie opisów
             makeLabels();
@@ -129,24 +121,19 @@ namespace stat2018
 
         #region "nagłowki tabel"
 
-
         protected void grvMergeHeader_RowCreated(object sender, GridViewRowEventArgs e)
         {
             if (e.Row.RowType == DataControlRowType.Header)
             {
-
                 // dolny
                 GridView HeaderGrid = (GridView)sender;
                 GridViewRow HeaderGridRow = new GridViewRow(0, 0, DataControlRowType.Header, DataControlRowState.Insert);
-
 
                 HeaderGridRow.Font.Size = 7;
                 HeaderGridRow.HorizontalAlign = HorizontalAlign.Center;
                 HeaderGridRow.VerticalAlign = VerticalAlign.Top;
                 HeaderGridRow.BackColor = System.Drawing.Color.Cyan;
                 TableCell HeaderCell = new TableCell();
-
-
 
                 //czwarty
                 HeaderCell = new TableCell();
@@ -215,8 +202,6 @@ namespace stat2018
                 HeaderGridRow.Cells.Add(HeaderCell);
                 GridView1.Controls[0].Controls.AddAt(0, HeaderGridRow);
 
-
-
                 // trzeci
 
                 HeaderGrid = (GridView)sender;
@@ -278,24 +263,6 @@ namespace stat2018
                 HeaderGridRow.Cells.Add(HeaderCell);
                 GridView1.Controls[0].Controls.AddAt(0, HeaderGridRow);
 
-
-                HeaderCell = new TableCell();
-                HeaderCell.Text = "na rozprawę";
-                HeaderCell.ApplyStyle(stl);
-                HeaderCell.ColumnSpan = 1;
-                HeaderCell.RowSpan = 2;
-                HeaderGridRow.Cells.Add(HeaderCell);
-                GridView1.Controls[0].Controls.AddAt(0, HeaderGridRow);
-
-                HeaderCell = new TableCell();
-                HeaderCell.Text = "na posiedzenie";
-                HeaderCell.ApplyStyle(stl);
-                HeaderCell.ColumnSpan = 1;
-                HeaderCell.RowSpan = 2;
-                HeaderGridRow.Cells.Add(HeaderCell);
-                GridView1.Controls[0].Controls.AddAt(0, HeaderGridRow);
-
-
                 HeaderCell = new TableCell();
                 HeaderCell.Text = "na rozprawę";
                 HeaderCell.ApplyStyle(stl);
@@ -456,6 +423,21 @@ namespace stat2018
                 HeaderGridRow.Cells.Add(HeaderCell);
                 GridView1.Controls[0].Controls.AddAt(0, HeaderGridRow);
 
+                HeaderCell = new TableCell();
+                HeaderCell.Text = "na rozprawę";
+                HeaderCell.ApplyStyle(stl);
+                HeaderCell.ColumnSpan = 1;
+                HeaderCell.RowSpan = 2;
+                HeaderGridRow.Cells.Add(HeaderCell);
+                GridView1.Controls[0].Controls.AddAt(0, HeaderGridRow);
+
+                HeaderCell = new TableCell();
+                HeaderCell.Text = "na posiedzenie";
+                HeaderCell.ApplyStyle(stl);
+                HeaderCell.ColumnSpan = 1;
+                HeaderCell.RowSpan = 2;
+                HeaderGridRow.Cells.Add(HeaderCell);
+                GridView1.Controls[0].Controls.AddAt(0, HeaderGridRow);
 
                 HeaderCell = new TableCell();
                 HeaderCell.Text = "na rozprawę";
@@ -474,8 +456,6 @@ namespace stat2018
                 HeaderCell.RowSpan = 2;
                 HeaderGridRow.Cells.Add(HeaderCell);
                 GridView1.Controls[0].Controls.AddAt(0, HeaderGridRow);
-
-
 
                 HeaderCell = new TableCell();
                 HeaderCell.Text = "na rozprawę";
@@ -502,7 +482,6 @@ namespace stat2018
                 HeaderCell.RowSpan = 1;
                 HeaderGridRow.Cells.Add(HeaderCell);
                 GridView1.Controls[0].Controls.AddAt(0, HeaderGridRow);
-
 
                 HeaderCell = new TableCell();
                 HeaderCell.Text = "15-30 dni";
@@ -562,12 +541,9 @@ namespace stat2018
                 HeaderGridRow.Cells.Add(HeaderCell);
                 GridView1.Controls[0].Controls.AddAt(0, HeaderGridRow);
 
-
                 //===================================================================================================================================================================
                 //===================================================================================================================================================================
                 //Środkowy
-
-
 
                 //===================================================================================================================================================================
                 //===================================================================================================================================================================
@@ -579,7 +555,6 @@ namespace stat2018
                 HeaderGridRow.Font.Size = 7;
                 HeaderGridRow.BackColor = System.Drawing.Color.LightGray;
                 HeaderGridRow.VerticalAlign = VerticalAlign.Top;
-
 
                 HeaderCell = new TableCell();
                 HeaderCell.Text = "Ogółem";
@@ -644,8 +619,6 @@ namespace stat2018
                 HeaderGridRow.Cells.Add(HeaderCell);
                 GridView1.Controls[0].Controls.AddAt(0, HeaderGridRow);
 
-
-
                 HeaderCell = new TableCell();
                 HeaderCell.Text = " P ";
                 HeaderCell.ColumnSpan = 2;
@@ -676,13 +649,11 @@ namespace stat2018
                 HeaderGridRow.Cells.Add(HeaderCell);
                 GridView1.Controls[0].Controls.AddAt(0, HeaderGridRow);
 
-
                 HeaderCell = new TableCell();
                 HeaderCell.Text = "Uo";
                 HeaderCell.ColumnSpan = 2;
                 HeaderGridRow.Cells.Add(HeaderCell);
                 GridView1.Controls[0].Controls.AddAt(0, HeaderGridRow);
-
 
                 HeaderCell = new TableCell();
                 HeaderCell.Text = "WSC";
@@ -748,8 +719,6 @@ namespace stat2018
                 HeaderGridRow.Cells.Add(HeaderCell);
                 GridView1.Controls[0].Controls.AddAt(0, HeaderGridRow);
 
-
-
                 HeaderCell = new TableCell();
                 HeaderCell.Text = " P ";
                 HeaderCell.ColumnSpan = 1;
@@ -758,8 +727,6 @@ namespace stat2018
                 HeaderGridRow.Cells.Add(HeaderCell);
                 GridView1.Controls[0].Controls.AddAt(0, HeaderGridRow);
 
-
-
                 HeaderCell = new TableCell();
                 HeaderCell.Text = " Np ";
                 HeaderCell.ColumnSpan = 1;
@@ -767,7 +734,6 @@ namespace stat2018
                 HeaderCell.BackColor = System.Drawing.Color.LightGray;
                 HeaderGridRow.Cells.Add(HeaderCell);
                 GridView1.Controls[0].Controls.AddAt(0, HeaderGridRow);
-
 
                 HeaderCell = new TableCell();
                 HeaderCell.Text = " Po ";
@@ -785,14 +751,12 @@ namespace stat2018
                 HeaderGridRow.Cells.Add(HeaderCell);
                 GridView1.Controls[0].Controls.AddAt(0, HeaderGridRow);
 
-
                 HeaderCell = new TableCell();
                 HeaderCell.Text = "U";
                 HeaderCell.ColumnSpan = 1;
                 HeaderCell.RowSpan = 3;
                 HeaderGridRow.Cells.Add(HeaderCell);
                 GridView1.Controls[0].Controls.AddAt(0, HeaderGridRow);
-
 
                 HeaderCell = new TableCell();
                 HeaderCell.Text = "Uo";
@@ -820,7 +784,6 @@ namespace stat2018
                 HeaderGridRow.Cells.Add(HeaderCell);
                 GridView1.Controls[0].Controls.AddAt(0, HeaderGridRow);
 
-
                 HeaderCell = new TableCell();
                 HeaderCell.Text = "z tego";
                 HeaderCell.ColumnSpan = 2;
@@ -836,7 +799,6 @@ namespace stat2018
                 HeaderCell.BackColor = System.Drawing.Color.LightGray;
                 HeaderGridRow.Cells.Add(HeaderCell);
                 GridView1.Controls[0].Controls.AddAt(0, HeaderGridRow);
-
 
                 HeaderCell = new TableCell();
                 HeaderCell.Text = "z tego";
@@ -891,7 +853,6 @@ namespace stat2018
                 HeaderGridRow.Cells.Add(HeaderCell);
                 GridView1.Controls[0].Controls.AddAt(0, HeaderGridRow);
 
-
                 HeaderCell = new TableCell();
                 HeaderCell.Text = "OGÓŁEM (wraz z publikacją orzeczeń)";
                 HeaderCell.ColumnSpan = 1;
@@ -900,7 +861,7 @@ namespace stat2018
                 HeaderGridRow.Cells.Add(HeaderCell);
                 GridView1.Controls[0].Controls.AddAt(0, HeaderGridRow);
 
-                //pozostałość 
+                //pozostałość
 
                 HeaderCell = new TableCell();
                 HeaderCell.Text = "Ogółem";
@@ -910,8 +871,6 @@ namespace stat2018
                 HeaderGridRow.Cells.Add(HeaderCell);
                 GridView1.Controls[0].Controls.AddAt(0, HeaderGridRow);
 
-
-
                 HeaderCell = new TableCell();
                 HeaderCell.Text = " P ";
                 HeaderCell.ColumnSpan = 1;
@@ -919,8 +878,6 @@ namespace stat2018
                 HeaderCell.BackColor = System.Drawing.Color.LightGray;
                 HeaderGridRow.Cells.Add(HeaderCell);
                 GridView1.Controls[0].Controls.AddAt(0, HeaderGridRow);
-
-
 
                 HeaderCell = new TableCell();
                 HeaderCell.Text = " Np. ";
@@ -930,7 +887,6 @@ namespace stat2018
                 HeaderGridRow.Cells.Add(HeaderCell);
                 GridView1.Controls[0].Controls.AddAt(0, HeaderGridRow);
 
-
                 HeaderCell = new TableCell();
                 HeaderCell.Text = "Po";
                 HeaderCell.ColumnSpan = 1;
@@ -938,7 +894,6 @@ namespace stat2018
                 HeaderCell.BackColor = System.Drawing.Color.LightGray;
                 HeaderGridRow.Cells.Add(HeaderCell);
                 GridView1.Controls[0].Controls.AddAt(0, HeaderGridRow);
-
 
                 HeaderCell = new TableCell();
                 HeaderCell.Text = "WSC";
@@ -972,8 +927,6 @@ namespace stat2018
                 HeaderGridRow.Cells.Add(HeaderCell);
                 GridView1.Controls[0].Controls.AddAt(0, HeaderGridRow);
 
-
-
                 //=====================
                 //pozostało spraw starych
                 HeaderCell = new TableCell();
@@ -983,7 +936,6 @@ namespace stat2018
                 HeaderCell.BackColor = System.Drawing.Color.LightGray;
                 HeaderGridRow.Cells.Add(HeaderCell);
                 GridView1.Controls[0].Controls.AddAt(0, HeaderGridRow);
-
 
                 HeaderCell = new TableCell();
                 HeaderCell.Text = "do 3 m-cy";
@@ -1040,7 +992,6 @@ namespace stat2018
                 HeaderCell.BackColor = System.Drawing.Color.LightGray;
                 HeaderGridRow.Cells.Add(HeaderCell);
 
-
                 GridView1.Controls[0].Controls.AddAt(0, HeaderGridRow);
                 HeaderCell = new TableCell();
                 HeaderCell.Text = "pow. 8 lat";
@@ -1049,7 +1000,6 @@ namespace stat2018
                 HeaderCell.BackColor = System.Drawing.Color.LightGray;
                 HeaderGridRow.Cells.Add(HeaderCell);
                 GridView1.Controls[0].Controls.AddAt(0, HeaderGridRow);
-
 
                 //liczba sporządzonych uzasadnień
                 GridView1.Controls[0].Controls.AddAt(0, HeaderGridRow);
@@ -1088,7 +1038,6 @@ namespace stat2018
                 HeaderCell.BackColor = System.Drawing.Color.LightGray;
                 HeaderGridRow.Cells.Add(HeaderCell);
                 GridView1.Controls[0].Controls.AddAt(0, HeaderGridRow);
-
 
                 GridView1.Controls[0].Controls.AddAt(0, HeaderGridRow);
                 HeaderCell = new TableCell();
@@ -1144,14 +1093,12 @@ namespace stat2018
                 HeaderGridRow.Cells.Add(HeaderCell);
                 GridView1.Controls[0].Controls.AddAt(0, HeaderGridRow);
 
-
                 HeaderCell = new TableCell();
                 HeaderCell.Text = "Skierowane do mediacji";
                 HeaderCell.ColumnSpan = 1;
                 HeaderCell.RowSpan = 3;
                 HeaderGridRow.Cells.Add(HeaderCell);
                 GridView1.Controls[0].Controls.AddAt(0, HeaderGridRow);
-
 
                 GridView1.Controls[0].Controls.AddAt(0, HeaderGridRow);
                 HeaderCell = new TableCell();
@@ -1171,7 +1118,6 @@ namespace stat2018
                 HeaderGridRow.Cells.Add(HeaderCell);
                 GridView1.Controls[0].Controls.AddAt(0, HeaderGridRow);
 
-
                 HeaderCell = new TableCell();
                 HeaderCell.ApplyStyle(stl);
                 HeaderCell.Text = "zakreślonych";
@@ -1179,7 +1125,6 @@ namespace stat2018
                 HeaderCell.RowSpan = 3;
                 HeaderGridRow.Cells.Add(HeaderCell);
                 GridView1.Controls[0].Controls.AddAt(0, HeaderGridRow);
-
 
                 HeaderCell = new TableCell();
                 HeaderCell.ApplyStyle(stl);
@@ -1196,7 +1141,6 @@ namespace stat2018
                 HeaderCell.RowSpan = 3;
                 HeaderGridRow.Cells.Add(HeaderCell);
                 GridView1.Controls[0].Controls.AddAt(0, HeaderGridRow);
-
 
                 HeaderCell = new TableCell();
                 HeaderCell.ApplyStyle(stl);
@@ -1215,7 +1159,6 @@ namespace stat2018
                 HeaderGridRow.Font.Size = 7;
                 HeaderGridRow.BackColor = System.Drawing.Color.LightGray;
                 HeaderGridRow.VerticalAlign = VerticalAlign.Top;
-
 
                 HeaderCell = new TableCell();
                 HeaderCell.Text = "Wszystkie sesje sędziego";
@@ -1278,7 +1221,6 @@ namespace stat2018
                 HeaderCell.BackColor = System.Drawing.Color.LightGray;
                 GridView1.Controls[0].Controls.AddAt(0, HeaderGridRow);
 
-
                 HeaderCell = new TableCell();
                 HeaderCell.Text = "Wyznaczono";
                 HeaderCell.ColumnSpan = 16;
@@ -1310,7 +1252,6 @@ namespace stat2018
                 HeaderCell.RowSpan = 1;
                 HeaderGridRow.Cells.Add(HeaderCell);
                 GridView1.Controls[0].Controls.AddAt(0, HeaderGridRow);
-
 
                 HeaderCell = new TableCell();
                 HeaderCell.Text = "Liczba odroczonych publikacji orzeczeń";
@@ -1344,7 +1285,6 @@ namespace stat2018
                 HeaderGridRow.Cells.Add(HeaderCell);
                 GridView1.Controls[0].Controls.AddAt(0, HeaderGridRow);
 
-
                 HeaderCell = new TableCell();
                 HeaderCell.Text = "liczba sporządzonych uzasadnień";
                 HeaderCell.ColumnSpan = 11;
@@ -1352,7 +1292,6 @@ namespace stat2018
                 HeaderGridRow.Cells.Add(HeaderCell);
                 HeaderCell.BackColor = System.Drawing.Color.LightGray;
                 GridView1.Controls[0].Controls.AddAt(0, HeaderGridRow);
-
 
                 HeaderCell = new TableCell();
                 HeaderCell.Text = "uzasadnienia wygłoszone *";
@@ -1412,9 +1351,7 @@ namespace stat2018
             }
         }
 
-
         #endregion "nagłowki tabel"
-
 
         protected void makeLabels()
         {
@@ -1431,7 +1368,6 @@ namespace stat2018
                 { }
                 Label3.Text = cl.nazwaSadu((string)Session["id_dzialu"]);
 
-
                 id_dzialu.Text = (string)Session["txt_dzialu"];
                 Label28.Text = cl.podajUzytkownika(User_id, domain);
                 Label29.Text = DateTime.Now.ToLongDateString();
@@ -1442,39 +1378,33 @@ namespace stat2018
                 catch
                 { }
 
-
-                string strMonthName = CultureInfo.CurrentCulture.DateTimeFormat.GetMonthName(DateTime.Parse(Date2.Text).Month);
-                int last_day = DateTime.DaysInMonth(DateTime.Parse(Date2.Text).Year, DateTime.Parse(Date2.Text).Month);
-                if (((DateTime.Parse(Date1.Text).Day == 1) && (DateTime.Parse(Date2.Text).Day == last_day)) && ((DateTime.Parse(Date1.Text).Month == DateTime.Parse(Date2.Text).Month)))
+                string strMonthName = CultureInfo.CurrentCulture.DateTimeFormat.GetMonthName(Date2.Date.Month);
+                int last_day = DateTime.DaysInMonth(Date2.Date.Year, Date2.Date.Month);
+                if (((Date1.Date.Day == 1) && (Date2.Date.Day == last_day)) && ((Date1.Date.Month == Date2.Date.Month)))
                 {
                     // cały miesiąc
-                    Label19.Text = "Załatwienia za miesiąc " + strMonthName + " " + DateTime.Parse(Date2.Text).Year.ToString() + " roku.";
-                    Label27.Text = "za miesiąc:  " + strMonthName + " " + DateTime.Parse(Date2.Text).Year.ToString() + " roku.";
+                    Label19.Text = "Załatwienia za miesiąc " + strMonthName + " " + Date2.Date.Year.ToString() + " roku.";
+                    Label27.Text = "za miesiąc:  " + strMonthName + " " + Date2.Date.Year.ToString() + " roku.";
                 }
                 else
                 {
                     Label19.Text = "Załatwienia za okres od " + Date1.Text + " do  " + Date2.Text;
                     Label27.Text = "za okres od:  " + Date1.Text + " do  " + Date2.Text;
-
                 }
             }
             catch
             {
-
             }
-
         }
 
         protected void Button1_Click(object sender, EventArgs e)
         {
-
             ScriptManager.RegisterStartupScript(this.Page, Page.GetType(), "print2", "JavaScript: window.print();", true);
             // ScriptManager.RegisterStartupScript(this.Page, Page.GetType(), "print", "window.open('raport_01_print.aspx', '')", true);
         }
 
         protected void Button3_Click(object sender, EventArgs e)
         {
-
             //  excell();
 
             string path = Server.MapPath("Template") + "\\oopu.xlsx";
@@ -1506,7 +1436,6 @@ namespace stat2018
                     table.Columns.Remove("stanowisko");
                     table.Columns.Remove("funkcja");
 
-
                     table.Columns.Remove("d_109");
                     table.Columns.Remove("d_108");
                     table.Columns.Remove("d_107");
@@ -1536,7 +1465,6 @@ namespace stat2018
                         MyWorksheet.Cells[rowik + 6, i + 3].Value = sumObject.ToString();
                     }
 
-
                     try
                     {
                         //==========================
@@ -1548,23 +1476,16 @@ namespace stat2018
                         this.Response.AddHeader("Content-Disposition", "attachment;filename=" + fNewFile.Name);
                         this.Response.WriteFile(fNewFile.FullName);
                         this.Response.End();
-
-
                     }
                     catch (Exception ex)
                     {
                         Label31.Text = Label31.Text + "Save Error massage " + ex.Message + "<br/>";
                     }
-
-
                 }
-                catch 
+                catch
                 { }
-
             }
         }
-
-
 
         protected void LinkButton54_Click(object sender, EventArgs e)
         {
@@ -1578,16 +1499,11 @@ namespace stat2018
             makeLabels();
         }
 
-
-
         protected void GridView1_RowDataBound(object sender, GridViewRowEventArgs e)
         {
-
             if (e.Row.RowType == DataControlRowType.Footer)
 
             {
-
-
                 DataView view = (DataView)statystyki.Select(DataSourceSelectArguments.Empty);
 
                 DataTable table = view.ToTable();
@@ -1601,12 +1517,7 @@ namespace stat2018
                     sumObject = table.Compute("Sum(" + txt + ")", "");
                     e.Row.Cells[3 + i].Text = sumObject.ToString();
                 }
-
             }
-
         }
-
-
     }
-
 }

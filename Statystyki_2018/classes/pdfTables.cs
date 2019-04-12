@@ -1,32 +1,26 @@
-﻿using System;
+﻿using iTextSharp.text;
+using System;
 using System.Data;
 using System.IO;
-
-using iTextSharp.text;
 
 namespace stat2018
 {
     public class pdfTables
     {
-
         public Class1 cl = new Class1();
-
 
         public MemoryStream memoryStr2(DataTable dT)
         {
-
             //======================
             using (MemoryStream ms = new MemoryStream())
             using (Document document = new Document(PageSize.A4.Rotate(), 25, 25, 30, 30))
             using (iTextSharp.text.pdf.PdfWriter writer = iTextSharp.text.pdf.PdfWriter.GetInstance(document, ms))
             {
-
                 document.Open();
 
                 document.Add(new Paragraph(" "));
 
                 // tabela pierwsza
-
 
                 // przetważanie tabeli
                 if (dT.Rows.Count > 0)
@@ -64,13 +58,11 @@ namespace stat2018
 
         public MemoryStream memoryStr(string sedzia, string tabela, string dzial, DateTime data1, DateTime data2, string aa, string bb)
         {
-
             //======================
             using (MemoryStream ms = new MemoryStream())
             using (Document document = new Document(PageSize.A4.Rotate(), 25, 25, 30, 30))
             using (iTextSharp.text.pdf.PdfWriter writer = iTextSharp.text.pdf.PdfWriter.GetInstance(document, ms))
             {
-
                 document.Open();
                 string id_sedziego = sedzia;//(string)Session["id_sedziego"];
                 string txt = cl.wyciagnij_sedziego(id_sedziego).ToString();
@@ -143,15 +135,14 @@ namespace stat2018
             }
         }
 
+        /*
         public MemoryStream xxlTable(DataTable dT)
         {
-
             //======================
             using (MemoryStream ms = new MemoryStream())
             using (Document document = new Document(PageSize.A4.Rotate(), 25, 25, 30, 30))
             using (iTextSharp.text.pdf.PdfWriter writer = iTextSharp.text.pdf.PdfWriter.GetInstance(document, ms))
             {
-
                 document.Open();
                 document.Add(new Paragraph(" "));
 
@@ -192,8 +183,6 @@ namespace stat2018
                 return ms;
             }
         }
-
-
-
+        */
     }
 }

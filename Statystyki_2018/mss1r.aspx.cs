@@ -1,72 +1,60 @@
 ﻿using System;
-using System.Text;
 using System.Data;
-using System.Linq;
 using System.Globalization;
+using System.Linq;
+using System.Text;
 
 namespace stat2018
 {
-
     public partial class mss1r : System.Web.UI.Page
     {
-
+        public static string tenPlik = "mss1r.aspx";
         public Class1 cl = new Class1();
         public mss ms = new mss();
         public common cm = new common();
-        public static string tenPlik = "mss1r.aspx";
+        public datyDoMSS datyMSS = new datyDoMSS();
+
         protected void Page_Load(object sender, EventArgs e)
         {
-           
-            //cm.log.Debug("Otwarcie formularza: " + tenPlik);
-            DateTime dTime = DateTime.Now.AddMonths(-1);
             string idWydzial = Request.QueryString["w"];
             if (idWydzial != null)
             {
                 Session["id_dzialu"] = idWydzial;
-                //   //cm.log.Info(tenPlik + ": id wydzialu=" + idWydzial);
+                //cm.log.Info(tenPlik + ": id wydzialu=" + idWydzial);
             }
             else
             {
                 return;
             }
-
-            if (Date1.Text.Length == 0)
-            {
-                Date1.Text = dTime.Year.ToString() + "-" + dTime.Month.ToString("D2") + "-01";
-                Date1.Date = DateTime.Parse ( Date1.Text);
-            }
-            if (Date2.Text.Length == 0)
-            {
-                Date2.Text = dTime.Year.ToString() + "-" + dTime.Month.ToString("D2") + "-" + DateTime.DaysInMonth(dTime.Year, dTime.Month).ToString("D2");
-                Date2.Date = DateTime.Parse(Date2.Text);
-            }
-            Session["data_1"] = Date1.Text;
-            Session["data_2"] = Date2.Text;
-
             if (!IsPostBack)
             {
+                //cm.log.Debug("otwarcie formularza: " + tenPlik);
                 try
                 {
-                    string ccc = (string)Session["user_id"];
-                  /*  bool license = ms.isLicence((string)Session["id_dzialu"]);
-                    if (!license)// && (!string.IsNullOrEmpty((string)Session["user_id"]))))
-                    {
-                        Server.Transfer("default.aspx");
-                    }*/
                     // file read with version
                     var fileContents = System.IO.File.ReadAllText(Server.MapPath(@"~//version.txt"));
                     this.Title = "Statystyki " + fileContents.ToString().Trim();
                 }
                 catch (Exception ex)
                 {
-                    //cm.log.Error(tenPlik+": " + ex.Message);
                     Server.Transfer("default.aspx");
                 }
             }
+            CultureInfo newCulture = (CultureInfo)CultureInfo.CurrentCulture.Clone();
+            newCulture.DateTimeFormat = CultureInfo.GetCultureInfo("PL").DateTimeFormat;
+            System.Threading.Thread.CurrentThread.CurrentCulture = newCulture;
+            System.Threading.Thread.CurrentThread.CurrentUICulture = newCulture;
+            if (Session["ustawDate1r"] == null)
+            {
+                Date1.Date = DateTime.Parse(datyMSS.DataPoczatkowa());
+                Date2.Date = DateTime.Parse(datyMSS.DataKoncowa());
+                Session["ustawDate1r"] = "X";
+            }
+            Session["data_1"] = Date1.Date.ToShortDateString();
+            Session["data_2"] = Date1.Date.ToShortDateString();
             przemiel();
             makeLabels();
         }// end of Page_Load
-
 
         protected void przemiel()
         {
@@ -95,20 +83,22 @@ namespace stat2018
 
             try
             {
-
-                DataTable tabela2 = ms.generuj_dane_do_tabeli_mss2(int.Parse((string)Session["id_dzialu"]), DateTime.Parse(Date1.Text), DateTime.Parse(Date2.Text), 10);
+                DataTable tabela2 = ms.generuj_dane_do_tabeli_mss2(int.Parse((string)Session["id_dzialu"]), Date1.Date, Date2.Date, 10);
                 //wypełnianie lebeli
                 //   string selectString = "id_wiersza=" + i + " and " + "id_kolumny=" + j;
 
                 #region "tabela 1 - 1.1.h"
+
                 tab_01_w01_c01.Text = wyciagnijWartosc(tabela2, "idWydzial=" + yyx + " and idTabeli='1.1.h' and idWiersza ='1' and idkolumny='1'");
                 tab_01_w02_c01.Text = wyciagnijWartosc(tabela2, "idWydzial=" + yyx + " and idTabeli='1.1.h' and idWiersza ='2' and idkolumny='1'");
                 tab_01_w03_c01.Text = wyciagnijWartosc(tabela2, "idWydzial=" + yyx + " and idTabeli='1.1.h' and idWiersza ='3' and idkolumny='1'");
                 tab_01_w04_c01.Text = wyciagnijWartosc(tabela2, "idWydzial=" + yyx + " and idTabeli='1.1.h' and idWiersza ='4' and idkolumny='1'");
                 tab_01_w05_c01.Text = wyciagnijWartosc(tabela2, "idWydzial=" + yyx + " and idTabeli='1.1.h' and idWiersza ='5' and idkolumny='1'");
 
-                #endregion
+                #endregion "tabela 1 - 1.1.h"
+
                 #region "tabela 1 - 2.2.a"
+
                 //wiersz 1
                 tab_02_w01_c01.Text = wyciagnijWartosc(tabela2, "idWydzial=" + yyx + " and idTabeli='2.2.a' and idWiersza ='1' and idkolumny='1'");
                 tab_02_w01_c02.Text = wyciagnijWartosc(tabela2, "idWydzial=" + yyx + " and idTabeli='2.2.a' and idWiersza ='1' and idkolumny='2'");
@@ -175,13 +165,10 @@ namespace stat2018
                 tab_02_w06_c08.Text = wyciagnijWartosc(tabela2, "idWydzial=" + yyx + " and idTabeli='2.2.a' and idWiersza ='6' and idkolumny='8'");
                 tab_02_w06_c09.Text = wyciagnijWartosc(tabela2, "idWydzial=" + yyx + " and idTabeli='2.2.a' and idWiersza ='6' and idkolumny='9'");
 
-
-
-
-                #endregion
-
+                #endregion "tabela 1 - 2.2.a"
 
                 #region "tabel 3 - 4.1"
+
                 //wiersz 1
                 string idTabeli = "'4.1'";
                 string idWiersza = "'1'";
@@ -202,11 +189,10 @@ namespace stat2018
                 tab_03_w02_c06.Text = wyciagnijWartosc(tabela2, "idWydzial=" + yyx + " and idTabeli=" + idTabeli + " and idWiersza =" + idWiersza + " and idkolumny='6'");
                 tab_03_w02_c07.Text = wyciagnijWartosc(tabela2, "idWydzial=" + yyx + " and idTabeli=" + idTabeli + " and idWiersza =" + idWiersza + " and idkolumny='7'");
 
-
-                #endregion
-
+                #endregion "tabel 3 - 4.1"
 
                 #region "tabel 4 - 4.1"
+
                 //wiersz 1
                 idTabeli = "'7.1'";
                 idWiersza = "'1'";
@@ -236,10 +222,10 @@ namespace stat2018
                 tab_04_w04_c03.Text = wyciagnijWartosc(tabela2, "idWydzial=" + yyx + " and idTabeli=" + idTabeli + " and idWiersza =" + idWiersza + " and idkolumny='3'");
                 tab_04_w04_c04.Text = wyciagnijWartosc(tabela2, "idWydzial=" + yyx + " and idTabeli=" + idTabeli + " and idWiersza =" + idWiersza + " and idkolumny='4'");
 
-                #endregion
-
+                #endregion "tabel 4 - 4.1"
 
                 #region "tabel 5 - 7.1"
+
                 //wiersz 1
                 idTabeli = "'7.2'";
                 idWiersza = "'1'";
@@ -252,7 +238,6 @@ namespace stat2018
                 tab_05_w01_c07.Text = wyciagnijWartosc(tabela2, "idWydzial=" + yyx + " and idTabeli=" + idTabeli + " and idWiersza =" + idWiersza + " and idkolumny='7'");
                 tab_05_w01_c08.Text = wyciagnijWartosc(tabela2, "idWydzial=" + yyx + " and idTabeli=" + idTabeli + " and idWiersza =" + idWiersza + " and idkolumny='8'");
 
-
                 //wiersz 2
                 idWiersza = "'2'";
                 tab_05_w02_c01.Text = wyciagnijWartosc(tabela2, "idWydzial=" + yyx + " and idTabeli=" + idTabeli + " and idWiersza =" + idWiersza + " and idkolumny='1'");
@@ -263,7 +248,6 @@ namespace stat2018
                 tab_05_w02_c06.Text = wyciagnijWartosc(tabela2, "idWydzial=" + yyx + " and idTabeli=" + idTabeli + " and idWiersza =" + idWiersza + " and idkolumny='6'");
                 tab_05_w02_c07.Text = wyciagnijWartosc(tabela2, "idWydzial=" + yyx + " and idTabeli=" + idTabeli + " and idWiersza =" + idWiersza + " and idkolumny='7'");
                 tab_05_w02_c08.Text = wyciagnijWartosc(tabela2, "idWydzial=" + yyx + " and idTabeli=" + idTabeli + " and idWiersza =" + idWiersza + " and idkolumny='8'");
-
 
                 //wiersz 3
                 idWiersza = "'3'";
@@ -276,7 +260,6 @@ namespace stat2018
                 tab_05_w03_c07.Text = wyciagnijWartosc(tabela2, "idWydzial=" + yyx + " and idTabeli=" + idTabeli + " and idWiersza =" + idWiersza + " and idkolumny='7'");
                 tab_05_w03_c08.Text = wyciagnijWartosc(tabela2, "idWydzial=" + yyx + " and idTabeli=" + idTabeli + " and idWiersza =" + idWiersza + " and idkolumny='8'");
 
-
                 //wiersz 4
                 idWiersza = "'4'";
                 tab_05_w04_c01.Text = wyciagnijWartosc(tabela2, "idWydzial=" + yyx + " and idTabeli=" + idTabeli + " and idWiersza =" + idWiersza + " and idkolumny='1'");
@@ -288,9 +271,10 @@ namespace stat2018
                 tab_05_w04_c07.Text = wyciagnijWartosc(tabela2, "idWydzial=" + yyx + " and idTabeli=" + idTabeli + " and idWiersza =" + idWiersza + " and idkolumny='7'");
                 tab_05_w04_c08.Text = wyciagnijWartosc(tabela2, "idWydzial=" + yyx + " and idTabeli=" + idTabeli + " and idWiersza =" + idWiersza + " and idkolumny='8'");
 
-                #endregion
+                #endregion "tabel 5 - 7.1"
 
                 #region "tabel 6 - X.1"
+
                 //wiersz 1
                 idTabeli = "'7.3'";
                 idWiersza = "'1'";
@@ -303,7 +287,6 @@ namespace stat2018
                 tab_06_w01_c07.Text = wyciagnijWartosc(tabela2, "idWydzial=" + yyx + " and idTabeli=" + idTabeli + " and idWiersza =" + idWiersza + " and idkolumny='7'");
                 tab_06_w01_c08.Text = wyciagnijWartosc(tabela2, "idWydzial=" + yyx + " and idTabeli=" + idTabeli + " and idWiersza =" + idWiersza + " and idkolumny='8'");
 
-
                 //wiersz 2
                 idWiersza = "'2'";
                 tab_06_w02_c01.Text = wyciagnijWartosc(tabela2, "idWydzial=" + yyx + " and idTabeli=" + idTabeli + " and idWiersza =" + idWiersza + " and idkolumny='1'");
@@ -314,7 +297,6 @@ namespace stat2018
                 tab_06_w02_c06.Text = wyciagnijWartosc(tabela2, "idWydzial=" + yyx + " and idTabeli=" + idTabeli + " and idWiersza =" + idWiersza + " and idkolumny='6'");
                 tab_06_w02_c07.Text = wyciagnijWartosc(tabela2, "idWydzial=" + yyx + " and idTabeli=" + idTabeli + " and idWiersza =" + idWiersza + " and idkolumny='7'");
                 tab_06_w02_c08.Text = wyciagnijWartosc(tabela2, "idWydzial=" + yyx + " and idTabeli=" + idTabeli + " and idWiersza =" + idWiersza + " and idkolumny='8'");
-
 
                 //wiersz 3
                 idWiersza = "'3'";
@@ -327,7 +309,6 @@ namespace stat2018
                 tab_06_w03_c07.Text = wyciagnijWartosc(tabela2, "idWydzial=" + yyx + " and idTabeli=" + idTabeli + " and idWiersza =" + idWiersza + " and idkolumny='7'");
                 tab_06_w03_c08.Text = wyciagnijWartosc(tabela2, "idWydzial=" + yyx + " and idTabeli=" + idTabeli + " and idWiersza =" + idWiersza + " and idkolumny='8'");
 
-
                 //wiersz 4
                 idWiersza = "'4'";
                 tab_06_w04_c01.Text = wyciagnijWartosc(tabela2, "idWydzial=" + yyx + " and idTabeli=" + idTabeli + " and idWiersza =" + idWiersza + " and idkolumny='1'");
@@ -339,11 +320,9 @@ namespace stat2018
                 tab_06_w04_c07.Text = wyciagnijWartosc(tabela2, "idWydzial=" + yyx + " and idTabeli=" + idTabeli + " and idWiersza =" + idWiersza + " and idkolumny='7'");
                 tab_06_w04_c08.Text = wyciagnijWartosc(tabela2, "idWydzial=" + yyx + " and idTabeli=" + idTabeli + " and idWiersza =" + idWiersza + " and idkolumny='8'");
 
-                #endregion
-
+                #endregion "tabel 6 - X.1"
 
                 #region "tabel 7 - "
-
 
                 idTabeli = "'8.1'";
                 idWiersza = "'1'";
@@ -361,10 +340,10 @@ namespace stat2018
                 tab_07_w01_c07.Text = wyciagnijWartosc(tabela2, "idWydzial=" + yyx + " and idTabeli=" + idTabeli + " and idWiersza =" + idWiersza + " and idkolumny='7'");
                 tab_07_w01_c08.Text = wyciagnijWartosc(tabela2, "idWydzial=" + yyx + " and idTabeli=" + idTabeli + " and idWiersza =" + idWiersza + " and idkolumny='8'");
 
-
-                #endregion
+                #endregion "tabel 7 - "
 
                 #region "tabel 8.3 "
+
                 //wiersz 1
                 idTabeli = "'8.3'";
                 idWiersza = "'1'";
@@ -377,19 +356,14 @@ namespace stat2018
                 tab_08_w01_c07.Text = wyciagnijWartosc(tabela2, "idWydzial=" + yyx + " and idTabeli=" + idTabeli + " and idWiersza =" + idWiersza + " and idkolumny='7'");
                 tab_08_w01_c08.Text = wyciagnijWartosc(tabela2, "idWydzial=" + yyx + " and idTabeli=" + idTabeli + " and idWiersza =" + idWiersza + " and idkolumny='8'");
 
-
-                #endregion
-
-
+                #endregion "tabel 8.3 "
             }
-            catch (Exception ex)
+            catch
             {
-
             }
 
             // dopasowanie opisów
             makeLabels();
-
 
             try
             {
@@ -402,11 +376,7 @@ namespace stat2018
 
             Label11.Text = txt;
             Label3.Text = ms.nazwaSadu((string)Session["id_dzialu"]);
-
-
         }
-
-
 
         protected void makeLabels()
         {
@@ -423,7 +393,6 @@ namespace stat2018
                 { }
                 Label3.Text = ms.nazwaSadu((string)Session["id_dzialu"]);
 
-
                 id_dzialu.Text = (string)Session["txt_dzialu"];
                 Label28.Text = cl.podajUzytkownika(User_id, domain);
                 Label29.Text = DateTime.Now.ToLongDateString();
@@ -434,22 +403,20 @@ namespace stat2018
                 catch
                 { }
 
-
-                string strMonthName = CultureInfo.CurrentCulture.DateTimeFormat.GetMonthName(DateTime.Parse(Date2.Text).Month);
-                int last_day = DateTime.DaysInMonth(DateTime.Parse(Date2.Text).Year, DateTime.Parse(Date2.Text).Month);
-                if (((DateTime.Parse(Date1.Text).Day == 1) && (DateTime.Parse(Date2.Text).Day == last_day)) && ((DateTime.Parse(Date1.Text).Month == DateTime.Parse(Date2.Text).Month)))
+                string strMonthName = CultureInfo.CurrentCulture.DateTimeFormat.GetMonthName(Date2.Date.Month);
+                int last_day = DateTime.DaysInMonth(Date2.Date.Year, Date2.Date.Month);
+                if (((Date1.Date.Day == 1) && (Date2.Date.Day == last_day)) && ((Date1.Date.Month == Date2.Date.Month)))
                 {
-
                     // cały miesiąc
-                    tabela1Label.Text = "Dział 1.1.h. w tym w wyniku sprzeciwu od nakazu wydanego w elektronicznym postępowaniu upominawczym za miesiąc:  " + strMonthName + " " + DateTime.Parse(Date2.Text).Year.ToString() + " roku.";
-                    tabela2Label.Text = "Dział 2.2.a. Czas trwania postępowania sądowego od dnia pierwszej rejestracji do dnia uprawomocnienia się sprawy merytorycznie zakończonej (wyrokiem, orzeczeniem) w I instancji (łącznie z czasem trwania mediacji) za miesiąc " + strMonthName + " " + DateTime.Parse(Date2.Text).Year.ToString() + " roku.";
-                    tabela3Label.Text = "Dział 4.1. Terminowość postępowania międzyinstancyjnego w pierwszej instancji za miesiąc " + strMonthName + " " + DateTime.Parse(Date2.Text).Year.ToString() + " roku.";
-                    tabela4Label.Text = "Dział 7.1. Liczba biegłych/podmiotów wydających opinie w sprawach  (z wył. tłumaczy przysięgłych) za miesiąc " + strMonthName + " " + DateTime.Parse(Date2.Text).Year.ToString() + " roku.";
+                    tabela1Label.Text = "Dział 1.1.h. w tym w wyniku sprzeciwu od nakazu wydanego w elektronicznym postępowaniu upominawczym za miesiąc:  " + strMonthName + " " + Date2.Date.Year.ToString() + " roku.";
+                    tabela2Label.Text = "Dział 2.2.a. Czas trwania postępowania sądowego od dnia pierwszej rejestracji do dnia uprawomocnienia się sprawy merytorycznie zakończonej (wyrokiem, orzeczeniem) w I instancji (łącznie z czasem trwania mediacji) za miesiąc " + strMonthName + " " + Date2.Date.Year.ToString() + " roku.";
+                    tabela3Label.Text = "Dział 4.1. Terminowość postępowania międzyinstancyjnego w pierwszej instancji za miesiąc " + strMonthName + " " + Date2.Date.Year.ToString() + " roku.";
+                    tabela4Label.Text = "Dział 7.1. Liczba biegłych/podmiotów wydających opinie w sprawach  (z wył. tłumaczy przysięgłych) za miesiąc " + strMonthName + " " + Date2.Date.Year.ToString() + " roku.";
 
-                    tabela5Label.Text = "Dział 7.2. Terminowość sporządzania opinii pisemnych (z wył. tłumaczy przysięgłych) za miesiąc " + strMonthName + " " + DateTime.Parse(Date2.Text).Year.ToString() + " roku.";
-                    tabela6Label.Text = "Dział 7.3.Terminowość przyznawania wynagrodzeń za sporządzenie opinii pisemnych i ustnych oraz za stawiennictwo za miesiąc " + strMonthName + " " + DateTime.Parse(Date2.Text).Year.ToString() + " roku.";
-                    tabela7Label.Text = "Dział 8.2 Terminowość sporządzania tłumaczeń pisemnych za miesiąc " + strMonthName + " " + DateTime.Parse(Date2.Text).Year.ToString() + " roku.";
-                    tabela8Label.Text = "Dział 8.3 Terminowość przyznawania wynagrodzeń za sporządzenie tłumaczeń pisemnych i ustnych oraz za stawiennictwo za miesiąc " + strMonthName + " " + DateTime.Parse(Date2.Text).Year.ToString() + " roku.";
+                    tabela5Label.Text = "Dział 7.2. Terminowość sporządzania opinii pisemnych (z wył. tłumaczy przysięgłych) za miesiąc " + strMonthName + " " + Date2.Date.Year.ToString() + " roku.";
+                    tabela6Label.Text = "Dział 7.3.Terminowość przyznawania wynagrodzeń za sporządzenie opinii pisemnych i ustnych oraz za stawiennictwo za miesiąc " + strMonthName + " " + Date2.Date.Year.ToString() + " roku.";
+                    tabela7Label.Text = "Dział 8.2 Terminowość sporządzania tłumaczeń pisemnych za miesiąc " + strMonthName + " " + Date2.Date.Year.ToString() + " roku.";
+                    tabela8Label.Text = "Dział 8.3 Terminowość przyznawania wynagrodzeń za sporządzenie tłumaczeń pisemnych i ustnych oraz za stawiennictwo za miesiąc " + strMonthName + " " + Date2.Date.Year.ToString() + " roku.";
                     //Informacje o ruchu sprawa za miesiąc: 
 
                     //Pozostało z ubieglego miesiąca
@@ -470,18 +437,13 @@ namespace stat2018
             }
             catch
             {
-
             }
-
         }
-
-
 
         protected void LinkButton54_Click(object sender, EventArgs e)
         {
             przemiel();
         }
-
 
         private string wyciagnijWartosc(DataTable ddT, string selectString)
         {
@@ -496,10 +458,7 @@ namespace stat2018
             catch (Exception ex)
             { }
             return result;
-
         }
-
-
 
         protected void makeCSVFile(object sender, EventArgs e)
         {
@@ -519,7 +478,7 @@ namespace stat2018
                 }
                 if (!string.IsNullOrEmpty(idWydzialu))
                 {
-                    DataTable tabela2 = ms.generuj_dane_do_tabeli_mss2(int.Parse((string)Session["id_dzialu"]), DateTime.Parse(Date1.Text), DateTime.Parse(Date2.Text), 21); //dane
+                    DataTable tabela2 = ms.generuj_dane_do_tabeli_mss2(int.Parse((string)Session["id_dzialu"]), Date1.Date, Date2.Date, 21); //dane
                     var distinctRows = (from DataRow dRow in tabela2.Rows select dRow["idTabeli"]).Distinct(); //lista tabelek
                     DataTable listaTabelek = new DataTable();
                     listaTabelek.Columns.Add("tabela", typeof(string));
@@ -548,13 +507,7 @@ namespace stat2018
             }
             catch (Exception)
             {
-
-
             }
-
         }
-
     }
-
-
 }

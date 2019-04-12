@@ -1,6 +1,6 @@
 ﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="default.aspx.cs" Inherits="stat2018._default"  EnableEventValidation="false"%>
 
-<%@ Register assembly="DevExpress.Web.v17.1, Version=17.1.10.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" namespace="DevExpress.Web" tagprefix="dx" %>
+<%@ Register assembly="DevExpress.Web.v17.1, Version=17.1.13.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" namespace="DevExpress.Web" tagprefix="dx" %>
 
 <!DOCTYPE html>
 
@@ -12,14 +12,14 @@
 <body>
     <form id="form1" runat="server">
     <div>
-    
+
                     <br />
                     <br />
                     <div class="accountInfo" style="left: 0px; top: 1px">
                     <div style=" color: #000;background: 0;padding-bottom: 14px;font-size: 24px;border-bottom: 1px solid #e6e6e6;margin-bottom: 15px;height: 18px;">
                         Zaloguj się
                    </div>
-                        
+
                         <br />
                         <div style="padding:24px 24px 15px 15px">
                         <div style=" height:28px;">
@@ -53,24 +53,22 @@
                            </div>
 
                             <div  class ="OK_login" style="text-align: center;">
-                              
-                               <asp:LinkButton ID="LinkButton1" runat="server" Width="200px" Height="30px" 
+
+                               <asp:LinkButton ID="LinkButton1" runat="server" Width="200px" Height="30px"
                                     CssClass="button_" onclick="LinkButton1_Click">Zaloguj!</asp:LinkButton>
                                 <br />
-                        <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" 
+                        <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server"
                             ControlToValidate="TextBox2" ErrorMessage="Hasło jest wymagane"></asp:RequiredFieldValidator>
-                              
-                        <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" 
+
+                        <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server"
                             ControlToValidate="TextBox1" ErrorMessage="Proszę wpisać użytkownika"></asp:RequiredFieldValidator>
-                              
+
                                 <br />
 
                                 <br />
                                 <asp:TextBox ID="ErrorBox" runat="server" Height="164px" TextMode="MultiLine" Visible="False" Width="357px"></asp:TextBox>
                                 <br />
-                              
                             </div>
-                        
                     </div>
     </div>
         <p>
@@ -83,7 +81,7 @@
 var left = 350;
     var top = 350;
     popup.ShowAtPos(left, top);
-	
+
 } " />
             <ContentCollection>
 <dx:PopupControlContentControl runat="server">Błędnie podany użytkownik lub hasło!<br /></dx:PopupControlContentControl>

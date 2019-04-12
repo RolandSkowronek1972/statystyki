@@ -103,22 +103,13 @@ namespace stat2018 {
         protected global::System.Web.UI.WebControls.Label infoLabel2;
         
         /// <summary>
-        /// GridView1 control.
+        /// gwTabela1 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.GridView GridView1;
-        
-        /// <summary>
-        /// tabela_1 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.SqlDataSource tabela_1;
+        protected global::System.Web.UI.WebControls.GridView gwTabela1;
         
         /// <summary>
         /// Label17 control.

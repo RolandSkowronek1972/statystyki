@@ -1,6 +1,6 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site1.Master" AutoEventWireup="true" CodeBehind="okrr.aspx.cs" Inherits="stat2018.okrr" AspCompat="true"   MaintainScrollPositionOnPostback="true"%>
+﻿<%@ Page Title="" Language="C#" UICulture="pl" Culture="pl-PL" MasterPageFile="~/Site1.Master" AutoEventWireup="true" CodeBehind="okrr.aspx.cs" Inherits="stat2018.okrr" AspCompat="true"   MaintainScrollPositionOnPostback="true"%>
 
-<%@ Register assembly="DevExpress.Web.v17.1, Version=17.1.10.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" namespace="DevExpress.Web" tagprefix="dx" %>
+<%@ Register assembly="DevExpress.Web.v17.1, Version=17.1.13.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" namespace="DevExpress.Web" tagprefix="dx" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
       <style>
@@ -100,8 +100,7 @@
   
 
          <br />
-       <asp:GridView ID="GridView6" runat="server" AutoGenerateColumns="False" 
-        DataSourceID="dane_do_tabeli_1" OnRowCreated="GridView6_RowCreated" 
+       <asp:GridView ID="GridView6" runat="server" AutoGenerateColumns="False" OnRowCreated="GridView6_RowCreated" 
         Width="100%" ShowHeader="False" OnRowDataBound="GridView1_RowDataBound">
         <Columns>
             <asp:BoundField DataField="id" HeaderText="L.p." SortExpression="id">
@@ -361,9 +360,9 @@
                   <ItemStyle  CssClass="col_50H" />
             </asp:TemplateField>
             
-             
-  
-              <asp:TemplateField HeaderText="d_07" SortExpression="d_07">
+               
+            
+            <asp:TemplateField HeaderText="d_07" SortExpression="d_07">
                 <ItemTemplate>
                    <asp:TextBox ID="TextBoxUwagi" runat="server" CssClass="col_29"></asp:TextBox>
           
@@ -384,15 +383,6 @@
   
 
        
-    <asp:SqlDataSource ID="dane_do_tabeli_1" runat="server" 
-        ConnectionString="<%$ ConnectionStrings:wap %>" 
-        
-        
-        SelectCommand="SELECT ROW_NUMBER() OVER( ORDER BY ident ) AS id, ident, imie, nazwisko, funkcja, stanowisko, d_01, d_02, d_03, d_04, d_05, d_06, d_07, d_08, d_09, d_10, d_11, d_12, d_13, d_14, d_15, d_16, d_17, d_18, d_19, d_20, d_21, d_22, d_23, d_24, d_25, d_26, d_27, d_28,d_29, d_30, d_31 , d_32, d_33, d_34, d_35 sesja, id_sedziego, id_dzialu, id_tabeli FROM tbl_statystyki_tbl_02 WHERE (id_tabeli = 1) AND (id_dzialu = @id_dzialu) ORDER BY id">
-        <SelectParameters>
-            <asp:SessionParameter Name="id_dzialu" SessionField="id_dzialu" />
-        </SelectParameters>
-    </asp:SqlDataSource>
      </div>
 </div>
  <div style="width:1150px; margin: 0 auto 0 auto; position:relative; z-index:11;" >
