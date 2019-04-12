@@ -162,13 +162,6 @@ namespace stat2018
             return result;
         }// end of CzyPracowal
 
-        /*
-        public string podajCSWcyw()
-        {
-            return con_str_wcyw;
-        }//end of podajCS
-        */
-
         public string podajCS()
         {
             return con_str;
@@ -178,37 +171,6 @@ namespace stat2018
         {
             return podajConnectionString(id_dzialu);
         }
-
-        /*
-               public double pobierzDanePracownika(string idPracownika, string data, int kolumna, string ConnectionString)
-               {
-                   //pobierz kwerende
-                   string kwerenda = string.Empty;
-
-                   DataTable parameters = Common.makeParameterTable();
-                   parameters.Rows.Add("@idkolumny", kolumna);
-                   kwerenda = Common.getQuerryValue("SELECT kwerenda FROM tbl_ocenaPracownikaKwerendy where   idKolumny=@idkolumny", con_str, parameters);
-                   var conn = new SqlConnection(ConnectionString);
-
-                   // user nr
-                   double result = 0;
-
-                   //pozwolenie
-
-                   parameters = Common.makeParameterTable();
-                   parameters.Rows.Add("@idPracownika", idPracownika.Trim());
-                   parameters.Rows.Add("@data", data);
-
-                   string odp = Common.getQuerryValue(kwerenda, con_str, parameters);
-                   try
-                   {
-                       result = double.Parse(odp);
-                   }
-                   catch (Exception)
-                   { }
-                   return result;
-               }// end of wyciagnij_kwerende
-               */
 
         public DataSet pod_tabela(string cs, string kwerenda, string poczatek, string koniec, string id_sedziego)
         {
@@ -303,7 +265,7 @@ namespace stat2018
 
             return result;
         }
-
+/*
         public string wyciagnijDaneNt(string kw, DateTime poczatek, DateTime koniec, string cs)
         {
             DataTable parametry = Common.makeParameterTable();
@@ -312,7 +274,7 @@ namespace stat2018
 
             return Common.getQuerryValue(kw, cs, parametry);
         }
-
+        */
         public string wyciagnijDane(int id_dzialu, int id_wiersza, int id_kolumny, DateTime poczatek, DateTime koniec, int id_tabeli)
         {
             string result = string.Empty;
@@ -342,11 +304,9 @@ namespace stat2018
 
         public void updateWiersz(int kolumna, int id, string opis, int id_tabeli)
         {
-           
-          
             string txt = getColumnName(kolumna);
             // skasowanie tabeli i wcyw
-          
+
             DataTable parametry = Common.makeParameterTable();
             parametry.Rows.Add("@opis", opis);
             parametry.Rows.Add("@id", id);
@@ -357,8 +317,7 @@ namespace stat2018
 
         public void deleteRowTable()
         {
-           Common.runQuerry("delete from  tbl_statystyki_tbl_01", con_str);
-           
+            Common.runQuerry("delete from  tbl_statystyki_tbl_01", con_str);
         }// end of deleteRowTable
 
         public string generuj_dane_do_tabeli_wierszy(DateTime poczatek, DateTime koniec, string id_dzialu, int id_tabeli)
@@ -404,68 +363,7 @@ namespace stat2018
 
             return "1";
         }// end of generuj_dane_do_tabeli
-      
-        
-        /*
-        public string generuj_dane_do_tabeli_wierszyNT(DateTime poczatek, DateTime koniec, string id_dzialu, int id_tabeli)
 
-        {
-            /*roznica w stosunku do wersji bez NT polega na tym ze wszystkie kwerendy są zaczytywane jednocześnie a potem tylko
-            zaciągane z datasetu
-            struktura datasetu
-            - wiersz, kolumna, kwerenda
-            - kwerenda: SELECT id_wiersza, id_kolumny, kwerenda  FROM kwerendy  where id_wydzial=@id_wydzial and  id_tabeli=@id_tabeli
-            */
-            /*
-            DataTable kwerendy = new DataTable();
-
-            DataTable parameters = Common.makeParameterTable();
-            parameters.Rows.Add("@id_wydzial", id_dzialu);
-            parameters.Rows.Add("@id_tabeli", id_tabeli);
-
-            DataTable ddT = Common.getDataTable("SELECT id_wiersza, id_kolumny, kwerenda  FROM kwerendy  where id_wydzial=@id_wydzial and  id_tabeli=@id_tabeli", con_str, parameters);
-
-            string cs = podajConnectionString(int.Parse(id_dzialu));
-            for (int i = 1; i <= 15; i++) //po wierszach
-            {
-                for (int j = 0; j <= 15; j++)
-                {
-                    try
-                    {
-                        string selectString = "id_wiersza=" + i + " and " + "id_kolumny=" + j;
-                        DataRow[] foundRows;
-                        foundRows = ddT.Select(selectString);
-                        DataRow dr = foundRows[0];
-                        string kw = dr[2].ToString();
-
-                        string dana2 = wyciagnijDaneNt(kw, poczatek, koniec, cs);
-                        //wpisanie danych
-                        if (j == 0)
-                        {
-                            // poczatek wiersza
-                            if (string.IsNullOrEmpty(dana2.Trim()) != true)
-                            {
-                                tworzWiersz(i, dana2, int.Parse(id_dzialu), id_tabeli);
-                            }
-                        }
-                        else
-                        {
-                            //srodek wiersza
-                            if (!string.IsNullOrEmpty(dana2.Trim()))
-                            {
-                                updateWiersz(j, i, dana2, id_tabeli);
-                            }
-                        }
-                    }
-                    catch
-                    {
-                    }
-                }
-            }
-
-            return "1";
-        }// end of generuj_dane_do_tabeli
-        */
         public DataTable generuj_dane_do_tabeli_wierszy_przestawnych1(DateTime poczatek, DateTime koniec, string id_dzialu, int id_tabeli, int id_pozycji)
         {
             string kwerenda = string.Empty;
@@ -507,10 +405,7 @@ namespace stat2018
                             {
                                 dR[j + 1] = dana;
                             }
-                            //  else
-                            //   {
-                            //       dR[j + 1] = 0;
-                            //   }
+                           
                         }
                         catch
                         { } // end of try
@@ -663,84 +558,12 @@ namespace stat2018
             return tab_1000;
         }// end of generuj_dane_do_tabeli_3
 
-        /*
-        public string PodajKolumne(int idSedziego)
-        {
-            var conn = new SqlConnection(con_str);
-            SqlCommand sqlCmd;
-
-            string status = string.Empty;
-            using (sqlCmd = new SqlCommand())
-            {
-                try
-                {
-                    conn.Open();
-                    sqlCmd = new SqlCommand("SELECT (select ident FROM [tbl_statystyki_tbl_x5] where id_sedziego=@sedzia)-min(ident)  FROM [tbl_statystyki_tbl_x5]", conn);
-                    sqlCmd.Parameters.AddWithValue("@sedzia", idSedziego);
-                    return sqlCmd.ExecuteScalar().ToString().Trim();
-                }
-                catch (Exception ex)
-                {
-                    conn.Close();
-                    status = status + "Bład uzupełnienia funkcji " + "<br>" + ex.Message + "<br>";
-                }
-                try
-                {
-                    conn.Open();
-                    sqlCmd = new SqlCommand("update tbl_statystyki_tbl_x5 set stanowisko=(SELECT   rtrim([nazwa]) FROM funkcje  where [rodzaj]=2 and ident=tbl_statystyki_tbl_x5.stanowisko)", conn);
-                    sqlCmd.ExecuteScalar();
-                    conn.Close();
-                }
-                catch (Exception ex)
-                {
-                    conn.Close();
-                    status = status + "Bład uzupełnienia stanowiska " + "<br>" + ex.Message + "<br>";
-                }
-            }
-            return status;
-        }
-        */
-
+      
         public string uzupelnij_statusy_Xl()
         {
-
-
             Common.runQuerry("update tbl_statystyki_tbl_x5 set funkcja=(SELECT     rtrim([nazwa]) FROM [funkcje]  where [rodzaj]=1 and ident=tbl_statystyki_tbl_x5.funkcja)", con_str, null);
             Common.runQuerry("update tbl_statystyki_tbl_x5 set stanowisko=(SELECT  rtrim([nazwa]) FROM funkcje    where [rodzaj]=2 and ident=tbl_statystyki_tbl_x5.stanowisko)", con_str, null);
 
-            /*
-            var conn = new SqlConnection(con_str);
-            SqlCommand sqlCmd;
-
-            string status = string.Empty;
-            using (sqlCmd = new SqlCommand())
-            {
-                try
-                {
-                    conn.Open();
-                    sqlCmd = new SqlCommand("update tbl_statystyki_tbl_x5 set funkcja=(SELECT   rtrim([nazwa]) FROM [funkcje]  where [rodzaj]=1 and ident=tbl_statystyki_tbl_x5.funkcja)", conn);
-                    sqlCmd.ExecuteScalar();
-            
-                    conn.Close();
-                }
-                catch (Exception ex)
-                {
-                    conn.Close();
-                    status = status + "Bład uzupełnienia funkcji " + "<br>" + ex.Message + "<br>";
-                }
-                try
-                {
-                    conn.Open();
-                    sqlCmd = new SqlCommand("update tbl_statystyki_tbl_x5 set stanowisko=(SELECT   rtrim([nazwa]) FROM funkcje  where [rodzaj]=2 and ident=tbl_statystyki_tbl_x5.stanowisko)", conn);
-                    sqlCmd.ExecuteScalar();
-                    conn.Close();
-                }
-                catch (Exception ex)
-                {
-                    conn.Close();
-                    status = status + "Bład uzupełnienia stanowiska " + "<br>" + ex.Message + "<br>";
-                }
-            }*/
             return "1";
         }
 
@@ -749,28 +572,7 @@ namespace stat2018
             Common.runQuerry("update tbl_statystyki_tbl_02 set funkcja = (SELECT   rtrim([nazwa]) FROM[funkcje]  where[rodzaj] = 1 and ident = tbl_statystyki_tbl_02.funkcja)", con_str, null);
             Common.runQuerry("update tbl_statystyki_tbl_02 set stanowisko=(SELECT   rtrim([nazwa]) FROM [funkcje]  where [rodzaj]=2 and ident=tbl_statystyki_tbl_02.stanowisko)", con_str, null);
 
-            /*
-            var conn = new SqlConnection(con_str);
-            SqlCommand sqlCmd;
-
-            string status = string.Empty;
-            using (sqlCmd = new SqlCommand())
-            {
-                try
-                {
-                    conn.Open();
-                    sqlCmd = new SqlCommand("update tbl_statystyki_tbl_02 set funkcja=(SELECT   rtrim([nazwa]) FROM [funkcje]  where [rodzaj]=1 and ident=tbl_statystyki_tbl_02.funkcja)", conn);
-                    sqlCmd.ExecuteScalar();
-                    sqlCmd = new SqlCommand("update tbl_statystyki_tbl_02 set stanowisko=(SELECT   rtrim([nazwa]) FROM [funkcje]  where [rodzaj]=2 and ident=tbl_statystyki_tbl_02.stanowisko)", conn);
-                    sqlCmd.ExecuteScalar();
-                    conn.Close();
-                }
-                catch (Exception ex)
-                {
-                    conn.Close();
-                    status = status + "Bład uzupełnienia funkcji " + "<br>" + ex.Message + "<br>";
-                }
-            }*/
+          
             return "1";
         }
 
@@ -780,10 +582,8 @@ namespace stat2018
 
             // skasowanie tabeli i wcyw
             status = status + "Kasowanie tabeli tbl_statystyki_tbl_02" + "<br>";
-
             Common.runQuerry("delete from  tbl_statystyki_tbl_02", con_str, null);
             Common.runQuerry("delete from  tbl_statystyki_tbl_01", con_str, null);
-
             status = status + "Tabela tbl_statystyki_tbl_02 skasowana" + "<br>";
 
             return status;
@@ -830,12 +630,10 @@ namespace stat2018
 
         public string nazwaSadu(string id_sadu)
         {
-
-
             DataTable parameters = Common.makeParameterTable();
             parameters.Rows.Add("@id_sadu", id_sadu);
 
-            return  Common.getQuerryValue ("SELECT  sad FROM     wydzialy where ident=@id_sadu",con_str,  parameters);
+            return Common.getQuerryValue("SELECT  sad FROM     wydzialy where ident=@id_sadu", con_str, parameters);
         }// end of nazwaSadu
 
         /*
@@ -952,6 +750,7 @@ namespace stat2018
             return odp;
         }
         */
+
         public string generuj_dane_do_tabeli_(int id_dzialu, int id_tabeli, DateTime poczatek, DateTime koniec)
         {
             string status = string.Empty;
@@ -1182,8 +981,6 @@ namespace stat2018
 
         private string funkcja(int id_)
         {
-          
-
             DataTable parameters = Common.makeParameterTable();
             parameters.Rows.Add("@_id", id_);
             return Common.getQuerryValue("SELECT   rtrim([nazwa]) FROM [funkcje]  where [rodzaj]=1 and ident=@_id", con_str, parameters);
@@ -1220,6 +1017,7 @@ namespace stat2018
             }
             return ds_x;
         }
+
         /*
         private DataSet kwerendy_mss1r(string cs, string kwe, int id_dzialu, string id_tabeli, DateTime poczatek, DateTime koniec)
         {
@@ -1675,6 +1473,7 @@ namespace stat2018
 
             return dTResult;
         }// end of generuj_dane_do_tabeli_mss2
+
         /*
         public string loguj(string user_, string haslo)
         {
@@ -1752,6 +1551,7 @@ namespace stat2018
             return result;
         }
         */
+
         #region private methode
 
         private DataTable generuj_dane_sedziow(int id_dzialu, int id_tabeli)
@@ -1807,6 +1607,7 @@ namespace stat2018
             }
             return dTResult;
         }// end of generuj_dane_sedziow
+
         /*
         private DataTable TabelaTyp1(int iloscKolumn)
         {
@@ -1819,6 +1620,7 @@ namespace stat2018
             return outputTable;
         }
         */
+
         private DataTable TabelaTyp2()
         {
             DataTable outputTable = new DataTable();
@@ -1905,6 +1707,7 @@ namespace stat2018
             return wyniki;
         }
         */
+
         #endregion private methode
     } // end of class
 }
