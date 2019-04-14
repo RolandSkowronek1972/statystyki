@@ -87,9 +87,11 @@ namespace stat2018
                 {
                     id = 100 + int.Parse(ident);
                 }
+#pragma warning disable CS0168 // The variable 'ex' is declared but never used
                 catch (Exception ex)
+#pragma warning restore CS0168 // The variable 'ex' is declared but never used
                 {
-                   // cl.log.Error("Wyszukiwarka spraw " + ex.Message);
+                    //cl.log.Error("Wyszukiwarka spraw " + ex.Message);
                 }
                 //user
                 string user = string.Empty;

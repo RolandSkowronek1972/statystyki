@@ -60,7 +60,7 @@ namespace stat2018
                 //cm.log.Info("Header: Użytkownik ma prawa administracyjne");
             }
             catch
-            {}
+            { }
             string kwerenda = string.Empty;
 
             if (admin == "1")

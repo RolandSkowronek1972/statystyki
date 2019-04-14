@@ -1201,7 +1201,7 @@ namespace stat2018
                 }//end of using
                 przemiel();
             }
-            catch (Exception ex)
+            catch 
             { }
         }
 
@@ -1240,7 +1240,9 @@ namespace stat2018
                     manageCells(MyWorksheet8, rowik + rowikPlus, i + 2, sumObject.ToString());
                 }
             }
+#pragma warning disable CS0168 // The variable 'ex' is declared but never used
             catch (Exception ex)
+#pragma warning restore CS0168 // The variable 'ex' is declared but never used
             { }
         }
 

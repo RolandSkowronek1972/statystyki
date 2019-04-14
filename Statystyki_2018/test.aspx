@@ -21,6 +21,9 @@
         <br />
         <br />
         <br />
+        <br />
+        <br />
+        <br />
                  
  <div id='17. Obciążenia administracyjne respondentów' class="page-break" >
  <br/>

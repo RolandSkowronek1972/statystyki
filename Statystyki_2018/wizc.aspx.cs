@@ -14,8 +14,12 @@ namespace stat2018
         private string path = string.Empty;
         private const string tenPlik = "wizc.aspx";
         public string tenPlikNazwa = "wizc";
+#pragma warning disable CS0414 // The field 'wizc.storid' is assigned but its value is never used
         private int storid = 0;
+#pragma warning restore CS0414 // The field 'wizc.storid' is assigned but its value is never used
+#pragma warning disable CS0414 // The field 'wizc.rowIndex' is assigned but its value is never used
         private int rowIndex = 1;
+#pragma warning restore CS0414 // The field 'wizc.rowIndex' is assigned but its value is never used
 
         protected void Page_Load(object sender, EventArgs e)
         {

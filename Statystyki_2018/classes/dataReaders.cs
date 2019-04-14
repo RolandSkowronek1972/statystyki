@@ -50,7 +50,9 @@ namespace stat2018
             - wiersz, kolumna, kwerenda
             - kwerenda: SELECT id_wiersza, id_kolumny, kwerenda  FROM kwerendy  where id_wydzial=@id_wydzial and  id_tabeli=@id_tabeli
             */
+#pragma warning disable CS0219 // The variable 'kod' is assigned but its value is never used
             string kod = " DR0003";
+#pragma warning restore CS0219 // The variable 'kod' is assigned but its value is never used
 
             //Common.log.Info(tenPlik + kod +"-> : rozpoczęcie tworzenia tabeli z danymi");
             DataTable outputTable = new DataTable();
@@ -102,7 +104,9 @@ namespace stat2018
                             { }
                         }
                     }
+#pragma warning disable CS0168 // The variable 'ex' is declared but never used
                     catch (Exception ex)
+#pragma warning restore CS0168 // The variable 'ex' is declared but never used
                     {
                         dR[j] = "0";
                     }
@@ -144,7 +148,7 @@ namespace stat2018
                 {
                     string id_kol = dRow[0].ToString().Trim();
                     string kwe = dRow[1].ToString().Trim();
-                    string cs = cl.PobierzConnectionString(id_dzialu);
+                    string cs = cl.podajConnectionString(id_dzialu);
                     ////############################################  ladowanie danych tabela 2 ##############################
                     // odczyt sedziów
                     parameters = Common.makeParameterTable();
@@ -268,7 +272,7 @@ namespace stat2018
             DataTable dTable = new DataTable();
             //Common.log.Info(tenplik + " :Generowanie tabeli danych: Pobieranie connectionstringa");
 
-            string cs = cl.PobierzConnectionString(id_dzialu);
+            string cs = cl.podajConnectionString(id_dzialu);
 
             DataTable parameters = Common.makeParameterTable();
             parameters.Rows.Add("@id_tabeli", id_tabeli);
@@ -390,11 +394,10 @@ namespace stat2018
                                 {
                                     dTable.Rows[index][getColumnName(int.Parse(kolumna))] = warosc;
                                 }
-
                                 index++;
                             }
                         }
-                        catch (Exception ex)
+                        catch 
                         { }
                     }
                 }
@@ -403,13 +406,11 @@ namespace stat2018
             { }
 
             // uzupelnienie funkcji
-            DataTable stanowiska = Common.getDataTable("SELECT distinct ident ,nazwa FROM stanowiska", con_str);
-
             foreach (DataRow wierszDanych in dTable.Rows)
             {
                 string idFunkcji = wierszDanych["stanowisko"].ToString().Trim();
 
-                var results = from myRow in stanowiska.AsEnumerable()
+                var results = from myRow in Common.getDataTable("SELECT distinct ident ,nazwa FROM stanowiska", con_str).AsEnumerable()
                               where myRow.Field<string>("nazwa") == idFunkcji
                               select myRow;
             }
@@ -429,9 +430,9 @@ namespace stat2018
             {
                 Common.log.Info(tenplik + " :Generowanie tabeli danych: Pobieranie connectionstringa");
             }
-
-            string cs = cl.PobierzConnectionString(id_dzialu);
-
+           
+          
+            string cs = cl.podajConnectionString(id_dzialu);
             DataTable parameters = Common.makeParameterTable();
             parameters.Rows.Add("@id_tabeli", id_tabeli);
             parameters.Rows.Add("@id_dzialu", id_dzialu);
@@ -473,14 +474,12 @@ namespace stat2018
 
             // sa kwerendy
             //wyselekcjonuj kwerendy z sedziami col=0
-            DataRow[] kwerendySedziow = dT1.Select("id_kolumny=0");
-            if (kwerendySedziow.Length == 0)
+            if (dT1.Select("id_kolumny=0").Length == 0)
             {
                 if (debug)
                 {
                     Common.log.Info(tenplik + " :Generowanie tabeli danych: Brak kwerend wyciągających sedziów dla tabeli : " + id_tabeli);
                 }
-
                 return null;
             }
             DataRow[] kwerendyDanych = dT1.Select("id_kolumny>0");
@@ -500,7 +499,7 @@ namespace stat2018
                 }
 
                 int i = 1;
-                foreach (var wiersz in kwerendySedziow)
+                foreach (var wiersz in dT1.Select("id_kolumny=0"))
                 {
                     string kwerendaSedziego = wiersz[1].ToString();
                     DataTable parametry = Common.makeParameterTable();
@@ -646,113 +645,16 @@ namespace stat2018
                     result = dr[4].ToString();
                 }
             }
+#pragma warning disable CS0168 // The variable 'ex' is declared but never used
             catch (Exception ex)
+#pragma warning restore CS0168 // The variable 'ex' is declared but never used
             {
                 // log.Error(tenPlik + " - wyciagnij wartosc -  " + ex.Message);
             }
             return result;
         }
 
-        /*
-        public DataTable naglowek(string plik, int numerArkusza)
-        {
-            //  string path = Server.MapPath("\\Template\\otrc.xlsx");
-            string path = HttpContext.Current.Server.MapPath(plik);
-            FileInfo fileInfo = new FileInfo(path);
-            if (!fileInfo.Exists)
-            {
-                return null;
-            }
-            IList<string> komorki = new List<string>();
-            DataTable schematNaglowka = new DataTable();
-            schematNaglowka.Columns.Add("wiersz", typeof(int));
-            schematNaglowka.Columns.Add("kolumna", typeof(int));
-            schematNaglowka.Columns.Add("text", typeof(string));
-            schematNaglowka.Columns.Add("rowSpan", typeof(int));
-            schematNaglowka.Columns.Add("colSpan", typeof(int));
-
-            var package = new ExcelPackage(new FileInfo(path));
-
-            using (package)
-            {
-                ExcelWorksheet worksheet = package.Workbook.Worksheets[numerArkusza];
-
-                int rows = worksheet.Dimension.End.Row;
-                int columns = worksheet.Dimension.End.Column;
-
-                for (int i = 1; i <= rows; i++)
-                {
-                    for (int j = 1; j <= columns; j++)
-                    {
-                        object baseE = worksheet.Cells[i, j];
-                        ExcelCellBase celka = (ExcelCellBase)baseE;
-
-                        bool polaczony = (bool)celka.GetType().GetProperty("Merge").GetValue(celka, null);
-                        var kolumny = celka.GetType().GetProperty("Columns").GetValue(celka, null);
-                        var wiersze = celka.GetType().GetProperty("Rows").GetValue(celka, null);
-                        var text = celka.GetType().GetProperty("Value").GetValue(celka, null);
-
-                        DataRow komorka = schematNaglowka.NewRow();
-                        if (polaczony && text != null)
-                        {
-                            IList<int> lista = okreslKomorke(i, j, rows, columns, worksheet);
-                            if (text != null)
-                            {
-                                komorka["wiersz"] = i;
-                                komorka["kolumna"] = j;
-                                komorka["text"] = text;
-                                komorka["colSpan"] = lista[0].ToString();
-                                komorka["rowSpan"] = lista[1].ToString();
-                                schematNaglowka.Rows.Add(komorka);
-                            }
-                            int k = lista[1];
-                            if (k > 1)
-                            {
-                                j = j + k;
-                            }
-                        }
-                        else
-                        {
-                            if (text != null)
-                            {
-                                komorka["wiersz"] = i;
-                                komorka["kolumna"] = j;
-                                komorka["text"] = text;
-                                komorka["colSpan"] = 1;
-                                komorka["rowSpan"] = 1;
-                                schematNaglowka.Rows.Add(komorka);
-                            }
-                        }
-                    }
-                }
-            }
-
-            DataTable dT_01 = new DataTable();
-            dT_01.Columns.Clear();
-            dT_01.Columns.Add("Column1", typeof(string));
-            dT_01.Columns.Add("Column2", typeof(string));
-            dT_01.Columns.Add("Column3", typeof(string));
-            dT_01.Columns.Add("Column4", typeof(string));
-            dT_01.Columns.Add("Column5", typeof(string));
-
-            // max ilosc wierszy
-            var max = schematNaglowka.Rows.OfType<DataRow>().Select(row => row["wiersz"]).Max();
-            int wiersz = 0;
-            for (int i = (int)max; i >= 0; i--)
-            {
-                wiersz++;
-                //wyciągnij dane tylko z wierszem
-                var selectString = "wiersz=" + i.ToString();
-                DataRow[] jedenWiersz = schematNaglowka.Select(selectString);
-                foreach (var komorka in jedenWiersz)
-                {
-                    dT_01.Rows.Add(new Object[] { wiersz.ToString(), komorka["text"], komorka["rowSpan"], komorka["colSpan"], "h" });
-                }
-            }
-            return dT_01;
-        }
-        */
-
+       
         protected IList<int> okreslKomorke(int wierszPoczatkowy, int kolumnaPoczatkowa, int iloscWierszy, int iloscKolumn, ExcelWorksheet worksheet)
         {
             IList<int> wyniki = new List<int>();

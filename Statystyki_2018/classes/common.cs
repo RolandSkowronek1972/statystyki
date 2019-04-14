@@ -10,7 +10,6 @@ namespace stat2018
         public string con_str = ConfigurationManager.ConnectionStrings["wap"].ConnectionString;
         public string con_str_wcyw = ConfigurationManager.ConnectionStrings["wcywConnectionString"].ConnectionString;
         public log_4_net log = new log_4_net();
-       
 
         public string[] splitData(string arg)
         {
@@ -38,9 +37,9 @@ namespace stat2018
                 case 12: return "grudzień";
                 default:
                     return "";
-                  
             }
         }
+
         public string podajMiesiacRzymski(int numerMiesiaca)
         {
             switch (numerMiesiaca)
@@ -59,9 +58,9 @@ namespace stat2018
                 case 12: return "XII";
                 default:
                     return "";
-                
             }
         }
+
         public DataTable getDataTable(string kwerenda, string connStr, DataTable parameters)
         {
             DataSet dataSet = new DataSet();
@@ -75,16 +74,16 @@ namespace stat2018
                 {
                     dataAdapter.Fill(dataSet);
                 }
-                catch 
-                {}
+                catch
+                { }
             }
-            if (dataSet.Tables.Count !=0)
+            if (dataSet.Tables.Count != 0)
             {
                 return dataSet.Tables[0];
             }
             return null;
         } // end of getDataTable
-     
+
         public DataTable getDataTable(string kwerenda, string connStr)
         {
             //log.Info("Start getDataTable");
@@ -109,7 +108,9 @@ namespace stat2018
 
                 result = dsKwerendy.Tables[0];
             }
+#pragma warning disable CS0168 // The variable 'ex' is declared but never used
             catch (Exception ex)
+#pragma warning restore CS0168 // The variable 'ex' is declared but never used
             {
                 //log.Error("Error : " + ex.Message);
                 conn.Close();
@@ -145,15 +146,15 @@ namespace stat2018
                 }
                 catch (Exception ex)
                 {
-                    //log.Error("Error : " + ex.Message);
+                    log.Error("Error : " + ex.Message);
                     conn.Close();
                 }
             } // end of using
         }
+
         public void runQuerry(string kwerenda, string connStr)
         {
             //log.Info("runQuerry is started");
-
             var conn = new SqlConnection(connStr);
             using (SqlCommand sqlCmd = new SqlCommand(kwerenda, conn))
             {
@@ -170,7 +171,7 @@ namespace stat2018
                 }
                 catch (Exception ex)
                 {
-                    //log.Error("Error : " + ex.Message);
+                    log.Error("Error runQuerry : " + ex.Message);
                     conn.Close();
                 }
             } // end of using
@@ -202,7 +203,7 @@ namespace stat2018
                 }
                 catch (Exception ex)
                 {
-                    //log.Error("Error : " + ex.Message);
+                    log.Error("Error getQuerryValue : " + ex.Message);
                     sqlCmd.Connection.Close();
                 }
             } // end of using
@@ -210,21 +211,7 @@ namespace stat2018
         }// end of getQuerryValue
 
         //==================================================
-        /*
-        private string getColumnName(int i)
-        {
-            string txt = string.Empty;
-            if (i < 10)
-            {
-                txt = "d_0" + i.ToString().Trim();
-            }
-            else
-            {
-                txt = "d_" + i.ToString().Trim();
-            }
-            return txt;
-        }
-        */
+      
         public DataTable makeParameterTable()
         {
             DataTable parameters = new DataTable();
@@ -237,7 +224,6 @@ namespace stat2018
         {
             DataTable parameters = makeParameterTable();
             parameters.Rows.Add("@klucz", klucz.Trim());
-
             return getQuerryValue("SELECT DISTINCT wartosc FROM  konfig WHERE klucz=rtrim(@klucz)", con_str, parameters);
         }
 
@@ -259,7 +245,7 @@ namespace stat2018
             }
             catch (Exception ex)
             {
-                //log.Error("dostęp - bład " + ex.Message);
+                log.Error("dostęp - bład " + ex.Message);
             }
             return false;
         }

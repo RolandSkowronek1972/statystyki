@@ -26,7 +26,9 @@ namespace stat2018
         private const string tenPlikNazwa = "aglg2";
         private string path = "";
         private int storid = 0;
+#pragma warning disable CS0414 // The field 'aglg2.rowIndex' is assigned but its value is never used
         private int rowIndex = 1;
+#pragma warning restore CS0414 // The field 'aglg2.rowIndex' is assigned but its value is never used
 
         protected void Page_Load(object sender, EventArgs e)
         {

@@ -35,7 +35,9 @@ namespace stat2018
                     conn.Close();
 
                 }
+#pragma warning disable CS0168 // The variable 'ex' is declared but never used
                 catch (Exception ex)
+#pragma warning restore CS0168 // The variable 'ex' is declared but never used
                 {
                     conn.Close();
                 }

@@ -38,7 +38,9 @@ namespace stat2018
                     var fileContents = System.IO.File.ReadAllText(Server.MapPath(@"~//version.txt"));
                     this.Title = "Statystyki " + fileContents.ToString().Trim();
                 }
+#pragma warning disable CS0168 // The variable 'ex' is declared but never used
                 catch (Exception ex)
+#pragma warning restore CS0168 // The variable 'ex' is declared but never used
                 {
                     Server.Transfer("default.aspx");
                 }
@@ -3948,7 +3950,7 @@ namespace stat2018
                     result = dr[4].ToString();
                 }
             }
-            catch (Exception ex)
+            catch 
             { }
             return result;
         }//end of wyciagnijWartosc
@@ -3998,7 +4000,7 @@ namespace stat2018
                     Response.End();
                 }
             }
-            catch (Exception ex)
+            catch
             {
             }
         }

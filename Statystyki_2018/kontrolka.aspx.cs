@@ -4,8 +4,6 @@ using System;
 using System.Data;
 using System.Drawing;
 using System.Globalization;
-using System.Net.Mime;
-using System.Web;
 using System.Web.UI;
 
 namespace stat2018
@@ -126,87 +124,89 @@ namespace stat2018
 
             Session["data1"] = data1.Date.ToShortDateString();
             Session["data2"] = data2.Date.ToShortDateString();
+            ASPxGridView1.DataBind();
+            /*
+                        try
+                        {
+                            SqlDataSource1.DataBind();
+                            SqlDataSource1.CancelSelectOnNullParameter = false;
+                                        ASPxGridView1.Columns.Clear();
+                            ASPxGridView1.DataSource = null;
+                            ASPxGridView1.DataSourceID = null;
 
-            try
-            {
-                SqlDataSource1.DataBind();
-                SqlDataSource1.CancelSelectOnNullParameter = false;
-                            ASPxGridView1.Columns.Clear();
-                ASPxGridView1.DataSource = null;
-                ASPxGridView1.DataSourceID = null;
-               
-                //wstawienie kolumna
-                ASPxGridView1.DataSource = dT;
+                            //wstawienie kolumna
+                            ASPxGridView1.DataSource = dT;
 
-                foreach (DataColumn dCol in dT.Columns)
-                {
-                    string name = dCol.ColumnName;
-                    Type typ = dCol.DataType;
-                    Type typRef = typeof(DateTime);
-                    GridViewDataColumn id = new GridViewDataColumn();
-                    id.FieldName = name;
-                    ASPxGridView1.Columns.Add(id);
-                    if (typ == typRef)
-                    {
-                        ASPxGridView1.DataColumns[name].SettingsHeaderFilter.Mode = GridHeaderFilterMode.DateRangePicker;
-                    }
-                }
+                            foreach (DataColumn dCol in dT.Columns)
+                            {
+                                string name = dCol.ColumnName;
+                                Type typ = dCol.DataType;
+                                Type typRef = typeof(DateTime);
+                                GridViewDataColumn id = new GridViewDataColumn();
+                                id.FieldName = name;
+                                ASPxGridView1.Columns.Add(id);
+                                if (typ == typRef)
+                                {
+                                    ASPxGridView1.DataColumns[name].SettingsHeaderFilter.Mode = GridHeaderFilterMode.DateRangePicker;
+                                }
+                            }
 
-                if (ASPxGridView1.Columns.Count > 0)
-                {
-                    ASPxGridView1.KeyFieldName = ASPxGridView1.Columns[0].Name;
-                }
-                int szerokoscKolumny = 0;
-                ASPxGridView1.DataBind();
-                try
-                {
-                    szerokoscKolumny = (int)Session["szerokoscKolumny"];
-                }
-                catch
-                { }
+                            if (ASPxGridView1.Columns.Count > 0)
+                            {
+                                ASPxGridView1.KeyFieldName = ASPxGridView1.Columns[0].Name;
+                            }
+                            int szerokoscKolumny = 0;
+                            ASPxGridView1.DataBind();
+                            try
+                            {
+                                szerokoscKolumny = (int)Session["szerokoscKolumny"];
+                            }
+                            catch
+                            { }
 
-                int rozmiarczcionki = 0;
-                try
-                {
-                    rozmiarczcionki = (int)Session["rozmiarczcionki"];
-                }
-                catch
-                {
-                }
-                if (rozmiarczcionki > 0)
-                {
-                    for (int i = 0; i < ASPxGridView1.Columns.Count; i++)
-                    {
-                        ASPxGridView1.Columns[i].CellStyle.Font.Size = rozmiarczcionki;
-                    }
-                }
-                if (szerokoscKolumny > 0)
-                {
-                    for (int i = 0; i < ASPxGridView1.Columns.Count; i++)
-                    {
-                        ASPxGridView1.Columns[i].Width = szerokoscKolumny;
-                        ASPxGridView1.Columns[i].MinWidth = szerokoscKolumny;
-                        ASPxGridView1.Style.Add("width", szerokoscKolumny.ToString());
-                        ASPxGridView1.Style.Add("min-width", szerokoscKolumny.ToString());
-                    }
-                }
-                try
-                {
-                    int szerokoscTabeli = (int)Session["szerokosctabeli"];
-                    if (szerokoscTabeli > 0)
-                    {
-                        ASPxGridView1.Width = szerokoscTabeli;
-                    }
-                }
-                catch
-                {
-                    ASPxGridView1.Width = 1150;
-                }
-            }
-            catch (Exception ex)
-            {
-                cm.log.Error(ex.Message);
-            }
+                            int rozmiarczcionki = 0;
+                            try
+                            {
+                                rozmiarczcionki = (int)Session["rozmiarczcionki"];
+                            }
+                            catch
+                            {
+                            }
+                            if (rozmiarczcionki > 0)
+                            {
+                                for (int i = 0; i < ASPxGridView1.Columns.Count; i++)
+                                {
+                                    ASPxGridView1.Columns[i].CellStyle.Font.Size = rozmiarczcionki;
+                                }
+                            }
+                            if (szerokoscKolumny > 0)
+                            {
+                                for (int i = 0; i < ASPxGridView1.Columns.Count; i++)
+                                {
+                                    ASPxGridView1.Columns[i].Width = szerokoscKolumny;
+                                    ASPxGridView1.Columns[i].MinWidth = szerokoscKolumny;
+                                    ASPxGridView1.Style.Add("width", szerokoscKolumny.ToString());
+                                    ASPxGridView1.Style.Add("min-width", szerokoscKolumny.ToString());
+                                }
+                            }
+                            try
+                            {
+                                int szerokoscTabeli = (int)Session["szerokosctabeli"];
+                                if (szerokoscTabeli > 0)
+                                {
+                                    ASPxGridView1.Width = szerokoscTabeli;
+                                }
+                            }
+                            catch
+                            {
+                                ASPxGridView1.Width = 1150;
+                            }
+                        }
+                        catch (Exception ex)
+                        {
+                            cm.log.Error(ex.Message);
+                        }
+                        */
         }
 
         protected void szukaj(object sender, EventArgs e)

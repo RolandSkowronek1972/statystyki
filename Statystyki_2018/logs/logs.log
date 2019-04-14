@@ -1,26 +1,2 @@
-2019-04-12 22:38:06,846  INFO stat2018.log_4_net - Header: Rozpoczecie procedury tworzenia elementów menu wyloguj
-2019-04-12 22:40:30,834  INFO stat2018.log_4_net - oglc3.aspx: rozpoczecie tworzenia tabeli 1
-2019-04-12 22:40:45,540  INFO stat2018.log_4_net - oglc3.aspx: rozpoczecie tworzenia tabeli 2
-2019-04-12 22:40:45,556  INFO stat2018.log_4_net - oglc3.aspx :Generowanie tabeli danych: Wpisywanie danych sedziów dla tabeli : 2 Odwolanie do obiektu nie zostalo ustawione na wystapienie obiektu.
-2019-04-12 22:40:45,568  INFO stat2018.log_4_net - oglc3.aspx: rozpoczecie tworzenia tabeli 3
-2019-04-12 22:40:45,571  INFO stat2018.log_4_net - oglc3.aspx: rozpoczecie tworzenia tabeli 4
-2019-04-12 22:40:45,577  INFO stat2018.log_4_net - oglc3.aspx: rozpoczecie tworzenia tabeli 5
-2019-04-12 22:40:45,581  INFO stat2018.log_4_net - oglc3.aspx: rozpoczecie tworzenia tabeli 6
-2019-04-12 22:40:45,586  INFO stat2018.log_4_net - oglc3.aspx: rozpoczecie tworzenia tabeli 7
-2019-04-12 22:40:45,589  INFO stat2018.log_4_net - oglc3.aspx :Generowanie tabeli danych: Wpisywanie danych sedziów dla tabeli : 7 Odwolanie do obiektu nie zostalo ustawione na wystapienie obiektu.
-2019-04-12 22:40:45,591  INFO stat2018.log_4_net - oglc3.aspx: rozpoczecie tworzenia tabeli 8
-2019-04-12 22:40:45,594  INFO stat2018.log_4_net - oglc3.aspx :Generowanie tabeli danych: Wpisywanie danych sedziów dla tabeli : 8 Odwolanie do obiektu nie zostalo ustawione na wystapienie obiektu.
-2019-04-12 22:40:45,597  INFO stat2018.log_4_net - oglc3.aspx: rozpoczecie tworzenia tabeli 9
-2019-04-12 22:40:45,602  INFO stat2018.log_4_net - oglc3.aspx: rozpoczecie tworzenia tabeli 10
-2019-04-12 22:40:45,613  INFO stat2018.log_4_net - oglc3.aspx: rozpoczecie tworzenia tabeli 11
-2019-04-12 22:40:45,617  INFO stat2018.log_4_net - oglc3.aspx :Generowanie tabeli danych: Wpisywanie danych sedziów dla tabeli : 11 Odwolanie do obiektu nie zostalo ustawione na wystapienie obiektu.
-2019-04-12 22:40:45,620  INFO stat2018.log_4_net - oglc3.aspx: rozpoczecie tworzenia tabeli 12
-2019-04-12 22:40:45,622  INFO stat2018.log_4_net - oglc3.aspx :Generowanie tabeli danych: Wpisywanie danych sedziów dla tabeli : 12 Odwolanie do obiektu nie zostalo ustawione na wystapienie obiektu.
-2019-04-12 22:40:45,625  INFO stat2018.log_4_net - oglc3.aspx: rozpoczecie tworzenia tabeli 13
-2019-04-12 22:40:45,630  INFO stat2018.log_4_net - oglc3.aspx: rozpoczecie tworzenia tabeli 14
-2019-04-12 22:40:45,640  INFO stat2018.log_4_net - oglc3.aspx: rozpoczecie tworzenia tabeli 15
-2019-04-12 22:40:45,643  INFO stat2018.log_4_net - oglc3.aspx :Generowanie tabeli danych: Wpisywanie danych sedziów dla tabeli : 15 Odwolanie do obiektu nie zostalo ustawione na wystapienie obiektu.
-2019-04-12 22:40:45,648  INFO stat2018.log_4_net - oglc3.aspx: rozpoczecie tworzenia tabeli 16
-2019-04-12 22:40:45,653  INFO stat2018.log_4_net - oglc3.aspx :Generowanie tabeli danych: Wpisywanie danych sedziów dla tabeli : 16 Odwolanie do obiektu nie zostalo ustawione na wystapienie obiektu.
-2019-04-12 22:40:45,656  INFO stat2018.log_4_net - oglc3.aspx: rozpoczecie tworzenia HTML 16
-2019-04-12 22:40:45,662  INFO stat2018.log_4_net - oglc3.aspx: Koniec tworzenia tabeli 16
+2019-04-14 17:43:49,236  INFO stat2018.log_4_net - Site1.Master:Brak przeniesienia z logowania identyfikatora numerycznego Uzytkownika! 
+2019-04-14 17:43:49,269  INFO stat2018.log_4_net - Odwolanie do obiektu nie zostalo ustawione na wystapienie obiektu.

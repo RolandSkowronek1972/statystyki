@@ -167,11 +167,7 @@ namespace stat2018
             return con_str;
         }//end of podajCS
 
-        public string PobierzConnectionString(int id_dzialu)
-        {
-            return podajConnectionString(id_dzialu);
-        }
-
+      
         public DataSet pod_tabela(string cs, string kwerenda, string poczatek, string koniec, string id_sedziego)
         {
             var conn = new SqlConnection(cs);
@@ -256,7 +252,9 @@ namespace stat2018
                     conn.Close();
                     return odp;
                 }
+#pragma warning disable CS0168 // The variable 'ex' is declared but never used
                 catch (Exception ex)
+#pragma warning restore CS0168 // The variable 'ex' is declared but never used
                 {
                     conn.Close();
                     result = string.Empty;
@@ -265,16 +263,18 @@ namespace stat2018
 
             return result;
         }
-/*
-        public string wyciagnijDaneNt(string kw, DateTime poczatek, DateTime koniec, string cs)
-        {
-            DataTable parametry = Common.makeParameterTable();
-            parametry.Rows.Add("@data_1", poczatek);
-            parametry.Rows.Add("@data_2", koniec);
 
-            return Common.getQuerryValue(kw, cs, parametry);
-        }
-        */
+        /*
+                public string wyciagnijDaneNt(string kw, DateTime poczatek, DateTime koniec, string cs)
+                {
+                    DataTable parametry = Common.makeParameterTable();
+                    parametry.Rows.Add("@data_1", poczatek);
+                    parametry.Rows.Add("@data_2", koniec);
+
+                    return Common.getQuerryValue(kw, cs, parametry);
+                }
+                */
+
         public string wyciagnijDane(int id_dzialu, int id_wiersza, int id_kolumny, DateTime poczatek, DateTime koniec, int id_tabeli)
         {
             string result = string.Empty;
@@ -405,7 +405,6 @@ namespace stat2018
                             {
                                 dR[j + 1] = dana;
                             }
-                           
                         }
                         catch
                         { } // end of try
@@ -460,7 +459,7 @@ namespace stat2018
                 il_wierszy = ddT.Rows.Count;
             }
             catch { }
-            string cs = PobierzConnectionString(id_dzialu);
+            string cs =podajConnectionString (id_dzialu);
             if (il_wierszy == 0)
             {
                 // brak kwerend odcztującch
@@ -551,14 +550,15 @@ namespace stat2018
                         }
                     }
                 }
+#pragma warning disable CS0168 // The variable 'ex' is declared but never used
                 catch (Exception ex)
+#pragma warning restore CS0168 // The variable 'ex' is declared but never used
                 { }//end of try
             }// end of if
 
             return tab_1000;
         }// end of generuj_dane_do_tabeli_3
 
-      
         public string uzupelnij_statusy_Xl()
         {
             Common.runQuerry("update tbl_statystyki_tbl_x5 set funkcja=(SELECT     rtrim([nazwa]) FROM [funkcje]  where [rodzaj]=1 and ident=tbl_statystyki_tbl_x5.funkcja)", con_str, null);
@@ -572,7 +572,6 @@ namespace stat2018
             Common.runQuerry("update tbl_statystyki_tbl_02 set funkcja = (SELECT   rtrim([nazwa]) FROM[funkcje]  where[rodzaj] = 1 and ident = tbl_statystyki_tbl_02.funkcja)", con_str, null);
             Common.runQuerry("update tbl_statystyki_tbl_02 set stanowisko=(SELECT   rtrim([nazwa]) FROM [funkcje]  where [rodzaj]=2 and ident=tbl_statystyki_tbl_02.stanowisko)", con_str, null);
 
-          
             return "1";
         }
 
@@ -597,6 +596,20 @@ namespace stat2018
 
         public bool debug(int wydzial)
         {
+            DataTable parametry = Common.makeParameterTable();
+            parametry.Rows.Add("@ident", wydzial);
+
+            string odp = Common.getQuerryValue("SELECT debug FROM  wydzialy where ident=@ident", con_str, parametry);
+
+            if (odp == "1")
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+            /*
             var conn = new SqlConnection(con_str);
             SqlCommand sqlCmd;
 
@@ -624,8 +637,8 @@ namespace stat2018
                 {
                 }
             } // end of using
-
-            return false;
+            */
+          
         }// end of debug
 
         public string nazwaSadu(string id_sadu)
@@ -787,7 +800,7 @@ namespace stat2018
                     {
                         string id_kol = dRow[0].ToString().Trim();
                         string kwe = dRow[1].ToString().Trim();
-                        string cs = PobierzConnectionString(id_dzialu);
+                        string cs = podajConnectionString(id_dzialu);
                         ////############################################  ladowanie danych tabela 2 ##############################
                         // odczyt sedziów
                         parameters = Common.makeParameterTable();
@@ -901,7 +914,7 @@ namespace stat2018
                     {
                         string id_kol = dRow[0].ToString().Trim();
                         string kwe = dRow[1].ToString().Trim();
-                        string cs = PobierzConnectionString(id_dzialu);
+                        string cs = podajConnectionString(id_dzialu);
 
                         ////############################################  ladowanie danych tabela 2 ##############################
 
@@ -1010,7 +1023,9 @@ namespace stat2018
                 da_x.Fill(ds_x);
                 conn_x.Close();
             }
+#pragma warning disable CS0168 // The variable 'ev' is declared but never used
             catch (Exception ev)
+#pragma warning restore CS0168 // The variable 'ev' is declared but never used
             {
                 return null;
                 // status = status + "Bład odczytu kwerendy " + kwe + "  " + ev.Message + "<br>";
@@ -1258,7 +1273,7 @@ namespace stat2018
             var conn = new SqlConnection(con_str);
 
             DataTable dTable = new DataTable();
-            string cs = PobierzConnectionString(id_dzialu);
+            string cs = podajConnectionString(id_dzialu);
 
             string kwerenda = string.Empty;
             DataSet dsKwerendy = new DataSet();
@@ -1384,7 +1399,9 @@ namespace stat2018
                                                 }
                                                 index++;
                                             }
+#pragma warning disable CS0168 // The variable 'ex3' is declared but never used
                                             catch (Exception ex3)
+#pragma warning restore CS0168 // The variable 'ex3' is declared but never used
                                             { }
                                         }
                                     }
@@ -1393,7 +1410,9 @@ namespace stat2018
                         }
                     }
                 }
+#pragma warning disable CS0168 // The variable 'ex' is declared but never used
                 catch (Exception ex)
+#pragma warning restore CS0168 // The variable 'ex' is declared but never used
                 { }//end of try
             }// end of if
 
@@ -1407,7 +1426,7 @@ namespace stat2018
             var conn = new SqlConnection(con_str);
 
             DataTable dTable = new DataTable();
-            string cs = PobierzConnectionString(id_dzialu);
+            string cs = podajConnectionString(id_dzialu);
 
             string kwerenda = string.Empty;
             DataSet dsKwerendy = new DataSet();
@@ -1474,86 +1493,10 @@ namespace stat2018
             return dTResult;
         }// end of generuj_dane_do_tabeli_mss2
 
-        /*
-        public string loguj(string user_, string haslo)
-        {
-            DataTable parameters = Common.makeParameterTable();
-            parameters.Rows.Add("@login", user_);
-            parameters.Rows.Add("@passwd", haslo);
-            string kwerenda = "SELECT [ident] FROM [uzytkownik] where [login]=@login and  [password]=@passwd ";
-            return Common.getQuerryValue(kwerenda, con_str, parameters);
-        } // end of loguj
-
-        public string podajWzorzec(string id_dzialu)
-        {
-            DataTable parameters = Common.makeParameterTable();
-            parameters.Rows.Add("@id_dzialu", id_dzialu);
-            return Common.getQuerryValue("SELECT         plik FROM            wydzialy where  ident=@id_dzialu", con_str, parameters);
-        } // end of podajWzorzec
-        */
-        //kof
-        /*
-        public string dodajDoTabeliKOF(DataRow rowik)
-        {
-            string result = string.Empty;
-            string id_sprawy = rowik[0].ToString();
-            string wydzial = rowik[1].ToString();
-            string sygnatura = rowik[2].ToString();
-            string d_wplywu = rowik[3].ToString();
-            string strona = rowik[4].ToString();
-            string pelnomocnik = rowik[5].ToString();
-            string przeciwko = rowik[6].ToString();
-
-            DataTable parameters = Common.makeParameterTable();
-            parameters.Rows.Add("@id_sprawy", id_sprawy);
-            string count = Common.getQuerryValue("select count(*) from kof where id_sprawy =@id_sprawy", podajCS(), parameters);
-
-            if (count == "0")
-            {
-                parameters = Common.makeParameterTable();
-
-                parameters.Rows.Add("@wydzial", wydzial);
-                parameters.Rows.Add("@id_sprawy", id_sprawy);
-                parameters.Rows.Add("@sygnatura", sygnatura);
-                parameters.Rows.Add("@d_wplywu", d_wplywu);
-                parameters.Rows.Add("@strona", strona);
-                parameters.Rows.Add("@pelnomocnik", pelnomocnik);
-                parameters.Rows.Add("@przeciwko", przeciwko);
-                string kwerenda = "INSERT INTO stat.dbo.kof  (id_sprawy, wydzial, sygnatura, d_wplywu, strona, pelnomocnik, przeciwko) VALUES (@id_sprawy, @wydzial, @sygnatura, @d_wplywu, @strona, @pelnomocnik,@przeciwko)";
-                Common.runQuerry(kwerenda, podajCS(), parameters);
-            }
-
-            return result;
-        }
-
-        public string lasujDanedoWCYW(string repermtorium, string numer, string rok, string id_sedziego, string rok_so, string d_orzeczenia_so, string d_zakreslenia, string czyskreslono, string czyus, string uwagi, string kreator, string d_kreacji, string d_wplywu, string opis)
-        {
-            string result = string.Empty;
-
-            DataTable parameters = Common.makeParameterTable();
-            parameters.Rows.Add("@repermtorium", repermtorium);
-            parameters.Rows.Add("@numer", numer);
-            parameters.Rows.Add("@rok", rok);
-            parameters.Rows.Add("@id_sedziego", id_sedziego);
-            parameters.Rows.Add("@rok_so", rok_so);
-            parameters.Rows.Add("@d_orzeczenia_so", d_orzeczenia_so);
-            parameters.Rows.Add("@d_zakreslenia", d_zakreslenia);
-            parameters.Rows.Add("@czyskreslono", czyskreslono);
-            parameters.Rows.Add("@czyus", czyus);
-            parameters.Rows.Add("@uwagi", uwagi);
-            parameters.Rows.Add("@kreator", kreator);
-            parameters.Rows.Add("@d_kreacji", d_kreacji);
-            parameters.Rows.Add("@d_wplywu", d_wplywu);
-            parameters.Rows.Add("@opis", opis);
-            string kwerenda = "INSERT INTO stat.dbo.kof  (id_sprawy, wydzial, sygnatura, d_wplywu, strona, pelnomocnik, przeciwko) VALUES (@id_sprawy, @wydzial, @sygnatura, @d_wplywu, @strona, @pelnomocnik,@przeciwko)";
-            Common.runQuerry(kwerenda, podajCS(), parameters);
-
-            return result;
-        }
-        */
+       
 
         #region private methode
-
+        /*
         private DataTable generuj_dane_sedziow(int id_dzialu, int id_tabeli)
 
         {
@@ -1566,7 +1509,7 @@ namespace stat2018
             string kwerenda = Common.getQuerryValue(kwerendaSedziow, con_str, parametry);
             return Common.getDataTable(kwerenda, connectionString);
         }// end of generuj_dane_sedziow
-
+        
         public DataTable generujDaneDoTabeli(int id_dzialu, int id_tabeli, DateTime pocztek, DateTime koniec)
 
         {
@@ -1607,7 +1550,7 @@ namespace stat2018
             }
             return dTResult;
         }// end of generuj_dane_sedziow
-
+*/
         /*
         private DataTable TabelaTyp1(int iloscKolumn)
         {
@@ -1619,7 +1562,7 @@ namespace stat2018
             }
             return outputTable;
         }
-        */
+       
 
         private DataTable TabelaTyp2()
         {
@@ -1667,7 +1610,7 @@ namespace stat2018
             }
             return sedzia;
         }
-
+ */
         /// <summary>
         ///
         /// </summary>

@@ -439,7 +439,7 @@ namespace stat2018
               
                 txt = txt + cl.uzupelnij_statusy();
             }
-            catch (Exception ex)
+            catch 
             {
             }
             txt = txt + cl.generuj_dane_do_tabeli_wierszy(Date1.Date, Date2.Date, yyx, 6);

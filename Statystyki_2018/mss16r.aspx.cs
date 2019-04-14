@@ -3300,7 +3300,7 @@ namespace stat2018
 
                 #endregion 15.3
             }
-            catch (Exception ex)
+            catch
             { }
 
             // dopasowanie opisów

@@ -2637,7 +2637,9 @@ namespace stat2018
                 DataRow dr = foundRows[0];
                 result = dr[4].ToString();
             }
+#pragma warning disable CS0168 // The variable 'ex' is declared but never used
             catch (Exception ex)
+#pragma warning restore CS0168 // The variable 'ex' is declared but never used
             { }
             return result;
         }
@@ -2687,7 +2689,9 @@ namespace stat2018
                     Response.End();
                 }
             }
+#pragma warning disable CS0168 // The variable 'ex' is declared but never used
             catch (Exception ex)
+#pragma warning restore CS0168 // The variable 'ex' is declared but never used
             {
             }
         }

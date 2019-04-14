@@ -1,4 +1,5 @@
-﻿using DevExpress.XtraPrinting;
+﻿using DevExpress.Web;
+using DevExpress.XtraPrinting;
 using System;
 using System.Data;
 using System.Drawing;
@@ -8,10 +9,9 @@ namespace stat2018
 {
     public partial class nowa : System.Web.UI.Page
     {
-        public Class1 cl = new Class1();
         public wyszukiwarka w1 = new wyszukiwarka();
         public common cm = new common();
-
+        public log_4_net log = new log_4_net();
         protected void Page_Load(object sender, EventArgs e)
         {
             //Bind the grid only once
@@ -118,6 +118,38 @@ namespace stat2018
             }
             catch (Exception)
             { }
+            //lejki przy datach
+            /*foreach (DataColumn dCol in dane.Columns)
+            {
+                string name = dCol.ColumnName;
+                Type typ = dCol.DataType;
+                Type typRef = typeof(DateTime);
+                GridViewDataColumn id = new GridViewDataColumn();
+                id.FieldName = name;
+                //  grid.Columns.Add(id);
+                log.Info("kontrolka reftype: " + typRef.FullName);
+                log.Info("kontrolka type: " + typ.FullName);
+                if (typ == typRef)
+                {
+                    grid.DataColumns[name].SettingsHeaderFilter.Mode = GridHeaderFilterMode.DateRangePicker;
+                }
+            }*/
+            foreach (GridViewDataColumn dCol in grid.Columns )
+            {
+                string name = dCol.Name;
+                Type typ = dCol.GetType() ;
+                Type typRef = typeof(DateTime);
+                GridViewDataColumn id = new GridViewDataColumn();
+                id.FieldName = name;
+                //  grid.Columns.Add(id);
+                log.Info("kontrolka reftype: " + typRef.FullName);
+                log.Info("kontrolka type: " + typ.FullName);
+                if (typ == typRef)
+                {
+                    grid.DataColumns[name].SettingsHeaderFilter.Mode = GridHeaderFilterMode.DateRangePicker;
+                    grid.DataColumns[name].Settings.AllowHeaderFilter = DevExpress.Utils.DefaultBoolean.True;
+                }
+            }
         }
 
         private DataTable GetTable(DateTime dataPoczatkowa, DateTime dataKoncowa, string ident)

@@ -35,7 +35,9 @@ namespace stat2018
                     var fileContents = System.IO.File.ReadAllText(Server.MapPath(@"~//version.txt"));
                     this.Title = "Statystyki " + fileContents.ToString().Trim();
                 }
+#pragma warning disable CS0168 // The variable 'ex' is declared but never used
                 catch (Exception ex)
+#pragma warning restore CS0168 // The variable 'ex' is declared but never used
                 {
                     Server.Transfer("default.aspx");
                 }
@@ -1466,7 +1468,9 @@ namespace stat2018
 
                 #endregion "tabela C4.1.2"
             }
+#pragma warning disable CS0168 // The variable 'ex' is declared but never used
             catch (Exception ex)
+#pragma warning restore CS0168 // The variable 'ex' is declared but never used
             {
             }
 

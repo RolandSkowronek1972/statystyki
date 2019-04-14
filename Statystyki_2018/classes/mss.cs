@@ -29,7 +29,9 @@ namespace stat2018
                     }
                     conn.Close();
                 }
+#pragma warning disable CS0168 // The variable 'ex' is declared but never used
                 catch (Exception ex)
+#pragma warning restore CS0168 // The variable 'ex' is declared but never used
                 {
                     conn.Close();
                 }
@@ -369,7 +371,9 @@ namespace stat2018
                             {
                                 czwarta = idSad.Substring(idSad.Length - 2, 2);
                             }
+#pragma warning disable CS0168 // The variable 'ecc' is declared but never used
                             catch (Exception ecc)
+#pragma warning restore CS0168 // The variable 'ecc' is declared but never used
                             { }
                             idsadu = idSad.Substring(0, 6);
                             string idTabeli = t1;
@@ -426,7 +430,9 @@ namespace stat2018
                     conn.Close();
                     return odp;
                 }
+#pragma warning disable CS0168 // The variable 'ex' is declared but never used
                 catch (Exception ex)
+#pragma warning restore CS0168 // The variable 'ex' is declared but never used
                 {
                     conn.Close();
                     return "";

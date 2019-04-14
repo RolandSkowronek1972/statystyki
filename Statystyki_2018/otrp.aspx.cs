@@ -1,4 +1,10 @@
-﻿using NPOI.HPSF;
+﻿/*
+Last Update:
+    - version 1.181121
+Creation date: 2018-11-21
+
+*/
+using NPOI.HPSF;
 using NPOI.HSSF.UserModel;
 using NPOI.SS.UserModel;
 using System;
@@ -7,30 +13,23 @@ using System.Globalization;
 using System.IO;
 using System.Web.UI;
 using System.Web.UI.WebControls;
-using System;
-using System.Data;
-using System.IO;
-using System.Web.UI.WebControls;
-using OfficeOpenXml;
 
 namespace stat2018
 {
-
-
     public partial class otrp : System.Web.UI.Page
     {
-
         public Class1 cl = new Class1();
         private HSSFWorkbook hssfworkbook;
         public common cm = new common();
         public string tenPlik = "otrp.aspx";
+
         protected void Page_Load(object sender, EventArgs e)
         {
             string idWydzial = Request.QueryString["w"];
             if (idWydzial != null)
             {
                 Session["id_dzialu"] = idWydzial;
-             //   //cm.log.Info(tenPlik + ": id wydzialu=" + idWydzial);
+                //   //cm.log.Info(tenPlik + ": id wydzialu=" + idWydzial);
             }
             else
             {
@@ -43,7 +42,7 @@ namespace stat2018
             Session["data_1"] = Date1.Text;
             Session["data_2"] = Date2.Text;
             clearHedersSession();
-            //makeHeader();
+
             try
             {
                 string user = (string)Session["userIdNum"];
@@ -60,7 +59,6 @@ namespace stat2018
                         var fileContents = System.IO.File.ReadAllText(Server.MapPath(@"~//version.txt"));    // file read with version
                         this.Title = "Statystyki " + fileContents.ToString().Trim();
                         przemiel();
-                        //makeLabels();
                     }
                 }
             }
@@ -81,7 +79,6 @@ namespace stat2018
             Session["header_07"] = null;
             Session["header_08"] = null;
         }
-
 
         protected void przemiel()
         {
@@ -112,11 +109,8 @@ namespace stat2018
 
             int dzial = int.Parse((string)Session["id_dzialu"]);
 
-
-
             try
             {
-
                 txt = txt + cl.generuj_dane_do_tabeli_wierszy(DateTime.Parse(Date1.Text), DateTime.Parse(Date2.Text), yyx, 1);
                 GridView2.DataBind();
                 txt = txt + cl.generuj_dane_do_tabeli_(dzial, 2, DateTime.Parse(Date1.Text), DateTime.Parse(Date2.Text));
@@ -128,7 +122,7 @@ namespace stat2018
             catch
             {
             }
-        
+
             GridView1.DataBind();
             GridView3.DataBind();
             GridView4.DataBind();
@@ -181,7 +175,6 @@ namespace stat2018
                 HeaderCell.ColumnSpan = 1;
                 HeaderGridRow.Cells.Add(HeaderCell);
                 GridView2.Controls[0].Controls.AddAt(0, HeaderGridRow);
-
 
                 HeaderCell = new TableCell();
                 HeaderCell.Text = "Uo";
@@ -367,7 +360,6 @@ namespace stat2018
                 HeaderCell.RowSpan = 1;
                 HeaderGridRow.Cells.Add(HeaderCell);
                 GridView1.Controls[0].Controls.AddAt(0, HeaderGridRow);
-
             }
         }
 
@@ -488,7 +480,6 @@ namespace stat2018
                 HeaderGridRow.VerticalAlign = VerticalAlign.Top;
                 TableCell HeaderCell = new TableCell();
 
-
                 HeaderCell = new TableCell();
                 HeaderCell.Text = "P";
                 HeaderCell.ColumnSpan = 1;
@@ -587,73 +578,8 @@ namespace stat2018
             //makeLabels();
         }
 
-
-
         #endregion "obsługa oncommand  tabel z nazwiskami"
 
-        /*
-        protected void makeLabels()
-        {
-            try
-            {
-                string User_id = string.Empty;
-                string domain = string.Empty;
-                try
-                {
-                    User_id = (string)Session["user_id"];
-                    domain = (string)Session["damain"];
-                }
-                catch
-                { }
-                string tst = (string)Session["id_dzialu"];
-                Label3.Text = cl.nazwaSadu((string)Session["id_dzialu"]);
-                //Label26.Text = cl.nazwaSadu((string)Session["id_dzialu"]);
-                Label29.Text =           DateTime.Now.ToLongDateString();
-                id_dzialu.Text = cl.nazwaSadu((string)Session["id_dzialu"]);// (string)Session["txt_dzialu"];
-                Label28.Text = cl.podajUzytkownika(User_id, domain);
-                string strMonthName = CultureInfo.CurrentCulture.DateTimeFormat.GetMonthName(DateTime.Parse(Date2.Text)).Month;
-                int last_day = DateTime.DaysInMonth(DateTime.Parse(Date2.Text)).Year, DateTime.Parse(Date2.Text).Month;
-                if (((Date1.Date.Day == 1) && (DateTime.Parse(Date2.Text).Day == last_day)) && ((Date1.Date.Month == DateTime.Parse(Date2.Text)).Month));
-                {
-                    // cały miesiąc
-                    Label19.Text = "Załatwienia za miesiąc " + strMonthName + " " + DateTime.Parse(Date2.Text).Year.ToString() + " roku.";
-                    Label17.Text = "Wyznaczenia za miesiąc " + strMonthName + " " + Date2.Date.Year.ToString() + " roku.";
-                    //Stan referatów sędziów na koniec miesiąca
-                    Label15.Text = "Stan referatów sędziów na koniec miesiąca " + strMonthName + " " + Date2.Date.Year.ToString() + " roku.";
-                    //Informacje o ruchu sprawa za miesiąc: 
-                    Label5.Text = "Informacje o ruchu sprawa za miesiąc:  " + strMonthName + " " + Date2.Date.Year.ToString() + " roku.";
-                    Label27.Text = "za miesiąc:  " + strMonthName + " " + Date2.Date.Year.ToString() + " roku.";
-                }
-                else
-                {
-                    Label19.Text = "Załatwienia za okres od " + Date1.Text + " do  " + Date2.Text;
-                    Label17.Text = "Wyznaczenia za okres od" + Date1.Text + " do  " + Date2.Text;
-                    Label15.Text = "Stan referatów sędziów za okres od " + Date1.Text + " do  " + Date2.Text;
-                    Label5.Text = "Informacje o ruchu sprawa za okres od:  " + Date1.Text + " do  " + Date2.Text;
-                    Label27.Text = "za okres od:  " + Date1.Text + " do  " + Date2.Text;
-
-                }
-                try
-                {
-                    Label28.Text = (string)Session["daneUzytkownika"]; //cl.podajUzytkownika(User_id, domain);
-                    Label29.Text = DateTime.Now.ToShortDateString();
-                }
-                catch
-                { }
-                try
-                {
-                    Label30.Text = System.IO.File.ReadAllText(Server.MapPath(@"~//version.txt")).ToString().Trim();
-                }
-                catch
-                { }
-            }
-            catch
-            {
-
-            }
-
-        }
-        */
         protected void Button1_Click(object sender, EventArgs e)
         {
             Session["date_1"] = Date1.Text.Trim();
@@ -662,7 +588,6 @@ namespace stat2018
 
         protected void Button3_Click(object sender, EventArgs e)
         {
-
             // execel begin
             string filename = "statystykiWydzialPracy.xls";
             Response.ContentType = "application/vnd.ms-excel";
@@ -677,9 +602,6 @@ namespace stat2018
             Response.End();
         }
 
-
-
-
         private void InitializeWorkbook()
         {
             hssfworkbook = new HSSFWorkbook();
@@ -689,8 +611,6 @@ namespace stat2018
             si.Title = "statystyki";
             hssfworkbook.SummaryInformation = si;
         }
-
-
 
         private MemoryStream WriteToStream()
         {
@@ -705,13 +625,9 @@ namespace stat2018
         {
             ISheet sheet0 = hssfworkbook.CreateSheet("Ruch spraw");
 
-
             DataView view = (DataView)dane_do_tabeli_1.Select(DataSourceSelectArguments.Empty);
 
             DataTable table = view.ToTable();
-
-
-
 
             IRow row0 = sheet0.CreateRow(0);
             table.TableName = "Załatwienia";
@@ -724,8 +640,6 @@ namespace stat2018
             sheet0.AddMergedRegion(crs);
             crs = new NPOI.SS.Util.CellRangeAddress(0, 0, 1, 7);
             sheet0.AddMergedRegion(crs);
-
-
 
             row0 = sheet0.CreateRow(1);
 
@@ -955,8 +869,6 @@ namespace stat2018
             }// end foreach
 
             // czwarty sheet
-
-
         }
 
         protected void LinkButton54_Click(object sender, EventArgs e)
@@ -966,12 +878,8 @@ namespace stat2018
 
         protected void LinkButton55_Click(object sender, EventArgs e)
         {
-            
             ScriptManager.RegisterStartupScript(this.Page, Page.GetType(), "print2", "JavaScript: window.print();", true);
             //makeLabels();
-
         }
-
-
     }
 }
