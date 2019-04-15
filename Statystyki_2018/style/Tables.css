@@ -1511,8 +1511,8 @@ position: relative;
     transition: opacity .2s cubic-bezier(0.645,0.045,0.355,1);
     font: 16px/18px "Lucida Grande", "Lucida Sans Unicode", Helvetica, Arial, Verdana, sans-serif;
     top: 0px;
-    
     height: 24px;
+    cursor: pointer;
 }
 .ax_X:hover {
     color:Black;

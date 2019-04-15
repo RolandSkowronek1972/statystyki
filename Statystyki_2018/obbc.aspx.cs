@@ -1,34 +1,32 @@
 ﻿/*
 Last Update:
-    - version 1.181121
+    - version 1.190414
 Creation date: 2018-11-21
 
 */
+
+using OfficeOpenXml;
 using System;
 using System.Data;
+using System.Globalization;
 using System.IO;
 using System.Web.UI;
 using System.Web.UI.WebControls;
-using OfficeOpenXml;
-using System.Globalization;
-
-
 
 namespace stat2018
 {
     public partial class obbc : System.Web.UI.Page
     {
-        int storid = 0;
-        int rowIndex = 1;
-        const string tenPlik = "obbc.aspx";
-        const string tenPlikNazwa = "obbc";
+        private int storid = 0;
+        private int rowIndex = 1;
+        private const string tenPlik = "obbc.aspx";
+        private const string tenPlikNazwa = "obbc";
         public string path = "";
 
         public Class1 cl = new Class1();
         public common cm = new common();
         public tabele tb = new tabele();
         public dataReaders dr = new dataReaders();
-        
 
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -51,7 +49,6 @@ namespace stat2018
                 Session["id_dzialu"] = idWydzial;
                 Session["data_1"] = Date1.Date.ToShortDateString();
                 Session["data_2"] = Date2.Date.ToShortDateString();
-
             }
             catch
             { }
@@ -66,15 +63,10 @@ namespace stat2018
             Session["header_03"] = null;
             Session["header_04"] = null;
             Session["header_05"] = null;
-            Session["header_06"] = null;
-            Session["header_07"] = null;
-            Session["header_08"] = null;
         }
 
         protected void makeHeader()
         {
-
-
             DataTable dT_01 = new DataTable();
             dT_01.Columns.Clear();
             dT_01.Columns.Add("Column1", typeof(string));
@@ -112,17 +104,11 @@ namespace stat2018
             dT_04.Columns.Add("Column3", typeof(string));
             dT_04.Columns.Add("Column4", typeof(string));
 
-         
-            #region tabela  1 
-
-
+            #region tabela  1
 
             System.Web.UI.WebControls.GridView sn = new System.Web.UI.WebControls.GridView();
 
-
-
             dT_01.Clear();
-              
 
             dT_01.Rows.Add(new Object[] { "1", "Rozprawy", "1", "1", 0, 0, 1, 1 });
             dT_01.Rows.Add(new Object[] { "1", "Posiedzenia Jawne", "1", "1", 0, 0, 2, 2 });
@@ -135,30 +121,29 @@ namespace stat2018
             dT_01.Rows.Add(new Object[] { "1", "Cps", "1", "1", 0, 0, 9, 9 });
             dT_01.Rows.Add(new Object[] { "1", "N", "1", "1", 0, 1, 10, 11 });
             dT_01.Rows.Add(new Object[] { "1", "Razem", "1", "1", 0, 1, 12, 12 });
-            
 
             dT_01.Rows.Add(new Object[] { "2", "Nazwisko i imię sędziego", "1", "2", 0, 1, 0, 0 });
             dT_01.Rows.Add(new Object[] { "2", "Ilość dni rozpraw", "4", "1", 0, 0, 1, 13 });
             dT_01.Rows.Add(new Object[] { "2", "Załatwiono / Sprawy", "7", "1", 0, 0, 1, 13 });
 
             Session["header_01"] = dT_01;
-           
-            #endregion
+
+            #endregion tabela  1
+
             #region tabela  3 ()
 
             dT_03.Clear();
 
-            
             dT_03.Rows.Add(new Object[] { "1", "Wyznaczonych", "1", "1" });
             dT_03.Rows.Add(new Object[] { "1", "odroczonych", "1", "1" });
 
             dT_03.Rows.Add(new Object[] { "2", "Sędzia", "1", "2" });
             dT_03.Rows.Add(new Object[] { "2", "Ilość spraw", "2", "1" });
             dT_03.Rows.Add(new Object[] { "2", "% Odroczonych", "1", "2" });
-        
 
             Session["header_03"] = dT_03;
-            #endregion
+
+            #endregion tabela  3 ()
 
             #region tabela  4 ()
 
@@ -188,23 +173,20 @@ namespace stat2018
             Session["header_04"] = dT_04;
             //makeHeader4(sn, dT_04);
 
-            #endregion
-
-          
-
+            #endregion tabela  4 ()
         }
-
 
         protected void Odswiez(object sender, EventArgs e)
         {
             odswiez();
         }
+
         protected void odswiez()
         {
             makeHeader();
             //odswiezenie danych
             tabela1();
-          
+
             tabela3();
             tabela4();
             tabela5();
@@ -225,14 +207,13 @@ namespace stat2018
                 }
                 catch
                 { }
-               
+
                 Label28.Text = cl.podajUzytkownika(User_id, domain);
                 Label29.Text = DateTime.Now.ToLongDateString();
                 Label30.Text = System.IO.File.ReadAllText(Server.MapPath(@"~//version.txt")).ToString().Trim();
-              
             }
             catch
-            {  }
+            { }
             try
             {
                 string idDzialu = (string)Session["id_dzialu"];
@@ -241,39 +222,32 @@ namespace stat2018
                 infoLabel4.Visible = cl.debug(int.Parse(idDzialu));
 
                 infoLabel2.Visible = cl.debug(int.Parse(idDzialu));
-
             }
             catch
             {
-
                 infoLabel3.Visible = false;
                 infoLabel1.Visible = false;
                 infoLabel4.Visible = false;
                 infoLabel2.Visible = false;
-
-
-
             }
         }
 
-        DataTable tabela_2()
+        private DataTable tabela_2()
         {
             //dane do tabeli sumującej po tabelą nr 1
             DataTable tabelka01 = new DataTable();
             try
             {
-
-                tabelka01 = dr.generuj_dane_do_tabeli_wierszy2018(Date1.Date,Date2.Date, (string)Session["id_dzialu"], 2, 8, 8, tenPlik);
+                tabelka01 = dr.generuj_dane_do_tabeli_wierszy2018(Date1.Date, Date2.Date, (string)Session["id_dzialu"], 2, 7, 8, tenPlik);
                 Session["tabelka002"] = tabelka01;
-                //row 1
-
             }
             catch (Exception ex)
             {
-                cm.log.Error(tenPlik + " " + ex.Message);
+                cm.log.Error(tenPlik + "-tabela 1 " + ex.Message);
             }
             return tabelka01;
         }
+
         protected void tabela3()
         {
             if (Session["id_dzialu"] == null)
@@ -283,8 +257,7 @@ namespace stat2018
 
             try
             {
-
-                DataTable tabelka01 = dr.generuj_dane_do_tabeli_wierszy2018(Date1.Date,Date2.Date, (string)Session["id_dzialu"], 3, 20, 20, tenPlik);
+                DataTable tabelka01 = dr.generuj_dane_do_tabeli_wierszy2018(Date1.Date, Date2.Date, (string)Session["id_dzialu"], 3, 20, 20, tenPlik);
                 Session["tabelka003"] = tabelka01;
                 //row 1
                 tab_7_w01_c01.Text = tabelka01.Rows[0][1].ToString().Trim();
@@ -312,83 +285,60 @@ namespace stat2018
             }
             catch (Exception ex)
             {
-                cm.log.Error(tenPlik + " " + ex.Message);
+                cm.log.Error(tenPlik + "- tabela 3  " + ex.Message);
             }
-
         }
+
         protected void tworzPlikExcell(object sender, EventArgs e)
         {
-            
             // execel begin
             string path = Server.MapPath("Template") + "\\obbc.xlsx";
             FileInfo existingFile = new FileInfo(path);
-            if (!existingFile.Exists )
+            if (!existingFile.Exists)
             {
                 return;
             }
             string download = Server.MapPath("Template") + @"\obbc";
-
             FileInfo fNewFile = new FileInfo(download + "_.xlsx");
-
-            // pierwsza tabelka
-
 
             using (ExcelPackage MyExcel = new ExcelPackage(existingFile))
             {
-                
                 ExcelWorksheet MyWorksheet1 = MyExcel.Workbook.Worksheets[1];
-
                 // pierwsza
                 DataTable table1 = (DataTable)Session["tabelka001"];
-                MyWorksheet1 = tb.tworzArkuszwExcle(MyExcel.Workbook.Worksheets[1], table1,12, 0, 3,false,false,false,false,false);
-
+                MyWorksheet1 = tb.tworzArkuszwExcle(MyExcel.Workbook.Worksheets[1], table1, 12, 0, 3, false, false, false, false, false);
                 //pod tabela
                 int rowik = table1.Rows.Count - 4;
-                MyWorksheet1.Cells[rowik + 7, 1, rowik + 7, 5].Merge = true;
-                MyWorksheet1.Cells[rowik + 7, 1].Value = "Zaległość z poprzedniego miesiąca";
-                MyWorksheet1.Cells[rowik + 8, 1, rowik + 8, 5].Merge = true;
-                MyWorksheet1.Cells[rowik + 8, 1].Value = "Wpływ";
-                MyWorksheet1.Cells[rowik + 9, 1, rowik + 9, 5].Merge = true;
-                MyWorksheet1.Cells[rowik + 9, 1].Value = "Wpływ";
-                MyWorksheet1.Cells[rowik + 10, 1, rowik + 10, 5].Merge = true;
-                MyWorksheet1.Cells[rowik + 10, 1].Value = "Załatwienia";
-                MyWorksheet1.Cells[rowik + 11, 1, rowik + 11, 5].Merge = true;
-                MyWorksheet1.Cells[rowik + 11, 1].Value = " Pozostało na następny miesiąc";
-                MyWorksheet1.Cells[rowik + 12, 1, rowik + 12, 5].Merge = true;
-
-                MyWorksheet1.Cells[rowik + 12, 1].Value = " 3-6 miesięcy";
-                MyWorksheet1.Cells[rowik + 13, 1, rowik + 13, 5].Merge = true;
-
-                MyWorksheet1.Cells[rowik + 13, 1].Value = " 6-12 miesięcy";
-                MyWorksheet1.Cells[rowik + 14, 1, rowik + 14, 5].Merge = true;
-
-                MyWorksheet1.Cells[rowik + 14, 1].Value = "ponad 12 miesięcy";
+                tb.komorkaExcela(MyWorksheet1, rowik + 7, 1, "Zaległość z poprzedniego miesiąca", true, 0, 4);
+                tb.komorkaExcela(MyWorksheet1, rowik + 8, 1, "Wpływ", true, 0, 4);
+                tb.komorkaExcela(MyWorksheet1, rowik + 9, 1, "Załatwienia", true, 0, 4);
+                tb.komorkaExcela(MyWorksheet1, rowik + 10, 1, "Pozostało na następny miesiąc", true, 0, 4);
+                tb.komorkaExcela(MyWorksheet1, rowik + 11, 1, "3-6 miesięcy", true, 0, 4);
+                tb.komorkaExcela(MyWorksheet1, rowik + 12, 1, "6-12 miesięcy", true, 0, 4);
+                tb.komorkaExcela(MyWorksheet1, rowik + 13, 1, "ponad 12 miesięcy", true, 0, 4);
                 DataTable tabelka001 = (DataTable)Session["tabelka002"];
 
                 foreach (DataRow dR in tabelka001.Rows)
                 {
-                    for (int i = 2; i < 10; i++)
+                    for (int i = 2; i < 9; i++)
                     {
-
                         try
                         {
                             MyWorksheet1.Cells[rowik + 7, i + 4].Value = double.Parse(dR[i - 1].ToString().Trim());
                         }
                         catch
                         {
-
                             MyWorksheet1.Cells[rowik + 7, i + 4].Value = dR[i - 1].ToString().Trim();
                         }
 
                         MyWorksheet1.Cells[rowik + 7, i + 4].Style.ShrinkToFit = true;
                         MyWorksheet1.Cells[rowik + 7, i + 4].Style.Border.BorderAround(OfficeOpenXml.Style.ExcelBorderStyle.Thin, System.Drawing.Color.Black);
-
                     }
                     rowik++;
                 }
 
-
                 DataTable table2 = (DataTable)Session["tabelka003"];
+                cm.log.Info("oobc trzecia tabela ilosc wierszy " + table2.Rows.Count.ToString());
                 MyWorksheet1 = tb.tworzArkuszwExcleBezSedziow(MyExcel.Workbook.Worksheets[2], table2, 2, 6, 2, 4, false);
 
                 // trzecia
@@ -396,10 +346,11 @@ namespace stat2018
                 DataTable table3 = (DataTable)Session["tabelka004"];
                 MyWorksheet1 = tb.tworzArkuszwExcle(MyExcel.Workbook.Worksheets[3], table3, 4, 0, 3, false, false, false, false, false);
 
-
                 // czwarta
 
                 DataTable table4 = (DataTable)Session["tabelka005"];
+                cm.log.Info("oobc trzecia tabela ilosc wierszy " + table4.Rows.Count.ToString());
+
                 MyWorksheet1 = tb.tworzArkuszwExcle(MyExcel.Workbook.Worksheets[4], table4, 9, 0, 3, false, false, false, false, false);
 
                 try
@@ -415,15 +366,11 @@ namespace stat2018
                 {
                     cm.log.Error(tenPlik + " " + ex.Message);
                 }
-
             }//end of using
-
-
-
         }
+
         protected void tabela1()
         {
-
             if (Session["id_dzialu"] == null)
             {
                 return;
@@ -433,7 +380,7 @@ namespace stat2018
             {
                 //cm.log.Info(tenPlik + ": rozpoczęcie tworzenia tabeli 1");
             }
-            DataTable tabelka01 = dr.generuj_dane_do_tabeli_sedziowskiej_2018(int.Parse(idDzialu),1, Date1.Date,Date2.Date, 15, tenPlik);
+            DataTable tabelka01 = dr.generuj_dane_do_tabeli_sedziowskiej_2018(int.Parse(idDzialu), 1, Date1.Date, Date2.Date, 15, tenPlik);
             Session["tabelka001"] = tabelka01;
             gwTabela1.DataSource = null;
             gwTabela1.DataSourceID = null;
@@ -452,13 +399,14 @@ namespace stat2018
             {
                 //cm.log.Info(tenPlik + ": rozpoczęcie tworzenia tabeli 4");
             }
-            DataTable tabelka01 = dr.generuj_dane_do_tabeli_sedziowskiej_2018(int.Parse(idDzialu), 4, Date1.Date,Date2.Date, 23, tenPlik);
+            DataTable tabelka01 = dr.generuj_dane_do_tabeli_sedziowskiej_2018(int.Parse(idDzialu), 4, Date1.Date, Date2.Date, 23, tenPlik);
             Session["tabelka004"] = tabelka01;
             gwTabela4.DataSource = null;
             gwTabela4.DataSourceID = null;
             gwTabela4.DataSource = tabelka01;
             gwTabela4.DataBind();
         }
+
         protected void tabela5()
         {
             if (Session["id_dzialu"] == null)
@@ -466,27 +414,25 @@ namespace stat2018
                 return;
             }
 
-            string idDzialu =  (string)Session["id_dzialu"];
+            string idDzialu = (string)Session["id_dzialu"];
             if (cl.debug(int.Parse(idDzialu)))
             {
                 //cm.log.Info(tenPlik + ": rozpoczęcie tworzenia tabeli 5");
             }
-            DataTable tabelka01 = dr.generuj_dane_do_tabeli_sedziowskiej_2018(int.Parse(idDzialu), 5, Date1.Date,Date2.Date, 23, tenPlik);
-            Session["tabelka004"] = tabelka01;
+            DataTable tabelka01 = dr.generuj_dane_do_tabeli_sedziowskiej_2018(int.Parse(idDzialu), 5, Date1.Date, Date2.Date, 23, tenPlik);
+            Session["tabelka005"] = tabelka01;
             gwTabela5.DataSource = null;
             gwTabela5.DataSourceID = null;
             gwTabela5.DataSource = tabelka01;
             gwTabela5.DataBind();
         }
-    
 
         protected void naglowekTabeli_gwTabela1(object sender, GridViewRowEventArgs e)
         {
             if (e.Row.RowType == DataControlRowType.Header)
             {
-                System.Web.UI.WebControls.GridView sn = new System.Web.UI.WebControls.GridView();
                 DataTable dT = (DataTable)Session["header_01"];
-                tb.makeHeader(sn, dT, gwTabela1);
+                tb.makeHeader(dT, gwTabela1);
             }
             else
             {
@@ -502,9 +448,7 @@ namespace stat2018
         {
             if (e.Row.RowType == DataControlRowType.Header)
             {
-                System.Web.UI.WebControls.GridView sn = new System.Web.UI.WebControls.GridView();
-                DataTable dT = (DataTable)Session["header_03"];
-                tb.makeHeader(sn, dT, gwTabela4);
+                tb.makeHeader((DataTable)Session["header_03"], gwTabela4);
             }
         }
 
@@ -512,10 +456,8 @@ namespace stat2018
         {
             if (e.Row.RowType == DataControlRowType.Header)
             {
-                System.Web.UI.WebControls.GridView sn = new System.Web.UI.WebControls.GridView();
-                string path = Server.MapPath("~\\Template\\obbc.xlsx");
-                DataTable dT = tb.naglowek(path, 4);
-                tb.makeHeader(sn, dT, gwTabela5);
+                DataTable dT = tb.naglowek(Server.MapPath("~\\Template\\obbc.xlsx"), 4);
+                tb.makeHeader(dT, gwTabela5);
             }
         }
 
@@ -531,49 +473,35 @@ namespace stat2018
         {
             DataTable tabelka01 = tabela_2();
 
-
             GridView GridView1 = (GridView)sender;
             GridViewRow NewTotalRow = new GridViewRow(0, 0, DataControlRowType.DataRow, DataControlRowState.Insert);
 
             string idtabeli = "2";
-            
+
             // nowy wiersz
             int idWiersza = 1;
-            //(DataTable dane,int iloscKolumn, int idWiersza, string idtabeli, string tekst, int colSpan, int rowSpan, string CssStyleDlaTekstu, string cssStyleDlaTabeli)
-            GridView1.Controls[0].Controls.AddAt(e.Row.RowIndex + rowIndex, tb.wierszTabeli(tabelka01,8, idWiersza, idtabeli, "zaległości z poprzedniego miesiąca",5,0,"","borderAll center"));
+            GridView1.Controls[0].Controls.AddAt(e.Row.RowIndex + rowIndex, tb.wierszTabeli(tabelka01, 8, idWiersza, idtabeli, "zaległości z poprzedniego miesiąca", 5, 0, "", "borderAll center"));
 
             idWiersza = 2;
+            GridView1.Controls[0].Controls.AddAt(e.Row.RowIndex + rowIndex, tb.wierszTabeli(tabelka01, 8, idWiersza, idtabeli, "Wpłynęło", 5, 0, "", "borderAll center"));
 
-
-            GridView1.Controls[0].Controls.AddAt(e.Row.RowIndex + rowIndex, tb.wierszTabeli(tabelka01,8, idWiersza, idtabeli, "Wpłynęło", 5, 0, "", "borderAll center"));
-
-            // nowy wiersz
             idWiersza = 3;
-            GridView1.Controls[0].Controls.AddAt(e.Row.RowIndex + rowIndex, tb.wierszTabeli(tabelka01,8, idWiersza, idtabeli, "Załatwiono", 5, 0, "", "borderAll center"));
+            GridView1.Controls[0].Controls.AddAt(e.Row.RowIndex + rowIndex, tb.wierszTabeli(tabelka01, 8, idWiersza, idtabeli, "Załatwiono", 5, 0, "", "borderAll center"));
 
-            // nowy wiersz
             idWiersza = 4;
-            GridView1.Controls[0].Controls.AddAt(e.Row.RowIndex + rowIndex, tb.wierszTabeli(tabelka01,8, idWiersza, idtabeli, "Pozostało na miesiąc następny", 5, 0, "", "borderAll center"));
+            GridView1.Controls[0].Controls.AddAt(e.Row.RowIndex + rowIndex, tb.wierszTabeli(tabelka01, 8, idWiersza, idtabeli, "Pozostało na miesiąc następny", 5, 0, "", "borderAll center"));
 
-
-            // nowy wiersz
             idWiersza = 5;
+            GridView1.Controls[0].Controls.AddAt(e.Row.RowIndex + rowIndex, tb.wierszTabeli(tabelka01, 8, idWiersza, idtabeli, "Powyżej 6-12 miesięcy", 5, 0, "", "borderAll center"));
 
-            GridView1.Controls[0].Controls.AddAt(e.Row.RowIndex + rowIndex, tb.wierszTabeli(tabelka01,8, idWiersza, idtabeli, "Powyżej 6-12 miesięcy", 5, 0, "", "borderAll center"));
-
-            // nowy wiersz
             idWiersza = 6;
-            GridView1.Controls[0].Controls.AddAt(e.Row.RowIndex + rowIndex, tb.wierszTabeli(tabelka01,8, idWiersza, idtabeli, "Powyżej 12-24 miesięcy", 5, 0, "", "borderAll center"));
-            // nowy wiersz
+            GridView1.Controls[0].Controls.AddAt(e.Row.RowIndex + rowIndex, tb.wierszTabeli(tabelka01, 8, idWiersza, idtabeli, "Powyżej 12-24 miesięcy", 5, 0, "", "borderAll center"));
+
             idWiersza = 7;
-            GridView1.Controls[0].Controls.AddAt(e.Row.RowIndex + rowIndex, tb.wierszTabeli(tabelka01,8, idWiersza, idtabeli, "Powyżej 24 – 36 miesięcy ", 5, 0, "", "borderAll center"));
+            GridView1.Controls[0].Controls.AddAt(e.Row.RowIndex + rowIndex, tb.wierszTabeli(tabelka01, 8, idWiersza, idtabeli, "Powyżej 24 – 36 miesięcy ", 5, 0, "", "borderAll center"));
 
-            // nowy wiersz
             idWiersza = 8;
-            GridView1.Controls[0].Controls.AddAt(e.Row.RowIndex + rowIndex, tb.wierszTabeli(tabelka01,8, idWiersza, idtabeli, "Powyżej 36 miesięcy", 5, 0, "", "borderAll center"));
-
-
-
+            GridView1.Controls[0].Controls.AddAt(e.Row.RowIndex + rowIndex, tb.wierszTabeli(tabelka01, 8, idWiersza, idtabeli, "Powyżej 36 miesięcy", 5, 0, "", "borderAll center"));
         }
     }
 }

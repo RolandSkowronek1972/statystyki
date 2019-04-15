@@ -931,7 +931,6 @@ namespace stat2018
                     try
                     {
                         string value = daneDoArkusza.Rows[i][j].ToString().Trim();
-
                         Arkusz.Cells[i + przesuniecieY, przesunięcieX + j].Value = value;
                     }
                     catch (Exception)
@@ -951,7 +950,8 @@ namespace stat2018
                 {
                     Arkusz.Cells[wiersz, kolumna, wiersz + rowSpan, kolumna + colSpan].Merge = true;
                     Arkusz.Cells[wiersz, kolumna, wiersz + rowSpan, kolumna + colSpan].Style.Border.BorderAround(OfficeOpenXml.Style.ExcelBorderStyle.Thin, System.Drawing.Color.Black);
-                    Arkusz.Cells[wiersz, kolumna].Style.Border.BorderAround(OfficeOpenXml.Style.ExcelBorderStyle.Thin, System.Drawing.Color.Black);
+
+                    //Arkusz.Cells[wiersz, kolumna].Style.Border.BorderAround(OfficeOpenXml.Style.ExcelBorderStyle.Thin, System.Drawing.Color.Black);
                 }
                 catch (Exception ex)
                 {
