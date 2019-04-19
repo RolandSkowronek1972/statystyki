@@ -244,7 +244,7 @@
                     <strong>Dział 1.1.1.d</strong>. Przysposobienie według wieku małoletnich (liczby osób)<br />
         <br />
          <div id='1.1.1.d'>
-    <table cellpadding="0" cellspacing="0" style="width: 100 %; ">
+   <table  style="width: 100%; ">
   <tr>
     <td  class="borderAll center" colspan="2" rowspan="2">Małoletni według wieku </td>
     <td  class="borderAll center" rowspan="2">Ogółem orzeczone </td>
@@ -385,7 +385,7 @@
 
                     <strong>Dział 1.1.1.e.</strong> Pozbawienie, zawieszenie, ograniczenie władzy rodzicielskiej
          <div id='1.1.1.e'>
-    <table cellpadding="0" cellspacing="0" style="width: 100 %; ">
+   <table  style="width: 100%; ">
   <tr>
     <td  class="borderAll center" colspan="3">Wyszczególnienia</td>
     <td  class="borderAll center">Liczba spraw (Dział 1.1. w.48 rubr. 5) </td>
@@ -463,7 +463,7 @@
         <br />
 
                     <strong>Dział 1.1.1.f.</strong> w tym (dz. 1.1.1. w. 48 lit. f)<div id='1.1.1.f'>
-    <table cellpadding="0" cellspacing="0" style="width: 100 %; ">
+   <table  style="width: 100%; ">
   <tr>
     <td  class="borderAll center" colspan="2">Wyszczególnienie</td>
     <td  class="col_330 center borderAll ">Liczby</td>
@@ -511,7 +511,7 @@
                     <strong>Dział 1.1.1.g. </strong>
             <h3 class="western"><font size="2">Rodzaje orzeczeń wydanych w okresie statystycznym w sprawach dotyczących wykonywania kontaktów z dzieckiem (art. 598</font><sup><font size="2">15 </font></sup>i nast. K.p.c.)</h3>
             <br />
-    <table cellpadding="0" cellspacing="0" style="width: 100 %; ">
+   <table  style="width: 100%; ">
   <tr>
     <td  class="borderAll center" colspan="2" rowspan="2">Wyszczególnienia</td>
     <td  class="borderAll center" colspan="2">Liczby</td>
@@ -685,7 +685,7 @@
 
                         <strong>Dział 1.1.2</strong> Ewidencja spraw nieletnich<br />
         <div id='1.1.2'>
-    <table cellpadding="0" cellspacing="0" style="width: 100 %; ">
+   <table  style="width: 100%; ">
   <tr>
     <td  class="borderAll center" colspan="2" rowspan="2">Wyszczególnienia</td>
   <td  class="borderAll center" rowspan="2">L.p.</td>
@@ -746,7 +746,7 @@
                         <strong>
           <br />
           Dział 1.1.2.a </strong>&nbsp;Ewidencja popełnionych czynów karalnych przez nieletnich w odniesieniu do osób<div id='1.1.2.a'>
-    <table cellpadding="0" cellspacing="0" style="width: 100 %; ">
+   <table  style="width: 100%; ">
   <tr>
     <td  class="col_100 borderAll " rowspan="4">Wyszczególnienia</td>
   <td  class="borderAll col_36" rowspan="4">L.p.</td>
@@ -799,7 +799,7 @@
 
                         <strong>
           Dział 1.1.2.b </strong>&nbsp;Stwierdzone czyny karalne przypisane nieletniemu w orzeczeniu kończącym postępowanie <div id='1.1.2.b'>
-    <table cellpadding="0" cellspacing="0" style="width: 100 %; ">
+   <table  style="width: 100%; ">
   <tr>
     <td  class="borderAll center" colspan="4">Rodzaje czynów karalnych </td>
     <td  class="col_90 center borderAll ">Liczba stwierdzonych czynów karalnych </td>
@@ -940,7 +940,7 @@
 
                         <strong>
           Dział 1.1.2.c </strong>&nbsp;Załatwiono w odniesieniu do osób (z wyłączeniem orzeczeń zmienionych w czasie wykonywania orzeczeń) Rep. Nkd<div id='1.1.2.c'>
-    <table cellpadding="0" cellspacing="0" style="width: 100 %; ">
+   <table  style="width: 100%; ">
   <tr>
     <td  class="borderAll center" colspan="3">Wyszczególnienia</td>
     <td  class="col_110 center borderAll ">ogółem</td>
@@ -1231,7 +1231,7 @@
           <br />
           <div id='1.1.4'>
  <strong> Dział 1.1.4</strong> Obciążenie kosztami postępowania we wszystkich sprawach  Nw, Nkd – łącznie (art. 32  ustawy)*)
-    <table cellpadding="0" cellspacing="0" style="width: 100 %; ">
+   <table  style="width: 100%; ">
  <tr>    <td  class="center borderAll" colspan="2"> Wyszczególnienie </td>    <td class="center borderAll"> Liczba</td>
 </tr>
  <tr>    <td  class="center borderAll" colspan="2">0</td>    <td class="center borderAll">1</td>
@@ -1257,7 +1257,7 @@
           <br />
           <div id="1.1.6">
               <strong>Dział 1.1.6</strong> Nieletni oczekujący na umieszczenie i umieszczeni
-              <table cellpadding="0" cellspacing="0" style="width: 100 %; ">
+             <table  style="width: 100%; ">
                   <tr>
                       <td class="center borderAll" colspan="4">Wyszczególnienie </td>
                       <td class="center borderAll">Liczba</td>
@@ -1344,7 +1344,7 @@
 
           <div id="1.1.7">
               <strong>Dział 1.1.7</strong> Sprawy Nw (wykonywane środki wobec nieletnich)
-              <table cellpadding="0" cellspacing="0" style="width: 100 %; ">
+             <table  style="width: 100%; ">
                   <tr>
                       <td class="center borderAll" colspan="2" rowspan="4">Wykonywane środki </td>
                       <td class="center borderAll" rowspan="4">Stan w ostatnim dniu poprzedniego okresu sprawoz-dawczego </td>
@@ -1624,7 +1624,7 @@
           <br />
           <div id="1.1.7.b">
               <strong>Dział 1.1.7.b</strong> Sprawy Nw (wykonywane środki wobec nieletnich)
-              <table cellpadding="0" cellspacing="0" style="width: 100 %; ">
+             <table  style="width: 100%; ">
                   <tr>
                       <td class="center borderAll" colspan="2" rowspan="2">Wykonywane środki – umieszczenie w </td>
                       <td class="center borderAll" rowspan="2">Stan w ostatnim dniu poprzedniego okresu sprawoz-dawczego </td>
@@ -1902,22 +1902,51 @@
           </div>
           <br />
           <br />
-          <div id="1.1.8" class="page-break">
+      <div id='1.1.7.c' class="page-break">
+ <br />
+ <strong> Dział 1.1.7.c</strong>  Liczba spraw Nw
+    <table  style="width: 100%; ">
+ <tr>    <td  class="center borderAll" colspan="2"> Wyszczególnienie</td>    <td class="borderAll center "> Liczba spraw ogółem *)</td>
+<td class="borderAll center ">Stan w ostatnim dniu poprzedniego okresu sprawozdawczego</td>
+<td class="borderAll center ">Przybyło</td>
+<td class="borderAll center ">Ubyło</td>
+<td class="borderAll center ">Stan w ostatnim dniu okresu sprawozdawczego</td>
+</tr>
+ <tr>    <td  class="center borderAll" colspan="2">0</td>    <td class="borderAll center ">1</td>
+<td class="borderAll center ">2</td>
+<td class="borderAll center ">3</td>
+<td class="borderAll center ">4</td>
+<td class="borderAll center ">5</td>
+</tr>
+  <tr>
+    <td  class="borderAll col_150">Sprawy Nw</td>
+  <td  class="borderAll col_36">1</td>
+    <td  class="borderAll center col_150"><a href="javascript:openPopup('popup.aspx?sesja=1!1.1.7.c!1!4')"><asp:Label CssClass="normal" ID="tab_117c_w01_c01" runat="server" Text="0"></asp:Label></a></td>
+    <td  class="borderAll center col_150"><a href="javascript:openPopup('popup.aspx?sesja=1!1.1.7.c!2!4')"><asp:Label CssClass="normal" ID="tab_117c_w01_c02" runat="server" Text="0"></asp:Label></a></td>
+    <td  class="borderAll center col_150"><a href="javascript:openPopup('popup.aspx?sesja=1!1.1.7.c!3!4')"><asp:Label CssClass="normal" ID="tab_117c_w01_c03" runat="server" Text="0"></asp:Label></a></td>
+    <td  class="borderAll center col_150"><a href="javascript:openPopup('popup.aspx?sesja=1!1.1.7.c!4!4')"><asp:Label CssClass="normal" ID="tab_117c_w01_c04" runat="server" Text="0"></asp:Label></a></td>
+    <td  class="borderAll center col_150"><a href="javascript:openPopup('popup.aspx?sesja=1!1.1.7.c!5!4')"><asp:Label CssClass="normal" ID="tab_117c_w01_c05" runat="server" Text="0"></asp:Label></a></td>
+  </tr>
+    </table>
+              *) Liczba postępowań wykonawczych prowadzonych w stosunku do danego nieletniego – pozostających w toku
+ </div>
+<br />
+        <div id="1.1.8" class="page-break">
               <strong>Dział 1.1.8</strong> Ośrodki kuratorskie
-              <table cellpadding="0" cellspacing="0" style="width: 100 %; ">
+              <table style="width: 100%">
                   <tr>
                       <td class="center borderAll" colspan="4">Wyszczególnienie</td>
-                      <td class="center borderAll">Liczba</td>
+                      <td class="borderAll col_150 center">Liczba</td>
                   </tr>
                   <tr>
                       <td class="center borderAll" colspan="4">0</td>
-                      <td class="center borderAll">1</td>
+                      <td class="borderAll col_150 center">1</td>
                   </tr>
                   <tr>
                       <td class="borderAll wciecie" rowspan="4">Ośrodki</td>
                       <td class="borderAll wciecie" colspan="2">stan w ostatnim dniu poprzedniego okresu sprawozdawczego </td>
                       <td class="borderAll col_36">1</td>
-                      <td class="col_180 center borderAll "><a href="javascript:openPopup('popup.aspx?sesja=1!1.1.8!1!4')">
+                      <td class="borderAll col_150 center"><a href="javascript:openPopup('popup.aspx?sesja=1!1.1.8!1!4')">
                           <asp:Label ID="tab_1_1_1_8_w01_c01" runat="server" CssClass="normal" Text="0"></asp:Label>
                           </a></td>
                   </tr>
@@ -1925,21 +1954,21 @@
                       <td class="borderAll wciecie" rowspan="2">w okresie sprawozdawczym</td>
                       <td class="borderAll wciecie">przybyło</td>
                       <td class="borderAll col_36">2</td>
-                      <td class="col_180 center borderAll "><a href="javascript:openPopup('popup.aspx?sesja=2!1.1.8!1!4')">
+                      <td class="borderAll col_150 center"><a href="javascript:openPopup('popup.aspx?sesja=2!1.1.8!1!4')">
                           <asp:Label ID="tab_1_1_1_8_w02_c01" runat="server" CssClass="normal" Text="0"></asp:Label>
                           </a></td>
                   </tr>
                   <tr>
                       <td class="borderAll wciecie">ubyło</td>
                       <td class="borderAll col_36">3</td>
-                      <td class="col_180 center borderAll "><a href="javascript:openPopup('popup.aspx?sesja=3!1.1.8!1!4')">
+                      <td class="borderAll col_150 center"><a href="javascript:openPopup('popup.aspx?sesja=3!1.1.8!1!4')">
                           <asp:Label ID="tab_1_1_1_8_w03_c01" runat="server" CssClass="normal" Text="0"></asp:Label>
                           </a></td>
                   </tr>
                   <tr>
                       <td class="borderAll wciecie" colspan="2">stan w ostatnim dniu okresu sprawozdawczego</td>
                       <td class="borderAll col_36">4</td>
-                      <td class="col_180 center borderAll "><a href="javascript:openPopup('popup.aspx?sesja=4!1.1.8!1!4')">
+                      <td class="borderAll col_150 center"><a href="javascript:openPopup('popup.aspx?sesja=4!1.1.8!1!4')">
                           <asp:Label ID="tab_1_1_1_8_w04_c01" runat="server" CssClass="normal" Text="0"></asp:Label>
                           </a></td>
                   </tr>
@@ -1947,24 +1976,24 @@
                       <td class="borderAll wciecie" rowspan="2">Nieletni</td>
                       <td class="borderAll wciecie" colspan="2">ogółem (stan w ostatnim dniu okresu sprawozdawczego)</td>
                       <td class="borderAll col_36">5</td>
-                      <td class="col_180 center borderAll "><a href="javascript:openPopup('popup.aspx?sesja=5!1.1.8!1!4')">
+                      <td class="borderAll col_150 center"><a href="javascript:openPopup('popup.aspx?sesja=5!1.1.8!1!4')">
                           <asp:Label ID="tab_1_1_1_8_w05_c01" runat="server" CssClass="normal" Text="0"></asp:Label>
                           </a></td>
                   </tr>
                   <tr>
                       <td class="borderAll wciecie" colspan="2">w tym ze spraw Nw</td>
                       <td class="borderAll col_36">6</td>
-                      <td class="col_180 center borderAll "><a href="javascript:openPopup('popup.aspx?sesja=6!1.1.8!1!4')">
+                      <td class="borderAll col_150 center"><a href="javascript:openPopup('popup.aspx?sesja=6!1.1.8!1!4')">
                           <asp:Label ID="tab_1_1_1_8_w06_c01" runat="server" CssClass="normal" Text="0"></asp:Label>
                           </a></td>
                   </tr>
               </table>
           </div>
-          <br />
+       <br />
 
           <div id="1.1.9" class="page-break">
               <strong>Dział 1.1.9</strong> Posiedzenia wykonawcze
-              <table cellpadding="0" cellspacing="0" style="width: 100 %; ">
+             <table  style="width: 100%; ">
                   <tr>
                       <td class="center borderAll" colspan="2" rowspan="2">Wyszczególnienie</td>
                       <td class="center borderAll" colspan="5">Liczba spraw, w których</td>
@@ -2082,11 +2111,55 @@
               </table>
           </div>
           <br />
+        <div id='Ustanowienie pełnomocnika / obrońcy z urzędu' class="page-break">
+ <br />
+ <strong> Dział Ustanowienie pełnomocnika / obrońcy z urzędu</strong>
+    <table  style="width: 100%; ">
+ <tr>    <td  class="center borderAll" colspan="2"> Repertorium lub wykaz</td>    <td class="center borderAll"> Liczba spraw w których doszło do ustanowienia pełnomocnika z urzędu (radca prawny, adwokat)</td>
+<td class="center borderAll">Liczba ustanowionych pełnomocników z urzędu (radca prawny, adwokat) </td>
+<td class="center borderAll">W tym liczba wyznaczonych pełnomocników w wyniku zwolnienia poprzedniego pełnomocnika </td>
+</tr>
+ <tr>    <td  class="center borderAll" colspan="2">0</td>    <td class="center borderAll">1</td>
+<td class="center borderAll">2</td>
+<td class="center borderAll">3</td>
+</tr>
+   <tr>
+    <td  class="borderAll  col_60 wciecie">RC</td>
+  <td  class="borderAll col_36">1</td>
+    <td  class="col_250 center borderAll "><a href="javascript:openPopup('popup.aspx?sesja=1!1.1.10!1!4')"><asp:Label CssClass="normal" ID="Label8" runat="server" Text="0"></asp:Label></a></td>
+    <td  class="col_250 center borderAll "><a href="javascript:openPopup('popup.aspx?sesja=1!1.1.10!2!4')"><asp:Label CssClass="normal" ID="Label10" runat="server" Text="0"></asp:Label></a></td>
+    <td  class="col_250 center borderAll "><a href="javascript:openPopup('popup.aspx?sesja=1!1.1.10!3!4')"><asp:Label CssClass="normal" ID="Label12" runat="server" Text="0"></asp:Label></a></td>
+  </tr>
+  <tr>
+    <td  class="borderAll  col_60 wciecie">RNc</td>
+  <td  class="borderAll col_36">2</td>
+    <td  class="col_250 center borderAll "><a href="javascript:openPopup('popup.aspx?sesja=2!1.1.10!1!4')"><asp:Label CssClass="normal" ID="tab_1110_w02_c01" runat="server" Text="0"></asp:Label></a></td>
+    <td  class="col_250 center borderAll "><a href="javascript:openPopup('popup.aspx?sesja=2!1.1.10!2!4')"><asp:Label CssClass="normal" ID="tab_1110_w02_c02" runat="server" Text="0"></asp:Label></a></td>
+    <td  class="col_250 center borderAll "><a href="javascript:openPopup('popup.aspx?sesja=2!1.1.10!3!4')"><asp:Label CssClass="normal" ID="tab_1110_w02_c03" runat="server" Text="0"></asp:Label></a></td>
+  </tr>
+  <tr>
+    <td  class="borderAll  col_60 wciecie">Nsm</td>
+  <td  class="borderAll col_36">3</td>
+    <td  class="col_250 center borderAll "><a href="javascript:openPopup('popup.aspx?sesja=3!1.1.10!1!4')"><asp:Label CssClass="normal" ID="tab_1110_w03_c01" runat="server" Text="0"></asp:Label></a></td>
+    <td  class="col_250 center borderAll "><a href="javascript:openPopup('popup.aspx?sesja=3!1.1.10!2!4')"><asp:Label CssClass="normal" ID="tab_1110_w03_c02" runat="server" Text="0"></asp:Label></a></td>
+    <td  class="col_250 center borderAll "><a href="javascript:openPopup('popup.aspx?sesja=3!1.1.10!3!4')"><asp:Label CssClass="normal" ID="tab_1110_w03_c03" runat="server" Text="0"></asp:Label></a></td>
+  </tr>
+  <tr>
+    <td  class="borderAll  col_60 wciecie">Nkd</td>
+  <td  class="borderAll col_36">4</td>
+    <td  class="col_250 center borderAll "><a href="javascript:openPopup('popup.aspx?sesja=4!1.1.10!1!4')"><asp:Label CssClass="normal" ID="tab_1110_w04_c01" runat="server" Text="0"></asp:Label></a></td>
+    <td  class="col_250 center borderAll "><a href="javascript:openPopup('popup.aspx?sesja=4!1.1.10!2!4')"><asp:Label CssClass="normal" ID="tab_1110_w04_c02" runat="server" Text="0"></asp:Label></a></td>
+    <td  class="col_250 center borderAll "><a href="javascript:openPopup('popup.aspx?sesja=4!1.1.10!3!4')"><asp:Label CssClass="normal" ID="tab_1110_w04_c03" runat="server" Text="0"></asp:Label></a></td>
+  </tr>
+    </table>
+ </div>
+
+       <br />
           <h4><span lang="PL">Sprawy z zakresu spraw cywilnych rodzinnych i nieletnich – część wspólna<o:p></o:p></span></h4>
           <br />
           <div id="1.2" class="page-break">
               <strong>Dział 1.2</strong> Ewidencja spraw ogółem i przyczyny ponownych wpisów oraz szczególne rodzaje załatwień spraw cywilnych rodzinnych i nieletnich
-              <table cellpadding="0" cellspacing="0" style="width: 100 %; ">
+             <table  style="width: 100%; ">
                   <tr>
                       <td class="center borderAll" colspan="4" rowspan="3">Wyszczególnienie </td>
                       <td class="center borderAll" colspan="7">Repertorium / wykaz</td>
@@ -3172,79 +3245,582 @@
               </table>
           </div>
           <br />
-          <div id="1.2.a" class="page-break">
-              <strong>Dział 1.2.a</strong> Ustanowienie pełnomocnika / obrońcy z urzędu
-              <table cellpadding="0" cellspacing="0" style="width: 100 %; ">
-                  <tr>
-                      <td class="center borderAll" colspan="2">Repertorium lub wykaz</td>
-                      <td class="center borderAll">Liczba spraw w których doszło do ustanowienia pełnomocnika z urzędu (radca prawny, adwokat)</td>
-                      <td class="center borderAll">&nbsp;Liczba ustanowionych pełnomocników z urzędu (radca prawny, adwokat)</td>
-                      <td class="center borderAll">W tym liczba wyznaczonych pełnomocników w wyniku zwolnienia poprzedniego pełnomocnika </td>
-                  </tr>
-                  <tr>
-                      <td class="center borderAll" colspan="2">0</td>
-                      <td class="center borderAll">1</td>
-                      <td class="center borderAll">2</td>
-                      <td class="center borderAll">3</td>
-                  </tr>
-                  <tr>
-                      <td class="borderAll wciecie">RC</td>
-                      <td class="borderAll col_36">1</td>
-                      <td class="col_180 center borderAll "><a href="javascript:openPopup('popup.aspx?sesja=1!1.2.a!1!4')">
-                          <asp:Label ID="tab_1_2_a_w01_c01" runat="server" CssClass="normal" Text="0"></asp:Label>
-                          </a></td>
-                      <td class="col_180 center borderAll "><a href="javascript:openPopup('popup.aspx?sesja=1!1.2.a!2!4')">
-                          <asp:Label ID="tab_1_2_a_w01_c02" runat="server" CssClass="normal" Text="0"></asp:Label>
-                          </a></td>
-                      <td class="col_180 center borderAll "><a href="javascript:openPopup('popup.aspx?sesja=1!1.2.a!3!4')">
-                          <asp:Label ID="tab_1_2_a_w01_c03" runat="server" CssClass="normal" Text="0"></asp:Label>
-                          </a></td>
-                  </tr>
-                  <tr>
-                      <td class="borderAll wciecie">RNs</td>
-                      <td class="borderAll col_36">2</td>
-                      <td class="col_180 center borderAll "><a href="javascript:openPopup('popup.aspx?sesja=2!1.2.a!1!4')">
-                          <asp:Label ID="tab_1_2_a_w02_c01" runat="server" CssClass="normal" Text="0"></asp:Label>
-                          </a></td>
-                      <td class="col_180 center borderAll "><a href="javascript:openPopup('popup.aspx?sesja=2!1.2.a!2!4')">
-                          <asp:Label ID="tab_1_2_a_w02_c02" runat="server" CssClass="normal" Text="0"></asp:Label>
-                          </a></td>
-                      <td class="col_180 center borderAll "><a href="javascript:openPopup('popup.aspx?sesja=2!1.2.a!3!4')">
-                          <asp:Label ID="tab_1_2_a_w02_c03" runat="server" CssClass="normal" Text="0"></asp:Label>
-                          </a></td>
-                  </tr>
-                  <tr>
-                      <td class="borderAll wciecie">Nsm</td>
-                      <td class="borderAll col_36">3</td>
-                      <td class="col_180 center borderAll "><a href="javascript:openPopup('popup.aspx?sesja=3!1.2.a!1!4')">
-                          <asp:Label ID="tab_1_2_a_w03_c01" runat="server" CssClass="normal" Text="0"></asp:Label>
-                          </a></td>
-                      <td class="col_180 center borderAll "><a href="javascript:openPopup('popup.aspx?sesja=3!1.2.a!2!4')">
-                          <asp:Label ID="tab_1_2_a_w03_c02" runat="server" CssClass="normal" Text="0"></asp:Label>
-                          </a></td>
-                      <td class="col_180 center borderAll "><a href="javascript:openPopup('popup.aspx?sesja=3!1.2.a!3!4')">
-                          <asp:Label ID="tab_1_2_a_w03_c03" runat="server" CssClass="normal" Text="0"></asp:Label>
-                          </a></td>
-                  </tr>
-                  <tr>
-                      <td class="borderAll wciecie">Nkd</td>
-                      <td class="borderAll col_36">4</td>
-                      <td class="col_180 center borderAll "><a href="javascript:openPopup('popup.aspx?sesja=4!1.2.a!1!4')">
-                          <asp:Label ID="tab_1_2_a_w04_c01" runat="server" CssClass="normal" Text="0"></asp:Label>
-                          </a></td>
-                      <td class="col_180 center borderAll "><a href="javascript:openPopup('popup.aspx?sesja=4!1.2.a!2!4')">
-                          <asp:Label ID="tab_1_2_a_w04_c02" runat="server" CssClass="normal" Text="0"></asp:Label>
-                          </a></td>
-                      <td class="col_180 center borderAll "><a href="javascript:openPopup('popup.aspx?sesja=4!1.2.a!3!4')">
-                          <asp:Label ID="tab_1_2_a_w04_c03" runat="server" CssClass="normal" Text="0"></asp:Label>
-                          </a></td>
-                  </tr>
-              </table>
-          </div>
-          <br />
+
+ <div id='Struktura wpływu spraw' class="page-break">
+ <br />
+ <strong> Dział Struktura wpływu spraw</strong>
+    <table  style="width: 100%; ">
+ <tr>
+     <td  class="center borderAll" colspan="4" rowspan="3"> Wyszczególnienie</td>    <td class="center borderAll" colspan="7"> Repertorium / wykaz</td>
+</tr>
+ <tr>    <td class="center borderAll" rowspan="2"> Ogółem</td>
+<td class="center borderAll" colspan="6">wtym</td>
+</tr>
+ <tr>
+<td class="center borderAll">RC</td>
+<td class="center borderAll">RNs</td>
+<td class="center borderAll">Nsm</td>
+<td class="center borderAll">RCo</td>
+<td class="center borderAll">Nmo</td>
+<td class="center borderAll">Nkd</td>
+</tr>
+ <tr>    <td  class="center borderAll" colspan="4">0</td>    <td class="center borderAll">1</td>
+<td class="center borderAll">2</td>
+<td class="center borderAll">3</td>
+<td class="center borderAll">4</td>
+<td class="center borderAll">5</td>
+<td class="center borderAll">6</td>
+<td class="center borderAll">7</td>
+</tr>
+  <tr>
+    <td  class="borderAll wciecie" colspan="3">Pozostało z ubiegłego roku (w.01 = dz.1.1.1. kol.1 i dz. 1.1.2. kol.1 odpowiednie wiersze)</td>
+  <td  class="borderAll col_36">1</td>
+    <td  class="col_60 center borderAll "><a href="javascript:openPopup('popup.aspx?sesja=1!1.2.a!1!4')"><asp:Label CssClass="normal" ID="tab_12a_w01_c01" runat="server" Text="0"></asp:Label></a></td>
+    <td  class="col_60 center borderAll "><a href="javascript:openPopup('popup.aspx?sesja=1!1.2.a!2!4')"><asp:Label CssClass="normal" ID="tab_12a_w01_c02" runat="server" Text="0"></asp:Label></a></td>
+    <td  class="col_60 center borderAll "><a href="javascript:openPopup('popup.aspx?sesja=1!1.2.a!3!4')"><asp:Label CssClass="normal" ID="tab_12a_w01_c03" runat="server" Text="0"></asp:Label></a></td>
+    <td  class="col_60 center borderAll "><a href="javascript:openPopup('popup.aspx?sesja=1!1.2.a!4!4')"><asp:Label CssClass="normal" ID="tab_12a_w01_c04" runat="server" Text="0"></asp:Label></a></td>
+    <td  class="col_60 center borderAll "><a href="javascript:openPopup('popup.aspx?sesja=1!1.2.a!5!4')"><asp:Label CssClass="normal" ID="tab_12a_w01_c05" runat="server" Text="0"></asp:Label></a></td>
+    <td  class="col_60 center borderAll "><a href="javascript:openPopup('popup.aspx?sesja=1!1.2.a!6!4')"><asp:Label CssClass="normal" ID="tab_12a_w01_c06" runat="server" Text="0"></asp:Label></a></td>
+    <td  class="col_60 center borderAll "><a href="javascript:openPopup('popup.aspx?sesja=1!1.2.a!7!4')"><asp:Label CssClass="normal" ID="tab_12a_w01_c07" runat="server" Text="0"></asp:Label></a></td>
+  </tr>
+  <tr>
+    <td  class="borderAll wciecie" colspan="3">Wpłynęło ogółem (w.02 = dz.1.1.1. kol.2 + dz. 1.1.2. kol.2 odpowiednie wiersze = w.03+22) </td>
+  <td  class="borderAll col_36">2</td>
+    <td  class="col_60 center borderAll "><a href="javascript:openPopup('popup.aspx?sesja=2!1.2.a!1!4')"><asp:Label CssClass="normal" ID="tab_12a_w02_c01" runat="server" Text="0"></asp:Label></a></td>
+    <td  class="col_60 center borderAll "><a href="javascript:openPopup('popup.aspx?sesja=2!1.2.a!2!4')"><asp:Label CssClass="normal" ID="tab_12a_w02_c02" runat="server" Text="0"></asp:Label></a></td>
+    <td  class="col_60 center borderAll "><a href="javascript:openPopup('popup.aspx?sesja=2!1.2.a!3!4')"><asp:Label CssClass="normal" ID="tab_12a_w02_c03" runat="server" Text="0"></asp:Label></a></td>
+    <td  class="col_60 center borderAll "><a href="javascript:openPopup('popup.aspx?sesja=2!1.2.a!4!4')"><asp:Label CssClass="normal" ID="tab_12a_w02_c04" runat="server" Text="0"></asp:Label></a></td>
+    <td  class="col_60 center borderAll "><a href="javascript:openPopup('popup.aspx?sesja=2!1.2.a!5!4')"><asp:Label CssClass="normal" ID="tab_12a_w02_c05" runat="server" Text="0"></asp:Label></a></td>
+    <td  class="col_60 center borderAll "><a href="javascript:openPopup('popup.aspx?sesja=2!1.2.a!6!4')"><asp:Label CssClass="normal" ID="tab_12a_w02_c06" runat="server" Text="0"></asp:Label></a></td>
+    <td  class="col_60 center borderAll "><a href="javascript:openPopup('popup.aspx?sesja=2!1.2.a!7!4')"><asp:Label CssClass="normal" ID="tab_12a_w02_c07" runat="server" Text="0"></asp:Label></a></td>
+  </tr>
+  <tr>
+    <td  class="verticaltext borderAll wciecie " rowspan="19">W tym ponownie wpisane</td>
+    <td  class="borderAll wciecie" colspan="2">razem (w.03 = w.04 do 21)</td>
+  <td  class="borderAll col_36">3</td>
+    <td  class="col_60 center borderAll "><a href="javascript:openPopup('popup.aspx?sesja=3!1.2.a!1!4')"><asp:Label CssClass="normal" ID="tab_12a_w03_c01" runat="server" Text="0"></asp:Label></a></td>
+    <td  class="col_60 center borderAll "><a href="javascript:openPopup('popup.aspx?sesja=3!1.2.a!2!4')"><asp:Label CssClass="normal" ID="tab_12a_w03_c02" runat="server" Text="0"></asp:Label></a></td>
+    <td  class="col_60 center borderAll "><a href="javascript:openPopup('popup.aspx?sesja=3!1.2.a!3!4')"><asp:Label CssClass="normal" ID="tab_12a_w03_c03" runat="server" Text="0"></asp:Label></a></td>
+    <td  class="col_60 center borderAll "><a href="javascript:openPopup('popup.aspx?sesja=3!1.2.a!4!4')"><asp:Label CssClass="normal" ID="tab_12a_w03_c04" runat="server" Text="0"></asp:Label></a></td>
+    <td  class="col_60 center borderAll "><a href="javascript:openPopup('popup.aspx?sesja=3!1.2.a!5!4')"><asp:Label CssClass="normal" ID="tab_12a_w03_c05" runat="server" Text="0"></asp:Label></a></td>
+    <td  class="col_60 center borderAll "><a href="javascript:openPopup('popup.aspx?sesja=3!1.2.a!6!4')"><asp:Label CssClass="normal" ID="tab_12a_w03_c06" runat="server" Text="0"></asp:Label></a></td>
+    <td  class="col_60 center borderAll "><a href="javascript:openPopup('popup.aspx?sesja=3!1.2.a!7!4')"><asp:Label CssClass="normal" ID="tab_12a_w03_c07" runat="server" Text="0"></asp:Label></a></td>
+  </tr>
+  <tr>
+    <td  class="borderAll wciecie" colspan="2">zwrot pozwu/wniosku/skargi (art. 130 kpc)</td>
+  <td  class="borderAll col_36">4</td>
+    <td  class="col_60 center borderAll "><a href="javascript:openPopup('popup.aspx?sesja=4!1.2.a!1!4')"><asp:Label CssClass="normal" ID="tab_12a_w04_c01" runat="server" Text="0"></asp:Label></a></td>
+    <td  class="col_60 center borderAll "><a href="javascript:openPopup('popup.aspx?sesja=4!1.2.a!2!4')"><asp:Label CssClass="normal" ID="tab_12a_w04_c02" runat="server" Text="0"></asp:Label></a></td>
+    <td  class="col_60 center borderAll "><a href="javascript:openPopup('popup.aspx?sesja=4!1.2.a!3!4')"><asp:Label CssClass="normal" ID="tab_12a_w04_c03" runat="server" Text="0"></asp:Label></a></td>
+    <td  class="col_60 center borderAll "><a href="javascript:openPopup('popup.aspx?sesja=4!1.2.a!4!4')"><asp:Label CssClass="normal" ID="tab_12a_w04_c04" runat="server" Text="0"></asp:Label></a></td>
+    <td  class="col_60 center borderAll "><a href="javascript:openPopup('popup.aspx?sesja=4!1.2.a!5!4')"><asp:Label CssClass="normal" ID="tab_12a_w04_c05" runat="server" Text="0"></asp:Label></a></td>
+    <td  class="col_60 center borderAll "><a href="javascript:openPopup('popup.aspx?sesja=4!1.2.a!6!4')"><asp:Label CssClass="normal" ID="tab_12a_w04_c06" runat="server" Text="0"></asp:Label></a></td>
+    <td  class="col_60 center borderAll "><a href="javascript:openPopup('popup.aspx?sesja=4!1.2.a!7!4')"><asp:Label CssClass="normal" ID="tab_12a_w04_c07" runat="server" Text="0"></asp:Label></a></td>
+  </tr>
+  <tr>
+    <td  class="borderAll wciecie" colspan="2">zwrot pozwu/wniosku/skargi (art. 1301 kpc)</td>
+  <td  class="borderAll col_36">5</td>
+    <td  class="col_60 center borderAll "><a href="javascript:openPopup('popup.aspx?sesja=5!1.2.a!1!4')"><asp:Label CssClass="normal" ID="tab_12a_w05_c01" runat="server" Text="0"></asp:Label></a></td>
+    <td  class="col_60 center borderAll "><a href="javascript:openPopup('popup.aspx?sesja=5!1.2.a!2!4')"><asp:Label CssClass="normal" ID="tab_12a_w05_c02" runat="server" Text="0"></asp:Label></a></td>
+    <td  class="col_60 center borderAll "><a href="javascript:openPopup('popup.aspx?sesja=5!1.2.a!3!4')"><asp:Label CssClass="normal" ID="tab_12a_w05_c03" runat="server" Text="0"></asp:Label></a></td>
+    <td  class="col_60 center borderAll "><a href="javascript:openPopup('popup.aspx?sesja=5!1.2.a!4!4')"><asp:Label CssClass="normal" ID="tab_12a_w05_c04" runat="server" Text="0"></asp:Label></a></td>
+    <td  class="col_60 center borderAll "><a href="javascript:openPopup('popup.aspx?sesja=5!1.2.a!5!4')"><asp:Label CssClass="normal" ID="tab_12a_w05_c05" runat="server" Text="0"></asp:Label></a></td>
+    <td  class="col_60 center borderAll "><a href="javascript:openPopup('popup.aspx?sesja=5!1.2.a!6!4')"><asp:Label CssClass="normal" ID="tab_12a_w05_c06" runat="server" Text="0"></asp:Label></a></td>
+    <td  class="col_60 center borderAll "><a href="javascript:openPopup('popup.aspx?sesja=5!1.2.a!7!4')"><asp:Label CssClass="normal" ID="tab_12a_w05_c07" runat="server" Text="0"></asp:Label></a></td>
+  </tr>
+  <tr>
+    <td  class="borderAll wciecie" colspan="2">przekazanie z innych jednostek na podstawie art. 200§1 kpc (z wyjątkiem zmian organizacyjnych)</td>
+  <td  class="borderAll col_36">6</td>
+    <td  class="col_60 center borderAll "><a href="javascript:openPopup('popup.aspx?sesja=6!1.2.a!1!4')"><asp:Label CssClass="normal" ID="tab_12a_w06_c01" runat="server" Text="0"></asp:Label></a></td>
+    <td  class="col_60 center borderAll "><a href="javascript:openPopup('popup.aspx?sesja=6!1.2.a!2!4')"><asp:Label CssClass="normal" ID="tab_12a_w06_c02" runat="server" Text="0"></asp:Label></a></td>
+    <td  class="col_60 center borderAll "><a href="javascript:openPopup('popup.aspx?sesja=6!1.2.a!3!4')"><asp:Label CssClass="normal" ID="tab_12a_w06_c03" runat="server" Text="0"></asp:Label></a></td>
+    <td  class="col_60 center borderAll "><a href="javascript:openPopup('popup.aspx?sesja=6!1.2.a!4!4')"><asp:Label CssClass="normal" ID="tab_12a_w06_c04" runat="server" Text="0"></asp:Label></a></td>
+    <td  class="col_60 center borderAll "><a href="javascript:openPopup('popup.aspx?sesja=6!1.2.a!5!4')"><asp:Label CssClass="normal" ID="tab_12a_w06_c05" runat="server" Text="0"></asp:Label></a></td>
+    <td  class="col_60 center borderAll "><a href="javascript:openPopup('popup.aspx?sesja=6!1.2.a!6!4')"><asp:Label CssClass="normal" ID="tab_12a_w06_c06" runat="server" Text="0"></asp:Label></a></td>
+    <td  class="col_60 center borderAll "><a href="javascript:openPopup('popup.aspx?sesja=6!1.2.a!7!4')"><asp:Label CssClass="normal" ID="tab_12a_w06_c07" runat="server" Text="0"></asp:Label></a></td>
+  </tr>
+  <tr>
+    <td  class="borderAll wciecie" colspan="2">wyłączenie roszczenia do odrębnego rozpoznania – poprzednio połączonej na podstawie art. 219 kpc</td>
+  <td  class="borderAll col_36">7</td>
+    <td  class="col_60 center borderAll "><a href="javascript:openPopup('popup.aspx?sesja=7!1.2.a!1!4')"><asp:Label CssClass="normal" ID="tab_12a_w07_c01" runat="server" Text="0"></asp:Label></a></td>
+    <td  class="col_60 center borderAll "><a href="javascript:openPopup('popup.aspx?sesja=7!1.2.a!2!4')"><asp:Label CssClass="normal" ID="tab_12a_w07_c02" runat="server" Text="0"></asp:Label></a></td>
+    <td  class="col_60 center borderAll "><a href="javascript:openPopup('popup.aspx?sesja=7!1.2.a!3!4')"><asp:Label CssClass="normal" ID="tab_12a_w07_c03" runat="server" Text="0"></asp:Label></a></td>
+    <td  class="col_60 center borderAll "><a href="javascript:openPopup('popup.aspx?sesja=7!1.2.a!4!4')"><asp:Label CssClass="normal" ID="tab_12a_w07_c04" runat="server" Text="0"></asp:Label></a></td>
+    <td  class="col_60 center borderAll "><a href="javascript:openPopup('popup.aspx?sesja=7!1.2.a!5!4')"><asp:Label CssClass="normal" ID="tab_12a_w07_c05" runat="server" Text="0"></asp:Label></a></td>
+    <td  class="col_60 center borderAll "><a href="javascript:openPopup('popup.aspx?sesja=7!1.2.a!6!4')"><asp:Label CssClass="normal" ID="tab_12a_w07_c06" runat="server" Text="0"></asp:Label></a></td>
+    <td  class="col_60 center borderAll "><a href="javascript:openPopup('popup.aspx?sesja=7!1.2.a!7!4')"><asp:Label CssClass="normal" ID="tab_12a_w07_c07" runat="server" Text="0"></asp:Label></a></td>
+  </tr>
+  <tr>
+    <td  class="borderAll wciecie" colspan="2">wyłączenie roszczenia do odrębnego rozpoznania (z wyłączeniem wiersza 07)</td>
+  <td  class="borderAll col_36">8</td>
+    <td  class="col_60 center borderAll "><a href="javascript:openPopup('popup.aspx?sesja=8!1.2.a!1!4')"><asp:Label CssClass="normal" ID="tab_12a_w08_c01" runat="server" Text="0"></asp:Label></a></td>
+    <td  class="col_60 center borderAll "><a href="javascript:openPopup('popup.aspx?sesja=8!1.2.a!2!4')"><asp:Label CssClass="normal" ID="tab_12a_w08_c02" runat="server" Text="0"></asp:Label></a></td>
+    <td  class="col_60 center borderAll "><a href="javascript:openPopup('popup.aspx?sesja=8!1.2.a!3!4')"><asp:Label CssClass="normal" ID="tab_12a_w08_c03" runat="server" Text="0"></asp:Label></a></td>
+    <td  class="col_60 center borderAll "><a href="javascript:openPopup('popup.aspx?sesja=8!1.2.a!4!4')"><asp:Label CssClass="normal" ID="tab_12a_w08_c04" runat="server" Text="0"></asp:Label></a></td>
+    <td  class="col_60 center borderAll "><a href="javascript:openPopup('popup.aspx?sesja=8!1.2.a!5!4')"><asp:Label CssClass="normal" ID="tab_12a_w08_c05" runat="server" Text="0"></asp:Label></a></td>
+    <td  class="col_60 center borderAll "><a href="javascript:openPopup('popup.aspx?sesja=8!1.2.a!6!4')"><asp:Label CssClass="normal" ID="tab_12a_w08_c06" runat="server" Text="0"></asp:Label></a></td>
+    <td  class="col_60 center borderAll "><a href="javascript:openPopup('popup.aspx?sesja=8!1.2.a!7!4')"><asp:Label CssClass="normal" ID="tab_12a_w08_c07" runat="server" Text="0"></asp:Label></a></td>
+  </tr>
+  <tr>
+    <td  class="borderAll wciecie" colspan="2">sprawy zawieszone, które podjęto</td>
+  <td  class="borderAll col_36">9</td>
+    <td  class="col_60 center borderAll "><a href="javascript:openPopup('popup.aspx?sesja=9!1.2.a!1!4')"><asp:Label CssClass="normal" ID="tab_12a_w09_c01" runat="server" Text="0"></asp:Label></a></td>
+    <td  class="col_60 center borderAll "><a href="javascript:openPopup('popup.aspx?sesja=9!1.2.a!2!4')"><asp:Label CssClass="normal" ID="tab_12a_w09_c02" runat="server" Text="0"></asp:Label></a></td>
+    <td  class="col_60 center borderAll "><a href="javascript:openPopup('popup.aspx?sesja=9!1.2.a!3!4')"><asp:Label CssClass="normal" ID="tab_12a_w09_c03" runat="server" Text="0"></asp:Label></a></td>
+    <td  class="col_60 center borderAll "><a href="javascript:openPopup('popup.aspx?sesja=9!1.2.a!4!4')"><asp:Label CssClass="normal" ID="tab_12a_w09_c04" runat="server" Text="0"></asp:Label></a></td>
+    <td  class="col_60 center borderAll "><a href="javascript:openPopup('popup.aspx?sesja=9!1.2.a!5!4')"><asp:Label CssClass="normal" ID="tab_12a_w09_c05" runat="server" Text="0"></asp:Label></a></td>
+    <td  class="col_60 center borderAll "><a href="javascript:openPopup('popup.aspx?sesja=9!1.2.a!6!4')"><asp:Label CssClass="normal" ID="tab_12a_w09_c06" runat="server" Text="0"></asp:Label></a></td>
+    <td  class="col_60 center borderAll "><a href="javascript:openPopup('popup.aspx?sesja=9!1.2.a!7!4')"><asp:Label CssClass="normal" ID="tab_12a_w09_c07" runat="server" Text="0"></asp:Label></a></td>
+  </tr>
+  <tr>
+    <td  class="borderAll wciecie" colspan="2">przekazano sprawy w ramach sądu pomiędzy wydziałami tego samego pionu</td>
+  <td  class="borderAll col_36">10</td>
+    <td  class="col_60 center borderAll "><a href="javascript:openPopup('popup.aspx?sesja=10!1.2.a!1!4')"><asp:Label CssClass="normal" ID="tab_12a_w10_c01" runat="server" Text="0"></asp:Label></a></td>
+    <td  class="col_60 center borderAll "><a href="javascript:openPopup('popup.aspx?sesja=10!1.2.a!2!4')"><asp:Label CssClass="normal" ID="tab_12a_w10_c02" runat="server" Text="0"></asp:Label></a></td>
+    <td  class="col_60 center borderAll "><a href="javascript:openPopup('popup.aspx?sesja=10!1.2.a!3!4')"><asp:Label CssClass="normal" ID="tab_12a_w10_c03" runat="server" Text="0"></asp:Label></a></td>
+    <td  class="col_60 center borderAll "><a href="javascript:openPopup('popup.aspx?sesja=10!1.2.a!4!4')"><asp:Label CssClass="normal" ID="tab_12a_w10_c04" runat="server" Text="0"></asp:Label></a></td>
+    <td  class="col_60 center borderAll "><a href="javascript:openPopup('popup.aspx?sesja=10!1.2.a!5!4')"><asp:Label CssClass="normal" ID="tab_12a_w10_c05" runat="server" Text="0"></asp:Label></a></td>
+    <td  class="col_60 center borderAll "><a href="javascript:openPopup('popup.aspx?sesja=10!1.2.a!6!4')"><asp:Label CssClass="normal" ID="tab_12a_w10_c06" runat="server" Text="0"></asp:Label></a></td>
+    <td  class="col_60 center borderAll "><a href="javascript:openPopup('popup.aspx?sesja=10!1.2.a!7!4')"><asp:Label CssClass="normal" ID="tab_12a_w10_c07" runat="server" Text="0"></asp:Label></a></td>
+  </tr>
+  <tr>
+    <td  class="borderAll wciecie" colspan="2">przekazano sprawy w ramach sądu pomiędzy wydziałami różnych pionów</td>
+  <td  class="borderAll col_36">11</td>
+    <td  class="col_60 center borderAll "><a href="javascript:openPopup('popup.aspx?sesja=11!1.2.a!1!4')"><asp:Label CssClass="normal" ID="tab_12a_w11_c01" runat="server" Text="0"></asp:Label></a></td>
+    <td  class="col_60 center borderAll "><a href="javascript:openPopup('popup.aspx?sesja=11!1.2.a!2!4')"><asp:Label CssClass="normal" ID="tab_12a_w11_c02" runat="server" Text="0"></asp:Label></a></td>
+    <td  class="col_60 center borderAll "><a href="javascript:openPopup('popup.aspx?sesja=11!1.2.a!3!4')"><asp:Label CssClass="normal" ID="tab_12a_w11_c03" runat="server" Text="0"></asp:Label></a></td>
+    <td  class="col_60 center borderAll "><a href="javascript:openPopup('popup.aspx?sesja=11!1.2.a!4!4')"><asp:Label CssClass="normal" ID="tab_12a_w11_c04" runat="server" Text="0"></asp:Label></a></td>
+    <td  class="col_60 center borderAll "><a href="javascript:openPopup('popup.aspx?sesja=11!1.2.a!5!4')"><asp:Label CssClass="normal" ID="tab_12a_w11_c05" runat="server" Text="0"></asp:Label></a></td>
+    <td  class="col_60 center borderAll "><a href="javascript:openPopup('popup.aspx?sesja=11!1.2.a!6!4')"><asp:Label CssClass="normal" ID="tab_12a_w11_c06" runat="server" Text="0"></asp:Label></a></td>
+    <td  class="col_60 center borderAll "><a href="javascript:openPopup('popup.aspx?sesja=11!1.2.a!7!4')"><asp:Label CssClass="normal" ID="tab_12a_w11_c07" runat="server" Text="0"></asp:Label></a></td>
+  </tr>
+  <tr>
+    <td  class="borderAll wciecie" colspan="2">po uchyleniu orzeczenia i przekazaniu sprawy do ponownego rozpoznania </td>
+  <td  class="borderAll col_36">12</td>
+    <td  class="col_60 center borderAll "><a href="javascript:openPopup('popup.aspx?sesja=12!1.2.a!1!4')"><asp:Label CssClass="normal" ID="tab_12a_w12_c01" runat="server" Text="0"></asp:Label></a></td>
+    <td  class="col_60 center borderAll "><a href="javascript:openPopup('popup.aspx?sesja=12!1.2.a!2!4')"><asp:Label CssClass="normal" ID="tab_12a_w12_c02" runat="server" Text="0"></asp:Label></a></td>
+    <td  class="col_60 center borderAll "><a href="javascript:openPopup('popup.aspx?sesja=12!1.2.a!3!4')"><asp:Label CssClass="normal" ID="tab_12a_w12_c03" runat="server" Text="0"></asp:Label></a></td>
+    <td  class="col_60 center borderAll "><a href="javascript:openPopup('popup.aspx?sesja=12!1.2.a!4!4')"><asp:Label CssClass="normal" ID="tab_12a_w12_c04" runat="server" Text="0"></asp:Label></a></td>
+    <td  class="col_60 center borderAll "><a href="javascript:openPopup('popup.aspx?sesja=12!1.2.a!5!4')"><asp:Label CssClass="normal" ID="tab_12a_w12_c05" runat="server" Text="0"></asp:Label></a></td>
+    <td  class="col_60 center borderAll "><a href="javascript:openPopup('popup.aspx?sesja=12!1.2.a!6!4')"><asp:Label CssClass="normal" ID="tab_12a_w12_c06" runat="server" Text="0"></asp:Label></a></td>
+    <td  class="col_60 center borderAll "><a href="javascript:openPopup('popup.aspx?sesja=12!1.2.a!7!4')"><asp:Label CssClass="normal" ID="tab_12a_w12_c07" runat="server" Text="0"></asp:Label></a></td>
+  </tr>
+  <tr>
+    <td  class="borderAll wciecie" colspan="2">w wyniku zmian zarządzenia MS o biurowości</td>
+  <td  class="borderAll col_36">13</td>
+    <td  class="col_60 center borderAll "><a href="javascript:openPopup('popup.aspx?sesja=13!1.2.a!1!4')"><asp:Label CssClass="normal" ID="tab_12a_w13_c01" runat="server" Text="0"></asp:Label></a></td>
+    <td  class="col_60 center borderAll "><a href="javascript:openPopup('popup.aspx?sesja=13!1.2.a!2!4')"><asp:Label CssClass="normal" ID="tab_12a_w13_c02" runat="server" Text="0"></asp:Label></a></td>
+    <td  class="col_60 center borderAll "><a href="javascript:openPopup('popup.aspx?sesja=13!1.2.a!3!4')"><asp:Label CssClass="normal" ID="tab_12a_w13_c03" runat="server" Text="0"></asp:Label></a></td>
+    <td  class="col_60 center borderAll "><a href="javascript:openPopup('popup.aspx?sesja=13!1.2.a!4!4')"><asp:Label CssClass="normal" ID="tab_12a_w13_c04" runat="server" Text="0"></asp:Label></a></td>
+    <td  class="col_60 center borderAll "><a href="javascript:openPopup('popup.aspx?sesja=13!1.2.a!5!4')"><asp:Label CssClass="normal" ID="tab_12a_w13_c05" runat="server" Text="0"></asp:Label></a></td>
+    <td  class="col_60 center borderAll "><a href="javascript:openPopup('popup.aspx?sesja=13!1.2.a!6!4')"><asp:Label CssClass="normal" ID="tab_12a_w13_c06" runat="server" Text="0"></asp:Label></a></td>
+    <td  class="col_60 center borderAll "><a href="javascript:openPopup('popup.aspx?sesja=13!1.2.a!7!4')"><asp:Label CssClass="normal" ID="tab_12a_w13_c07" runat="server" Text="0"></asp:Label></a></td>
+  </tr>
+  <tr>
+    <td  class="borderAll wciecie" rowspan="2">zmiany organizacyjne związane z utworzeniem lub likwidacją </td>
+    <td  class="borderAll wciecie">wydziału (łów) / sekcji </td>
+  <td  class="borderAll col_36">14</td>
+    <td  class="col_60 center borderAll "><a href="javascript:openPopup('popup.aspx?sesja=14!1.2.a!1!4')"><asp:Label CssClass="normal" ID="tab_12a_w14_c01" runat="server" Text="0"></asp:Label></a></td>
+    <td  class="col_60 center borderAll "><a href="javascript:openPopup('popup.aspx?sesja=14!1.2.a!2!4')"><asp:Label CssClass="normal" ID="tab_12a_w14_c02" runat="server" Text="0"></asp:Label></a></td>
+    <td  class="col_60 center borderAll "><a href="javascript:openPopup('popup.aspx?sesja=14!1.2.a!3!4')"><asp:Label CssClass="normal" ID="tab_12a_w14_c03" runat="server" Text="0"></asp:Label></a></td>
+    <td  class="col_60 center borderAll "><a href="javascript:openPopup('popup.aspx?sesja=14!1.2.a!4!4')"><asp:Label CssClass="normal" ID="tab_12a_w14_c04" runat="server" Text="0"></asp:Label></a></td>
+    <td  class="col_60 center borderAll "><a href="javascript:openPopup('popup.aspx?sesja=14!1.2.a!5!4')"><asp:Label CssClass="normal" ID="tab_12a_w14_c05" runat="server" Text="0"></asp:Label></a></td>
+    <td  class="col_60 center borderAll "><a href="javascript:openPopup('popup.aspx?sesja=14!1.2.a!6!4')"><asp:Label CssClass="normal" ID="tab_12a_w14_c06" runat="server" Text="0"></asp:Label></a></td>
+    <td  class="col_60 center borderAll "><a href="javascript:openPopup('popup.aspx?sesja=14!1.2.a!7!4')"><asp:Label CssClass="normal" ID="tab_12a_w14_c07" runat="server" Text="0"></asp:Label></a></td>
+  </tr>
+  <tr>
+    <td  class="borderAll wciecie">sądu (dów)</td>
+  <td  class="borderAll col_36">15</td>
+    <td  class="col_60 center borderAll "><a href="javascript:openPopup('popup.aspx?sesja=15!1.2.a!1!4')"><asp:Label CssClass="normal" ID="tab_12a_w15_c01" runat="server" Text="0"></asp:Label></a></td>
+    <td  class="col_60 center borderAll "><a href="javascript:openPopup('popup.aspx?sesja=15!1.2.a!2!4')"><asp:Label CssClass="normal" ID="tab_12a_w15_c02" runat="server" Text="0"></asp:Label></a></td>
+    <td  class="col_60 center borderAll "><a href="javascript:openPopup('popup.aspx?sesja=15!1.2.a!3!4')"><asp:Label CssClass="normal" ID="tab_12a_w15_c03" runat="server" Text="0"></asp:Label></a></td>
+    <td  class="col_60 center borderAll "><a href="javascript:openPopup('popup.aspx?sesja=15!1.2.a!4!4')"><asp:Label CssClass="normal" ID="tab_12a_w15_c04" runat="server" Text="0"></asp:Label></a></td>
+    <td  class="col_60 center borderAll "><a href="javascript:openPopup('popup.aspx?sesja=15!1.2.a!5!4')"><asp:Label CssClass="normal" ID="tab_12a_w15_c05" runat="server" Text="0"></asp:Label></a></td>
+    <td  class="col_60 center borderAll "><a href="javascript:openPopup('popup.aspx?sesja=15!1.2.a!6!4')"><asp:Label CssClass="normal" ID="tab_12a_w15_c06" runat="server" Text="0"></asp:Label></a></td>
+    <td  class="col_60 center borderAll "><a href="javascript:openPopup('popup.aspx?sesja=15!1.2.a!7!4')"><asp:Label CssClass="normal" ID="tab_12a_w15_c07" runat="server" Text="0"></asp:Label></a></td>
+  </tr>
+  <tr>
+    <td  class="borderAll wciecie" rowspan="2">w związku ze zmianą obszaru właściwości miejscowej</td>
+    <td  class="borderAll wciecie">wydziału (łów)</td>
+  <td  class="borderAll col_36">16</td>
+    <td  class="col_60 center borderAll "><a href="javascript:openPopup('popup.aspx?sesja=16!1.2.a!1!4')"><asp:Label CssClass="normal" ID="tab_12a_w16_c01" runat="server" Text="0"></asp:Label></a></td>
+    <td  class="col_60 center borderAll "><a href="javascript:openPopup('popup.aspx?sesja=16!1.2.a!2!4')"><asp:Label CssClass="normal" ID="tab_12a_w16_c02" runat="server" Text="0"></asp:Label></a></td>
+    <td  class="col_60 center borderAll "><a href="javascript:openPopup('popup.aspx?sesja=16!1.2.a!3!4')"><asp:Label CssClass="normal" ID="tab_12a_w16_c03" runat="server" Text="0"></asp:Label></a></td>
+    <td  class="col_60 center borderAll "><a href="javascript:openPopup('popup.aspx?sesja=16!1.2.a!4!4')"><asp:Label CssClass="normal" ID="tab_12a_w16_c04" runat="server" Text="0"></asp:Label></a></td>
+    <td  class="col_60 center borderAll "><a href="javascript:openPopup('popup.aspx?sesja=16!1.2.a!5!4')"><asp:Label CssClass="normal" ID="tab_12a_w16_c05" runat="server" Text="0"></asp:Label></a></td>
+    <td  class="col_60 center borderAll "><a href="javascript:openPopup('popup.aspx?sesja=16!1.2.a!6!4')"><asp:Label CssClass="normal" ID="tab_12a_w16_c06" runat="server" Text="0"></asp:Label></a></td>
+    <td  class="col_60 center borderAll "><a href="javascript:openPopup('popup.aspx?sesja=16!1.2.a!7!4')"><asp:Label CssClass="normal" ID="tab_12a_w16_c07" runat="server" Text="0"></asp:Label></a></td>
+  </tr>
+  <tr>
+    <td  class="borderAll wciecie">sądu (dów)</td>
+  <td  class="borderAll col_36">17</td>
+    <td  class="col_60 center borderAll "><a href="javascript:openPopup('popup.aspx?sesja=17!1.2.a!1!4')"><asp:Label CssClass="normal" ID="tab_12a_w17_c01" runat="server" Text="0"></asp:Label></a></td>
+    <td  class="col_60 center borderAll "><a href="javascript:openPopup('popup.aspx?sesja=17!1.2.a!2!4')"><asp:Label CssClass="normal" ID="tab_12a_w17_c02" runat="server" Text="0"></asp:Label></a></td>
+    <td  class="col_60 center borderAll "><a href="javascript:openPopup('popup.aspx?sesja=17!1.2.a!3!4')"><asp:Label CssClass="normal" ID="tab_12a_w17_c03" runat="server" Text="0"></asp:Label></a></td>
+    <td  class="col_60 center borderAll "><a href="javascript:openPopup('popup.aspx?sesja=17!1.2.a!4!4')"><asp:Label CssClass="normal" ID="tab_12a_w17_c04" runat="server" Text="0"></asp:Label></a></td>
+    <td  class="col_60 center borderAll "><a href="javascript:openPopup('popup.aspx?sesja=17!1.2.a!5!4')"><asp:Label CssClass="normal" ID="tab_12a_w17_c05" runat="server" Text="0"></asp:Label></a></td>
+    <td  class="col_60 center borderAll "><a href="javascript:openPopup('popup.aspx?sesja=17!1.2.a!6!4')"><asp:Label CssClass="normal" ID="tab_12a_w17_c06" runat="server" Text="0"></asp:Label></a></td>
+    <td  class="col_60 center borderAll "><a href="javascript:openPopup('popup.aspx?sesja=17!1.2.a!7!4')"><asp:Label CssClass="normal" ID="tab_12a_w17_c07" runat="server" Text="0"></asp:Label></a></td>
+  </tr>
+  <tr>
+    <td  class="borderAll wciecie" colspan="2">przekazanie z innego trybu na podstawie art. 201§1 i 2 kpc lub do odrębnego postępowania </td>
+  <td  class="borderAll col_36">18</td>
+    <td  class="col_60 center borderAll "><a href="javascript:openPopup('popup.aspx?sesja=18!1.2.a!1!4')"><asp:Label CssClass="normal" ID="tab_12a_w18_c01" runat="server" Text="0"></asp:Label></a></td>
+    <td  class="col_60 center borderAll "><a href="javascript:openPopup('popup.aspx?sesja=18!1.2.a!2!4')"><asp:Label CssClass="normal" ID="tab_12a_w18_c02" runat="server" Text="0"></asp:Label></a></td>
+    <td  class="col_60 center borderAll "><a href="javascript:openPopup('popup.aspx?sesja=18!1.2.a!3!4')"><asp:Label CssClass="normal" ID="tab_12a_w18_c03" runat="server" Text="0"></asp:Label></a></td>
+    <td  class="col_60 center borderAll "><a href="javascript:openPopup('popup.aspx?sesja=18!1.2.a!4!4')"><asp:Label CssClass="normal" ID="tab_12a_w18_c04" runat="server" Text="0"></asp:Label></a></td>
+    <td  class="col_60 center borderAll "><a href="javascript:openPopup('popup.aspx?sesja=18!1.2.a!5!4')"><asp:Label CssClass="normal" ID="tab_12a_w18_c05" runat="server" Text="0"></asp:Label></a></td>
+    <td  class="col_60 center borderAll "><a href="javascript:openPopup('popup.aspx?sesja=18!1.2.a!6!4')"><asp:Label CssClass="normal" ID="tab_12a_w18_c06" runat="server" Text="0"></asp:Label></a></td>
+    <td  class="col_60 center borderAll "><a href="javascript:openPopup('popup.aspx?sesja=18!1.2.a!7!4')"><asp:Label CssClass="normal" ID="tab_12a_w18_c07" runat="server" Text="0"></asp:Label></a></td>
+  </tr>
+  <tr>
+    <td  class="borderAll wciecie" rowspan="2">wpływ spraw</td>
+    <td  class="borderAll wciecie">w związku z funkcjonowaniem § 43 Regulaminu</td>
+  <td  class="borderAll col_36">19</td>
+    <td  class="col_60 center borderAll "><a href="javascript:openPopup('popup.aspx?sesja=19!1.2.a!1!4')"><asp:Label CssClass="normal" ID="tab_12a_w19_c01" runat="server" Text="0"></asp:Label></a></td>
+    <td  class="col_60 center borderAll "><a href="javascript:openPopup('popup.aspx?sesja=19!1.2.a!2!4')"><asp:Label CssClass="normal" ID="tab_12a_w19_c02" runat="server" Text="0"></asp:Label></a></td>
+    <td  class="col_60 center borderAll "><a href="javascript:openPopup('popup.aspx?sesja=19!1.2.a!3!4')"><asp:Label CssClass="normal" ID="tab_12a_w19_c03" runat="server" Text="0"></asp:Label></a></td>
+    <td  class="col_60 center borderAll "><a href="javascript:openPopup('popup.aspx?sesja=19!1.2.a!4!4')"><asp:Label CssClass="normal" ID="tab_12a_w19_c04" runat="server" Text="0"></asp:Label></a></td>
+    <td  class="col_60 center borderAll "><a href="javascript:openPopup('popup.aspx?sesja=19!1.2.a!5!4')"><asp:Label CssClass="normal" ID="tab_12a_w19_c05" runat="server" Text="0"></asp:Label></a></td>
+    <td  class="col_60 center borderAll "><a href="javascript:openPopup('popup.aspx?sesja=19!1.2.a!6!4')"><asp:Label CssClass="normal" ID="tab_12a_w19_c06" runat="server" Text="0"></asp:Label></a></td>
+    <td  class="col_60 center borderAll "><a href="javascript:openPopup('popup.aspx?sesja=19!1.2.a!7!4')"><asp:Label CssClass="normal" ID="tab_12a_w19_c07" runat="server" Text="0"></asp:Label></a></td>
+  </tr>
+  <tr>
+    <td  class="borderAll wciecie">w związku ze wspólnym wpływem § 54 ust.2 Regulaminu </td>
+  <td  class="borderAll col_36">20</td>
+    <td  class="col_60 center borderAll "><a href="javascript:openPopup('popup.aspx?sesja=20!1.2.a!1!4')"><asp:Label CssClass="normal" ID="tab_12a_w20_c01" runat="server" Text="0"></asp:Label></a></td>
+    <td  class="col_60 center borderAll "><a href="javascript:openPopup('popup.aspx?sesja=20!1.2.a!2!4')"><asp:Label CssClass="normal" ID="tab_12a_w20_c02" runat="server" Text="0"></asp:Label></a></td>
+    <td  class="col_60 center borderAll "><a href="javascript:openPopup('popup.aspx?sesja=20!1.2.a!3!4')"><asp:Label CssClass="normal" ID="tab_12a_w20_c03" runat="server" Text="0"></asp:Label></a></td>
+    <td  class="col_60 center borderAll "><a href="javascript:openPopup('popup.aspx?sesja=20!1.2.a!4!4')"><asp:Label CssClass="normal" ID="tab_12a_w20_c04" runat="server" Text="0"></asp:Label></a></td>
+    <td  class="col_60 center borderAll "><a href="javascript:openPopup('popup.aspx?sesja=20!1.2.a!5!4')"><asp:Label CssClass="normal" ID="tab_12a_w20_c05" runat="server" Text="0"></asp:Label></a></td>
+    <td  class="col_60 center borderAll "><a href="javascript:openPopup('popup.aspx?sesja=20!1.2.a!6!4')"><asp:Label CssClass="normal" ID="tab_12a_w20_c06" runat="server" Text="0"></asp:Label></a></td>
+    <td  class="col_60 center borderAll "><a href="javascript:openPopup('popup.aspx?sesja=20!1.2.a!7!4')"><asp:Label CssClass="normal" ID="tab_12a_w20_c07" runat="server" Text="0"></asp:Label></a></td>
+  </tr>
+  <tr>
+    <td  class="borderAll wciecie" colspan="2">inne</td>
+  <td  class="borderAll col_36">21</td>
+    <td  class="col_60 center borderAll "><a href="javascript:openPopup('popup.aspx?sesja=21!1.2.a!1!4')"><asp:Label CssClass="normal" ID="tab_12a_w21_c01" runat="server" Text="0"></asp:Label></a></td>
+    <td  class="col_60 center borderAll "><a href="javascript:openPopup('popup.aspx?sesja=21!1.2.a!2!4')"><asp:Label CssClass="normal" ID="tab_12a_w21_c02" runat="server" Text="0"></asp:Label></a></td>
+    <td  class="col_60 center borderAll "><a href="javascript:openPopup('popup.aspx?sesja=21!1.2.a!3!4')"><asp:Label CssClass="normal" ID="tab_12a_w21_c03" runat="server" Text="0"></asp:Label></a></td>
+    <td  class="col_60 center borderAll "><a href="javascript:openPopup('popup.aspx?sesja=21!1.2.a!4!4')"><asp:Label CssClass="normal" ID="tab_12a_w21_c04" runat="server" Text="0"></asp:Label></a></td>
+    <td  class="col_60 center borderAll "><a href="javascript:openPopup('popup.aspx?sesja=21!1.2.a!5!4')"><asp:Label CssClass="normal" ID="tab_12a_w21_c05" runat="server" Text="0"></asp:Label></a></td>
+    <td  class="col_60 center borderAll "><a href="javascript:openPopup('popup.aspx?sesja=21!1.2.a!6!4')"><asp:Label CssClass="normal" ID="tab_12a_w21_c06" runat="server" Text="0"></asp:Label></a></td>
+    <td  class="col_60 center borderAll "><a href="javascript:openPopup('popup.aspx?sesja=21!1.2.a!7!4')"><asp:Label CssClass="normal" ID="tab_12a_w21_c07" runat="server" Text="0"></asp:Label></a></td>
+  </tr>
+  <tr>
+    <td  class="borderAll wciecie" colspan="3">Wpływ pozostałych spraw</td>
+  <td  class="borderAll col_36">22</td>
+    <td  class="col_60 center borderAll "><a href="javascript:openPopup('popup.aspx?sesja=22!1.2.a!1!4')"><asp:Label CssClass="normal" ID="tab_12a_w22_c01" runat="server" Text="0"></asp:Label></a></td>
+    <td  class="col_60 center borderAll "><a href="javascript:openPopup('popup.aspx?sesja=22!1.2.a!2!4')"><asp:Label CssClass="normal" ID="tab_12a_w22_c02" runat="server" Text="0"></asp:Label></a></td>
+    <td  class="col_60 center borderAll "><a href="javascript:openPopup('popup.aspx?sesja=22!1.2.a!3!4')"><asp:Label CssClass="normal" ID="tab_12a_w22_c03" runat="server" Text="0"></asp:Label></a></td>
+    <td  class="col_60 center borderAll "><a href="javascript:openPopup('popup.aspx?sesja=22!1.2.a!4!4')"><asp:Label CssClass="normal" ID="tab_12a_w22_c04" runat="server" Text="0"></asp:Label></a></td>
+    <td  class="col_60 center borderAll "><a href="javascript:openPopup('popup.aspx?sesja=22!1.2.a!5!4')"><asp:Label CssClass="normal" ID="tab_12a_w22_c05" runat="server" Text="0"></asp:Label></a></td>
+    <td  class="col_60 center borderAll "><a href="javascript:openPopup('popup.aspx?sesja=22!1.2.a!6!4')"><asp:Label CssClass="normal" ID="tab_12a_w22_c06" runat="server" Text="0"></asp:Label></a></td>
+    <td  class="col_60 center borderAll "><a href="javascript:openPopup('popup.aspx?sesja=22!1.2.a!7!4')"><asp:Label CssClass="normal" ID="tab_12a_w22_c07" runat="server" Text="0"></asp:Label></a></td>
+  </tr>
+    </table>
+ </div>
+       <br />
+       <div id='Dział 1.2.b. Struktura załatwień spraw' class="page-break">
+ <br />
+     <strong> Dział 1.2.b. Struktura załatwień spraw</strong>
+    <table  style="width: 100%; ">
+<tr>
+     <td  class="center borderAll" colspan="4" rowspan="3"> Wyszczególnienie</td>    <td class="center borderAll" colspan="7"> Repertorium / wykaz</td>
+</tr>
+ <tr>    <td class="center borderAll" rowspan="2"> Ogółem</td>
+<td class="center borderAll" colspan="6">wtym</td>
+</tr>
+ <tr>
+<td class="center borderAll">RC</td>
+<td class="center borderAll">RNs</td>
+<td class="center borderAll">Nsm</td>
+<td class="center borderAll">RCo</td>
+<td class="center borderAll">Nmo</td>
+<td class="center borderAll">Nkd</td>
+</tr>
+ <tr>    <td  class="center borderAll" colspan="4">0</td>    <td class="center borderAll">1</td>
+<td class="center borderAll">2</td>
+<td class="center borderAll">3</td>
+<td class="center borderAll">4</td>
+<td class="center borderAll">5</td>
+<td class="center borderAll">6</td>
+<td class="center borderAll">7</td>
+</tr>
+  <tr>
+    <td  class="borderAll wciecie" colspan="3">Załatwiono ogółem (w.01 = dz.1.1.1. kol.3 + dz. 1.1.2. kol. 4 odpowiednie wiersze = w.02+23)</td>
+  <td  class="borderAll col_36">1</td>
+    <td  class="col_60 center borderAll "><a href="javascript:openPopup('popup.aspx?sesja=1!1.2.b!1!4')"><asp:Label CssClass="normal" ID="tab_12b_w01_c01" runat="server" Text="0"></asp:Label></a></td>
+    <td  class="col_60 center borderAll "><a href="javascript:openPopup('popup.aspx?sesja=1!1.2.b!2!4')"><asp:Label CssClass="normal" ID="tab_12b_w01_c02" runat="server" Text="0"></asp:Label></a></td>
+    <td  class="col_60 center borderAll "><a href="javascript:openPopup('popup.aspx?sesja=1!1.2.b!3!4')"><asp:Label CssClass="normal" ID="tab_12b_w01_c03" runat="server" Text="0"></asp:Label></a></td>
+    <td  class="col_60 center borderAll "><a href="javascript:openPopup('popup.aspx?sesja=1!1.2.b!4!4')"><asp:Label CssClass="normal" ID="tab_12b_w01_c04" runat="server" Text="0"></asp:Label></a></td>
+    <td  class="col_60 center borderAll "><a href="javascript:openPopup('popup.aspx?sesja=1!1.2.b!5!4')"><asp:Label CssClass="normal" ID="tab_12b_w01_c05" runat="server" Text="0"></asp:Label></a></td>
+    <td  class="col_60 center borderAll "><a href="javascript:openPopup('popup.aspx?sesja=1!1.2.b!6!4')"><asp:Label CssClass="normal" ID="tab_12b_w01_c06" runat="server" Text="0"></asp:Label></a></td>
+    <td  class="col_60 center borderAll "><a href="javascript:openPopup('popup.aspx?sesja=1!1.2.b!7!4')"><asp:Label CssClass="normal" ID="tab_12b_w01_c07" runat="server" Text="0"></asp:Label></a></td>
+  </tr>
+  <tr>
+    <td  class="borderAll wciecie" rowspan="21">W tym szczególne rodzaje załatwień</td>
+    <td  class="borderAll wciecie" colspan="2">razem (w. 02 = w.03 do 22)</td>
+  <td  class="borderAll col_36">2</td>
+    <td  class="col_60 center borderAll "><a href="javascript:openPopup('popup.aspx?sesja=2!1.2.b!1!4')"><asp:Label CssClass="normal" ID="tab_12b_w02_c01" runat="server" Text="0"></asp:Label></a></td>
+    <td  class="col_60 center borderAll "><a href="javascript:openPopup('popup.aspx?sesja=2!1.2.b!2!4')"><asp:Label CssClass="normal" ID="tab_12b_w02_c02" runat="server" Text="0"></asp:Label></a></td>
+    <td  class="col_60 center borderAll "><a href="javascript:openPopup('popup.aspx?sesja=2!1.2.b!3!4')"><asp:Label CssClass="normal" ID="tab_12b_w02_c03" runat="server" Text="0"></asp:Label></a></td>
+    <td  class="col_60 center borderAll "><a href="javascript:openPopup('popup.aspx?sesja=2!1.2.b!4!4')"><asp:Label CssClass="normal" ID="tab_12b_w02_c04" runat="server" Text="0"></asp:Label></a></td>
+    <td  class="col_60 center borderAll "><a href="javascript:openPopup('popup.aspx?sesja=2!1.2.b!5!4')"><asp:Label CssClass="normal" ID="tab_12b_w02_c05" runat="server" Text="0"></asp:Label></a></td>
+    <td  class="col_60 center borderAll "><a href="javascript:openPopup('popup.aspx?sesja=2!1.2.b!6!4')"><asp:Label CssClass="normal" ID="tab_12b_w02_c06" runat="server" Text="0"></asp:Label></a></td>
+    <td  class="col_60 center borderAll "><a href="javascript:openPopup('popup.aspx?sesja=2!1.2.b!7!4')"><asp:Label CssClass="normal" ID="tab_12b_w02_c07" runat="server" Text="0"></asp:Label></a></td>
+  </tr>
+  <tr>
+    <td  class="borderAll wciecie" colspan="2">zwrot pozwu/wniosku/skargi (art. 130 kpc)</td>
+  <td  class="borderAll col_36">3</td>
+    <td  class="col_60 center borderAll "><a href="javascript:openPopup('popup.aspx?sesja=3!1.2.b!1!4')"><asp:Label CssClass="normal" ID="tab_12b_w03_c01" runat="server" Text="0"></asp:Label></a></td>
+    <td  class="col_60 center borderAll "><a href="javascript:openPopup('popup.aspx?sesja=3!1.2.b!2!4')"><asp:Label CssClass="normal" ID="tab_12b_w03_c02" runat="server" Text="0"></asp:Label></a></td>
+    <td  class="col_60 center borderAll "><a href="javascript:openPopup('popup.aspx?sesja=3!1.2.b!3!4')"><asp:Label CssClass="normal" ID="tab_12b_w03_c03" runat="server" Text="0"></asp:Label></a></td>
+    <td  class="col_60 center borderAll "><a href="javascript:openPopup('popup.aspx?sesja=3!1.2.b!4!4')"><asp:Label CssClass="normal" ID="tab_12b_w03_c04" runat="server" Text="0"></asp:Label></a></td>
+    <td  class="col_60 center borderAll "><a href="javascript:openPopup('popup.aspx?sesja=3!1.2.b!5!4')"><asp:Label CssClass="normal" ID="tab_12b_w03_c05" runat="server" Text="0"></asp:Label></a></td>
+    <td  class="col_60 center borderAll "><a href="javascript:openPopup('popup.aspx?sesja=3!1.2.b!6!4')"><asp:Label CssClass="normal" ID="tab_12b_w03_c06" runat="server" Text="0"></asp:Label></a></td>
+    <td  class="col_60 center borderAll "><a href="javascript:openPopup('popup.aspx?sesja=3!1.2.b!7!4')"><asp:Label CssClass="normal" ID="tab_12b_w03_c07" runat="server" Text="0"></asp:Label></a></td>
+  </tr>
+  <tr>
+    <td  class="borderAll wciecie" colspan="2">zwrot pozwu/wniosku/skargi (art. 1301 kpc)</td>
+  <td  class="borderAll col_36">4</td>
+    <td  class="col_60 center borderAll "><a href="javascript:openPopup('popup.aspx?sesja=4!1.2.b!1!4')"><asp:Label CssClass="normal" ID="tab_12b_w04_c01" runat="server" Text="0"></asp:Label></a></td>
+    <td  class="col_60 center borderAll "><a href="javascript:openPopup('popup.aspx?sesja=4!1.2.b!2!4')"><asp:Label CssClass="normal" ID="tab_12b_w04_c02" runat="server" Text="0"></asp:Label></a></td>
+    <td  class="col_60 center borderAll "><a href="javascript:openPopup('popup.aspx?sesja=4!1.2.b!3!4')"><asp:Label CssClass="normal" ID="tab_12b_w04_c03" runat="server" Text="0"></asp:Label></a></td>
+    <td  class="col_60 center borderAll "><a href="javascript:openPopup('popup.aspx?sesja=4!1.2.b!4!4')"><asp:Label CssClass="normal" ID="tab_12b_w04_c04" runat="server" Text="0"></asp:Label></a></td>
+    <td  class="col_60 center borderAll "><a href="javascript:openPopup('popup.aspx?sesja=4!1.2.b!5!4')"><asp:Label CssClass="normal" ID="tab_12b_w04_c05" runat="server" Text="0"></asp:Label></a></td>
+    <td  class="col_60 center borderAll "><a href="javascript:openPopup('popup.aspx?sesja=4!1.2.b!6!4')"><asp:Label CssClass="normal" ID="tab_12b_w04_c06" runat="server" Text="0"></asp:Label></a></td>
+    <td  class="col_60 center borderAll "><a href="javascript:openPopup('popup.aspx?sesja=4!1.2.b!7!4')"><asp:Label CssClass="normal" ID="tab_12b_w04_c07" runat="server" Text="0"></asp:Label></a></td>
+  </tr>
+  <tr>
+    <td  class="borderAll wciecie" colspan="2">przekazanie do innych jednostek na podstawie art. 200§1 kpc (z wyjątkiem zmian organizacyjnych)</td>
+  <td  class="borderAll col_36">5</td>
+    <td  class="col_60 center borderAll "><a href="javascript:openPopup('popup.aspx?sesja=5!1.2.b!1!4')"><asp:Label CssClass="normal" ID="tab_12b_w05_c01" runat="server" Text="0"></asp:Label></a></td>
+    <td  class="col_60 center borderAll "><a href="javascript:openPopup('popup.aspx?sesja=5!1.2.b!2!4')"><asp:Label CssClass="normal" ID="tab_12b_w05_c02" runat="server" Text="0"></asp:Label></a></td>
+    <td  class="col_60 center borderAll "><a href="javascript:openPopup('popup.aspx?sesja=5!1.2.b!3!4')"><asp:Label CssClass="normal" ID="tab_12b_w05_c03" runat="server" Text="0"></asp:Label></a></td>
+    <td  class="col_60 center borderAll "><a href="javascript:openPopup('popup.aspx?sesja=5!1.2.b!4!4')"><asp:Label CssClass="normal" ID="tab_12b_w05_c04" runat="server" Text="0"></asp:Label></a></td>
+    <td  class="col_60 center borderAll "><a href="javascript:openPopup('popup.aspx?sesja=5!1.2.b!5!4')"><asp:Label CssClass="normal" ID="tab_12b_w05_c05" runat="server" Text="0"></asp:Label></a></td>
+    <td  class="col_60 center borderAll "><a href="javascript:openPopup('popup.aspx?sesja=5!1.2.b!6!4')"><asp:Label CssClass="normal" ID="tab_12b_w05_c06" runat="server" Text="0"></asp:Label></a></td>
+    <td  class="col_60 center borderAll "><a href="javascript:openPopup('popup.aspx?sesja=5!1.2.b!7!4')"><asp:Label CssClass="normal" ID="tab_12b_w05_c07" runat="server" Text="0"></asp:Label></a></td>
+  </tr>
+  <tr>
+    <td  class="borderAll wciecie" colspan="2">zakończono w trybie art. 339 kpc</td>
+  <td  class="borderAll col_36">6</td>
+    <td  class="col_60 center borderAll "><a href="javascript:openPopup('popup.aspx?sesja=6!1.2.b!1!4')"><asp:Label CssClass="normal" ID="tab_12b_w06_c01" runat="server" Text="0"></asp:Label></a></td>
+    <td  class="col_60 center borderAll "><a href="javascript:openPopup('popup.aspx?sesja=6!1.2.b!2!4')"><asp:Label CssClass="normal" ID="tab_12b_w06_c02" runat="server" Text="0"></asp:Label></a></td>
+    <td  class="col_60 center borderAll "><a href="javascript:openPopup('popup.aspx?sesja=6!1.2.b!3!4')"><asp:Label CssClass="normal" ID="tab_12b_w06_c03" runat="server" Text="0"></asp:Label></a></td>
+    <td  class="col_60 center borderAll "><a href="javascript:openPopup('popup.aspx?sesja=6!1.2.b!4!4')"><asp:Label CssClass="normal" ID="tab_12b_w06_c04" runat="server" Text="0"></asp:Label></a></td>
+    <td  class="col_60 center borderAll "><a href="javascript:openPopup('popup.aspx?sesja=6!1.2.b!5!4')"><asp:Label CssClass="normal" ID="tab_12b_w06_c05" runat="server" Text="0"></asp:Label></a></td>
+    <td  class="col_60 center borderAll "><a href="javascript:openPopup('popup.aspx?sesja=6!1.2.b!6!4')"><asp:Label CssClass="normal" ID="tab_12b_w06_c06" runat="server" Text="0"></asp:Label></a></td>
+    <td  class="col_60 center borderAll "><a href="javascript:openPopup('popup.aspx?sesja=6!1.2.b!7!4')"><asp:Label CssClass="normal" ID="tab_12b_w06_c07" runat="server" Text="0"></asp:Label></a></td>
+  </tr>
+  <tr>
+    <td  class="borderAll wciecie" colspan="2">zakończono w trybie art. 341 kpc</td>
+  <td  class="borderAll col_36">7</td>
+    <td  class="col_60 center borderAll "><a href="javascript:openPopup('popup.aspx?sesja=7!1.2.b!1!4')"><asp:Label CssClass="normal" ID="tab_12b_w07_c01" runat="server" Text="0"></asp:Label></a></td>
+    <td  class="col_60 center borderAll "><a href="javascript:openPopup('popup.aspx?sesja=7!1.2.b!2!4')"><asp:Label CssClass="normal" ID="tab_12b_w07_c02" runat="server" Text="0"></asp:Label></a></td>
+    <td  class="col_60 center borderAll "><a href="javascript:openPopup('popup.aspx?sesja=7!1.2.b!3!4')"><asp:Label CssClass="normal" ID="tab_12b_w07_c03" runat="server" Text="0"></asp:Label></a></td>
+    <td  class="col_60 center borderAll "><a href="javascript:openPopup('popup.aspx?sesja=7!1.2.b!4!4')"><asp:Label CssClass="normal" ID="tab_12b_w07_c04" runat="server" Text="0"></asp:Label></a></td>
+    <td  class="col_60 center borderAll "><a href="javascript:openPopup('popup.aspx?sesja=7!1.2.b!5!4')"><asp:Label CssClass="normal" ID="tab_12b_w07_c05" runat="server" Text="0"></asp:Label></a></td>
+    <td  class="col_60 center borderAll "><a href="javascript:openPopup('popup.aspx?sesja=7!1.2.b!6!4')"><asp:Label CssClass="normal" ID="tab_12b_w07_c06" runat="server" Text="0"></asp:Label></a></td>
+    <td  class="col_60 center borderAll "><a href="javascript:openPopup('popup.aspx?sesja=7!1.2.b!7!4')"><asp:Label CssClass="normal" ID="tab_12b_w07_c07" runat="server" Text="0"></asp:Label></a></td>
+  </tr>
+  <tr>
+    <td  class="borderAll wciecie" colspan="2">w wyniku zmian zarządzenia MS o biurowości</td>
+  <td  class="borderAll col_36">8</td>
+    <td  class="col_60 center borderAll "><a href="javascript:openPopup('popup.aspx?sesja=8!1.2.b!1!4')"><asp:Label CssClass="normal" ID="tab_12b_w08_c01" runat="server" Text="0"></asp:Label></a></td>
+    <td  class="col_60 center borderAll "><a href="javascript:openPopup('popup.aspx?sesja=8!1.2.b!2!4')"><asp:Label CssClass="normal" ID="tab_12b_w08_c02" runat="server" Text="0"></asp:Label></a></td>
+    <td  class="col_60 center borderAll "><a href="javascript:openPopup('popup.aspx?sesja=8!1.2.b!3!4')"><asp:Label CssClass="normal" ID="tab_12b_w08_c03" runat="server" Text="0"></asp:Label></a></td>
+    <td  class="col_60 center borderAll "><a href="javascript:openPopup('popup.aspx?sesja=8!1.2.b!4!4')"><asp:Label CssClass="normal" ID="tab_12b_w08_c04" runat="server" Text="0"></asp:Label></a></td>
+    <td  class="col_60 center borderAll "><a href="javascript:openPopup('popup.aspx?sesja=8!1.2.b!5!4')"><asp:Label CssClass="normal" ID="tab_12b_w08_c05" runat="server" Text="0"></asp:Label></a></td>
+    <td  class="col_60 center borderAll "><a href="javascript:openPopup('popup.aspx?sesja=8!1.2.b!6!4')"><asp:Label CssClass="normal" ID="tab_12b_w08_c06" runat="server" Text="0"></asp:Label></a></td>
+    <td  class="col_60 center borderAll "><a href="javascript:openPopup('popup.aspx?sesja=8!1.2.b!7!4')"><asp:Label CssClass="normal" ID="tab_12b_w08_c07" runat="server" Text="0"></asp:Label></a></td>
+  </tr>
+  <tr>
+    <td  class="borderAll wciecie" colspan="2">w wyniku przekazania sprawy w ramach sądu pomiędzy wydziałami tego samego pionu</td>
+  <td  class="borderAll col_36">9</td>
+    <td  class="col_60 center borderAll "><a href="javascript:openPopup('popup.aspx?sesja=9!1.2.b!1!4')"><asp:Label CssClass="normal" ID="tab_12b_w09_c01" runat="server" Text="0"></asp:Label></a></td>
+    <td  class="col_60 center borderAll "><a href="javascript:openPopup('popup.aspx?sesja=9!1.2.b!2!4')"><asp:Label CssClass="normal" ID="tab_12b_w09_c02" runat="server" Text="0"></asp:Label></a></td>
+    <td  class="col_60 center borderAll "><a href="javascript:openPopup('popup.aspx?sesja=9!1.2.b!3!4')"><asp:Label CssClass="normal" ID="tab_12b_w09_c03" runat="server" Text="0"></asp:Label></a></td>
+    <td  class="col_60 center borderAll "><a href="javascript:openPopup('popup.aspx?sesja=9!1.2.b!4!4')"><asp:Label CssClass="normal" ID="tab_12b_w09_c04" runat="server" Text="0"></asp:Label></a></td>
+    <td  class="col_60 center borderAll "><a href="javascript:openPopup('popup.aspx?sesja=9!1.2.b!5!4')"><asp:Label CssClass="normal" ID="tab_12b_w09_c05" runat="server" Text="0"></asp:Label></a></td>
+    <td  class="col_60 center borderAll "><a href="javascript:openPopup('popup.aspx?sesja=9!1.2.b!6!4')"><asp:Label CssClass="normal" ID="tab_12b_w09_c06" runat="server" Text="0"></asp:Label></a></td>
+    <td  class="col_60 center borderAll "><a href="javascript:openPopup('popup.aspx?sesja=9!1.2.b!7!4')"><asp:Label CssClass="normal" ID="tab_12b_w09_c07" runat="server" Text="0"></asp:Label></a></td>
+  </tr>
+  <tr>
+    <td  class="borderAll wciecie" colspan="2">w wyniku przekazania sprawy w ramach sądu pomiędzy wydziałami różnych pionów</td>
+  <td  class="borderAll col_36">10</td>
+    <td  class="col_60 center borderAll "><a href="javascript:openPopup('popup.aspx?sesja=10!1.2.b!1!4')"><asp:Label CssClass="normal" ID="tab_12b_w10_c01" runat="server" Text="0"></asp:Label></a></td>
+    <td  class="col_60 center borderAll "><a href="javascript:openPopup('popup.aspx?sesja=10!1.2.b!2!4')"><asp:Label CssClass="normal" ID="tab_12b_w10_c02" runat="server" Text="0"></asp:Label></a></td>
+    <td  class="col_60 center borderAll "><a href="javascript:openPopup('popup.aspx?sesja=10!1.2.b!3!4')"><asp:Label CssClass="normal" ID="tab_12b_w10_c03" runat="server" Text="0"></asp:Label></a></td>
+    <td  class="col_60 center borderAll "><a href="javascript:openPopup('popup.aspx?sesja=10!1.2.b!4!4')"><asp:Label CssClass="normal" ID="tab_12b_w10_c04" runat="server" Text="0"></asp:Label></a></td>
+    <td  class="col_60 center borderAll "><a href="javascript:openPopup('popup.aspx?sesja=10!1.2.b!5!4')"><asp:Label CssClass="normal" ID="tab_12b_w10_c05" runat="server" Text="0"></asp:Label></a></td>
+    <td  class="col_60 center borderAll "><a href="javascript:openPopup('popup.aspx?sesja=10!1.2.b!6!4')"><asp:Label CssClass="normal" ID="tab_12b_w10_c06" runat="server" Text="0"></asp:Label></a></td>
+    <td  class="col_60 center borderAll "><a href="javascript:openPopup('popup.aspx?sesja=10!1.2.b!7!4')"><asp:Label CssClass="normal" ID="tab_12b_w10_c07" runat="server" Text="0"></asp:Label></a></td>
+  </tr>
+  <tr>
+    <td  class="borderAll wciecie" rowspan="2">zmiany organizacyjne związane z utworzeniem lub likwidacją</td>
+    <td  class="borderAll wciecie">wydziału (łów) / sekcji </td>
+  <td  class="borderAll col_36">11</td>
+    <td  class="col_60 center borderAll "><a href="javascript:openPopup('popup.aspx?sesja=11!1.2.b!1!4')"><asp:Label CssClass="normal" ID="tab_12b_w11_c01" runat="server" Text="0"></asp:Label></a></td>
+    <td  class="col_60 center borderAll "><a href="javascript:openPopup('popup.aspx?sesja=11!1.2.b!2!4')"><asp:Label CssClass="normal" ID="tab_12b_w11_c02" runat="server" Text="0"></asp:Label></a></td>
+    <td  class="col_60 center borderAll "><a href="javascript:openPopup('popup.aspx?sesja=11!1.2.b!3!4')"><asp:Label CssClass="normal" ID="tab_12b_w11_c03" runat="server" Text="0"></asp:Label></a></td>
+    <td  class="col_60 center borderAll "><a href="javascript:openPopup('popup.aspx?sesja=11!1.2.b!4!4')"><asp:Label CssClass="normal" ID="tab_12b_w11_c04" runat="server" Text="0"></asp:Label></a></td>
+    <td  class="col_60 center borderAll "><a href="javascript:openPopup('popup.aspx?sesja=11!1.2.b!5!4')"><asp:Label CssClass="normal" ID="tab_12b_w11_c05" runat="server" Text="0"></asp:Label></a></td>
+    <td  class="col_60 center borderAll "><a href="javascript:openPopup('popup.aspx?sesja=11!1.2.b!6!4')"><asp:Label CssClass="normal" ID="tab_12b_w11_c06" runat="server" Text="0"></asp:Label></a></td>
+    <td  class="col_60 center borderAll "><a href="javascript:openPopup('popup.aspx?sesja=11!1.2.b!7!4')"><asp:Label CssClass="normal" ID="tab_12b_w11_c07" runat="server" Text="0"></asp:Label></a></td>
+  </tr>
+  <tr>
+    <td  class="borderAll wciecie">sądu (dów)</td>
+  <td  class="borderAll col_36">12</td>
+    <td  class="col_60 center borderAll "><a href="javascript:openPopup('popup.aspx?sesja=12!1.2.b!1!4')"><asp:Label CssClass="normal" ID="tab_12b_w12_c01" runat="server" Text="0"></asp:Label></a></td>
+    <td  class="col_60 center borderAll "><a href="javascript:openPopup('popup.aspx?sesja=12!1.2.b!2!4')"><asp:Label CssClass="normal" ID="tab_12b_w12_c02" runat="server" Text="0"></asp:Label></a></td>
+    <td  class="col_60 center borderAll "><a href="javascript:openPopup('popup.aspx?sesja=12!1.2.b!3!4')"><asp:Label CssClass="normal" ID="tab_12b_w12_c03" runat="server" Text="0"></asp:Label></a></td>
+    <td  class="col_60 center borderAll "><a href="javascript:openPopup('popup.aspx?sesja=12!1.2.b!4!4')"><asp:Label CssClass="normal" ID="tab_12b_w12_c04" runat="server" Text="0"></asp:Label></a></td>
+    <td  class="col_60 center borderAll "><a href="javascript:openPopup('popup.aspx?sesja=12!1.2.b!5!4')"><asp:Label CssClass="normal" ID="tab_12b_w12_c05" runat="server" Text="0"></asp:Label></a></td>
+    <td  class="col_60 center borderAll "><a href="javascript:openPopup('popup.aspx?sesja=12!1.2.b!6!4')"><asp:Label CssClass="normal" ID="tab_12b_w12_c06" runat="server" Text="0"></asp:Label></a></td>
+    <td  class="col_60 center borderAll "><a href="javascript:openPopup('popup.aspx?sesja=12!1.2.b!7!4')"><asp:Label CssClass="normal" ID="tab_12b_w12_c07" runat="server" Text="0"></asp:Label></a></td>
+  </tr>
+  <tr>
+    <td  class="borderAll wciecie" rowspan="2">w związku ze zmianą obszaru właściwości miejscowej</td>
+    <td  class="borderAll wciecie">wydziału (łów)</td>
+  <td  class="borderAll col_36">13</td>
+    <td  class="col_60 center borderAll "><a href="javascript:openPopup('popup.aspx?sesja=13!1.2.b!1!4')"><asp:Label CssClass="normal" ID="tab_12b_w13_c01" runat="server" Text="0"></asp:Label></a></td>
+    <td  class="col_60 center borderAll "><a href="javascript:openPopup('popup.aspx?sesja=13!1.2.b!2!4')"><asp:Label CssClass="normal" ID="tab_12b_w13_c02" runat="server" Text="0"></asp:Label></a></td>
+    <td  class="col_60 center borderAll "><a href="javascript:openPopup('popup.aspx?sesja=13!1.2.b!3!4')"><asp:Label CssClass="normal" ID="tab_12b_w13_c03" runat="server" Text="0"></asp:Label></a></td>
+    <td  class="col_60 center borderAll "><a href="javascript:openPopup('popup.aspx?sesja=13!1.2.b!4!4')"><asp:Label CssClass="normal" ID="tab_12b_w13_c04" runat="server" Text="0"></asp:Label></a></td>
+    <td  class="col_60 center borderAll "><a href="javascript:openPopup('popup.aspx?sesja=13!1.2.b!5!4')"><asp:Label CssClass="normal" ID="tab_12b_w13_c05" runat="server" Text="0"></asp:Label></a></td>
+    <td  class="col_60 center borderAll "><a href="javascript:openPopup('popup.aspx?sesja=13!1.2.b!6!4')"><asp:Label CssClass="normal" ID="tab_12b_w13_c06" runat="server" Text="0"></asp:Label></a></td>
+    <td  class="col_60 center borderAll "><a href="javascript:openPopup('popup.aspx?sesja=13!1.2.b!7!4')"><asp:Label CssClass="normal" ID="tab_12b_w13_c07" runat="server" Text="0"></asp:Label></a></td>
+  </tr>
+  <tr>
+    <td  class="borderAll wciecie">sądu (dów)</td>
+  <td  class="borderAll col_36">14</td>
+    <td  class="col_60 center borderAll "><a href="javascript:openPopup('popup.aspx?sesja=14!1.2.b!1!4')"><asp:Label CssClass="normal" ID="tab_12b_w14_c01" runat="server" Text="0"></asp:Label></a></td>
+    <td  class="col_60 center borderAll "><a href="javascript:openPopup('popup.aspx?sesja=14!1.2.b!2!4')"><asp:Label CssClass="normal" ID="tab_12b_w14_c02" runat="server" Text="0"></asp:Label></a></td>
+    <td  class="col_60 center borderAll "><a href="javascript:openPopup('popup.aspx?sesja=14!1.2.b!3!4')"><asp:Label CssClass="normal" ID="tab_12b_w14_c03" runat="server" Text="0"></asp:Label></a></td>
+    <td  class="col_60 center borderAll "><a href="javascript:openPopup('popup.aspx?sesja=14!1.2.b!4!4')"><asp:Label CssClass="normal" ID="tab_12b_w14_c04" runat="server" Text="0"></asp:Label></a></td>
+    <td  class="col_60 center borderAll "><a href="javascript:openPopup('popup.aspx?sesja=14!1.2.b!5!4')"><asp:Label CssClass="normal" ID="tab_12b_w14_c05" runat="server" Text="0"></asp:Label></a></td>
+    <td  class="col_60 center borderAll "><a href="javascript:openPopup('popup.aspx?sesja=14!1.2.b!6!4')"><asp:Label CssClass="normal" ID="tab_12b_w14_c06" runat="server" Text="0"></asp:Label></a></td>
+    <td  class="col_60 center borderAll "><a href="javascript:openPopup('popup.aspx?sesja=14!1.2.b!7!4')"><asp:Label CssClass="normal" ID="tab_12b_w14_c07" runat="server" Text="0"></asp:Label></a></td>
+  </tr>
+  <tr>
+    <td  class="borderAll wciecie" colspan="2">połączono do łącznego rozpoznania na podstawie art. 219 kpc</td>
+  <td  class="borderAll col_36">15</td>
+    <td  class="col_60 center borderAll "><a href="javascript:openPopup('popup.aspx?sesja=15!1.2.b!1!4')"><asp:Label CssClass="normal" ID="tab_12b_w15_c01" runat="server" Text="0"></asp:Label></a></td>
+    <td  class="col_60 center borderAll "><a href="javascript:openPopup('popup.aspx?sesja=15!1.2.b!2!4')"><asp:Label CssClass="normal" ID="tab_12b_w15_c02" runat="server" Text="0"></asp:Label></a></td>
+    <td  class="col_60 center borderAll "><a href="javascript:openPopup('popup.aspx?sesja=15!1.2.b!3!4')"><asp:Label CssClass="normal" ID="tab_12b_w15_c03" runat="server" Text="0"></asp:Label></a></td>
+    <td  class="col_60 center borderAll "><a href="javascript:openPopup('popup.aspx?sesja=15!1.2.b!4!4')"><asp:Label CssClass="normal" ID="tab_12b_w15_c04" runat="server" Text="0"></asp:Label></a></td>
+    <td  class="col_60 center borderAll "><a href="javascript:openPopup('popup.aspx?sesja=15!1.2.b!5!4')"><asp:Label CssClass="normal" ID="tab_12b_w15_c05" runat="server" Text="0"></asp:Label></a></td>
+    <td  class="col_60 center borderAll "><a href="javascript:openPopup('popup.aspx?sesja=15!1.2.b!6!4')"><asp:Label CssClass="normal" ID="tab_12b_w15_c06" runat="server" Text="0"></asp:Label></a></td>
+    <td  class="col_60 center borderAll "><a href="javascript:openPopup('popup.aspx?sesja=15!1.2.b!7!4')"><asp:Label CssClass="normal" ID="tab_12b_w15_c07" runat="server" Text="0"></asp:Label></a></td>
+  </tr>
+  <tr>
+    <td  class="borderAll wciecie" colspan="2">przekazanie do innego trybu na podstawie art. 201§1 i 2 kpc lub do odrębnego postępowania</td>
+  <td  class="borderAll col_36">16</td>
+    <td  class="col_60 center borderAll "><a href="javascript:openPopup('popup.aspx?sesja=16!1.2.b!1!4')"><asp:Label CssClass="normal" ID="tab_12b_w16_c01" runat="server" Text="0"></asp:Label></a></td>
+    <td  class="col_60 center borderAll "><a href="javascript:openPopup('popup.aspx?sesja=16!1.2.b!2!4')"><asp:Label CssClass="normal" ID="tab_12b_w16_c02" runat="server" Text="0"></asp:Label></a></td>
+    <td  class="col_60 center borderAll "><a href="javascript:openPopup('popup.aspx?sesja=16!1.2.b!3!4')"><asp:Label CssClass="normal" ID="tab_12b_w16_c03" runat="server" Text="0"></asp:Label></a></td>
+    <td  class="col_60 center borderAll "><a href="javascript:openPopup('popup.aspx?sesja=16!1.2.b!4!4')"><asp:Label CssClass="normal" ID="tab_12b_w16_c04" runat="server" Text="0"></asp:Label></a></td>
+    <td  class="col_60 center borderAll "><a href="javascript:openPopup('popup.aspx?sesja=16!1.2.b!5!4')"><asp:Label CssClass="normal" ID="tab_12b_w16_c05" runat="server" Text="0"></asp:Label></a></td>
+    <td  class="col_60 center borderAll "><a href="javascript:openPopup('popup.aspx?sesja=16!1.2.b!6!4')"><asp:Label CssClass="normal" ID="tab_12b_w16_c06" runat="server" Text="0"></asp:Label></a></td>
+    <td  class="col_60 center borderAll "><a href="javascript:openPopup('popup.aspx?sesja=16!1.2.b!7!4')"><asp:Label CssClass="normal" ID="tab_12b_w16_c07" runat="server" Text="0"></asp:Label></a></td>
+  </tr>
+  <tr>
+    <td  class="borderAll wciecie" colspan="2">zakreślono na podstawie art. 174 §1 pkt 1 kpc</td>
+  <td  class="borderAll col_36">17</td>
+    <td  class="col_60 center borderAll "><a href="javascript:openPopup('popup.aspx?sesja=17!1.2.b!1!4')"><asp:Label CssClass="normal" ID="tab_12b_w17_c01" runat="server" Text="0"></asp:Label></a></td>
+    <td  class="col_60 center borderAll "><a href="javascript:openPopup('popup.aspx?sesja=17!1.2.b!2!4')"><asp:Label CssClass="normal" ID="tab_12b_w17_c02" runat="server" Text="0"></asp:Label></a></td>
+    <td  class="col_60 center borderAll "><a href="javascript:openPopup('popup.aspx?sesja=17!1.2.b!3!4')"><asp:Label CssClass="normal" ID="tab_12b_w17_c03" runat="server" Text="0"></asp:Label></a></td>
+    <td  class="col_60 center borderAll "><a href="javascript:openPopup('popup.aspx?sesja=17!1.2.b!4!4')"><asp:Label CssClass="normal" ID="tab_12b_w17_c04" runat="server" Text="0"></asp:Label></a></td>
+    <td  class="col_60 center borderAll "><a href="javascript:openPopup('popup.aspx?sesja=17!1.2.b!5!4')"><asp:Label CssClass="normal" ID="tab_12b_w17_c05" runat="server" Text="0"></asp:Label></a></td>
+    <td  class="col_60 center borderAll "><a href="javascript:openPopup('popup.aspx?sesja=17!1.2.b!6!4')"><asp:Label CssClass="normal" ID="tab_12b_w17_c06" runat="server" Text="0"></asp:Label></a></td>
+    <td  class="col_60 center borderAll "><a href="javascript:openPopup('popup.aspx?sesja=17!1.2.b!7!4')"><asp:Label CssClass="normal" ID="tab_12b_w17_c07" runat="server" Text="0"></asp:Label></a></td>
+  </tr>
+  <tr>
+    <td  class="borderAll wciecie" colspan="2">umorzenie na skutek cofnięcia pozwu, wniosku, skargi</td>
+  <td  class="borderAll col_36">18</td>
+    <td  class="col_60 center borderAll "><a href="javascript:openPopup('popup.aspx?sesja=18!1.2.b!1!4')"><asp:Label CssClass="normal" ID="tab_12b_w18_c01" runat="server" Text="0"></asp:Label></a></td>
+    <td  class="col_60 center borderAll "><a href="javascript:openPopup('popup.aspx?sesja=18!1.2.b!2!4')"><asp:Label CssClass="normal" ID="tab_12b_w18_c02" runat="server" Text="0"></asp:Label></a></td>
+    <td  class="col_60 center borderAll "><a href="javascript:openPopup('popup.aspx?sesja=18!1.2.b!3!4')"><asp:Label CssClass="normal" ID="tab_12b_w18_c03" runat="server" Text="0"></asp:Label></a></td>
+    <td  class="col_60 center borderAll "><a href="javascript:openPopup('popup.aspx?sesja=18!1.2.b!4!4')"><asp:Label CssClass="normal" ID="tab_12b_w18_c04" runat="server" Text="0"></asp:Label></a></td>
+    <td  class="col_60 center borderAll "><a href="javascript:openPopup('popup.aspx?sesja=18!1.2.b!5!4')"><asp:Label CssClass="normal" ID="tab_12b_w18_c05" runat="server" Text="0"></asp:Label></a></td>
+    <td  class="col_60 center borderAll "><a href="javascript:openPopup('popup.aspx?sesja=18!1.2.b!6!4')"><asp:Label CssClass="normal" ID="tab_12b_w18_c06" runat="server" Text="0"></asp:Label></a></td>
+    <td  class="col_60 center borderAll "><a href="javascript:openPopup('popup.aspx?sesja=18!1.2.b!7!4')"><asp:Label CssClass="normal" ID="tab_12b_w18_c07" runat="server" Text="0"></asp:Label></a></td>
+  </tr>
+  <tr>
+    <td  class="borderAll wciecie" colspan="2">zakończono w trybie art.1481 §1 kpc</td>
+  <td  class="borderAll col_36">19</td>
+    <td  class="col_60 center borderAll "><a href="javascript:openPopup('popup.aspx?sesja=19!1.2.b!1!4')"><asp:Label CssClass="normal" ID="tab_12b_w19_c01" runat="server" Text="0"></asp:Label></a></td>
+    <td  class="col_60 center borderAll "><a href="javascript:openPopup('popup.aspx?sesja=19!1.2.b!2!4')"><asp:Label CssClass="normal" ID="tab_12b_w19_c02" runat="server" Text="0"></asp:Label></a></td>
+    <td  class="col_60 center borderAll "><a href="javascript:openPopup('popup.aspx?sesja=19!1.2.b!3!4')"><asp:Label CssClass="normal" ID="tab_12b_w19_c03" runat="server" Text="0"></asp:Label></a></td>
+    <td  class="col_60 center borderAll "><a href="javascript:openPopup('popup.aspx?sesja=19!1.2.b!4!4')"><asp:Label CssClass="normal" ID="tab_12b_w19_c04" runat="server" Text="0"></asp:Label></a></td>
+    <td  class="col_60 center borderAll "><a href="javascript:openPopup('popup.aspx?sesja=19!1.2.b!5!4')"><asp:Label CssClass="normal" ID="tab_12b_w19_c05" runat="server" Text="0"></asp:Label></a></td>
+    <td  class="col_60 center borderAll "><a href="javascript:openPopup('popup.aspx?sesja=19!1.2.b!6!4')"><asp:Label CssClass="normal" ID="tab_12b_w19_c06" runat="server" Text="0"></asp:Label></a></td>
+    <td  class="col_60 center borderAll "><a href="javascript:openPopup('popup.aspx?sesja=19!1.2.b!7!4')"><asp:Label CssClass="normal" ID="tab_12b_w19_c07" runat="server" Text="0"></asp:Label></a></td>
+  </tr>
+  <tr>
+    <td  class="borderAll wciecie" rowspan="2">zakreślenie spraw </td>
+    <td  class="borderAll wciecie">w związku z funkcjonowaniem § 43 Regulaminu</td>
+  <td  class="borderAll col_36">20</td>
+    <td  class="col_60 center borderAll "><a href="javascript:openPopup('popup.aspx?sesja=20!1.2.b!1!4')"><asp:Label CssClass="normal" ID="tab_12b_w20_c01" runat="server" Text="0"></asp:Label></a></td>
+    <td  class="col_60 center borderAll "><a href="javascript:openPopup('popup.aspx?sesja=20!1.2.b!2!4')"><asp:Label CssClass="normal" ID="tab_12b_w20_c02" runat="server" Text="0"></asp:Label></a></td>
+    <td  class="col_60 center borderAll "><a href="javascript:openPopup('popup.aspx?sesja=20!1.2.b!3!4')"><asp:Label CssClass="normal" ID="tab_12b_w20_c03" runat="server" Text="0"></asp:Label></a></td>
+    <td  class="col_60 center borderAll "><a href="javascript:openPopup('popup.aspx?sesja=20!1.2.b!4!4')"><asp:Label CssClass="normal" ID="tab_12b_w20_c04" runat="server" Text="0"></asp:Label></a></td>
+    <td  class="col_60 center borderAll "><a href="javascript:openPopup('popup.aspx?sesja=20!1.2.b!5!4')"><asp:Label CssClass="normal" ID="tab_12b_w20_c05" runat="server" Text="0"></asp:Label></a></td>
+    <td  class="col_60 center borderAll "><a href="javascript:openPopup('popup.aspx?sesja=20!1.2.b!6!4')"><asp:Label CssClass="normal" ID="tab_12b_w20_c06" runat="server" Text="0"></asp:Label></a></td>
+    <td  class="col_60 center borderAll "><a href="javascript:openPopup('popup.aspx?sesja=20!1.2.b!7!4')"><asp:Label CssClass="normal" ID="tab_12b_w20_c07" runat="server" Text="0"></asp:Label></a></td>
+  </tr>
+  <tr>
+    <td  class="borderAll wciecie">w związku ze wspólnym wpływem § 54 ust.2 Regulaminu</td>
+  <td  class="borderAll col_36">21</td>
+    <td  class="col_60 center borderAll "><a href="javascript:openPopup('popup.aspx?sesja=21!1.2.b!1!4')"><asp:Label CssClass="normal" ID="tab_12b_w21_c01" runat="server" Text="0"></asp:Label></a></td>
+    <td  class="col_60 center borderAll "><a href="javascript:openPopup('popup.aspx?sesja=21!1.2.b!2!4')"><asp:Label CssClass="normal" ID="tab_12b_w21_c02" runat="server" Text="0"></asp:Label></a></td>
+    <td  class="col_60 center borderAll "><a href="javascript:openPopup('popup.aspx?sesja=21!1.2.b!3!4')"><asp:Label CssClass="normal" ID="tab_12b_w21_c03" runat="server" Text="0"></asp:Label></a></td>
+    <td  class="col_60 center borderAll "><a href="javascript:openPopup('popup.aspx?sesja=21!1.2.b!4!4')"><asp:Label CssClass="normal" ID="tab_12b_w21_c04" runat="server" Text="0"></asp:Label></a></td>
+    <td  class="col_60 center borderAll "><a href="javascript:openPopup('popup.aspx?sesja=21!1.2.b!5!4')"><asp:Label CssClass="normal" ID="tab_12b_w21_c05" runat="server" Text="0"></asp:Label></a></td>
+    <td  class="col_60 center borderAll "><a href="javascript:openPopup('popup.aspx?sesja=21!1.2.b!6!4')"><asp:Label CssClass="normal" ID="tab_12b_w21_c06" runat="server" Text="0"></asp:Label></a></td>
+    <td  class="col_60 center borderAll "><a href="javascript:openPopup('popup.aspx?sesja=21!1.2.b!7!4')"><asp:Label CssClass="normal" ID="tab_12b_w21_c07" runat="server" Text="0"></asp:Label></a></td>
+  </tr>
+  <tr>
+    <td  class="borderAll wciecie" colspan="2">inne formalne (w tym odrzucenia pozwu/wniosku/skargi) (= w.16 k.3 + w.17 k.3 dz.1.2.2.)</td>
+  <td  class="borderAll col_36">22</td>
+    <td  class="col_60 center borderAll "><a href="javascript:openPopup('popup.aspx?sesja=22!1.2.b!1!4')"><asp:Label CssClass="normal" ID="tab_12b_w22_c01" runat="server" Text="0"></asp:Label></a></td>
+    <td  class="col_60 center borderAll "><a href="javascript:openPopup('popup.aspx?sesja=22!1.2.b!2!4')"><asp:Label CssClass="normal" ID="tab_12b_w22_c02" runat="server" Text="0"></asp:Label></a></td>
+    <td  class="col_60 center borderAll "><a href="javascript:openPopup('popup.aspx?sesja=22!1.2.b!3!4')"><asp:Label CssClass="normal" ID="tab_12b_w22_c03" runat="server" Text="0"></asp:Label></a></td>
+    <td  class="col_60 center borderAll "><a href="javascript:openPopup('popup.aspx?sesja=22!1.2.b!4!4')"><asp:Label CssClass="normal" ID="tab_12b_w22_c04" runat="server" Text="0"></asp:Label></a></td>
+    <td  class="col_60 center borderAll "><a href="javascript:openPopup('popup.aspx?sesja=22!1.2.b!5!4')"><asp:Label CssClass="normal" ID="tab_12b_w22_c05" runat="server" Text="0"></asp:Label></a></td>
+    <td  class="col_60 center borderAll "><a href="javascript:openPopup('popup.aspx?sesja=22!1.2.b!6!4')"><asp:Label CssClass="normal" ID="tab_12b_w22_c06" runat="server" Text="0"></asp:Label></a></td>
+    <td  class="col_60 center borderAll "><a href="javascript:openPopup('popup.aspx?sesja=22!1.2.b!7!4')"><asp:Label CssClass="normal" ID="tab_12b_w22_c07" runat="server" Text="0"></asp:Label></a></td>
+  </tr>
+  <tr>
+    <td  class="borderAll wciecie" colspan="3">Załatwienia merytoryczne pozostałych spraw</td>
+  <td  class="borderAll col_36">23</td>
+    <td  class="col_60 center borderAll "><a href="javascript:openPopup('popup.aspx?sesja=23!1.2.b!1!4')"><asp:Label CssClass="normal" ID="tab_12b_w23_c01" runat="server" Text="0"></asp:Label></a></td>
+    <td  class="col_60 center borderAll "><a href="javascript:openPopup('popup.aspx?sesja=23!1.2.b!2!4')"><asp:Label CssClass="normal" ID="tab_12b_w23_c02" runat="server" Text="0"></asp:Label></a></td>
+    <td  class="col_60 center borderAll "><a href="javascript:openPopup('popup.aspx?sesja=23!1.2.b!3!4')"><asp:Label CssClass="normal" ID="tab_12b_w23_c03" runat="server" Text="0"></asp:Label></a></td>
+    <td  class="col_60 center borderAll "><a href="javascript:openPopup('popup.aspx?sesja=23!1.2.b!4!4')"><asp:Label CssClass="normal" ID="tab_12b_w23_c04" runat="server" Text="0"></asp:Label></a></td>
+    <td  class="col_60 center borderAll "><a href="javascript:openPopup('popup.aspx?sesja=23!1.2.b!5!4')"><asp:Label CssClass="normal" ID="tab_12b_w23_c05" runat="server" Text="0"></asp:Label></a></td>
+    <td  class="col_60 center borderAll "><a href="javascript:openPopup('popup.aspx?sesja=23!1.2.b!6!4')"><asp:Label CssClass="normal" ID="tab_12b_w23_c06" runat="server" Text="0"></asp:Label></a></td>
+    <td  class="col_60 center borderAll "><a href="javascript:openPopup('popup.aspx?sesja=23!1.2.b!7!4')"><asp:Label CssClass="normal" ID="tab_12b_w23_c07" runat="server" Text="0"></asp:Label></a></td>
+  </tr>
+  <tr>
+    <td  class="borderAll wciecie" colspan="3">Pozostało na okres następny (w.24 = dz.1.1.1. kol.18 + dz. 1.1.2. kol. 6 odpowiednie wiersze)</td>
+  <td  class="borderAll col_36">24</td>
+    <td  class="col_60 center borderAll "><a href="javascript:openPopup('popup.aspx?sesja=24!1.2.b!1!4')"><asp:Label CssClass="normal" ID="tab_12b_w24_c01" runat="server" Text="0"></asp:Label></a></td>
+    <td  class="col_60 center borderAll "><a href="javascript:openPopup('popup.aspx?sesja=24!1.2.b!2!4')"><asp:Label CssClass="normal" ID="tab_12b_w24_c02" runat="server" Text="0"></asp:Label></a></td>
+    <td  class="col_60 center borderAll "><a href="javascript:openPopup('popup.aspx?sesja=24!1.2.b!3!4')"><asp:Label CssClass="normal" ID="tab_12b_w24_c03" runat="server" Text="0"></asp:Label></a></td>
+    <td  class="col_60 center borderAll "><a href="javascript:openPopup('popup.aspx?sesja=24!1.2.b!4!4')"><asp:Label CssClass="normal" ID="tab_12b_w24_c04" runat="server" Text="0"></asp:Label></a></td>
+    <td  class="col_60 center borderAll "><a href="javascript:openPopup('popup.aspx?sesja=24!1.2.b!5!4')"><asp:Label CssClass="normal" ID="tab_12b_w24_c05" runat="server" Text="0"></asp:Label></a></td>
+    <td  class="col_60 center borderAll "><a href="javascript:openPopup('popup.aspx?sesja=24!1.2.b!6!4')"><asp:Label CssClass="normal" ID="tab_12b_w24_c06" runat="server" Text="0"></asp:Label></a></td>
+    <td  class="col_60 center borderAll "><a href="javascript:openPopup('popup.aspx?sesja=24!1.2.b!7!4')"><asp:Label CssClass="normal" ID="tab_12b_w24_c07" runat="server" Text="0"></asp:Label></a></td>
+  </tr>
+    </table>
+ </div>
+       <br />
           <div id="1.2.1" class="page-break">
               <strong>Dział 1.2.1</strong> Liczba sesji i wyznaczonych spraw
-              <table cellpadding="0" cellspacing="0" style="width: 100 %; ">
+             <table  style="width: 100%; ">
                   <tr>
                       <td class="center borderAll" rowspan="3">SPRAWY według repertoriów i wyka-zów</td>
                       <td class="center borderAll" rowspan="3">L.p.</td>
@@ -4138,7 +4714,7 @@
           <br />
           <div id="1.2.2" class="page-break">
               <strong>Dział 1.2.2</strong> Liczba odbytych sesji i załatwionych spraw
-              <table cellpadding="0" cellspacing="0" style="width: 100 %; ">
+             <table  style="width: 100%; ">
                 <tr>
                       <td class="center borderAll" rowspan="3" colspan="2">SPRAWY według repertoriów i wyka-zów</td>
                       <td class="center borderAll" rowspan="3">L.p.</td>
@@ -6264,7 +6840,7 @@
 
           <div id="1.3" class="page-break">
               <strong>Dział 1.3</strong> Załatwienie spraw przez referendarzy
-              <table cellpadding="0" cellspacing="0" style="width: 100 %; ">
+             <table  style="width: 100%; ">
                   <tr>
                       <td class="center borderAll" colspan="2" rowspan="2">Wyszczególnienie</td>
                       <td class="center borderAll" colspan="7">Liczba spraw załatwionych przez referendarzy </td>
@@ -6368,7 +6944,7 @@
           <br />
           <div id="1.4" class="page-break">
               <strong>Dział 1.4</strong> Terminowość sporządzania uzasadnień
-              <table cellpadding="0" cellspacing="0" style="width: 100 %; ">
+             <table  style="width: 100%; ">
                   <tr>
                       <td class="center borderAll" colspan="2" rowspan="3">SPRAWY według repertoriów</td>
                       <td class="center borderAll" colspan="10">Terminowość sporządzania uzasadnień</td>
@@ -6594,12 +7170,58 @@
                           <asp:Label ID="tab_1_4_w04_c14" runat="server" CssClass="normal" Text="0"></asp:Label>
                           </a></td>
                   </tr>
+                    <tr>
+                      <td class="borderAll wciecie">Nkd</td>
+                      <td class="borderAll col_36">4</td>
+                      <td class="col_60 center borderAll "><a href="javascript:openPopup('popup.aspx?sesja=5!1.4!1!4')">
+                          <asp:Label ID="tab_1_4_w05_c01" runat="server" CssClass="normal" Text="0"></asp:Label>
+                          </a></td>
+                      <td class="col_60 center borderAll "><a href="javascript:openPopup('popup.aspx?sesja=5!1.4!2!4')">
+                          <asp:Label ID="tab_1_4_w05_c02" runat="server" CssClass="normal" Text="0"></asp:Label>
+                          </a></td>
+                      <td class="col_60 center borderAll "><a href="javascript:openPopup('popup.aspx?sesja=5!1.4!3!4')">
+                          <asp:Label ID="tab_1_4_w05_c03" runat="server" CssClass="normal" Text="0"></asp:Label>
+                          </a></td>
+                      <td class="col_60 center borderAll "><a href="javascript:openPopup('popup.aspx?sesja=5!1.4!4!4')">
+                          <asp:Label ID="tab_1_4_w05_c04" runat="server" CssClass="normal" Text="0"></asp:Label>
+                          </a></td>
+                      <td class="col_60 center borderAll "><a href="javascript:openPopup('popup.aspx?sesja=5!1.4!5!4')">
+                          <asp:Label ID="tab_1_4_w05_c05" runat="server" CssClass="normal" Text="0"></asp:Label>
+                          </a></td>
+                      <td class="col_60 center borderAll "><a href="javascript:openPopup('popup.aspx?sesja=5!1.4!6!4')">
+                          <asp:Label ID="tab_1_4_w05_c06" runat="server" CssClass="normal" Text="0"></asp:Label>
+                          </a></td>
+                      <td class="col_60 center borderAll "><a href="javascript:openPopup('popup.aspx?sesja=5!1.4!7!4')">
+                          <asp:Label ID="tab_1_4_w05_c07" runat="server" CssClass="normal" Text="0"></asp:Label>
+                          </a></td>
+                      <td class="col_60 center borderAll "><a href="javascript:openPopup('popup.aspx?sesja=5!1.4!8!4')">
+                          <asp:Label ID="tab_1_4_w05_c08" runat="server" CssClass="normal" Text="0"></asp:Label>
+                          </a></td>
+                      <td class="col_60 center borderAll "><a href="javascript:openPopup('popup.aspx?sesja=5!1.4!9!4')">
+                          <asp:Label ID="tab_1_4_w05_c09" runat="server" CssClass="normal" Text="0"></asp:Label>
+                          </a></td>
+                      <td class="col_60 center borderAll "><a href="javascript:openPopup('popup.aspx?sesja=5!1.4!10!4')">
+                          <asp:Label ID="tab_1_4_w05_c10" runat="server" CssClass="normal" Text="0"></asp:Label>
+                          </a></td>
+                      <td class="col_60 center borderAll "><a href="javascript:openPopup('popup.aspx?sesja=5!1.4!11!4')">
+                          <asp:Label ID="tab_1_4_w05_c11" runat="server" CssClass="normal" Text="0"></asp:Label>
+                          </a></td>
+                      <td class="col_60 center borderAll "><a href="javascript:openPopup('popup.aspx?sesja=5!1.4!12!4')">
+                          <asp:Label ID="tab_1_4_w05_c12" runat="server" CssClass="normal" Text="0"></asp:Label>
+                          </a></td>
+                      <td class="col_60 center borderAll "><a href="javascript:openPopup('popup.aspx?sesja=5!1.4!13!4')">
+                          <asp:Label ID="tab_1_4_w05_c13" runat="server" CssClass="normal" Text="0"></asp:Label>
+                          </a></td>
+                      <td class="col_60 center borderAll "><a href="javascript:openPopup('popup.aspx?sesja=5!1.4!14!4')">
+                          <asp:Label ID="tab_1_4_w05_c14" runat="server" CssClass="normal" Text="0"></asp:Label>
+                          </a></td>
+                  </tr>
               </table>
           </div>
           <br />
           <div id="2.1.1" class="page-break">
               <strong>Dział 2.1.1</strong> Sprawy od dnia pierwotnego wpisu do repertorium (łącznie z czasem trwania mediacji)
-              <table cellpadding="0" cellspacing="0" style="width: 100 %; ">
+             <table  style="width: 100%; ">
                   <tr>
                       <td class="center borderAll" rowspan="2">SPRAWY według
                           <br />
@@ -6790,12 +7412,11 @@
               </table>
           </div>
           <br />
-
 <div id="2.1.1.a" class="page-break">
               <strong>Dział 2.1.1.a</strong> Sprawy zawieszone nie zakreślone od dnia pierwotnego wpisu do repertorium (wykazane w dziale 2.1.1.) (łącznie z czasem trwania mediacji)
-              <table cellpadding="0" cellspacing="0" style="width: 100 %; ">
+             <table  style="width: 100%; ">
                   <tr>
-                      <td class="center borderAll" rowspan="2">SPRAWY według
+                      <td class="center borderAll" rowspan="2" colspan="2">SPRAWY według
                           <br />
                           repertoriów</td>
                       <td class="center borderAll" rowspan="2">Symbol </td>
@@ -6816,7 +7437,7 @@
                       <td class="center borderAll">ponad 8 lat</td>
                   </tr>
                   <tr>
-                      <td class="center borderAll" colspan="3">0</td>
+                      <td class="center borderAll" colspan="4">0</td>
                       <td class="center borderAll">1</td>
                       <td class="center borderAll">2</td>
                       <td class="center borderAll">3</td>
@@ -6830,7 +7451,7 @@
                       <td class="center borderAll">11</td>
                   </tr>
                   <tr>
-                      <td class="borderAll wciecie">RC</td>
+                      <td class="borderAll wciecie" colspan="2">ogółem</td>
                       <td class="borderAll wciecie">--</td>
                       <td class="borderAll col_36">1</td>
                       <td class="col_90 center borderAll "><a href="javascript:openPopup('popup.aspx?sesja=1!2.1.1.a!1!4')">
@@ -6868,7 +7489,8 @@
                           </a></td>
                   </tr>
                   <tr>
-                      <td class="borderAll wciecie">RNs</td>
+                      <td class="borderAll wciecie" rowspan="4">w tym</td>
+                      <td class="borderAll wciecie">RC</td>
                       <td class="borderAll wciecie">--</td>
                       <td class="borderAll col_36">2</td>
                       <td class="col_90 center borderAll "><a href="javascript:openPopup('popup.aspx?sesja=2!2.1.1.a!1!4')">
@@ -6906,7 +7528,7 @@
                           </a></td>
                   </tr>
                   <tr>
-                      <td class="borderAll wciecie">Nsm</td>
+                      <td class="borderAll wciecie">RNs</td>
                       <td class="borderAll wciecie">--</td>
                       <td class="borderAll col_36">3</td>
                       <td class="col_90 center borderAll "><a href="javascript:openPopup('popup.aspx?sesja=3!2.1.1.a!1!4')">
@@ -6944,7 +7566,7 @@
                           </a></td>
                   </tr>
                   <tr>
-                      <td class="borderAll wciecie">Nkd</td>
+                      <td class="borderAll wciecie">Nsm</td>
                       <td class="borderAll wciecie">--</td>
                       <td class="borderAll col_36">4</td>
                       <td class="col_90 center borderAll "><a href="javascript:openPopup('popup.aspx?sesja=4!2.1.1.a!1!4')">
@@ -6981,13 +7603,51 @@
                           <asp:Label ID="tab_2_11_a_w04_c11" runat="server" CssClass="normal" Text="0"></asp:Label>
                           </a></td>
                   </tr>
+                 <tr>
+                      <td class="borderAll wciecie">Nkd</td>
+                      <td class="borderAll wciecie">--</td>
+                      <td class="borderAll col_36">4</td>
+                      <td class="col_90 center borderAll "><a href="javascript:openPopup('popup.aspx?sesja=5!2.1.1.a!1!4')">
+                          <asp:Label ID="tab_2_11_a_w05_c01" runat="server" CssClass="normal" Text="0"></asp:Label>
+                          </a></td>
+                      <td class="col_90 center borderAll "><a href="javascript:openPopup('popup.aspx?sesja=5!2.1.1.a!2!4')">
+                          <asp:Label ID="tab_2_11_a_w05_c02" runat="server" CssClass="normal" Text="0"></asp:Label>
+                          </a></td>
+                      <td class="col_90 center borderAll "><a href="javascript:openPopup('popup.aspx?sesja=5!2.1.1.a!3!4')">
+                          <asp:Label ID="tab_2_11_a_w05_c03" runat="server" CssClass="normal" Text="0"></asp:Label>
+                          </a></td>
+                      <td class="col_90 center borderAll "><a href="javascript:openPopup('popup.aspx?sesja=5!2.1.1.a!4!4')">
+                          <asp:Label ID="tab_2_11_a_w05_c04" runat="server" CssClass="normal" Text="0"></asp:Label>
+                          </a></td>
+                      <td class="col_90 center borderAll "><a href="javascript:openPopup('popup.aspx?sesja=5!2.1.1.a!5!4')">
+                          <asp:Label ID="tab_2_11_a_w05_c05" runat="server" CssClass="normal" Text="0"></asp:Label>
+                          </a></td>
+                      <td class="col_90 center borderAll "><a href="javascript:openPopup('popup.aspx?sesja=5!2.1.1.a!6!4')">
+                          <asp:Label ID="tab_2_11_a_w05_c06" runat="server" CssClass="normal" Text="0"></asp:Label>
+                          </a></td>
+                      <td class="col_90 center borderAll "><a href="javascript:openPopup('popup.aspx?sesja=5!2.1.1.a!7!4')">
+                          <asp:Label ID="tab_2_11_a_w05_c07" runat="server" CssClass="normal" Text="0"></asp:Label>
+                          </a></td>
+                      <td class="col_90 center borderAll "><a href="javascript:openPopup('popup.aspx?sesja=5!2.1.1.a!8!4')">
+                          <asp:Label ID="tab_2_11_a_w05_c08" runat="server" CssClass="normal" Text="0"></asp:Label>
+                          </a></td>
+                      <td class="col_90 center borderAll "><a href="javascript:openPopup('popup.aspx?sesja=5!2.1.1.a!9!4')">
+                          <asp:Label ID="tab_2_11_a_w05_c09" runat="server" CssClass="normal" Text="0"></asp:Label>
+                          </a></td>
+                      <td class="col_90 center borderAll "><a href="javascript:openPopup('popup.aspx?sesja=5!2.1.1.a!10!4')">
+                          <asp:Label ID="tab_2_11_a_w05_c10" runat="server" CssClass="normal" Text="0"></asp:Label>
+                          </a></td>
+                      <td class="col_90 center borderAll "><a href="javascript:openPopup('popup.aspx?sesja=5!2.1.1.a!11!4')">
+                          <asp:Label ID="tab_2_11_a_w05_c11" runat="server" CssClass="normal" Text="0"></asp:Label>
+                          </a></td>
+
+                 </tr>
               </table>
-          </div>
-          <br />
+          </div>        <br />
 
 <div id="2.1.2" class="page-break">
               <strong>Dział 2.1.2</strong> Liczba spraw zakreślonych w urządzeniu ewidencyjnym w wyniku zawieszenia postępowania (łącznie z czasem trwania mediacji)
-              <table cellpadding="0" cellspacing="0" style="width: 100 %; ">
+             <table  style="width: 100%; ">
                   <tr>
                       <td class="center borderAll" rowspan="2">SPRAWY według
                           <br />
@@ -7180,7 +7840,7 @@
           <br />
           <div id="2.2" class="page-break">
               <strong>Dział 2.2</strong> Czas trwania postępowania sądowego od dnia pierwszej rejestracji do dnia uprawomocnienia się sprawy w I instancji (łącznie z czasem trwania mediacji)
-              <table cellpadding="0" cellspacing="0" style="width: 100 %; ">
+             <table  style="width: 100%; ">
                   <tr>
                       <td class="center borderAll" colspan="2">SPRAWY wg repertoriów</td>
                       <td class="center borderAll">Razem<br />
@@ -7641,7 +8301,7 @@ wg repertoriów
               <br />
               <div id='2.3' class="page-break">
  <strong> Dział 2.3</strong> Czas trwania wszystkich mediacji w sprawie od dnia wydania postanowienia o skierowaniu stron do mediacji do dnia zakończenia mediacji
-    <table cellpadding="0" cellspacing="0" style="width: 100 %; ">
+   <table  style="width: 100%; ">
  <tr>    <td  class="center borderAll" colspan="2"> SPRAWY wg repertoriów</td>    <td class="center borderAll"> Razem<br />
 &nbsp;(kol. 2 do 7)</td>
 <td class="center borderAll">Do 1 miesiąca</td>
@@ -7691,7 +8351,7 @@ wg repertoriów
         </div>
         <div id='2.3.1' class="page-break">
  <strong> Dział 2.3.1</strong> . Czas trwania mediacji niezakończonych w sprawie od dnia wydania postanowienia o skierowaniu stron do mediacji do ostatniego dnia okresu sprawozdawczego
-    <table cellpadding="0" cellspacing="0" style="width: 100 %; ">
+   <table  style="width: 100%; ">
         <tr>
             <td  class="center borderAll" colspan="2"> SPRAWY wg repertoriów</td>    <td class="center borderAll"> Razem<br />
 &nbsp;(kol. 2 do 7)</td>
@@ -7738,7 +8398,7 @@ wg repertoriów
        <br />
         <div id='3' class="page-break">
  <strong> Dział 3</strong> Wyznaczenie pierwszej rozprawy / posiedzenia spraw (od dnia wpływu/wpisu sprawy, wraz ze sprawami zawieszonymi poprzednio za-kreślonymi, do dnia, w którym odbyła się pierwsza rozprawa/posiedzenie).
-    <table cellpadding="0" cellspacing="0" style="width: 100 %; ">
+   <table  style="width: 100%; ">
  <tr>    <td  class="center borderAll" colspan="2" rowspan="2"> Sprawy z repertorium</td>    <td class="center borderAll" colspan="8"> Od daty wpływu sprawy w danym lub poprzednim okresie sprawozdawczym do pierwszej rozprawy (posiedzenia) w okresie sprawozdawczym upłynął okres</td>
 </tr>
  <tr>    <td class="center borderAll"> razem
@@ -7834,7 +8494,7 @@ wg repertoriów
           <br />
           <div id="5" class="page-break">
               <strong>Dział 5</strong> Prawomocne orzeczenia w sprawach o alimenty poza alimentami orzeczonymi w trakcie rozwodu (sprawy)
-              <table cellpadding="0" cellspacing="0" style="width: 100 %; ">
+             <table  style="width: 100%; ">
                   <tr>
                       <td class="center borderAll" colspan="3" rowspan="3">RODZAJE SPRAW O ALIMENTY </td>
                       <td class="center borderAll" rowspan="3">Ogółem (kol. 2 do 5) </td>
@@ -8020,7 +8680,7 @@ wg repertoriów
           <br />
           <div id="6.1.a" class="page-break">
               <strong>Dział 6.1.a</strong> Prawomocne orzeczenia w sprawach o alimenty poza alimentami orzeczonymi w trakcie rozwodu (sprawy)
-              <table cellpadding="0" cellspacing="0" style="width: 100 %; ">
+             <table  style="width: 100%; ">
                   <tr>
                       <td class="center borderAll" colspan="5">Sądowe</td>
                       <td class="center borderAll">Liczba</td>
@@ -8163,7 +8823,7 @@ wg repertoriów
           <br />
           <div id="6.1.b" class="page-break">
               <strong>Dział 6.1.b</strong> Prawomocne orzeczenia w sprawach o alimenty poza alimentami orzeczonymi w trakcie rozwodu (sprawy)
-              <table cellpadding="0" cellspacing="0" style="width: 100 %; ">
+             <table  style="width: 100%; ">
                   <tr>
                       <td class="center borderAll" colspan="3" rowspan="2">Zakres ugody</td>
                       <td class="center borderAll" colspan="2">Z mediacji</td>
@@ -8273,7 +8933,7 @@ wg repertoriów
           <br />
           <div id="6.2" class="page-break">
               <strong>Dział 6.2</strong> 2 Ewidencja i wyniki postępowania mediacyjnego w sprawach nieletnich (proszę podać liczbę spraw, w których postępowanie zakończyło się ugodą lub w inny sposób)
-              <table cellpadding="0" cellspacing="0" style="width: 100 %; ">
+             <table  style="width: 100%; ">
                   <tr>
                       <td class="center borderAll" colspan="2">Wyszczególnienie </td>
                       <td class="center borderAll">Razem</td>
@@ -8437,7 +9097,7 @@ wg repertoriów
           <br />
           <div id="7" class="page-break">
               <strong>Dział 7</strong> Stan wykazu Opm (stan w ostatnim dniu okresu sprawozdawczego)
-              <table cellpadding="0" cellspacing="0" style="width: 100 %; ">
+             <table  style="width: 100%; ">
                   <tr>
                       <td class="center borderAll" rowspan="3">Ogółem</td>
                       <td class="center borderAll" colspan="4" rowspan="2">Liczba małoletnich pod opieką</td>
@@ -8508,7 +9168,7 @@ wg repertoriów
           <br />
           <div id="8" class="page-break">
               <strong>Dział 8</strong> Wykonywane orzeczenia sądu o umieszczeniu małoletnich w placówkach opiekuńczo-wychowawczych (liczba małoletnich)
-              <table cellpadding="0" cellspacing="0" style="width: 100 %; ">
+             <table  style="width: 100%; ">
                   <tr>
                       <td class="center borderAll" rowspan="2">Liczba orzeczeń wykonywanych wg stanu w ostatnim dniu poprzedniego okresu sprawozdawczego</td>
                       <td class="center borderAll" colspan="2">PRZTBYŁO</td>
@@ -8584,7 +9244,7 @@ wg repertoriów
           <br />
           <div id="9" class="page-break">
               <strong>Dział 9</strong> Stan wykazu „ALK” (stan w ostatnim dniu okresu sprawozdawczego)
-              <table cellpadding="0" cellspacing="0" style="width: 100 %; ">
+             <table  style="width: 100%; ">
                   <tr>
                       <td class="center borderAll" rowspan="3"></td>
                       <td class="center borderAll" colspan="4">Liczba osób, wobec których wykonywane są orzeczenia o obowiązku poddania się leczeniu </td>
@@ -8760,7 +9420,7 @@ normal"><span style="font-size:12.0pt;mso-fareast-font-family:Symbol"> Kontrolka
 
          <div id='12' class="page-break">
  <strong> Dział 12</strong> Terminowość postępowania międzyinstancyjnego  w pierwszej instancji
-    <table cellpadding="0" cellspacing="0" style="width: 100 %; ">
+   <table  style="width: 100%; ">
  <tr>    <td  class="center borderAll" colspan="4" rowspan="2"> Sprawy z rep.</td>    <td class="center borderAll" colspan="4"> Sprawy rodzinne nieletnich wielotomowe - liczba spraw </td>
 </tr>
  <tr>    <td class="center borderAll"> zbiorczo pow. 5 tomów (kol. od 2 do 4)</td>
@@ -9015,7 +9675,7 @@ normal"><span style="font-size:12.0pt;mso-fareast-font-family:Symbol"> Kontrolka
        <br />
         <div id='13.1' class="page-break">
  <strong> Dział 13.1</strong> . Limity etatów i obsada Sądu (Wydziału)
-    <table cellpadding="0" cellspacing="0" style="width: 100 %; ">
+   <table  style="width: 100%; ">
  <tr>    <td  class="center borderAll" colspan="2"> </td>    <td class="center borderAll"> Licz-ba sę-dziów SR i waku-ją-cych sta-no-wisk sę-dziowskich w ra-mach limitu (na ostatni dzień okre-su sta-ty-stycznego) </td>
 <td class="center borderAll">Liczba sę-dziów SR  i wa-ku-ją-cych stano-wisk sę-dziowskich w ra-mach li-mi-tu (w okresie sta-ty-stycznym)</td>
 <td class="center borderAll">Obsada średniookresowa sędziowie SR z wyłączeniem sędziów funkcyjnych oraz delegowanych do pełnienia czynności w Ministerstwie Sprawiedliwości, KSSiP, a także delegowanych w trybie art. 77 § 1 usp na czas nieokreślony lub na czas określony orzekający w pełnym wymiarze w SO i delegowanych do pełnienia czynności orzeczniczych w pełnym wymiarze w innym sądzie rejonowym</td>
@@ -9102,7 +9762,7 @@ normal"><span style="font-size:12.0pt;mso-fareast-font-family:Symbol"> Kontrolka
  <br />
           <div id='13.2' class="page-break">
  <strong> Dział 13.2</strong> Obsada Sądu (Wydziału)
-    <table cellpadding="0" cellspacing="0" style="width: 100 %; ">
+   <table  style="width: 100%; ">
  <tr>    <td  class="center borderAll" colspan="3"> Treść </td>    <td class="center borderAll"> Liczba według limitu etatów na ostatni dzień okresu statystycznego</td>
 <td class="center borderAll">Liczba według limitu etatów w okresie statystycznym</td>
 <td class="center borderAll">Obsada średniookresowa</td>

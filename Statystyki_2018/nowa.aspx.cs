@@ -17,10 +17,10 @@ namespace stat2018
             //Bind the grid only once
             if (!IsPostBack)
             {
-                if (Session["valueX"] == null)
-                {
+               // if (Session["valueX"] == null)
+              //  {
                     Session["valueX"] = Request.QueryString["id"];
-                }
+              //  }
                 DateTime dTime = DateTime.Now.AddMonths(-1);
                 if (data1.Text.Length == 0)
                 {
@@ -88,7 +88,9 @@ namespace stat2018
             }
             catch (Exception)
             { }
-
+            cm.log.Info("Kontrolka -rozmiar czcionki: " + rozmiarCzcionki.ToString());
+            cm.log.Info("Kontrolka -szerokosc Kolumny: " + szerokoscKolumny.ToString());
+            cm.log.Info("Kontrolka -szerokosc tabeli: " + szerokosctabeli.ToString());
             Session["rozmiarCzcionki"] = rozmiarCzcionki;
             Session["szerokoscKolumny"] = szerokoscKolumny;
             Session["szerokosctabeli"] = szerokosctabeli;

@@ -44,7 +44,7 @@ namespace stat2018
                 Session["ustawDate10r"] = "X";
             }
             Session["data_1"] = Date1.Date.ToShortDateString();
-            Session["data_2"] = Date1.Date.ToShortDateString();
+            Session["data_2"] = Date2.Date.ToShortDateString();
             if (!IsPostBack)
             {
                 try

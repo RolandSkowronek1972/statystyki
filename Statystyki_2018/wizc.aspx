@@ -565,7 +565,7 @@
            &nbsp;&nbsp;&nbsp;&nbsp;<asp:Label ID="Label14" runat="server" Text="tabela 8  \/\/\/" Visible="False"></asp:Label>
                <br />
 
-    <table cellpadding="0" cellspacing="0" style="width: 100 %; " class="borderAll  center">
+    <table  class="borderAll  center">
  <tr>    <td  class="center borderAll"> kategoria spraw </td>    <td class="col_80_fest_fest center borderAll"> rok&nbsp; </td>
 <td class="col_80_fest_fest center borderAll">wpływ</td>
 <td class="col_80_fest_fest center borderAll">załatwienia</td>

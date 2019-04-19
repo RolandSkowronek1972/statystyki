@@ -185,7 +185,7 @@
      </div>
 
         <div id='1.1' >
-    <table cellpadding="0" cellspacing="0" style="width: 100 %; ">
+    <table >
   <tr>
     <td  class="borderAll center" colspan="4">SPRAWY wg repertoriów lub wykazów</td>
     <td  class="col_100 center borderAll ">Pozostało z ubiegłego roku </td>
@@ -1006,7 +1006,7 @@
   </div>
 
         <div id='1.1.1' >
-    <table cellpadding="0" cellspacing="0" style="width: 100 %; ">
+    <table >
   <tr>
     <td  class="borderAll center" colspan="5" rowspan="2">Wyszczególnienie</td>
     <td  class="col_100 center borderAll " rowspan="2">Ogółem</td>
@@ -1281,7 +1281,7 @@
             <br />
 <strong>Dział 1.1.2.</strong>&nbsp;Struktura załatwień spraw
             <br />
-    <table cellpadding="0" cellspacing="0" style="width: 100 %; ">
+    <table >
   <tr>
     <td  class="center borderAll" colspan="4" rowspan="2">Wyszczególnienie </td>
     <td  class="center borderAll" rowspan="2">Ogółem</td>

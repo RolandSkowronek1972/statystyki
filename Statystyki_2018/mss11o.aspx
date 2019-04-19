@@ -14,6 +14,18 @@
                 left: 0;
                 right: 0;
             }
+
+        .auto-style1 {
+            font-size: medium;
+        }
+
+        .auto-style2 {
+            font-size: x-small;
+        }
+
+        .auto-style3 {
+            font-size: small;
+        }
     </style>
 
     <script src="Scripts/rls.js"></script>
@@ -117,12 +129,14 @@
             </p>
                     </td>
                     <td rowspan="3" width="290">
-                        <h2 class="auto-style2 center">MS-S5o/18</h2>
-                        <p class="western" align="CENTER"><font face="Arial, sans-serif"><FONT SIZE=3><B>SPRAWOZDANIE</B></FONT></font></p>
-                        <p class="western" align="CENTER">
-                            <font face="Arial, sans-serif"><FONT SIZE=3><B>w
-			sprawach rodzinnych i nieletnich </B></FONT></font>
-                        </p>
+                       
+                       
+                            <h2 class="center">MS-S11/12o</h2>
+                            <p class="center">&nbsp;</p>
+                        
+                            <h3 class="center">SPRAWOZDANIE</h3>
+                        
+                            <h3 class="center">z zakresu prawa pracy i ubezpieczeń społecznych</h3>
                     </td>
                     <td rowspan="2" width="338">
                         <p class="western"><font face="Arial, sans-serif"><FONT SIZE=2 STYLE="font-size: 9pt">Adresaci:</FONT></font></p>
@@ -183,32 +197,29 @@
             </table>
 
             <br />
-          
 
             <asp:Label ID="kod011" runat="server"></asp:Label>
             <br />
             <br />
                <asp:PlaceHolder runat="server" ID="tablePlaceHolder"></asp:PlaceHolder>
 
-
             <br />
         </div>
 
    <div id="debag">
 
-            <br />
-            Raport statystyczny
-                    ID="Label27" runat="server">Label>
+           
+                <br />
+                Raport statystyczny
+                    <asp:Label ID="Label27" runat="server"></asp:Label>
                 &nbsp;Sporzadzone dn.
-            abel ID="Label29" runat="server">&nbsp;przez&nbsp;
+            <asp:Label ID="Label29" runat="server"></asp:Label>&nbsp;przez&nbsp;
 &nbsp;&nbsp;
             <asp:Label ID="Label28" runat="server"></asp:Label>
-            &nbsp;<asp:Label ID="Label30" runat="server"></asp:Label>
-            <br />
+                &nbsp;<asp:Label ID="Label30" runat="server"></asp:Label>
+                <br />
 
-            <asp:Label ID="Label11" runat="server"></asp:Label>
-        </div>
-
-        <br />
+                <asp:Label ID="Label11" runat="server"></asp:Label>
+           
     </div>
 </asp:Content>

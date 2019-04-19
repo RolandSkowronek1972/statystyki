@@ -57,17 +57,17 @@
             &nbsp;&nbsp;&nbsp;
            <asp:Label ID="infoLabel1" runat="server" Text="tabela  1" Visible="False"></asp:Label>
             <br />
-            <div id="TABELA5" class="page -break">
+            <div id="TABELA1" class="page -break">
                 <table style="width: 100%;">
                     <tr>
                         <td class="borderAll center" rowspan="3">okres statystyczny</td>
                         <td class="borderAll center" rowspan="3">&nbsp;</td>
                         <td class="borderAll center" rowspan="3">razem</td>
-                        <td class="borderAll center col_60" rowspan="3"></td>
+                        <td class="borderAll center " rowspan="3">w tym liczba orzeczeń, w których sporządzono uzasadnienie i nie wniesiono środka zaskarżenia</td>
                         <td class="borderAll center" colspan="10">Terminowość sporządzania uzasadnień</td>
                     </tr>
                     <tr>
-                        <td class="borderAll center col_60" rowspan="2">w terminie ustawowym</td>
+                        <td class="borderAll center " rowspan="2">w terminie ustawowym</td>
                         <td class="borderAll center" colspan="9">po upływie terminu ustawowego
                         </td>
                     </tr>
@@ -75,16 +75,18 @@
                         <td class="borderAll center ">1-14 dni</td>
                         <td class="borderAll center ">w tym
       <br />
-                            nieuspra-wiedliwione</td>
+                            nieuspra-wiedli-wione</td>
                         <td class="borderAll center ">15-30 dni</td>
                         <td class="borderAll center ">w tym nieuspra-<br />
-                            wiedliwione</td>
-                        <td class="borderAll center ">pow. 1 do 3 m-cy</td>
+                            wiedl-iwione</td>
+                        <td class="borderAll center ">pow. 1 do 3
+                            <br />
+                            m-cy</td>
                         <td class="borderAll center ">w tym nieuspra-<br />
-                            wiedliwione</td>
+                            wiedli-wione</td>
                         <td class="borderAll center ">ponad 3 m-ce</td>
                         <td class="borderAll center ">w tym nieuspra-<br />
-                            wiedliwione</td>
+                            wiedli-wione</td>
                         <td class="borderAll center ">uzasadnienia wygłoszone (art.328 § 11 kpc)</td>
                     </tr>
                     <tr>
@@ -868,7 +870,7 @@
                                 <table style="width: 100%;">
                                     <tr>
                                         <td class="borderAll center">Repetytorium</td>
-                                        <td class="borderAll center">Wpływ spraw w 2016 roku</td>
+                                        <td class="borderAll center">Wpływ spraw </td>
                                         <td class="borderAll center">Wpływ spraw z obszaru właściwości Gminy Miasta
                                         </td>
                                         <td class="borderAll center">Wpływ spraw z obszaru właściwości innych Gmin
@@ -968,7 +970,7 @@
                                 &nbsp;<asp:Label ID="infoLabel6" runat="server" Text="tabela 6  \/\/\/" Visible="False"></asp:Label>
                                 <br />
 
-                                <div id="TABELA5" class="page -break">
+                                <div id="TABELA6" class="page -break">
                                     <table style="width: 100%;">
                                         <tr>
                                             <td class="borderAll center" rowspan="3">Pozostało z r.</td>

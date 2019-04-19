@@ -121,6 +121,7 @@
     <Content Include="akrg.aspx" />
     <Content Include="akrp.aspx" />
     <Content Include="akrk.aspx" />
+    <Content Include="aopc.aspx" />
     <Content Include="aopk.aspx" />
     <Content Include="aopk2.aspx" />
     <Content Include="aopc2.aspx" />
@@ -371,6 +372,13 @@
     </Compile>
     <Compile Include="akrk.aspx.designer.cs">
       <DependentUpon>akrk.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="aopc.aspx.cs">
+      <DependentUpon>aopc.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="aopc.aspx.designer.cs">
+      <DependentUpon>aopc.aspx</DependentUpon>
     </Compile>
     <Compile Include="aopk.aspx.cs">
       <DependentUpon>aopk.aspx</DependentUpon>

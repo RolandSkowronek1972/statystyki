@@ -1,6 +1,6 @@
 ﻿/*
 Last Update:
-    - version 1.181211
+    - version 1.160417
 Creation date: 2018-12-11
 
 */
@@ -99,7 +99,6 @@ namespace stat2018
                 infoLabel7.Visible = cl.debug(int.Parse(idDzialu));
                 infoLabel8.Visible = cl.debug(int.Parse(idDzialu));
                 infoLabel9.Visible = cl.debug(int.Parse(idDzialu));
-                //infoLabel10.Visible = cl.debug(int.Parse(idDzialu));
                 infoLabel11.Visible = cl.debug(int.Parse(idDzialu));
                 infoLabel12.Visible = cl.debug(int.Parse(idDzialu));
                 infoLabel13.Visible = cl.debug(int.Parse(idDzialu));
@@ -142,7 +141,6 @@ namespace stat2018
             tabela_13();
             tabela_14();
             tabela_15();
-
             tabela_16();
 
             dateLabel01.Text = Date1.Date.ToShortDateString() + " - " + Date2.Date.ToShortDateString();
@@ -212,7 +210,7 @@ namespace stat2018
             {
                 cm.log.Info(tenPlik + ": rozpoczęcie tworzenia tabeli 1");
             }
-            DataTable tabelka01 = dr. generuj_dane_do_tabeli_wierszy2018(Date1.Date, Date2.Date, (string)Session["id_dzialu"], 1, 4, 12, tenPlik);
+            DataTable tabelka01 = dr.generuj_dane_do_tabeli_wierszy2018(Date1.Date, Date2.Date, (string)Session["id_dzialu"], 1, 4, 12, tenPlik);
             Session["tabelka001"] = tabelka01;
             pisz("tab_1_", 4, 12, tabelka01);
         }
@@ -239,7 +237,7 @@ namespace stat2018
             {
                 cm.log.Info(tenPlik + ": rozpoczęcie tworzenia tabeli 3");
             }
-            DataTable tabelka01 = dr. generuj_dane_do_tabeli_wierszy2018(Date1.Date, Date2.Date, (string)Session["id_dzialu"], 3, 16, 3, tenPlik);
+            DataTable tabelka01 = dr.generuj_dane_do_tabeli_wierszy2018(Date1.Date, Date2.Date, (string)Session["id_dzialu"], 3, 16, 3, tenPlik);
             Session["tabelka003"] = tabelka01;
             pisz("tab_3_", 16, 3, tabelka01);
         }
@@ -251,7 +249,7 @@ namespace stat2018
             {
                 cm.log.Info(tenPlik + ": rozpoczęcie tworzenia tabeli 4");
             }
-            DataTable tabelka01 = dr. generuj_dane_do_tabeli_wierszy2018(Date1.Date, Date2.Date, (string)Session["id_dzialu"], 4, 16, 4, tenPlik);
+            DataTable tabelka01 = dr.generuj_dane_do_tabeli_wierszy2018(Date1.Date, Date2.Date, (string)Session["id_dzialu"], 4, 16, 4, tenPlik);
             Session["tabelka004"] = tabelka01;
             pisz("tab_4_", 16, 4, tabelka01);
         }
@@ -263,7 +261,7 @@ namespace stat2018
             {
                 cm.log.Info(tenPlik + ": rozpoczęcie tworzenia tabeli 5");
             }
-            DataTable tabelka01 = dr. generuj_dane_do_tabeli_wierszy2018(Date1.Date, Date2.Date, (string)Session["id_dzialu"], 5, 7, 4, tenPlik);
+            DataTable tabelka01 = dr.generuj_dane_do_tabeli_wierszy2018(Date1.Date, Date2.Date, (string)Session["id_dzialu"], 5, 7, 4, tenPlik);
             Session["tabelka005"] = tabelka01;
             pisz("tab_5_", 7, 3, tabelka01);
         }
@@ -275,7 +273,7 @@ namespace stat2018
             {
                 cm.log.Info(tenPlik + ": rozpoczęcie tworzenia tabeli 6");
             }
-            DataTable tabelka01 = dr. generuj_dane_do_tabeli_wierszy2018(Date1.Date, Date2.Date, (string)Session["id_dzialu"], 6, 6, 8, tenPlik);
+            DataTable tabelka01 = dr.generuj_dane_do_tabeli_wierszy2018(Date1.Date, Date2.Date, (string)Session["id_dzialu"], 6, 6, 8, tenPlik);
             Session["tabelka006"] = tabelka01;
             pisz("tab_6_", 6, 8, tabelka01);
         }
@@ -318,7 +316,7 @@ namespace stat2018
                 cm.log.Info(tenPlik + ": rozpoczęcie tworzenia tabeli 9");
             }
 
-            DataTable tabelka01 = dr. generuj_dane_do_tabeli_wierszy2018(Date1.Date, Date2.Date, (string)Session["id_dzialu"], 9, 1, 11, tenPlik);
+            DataTable tabelka01 = dr.generuj_dane_do_tabeli_wierszy2018(Date1.Date, Date2.Date, (string)Session["id_dzialu"], 9, 1, 11, tenPlik);
             Session["tabelka009"] = tabelka01;
             pisz("tab_9_", 1, 11, tabelka01);
         }
@@ -331,7 +329,7 @@ namespace stat2018
                 cm.log.Info(tenPlik + ": rozpoczęcie tworzenia tabeli 10");
             }
 
-            DataTable tabelka01 = dr. generuj_dane_do_tabeli_wierszy2018(Date1.Date, Date2.Date, (string)Session["id_dzialu"], 10, 4, 4, tenPlik);
+            DataTable tabelka01 = dr.generuj_dane_do_tabeli_wierszy2018(Date1.Date, Date2.Date, (string)Session["id_dzialu"], 10, 4, 4, tenPlik);
             Session["tabelka010"] = tabelka01;
             pisz("tab_10_", 1, 11, tabelka01);
         }
@@ -373,7 +371,7 @@ namespace stat2018
             {
                 cm.log.Info(tenPlik + ": rozpoczęcie tworzenia tabeli 13");
             }
-            DataTable tabelka01 = dr. generuj_dane_do_tabeli_wierszy2018(Date1.Date, Date2.Date, (string)Session["id_dzialu"], 13, 8, 5, tenPlik);
+            DataTable tabelka01 = dr.generuj_dane_do_tabeli_wierszy2018(Date1.Date, Date2.Date, (string)Session["id_dzialu"], 13, 8, 5, tenPlik);
             Session["tabelka013"] = tabelka01;
             pisz("tab_13_", 8, 5, tabelka01);
         }
@@ -385,7 +383,7 @@ namespace stat2018
             {
                 cm.log.Info(tenPlik + ": rozpoczęcie tworzenia tabeli 14");
             }
-            DataTable tabelka01 = dr. generuj_dane_do_tabeli_wierszy2018(Date1.Date, Date2.Date, (string)Session["id_dzialu"], 14, 8, 5, tenPlik);
+            DataTable tabelka01 = dr.generuj_dane_do_tabeli_wierszy2018(Date1.Date, Date2.Date, (string)Session["id_dzialu"], 14, 8, 5, tenPlik);
             Session["tabelka014"] = tabelka01;
             pisz("tab_14_", 8, 5, tabelka01);
         }
@@ -422,7 +420,6 @@ namespace stat2018
         {
             if (dane == null)
             {
-               
                 cm.log.Info(tenPlik + ": Brak danych do tworzenia tabeli 16");
                 return;
             }
