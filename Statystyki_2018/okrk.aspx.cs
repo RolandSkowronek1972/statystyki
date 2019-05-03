@@ -1,4 +1,11 @@
-﻿using OfficeOpenXml;
+﻿/*
+Last Update:
+     - version 1.190414
+Creation date: 2018-11-21
+
+*/
+
+using OfficeOpenXml;
 using System;
 using System.Data;
 using System.Globalization;
@@ -178,7 +185,7 @@ namespace stat2018
             string idDzialu = (string)Session["id_dzialu"];
             if (cl.debug(int.Parse(idDzialu)))
             {
-                //cm.log.Info(tenPlik + ": rozpoczęcie tworzenia tabeli 3");
+                cm.log.Info(tenPlik + ": rozpoczęcie tworzenia tabeli 3");
             }
             DataTable tabelka01 = dr.generuj_dane_do_tabeli_sedziowskiej_2018(int.Parse(idDzialu), 5, Date1.Date, Date2.Date, 23, tenPlik);
             Session["tabelka005"] = tabelka01;
@@ -241,25 +248,33 @@ namespace stat2018
 
             dT_01.Clear();
 
-            dT_01.Rows.Add(new Object[] { "1", "rozprzwy", "1", "1", "h", "60" });//
-            dT_01.Rows.Add(new Object[] { "1", "posiedzenia", "1", "1", "h", "60" });//
-            dT_01.Rows.Add(new Object[] { "1", "rozprzwy", "1", "1", "h", "60" });//
-            dT_01.Rows.Add(new Object[] { "1", "posiedzenia", "1", "1", "h", "60" });//
+            dT_01.Rows.Add(new Object[] { "1", "rozprawy", "1", "1", "h", "60" });
+            dT_01.Rows.Add(new Object[] { "1", "posiedzenia", "1", "1", "h", "60" });
+           
+            dT_01.Rows.Add(new Object[] { "1", "wyroki łączne", "1", "1", "h", "60" });
+            dT_01.Rows.Add(new Object[] { "1", "tryby szybkie (335,338a,336,387kpk)", "1", "1", "h", "60" });//
+            dT_01.Rows.Add(new Object[] { "1", "rozprawy", "1", "1", "h", "60" });
+            dT_01.Rows.Add(new Object[] { "1", "posiedzenia", "1", "1", "h", "60" });
 
             dT_01.Rows.Add(new Object[] { "2", "Urlopy", "1", "2", "h" });//
             dT_01.Rows.Add(new Object[] { "2", "Zwolnienia", "1", "2", "h" });//
-            dT_01.Rows.Add(new Object[] { "2", "Razem", "1", "2", "h", "120" });//;
+            dT_01.Rows.Add(new Object[] { "2", "Razem", "1", "2", "h", "120" });
             dT_01.Rows.Add(new Object[] { "2", "w terminie ustawowym", "1", "2", "h", "120" });//
             dT_01.Rows.Add(new Object[] { "2", "po upływie teminu ustawowego", "1", "2", "h", "120" });//
             dT_01.Rows.Add(new Object[] { "2", "w tym nieuspra- <br/>wiedliwione", "1", "2", "h", "120" });//
-            dT_01.Rows.Add(new Object[] { "2", "K", "2", "1", "h", "120" });//;
-            dT_01.Rows.Add(new Object[] { "2", "Ko", "1", "2", "h", "120" });//;
+            dT_01.Rows.Add(new Object[] { "2", "Razem", "1", "2", "h", "120" });
+            dT_01.Rows.Add(new Object[] { "2", "w terminie ustawowym", "1", "2", "h", "120" });
+            dT_01.Rows.Add(new Object[] { "2", "po upływie terminu ustawowego", "1", "2", "h", "120" });
+            dT_01.Rows.Add(new Object[] { "2", "w tym nieusprawiedliwione", "1", "2", "h", "120" });
 
-            dT_01.Rows.Add(new Object[] { "2", "Kp", "1", "2", "h", "120" });//;
-            dT_01.Rows.Add(new Object[] { "2", "Kop", "1", "2", "h", "120" });//;
-            dT_01.Rows.Add(new Object[] { "2", "W", "2", "1", "h", "120" });//;
-            dT_01.Rows.Add(new Object[] { "2", "Razem sprawy K+W", "1", "2", "h", "120" });//;
-            dT_01.Rows.Add(new Object[] { "2", "Razem", "1", "2", "h", "120" });//;
+            dT_01.Rows.Add(new Object[] { "2", "K", "4", "1", "h", "120" });
+            dT_01.Rows.Add(new Object[] { "2", "Ko", "1", "2", "h", "120" });
+
+            dT_01.Rows.Add(new Object[] { "2", "Kp", "1", "2", "h", "120" });
+            dT_01.Rows.Add(new Object[] { "2", "Kop", "1", "2", "h", "120" });
+            dT_01.Rows.Add(new Object[] { "2", "W", "2", "1", "h", "120" });
+            dT_01.Rows.Add(new Object[] { "2", "Razem sprawy K+W", "1", "2", "h", "120" });
+            dT_01.Rows.Add(new Object[] { "2", "Razem", "1", "2", "h", "120" });
 
             dT_01.Rows.Add(new Object[] { "3", "L.p.", "1", "3", "h", "10" });
             dT_01.Rows.Add(new Object[] { "3", "Funkcja.", "1", "3", "h", "10" });
@@ -269,7 +284,9 @@ namespace stat2018
             dT_01.Rows.Add(new Object[] { "3", "Nieobecności", "2", "1", "h", "45" });
             dT_01.Rows.Add(new Object[] { "3", "Terminowość sporządzania uzasadnień", "4", "1", "h" });
             dT_01.Rows.Add(new Object[] { "3", "Uzasadnienia wygłoszone", "1", "3", "h" });
-            dT_01.Rows.Add(new Object[] { "3", "ZAŁATWIENIA", "9", "1", "h", "45" });
+            dT_01.Rows.Add(new Object[] { "3", "Terminowość sporządzania uzasadnień orzeczeń merytorycznych", "4", "1", "h", "45" });
+            dT_01.Rows.Add(new Object[] { "3", "Uzasadnienia wygłoszone", "1", "3", "h" });
+            dT_01.Rows.Add(new Object[] { "3", "ZAŁATWIENIA", "11", "1", "h", "45" });
             dT_01.Rows.Add(new Object[] { "3", "UWAGI", "1", "3", "h", "45" });
 
             Session["header_01"] = dT_01;
@@ -308,15 +325,15 @@ namespace stat2018
             dT_02.Rows.Add(new Object[] { "2", "Nmo", "2", "1", "h" });//
             dT_02.Rows.Add(new Object[] { "2", "Nkd", "2", "1", "h" });//
             dT_02.Rows.Add(new Object[] { "2", "Nsm", "2", "1", "h", "120" });//
-            dT_02.Rows.Add(new Object[] { "2", "Razem", "2", "1", "h", "120" });//;
+            dT_02.Rows.Add(new Object[] { "2", "Razem", "2", "1", "h", "120" });
             dT_02.Rows.Add(new Object[] { "2", "RC", "2", "1", "h", "120" });//
             dT_02.Rows.Add(new Object[] { "2", "RNc", "2", "1", "h", "120" });//
             dT_02.Rows.Add(new Object[] { "2", "RNs", "2", "1", "h", "120" });//
-            dT_02.Rows.Add(new Object[] { "2", "RCo", "2", "1", "h", "120" });//;
-            dT_02.Rows.Add(new Object[] { "2", "Cps", "2", "1", "h", "120" });//;
+            dT_02.Rows.Add(new Object[] { "2", "RCo", "2", "1", "h", "120" });
+            dT_02.Rows.Add(new Object[] { "2", "Cps", "2", "1", "h", "120" });
 
-            dT_02.Rows.Add(new Object[] { "2", "Razem", "2", "1", "h", "120" });//;
-            dT_02.Rows.Add(new Object[] { "2", "", "2", "1", "h", "120" });//;
+            dT_02.Rows.Add(new Object[] { "2", "Razem", "2", "1", "h", "120" });
+            dT_02.Rows.Add(new Object[] { "2", "", "2", "1", "h", "120" });
 
             dT_02.Rows.Add(new Object[] { "3", "L.p.", "1", "3", "h", "10" });//
             dT_02.Rows.Add(new Object[] { "3", "Nazwisko i imię Sędziego", "1", "3", "h", "130" });//
@@ -455,8 +472,7 @@ namespace stat2018
                 catch
                 { }
                 Label3.Text = cl.nazwaSadu((string)Session["id_dzialu"]);
-
-                //	id_dzialu.Text = (string)Session["txt_dzialu"];
+ 
                 Label28.Text = cl.podajUzytkownika(User_id, domain);
                 Label29.Text = DateTime.Now.ToLongDateString();
                 try
@@ -473,14 +489,12 @@ namespace stat2018
                     // cały miesiąc
                     tabela1Label.Text = "Sprawozdanie z ruchu spraw w za miesiąc " + strMonthName + " " + Date2.Date.Year.ToString() + " roku.";
                     tabela3Label.Text = "Wydajność sędziów orzekających w Wydziale za miesiąc " + strMonthName + " " + Date2.Date.Year.ToString() + " roku.";
-                    //Label2.Text= "Ewidencja spraw odroczonych  za miesiąc " + strMonthName + " " + Date2.Date.Year.ToString() + " roku.";
                     Tabela4label.Text = "Postępowanie wykonawcze w miesiącu " + strMonthName + " " + Date2.Date.Year.ToString() + " roku.";
                 }
                 else
                 {
                     tabela1Label.Text = "Sprawozdanie z ruchu spraw w za okres od " + Date1.Text + " do  " + Date2.Text;
                     tabela3Label.Text = "Wydajność sędziów orzekających w Wydziale za okres od" + Date1.Text + " do  " + Date2.Text;
-                    //    Label2.Text = "Ewidencja spraw odroczonych za okres od " + Date1.Text + " do  " + Date2.Text;
                     Tabela4label.Text = "Postępowanie wykonawcze w okresie od " + Date1.Text + " do  " + Date2.Text;
                 }
             }
@@ -524,55 +538,55 @@ namespace stat2018
                 MyWorksheet1.Cells[rowik + 6, 1].Value = "RAZEM";
                 MyWorksheet1.Cells[rowik + 6, 1].Style.Border.BorderAround(OfficeOpenXml.Style.ExcelBorderStyle.Thin, System.Drawing.Color.Black);
 
-                MyWorksheet1.Cells[rowik + 6, 4, rowik + 6, 14].Merge = true;
+                MyWorksheet1.Cells[rowik + 6, 4, rowik + 6, 20].Merge = true;
                 MyWorksheet1.Cells[rowik + 6, 4].Value = "Zaległość z poprzedniego miesiąca";
                 MyWorksheet1.Cells[rowik + 6, 4].Style.Border.BorderAround(OfficeOpenXml.Style.ExcelBorderStyle.Thin, System.Drawing.Color.Black);
 
-                MyWorksheet1.Cells[rowik + 7, 4, rowik + 7, 14].Merge = true;
+                MyWorksheet1.Cells[rowik + 7, 4, rowik + 7, 20].Merge = true;
                 MyWorksheet1.Cells[rowik + 7, 4].Value = "Wpływ";
                 MyWorksheet1.Cells[rowik + 7, 4].Style.Border.BorderAround(OfficeOpenXml.Style.ExcelBorderStyle.Thin, System.Drawing.Color.Black);
 
-                MyWorksheet1.Cells[rowik + 8, 4, rowik + 8, 14].Merge = true;
+                MyWorksheet1.Cells[rowik + 8, 4, rowik + 8, 20].Merge = true;
                 MyWorksheet1.Cells[rowik + 8, 4].Value = "Załatwienia";
                 MyWorksheet1.Cells[rowik + 8, 4].Style.Border.BorderAround(OfficeOpenXml.Style.ExcelBorderStyle.Thin, System.Drawing.Color.Black);
 
-                MyWorksheet1.Cells[rowik + 9, 4, rowik + 9, 14].Merge = true;
+                MyWorksheet1.Cells[rowik + 9, 4, rowik + 9, 20].Merge = true;
                 MyWorksheet1.Cells[rowik + 9, 4].Value = "Pozostało na następny miesiąc";
                 MyWorksheet1.Cells[rowik + 9, 4].Style.Border.BorderAround(OfficeOpenXml.Style.ExcelBorderStyle.Thin, System.Drawing.Color.Black);
 
-                MyWorksheet1.Cells[rowik + 10, 4, rowik + 10, 14].Merge = true;
+                MyWorksheet1.Cells[rowik + 10, 4, rowik + 10, 20].Merge = true;
                 MyWorksheet1.Cells[rowik + 10, 4].Value = "powyżej 3 - 6 miesięcy";
                 MyWorksheet1.Cells[rowik + 10, 4].Style.Border.BorderAround(OfficeOpenXml.Style.ExcelBorderStyle.Thin, System.Drawing.Color.Black);
 
-                MyWorksheet1.Cells[rowik + 11, 4, rowik + 11, 14].Merge = true;
+                MyWorksheet1.Cells[rowik + 11, 4, rowik + 11, 20].Merge = true;
 
                 MyWorksheet1.Cells[rowik + 11, 4].Value = " powyżej 6 - 12 miesięcy";
                 MyWorksheet1.Cells[rowik + 11, 4].Style.Border.BorderAround(OfficeOpenXml.Style.ExcelBorderStyle.Thin, System.Drawing.Color.Black);
 
-                MyWorksheet1.Cells[rowik + 12, 4, rowik + 12, 14].Merge = true;
+                MyWorksheet1.Cells[rowik + 12, 4, rowik + 12, 20].Merge = true;
                 MyWorksheet1.Cells[rowik + 12, 4].Value = " ponad 12 miesięcy";
                 MyWorksheet1.Cells[rowik + 12, 4].Style.Border.BorderAround(OfficeOpenXml.Style.ExcelBorderStyle.Thin, System.Drawing.Color.Black);
 
                 MyWorksheet1.Cells[rowik + 13, 4, rowik + 17, 6].Merge = true;
                 MyWorksheet1.Cells[rowik + 13, 4].Value = " w tym";
-                MyWorksheet1.Cells[rowik + 13, 7, rowik + 13, 14].Merge = true;
+                MyWorksheet1.Cells[rowik + 13, 7, rowik + 13, 20].Merge = true;
                 MyWorksheet1.Cells[rowik + 13, 7].Value = "powyżej 12 miesiecy  - 2 lat";
                 MyWorksheet1.Cells[rowik + 13, 4].Style.Border.BorderAround(OfficeOpenXml.Style.ExcelBorderStyle.Thin, System.Drawing.Color.Black);
                 MyWorksheet1.Cells[rowik + 13, 7].Style.Border.BorderAround(OfficeOpenXml.Style.ExcelBorderStyle.Thin, System.Drawing.Color.Black);
 
-                MyWorksheet1.Cells[rowik + 14, 7, rowik + 14, 14].Merge = true;
+                MyWorksheet1.Cells[rowik + 14, 7, rowik + 14, 20].Merge = true;
                 MyWorksheet1.Cells[rowik + 14, 7].Value = "powyżej 2 lat - do 3 lat";
                 MyWorksheet1.Cells[rowik + 14, 7].Style.Border.BorderAround(OfficeOpenXml.Style.ExcelBorderStyle.Thin, System.Drawing.Color.Black);
 
-                MyWorksheet1.Cells[rowik + 15, 7, rowik + 15, 14].Merge = true;
+                MyWorksheet1.Cells[rowik + 15, 7, rowik + 15, 20].Merge = true;
                 MyWorksheet1.Cells[rowik + 15, 7].Value = "powyżej 3 lat - do 5 lat";
                 MyWorksheet1.Cells[rowik + 15, 7].Style.Border.BorderAround(OfficeOpenXml.Style.ExcelBorderStyle.Thin, System.Drawing.Color.Black);
 
-                MyWorksheet1.Cells[rowik + 16, 7, rowik + 16, 14].Merge = true;
+                MyWorksheet1.Cells[rowik + 16, 7, rowik + 16, 20].Merge = true;
                 MyWorksheet1.Cells[rowik + 16, 7].Value = "powyżej 5 lat - do 8 lat";
                 MyWorksheet1.Cells[rowik + 16, 7].Style.Border.BorderAround(OfficeOpenXml.Style.ExcelBorderStyle.Thin, System.Drawing.Color.Black);
 
-                MyWorksheet1.Cells[rowik + 17, 7, rowik + 17, 14].Merge = true;
+                MyWorksheet1.Cells[rowik + 17, 7, rowik + 17, 20].Merge = true;
                 MyWorksheet1.Cells[rowik + 17, 7].Value = "ponad 8 lat";
                 MyWorksheet1.Cells[rowik + 17, 7].Style.Border.BorderAround(OfficeOpenXml.Style.ExcelBorderStyle.Thin, System.Drawing.Color.Black);
 
@@ -742,9 +756,12 @@ namespace stat2018
             DataTable tabelka01 = (DataTable)Session["tabelka002"];
             GridViewRow NewTotalRow = new GridViewRow(0, 0, DataControlRowType.DataRow, DataControlRowState.Insert);
             NewTotalRow.Cells.Add(tabela.cela("Razem", 12, 3, "borderTopLeft "));
-            NewTotalRow.Cells.Add(tabela.cela(tekst, 1, 9, "borderTopLeft  "));
+            NewTotalRow.Cells.Add(tabela.cela(tekst, 1, 14, "borderTopLeft  "));
             //podwojna komorka pod K
             NewTotalRow.Cells.Add(tabela.cela("<a class='normal' href=\"javascript: openPopup('popup.aspx?sesja=" + (idWiersza).ToString().Trim() + "!" + idtabeli.ToString() + "!1!3')\">" + tabelka01.Rows[idWiersza - 1][1].ToString().Trim() + "</a>", 1, 2, "borderTopLeft")); //trzy pojedyncze
+            NewTotalRow.Cells.Add(tabela.cela("<a class='doubleXcross ' </a>", 1, 1, "borderTopLeft")); //zakrzyżowane
+            NewTotalRow.Cells.Add(tabela.cela("<a class='doubleXcross ' </a>", 1, 1, "borderTopLeft")); //zakrzyżowane
+
             //trzy pojedyncze
             for (int i = 2; i < 5; i++)
             {
@@ -766,9 +783,12 @@ namespace stat2018
             DataTable tabelka01 = (DataTable)Session["tabelka002"];
             GridViewRow NewTotalRow = new GridViewRow(0, 0, DataControlRowType.DataRow, DataControlRowState.Insert);
             // nowy wiersz
-            NewTotalRow.Cells.Add(tabela.cela(tekst, 1, 9, "borderTopLeft  "));
+            NewTotalRow.Cells.Add(tabela.cela(tekst, 1, 14, "borderTopLeft  "));
             //podwojna komorka pod K
             NewTotalRow.Cells.Add(tabela.cela("<a class='normal' href=\"javascript: openPopup('popup.aspx?sesja=" + (idWiersza).ToString().Trim() + "!" + idtabeli.ToString() + "!1!3')\">" + tabelka01.Rows[idWiersza - 1][1].ToString().Trim() + "</a>", 1, 2, "borderTopLeft")); //trzy pojedyncze
+            NewTotalRow.Cells.Add(tabela.cela("<a class='doubleXcross ' </a>", 1, 1, "borderTopLeft")); //zakrzyżowane
+            NewTotalRow.Cells.Add(tabela.cela("<a class='doubleXcross ' </a>", 1, 1, "borderTopLeft")); //zakrzyżowane
+
             //trzy pojedyncze
             for (int i = 2; i < 5; i++)
             {
@@ -792,9 +812,12 @@ namespace stat2018
             DataTable tabelka01 = (DataTable)Session["tabelka002"];
             GridViewRow NewTotalRow = new GridViewRow(0, 0, DataControlRowType.DataRow, DataControlRowState.Insert);
             NewTotalRow.Cells.Add(tabela.cela("w tym", 5, 2, "borderTopLeft "));
-            NewTotalRow.Cells.Add(tabela.cela(tekst, 1, 7, "borderTopLeft  "));
+            NewTotalRow.Cells.Add(tabela.cela(tekst, 1, 12, "borderTopLeft  "));
             //podwojna komorka pod K
             NewTotalRow.Cells.Add(tabela.cela("<a class='normal' href=\"javascript: openPopup('popup.aspx?sesja=" + (idWiersza).ToString().Trim() + "!" + idtabeli.ToString() + "!1!3')\">" + tabelka01.Rows[idWiersza - 1][1].ToString().Trim() + "</a>", 1, 2, "borderTopLeft")); //trzy pojedyncze
+            NewTotalRow.Cells.Add(tabela.cela("<a class='doubleXcross ' </a>", 1, 1, "borderTopLeft")); //zakrzyżowane
+            NewTotalRow.Cells.Add(tabela.cela("<a class='doubleXcross ' </a>", 1, 1, "borderTopLeft")); //zakrzyżowane
+
             //trzy pojedyncze
             for (int i = 2; i < 5; i++)
             {
@@ -817,8 +840,11 @@ namespace stat2018
 
             DataTable tabelka01 = (DataTable)Session["tabelka002"];
             GridViewRow NewTotalRow = new GridViewRow(0, 0, DataControlRowType.DataRow, DataControlRowState.Insert);
-            NewTotalRow.Cells.Add(tabela.cela(tekst, 1, 7, "borderTopLeft  "));
+            NewTotalRow.Cells.Add(tabela.cela(tekst, 1, 12, "borderTopLeft  "));
             NewTotalRow.Cells.Add(tabela.cela("<a class='normal' href=\"javascript: openPopup('popup.aspx?sesja=" + (idWiersza).ToString().Trim() + "!" + idtabeli.ToString() + "!1!3')\">" + tabelka01.Rows[idWiersza - 1][1].ToString().Trim() + "</a>", 1, 2, "borderTopLeft")); //trzy pojedyncze
+            NewTotalRow.Cells.Add(tabela.cela("<a class='doubleXcross' </a>", 1, 1, "borderTopLeft")); //zakrzyżowane
+            NewTotalRow.Cells.Add(tabela.cela("<a class='doubleXcross' </a>", 1, 1, "borderTopLeft")); //zakrzyżowane
+
             //trzy pojedyncze
             for (int i = 2; i < 5; i++)
             {

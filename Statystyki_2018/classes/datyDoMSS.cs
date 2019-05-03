@@ -60,6 +60,6 @@ namespace stat2018
                 default:
                     return datadzisiejsza.ToShortDateString();
             }
-        }// end of DataPoczatkowa
+        }// end of DataKoncowa
     }
 }

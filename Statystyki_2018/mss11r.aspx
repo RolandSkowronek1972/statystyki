@@ -7,8 +7,7 @@
         #menu {
             position: relative;
         }
-
-            #menu.scrolling {
+    #menu.scrolling {
                 position: fixed;
                 top: 0;
                 left: 0;
@@ -60,14 +59,8 @@
         </div>
     </div>
 
-    <div style="width: 1150px; margin: 0 auto 0 auto; position: relative; top: 60px;" class="content">
-        &nbsp;<asp:SqlDataSource ID="SqlDataSource2" runat="server"
-            ConnectionString="<%$ ConnectionStrings:wap %>"
-            SelectCommand="SELECT DISTINCT id_, opis, d_01, d_02, d_03, d_04, d_05, d_06, d_07, d_08, d_09, d_10, d_11, d_12, d_13, d_14, d_15,id_tabeli FROM tbl_statystyki_tbl_01 WHERE (id_dzialu = @id_dzialu) AND (id_tabeli = 1) ORDER BY id_">
-            <SelectParameters>
-                <asp:SessionParameter Name="id_dzialu" SessionField="id_dzialu" />
-            </SelectParameters>
-        </asp:SqlDataSource>
+    <div style="width: 1150px; margin: 0 auto 0 auto; position: relative; top: 60px;" >
+       
 
         <div id="Div2" style="z-index: 10;">
             <div style="margin-left: auto; margin-right: auto; text-align: center; width: auto; visibility: hidden;">
@@ -79,7 +72,7 @@
             </div>
 
             <br />
-            <table width="100%" border="1" bordercolor="#000000" cellpadding="5" cellspacing="0" style="page-break-before: always">
+            <table style="width: 100%;" border="1" bordercolor="#000000" cellpadding="5" cellspacing="0" style="page-break-before: always">
                 <col width="209">
                 <col width="191">
                 <col width="290">
@@ -108,9 +101,9 @@
 			.......................................................</FONT></font>
             </p>
                     </td>
-                    <td rowspan="3" width="290" align="center">
+                    <td rowspan="3" width="290 center">
                         <h2 class="auto-style2">MS-S11r</h2>
-                        <p class="western" align="CENTER"><font face="Arial, sans-serif"><FONT SIZE=3><B>SPRAWOZDANIE</B></FONT></font></p>
+                        <p class="western center"><font face="Arial, sans-serif"><FONT SIZE=3><B>SPRAWOZDANIE</B></FONT></font></p>
                         <p align="CENTER" style="margin-bottom: 0cm">
                             <font face="Arial, sans-serif" size="2"><b>z zakresu prawa pracy i ubezpieczeń społecznych </b></font>
                         </p>
@@ -181,26 +174,27 @@
             <br />
             <b>Dział 1.1.1.a.</b> w tym: skarga o stwierdzenie niezgodności z prawem (dział 1.1.1. wiersz 23 rubryka 4 lit. a)
           <br />
-            <table cellpadding="0" cellspacing="0" width="50%">
+            <table width="50%">
                 <tr>
-                    <td class="borderTopLeft " colspan="3" align="center">Wyszczególnienie</td>
-                    <td class="borderTopLeftRight col_90" align="center">Liczby spraw</td>
+                <tr>
+                    <td class="borderTopLeft center" colspan="3">Wyszczególnienie</td>
+                    <td class="borderTopLeftRight col_90 center">Liczby spraw</td>
                 </tr>
                 <tr>
-                    <td class="borderTopLeft " colspan="3" align="center">0</td>
-                    <td class="borderTopLeftRight col_90" align="center">1</td>
+                    <td class="borderTopLeft center" colspan="3">0</td>
+                    <td class="borderTopLeftRight col_90 center">1</td>
                 </tr>
                 <tr>
                     <td class="borderTopLeft wciecie" colspan="2">Przekazane Sądowi Najwyższemu ze skargą o stwierdzenie niezgodności z prawem </td>
                     <td class="borderTopLeft col_36">01</td>
-                    <td class="borderTopLeftRight col_90" align="center"><a href="javascript:openPopup('popup.aspx?sesja=1!1.1.1.a!1!4')">
+                    <td class="borderTopLeftRight col_90 center"><a href="javascript:openPopup('popup.aspx?sesja=1!1.1.1.a!1!4')">
                         <asp:Label CssClass="normal" ID="tab_111a_w01_c01" runat="server" Text="0"></asp:Label>
                     </a></td>
                 </tr>
                 <tr>
                     <td class="borderTopLeft wciecie" colspan="2">Przesłanych z Sądu Najwyższego w okresie sprawozdawczym (w.02 =w. 03 do 07)</td>
                     <td class="borderTopLeft col_36">02</td>
-                    <td class="borderTopLeftRight col_90" align="center"><a href="javascript:openPopup('popup.aspx?sesja=2!1.1.1.a!1!4')">
+                    <td class="borderTopLeftRight col_90 center"><a href="javascript:openPopup('popup.aspx?sesja=2!1.1.1.a!1!4')">
                         <asp:Label CssClass="normal" ID="tab_111a_w02_c01" runat="server" Text="0"></asp:Label>
                     </a></td>
                 </tr>
@@ -208,35 +202,35 @@
                     <td class="borderTopLeftBottom wciecie" rowspan="5">w których Sąd Najwyższy</td>
                     <td class="borderTopLeft wciecie">odmówił przyjęcia skargi (art.4249 kpc) </td>
                     <td class="borderTopLeft col_36">03</td>
-                    <td class="borderTopLeftRight col_90" align="center"><a href="javascript:openPopup('popup.aspx?sesja=3!1.1.1.a!1!4')">
+                    <td class="borderTopLeftRight col_90 center"><a href="javascript:openPopup('popup.aspx?sesja=3!1.1.1.a!1!4')">
                         <asp:Label CssClass="normal" ID="tab_111a_w03_c01" runat="server" Text="0"></asp:Label>
                     </a></td>
                 </tr>
                 <tr>
                     <td class="borderTopLeft wciecie">odrzucił skargę (art.4248 kpc) </td>
                     <td class="borderTopLeft col_36">04</td>
-                    <td class="borderTopLeftRight col_90" align="center"><a href="javascript:openPopup('popup.aspx?sesja=4!1.1.1.a!1!4')">
+                    <td class="borderTopLeftRight col_90 center"><a href="javascript:openPopup('popup.aspx?sesja=4!1.1.1.a!1!4')">
                         <asp:Label CssClass="normal" ID="tab_111a_w04_c01" runat="server" Text="0"></asp:Label>
                     </a></td>
                 </tr>
                 <tr>
                     <td class="borderTopLeft wciecie">oddalił skargę (art.42411 §1 kpc) </td>
                     <td class="borderTopLeft col_36">05</td>
-                    <td class="borderTopLeftRight col_90" align="center"><a href="javascript:openPopup('popup.aspx?sesja=5!1.1.1.a!1!4')">
+                    <td class="borderTopLeftRight col_90 center"><a href="javascript:openPopup('popup.aspx?sesja=5!1.1.1.a!1!4')">
                         <asp:Label CssClass="normal" ID="tab_111a_w05_c01" runat="server" Text="0"></asp:Label>
                     </a></td>
                 </tr>
                 <tr>
                     <td class="borderTopLeft wciecie">uwzględnił skargę (art.42411 §2 kpc) </td>
                     <td class="borderTopLeft col_36">06</td>
-                    <td class="borderTopLeftRight col_90" align="center"><a href="javascript:openPopup('popup.aspx?sesja=6!1.1.1.a!1!4')">
+                    <td class="borderTopLeftRight col_90 center"><a href="javascript:openPopup('popup.aspx?sesja=6!1.1.1.a!1!4')">
                         <asp:Label CssClass="normal" ID="tab_111a_w06_c01" runat="server" Text="0"></asp:Label>
                     </a></td>
                 </tr>
                 <tr>
                     <td class="borderTopLeftBottom  wciecie">załatwił w inny sposób </td>
                     <td class="borderTopLeftBottom col_36">07</td>
-                    <td class="borderAll col_90" align="center"><a href="javascript:openPopup('popup.aspx?sesja=7!1.1.1.a!1!4')">
+                    <td class="borderAll col_90 center"><a href="javascript:openPopup('popup.aspx?sesja=7!1.1.1.a!1!4')">
                         <asp:Label CssClass="normal" ID="tab_111a_w07_c01" runat="server" Text="0"></asp:Label>
                     </a></td>
                 </tr>
@@ -246,51 +240,51 @@
 
             <strong>Dział 1.1.1.b</strong> Ewidencja spraw z zakresu ubezpieczeń społecznych – wg rodzajów podmiotów<br />
 
-            <table cellpadding="0" cellspacing="0" class="auto-style14">
+            <table>
                 <tr>
-                    <td class="borderTopLeft col_180" rowspan="3" align="center">SPRAWY wg repertorium</td>
-                    <td class="borderTopLeft" rowspan="3" align="center">l.p.</td>
-                    <td class="borderTopLeft" rowspan="3" align="center">Pozostało z ubiegłego roku</td>
-                    <td class="borderTopLeft" align="center" colspan="2">Wpłynęło</td>
-                    <td class="borderTopLeft" align="center" colspan="9">ZAŁATWIONO</td>
-                    <td class="borderTopLeft" align="center" rowspan="3">odro-czono</td>
-                    <td class="borderTopLeftRight" align="center" rowspan="3">Pozostało na okres następny</td>
+                    <td class="borderTopLeft col_180" rowspan="3 center">SPRAWY wg repertorium</td>
+                    <td class="borderTopLeft" rowspan="3 center">l.p.</td>
+                    <td class="borderTopLeft" rowspan="3 center">Pozostało z ubiegłego roku</td>
+                    <td class="borderTopLeft center" colspan="2">Wpłynęło</td>
+                    <td class="borderTopLeft center" colspan="9">ZAŁATWIONO</td>
+                    <td class="borderTopLeft center" rowspan="3">odro-czono</td>
+                    <td class="borderTopLeftRight center" rowspan="3">Pozostało na okres następny</td>
                 </tr>
                 <tr>
-                    <td class="borderTopLeft" align="center" rowspan="2">razem</td>
-                    <td class="borderTopLeft" align="center" rowspan="2">w tym odwołań od decyzji upraw-nionego organu </td>
-                    <td class="borderTopLeft" align="center" rowspan="2">Razem</td>
-                    <td class="borderTopLeft" align="center" colspan="3">od decyzji uprawnionego organu</td>
-                    <td class="borderTopLeft" align="center" rowspan="2">w związku z niewydaniem decyzji zobowiązano uprawniony organ do wydania decyzji w określonym termini</td>
-                    <td class="borderTopLeft" align="center" rowspan="2">uchylono</td>
-                    <td class="borderTopLeft" align="center" colspan="2">umorzono</td>
-                    <td class="borderTopLeft" align="center" rowspan="2">inne załat-wienia</td>
+                    <td class="borderTopLeft center" rowspan="2">razem</td>
+                    <td class="borderTopLeft center" rowspan="2">w tym odwołań od decyzji upraw-nionego organu </td>
+                    <td class="borderTopLeft center" rowspan="2">Razem</td>
+                    <td class="borderTopLeft center" colspan="3">od decyzji uprawnionego organu</td>
+                    <td class="borderTopLeft center" rowspan="2">w związku z niewydaniem decyzji zobowiązano uprawniony organ do wydania decyzji w określonym termini</td>
+                    <td class="borderTopLeft center" rowspan="2">uchylono</td>
+                    <td class="borderTopLeft center" colspan="2">umorzono</td>
+                    <td class="borderTopLeft center" rowspan="2">inne załat-wienia</td>
                 </tr>
                 <tr>
-                    <td class="borderTopLeft" align="center">odda-lono</td>
-                    <td class="borderTopLeft" align="center">zmieniono zaskarżoną decyzję w całości lub w części</td>
-                    <td class="borderTopLeft" align="center">odrzu-cono</td>
-                    <td class="borderTopLeft" align="center">ogółem</td>
-                    <td class="borderTopLeft" align="center">w tym w wyniku cofnięcia pozwu/<br />
+                    <td class="borderTopLeft center">odda-lono</td>
+                    <td class="borderTopLeft center">zmieniono zaskarżoną decyzję w całości lub w części</td>
+                    <td class="borderTopLeft center">odrzu-cono</td>
+                    <td class="borderTopLeft center">ogółem</td>
+                    <td class="borderTopLeft center">w tym w wyniku cofnięcia pozwu/<br />
                         wniosku/<br />
                         skargi</td>
                 </tr>
                 <tr>
-                    <td class="borderTopLeft col_76" align="center" colspan="2">0</td>
-                    <td class="borderTopLeft col_60" align="center">1</td>
-                    <td class="borderTopLeft col_60" align="center">2</td>
-                    <td class="borderTopLeft col_60" align="center">3</td>
-                    <td class="borderTopLeft col_60" align="center">4</td>
-                    <td class="borderTopLeft col_60" align="center">5</td>
-                    <td class="borderTopLeft col_60" align="center">6</td>
-                    <td class="borderTopLeft col_60" align="center">7</td>
-                    <td class="borderTopLeft col_60" align="center">8</td>
-                    <td class="borderTopLeft col_60" align="center">9</td>
-                    <td class="borderTopLeft col_60" align="center">10</td>
-                    <td class="borderTopLeft col_60" align="center">11</td>
-                    <td class="borderTopLeft col_60" align="center">12</td>
-                    <td class="borderTopLeft col_60" align="center">13</td>
-                    <td class="borderTopLeftRight col_76" align="center">14</td>
+                    <td class="borderTopLeft col_76 center" colspan="2">0</td>
+                    <td class="borderTopLeft col_60 center">1</td>
+                    <td class="borderTopLeft col_60 center">2</td>
+                    <td class="borderTopLeft col_60 center">3</td>
+                    <td class="borderTopLeft col_60 center">4</td>
+                    <td class="borderTopLeft col_60 center">5</td>
+                    <td class="borderTopLeft col_60 center">6</td>
+                    <td class="borderTopLeft col_60 center">7</td>
+                    <td class="borderTopLeft col_60 center">8</td>
+                    <td class="borderTopLeft col_60 center">9</td>
+                    <td class="borderTopLeft col_60 center">10</td>
+                    <td class="borderTopLeft col_60 center">11</td>
+                    <td class="borderTopLeft col_60 center">12</td>
+                    <td class="borderTopLeft col_60 center">13</td>
+                    <td class="borderTopLeftRight col_76 center">14</td>
                 </tr>
                 <tr>
                     <td class="borderAll col_180">U razem (w. 02 do 09)</td>
@@ -784,20 +778,20 @@
 
             Dział 1.1.2.c. (dział 1.1.2. wiersz 90 kolumna 4 lit. c)
             <br />
-            <table cellpadding="0" cellspacing="0" style="width: 80%">
+            <table style="width: 80%">
                 <tr>
-                    <td class="borderTopLeft" colspan="3" align="center">Wyszczególnienie</td>
-                    <td class="borderAll" align="center" colspan="2">Liczby</td>
+                    <td class="borderTopLeft center" colspan="3">Wyszczególnienie</td>
+                    <td class="borderAll center" colspan="2">Liczby</td>
                 </tr>
                 <tr>
-                    <td class="borderTopLeft" colspan="3" align="center">&nbsp;</td>
-                    <td class="borderTopLeftRight col_125" align="center">P</td>
-                    <td class="borderTopLeftRight col_125" align="center">Np</td>
+                    <td class="borderTopLeft center" colspan="3">&nbsp;</td>
+                    <td class="borderTopLeftRight col_125 center">P</td>
+                    <td class="borderTopLeftRight col_125 center">Np</td>
                 </tr>
                 <tr>
-                    <td class="borderTopLeft" colspan="3" align="center">0</td>
-                    <td class="borderTopLeftRight" align="center">1</td>
-                    <td class="borderTopLeftRight" align="center">2</td>
+                    <td class="borderTopLeft center" colspan="3">0</td>
+                    <td class="borderTopLeftRight center">1</td>
+                    <td class="borderTopLeftRight center">2</td>
                 </tr>
                 <tr>
                     <td class="borderTopLeftBottom center" rowspan="3">Wydano nakaz zapłaty</td>
@@ -812,21 +806,21 @@
                 </tr>
                 <tr>
                     <td class="wciecie borderTopLeft">w postępowaniu upominawczym</td>
-                    <td class="borderTopLeft col_36" align="center">02</td>
-                    <td class="borderTopLeftRight " align="center"><a href="javascript:openPopup('popup.aspx?sesja=2!1.1.2.c!1!4')">
+                    <td class="borderTopLeft col_36 center">02</td>
+                    <td class="borderTopLeftRight center"><a href="javascript:openPopup('popup.aspx?sesja=2!1.1.2.c!1!4')">
                         <asp:Label CssClass="normal" ID="tab_112c_w02_c01" runat="server" Text="0"></asp:Label>
                     </a></td>
-                    <td class="borderTopLeftRight " align="center"><a href="javascript:openPopup('popup.aspx?sesja=2!1.1.2.c!2!4')">
+                    <td class="borderTopLeftRight center"><a href="javascript:openPopup('popup.aspx?sesja=2!1.1.2.c!2!4')">
                         <asp:Label CssClass="normal" ID="tab_112c_w02_c02" runat="server" Text="0"></asp:Label>
                     </a></td>
                 </tr>
                 <tr>
                     <td class="wciecie borderTopLeftBottom">w europejskim postępowaniu nakazowym </td>
-                    <td class="borderTopLeftBottom col_36" align="center">03</td>
-                    <td class="borderAll" align="center"><a href="javascript:openPopup('popup.aspx?sesja=3!1.1.2.c!1!4')">
+                    <td class="borderTopLeftBottom col_36 center">03</td>
+                    <td class="borderAll center"><a href="javascript:openPopup('popup.aspx?sesja=3!1.1.2.c!1!4')">
                         <asp:Label CssClass="normal" ID="tab_112c_w03_c01" runat="server" Text="0"></asp:Label>
                     </a></td>
-                    <td class="borderAll" align="center"><a href="javascript:openPopup('popup.aspx?sesja=3!1.1.2.c!2!4')">
+                    <td class="borderAll center"><a href="javascript:openPopup('popup.aspx?sesja=3!1.1.2.c!2!4')">
                         <asp:Label CssClass="normal" ID="tab_112c_w03_c02" runat="server" Text="0"></asp:Label>
                     </a></td>
                 </tr>
@@ -838,64 +832,64 @@
 
             Dział 1.1.2.d. (dział 1.1.2. wiersz 111 kolumna 3 lit. d) W tym: skarga o stwierdzenie niezgodności z prawem
             <br />
-            <table cellpadding="0" cellspacing="0" style="width: 50%">
+            <table style="width: 50%">
                 <tr>
-                    <td class="borderTopLeft" colspan="3" align="center">Wyszczególnienie</td>
-                    <td class="borderTopLeftRight col_125" align="center">Liczby</td>
+                    <td class="borderTopLeft center" colspan="3">Wyszczególnienie</td>
+                    <td class="borderTopLeftRight col_125 center">Liczby</td>
                 </tr>
                 <tr>
-                    <td class="borderTopLeft" colspan="3" align="center">0</td>
-                    <td class="borderTopLeftRight" align="center">1</td>
+                    <td class="borderTopLeft center" colspan="3">0</td>
+                    <td class="borderTopLeftRight center">1</td>
                 </tr>
                 <tr>
-                    <td class="borderTopLeftBottom" align="center" colspan="2">Przekazane Sądowi Najwyższemu ze skargą o stwierdzenie niezgodności z prawem</td>
-                    <td class="borderTopLeft col_36" align="center">01</td>
-                    <td class="borderTopLeftRight " align="center"><a href="javascript:openPopup('popup.aspx?sesja=1!1.1.2.d!1!4')">
+                    <td class="borderTopLeftBottom center" colspan="2">Przekazane Sądowi Najwyższemu ze skargą o stwierdzenie niezgodności z prawem</td>
+                    <td class="borderTopLeft col_36 center">01</td>
+                    <td class="borderTopLeftRight center"><a href="javascript:openPopup('popup.aspx?sesja=1!1.1.2.d!1!4')">
                         <asp:Label CssClass="normal" ID="tab_112d_w01_c01" runat="server" Text="0"></asp:Label>
                     </a></td>
                 </tr>
                 <tr>
-                    <td class="borderTopLeftBottom" align="center" colspan="2">Przesłanych z Sądu Najwyższego w okresie sprawozdawczym (w.02 =w. 03 do 07) </td>
-                    <td class="borderTopLeft col_36" align="center">02</td>
-                    <td class="borderTopLeftRight " align="center"><a href="javascript:openPopup('popup.aspx?sesja=2!1.1.2.d!1!4')">
+                    <td class="borderTopLeftBottom center" colspan="2">Przesłanych z Sądu Najwyższego w okresie sprawozdawczym (w.02 =w. 03 do 07) </td>
+                    <td class="borderTopLeft col_36 center">02</td>
+                    <td class="borderTopLeftRight center"><a href="javascript:openPopup('popup.aspx?sesja=2!1.1.2.d!1!4')">
                         <asp:Label CssClass="normal" ID="tab_112d_w02_c01" runat="server" Text="0"></asp:Label>
                     </a></td>
                 </tr>
                 <tr>
-                    <td class="borderTopLeftBottom" align="center" rowspan="5">w których
+                    <td class="borderTopLeftBottom center" rowspan="5">w których
        <br />
                         Sąd Najwyższy</td>
                     <td class="wciecie borderTopLeft">odmówił przyjęcia skargi (art.4249 kpc)</td>
-                    <td class="borderTopLeft col_36" align="center">03</td>
-                    <td class="borderTopLeftRight " align="center"><a href="javascript:openPopup('popup.aspx?sesja=3!1.1.2.d!1!4')">
+                    <td class="borderTopLeft col_36 center">03</td>
+                    <td class="borderTopLeftRight center"><a href="javascript:openPopup('popup.aspx?sesja=3!1.1.2.d!1!4')">
                         <asp:Label CssClass="normal" ID="tab_112d_w03_c01" runat="server" Text="0"></asp:Label>
                     </a></td>
                 </tr>
                 <tr>
                     <td class="wciecie borderTopLeft">odrzucił skargę (art.4248 kpc)</td>
-                    <td class="borderTopLeft col_36" align="center">04</td>
-                    <td class="borderTopLeftRight " align="center"><a href="javascript:openPopup('popup.aspx?sesja=4!1.1.2.d!1!4')">
+                    <td class="borderTopLeft col_36 center">04</td>
+                    <td class="borderTopLeftRight center"><a href="javascript:openPopup('popup.aspx?sesja=4!1.1.2.d!1!4')">
                         <asp:Label CssClass="normal" ID="tab_112d_w04_c01" runat="server" Text="0"></asp:Label>
                     </a></td>
                 </tr>
                 <tr>
                     <td class="wciecie borderTopLeft">oddalił skargę (art.42411 §1 kpc)</td>
-                    <td class="borderTopLeft col_36" align="center">05</td>
-                    <td class="borderTopLeftRight " align="center"><a href="javascript:openPopup('popup.aspx?sesja=5!1.1.2.d!1!4')">
+                    <td class="borderTopLeft col_36 center">05</td>
+                    <td class="borderTopLeftRight center"><a href="javascript:openPopup('popup.aspx?sesja=5!1.1.2.d!1!4')">
                         <asp:Label CssClass="normal" ID="tab_112d_w05_c01" runat="server" Text="0"></asp:Label>
                     </a></td>
                 </tr>
                 <tr>
                     <td class="wciecie borderTopLeft">uwzględnił skargę (art.42411 §2 kpc)</td>
-                    <td class="borderTopLeft col_36" align="center">06</td>
-                    <td class="borderTopLeftRight " align="center"><a href="javascript:openPopup('popup.aspx?sesja=6!1.1.2.d!1!4')">
+                    <td class="borderTopLeft col_36 center">06</td>
+                    <td class="borderTopLeftRight center"><a href="javascript:openPopup('popup.aspx?sesja=6!1.1.2.d!1!4')">
                         <asp:Label CssClass="normal" ID="tab_112d_w06_c01" runat="server" Text="0"></asp:Label>
                     </a></td>
                 </tr>
                 <tr>
                     <td class="wciecie borderTopLeftBottom">załatwił w inny sposób</td>
-                    <td class="borderTopLeftBottom col_36" align="center">07</td>
-                    <td class="borderAll" align="center"><a href="javascript:openPopup('popup.aspx?sesja=7!1.1.2.d!1!4')">
+                    <td class="borderTopLeftBottom col_36 center">07</td>
+                    <td class="borderAll center"><a href="javascript:openPopup('popup.aspx?sesja=7!1.1.2.d!1!4')">
                         <asp:Label CssClass="normal" ID="tab_112d_w07_c01" runat="server" Text="0"></asp:Label>
                     </a></td>
                 </tr>
@@ -908,7 +902,7 @@
             <br />
             <br />
             <b>Dział 1.1.2.e.</b> Sprawy mediacyjne<div id='1.1.2.e' class="page-break">
-                <table cellpadding="0" cellspacing="0" style="width: 100 %;">
+                <table style="width: 100%;">
                     <tr>
                         <td class="center borderAll" colspan="5">Sądowe</td>
                         <td class="center borderAll">Liczba </td>
@@ -1032,14 +1026,14 @@
                     </tr>
                 </table>
             </div>
+
+            <br />
+            <br />
         </div>
         <div class="page-break">
 
-            <br />
-            <br />
-            <br />
 
-            <table width="100%">
+            <table style="width: 100%;">
                 <tr>
                     <td>
                         <b>Dział 1.1.2.f.   Liczba wyznaczonych ławników (osoby)
@@ -1052,52 +1046,52 @@
                 </tr>
             </table>
         </div>
+        <br />
         <div class="page-break">
-            <br />
 
             <strong>Dział 1.1.2.g</strong>. w tym w wyniku sprzeciwu od nakazu wydanego w elektronicznym postępowaniu upominawczym<br />
-            <table cellpadding="0" cellspacing="0" style="width: 50%">
+            <table style="width: 50%">
                 <tr>
-                    <td class="borderTopLeft" colspan="3" align="center">Wyszczególnienie</td>
-                    <td class="borderTopLeftRight col_125" align="center">Liczba spraw</td>
+                    <td class="borderTopLeft center" colspan="3">Wyszczególnienie</td>
+                    <td class="borderTopLeftRight col_125 center">Liczba spraw</td>
                 </tr>
                 <tr>
-                    <td class="borderTopLeft" colspan="3" align="center">0</td>
-                    <td class="borderTopLeftRight" align="center">1</td>
+                    <td class="borderTopLeft center" colspan="3">0</td>
+                    <td class="borderTopLeftRight center">1</td>
                 </tr>
                 <tr>
                     <td class="borderTopLeftBottom wciecie" colspan="2">Wpłynęło</td>
-                    <td class="borderTopLeft col_36" align="center">01</td>
-                    <td class="borderTopLeftRight " align="center"><a href="javascript:openPopup('popup.aspx?sesja=1!1.1.2.g!1!4')">
+                    <td class="borderTopLeft col_36 center">01</td>
+                    <td class="borderTopLeftRight center"><a href="javascript:openPopup('popup.aspx?sesja=1!1.1.2.g!1!4')">
                         <asp:Label CssClass="normal" ID="tab_112g_w01_c01" runat="server" Text="0"></asp:Label>
                     </a></td>
                 </tr>
                 <tr>
                     <td class="borderTopLeftBottom wciecie" colspan="2">Załatwiono</td>
-                    <td class="borderTopLeft col_36" align="center">02</td>
-                    <td class="borderTopLeftRight " align="center"><a href="javascript:openPopup('popup.aspx?sesja=2!1.1.2.g!1!4')">
+                    <td class="borderTopLeft col_36 center">02</td>
+                    <td class="borderTopLeftRight center"><a href="javascript:openPopup('popup.aspx?sesja=2!1.1.2.g!1!4')">
                         <asp:Label CssClass="normal" ID="tab_112g_w02_c01" runat="server" Text="0"></asp:Label>
                     </a></td>
                 </tr>
                 <tr>
-                    <td class="borderTopLeftBottom" align="center" rowspan="2">w tym</td>
+                    <td class="borderTopLeftBottom center" rowspan="2">w tym</td>
                     <td class="wciecie borderTopLeft">uwzględniono w całości lub w części</td>
-                    <td class="borderTopLeft col_36" align="center">03</td>
-                    <td class="borderTopLeftRight " align="center"><a href="javascript:openPopup('popup.aspx?sesja=3!1.1.2.g!1!4')">
+                    <td class="borderTopLeft col_36 center">03</td>
+                    <td class="borderTopLeftRight center"><a href="javascript:openPopup('popup.aspx?sesja=3!1.1.2.g!1!4')">
                         <asp:Label CssClass="normal" ID="tab_112g_w03_c01" runat="server" Text="0"></asp:Label>
                     </a></td>
                 </tr>
                 <tr>
                     <td class="wciecie borderTopLeft">oddalono</td>
-                    <td class="borderTopLeft col_36" align="center">04</td>
-                    <td class="borderTopLeftRight " align="center"><a href="javascript:openPopup('popup.aspx?sesja=4!1.1.2.g!1!4')">
+                    <td class="borderTopLeft col_36 center">04</td>
+                    <td class="borderTopLeftRight center"><a href="javascript:openPopup('popup.aspx?sesja=4!1.1.2.g!1!4')">
                         <asp:Label CssClass="normal" ID="tab_112g_w04_c01" runat="server" Text="0"></asp:Label>
                     </a></td>
                 </tr>
                 <tr>
                     <td class="borderTopLeftBottom" colspan="2">Pozostało</td>
-                    <td class="borderTopLeftBottom col_36" align="center">05</td>
-                    <td class="borderAll" align="center"><a href="javascript:openPopup('popup.aspx?sesja=5!1.1.2.g!1!4')">
+                    <td class="borderTopLeftBottom col_36 center">05</td>
+                    <td class="borderAll center"><a href="javascript:openPopup('popup.aspx?sesja=5!1.1.2.g!1!4')">
                         <asp:Label CssClass="normal" ID="tab_112g_w05_c01" runat="server" Text="0"></asp:Label>
                     </a></td>
                 </tr>
@@ -1111,33 +1105,33 @@
             <strong>Dział 1.2.</strong> Ewidencja i przyczyny ponownych wpisów oraz rodzaje załatwień spraw z zakresu prawa pracy i ubezpieczeń społecznych
            <br />
             <br />
-            <table cellpadding="0" cellspacing="0" class="borderAll">
+            <table class="borderAll">
                 <tr>
-                    <td align="center" class="borderTopLeft" colspan="4" rowspan="3">Wyszczególnienie</td>
-                    <td align="center" class="borderTopLeftRight" colspan="7">Repetytorium</td>
+                    <td class="center borderTopLeft" colspan="4" rowspan="3">Wyszczególnienie</td>
+                    <td class="center borderTopLeftRight" colspan="7">Repetytorium</td>
                 </tr>
                 <tr>
-                    <td align="center" class="borderTopLeft" rowspan="2">ogółem z zakresu ubezpie-czeń</td>
-                    <td align="center" class="borderTopLeft" colspan="2">w tym </td>
-                    <td align="center" class="borderTopLeft" rowspan="2">ogółem z zakresu prawa pracy</td>
-                    <td align="center" class="borderTopLeftRight" colspan="3">w tym</td>
+                    <td class="center borderTopLeft" rowspan="2">ogółem z zakresu ubezpie-czeń</td>
+                    <td class="center borderTopLeft" colspan="2">w tym </td>
+                    <td class="center borderTopLeft" rowspan="2">ogółem z zakresu prawa pracy</td>
+                    <td class="center borderTopLeftRight" colspan="3">w tym</td>
                 </tr>
                 <tr>
-                    <td align="center" class="borderTopLeft">U</td>
-                    <td align="center" class="borderTopLeft">Ua</td>
-                    <td align="center" class="borderTopLeft">P</td>
-                    <td align="center" class="borderTopLeft">Np </td>
-                    <td align="center" class="borderTopLeftRight">Po</td>
+                    <td class="center borderTopLeft">U</td>
+                    <td class="center borderTopLeft">Ua</td>
+                    <td class="center borderTopLeft">P</td>
+                    <td class="center borderTopLeft">Np </td>
+                    <td class="center borderTopLeftRight">Po</td>
                 </tr>
                 <tr>
-                    <td align="center" class="borderTopLeft" colspan="4">0</td>
-                    <td align="center" class="borderTopLeft col_60">1</td>
-                    <td align="center" class="borderTopLeft col_60">2</td>
-                    <td align="center" class="borderTopLeft col_60">3</td>
-                    <td align="center" class="borderTopLeft col_60">4</td>
-                    <td align="center" class="borderTopLeft col_60">5</td>
-                    <td align="center" class="borderTopLeft col_60">6</td>
-                    <td align="center" class="borderTopLeftRight col_60">7</td>
+                    <td class="center borderTopLeft" colspan="4">0</td>
+                    <td class="center borderTopLeft col_60">1</td>
+                    <td class="center borderTopLeft col_60">2</td>
+                    <td class="center borderTopLeft col_60">3</td>
+                    <td class="center borderTopLeft col_60">4</td>
+                    <td class="center borderTopLeft col_60">5</td>
+                    <td class="center borderTopLeft col_60">6</td>
+                    <td class="center borderTopLeftRight col_60">7</td>
                 </tr>
                 <tr>
                     <td class="borderTopLeft" colspan="3">Pozostało z ubiegłego roku<br />
@@ -1192,7 +1186,7 @@
                     </a></td>
                 </tr>
                 <tr>
-                    <td class="wciecie borderTopLeft " rowspan="23" align="center">
+                    <td class="wciecie borderTopLeft " rowspan="23 center">
                         <div class="rotate">
                             W tym
                             <br />
@@ -1826,7 +1820,7 @@
                     </a></td>
                 </tr>
                 <tr>
-                    <td class=" borderTopLeft " rowspan="26" align="center">
+                    <td class=" borderTopLeft " rowspan="26 center">
                         <div class="rotate">
                             W tym
                             <br />
@@ -2545,22 +2539,22 @@
             <strong>Dział 1.2.a </strong>Ustanowienie pełnomocnika z urzędu
             <br />
 
-            <table cellpadding="0" cellspacing="0" class="auto-style14">
+            <table class="auto-style14">
 
                 <tr>
-                    <td class="borderTopLeft " align="center" colspan="2">Repertorium lub wykaz</td>
-                    <td class="borderTopLeft col_325" align="center">Liczba spraw w których doszło do ustanowienia pełnomocnika z urzędu (radca prawny, adwokat)</td>
-                    <td class="borderTopLeft col_325" align="center">Liczba ustanowionych pełnomocników z urzędu (radca prawny, adwokat)</td>
+                    <td class="borderTopLeft center" colspan="2">Repertorium lub wykaz</td>
+                    <td class="borderTopLeft col_325 center">Liczba spraw w których doszło do ustanowienia pełnomocnika z urzędu (radca prawny, adwokat)</td>
+                    <td class="borderTopLeft col_325 center">Liczba ustanowionych pełnomocników z urzędu (radca prawny, adwokat)</td>
 
-                    <td class="borderTopLeftRight " align="center">W tym liczba wyznaczonych pełnomocników w wyniku zwolnienia poprzedniego pełnomocnika (od I 2012)</td>
+                    <td class="borderTopLeftRight center">W tym liczba wyznaczonych pełnomocników w wyniku zwolnienia poprzedniego pełnomocnika (od I 2012)</td>
                 </tr>
 
                 <tr>
-                    <td class="borderTopLeft " align="center" colspan="2">0</td>
-                    <td class="borderTopLeft col_325" align="center">1</td>
-                    <td class="borderTopLeft col_325" align="center">2</td>
+                    <td class="borderTopLeft center" colspan="2">0</td>
+                    <td class="borderTopLeft col_325 center">1</td>
+                    <td class="borderTopLeft col_325 center">2</td>
 
-                    <td class="borderTopLeftRight " align="center">3</td>
+                    <td class="borderTopLeftRight center">3</td>
                 </tr>
                 <tr>
                     <td class="wciecie borderTopLeft ">U razem (w. 02 do 09)</td>
@@ -2599,26 +2593,26 @@
             <br />
             <br />
 
-            <table align="center" cellpadding="0" cellspacing="0">
+            <table align="center">
                 <tr>
-                    <td class="borderTopLeft " rowspan="3" align="center">SPRAWY według repertoriów i wykazów</td>
+                    <td class="borderTopLeft center" rowspan="3">SPRAWY według repertoriów i wykazów</td>
                     <td class="borderTopLeft col_29" rowspan="3">L.p.</td>
                     <td class="borderTopLeft " rowspan="3">Liczba sesji (rozprawy i posiedzenia) - wokandy</td>
                     <td class="borderTopLeft " rowspan="3">Suma wyznaczonych spraw</td>
                     <td class="borderTopLeft " rowspan="3">Łączna liczba dni na które wyznaczono sesje -wokandy</td>
-                    <td class="borderTopLeft " colspan="11" align="center">Liczba wyznaczonych spraw na rozprawę, dotyczy:</td>
+                    <td class="borderTopLeft center" colspan="11">Liczba wyznaczonych spraw na rozprawę, dotyczy:</td>
                     <td class="borderTopLeft col_36" colspan="12"></td>
                 </tr>
                 <tr>
                     <td class="borderTopLeft " rowspan="2">Razem wyznaczonych spraw na rozprawę</td>
                     <td class="borderTopLeft " rowspan="2">sędziów / SR z wyłączeniem sędziów funkcyjnych </td>
                     <td class="borderTopLeft " rowspan="2">sędziów funkcyjnych SR (suma kol. od 7 do 13)</td>
-                    <td class="borderTopLeft " colspan="7" align="center">z tego</td>
+                    <td class="borderTopLeft center" colspan="7">z tego</td>
                     <td class="borderTopLeft col_36" rowspan="2">inni</td>
                     <td class="borderTopLeft col_36" rowspan="2">Razem wyznaczonych spraw na posiedzenie </td>
                     <td class="borderTopLeft col_36" rowspan="2">sędziów SR z wyłączeniem sędziów funkcyjnych</td>
                     <td class="borderTopLeft col_36" rowspan="2">sędziów / funkcyjnych SR (suma kol. od 18 do 24)</td>
-                    <td class="borderTopLeft " colspan="7" align="center">z tego</td>
+                    <td class="borderTopLeft  center  " colspan="7">z tego</td>
                     <td class="borderTopLeft col_36" rowspan="2">inni</td>
                     <td class="borderTopLeftRight col_36" rowspan="2">referendarzy </td>
                 </tr>
@@ -2639,7 +2633,7 @@
                     <td class="borderTopLeft col_36">innych funkcyjnych tego sądu z innych pionów</td>
                 </tr>
                 <tr>
-                    <td class="borderTopLeft " colspan="2" align="center">0</td>
+                    <td class="borderTopLeft center" colspan="2">0</td>
                     <td class="borderTopLeft col_36">1</td>
                     <td class="borderTopLeft col_36">2</td>
                     <td class="borderTopLeft col_36">3</td>
@@ -3380,27 +3374,27 @@
             <strong>Dział 1.2.2 </strong>Liczba odbytych sesji i załatwionych spraw (dok.)
             <br />
 
-            <table cellpadding="0" cellspacing="0">
+            <table>
                 <tbody>
                     <tr>
-                        <td class="borderTopLeft " rowspan="3" colspan="3" align="center">SPRAWY według repertoriów i wykazów</td>
+                        <td class="borderTopLeft " rowspan="3 center" colspan="3">SPRAWY według repertoriów i wykazów</td>
                         <td class="borderTopLeft col_29" rowspan="3">L.p.</td>
                         <td class="borderTopLeft " rowspan="3">Liczba odbytych sesji (rozprawy i posiedzenia) - wokandy</td>
                         <td class="borderTopLeft " rowspan="3">Liczba dni w których odbyto sesje - wokandy</td>
                         <td class="borderTopLeft " rowspan="3">Załatwienie 1)ogółem (kol. 4, 15)</td>
-                        <td class="borderTopLeft " colspan="11" align="center">Liczba wyznaczonych spraw na rozprawę, dotyczy:</td>
+                        <td class="borderTopLeft " colspan="11 center">Liczba wyznaczonych spraw na rozprawę, dotyczy:</td>
                         <td class="borderTopLeftRight col_36" colspan="12"></td>
                     </tr>
                     <tr>
                         <td class="borderTopLeft " rowspan="2">Razem wyznaczonych spraw na rozprawę</td>
                         <td class="borderTopLeft " rowspan="2">sędziów / SR z wyłączeniem sędziów funkcyjnych </td>
                         <td class="borderTopLeft " rowspan="2">sędziów funkcyjnych SR (suma kol. od 7 do 13)</td>
-                        <td class="borderTopLeft " colspan="7" align="center">z tego</td>
+                        <td class="borderTopLeft " colspan="7 center">z tego</td>
                         <td class="borderTopLeft col_36" rowspan="2">inni</td>
                         <td class="borderTopLeft col_36" rowspan="2">Razem wyznaczonych spraw na posiedzenie </td>
                         <td class="borderTopLeft col_36" rowspan="2">sędziów SR z wyłączeniem sędziów funkcyjnych</td>
                         <td class="borderTopLeft col_36" rowspan="2">sędziów / funkcyjnych SR (suma kol. od 18 do 24)</td>
-                        <td class="borderTopLeft " colspan="7" align="center">z tego</td>
+                        <td class="borderTopLeft " colspan="7 center">z tego</td>
                         <td class="borderTopLeft col_36" rowspan="2">inni</td>
                         <td class="borderTopLeftRight col_36" rowspan="2">referendarzy </td>
                     </tr>
@@ -3421,30 +3415,30 @@
                         <td class="borderTopLeft col_36">innych funkcyjnych tego sądu z innych pionów</td>
                     </tr>
                     <tr>
-                        <td class="borderTopLeft " colspan="4" align="center">0</td>
-                        <td class="borderTopLeft" align="center">1</td>
-                        <td class="borderTopLeft" align="center">2</td>
-                        <td class="borderTopLeft" align="center">3</td>
-                        <td class="borderTopLeft" align="center">4</td>
-                        <td class="borderTopLeft" align="center">5</td>
-                        <td class="borderTopLeft" align="center">6</td>
-                        <td class="borderTopLeft" align="center">7</td>
-                        <td class="borderTopLeft" align="center">8</td>
-                        <td class="borderTopLeft" align="center">9</td>
-                        <td class="borderTopLeft" align="center">10</td>
-                        <td class="borderTopLeft" align="center">11</td>
-                        <td class="borderTopLeft" align="center">12</td>
-                        <td class="borderTopLeft" align="center">13</td>
-                        <td class="borderTopLeft" align="center">14</td>
-                        <td class="borderTopLeft" align="center">15</td>
-                        <td class="borderTopLeft" align="center">16</td>
-                        <td class="borderTopLeft" align="center">17</td>
-                        <td class="borderTopLeft" align="center">18</td>
-                        <td class="borderTopLeft" align="center">19</td>
-                        <td class="borderTopLeft" align="center">20</td>
-                        <td class="borderTopLeft" align="center">21</td>
-                        <td class="borderTopLeft" align="center">22</td>
-                        <td class="borderTopLeft" align="center">23</td>
+                        <td class="borderTopLeft " colspan="4 center">0</td>
+                        <td class="borderTopLeft center">1</td>
+                        <td class="borderTopLeft center">2</td>
+                        <td class="borderTopLeft center">3</td>
+                        <td class="borderTopLeft center">4</td>
+                        <td class="borderTopLeft center">5</td>
+                        <td class="borderTopLeft center">6</td>
+                        <td class="borderTopLeft center">7</td>
+                        <td class="borderTopLeft center">8</td>
+                        <td class="borderTopLeft center">9</td>
+                        <td class="borderTopLeft center">10</td>
+                        <td class="borderTopLeft center">11</td>
+                        <td class="borderTopLeft center">12</td>
+                        <td class="borderTopLeft center">13</td>
+                        <td class="borderTopLeft center">14</td>
+                        <td class="borderTopLeft center">15</td>
+                        <td class="borderTopLeft center">16</td>
+                        <td class="borderTopLeft center">17</td>
+                        <td class="borderTopLeft center">18</td>
+                        <td class="borderTopLeft center">19</td>
+                        <td class="borderTopLeft center">20</td>
+                        <td class="borderTopLeft center">21</td>
+                        <td class="borderTopLeft center">22</td>
+                        <td class="borderTopLeft center">23</td>
                         <td class="borderTopLeft col_36">24</td>
                         <td class="borderTopLeft col_36">25</td>
                         <td class="borderTopLeftRight col_36">26</td>
@@ -6998,35 +6992,35 @@
 
             <br />
 
-            <table cellpadding="0" cellspacing="0" class="auto-style14">
+            <table class="auto-style14">
                 <tr>
-                    <td class="borderTopLeft " align="center" colspan="2" rowspan="2">Wyszczególnie</td>
-                    <td class="borderTopLeftRight" align="center" colspan="10">Liczba spraw załatwionych przez referendarzy</td>
+                    <td class="borderTopLeft center" colspan="2" rowspan="2">Wyszczególnie</td>
+                    <td class="borderTopLeftRight center" colspan="10">Liczba spraw załatwionych przez referendarzy</td>
                 </tr>
                 <tr>
-                    <td class="borderTopLeft col_110" align="center">ogółem spraw z zakresu prawa pracy i ubezpieczeń społecznych (kol. 2 + 6)</td>
-                    <td class="borderTopLeft col_110" align="center">ogółem sprawy z zakresu ubezpieczeń społecznych (kol. 3 do 5) </td>
-                    <td class="borderTopLeft col_110" align="center">rep. U</td>
-                    <td class="borderTopLeft col_110" align="center">rep. Uo</td>
-                    <td class="borderTopLeft col_110" align="center">inne</td>
-                    <td class="borderTopLeft col_110" align="center">ogółem sprawy z zakresu prawa pracy (kol. od 7 do 10) </td>
-                    <td class="borderTopLeft col_110" align="center">rep. P</td>
-                    <td class="borderTopLeft col_110" align="center">rep. Np</td>
-                    <td class="borderTopLeft col_110" align="center">rep. Po</td>
-                    <td class="borderTopLeftRight col_110" align="center">inne</td>
+                    <td class="borderTopLeft col_110 center">ogółem spraw z zakresu prawa pracy i ubezpieczeń społecznych (kol. 2 + 6)</td>
+                    <td class="borderTopLeft col_110 center">ogółem sprawy z zakresu ubezpieczeń społecznych (kol. 3 do 5) </td>
+                    <td class="borderTopLeft col_110 center">rep. U</td>
+                    <td class="borderTopLeft col_110 center">rep. Uo</td>
+                    <td class="borderTopLeft col_110 center">inne</td>
+                    <td class="borderTopLeft col_110 center">ogółem sprawy z zakresu prawa pracy (kol. od 7 do 10) </td>
+                    <td class="borderTopLeft col_110 center">rep. P</td>
+                    <td class="borderTopLeft col_110 center">rep. Np</td>
+                    <td class="borderTopLeft col_110 center">rep. Po</td>
+                    <td class="borderTopLeftRight col_110 center">inne</td>
                 </tr>
                 <tr>
-                    <td class="borderTopLeft col_76" align="center" colspan="2">0</td>
-                    <td class="borderTopLeft col_110" align="center">1</td>
-                    <td class="borderTopLeft col_110" align="center">2</td>
-                    <td class="borderTopLeft col_110" align="center">3</td>
-                    <td class="borderTopLeft col_110" align="center">4</td>
-                    <td class="borderTopLeft col_110" align="center">5</td>
-                    <td class="borderTopLeft col_110" align="center">6</td>
-                    <td class="borderTopLeft col_110" align="center">7</td>
-                    <td class="borderTopLeft col_110" align="center">8</td>
-                    <td class="borderTopLeft col_110" align="center">9</td>
-                    <td class="borderTopLeftRight col_110" align="center">10</td>
+                    <td class="borderTopLeft col_76 center" colspan="2">0</td>
+                    <td class="borderTopLeft col_110 center">1</td>
+                    <td class="borderTopLeft col_110 center">2</td>
+                    <td class="borderTopLeft col_110 center">3</td>
+                    <td class="borderTopLeft col_110 center">4</td>
+                    <td class="borderTopLeft col_110 center">5</td>
+                    <td class="borderTopLeft col_110 center">6</td>
+                    <td class="borderTopLeft col_110 center">7</td>
+                    <td class="borderTopLeft col_110 center">8</td>
+                    <td class="borderTopLeft col_110 center">9</td>
+                    <td class="borderTopLeftRight col_110 center">10</td>
                 </tr>
                 <tr>
                     <td class="wciecie borderTopLeft col_125">U razem (w. 02 do 09)</td>
@@ -7205,49 +7199,49 @@
 
             <strong>
                 <br />
-                Dział 1.4</strong> Terminowość sporządzania uzasadnień<table cellpadding="0" cellspacing="0" class="auto-style14">
+                Dział 1.4</strong> Terminowość sporządzania uzasadnień<table class="auto-style14">
                     <tr>
-                        <td class="borderTopLeft" align="center" colspan="2" rowspan="3">SPRAWY wg repertorium </td>
-                        <td class="borderTopLeft col_71" align="center" rowspan="3">Razem (kol.2+3+5+<br />
+                        <td class="borderTopLeft center" colspan="2" rowspan="3">SPRAWY wg repertorium </td>
+                        <td class="borderTopLeft col_71 center" rowspan="3">Razem (kol.2+3+5+<br />
                             7+9)</td>
-                        <td class="borderTopLeft" align="center" colspan="9">Terminowość sporządzania uzasadnień</td>
-                        <td class="borderTopLeft col_71" align="center" rowspan="3">Uzasadnienia wygłoszone (art.328 § 1<sup><span class="auto-style7">1</span></sup> kpc)</td>
-                        <td class="borderTopLeft col_71" align="center" rowspan="3">Liczba spraw do których wpłynął wniosek o transkrypcję uzasadnień wygłoszonych w trybie art.328 § 1<sup><span class="auto-style7">1</span></sup> kpc</td>
-                        <td class="borderTopLeftRight" align="center" colspan="2">Liczba spraw, w których projekt uzasadnienia orzeczenia sporządził asystent</td>
+                        <td class="borderTopLeft center" colspan="9">Terminowość sporządzania uzasadnień</td>
+                        <td class="borderTopLeft col_71 center" rowspan="3">Uzasadnienia wygłoszone (art.328 § 1<sup><span class="auto-style7">1</span></sup> kpc)</td>
+                        <td class="borderTopLeft col_71 center" rowspan="3">Liczba spraw do których wpłynął wniosek o transkrypcję uzasadnień wygłoszonych w trybie art.328 § 1<sup><span class="auto-style7">1</span></sup> kpc</td>
+                        <td class="borderTopLeftRight center" colspan="2">Liczba spraw, w których projekt uzasadnienia orzeczenia sporządził asystent</td>
                     </tr>
                     <tr>
-                        <td class="borderTopLeft col_71" align="center" rowspan="2">w terminie ustawowym</td>
-                        <td class="borderTopLeft" align="center" colspan="8">po upływie terminu ustawowego <sup><span class="auto-style7">1)</span></sup></td>
-                        <td class="borderTopLeft col_71" align="center" rowspan="2">Razem</td>
-                        <td class="borderTopLeftRight col_76" align="center" rowspan="2">w tym, w których projekt został zaakceptowany przez sędziego</td>
+                        <td class="borderTopLeft col_71 center" rowspan="2">w terminie ustawowym</td>
+                        <td class="borderTopLeft center" colspan="8">po upływie terminu ustawowego <sup><span class="auto-style7">1)</span></sup></td>
+                        <td class="borderTopLeft col_71 center" rowspan="2">Razem</td>
+                        <td class="borderTopLeftRight col_76 center" rowspan="2">w tym, w których projekt został zaakceptowany przez sędziego</td>
                     </tr>
                     <tr>
-                        <td class="borderTopLeft col_71" align="center">1-14 dni</td>
-                        <td class="borderTopLeft col_71" align="center">w tym nieuspra-<br />
+                        <td class="borderTopLeft col_71 center">1-14 dni</td>
+                        <td class="borderTopLeft col_71 center">w tym nieuspra-<br />
                             wiedliwione</td>
-                        <td class="borderTopLeft col_71" align="center">15-30 dni</td>
-                        <td class="borderTopLeft col_71" align="center">w tym nieuspra-wiedliwione</td>
-                        <td class="borderTopLeft col_71" align="center">pow. 1 do 3 mies.</td>
-                        <td class="borderTopLeft col_71" align="center">w tym nieuspra-wiedliwione</td>
-                        <td class="borderTopLeft col_71" align="center">ponad 3 mies.</td>
-                        <td class="borderTopLeft col_71" align="center">w tym nieuspra-wiedliwione</td>
+                        <td class="borderTopLeft col_71 center">15-30 dni</td>
+                        <td class="borderTopLeft col_71 center">w tym nieuspra-wiedliwione</td>
+                        <td class="borderTopLeft col_71 center">pow. 1 do 3 mies.</td>
+                        <td class="borderTopLeft col_71 center">w tym nieuspra-wiedliwione</td>
+                        <td class="borderTopLeft col_71 center">ponad 3 mies.</td>
+                        <td class="borderTopLeft col_71 center">w tym nieuspra-wiedliwione</td>
                     </tr>
                     <tr>
-                        <td class="borderTopLeft " align="center" colspan="2">0</td>
-                        <td class="borderTopLeft col_71" align="center">1</td>
-                        <td class="borderTopLeft col_71" align="center">2</td>
-                        <td class="borderTopLeft col_71" align="center">3</td>
-                        <td class="borderTopLeft col_71" align="center">4</td>
-                        <td class="borderTopLeft col_71" align="center">5</td>
-                        <td class="borderTopLeft col_71" align="center">6</td>
-                        <td class="borderTopLeft col_71" align="center">7</td>
-                        <td class="borderTopLeft col_71" align="center">8</td>
-                        <td class="borderTopLeft col_71" align="center">9</td>
-                        <td class="borderTopLeft col_71" align="center">10</td>
-                        <td class="borderTopLeft col_71" align="center">11</td>
-                        <td class="borderTopLeft col_71" align="center">12</td>
-                        <td class="borderTopLeft col_71" align="center">13</td>
-                        <td class="borderTopLeftRight col_76" align="center">14</td>
+                        <td class="borderTopLeft center" colspan="2">0</td>
+                        <td class="borderTopLeft col_71 center">1</td>
+                        <td class="borderTopLeft col_71 center">2</td>
+                        <td class="borderTopLeft col_71 center">3</td>
+                        <td class="borderTopLeft col_71 center">4</td>
+                        <td class="borderTopLeft col_71 center">5</td>
+                        <td class="borderTopLeft col_71 center">6</td>
+                        <td class="borderTopLeft col_71 center">7</td>
+                        <td class="borderTopLeft col_71 center">8</td>
+                        <td class="borderTopLeft col_71 center">9</td>
+                        <td class="borderTopLeft col_71 center">10</td>
+                        <td class="borderTopLeft col_71 center">11</td>
+                        <td class="borderTopLeft col_71 center">12</td>
+                        <td class="borderTopLeft col_71 center">13</td>
+                        <td class="borderTopLeftRight col_76 center">14</td>
                     </tr>
                     <tr>
                         <td class="wciecie borderTopLeft col_45">U razem (w. 02 do 09)</td>
@@ -7444,40 +7438,40 @@
 
             <br />
 
-            <table cellpadding="0" cellspacing="0" class="auto-style14">
+            <table class="auto-style14">
                 <tr>
-                    <td class="borderTopLeft " align="center" rowspan="2">Wyszczególnie</td>
-                    <td class="borderTopLeft " align="center" rowspan="2">L.p.</td>
-                    <td class="borderTopLeftRight" align="center" colspan="11">W tym spraw niezałatwionych pozostających od daty wpływu</td>
+                    <td class="borderTopLeft center" rowspan="2">Wyszczególnie</td>
+                    <td class="borderTopLeft center" rowspan="2">L.p.</td>
+                    <td class="borderTopLeftRight center" colspan="11">W tym spraw niezałatwionych pozostających od daty wpływu</td>
                 </tr>
                 <tr>
-                    <td class="borderTopLeft col_110" align="center">razem (kol.2+3)</td>
-                    <td class="borderTopLeft col_110" align="center">do 3 miesięcy</td>
-                    <td class="borderTopLeft col_110" align="center"><b>suma powyżej 3 miesięcy</b> (kol. od 4 do 6)</td>
-                    <td class="borderTopLeft col_110" align="center">powyżej 3 do 6</td>
-                    <td class="borderTopLeft col_110" align="center">powyżej 6 do 12 miesięcy</td>
-                    <td class="borderTopLeft col_110" align="center"><b>suma powyżej 12 miesięcy </b>
+                    <td class="borderTopLeft col_110 center">razem (kol.2+3)</td>
+                    <td class="borderTopLeft col_110 center">do 3 miesięcy</td>
+                    <td class="borderTopLeft col_110 center"><b>suma powyżej 3 miesięcy</b> (kol. od 4 do 6)</td>
+                    <td class="borderTopLeft col_110 center">powyżej 3 do 6</td>
+                    <td class="borderTopLeft col_110 center">powyżej 6 do 12 miesięcy</td>
+                    <td class="borderTopLeft col_110 center"><b>suma powyżej 12 miesięcy </b>
                         <br />
                         (kol. od 7 do 11)</td>
-                    <td class="borderTopLeft col_110" align="center">powyżej 12 miesięcy  do 2 lat</td>
-                    <td class="borderTopLeft col_110" align="center">powyżej 2 do 3 lat</td>
-                    <td class="borderTopLeft col_110" align="center">powyżej 3 do 5 lat</td>
-                    <td class="borderTopLeft col_110" align="center">powyżej 5 do 8 lat</td>
-                    <td class="borderTopLeftRight col_110" align="center">ponad 8 lat</td>
+                    <td class="borderTopLeft col_110 center">powyżej 12 miesięcy  do 2 lat</td>
+                    <td class="borderTopLeft col_110 center">powyżej 2 do 3 lat</td>
+                    <td class="borderTopLeft col_110 center">powyżej 3 do 5 lat</td>
+                    <td class="borderTopLeft col_110 center">powyżej 5 do 8 lat</td>
+                    <td class="borderTopLeftRight col_110 center">ponad 8 lat</td>
                 </tr>
                 <tr>
-                    <td class="borderTopLeft col_76" align="center" colspan="2">0</td>
-                    <td class="borderTopLeft col_110" align="center">1</td>
-                    <td class="borderTopLeft col_110" align="center">2</td>
-                    <td class="borderTopLeft col_110" align="center">3</td>
-                    <td class="borderTopLeft col_110" align="center">4</td>
-                    <td class="borderTopLeft col_110" align="center">5</td>
-                    <td class="borderTopLeft col_110" align="center">6</td>
-                    <td class="borderTopLeft col_110" align="center">7</td>
-                    <td class="borderTopLeft col_110" align="center">8</td>
-                    <td class="borderTopLeft col_110" align="center">9</td>
-                    <td class="borderTopLeft col_110" align="center">10</td>
-                    <td class="borderTopLeftRight col_110" align="center">11</td>
+                    <td class="borderTopLeft col_76 center" colspan="2">0</td>
+                    <td class="borderTopLeft col_110 center">1</td>
+                    <td class="borderTopLeft col_110 center">2</td>
+                    <td class="borderTopLeft col_110 center">3</td>
+                    <td class="borderTopLeft col_110 center">4</td>
+                    <td class="borderTopLeft col_110 center">5</td>
+                    <td class="borderTopLeft col_110 center">6</td>
+                    <td class="borderTopLeft col_110 center">7</td>
+                    <td class="borderTopLeft col_110 center">8</td>
+                    <td class="borderTopLeft col_110 center">9</td>
+                    <td class="borderTopLeft col_110 center">10</td>
+                    <td class="borderTopLeftRight col_110 center">11</td>
                 </tr>
                 <tr>
                     <td class="wciecie borderTopLeft col_125">U </td>
@@ -7601,40 +7595,40 @@
 
             <br />
 
-            <table cellpadding="0" cellspacing="0" class="auto-style14">
+            <table class="auto-style14">
                 <tr>
-                    <td class="borderTopLeft " align="center" rowspan="2">Wyszczególnie</td>
-                    <td class="borderTopLeft " align="center" rowspan="2">L.p.</td>
-                    <td class="borderTopLeftRight" align="center" colspan="11">W tym spraw niezałatwionych pozostających od daty wpływu</td>
+                    <td class="borderTopLeft center" rowspan="2">Wyszczególnie</td>
+                    <td class="borderTopLeft center" rowspan="2">L.p.</td>
+                    <td class="borderTopLeftRight center" colspan="11">W tym spraw niezałatwionych pozostających od daty wpływu</td>
                 </tr>
                 <tr>
-                    <td class="borderTopLeft col_110" align="center">razem (kol.2+3)</td>
-                    <td class="borderTopLeft col_110" align="center">do 3 miesięcy</td>
-                    <td class="borderTopLeft col_110" align="center"><b>suma powyżej 3 miesięcy</b> (kol. od 4 do 6)</td>
-                    <td class="borderTopLeft col_110" align="center">powyżej 3 do 6</td>
-                    <td class="borderTopLeft col_110" align="center">powyżej 6 do 12 miesięcy</td>
-                    <td class="borderTopLeft col_110" align="center"><b>suma powyżej 12 miesięcy </b>
+                    <td class="borderTopLeft col_110 center">razem (kol.2+3)</td>
+                    <td class="borderTopLeft col_110 center">do 3 miesięcy</td>
+                    <td class="borderTopLeft col_110 center"><b>suma powyżej 3 miesięcy</b> (kol. od 4 do 6)</td>
+                    <td class="borderTopLeft col_110 center">powyżej 3 do 6</td>
+                    <td class="borderTopLeft col_110 center">powyżej 6 do 12 miesięcy</td>
+                    <td class="borderTopLeft col_110 center"><b>suma powyżej 12 miesięcy </b>
                         <br />
                         (kol. od 7 do 11)</td>
-                    <td class="borderTopLeft col_110" align="center">powyżej 12 miesięcy  do 2 lat</td>
-                    <td class="borderTopLeft col_110" align="center">powyżej 2 do 3 lat</td>
-                    <td class="borderTopLeft col_110" align="center">powyżej 3 do 5 lat</td>
-                    <td class="borderTopLeft col_110" align="center">powyżej 5 do 8 lat</td>
-                    <td class="borderTopLeftRight col_110" align="center">ponad 8 lat</td>
+                    <td class="borderTopLeft col_110 center">powyżej 12 miesięcy  do 2 lat</td>
+                    <td class="borderTopLeft col_110 center">powyżej 2 do 3 lat</td>
+                    <td class="borderTopLeft col_110 center">powyżej 3 do 5 lat</td>
+                    <td class="borderTopLeft col_110 center">powyżej 5 do 8 lat</td>
+                    <td class="borderTopLeftRight col_110 center">ponad 8 lat</td>
                 </tr>
                 <tr>
-                    <td class="borderTopLeft col_76" align="center" colspan="2">0</td>
-                    <td class="borderTopLeft col_110" align="center">1</td>
-                    <td class="borderTopLeft col_110" align="center">2</td>
-                    <td class="borderTopLeft col_110" align="center">3</td>
-                    <td class="borderTopLeft col_110" align="center">4</td>
-                    <td class="borderTopLeft col_110" align="center">5</td>
-                    <td class="borderTopLeft col_110" align="center">6</td>
-                    <td class="borderTopLeft col_110" align="center">7</td>
-                    <td class="borderTopLeft col_110" align="center">8</td>
-                    <td class="borderTopLeft col_110" align="center">9</td>
-                    <td class="borderTopLeft col_110" align="center">10</td>
-                    <td class="borderTopLeftRight col_110" align="center">11</td>
+                    <td class="borderTopLeft col_76 center" colspan="2">0</td>
+                    <td class="borderTopLeft col_110 center">1</td>
+                    <td class="borderTopLeft col_110 center">2</td>
+                    <td class="borderTopLeft col_110 center">3</td>
+                    <td class="borderTopLeft col_110 center">4</td>
+                    <td class="borderTopLeft col_110 center">5</td>
+                    <td class="borderTopLeft col_110 center">6</td>
+                    <td class="borderTopLeft col_110 center">7</td>
+                    <td class="borderTopLeft col_110 center">8</td>
+                    <td class="borderTopLeft col_110 center">9</td>
+                    <td class="borderTopLeft col_110 center">10</td>
+                    <td class="borderTopLeftRight col_110 center">11</td>
                 </tr>
                 <tr>
                     <td class="wciecie borderTopLeft col_125">U </td>
@@ -7757,40 +7751,40 @@
 		   <br />
             <br />
 
-            <table cellpadding="0" cellspacing="0" class="auto-style14">
+            <table class="auto-style14">
                 <tr>
-                    <td class="borderTopLeft " align="center" rowspan="2">Wyszczególnie</td>
-                    <td class="borderTopLeft " align="center" rowspan="2">L.p.</td>
-                    <td class="borderTopLeftRight" align="center" colspan="11">W tym spraw niezałatwionych pozostających od daty wpływu</td>
+                    <td class="borderTopLeft center" rowspan="2">Wyszczególnie</td>
+                    <td class="borderTopLeft center" rowspan="2">L.p.</td>
+                    <td class="borderTopLeftRight center" colspan="11">W tym spraw niezałatwionych pozostających od daty wpływu</td>
                 </tr>
                 <tr>
-                    <td class="borderTopLeft col_110" align="center">razem (kol.2+3)</td>
-                    <td class="borderTopLeft col_110" align="center">do 3 miesięcy</td>
-                    <td class="borderTopLeft col_110" align="center"><b>suma powyżej 3 miesięcy</b> (kol. od 4 do 6)</td>
-                    <td class="borderTopLeft col_110" align="center">powyżej 3 do 6</td>
-                    <td class="borderTopLeft col_110" align="center">powyżej 6 do 12 miesięcy</td>
-                    <td class="borderTopLeft col_110" align="center"><b>suma powyżej 12 miesięcy </b>
+                    <td class="borderTopLeft col_110 center">razem (kol.2+3)</td>
+                    <td class="borderTopLeft col_110 center">do 3 miesięcy</td>
+                    <td class="borderTopLeft col_110 center"><b>suma powyżej 3 miesięcy</b> (kol. od 4 do 6)</td>
+                    <td class="borderTopLeft col_110 center">powyżej 3 do 6</td>
+                    <td class="borderTopLeft col_110 center">powyżej 6 do 12 miesięcy</td>
+                    <td class="borderTopLeft col_110 center"><b>suma powyżej 12 miesięcy </b>
                         <br />
                         (kol. od 7 do 11)</td>
-                    <td class="borderTopLeft col_110" align="center">powyżej 12 miesięcy  do 2 lat</td>
-                    <td class="borderTopLeft col_110" align="center">powyżej 2 do 3 lat</td>
-                    <td class="borderTopLeft col_110" align="center">powyżej 3 do 5 lat</td>
-                    <td class="borderTopLeft col_110" align="center">powyżej 5 do 8 lat</td>
-                    <td class="borderTopLeftRight col_110" align="center">ponad 8 lat</td>
+                    <td class="borderTopLeft col_110 center">powyżej 12 miesięcy  do 2 lat</td>
+                    <td class="borderTopLeft col_110 center">powyżej 2 do 3 lat</td>
+                    <td class="borderTopLeft col_110 center">powyżej 3 do 5 lat</td>
+                    <td class="borderTopLeft col_110 center">powyżej 5 do 8 lat</td>
+                    <td class="borderTopLeftRight col_110 center">ponad 8 lat</td>
                 </tr>
                 <tr>
-                    <td class="borderTopLeft col_76" align="center" colspan="2">0</td>
-                    <td class="borderTopLeft col_110" align="center">1</td>
-                    <td class="borderTopLeft col_110" align="center">2</td>
-                    <td class="borderTopLeft col_110" align="center">3</td>
-                    <td class="borderTopLeft col_110" align="center">4</td>
-                    <td class="borderTopLeft col_110" align="center">5</td>
-                    <td class="borderTopLeft col_110" align="center">6</td>
-                    <td class="borderTopLeft col_110" align="center">7</td>
-                    <td class="borderTopLeft col_110" align="center">8</td>
-                    <td class="borderTopLeft col_110" align="center">9</td>
-                    <td class="borderTopLeft col_110" align="center">10</td>
-                    <td class="borderTopLeftRight col_110" align="center">11</td>
+                    <td class="borderTopLeft col_76 center" colspan="2">0</td>
+                    <td class="borderTopLeft col_110 center">1</td>
+                    <td class="borderTopLeft col_110 center">2</td>
+                    <td class="borderTopLeft col_110 center">3</td>
+                    <td class="borderTopLeft col_110 center">4</td>
+                    <td class="borderTopLeft col_110 center">5</td>
+                    <td class="borderTopLeft col_110 center">6</td>
+                    <td class="borderTopLeft col_110 center">7</td>
+                    <td class="borderTopLeft col_110 center">8</td>
+                    <td class="borderTopLeft col_110 center">9</td>
+                    <td class="borderTopLeft col_110 center">10</td>
+                    <td class="borderTopLeftRight col_110 center">11</td>
                 </tr>
                 <tr>
                     <td class="wciecie borderTopLeft col_125">U </td>
@@ -7914,40 +7908,40 @@
 
             <br />
 
-            <table cellpadding="0" cellspacing="0" class="auto-style14">
+            <table class="auto-style14">
                 <tr>
-                    <td class="borderTopLeft " align="center" rowspan="2">Wyszczególnie</td>
-                    <td class="borderTopLeft " align="center" rowspan="2">L.p.</td>
-                    <td class="borderTopLeftRight" align="center" colspan="11">W tym spraw niezałatwionych pozostających od daty wpływu</td>
+                    <td class="borderTopLeft center" rowspan="2">Wyszczególnie</td>
+                    <td class="borderTopLeft center" rowspan="2">L.p.</td>
+                    <td class="borderTopLeftRight center" colspan="11">W tym spraw niezałatwionych pozostających od daty wpływu</td>
                 </tr>
                 <tr>
-                    <td class="borderTopLeft col_110" align="center">razem (kol.2+3)</td>
-                    <td class="borderTopLeft col_110" align="center">do 3 miesięcy</td>
-                    <td class="borderTopLeft col_110" align="center"><b>suma powyżej 3 miesięcy</b> (kol. od 4 do 6)</td>
-                    <td class="borderTopLeft col_110" align="center">powyżej 3 do 6</td>
-                    <td class="borderTopLeft col_110" align="center">powyżej 6 do 12 miesięcy</td>
-                    <td class="borderTopLeft col_110" align="center"><b>suma powyżej 12 miesięcy </b>
+                    <td class="borderTopLeft col_110 center">razem (kol.2+3)</td>
+                    <td class="borderTopLeft col_110 center">do 3 miesięcy</td>
+                    <td class="borderTopLeft col_110 center"><b>suma powyżej 3 miesięcy</b> (kol. od 4 do 6)</td>
+                    <td class="borderTopLeft col_110 center">powyżej 3 do 6</td>
+                    <td class="borderTopLeft col_110 center">powyżej 6 do 12 miesięcy</td>
+                    <td class="borderTopLeft col_110 center"><b>suma powyżej 12 miesięcy </b>
                         <br />
                         (kol. od 7 do 11)</td>
-                    <td class="borderTopLeft col_110" align="center">powyżej 12 miesięcy  do 2 lat</td>
-                    <td class="borderTopLeft col_110" align="center">powyżej 2 do 3 lat</td>
-                    <td class="borderTopLeft col_110" align="center">powyżej 3 do 5 lat</td>
-                    <td class="borderTopLeft col_110" align="center">powyżej 5 do 8 lat</td>
-                    <td class="borderTopLeftRight col_110" align="center">ponad 8 lat</td>
+                    <td class="borderTopLeft col_110 center">powyżej 12 miesięcy  do 2 lat</td>
+                    <td class="borderTopLeft col_110 center">powyżej 2 do 3 lat</td>
+                    <td class="borderTopLeft col_110 center">powyżej 3 do 5 lat</td>
+                    <td class="borderTopLeft col_110 center">powyżej 5 do 8 lat</td>
+                    <td class="borderTopLeftRight col_110 center">ponad 8 lat</td>
                 </tr>
                 <tr>
-                    <td class="borderTopLeft col_76" align="center" colspan="2">0</td>
-                    <td class="borderTopLeft col_110" align="center">1</td>
-                    <td class="borderTopLeft col_110" align="center">2</td>
-                    <td class="borderTopLeft col_110" align="center">3</td>
-                    <td class="borderTopLeft col_110" align="center">4</td>
-                    <td class="borderTopLeft col_110" align="center">5</td>
-                    <td class="borderTopLeft col_110" align="center">6</td>
-                    <td class="borderTopLeft col_110" align="center">7</td>
-                    <td class="borderTopLeft col_110" align="center">8</td>
-                    <td class="borderTopLeft col_110" align="center">9</td>
-                    <td class="borderTopLeft col_110" align="center">10</td>
-                    <td class="borderTopLeftRight col_110" align="center">11</td>
+                    <td class="borderTopLeft col_76 center" colspan="2">0</td>
+                    <td class="borderTopLeft col_110 center">1</td>
+                    <td class="borderTopLeft col_110 center">2</td>
+                    <td class="borderTopLeft col_110 center">3</td>
+                    <td class="borderTopLeft col_110 center">4</td>
+                    <td class="borderTopLeft col_110 center">5</td>
+                    <td class="borderTopLeft col_110 center">6</td>
+                    <td class="borderTopLeft col_110 center">7</td>
+                    <td class="borderTopLeft col_110 center">8</td>
+                    <td class="borderTopLeft col_110 center">9</td>
+                    <td class="borderTopLeft col_110 center">10</td>
+                    <td class="borderTopLeftRight col_110 center">11</td>
                 </tr>
                 <tr>
                     <td class="wciecie borderTopLeft col_125">U </td>
@@ -8071,40 +8065,40 @@
 		   <br />
             <br />
 
-            <table cellpadding="0" cellspacing="0" class="auto-style14">
+            <table class="auto-style14">
                 <tr>
-                    <td class="borderTopLeft " align="center" rowspan="2">Wyszczególnie</td>
-                    <td class="borderTopLeft " align="center" rowspan="2">L.p.</td>
-                    <td class="borderTopLeftRight" align="center" colspan="11">W tym spraw niezałatwionych pozostających od daty wpływu</td>
+                    <td class="borderTopLeft center" rowspan="2">Wyszczególnie</td>
+                    <td class="borderTopLeft center" rowspan="2">L.p.</td>
+                    <td class="borderTopLeftRight center" colspan="11">W tym spraw niezałatwionych pozostających od daty wpływu</td>
                 </tr>
                 <tr>
-                    <td class="borderTopLeft col_110" align="center">razem (kol.2+3)</td>
-                    <td class="borderTopLeft col_110" align="center">do 3 miesięcy</td>
-                    <td class="borderTopLeft col_110" align="center"><b>suma powyżej 3 miesięcy</b> (kol. od 4 do 6)</td>
-                    <td class="borderTopLeft col_110" align="center">powyżej 3 do 6</td>
-                    <td class="borderTopLeft col_110" align="center">powyżej 6 do 12 miesięcy</td>
-                    <td class="borderTopLeft col_110" align="center"><b>suma powyżej 12 miesięcy </b>
+                    <td class="borderTopLeft col_110 center">razem (kol.2+3)</td>
+                    <td class="borderTopLeft col_110 center">do 3 miesięcy</td>
+                    <td class="borderTopLeft col_110 center"><b>suma powyżej 3 miesięcy</b> (kol. od 4 do 6)</td>
+                    <td class="borderTopLeft col_110 center">powyżej 3 do 6</td>
+                    <td class="borderTopLeft col_110 center">powyżej 6 do 12 miesięcy</td>
+                    <td class="borderTopLeft col_110 center"><b>suma powyżej 12 miesięcy </b>
                         <br />
                         (kol. od 7 do 11)</td>
-                    <td class="borderTopLeft col_110" align="center">powyżej 12 miesięcy  do 2 lat</td>
-                    <td class="borderTopLeft col_110" align="center">powyżej 2 do 3 lat</td>
-                    <td class="borderTopLeft col_110" align="center">powyżej 3 do 5 lat</td>
-                    <td class="borderTopLeft col_110" align="center">powyżej 5 do 8 lat</td>
-                    <td class="borderTopLeftRight col_110" align="center">ponad 8 lat</td>
+                    <td class="borderTopLeft col_110 center">powyżej 12 miesięcy  do 2 lat</td>
+                    <td class="borderTopLeft col_110 center">powyżej 2 do 3 lat</td>
+                    <td class="borderTopLeft col_110 center">powyżej 3 do 5 lat</td>
+                    <td class="borderTopLeft col_110 center">powyżej 5 do 8 lat</td>
+                    <td class="borderTopLeftRight col_110 center">ponad 8 lat</td>
                 </tr>
                 <tr>
-                    <td class="borderTopLeft " align="center" colspan="2">0</td>
-                    <td class="borderTopLeft col_110" align="center">1</td>
-                    <td class="borderTopLeft col_110" align="center">2</td>
-                    <td class="borderTopLeft col_110" align="center">3</td>
-                    <td class="borderTopLeft col_110" align="center">4</td>
-                    <td class="borderTopLeft col_110" align="center">5</td>
-                    <td class="borderTopLeft col_110" align="center">6</td>
-                    <td class="borderTopLeft col_110" align="center">7</td>
-                    <td class="borderTopLeft col_110" align="center">8</td>
-                    <td class="borderTopLeft col_110" align="center">9</td>
-                    <td class="borderTopLeft col_110" align="center">10</td>
-                    <td class="borderTopLeftRight col_110" align="center">11</td>
+                    <td class="borderTopLeft center" colspan="2">0</td>
+                    <td class="borderTopLeft col_110 center">1</td>
+                    <td class="borderTopLeft col_110 center">2</td>
+                    <td class="borderTopLeft col_110 center">3</td>
+                    <td class="borderTopLeft col_110 center">4</td>
+                    <td class="borderTopLeft col_110 center">5</td>
+                    <td class="borderTopLeft col_110 center">6</td>
+                    <td class="borderTopLeft col_110 center">7</td>
+                    <td class="borderTopLeft col_110 center">8</td>
+                    <td class="borderTopLeft col_110 center">9</td>
+                    <td class="borderTopLeft col_110 center">10</td>
+                    <td class="borderTopLeftRight col_110 center">11</td>
                 </tr>
                 <tr>
                     <td class="wciecie borderTopLeft col_125">U </td>
@@ -8228,40 +8222,40 @@
 		   <br />
             <br />
 
-            <table cellpadding="0" cellspacing="0" class="auto-style14">
+            <table class="auto-style14">
                 <tr>
-                    <td class="borderTopLeft " align="center" rowspan="2">Wyszczególnie</td>
-                    <td class="borderTopLeft " align="center" rowspan="2">L.p.</td>
-                    <td class="borderTopLeftRight" align="center" colspan="11">W tym spraw niezałatwionych pozostających od daty wpływu</td>
+                    <td class="borderTopLeft center" rowspan="2">Wyszczególnie</td>
+                    <td class="borderTopLeft center" rowspan="2">L.p.</td>
+                    <td class="borderTopLeftRight center" colspan="11">W tym spraw niezałatwionych pozostających od daty wpływu</td>
                 </tr>
                 <tr>
-                    <td class="borderTopLeft col_110" align="center">razem (kol.2+3)</td>
-                    <td class="borderTopLeft col_110" align="center">do 3 miesięcy</td>
-                    <td class="borderTopLeft col_110" align="center"><b>suma powyżej 3 miesięcy</b> (kol. od 4 do 6)</td>
-                    <td class="borderTopLeft col_110" align="center">powyżej 3 do 6</td>
-                    <td class="borderTopLeft col_110" align="center">powyżej 6 do 12 miesięcy</td>
-                    <td class="borderTopLeft col_110" align="center"><b>suma powyżej 12 miesięcy </b>
+                    <td class="borderTopLeft col_110 center">razem (kol.2+3)</td>
+                    <td class="borderTopLeft col_110 center">do 3 miesięcy</td>
+                    <td class="borderTopLeft col_110 center"><b>suma powyżej 3 miesięcy</b> (kol. od 4 do 6)</td>
+                    <td class="borderTopLeft col_110 center">powyżej 3 do 6</td>
+                    <td class="borderTopLeft col_110 center">powyżej 6 do 12 miesięcy</td>
+                    <td class="borderTopLeft col_110 center"><b>suma powyżej 12 miesięcy </b>
                         <br />
                         (kol. od 7 do 11)</td>
-                    <td class="borderTopLeft col_110" align="center">powyżej 12 miesięcy  do 2 lat</td>
-                    <td class="borderTopLeft col_110" align="center">powyżej 2 do 3 lat</td>
-                    <td class="borderTopLeft col_110" align="center">powyżej 3 do 5 lat</td>
-                    <td class="borderTopLeft col_110" align="center">powyżej 5 do 8 lat</td>
-                    <td class="borderTopLeftRight col_110" align="center">ponad 8 lat</td>
+                    <td class="borderTopLeft col_110 center">powyżej 12 miesięcy  do 2 lat</td>
+                    <td class="borderTopLeft col_110 center">powyżej 2 do 3 lat</td>
+                    <td class="borderTopLeft col_110 center">powyżej 3 do 5 lat</td>
+                    <td class="borderTopLeft col_110 center">powyżej 5 do 8 lat</td>
+                    <td class="borderTopLeftRight col_110 center">ponad 8 lat</td>
                 </tr>
                 <tr>
-                    <td class="borderTopLeft " align="center" colspan="2">0</td>
-                    <td class="borderTopLeft col_110" align="center">1</td>
-                    <td class="borderTopLeft col_110" align="center">2</td>
-                    <td class="borderTopLeft col_110" align="center">3</td>
-                    <td class="borderTopLeft col_110" align="center">4</td>
-                    <td class="borderTopLeft col_110" align="center">5</td>
-                    <td class="borderTopLeft col_110" align="center">6</td>
-                    <td class="borderTopLeft col_110" align="center">7</td>
-                    <td class="borderTopLeft col_110" align="center">8</td>
-                    <td class="borderTopLeft col_110" align="center">9</td>
-                    <td class="borderTopLeft col_110" align="center">10</td>
-                    <td class="borderTopLeftRight col_110" align="center">11</td>
+                    <td class="borderTopLeft center" colspan="2">0</td>
+                    <td class="borderTopLeft col_110 center">1</td>
+                    <td class="borderTopLeft col_110 center">2</td>
+                    <td class="borderTopLeft col_110 center">3</td>
+                    <td class="borderTopLeft col_110 center">4</td>
+                    <td class="borderTopLeft col_110 center">5</td>
+                    <td class="borderTopLeft col_110 center">6</td>
+                    <td class="borderTopLeft col_110 center">7</td>
+                    <td class="borderTopLeft col_110 center">8</td>
+                    <td class="borderTopLeft col_110 center">9</td>
+                    <td class="borderTopLeft col_110 center">10</td>
+                    <td class="borderTopLeftRight col_110 center">11</td>
                 </tr>
                 <tr>
                     <td class="wciecie borderTopLeft col_125">U </td>
@@ -8384,37 +8378,37 @@
 		   <br />
             <br />
 
-            <table cellpadding="0" cellspacing="0" class="auto-style14">
+            <table class="auto-style14">
 
                 <tr>
-                    <td class="borderTopLeft " align="center">Sprawy wg repertoriów</td>
-                    <td class="borderTopLeft col_76" align="center">L.p.</td>
-                    <td class="borderTopLeft col_110" align="center">Razem (kol. od 2 do 9) </td>
-                    <td class="borderTopLeft col_110" align="center">do 3 miesięcy</td>
-                    <td class="borderTopLeft col_110" align="center">powyżej 3 do 6</td>
-                    <td class="borderTopLeft col_110" align="center">powyżej 6 do 12 miesięcy</td>
-                    <td class="borderTopLeft col_110" align="center">powyżej 12 miesięcy  do 2 lat</td>
-                    <td class="borderTopLeft col_110" align="center">powyżej 2 do 3 lat</td>
-                    <td class="borderTopLeft col_110" align="center">powyżej 3 do 5 lat</td>
-                    <td class="borderTopLeft col_110" align="center">powyżej 5 do 8 lat</td>
+                    <td class="borderTopLeft center">Sprawy wg repertoriów</td>
+                    <td class="borderTopLeft col_76 center">L.p.</td>
+                    <td class="borderTopLeft col_110 center">Razem (kol. od 2 do 9) </td>
+                    <td class="borderTopLeft col_110 center">do 3 miesięcy</td>
+                    <td class="borderTopLeft col_110 center">powyżej 3 do 6</td>
+                    <td class="borderTopLeft col_110 center">powyżej 6 do 12 miesięcy</td>
+                    <td class="borderTopLeft col_110 center">powyżej 12 miesięcy  do 2 lat</td>
+                    <td class="borderTopLeft col_110 center">powyżej 2 do 3 lat</td>
+                    <td class="borderTopLeft col_110 center">powyżej 3 do 5 lat</td>
+                    <td class="borderTopLeft col_110 center">powyżej 5 do 8 lat</td>
 
-                    <td class="borderTopLeftRight col_110" align="center">ponad 8 lat</td>
+                    <td class="borderTopLeftRight col_110 center">ponad 8 lat</td>
                 </tr>
                 <tr>
-                    <td class="borderTopLeft " align="center" colspan="2">0</td>
-                    <td class="borderTopLeft col_110" align="center">1</td>
-                    <td class="borderTopLeft col_110" align="center">2</td>
-                    <td class="borderTopLeft col_110" align="center">3</td>
-                    <td class="borderTopLeft col_110" align="center">4</td>
-                    <td class="borderTopLeft col_110" align="center">5</td>
-                    <td class="borderTopLeft col_110" align="center">6</td>
-                    <td class="borderTopLeft col_110" align="center">7</td>
-                    <td class="borderTopLeft col_110" align="center">8</td>
+                    <td class="borderTopLeft center" colspan="2">0</td>
+                    <td class="borderTopLeft col_110 center">1</td>
+                    <td class="borderTopLeft col_110 center">2</td>
+                    <td class="borderTopLeft col_110 center">3</td>
+                    <td class="borderTopLeft col_110 center">4</td>
+                    <td class="borderTopLeft col_110 center">5</td>
+                    <td class="borderTopLeft col_110 center">6</td>
+                    <td class="borderTopLeft col_110 center">7</td>
+                    <td class="borderTopLeft col_110 center">8</td>
 
-                    <td class="borderTopLeftRight col_110" align="center">9</td>
+                    <td class="borderTopLeftRight col_110 center">9</td>
                 </tr>
                 <tr>
-                    <td class="wciecie borderTopLeft " align="center">OGÓŁEM
+                    <td class="wciecie borderTopLeft center">OGÓŁEM
                        <br />
                         (w. 02 do 05)</td>
                     <td class="borderTopLeft col_36">01</td>
@@ -8447,7 +8441,7 @@
                     </a></td>
                 </tr>
                 <tr>
-                    <td class="wciecie borderTopLeft " align="center">U</td>
+                    <td class="wciecie borderTopLeft center">U</td>
                     <td class="borderTopLeft col_36">02</td>
                     <td class="borderTopLeft col_110"><a href="javascript:openPopup('popup.aspx?sesja=2!2.2!1!4')">
                         <asp:Label CssClass="normal" ID="tab_22_w02_c01" runat="server" Text="0"></asp:Label>
@@ -8478,7 +8472,7 @@
                     </a></td>
                 </tr>
                 <tr>
-                    <td class="wciecie borderTopLeft " align="center">Uo</td>
+                    <td class="wciecie borderTopLeft center">Uo</td>
                     <td class="borderTopLeft col_36">03</td>
                     <td class="borderTopLeft col_110"><a href="javascript:openPopup('popup.aspx?sesja=3!2.2!1!4')">
                         <asp:Label CssClass="normal" ID="tab_22_w03_c01" runat="server" Text="0"></asp:Label>
@@ -8510,7 +8504,7 @@
                 </tr>
 
                 <tr>
-                    <td class="wciecie borderTopLeft " align="center">P</td>
+                    <td class="wciecie borderTopLeft center">P</td>
                     <td class="borderTopLeft col_36">04</td>
                     <td class="borderTopLeft col_110"><a href="javascript:openPopup('popup.aspx?sesja=4!2.2!1!4')">
                         <asp:Label CssClass="normal" ID="tab_22_w04_c01" runat="server" Text="0"></asp:Label>
@@ -8582,37 +8576,37 @@
 		   <br />
             <br />
 
-            <table cellpadding="0" cellspacing="0" class="auto-style14">
+            <table class="auto-style14">
 
                 <tr>
-                    <td class="borderTopLeft " align="center">Sprawy wg repertoriów</td>
-                    <td class="borderTopLeft col_76" align="center">L.p.</td>
-                    <td class="borderTopLeft col_110" align="center">Razem (kol. od 2 do 9) </td>
-                    <td class="borderTopLeft col_110" align="center">do 3 miesięcy</td>
-                    <td class="borderTopLeft col_110" align="center">powyżej 3 do 6</td>
-                    <td class="borderTopLeft col_110" align="center">powyżej 6 do 12 miesięcy</td>
-                    <td class="borderTopLeft col_110" align="center">powyżej 12 miesięcy  do 2 lat</td>
-                    <td class="borderTopLeft col_110" align="center">powyżej 2 do 3 lat</td>
-                    <td class="borderTopLeft col_110" align="center">powyżej 3 do 5 lat</td>
-                    <td class="borderTopLeft col_110" align="center">powyżej 5 do 8 lat</td>
+                    <td class="borderTopLeft center">Sprawy wg repertoriów</td>
+                    <td class="borderTopLeft col_76 center">L.p.</td>
+                    <td class="borderTopLeft col_110 center">Razem (kol. od 2 do 9) </td>
+                    <td class="borderTopLeft col_110 center">do 3 miesięcy</td>
+                    <td class="borderTopLeft col_110 center">powyżej 3 do 6</td>
+                    <td class="borderTopLeft col_110 center">powyżej 6 do 12 miesięcy</td>
+                    <td class="borderTopLeft col_110 center">powyżej 12 miesięcy  do 2 lat</td>
+                    <td class="borderTopLeft col_110 center">powyżej 2 do 3 lat</td>
+                    <td class="borderTopLeft col_110 center">powyżej 3 do 5 lat</td>
+                    <td class="borderTopLeft col_110 center">powyżej 5 do 8 lat</td>
 
-                    <td class="borderTopLeftRight col_110" align="center">ponad 8 lat</td>
+                    <td class="borderTopLeftRight col_110 center">ponad 8 lat</td>
                 </tr>
                 <tr>
-                    <td class="borderTopLeft " align="center" colspan="2">0</td>
-                    <td class="borderTopLeft col_110" align="center">1</td>
-                    <td class="borderTopLeft col_110" align="center">2</td>
-                    <td class="borderTopLeft col_110" align="center">3</td>
-                    <td class="borderTopLeft col_110" align="center">4</td>
-                    <td class="borderTopLeft col_110" align="center">5</td>
-                    <td class="borderTopLeft col_110" align="center">6</td>
-                    <td class="borderTopLeft col_110" align="center">7</td>
-                    <td class="borderTopLeft col_110" align="center">8</td>
+                    <td class="borderTopLeft center" colspan="2">0</td>
+                    <td class="borderTopLeft col_110 center">1</td>
+                    <td class="borderTopLeft col_110 center">2</td>
+                    <td class="borderTopLeft col_110 center">3</td>
+                    <td class="borderTopLeft col_110 center">4</td>
+                    <td class="borderTopLeft col_110 center">5</td>
+                    <td class="borderTopLeft col_110 center">6</td>
+                    <td class="borderTopLeft col_110 center">7</td>
+                    <td class="borderTopLeft col_110 center">8</td>
 
-                    <td class="borderTopLeftRight col_110" align="center">9</td>
+                    <td class="borderTopLeftRight col_110 center">9</td>
                 </tr>
                 <tr>
-                    <td class="wciecie borderTopLeft " align="center">OGÓŁEM
+                    <td class="wciecie borderTopLeft center">OGÓŁEM
                        <br />
                         (w. 02 do 05)</td>
                     <td class="borderTopLeft col_36">01</td>
@@ -8645,7 +8639,7 @@
                     </a></td>
                 </tr>
                 <tr>
-                    <td class="wciecie borderTopLeft " align="center">U</td>
+                    <td class="wciecie borderTopLeft center">U</td>
                     <td class="borderTopLeft col_36">02</td>
                     <td class="borderTopLeft col_110"><a href="javascript:openPopup('popup.aspx?sesja=2!2.2.a!1!4')">
                         <asp:Label CssClass="normal" ID="tab_22a_w02_c01" runat="server" Text="0"></asp:Label>
@@ -8676,7 +8670,7 @@
                     </a></td>
                 </tr>
                 <tr>
-                    <td class="wciecie borderTopLeft " align="center">Uo</td>
+                    <td class="wciecie borderTopLeft center">Uo</td>
                     <td class="borderTopLeft col_36">03</td>
                     <td class="borderTopLeft col_110"><a href="javascript:openPopup('popup.aspx?sesja=3!2.2.a!1!4')">
                         <asp:Label CssClass="normal" ID="tab_22a_w03_c01" runat="server" Text="0"></asp:Label>
@@ -8708,7 +8702,7 @@
                 </tr>
 
                 <tr>
-                    <td class="wciecie borderTopLeft " align="center">P</td>
+                    <td class="wciecie borderTopLeft center">P</td>
                     <td class="borderTopLeft col_36">04</td>
                     <td class="borderTopLeft col_110"><a href="javascript:openPopup('popup.aspx?sesja=4!2.2.a!1!4')">
                         <asp:Label CssClass="normal" ID="tab_22a_w04_c01" runat="server" Text="0"></asp:Label>
@@ -8780,37 +8774,37 @@
 		   <br />
             <br />
 
-            <table cellpadding="0" cellspacing="0" class="auto-style14">
+            <table class="auto-style14">
 
                 <tr>
-                    <td class="borderTopLeft " align="center">Sprawy wg repertoriów</td>
-                    <td class="borderTopLeft col_76" align="center">L.p.</td>
-                    <td class="borderTopLeft col_110" align="center">Razem (kol. od 2 do 9) </td>
-                    <td class="borderTopLeft col_110" align="center">do 3 miesięcy</td>
-                    <td class="borderTopLeft col_110" align="center">powyżej 3 do 6</td>
-                    <td class="borderTopLeft col_110" align="center">powyżej 6 do 12 miesięcy</td>
-                    <td class="borderTopLeft col_110" align="center">powyżej 12 miesięcy  do 2 lat</td>
-                    <td class="borderTopLeft col_110" align="center">powyżej 2 do 3 lat</td>
-                    <td class="borderTopLeft col_110" align="center">powyżej 3 do 5 lat</td>
-                    <td class="borderTopLeft col_110" align="center">powyżej 5 do 8 lat</td>
+                    <td class="borderTopLeft center">Sprawy wg repertoriów</td>
+                    <td class="borderTopLeft col_76 center">L.p.</td>
+                    <td class="borderTopLeft col_110 center">Razem (kol. od 2 do 9) </td>
+                    <td class="borderTopLeft col_110 center">do 3 miesięcy</td>
+                    <td class="borderTopLeft col_110 center">powyżej 3 do 6</td>
+                    <td class="borderTopLeft col_110 center">powyżej 6 do 12 miesięcy</td>
+                    <td class="borderTopLeft col_110 center">powyżej 12 miesięcy  do 2 lat</td>
+                    <td class="borderTopLeft col_110 center">powyżej 2 do 3 lat</td>
+                    <td class="borderTopLeft col_110 center">powyżej 3 do 5 lat</td>
+                    <td class="borderTopLeft col_110 center">powyżej 5 do 8 lat</td>
 
-                    <td class="borderTopLeftRight col_110" align="center">ponad 8 lat</td>
+                    <td class="borderTopLeftRight col_110 center">ponad 8 lat</td>
                 </tr>
                 <tr>
-                    <td class="borderTopLeft " align="center" colspan="2">0</td>
-                    <td class="borderTopLeft col_110" align="center">1</td>
-                    <td class="borderTopLeft col_110" align="center">2</td>
-                    <td class="borderTopLeft col_110" align="center">3</td>
-                    <td class="borderTopLeft col_110" align="center">4</td>
-                    <td class="borderTopLeft col_110" align="center">5</td>
-                    <td class="borderTopLeft col_110" align="center">6</td>
-                    <td class="borderTopLeft col_110" align="center">7</td>
-                    <td class="borderTopLeft col_110" align="center">8</td>
+                    <td class="borderTopLeft center" colspan="2">0</td>
+                    <td class="borderTopLeft col_110 center">1</td>
+                    <td class="borderTopLeft col_110 center">2</td>
+                    <td class="borderTopLeft col_110 center">3</td>
+                    <td class="borderTopLeft col_110 center">4</td>
+                    <td class="borderTopLeft col_110 center">5</td>
+                    <td class="borderTopLeft col_110 center">6</td>
+                    <td class="borderTopLeft col_110 center">7</td>
+                    <td class="borderTopLeft col_110 center">8</td>
 
-                    <td class="borderTopLeftRight col_110" align="center">9</td>
+                    <td class="borderTopLeftRight col_110 center">9</td>
                 </tr>
                 <tr>
-                    <td class="wciecie borderTopLeft " align="center">OGÓŁEM
+                    <td class="wciecie borderTopLeft center">OGÓŁEM
                        <br />
                         (w. 02 do 05)</td>
                     <td class="borderTopLeft col_36">01</td>
@@ -8843,7 +8837,7 @@
                     </a></td>
                 </tr>
                 <tr>
-                    <td class="wciecie borderTopLeft " align="center">U</td>
+                    <td class="wciecie borderTopLeft center">U</td>
                     <td class="borderTopLeft col_36">02</td>
                     <td class="borderTopLeft col_110"><a href="javascript:openPopup('popup.aspx?sesja=2!2.2.1!1!4')">
                         <asp:Label CssClass="normal" ID="tab_221_w02_c01" runat="server" Text="0"></asp:Label>
@@ -8874,7 +8868,7 @@
                     </a></td>
                 </tr>
                 <tr>
-                    <td class="wciecie borderTopLeft " align="center">Uo</td>
+                    <td class="wciecie borderTopLeft center">Uo</td>
                     <td class="borderTopLeft col_36">03</td>
                     <td class="borderTopLeft col_110"><a href="javascript:openPopup('popup.aspx?sesja=3!2.2.1!1!4')">
                         <asp:Label CssClass="normal" ID="tab_221_w03_c01" runat="server" Text="0"></asp:Label>
@@ -8906,7 +8900,7 @@
                 </tr>
 
                 <tr>
-                    <td class="wciecie borderTopLeft " align="center">P</td>
+                    <td class="wciecie borderTopLeft center">P</td>
                     <td class="borderTopLeft col_36">04</td>
                     <td class="borderTopLeft col_110"><a href="javascript:openPopup('popup.aspx?sesja=4!2.2.1!1!4')">
                         <asp:Label CssClass="normal" ID="tab_221_w04_c01" runat="server" Text="0"></asp:Label>
@@ -8979,34 +8973,34 @@
 		   <br />
             <br />
 
-            <table cellpadding="0" cellspacing="0" class="auto-style14">
+            <table class="auto-style14">
 
                 <tr>
-                    <td class="borderTopLeft " align="center">Sprawy wg repertoriów</td>
-                    <td class="borderTopLeft col_76" align="center">L.p.</td>
-                    <td class="borderTopLeft col_140" align="center">Razem (kol. od 2 do 7) </td>
-                    <td class="borderTopLeft col_140" align="center">Do 1 miesiąca</td>
-                    <td class="borderTopLeft col_140" align="center">Powyżej 1 do 2 miesięcy </td>
-                    <td class="borderTopLeft col_140" align="center">Powyżej 2 do 3 miesięcy</td>
-                    <td class="borderTopLeft col_140" align="center">Powyżej 3 do 6 miesięcy</td>
-                    <td class="borderTopLeft col_140" align="center">Powyżej 6 do 9 miesięcy</td>
-                    <td class="borderTopLeftRight col_140" align="center">Ponad 9 miesięcy</td>
+                    <td class="borderTopLeft center">Sprawy wg repertoriów</td>
+                    <td class="borderTopLeft col_76 center">L.p.</td>
+                    <td class="borderTopLeft col_140 center">Razem (kol. od 2 do 7) </td>
+                    <td class="borderTopLeft col_140 center">Do 1 miesiąca</td>
+                    <td class="borderTopLeft col_140 center">Powyżej 1 do 2 miesięcy </td>
+                    <td class="borderTopLeft col_140 center">Powyżej 2 do 3 miesięcy</td>
+                    <td class="borderTopLeft col_140 center">Powyżej 3 do 6 miesięcy</td>
+                    <td class="borderTopLeft col_140 center">Powyżej 6 do 9 miesięcy</td>
+                    <td class="borderTopLeftRight col_140 center">Ponad 9 miesięcy</td>
                 </tr>
                 <tr>
-                    <td class="borderTopLeft " align="center" colspan="2">0</td>
-                    <td class="borderTopLeft col_140" align="center">1</td>
-                    <td class="borderTopLeft col_140" align="center">2</td>
-                    <td class="borderTopLeft col_140" align="center">3</td>
-                    <td class="borderTopLeft col_140" align="center">4</td>
-                    <td class="borderTopLeft col_140" align="center">5</td>
-                    <td class="borderTopLeft col_140" align="center">6</td>
+                    <td class="borderTopLeft center" colspan="2">0</td>
+                    <td class="borderTopLeft col_140 center">1</td>
+                    <td class="borderTopLeft col_140 center">2</td>
+                    <td class="borderTopLeft col_140 center">3</td>
+                    <td class="borderTopLeft col_140 center">4</td>
+                    <td class="borderTopLeft col_140 center">5</td>
+                    <td class="borderTopLeft col_140 center">6</td>
 
-                    <td class="borderTopLeftRight col_140" align="center">7</td>
+                    <td class="borderTopLeftRight col_140 center">7</td>
                 </tr>
 
                 <tr>
                     <td class="wciecie borderTopLeftBottom col_140">P</td>
-                    <td class="borderTopLeftBottom " align="center">01</td>
+                    <td class="borderTopLeftBottom center">01</td>
                     <td class="borderTopLeftBottom col_140"><a href="javascript:openPopup('popup.aspx?sesja=1!2.3!1!4')">
                         <asp:Label CssClass="normal" ID="tab_23_w01_c01" runat="server" Text="0"></asp:Label>
                     </a></td>
@@ -9040,34 +9034,34 @@
 		   <br />
             <br />
 
-            <table cellpadding="0" cellspacing="0" class="auto-style14">
+            <table class="auto-style14">
 
                 <tr>
-                    <td class="borderTopLeft " align="center">Sprawy wg repertoriów</td>
-                    <td class="borderTopLeft col_76" align="center">L.p.</td>
-                    <td class="borderTopLeft col_140" align="center">Razem (kol. od 2 do 7) </td>
-                    <td class="borderTopLeft col_140" align="center">Do 1 miesiąca</td>
-                    <td class="borderTopLeft col_140" align="center">Powyżej 1 do 2 miesięcy </td>
-                    <td class="borderTopLeft col_140" align="center">Powyżej 2 do 3 miesięcy</td>
-                    <td class="borderTopLeft col_140" align="center">Powyżej 3 do 6 miesięcy</td>
-                    <td class="borderTopLeft col_140" align="center">Powyżej 6 do 9 miesięcy</td>
-                    <td class="borderTopLeftRight col_140" align="center">Ponad 9 miesięcy</td>
+                    <td class="borderTopLeft center">Sprawy wg repertoriów</td>
+                    <td class="borderTopLeft col_76 center">L.p.</td>
+                    <td class="borderTopLeft col_140 center">Razem (kol. od 2 do 7) </td>
+                    <td class="borderTopLeft col_140 center">Do 1 miesiąca</td>
+                    <td class="borderTopLeft col_140 center">Powyżej 1 do 2 miesięcy </td>
+                    <td class="borderTopLeft col_140 center">Powyżej 2 do 3 miesięcy</td>
+                    <td class="borderTopLeft col_140 center">Powyżej 3 do 6 miesięcy</td>
+                    <td class="borderTopLeft col_140 center">Powyżej 6 do 9 miesięcy</td>
+                    <td class="borderTopLeftRight col_140 center">Ponad 9 miesięcy</td>
                 </tr>
                 <tr>
-                    <td class="borderTopLeft " align="center" colspan="2">0</td>
-                    <td class="borderTopLeft col_140" align="center">1</td>
-                    <td class="borderTopLeft col_140" align="center">2</td>
-                    <td class="borderTopLeft col_140" align="center">3</td>
-                    <td class="borderTopLeft col_140" align="center">4</td>
-                    <td class="borderTopLeft col_140" align="center">5</td>
-                    <td class="borderTopLeft col_140" align="center">6</td>
+                    <td class="borderTopLeft center" colspan="2">0</td>
+                    <td class="borderTopLeft col_140 center">1</td>
+                    <td class="borderTopLeft col_140 center">2</td>
+                    <td class="borderTopLeft col_140 center">3</td>
+                    <td class="borderTopLeft col_140 center">4</td>
+                    <td class="borderTopLeft col_140 center">5</td>
+                    <td class="borderTopLeft col_140 center">6</td>
 
-                    <td class="borderTopLeftRight col_140" align="center">7</td>
+                    <td class="borderTopLeftRight col_140 center">7</td>
                 </tr>
 
                 <tr>
                     <td class="wciecie borderTopLeftBottom col_140">P</td>
-                    <td class="borderTopLeftBottom " align="center">01</td>
+                    <td class="borderTopLeftBottom center">01</td>
                     <td class="borderTopLeftBottom col_140"><a href="javascript:openPopup('popup.aspx?sesja=1!2.3.1!1!4')">
                         <asp:Label CssClass="normal" ID="tab_231_w01_c01" runat="server" Text="0"></asp:Label>
                     </a></td>
@@ -9102,34 +9096,34 @@
 		   <br />
             <br />
 
-            <table cellpadding="0" cellspacing="0" class="auto-style14">
+            <table class="auto-style14">
 
                 <tr>
-                    <td class="borderTopLeft " align="center">Sprawy wg repertoriów</td>
-                    <td class="borderTopLeft col_76" align="center">L.p.</td>
-                    <td class="borderTopLeft col_121" align="center">Razem (kol. od 2 do 8) </td>
-                    <td class="borderTopLeft col_121" align="center">do 1 mies.</td>
-                    <td class="borderTopLeft col_121" align="center">powyżej 3 do 6</td>
-                    <td class="borderTopLeft col_121" align="center">powyżej 6 do 12 miesięcy</td>
-                    <td class="borderTopLeft col_121" align="center">powyżej 12 miesięcy  do 2 lat</td>
-                    <td class="borderTopLeft col_121" align="center">powyżej 2 do 3 lat</td>
-                    <td class="borderTopLeft col_121" align="center">powyżej 3 do 5 lat</td>
-                    <td class="borderTopLeftRight col_121" align="center">powyżej 5 do 8 lat</td>
+                    <td class="borderTopLeft center">Sprawy wg repertoriów</td>
+                    <td class="borderTopLeft col_76 center">L.p.</td>
+                    <td class="borderTopLeft col_121 center">Razem (kol. od 2 do 8) </td>
+                    <td class="borderTopLeft col_121 center">do 1 mies.</td>
+                    <td class="borderTopLeft col_121 center">powyżej 3 do 6</td>
+                    <td class="borderTopLeft col_121 center">powyżej 6 do 12 miesięcy</td>
+                    <td class="borderTopLeft col_121 center">powyżej 12 miesięcy  do 2 lat</td>
+                    <td class="borderTopLeft col_121 center">powyżej 2 do 3 lat</td>
+                    <td class="borderTopLeft col_121 center">powyżej 3 do 5 lat</td>
+                    <td class="borderTopLeftRight col_121 center">powyżej 5 do 8 lat</td>
                 </tr>
                 <tr>
-                    <td class="borderTopLeft " align="center" colspan="2">0</td>
-                    <td class="borderTopLeft col_121" align="center">1</td>
-                    <td class="borderTopLeft col_121" align="center">2</td>
-                    <td class="borderTopLeft col_121" align="center">3</td>
-                    <td class="borderTopLeft col_121" align="center">4</td>
-                    <td class="borderTopLeft col_121" align="center">5</td>
-                    <td class="borderTopLeft col_121" align="center">6</td>
-                    <td class="borderTopLeft col_121" align="center">7</td>
+                    <td class="borderTopLeft center" colspan="2">0</td>
+                    <td class="borderTopLeft col_121 center">1</td>
+                    <td class="borderTopLeft col_121 center">2</td>
+                    <td class="borderTopLeft col_121 center">3</td>
+                    <td class="borderTopLeft col_121 center">4</td>
+                    <td class="borderTopLeft col_121 center">5</td>
+                    <td class="borderTopLeft col_121 center">6</td>
+                    <td class="borderTopLeft col_121 center">7</td>
 
-                    <td class="borderTopLeftRight col_121" align="center">8</td>
+                    <td class="borderTopLeftRight col_121 center">8</td>
                 </tr>
                 <tr>
-                    <td class="wciecie borderTopLeft " align="center">U</td>
+                    <td class="wciecie borderTopLeft center">U</td>
                     <td class="borderTopLeft col_36">01</td>
                     <td class="borderTopLeft col_121"><a href="javascript:openPopup('popup.aspx?sesja=1!3!1!4')">
                         <asp:Label CssClass="normal" ID="tab_3_w01_c01" runat="server" Text="0"></asp:Label>
@@ -9157,7 +9151,7 @@
                     </a></td>
                 </tr>
                 <tr>
-                    <td class="wciecie borderTopLeft " align="center">P</td>
+                    <td class="wciecie borderTopLeft center">P</td>
                     <td class="borderTopLeft col_36">02</td>
                     <td class="borderTopLeft col_121"><a href="javascript:openPopup('popup.aspx?sesja=2!3!1!4')">
                         <asp:Label CssClass="normal" ID="tab_3_w02_c01" runat="server" Text="0"></asp:Label>
@@ -9185,7 +9179,7 @@
                     </a></td>
                 </tr>
                 <tr>
-                    <td class="wciecie borderTopLeftBottom " align="center">Np</td>
+                    <td class="wciecie borderTopLeftBottom center">Np</td>
                     <td class="borderTopLeftBottom col_36">03</td>
                     <td class="borderTopLeftBottom col_121"><a href="javascript:openPopup('popup.aspx?sesja=3!3!1!4')">
                         <asp:Label CssClass="normal" ID="tab_3_w03_c01" runat="server" Text="0"></asp:Label>
@@ -9223,38 +9217,38 @@
 		   <br />
             <br />
 
-            <table cellpadding="0" cellspacing="0" class="auto-style14">
+            <table class="auto-style14">
 
                 <tr>
-                    <td class="borderTopLeft " align="center" colspan="2" rowspan="2">Środki odwoławcze, które zostały przekazane  do rozpoznania sądowi II instancji</td>
-                    <td class="borderTopLeft col_140" align="center" rowspan="2">Ogółem<br />
+                    <td class="borderTopLeft center" colspan="2" rowspan="2">Środki odwoławcze, które zostały przekazane  do rozpoznania sądowi II instancji</td>
+                    <td class="borderTopLeft col_140 center" rowspan="2">Ogółem<br />
                         (ko. 2 do 7) </td>
-                    <td class="borderTopLeftRight" align="center" colspan="6">Z tego od daty orzeczenia sądu rejonowego do daty przekazania do sądu II instancji upłynął okres</td>
+                    <td class="borderTopLeftRight center" colspan="6">Z tego od daty orzeczenia sądu rejonowego do daty przekazania do sądu II instancji upłynął okres</td>
                 </tr>
 
                 <tr>
-                    <td class="borderTopLeft col_140" align="center">Do 1 miesiąca</td>
-                    <td class="borderTopLeft col_140" align="center">Powyżej 2 do 3 miesięcy </td>
-                    <td class="borderTopLeft col_140" align="center">Powyżej 3 do 6 miesięcy</td>
-                    <td class="borderTopLeft col_140" align="center">Powyżej 6 do 12 miesięcy</td>
-                    <td class="borderTopLeft col_140" align="center">Powyżej 12 mies. do 2 lat</td>
-                    <td class="borderTopLeftRight col_140" align="center">Ponad 2 lata</td>
+                    <td class="borderTopLeft col_140 center">Do 1 miesiąca</td>
+                    <td class="borderTopLeft col_140 center">Powyżej 2 do 3 miesięcy </td>
+                    <td class="borderTopLeft col_140 center">Powyżej 3 do 6 miesięcy</td>
+                    <td class="borderTopLeft col_140 center">Powyżej 6 do 12 miesięcy</td>
+                    <td class="borderTopLeft col_140 center">Powyżej 12 mies. do 2 lat</td>
+                    <td class="borderTopLeftRight col_140 center">Ponad 2 lata</td>
                 </tr>
                 <tr>
-                    <td class="borderTopLeft " align="center" colspan="2">0</td>
-                    <td class="borderTopLeft col_140" align="center">1</td>
-                    <td class="borderTopLeft col_140" align="center">2</td>
-                    <td class="borderTopLeft col_140" align="center">3</td>
-                    <td class="borderTopLeft col_140" align="center">4</td>
-                    <td class="borderTopLeft col_140" align="center">5</td>
-                    <td class="borderTopLeft col_140" align="center">6</td>
+                    <td class="borderTopLeft center" colspan="2">0</td>
+                    <td class="borderTopLeft col_140 center">1</td>
+                    <td class="borderTopLeft col_140 center">2</td>
+                    <td class="borderTopLeft col_140 center">3</td>
+                    <td class="borderTopLeft col_140 center">4</td>
+                    <td class="borderTopLeft col_140 center">5</td>
+                    <td class="borderTopLeft col_140 center">6</td>
 
-                    <td class="borderTopLeftRight col_140" align="center">7</td>
+                    <td class="borderTopLeftRight col_140 center">7</td>
                 </tr>
 
                 <tr>
                     <td class="wciecie borderTopLeftBottom ">Apelacje</td>
-                    <td class="borderTopLeftBottom " align="center">01</td>
+                    <td class="borderTopLeftBottom center">01</td>
                     <td class="borderTopLeftBottom col_140"><a href="javascript:openPopup('popup.aspx?sesja=1!4.1!1!4')">
                         <asp:Label CssClass="normal" ID="tab_41_w01_c01" runat="server" Text="0"></asp:Label>
                     </a></td>
@@ -9280,7 +9274,7 @@
 
                 <tr>
                     <td class="wciecie borderTopLeftBottom ">Zażalenia</td>
-                    <td class="borderTopLeftBottom " align="center">02</td>
+                    <td class="borderTopLeftBottom center">02</td>
                     <td class="borderTopLeftBottom col_140"><a href="javascript:openPopup('popup.aspx?sesja=2!4.1!1!4')">
                         <asp:Label CssClass="normal" ID="tab_41_w02_c01" runat="server" Text="0"></asp:Label>
                     </a></td>
@@ -9314,39 +9308,39 @@
 		   <br />
             <br />
 
-            <table cellpadding="0" cellspacing="0" class="auto-style14">
+            <table class="auto-style14">
 
                 <tr>
-                    <td class="borderTopLeft " align="center" colspan="3" rowspan="2">Środki odwoławcze, które zostały przekazane  do rozpoznania sądowi II instancji</td>
-                    <td class="borderTopLeft col_140" align="center" rowspan="2">Wpłynęło</td>
-                    <td class="borderTopLeft col_140" align="center" rowspan="2">Przesłano do sądu właściwego</td>
-                    <td class="borderTopLeft" align="center" colspan="3">Rozpoznanie skargi</td>
-                    <td class="borderTopLeft col_140" align="center" rowspan="2">Zarządzono wypłatę przez Skarb Państwa</td>
-                    <td class="borderTopLeftRight col_140" align="center" rowspan="2">Kwota<br />
+                    <td class="borderTopLeft center" colspan="3" rowspan="2">Środki odwoławcze, które zostały przekazane  do rozpoznania sądowi II instancji</td>
+                    <td class="borderTopLeft col_140 center" rowspan="2">Wpłynęło</td>
+                    <td class="borderTopLeft col_140 center" rowspan="2">Przesłano do sądu właściwego</td>
+                    <td class="borderTopLeft center" colspan="3">Rozpoznanie skargi</td>
+                    <td class="borderTopLeft col_140 center" rowspan="2">Zarządzono wypłatę przez Skarb Państwa</td>
+                    <td class="borderTopLeftRight col_140 center" rowspan="2">Kwota<br />
                         (w złotych)</td>
                 </tr>
 
                 <tr>
-                    <td class="borderTopLeft col_140" align="center">uwzględniono</td>
-                    <td class="borderTopLeft col_140" align="center">oddalono</td>
-                    <td class="borderTopLeft col_140" align="center">inne</td>
+                    <td class="borderTopLeft col_140 center">uwzględniono</td>
+                    <td class="borderTopLeft col_140 center">oddalono</td>
+                    <td class="borderTopLeft col_140 center">inne</td>
                 </tr>
                 <tr>
-                    <td class="borderTopLeft " align="center" colspan="3">0</td>
-                    <td class="borderTopLeft col_140" align="center">1</td>
-                    <td class="borderTopLeft col_140" align="center">2</td>
-                    <td class="borderTopLeft col_140" align="center">3</td>
-                    <td class="borderTopLeft col_140" align="center">4</td>
-                    <td class="borderTopLeft col_140" align="center">5</td>
-                    <td class="borderTopLeft col_140" align="center">6</td>
+                    <td class="borderTopLeft center" colspan="3">0</td>
+                    <td class="borderTopLeft col_140 center">1</td>
+                    <td class="borderTopLeft col_140 center">2</td>
+                    <td class="borderTopLeft col_140 center">3</td>
+                    <td class="borderTopLeft col_140 center">4</td>
+                    <td class="borderTopLeft col_140 center">5</td>
+                    <td class="borderTopLeft col_140 center">6</td>
 
-                    <td class="borderTopLeftRight col_140" align="center">7</td>
+                    <td class="borderTopLeftRight col_140 center">7</td>
                 </tr>
 
                 <tr>
                     <td class="wciecie borderTopLeftBottom col_140" rowspan="2">Skargi na pracę sądu</td>
                     <td class="wciecie borderTopLeft col_140">sprawy ubezpieczeń społecznych</td>
-                    <td class="borderTopLeft " align="center">01</td>
+                    <td class="borderTopLeft center">01</td>
                     <td class="borderTopLeft col_140"><a href="javascript:openPopup('popup.aspx?sesja=1!4.2!1!4')">
                         <asp:Label CssClass="normal" ID="tab_42_w01_c01" runat="server" Text="0"></asp:Label>
                     </a></td>
@@ -9372,7 +9366,7 @@
 
                 <tr>
                     <td class="wciecie borderTopLeftBottom col_140">sprawy pracy</td>
-                    <td class="borderTopLeftBottom " align="center">02</td>
+                    <td class="borderTopLeftBottom center">02</td>
                     <td class="borderTopLeftBottom col_140"><a href="javascript:openPopup('popup.aspx?sesja=2!4.2!1!4')">
                         <asp:Label CssClass="normal" ID="tab_42_w02_c01" runat="server" Text="0"></asp:Label>
                     </a></td>
@@ -9406,10 +9400,10 @@
 		   <br />
             <br />
 
-            <table style="width: 100%;" cellpadding="0" cellspacing="0">
+            <table style="width: 100%;">
                 <tr>
                     <td colspan="2" class="borderTopLeft">Wyszczególnienie</td>
-                    <td class="borderTopLeft " align="center">Liczba sędziów SR i wakujących stanowisk sędziowskich w ramach limitu<br />
+                    <td class="borderTopLeft center">Liczba sędziów SR i wakujących stanowisk sędziowskich w ramach limitu<br />
                         <em>(na ostatni dzień okresu statystycznego)</em></td>
                     <td class="borderTopLeft ">Liczba sędziów SR  i wakujących stanowisk sędziowskich w ramach limitu
                        <br />
@@ -9439,38 +9433,38 @@
                     <td class="borderTopLeftRight ">Liczba obsadzonych etatów (w okresie statystycznym)</td>
                 </tr>
                 <tr>
-                    <td colspan="2" class="borderTopLeft " align="center">0</td>
-                    <td class="borderTopLeft " align="center">1</td>
-                    <td class="borderTopLeft" align="center">2</td>
-                    <td class="borderTopLeft" align="center">3</td>
-                    <td class="borderTopLeft" align="center">4</td>
-                    <td class="borderTopLeft" align="center">5</td>
-                    <td class="borderTopLeft" align="center">6</td>
-                    <td class="borderTopLeft" align="center">7</td>
-                    <td class="borderTopLeft" align="center">8</td>
-                    <td class="borderTopLeft" align="center">9</td>
-                    <td class="borderTopLeft" align="center">10</td>
-                    <td class="borderTopLeft" align="center">11</td>
-                    <td class="borderTopLeft" align="center">12</td>
-                    <td class="borderTopLeft" align="center">13</td>
-                    <td class="borderTopLeft" align="center">14</td>
-                    <td class="borderTopLeft" align="center">15</td>
-                    <td class="borderTopLeft" align="center">16</td>
-                    <td class="borderTopLeft" align="center">17</td>
-                    <td class="borderTopLeft" align="center">18</td>
-                    <td class="borderTopLeft" align="center">19</td>
-                    <td class="borderTopLeft" align="center">20</td>
-                    <td class="borderTopLeft" align="center">21</td>
-                    <td class="borderTopLeft" align="center">22</td>
-                    <td class="borderTopLeft" align="center">23</td>
-                    <td class="borderTopLeft" align="center">24</td>
-                    <td class="borderTopLeftRight  " align="center">25</td>
+                    <td colspan="2" class="borderTopLeft center">0</td>
+                    <td class="borderTopLeft center">1</td>
+                    <td class="borderTopLeft center">2</td>
+                    <td class="borderTopLeft center">3</td>
+                    <td class="borderTopLeft center">4</td>
+                    <td class="borderTopLeft center">5</td>
+                    <td class="borderTopLeft center">6</td>
+                    <td class="borderTopLeft center">7</td>
+                    <td class="borderTopLeft center">8</td>
+                    <td class="borderTopLeft center">9</td>
+                    <td class="borderTopLeft center">10</td>
+                    <td class="borderTopLeft center">11</td>
+                    <td class="borderTopLeft center">12</td>
+                    <td class="borderTopLeft center">13</td>
+                    <td class="borderTopLeft center">14</td>
+                    <td class="borderTopLeft center">15</td>
+                    <td class="borderTopLeft center">16</td>
+                    <td class="borderTopLeft center">17</td>
+                    <td class="borderTopLeft center">18</td>
+                    <td class="borderTopLeft center">19</td>
+                    <td class="borderTopLeft center">20</td>
+                    <td class="borderTopLeft center">21</td>
+                    <td class="borderTopLeft center">22</td>
+                    <td class="borderTopLeft center">23</td>
+                    <td class="borderTopLeft center">24</td>
+                    <td class="borderTopLeftRight  center">25</td>
                 </tr>
                 <tr>
 
                     <td class="borderTopLeftBottom  wciecie">Sędziowie z wydziałów pracy i ubezpieczeń</td>
                     <td class="borderTopLeftBottom  col_36">01</td>
-                    <td class="borderTopLeftBottom  col_36" align="center"><a href="javascript:openPopup('popup.aspx?sesja=1!5.1!1!4')">
+                    <td class="borderTopLeftBottom  col_36 center"><a href="javascript:openPopup('popup.aspx?sesja=1!5.1!1!4')">
                         <asp:Label CssClass="normal" ID="tab_51_w01_c01" runat="server" Text="0"></asp:Label>
                     </a></td>
                     <td class="borderTopLeftBottom  col_36"><a href="javascript:openPopup('popup.aspx?sesja=1!5.1!2!4')">
@@ -9550,7 +9544,7 @@
 
                     <td class="borderTopLeftBottom  wciecie">Sędziowie z wydziałów pracy</td>
                     <td class="borderTopLeftBottom  col_36">02</td>
-                    <td class="borderTopLeftBottom  col_36" align="center"><a href="javascript:openPopup('popup.aspx?sesja=2!5.1!1!4')">
+                    <td class="borderTopLeftBottom  col_36 center"><a href="javascript:openPopup('popup.aspx?sesja=2!5.1!1!4')">
                         <asp:Label CssClass="normal" ID="tab_51_w02_c01" runat="server" Text="0"></asp:Label>
                     </a></td>
                     <td class="borderTopLeftBottom  col_36"><a href="javascript:openPopup('popup.aspx?sesja=2!5.1!2!4')">
@@ -9630,7 +9624,7 @@
 
                     <td class="borderTopLeftBottom  wciecie">Sędziowie z wydziałów ubezpieczeń</td>
                     <td class="borderTopLeftBottom  col_36">03</td>
-                    <td class="borderTopLeftBottom  col_36" align="center"><a href="javascript:openPopup('popup.aspx?sesja=3!5.1!1!4')">
+                    <td class="borderTopLeftBottom  col_36 center"><a href="javascript:openPopup('popup.aspx?sesja=3!5.1!1!4')">
                         <asp:Label CssClass="normal" ID="tab_51_w03_c01" runat="server" Text="0"></asp:Label>
                     </a></td>
                     <td class="borderTopLeftBottom  col_36"><a href="javascript:openPopup('popup.aspx?sesja=3!5.1!2!4')">
@@ -9717,30 +9711,30 @@
 		   <br />
             <br />
 
-            <table cellpadding="0" cellspacing="0" class="auto-style14">
+            <table class="auto-style14">
 
                 <tr>
-                    <td class="borderTopLeft " align="center" colspan="3">treść</td>
-                    <td class="borderTopLeft col_140" align="center">Liczba według limitu etatów na ostatni dzień okresu statystycznego</td>
-                    <td class="borderTopLeft col_140" align="center">Liczba według limitu etatów w okresie statystycznym</td>
-                    <td class="borderTopLeft col_140" align="center">Obsada średniookresowa</td>
-                    <td class="borderTopLeft col_140" align="center">W tym obsada osób świadczących usługi na rzecz e-sądu </td>
-                    <td class="borderTopLeft col_140" align="center">Liczba obsadzonych etatów na ostatni dzień okresu statystycznego</td>
-                    <td class="borderTopLeftRight col_140" align="center">Liczba obsadzonych etatów w okresie statystycznym)</td>
+                    <td class="borderTopLeft center" colspan="3">treść</td>
+                    <td class="borderTopLeft col_140 center">Liczba według limitu etatów na ostatni dzień okresu statystycznego</td>
+                    <td class="borderTopLeft col_140 center">Liczba według limitu etatów w okresie statystycznym</td>
+                    <td class="borderTopLeft col_140 center">Obsada średniookresowa</td>
+                    <td class="borderTopLeft col_140 center">W tym obsada osób świadczących usługi na rzecz e-sądu </td>
+                    <td class="borderTopLeft col_140 center">Liczba obsadzonych etatów na ostatni dzień okresu statystycznego</td>
+                    <td class="borderTopLeftRight col_140 center">Liczba obsadzonych etatów w okresie statystycznym)</td>
                 </tr>
                 <tr>
-                    <td class="borderTopLeft " align="center" colspan="3">0</td>
-                    <td class="borderTopLeft col_140" align="center">1</td>
-                    <td class="borderTopLeft col_140" align="center">2</td>
-                    <td class="borderTopLeft col_140" align="center">3</td>
-                    <td class="borderTopLeft col_140" align="center">4</td>
-                    <td class="borderTopLeft col_140" align="center">5</td>
-                    <td class="borderTopLeftRight col_140" align="center">6</td>
+                    <td class="borderTopLeft center" colspan="3">0</td>
+                    <td class="borderTopLeft col_140 center">1</td>
+                    <td class="borderTopLeft col_140 center">2</td>
+                    <td class="borderTopLeft col_140 center">3</td>
+                    <td class="borderTopLeft col_140 center">4</td>
+                    <td class="borderTopLeft col_140 center">5</td>
+                    <td class="borderTopLeftRight col_140 center">6</td>
                 </tr>
 
                 <tr>
-                    <td class="borderTopLeft" align="center" colspan="2">Referendarze</td>
-                    <td class="borderTopLeft " align="center">01</td>
+                    <td class="borderTopLeft center" colspan="2">Referendarze</td>
+                    <td class="borderTopLeft center">01</td>
                     <td class="borderTopLeft col_140"><a href="javascript:openPopup('popup.aspx?sesja=1!5.2!1!4')">
                         <asp:Label CssClass="normal" ID="tab_52_w01_c01" runat="server" Text="0"></asp:Label>
                     </a></td>
@@ -9764,7 +9758,7 @@
                 <tr>
                     <td class="wciecie borderTopLeftBottom col_140" rowspan="2">Pracownicy administracyjni</td>
                     <td class="wciecie borderTopLeft col_140">urzędnicy</td>
-                    <td class="borderTopLeft " align="center">02</td>
+                    <td class="borderTopLeft center">02</td>
                     <td class="borderTopLeft col_140"><a href="javascript:openPopup('popup.aspx?sesja=2!5.2!1!4')">
                         <asp:Label CssClass="normal" ID="tab_52_w02_c01" runat="server" Text="0"></asp:Label>
                     </a></td>
@@ -9787,7 +9781,7 @@
 
                 <tr>
                     <td class="wciecie borderTopLeftBottom col_140">asystenci sędziów</td>
-                    <td class="borderTopLeftBottom " align="center">03</td>
+                    <td class="borderTopLeftBottom center">03</td>
                     <td class="borderTopLeftBottom col_140"><a href="javascript:openPopup('popup.aspx?sesja=3!5.2!1!4')">
                         <asp:Label CssClass="normal" ID="tab_52_w03_c01" runat="server" Text="0"></asp:Label>
                     </a></td>
@@ -9819,33 +9813,33 @@
                     Dział 6. </strong>Prawomocnie zasądzone odszkodowania i zadośćuczynienia (w okresie sprawozdawczym)
 		      <br />
                 <br />
-                <table style="width: 100%;" cellpadding="0" cellspacing="0">
+                <table style="width: 100%;">
                     <tr>
-                        <td align="center" class="borderTopLeft" rowspan="3" colspan="4">Wyszczególnienia</td>
-                        <td align="center" class="borderTopLeft" rowspan="3">L.P.</td>
-                        <td align="center" class="borderTopLeft" colspan="3">Liczba</td>
-                        <td align="center" class="borderTopLeft" rowspan="3">Łączna wysokość odszkodowań (zł)</td>
-                        <td align="center" class="borderTopLeftRight" rowspan="3">Łączna wysokość zadośćuczynienia</td>
+                        <td class="center borderTopLeft" rowspan="3" colspan="4">Wyszczególnienia</td>
+                        <td class="center borderTopLeft" rowspan="3">L.P.</td>
+                        <td class="center borderTopLeft" colspan="3">Liczba</td>
+                        <td class="center borderTopLeft" rowspan="3">Łączna wysokość odszkodowań (zł)</td>
+                        <td class="center borderTopLeftRight" rowspan="3">Łączna wysokość zadośćuczynienia</td>
                     </tr>
                     <tr>
-                        <td align="center" class="borderTopLeft" rowspan="2">spraw</td>
-                        <td align="center" class="borderTopLeft" colspan="2">osób którym zasądzono</td>
+                        <td class="center borderTopLeft" rowspan="2">spraw</td>
+                        <td class="center borderTopLeft" colspan="2">osób którym zasądzono</td>
                     </tr>
                     <tr>
-                        <td align="center" class="borderTopLeft">odszkodowania</td>
-                        <td align="center" class="borderTopLeft">zadośćuczynienia</td>
+                        <td class="center borderTopLeft">odszkodowania</td>
+                        <td class="center borderTopLeft">zadośćuczynienia</td>
                     </tr>
                     <tr>
-                        <td align="center" class="borderTopLeft" colspan="5">0</td>
-                        <td align="center" class="borderTopLeft">1</td>
-                        <td align="center" class="borderTopLeft">2</td>
-                        <td align="center" class="borderTopLeft">3</td>
-                        <td align="center" class="borderTopLeft">4</td>
-                        <td align="center" class="borderTopLeftRight">5</td>
+                        <td class="center borderTopLeft" colspan="5">0</td>
+                        <td class="center borderTopLeft">1</td>
+                        <td class="center borderTopLeft">2</td>
+                        <td class="center borderTopLeft">3</td>
+                        <td class="center borderTopLeft">4</td>
+                        <td class="center borderTopLeftRight">5</td>
                     </tr>
                     <tr>
                         <td class="wciecie borderTopLeft" colspan="4">Ogółem ubezpieczeniowe (w. 02 do 06)</td>
-                        <td align="center" class="borderTopLeft col_36">01</td>
+                        <td class="center borderTopLeft col_36">01</td>
                         <td class="borderTopLeft col_100"><a href="javascript:openPopup('popup.aspx?sesja=1!6!1!4')">
                             <asp:Label CssClass="normal" ID="tab_6_w01_c01" runat="server" Text="0"></asp:Label>
                         </a></td>
@@ -9865,8 +9859,8 @@
                     <tr>
                         <td class="wciecie borderTopLeft" colspan="2" rowspan="2">odszkodowania z tytułu</td>
                         <td class="wciecie borderTopLeft">wypadku przy pracy rolniczej lub rolniczej choroby zawodowej</td>
-                        <td align="center" class="borderTopLeft">514</td>
-                        <td align="center" class="borderTopLeft col_36">02</td>
+                        <td class="center borderTopLeft">514</td>
+                        <td class="center borderTopLeft col_36">02</td>
                         <td class="borderTopLeft col_100"><a href="javascript:openPopup('popup.aspx?sesja=2!6!1!4')">
                             <asp:Label CssClass="normal" ID="tab_6_w02_c01" runat="server" Text="0"></asp:Label>
                         </a></td>
@@ -9885,8 +9879,8 @@
                     </tr>
                     <tr>
                         <td class="wciecie borderTopLeft">wypadku przy pracy lub choroby zawodowej </td>
-                        <td align="center" class="borderTopLeft">516</td>
-                        <td align="center" class="borderTopLeft col_36">03</td>
+                        <td class="center borderTopLeft">516</td>
+                        <td class="center borderTopLeft col_36">03</td>
                         <td class="borderTopLeft col_100"><a href="javascript:openPopup('popup.aspx?sesja=3!6!1!4')">
                             <asp:Label CssClass="normal" ID="tab_6_w03_c01" runat="server" Text="0"></asp:Label>
                         </a></td>
@@ -9905,8 +9899,8 @@
                     </tr>
                     <tr>
                         <td class="borderTopLeft wciecie" colspan="3">Odszkodowania przysługujące w razie wypadków lub chorób pozostających w związku ze służbą wojskową, w Policji, Agencji Bezpieczeństwa Wewnętrznego, Agencji Wywiadu, Służby Kontrwywiadu Wojskowego, Służby Wywiadu Wojskowego, Centralnego Biura Antykorupcyjnego, Biura Ochrony Rządu, Straży Granicznej, Służbie Więziennej, Państwowej Straży Pożarnej i Służbie Celnej</td>
-                        <td align="center" class="borderTopLeft">559</td>
-                        <td align="center" class="borderTopLeft col_36">04</td>
+                        <td class="center borderTopLeft">559</td>
+                        <td class="center borderTopLeft col_36">04</td>
                         <td class="borderTopLeft col_100"><a href="javascript:openPopup('popup.aspx?sesja=4!6!1!4')">
                             <asp:Label CssClass="normal" ID="tab_6_w04_c01" runat="server" Text="0"></asp:Label>
                         </a></td>
@@ -9925,8 +9919,8 @@
                     </tr>
                     <tr>
                         <td class="borderTopLeft wciecie" colspan="3">O odszkodowanie z tytułu wypadku przy pracy lub choroby zawodowej (nie dotyczy gospodarstw rolnych) </td>
-                        <td align="center" class="borderTopLeft">-</td>
-                        <td align="center" class="borderTopLeft col_36">05</td>
+                        <td class="center borderTopLeft">-</td>
+                        <td class="center borderTopLeft col_36">05</td>
                         <td class="borderTopLeft col_100"><a href="javascript:openPopup('popup.aspx?sesja=5!6!1!4')">
                             <asp:Label CssClass="normal" ID="tab_6_w05_c01" runat="server" Text="0"></asp:Label>
                         </a></td>
@@ -9945,8 +9939,8 @@
                     </tr>
                     <tr>
                         <td class="borderTopLeft wciecie" colspan="3">inne</td>
-                        <td align="center" class="borderTopLeft">-</td>
-                        <td align="center" class="borderTopLeft col_36">06</td>
+                        <td class="center borderTopLeft">-</td>
+                        <td class="center borderTopLeft col_36">06</td>
                         <td class="borderTopLeft col_100"><a href="javascript:openPopup('popup.aspx?sesja=6!6!1!4')">
                             <asp:Label CssClass="normal" ID="tab_6_w06_c01" runat="server" Text="0"></asp:Label>
                         </a></td>
@@ -9965,7 +9959,7 @@
                     </tr>
                     <tr>
                         <td class="borderTopLeft wciecie" colspan="4">Ogółem pracy (w. 8 do 23)</td>
-                        <td align="center" class="borderTopLeft col_36">07</td>
+                        <td class="center borderTopLeft col_36">07</td>
                         <td class="borderTopLeft col_100"><a href="javascript:openPopup('popup.aspx?sesja=7!6!1!4')">
                             <asp:Label CssClass="normal" ID="tab_6_w07_c01" runat="server" Text="0"></asp:Label>
                         </a></td>
@@ -9984,8 +9978,8 @@
                     </tr>
                     <tr>
                         <td class="borderTopLeft wciecie" colspan="3">O odszkodowanie z tytułu niewydania w terminie świadectwa pracy lub wydania niewłaściwego świadectwa pracy</td>
-                        <td align="center" class="borderTopLeft">405</td>
-                        <td align="center" class="borderTopLeft col_36">08</td>
+                        <td class="center borderTopLeft">405</td>
+                        <td class="center borderTopLeft col_36">08</td>
                         <td class="borderTopLeft col_100"><a href="javascript:openPopup('popup.aspx?sesja=8!6!1!4')">
                             <asp:Label CssClass="normal" ID="tab_6_w08_c01" runat="server" Text="0"></asp:Label>
                         </a></td>
@@ -10004,8 +9998,8 @@
                     </tr>
                     <tr>
                         <td class="borderTopLeft wciecie" colspan="3">O odszkodowanie należne pracownikowi za okres obowiązywania zakazu konkurencji </td>
-                        <td align="center" class="borderTopLeft">450</td>
-                        <td align="center" class="borderTopLeft col_36">09</td>
+                        <td class="center borderTopLeft">450</td>
+                        <td class="center borderTopLeft col_36">09</td>
                         <td class="borderTopLeft col_100"><a href="javascript:openPopup('popup.aspx?sesja=9!6!1!4')">
                             <asp:Label CssClass="normal" ID="tab_6_w09_c01" runat="server" Text="0"></asp:Label>
                         </a></td>
@@ -10024,8 +10018,8 @@
                     </tr>
                     <tr>
                         <td class="borderTopLeft wciecie" colspan="3">O odszkodowanie z tytułu wypadku przy pracy lub choroby zawodowej (nie dotyczy wypadku przy pracy w gospodarstwie rolnym) </td>
-                        <td align="center" class="borderTopLeft">451</td>
-                        <td align="center" class="borderTopLeft col_36">10</td>
+                        <td class="center borderTopLeft">451</td>
+                        <td class="center borderTopLeft col_36">10</td>
                         <td class="borderTopLeft col_100"><a href="javascript:openPopup('popup.aspx?sesja=1!6!1!4')">
                             <asp:Label CssClass="normal" ID="tab_6_w10_c01" runat="server" Text="0"></asp:Label>
                         </a></td>
@@ -10045,8 +10039,8 @@
                     <tr>
                         <td class="borderTopLeft wciecie" colspan="2" rowspan="2">O odszkodowanie z tytułu naruszenia zasady równego traktowania w zatrudnieniu dotyczy (art. 183d kp) </td>
                         <td class="borderTopLeft wciecie">kobiet</td>
-                        <td align="center" class="borderTopLeft">458dk </td>
-                        <td align="center" class="borderTopLeft col_36">11</td>
+                        <td class="center borderTopLeft">458dk </td>
+                        <td class="center borderTopLeft col_36">11</td>
                         <td class="borderTopLeft col_100"><a href="javascript:openPopup('popup.aspx?sesja=11!6!1!4')">
                             <asp:Label CssClass="normal" ID="tab_6_w11_c01" runat="server" Text="0"></asp:Label>
                         </a></td>
@@ -10065,8 +10059,8 @@
 
                         <tr>
                             <td class="borderTopLeft wciecie">mężczyzn</td>
-                            <td align="center" class="borderTopLeft">458m </td>
-                            <td align="center" class="borderTopLeft col_36">12</td>
+                            <td class="center borderTopLeft">458m </td>
+                            <td class="center borderTopLeft col_36">12</td>
                             <td class="borderTopLeft col_100"><a href="javascript:openPopup('popup.aspx?sesja=12!6!1!4')">
                                 <asp:Label CssClass="normal" ID="tab_6_w12_c01" runat="server" Text="0"></asp:Label>
                             </a></td>
@@ -10086,8 +10080,8 @@
                         <tr>
                             <td class="borderTopLeft wciecie" colspan="2" rowspan="2">O odszkodowanie w związku z molestowaniem seksualnym, jako jedną z form dyskryminacji w miejscu pracy dotyczy (art.183a§ 6 kp w zw. z art. 183d kp) </td>
                             <td class="borderTopLeft wciecie">kobiet</td>
-                            <td align="center" class="borderTopLeft">459dk </td>
-                            <td align="center" class="borderTopLeft col_36">13</td>
+                            <td class="center borderTopLeft">459dk </td>
+                            <td class="center borderTopLeft col_36">13</td>
                             <td class="borderTopLeft col_100"><a href="javascript:openPopup('popup.aspx?sesja=13!6!1!4')">
                                 <asp:Label CssClass="normal" ID="tab_6_w13_c01" runat="server" Text="0"></asp:Label>
                             </a></td>
@@ -10106,8 +10100,8 @@
                         </tr>
                         <tr>
                             <td class="borderTopLeft wciecie">mężczyzn</td>
-                            <td align="center" class="borderTopLeft">459dm </td>
-                            <td align="center" class="borderTopLeft col_36">14</td>
+                            <td class="center borderTopLeft">459dm </td>
+                            <td class="center borderTopLeft col_36">14</td>
                             <td class="borderTopLeft col_100"><a href="javascript:openPopup('popup.aspx?sesja=14!6!1!4')">
                                 <asp:Label CssClass="normal" ID="tab_6_w14_c01" runat="server" Text="0"></asp:Label>
                             </a></td>
@@ -10127,8 +10121,8 @@
                         <tr>
                             <td class="borderTopLeft wciecie" colspan="2" rowspan="2">O zadośćuczynienie w związku z mobbingiem dotyczy (art. 943§3 kp) </td>
                             <td class="borderTopLeft wciecie">kobiet</td>
-                            <td align="center" class="borderTopLeft">462dk </td>
-                            <td align="center" class="borderTopLeft col_36">15</td>
+                            <td class="center borderTopLeft">462dk </td>
+                            <td class="center borderTopLeft col_36">15</td>
                             <td class="borderTopLeft col_100"><a href="javascript:openPopup('popup.aspx?sesja=15!6!1!4')">
                                 <asp:Label CssClass="normal" ID="tab_6_w15_c01" runat="server" Text="0"></asp:Label>
                             </a></td>
@@ -10147,8 +10141,8 @@
                         </tr>
                         <tr>
                             <td class="borderTopLeft wciecie">mężczyzn</td>
-                            <td align="center" class="borderTopLeft">462dm </td>
-                            <td align="center" class="borderTopLeft col_36">16</td>
+                            <td class="center borderTopLeft">462dm </td>
+                            <td class="center borderTopLeft col_36">16</td>
                             <td class="borderTopLeft col_100"><a href="javascript:openPopup('popup.aspx?sesja=16!6!1!4')">
                                 <asp:Label CssClass="normal" ID="tab_6_w16_c01" runat="server" Text="0"></asp:Label>
                             </a></td>
@@ -10168,8 +10162,8 @@
                         <tr>
                             <td class="borderTopLeft wciecie" colspan="2" rowspan="2">O odszkodowanie w związku z mobbingiem dotyczy (art. 943§4 kp) </td>
                             <td class="borderTopLeft wciecie">kobiet</td>
-                            <td align="center" class="borderTopLeft">463dk </td>
-                            <td align="center" class="borderTopLeft col_36">17</td>
+                            <td class="center borderTopLeft">463dk </td>
+                            <td class="center borderTopLeft col_36">17</td>
                             <td class="borderTopLeft col_100"><a href="javascript:openPopup('popup.aspx?sesja=17!6!1!4')">
                                 <asp:Label CssClass="normal" ID="tab_6_w17_c01" runat="server" Text="0"></asp:Label>
                             </a></td>
@@ -10188,8 +10182,8 @@
                         </tr>
                         <tr>
                             <td class="borderTopLeft wciecie">mężczyzn</td>
-                            <td align="center" class="borderTopLeft">463dk </td>
-                            <td align="center" class="borderTopLeft col_36">18</td>
+                            <td class="center borderTopLeft">463dk </td>
+                            <td class="center borderTopLeft col_36">18</td>
                             <td class="borderTopLeft col_100"><a href="javascript:openPopup('popup.aspx?sesja=18!6!1!4')">
                                 <asp:Label CssClass="normal" ID="tab_6_w18_c01" runat="server" Text="0"></asp:Label>
                             </a></td>
@@ -10210,8 +10204,8 @@
                             <td class="borderTopLeft wciecie" rowspan="4">O odszkodowanie</td>
                             <td class="borderTopLeft wciecie" rowspan="2">za mienie</td>
                             <td class="borderTopLeft wciecie">nie powierzone</td>
-                            <td align="center" class="borderTopLeft">415 </td>
-                            <td align="center" class="borderTopLeft col_36">19</td>
+                            <td class="center borderTopLeft">415 </td>
+                            <td class="center borderTopLeft col_36">19</td>
                             <td class="borderTopLeft col_100"><a href="javascript:openPopup('popup.aspx?sesja=19!6!1!4')">
                                 <asp:Label CssClass="normal" ID="tab_6_w19_c01" runat="server" Text="0"></asp:Label>
                             </a></td>
@@ -10230,8 +10224,8 @@
                         </tr>
                         <tr>
                             <td class="borderTopLeft wciecie">powierzone łącznie ze sprawami z tytułu odpowiedzialności wspólnej </td>
-                            <td align="center" class="borderTopLeft">416 </td>
-                            <td align="center" class="borderTopLeft col_36">20</td>
+                            <td class="center borderTopLeft">416 </td>
+                            <td class="center borderTopLeft col_36">20</td>
                             <td class="borderTopLeft col_100"><a href="javascript:openPopup('popup.aspx?sesja=20!6!1!4')">
                                 <asp:Label CssClass="normal" ID="tab_6_w20_c01" runat="server" Text="0"></asp:Label>
                             </a></td>
@@ -10250,8 +10244,8 @@
                         </tr>
                         <tr>
                             <td class="borderTopLeft wciecie" colspan="2">przysługujące pracodawcy w razie nieuzasadnionego rozwiązania przez pracownika umowy o pracę bez wypowiedzenia </td>
-                            <td align="center" class="borderTopLeft">417</td>
-                            <td align="center" class="borderTopLeft col_36">21</td>
+                            <td class="center borderTopLeft">417</td>
+                            <td class="center borderTopLeft col_36">21</td>
                             <td class="borderTopLeft col_100"><a href="javascript:openPopup('popup.aspx?sesja=21!6!1!4')">
                                 <asp:Label CssClass="normal" ID="tab_6_w21_c01" runat="server" Text="0"></asp:Label>
                             </a></td>
@@ -10270,8 +10264,8 @@
                         </tr>
                         <tr>
                             <td class="borderTopLeft wciecie" colspan="2">z tytułu naruszenia przez pracownika zakazu konkurencji </td>
-                            <td align="center" class="borderTopLeft">418</td>
-                            <td align="center" class="borderTopLeft col_36">22</td>
+                            <td class="center borderTopLeft">418</td>
+                            <td class="center borderTopLeft col_36">22</td>
                             <td class="borderTopLeft col_100"><a href="javascript:openPopup('popup.aspx?sesja=22!6!1!4')">
                                 <asp:Label CssClass="normal" ID="tab_6_w22_c01" runat="server" Text="0"></asp:Label>
                             </a></td>
@@ -10290,7 +10284,7 @@
                         </tr>
                         <tr>
                             <td class="borderTopLeftBottom wciecie" colspan="4">inne</td>
-                            <td align="center" class="borderTopLeftBottom col_36">23</td>
+                            <td class="center borderTopLeftBottom col_36">23</td>
                             <td class="borderTopLeftBottom col_100"><a href="javascript:openPopup('popup.aspx?sesja=23!6!1!4')">
                                 <asp:Label CssClass="normal" ID="tab_6_w23_c01" runat="server" Text="0"></asp:Label>
                             </a></td>
@@ -10319,29 +10313,29 @@
                     Dział 7. </strong>Sprawy z zakresu prawa pracy i ubezpieczeń społecznych wielotomowe
 		      <br />
                 <br />
-                <table style="width: 100%;" cellpadding="0" cellspacing="0">
+                <table style="width: 100%;">
                     <tr>
-                        <td colspan="5" rowspan="2" align="center" class="borderTopLeft">SPRAWY z rep.</td>
-                        <td colspan="7" align="center" class="borderTopLeftRight">Sprawy z zakresu prawa pracy i ubezpieczeń społecznych wielotomowe Liczba spraw </td>
+                        <td colspan="5" rowspan="2 center" class="borderTopLeft">SPRAWY z rep.</td>
+                        <td colspan="7 center" class="borderTopLeftRight">Sprawy z zakresu prawa pracy i ubezpieczeń społecznych wielotomowe Liczba spraw </td>
                     </tr>
                     <tr>
-                        <td align="center" class="borderTopLeft">zbiorczo pow. 5 tomów (kol. od 2 do 7) </td>
-                        <td align="center" class="borderTopLeft">pow. 5 do 10 tomów</td>
-                        <td align="center" class="borderTopLeft">pow. 10 do 20 tomów </td>
-                        <td align="center" class="borderTopLeft">pow. 20 do 30 tomów </td>
-                        <td align="center" class="borderTopLeft">pow. 30 do 50 tomów </td>
-                        <td align="center" class="borderTopLeft">pow. 50 do 100 tomów </td>
-                        <td align="center" class="borderTopLeftRight">powyżej 100 tomów </td>
+                        <td class="center borderTopLeft">zbiorczo pow. 5 tomów (kol. od 2 do 7) </td>
+                        <td class="center borderTopLeft">pow. 5 do 10 tomów</td>
+                        <td class="center borderTopLeft">pow. 10 do 20 tomów </td>
+                        <td class="center borderTopLeft">pow. 20 do 30 tomów </td>
+                        <td class="center borderTopLeft">pow. 30 do 50 tomów </td>
+                        <td class="center borderTopLeft">pow. 50 do 100 tomów </td>
+                        <td class="center borderTopLeftRight">powyżej 100 tomów </td>
                     </tr>
                     <tr>
-                        <td colspan="5" align="center" class="borderTopLeft">0</td>
-                        <td align="center" class="borderTopLeft">1</td>
-                        <td align="center" class="borderTopLeft">2</td>
-                        <td align="center" class="borderTopLeft">3</td>
-                        <td align="center" class="borderTopLeft">4</td>
-                        <td align="center" class="borderTopLeft">5</td>
-                        <td align="center" class="borderTopLeft">6</td>
-                        <td align="center" class="borderTopLeftRight">7</td>
+                        <td colspan="5 center" class="borderTopLeft">0</td>
+                        <td class="center borderTopLeft">1</td>
+                        <td class="center borderTopLeft">2</td>
+                        <td class="center borderTopLeft">3</td>
+                        <td class="center borderTopLeft">4</td>
+                        <td class="center borderTopLeft">5</td>
+                        <td class="center borderTopLeft">6</td>
+                        <td class="center borderTopLeftRight">7</td>
                     </tr>
                     <tr>
                         <td rowspan="7" class="borderTopLeft col_36">U</td>
@@ -10713,24 +10707,24 @@
 		      <br />
                 <br />
 
-                <table style="width: 100%;" cellpadding="0" cellspacing="0">
+                <table style="width: 100%;">
                     <tr>
-                        <td colspan="3" rowspan="2" align="center" class="borderTopLeft">Sprawy wg repertoriów</td>
-                        <td colspan="4" align="center" class="borderTopLeftRight">Liczba powołanych biegłych </td>
+                        <td colspan="3" rowspan="2 center" class="borderTopLeft">Sprawy wg repertoriów</td>
+                        <td colspan="4 center" class="borderTopLeftRight">Liczba powołanych biegłych </td>
                     </tr>
                     <tr>
-                        <td align="center" class="col_200 borderTopLeft">Razem (kol. 2-4)</td>
-                        <td align="center" class="col_200 borderTopLeft">biegli sądowi</td>
-                        <td align="center" class="col_200 borderTopLeft">biegli spoza listy</td>
-                        <td align="center" class="col_200 borderTopLeftRight">inne podmioty</td>
+                        <td class="center col_200 borderTopLeft">Razem (kol. 2-4)</td>
+                        <td class="center col_200 borderTopLeft">biegli sądowi</td>
+                        <td class="center col_200 borderTopLeft">biegli spoza listy</td>
+                        <td class="center col_200 borderTopLeftRight">inne podmioty</td>
                     </tr>
                     <tr>
-                        <td colspan="3" align="center" class="borderTopLeft">0</td>
-                        <td align="center" class="col_200 borderTopLeft">1</td>
-                        <td align="center" class="col_200 borderTopLeft">2</td>
-                        <td align="center" class="col_200 borderTopLeft">3</td>
+                        <td colspan="3 center" class="borderTopLeft">0</td>
+                        <td class="center col_200 borderTopLeft">1</td>
+                        <td class="center col_200 borderTopLeft">2</td>
+                        <td class="center col_200 borderTopLeft">3</td>
 
-                        <td align="center" class="col_200 borderTopLeftRight">4</td>
+                        <td class="center col_200 borderTopLeftRight">4</td>
                     </tr>
                     <tr>
                         <td colspan="2" class="borderTopLeft wciecie">ogółem</td>
@@ -10793,35 +10787,35 @@
                     Dział 9.2. </strong>Terminowość sporządzania opinii pisemnych (z wył. tłumaczy przysięgłych)
 		      <br />
                 <br />
-                <table style="width: 100%;" cellpadding="0" cellspacing="0">
+                <table style="width: 100%;">
                     <tr>
-                        <td colspan="3" rowspan="3" align="center" class="borderTopLeft">Sprawy wg repertoriów</td>
-                        <td colspan="8" align="center" class="borderTopLeftRight">Liczba sporządzonych opinii</td>
+                        <td colspan="3" rowspan="3 center" class="borderTopLeft">Sprawy wg repertoriów</td>
+                        <td colspan="8 center" class="borderTopLeftRight">Liczba sporządzonych opinii</td>
                     </tr>
                     <tr>
-                        <td align="center" class="borderTopLeft" rowspan="2">razem (kol.1= 2 do 5 = 6 do 8)</td>
-                        <td align="center" class="borderTopLeft" rowspan="2">w ustalonym terminie</td>
-                        <td align="center" class="borderTopLeft" colspan="3">po ustalonym terminie</td>
-                        <td align="center" class="borderTopLeftRight" colspan="3">wg czasu wydania opinii</td>
+                        <td class="center borderTopLeft" rowspan="2">razem (kol.1= 2 do 5 = 6 do 8)</td>
+                        <td class="center borderTopLeft" rowspan="2">w ustalonym terminie</td>
+                        <td class="center borderTopLeft" colspan="3">po ustalonym terminie</td>
+                        <td class="center borderTopLeftRight" colspan="3">wg czasu wydania opinii</td>
                     </tr>
                     <tr>
-                        <td align="center" class="borderTopLeft">do 30 dni </td>
-                        <td align="center" class="borderTopLeft">pow. 1 do 3 miesięcy</td>
-                        <td align="center" class="borderTopLeft">pow. 3 miesięcy</td>
-                        <td align="center" class="borderTopLeft">do 30 dni </td>
-                        <td align="center" class="borderTopLeft">pow. 1 do 3 miesięcy</td>
-                        <td align="center" class="borderTopLeftRight">pow. 3 miesięcy</td>
+                        <td class="center borderTopLeft">do 30 dni </td>
+                        <td class="center borderTopLeft">pow. 1 do 3 miesięcy</td>
+                        <td class="center borderTopLeft">pow. 3 miesięcy</td>
+                        <td class="center borderTopLeft">do 30 dni </td>
+                        <td class="center borderTopLeft">pow. 1 do 3 miesięcy</td>
+                        <td class="center borderTopLeftRight">pow. 3 miesięcy</td>
                     </tr>
                     <tr>
-                        <td colspan="3" align="center" class="borderTopLeftRight">0</td>
-                        <td align="center" class="borderTopLeft">1</td>
-                        <td align="center" class="borderTopLeft">2</td>
-                        <td align="center" class="borderTopLeft">3</td>
-                        <td align="center" class="borderTopLeft">4</td>
-                        <td align="center" class="borderTopLeft">5</td>
-                        <td align="center" class="borderTopLeft">6</td>
-                        <td align="center" class="borderTopLeft">7</td>
-                        <td align="center" class="borderTopLeftRight">8</td>
+                        <td colspan="3 center" class="borderTopLeftRight">0</td>
+                        <td class="center borderTopLeft">1</td>
+                        <td class="center borderTopLeft">2</td>
+                        <td class="center borderTopLeft">3</td>
+                        <td class="center borderTopLeft">4</td>
+                        <td class="center borderTopLeft">5</td>
+                        <td class="center borderTopLeft">6</td>
+                        <td class="center borderTopLeft">7</td>
+                        <td class="center borderTopLeftRight">8</td>
                     </tr>
                     <tr>
                         <td colspan="2" class="borderTopLeft wciecie">Ogółem</td>
@@ -10918,38 +10912,38 @@
                     Dział 9.3. </strong>Terminowość przyznawania wynagrodzeń za sporządzenie opinii pisemnych i ustnych oraz za stawiennictwo (z wył. tłumaczy przysięgłych)
 		        <br />
                 <br />
-                <table style="width: 100%;" cellpadding="0" cellspacing="0">
+                <table style="width: 100%;">
                     <tr>
-                        <td colspan="3" rowspan="2" align="center" class="borderTopLeft">SPRAWY z rep.</td>
-                        <td colspan="8" align="center" class="borderTopLeftRight">Sprawy z zakresu prawa pracy i ubezpieczeń społecznych wielotomowe Liczba spraw </td>
+                        <td colspan="3" rowspan="2 center" class="borderTopLeft">SPRAWY z rep.</td>
+                        <td colspan="8 center" class="borderTopLeftRight">Sprawy z zakresu prawa pracy i ubezpieczeń społecznych wielotomowe Liczba spraw </td>
                     </tr>
                     <tr>
-                        <td align="center" class="borderTopLeft">razem
+                        <td class="center borderTopLeft">razem
                             <br />
                             (kol.2-4)
                         </td>
-                        <td align="center" class="borderTopLeft">do 14 dni</td>
-                        <td align="center" class="borderTopLeft">pow. 14 do
+                        <td class="center borderTopLeft">do 14 dni</td>
+                        <td class="center borderTopLeft">pow. 14 do
                             <br />
                             30 dni</td>
-                        <td align="center" class="borderTopLeft">pow. powyżej miesiąca </td>
-                        <td align="center" class="borderTopLeft">razem<br />
+                        <td class="center borderTopLeft">pow. powyżej miesiąca </td>
+                        <td class="center borderTopLeft">razem<br />
                             (kol.2-4)
                         </td>
-                        <td align="center" class="borderTopLeft">do 14 dni</td>
-                        <td align="center" class="borderTopLeft">pow. 14 do 30 dni</td>
-                        <td align="center" class="borderTopLeftRight">pow. powyżej miesiąca </td>
+                        <td class="center borderTopLeft">do 14 dni</td>
+                        <td class="center borderTopLeft">pow. 14 do 30 dni</td>
+                        <td class="center borderTopLeftRight">pow. powyżej miesiąca </td>
                     </tr>
                     <tr>
-                        <td colspan="3" align="center" class="borderTopLeft">0</td>
-                        <td align="center" class="borderTopLeft">1</td>
-                        <td align="center" class="borderTopLeft">2</td>
-                        <td align="center" class="borderTopLeft">3</td>
-                        <td align="center" class="borderTopLeft">4</td>
-                        <td align="center" class="borderTopLeft">5</td>
-                        <td align="center" class="borderTopLeft">6</td>
-                        <td align="center" class="borderTopLeft">7</td>
-                        <td align="center" class="borderTopLeftRight">8</td>
+                        <td colspan="3 center" class="borderTopLeft">0</td>
+                        <td class="center borderTopLeft">1</td>
+                        <td class="center borderTopLeft">2</td>
+                        <td class="center borderTopLeft">3</td>
+                        <td class="center borderTopLeft">4</td>
+                        <td class="center borderTopLeft">5</td>
+                        <td class="center borderTopLeft">6</td>
+                        <td class="center borderTopLeft">7</td>
+                        <td class="center borderTopLeftRight">8</td>
                     </tr>
                     <tr>
                         <td colspan="2" class="borderTopLeft wciecie">Ogółem</td>
@@ -11067,35 +11061,35 @@
 
                 <br />
 
-                <table style="width: 100%;" cellpadding="0" cellspacing="0">
+                <table style="width: 100%;">
                     <tr>
-                        <td colspan="8" align="center" class="borderTopLeftRight">Sprawy z zakresu prawa pracy i ubezpieczeń społecznych wielotomowe Liczba spraw </td>
+                        <td colspan="8 center" class="borderTopLeftRight">Sprawy z zakresu prawa pracy i ubezpieczeń społecznych wielotomowe Liczba spraw </td>
                     </tr>
                     <tr>
-                        <td align="center" class="borderTopLeft" rowspan="2">razem
+                        <td class="center borderTopLeft" rowspan="2">razem
                             <br />
                             (kol.1= 2 do 5 = 6 do 8)</td>
-                        <td align="center" class="borderTopLeft" rowspan="2">w ustalonym terminie</td>
-                        <td align="center" class="borderTopLeft" colspan="3">po ustalonym terminie</td>
-                        <td align="center" class="borderTopLeftRight" colspan="3">wg czasu wydania tłumaczenia </td>
+                        <td class="center borderTopLeft" rowspan="2">w ustalonym terminie</td>
+                        <td class="center borderTopLeft" colspan="3">po ustalonym terminie</td>
+                        <td class="center borderTopLeftRight" colspan="3">wg czasu wydania tłumaczenia </td>
                     </tr>
                     <tr>
-                        <td align="center" class="borderTopLeft">do 30 dni</td>
-                        <td align="center" class="borderTopLeft">pow. 1 do 3 miesięcy</td>
-                        <td align="center" class="borderTopLeft">pow. 3 miesięcy</td>
-                        <td align="center" class="borderTopLeft">do 30 dni</td>
-                        <td align="center" class="borderTopLeft">pow. 1 do 3 miesięcy</td>
-                        <td align="center" class="borderTopLeftRight">pow. 3 miesięcy</td>
+                        <td class="center borderTopLeft">do 30 dni</td>
+                        <td class="center borderTopLeft">pow. 1 do 3 miesięcy</td>
+                        <td class="center borderTopLeft">pow. 3 miesięcy</td>
+                        <td class="center borderTopLeft">do 30 dni</td>
+                        <td class="center borderTopLeft">pow. 1 do 3 miesięcy</td>
+                        <td class="center borderTopLeftRight">pow. 3 miesięcy</td>
                     </tr>
                     <tr>
-                        <td align="center" class="borderTopLeft">1</td>
-                        <td align="center" class="borderTopLeft">2</td>
-                        <td align="center" class="borderTopLeft">3</td>
-                        <td align="center" class="borderTopLeft">4</td>
-                        <td align="center" class="borderTopLeft">5</td>
-                        <td align="center" class="borderTopLeft">6</td>
-                        <td align="center" class="borderTopLeft">7</td>
-                        <td align="center" class="borderTopLeftRight">8</td>
+                        <td class="center borderTopLeft">1</td>
+                        <td class="center borderTopLeft">2</td>
+                        <td class="center borderTopLeft">3</td>
+                        <td class="center borderTopLeft">4</td>
+                        <td class="center borderTopLeft">5</td>
+                        <td class="center borderTopLeft">6</td>
+                        <td class="center borderTopLeft">7</td>
+                        <td class="center borderTopLeftRight">8</td>
                     </tr>
                     <tr>
                         <td class="col_140 borderAll"><a href="javascript:openPopup('popup.aspx?sesja=1!10.2!1!4')">
@@ -11135,35 +11129,35 @@
 
                 <br />
 
-                <table style="width: 100%;" cellpadding="0" cellspacing="0">
+                <table style="width: 100%;">
                     <tr>
-                        <td colspan="8" align="center" class="borderTopLeftRight">Sprawy z zakresu prawa pracy i ubezpieczeń społecznych wielotomowe Liczba spraw </td>
+                        <td colspan="8 center" class="borderTopLeftRight">Sprawy z zakresu prawa pracy i ubezpieczeń społecznych wielotomowe Liczba spraw </td>
                     </tr>
                     <tr>
-                        <td align="center" class="borderTopLeft" rowspan="2">razem
+                        <td class="center borderTopLeft" rowspan="2">razem
                             <br />
                             (kol.1= 2 do 5 = 6 do 8)</td>
-                        <td align="center" class="borderTopLeft" rowspan="2">w ustalonym terminie</td>
-                        <td align="center" class="borderTopLeft" colspan="3">po ustalonym terminie</td>
-                        <td align="center" class="borderTopLeftRight" colspan="3">wg czasu wydania tłumaczenia </td>
+                        <td class="center borderTopLeft" rowspan="2">w ustalonym terminie</td>
+                        <td class="center borderTopLeft" colspan="3">po ustalonym terminie</td>
+                        <td class="center borderTopLeftRight" colspan="3">wg czasu wydania tłumaczenia </td>
                     </tr>
                     <tr>
-                        <td align="center" class="borderTopLeft">do 30 dni</td>
-                        <td align="center" class="borderTopLeft">pow. 1 do 3 miesięcy</td>
-                        <td align="center" class="borderTopLeft">pow. 3 miesięcy</td>
-                        <td align="center" class="borderTopLeft">do 30 dni</td>
-                        <td align="center" class="borderTopLeft">pow. 1 do 3 miesięcy</td>
-                        <td align="center" class="borderTopLeftRight">pow. 3 miesięcy</td>
+                        <td class="center borderTopLeft">do 30 dni</td>
+                        <td class="center borderTopLeft">pow. 1 do 3 miesięcy</td>
+                        <td class="center borderTopLeft">pow. 3 miesięcy</td>
+                        <td class="center borderTopLeft">do 30 dni</td>
+                        <td class="center borderTopLeft">pow. 1 do 3 miesięcy</td>
+                        <td class="center borderTopLeftRight">pow. 3 miesięcy</td>
                     </tr>
                     <tr>
-                        <td align="center" class="borderTopLeft">1</td>
-                        <td align="center" class="borderTopLeft">2</td>
-                        <td align="center" class="borderTopLeft">3</td>
-                        <td align="center" class="borderTopLeft">4</td>
-                        <td align="center" class="borderTopLeft">5</td>
-                        <td align="center" class="borderTopLeft">6</td>
-                        <td align="center" class="borderTopLeft">7</td>
-                        <td align="center" class="borderTopLeftRight">8</td>
+                        <td class="center borderTopLeft">1</td>
+                        <td class="center borderTopLeft">2</td>
+                        <td class="center borderTopLeft">3</td>
+                        <td class="center borderTopLeft">4</td>
+                        <td class="center borderTopLeft">5</td>
+                        <td class="center borderTopLeft">6</td>
+                        <td class="center borderTopLeft">7</td>
+                        <td class="center borderTopLeftRight">8</td>
                     </tr>
                     <tr>
                         <td class="col_140 borderAll"><a href="javascript:openPopup('popup.aspx?sesja=1!10.3!1!4')">
@@ -11241,6 +11235,7 @@
                 <asp:Label ID="Label11" runat="server"></asp:Label>
             </div>
 
-            <br />
+         
         </div>
+           </div>
 </asp:Content>

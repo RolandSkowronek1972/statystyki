@@ -257,6 +257,7 @@
     <Content Include="UserControlls\PopupLinkButtom.ascx" />
     <Content Include="version.txt" />
     <Content Include="Web.config" />
+    <Content Include="Template\aopc.xlsx" />
     <None Include="Web.config.old">
       <SubType>Designer</SubType>
     </None>
@@ -417,8 +418,6 @@
     </Compile>
     <Compile Include="classes\datyDoMSS.cs" />
     <Compile Include="classes\log_4_net.cs" />
-    <Compile Include="classes\tabeleDoMSS.cs" />
-    <Compile Include="classes\tabeleMSS.cs" />
     <Compile Include="GlobalSuppressions.cs" />
     <Compile Include="nowa.aspx.cs">
       <DependentUpon>nowa.aspx</DependentUpon>

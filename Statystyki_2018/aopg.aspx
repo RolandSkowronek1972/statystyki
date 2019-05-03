@@ -77,7 +77,7 @@
   
            <br />
                <div >
-&nbsp;<asp:Label ID="Label1" runat="server" Text="Uzasadnienia"></asp:Label>
+&nbsp;<asp:Label ID="Label1" runat="server" Text="&quot;Ruch spraw w referatach sędziów"></asp:Label>
            &nbsp;&nbsp;&nbsp;
            <asp:Label ID="infoLabel1" runat="server" Text="tabela  1" Visible="False"></asp:Label>
            <br />
@@ -1374,7 +1374,7 @@
                </div>
            <br />
            <div class="page-break">
-&nbsp;<asp:Label ID="Label7" runat="server" Text="Efektywny czas orzekania"></asp:Label>
+&nbsp;<asp:Label ID="Label7" runat="server" Text="Terminowość uzasadnień"></asp:Label>
            &nbsp;&nbsp;&nbsp;
            <asp:Label ID="infoLabel2" runat="server" Text="tabela 2" Visible="False"></asp:Label>
                <br />

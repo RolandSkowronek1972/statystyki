@@ -15,17 +15,6 @@
                 right: 0;
             }
 
-        .auto-style1 {
-            font-size: medium;
-        }
-
-        .auto-style2 {
-            font-size: x-small;
-        }
-
-        .auto-style3 {
-            font-size: small;
-        }
     </style>
 
     <script src="Scripts/rls.js"></script>
@@ -84,13 +73,7 @@
             <div style="margin-left: auto; margin-right: auto; text-align: center; width: auto;">
                 <asp:Label runat="server" ID="Label9" Visible="False"></asp:Label>
             </div>
-            &nbsp;<asp:SqlDataSource ID="SqlDataSource2" runat="server"
-                ConnectionString="<%$ ConnectionStrings:wap %>"
-                SelectCommand="SELECT DISTINCT id_, opis, d_01, d_02, d_03, d_04, d_05, d_06, d_07, d_08, d_09, d_10, d_11, d_12, d_13, d_14, d_15,id_tabeli FROM tbl_statystyki_tbl_01 WHERE (id_dzialu = @id_dzialu) AND (id_tabeli = 1) ORDER BY id_">
-                <SelectParameters>
-                    <asp:SessionParameter Name="id_dzialu" SessionField="id_dzialu" />
-                </SelectParameters>
-            </asp:SqlDataSource>
+          
         </div>
 
         <div id="Div2" style="z-index: 10;">
@@ -190,7 +173,7 @@
                         </p>
                         <p class="western" style="margin-left: 0.42cm; margin-top: 0.07cm">
                             <font face="Arial, sans-serif"><FONT SIZE=2 STYLE="font-size: 9pt">zgodnie
-			z PBSSP 2017 r.</FONT></font>
+			z PBSSP 2019 r.</FONT></font>
                         </p>
                     </td>
                 </tr>
@@ -199,8 +182,7 @@
             <br />
 
             <asp:Label ID="kod011" runat="server"></asp:Label>
-            <br />
-            <br />
+          
                <asp:PlaceHolder runat="server" ID="tablePlaceHolder"></asp:PlaceHolder>
 
             <br />
@@ -219,7 +201,6 @@
                 &nbsp;<asp:Label ID="Label30" runat="server"></asp:Label>
                 <br />
 
-                <asp:Label ID="Label11" runat="server"></asp:Label>
-           
+            </div>
     </div>
 </asp:Content>

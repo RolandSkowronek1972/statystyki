@@ -152,7 +152,7 @@ namespace stat2018
             string idDzialu = (string)Session["id_dzialu"];
             if (cl.debug(int.Parse(idDzialu)))
             {
-                //cm.log.Info(tenPlik + ": rozpoczęcie tworzenia tabeli 1");
+                cm.log.Info(tenPlik + ": rozpoczęcie tworzenia tabeli 1");
             }
             DataTable tabelka01 = dr.generuj_dane_do_tabeli_sedziowskiej_2018(int.Parse(idDzialu), 1, Date1.Date, Date2.Date, 230, tenPlik);
             Session["tabelka001"] = tabelka01;
@@ -167,7 +167,7 @@ namespace stat2018
             string idDzialu = (string)Session["id_dzialu"];
             if (cl.debug(int.Parse(idDzialu)))
             {
-                //cm.log.Info(tenPlik + ": rozpoczęcie tworzenia tabeli 2");
+                cm.log.Info(tenPlik + ": rozpoczęcie tworzenia tabeli 2");
             }
             DataTable tabelka01 = dr.generuj_dane_do_tabeli_sedziowskiej_2018(int.Parse(idDzialu), 2, Date1.Date, Date2.Date, 150, tenPlik);
             Session["tabelka002"] = tabelka01;
@@ -181,10 +181,8 @@ namespace stat2018
         {
             if (e.Row.RowType == DataControlRowType.Header)
             {
-                System.Web.UI.WebControls.GridView sn = new System.Web.UI.WebControls.GridView();
-
                 DataTable dT = (DataTable)Session["header_01"];//tb.naglowek(path, 1);
-                tb.makeHeader(sn, header_01(), gwTabela1);
+                tb.makeHeader( header_01(), gwTabela1);
             }
         }
 
@@ -230,9 +228,7 @@ namespace stat2018
                             tb.Text = dane.Rows[wiersz - 1][kolumna].ToString().Trim();
                         }
                         catch
-                        {
-                        }
-                        //tb.Text = dr.wyciagnijWartosc(dane, "idWydzial=" + idWydzialu + " and idTabeli=" + idTabeli + " and idWiersza ='" + wiersz + "' and idkolumny='" + kolumna + "'", tenPlik);
+                        { }
                     }
                 }
             }
@@ -512,71 +508,6 @@ namespace stat2018
 
             return tabelaNaglowkowa;
         }
-
-        private DataTable header_05()
-        {
-            DataTable tabelaNaglowkowa = tb.SchematTabelinaglowkowej();
-
-            tabelaNaglowkowa.Rows.Add(new Object[] { "1", "K", "1", "1", "h" });
-            tabelaNaglowkowa.Rows.Add(new Object[] { "1", "Ko", "1", "1", "h" });
-            tabelaNaglowkowa.Rows.Add(new Object[] { "1", "Kop", "1", "1" });
-            tabelaNaglowkowa.Rows.Add(new Object[] { "1", "Kp", "1", "1" });
-            tabelaNaglowkowa.Rows.Add(new Object[] { "1", "W", "1", "1" });
-            tabelaNaglowkowa.Rows.Add(new Object[] { "1", "Razem", "1", "1" });
-
-            return tabelaNaglowkowa;
-        }
-
-        private DataTable header_11()
-        {
-            DataTable tabelaNaglowkowa = tb.SchematTabelinaglowkowej();
-
-            tabelaNaglowkowa.Rows.Add(new Object[] { "1", "uchylono", "1", "1", "h" });
-            tabelaNaglowkowa.Rows.Add(new Object[] { "1", "skierowano do wykonania", "1", "1", "h" });
-            tabelaNaglowkowa.Rows.Add(new Object[] { "1", "inny sposób", "1", "1" });
-
-            tabelaNaglowkowa.Rows.Add(new Object[] { "2", "Sędzia", "1", "2" });
-            tabelaNaglowkowa.Rows.Add(new Object[] { "2", "Wpływ", "1", "2" });
-            tabelaNaglowkowa.Rows.Add(new Object[] { "2", "Załatwienia", "3", "1" });
-            tabelaNaglowkowa.Rows.Add(new Object[] { "2", "Pozostało", "1", "2" });
-
-            return tabelaNaglowkowa;
-        }
-
-        private DataTable header_10()
-        {
-            DataTable tabelaNaglowkowa = tb.SchematTabelinaglowkowej();
-
-            tabelaNaglowkowa.Rows.Add(new Object[] { "1", "K", "1", "1", "h" });
-            tabelaNaglowkowa.Rows.Add(new Object[] { "1", "Ko", "1", "1", "h" });
-            tabelaNaglowkowa.Rows.Add(new Object[] { "1", "Kop", "1", "1" });
-            tabelaNaglowkowa.Rows.Add(new Object[] { "1", "Kp", "1", "1" });
-            tabelaNaglowkowa.Rows.Add(new Object[] { "1", "W", "1", "1" });
-            tabelaNaglowkowa.Rows.Add(new Object[] { "1", "Razem", "1", "1" });
-
-            tabelaNaglowkowa.Rows.Add(new Object[] { "2", "Sędzia", "1", "2" });
-            tabelaNaglowkowa.Rows.Add(new Object[] { "2", "Efektywny okres orzekania", "1", "2" });
-            tabelaNaglowkowa.Rows.Add(new Object[] { "2", "Ilość wyznaczonych spraw", "6", "1" });
-
-            return tabelaNaglowkowa;
-        }
-
-        private DataTable header_12()
-        {
-            DataTable tabelaNaglowkowa = tb.SchematTabelinaglowkowej();
-
-            tabelaNaglowkowa.Rows.Add(new Object[] { "1", "utrzymano  w mocy", "1", "1", "h" });
-            tabelaNaglowkowa.Rows.Add(new Object[] { "1", "uchylono ", "1", "1", "h" });
-            tabelaNaglowkowa.Rows.Add(new Object[] { "1", "Kop", "1", "1" });
-            tabelaNaglowkowa.Rows.Add(new Object[] { "1", "zmienionoKp", "1", "1" });
-            tabelaNaglowkowa.Rows.Add(new Object[] { "1", "częściowo uchylono", "1", "1" });
-            tabelaNaglowkowa.Rows.Add(new Object[] { "1", "pozostawiono bez rozpoznania ", "1", "1" });
-
-            tabelaNaglowkowa.Rows.Add(new Object[] { "2", "Sędzia", "1", "2" });
-            tabelaNaglowkowa.Rows.Add(new Object[] { "2", "Rodzaje orzeczeń ", "1", "2" });
-            tabelaNaglowkowa.Rows.Add(new Object[] { "2", "Razem", "6", "1" });
-
-            return tabelaNaglowkowa;
-        }
+     
     }
 }

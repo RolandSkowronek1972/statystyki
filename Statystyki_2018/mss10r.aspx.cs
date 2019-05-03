@@ -1,6 +1,6 @@
 ﻿/*
 Last Update:
-    - version 1.190105
+    - version 1.190428
 
 */
 
@@ -22,12 +22,12 @@ namespace stat2018
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            //cm.log.Debug("otwarcie formularza: " + tenPlik);
+            cm.log.Info("otwarcie formularza: " + tenPlik);
             string idWydzial = Request.QueryString["w"];
             if (idWydzial != null)
             {
                 Session["id_dzialu"] = idWydzial;
-                //cm.log.Info(tenPlik + ": id wydzialu=" + idWydzial);
+                cm.log.Info(tenPlik + ": id wydzialu=" + idWydzial);
             }
             else
             {
@@ -65,29 +65,9 @@ namespace stat2018
 
         protected void przemiel()
         {
-            /*
-            Session["sesja"] = "s3030";
-            try
-            {
-                DateTime dTime = DateTime.Now;
-                dTime = dTime.AddMonths(-1);
-                if (Date1.Text.Length == 0)
-                {
-                    Date1.Text = dTime.Year.ToString() + "-" + dTime.Month.ToString("D2") + "-01";
-                }
-                if (Date2.Text.Length == 0)
-                {
-                    Date2.Text = dTime.Year.ToString() + "-" + dTime.Month.ToString("D2") + "-" + DateTime.DaysInMonth(dTime.Year, dTime.Month).ToString("D2");
-                }
-
-                Session["data_1"] =
-                Session["data_2"] = Date2.Text.Trim();
-            }
-            catch
-            { }*/
             string yyx = (string)Session["id_dzialu"];
-            //   id_dzialu.Text = (string)Session["txt_dzialu"];
-            string txt = string.Empty; //
+
+            string txt = string.Empty;
 
             try
             {
@@ -2546,7 +2526,7 @@ namespace stat2018
 
                 #endregion "tabela 11"
             }
-            catch 
+            catch
             {
             }
 
@@ -2561,9 +2541,7 @@ namespace stat2018
             {
                 Label11.Visible = false;
             }
-
             Label11.Text = txt;
-            //  Label3.Text = ms.nazwaSadu((string)Session["id_dzialu"]);
         }
 
         protected void makeLabels()
@@ -2579,9 +2557,7 @@ namespace stat2018
                 }
                 catch
                 { }
-                // Label3.Text = cl.nazwaSadu((string)Session["id_dzialu"]);
-
-                //   id_dzialu.Text = (string)Session["txt_dzialu"];
+               
                 Label28.Text = cl.podajUzytkownika(User_id, domain);
                 Label29.Text = DateTime.Now.ToLongDateString();
                 try
@@ -2590,32 +2566,8 @@ namespace stat2018
                 }
                 catch
                 { }
-
                 string strMonthName = CultureInfo.CurrentCulture.DateTimeFormat.GetMonthName(Date2.Date.Month);
                 int last_day = DateTime.DaysInMonth(Date2.Date.Year, Date2.Date.Month);
-                if (((Date1.Date.Day == 1) && (Date2.Date.Day == last_day)) && ((Date1.Date.Month == Date2.Date.Month)))
-                {
-                    // cały miesiąc
-                    //        tabela1Label.Text = "Dział 1.1.1.a.1 Liczba spraw o umieszczenie w szpitalu psychiatrycznym bez zgody, w którym natąpiło przekroczenie terminu 14 dni od dnia wpływu wniosku lub zawiadomienia o przyjęciu do szpitala psychiatrycznego osoby chorej psychicznie wymaganego w celu odbycia rozprawy [art. 45 ust. 1 ustawy z dnia 19 sierpnia 1994 r. o ochronie zdrowia psychicznego (Dz. U. z 2016 r., poz. 546 )] za miesiąc " + strMonthName + " " + Date2.Date.Year.ToString() + " roku.";
-                    //      tabela2Label.Text = "Dział 1.1.1.a.2. Liczba spraw o umieszczenie w szpitalu psychiatrycznym bez zgody, w których wydano zarządzenie o doprowadzeniu osoby pozostającej w szpitalu, a której postępowanie bezpośrednio dotyczy na rozprawę, stosownie do możliwości przewidzianej w przepisie art. 46 ust. 1a ustawy z dnia 19 sierpnia 1994 r. o ochronie zdrowia psychicznego (Dz. U. z 2016 r., poz. 546) za miesiąc " + strMonthName + " " + Date2.Date.Year.ToString() + " roku.";
-                    //    tabela3Label.Text = "Dział 4.1. Terminowość postępowania międzyinstancyjnego w pierwszej instancji za miesiąc " + strMonthName + " " + Date2.Date.Year.ToString() + " roku.";
-                    //      tabela4Label.Text = "Dział 2.2.a. Czas trwania postępowania sądowego od dnia pierwszej rejestracji do dnia uprawomocnienia się sprawy merytorycznie zakończonej (wyrokiem, orzeczeniem) w I instancji (łącznie z czasem trwania mediacji) za miesiąc " + strMonthName + " " + Date2.Date.Year.ToString() + " roku.";
-
-                    //    tabela5Label.Text = "Dział 11.1. Terminowość postępowania międzyinstancyjnego  w pierwszej instancji za miesiąc " + strMonthName + " " + Date2.Date.Year.ToString() + " roku.";
-                    //Informacje o ruchu sprawa za miesiąc: 
-
-                    //Pozostało z ubieglego miesiąca
-                }
-                else
-                {
-                    //  tabela1Label.Text = "Dział 1.1.1.a.1 Liczba spraw o umieszczenie w szpitalu psychiatrycznym bez zgody, w którym natąpiło przekroczenie terminu 14 dni od dnia wpływu wniosku lub zawiadomienia o przyjęciu do szpitala psychiatrycznego osoby chorej psychicznie wymaganego w celu odbycia rozprawy [art. 45 ust. 1 ustawy z dnia 19 sierpnia 1994 r. o ochronie zdrowia psychicznego (Dz. U. z 2016 r., poz. 546 )] za okres od:  " + Date1.Text + " do  " + Date2.Text;
-                    //       tabela2Label.Text = "Dział 1.1.1.a.2. Liczba spraw o umieszczenie w szpitalu psychiatrycznym bez zgody, w których wydano zarządzenie o doprowadzeniu osoby pozostającej w szpitalu, a której postępowanie bezpośrednio dotyczy na rozprawę, stosownie do możliwości przewidzianej w przepisie art. 46 ust. 1a ustawy z dnia 19 sierpnia 1994 r. o ochronie zdrowia psychicznego (Dz. U. z 2016 r., poz. 546) za okres od " + Date1.Text + " do  " + Date2.Text;
-                    //     tabela3Label.Text = "Dział 4.1. Terminowość postępowania międzyinstancyjnego w pierwszej instancji za okres od" + Date1.Text + " do  " + Date2.Text;
-
-                    //tabela4Label.Text = "Dział 2.2.a. Czas trwania postępowania sądowego od dnia pierwszej rejestracji do dnia uprawomocnienia się sprawy merytorycznie zakończonej (wyrokiem, orzeczeniem) w I instancji (łącznie z czasem trwania mediacji) za okres od " + Date1.Text + " do  " + Date2.Text;
-
-                    //tabela5Label.Text = "Dział 11.1. Terminowość postępowania międzyinstancyjnego  w pierwszej instancji za okres od " + Date1.Text + " do  " + Date2.Text;
-                }
             }
             catch
             {
@@ -2675,8 +2627,7 @@ namespace stat2018
                         listaTabelek.Rows.Add(rowik);
                     }
                     var output = new StringBuilder();
-                    //  output.AppendLine("Id formularza;Okres;Sąd;Wydział ;Dział;Wiersz;Kolumna;Liczba");
-
+ 
                     output = ms.raportTXT(listaTabelek, tabela2, idRaportu.Text.Trim(), idSad.Text);
 
                     Response.Clear();
@@ -2684,7 +2635,7 @@ namespace stat2018
                     Response.ContentType = "application/text";
                     Response.AddHeader("Content-Disposition", "attachment;filename=" + idRaportu.Text.Trim() + ".csv");
                     Response.Output.Write(output);
-                    //  Response.WriteFile(idRaportu + ".csv");
+                 
                     Response.Flush();
                     Response.End();
                 }

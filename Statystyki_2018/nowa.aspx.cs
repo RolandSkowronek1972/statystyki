@@ -45,6 +45,7 @@ namespace stat2018
         {
             Session["exporter"] = ASPxGridViewExporter1;
             ScriptManager.RegisterStartupScript(Page, Page.GetType(), "print2", "JavaScript:window.open('kontrolkaDruk.aspx')", true);
+        
         }
 
         protected void dataBinding(object sender, EventArgs e)

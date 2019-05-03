@@ -2614,6 +2614,60 @@ namespace stat2018 {
         protected global::System.Web.UI.WebControls.Label tab_112c_w37_c03;
         
         /// <summary>
+        /// tab_113_w01_c01 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label tab_113_w01_c01;
+        
+        /// <summary>
+        /// tab_113_w02_c01 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label tab_113_w02_c01;
+        
+        /// <summary>
+        /// tab_113_w03_c01 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label tab_113_w03_c01;
+        
+        /// <summary>
+        /// tab_113_w04_c01 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label tab_113_w04_c01;
+        
+        /// <summary>
+        /// tab_113_w05_c01 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label tab_113_w05_c01;
+        
+        /// <summary>
+        /// tab_113_w06_c01 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label tab_113_w06_c01;
+        
+        /// <summary>
         /// tab_1_1_4_w01_c01 control.
         /// </summary>
         /// <remarks>
@@ -2639,6 +2693,33 @@ namespace stat2018 {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label tab_1_1_4_w03_c01;
+        
+        /// <summary>
+        /// tab_115_w01_c01 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label tab_115_w01_c01;
+        
+        /// <summary>
+        /// tab_115_w02_c01 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label tab_115_w02_c01;
+        
+        /// <summary>
+        /// tab_115_w03_c01 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label tab_115_w03_c01;
         
         /// <summary>
         /// tab_1_1_6_w01_c01 control.

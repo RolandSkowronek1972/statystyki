@@ -57,7 +57,7 @@
 
         <dx:ASPxGridView ID="grid" runat="server" EnableTheming="True" OnDataBinding="dataBinding" Theme="Moderno">
            
-              <Settings ShowFilterRow="True" EnableFilterControlPopupMenuScrolling="True" ShowFilterBar="Auto" ShowFilterRowMenu="True" ShowGroupFooter="VisibleAlways" ShowHeaderFilterButton="True" />
+              <Settings ShowFilterRow="True" EnableFilterControlPopupMenuScrolling="True" ShowFilterBar="Auto" ShowFilterRowMenu="True" ShowGroupFooter="VisibleAlways" ShowHeaderFilterButton="True" ShowFooter="True" />
          
         </dx:ASPxGridView>
         <br />

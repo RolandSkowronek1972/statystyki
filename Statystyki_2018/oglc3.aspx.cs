@@ -179,13 +179,17 @@ namespace stat2018
                 MyWorksheet1 = tb.tworzArkuszwExcle(MyExcel.Workbook.Worksheets[6], (DataTable)Session["tabelka006"], 4, 0, 3, false, false, false, false, false);
                 MyWorksheet1 = tb.tworzArkuszwExcle(MyExcel.Workbook.Worksheets[7], (DataTable)Session["tabelka007"], 7, 0, 3, false, false, false, false, false);
 
-                MyWorksheet1 = tb.tworzArkuszwExcleBezSedziow(MyExcel.Workbook.Worksheets[8], (DataTable)Session["tabelka008"], 4, 2, 2, 2, false);
-                MyWorksheet1 = tb.tworzArkuszwExcleBezSedziow(MyExcel.Workbook.Worksheets[9], (DataTable)Session["tabelka009"], 1, 11, 2, 2, false);
-                MyWorksheet1 = tb.tworzArkuszwExcleBezSedziow(MyExcel.Workbook.Worksheets[10], (DataTable)Session["tabelka010"], 4, 3, 2, 1, false);
+                MyWorksheet1 = tb.tworzArkuszwExcle(MyExcel.Workbook.Worksheets[8], (DataTable)Session["tabelka0016"], 4, 0, 3, false, false, false, false, false);
+                MyWorksheet1 = tb.tworzArkuszwExcle(MyExcel.Workbook.Worksheets[9], (DataTable)Session["tabelka0017"], 7, 0, 3, false, false, false, false, false);
 
-                MyWorksheet1 = tb.tworzArkuszwExcle(MyExcel.Workbook.Worksheets[11], (DataTable)Session["tabelka011"], 8, 0, 4, false, false, false, false, false);
-                MyWorksheet1 = tb.tworzArkuszwExcle(MyExcel.Workbook.Worksheets[12], (DataTable)Session["tabelka012"], 6, 0, 4, false, false, false, false, false);
-                MyWorksheet1 = tb.tworzArkuszwExcle(MyExcel.Workbook.Worksheets[13], (DataTable)Session["tabelka013"], 7, 0, 4, false, false, false, false, false);
+
+                MyWorksheet1 = tb.tworzArkuszwExcleBezSedziow(MyExcel.Workbook.Worksheets[10], (DataTable)Session["tabelka008"], 4, 2, 2, 2, false);
+                MyWorksheet1 = tb.tworzArkuszwExcleBezSedziow(MyExcel.Workbook.Worksheets[11], (DataTable)Session["tabelka009"], 1, 11, 2, 2, false);
+                MyWorksheet1 = tb.tworzArkuszwExcleBezSedziow(MyExcel.Workbook.Worksheets[12], (DataTable)Session["tabelka010"], 4, 3, 2, 1, false);
+
+                MyWorksheet1 = tb.tworzArkuszwExcle(MyExcel.Workbook.Worksheets[13], (DataTable)Session["tabelka011"], 8, 0, 4, false, false, false, false, false);
+                MyWorksheet1 = tb.tworzArkuszwExcle(MyExcel.Workbook.Worksheets[14], (DataTable)Session["tabelka012"], 6, 0, 4, false, false, false, false, false);
+                MyWorksheet1 = tb.tworzArkuszwExcle(MyExcel.Workbook.Worksheets[15], (DataTable)Session["tabelka013"], 7, 0, 4, false, false, false, false, false);
 
                 try
                 {
@@ -415,6 +419,36 @@ namespace stat2018
             cm.log.Info(tenPlik + ": rozpoczęcie tworzenia HTML 16");
             tworztabelkeHTML3("K2", 10, 16, tabelka01);
         }
+        protected void tabela_17()
+        {
+            string idDzialu = (string)Session["id_dzialu"];
+            if (cl.debug(int.Parse(idDzialu)))
+            {
+                cm.log.Info(tenPlik + ": rozpoczęcie tworzenia tabeli 17");
+            }
+            DataTable tabelka01 = dr.generuj_dane_do_tabeli_sedziowskiej_2018(int.Parse(idDzialu), 17, Date1.Date, Date2.Date, 23, tenPlik);
+            Session["tabelka017"] = tabelka01;
+            gwTabela16.DataSource = null;
+            gwTabela16.DataSourceID = null;
+            gwTabela16.DataSource = tabelka01;
+            gwTabela16.DataBind();
+        }
+        protected void tabela_18()
+        {
+            string idDzialu = (string)Session["id_dzialu"];
+            if (cl.debug(int.Parse(idDzialu)))
+            {
+                cm.log.Info(tenPlik + ": rozpoczęcie tworzenia tabeli 18");
+            }
+            DataTable tabelka01 = dr.generuj_dane_do_tabeli_sedziowskiej_2018(int.Parse(idDzialu), 18, Date1.Date, Date2.Date, 23, tenPlik);
+            Session["tabelka018"] = tabelka01;
+            gwTabela17.DataSource = null;
+            gwTabela17.DataSourceID = null;
+            gwTabela17.DataSource = tabelka01;
+            gwTabela17.DataBind();
+        }
+
+
 
         protected void tworztabelkeHTML3(string idKontrolki, int idWydzialu, int idtabeli, DataTable dane)
         {
@@ -1097,6 +1131,26 @@ namespace stat2018
             {
                 cm.log.Info(tenPlik + ": rozpoczęcie tworzenia stopki tabeli 15");
                 DataTable table = (DataTable)Session["tabelka015"];
+                tb.makeSumRow(table, e, 0);
+            }
+        }
+
+        protected void stopkaTabeli_gwTabela16(object sender, GridViewRowEventArgs e)
+        {
+            if (e.Row.RowType == DataControlRowType.Footer)
+            {
+                cm.log.Info(tenPlik + ": rozpoczęcie tworzenia stopki tabeli 15");
+                DataTable table = (DataTable)Session["tabelka016"];
+                tb.makeSumRow(table, e, 0);
+            }
+        }
+
+        protected void stopkaTabeli_gwTabela17(object sender, GridViewRowEventArgs e)
+        {
+            if (e.Row.RowType == DataControlRowType.Footer)
+            {
+                cm.log.Info(tenPlik + ": rozpoczęcie tworzenia stopki tabeli 15");
+                DataTable table = (DataTable)Session["tabelka017"];
                 tb.makeSumRow(table, e, 0);
             }
         }

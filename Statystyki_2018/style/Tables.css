@@ -637,8 +637,7 @@ word-wrap: break-word;
 .col_100 {
     max-width:100px;
     min-height:100%;
-        width:100px;
- text-align:center;
+        text-align:center;
  word-wrap: break-word;
 
 }

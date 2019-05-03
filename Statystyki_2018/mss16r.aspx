@@ -173,68 +173,68 @@
          <asp:Label ID="tabela1Label" runat="server"></asp:Label>
 
        <br />
-       <table cellpadding="0" cellspacing="0" style="width:100%;">
+       <table  style="width:100%;">
            <tr>
-               <td align="center" colspan="6" style="border-left: thin solid #666666; border-right: 0px solid #666666; border-top: thin solid #666666; border-bottom: 0px solid #666666; border-width: thin thin 0px thin;">Liczba spraw, w których nastąpiło przekroczenie terminu 14 dni od dnia wpływu wniosku lub zawiadomienia o przyjęciu do szpitala psychiatrychnego</td>
+               <td class="center" colspan="6" style="border-left: thin solid #666666; border-right: 0px solid #666666; border-top: thin solid #666666; border-bottom: 0px solid #666666; border-width: thin thin 0px thin;">Liczba spraw, w których nastąpiło przekroczenie terminu 14 dni od dnia wpływu wniosku lub zawiadomienia o przyjęciu do szpitala psychiatrychnego</td>
            </tr>
            <tr>
-               <td align="center" style="border-style: solid; border-width: thin 0px 0px thin; border-color: #666666; width: 191px;">Razem&nbsp; (kol. 2 fo 6)</td>
-               <td align="center" style="border-style: solid; border-width: thin 0px 0px thin; border-color: #666666; width: 191px;">do 7 dni </td>
-               <td align="center" style="border-style: solid; border-width: thin 0px 0px thin; border-color: #666666; width: 191px;">powyżej 7 do 14 dni</td>
-               <td align="center" style="border-style: solid; border-width: thin 0px 0px thin; border-color: #666666; width: 191px;">powyżej 14 do 21 dni</td>
-               <td align="center" style="border-style: solid; border-width: thin 0px 0px thin; border-color: #666666; width: 191px;">powyżej 21 do30 dni</td>
-               <td align="center" style="border-style: solid; border-width: thin thin 0px thin; border-color: #666666; width: 191px;">Ponad 30 dni</td>
+               <td class="center" style="border-style: solid; border-width: thin 0px 0px thin; border-color: #666666; width: 191px;">Razem&nbsp; (kol. 2 fo 6)</td>
+               <td class="center" style="border-style: solid; border-width: thin 0px 0px thin; border-color: #666666; width: 191px;">do 7 dni </td>
+               <td class="center" style="border-style: solid; border-width: thin 0px 0px thin; border-color: #666666; width: 191px;">powyżej 7 do 14 dni</td>
+               <td class="center" style="border-style: solid; border-width: thin 0px 0px thin; border-color: #666666; width: 191px;">powyżej 14 do 21 dni</td>
+               <td class="center" style="border-style: solid; border-width: thin 0px 0px thin; border-color: #666666; width: 191px;">powyżej 21 do30 dni</td>
+               <td class="center" style="border-style: solid; border-width: thin thin 0px thin; border-color: #666666; width: 191px;">Ponad 30 dni</td>
            </tr>
            <tr>
-               <td align="center" style="border-left: thin solid #666666; border-right: 0px solid #666666; border-top: thin solid #666666; border-bottom: 0px solid #666666; " class="auto-style6">1</td>
-               <td align="center" style="border-style: solid; border-width: thin 0px 0px thin; border-color: #666666; width: 191px;" class="mssGrayMiddle">2</td>
-               <td align="center" style="border-style: solid; border-width: thin 0px 0px thin; border-color: #666666; width: 191px;" class="mssGrayMiddle">3</td>
-               <td align="center" style="border-style: solid; border-width: thin 0px 0px thin; border-color: #666666; width: 191px;" class="mssGrayMiddle">4</td>
-               <td align="center" style="border-style: solid; border-width: thin 0px 0px thin; border-color: #666666; width: 191px;" class="mssGrayMiddle">5</td>
-               <td align="center" style="border-left: thin solid #666666; border-right: 0px solid #666666; border-top: thin solid #666666; border-bottom: 0px solid #666666; border-width: thin thin 0px thin;" class="auto-style6">6</td>
+               <td class="center" style="border-left: thin solid #666666; border-right: 0px solid #666666; border-top: thin solid #666666; border-bottom: 0px solid #666666; " class="auto-style6">1</td>
+               <td class="center" style="border-style: solid; border-width: thin 0px 0px thin; border-color: #666666; width: 191px;" class="mssGrayMiddle">2</td>
+               <td class="center" style="border-style: solid; border-width: thin 0px 0px thin; border-color: #666666; width: 191px;" class="mssGrayMiddle">3</td>
+               <td class="center" style="border-style: solid; border-width: thin 0px 0px thin; border-color: #666666; width: 191px;" class="mssGrayMiddle">4</td>
+               <td class="center" style="border-style: solid; border-width: thin 0px 0px thin; border-color: #666666; width: 191px;" class="mssGrayMiddle">5</td>
+               <td class="center" style="border-left: thin solid #666666; border-right: 0px solid #666666; border-top: thin solid #666666; border-bottom: 0px solid #666666; border-width: thin thin 0px thin;" class="auto-style6">6</td>
            </tr>
            <tr>
-               <td align="center" style="border: thin solid #000000;" class=""><a href="javascript:openPopup('popup.aspx?sesja=1!1.1.1.a.1!1!4')"><asp:Label CssClass="normal" ID="tab_111a1_w01_col01" runat="server" Text="0"></asp:Label></a></td>
-               <td align="center" style="border: thin solid #000000;" class=""><a href="javascript:openPopup('popup.aspx?sesja=1!1.1.1.a.1!2!4')"><asp:Label CssClass="normal" ID="tab_111a1_w01_col02" runat="server" Text="0"></asp:Label></a></td>
-               <td align="center" style="border: thin solid #000000;" class=""><a href="javascript:openPopup('popup.aspx?sesja=1!1.1.1.a.1!3!4')"><asp:Label CssClass="normal" ID="tab_111a1_w01_col03" runat="server" Text="0"></asp:Label></a></td>
-               <td align="center" style="border: thin solid #000000;" class=""><a href="javascript:openPopup('popup.aspx?sesja=1!1.1.1.a.1!4!4')"><asp:Label CssClass="normal" ID="tab_111a1_w01_col04" runat="server" Text="0"></asp:Label></a></td>
-               <td align="center" style="border: thin solid #000000;" class=""><a href="javascript:openPopup('popup.aspx?sesja=1!1.1.1.a.1!5!4')"><asp:Label CssClass="normal" ID="tab_111a1_w01_col05" runat="server" Text="0"></asp:Label></a></td>
-               <td align="center" style="border: thin solid #000000;" class=""><a href="javascript:openPopup('popup.aspx?sesja=1!1.1.1.a.1!6!4')"><asp:Label CssClass="normal" ID="tab_111a1_w01_col06" runat="server" Text="0"></asp:Label></a></td>
+               <td class="center" style="border: thin solid #000000;" class=""><a href="javascript:openPopup('popup.aspx?sesja=1!1.1.1.a.1!1!4')"><asp:Label CssClass="normal" ID="tab_111a1_w01_col01" runat="server" Text="0"></asp:Label></a></td>
+               <td class="center" style="border: thin solid #000000;" class=""><a href="javascript:openPopup('popup.aspx?sesja=1!1.1.1.a.1!2!4')"><asp:Label CssClass="normal" ID="tab_111a1_w01_col02" runat="server" Text="0"></asp:Label></a></td>
+               <td class="center" style="border: thin solid #000000;" class=""><a href="javascript:openPopup('popup.aspx?sesja=1!1.1.1.a.1!3!4')"><asp:Label CssClass="normal" ID="tab_111a1_w01_col03" runat="server" Text="0"></asp:Label></a></td>
+               <td class="center" style="border: thin solid #000000;" class=""><a href="javascript:openPopup('popup.aspx?sesja=1!1.1.1.a.1!4!4')"><asp:Label CssClass="normal" ID="tab_111a1_w01_col04" runat="server" Text="0"></asp:Label></a></td>
+               <td class="center" style="border: thin solid #000000;" class=""><a href="javascript:openPopup('popup.aspx?sesja=1!1.1.1.a.1!5!4')"><asp:Label CssClass="normal" ID="tab_111a1_w01_col05" runat="server" Text="0"></asp:Label></a></td>
+               <td class="center" style="border: thin solid #000000;" class=""><a href="javascript:openPopup('popup.aspx?sesja=1!1.1.1.a.1!6!4')"><asp:Label CssClass="normal" ID="tab_111a1_w01_col06" runat="server" Text="0"></asp:Label></a></td>
            </tr>
            </table>
        <br />
     <br />
        </div>
     <div id="wyznaczenia"  class="page-break">
-        <table style="width:100%;" cellpadding="0" cellspacing="0">
+        <table style="width:100%;" >
             <tr>
                 <td style="width: 1000px">
 
                     <strong>Dział 1.1.1.a.2.</strong> Liczba spraw o umieszczenie w szpitalu psychiatrycznym bez zgody, w których wydano zarządzenie o doprowadzeniu osoby pozostającej w szpitalu, a której postępowanie bezpośrednio dotyczy na rozprawę, stosownie do możliwości przewidzianej w przepisie art. 46 ust. 1a ustawy z dnia 19 sierpnia 1994 r. o ochronie zdrowia psychicznego (Dz. U. z 2017 r., poz. 882)
                 </td>
-                 <td valign="top" align="center">
+                 <td valign="top" class="center">
                     <a href="javascript:openPopup('popup.aspx?sesja=1!1.1.1.a.2!1!4')"> <asp:TextBox ID="tab_111a2_w01_col01" runat="server" ReadOnly="True" CssClass="col_155"></asp:TextBox></a>
                 </td>
             </tr>
         </table>
         <br />
-        <table style="width:100%;" cellpadding="0" cellspacing="0">
+        <table style="width:100%;" >
             <tr>
                 <td style="width: 1000px">
 
                     <strong>Dział 1.1.1.b.</strong> w tym (dz. 1.1.1. w. 47 lit. b) orzeczono przysposobienie, na które rodzice wcześniej wyrazili zgodę</td>
-                 <td valign="top" align="center">
+                 <td valign="top" class="center">
                     <a href="javascript:openPopup('popup.aspx?sesja=1!1.1.1.b!1!4')"> <asp:TextBox ID="tab_111b_w01_col01" runat="server" ReadOnly="True" CssClass="col_155"></asp:TextBox></a>
                 </td>
             </tr>
         </table>
         <br />
-        <table style="width:100%;" cellpadding="0" cellspacing="0">
+        <table style="width:100%;" >
             <tr>
                 <td style="width: 1000px">
 
                     <strong>Dział 1.1.1.c</strong>. w tym (dz. 1.1.1. w. 47 lit. c) przez osoby zamieszkałe za granicą</td>
-                 <td valign="top" align="center">
+                 <td valign="top" class="center">
                     <a href="javascript:openPopup('popup.aspx?sesja=1!1.1.1.c!1!4')"> <asp:TextBox ID="tab_111c_w01_col01" runat="server" ReadOnly="True" CssClass="col_155"></asp:TextBox></a>
                 </td>
             </tr>
@@ -607,32 +607,32 @@
  </div>
 
         <br />
-        <table style="width:100%;" cellpadding="0" cellspacing="0">
+        <table style="width:100%;" >
             <tr>
                 <td style="width: 1000px">
 
                     <strong>Dział 1.1.1.g.1</strong>. </td>
-                 <td valign="top" align="center">
+                 <td valign="top" class="center">
                 </td>
             </tr>
         </table>
-        <table style="width:100%;" cellpadding="0" cellspacing="0">
+        <table style="width:100%;" >
             <tr>
                 <td style="width: 1000px" class="wciecie">
 
                     Sprawy dotyczące wykonywania orzeczeń o odebranie osoby podlegającej władzy rodzicielskiej lub pozostającej pod opieką, wydanych na podstawie art. 5981- 5985 kpc </td>
-                 <td valign="top" align="center">
+                 <td valign="top" class="center">
 
                      <a href="javascript:openPopup('popup.aspx?sesja=1!1.1.1.g.1!1!4')"> <asp:TextBox ID="tab_111g1_w01_col01" runat="server" ReadOnly="True" CssClass="col_155"></asp:TextBox></a>
                 </td>
             </tr>
         </table>
-        <table style="width:100%;" cellpadding="0" cellspacing="0">
+        <table style="width:100%;" >
             <tr>
                 <td style="width: 1000px" class="wciecie">
 
                     Sprawy dotyczące wykonywania orzeczeń o odebranie osoby podlegającej władzy rodzicielskiej lub pozostającej pod opieką, wydanych na podstawie art. 5986- 59812 kpc w zw. z art. 59813 </td>
-                 <td valign="top" align="center">
+                 <td valign="top" class="center">
                   <a href="javascript:openPopup('popup.aspx?sesja=1!1.1.1.g.1!1!4')"> <asp:TextBox ID="tab_111g1_w02_col01" runat="server" ReadOnly="True" CssClass="col_155"></asp:TextBox></a>
                  </td>
             </tr>
@@ -646,14 +646,14 @@
                     <p style="margin-bottom: 0cm">
                         <strong>Dział 1.1.1.h</strong> Liczba zarządzeń sędziego o natychmiastowe wypisanie ze szpitala psychiatrycznego i umorzenie postępowania [art. 45 ust. 2 ustawy z dnia 19 sierpnia 1994 r. o ochronie zdrowia psychicznego (Dz. U. z 2016 r., poz. 546)]</p>
                 </td>
-                <td valign="bottom" align="center">
+                <td valign="bottom" class="center">
                     <a href="javascript:openPopup('popup.aspx?sesja=1!1.1.1.h!1!4')"> <asp:TextBox ID="tab_111h1_w01_col01" runat="server" ReadOnly="True" CssClass="col_155"></asp:TextBox></a>
                 </td>
             </tr>
             </table>
         <br />
         </div>
-       <div id="Div11"  class="page-break">
+       <div id="1.1.1.i"  class="page-break">
            <br />
         <table style="width:100%;">
             <tr>
@@ -661,7 +661,7 @@
 
                         <font face="Arial, sans-serif"><font size="2" style="font-size: 11pt"><font size="2" style="font-size: 9pt"><b>Dział 1.1.1.i. Liczba spraw, w których orzeczono obniżenie alimentów wyłącznie z uwagi na okoliczność uzyskania świadczenia wychowawczego przez uprawniony podmiot na podstawie ustawy z dnia 11 lutego 2016 r. </b><i><b>O pomocy państwa w wychowaniu dzieci</b></i><b> (Dz. U. poz. 195) symbol 003o</b></font></font></font>
                 </td>
-                <td valign="bottom" align="center">
+                <td valign="bottom" class="center">
                          <a href="javascript:openPopup('popup.aspx?sesja=1!1.1.1.i!1!4')"> <asp:TextBox ID="tab_111i_w01_col01" runat="server" ReadOnly="True" CssClass="col_155"></asp:TextBox></a>
                 </td>
             </tr>
@@ -673,7 +673,7 @@
 
                             <font face="Arial, sans-serif"><font size="2" style="font-size: 9pt"><font size="1"><span class="auto-style3" >[art. 45 ust. 2 ustawy z dnia 19 sierpnia 1994 r. o ochronie zdrowia psychicznego </span></font><font class="auto-style3"><font size="1" style="font-size: 6pt"><span >(Dz. U. z 2016 r., poz. 546</span></font><font size="1"><span >)]</span></font></font></font></font>
                 </td>
-                <td valign="bottom" align="center">
+                <td valign="bottom" class="center">
 
                        <a href="javascript:openPopup('popup.aspx?sesja=1!1.1.1.i!1!4')">  <asp:TextBox ID="tab_111j_w01_col01" runat="server" ReadOnly="True" CssClass="col_155"></asp:TextBox></a>
                 </td>
@@ -742,10 +742,12 @@
   </tr>
     </table>
  </div>
-
-                        <strong>
-          <br />
-          Dział 1.1.2.a </strong>&nbsp;Ewidencja popełnionych czynów karalnych przez nieletnich w odniesieniu do osób<div id='1.1.2.a'>
+ <br />
+          <div id='1.1.2.a'>
+                      
+         
+         <strong>   Dział 1.1.2.a </strong>&nbsp;Ewidencja popełnionych czynów karalnych przez nieletnich w odniesieniu do osób
+              
    <table  style="width: 100%; ">
   <tr>
     <td  class="col_100 borderAll " rowspan="4">Wyszczególnienia</td>
@@ -797,8 +799,8 @@
 
           <br />
 
-                        <strong>
-          Dział 1.1.2.b </strong>&nbsp;Stwierdzone czyny karalne przypisane nieletniemu w orzeczeniu kończącym postępowanie <div id='1.1.2.b'>
+                      
+          <strong>  Dział 1.1.2.b </strong>&nbsp;Stwierdzone czyny karalne przypisane nieletniemu w orzeczeniu kończącym postępowanie <div id='1.1.2.b'>
    <table  style="width: 100%; ">
   <tr>
     <td  class="borderAll center" colspan="4">Rodzaje czynów karalnych </td>
@@ -1227,7 +1229,51 @@
           <br />
           b) Wykazuje się wszystkie środki orzeczone przy zawieszeniu zakładu poprawczego. Suma wierszy 26 do 31 może być zatem większa od liczby w wierszu 25.
           <br />
+       <br />
 
+       <div id='Zastosowanie środków zapobiegania i zwalczania demoralizacji i przestępczości nieletnich (art. 26 i 27 ustawy)*)' class="page-break" >
+ <br/>
+ <strong> Dział 1.1.3 Zastosowanie środków zapobiegania i zwalczania demoralizacji i przestępczości nieletnich (art. 26 i 27 ustawy)*)</strong> 
+    <table  style="width: 100%; ">
+ <tr>    <td  class="center borderAll" colspan="3"> Wyszczególnienie</td>    <td class="center borderAll"> Liczba</td>
+</tr>
+ <tr>    <td  class="center borderAll" colspan="3">0</td>    <td class="center borderAll">1</td>
+</tr>
+  <tr>
+    <td  class="borderAll wciecie" colspan="2">Umieszczenie w schronisku dla nieletnich</td>
+  <td  class="borderAll col_36">1</td>
+    <td  class="col_250 center borderAll "><a href="javascript:openPopup('popup.aspx?sesja=1!1.1.3!1!4')"><asp:Label CssClass="normal" ID="tab_113_w01_c01" runat="server" Text="0"></asp:Label></a></td>
+  </tr>
+  <tr>
+    <td  class="borderAll wciecie" colspan="2">Nadzór organizacji młodzieżowej, społecznej, zakładu pracy, osoby godnej zaufania</td>
+  <td  class="borderAll col_36">2</td>
+    <td  class="col_250 center borderAll "><a href="javascript:openPopup('popup.aspx?sesja=2!1.1.3!1!4')"><asp:Label CssClass="normal" ID="tab_113_w02_c01" runat="server" Text="0"></asp:Label></a></td>
+  </tr>
+  <tr>
+    <td  class="borderAll wciecie" colspan="2">Nadzór kuratora</td>
+  <td  class="borderAll col_36">3</td>
+    <td  class="col_250 center borderAll "><a href="javascript:openPopup('popup.aspx?sesja=3!1.1.3!1!4')"><asp:Label CssClass="normal" ID="tab_113_w03_c01" runat="server" Text="0"></asp:Label></a></td>
+  </tr>
+  <tr>
+    <td  class="borderAll wciecie" rowspan="3">Nadzór kuratora</td>
+    <td  class="borderAll wciecie">zakładzie leczniczym</td>
+  <td  class="borderAll col_36">4</td>
+    <td  class="col_250 center borderAll "><a href="javascript:openPopup('popup.aspx?sesja=4!1.1.3!1!4')"><asp:Label CssClass="normal" ID="tab_113_w04_c01" runat="server" Text="0"></asp:Label></a></td>
+  </tr>
+  <tr>
+    <td  class="borderAll wciecie">młodzieżowym ośrodku wychowawczym</td>
+  <td  class="borderAll col_36">5</td>
+    <td  class="col_250 center borderAll "><a href="javascript:openPopup('popup.aspx?sesja=5!1.1.3!1!4')"><asp:Label CssClass="normal" ID="tab_113_w05_c01" runat="server" Text="0"></asp:Label></a></td>
+  </tr>
+  <tr>
+    <td  class="borderAll wciecie">domu pomocy społecznej</td>
+  <td  class="borderAll col_36">6</td>
+    <td  class="col_250 center borderAll "><a href="javascript:openPopup('popup.aspx?sesja=6!1.1.3!1!4')"><asp:Label CssClass="normal" ID="tab_113_w06_c01" runat="server" Text="0"></asp:Label></a></td>
+  </tr>
+    </table>
+ </div>
+         
+          <br />
           <br />
           <div id='1.1.4'>
  <strong> Dział 1.1.4</strong> Obciążenie kosztami postępowania we wszystkich sprawach  Nw, Nkd – łącznie (art. 32  ustawy)*)
@@ -1253,7 +1299,33 @@
   </tr>
     </table>
  </div>
-
+         <div id='1.1.5' class="page-break">
+        
+ <strong> Dział Środki zobowiązujące rodziców (opiekunów)   (art. 7  ustawy)*)</strong> 
+    <table  style="width: 100%; ">
+ <tr>    <td  class="center borderAll" colspan="3"> Wyszczególnienie</td>    <td class="center borderAll"> Liczba</td>
+</tr>
+ <tr>    <td  class="center borderAll" colspan="3">0</td>    <td class="center borderAll">1</td>
+</tr>
+  <tr>
+    <td  class="borderAll wciecie" rowspan="3">Zobowiązano rodziców (opiekuna) do</td>
+    <td  class="borderAll wciecie">Poprawy określonych warunków nieletniego</td>
+  <td  class="borderAll col_36">1</td>
+    <td  class="col_250 center borderAll "><a href="javascript:openPopup('popup.aspx?sesja=1!1.1.5!1!4')"><asp:Label CssClass="normal" ID="tab_115_w01_c01" runat="server" Text="0"></asp:Label></a></td>
+  </tr>
+  <tr>
+    <td  class="borderAll wciecie">naprawienia szkody wyrządzonej przez nieletniego</td>
+  <td  class="borderAll col_36">2</td>
+    <td  class="col_250 center borderAll "><a href="javascript:openPopup('popup.aspx?sesja=2!1.1.5!1!4')"><asp:Label CssClass="normal" ID="tab_115_w02_c01" runat="server" Text="0"></asp:Label></a></td>
+  </tr>
+  <tr>
+    <td  class="borderAll wciecie">inne</td>
+  <td  class="borderAll col_36">3</td>
+    <td  class="col_250 center borderAll "><a href="javascript:openPopup('popup.aspx?sesja=3!1.1.5!1!4')"><asp:Label CssClass="normal" ID="tab_115_w03_c01" runat="server" Text="0"></asp:Label></a></td>
+  </tr>
+    </table>
+ </div>
+      
           <br />
           <div id="1.1.6">
               <strong>Dział 1.1.6</strong> Nieletni oczekujący na umieszczenie i umieszczeni
@@ -8002,98 +8074,98 @@
 
            <asp:Label ID="tabela4Label" runat="server">2.2.a Czas trwania postępowania sądowego od dnia pierwszej rejestracji do dnia uprawomocnienia się sprawy merytorycznie zakończonej (wyrokiem, orzeczeniem) w I instancji (łącznie z czasem trwania mediacji)</asp:Label>
 
-        <table cellpadding="0" cellspacing="0" class="dxflInternalEditorTable_MaterialCompact">
+        <table  class="dxflInternalEditorTable_MaterialCompact">
             <tr>
-                <td align="center" colspan="2" style="border-style: solid; border-width: thin 0px 0px thin; border-color: #666666;" class="col_155">SPRAWY
+                <td class="center" colspan="2" style="border-style: solid; border-width: thin 0px 0px thin; border-color: #666666;" class="col_155">SPRAWY
 wg repertoriów
                 </td>
                 <td class="center borderAll">Razem<br />
                     (kol. 2 do 9)</td>
-                <td align="center" style="border-style: solid; border-width: thin 0px 0px thin; border-color: #666666; width: 142px;" class="col_112">Do 3 miesięcy</td>
-                <td align="center" style="border-style: solid; border-width: thin 0px 0px thin; border-color: #666666; width: 142px;" class="col_112">Powyżej 3
+                <td class="center" style="border-style: solid; border-width: thin 0px 0px thin; border-color: #666666; width: 142px;" class="col_112">Do 3 miesięcy</td>
+                <td class="center" style="border-style: solid; border-width: thin 0px 0px thin; border-color: #666666; width: 142px;" class="col_112">Powyżej 3
                     <br />
                     do 6 mies.</td>
-                <td align="center" style="border-style: solid; border-width: thin 0px 0px thin; border-color: #666666; width: 142px;" class="col_112">Powyżej 6 do<br />
+                <td class="center" style="border-style: solid; border-width: thin 0px 0px thin; border-color: #666666; width: 142px;" class="col_112">Powyżej 6 do<br />
                     12
                     miesięcy.</td>
-                <td align="center" style="border-style: solid; border-width: thin 0px 0px thin; border-color: #666666;" class="col_112">Powyżej 12<br />
+                <td class="center" style="border-style: solid; border-width: thin 0px 0px thin; border-color: #666666;" class="col_112">Powyżej 12<br />
                     miesięcy do 2 lat</td>
-                <td align="center" style="border-style: solid; border-width: thin 0px 0px thin; border-color: #666666;" class="col_112">Powyżej 2
+                <td class="center" style="border-style: solid; border-width: thin 0px 0px thin; border-color: #666666;" class="col_112">Powyżej 2
                     <br />
                     do&nbsp;3
                     lat.</td>
-                <td align="center" style="border-style: solid; border-width: thin 0px 0px thin; border-color: #666666;" class="col_112">Powyżej 3
+                <td class="center" style="border-style: solid; border-width: thin 0px 0px thin; border-color: #666666;" class="col_112">Powyżej 3
                     <br />
                     do&nbsp;5
                     lat.</td>
-                <td align="center" style="border-style: solid; border-width: thin 0px 0px thin; border-color: #666666;" class="col_112">Powyżej 5 <br />
+                <td class="center" style="border-style: solid; border-width: thin 0px 0px thin; border-color: #666666;" class="col_112">Powyżej 5 <br />
                     do&nbsp;8
                     lat.</td>
-                <td align="center" style="border-style: solid; border-width: thin thin 0px thin; border-color: #666666;" class="col_112">Ponad 8 lat</td>
+                <td class="center" style="border-style: solid; border-width: thin thin 0px thin; border-color: #666666;" class="col_112">Ponad 8 lat</td>
             </tr>
             <tr>
-                <td align="center" colspan="2" style="border-style: solid; border-width: thin 0px 0px thin; border-color: #666666;" class="col_155">0</td>
-                <td align="center" style="border-left: thin solid #666666; border-right: 0px solid #666666; border-top: thin solid #666666; border-bottom: 0px solid #666666; width: 142px;" class="col_112">1</td>
-                <td align="center" style="border-style: solid; border-width: thin 0px 0px thin; border-color: #666666;" class="col_112">2</td>
-                <td align="center" style="border-style: solid; border-width: thin 0px 0px thin; border-color: #666666;" class="col_112">3</td>
-                <td align="center" style="border-style: solid; border-width: thin 0px 0px thin; border-color: #666666;" class="col_112">4</td>
-                <td align="center" style="border-style: solid; border-width: thin 0px 0px thin; border-color: #666666; width: 142px;" class="col_112">5</td>
-                <td align="center" style="border-style: solid; border-width: thin 0px 0px thin; border-color: #666666; width: 142px;" class="col_112">6</td>
-                <td align="center" style="border-style: solid; border-width: thin 0px 0px thin; border-color: #666666; width: 142px;" class="col_112">7</td>
-                <td align="center" style="border-style: solid; border-width: thin 0px 0px thin; border-color: #666666; width: 142px;" class="col_112">8</td>
-                <td align="center" style="border-style: solid; border-width: thin thin 0px thin; border-color: #666666; width: 142px;" class="col_112">9</td>
+                <td class="center" colspan="2" style="border-style: solid; border-width: thin 0px 0px thin; border-color: #666666;" class="col_155">0</td>
+                <td class="center" style="border-left: thin solid #666666; border-right: 0px solid #666666; border-top: thin solid #666666; border-bottom: 0px solid #666666; width: 142px;" class="col_112">1</td>
+                <td class="center" style="border-style: solid; border-width: thin 0px 0px thin; border-color: #666666;" class="col_112">2</td>
+                <td class="center" style="border-style: solid; border-width: thin 0px 0px thin; border-color: #666666;" class="col_112">3</td>
+                <td class="center" style="border-style: solid; border-width: thin 0px 0px thin; border-color: #666666;" class="col_112">4</td>
+                <td class="center" style="border-style: solid; border-width: thin 0px 0px thin; border-color: #666666; width: 142px;" class="col_112">5</td>
+                <td class="center" style="border-style: solid; border-width: thin 0px 0px thin; border-color: #666666; width: 142px;" class="col_112">6</td>
+                <td class="center" style="border-style: solid; border-width: thin 0px 0px thin; border-color: #666666; width: 142px;" class="col_112">7</td>
+                <td class="center" style="border-style: solid; border-width: thin 0px 0px thin; border-color: #666666; width: 142px;" class="col_112">8</td>
+                <td class="center" style="border-style: solid; border-width: thin thin 0px thin; border-color: #666666; width: 142px;" class="col_112">9</td>
             </tr>
             <tr>
                 <td align="justify" style="border-style: solid; border-width: thin 0px 0px thin; border-color: #666666; padding-left: 30px;" class="auto-style8">RC </td>
-                <td align="center" style="border-style: solid; border-width: thin 0px 0px thin; border-color: #000000 #666666 #666666 #000000;" class="auto-style9 col_36">01</td>
-                <td align="center" style="border-left: thin solid #666666; border-right: 0px solid #666666; border-top: thin solid #000000; border-bottom: 0px solid #666666; width: 142px;" class="col_112"> <a href="javascript:openPopup('popup.aspx?sesja=1!2.2.a!1!4')"><asp:Label CssClass="normal" ID="tab_22a_w01_col01" runat="server" Text="0"></asp:Label></a></td>
-                <td align="center" style="border-style: solid; border-width: thin 0px 0px thin; border-color: #000000 #666666 #666666 #666666;" class="col_112"> <a href="javascript:openPopup('popup.aspx?sesja=1!2.2.a!2!4')"><asp:Label CssClass="normal" ID="tab_22a_w01_col02" runat="server" Text="0"></asp:Label></a></td>
-                <td align="center" style="border-style: solid; border-width: thin 0px 0px thin; border-color: #000000 #666666 #666666 #666666;" class="col_112"> <a href="javascript:openPopup('popup.aspx?sesja=1!2.2.a!3!4')"><asp:Label CssClass="normal" ID="tab_22a_w01_col03" runat="server" Text="0"></asp:Label></a></td>
-                <td align="center" style="border-style: solid; border-width: thin 0px 0px thin; border-color: #000000 #666666 #666666 #666666;" class="col_112"> <a href="javascript:openPopup('popup.aspx?sesja=1!2.2.a!4!4')"><asp:Label CssClass="normal" ID="tab_22a_w01_col04" runat="server" Text="0"></asp:Label></a></td>
-                <td align="center" style="border-style: solid; border-width: thin 0px 0px thin; border-color: #000000 #666666 #666666 #666666;" class="col_112"> <a href="javascript:openPopup('popup.aspx?sesja=1!2.2.a!5!4')"><asp:Label CssClass="normal" ID="tab_22a_w01_col05" runat="server" Text="0"></asp:Label></a></td>
-                <td align="center" style="border-style: solid; border-width: thin 0px 0px thin; border-color: #000000 #666666 #666666 #666666;" class="col_112"> <a href="javascript:openPopup('popup.aspx?sesja=1!2.2.a!6!4')"><asp:Label CssClass="normal" ID="tab_22a_w01_col06" runat="server" Text="0"></asp:Label></a></td>
-                <td align="center" style="border-style: solid; border-width: thin 0px 0px thin; border-color: #000000 #666666 #666666 #666666;" class="col_112"> <a href="javascript:openPopup('popup.aspx?sesja=1!2.2.a!7!4')"><asp:Label CssClass="normal" ID="tab_22a_w01_col07" runat="server" Text="0"></asp:Label></a></td>
-                <td align="center" style="border-style: solid; border-width: thin 0px 0px thin; border-color: #000000 #666666 #666666 #666666;" class="col_112"> <a href="javascript:openPopup('popup.aspx?sesja=1!2.2.a!8!4')"><asp:Label CssClass="normal" ID="tab_22a_w01_col08" runat="server" Text="0"></asp:Label></a></td>
-                <td align="center" style="border-style: solid; border-width: thin thin 0px thin; border-color: #000000 #000000 #666666 #666666;" class="col_112"> <a href="javascript:openPopup('popup.aspx?sesja=1!2.2.a!9!4')"><asp:Label CssClass="normal" ID="tab_22a_w01_col09" runat="server" Text="0"></asp:Label></a></td>
+                <td class="center" style="border-style: solid; border-width: thin 0px 0px thin; border-color: #000000 #666666 #666666 #000000;" class="auto-style9 col_36">01</td>
+                <td class="center" style="border-left: thin solid #666666; border-right: 0px solid #666666; border-top: thin solid #000000; border-bottom: 0px solid #666666; width: 142px;" class="col_112"> <a href="javascript:openPopup('popup.aspx?sesja=1!2.2.a!1!4')"><asp:Label CssClass="normal" ID="tab_22a_w01_col01" runat="server" Text="0"></asp:Label></a></td>
+                <td class="center" style="border-style: solid; border-width: thin 0px 0px thin; border-color: #000000 #666666 #666666 #666666;" class="col_112"> <a href="javascript:openPopup('popup.aspx?sesja=1!2.2.a!2!4')"><asp:Label CssClass="normal" ID="tab_22a_w01_col02" runat="server" Text="0"></asp:Label></a></td>
+                <td class="center" style="border-style: solid; border-width: thin 0px 0px thin; border-color: #000000 #666666 #666666 #666666;" class="col_112"> <a href="javascript:openPopup('popup.aspx?sesja=1!2.2.a!3!4')"><asp:Label CssClass="normal" ID="tab_22a_w01_col03" runat="server" Text="0"></asp:Label></a></td>
+                <td class="center" style="border-style: solid; border-width: thin 0px 0px thin; border-color: #000000 #666666 #666666 #666666;" class="col_112"> <a href="javascript:openPopup('popup.aspx?sesja=1!2.2.a!4!4')"><asp:Label CssClass="normal" ID="tab_22a_w01_col04" runat="server" Text="0"></asp:Label></a></td>
+                <td class="center" style="border-style: solid; border-width: thin 0px 0px thin; border-color: #000000 #666666 #666666 #666666;" class="col_112"> <a href="javascript:openPopup('popup.aspx?sesja=1!2.2.a!5!4')"><asp:Label CssClass="normal" ID="tab_22a_w01_col05" runat="server" Text="0"></asp:Label></a></td>
+                <td class="center" style="border-style: solid; border-width: thin 0px 0px thin; border-color: #000000 #666666 #666666 #666666;" class="col_112"> <a href="javascript:openPopup('popup.aspx?sesja=1!2.2.a!6!4')"><asp:Label CssClass="normal" ID="tab_22a_w01_col06" runat="server" Text="0"></asp:Label></a></td>
+                <td class="center" style="border-style: solid; border-width: thin 0px 0px thin; border-color: #000000 #666666 #666666 #666666;" class="col_112"> <a href="javascript:openPopup('popup.aspx?sesja=1!2.2.a!7!4')"><asp:Label CssClass="normal" ID="tab_22a_w01_col07" runat="server" Text="0"></asp:Label></a></td>
+                <td class="center" style="border-style: solid; border-width: thin 0px 0px thin; border-color: #000000 #666666 #666666 #666666;" class="col_112"> <a href="javascript:openPopup('popup.aspx?sesja=1!2.2.a!8!4')"><asp:Label CssClass="normal" ID="tab_22a_w01_col08" runat="server" Text="0"></asp:Label></a></td>
+                <td class="center" style="border-style: solid; border-width: thin thin 0px thin; border-color: #000000 #000000 #666666 #666666;" class="col_112"> <a href="javascript:openPopup('popup.aspx?sesja=1!2.2.a!9!4')"><asp:Label CssClass="normal" ID="tab_22a_w01_col09" runat="server" Text="0"></asp:Label></a></td>
             </tr>
             <tr>
                 <td align="justify" style="border-style: solid; border-width: thin 0px thin thin; border-color: #666666; padding-left: 30px;" class="auto-style8">RNs</td>
-                <td align="center" style="border-style: solid; border-width: thin 0px thin thin; border-color: #666666 #666666 #000000 #000000;" class="auto-style9 col_36">02</td>
-                <td align="center" style="border-left: thin solid #666666; border-right: 0px solid #666666; border-top: thin solid #666666; border-bottom: thin solid #000000; border-width: thin 0px 0px thin; width: 142px;" class="col_112"><a href="javascript:openPopup('popup.aspx?sesja=2!2.2.a!1!4')"><asp:Label CssClass="normal" ID="tab_22a_w02_col01" runat="server" Text="0"></asp:Label></a></td>
-                <td align="center" style="border-style: solid; border-width: thin 0px 0px thin; border-color: #666666 #666666 #000000 #666666;" class="col_112"><a href="javascript:openPopup('popup.aspx?sesja=2!2.2.a!2!4')"><asp:Label CssClass="normal" ID="tab_22a_w02_col02" runat="server" Text="0"></asp:Label></a></td>
-                <td align="center" style="border-style: solid; border-width: thin 0px 0px thin; border-color: #666666 #666666 #000000 #666666;" class="col_112"><a href="javascript:openPopup('popup.aspx?sesja=2!2.2.a!3!4')"><asp:Label CssClass="normal" ID="tab_22a_w02_col03" runat="server" Text="0"></asp:Label></a></td>
-                <td align="center" style="border-style: solid; border-width: thin 0px 0px thin; border-color: #666666 #666666 #000000 #666666;" class="col_112"><a href="javascript:openPopup('popup.aspx?sesja=2!2.2.a!4!4')"><asp:Label CssClass="normal" ID="tab_22a_w02_col04" runat="server" Text="0"></asp:Label></a></td>
-                <td align="center" style="border-style: solid; border-width: thin 0px 0px thin; border-color: #666666 #666666 #000000 #666666;" class="col_112"><a href="javascript:openPopup('popup.aspx?sesja=2!2.2.a!5!4')"><asp:Label CssClass="normal" ID="tab_22a_w02_col05" runat="server" Text="0"></asp:Label></a></td>
-                <td align="center" style="border-style: solid; border-width: thin 0px 0px thin; border-color: #666666 #666666 #000000 #666666;" class="col_112"><a href="javascript:openPopup('popup.aspx?sesja=2!2.2.a!6!4')"><asp:Label CssClass="normal" ID="tab_22a_w02_col06" runat="server" Text="0"></asp:Label></a></td>
-                <td align="center" style="border-style: solid; border-width: thin 0px 0px thin; border-color: #666666 #666666 #000000 #666666;" class="col_112"><a href="javascript:openPopup('popup.aspx?sesja=2!2.2.a!7!4')"><asp:Label CssClass="normal" ID="tab_22a_w02_col07" runat="server" Text="0"></asp:Label></a></td>
-                <td align="center" style="border-style: solid; border-width: thin 0px 0px thin; border-color: #666666 #666666 #000000 #666666;" class="col_112"><a href="javascript:openPopup('popup.aspx?sesja=2!2.2.a!8!4')"><asp:Label CssClass="normal" ID="tab_22a_w02_col08" runat="server" Text="0"></asp:Label></a></td>
-                <td align="center" style="border-style: solid; border-width: thin thin 0px thin; border-color: #666666 #000000 #000000 #666666;" class="col_112"><a href="javascript:openPopup('popup.aspx?sesja=2!2.2.a!9!4')"><asp:Label CssClass="normal" ID="tab_22a_w02_col09" runat="server" Text="0"></asp:Label></a></td>
+                <td class="center" style="border-style: solid; border-width: thin 0px thin thin; border-color: #666666 #666666 #000000 #000000;" class="auto-style9 col_36">02</td>
+                <td class="center" style="border-left: thin solid #666666; border-right: 0px solid #666666; border-top: thin solid #666666; border-bottom: thin solid #000000; border-width: thin 0px 0px thin; width: 142px;" class="col_112"><a href="javascript:openPopup('popup.aspx?sesja=2!2.2.a!1!4')"><asp:Label CssClass="normal" ID="tab_22a_w02_col01" runat="server" Text="0"></asp:Label></a></td>
+                <td class="center" style="border-style: solid; border-width: thin 0px 0px thin; border-color: #666666 #666666 #000000 #666666;" class="col_112"><a href="javascript:openPopup('popup.aspx?sesja=2!2.2.a!2!4')"><asp:Label CssClass="normal" ID="tab_22a_w02_col02" runat="server" Text="0"></asp:Label></a></td>
+                <td class="center" style="border-style: solid; border-width: thin 0px 0px thin; border-color: #666666 #666666 #000000 #666666;" class="col_112"><a href="javascript:openPopup('popup.aspx?sesja=2!2.2.a!3!4')"><asp:Label CssClass="normal" ID="tab_22a_w02_col03" runat="server" Text="0"></asp:Label></a></td>
+                <td class="center" style="border-style: solid; border-width: thin 0px 0px thin; border-color: #666666 #666666 #000000 #666666;" class="col_112"><a href="javascript:openPopup('popup.aspx?sesja=2!2.2.a!4!4')"><asp:Label CssClass="normal" ID="tab_22a_w02_col04" runat="server" Text="0"></asp:Label></a></td>
+                <td class="center" style="border-style: solid; border-width: thin 0px 0px thin; border-color: #666666 #666666 #000000 #666666;" class="col_112"><a href="javascript:openPopup('popup.aspx?sesja=2!2.2.a!5!4')"><asp:Label CssClass="normal" ID="tab_22a_w02_col05" runat="server" Text="0"></asp:Label></a></td>
+                <td class="center" style="border-style: solid; border-width: thin 0px 0px thin; border-color: #666666 #666666 #000000 #666666;" class="col_112"><a href="javascript:openPopup('popup.aspx?sesja=2!2.2.a!6!4')"><asp:Label CssClass="normal" ID="tab_22a_w02_col06" runat="server" Text="0"></asp:Label></a></td>
+                <td class="center" style="border-style: solid; border-width: thin 0px 0px thin; border-color: #666666 #666666 #000000 #666666;" class="col_112"><a href="javascript:openPopup('popup.aspx?sesja=2!2.2.a!7!4')"><asp:Label CssClass="normal" ID="tab_22a_w02_col07" runat="server" Text="0"></asp:Label></a></td>
+                <td class="center" style="border-style: solid; border-width: thin 0px 0px thin; border-color: #666666 #666666 #000000 #666666;" class="col_112"><a href="javascript:openPopup('popup.aspx?sesja=2!2.2.a!8!4')"><asp:Label CssClass="normal" ID="tab_22a_w02_col08" runat="server" Text="0"></asp:Label></a></td>
+                <td class="center" style="border-style: solid; border-width: thin thin 0px thin; border-color: #666666 #000000 #000000 #666666;" class="col_112"><a href="javascript:openPopup('popup.aspx?sesja=2!2.2.a!9!4')"><asp:Label CssClass="normal" ID="tab_22a_w02_col09" runat="server" Text="0"></asp:Label></a></td>
             </tr>
             <tr>
                 <td align="justify" style="border-style: solid; border-width: thin 0px thin thin; border-color: #666666; padding-left: 30px;" class="auto-style8">Nsm</td>
-                <td align="center" style="border-style: solid; border-width: thin 0px thin thin; border-color: #666666 #666666 #000000 #000000;" class="auto-style9 col_36">03</td>
-                <td align="center" style="border-style: solid; border-width: thin 0px 0px thin; border-color: #666666 #666666 #000000 #666666;" class="col_112"><a href="javascript:openPopup('popup.aspx?sesja=3!2.2.a!1!4')"><asp:Label CssClass="normal" ID="tab_22a_w03_col01" runat="server" Text="0"></asp:Label></a></td>
-                <td align="center" style="border-style: solid; border-width: thin 0px 0px thin; border-color: #666666 #666666 #000000 #666666;" class="col_112"><a href="javascript:openPopup('popup.aspx?sesja=3!2.2.a!2!4')"><asp:Label CssClass="normal" ID="tab_22a_w03_col02" runat="server" Text="0"></asp:Label></a></td>
-                <td align="center" style="border-style: solid; border-width: thin 0px 0px thin; border-color: #666666 #666666 #000000 #666666;" class="col_112"><a href="javascript:openPopup('popup.aspx?sesja=3!2.2.a!3!4')"><asp:Label CssClass="normal" ID="tab_22a_w03_col03" runat="server" Text="0"></asp:Label></a></td>
-                <td align="center" style="border-style: solid; border-width: thin 0px 0px thin; border-color: #666666 #666666 #000000 #666666;" class="col_112"><a href="javascript:openPopup('popup.aspx?sesja=3!2.2.a!4!4')"><asp:Label CssClass="normal" ID="tab_22a_w03_col04" runat="server" Text="0"></asp:Label></a></td>
-                <td align="center" style="border-style: solid; border-width: thin 0px 0px thin; border-color: #666666 #666666 #000000 #666666;" class="col_112"><a href="javascript:openPopup('popup.aspx?sesja=3!2.2.a!5!4')"><asp:Label CssClass="normal" ID="tab_22a_w03_col05" runat="server" Text="0"></asp:Label></a></td>
-                <td align="center" style="border-style: solid; border-width: thin 0px 0px thin; border-color: #666666 #666666 #000000 #666666;" class="col_112"><a href="javascript:openPopup('popup.aspx?sesja=3!2.2.a!6!4')"><asp:Label CssClass="normal" ID="tab_22a_w03_col06" runat="server" Text="0"></asp:Label></a></td>
-                <td align="center" style="border-style: solid; border-width: thin 0px 0px thin; border-color: #666666 #666666 #000000 #666666;" class="col_112"><a href="javascript:openPopup('popup.aspx?sesja=3!2.2.a!7!4')"><asp:Label CssClass="normal" ID="tab_22a_w03_col07" runat="server" Text="0"></asp:Label></a></td>
-                <td align="center" style="border-style: solid; border-width: thin 0px 0px thin; border-color: #666666 #666666 #000000 #666666;" class="col_112"><a href="javascript:openPopup('popup.aspx?sesja=3!2.2.a!8!4')"><asp:Label CssClass="normal" ID="tab_22a_w03_col08" runat="server" Text="0"></asp:Label></a></td>
-                <td align="center" style="border-style: solid; border-width: thin thin 0px thin; border-color: #666666 #000000 #000000 #666666;" class="col_112"><a href="javascript:openPopup('popup.aspx?sesja=3!2.2.a!9!4')"><asp:Label CssClass="normal" ID="tab_22a_w03_col09" runat="server" Text="0"></asp:Label></a></td>
+                <td class="center" style="border-style: solid; border-width: thin 0px thin thin; border-color: #666666 #666666 #000000 #000000;" class="auto-style9 col_36">03</td>
+                <td class="center" style="border-style: solid; border-width: thin 0px 0px thin; border-color: #666666 #666666 #000000 #666666;" class="col_112"><a href="javascript:openPopup('popup.aspx?sesja=3!2.2.a!1!4')"><asp:Label CssClass="normal" ID="tab_22a_w03_col01" runat="server" Text="0"></asp:Label></a></td>
+                <td class="center" style="border-style: solid; border-width: thin 0px 0px thin; border-color: #666666 #666666 #000000 #666666;" class="col_112"><a href="javascript:openPopup('popup.aspx?sesja=3!2.2.a!2!4')"><asp:Label CssClass="normal" ID="tab_22a_w03_col02" runat="server" Text="0"></asp:Label></a></td>
+                <td class="center" style="border-style: solid; border-width: thin 0px 0px thin; border-color: #666666 #666666 #000000 #666666;" class="col_112"><a href="javascript:openPopup('popup.aspx?sesja=3!2.2.a!3!4')"><asp:Label CssClass="normal" ID="tab_22a_w03_col03" runat="server" Text="0"></asp:Label></a></td>
+                <td class="center" style="border-style: solid; border-width: thin 0px 0px thin; border-color: #666666 #666666 #000000 #666666;" class="col_112"><a href="javascript:openPopup('popup.aspx?sesja=3!2.2.a!4!4')"><asp:Label CssClass="normal" ID="tab_22a_w03_col04" runat="server" Text="0"></asp:Label></a></td>
+                <td class="center" style="border-style: solid; border-width: thin 0px 0px thin; border-color: #666666 #666666 #000000 #666666;" class="col_112"><a href="javascript:openPopup('popup.aspx?sesja=3!2.2.a!5!4')"><asp:Label CssClass="normal" ID="tab_22a_w03_col05" runat="server" Text="0"></asp:Label></a></td>
+                <td class="center" style="border-style: solid; border-width: thin 0px 0px thin; border-color: #666666 #666666 #000000 #666666;" class="col_112"><a href="javascript:openPopup('popup.aspx?sesja=3!2.2.a!6!4')"><asp:Label CssClass="normal" ID="tab_22a_w03_col06" runat="server" Text="0"></asp:Label></a></td>
+                <td class="center" style="border-style: solid; border-width: thin 0px 0px thin; border-color: #666666 #666666 #000000 #666666;" class="col_112"><a href="javascript:openPopup('popup.aspx?sesja=3!2.2.a!7!4')"><asp:Label CssClass="normal" ID="tab_22a_w03_col07" runat="server" Text="0"></asp:Label></a></td>
+                <td class="center" style="border-style: solid; border-width: thin 0px 0px thin; border-color: #666666 #666666 #000000 #666666;" class="col_112"><a href="javascript:openPopup('popup.aspx?sesja=3!2.2.a!8!4')"><asp:Label CssClass="normal" ID="tab_22a_w03_col08" runat="server" Text="0"></asp:Label></a></td>
+                <td class="center" style="border-style: solid; border-width: thin thin 0px thin; border-color: #666666 #000000 #000000 #666666;" class="col_112"><a href="javascript:openPopup('popup.aspx?sesja=3!2.2.a!9!4')"><asp:Label CssClass="normal" ID="tab_22a_w03_col09" runat="server" Text="0"></asp:Label></a></td>
             </tr>
             <tr>
                 <td align="justify" style="border-style: solid; border-width: thin 0px thin thin; border-color: #666666; padding-left: 30px;" class="auto-style8">Nkd</td>
-                <td align="center" style="border-style: solid; border-width: thin 0px thin thin; border-color: #666666 #666666 #000000 #000000;" class="auto-style9 col_36">04</td>
-                <td align="center" style="border-left: thin solid #666666; border-right: 0px solid #666666; border-top: thin solid #666666; border-bottom: thin solid #000000; width: 142px;" class="col_112"><a href="javascript:openPopup('popup.aspx?sesja=4!2.2.a!1!4')"><asp:Label CssClass="normal" ID="tab_22a_w04_col01" runat="server" Text="0"></asp:Label></a></td>
-                <td align="center" style="border-style: solid; border-width: thin 0px thin thin; border-color: #666666 #666666 #000000 #666666;" class="col_112"><a href="javascript:openPopup('popup.aspx?sesja=4!2.2.a!2!4')"><asp:Label CssClass="normal" ID="tab_22a_w04_col02" runat="server" Text="0"></asp:Label></a></td>
-                <td align="center" style="border-style: solid; border-width: thin 0px thin thin; border-color: #666666 #666666 #000000 #666666;" class="col_112"><a href="javascript:openPopup('popup.aspx?sesja=4!2.2.a!3!4')"><asp:Label CssClass="normal" ID="tab_22a_w04_col03" runat="server" Text="0"></asp:Label></a></td>
-                <td align="center" style="border-style: solid; border-width: thin 0px thin thin; border-color: #666666 #666666 #000000 #666666;" class="col_112"><a href="javascript:openPopup('popup.aspx?sesja=4!2.2.a!4!4')"><asp:Label CssClass="normal" ID="tab_22a_w04_col04" runat="server" Text="0"></asp:Label></a></td>
-                <td align="center" style="border-style: solid; border-width: thin 0px thin thin; border-color: #666666 #666666 #000000 #666666;" class="col_112"><a href="javascript:openPopup('popup.aspx?sesja=4!2.2.a!5!4')"><asp:Label CssClass="normal" ID="tab_22a_w04_col05" runat="server" Text="0"></asp:Label></a></td>
-                <td align="center" style="border-style: solid; border-width: thin 0px thin thin; border-color: #666666 #666666 #000000 #666666;" class="col_112"><a href="javascript:openPopup('popup.aspx?sesja=4!2.2.a!6!4')"><asp:Label CssClass="normal" ID="tab_22a_w04_col06" runat="server" Text="0"></asp:Label></a></td>
-                <td align="center" style="border-style: solid; border-width: thin 0px thin thin; border-color: #666666 #666666 #000000 #666666;" class="col_112"><a href="javascript:openPopup('popup.aspx?sesja=4!2.2.a!7!4')"><asp:Label CssClass="normal" ID="tab_22a_w04_col07" runat="server" Text="0"></asp:Label></a></td>
-                <td align="center" style="border-style: solid; border-width: thin 0px thin thin; border-color: #666666 #666666 #000000 #666666;" class="col_112"><a href="javascript:openPopup('popup.aspx?sesja=4!2.2.a!8!4')"><asp:Label CssClass="normal" ID="tab_22a_w04_col08" runat="server" Text="0"></asp:Label></a></td>
-                <td align="center" style="border-style: solid; border-width: thin; border-color: #666666 #666666 #000000 #666666;" class="col_112"><a href="javascript:openPopup('popup.aspx?sesja=4!2.2.a!9!4')"><asp:Label CssClass="normal" ID="tab_22a_w04_col09" runat="server" Text="0"></asp:Label></a></td>
+                <td class="center" style="border-style: solid; border-width: thin 0px thin thin; border-color: #666666 #666666 #000000 #000000;" class="auto-style9 col_36">04</td>
+                <td class="center" style="border-left: thin solid #666666; border-right: 0px solid #666666; border-top: thin solid #666666; border-bottom: thin solid #000000; width: 142px;" class="col_112"><a href="javascript:openPopup('popup.aspx?sesja=4!2.2.a!1!4')"><asp:Label CssClass="normal" ID="tab_22a_w04_col01" runat="server" Text="0"></asp:Label></a></td>
+                <td class="center" style="border-style: solid; border-width: thin 0px thin thin; border-color: #666666 #666666 #000000 #666666;" class="col_112"><a href="javascript:openPopup('popup.aspx?sesja=4!2.2.a!2!4')"><asp:Label CssClass="normal" ID="tab_22a_w04_col02" runat="server" Text="0"></asp:Label></a></td>
+                <td class="center" style="border-style: solid; border-width: thin 0px thin thin; border-color: #666666 #666666 #000000 #666666;" class="col_112"><a href="javascript:openPopup('popup.aspx?sesja=4!2.2.a!3!4')"><asp:Label CssClass="normal" ID="tab_22a_w04_col03" runat="server" Text="0"></asp:Label></a></td>
+                <td class="center" style="border-style: solid; border-width: thin 0px thin thin; border-color: #666666 #666666 #000000 #666666;" class="col_112"><a href="javascript:openPopup('popup.aspx?sesja=4!2.2.a!4!4')"><asp:Label CssClass="normal" ID="tab_22a_w04_col04" runat="server" Text="0"></asp:Label></a></td>
+                <td class="center" style="border-style: solid; border-width: thin 0px thin thin; border-color: #666666 #666666 #000000 #666666;" class="col_112"><a href="javascript:openPopup('popup.aspx?sesja=4!2.2.a!5!4')"><asp:Label CssClass="normal" ID="tab_22a_w04_col05" runat="server" Text="0"></asp:Label></a></td>
+                <td class="center" style="border-style: solid; border-width: thin 0px thin thin; border-color: #666666 #666666 #000000 #666666;" class="col_112"><a href="javascript:openPopup('popup.aspx?sesja=4!2.2.a!6!4')"><asp:Label CssClass="normal" ID="tab_22a_w04_col06" runat="server" Text="0"></asp:Label></a></td>
+                <td class="center" style="border-style: solid; border-width: thin 0px thin thin; border-color: #666666 #666666 #000000 #666666;" class="col_112"><a href="javascript:openPopup('popup.aspx?sesja=4!2.2.a!7!4')"><asp:Label CssClass="normal" ID="tab_22a_w04_col07" runat="server" Text="0"></asp:Label></a></td>
+                <td class="center" style="border-style: solid; border-width: thin 0px thin thin; border-color: #666666 #666666 #000000 #666666;" class="col_112"><a href="javascript:openPopup('popup.aspx?sesja=4!2.2.a!8!4')"><asp:Label CssClass="normal" ID="tab_22a_w04_col08" runat="server" Text="0"></asp:Label></a></td>
+                <td class="center" style="border-style: solid; border-width: thin; border-color: #666666 #666666 #000000 #666666;" class="col_112"><a href="javascript:openPopup('popup.aspx?sesja=4!2.2.a!9!4')"><asp:Label CssClass="normal" ID="tab_22a_w04_col09" runat="server" Text="0"></asp:Label></a></td>
             </tr>
         </table>
 
@@ -8103,98 +8175,98 @@ wg repertoriów
 
            <asp:Label ID="Label3" runat="server">2.2.1 </asp:Label>
 
-        <table cellpadding="0" cellspacing="0" class="dxflInternalEditorTable_MaterialCompact">
+        <table  class="dxflInternalEditorTable_MaterialCompact">
             <tr>
-                <td align="center" colspan="2" style="border-style: solid; border-width: thin 0px 0px thin; border-color: #666666;" class="col_155">SPRAWY
+                <td class="center" colspan="2" style="border-style: solid; border-width: thin 0px 0px thin; border-color: #666666;" class="col_155">SPRAWY
 wg repertoriów
                 </td>
                 <td class="center borderAll">Razem<br />
                     (kol. 2 do 9)</td>
-                <td align="center" style="border-style: solid; border-width: thin 0px 0px thin; border-color: #666666; width: 142px;" class="col_112">Do 3 miesięcy</td>
-                <td align="center" style="border-style: solid; border-width: thin 0px 0px thin; border-color: #666666; width: 142px;" class="col_112">Powyżej 3
+                <td class="center" style="border-style: solid; border-width: thin 0px 0px thin; border-color: #666666; width: 142px;" class="col_112">Do 3 miesięcy</td>
+                <td class="center" style="border-style: solid; border-width: thin 0px 0px thin; border-color: #666666; width: 142px;" class="col_112">Powyżej 3
                     <br />
                     do 6 mies.</td>
-                <td align="center" style="border-style: solid; border-width: thin 0px 0px thin; border-color: #666666; width: 142px;" class="col_112">Powyżej 6 do<br />
+                <td class="center" style="border-style: solid; border-width: thin 0px 0px thin; border-color: #666666; width: 142px;" class="col_112">Powyżej 6 do<br />
                     12
                     miesięcy.</td>
-                <td align="center" style="border-style: solid; border-width: thin 0px 0px thin; border-color: #666666;" class="col_112">Powyżej 12<br />
+                <td class="center" style="border-style: solid; border-width: thin 0px 0px thin; border-color: #666666;" class="col_112">Powyżej 12<br />
                     miesięcy do 2 lat</td>
-                <td align="center" style="border-style: solid; border-width: thin 0px 0px thin; border-color: #666666;" class="col_112">Powyżej 2
+                <td class="center" style="border-style: solid; border-width: thin 0px 0px thin; border-color: #666666;" class="col_112">Powyżej 2
                     <br />
                     do&nbsp;3
                     lat.</td>
-                <td align="center" style="border-style: solid; border-width: thin 0px 0px thin; border-color: #666666;" class="col_112">Powyżej 3
+                <td class="center" style="border-style: solid; border-width: thin 0px 0px thin; border-color: #666666;" class="col_112">Powyżej 3
                     <br />
                     do&nbsp;5
                     lat.</td>
-                <td align="center" style="border-style: solid; border-width: thin 0px 0px thin; border-color: #666666;" class="col_112">Powyżej 5 <br />
+                <td class="center" style="border-style: solid; border-width: thin 0px 0px thin; border-color: #666666;" class="col_112">Powyżej 5 <br />
                     do&nbsp;8
                     lat.</td>
-                <td align="center" style="border-style: solid; border-width: thin thin 0px thin; border-color: #666666;" class="col_112">Ponad 8 lat</td>
+                <td class="center" style="border-style: solid; border-width: thin thin 0px thin; border-color: #666666;" class="col_112">Ponad 8 lat</td>
             </tr>
             <tr>
-                <td align="center" colspan="2" style="border-style: solid; border-width: thin 0px 0px thin; border-color: #666666;" class="col_155">0</td>
-                <td align="center" style="border-left: thin solid #666666; border-right: 0px solid #666666; border-top: thin solid #666666; border-bottom: 0px solid #666666; width: 142px;" class="col_112">1</td>
-                <td align="center" style="border-style: solid; border-width: thin 0px 0px thin; border-color: #666666;" class="col_112">2</td>
-                <td align="center" style="border-style: solid; border-width: thin 0px 0px thin; border-color: #666666;" class="col_112">3</td>
-                <td align="center" style="border-style: solid; border-width: thin 0px 0px thin; border-color: #666666;" class="col_112">4</td>
-                <td align="center" style="border-style: solid; border-width: thin 0px 0px thin; border-color: #666666; width: 142px;" class="col_112">5</td>
-                <td align="center" style="border-style: solid; border-width: thin 0px 0px thin; border-color: #666666; width: 142px;" class="col_112">6</td>
-                <td align="center" style="border-style: solid; border-width: thin 0px 0px thin; border-color: #666666; width: 142px;" class="col_112">7</td>
-                <td align="center" style="border-style: solid; border-width: thin 0px 0px thin; border-color: #666666; width: 142px;" class="col_112">8</td>
-                <td align="center" style="border-style: solid; border-width: thin thin 0px thin; border-color: #666666; width: 142px;" class="col_112">9</td>
+                <td class="center" colspan="2" style="border-style: solid; border-width: thin 0px 0px thin; border-color: #666666;" class="col_155">0</td>
+                <td class="center" style="border-left: thin solid #666666; border-right: 0px solid #666666; border-top: thin solid #666666; border-bottom: 0px solid #666666; width: 142px;" class="col_112">1</td>
+                <td class="center" style="border-style: solid; border-width: thin 0px 0px thin; border-color: #666666;" class="col_112">2</td>
+                <td class="center" style="border-style: solid; border-width: thin 0px 0px thin; border-color: #666666;" class="col_112">3</td>
+                <td class="center" style="border-style: solid; border-width: thin 0px 0px thin; border-color: #666666;" class="col_112">4</td>
+                <td class="center" style="border-style: solid; border-width: thin 0px 0px thin; border-color: #666666; width: 142px;" class="col_112">5</td>
+                <td class="center" style="border-style: solid; border-width: thin 0px 0px thin; border-color: #666666; width: 142px;" class="col_112">6</td>
+                <td class="center" style="border-style: solid; border-width: thin 0px 0px thin; border-color: #666666; width: 142px;" class="col_112">7</td>
+                <td class="center" style="border-style: solid; border-width: thin 0px 0px thin; border-color: #666666; width: 142px;" class="col_112">8</td>
+                <td class="center" style="border-style: solid; border-width: thin thin 0px thin; border-color: #666666; width: 142px;" class="col_112">9</td>
             </tr>
             <tr>
                 <td align="justify" style="border-style: solid; border-width: thin 0px 0px thin; border-color: #666666; padding-left: 30px;" class="auto-style8">RC </td>
-                <td align="center" style="border-style: solid; border-width: thin 0px 0px thin; border-color: #000000 #666666 #666666 #000000;" class="auto-style9 col_36">01</td>
-                <td align="center" style="border-left: thin solid #666666; border-right: 0px solid #666666; border-top: thin solid #000000; border-bottom: 0px solid #666666; width: 142px;" class="col_112"> <a href="javascript:openPopup('popup.aspx?sesja=1!2.2.1!1!4')"><asp:Label CssClass="normal" ID="tab_2_2_1_w01_col01" runat="server" Text="0"></asp:Label></a></td>
-                <td align="center" style="border-style: solid; border-width: thin 0px 0px thin; border-color: #000000 #666666 #666666 #666666;" class="col_112"> <a href="javascript:openPopup('popup.aspx?sesja=1!2.2.1!2!4')"><asp:Label CssClass="normal" ID="tab_2_2_1_w01_col02" runat="server" Text="0"></asp:Label></a></td>
-                <td align="center" style="border-style: solid; border-width: thin 0px 0px thin; border-color: #000000 #666666 #666666 #666666;" class="col_112"> <a href="javascript:openPopup('popup.aspx?sesja=1!2.2.1!3!4')"><asp:Label CssClass="normal" ID="tab_2_2_1_w01_col03" runat="server" Text="0"></asp:Label></a></td>
-                <td align="center" style="border-style: solid; border-width: thin 0px 0px thin; border-color: #000000 #666666 #666666 #666666;" class="col_112"> <a href="javascript:openPopup('popup.aspx?sesja=1!2.2.1!4!4')"><asp:Label CssClass="normal" ID="tab_2_2_1_w01_col04" runat="server" Text="0"></asp:Label></a></td>
-                <td align="center" style="border-style: solid; border-width: thin 0px 0px thin; border-color: #000000 #666666 #666666 #666666;" class="col_112"> <a href="javascript:openPopup('popup.aspx?sesja=1!2.2.1!5!4')"><asp:Label CssClass="normal" ID="tab_2_2_1_w01_col05" runat="server" Text="0"></asp:Label></a></td>
-                <td align="center" style="border-style: solid; border-width: thin 0px 0px thin; border-color: #000000 #666666 #666666 #666666;" class="col_112"> <a href="javascript:openPopup('popup.aspx?sesja=1!2.2.1!6!4')"><asp:Label CssClass="normal" ID="tab_2_2_1_w01_col06" runat="server" Text="0"></asp:Label></a></td>
-                <td align="center" style="border-style: solid; border-width: thin 0px 0px thin; border-color: #000000 #666666 #666666 #666666;" class="col_112"> <a href="javascript:openPopup('popup.aspx?sesja=1!2.2.1!7!4')"><asp:Label CssClass="normal" ID="tab_2_2_1_w01_col07" runat="server" Text="0"></asp:Label></a></td>
-                <td align="center" style="border-style: solid; border-width: thin 0px 0px thin; border-color: #000000 #666666 #666666 #666666;" class="col_112"> <a href="javascript:openPopup('popup.aspx?sesja=1!2.2.1!8!4')"><asp:Label CssClass="normal" ID="tab_2_2_1_w01_col08" runat="server" Text="0"></asp:Label></a></td>
-                <td align="center" style="border-style: solid; border-width: thin thin 0px thin; border-color: #000000 #000000 #666666 #666666;" class="col_112"> <a href="javascript:openPopup('popup.aspx?sesja=1!2.2.1!9!4')"><asp:Label CssClass="normal" ID="tab_2_2_1_w01_col09" runat="server" Text="0"></asp:Label></a></td>
+                <td class="center" style="border-style: solid; border-width: thin 0px 0px thin; border-color: #000000 #666666 #666666 #000000;" class="auto-style9 col_36">01</td>
+                <td class="center" style="border-left: thin solid #666666; border-right: 0px solid #666666; border-top: thin solid #000000; border-bottom: 0px solid #666666; width: 142px;" class="col_112"> <a href="javascript:openPopup('popup.aspx?sesja=1!2.2.1!1!4')"><asp:Label CssClass="normal" ID="tab_2_2_1_w01_col01" runat="server" Text="0"></asp:Label></a></td>
+                <td class="center" style="border-style: solid; border-width: thin 0px 0px thin; border-color: #000000 #666666 #666666 #666666;" class="col_112"> <a href="javascript:openPopup('popup.aspx?sesja=1!2.2.1!2!4')"><asp:Label CssClass="normal" ID="tab_2_2_1_w01_col02" runat="server" Text="0"></asp:Label></a></td>
+                <td class="center" style="border-style: solid; border-width: thin 0px 0px thin; border-color: #000000 #666666 #666666 #666666;" class="col_112"> <a href="javascript:openPopup('popup.aspx?sesja=1!2.2.1!3!4')"><asp:Label CssClass="normal" ID="tab_2_2_1_w01_col03" runat="server" Text="0"></asp:Label></a></td>
+                <td class="center" style="border-style: solid; border-width: thin 0px 0px thin; border-color: #000000 #666666 #666666 #666666;" class="col_112"> <a href="javascript:openPopup('popup.aspx?sesja=1!2.2.1!4!4')"><asp:Label CssClass="normal" ID="tab_2_2_1_w01_col04" runat="server" Text="0"></asp:Label></a></td>
+                <td class="center" style="border-style: solid; border-width: thin 0px 0px thin; border-color: #000000 #666666 #666666 #666666;" class="col_112"> <a href="javascript:openPopup('popup.aspx?sesja=1!2.2.1!5!4')"><asp:Label CssClass="normal" ID="tab_2_2_1_w01_col05" runat="server" Text="0"></asp:Label></a></td>
+                <td class="center" style="border-style: solid; border-width: thin 0px 0px thin; border-color: #000000 #666666 #666666 #666666;" class="col_112"> <a href="javascript:openPopup('popup.aspx?sesja=1!2.2.1!6!4')"><asp:Label CssClass="normal" ID="tab_2_2_1_w01_col06" runat="server" Text="0"></asp:Label></a></td>
+                <td class="center" style="border-style: solid; border-width: thin 0px 0px thin; border-color: #000000 #666666 #666666 #666666;" class="col_112"> <a href="javascript:openPopup('popup.aspx?sesja=1!2.2.1!7!4')"><asp:Label CssClass="normal" ID="tab_2_2_1_w01_col07" runat="server" Text="0"></asp:Label></a></td>
+                <td class="center" style="border-style: solid; border-width: thin 0px 0px thin; border-color: #000000 #666666 #666666 #666666;" class="col_112"> <a href="javascript:openPopup('popup.aspx?sesja=1!2.2.1!8!4')"><asp:Label CssClass="normal" ID="tab_2_2_1_w01_col08" runat="server" Text="0"></asp:Label></a></td>
+                <td class="center" style="border-style: solid; border-width: thin thin 0px thin; border-color: #000000 #000000 #666666 #666666;" class="col_112"> <a href="javascript:openPopup('popup.aspx?sesja=1!2.2.1!9!4')"><asp:Label CssClass="normal" ID="tab_2_2_1_w01_col09" runat="server" Text="0"></asp:Label></a></td>
             </tr>
             <tr>
                 <td align="justify" style="border-style: solid; border-width: thin 0px thin thin; border-color: #666666; padding-left: 30px;" class="auto-style8">RNs</td>
-                <td align="center" style="border-style: solid; border-width: thin 0px thin thin; border-color: #666666 #666666 #000000 #000000;" class="auto-style9 col_36">02</td>
-                <td align="center" style="border-left: thin solid #666666; border-right: 0px solid #666666; border-top: thin solid #666666; border-bottom: thin solid #000000; border-width: thin 0px 0px thin; width: 142px;" class="col_112"><a href="javascript:openPopup('popup.aspx?sesja=2!2.2.1!1!4')"><asp:Label CssClass="normal" ID="tab_2_2_1_w02_col01" runat="server" Text="0"></asp:Label></a></td>
-                <td align="center" style="border-style: solid; border-width: thin 0px 0px thin; border-color: #666666 #666666 #000000 #666666;" class="col_112"><a href="javascript:openPopup('popup.aspx?sesja=2!2.2.1!2!4')"><asp:Label CssClass="normal" ID="tab_2_2_1_w02_col02" runat="server" Text="0"></asp:Label></a></td>
-                <td align="center" style="border-style: solid; border-width: thin 0px 0px thin; border-color: #666666 #666666 #000000 #666666;" class="col_112"><a href="javascript:openPopup('popup.aspx?sesja=2!2.2.1!3!4')"><asp:Label CssClass="normal" ID="tab_2_2_1_w02_col03" runat="server" Text="0"></asp:Label></a></td>
-                <td align="center" style="border-style: solid; border-width: thin 0px 0px thin; border-color: #666666 #666666 #000000 #666666;" class="col_112"><a href="javascript:openPopup('popup.aspx?sesja=2!2.2.1!4!4')"><asp:Label CssClass="normal" ID="tab_2_2_1_w02_col04" runat="server" Text="0"></asp:Label></a></td>
-                <td align="center" style="border-style: solid; border-width: thin 0px 0px thin; border-color: #666666 #666666 #000000 #666666;" class="col_112"><a href="javascript:openPopup('popup.aspx?sesja=2!2.2.1!5!4')"><asp:Label CssClass="normal" ID="tab_2_2_1_w02_col05" runat="server" Text="0"></asp:Label></a></td>
-                <td align="center" style="border-style: solid; border-width: thin 0px 0px thin; border-color: #666666 #666666 #000000 #666666;" class="col_112"><a href="javascript:openPopup('popup.aspx?sesja=2!2.2.1!6!4')"><asp:Label CssClass="normal" ID="tab_2_2_1_w02_col06" runat="server" Text="0"></asp:Label></a></td>
-                <td align="center" style="border-style: solid; border-width: thin 0px 0px thin; border-color: #666666 #666666 #000000 #666666;" class="col_112"><a href="javascript:openPopup('popup.aspx?sesja=2!2.2.1!7!4')"><asp:Label CssClass="normal" ID="tab_2_2_1_w02_col07" runat="server" Text="0"></asp:Label></a></td>
-                <td align="center" style="border-style: solid; border-width: thin 0px 0px thin; border-color: #666666 #666666 #000000 #666666;" class="col_112"><a href="javascript:openPopup('popup.aspx?sesja=2!2.2.1!8!4')"><asp:Label CssClass="normal" ID="tab_2_2_1_w02_col08" runat="server" Text="0"></asp:Label></a></td>
-                <td align="center" style="border-style: solid; border-width: thin thin 0px thin; border-color: #666666 #000000 #000000 #666666;" class="col_112"><a href="javascript:openPopup('popup.aspx?sesja=2!2.2.1!9!4')"><asp:Label CssClass="normal" ID="tab_2_2_1_w02_col09" runat="server" Text="0"></asp:Label></a></td>
+                <td class="center" style="border-style: solid; border-width: thin 0px thin thin; border-color: #666666 #666666 #000000 #000000;" class="auto-style9 col_36">02</td>
+                <td class="center" style="border-left: thin solid #666666; border-right: 0px solid #666666; border-top: thin solid #666666; border-bottom: thin solid #000000; border-width: thin 0px 0px thin; width: 142px;" class="col_112"><a href="javascript:openPopup('popup.aspx?sesja=2!2.2.1!1!4')"><asp:Label CssClass="normal" ID="tab_2_2_1_w02_col01" runat="server" Text="0"></asp:Label></a></td>
+                <td class="center" style="border-style: solid; border-width: thin 0px 0px thin; border-color: #666666 #666666 #000000 #666666;" class="col_112"><a href="javascript:openPopup('popup.aspx?sesja=2!2.2.1!2!4')"><asp:Label CssClass="normal" ID="tab_2_2_1_w02_col02" runat="server" Text="0"></asp:Label></a></td>
+                <td class="center" style="border-style: solid; border-width: thin 0px 0px thin; border-color: #666666 #666666 #000000 #666666;" class="col_112"><a href="javascript:openPopup('popup.aspx?sesja=2!2.2.1!3!4')"><asp:Label CssClass="normal" ID="tab_2_2_1_w02_col03" runat="server" Text="0"></asp:Label></a></td>
+                <td class="center" style="border-style: solid; border-width: thin 0px 0px thin; border-color: #666666 #666666 #000000 #666666;" class="col_112"><a href="javascript:openPopup('popup.aspx?sesja=2!2.2.1!4!4')"><asp:Label CssClass="normal" ID="tab_2_2_1_w02_col04" runat="server" Text="0"></asp:Label></a></td>
+                <td class="center" style="border-style: solid; border-width: thin 0px 0px thin; border-color: #666666 #666666 #000000 #666666;" class="col_112"><a href="javascript:openPopup('popup.aspx?sesja=2!2.2.1!5!4')"><asp:Label CssClass="normal" ID="tab_2_2_1_w02_col05" runat="server" Text="0"></asp:Label></a></td>
+                <td class="center" style="border-style: solid; border-width: thin 0px 0px thin; border-color: #666666 #666666 #000000 #666666;" class="col_112"><a href="javascript:openPopup('popup.aspx?sesja=2!2.2.1!6!4')"><asp:Label CssClass="normal" ID="tab_2_2_1_w02_col06" runat="server" Text="0"></asp:Label></a></td>
+                <td class="center" style="border-style: solid; border-width: thin 0px 0px thin; border-color: #666666 #666666 #000000 #666666;" class="col_112"><a href="javascript:openPopup('popup.aspx?sesja=2!2.2.1!7!4')"><asp:Label CssClass="normal" ID="tab_2_2_1_w02_col07" runat="server" Text="0"></asp:Label></a></td>
+                <td class="center" style="border-style: solid; border-width: thin 0px 0px thin; border-color: #666666 #666666 #000000 #666666;" class="col_112"><a href="javascript:openPopup('popup.aspx?sesja=2!2.2.1!8!4')"><asp:Label CssClass="normal" ID="tab_2_2_1_w02_col08" runat="server" Text="0"></asp:Label></a></td>
+                <td class="center" style="border-style: solid; border-width: thin thin 0px thin; border-color: #666666 #000000 #000000 #666666;" class="col_112"><a href="javascript:openPopup('popup.aspx?sesja=2!2.2.1!9!4')"><asp:Label CssClass="normal" ID="tab_2_2_1_w02_col09" runat="server" Text="0"></asp:Label></a></td>
             </tr>
             <tr>
                 <td align="justify" style="border-style: solid; border-width: thin 0px thin thin; border-color: #666666; padding-left: 30px;" class="auto-style8">Nsm</td>
-                <td align="center" style="border-style: solid; border-width: thin 0px thin thin; border-color: #666666 #666666 #000000 #000000;" class="auto-style9 col_36">03</td>
-                <td align="center" style="border-style: solid; border-width: thin 0px 0px thin; border-color: #666666 #666666 #000000 #666666;" class="col_112"><a href="javascript:openPopup('popup.aspx?sesja=3!2.2.1!1!4')"><asp:Label CssClass="normal" ID="tab_2_2_1_w03_col01" runat="server" Text="0"></asp:Label></a></td>
-                <td align="center" style="border-style: solid; border-width: thin 0px 0px thin; border-color: #666666 #666666 #000000 #666666;" class="col_112"><a href="javascript:openPopup('popup.aspx?sesja=3!2.2.1!2!4')"><asp:Label CssClass="normal" ID="tab_2_2_1_w03_col02" runat="server" Text="0"></asp:Label></a></td>
-                <td align="center" style="border-style: solid; border-width: thin 0px 0px thin; border-color: #666666 #666666 #000000 #666666;" class="col_112"><a href="javascript:openPopup('popup.aspx?sesja=3!2.2.1!3!4')"><asp:Label CssClass="normal" ID="tab_2_2_1_w03_col03" runat="server" Text="0"></asp:Label></a></td>
-                <td align="center" style="border-style: solid; border-width: thin 0px 0px thin; border-color: #666666 #666666 #000000 #666666;" class="col_112"><a href="javascript:openPopup('popup.aspx?sesja=3!2.2.1!4!4')"><asp:Label CssClass="normal" ID="tab_2_2_1_w03_col04" runat="server" Text="0"></asp:Label></a></td>
-                <td align="center" style="border-style: solid; border-width: thin 0px 0px thin; border-color: #666666 #666666 #000000 #666666;" class="col_112"><a href="javascript:openPopup('popup.aspx?sesja=3!2.2.1!5!4')"><asp:Label CssClass="normal" ID="tab_2_2_1_w03_col05" runat="server" Text="0"></asp:Label></a></td>
-                <td align="center" style="border-style: solid; border-width: thin 0px 0px thin; border-color: #666666 #666666 #000000 #666666;" class="col_112"><a href="javascript:openPopup('popup.aspx?sesja=3!2.2.1!6!4')"><asp:Label CssClass="normal" ID="tab_2_2_1_w03_col06" runat="server" Text="0"></asp:Label></a></td>
-                <td align="center" style="border-style: solid; border-width: thin 0px 0px thin; border-color: #666666 #666666 #000000 #666666;" class="col_112"><a href="javascript:openPopup('popup.aspx?sesja=3!2.2.1!7!4')"><asp:Label CssClass="normal" ID="tab_2_2_1_w03_col07" runat="server" Text="0"></asp:Label></a></td>
-                <td align="center" style="border-style: solid; border-width: thin 0px 0px thin; border-color: #666666 #666666 #000000 #666666;" class="col_112"><a href="javascript:openPopup('popup.aspx?sesja=3!2.2.1!8!4')"><asp:Label CssClass="normal" ID="tab_2_2_1_w03_col08" runat="server" Text="0"></asp:Label></a></td>
-                <td align="center" style="border-style: solid; border-width: thin thin 0px thin; border-color: #666666 #000000 #000000 #666666;" class="col_112"><a href="javascript:openPopup('popup.aspx?sesja=3!2.2.1!9!4')"><asp:Label CssClass="normal" ID="tab_2_2_1_w03_col09" runat="server" Text="0"></asp:Label></a></td>
+                <td class="center" style="border-style: solid; border-width: thin 0px thin thin; border-color: #666666 #666666 #000000 #000000;" class="auto-style9 col_36">03</td>
+                <td class="center" style="border-style: solid; border-width: thin 0px 0px thin; border-color: #666666 #666666 #000000 #666666;" class="col_112"><a href="javascript:openPopup('popup.aspx?sesja=3!2.2.1!1!4')"><asp:Label CssClass="normal" ID="tab_2_2_1_w03_col01" runat="server" Text="0"></asp:Label></a></td>
+                <td class="center" style="border-style: solid; border-width: thin 0px 0px thin; border-color: #666666 #666666 #000000 #666666;" class="col_112"><a href="javascript:openPopup('popup.aspx?sesja=3!2.2.1!2!4')"><asp:Label CssClass="normal" ID="tab_2_2_1_w03_col02" runat="server" Text="0"></asp:Label></a></td>
+                <td class="center" style="border-style: solid; border-width: thin 0px 0px thin; border-color: #666666 #666666 #000000 #666666;" class="col_112"><a href="javascript:openPopup('popup.aspx?sesja=3!2.2.1!3!4')"><asp:Label CssClass="normal" ID="tab_2_2_1_w03_col03" runat="server" Text="0"></asp:Label></a></td>
+                <td class="center" style="border-style: solid; border-width: thin 0px 0px thin; border-color: #666666 #666666 #000000 #666666;" class="col_112"><a href="javascript:openPopup('popup.aspx?sesja=3!2.2.1!4!4')"><asp:Label CssClass="normal" ID="tab_2_2_1_w03_col04" runat="server" Text="0"></asp:Label></a></td>
+                <td class="center" style="border-style: solid; border-width: thin 0px 0px thin; border-color: #666666 #666666 #000000 #666666;" class="col_112"><a href="javascript:openPopup('popup.aspx?sesja=3!2.2.1!5!4')"><asp:Label CssClass="normal" ID="tab_2_2_1_w03_col05" runat="server" Text="0"></asp:Label></a></td>
+                <td class="center" style="border-style: solid; border-width: thin 0px 0px thin; border-color: #666666 #666666 #000000 #666666;" class="col_112"><a href="javascript:openPopup('popup.aspx?sesja=3!2.2.1!6!4')"><asp:Label CssClass="normal" ID="tab_2_2_1_w03_col06" runat="server" Text="0"></asp:Label></a></td>
+                <td class="center" style="border-style: solid; border-width: thin 0px 0px thin; border-color: #666666 #666666 #000000 #666666;" class="col_112"><a href="javascript:openPopup('popup.aspx?sesja=3!2.2.1!7!4')"><asp:Label CssClass="normal" ID="tab_2_2_1_w03_col07" runat="server" Text="0"></asp:Label></a></td>
+                <td class="center" style="border-style: solid; border-width: thin 0px 0px thin; border-color: #666666 #666666 #000000 #666666;" class="col_112"><a href="javascript:openPopup('popup.aspx?sesja=3!2.2.1!8!4')"><asp:Label CssClass="normal" ID="tab_2_2_1_w03_col08" runat="server" Text="0"></asp:Label></a></td>
+                <td class="center" style="border-style: solid; border-width: thin thin 0px thin; border-color: #666666 #000000 #000000 #666666;" class="col_112"><a href="javascript:openPopup('popup.aspx?sesja=3!2.2.1!9!4')"><asp:Label CssClass="normal" ID="tab_2_2_1_w03_col09" runat="server" Text="0"></asp:Label></a></td>
             </tr>
             <tr>
                 <td align="justify" style="border-style: solid; border-width: thin 0px thin thin; border-color: #666666; padding-left: 30px;" class="auto-style8">Nkd</td>
-                <td align="center" style="border-style: solid; border-width: thin 0px thin thin; border-color: #666666 #666666 #000000 #000000;" class="auto-style9 col_36">04</td>
-                <td align="center" style="border-left: thin solid #666666; border-right: 0px solid #666666; border-top: thin solid #666666; border-bottom: thin solid #000000; width: 142px;" class="col_112"><a href="javascript:openPopup('popup.aspx?sesja=4!2.2.1!1!4')"><asp:Label CssClass="normal" ID="tab_2_2_1_w04_col01" runat="server" Text="0"></asp:Label></a></td>
-                <td align="center" style="border-style: solid; border-width: thin 0px thin thin; border-color: #666666 #666666 #000000 #666666;" class="col_112"><a href="javascript:openPopup('popup.aspx?sesja=4!2.2.1!2!4')"><asp:Label CssClass="normal" ID="tab_2_2_1_w04_col02" runat="server" Text="0"></asp:Label></a></td>
-                <td align="center" style="border-style: solid; border-width: thin 0px thin thin; border-color: #666666 #666666 #000000 #666666;" class="col_112"><a href="javascript:openPopup('popup.aspx?sesja=4!2.2.1!3!4')"><asp:Label CssClass="normal" ID="tab_2_2_1_w04_col03" runat="server" Text="0"></asp:Label></a></td>
-                <td align="center" style="border-style: solid; border-width: thin 0px thin thin; border-color: #666666 #666666 #000000 #666666;" class="col_112"><a href="javascript:openPopup('popup.aspx?sesja=4!2.2.1!4!4')"><asp:Label CssClass="normal" ID="tab_2_2_1_w04_col04" runat="server" Text="0"></asp:Label></a></td>
-                <td align="center" style="border-style: solid; border-width: thin 0px thin thin; border-color: #666666 #666666 #000000 #666666;" class="col_112"><a href="javascript:openPopup('popup.aspx?sesja=4!2.2.1!5!4')"><asp:Label CssClass="normal" ID="tab_2_2_1_w04_col05" runat="server" Text="0"></asp:Label></a></td>
-                <td align="center" style="border-style: solid; border-width: thin 0px thin thin; border-color: #666666 #666666 #000000 #666666;" class="col_112"><a href="javascript:openPopup('popup.aspx?sesja=4!2.2.1!6!4')"><asp:Label CssClass="normal" ID="tab_2_2_1_w04_col06" runat="server" Text="0"></asp:Label></a></td>
-                <td align="center" style="border-style: solid; border-width: thin 0px thin thin; border-color: #666666 #666666 #000000 #666666;" class="col_112"><a href="javascript:openPopup('popup.aspx?sesja=4!2.2.1!7!4')"><asp:Label CssClass="normal" ID="tab_2_2_1_w04_col07" runat="server" Text="0"></asp:Label></a></td>
-                <td align="center" style="border-style: solid; border-width: thin 0px thin thin; border-color: #666666 #666666 #000000 #666666;" class="col_112"><a href="javascript:openPopup('popup.aspx?sesja=4!2.2.1!8!4')"><asp:Label CssClass="normal" ID="tab_2_2_1_w04_col08" runat="server" Text="0"></asp:Label></a></td>
-                <td align="center" style="border-style: solid; border-width: thin; border-color: #666666 #666666 #000000 #666666;" class="col_112"><a href="javascript:openPopup('popup.aspx?sesja=4!2.2.1!9!4')"><asp:Label CssClass="normal" ID="tab_2_2_1_w04_col09" runat="server" Text="0"></asp:Label></a></td>
+                <td class="center" style="border-style: solid; border-width: thin 0px thin thin; border-color: #666666 #666666 #000000 #000000;" class="auto-style9 col_36">04</td>
+                <td class="center" style="border-left: thin solid #666666; border-right: 0px solid #666666; border-top: thin solid #666666; border-bottom: thin solid #000000; width: 142px;" class="col_112"><a href="javascript:openPopup('popup.aspx?sesja=4!2.2.1!1!4')"><asp:Label CssClass="normal" ID="tab_2_2_1_w04_col01" runat="server" Text="0"></asp:Label></a></td>
+                <td class="center" style="border-style: solid; border-width: thin 0px thin thin; border-color: #666666 #666666 #000000 #666666;" class="col_112"><a href="javascript:openPopup('popup.aspx?sesja=4!2.2.1!2!4')"><asp:Label CssClass="normal" ID="tab_2_2_1_w04_col02" runat="server" Text="0"></asp:Label></a></td>
+                <td class="center" style="border-style: solid; border-width: thin 0px thin thin; border-color: #666666 #666666 #000000 #666666;" class="col_112"><a href="javascript:openPopup('popup.aspx?sesja=4!2.2.1!3!4')"><asp:Label CssClass="normal" ID="tab_2_2_1_w04_col03" runat="server" Text="0"></asp:Label></a></td>
+                <td class="center" style="border-style: solid; border-width: thin 0px thin thin; border-color: #666666 #666666 #000000 #666666;" class="col_112"><a href="javascript:openPopup('popup.aspx?sesja=4!2.2.1!4!4')"><asp:Label CssClass="normal" ID="tab_2_2_1_w04_col04" runat="server" Text="0"></asp:Label></a></td>
+                <td class="center" style="border-style: solid; border-width: thin 0px thin thin; border-color: #666666 #666666 #000000 #666666;" class="col_112"><a href="javascript:openPopup('popup.aspx?sesja=4!2.2.1!5!4')"><asp:Label CssClass="normal" ID="tab_2_2_1_w04_col05" runat="server" Text="0"></asp:Label></a></td>
+                <td class="center" style="border-style: solid; border-width: thin 0px thin thin; border-color: #666666 #666666 #000000 #666666;" class="col_112"><a href="javascript:openPopup('popup.aspx?sesja=4!2.2.1!6!4')"><asp:Label CssClass="normal" ID="tab_2_2_1_w04_col06" runat="server" Text="0"></asp:Label></a></td>
+                <td class="center" style="border-style: solid; border-width: thin 0px thin thin; border-color: #666666 #666666 #000000 #666666;" class="col_112"><a href="javascript:openPopup('popup.aspx?sesja=4!2.2.1!7!4')"><asp:Label CssClass="normal" ID="tab_2_2_1_w04_col07" runat="server" Text="0"></asp:Label></a></td>
+                <td class="center" style="border-style: solid; border-width: thin 0px thin thin; border-color: #666666 #666666 #000000 #666666;" class="col_112"><a href="javascript:openPopup('popup.aspx?sesja=4!2.2.1!8!4')"><asp:Label CssClass="normal" ID="tab_2_2_1_w04_col08" runat="server" Text="0"></asp:Label></a></td>
+                <td class="center" style="border-style: solid; border-width: thin; border-color: #666666 #666666 #000000 #666666;" class="col_112"><a href="javascript:openPopup('popup.aspx?sesja=4!2.2.1!9!4')"><asp:Label CssClass="normal" ID="tab_2_2_1_w04_col09" runat="server" Text="0"></asp:Label></a></td>
             </tr>
         </table>
 
@@ -8203,98 +8275,98 @@ wg repertoriów
 
            <asp:Label ID="Label7" runat="server">2.2.1.a </asp:Label>
 
-        <table cellpadding="0" cellspacing="0" class="dxflInternalEditorTable_MaterialCompact">
+        <table  class="dxflInternalEditorTable_MaterialCompact">
             <tr>
-                <td align="center" colspan="2" style="border-style: solid; border-width: thin 0px 0px thin; border-color: #666666;" class="col_155">SPRAWY
+                <td class="center" colspan="2" style="border-style: solid; border-width: thin 0px 0px thin; border-color: #666666;" class="col_155">SPRAWY
 wg repertoriów
                 </td>
                 <td class="center borderAll">Razem<br />
                     (kol. 2 do 9)</td>
-                <td align="center" style="border-style: solid; border-width: thin 0px 0px thin; border-color: #666666; width: 142px;" class="col_112">Do 3 miesięcy</td>
-                <td align="center" style="border-style: solid; border-width: thin 0px 0px thin; border-color: #666666; width: 142px;" class="col_112">Powyżej 3
+                <td class="center" style="border-style: solid; border-width: thin 0px 0px thin; border-color: #666666; width: 142px;" class="col_112">Do 3 miesięcy</td>
+                <td class="center" style="border-style: solid; border-width: thin 0px 0px thin; border-color: #666666; width: 142px;" class="col_112">Powyżej 3
                     <br />
                     do 6 mies.</td>
-                <td align="center" style="border-style: solid; border-width: thin 0px 0px thin; border-color: #666666; width: 142px;" class="col_112">Powyżej 6 do<br />
+                <td class="center" style="border-style: solid; border-width: thin 0px 0px thin; border-color: #666666; width: 142px;" class="col_112">Powyżej 6 do<br />
                     12
                     miesięcy.</td>
-                <td align="center" style="border-style: solid; border-width: thin 0px 0px thin; border-color: #666666;" class="col_112">Powyżej 12<br />
+                <td class="center" style="border-style: solid; border-width: thin 0px 0px thin; border-color: #666666;" class="col_112">Powyżej 12<br />
                     miesięcy do 2 lat</td>
-                <td align="center" style="border-style: solid; border-width: thin 0px 0px thin; border-color: #666666;" class="col_112">Powyżej 2
+                <td class="center" style="border-style: solid; border-width: thin 0px 0px thin; border-color: #666666;" class="col_112">Powyżej 2
                     <br />
                     do&nbsp;3
                     lat.</td>
-                <td align="center" style="border-style: solid; border-width: thin 0px 0px thin; border-color: #666666;" class="col_112">Powyżej 3
+                <td class="center" style="border-style: solid; border-width: thin 0px 0px thin; border-color: #666666;" class="col_112">Powyżej 3
                     <br />
                     do&nbsp;5
                     lat.</td>
-                <td align="center" style="border-style: solid; border-width: thin 0px 0px thin; border-color: #666666;" class="col_112">Powyżej 5 <br />
+                <td class="center" style="border-style: solid; border-width: thin 0px 0px thin; border-color: #666666;" class="col_112">Powyżej 5 <br />
                     do&nbsp;8
                     lat.</td>
-                <td align="center" style="border-style: solid; border-width: thin thin 0px thin; border-color: #666666;" class="col_112">Ponad 8 lat</td>
+                <td class="center" style="border-style: solid; border-width: thin thin 0px thin; border-color: #666666;" class="col_112">Ponad 8 lat</td>
             </tr>
             <tr>
-                <td align="center" colspan="2" style="border-style: solid; border-width: thin 0px 0px thin; border-color: #666666;" class="col_155">0</td>
-                <td align="center" style="border-left: thin solid #666666; border-right: 0px solid #666666; border-top: thin solid #666666; border-bottom: 0px solid #666666; width: 142px;" class="col_112">1</td>
-                <td align="center" style="border-style: solid; border-width: thin 0px 0px thin; border-color: #666666;" class="col_112">2</td>
-                <td align="center" style="border-style: solid; border-width: thin 0px 0px thin; border-color: #666666;" class="col_112">3</td>
-                <td align="center" style="border-style: solid; border-width: thin 0px 0px thin; border-color: #666666;" class="col_112">4</td>
-                <td align="center" style="border-style: solid; border-width: thin 0px 0px thin; border-color: #666666; width: 142px;" class="col_112">5</td>
-                <td align="center" style="border-style: solid; border-width: thin 0px 0px thin; border-color: #666666; width: 142px;" class="col_112">6</td>
-                <td align="center" style="border-style: solid; border-width: thin 0px 0px thin; border-color: #666666; width: 142px;" class="col_112">7</td>
-                <td align="center" style="border-style: solid; border-width: thin 0px 0px thin; border-color: #666666; width: 142px;" class="col_112">8</td>
-                <td align="center" style="border-style: solid; border-width: thin thin 0px thin; border-color: #666666; width: 142px;" class="col_112">9</td>
+                <td class="center" colspan="2" style="border-style: solid; border-width: thin 0px 0px thin; border-color: #666666;" class="col_155">0</td>
+                <td class="center" style="border-left: thin solid #666666; border-right: 0px solid #666666; border-top: thin solid #666666; border-bottom: 0px solid #666666; width: 142px;" class="col_112">1</td>
+                <td class="center" style="border-style: solid; border-width: thin 0px 0px thin; border-color: #666666;" class="col_112">2</td>
+                <td class="center" style="border-style: solid; border-width: thin 0px 0px thin; border-color: #666666;" class="col_112">3</td>
+                <td class="center" style="border-style: solid; border-width: thin 0px 0px thin; border-color: #666666;" class="col_112">4</td>
+                <td class="center" style="border-style: solid; border-width: thin 0px 0px thin; border-color: #666666; width: 142px;" class="col_112">5</td>
+                <td class="center" style="border-style: solid; border-width: thin 0px 0px thin; border-color: #666666; width: 142px;" class="col_112">6</td>
+                <td class="center" style="border-style: solid; border-width: thin 0px 0px thin; border-color: #666666; width: 142px;" class="col_112">7</td>
+                <td class="center" style="border-style: solid; border-width: thin 0px 0px thin; border-color: #666666; width: 142px;" class="col_112">8</td>
+                <td class="center" style="border-style: solid; border-width: thin thin 0px thin; border-color: #666666; width: 142px;" class="col_112">9</td>
             </tr>
             <tr>
                 <td align="justify" style="border-style: solid; border-width: thin 0px 0px thin; border-color: #666666; padding-left: 30px;" class="auto-style8">RC </td>
-                <td align="center" style="border-style: solid; border-width: thin 0px 0px thin; border-color: #000000 #666666 #666666 #000000;" class="auto-style9 col_36">01</td>
-                <td align="center" style="border-left: thin solid #666666; border-right: 0px solid #666666; border-top: thin solid #000000; border-bottom: 0px solid #666666; width: 142px;" class="col_112"> <a href="javascript:openPopup('popup.aspx?sesja=1!2.2.1.a!1!4')"><asp:Label CssClass="normal" ID="tab_2_2_1_a_w01_col01" runat="server" Text="0"></asp:Label></a></td>
-                <td align="center" style="border-style: solid; border-width: thin 0px 0px thin; border-color: #000000 #666666 #666666 #666666;" class="col_112"> <a href="javascript:openPopup('popup.aspx?sesja=1!2.2.1.a!2!4')"><asp:Label CssClass="normal" ID="tab_2_2_1_a_w01_col02" runat="server" Text="0"></asp:Label></a></td>
-                <td align="center" style="border-style: solid; border-width: thin 0px 0px thin; border-color: #000000 #666666 #666666 #666666;" class="col_112"> <a href="javascript:openPopup('popup.aspx?sesja=1!2.2.1.a!3!4')"><asp:Label CssClass="normal" ID="tab_2_2_1_a_w01_col03" runat="server" Text="0"></asp:Label></a></td>
-                <td align="center" style="border-style: solid; border-width: thin 0px 0px thin; border-color: #000000 #666666 #666666 #666666;" class="col_112"> <a href="javascript:openPopup('popup.aspx?sesja=1!2.2.1.a!4!4')"><asp:Label CssClass="normal" ID="tab_2_2_1_a_w01_col04" runat="server" Text="0"></asp:Label></a></td>
-                <td align="center" style="border-style: solid; border-width: thin 0px 0px thin; border-color: #000000 #666666 #666666 #666666;" class="col_112"> <a href="javascript:openPopup('popup.aspx?sesja=1!2.2.1.a!5!4')"><asp:Label CssClass="normal" ID="tab_2_2_1_a_w01_col05" runat="server" Text="0"></asp:Label></a></td>
-                <td align="center" style="border-style: solid; border-width: thin 0px 0px thin; border-color: #000000 #666666 #666666 #666666;" class="col_112"> <a href="javascript:openPopup('popup.aspx?sesja=1!2.2.1.a!6!4')"><asp:Label CssClass="normal" ID="tab_2_2_1_a_w01_col06" runat="server" Text="0"></asp:Label></a></td>
-                <td align="center" style="border-style: solid; border-width: thin 0px 0px thin; border-color: #000000 #666666 #666666 #666666;" class="col_112"> <a href="javascript:openPopup('popup.aspx?sesja=1!2.2.1.a!7!4')"><asp:Label CssClass="normal" ID="tab_2_2_1_a_w01_col07" runat="server" Text="0"></asp:Label></a></td>
-                <td align="center" style="border-style: solid; border-width: thin 0px 0px thin; border-color: #000000 #666666 #666666 #666666;" class="col_112"> <a href="javascript:openPopup('popup.aspx?sesja=1!2.2.1.a!8!4')"><asp:Label CssClass="normal" ID="tab_2_2_1_a_w01_col08" runat="server" Text="0"></asp:Label></a></td>
-                <td align="center" style="border-style: solid; border-width: thin thin 0px thin; border-color: #000000 #000000 #666666 #666666;" class="col_112"> <a href="javascript:openPopup('popup.aspx?sesja=1!2.2.1.a!9!4')"><asp:Label CssClass="normal" ID="tab_2_2_1_a_w01_col09" runat="server" Text="0"></asp:Label></a></td>
+                <td class="center" style="border-style: solid; border-width: thin 0px 0px thin; border-color: #000000 #666666 #666666 #000000;" class="auto-style9 col_36">01</td>
+                <td class="center" style="border-left: thin solid #666666; border-right: 0px solid #666666; border-top: thin solid #000000; border-bottom: 0px solid #666666; width: 142px;" class="col_112"> <a href="javascript:openPopup('popup.aspx?sesja=1!2.2.1.a!1!4')"><asp:Label CssClass="normal" ID="tab_2_2_1_a_w01_col01" runat="server" Text="0"></asp:Label></a></td>
+                <td class="center" style="border-style: solid; border-width: thin 0px 0px thin; border-color: #000000 #666666 #666666 #666666;" class="col_112"> <a href="javascript:openPopup('popup.aspx?sesja=1!2.2.1.a!2!4')"><asp:Label CssClass="normal" ID="tab_2_2_1_a_w01_col02" runat="server" Text="0"></asp:Label></a></td>
+                <td class="center" style="border-style: solid; border-width: thin 0px 0px thin; border-color: #000000 #666666 #666666 #666666;" class="col_112"> <a href="javascript:openPopup('popup.aspx?sesja=1!2.2.1.a!3!4')"><asp:Label CssClass="normal" ID="tab_2_2_1_a_w01_col03" runat="server" Text="0"></asp:Label></a></td>
+                <td class="center" style="border-style: solid; border-width: thin 0px 0px thin; border-color: #000000 #666666 #666666 #666666;" class="col_112"> <a href="javascript:openPopup('popup.aspx?sesja=1!2.2.1.a!4!4')"><asp:Label CssClass="normal" ID="tab_2_2_1_a_w01_col04" runat="server" Text="0"></asp:Label></a></td>
+                <td class="center" style="border-style: solid; border-width: thin 0px 0px thin; border-color: #000000 #666666 #666666 #666666;" class="col_112"> <a href="javascript:openPopup('popup.aspx?sesja=1!2.2.1.a!5!4')"><asp:Label CssClass="normal" ID="tab_2_2_1_a_w01_col05" runat="server" Text="0"></asp:Label></a></td>
+                <td class="center" style="border-style: solid; border-width: thin 0px 0px thin; border-color: #000000 #666666 #666666 #666666;" class="col_112"> <a href="javascript:openPopup('popup.aspx?sesja=1!2.2.1.a!6!4')"><asp:Label CssClass="normal" ID="tab_2_2_1_a_w01_col06" runat="server" Text="0"></asp:Label></a></td>
+                <td class="center" style="border-style: solid; border-width: thin 0px 0px thin; border-color: #000000 #666666 #666666 #666666;" class="col_112"> <a href="javascript:openPopup('popup.aspx?sesja=1!2.2.1.a!7!4')"><asp:Label CssClass="normal" ID="tab_2_2_1_a_w01_col07" runat="server" Text="0"></asp:Label></a></td>
+                <td class="center" style="border-style: solid; border-width: thin 0px 0px thin; border-color: #000000 #666666 #666666 #666666;" class="col_112"> <a href="javascript:openPopup('popup.aspx?sesja=1!2.2.1.a!8!4')"><asp:Label CssClass="normal" ID="tab_2_2_1_a_w01_col08" runat="server" Text="0"></asp:Label></a></td>
+                <td class="center" style="border-style: solid; border-width: thin thin 0px thin; border-color: #000000 #000000 #666666 #666666;" class="col_112"> <a href="javascript:openPopup('popup.aspx?sesja=1!2.2.1.a!9!4')"><asp:Label CssClass="normal" ID="tab_2_2_1_a_w01_col09" runat="server" Text="0"></asp:Label></a></td>
             </tr>
             <tr>
                 <td align="justify" style="border-style: solid; border-width: thin 0px thin thin; border-color: #666666; padding-left: 30px;" class="auto-style8">RNs</td>
-                <td align="center" style="border-style: solid; border-width: thin 0px thin thin; border-color: #666666 #666666 #000000 #000000;" class="auto-style9 col_36">02</td>
-                <td align="center" style="border-left: thin solid #666666; border-right: 0px solid #666666; border-top: thin solid #666666; border-bottom: thin solid #000000; border-width: thin 0px 0px thin; width: 142px;" class="col_112"><a href="javascript:openPopup('popup.aspx?sesja=2!2.2.1.a!1!4')"><asp:Label CssClass="normal" ID="tab_2_2_1_a_w02_col01" runat="server" Text="0"></asp:Label></a></td>
-                <td align="center" style="border-style: solid; border-width: thin 0px 0px thin; border-color: #666666 #666666 #000000 #666666;" class="col_112"><a href="javascript:openPopup('popup.aspx?sesja=2!2.2.1.a!2!4')"><asp:Label CssClass="normal" ID="tab_2_2_1_a_w02_col02" runat="server" Text="0"></asp:Label></a></td>
-                <td align="center" style="border-style: solid; border-width: thin 0px 0px thin; border-color: #666666 #666666 #000000 #666666;" class="col_112"><a href="javascript:openPopup('popup.aspx?sesja=2!2.2.1.a!3!4')"><asp:Label CssClass="normal" ID="tab_2_2_1_a_w02_col03" runat="server" Text="0"></asp:Label></a></td>
-                <td align="center" style="border-style: solid; border-width: thin 0px 0px thin; border-color: #666666 #666666 #000000 #666666;" class="col_112"><a href="javascript:openPopup('popup.aspx?sesja=2!2.2.1.a!4!4')"><asp:Label CssClass="normal" ID="tab_2_2_1_a_w02_col04" runat="server" Text="0"></asp:Label></a></td>
-                <td align="center" style="border-style: solid; border-width: thin 0px 0px thin; border-color: #666666 #666666 #000000 #666666;" class="col_112"><a href="javascript:openPopup('popup.aspx?sesja=2!2.2.1.a!5!4')"><asp:Label CssClass="normal" ID="tab_2_2_1_a_w02_col05" runat="server" Text="0"></asp:Label></a></td>
-                <td align="center" style="border-style: solid; border-width: thin 0px 0px thin; border-color: #666666 #666666 #000000 #666666;" class="col_112"><a href="javascript:openPopup('popup.aspx?sesja=2!2.2.1.a!6!4')"><asp:Label CssClass="normal" ID="tab_2_2_1_a_w02_col06" runat="server" Text="0"></asp:Label></a></td>
-                <td align="center" style="border-style: solid; border-width: thin 0px 0px thin; border-color: #666666 #666666 #000000 #666666;" class="col_112"><a href="javascript:openPopup('popup.aspx?sesja=2!2.2.1.a!7!4')"><asp:Label CssClass="normal" ID="tab_2_2_1_a_w02_col07" runat="server" Text="0"></asp:Label></a></td>
-                <td align="center" style="border-style: solid; border-width: thin 0px 0px thin; border-color: #666666 #666666 #000000 #666666;" class="col_112"><a href="javascript:openPopup('popup.aspx?sesja=2!2.2.1.a!8!4')"><asp:Label CssClass="normal" ID="tab_2_2_1_a_w02_col08" runat="server" Text="0"></asp:Label></a></td>
-                <td align="center" style="border-style: solid; border-width: thin thin 0px thin; border-color: #666666 #000000 #000000 #666666;" class="col_112"><a href="javascript:openPopup('popup.aspx?sesja=2!2.2.1.a!9!4')"><asp:Label CssClass="normal" ID="tab_2_2_1_a_w02_col09" runat="server" Text="0"></asp:Label></a></td>
+                <td class="center" style="border-style: solid; border-width: thin 0px thin thin; border-color: #666666 #666666 #000000 #000000;" class="auto-style9 col_36">02</td>
+                <td class="center" style="border-left: thin solid #666666; border-right: 0px solid #666666; border-top: thin solid #666666; border-bottom: thin solid #000000; border-width: thin 0px 0px thin; width: 142px;" class="col_112"><a href="javascript:openPopup('popup.aspx?sesja=2!2.2.1.a!1!4')"><asp:Label CssClass="normal" ID="tab_2_2_1_a_w02_col01" runat="server" Text="0"></asp:Label></a></td>
+                <td class="center" style="border-style: solid; border-width: thin 0px 0px thin; border-color: #666666 #666666 #000000 #666666;" class="col_112"><a href="javascript:openPopup('popup.aspx?sesja=2!2.2.1.a!2!4')"><asp:Label CssClass="normal" ID="tab_2_2_1_a_w02_col02" runat="server" Text="0"></asp:Label></a></td>
+                <td class="center" style="border-style: solid; border-width: thin 0px 0px thin; border-color: #666666 #666666 #000000 #666666;" class="col_112"><a href="javascript:openPopup('popup.aspx?sesja=2!2.2.1.a!3!4')"><asp:Label CssClass="normal" ID="tab_2_2_1_a_w02_col03" runat="server" Text="0"></asp:Label></a></td>
+                <td class="center" style="border-style: solid; border-width: thin 0px 0px thin; border-color: #666666 #666666 #000000 #666666;" class="col_112"><a href="javascript:openPopup('popup.aspx?sesja=2!2.2.1.a!4!4')"><asp:Label CssClass="normal" ID="tab_2_2_1_a_w02_col04" runat="server" Text="0"></asp:Label></a></td>
+                <td class="center" style="border-style: solid; border-width: thin 0px 0px thin; border-color: #666666 #666666 #000000 #666666;" class="col_112"><a href="javascript:openPopup('popup.aspx?sesja=2!2.2.1.a!5!4')"><asp:Label CssClass="normal" ID="tab_2_2_1_a_w02_col05" runat="server" Text="0"></asp:Label></a></td>
+                <td class="center" style="border-style: solid; border-width: thin 0px 0px thin; border-color: #666666 #666666 #000000 #666666;" class="col_112"><a href="javascript:openPopup('popup.aspx?sesja=2!2.2.1.a!6!4')"><asp:Label CssClass="normal" ID="tab_2_2_1_a_w02_col06" runat="server" Text="0"></asp:Label></a></td>
+                <td class="center" style="border-style: solid; border-width: thin 0px 0px thin; border-color: #666666 #666666 #000000 #666666;" class="col_112"><a href="javascript:openPopup('popup.aspx?sesja=2!2.2.1.a!7!4')"><asp:Label CssClass="normal" ID="tab_2_2_1_a_w02_col07" runat="server" Text="0"></asp:Label></a></td>
+                <td class="center" style="border-style: solid; border-width: thin 0px 0px thin; border-color: #666666 #666666 #000000 #666666;" class="col_112"><a href="javascript:openPopup('popup.aspx?sesja=2!2.2.1.a!8!4')"><asp:Label CssClass="normal" ID="tab_2_2_1_a_w02_col08" runat="server" Text="0"></asp:Label></a></td>
+                <td class="center" style="border-style: solid; border-width: thin thin 0px thin; border-color: #666666 #000000 #000000 #666666;" class="col_112"><a href="javascript:openPopup('popup.aspx?sesja=2!2.2.1.a!9!4')"><asp:Label CssClass="normal" ID="tab_2_2_1_a_w02_col09" runat="server" Text="0"></asp:Label></a></td>
             </tr>
             <tr>
                 <td align="justify" style="border-style: solid; border-width: thin 0px thin thin; border-color: #666666; padding-left: 30px;" class="auto-style8">Nsm</td>
-                <td align="center" style="border-style: solid; border-width: thin 0px thin thin; border-color: #666666 #666666 #000000 #000000;" class="auto-style9 col_36">03</td>
-                <td align="center" style="border-style: solid; border-width: thin 0px 0px thin; border-color: #666666 #666666 #000000 #666666;" class="col_112"><a href="javascript:openPopup('popup.aspx?sesja=3!2.2.1.a!1!4')"><asp:Label CssClass="normal" ID="tab_2_2_1_a_w03_col01" runat="server" Text="0"></asp:Label></a></td>
-                <td align="center" style="border-style: solid; border-width: thin 0px 0px thin; border-color: #666666 #666666 #000000 #666666;" class="col_112"><a href="javascript:openPopup('popup.aspx?sesja=3!2.2.1.a!2!4')"><asp:Label CssClass="normal" ID="tab_2_2_1_a_w03_col02" runat="server" Text="0"></asp:Label></a></td>
-                <td align="center" style="border-style: solid; border-width: thin 0px 0px thin; border-color: #666666 #666666 #000000 #666666;" class="col_112"><a href="javascript:openPopup('popup.aspx?sesja=3!2.2.1.a!3!4')"><asp:Label CssClass="normal" ID="tab_2_2_1_a_w03_col03" runat="server" Text="0"></asp:Label></a></td>
-                <td align="center" style="border-style: solid; border-width: thin 0px 0px thin; border-color: #666666 #666666 #000000 #666666;" class="col_112"><a href="javascript:openPopup('popup.aspx?sesja=3!2.2.1.a!4!4')"><asp:Label CssClass="normal" ID="tab_2_2_1_a_w03_col04" runat="server" Text="0"></asp:Label></a></td>
-                <td align="center" style="border-style: solid; border-width: thin 0px 0px thin; border-color: #666666 #666666 #000000 #666666;" class="col_112"><a href="javascript:openPopup('popup.aspx?sesja=3!2.2.1.a!5!4')"><asp:Label CssClass="normal" ID="tab_2_2_1_a_w03_col05" runat="server" Text="0"></asp:Label></a></td>
-                <td align="center" style="border-style: solid; border-width: thin 0px 0px thin; border-color: #666666 #666666 #000000 #666666;" class="col_112"><a href="javascript:openPopup('popup.aspx?sesja=3!2.2.1.a!6!4')"><asp:Label CssClass="normal" ID="tab_2_2_1_a_w03_col06" runat="server" Text="0"></asp:Label></a></td>
-                <td align="center" style="border-style: solid; border-width: thin 0px 0px thin; border-color: #666666 #666666 #000000 #666666;" class="col_112"><a href="javascript:openPopup('popup.aspx?sesja=3!2.2.1.a!7!4')"><asp:Label CssClass="normal" ID="tab_2_2_1_a_w03_col07" runat="server" Text="0"></asp:Label></a></td>
-                <td align="center" style="border-style: solid; border-width: thin 0px 0px thin; border-color: #666666 #666666 #000000 #666666;" class="col_112"><a href="javascript:openPopup('popup.aspx?sesja=3!2.2.1.a!8!4')"><asp:Label CssClass="normal" ID="tab_2_2_1_a_w03_col08" runat="server" Text="0"></asp:Label></a></td>
-                <td align="center" style="border-style: solid; border-width: thin thin 0px thin; border-color: #666666 #000000 #000000 #666666;" class="col_112"><a href="javascript:openPopup('popup.aspx?sesja=3!2.2.1.a!9!4')"><asp:Label CssClass="normal" ID="tab_2_2_1_a_w03_col09" runat="server" Text="0"></asp:Label></a></td>
+                <td class="center" style="border-style: solid; border-width: thin 0px thin thin; border-color: #666666 #666666 #000000 #000000;" class="auto-style9 col_36">03</td>
+                <td class="center" style="border-style: solid; border-width: thin 0px 0px thin; border-color: #666666 #666666 #000000 #666666;" class="col_112"><a href="javascript:openPopup('popup.aspx?sesja=3!2.2.1.a!1!4')"><asp:Label CssClass="normal" ID="tab_2_2_1_a_w03_col01" runat="server" Text="0"></asp:Label></a></td>
+                <td class="center" style="border-style: solid; border-width: thin 0px 0px thin; border-color: #666666 #666666 #000000 #666666;" class="col_112"><a href="javascript:openPopup('popup.aspx?sesja=3!2.2.1.a!2!4')"><asp:Label CssClass="normal" ID="tab_2_2_1_a_w03_col02" runat="server" Text="0"></asp:Label></a></td>
+                <td class="center" style="border-style: solid; border-width: thin 0px 0px thin; border-color: #666666 #666666 #000000 #666666;" class="col_112"><a href="javascript:openPopup('popup.aspx?sesja=3!2.2.1.a!3!4')"><asp:Label CssClass="normal" ID="tab_2_2_1_a_w03_col03" runat="server" Text="0"></asp:Label></a></td>
+                <td class="center" style="border-style: solid; border-width: thin 0px 0px thin; border-color: #666666 #666666 #000000 #666666;" class="col_112"><a href="javascript:openPopup('popup.aspx?sesja=3!2.2.1.a!4!4')"><asp:Label CssClass="normal" ID="tab_2_2_1_a_w03_col04" runat="server" Text="0"></asp:Label></a></td>
+                <td class="center" style="border-style: solid; border-width: thin 0px 0px thin; border-color: #666666 #666666 #000000 #666666;" class="col_112"><a href="javascript:openPopup('popup.aspx?sesja=3!2.2.1.a!5!4')"><asp:Label CssClass="normal" ID="tab_2_2_1_a_w03_col05" runat="server" Text="0"></asp:Label></a></td>
+                <td class="center" style="border-style: solid; border-width: thin 0px 0px thin; border-color: #666666 #666666 #000000 #666666;" class="col_112"><a href="javascript:openPopup('popup.aspx?sesja=3!2.2.1.a!6!4')"><asp:Label CssClass="normal" ID="tab_2_2_1_a_w03_col06" runat="server" Text="0"></asp:Label></a></td>
+                <td class="center" style="border-style: solid; border-width: thin 0px 0px thin; border-color: #666666 #666666 #000000 #666666;" class="col_112"><a href="javascript:openPopup('popup.aspx?sesja=3!2.2.1.a!7!4')"><asp:Label CssClass="normal" ID="tab_2_2_1_a_w03_col07" runat="server" Text="0"></asp:Label></a></td>
+                <td class="center" style="border-style: solid; border-width: thin 0px 0px thin; border-color: #666666 #666666 #000000 #666666;" class="col_112"><a href="javascript:openPopup('popup.aspx?sesja=3!2.2.1.a!8!4')"><asp:Label CssClass="normal" ID="tab_2_2_1_a_w03_col08" runat="server" Text="0"></asp:Label></a></td>
+                <td class="center" style="border-style: solid; border-width: thin thin 0px thin; border-color: #666666 #000000 #000000 #666666;" class="col_112"><a href="javascript:openPopup('popup.aspx?sesja=3!2.2.1.a!9!4')"><asp:Label CssClass="normal" ID="tab_2_2_1_a_w03_col09" runat="server" Text="0"></asp:Label></a></td>
             </tr>
             <tr>
                 <td align="justify" style="border-style: solid; border-width: thin 0px thin thin; border-color: #666666; padding-left: 30px;" class="auto-style8">Nkd</td>
-                <td align="center" style="border-style: solid; border-width: thin 0px thin thin; border-color: #666666 #666666 #000000 #000000;" class="auto-style9 col_36">04</td>
-                <td align="center" style="border-left: thin solid #666666; border-right: 0px solid #666666; border-top: thin solid #666666; border-bottom: thin solid #000000; width: 142px;" class="col_112"><a href="javascript:openPopup('popup.aspx?sesja=4!2.2.1.a!1!4')"><asp:Label CssClass="normal" ID="tab_2_2_1_a_w04_col01" runat="server" Text="0"></asp:Label></a></td>
-                <td align="center" style="border-style: solid; border-width: thin 0px thin thin; border-color: #666666 #666666 #000000 #666666;" class="col_112"><a href="javascript:openPopup('popup.aspx?sesja=4!2.2.1.a!2!4')"><asp:Label CssClass="normal" ID="tab_2_2_1_a_w04_col02" runat="server" Text="0"></asp:Label></a></td>
-                <td align="center" style="border-style: solid; border-width: thin 0px thin thin; border-color: #666666 #666666 #000000 #666666;" class="col_112"><a href="javascript:openPopup('popup.aspx?sesja=4!2.2.1.a!3!4')"><asp:Label CssClass="normal" ID="tab_2_2_1_a_w04_col03" runat="server" Text="0"></asp:Label></a></td>
-                <td align="center" style="border-style: solid; border-width: thin 0px thin thin; border-color: #666666 #666666 #000000 #666666;" class="col_112"><a href="javascript:openPopup('popup.aspx?sesja=4!2.2.1.a!4!4')"><asp:Label CssClass="normal" ID="tab_2_2_1_a_w04_col04" runat="server" Text="0"></asp:Label></a></td>
-                <td align="center" style="border-style: solid; border-width: thin 0px thin thin; border-color: #666666 #666666 #000000 #666666;" class="col_112"><a href="javascript:openPopup('popup.aspx?sesja=4!2.2.1.a!5!4')"><asp:Label CssClass="normal" ID="tab_2_2_1_a_w04_col05" runat="server" Text="0"></asp:Label></a></td>
-                <td align="center" style="border-style: solid; border-width: thin 0px thin thin; border-color: #666666 #666666 #000000 #666666;" class="col_112"><a href="javascript:openPopup('popup.aspx?sesja=4!2.2.1.a!6!4')"><asp:Label CssClass="normal" ID="tab_2_2_1_a_w04_col06" runat="server" Text="0"></asp:Label></a></td>
-                <td align="center" style="border-style: solid; border-width: thin 0px thin thin; border-color: #666666 #666666 #000000 #666666;" class="col_112"><a href="javascript:openPopup('popup.aspx?sesja=4!2.2.1.a!7!4')"><asp:Label CssClass="normal" ID="tab_2_2_1_a_w04_col07" runat="server" Text="0"></asp:Label></a></td>
-                <td align="center" style="border-style: solid; border-width: thin 0px thin thin; border-color: #666666 #666666 #000000 #666666;" class="col_112"><a href="javascript:openPopup('popup.aspx?sesja=4!2.2.1.a!8!4')"><asp:Label CssClass="normal" ID="tab_2_2_1_a_w04_col08" runat="server" Text="0"></asp:Label></a></td>
-                <td align="center" style="border-style: solid; border-width: thin; border-color: #666666 #666666 #000000 #666666;" class="col_112"><a href="javascript:openPopup('popup.aspx?sesja=4!2.2.1.a!9!4')"><asp:Label CssClass="normal" ID="tab_2_2_1_a_w04_col09" runat="server" Text="0"></asp:Label></a></td>
+                <td class="center" style="border-style: solid; border-width: thin 0px thin thin; border-color: #666666 #666666 #000000 #000000;" class="auto-style9 col_36">04</td>
+                <td class="center" style="border-left: thin solid #666666; border-right: 0px solid #666666; border-top: thin solid #666666; border-bottom: thin solid #000000; width: 142px;" class="col_112"><a href="javascript:openPopup('popup.aspx?sesja=4!2.2.1.a!1!4')"><asp:Label CssClass="normal" ID="tab_2_2_1_a_w04_col01" runat="server" Text="0"></asp:Label></a></td>
+                <td class="center" style="border-style: solid; border-width: thin 0px thin thin; border-color: #666666 #666666 #000000 #666666;" class="col_112"><a href="javascript:openPopup('popup.aspx?sesja=4!2.2.1.a!2!4')"><asp:Label CssClass="normal" ID="tab_2_2_1_a_w04_col02" runat="server" Text="0"></asp:Label></a></td>
+                <td class="center" style="border-style: solid; border-width: thin 0px thin thin; border-color: #666666 #666666 #000000 #666666;" class="col_112"><a href="javascript:openPopup('popup.aspx?sesja=4!2.2.1.a!3!4')"><asp:Label CssClass="normal" ID="tab_2_2_1_a_w04_col03" runat="server" Text="0"></asp:Label></a></td>
+                <td class="center" style="border-style: solid; border-width: thin 0px thin thin; border-color: #666666 #666666 #000000 #666666;" class="col_112"><a href="javascript:openPopup('popup.aspx?sesja=4!2.2.1.a!4!4')"><asp:Label CssClass="normal" ID="tab_2_2_1_a_w04_col04" runat="server" Text="0"></asp:Label></a></td>
+                <td class="center" style="border-style: solid; border-width: thin 0px thin thin; border-color: #666666 #666666 #000000 #666666;" class="col_112"><a href="javascript:openPopup('popup.aspx?sesja=4!2.2.1.a!5!4')"><asp:Label CssClass="normal" ID="tab_2_2_1_a_w04_col05" runat="server" Text="0"></asp:Label></a></td>
+                <td class="center" style="border-style: solid; border-width: thin 0px thin thin; border-color: #666666 #666666 #000000 #666666;" class="col_112"><a href="javascript:openPopup('popup.aspx?sesja=4!2.2.1.a!6!4')"><asp:Label CssClass="normal" ID="tab_2_2_1_a_w04_col06" runat="server" Text="0"></asp:Label></a></td>
+                <td class="center" style="border-style: solid; border-width: thin 0px thin thin; border-color: #666666 #666666 #000000 #666666;" class="col_112"><a href="javascript:openPopup('popup.aspx?sesja=4!2.2.1.a!7!4')"><asp:Label CssClass="normal" ID="tab_2_2_1_a_w04_col07" runat="server" Text="0"></asp:Label></a></td>
+                <td class="center" style="border-style: solid; border-width: thin 0px thin thin; border-color: #666666 #666666 #000000 #666666;" class="col_112"><a href="javascript:openPopup('popup.aspx?sesja=4!2.2.1.a!8!4')"><asp:Label CssClass="normal" ID="tab_2_2_1_a_w04_col08" runat="server" Text="0"></asp:Label></a></td>
+                <td class="center" style="border-style: solid; border-width: thin; border-color: #666666 #666666 #000000 #666666;" class="col_112"><a href="javascript:openPopup('popup.aspx?sesja=4!2.2.1.a!9!4')"><asp:Label CssClass="normal" ID="tab_2_2_1_a_w04_col09" runat="server" Text="0"></asp:Label></a></td>
             </tr>
         </table>
 
@@ -9316,55 +9388,55 @@ wg repertoriów
               &nbsp;<br />
      <asp:Label ID="tabela5Label" runat="server">Dział 11.1. Terminowość postępowania międzyinstancyjnego  w pierwszej instancji</asp:Label>
      <br />
-        <table cellpadding="0" cellspacing="0" style="width:100%;">
+        <table  style="width:100%;">
             <tr>
-                <td align="center" colspan="2" rowspan="2" style="border-style: solid; border-width: thin 0px 0px thin; border-color: #666666;">Środki odwoławcze, które zostały przekazane do rozpoznania sądowi II instancji</td>
-                <td align="center" style="border-style: solid; border-width: thin thin 0px thin; border-color: #666666;" colspan="7">Z tego od daty orzeczenia sądu rejonowego do daty przekazania do sądu II instancji upłynął okres</td>
+                <td class="center" colspan="2" rowspan="2" style="border-style: solid; border-width: thin 0px 0px thin; border-color: #666666;">Środki odwoławcze, które zostały przekazane do rozpoznania sądowi II instancji</td>
+                <td class="center" style="border-style: solid; border-width: thin thin 0px thin; border-color: #666666;" colspan="7">Z tego od daty orzeczenia sądu rejonowego do daty przekazania do sądu II instancji upłynął okres</td>
             </tr>
             <tr>
-                <td align="center" style="border-style: solid; border-width: thin 0px 0px thin; border-color: #666666; width: 142px;">Ogółem
+                <td class="center" style="border-style: solid; border-width: thin 0px 0px thin; border-color: #666666; width: 142px;">Ogółem
                     (kol. 2 do 7)</td>
-                <td align="center" style="border-style: solid; border-width: thin 0px 0px thin; border-color: #666666; width: 142px;">do 2 mies.</td>
-                <td align="center" style="border-style: solid; border-width: thin 0px 0px thin; border-color: #666666; width: 142px;">pow. 2 do 3 mies.</td>
-                <td align="center" style="border-style: solid; border-width: thin 0px 0px thin; border-color: #666666; width: 142px;">pow. 3 do&nbsp; 6<br />
+                <td class="center" style="border-style: solid; border-width: thin 0px 0px thin; border-color: #666666; width: 142px;">do 2 mies.</td>
+                <td class="center" style="border-style: solid; border-width: thin 0px 0px thin; border-color: #666666; width: 142px;">pow. 2 do 3 mies.</td>
+                <td class="center" style="border-style: solid; border-width: thin 0px 0px thin; border-color: #666666; width: 142px;">pow. 3 do&nbsp; 6<br />
                     miesięcy.</td>
-                <td align="center" style="border-style: solid; border-width: thin 0px 0px thin; border-color: #666666;">pow. 6 do&nbsp; 12<br />
+                <td class="center" style="border-style: solid; border-width: thin 0px 0px thin; border-color: #666666;">pow. 6 do&nbsp; 12<br />
                     miesięcy.</td>
-                <td align="center" style="border-style: solid; border-width: thin 0px 0px thin; border-color: #666666;">pow. 12 do&nbsp;2<br />
+                <td class="center" style="border-style: solid; border-width: thin 0px 0px thin; border-color: #666666;">pow. 12 do&nbsp;2<br />
                     lat.</td>
                 <td class="borderAll center">ponad 2 lata</td>
             </tr>
             <tr>
-                <td align="center" colspan="2" style="border-style: solid; border-width: thin 0px 0px thin; border-color: #666666;">0</td>
-                <td align="center" style="border-style: solid; border-width: thin 0px 0px thin; border-color: #666666;" class="mssGrayMiddle">1</td>
-                <td align="center" style="border-style: solid; border-width: thin 0px 0px thin; border-color: #666666;">2</td>
-                <td align="center" style="border-style: solid; border-width: thin 0px 0px thin; border-color: #666666;">3</td>
-                <td align="center" style="border-style: solid; border-width: thin 0px 0px thin; border-color: #666666;">4</td>
-                <td align="center" style="border-style: solid; border-width: thin 0px 0px thin; border-color: #666666; width: 142px;">5</td>
-                <td align="center" style="border-style: solid; border-width: thin 0px 0px thin; border-color: #666666; width: 142px;">6</td>
-                <td align="center" style="border-style: solid; border-width: thin thin 0px thin; border-color: #666666; width: 142px;">7</td>
+                <td class="center" colspan="2" style="border-style: solid; border-width: thin 0px 0px thin; border-color: #666666;">0</td>
+                <td class="center" style="border-style: solid; border-width: thin 0px 0px thin; border-color: #666666;" class="mssGrayMiddle">1</td>
+                <td class="center" style="border-style: solid; border-width: thin 0px 0px thin; border-color: #666666;">2</td>
+                <td class="center" style="border-style: solid; border-width: thin 0px 0px thin; border-color: #666666;">3</td>
+                <td class="center" style="border-style: solid; border-width: thin 0px 0px thin; border-color: #666666;">4</td>
+                <td class="center" style="border-style: solid; border-width: thin 0px 0px thin; border-color: #666666; width: 142px;">5</td>
+                <td class="center" style="border-style: solid; border-width: thin 0px 0px thin; border-color: #666666; width: 142px;">6</td>
+                <td class="center" style="border-style: solid; border-width: thin thin 0px thin; border-color: #666666; width: 142px;">7</td>
             </tr>
             <tr>
                 <td align="justify" style="border-style: solid; border-width: thin 0px 0px thin; border-color: #666666; padding-left: 30px;">Apelacje </td>
                 <td style="border-style: solid; border-width: thin 0px 0px thin; border-color: #000000 #666666 #666666 #000000;" class="col_36">01</td>
-                <td align="center" style="border-style: solid; border-width: thin 0px 0px thin; border-color: #000000 #666666 #666666 #666666;" class="mssGrayMiddle"> <a href="javascript:openPopup('popup.aspx?sesja=1!11.1!1!4')"><asp:Label CssClass="normal" ID="tab_111_w01_c01" runat="server" Text="0"></asp:Label></a></td>
-                <td align="center" style="border-style: solid; border-width: thin 0px 0px thin; border-color: #000000 #666666 #666666 #666666;"> <a href="javascript:openPopup('popup.aspx?sesja=1!11.1!2!4')"><asp:Label CssClass="normal" ID="tab_111_w01_c02" runat="server" Text="0"></asp:Label></a></td>
-                <td align="center" style="border-style: solid; border-width: thin 0px 0px thin; border-color: #000000 #666666 #666666 #666666;"> <a href="javascript:openPopup('popup.aspx?sesja=1!11.1!3!4')"><asp:Label CssClass="normal" ID="tab_111_w01_c03" runat="server" Text="0"></asp:Label></a></td>
-                <td align="center" style="border-style: solid; border-width: thin 0px 0px thin; border-color: #000000 #666666 #666666 #666666;"> <a href="javascript:openPopup('popup.aspx?sesja=1!11.1!4!4')"><asp:Label CssClass="normal" ID="tab_111_w01_c04" runat="server" Text="0"></asp:Label></a></td>
-                <td align="center" style="border-style: solid; border-width: thin 0px 0px thin; border-color: #000000 #666666 #666666 #666666;"> <a href="javascript:openPopup('popup.aspx?sesja=1!11.1!5!4')"><asp:Label CssClass="normal" ID="tab_111_w01_c05" runat="server" Text="0"></asp:Label></a></td>
-                <td align="center" style="border-style: solid; border-width: thin 0px 0px thin; border-color: #000000 #666666 #666666 #666666;"> <a href="javascript:openPopup('popup.aspx?sesja=1!11.1!6!4')"><asp:Label CssClass="normal" ID="tab_111_w01_c06" runat="server" Text="0"></asp:Label></a></td>
-                <td align="center" style="border-style: solid; border-width: thin thin 0px thin; border-color: #000000 #000000 #666666 #666666;"> <a href="javascript:openPopup('popup.aspx?sesja=1!11.1!7!4')"><asp:Label CssClass="normal" ID="tab_111_w01_c07" runat="server" Text="0"></asp:Label></a></td>
+                <td class="center" style="border-style: solid; border-width: thin 0px 0px thin; border-color: #000000 #666666 #666666 #666666;" class="mssGrayMiddle"> <a href="javascript:openPopup('popup.aspx?sesja=1!11.1!1!4')"><asp:Label CssClass="normal" ID="tab_111_w01_c01" runat="server" Text="0"></asp:Label></a></td>
+                <td class="center" style="border-style: solid; border-width: thin 0px 0px thin; border-color: #000000 #666666 #666666 #666666;"> <a href="javascript:openPopup('popup.aspx?sesja=1!11.1!2!4')"><asp:Label CssClass="normal" ID="tab_111_w01_c02" runat="server" Text="0"></asp:Label></a></td>
+                <td class="center" style="border-style: solid; border-width: thin 0px 0px thin; border-color: #000000 #666666 #666666 #666666;"> <a href="javascript:openPopup('popup.aspx?sesja=1!11.1!3!4')"><asp:Label CssClass="normal" ID="tab_111_w01_c03" runat="server" Text="0"></asp:Label></a></td>
+                <td class="center" style="border-style: solid; border-width: thin 0px 0px thin; border-color: #000000 #666666 #666666 #666666;"> <a href="javascript:openPopup('popup.aspx?sesja=1!11.1!4!4')"><asp:Label CssClass="normal" ID="tab_111_w01_c04" runat="server" Text="0"></asp:Label></a></td>
+                <td class="center" style="border-style: solid; border-width: thin 0px 0px thin; border-color: #000000 #666666 #666666 #666666;"> <a href="javascript:openPopup('popup.aspx?sesja=1!11.1!5!4')"><asp:Label CssClass="normal" ID="tab_111_w01_c05" runat="server" Text="0"></asp:Label></a></td>
+                <td class="center" style="border-style: solid; border-width: thin 0px 0px thin; border-color: #000000 #666666 #666666 #666666;"> <a href="javascript:openPopup('popup.aspx?sesja=1!11.1!6!4')"><asp:Label CssClass="normal" ID="tab_111_w01_c06" runat="server" Text="0"></asp:Label></a></td>
+                <td class="center" style="border-style: solid; border-width: thin thin 0px thin; border-color: #000000 #000000 #666666 #666666;"> <a href="javascript:openPopup('popup.aspx?sesja=1!11.1!7!4')"><asp:Label CssClass="normal" ID="tab_111_w01_c07" runat="server" Text="0"></asp:Label></a></td>
             </tr>
             <tr>
                 <td align="justify" style="border-style: solid; border-width: thin 0px thin thin; border-color: #666666; padding-left: 30px;">Zażalenia</td>
                 <td style="border-style: solid; border-width: thin 0px thin thin; border-color: #666666 #666666 #000000 #000000;" class="col_36">02</td>
-                <td align="center" style="border-style: solid; border-width: thin 0px thin thin; border-color: #666666 #666666 #000000 #666666;" class="mssGrayMiddle"><a href="javascript:openPopup('popup.aspx?sesja=2!11.1!1!4')"><asp:Label CssClass="normal" ID="tab_111_w02_c01" runat="server" Text="0"></asp:Label></a></td>
-                <td align="center" style="border-style: solid; border-width: thin 0px thin thin; border-color: #666666 #666666 #000000 #666666;"><a href="javascript:openPopup('popup.aspx?sesja=2!11.1!2!4')"><asp:Label CssClass="normal" ID="tab_111_w02_c02" runat="server" Text="0"></asp:Label></a></td>
-                <td align="center" style="border-style: solid; border-width: thin 0px thin thin; border-color: #666666 #666666 #000000 #666666;"><a href="javascript:openPopup('popup.aspx?sesja=2!11.1!3!4')"><asp:Label CssClass="normal" ID="tab_111_w02_c03" runat="server" Text="0"></asp:Label></a></td>
-                <td align="center" style="border-style: solid; border-width: thin 0px thin thin; border-color: #666666 #666666 #000000 #666666;"><a href="javascript:openPopup('popup.aspx?sesja=2!11.1!4!4')"><asp:Label CssClass="normal" ID="tab_111_w02_c04" runat="server" Text="0"></asp:Label></a></td>
-                <td align="center" style="border-style: solid; border-width: thin 0px thin thin; border-color: #666666 #666666 #000000 #666666;"><a href="javascript:openPopup('popup.aspx?sesja=2!11.1!5!4')"><asp:Label CssClass="normal" ID="tab_111_w02_c05" runat="server" Text="0"></asp:Label></a></td>
-                <td align="center" style="border-style: solid; border-width: thin 0px thin thin; border-color: #666666 #666666 #000000 #666666;"><a href="javascript:openPopup('popup.aspx?sesja=2!11.1!6!4')"><asp:Label CssClass="normal" ID="tab_111_w02_c06" runat="server" Text="0"></asp:Label></a></td>
-                <td align="center" style="border-style: solid; border-width: thin; border-color: #666666 #000000 #000000 #666666;"><a href="javascript:openPopup('popup.aspx?sesja=2!11.1!7!4')"><asp:Label CssClass="normal" ID="tab_111_w02_c07" runat="server" Text="0"></asp:Label></a></td>
+                <td class="center" style="border-style: solid; border-width: thin 0px thin thin; border-color: #666666 #666666 #000000 #666666;" class="mssGrayMiddle"><a href="javascript:openPopup('popup.aspx?sesja=2!11.1!1!4')"><asp:Label CssClass="normal" ID="tab_111_w02_c01" runat="server" Text="0"></asp:Label></a></td>
+                <td class="center" style="border-style: solid; border-width: thin 0px thin thin; border-color: #666666 #666666 #000000 #666666;"><a href="javascript:openPopup('popup.aspx?sesja=2!11.1!2!4')"><asp:Label CssClass="normal" ID="tab_111_w02_c02" runat="server" Text="0"></asp:Label></a></td>
+                <td class="center" style="border-style: solid; border-width: thin 0px thin thin; border-color: #666666 #666666 #000000 #666666;"><a href="javascript:openPopup('popup.aspx?sesja=2!11.1!3!4')"><asp:Label CssClass="normal" ID="tab_111_w02_c03" runat="server" Text="0"></asp:Label></a></td>
+                <td class="center" style="border-style: solid; border-width: thin 0px thin thin; border-color: #666666 #666666 #000000 #666666;"><a href="javascript:openPopup('popup.aspx?sesja=2!11.1!4!4')"><asp:Label CssClass="normal" ID="tab_111_w02_c04" runat="server" Text="0"></asp:Label></a></td>
+                <td class="center" style="border-style: solid; border-width: thin 0px thin thin; border-color: #666666 #666666 #000000 #666666;"><a href="javascript:openPopup('popup.aspx?sesja=2!11.1!5!4')"><asp:Label CssClass="normal" ID="tab_111_w02_c05" runat="server" Text="0"></asp:Label></a></td>
+                <td class="center" style="border-style: solid; border-width: thin 0px thin thin; border-color: #666666 #666666 #000000 #666666;"><a href="javascript:openPopup('popup.aspx?sesja=2!11.1!6!4')"><asp:Label CssClass="normal" ID="tab_111_w02_c06" runat="server" Text="0"></asp:Label></a></td>
+                <td class="center" style="border-style: solid; border-width: thin; border-color: #666666 #000000 #000000 #666666;"><a href="javascript:openPopup('popup.aspx?sesja=2!11.1!7!4')"><asp:Label CssClass="normal" ID="tab_111_w02_c07" runat="server" Text="0"></asp:Label></a></td>
             </tr>
         </table>
         <br />
@@ -9375,43 +9447,43 @@ wg repertoriów
                <p class="auto-style5">
                    <span style="mso-bidi-font-weight:normal"><span style="font-size: 12.0pt; mso-fareast-font-family: Symbol; mso-highlight: yellow" class="auto-style3">Dział 11.2.</span></span><span style="mso-bidi-font-weight:
 normal"><span style="font-size:12.0pt;mso-fareast-font-family:Symbol"> Kontrolka skarg</span></span><span style="mso-bidi-font-weight:normal"><span style="mso-fareast-font-family:Symbol"> (w wydziale, którego<span style="mso-spacerun:yes">&nbsp; </span>sprawy skarga dotyczy) <span style="mso-bidi-font-weight:bold">(§ 448<sup>5 </sup><span  >ust. 1</span></span></span></span><span style="font-size:8.0pt;mso-fareast-font-family:Symbol"> </span><span style="mso-fareast-font-family:Symbol">Zarządzenie</span><span style="mso-bidi-font-weight:normal"><span style="mso-fareast-font-family:Symbol"> Ministra Sprawiedliwości z dnia 12 grudnia 2003 roku w sprawie organizacji i zakresu działania sekretariatów sądowych oraz innych działów administracji sądowej (Dz. Urz. MS. z 2003 r. Nr 5, poz.22, z późn. zm.)</span></span></p>
-        <table cellpadding="0" cellspacing="0" style="width:100%;">
+        <table  style="width:100%;">
             <tr>
-                <td align="center" colspan="2" rowspan="2" style="border-style: solid; border-width: thin 0px 0px thin; border-color: #666666;">Wyszczególnienie</td>
-                <td align="center" rowspan="2" style="border-style: solid; border-width: thin 0px 0px thin; border-color: #666666; width: 142px;" class="mssGrayMiddle">Wpłynęło</td>
-                <td align="center" style="border-style: solid; border-width: thin 0px 0px thin; border-color: #666666;" rowspan="2">Przesłano do sądu właściwego</td>
-                <td align="center" style="border-style: solid; border-width: thin 0px 0px thin; border-color: #666666;" colspan="3">Rozpoznanie skargi</td>
-                <td align="center" style="border-style: solid; border-width: thin 0px 0px thin; border-color: #666666;" rowspan="2">Zarządzono wypłatę przez Skarb Państwa</td>
-                <td align="center" style="border-style: solid; border-width: thin thin 0px thin; border-color: #666666;" rowspan="2">
+                <td class="center" colspan="2" rowspan="2" style="border-style: solid; border-width: thin 0px 0px thin; border-color: #666666;">Wyszczególnienie</td>
+                <td class="center" rowspan="2" style="border-style: solid; border-width: thin 0px 0px thin; border-color: #666666; width: 142px;" class="mssGrayMiddle">Wpłynęło</td>
+                <td class="center" style="border-style: solid; border-width: thin 0px 0px thin; border-color: #666666;" rowspan="2">Przesłano do sądu właściwego</td>
+                <td class="center" style="border-style: solid; border-width: thin 0px 0px thin; border-color: #666666;" colspan="3">Rozpoznanie skargi</td>
+                <td class="center" style="border-style: solid; border-width: thin 0px 0px thin; border-color: #666666;" rowspan="2">Zarządzono wypłatę przez Skarb Państwa</td>
+                <td class="center" style="border-style: solid; border-width: thin thin 0px thin; border-color: #666666;" rowspan="2">
 
         Kwota
                     (w złotych)</td>
             </tr>
             <tr>
-                <td align="center" style="border-style: solid; border-width: thin 0px 0px thin; border-color: #666666; width: 142px;">uwzględniono</td>
-                <td align="center" style="border-style: solid; border-width: thin 0px 0px thin; border-color: #666666; width: 142px;">oddalono</td>
-                <td align="center" style="border-style: solid; border-width: thin 0px 0px thin; border-color: #666666;">inne</td>
+                <td class="center" style="border-style: solid; border-width: thin 0px 0px thin; border-color: #666666; width: 142px;">uwzględniono</td>
+                <td class="center" style="border-style: solid; border-width: thin 0px 0px thin; border-color: #666666; width: 142px;">oddalono</td>
+                <td class="center" style="border-style: solid; border-width: thin 0px 0px thin; border-color: #666666;">inne</td>
             </tr>
             <tr>
-                <td align="center" colspan="2" style="border-style: solid; border-width: thin 0px 0px thin; border-color: #666666;">0</td>
-                <td align="center" style="border-style: solid; border-width: thin 0px 0px thin; border-color: #666666;" class="mssGrayMiddle">1</td>
-                <td align="center" style="border-style: solid; border-width: thin 0px 0px thin; border-color: #666666;">2</td>
-                <td align="center" style="border-style: solid; border-width: thin 0px 0px thin; border-color: #666666;">3</td>
-                <td align="center" style="border-style: solid; border-width: thin 0px 0px thin; border-color: #666666;">4</td>
-                <td align="center" style="border-style: solid; border-width: thin 0px 0px thin; border-color: #666666; width: 142px;">5</td>
-                <td align="center" style="border-style: solid; border-width: thin 0px 0px thin; border-color: #666666; width: 142px;">6</td>
-                <td align="center" style="border-style: solid; border-width: thin thin 0px thin; border-color: #666666; width: 142px;">7</td>
+                <td class="center" colspan="2" style="border-style: solid; border-width: thin 0px 0px thin; border-color: #666666;">0</td>
+                <td class="center" style="border-style: solid; border-width: thin 0px 0px thin; border-color: #666666;" class="mssGrayMiddle">1</td>
+                <td class="center" style="border-style: solid; border-width: thin 0px 0px thin; border-color: #666666;">2</td>
+                <td class="center" style="border-style: solid; border-width: thin 0px 0px thin; border-color: #666666;">3</td>
+                <td class="center" style="border-style: solid; border-width: thin 0px 0px thin; border-color: #666666;">4</td>
+                <td class="center" style="border-style: solid; border-width: thin 0px 0px thin; border-color: #666666; width: 142px;">5</td>
+                <td class="center" style="border-style: solid; border-width: thin 0px 0px thin; border-color: #666666; width: 142px;">6</td>
+                <td class="center" style="border-style: solid; border-width: thin thin 0px thin; border-color: #666666; width: 142px;">7</td>
             </tr>
             <tr>
                 <td align="justify" style="border-style: solid; border-width: thin 0px thin thin; border-color: #666666; padding-left: 30px;">Skargi na pracę sądu</td>
-                <td align="center" style="border-style: solid; border-width: thin 0px thin thin; border-color: #000000 #666666 #666666 #000000;" class="col_36">01</td>
-                <td align="center" style="border-style: solid; border-width: thin 0px thin thin; border-color: #000000 #666666 #666666 #666666;" class="mssGrayMiddle"> <a href="javascript:openPopup('popup.aspx?sesja=1!11.2!1!4')"><asp:Label CssClass="normal" ID="tab_11_2_w01_c01" runat="server" Text="0"></asp:Label></a></td>
-                <td align="center" style="border-style: solid; border-width: thin 0px thin thin; border-color: #000000 #666666 #666666 #666666;"> <a href="javascript:openPopup('popup.aspx?sesja=1!11.2!2!4')"><asp:Label CssClass="normal" ID="tab_11_2_w01_c02" runat="server" Text="0"></asp:Label></a></td>
-                <td align="center" style="border-style: solid; border-width: thin 0px thin thin; border-color: #000000 #666666 #666666 #666666;"> <a href="javascript:openPopup('popup.aspx?sesja=1!11.2!3!4')"><asp:Label CssClass="normal" ID="tab_11_2_w01_c03" runat="server" Text="0"></asp:Label></a></td>
-                <td align="center" style="border-style: solid; border-width: thin 0px thin thin; border-color: #000000 #666666 #666666 #666666;"> <a href="javascript:openPopup('popup.aspx?sesja=1!11.2!4!4')"><asp:Label CssClass="normal" ID="tab_11_2_w01_c04" runat="server" Text="0"></asp:Label></a></td>
-                <td align="center" style="border-style: solid; border-width: thin 0px thin thin; border-color: #000000 #666666 #666666 #666666;"> <a href="javascript:openPopup('popup.aspx?sesja=1!11.2!5!4')"><asp:Label CssClass="normal" ID="tab_11_2_w01_c05" runat="server" Text="0"></asp:Label></a></td>
-                <td align="center" style="border-style: solid; border-width: thin 0px thin thin; border-color: #000000 #666666 #666666 #666666;"> <a href="javascript:openPopup('popup.aspx?sesja=1!11.2!6!4')"><asp:Label CssClass="normal" ID="tab_11_2_w01_c06" runat="server" Text="0"></asp:Label></a></td>
-                <td align="center" style="border-style: solid; border-width: thin; border-color: #000000 #000000 #666666 #666666;"> <a href="javascript:openPopup('popup.aspx?sesja=1!11.2!7!4')"><asp:Label CssClass="normal" ID="tab_11_2_w01_c07" runat="server" Text="0"></asp:Label></a></td>
+                <td class="center" style="border-style: solid; border-width: thin 0px thin thin; border-color: #000000 #666666 #666666 #000000;" class="col_36">01</td>
+                <td class="center" style="border-style: solid; border-width: thin 0px thin thin; border-color: #000000 #666666 #666666 #666666;" class="mssGrayMiddle"> <a href="javascript:openPopup('popup.aspx?sesja=1!11.2!1!4')"><asp:Label CssClass="normal" ID="tab_11_2_w01_c01" runat="server" Text="0"></asp:Label></a></td>
+                <td class="center" style="border-style: solid; border-width: thin 0px thin thin; border-color: #000000 #666666 #666666 #666666;"> <a href="javascript:openPopup('popup.aspx?sesja=1!11.2!2!4')"><asp:Label CssClass="normal" ID="tab_11_2_w01_c02" runat="server" Text="0"></asp:Label></a></td>
+                <td class="center" style="border-style: solid; border-width: thin 0px thin thin; border-color: #000000 #666666 #666666 #666666;"> <a href="javascript:openPopup('popup.aspx?sesja=1!11.2!3!4')"><asp:Label CssClass="normal" ID="tab_11_2_w01_c03" runat="server" Text="0"></asp:Label></a></td>
+                <td class="center" style="border-style: solid; border-width: thin 0px thin thin; border-color: #000000 #666666 #666666 #666666;"> <a href="javascript:openPopup('popup.aspx?sesja=1!11.2!4!4')"><asp:Label CssClass="normal" ID="tab_11_2_w01_c04" runat="server" Text="0"></asp:Label></a></td>
+                <td class="center" style="border-style: solid; border-width: thin 0px thin thin; border-color: #000000 #666666 #666666 #666666;"> <a href="javascript:openPopup('popup.aspx?sesja=1!11.2!5!4')"><asp:Label CssClass="normal" ID="tab_11_2_w01_c05" runat="server" Text="0"></asp:Label></a></td>
+                <td class="center" style="border-style: solid; border-width: thin 0px thin thin; border-color: #000000 #666666 #666666 #666666;"> <a href="javascript:openPopup('popup.aspx?sesja=1!11.2!6!4')"><asp:Label CssClass="normal" ID="tab_11_2_w01_c06" runat="server" Text="0"></asp:Label></a></td>
+                <td class="center" style="border-style: solid; border-width: thin; border-color: #000000 #000000 #666666 #666666;"> <a href="javascript:openPopup('popup.aspx?sesja=1!11.2!7!4')"><asp:Label CssClass="normal" ID="tab_11_2_w01_c07" runat="server" Text="0"></asp:Label></a></td>
             </tr>
             </table>
            <br />
@@ -9829,73 +9901,73 @@ normal"><span style="font-size:12.0pt;mso-fareast-font-family:Symbol"> Kontrolka
 
            <asp:Label ID="tabela8Label" runat="server" Text="Dział 14.1. Liczba biegłych/podmiotów wydających opinie w sprawach  (z wył. tłumaczy przysięgłych)"></asp:Label>
 &nbsp;<br />
-        <table cellpadding="0" cellspacing="0" style="width:100%;">
+        <table  style="width:100%;">
             <tr>
-                <td align="center" colspan="2" rowspan="2" style="border-style: solid; border-width: thin 0px 0px thin; border-color: #666666;">Sprawy wg repertoriów
-                <td align="center" style="border-style: solid; border-width: thin thin 0px thin; border-color: #666666;" colspan="4">Z tego od daty orzeczenia sądu rejonowego do daty przekazania do sądu II instancji upłynął okres</td>
+                <td class="center" colspan="2" rowspan="2" style="border-style: solid; border-width: thin 0px 0px thin; border-color: #666666;">Sprawy wg repertoriów
+                <td class="center" style="border-style: solid; border-width: thin thin 0px thin; border-color: #666666;" colspan="4">Z tego od daty orzeczenia sądu rejonowego do daty przekazania do sądu II instancji upłynął okres</td>
             </tr>
             <tr>
-                <td align="center" style="border-style: solid; border-width: thin 0px 0px thin; border-color: #666666; " class="col_246">do 2 mies.</td>
-                <td align="center" style="border-style: solid; border-width: thin 0px 0px thin; border-color: #666666; " class="col_246">pow. 2 do 3 mies.</td>
+                <td class="center" style="border-style: solid; border-width: thin 0px 0px thin; border-color: #666666; " class="col_246">do 2 mies.</td>
+                <td class="center" style="border-style: solid; border-width: thin 0px 0px thin; border-color: #666666; " class="col_246">pow. 2 do 3 mies.</td>
                 <td style="border-style: solid; border-width: thin 0px 0px thin; border-color: #666666; " class="col_246">pow. 3 do&nbsp; 6<br />
                     miesięcy.</td>
-                <td align="center" style="border-style: solid; border-width: thin thin 0px thin; border-color: #666666;" class="col_246">pow. 6 do&nbsp; 12<br />
+                <td class="center" style="border-style: solid; border-width: thin thin 0px thin; border-color: #666666;" class="col_246">pow. 6 do&nbsp; 12<br />
                     miesięcy.</td>
             </tr>
             <tr>
-                <td align="center" colspan="2" style="border-style: solid; border-width: thin 0px 0px thin; border-color: #666666;">0</td>
-                <td align="center" style="border-style: solid; border-width: thin 0px 0px thin; border-color: #666666; width: 250px;" class="col_246">1</td>
-                <td align="center" style="border-style: solid; border-width: thin 0px 0px thin; border-color: #666666; width: 250px;" class="col_246">2</td>
-                <td align="center" style="border-style: solid; border-width: thin 0px 0px thin; border-color: #666666; width: 250px;" class="col_246">3</td>
-                <td align="center" style="border-style: solid; border-width: thin thin 0px thin; border-color: #666666; width: 250px;" class="col_246">4</td>
+                <td class="center" colspan="2" style="border-style: solid; border-width: thin 0px 0px thin; border-color: #666666;">0</td>
+                <td class="center" style="border-style: solid; border-width: thin 0px 0px thin; border-color: #666666; width: 250px;" class="col_246">1</td>
+                <td class="center" style="border-style: solid; border-width: thin 0px 0px thin; border-color: #666666; width: 250px;" class="col_246">2</td>
+                <td class="center" style="border-style: solid; border-width: thin 0px 0px thin; border-color: #666666; width: 250px;" class="col_246">3</td>
+                <td class="center" style="border-style: solid; border-width: thin thin 0px thin; border-color: #666666; width: 250px;" class="col_246">4</td>
             </tr>
             <tr>
                 <td align="justify" style="border-style: solid; border-width: thin 0px 0px thin; border-color: #666666; padding-left: 30px;" class="col_121">Ogółem (w. 02 do 06)</td>
-                <td align="center" style="border-style: solid; border-width: thin 0px 0px thin; border-color: #000000 #666666 #666666 #000000;" class="col_36">01</td>
-                <td align="center" style="border-style: solid; border-width: thin 0px 0px thin; border-color: #000000 #666666 #666666 #666666;" class="col_246"> <a href="javascript:openPopup('popup.aspx?sesja=1!14.1!1!4')"><asp:Label CssClass="normal" ID="tab_141_w01_c01" runat="server" Text="0"></asp:Label></a></td>
-                <td align="center" style="border-style: solid; border-width: thin 0px 0px thin; border-color: #000000 #666666 #666666 #666666;" class="col_246"> <a href="javascript:openPopup('popup.aspx?sesja=1!14.1!2!4')"><asp:Label CssClass="normal" ID="tab_141_w01_c02" runat="server" Text="0"></asp:Label></a></td>
-                <td align="center" style="border-style: solid; border-width: thin 0px 0px thin; border-color: #000000 #666666 #666666 #666666;" class="col_246"> <a href="javascript:openPopup('popup.aspx?sesja=1!14.1!3!4')"><asp:Label CssClass="normal" ID="tab_141_w01_c03" runat="server" Text="0"></asp:Label></a></td>
-                <td align="center" style="border-style: solid; border-width: thin thin 0px thin; border-color: #000000 #000000 #666666 #666666;" class="col_246"> <a href="javascript:openPopup('popup.aspx?sesja=1!14.1!4!4')"><asp:Label CssClass="normal" ID="tab_141_w01_c04" runat="server" Text="0"></asp:Label></a></td>
+                <td class="center" style="border-style: solid; border-width: thin 0px 0px thin; border-color: #000000 #666666 #666666 #000000;" class="col_36">01</td>
+                <td class="center" style="border-style: solid; border-width: thin 0px 0px thin; border-color: #000000 #666666 #666666 #666666;" class="col_246"> <a href="javascript:openPopup('popup.aspx?sesja=1!14.1!1!4')"><asp:Label CssClass="normal" ID="tab_141_w01_c01" runat="server" Text="0"></asp:Label></a></td>
+                <td class="center" style="border-style: solid; border-width: thin 0px 0px thin; border-color: #000000 #666666 #666666 #666666;" class="col_246"> <a href="javascript:openPopup('popup.aspx?sesja=1!14.1!2!4')"><asp:Label CssClass="normal" ID="tab_141_w01_c02" runat="server" Text="0"></asp:Label></a></td>
+                <td class="center" style="border-style: solid; border-width: thin 0px 0px thin; border-color: #000000 #666666 #666666 #666666;" class="col_246"> <a href="javascript:openPopup('popup.aspx?sesja=1!14.1!3!4')"><asp:Label CssClass="normal" ID="tab_141_w01_c03" runat="server" Text="0"></asp:Label></a></td>
+                <td class="center" style="border-style: solid; border-width: thin thin 0px thin; border-color: #000000 #000000 #666666 #666666;" class="col_246"> <a href="javascript:openPopup('popup.aspx?sesja=1!14.1!4!4')"><asp:Label CssClass="normal" ID="tab_141_w01_c04" runat="server" Text="0"></asp:Label></a></td>
             </tr>
              <tr>
                 <td align="justify" style="border-style: solid; border-width: thin 0px 0px thin; border-color: #666666; padding-left: 30px;" class="col_121">RC </td>
-                <td align="center" style="border-style: solid; border-width: thin 0px 0px thin; border-color: #000000 #666666 #666666 #000000;" class="col_36">02</td>
-                <td align="center" style="border-style: solid; border-width: thin 0px 0px thin; border-color: #666666;" class="col_246"> <a href="javascript:openPopup('popup.aspx?sesja=2!14.1!1!4')"><asp:Label CssClass="normal" ID="tab_141_w02_c01" runat="server" Text="0"></asp:Label></a></td>
-                <td align="center" style="border-style: solid; border-width: thin 0px 0px thin; border-color: #666666;" class="col_246"> <a href="javascript:openPopup('popup.aspx?sesja=2!14.1!2!4')"><asp:Label CssClass="normal" ID="tab_141_w02_c02" runat="server" Text="0"></asp:Label></a></td>
-                <td align="center" style="border-style: solid; border-width: thin 0px 0px thin; border-color: #666666;" class="col_246"> <a href="javascript:openPopup('popup.aspx?sesja=2!14.1!3!4')"><asp:Label CssClass="normal" ID="tab_141_w02_c03" runat="server" Text="0"></asp:Label></a></td>
-                <td align="center" style="border-style: solid; border-width: thin thin 0px thin; border-color: #666666 #000000 #666666 #666666;" class="col_246"> <a href="javascript:openPopup('popup.aspx?sesja=2!14.1!4!4')"><asp:Label CssClass="normal" ID="tab_141_w02_c04" runat="server" Text="0"></asp:Label></a></td>
+                <td class="center" style="border-style: solid; border-width: thin 0px 0px thin; border-color: #000000 #666666 #666666 #000000;" class="col_36">02</td>
+                <td class="center" style="border-style: solid; border-width: thin 0px 0px thin; border-color: #666666;" class="col_246"> <a href="javascript:openPopup('popup.aspx?sesja=2!14.1!1!4')"><asp:Label CssClass="normal" ID="tab_141_w02_c01" runat="server" Text="0"></asp:Label></a></td>
+                <td class="center" style="border-style: solid; border-width: thin 0px 0px thin; border-color: #666666;" class="col_246"> <a href="javascript:openPopup('popup.aspx?sesja=2!14.1!2!4')"><asp:Label CssClass="normal" ID="tab_141_w02_c02" runat="server" Text="0"></asp:Label></a></td>
+                <td class="center" style="border-style: solid; border-width: thin 0px 0px thin; border-color: #666666;" class="col_246"> <a href="javascript:openPopup('popup.aspx?sesja=2!14.1!3!4')"><asp:Label CssClass="normal" ID="tab_141_w02_c03" runat="server" Text="0"></asp:Label></a></td>
+                <td class="center" style="border-style: solid; border-width: thin thin 0px thin; border-color: #666666 #000000 #666666 #666666;" class="col_246"> <a href="javascript:openPopup('popup.aspx?sesja=2!14.1!4!4')"><asp:Label CssClass="normal" ID="tab_141_w02_c04" runat="server" Text="0"></asp:Label></a></td>
             </tr>
              <tr>
                 <td align="justify" style="border-style: solid; border-width: thin 0px 0px thin; border-color: #666666; padding-left: 30px;" class="col_121">RNs </td>
-                <td align="center" style="border-style: solid; border-width: thin 0px 0px thin; border-color: #000000 #666666 #666666 #000000;" class="col_36">03</td>
-                <td align="center" style="border-style: solid; border-width: thin 0px 0px thin; border-color: #666666;" class="col_246"> <a href="javascript:openPopup('popup.aspx?sesja=3!14.1!1!4')"><asp:Label CssClass="normal" ID="tab_141_w03_c01" runat="server" Text="0"></asp:Label></a></td>
-                <td align="center" style="border-style: solid; border-width: thin 0px 0px thin; border-color: #666666;" class="col_246"> <a href="javascript:openPopup('popup.aspx?sesja=3!14.1!2!4')"><asp:Label CssClass="normal" ID="tab_141_w03_c02" runat="server" Text="0"></asp:Label></a></td>
-                <td align="center" style="border-style: solid; border-width: thin 0px 0px thin; border-color: #666666;" class="col_246"> <a href="javascript:openPopup('popup.aspx?sesja=3!14.1!3!4')"><asp:Label CssClass="normal" ID="tab_141_w03_c03" runat="server" Text="0"></asp:Label></a></td>
-                <td align="center" style="border-style: solid; border-width: thin thin 0px thin; border-color: #666666 #000000 #666666 #666666;" class="col_246"> <a href="javascript:openPopup('popup.aspx?sesja=3!14.1!4!4')"><asp:Label CssClass="normal" ID="tab_141_w03_c04" runat="server" Text="0"></asp:Label></a></td>
+                <td class="center" style="border-style: solid; border-width: thin 0px 0px thin; border-color: #000000 #666666 #666666 #000000;" class="col_36">03</td>
+                <td class="center" style="border-style: solid; border-width: thin 0px 0px thin; border-color: #666666;" class="col_246"> <a href="javascript:openPopup('popup.aspx?sesja=3!14.1!1!4')"><asp:Label CssClass="normal" ID="tab_141_w03_c01" runat="server" Text="0"></asp:Label></a></td>
+                <td class="center" style="border-style: solid; border-width: thin 0px 0px thin; border-color: #666666;" class="col_246"> <a href="javascript:openPopup('popup.aspx?sesja=3!14.1!2!4')"><asp:Label CssClass="normal" ID="tab_141_w03_c02" runat="server" Text="0"></asp:Label></a></td>
+                <td class="center" style="border-style: solid; border-width: thin 0px 0px thin; border-color: #666666;" class="col_246"> <a href="javascript:openPopup('popup.aspx?sesja=3!14.1!3!4')"><asp:Label CssClass="normal" ID="tab_141_w03_c03" runat="server" Text="0"></asp:Label></a></td>
+                <td class="center" style="border-style: solid; border-width: thin thin 0px thin; border-color: #666666 #000000 #666666 #666666;" class="col_246"> <a href="javascript:openPopup('popup.aspx?sesja=3!14.1!4!4')"><asp:Label CssClass="normal" ID="tab_141_w03_c04" runat="server" Text="0"></asp:Label></a></td>
             </tr>
              <tr>
                 <td align="justify" style="border-style: solid; border-width: thin 0px 0px thin; border-color: #666666; padding-left: 30px;" class="col_121">Nsm </td>
-                <td align="center" style="border-style: solid; border-width: thin 0px 0px thin; border-color: #000000 #666666 #666666 #000000;" class="col_36">04</td>
-                <td align="center" style="border-style: solid; border-width: thin 0px 0px thin; border-color: #666666;" class="col_246"> <a href="javascript:openPopup('popup.aspx?sesja=4!14.1!1!4')"><asp:Label CssClass="normal" ID="tab_141_w04_c01" runat="server" Text="0"></asp:Label></a></td>
-                <td align="center" style="border-style: solid; border-width: thin 0px 0px thin; border-color: #666666;" class="col_246"> <a href="javascript:openPopup('popup.aspx?sesja=4!14.1!2!4')"><asp:Label CssClass="normal" ID="tab_141_w04_c02" runat="server" Text="0"></asp:Label></a></td>
-                <td align="center" style="border-style: solid; border-width: thin 0px 0px thin; border-color: #666666;" class="col_246"> <a href="javascript:openPopup('popup.aspx?sesja=4!14.1!3!4')"><asp:Label CssClass="normal" ID="tab_141_w04_c03" runat="server" Text="0"></asp:Label></a></td>
-                <td align="center" style="border-style: solid; border-width: thin thin 0px thin; border-color: #666666 #000000 #666666 #666666;" class="col_246"> <a href="javascript:openPopup('popup.aspx?sesja=4!14.1!4!4')"><asp:Label CssClass="normal" ID="tab_141_w04_c04" runat="server" Text="0"></asp:Label></a></td>
+                <td class="center" style="border-style: solid; border-width: thin 0px 0px thin; border-color: #000000 #666666 #666666 #000000;" class="col_36">04</td>
+                <td class="center" style="border-style: solid; border-width: thin 0px 0px thin; border-color: #666666;" class="col_246"> <a href="javascript:openPopup('popup.aspx?sesja=4!14.1!1!4')"><asp:Label CssClass="normal" ID="tab_141_w04_c01" runat="server" Text="0"></asp:Label></a></td>
+                <td class="center" style="border-style: solid; border-width: thin 0px 0px thin; border-color: #666666;" class="col_246"> <a href="javascript:openPopup('popup.aspx?sesja=4!14.1!2!4')"><asp:Label CssClass="normal" ID="tab_141_w04_c02" runat="server" Text="0"></asp:Label></a></td>
+                <td class="center" style="border-style: solid; border-width: thin 0px 0px thin; border-color: #666666;" class="col_246"> <a href="javascript:openPopup('popup.aspx?sesja=4!14.1!3!4')"><asp:Label CssClass="normal" ID="tab_141_w04_c03" runat="server" Text="0"></asp:Label></a></td>
+                <td class="center" style="border-style: solid; border-width: thin thin 0px thin; border-color: #666666 #000000 #666666 #666666;" class="col_246"> <a href="javascript:openPopup('popup.aspx?sesja=4!14.1!4!4')"><asp:Label CssClass="normal" ID="tab_141_w04_c04" runat="server" Text="0"></asp:Label></a></td>
             </tr>
              <tr>
                 <td align="justify" style="border-style: solid; border-width: thin 0px 0px thin; border-color: #666666; padding-left: 30px;" class="col_121">Nkd </td>
-                <td align="center" style="border-style: solid; border-width: thin 0px 0px thin; border-color: #000000 #666666 #666666 #000000;" class="col_36">05</td>
-                <td align="center" style="border-style: solid; border-width: thin 0px 0px thin; border-color: #666666;" class="col_246"> <a href="javascript:openPopup('popup.aspx?sesja=5!14.1!1!4')"><asp:Label CssClass="normal" ID="tab_141_w05_c01" runat="server" Text="0"></asp:Label></a></td>
-                <td align="center" style="border-style: solid; border-width: thin 0px 0px thin; border-color: #666666;" class="col_246"> <a href="javascript:openPopup('popup.aspx?sesja=5!14.1!2!4')"><asp:Label CssClass="normal" ID="tab_141_w05_c02" runat="server" Text="0"></asp:Label></a></td>
-                <td align="center" style="border-style: solid; border-width: thin 0px 0px thin; border-color: #666666;" class="col_246"> <a href="javascript:openPopup('popup.aspx?sesja=5!14.1!3!4')"><asp:Label CssClass="normal" ID="tab_141_w05_c03" runat="server" Text="0"></asp:Label></a></td>
-                <td align="center" style="border-style: solid; border-width: thin thin 0px thin; border-color: #666666 #000000 #666666 #666666;" class="col_246"> <a href="javascript:openPopup('popup.aspx?sesja=5!14.1!4!4')"><asp:Label CssClass="normal" ID="tab_141_w05_c04" runat="server" Text="0"></asp:Label></a></td>
+                <td class="center" style="border-style: solid; border-width: thin 0px 0px thin; border-color: #000000 #666666 #666666 #000000;" class="col_36">05</td>
+                <td class="center" style="border-style: solid; border-width: thin 0px 0px thin; border-color: #666666;" class="col_246"> <a href="javascript:openPopup('popup.aspx?sesja=5!14.1!1!4')"><asp:Label CssClass="normal" ID="tab_141_w05_c01" runat="server" Text="0"></asp:Label></a></td>
+                <td class="center" style="border-style: solid; border-width: thin 0px 0px thin; border-color: #666666;" class="col_246"> <a href="javascript:openPopup('popup.aspx?sesja=5!14.1!2!4')"><asp:Label CssClass="normal" ID="tab_141_w05_c02" runat="server" Text="0"></asp:Label></a></td>
+                <td class="center" style="border-style: solid; border-width: thin 0px 0px thin; border-color: #666666;" class="col_246"> <a href="javascript:openPopup('popup.aspx?sesja=5!14.1!3!4')"><asp:Label CssClass="normal" ID="tab_141_w05_c03" runat="server" Text="0"></asp:Label></a></td>
+                <td class="center" style="border-style: solid; border-width: thin thin 0px thin; border-color: #666666 #000000 #666666 #666666;" class="col_246"> <a href="javascript:openPopup('popup.aspx?sesja=5!14.1!4!4')"><asp:Label CssClass="normal" ID="tab_141_w05_c04" runat="server" Text="0"></asp:Label></a></td>
             </tr>
             <tr>
                 <td align="justify" style="border-style: solid; border-width: thin 0px thin thin; border-color: #666666; padding-left: 30px;" class="col_121">Inne</td>
-                <td align="center" style="border-style: solid; border-width: thin 0px thin thin; border-color: #666666 #666666 #000000 #000000;" class="col_36">06</td>
-                <td align="center" style="border-style: solid; border-width: thin 0px thin thin; border-color: #666666 #666666 #000000 #666666;" class="col_246"><a href="javascript:openPopup('popup.aspx?sesja=6!14.1!1!4')"><asp:Label CssClass="normal" ID="tab_141_w06_c01" runat="server" Text="0"></asp:Label></a></td>
-                <td align="center" style="border-style: solid; border-width: thin 0px thin thin; border-color: #666666 #666666 #000000 #666666;" class="col_246"><a href="javascript:openPopup('popup.aspx?sesja=6!14.1!2!4')"><asp:Label CssClass="normal" ID="tab_141_w06_c02" runat="server" Text="0"></asp:Label></a></td>
-                <td align="center" style="border-style: solid; border-width: thin 0px thin thin; border-color: #666666 #666666 #000000 #666666;" class="col_246"><a href="javascript:openPopup('popup.aspx?sesja=6!14.1!3!4')"><asp:Label CssClass="normal" ID="tab_141_w06_c03" runat="server" Text="0"></asp:Label></a></td>
-                <td align="center" style="border-style: solid; border-width: thin; border-color: #666666 #000000 #000000 #666666;" class="col_246"><a href="javascript:openPopup('popup.aspx?sesja=6!14.1!4!4')"><asp:Label CssClass="normal" ID="tab_141_w06_c04" runat="server" Text="0"></asp:Label></a></td>
+                <td class="center" style="border-style: solid; border-width: thin 0px thin thin; border-color: #666666 #666666 #000000 #000000;" class="col_36">06</td>
+                <td class="center" style="border-style: solid; border-width: thin 0px thin thin; border-color: #666666 #666666 #000000 #666666;" class="col_246"><a href="javascript:openPopup('popup.aspx?sesja=6!14.1!1!4')"><asp:Label CssClass="normal" ID="tab_141_w06_c01" runat="server" Text="0"></asp:Label></a></td>
+                <td class="center" style="border-style: solid; border-width: thin 0px thin thin; border-color: #666666 #666666 #000000 #666666;" class="col_246"><a href="javascript:openPopup('popup.aspx?sesja=6!14.1!2!4')"><asp:Label CssClass="normal" ID="tab_141_w06_c02" runat="server" Text="0"></asp:Label></a></td>
+                <td class="center" style="border-style: solid; border-width: thin 0px thin thin; border-color: #666666 #666666 #000000 #666666;" class="col_246"><a href="javascript:openPopup('popup.aspx?sesja=6!14.1!3!4')"><asp:Label CssClass="normal" ID="tab_141_w06_c03" runat="server" Text="0"></asp:Label></a></td>
+                <td class="center" style="border-style: solid; border-width: thin; border-color: #666666 #000000 #000000 #666666;" class="col_246"><a href="javascript:openPopup('popup.aspx?sesja=6!14.1!4!4')"><asp:Label CssClass="normal" ID="tab_141_w06_c04" runat="server" Text="0"></asp:Label></a></td>
             </tr>
         </table>
           <br />
@@ -9905,111 +9977,111 @@ normal"><span style="font-size:12.0pt;mso-fareast-font-family:Symbol"> Kontrolka
            <asp:Label ID="Label1" runat="server">Dział 14.2. Terminowość sporządzania opinii pisemnych (z wył. tłumaczy przysięgłych</asp:Label>
 
               <br />
-        <table cellpadding="0" cellspacing="0" style="width:100%;">
+        <table  style="width:100%;">
             <tr>
-                <td align="center" colspan="2" style="border-style: solid; border-width: thin 0px 0px thin; border-color: #666666;" class="col_155" rowspan="3">Sprawy wg repertoriów</td>
-                <td align="center" style="border-left: thin solid #666666; border-right: 0px solid #666666; border-top: thin solid #666666; border-bottom: 0px solid #666666; border-width: thin thin 0px thin;" class="mssGrayMiddle" colspan="8">Liczba sporządzonych opinii</td>
+                <td class="center" colspan="2" style="border-style: solid; border-width: thin 0px 0px thin; border-color: #666666;" class="col_155" rowspan="3">Sprawy wg repertoriów</td>
+                <td class="center" style="border-left: thin solid #666666; border-right: 0px solid #666666; border-top: thin solid #666666; border-bottom: 0px solid #666666; border-width: thin thin 0px thin;" class="mssGrayMiddle" colspan="8">Liczba sporządzonych opinii</td>
             </tr>
             <tr>
-                <td align="center" style="border-style: solid; border-width: thin 0px 0px thin; border-color: #666666; width: 142px;" class="col_100" rowspan="2">razem
+                <td class="center" style="border-style: solid; border-width: thin 0px 0px thin; border-color: #666666; width: 142px;" class="col_100" rowspan="2">razem
                     <br />
                     (kol.1= 2 do 5 =
                     <br />
                     6 do 8)</td>
-                <td align="center" style="border-left: thin solid #666666; border-right: 0px solid #666666; border-top: thin solid #666666; border-bottom: 0px solid #666666;" class="col_100" rowspan="2">w ustalonym terminie</td>
-                <td align="center" style="border-left: thin solid #666666; border-right: 0px solid #666666; border-top: thin solid #666666; border-bottom: 0px solid #666666;" colspan="3">po ustalonym terminie </td>
-                <td align="center" style="border-style: solid; border-width: thin thin 0px thin; border-color: #666666;" colspan="3">wg czasu wydania opinii</td>
+                <td class="center" style="border-left: thin solid #666666; border-right: 0px solid #666666; border-top: thin solid #666666; border-bottom: 0px solid #666666;" class="col_100" rowspan="2">w ustalonym terminie</td>
+                <td class="center" style="border-left: thin solid #666666; border-right: 0px solid #666666; border-top: thin solid #666666; border-bottom: 0px solid #666666;" colspan="3">po ustalonym terminie </td>
+                <td class="center" style="border-style: solid; border-width: thin thin 0px thin; border-color: #666666;" colspan="3">wg czasu wydania opinii</td>
             </tr>
             <tr>
-                <td align="center" style="border-style: solid; border-width: thin 0px 0px thin; border-color: #666666; width: 142px;" class="col_100">do 30dni</td>
-                <td align="center" style="border-style: solid; border-width: thin 0px 0px thin; border-color: #666666; width: 142px;" class="col_100">pow. 1 do 3 miesięcy</td>
-                <td align="center" style="border-style: solid; border-width: thin 0px 0px thin; border-color: #666666;" class="col_100">pow. 3 miesięcy</td>
-                <td align="center" style="border-style: solid; border-width: thin 0px 0px thin; border-color: #666666;" class="col_100">do 30 dni</td>
-                <td align="center" style="border-style: solid; border-width: thin 0px 0px thin; border-color: #666666;" class="col_100">pow. 1 do 3 miesięcy</td>
-                <td align="center" style="border-style: solid; border-width: thin thin 0px thin; border-color: #666666;" class="col_100">pow. 3 miesięcy</td>
+                <td class="center" style="border-style: solid; border-width: thin 0px 0px thin; border-color: #666666; width: 142px;" class="col_100">do 30dni</td>
+                <td class="center" style="border-style: solid; border-width: thin 0px 0px thin; border-color: #666666; width: 142px;" class="col_100">pow. 1 do 3 miesięcy</td>
+                <td class="center" style="border-style: solid; border-width: thin 0px 0px thin; border-color: #666666;" class="col_100">pow. 3 miesięcy</td>
+                <td class="center" style="border-style: solid; border-width: thin 0px 0px thin; border-color: #666666;" class="col_100">do 30 dni</td>
+                <td class="center" style="border-style: solid; border-width: thin 0px 0px thin; border-color: #666666;" class="col_100">pow. 1 do 3 miesięcy</td>
+                <td class="center" style="border-style: solid; border-width: thin thin 0px thin; border-color: #666666;" class="col_100">pow. 3 miesięcy</td>
             </tr>
             <tr>
-                <td align="center" colspan="2" style="border-style: solid; border-width: thin 0px 0px thin; border-color: #666666;" class="col_155">0</td>
-                <td align="center" style="border-left: thin solid #666666; border-right: 0px solid #666666; border-top: thin solid #666666; border-bottom: 0px solid #666666; width: 142px;" class="col_123">1</td>
-                <td align="center" style="border-style: solid; border-width: thin 0px 0px thin; border-color: #666666;" class="col_123">2</td>
-                <td align="center" style="border-style: solid; border-width: thin 0px 0px thin; border-color: #666666;" class="col_123">3</td>
-                <td align="center" style="border-style: solid; border-width: thin 0px 0px thin; border-color: #666666;" class="col_123">4</td>
-                <td align="center" style="border-style: solid; border-width: thin 0px 0px thin; border-color: #666666; width: 142px;" class="col_123">5</td>
-                <td align="center" style="border-style: solid; border-width: thin 0px 0px thin; border-color: #666666; width: 142px;" class="col_123">6</td>
-                <td align="center" style="border-style: solid; border-width: thin 0px 0px thin; border-color: #666666; width: 142px;" class="col_123">7</td>
-                <td align="center" style="border-style: solid; border-width: thin thin 0px thin; border-color: #666666; width: 142px;" class="col_123">8</td>
+                <td class="center" colspan="2" style="border-style: solid; border-width: thin 0px 0px thin; border-color: #666666;" class="col_155">0</td>
+                <td class="center" style="border-left: thin solid #666666; border-right: 0px solid #666666; border-top: thin solid #666666; border-bottom: 0px solid #666666; width: 142px;" class="col_123">1</td>
+                <td class="center" style="border-style: solid; border-width: thin 0px 0px thin; border-color: #666666;" class="col_123">2</td>
+                <td class="center" style="border-style: solid; border-width: thin 0px 0px thin; border-color: #666666;" class="col_123">3</td>
+                <td class="center" style="border-style: solid; border-width: thin 0px 0px thin; border-color: #666666;" class="col_123">4</td>
+                <td class="center" style="border-style: solid; border-width: thin 0px 0px thin; border-color: #666666; width: 142px;" class="col_123">5</td>
+                <td class="center" style="border-style: solid; border-width: thin 0px 0px thin; border-color: #666666; width: 142px;" class="col_123">6</td>
+                <td class="center" style="border-style: solid; border-width: thin 0px 0px thin; border-color: #666666; width: 142px;" class="col_123">7</td>
+                <td class="center" style="border-style: solid; border-width: thin thin 0px thin; border-color: #666666; width: 142px;" class="col_123">8</td>
             </tr>
             <tr>
                 <td align="justify" style="border-style: solid; border-width: thin 0px 0px thin; border-color: #666666; padding-left: 30px;" class="col_121">Ogółem (w. 02 do 07)</td>
-                <td align="center" style="border-style: solid; border-width: thin 0px 0px thin; border-color: #000000 #666666 #666666 #000000;" class="col_36">01</td>
-                <td align="center" style="border-left: thin solid #666666; border-right: 0px solid #666666; border-top: thin solid #000000; border-bottom: 0px solid #666666; width: 142px;" class="col_123"> <a href="javascript:openPopup('popup.aspx?sesja=1!14.2!1!4')"><asp:Label CssClass="normal" ID="tab_142_w01_c01" runat="server" Text="0"></asp:Label></a></td>
-                <td align="center" style="border-style: solid; border-width: thin 0px 0px thin; border-color: #000000 #666666 #666666 #666666;" class="col_123"> <a href="javascript:openPopup('popup.aspx?sesja=1!14.2!2!4')"><asp:Label CssClass="normal" ID="tab_142_w01_c02" runat="server" Text="0"></asp:Label></a></td>
-                <td align="center" style="border-style: solid; border-width: thin 0px 0px thin; border-color: #000000 #666666 #666666 #666666;" class="col_123"> <a href="javascript:openPopup('popup.aspx?sesja=1!14.2!3!4')"><asp:Label CssClass="normal" ID="tab_142_w01_c03" runat="server" Text="0"></asp:Label></a></td>
-                <td align="center" style="border-style: solid; border-width: thin 0px 0px thin; border-color: #000000 #666666 #666666 #666666;" class="col_123"> <a href="javascript:openPopup('popup.aspx?sesja=1!14.2!4!4')"><asp:Label CssClass="normal" ID="tab_142_w01_c04" runat="server" Text="0"></asp:Label></a></td>
-                <td align="center" style="border-style: solid; border-width: thin 0px 0px thin; border-color: #000000 #666666 #666666 #666666;" class="col_123"> <a href="javascript:openPopup('popup.aspx?sesja=1!14.2!5!4')"><asp:Label CssClass="normal" ID="tab_142_w01_c05" runat="server" Text="0"></asp:Label></a></td>
-                <td align="center" style="border-style: solid; border-width: thin 0px 0px thin; border-color: #000000 #666666 #666666 #666666;" class="col_123"> <a href="javascript:openPopup('popup.aspx?sesja=1!14.2!6!4')"><asp:Label CssClass="normal" ID="tab_142_w01_c06" runat="server" Text="0"></asp:Label></a></td>
-                <td align="center" style="border-style: solid; border-width: thin 0px 0px thin; border-color: #000000 #666666 #666666 #666666;" class="col_123"> <a href="javascript:openPopup('popup.aspx?sesja=1!14.2!7!4')"><asp:Label CssClass="normal" ID="tab_142_w01_c07" runat="server" Text="0"></asp:Label></a></td>
-                <td align="center" style="border-style: solid; border-width: thin thin 0px thin; border-color: #000000 #000000 #666666 #666666;" class="col_123"> <a href="javascript:openPopup('popup.aspx?sesja=1!14.2!8!4')"><asp:Label CssClass="normal" ID="tab_142_w01_c08" runat="server" Text="0"></asp:Label></a></td>
+                <td class="center" style="border-style: solid; border-width: thin 0px 0px thin; border-color: #000000 #666666 #666666 #000000;" class="col_36">01</td>
+                <td class="center" style="border-left: thin solid #666666; border-right: 0px solid #666666; border-top: thin solid #000000; border-bottom: 0px solid #666666; width: 142px;" class="col_123"> <a href="javascript:openPopup('popup.aspx?sesja=1!14.2!1!4')"><asp:Label CssClass="normal" ID="tab_142_w01_c01" runat="server" Text="0"></asp:Label></a></td>
+                <td class="center" style="border-style: solid; border-width: thin 0px 0px thin; border-color: #000000 #666666 #666666 #666666;" class="col_123"> <a href="javascript:openPopup('popup.aspx?sesja=1!14.2!2!4')"><asp:Label CssClass="normal" ID="tab_142_w01_c02" runat="server" Text="0"></asp:Label></a></td>
+                <td class="center" style="border-style: solid; border-width: thin 0px 0px thin; border-color: #000000 #666666 #666666 #666666;" class="col_123"> <a href="javascript:openPopup('popup.aspx?sesja=1!14.2!3!4')"><asp:Label CssClass="normal" ID="tab_142_w01_c03" runat="server" Text="0"></asp:Label></a></td>
+                <td class="center" style="border-style: solid; border-width: thin 0px 0px thin; border-color: #000000 #666666 #666666 #666666;" class="col_123"> <a href="javascript:openPopup('popup.aspx?sesja=1!14.2!4!4')"><asp:Label CssClass="normal" ID="tab_142_w01_c04" runat="server" Text="0"></asp:Label></a></td>
+                <td class="center" style="border-style: solid; border-width: thin 0px 0px thin; border-color: #000000 #666666 #666666 #666666;" class="col_123"> <a href="javascript:openPopup('popup.aspx?sesja=1!14.2!5!4')"><asp:Label CssClass="normal" ID="tab_142_w01_c05" runat="server" Text="0"></asp:Label></a></td>
+                <td class="center" style="border-style: solid; border-width: thin 0px 0px thin; border-color: #000000 #666666 #666666 #666666;" class="col_123"> <a href="javascript:openPopup('popup.aspx?sesja=1!14.2!6!4')"><asp:Label CssClass="normal" ID="tab_142_w01_c06" runat="server" Text="0"></asp:Label></a></td>
+                <td class="center" style="border-style: solid; border-width: thin 0px 0px thin; border-color: #000000 #666666 #666666 #666666;" class="col_123"> <a href="javascript:openPopup('popup.aspx?sesja=1!14.2!7!4')"><asp:Label CssClass="normal" ID="tab_142_w01_c07" runat="server" Text="0"></asp:Label></a></td>
+                <td class="center" style="border-style: solid; border-width: thin thin 0px thin; border-color: #000000 #000000 #666666 #666666;" class="col_123"> <a href="javascript:openPopup('popup.aspx?sesja=1!14.2!8!4')"><asp:Label CssClass="normal" ID="tab_142_w01_c08" runat="server" Text="0"></asp:Label></a></td>
             </tr>
             <tr>
                 <td align="justify" style="border-style: solid; border-width: thin 0px 0px thin; border-color: #666666; padding-left: 30px;" class="col_121">RC</td>
-                <td align="center" style="border-style: solid; border-width: thin 0px thin thin; border-color: #666666 #666666 #000000 #000000;" class="col_36">02</td>
-                <td align="center" style="border-style: solid; border-color: #666666 #666666 #000000 #666666; border-width: thin 0px 0px thin;" class="col_123"><a href="javascript:openPopup('popup.aspx?sesja=2!14.2!1!4')"><asp:Label CssClass="normal" ID="tab_142_w02_c01" runat="server" Text="0"></asp:Label></a></td>
-                <td align="center" style="border-style: solid; border-width: thin 0px 0px thin; border-color: #666666 #666666 #000000 #666666;" class="col_123"><a href="javascript:openPopup('popup.aspx?sesja=2!14.2!2!4')"><asp:Label CssClass="normal" ID="tab_142_w02_c02" runat="server" Text="0"></asp:Label></a></td>
-                <td align="center" style="border-style: solid; border-width: thin 0px 0px thin; border-color: #666666 #666666 #000000 #666666;" class="col_123"><a href="javascript:openPopup('popup.aspx?sesja=2!14.2!3!4')"><asp:Label CssClass="normal" ID="tab_142_w02_c03" runat="server" Text="0"></asp:Label></a></td>
-                <td align="center" style="border-style: solid; border-width: thin 0px 0px thin; border-color: #666666 #666666 #000000 #666666;" class="col_123"><a href="javascript:openPopup('popup.aspx?sesja=2!14.2!4!4')"><asp:Label CssClass="normal" ID="tab_142_w02_c04" runat="server" Text="0"></asp:Label></a></td>
-                <td align="center" style="border-style: solid; border-width: thin 0px 0px thin; border-color: #666666 #666666 #000000 #666666;" class="col_123"><a href="javascript:openPopup('popup.aspx?sesja=2!14.2!5!4')"><asp:Label CssClass="normal" ID="tab_142_w02_c05" runat="server" Text="0"></asp:Label></a></td>
-                <td align="center" style="border-style: solid; border-width: thin 0px 0px thin; border-color: #666666 #666666 #000000 #666666;" class="col_123"><a href="javascript:openPopup('popup.aspx?sesja=2!14.2!6!4')"><asp:Label CssClass="normal" ID="tab_142_w02_c06" runat="server" Text="0"></asp:Label></a></td>
-                <td align="center" style="border-style: solid; border-width: thin 0px 0px thin; border-color: #666666 #666666 #000000 #666666;" class="col_123"><a href="javascript:openPopup('popup.aspx?sesja=2!14.2!7!4')"><asp:Label CssClass="normal" ID="tab_142_w02_c07" runat="server" Text="0"></asp:Label></a></td>
-                <td align="center" style="border-style: solid; border-width: thin thin 0px thin; border-color: #666666 #000000 #666666 #666666;" class="col_123"><a href="javascript:openPopup('popup.aspx?sesja=2!14.2!8!4')"><asp:Label CssClass="normal" ID="tab_142_w02_c08" runat="server" Text="0"></asp:Label></a></td>
+                <td class="center" style="border-style: solid; border-width: thin 0px thin thin; border-color: #666666 #666666 #000000 #000000;" class="col_36">02</td>
+                <td class="center" style="border-style: solid; border-color: #666666 #666666 #000000 #666666; border-width: thin 0px 0px thin;" class="col_123"><a href="javascript:openPopup('popup.aspx?sesja=2!14.2!1!4')"><asp:Label CssClass="normal" ID="tab_142_w02_c01" runat="server" Text="0"></asp:Label></a></td>
+                <td class="center" style="border-style: solid; border-width: thin 0px 0px thin; border-color: #666666 #666666 #000000 #666666;" class="col_123"><a href="javascript:openPopup('popup.aspx?sesja=2!14.2!2!4')"><asp:Label CssClass="normal" ID="tab_142_w02_c02" runat="server" Text="0"></asp:Label></a></td>
+                <td class="center" style="border-style: solid; border-width: thin 0px 0px thin; border-color: #666666 #666666 #000000 #666666;" class="col_123"><a href="javascript:openPopup('popup.aspx?sesja=2!14.2!3!4')"><asp:Label CssClass="normal" ID="tab_142_w02_c03" runat="server" Text="0"></asp:Label></a></td>
+                <td class="center" style="border-style: solid; border-width: thin 0px 0px thin; border-color: #666666 #666666 #000000 #666666;" class="col_123"><a href="javascript:openPopup('popup.aspx?sesja=2!14.2!4!4')"><asp:Label CssClass="normal" ID="tab_142_w02_c04" runat="server" Text="0"></asp:Label></a></td>
+                <td class="center" style="border-style: solid; border-width: thin 0px 0px thin; border-color: #666666 #666666 #000000 #666666;" class="col_123"><a href="javascript:openPopup('popup.aspx?sesja=2!14.2!5!4')"><asp:Label CssClass="normal" ID="tab_142_w02_c05" runat="server" Text="0"></asp:Label></a></td>
+                <td class="center" style="border-style: solid; border-width: thin 0px 0px thin; border-color: #666666 #666666 #000000 #666666;" class="col_123"><a href="javascript:openPopup('popup.aspx?sesja=2!14.2!6!4')"><asp:Label CssClass="normal" ID="tab_142_w02_c06" runat="server" Text="0"></asp:Label></a></td>
+                <td class="center" style="border-style: solid; border-width: thin 0px 0px thin; border-color: #666666 #666666 #000000 #666666;" class="col_123"><a href="javascript:openPopup('popup.aspx?sesja=2!14.2!7!4')"><asp:Label CssClass="normal" ID="tab_142_w02_c07" runat="server" Text="0"></asp:Label></a></td>
+                <td class="center" style="border-style: solid; border-width: thin thin 0px thin; border-color: #666666 #000000 #666666 #666666;" class="col_123"><a href="javascript:openPopup('popup.aspx?sesja=2!14.2!8!4')"><asp:Label CssClass="normal" ID="tab_142_w02_c08" runat="server" Text="0"></asp:Label></a></td>
             </tr>
              <tr>
                 <td align="justify" style="border-style: solid; border-width: thin 0px 0px thin; border-color: #666666; padding-left: 30px;" class="col_121">RNs</td>
-                <td align="center" style="border-style: solid; border-width: thin 0px thin thin; border-color: #666666 #666666 #000000 #000000;" class="col_36">03</td>
-                <td align="center" style="border-style: solid; border-color: #666666 #666666 #000000 #666666; border-width: thin 0px 0px thin;" class="col_123"><a href="javascript:openPopup('popup.aspx?sesja=3!14.2!1!4')"><asp:Label CssClass="normal" ID="tab_142_w03_c01" runat="server" Text="0"></asp:Label></a></td>
-                <td align="center" style="border-style: solid; border-width: thin 0px 0px thin; border-color: #666666 #666666 #000000 #666666;" class="col_123"><a href="javascript:openPopup('popup.aspx?sesja=3!14.2!2!4')"><asp:Label CssClass="normal" ID="tab_142_w03_c02" runat="server" Text="0"></asp:Label></a></td>
-                <td align="center" style="border-style: solid; border-width: thin 0px 0px thin; border-color: #666666 #666666 #000000 #666666;" class="col_123"><a href="javascript:openPopup('popup.aspx?sesja=3!14.2!3!4')"><asp:Label CssClass="normal" ID="tab_142_w03_c03" runat="server" Text="0"></asp:Label></a></td>
-                <td align="center" style="border-style: solid; border-width: thin 0px 0px thin; border-color: #666666 #666666 #000000 #666666;" class="col_123"><a href="javascript:openPopup('popup.aspx?sesja=3!14.2!4!4')"><asp:Label CssClass="normal" ID="tab_142_w03_c04" runat="server" Text="0"></asp:Label></a></td>
-                <td align="center" style="border-style: solid; border-width: thin 0px 0px thin; border-color: #666666 #666666 #000000 #666666;" class="col_123"><a href="javascript:openPopup('popup.aspx?sesja=3!14.2!5!4')"><asp:Label CssClass="normal" ID="tab_142_w03_c05" runat="server" Text="0"></asp:Label></a></td>
-                <td align="center" style="border-style: solid; border-width: thin 0px 0px thin; border-color: #666666 #666666 #000000 #666666;" class="col_123"><a href="javascript:openPopup('popup.aspx?sesja=3!14.2!6!4')"><asp:Label CssClass="normal" ID="tab_142_w03_c06" runat="server" Text="0"></asp:Label></a></td>
-                <td align="center" style="border-style: solid; border-width: thin 0px 0px thin; border-color: #666666 #666666 #000000 #666666;" class="col_123"><a href="javascript:openPopup('popup.aspx?sesja=3!14.2!7!4')"><asp:Label CssClass="normal" ID="tab_142_w03_c07" runat="server" Text="0"></asp:Label></a></td>
-                <td align="center" style="border-style: solid; border-width: thin thin 0px thin; border-color: #666666 #000000 #666666 #666666;" class="col_123"><a href="javascript:openPopup('popup.aspx?sesja=3!14.2!8!4')"><asp:Label CssClass="normal" ID="tab_142_w03_c08" runat="server" Text="0"></asp:Label></a></td>
+                <td class="center" style="border-style: solid; border-width: thin 0px thin thin; border-color: #666666 #666666 #000000 #000000;" class="col_36">03</td>
+                <td class="center" style="border-style: solid; border-color: #666666 #666666 #000000 #666666; border-width: thin 0px 0px thin;" class="col_123"><a href="javascript:openPopup('popup.aspx?sesja=3!14.2!1!4')"><asp:Label CssClass="normal" ID="tab_142_w03_c01" runat="server" Text="0"></asp:Label></a></td>
+                <td class="center" style="border-style: solid; border-width: thin 0px 0px thin; border-color: #666666 #666666 #000000 #666666;" class="col_123"><a href="javascript:openPopup('popup.aspx?sesja=3!14.2!2!4')"><asp:Label CssClass="normal" ID="tab_142_w03_c02" runat="server" Text="0"></asp:Label></a></td>
+                <td class="center" style="border-style: solid; border-width: thin 0px 0px thin; border-color: #666666 #666666 #000000 #666666;" class="col_123"><a href="javascript:openPopup('popup.aspx?sesja=3!14.2!3!4')"><asp:Label CssClass="normal" ID="tab_142_w03_c03" runat="server" Text="0"></asp:Label></a></td>
+                <td class="center" style="border-style: solid; border-width: thin 0px 0px thin; border-color: #666666 #666666 #000000 #666666;" class="col_123"><a href="javascript:openPopup('popup.aspx?sesja=3!14.2!4!4')"><asp:Label CssClass="normal" ID="tab_142_w03_c04" runat="server" Text="0"></asp:Label></a></td>
+                <td class="center" style="border-style: solid; border-width: thin 0px 0px thin; border-color: #666666 #666666 #000000 #666666;" class="col_123"><a href="javascript:openPopup('popup.aspx?sesja=3!14.2!5!4')"><asp:Label CssClass="normal" ID="tab_142_w03_c05" runat="server" Text="0"></asp:Label></a></td>
+                <td class="center" style="border-style: solid; border-width: thin 0px 0px thin; border-color: #666666 #666666 #000000 #666666;" class="col_123"><a href="javascript:openPopup('popup.aspx?sesja=3!14.2!6!4')"><asp:Label CssClass="normal" ID="tab_142_w03_c06" runat="server" Text="0"></asp:Label></a></td>
+                <td class="center" style="border-style: solid; border-width: thin 0px 0px thin; border-color: #666666 #666666 #000000 #666666;" class="col_123"><a href="javascript:openPopup('popup.aspx?sesja=3!14.2!7!4')"><asp:Label CssClass="normal" ID="tab_142_w03_c07" runat="server" Text="0"></asp:Label></a></td>
+                <td class="center" style="border-style: solid; border-width: thin thin 0px thin; border-color: #666666 #000000 #666666 #666666;" class="col_123"><a href="javascript:openPopup('popup.aspx?sesja=3!14.2!8!4')"><asp:Label CssClass="normal" ID="tab_142_w03_c08" runat="server" Text="0"></asp:Label></a></td>
             </tr>
              <tr>
                 <td align="justify" style="border-style: solid; border-width: thin 0px 0px thin; border-color: #666666; padding-left: 30px;" class="col_121">Nsm</td>
-                <td align="center" style="border-style: solid; border-width: thin 0px thin thin; border-color: #666666 #666666 #000000 #000000;" class="col_36">04</td>
-                <td align="center" style="border-style: solid; border-color: #666666 #666666 #000000 #666666; border-width: thin 0px 0px thin;" class="col_123"><a href="javascript:openPopup('popup.aspx?sesja=4!14.2!1!4')"><asp:Label CssClass="normal" ID="tab_142_w04_c01" runat="server" Text="0"></asp:Label></a></td>
-                <td align="center" style="border-style: solid; border-width: thin 0px 0px thin; border-color: #666666 #666666 #000000 #666666;" class="col_123"><a href="javascript:openPopup('popup.aspx?sesja=4!14.2!2!4')"><asp:Label CssClass="normal" ID="tab_142_w04_c02" runat="server" Text="0"></asp:Label></a></td>
-                <td align="center" style="border-style: solid; border-width: thin 0px 0px thin; border-color: #666666 #666666 #000000 #666666;" class="col_123"><a href="javascript:openPopup('popup.aspx?sesja=4!14.2!3!4')"><asp:Label CssClass="normal" ID="tab_142_w04_c03" runat="server" Text="0"></asp:Label></a></td>
-                <td align="center" style="border-style: solid; border-width: thin 0px 0px thin; border-color: #666666 #666666 #000000 #666666;" class="col_123"><a href="javascript:openPopup('popup.aspx?sesja=4!14.2!4!4')"><asp:Label CssClass="normal" ID="tab_142_w04_c04" runat="server" Text="0"></asp:Label></a></td>
-                <td align="center" style="border-style: solid; border-width: thin 0px 0px thin; border-color: #666666 #666666 #000000 #666666;" class="col_123"><a href="javascript:openPopup('popup.aspx?sesja=4!14.2!5!4')"><asp:Label CssClass="normal" ID="tab_142_w04_c05" runat="server" Text="0"></asp:Label></a></td>
-                <td align="center" style="border-style: solid; border-width: thin 0px 0px thin; border-color: #666666 #666666 #000000 #666666;" class="col_123"><a href="javascript:openPopup('popup.aspx?sesja=4!14.2!6!4')"><asp:Label CssClass="normal" ID="tab_142_w04_c06" runat="server" Text="0"></asp:Label></a></td>
-                <td align="center" style="border-style: solid; border-width: thin 0px 0px thin; border-color: #666666 #666666 #000000 #666666;" class="col_123"><a href="javascript:openPopup('popup.aspx?sesja=4!14.2!7!4')"><asp:Label CssClass="normal" ID="tab_142_w04_c07" runat="server" Text="0"></asp:Label></a></td>
-                <td align="center" style="border-style: solid; border-width: thin thin 0px thin; border-color: #666666 #000000 #666666 #666666;" class="col_123"><a href="javascript:openPopup('popup.aspx?sesja=4!14.2!8!4')"><asp:Label CssClass="normal" ID="tab_142_w04_c08" runat="server" Text="0"></asp:Label></a></td>
+                <td class="center" style="border-style: solid; border-width: thin 0px thin thin; border-color: #666666 #666666 #000000 #000000;" class="col_36">04</td>
+                <td class="center" style="border-style: solid; border-color: #666666 #666666 #000000 #666666; border-width: thin 0px 0px thin;" class="col_123"><a href="javascript:openPopup('popup.aspx?sesja=4!14.2!1!4')"><asp:Label CssClass="normal" ID="tab_142_w04_c01" runat="server" Text="0"></asp:Label></a></td>
+                <td class="center" style="border-style: solid; border-width: thin 0px 0px thin; border-color: #666666 #666666 #000000 #666666;" class="col_123"><a href="javascript:openPopup('popup.aspx?sesja=4!14.2!2!4')"><asp:Label CssClass="normal" ID="tab_142_w04_c02" runat="server" Text="0"></asp:Label></a></td>
+                <td class="center" style="border-style: solid; border-width: thin 0px 0px thin; border-color: #666666 #666666 #000000 #666666;" class="col_123"><a href="javascript:openPopup('popup.aspx?sesja=4!14.2!3!4')"><asp:Label CssClass="normal" ID="tab_142_w04_c03" runat="server" Text="0"></asp:Label></a></td>
+                <td class="center" style="border-style: solid; border-width: thin 0px 0px thin; border-color: #666666 #666666 #000000 #666666;" class="col_123"><a href="javascript:openPopup('popup.aspx?sesja=4!14.2!4!4')"><asp:Label CssClass="normal" ID="tab_142_w04_c04" runat="server" Text="0"></asp:Label></a></td>
+                <td class="center" style="border-style: solid; border-width: thin 0px 0px thin; border-color: #666666 #666666 #000000 #666666;" class="col_123"><a href="javascript:openPopup('popup.aspx?sesja=4!14.2!5!4')"><asp:Label CssClass="normal" ID="tab_142_w04_c05" runat="server" Text="0"></asp:Label></a></td>
+                <td class="center" style="border-style: solid; border-width: thin 0px 0px thin; border-color: #666666 #666666 #000000 #666666;" class="col_123"><a href="javascript:openPopup('popup.aspx?sesja=4!14.2!6!4')"><asp:Label CssClass="normal" ID="tab_142_w04_c06" runat="server" Text="0"></asp:Label></a></td>
+                <td class="center" style="border-style: solid; border-width: thin 0px 0px thin; border-color: #666666 #666666 #000000 #666666;" class="col_123"><a href="javascript:openPopup('popup.aspx?sesja=4!14.2!7!4')"><asp:Label CssClass="normal" ID="tab_142_w04_c07" runat="server" Text="0"></asp:Label></a></td>
+                <td class="center" style="border-style: solid; border-width: thin thin 0px thin; border-color: #666666 #000000 #666666 #666666;" class="col_123"><a href="javascript:openPopup('popup.aspx?sesja=4!14.2!8!4')"><asp:Label CssClass="normal" ID="tab_142_w04_c08" runat="server" Text="0"></asp:Label></a></td>
             </tr>
             <tr>
                 <td align="justify" style="border-style: solid; border-width: thin 0px 0px thin; border-color: #666666; padding-left: 30px;" class="col_121">Nkd</td>
-                <td align="center" style="border-style: solid; border-width: thin 0px thin thin; border-color: #666666 #666666 #000000 #000000;" class="col_36">05</td>
-                <td align="center" style="border-style: solid; border-width: thin 0px 0px thin; border-color: #666666 #666666 #000000 #666666;" class="col_123"><a href="javascript:openPopup('popup.aspx?sesja=5!14.2!1!4')"><asp:Label CssClass="normal" ID="tab_142_w05_c01" runat="server" Text="0"></asp:Label></a></td>
-                <td align="center" style="border-style: solid; border-width: thin 0px 0px thin; border-color: #666666 #666666 #000000 #666666;" class="col_123"><a href="javascript:openPopup('popup.aspx?sesja=5!14.2!2!4')"><asp:Label CssClass="normal" ID="tab_142_w05_c02" runat="server" Text="0"></asp:Label></a></td>
-                <td align="center" style="border-style: solid; border-width: thin 0px 0px thin; border-color: #666666 #666666 #000000 #666666;" class="col_123"><a href="javascript:openPopup('popup.aspx?sesja=5!14.2!3!4')"><asp:Label CssClass="normal" ID="tab_142_w05_c03" runat="server" Text="0"></asp:Label></a></td>
-                <td align="center" style="border-style: solid; border-width: thin 0px 0px thin; border-color: #666666 #666666 #000000 #666666;" class="col_123"><a href="javascript:openPopup('popup.aspx?sesja=5!14.2!4!4')"><asp:Label CssClass="normal" ID="tab_142_w05_c04" runat="server" Text="0"></asp:Label></a></td>
-                <td align="center" style="border-style: solid; border-width: thin 0px 0px thin; border-color: #666666 #666666 #000000 #666666;" class="col_123"><a href="javascript:openPopup('popup.aspx?sesja=5!14.2!5!4')"><asp:Label CssClass="normal" ID="tab_142_w05_c05" runat="server" Text="0"></asp:Label></a></td>
-                <td align="center" style="border-style: solid; border-width: thin 0px 0px thin; border-color: #666666 #666666 #000000 #666666;" class="col_123"><a href="javascript:openPopup('popup.aspx?sesja=5!14.2!6!4')"><asp:Label CssClass="normal" ID="tab_142_w05_c06" runat="server" Text="0"></asp:Label></a></td>
-                <td align="center" style="border-style: solid; border-width: thin 0px 0px thin; border-color: #666666 #666666 #000000 #666666;" class="col_123"><a href="javascript:openPopup('popup.aspx?sesja=5!14.2!7!4')"><asp:Label CssClass="normal" ID="tab_142_w05_c07" runat="server" Text="0"></asp:Label></a></td>
-                <td align="center" style="border-style: solid; border-width: thin thin 0px thin; border-color: #666666 #000000 #666666 #666666;" class="col_123"><a href="javascript:openPopup('popup.aspx?sesja=5!14.2!8!4')"><asp:Label CssClass="normal" ID="tab_142_w05_c08" runat="server" Text="0"></asp:Label></a></td>
+                <td class="center" style="border-style: solid; border-width: thin 0px thin thin; border-color: #666666 #666666 #000000 #000000;" class="col_36">05</td>
+                <td class="center" style="border-style: solid; border-width: thin 0px 0px thin; border-color: #666666 #666666 #000000 #666666;" class="col_123"><a href="javascript:openPopup('popup.aspx?sesja=5!14.2!1!4')"><asp:Label CssClass="normal" ID="tab_142_w05_c01" runat="server" Text="0"></asp:Label></a></td>
+                <td class="center" style="border-style: solid; border-width: thin 0px 0px thin; border-color: #666666 #666666 #000000 #666666;" class="col_123"><a href="javascript:openPopup('popup.aspx?sesja=5!14.2!2!4')"><asp:Label CssClass="normal" ID="tab_142_w05_c02" runat="server" Text="0"></asp:Label></a></td>
+                <td class="center" style="border-style: solid; border-width: thin 0px 0px thin; border-color: #666666 #666666 #000000 #666666;" class="col_123"><a href="javascript:openPopup('popup.aspx?sesja=5!14.2!3!4')"><asp:Label CssClass="normal" ID="tab_142_w05_c03" runat="server" Text="0"></asp:Label></a></td>
+                <td class="center" style="border-style: solid; border-width: thin 0px 0px thin; border-color: #666666 #666666 #000000 #666666;" class="col_123"><a href="javascript:openPopup('popup.aspx?sesja=5!14.2!4!4')"><asp:Label CssClass="normal" ID="tab_142_w05_c04" runat="server" Text="0"></asp:Label></a></td>
+                <td class="center" style="border-style: solid; border-width: thin 0px 0px thin; border-color: #666666 #666666 #000000 #666666;" class="col_123"><a href="javascript:openPopup('popup.aspx?sesja=5!14.2!5!4')"><asp:Label CssClass="normal" ID="tab_142_w05_c05" runat="server" Text="0"></asp:Label></a></td>
+                <td class="center" style="border-style: solid; border-width: thin 0px 0px thin; border-color: #666666 #666666 #000000 #666666;" class="col_123"><a href="javascript:openPopup('popup.aspx?sesja=5!14.2!6!4')"><asp:Label CssClass="normal" ID="tab_142_w05_c06" runat="server" Text="0"></asp:Label></a></td>
+                <td class="center" style="border-style: solid; border-width: thin 0px 0px thin; border-color: #666666 #666666 #000000 #666666;" class="col_123"><a href="javascript:openPopup('popup.aspx?sesja=5!14.2!7!4')"><asp:Label CssClass="normal" ID="tab_142_w05_c07" runat="server" Text="0"></asp:Label></a></td>
+                <td class="center" style="border-style: solid; border-width: thin thin 0px thin; border-color: #666666 #000000 #666666 #666666;" class="col_123"><a href="javascript:openPopup('popup.aspx?sesja=5!14.2!8!4')"><asp:Label CssClass="normal" ID="tab_142_w05_c08" runat="server" Text="0"></asp:Label></a></td>
             </tr>
             <tr>
                 <td align="justify" style="border-style: solid; border-width: thin 0px thin thin; border-color: #666666; padding-left: 30px;" class="col_121">Inne</td>
-                <td align="center" style="border-style: solid; border-width: thin 0px thin thin; border-color: #666666 #666666 #000000 #000000;" class="col_36">06</td>
-                <td align="center" style="border-left: thin solid #666666; border-right: 0px solid #666666; border-top: thin solid #666666; border-bottom: thin solid #000000; width: 142px;" class="col_123"><a href="javascript:openPopup('popup.aspx?sesja=4!14.2!1!4')"><asp:Label CssClass="normal" ID="tab_142_w06_c01" runat="server" Text="0"></asp:Label></a></td>
-                <td align="center" style="border-style: solid; border-width: thin 0px thin thin; border-color: #666666 #666666 #000000 #666666;" class="col_123"><a href="javascript:openPopup('popup.aspx?sesja=6!14.2!2!4')"><asp:Label CssClass="normal" ID="tab_142_w06_c02" runat="server" Text="0"></asp:Label></a></td>
-                <td align="center" style="border-style: solid; border-width: thin 0px thin thin; border-color: #666666 #666666 #000000 #666666;" class="col_123"><a href="javascript:openPopup('popup.aspx?sesja=6!14.2!3!4')"><asp:Label CssClass="normal" ID="tab_142_w06_c03" runat="server" Text="0"></asp:Label></a></td>
-                <td align="center" style="border-style: solid; border-width: thin 0px thin thin; border-color: #666666 #666666 #000000 #666666;" class="col_123"><a href="javascript:openPopup('popup.aspx?sesja=6!14.2!4!4')"><asp:Label CssClass="normal" ID="tab_142_w06_c04" runat="server" Text="0"></asp:Label></a></td>
-                <td align="center" style="border-style: solid; border-width: thin 0px thin thin; border-color: #666666 #666666 #000000 #666666;" class="col_123"><a href="javascript:openPopup('popup.aspx?sesja=6!14.2!5!4')"><asp:Label CssClass="normal" ID="tab_142_w06_c05" runat="server" Text="0"></asp:Label></a></td>
-                <td align="center" style="border-style: solid; border-width: thin 0px thin thin; border-color: #666666 #666666 #000000 #666666;" class="col_123"><a href="javascript:openPopup('popup.aspx?sesja=6!14.2!6!4')"><asp:Label CssClass="normal" ID="tab_142_w06_c06" runat="server" Text="0"></asp:Label></a></td>
-                <td align="center" style="border-style: solid; border-width: thin 0px thin thin; border-color: #666666 #666666 #000000 #666666;" class="col_123"><a href="javascript:openPopup('popup.aspx?sesja=6!14.2!7!4')"><asp:Label CssClass="normal" ID="tab_142_w06_c07" runat="server" Text="0"></asp:Label></a></td>
-                <td align="center" style="border-style: solid; border-width: thin; border-color: #666666 #000000 #000000 #666666;" class="col_123"><a href="javascript:openPopup('popup.aspx?sesja=6!14.2!8!4')"><asp:Label CssClass="normal" ID="tab_142_w06_c08" runat="server" Text="0"></asp:Label></a></td>
+                <td class="center" style="border-style: solid; border-width: thin 0px thin thin; border-color: #666666 #666666 #000000 #000000;" class="col_36">06</td>
+                <td class="center" style="border-left: thin solid #666666; border-right: 0px solid #666666; border-top: thin solid #666666; border-bottom: thin solid #000000; width: 142px;" class="col_123"><a href="javascript:openPopup('popup.aspx?sesja=4!14.2!1!4')"><asp:Label CssClass="normal" ID="tab_142_w06_c01" runat="server" Text="0"></asp:Label></a></td>
+                <td class="center" style="border-style: solid; border-width: thin 0px thin thin; border-color: #666666 #666666 #000000 #666666;" class="col_123"><a href="javascript:openPopup('popup.aspx?sesja=6!14.2!2!4')"><asp:Label CssClass="normal" ID="tab_142_w06_c02" runat="server" Text="0"></asp:Label></a></td>
+                <td class="center" style="border-style: solid; border-width: thin 0px thin thin; border-color: #666666 #666666 #000000 #666666;" class="col_123"><a href="javascript:openPopup('popup.aspx?sesja=6!14.2!3!4')"><asp:Label CssClass="normal" ID="tab_142_w06_c03" runat="server" Text="0"></asp:Label></a></td>
+                <td class="center" style="border-style: solid; border-width: thin 0px thin thin; border-color: #666666 #666666 #000000 #666666;" class="col_123"><a href="javascript:openPopup('popup.aspx?sesja=6!14.2!4!4')"><asp:Label CssClass="normal" ID="tab_142_w06_c04" runat="server" Text="0"></asp:Label></a></td>
+                <td class="center" style="border-style: solid; border-width: thin 0px thin thin; border-color: #666666 #666666 #000000 #666666;" class="col_123"><a href="javascript:openPopup('popup.aspx?sesja=6!14.2!5!4')"><asp:Label CssClass="normal" ID="tab_142_w06_c05" runat="server" Text="0"></asp:Label></a></td>
+                <td class="center" style="border-style: solid; border-width: thin 0px thin thin; border-color: #666666 #666666 #000000 #666666;" class="col_123"><a href="javascript:openPopup('popup.aspx?sesja=6!14.2!6!4')"><asp:Label CssClass="normal" ID="tab_142_w06_c06" runat="server" Text="0"></asp:Label></a></td>
+                <td class="center" style="border-style: solid; border-width: thin 0px thin thin; border-color: #666666 #666666 #000000 #666666;" class="col_123"><a href="javascript:openPopup('popup.aspx?sesja=6!14.2!7!4')"><asp:Label CssClass="normal" ID="tab_142_w06_c07" runat="server" Text="0"></asp:Label></a></td>
+                <td class="center" style="border-style: solid; border-width: thin; border-color: #666666 #000000 #000000 #666666;" class="col_123"><a href="javascript:openPopup('popup.aspx?sesja=6!14.2!8!4')"><asp:Label CssClass="normal" ID="tab_142_w06_c08" runat="server" Text="0"></asp:Label></a></td>
             </tr>
         </table>
              <span style="font-size: xx-small; font-family: Arial, Helvetica, sans-serif"> W przypadku złożenia przez biegłego opinii w terminie przedłużonym przez sąd, uznaje się ją za sporządzoną w ustalonym terminie.</span><br />
@@ -10022,106 +10094,106 @@ normal"><span style="font-size:12.0pt;mso-fareast-font-family:Symbol"> Kontrolka
            <asp:Label ID="Label2" runat="server">Dział 14.3. Terminowość przyznawania wynagrodzeń za sporządzenie opinii pisemnych i ustnych oraz za stawiennictwo</asp:Label>
 
               <br />
-        <table cellpadding="0" cellspacing="0" style="width:100%;">
+        <table  style="width:100%;">
             <tr>
-                <td align="center" colspan="2" style="border-style: solid; border-width: thin 0px 0px thin; border-color: #666666;" class="col_155" rowspan="2">Sprawy wg repertoriów</td>
-                <td align="center" style="border-left: thin solid #666666; border-right: 0px solid #666666; border-top: thin solid #666666; border-bottom: 0px solid #666666;" class="auto-style2" colspan="4">Postanowienia o przyznaniu wynagrodzenia wg czasu od złożenia rachunku</td>
-                <td align="center" style="border-style: solid; border-width: thin thin 0px thin; border-color: #000000 #666666 #666666 #666666;" colspan="4">Skierowanie rachunku do oddziału finansowego
+                <td class="center" colspan="2" style="border-style: solid; border-width: thin 0px 0px thin; border-color: #666666;" class="col_155" rowspan="2">Sprawy wg repertoriów</td>
+                <td class="center" style="border-left: thin solid #666666; border-right: 0px solid #666666; border-top: thin solid #666666; border-bottom: 0px solid #666666;" class="auto-style2" colspan="4">Postanowienia o przyznaniu wynagrodzenia wg czasu od złożenia rachunku</td>
+                <td class="center" style="border-style: solid; border-width: thin thin 0px thin; border-color: #000000 #666666 #666666 #666666;" colspan="4">Skierowanie rachunku do oddziału finansowego
                     <br />
                     wg czasu od postanowienia o przyznaniu wynagrodzenia</td>
             </tr>
             <tr>
-                <td align="center" style="border-style: solid; border-width: thin 0px 0px thin; border-color: #666666; width: 142px;" class="col_100">razem (kol.2-4) </td>
-                <td align="center" style="border-left: thin solid #666666; border-right: 0px solid #666666; border-top: thin solid #666666; border-bottom: 0px solid #666666;" class="col_100">do 14 dni</td>
-                <td align="center" style="border-style: solid; border-width: thin 0px 0px thin; border-color: #666666; width: 142px;" class="col_100">pow. 14 do 30dni</td>
-                <td align="center" style="border-style: solid; border-width: thin 0px 0px thin; border-color: #666666; width: 142px;" class="col_100">pow.yżej miesiąca</td>
-                <td align="center" style="border-style: solid; border-width: thin 0px 0px thin; border-color: #666666;" class="col_100">razem (ko. 4-8)</td>
-                <td align="center" style="border-style: solid; border-width: thin 0px 0px thin; border-color: #666666;" class="col_100">do 14 dni</td>
-                <td align="center" style="border-style: solid; border-width: thin 0px 0px thin; border-color: #666666;" class="col_100">pow. 14 do 30dni</td>
-                <td align="center" style="border-style: solid; border-width: thin thin 0px thin; border-color: #000000 #666666 #666666 #666666;" class="col_100">powyżej miesiąca</td>
+                <td class="center" style="border-style: solid; border-width: thin 0px 0px thin; border-color: #666666; width: 142px;" class="col_100">razem (kol.2-4) </td>
+                <td class="center" style="border-left: thin solid #666666; border-right: 0px solid #666666; border-top: thin solid #666666; border-bottom: 0px solid #666666;" class="col_100">do 14 dni</td>
+                <td class="center" style="border-style: solid; border-width: thin 0px 0px thin; border-color: #666666; width: 142px;" class="col_100">pow. 14 do 30dni</td>
+                <td class="center" style="border-style: solid; border-width: thin 0px 0px thin; border-color: #666666; width: 142px;" class="col_100">pow.yżej miesiąca</td>
+                <td class="center" style="border-style: solid; border-width: thin 0px 0px thin; border-color: #666666;" class="col_100">razem (ko. 4-8)</td>
+                <td class="center" style="border-style: solid; border-width: thin 0px 0px thin; border-color: #666666;" class="col_100">do 14 dni</td>
+                <td class="center" style="border-style: solid; border-width: thin 0px 0px thin; border-color: #666666;" class="col_100">pow. 14 do 30dni</td>
+                <td class="center" style="border-style: solid; border-width: thin thin 0px thin; border-color: #000000 #666666 #666666 #666666;" class="col_100">powyżej miesiąca</td>
             </tr>
             <tr>
-                <td align="center" colspan="2" style="border-style: solid; border-width: thin 0px 0px thin; border-color: #666666;" class="col_155">0</td>
-                <td align="center" style="border-left: thin solid #666666; border-right: 0px solid #666666; border-top: thin solid #666666; border-bottom: 0px solid #666666; width: 142px;" class="col_123">1</td>
-                <td align="center" style="border-style: solid; border-width: thin 0px 0px thin; border-color: #666666;" class="col_123">2</td>
-                <td align="center" style="border-style: solid; border-width: thin 0px 0px thin; border-color: #666666;" class="col_123">3</td>
-                <td align="center" style="border-style: solid; border-width: thin 0px 0px thin; border-color: #666666;" class="col_123">4</td>
-                <td align="center" style="border-style: solid; border-width: thin 0px 0px thin; border-color: #666666; width: 142px;" class="col_123">5</td>
-                <td align="center" style="border-style: solid; border-width: thin 0px 0px thin; border-color: #666666; width: 142px;" class="col_123">6</td>
-                <td align="center" style="border-style: solid; border-width: thin 0px 0px thin; border-color: #666666; width: 142px;" class="col_123">7</td>
-                <td align="center" style="border-style: solid; border-width: thin thin 0px thin; border-color: #000000 #666666 #666666 #666666; " class="col_123">8</td>
+                <td class="center" colspan="2" style="border-style: solid; border-width: thin 0px 0px thin; border-color: #666666;" class="col_155">0</td>
+                <td class="center" style="border-left: thin solid #666666; border-right: 0px solid #666666; border-top: thin solid #666666; border-bottom: 0px solid #666666; width: 142px;" class="col_123">1</td>
+                <td class="center" style="border-style: solid; border-width: thin 0px 0px thin; border-color: #666666;" class="col_123">2</td>
+                <td class="center" style="border-style: solid; border-width: thin 0px 0px thin; border-color: #666666;" class="col_123">3</td>
+                <td class="center" style="border-style: solid; border-width: thin 0px 0px thin; border-color: #666666;" class="col_123">4</td>
+                <td class="center" style="border-style: solid; border-width: thin 0px 0px thin; border-color: #666666; width: 142px;" class="col_123">5</td>
+                <td class="center" style="border-style: solid; border-width: thin 0px 0px thin; border-color: #666666; width: 142px;" class="col_123">6</td>
+                <td class="center" style="border-style: solid; border-width: thin 0px 0px thin; border-color: #666666; width: 142px;" class="col_123">7</td>
+                <td class="center" style="border-style: solid; border-width: thin thin 0px thin; border-color: #000000 #666666 #666666 #666666; " class="col_123">8</td>
             </tr>
             <tr>
                 <td align="justify" style="border-style: solid; border-width: thin 0px 0px thin; border-color: #666666; padding-left: 30px;" class="col_121">Ogółem (w. 02 do 07)</td>
-                <td align="center" style="border-style: solid; border-width: thin 0px 0px thin; border-color: #000000 #666666 #666666 #000000;" class="col_36">01</td>
-                <td align="center" style="border-left: thin solid #666666; border-right: 0px solid #666666; border-top: thin solid #000000; border-bottom: 0px solid #666666; width: 142px;" class="col_123"> <a href="javascript:openPopup('popup.aspx?sesja=1!14.3!1!4')"><asp:Label CssClass="normal" ID="tab_143_w01_c01" runat="server" Text="0"></asp:Label></a></td>
-                <td align="center" style="border-style: solid; border-width: thin 0px 0px thin; border-color: #000000 #666666 #666666 #666666;" class="col_123"> <a href="javascript:openPopup('popup.aspx?sesja=1!14.3!2!4')"><asp:Label CssClass="normal" ID="tab_143_w01_c02" runat="server" Text="0"></asp:Label></a></td>
-                <td align="center" style="border-style: solid; border-width: thin 0px 0px thin; border-color: #000000 #666666 #666666 #666666;" class="col_123"> <a href="javascript:openPopup('popup.aspx?sesja=1!14.3!3!4')"><asp:Label CssClass="normal" ID="tab_143_w01_c03" runat="server" Text="0"></asp:Label></a></td>
-                <td align="center" style="border-style: solid; border-width: thin 0px 0px thin; border-color: #000000 #666666 #666666 #666666;" class="col_123"> <a href="javascript:openPopup('popup.aspx?sesja=1!14.3!4!4')"><asp:Label CssClass="normal" ID="tab_143_w01_c04" runat="server" Text="0"></asp:Label></a></td>
-                <td align="center" style="border-style: solid; border-width: thin 0px 0px thin; border-color: #000000 #666666 #666666 #666666;" class="col_123"> <a href="javascript:openPopup('popup.aspx?sesja=1!14.3!5!4')"><asp:Label CssClass="normal" ID="tab_143_w01_c05" runat="server" Text="0"></asp:Label></a></td>
-                <td align="center" style="border-style: solid; border-width: thin 0px 0px thin; border-color: #000000 #666666 #666666 #666666;" class="col_123"> <a href="javascript:openPopup('popup.aspx?sesja=1!14.3!6!4')"><asp:Label CssClass="normal" ID="tab_143_w01_c06" runat="server" Text="0"></asp:Label></a></td>
-                <td align="center" style="border-style: solid; border-width: thin 0px 0px thin; border-color: #000000 #666666 #666666 #666666;" class="col_123"> <a href="javascript:openPopup('popup.aspx?sesja=1!14.3!7!4')"><asp:Label CssClass="normal" ID="tab_143_w01_c07" runat="server" Text="0"></asp:Label></a></td>
-                <td align="center" style="border-style: solid; border-width: thin thin 0px thin; border-color: #000000 #666666 #666666 #666666;" class="col_123"> <a href="javascript:openPopup('popup.aspx?sesja=1!14.3!8!4')"><asp:Label CssClass="normal" ID="tab_143_w01_c08" runat="server" Text="0"></asp:Label></a></td>
+                <td class="center" style="border-style: solid; border-width: thin 0px 0px thin; border-color: #000000 #666666 #666666 #000000;" class="col_36">01</td>
+                <td class="center" style="border-left: thin solid #666666; border-right: 0px solid #666666; border-top: thin solid #000000; border-bottom: 0px solid #666666; width: 142px;" class="col_123"> <a href="javascript:openPopup('popup.aspx?sesja=1!14.3!1!4')"><asp:Label CssClass="normal" ID="tab_143_w01_c01" runat="server" Text="0"></asp:Label></a></td>
+                <td class="center" style="border-style: solid; border-width: thin 0px 0px thin; border-color: #000000 #666666 #666666 #666666;" class="col_123"> <a href="javascript:openPopup('popup.aspx?sesja=1!14.3!2!4')"><asp:Label CssClass="normal" ID="tab_143_w01_c02" runat="server" Text="0"></asp:Label></a></td>
+                <td class="center" style="border-style: solid; border-width: thin 0px 0px thin; border-color: #000000 #666666 #666666 #666666;" class="col_123"> <a href="javascript:openPopup('popup.aspx?sesja=1!14.3!3!4')"><asp:Label CssClass="normal" ID="tab_143_w01_c03" runat="server" Text="0"></asp:Label></a></td>
+                <td class="center" style="border-style: solid; border-width: thin 0px 0px thin; border-color: #000000 #666666 #666666 #666666;" class="col_123"> <a href="javascript:openPopup('popup.aspx?sesja=1!14.3!4!4')"><asp:Label CssClass="normal" ID="tab_143_w01_c04" runat="server" Text="0"></asp:Label></a></td>
+                <td class="center" style="border-style: solid; border-width: thin 0px 0px thin; border-color: #000000 #666666 #666666 #666666;" class="col_123"> <a href="javascript:openPopup('popup.aspx?sesja=1!14.3!5!4')"><asp:Label CssClass="normal" ID="tab_143_w01_c05" runat="server" Text="0"></asp:Label></a></td>
+                <td class="center" style="border-style: solid; border-width: thin 0px 0px thin; border-color: #000000 #666666 #666666 #666666;" class="col_123"> <a href="javascript:openPopup('popup.aspx?sesja=1!14.3!6!4')"><asp:Label CssClass="normal" ID="tab_143_w01_c06" runat="server" Text="0"></asp:Label></a></td>
+                <td class="center" style="border-style: solid; border-width: thin 0px 0px thin; border-color: #000000 #666666 #666666 #666666;" class="col_123"> <a href="javascript:openPopup('popup.aspx?sesja=1!14.3!7!4')"><asp:Label CssClass="normal" ID="tab_143_w01_c07" runat="server" Text="0"></asp:Label></a></td>
+                <td class="center" style="border-style: solid; border-width: thin thin 0px thin; border-color: #000000 #666666 #666666 #666666;" class="col_123"> <a href="javascript:openPopup('popup.aspx?sesja=1!14.3!8!4')"><asp:Label CssClass="normal" ID="tab_143_w01_c08" runat="server" Text="0"></asp:Label></a></td>
             </tr>
             <tr>
                 <td align="justify" style="border-style: solid; border-width: thin 0px 0px thin; border-color: #666666; padding-left: 30px;" class="col_121">RC</td>
-                <td align="center" style="border-style: solid; border-width: thin 0px thin thin; border-color: #666666 #666666 #000000 #000000;" class="col_36">02</td>
-                <td align="center" style="border-style: solid; border-color: #666666 #666666 #000000 #666666; border-width: thin 0px 0px thin;" class="col_123"><a href="javascript:openPopup('popup.aspx?sesja=2!14.3!1!4')"><asp:Label CssClass="normal" ID="tab_143_w02_c01" runat="server" Text="0"></asp:Label></a></td>
-                <td align="center" style="border-style: solid; border-width: thin 0px 0px thin; border-color: #666666 #666666 #000000 #666666;" class="col_123"><a href="javascript:openPopup('popup.aspx?sesja=2!14.3!2!4')"><asp:Label CssClass="normal" ID="tab_143_w02_c02" runat="server" Text="0"></asp:Label></a></td>
-                <td align="center" style="border-style: solid; border-width: thin 0px 0px thin; border-color: #666666 #666666 #000000 #666666;" class="col_123"><a href="javascript:openPopup('popup.aspx?sesja=2!14.3!3!4')"><asp:Label CssClass="normal" ID="tab_143_w02_c03" runat="server" Text="0"></asp:Label></a></td>
-                <td align="center" style="border-style: solid; border-width: thin 0px 0px thin; border-color: #666666 #666666 #000000 #666666;" class="col_123"><a href="javascript:openPopup('popup.aspx?sesja=2!14.3!4!4')"><asp:Label CssClass="normal" ID="tab_143_w02_c04" runat="server" Text="0"></asp:Label></a></td>
-                <td align="center" style="border-style: solid; border-width: thin 0px 0px thin; border-color: #666666 #666666 #000000 #666666;" class="col_123"><a href="javascript:openPopup('popup.aspx?sesja=2!14.3!5!4')"><asp:Label CssClass="normal" ID="tab_143_w02_c05" runat="server" Text="0"></asp:Label></a></td>
-                <td align="center" style="border-style: solid; border-width: thin 0px 0px thin; border-color: #666666 #666666 #000000 #666666;" class="col_123"><a href="javascript:openPopup('popup.aspx?sesja=2!14.3!6!4')"><asp:Label CssClass="normal" ID="tab_143_w02_c06" runat="server" Text="0"></asp:Label></a></td>
-                <td align="center" style="border-style: solid; border-width: thin 0px 0px thin; border-color: #666666 #666666 #000000 #666666;" class="col_123"><a href="javascript:openPopup('popup.aspx?sesja=2!14.3!7!4')"><asp:Label CssClass="normal" ID="tab_143_w02_c07" runat="server" Text="0"></asp:Label></a></td>
-                <td align="center" style="border-style: solid; border-width: thin thin 0px thin; border-color: #666666 #000000 #000000 #666666;" class="col_123"><a href="javascript:openPopup('popup.aspx?sesja=2!14.3!8!4')"><asp:Label CssClass="normal" ID="tab_143_w02_c08" runat="server" Text="0"></asp:Label></a></td>
+                <td class="center" style="border-style: solid; border-width: thin 0px thin thin; border-color: #666666 #666666 #000000 #000000;" class="col_36">02</td>
+                <td class="center" style="border-style: solid; border-color: #666666 #666666 #000000 #666666; border-width: thin 0px 0px thin;" class="col_123"><a href="javascript:openPopup('popup.aspx?sesja=2!14.3!1!4')"><asp:Label CssClass="normal" ID="tab_143_w02_c01" runat="server" Text="0"></asp:Label></a></td>
+                <td class="center" style="border-style: solid; border-width: thin 0px 0px thin; border-color: #666666 #666666 #000000 #666666;" class="col_123"><a href="javascript:openPopup('popup.aspx?sesja=2!14.3!2!4')"><asp:Label CssClass="normal" ID="tab_143_w02_c02" runat="server" Text="0"></asp:Label></a></td>
+                <td class="center" style="border-style: solid; border-width: thin 0px 0px thin; border-color: #666666 #666666 #000000 #666666;" class="col_123"><a href="javascript:openPopup('popup.aspx?sesja=2!14.3!3!4')"><asp:Label CssClass="normal" ID="tab_143_w02_c03" runat="server" Text="0"></asp:Label></a></td>
+                <td class="center" style="border-style: solid; border-width: thin 0px 0px thin; border-color: #666666 #666666 #000000 #666666;" class="col_123"><a href="javascript:openPopup('popup.aspx?sesja=2!14.3!4!4')"><asp:Label CssClass="normal" ID="tab_143_w02_c04" runat="server" Text="0"></asp:Label></a></td>
+                <td class="center" style="border-style: solid; border-width: thin 0px 0px thin; border-color: #666666 #666666 #000000 #666666;" class="col_123"><a href="javascript:openPopup('popup.aspx?sesja=2!14.3!5!4')"><asp:Label CssClass="normal" ID="tab_143_w02_c05" runat="server" Text="0"></asp:Label></a></td>
+                <td class="center" style="border-style: solid; border-width: thin 0px 0px thin; border-color: #666666 #666666 #000000 #666666;" class="col_123"><a href="javascript:openPopup('popup.aspx?sesja=2!14.3!6!4')"><asp:Label CssClass="normal" ID="tab_143_w02_c06" runat="server" Text="0"></asp:Label></a></td>
+                <td class="center" style="border-style: solid; border-width: thin 0px 0px thin; border-color: #666666 #666666 #000000 #666666;" class="col_123"><a href="javascript:openPopup('popup.aspx?sesja=2!14.3!7!4')"><asp:Label CssClass="normal" ID="tab_143_w02_c07" runat="server" Text="0"></asp:Label></a></td>
+                <td class="center" style="border-style: solid; border-width: thin thin 0px thin; border-color: #666666 #000000 #000000 #666666;" class="col_123"><a href="javascript:openPopup('popup.aspx?sesja=2!14.3!8!4')"><asp:Label CssClass="normal" ID="tab_143_w02_c08" runat="server" Text="0"></asp:Label></a></td>
             </tr>
              <tr>
                 <td align="justify" style="border-style: solid; border-width: thin 0px 0px thin; border-color: #666666; padding-left: 30px;" class="col_121">RNs</td>
-                <td align="center" style="border-style: solid; border-width: thin 0px thin thin; border-color: #666666 #666666 #000000 #000000;" class="col_36">03</td>
-                <td align="center" style="border-style: solid; border-color: #666666 #666666 #000000 #666666; border-width: thin 0px 0px thin;" class="col_123"><a href="javascript:openPopup('popup.aspx?sesja=3!14.3!1!4')"><asp:Label CssClass="normal" ID="tab_143_w03_c01" runat="server" Text="0"></asp:Label></a></td>
-                <td align="center" style="border-style: solid; border-width: thin 0px 0px thin; border-color: #666666 #666666 #000000 #666666;" class="col_123"><a href="javascript:openPopup('popup.aspx?sesja=3!14.3!2!4')"><asp:Label CssClass="normal" ID="tab_143_w03_c02" runat="server" Text="0"></asp:Label></a></td>
-                <td align="center" style="border-style: solid; border-width: thin 0px 0px thin; border-color: #666666 #666666 #000000 #666666;" class="col_123"><a href="javascript:openPopup('popup.aspx?sesja=3!14.3!3!4')"><asp:Label CssClass="normal" ID="tab_143_w03_c03" runat="server" Text="0"></asp:Label></a></td>
-                <td align="center" style="border-style: solid; border-width: thin 0px 0px thin; border-color: #666666 #666666 #000000 #666666;" class="col_123"><a href="javascript:openPopup('popup.aspx?sesja=3!14.3!4!4')"><asp:Label CssClass="normal" ID="tab_143_w03_c04" runat="server" Text="0"></asp:Label></a></td>
-                <td align="center" style="border-style: solid; border-width: thin 0px 0px thin; border-color: #666666 #666666 #000000 #666666;" class="col_123"><a href="javascript:openPopup('popup.aspx?sesja=3!14.3!5!4')"><asp:Label CssClass="normal" ID="tab_143_w03_c05" runat="server" Text="0"></asp:Label></a></td>
-                <td align="center" style="border-style: solid; border-width: thin 0px 0px thin; border-color: #666666 #666666 #000000 #666666;" class="col_123"><a href="javascript:openPopup('popup.aspx?sesja=3!14.3!6!4')"><asp:Label CssClass="normal" ID="tab_143_w03_c06" runat="server" Text="0"></asp:Label></a></td>
-                <td align="center" style="border-style: solid; border-width: thin 0px 0px thin; border-color: #666666 #666666 #000000 #666666;" class="col_123"><a href="javascript:openPopup('popup.aspx?sesja=3!14.3!7!4')"><asp:Label CssClass="normal" ID="tab_143_w03_c07" runat="server" Text="0"></asp:Label></a></td>
-                <td align="center" style="border-style: solid; border-width: thin thin 0px thin; border-color: #666666 #000000 #000000 #666666;" class="col_123"><a href="javascript:openPopup('popup.aspx?sesja=3!14.3!8!4')"><asp:Label CssClass="normal" ID="tab_143_w03_c08" runat="server" Text="0"></asp:Label></a></td>
+                <td class="center" style="border-style: solid; border-width: thin 0px thin thin; border-color: #666666 #666666 #000000 #000000;" class="col_36">03</td>
+                <td class="center" style="border-style: solid; border-color: #666666 #666666 #000000 #666666; border-width: thin 0px 0px thin;" class="col_123"><a href="javascript:openPopup('popup.aspx?sesja=3!14.3!1!4')"><asp:Label CssClass="normal" ID="tab_143_w03_c01" runat="server" Text="0"></asp:Label></a></td>
+                <td class="center" style="border-style: solid; border-width: thin 0px 0px thin; border-color: #666666 #666666 #000000 #666666;" class="col_123"><a href="javascript:openPopup('popup.aspx?sesja=3!14.3!2!4')"><asp:Label CssClass="normal" ID="tab_143_w03_c02" runat="server" Text="0"></asp:Label></a></td>
+                <td class="center" style="border-style: solid; border-width: thin 0px 0px thin; border-color: #666666 #666666 #000000 #666666;" class="col_123"><a href="javascript:openPopup('popup.aspx?sesja=3!14.3!3!4')"><asp:Label CssClass="normal" ID="tab_143_w03_c03" runat="server" Text="0"></asp:Label></a></td>
+                <td class="center" style="border-style: solid; border-width: thin 0px 0px thin; border-color: #666666 #666666 #000000 #666666;" class="col_123"><a href="javascript:openPopup('popup.aspx?sesja=3!14.3!4!4')"><asp:Label CssClass="normal" ID="tab_143_w03_c04" runat="server" Text="0"></asp:Label></a></td>
+                <td class="center" style="border-style: solid; border-width: thin 0px 0px thin; border-color: #666666 #666666 #000000 #666666;" class="col_123"><a href="javascript:openPopup('popup.aspx?sesja=3!14.3!5!4')"><asp:Label CssClass="normal" ID="tab_143_w03_c05" runat="server" Text="0"></asp:Label></a></td>
+                <td class="center" style="border-style: solid; border-width: thin 0px 0px thin; border-color: #666666 #666666 #000000 #666666;" class="col_123"><a href="javascript:openPopup('popup.aspx?sesja=3!14.3!6!4')"><asp:Label CssClass="normal" ID="tab_143_w03_c06" runat="server" Text="0"></asp:Label></a></td>
+                <td class="center" style="border-style: solid; border-width: thin 0px 0px thin; border-color: #666666 #666666 #000000 #666666;" class="col_123"><a href="javascript:openPopup('popup.aspx?sesja=3!14.3!7!4')"><asp:Label CssClass="normal" ID="tab_143_w03_c07" runat="server" Text="0"></asp:Label></a></td>
+                <td class="center" style="border-style: solid; border-width: thin thin 0px thin; border-color: #666666 #000000 #000000 #666666;" class="col_123"><a href="javascript:openPopup('popup.aspx?sesja=3!14.3!8!4')"><asp:Label CssClass="normal" ID="tab_143_w03_c08" runat="server" Text="0"></asp:Label></a></td>
             </tr>
              <tr>
                 <td align="justify" style="border-style: solid; border-width: thin 0px 0px thin; border-color: #666666; padding-left: 30px;" class="col_121">Nsm</td>
-                <td align="center" style="border-style: solid; border-width: thin 0px thin thin; border-color: #666666 #666666 #000000 #000000;" class="col_36">04</td>
-                <td align="center" style="border-style: solid; border-color: #666666 #666666 #000000 #666666; border-width: thin 0px 0px thin;" class="col_123"><a href="javascript:openPopup('popup.aspx?sesja=4!14.3!1!4')"><asp:Label CssClass="normal" ID="tab_143_w04_c01" runat="server" Text="0"></asp:Label></a></td>
-                <td align="center" style="border-style: solid; border-width: thin 0px 0px thin; border-color: #666666 #666666 #000000 #666666;" class="col_123"><a href="javascript:openPopup('popup.aspx?sesja=4!14.3!2!4')"><asp:Label CssClass="normal" ID="tab_143_w04_c02" runat="server" Text="0"></asp:Label></a></td>
-                <td align="center" style="border-style: solid; border-width: thin 0px 0px thin; border-color: #666666 #666666 #000000 #666666;" class="col_123"><a href="javascript:openPopup('popup.aspx?sesja=4!14.3!3!4')"><asp:Label CssClass="normal" ID="tab_143_w04_c03" runat="server" Text="0"></asp:Label></a></td>
-                <td align="center" style="border-style: solid; border-width: thin 0px 0px thin; border-color: #666666 #666666 #000000 #666666;" class="col_123"><a href="javascript:openPopup('popup.aspx?sesja=4!14.3!4!4')"><asp:Label CssClass="normal" ID="tab_143_w04_c04" runat="server" Text="0"></asp:Label></a></td>
-                <td align="center" style="border-style: solid; border-width: thin 0px 0px thin; border-color: #666666 #666666 #000000 #666666;" class="col_123"><a href="javascript:openPopup('popup.aspx?sesja=4!14.3!5!4')"><asp:Label CssClass="normal" ID="tab_143_w04_c05" runat="server" Text="0"></asp:Label></a></td>
-                <td align="center" style="border-style: solid; border-width: thin 0px 0px thin; border-color: #666666 #666666 #000000 #666666;" class="col_123"><a href="javascript:openPopup('popup.aspx?sesja=4!14.3!6!4')"><asp:Label CssClass="normal" ID="tab_143_w04_c06" runat="server" Text="0"></asp:Label></a></td>
-                <td align="center" style="border-style: solid; border-width: thin 0px 0px thin; border-color: #666666 #666666 #000000 #666666;" class="col_123"><a href="javascript:openPopup('popup.aspx?sesja=4!14.3!7!4')"><asp:Label CssClass="normal" ID="tab_143_w04_c07" runat="server" Text="0"></asp:Label></a></td>
-                <td align="center" style="border-style: solid; border-width: thin thin 0px thin; border-color: #666666 #000000 #000000 #666666;" class="col_123"><a href="javascript:openPopup('popup.aspx?sesja=4!14.3!8!4')"><asp:Label CssClass="normal" ID="tab_143_w04_c08" runat="server" Text="0"></asp:Label></a></td>
+                <td class="center" style="border-style: solid; border-width: thin 0px thin thin; border-color: #666666 #666666 #000000 #000000;" class="col_36">04</td>
+                <td class="center" style="border-style: solid; border-color: #666666 #666666 #000000 #666666; border-width: thin 0px 0px thin;" class="col_123"><a href="javascript:openPopup('popup.aspx?sesja=4!14.3!1!4')"><asp:Label CssClass="normal" ID="tab_143_w04_c01" runat="server" Text="0"></asp:Label></a></td>
+                <td class="center" style="border-style: solid; border-width: thin 0px 0px thin; border-color: #666666 #666666 #000000 #666666;" class="col_123"><a href="javascript:openPopup('popup.aspx?sesja=4!14.3!2!4')"><asp:Label CssClass="normal" ID="tab_143_w04_c02" runat="server" Text="0"></asp:Label></a></td>
+                <td class="center" style="border-style: solid; border-width: thin 0px 0px thin; border-color: #666666 #666666 #000000 #666666;" class="col_123"><a href="javascript:openPopup('popup.aspx?sesja=4!14.3!3!4')"><asp:Label CssClass="normal" ID="tab_143_w04_c03" runat="server" Text="0"></asp:Label></a></td>
+                <td class="center" style="border-style: solid; border-width: thin 0px 0px thin; border-color: #666666 #666666 #000000 #666666;" class="col_123"><a href="javascript:openPopup('popup.aspx?sesja=4!14.3!4!4')"><asp:Label CssClass="normal" ID="tab_143_w04_c04" runat="server" Text="0"></asp:Label></a></td>
+                <td class="center" style="border-style: solid; border-width: thin 0px 0px thin; border-color: #666666 #666666 #000000 #666666;" class="col_123"><a href="javascript:openPopup('popup.aspx?sesja=4!14.3!5!4')"><asp:Label CssClass="normal" ID="tab_143_w04_c05" runat="server" Text="0"></asp:Label></a></td>
+                <td class="center" style="border-style: solid; border-width: thin 0px 0px thin; border-color: #666666 #666666 #000000 #666666;" class="col_123"><a href="javascript:openPopup('popup.aspx?sesja=4!14.3!6!4')"><asp:Label CssClass="normal" ID="tab_143_w04_c06" runat="server" Text="0"></asp:Label></a></td>
+                <td class="center" style="border-style: solid; border-width: thin 0px 0px thin; border-color: #666666 #666666 #000000 #666666;" class="col_123"><a href="javascript:openPopup('popup.aspx?sesja=4!14.3!7!4')"><asp:Label CssClass="normal" ID="tab_143_w04_c07" runat="server" Text="0"></asp:Label></a></td>
+                <td class="center" style="border-style: solid; border-width: thin thin 0px thin; border-color: #666666 #000000 #000000 #666666;" class="col_123"><a href="javascript:openPopup('popup.aspx?sesja=4!14.3!8!4')"><asp:Label CssClass="normal" ID="tab_143_w04_c08" runat="server" Text="0"></asp:Label></a></td>
             </tr>
              <tr>
                 <td align="justify" style="border-style: solid; border-width: thin 0px 0px thin; border-color: #666666; padding-left: 30px;" class="col_121">Nkd</td>
-                <td align="center" style="border-style: solid; border-width: thin 0px thin thin; border-color: #666666 #666666 #000000 #000000;" class="col_36">05</td>
-                <td align="center" style="border-style: solid; border-color: #666666 #666666 #000000 #666666; border-width: thin 0px 0px thin;" class="col_123"><a href="javascript:openPopup('popup.aspx?sesja=5!14.3!1!4')"><asp:Label CssClass="normal" ID="tab_143_w05_c01" runat="server" Text="0"></asp:Label></a></td>
-                <td align="center" style="border-style: solid; border-width: thin 0px 0px thin; border-color: #666666 #666666 #000000 #666666;" class="col_123"><a href="javascript:openPopup('popup.aspx?sesja=5!14.3!2!4')"><asp:Label CssClass="normal" ID="tab_143_w05_c02" runat="server" Text="0"></asp:Label></a></td>
-                <td align="center" style="border-style: solid; border-width: thin 0px 0px thin; border-color: #666666 #666666 #000000 #666666;" class="col_123"><a href="javascript:openPopup('popup.aspx?sesja=5!14.3!3!4')"><asp:Label CssClass="normal" ID="tab_143_w05_c03" runat="server" Text="0"></asp:Label></a></td>
-                <td align="center" style="border-style: solid; border-width: thin 0px 0px thin; border-color: #666666 #666666 #000000 #666666;" class="col_123"><a href="javascript:openPopup('popup.aspx?sesja=5!14.3!4!4')"><asp:Label CssClass="normal" ID="tab_143_w05_c04" runat="server" Text="0"></asp:Label></a></td>
-                <td align="center" style="border-style: solid; border-width: thin 0px 0px thin; border-color: #666666 #666666 #000000 #666666;" class="col_123"><a href="javascript:openPopup('popup.aspx?sesja=5!14.3!5!4')"><asp:Label CssClass="normal" ID="tab_143_w05_c05" runat="server" Text="0"></asp:Label></a></td>
-                <td align="center" style="border-style: solid; border-width: thin 0px 0px thin; border-color: #666666 #666666 #000000 #666666;" class="col_123"><a href="javascript:openPopup('popup.aspx?sesja=5!14.3!6!4')"><asp:Label CssClass="normal" ID="tab_143_w05_c06" runat="server" Text="0"></asp:Label></a></td>
-                <td align="center" style="border-style: solid; border-width: thin 0px 0px thin; border-color: #666666 #666666 #000000 #666666;" class="col_123"><a href="javascript:openPopup('popup.aspx?sesja=5!14.3!7!4')"><asp:Label CssClass="normal" ID="tab_143_w05_c07" runat="server" Text="0"></asp:Label></a></td>
-                <td align="center" style="border-style: solid; border-width: thin thin 0px thin; border-color: #666666 #000000 #000000 #666666;" class="col_123"><a href="javascript:openPopup('popup.aspx?sesja=5!14.3!8!4')"><asp:Label CssClass="normal" ID="tab_143_w05_c08" runat="server" Text="0"></asp:Label></a></td>
+                <td class="center" style="border-style: solid; border-width: thin 0px thin thin; border-color: #666666 #666666 #000000 #000000;" class="col_36">05</td>
+                <td class="center" style="border-style: solid; border-color: #666666 #666666 #000000 #666666; border-width: thin 0px 0px thin;" class="col_123"><a href="javascript:openPopup('popup.aspx?sesja=5!14.3!1!4')"><asp:Label CssClass="normal" ID="tab_143_w05_c01" runat="server" Text="0"></asp:Label></a></td>
+                <td class="center" style="border-style: solid; border-width: thin 0px 0px thin; border-color: #666666 #666666 #000000 #666666;" class="col_123"><a href="javascript:openPopup('popup.aspx?sesja=5!14.3!2!4')"><asp:Label CssClass="normal" ID="tab_143_w05_c02" runat="server" Text="0"></asp:Label></a></td>
+                <td class="center" style="border-style: solid; border-width: thin 0px 0px thin; border-color: #666666 #666666 #000000 #666666;" class="col_123"><a href="javascript:openPopup('popup.aspx?sesja=5!14.3!3!4')"><asp:Label CssClass="normal" ID="tab_143_w05_c03" runat="server" Text="0"></asp:Label></a></td>
+                <td class="center" style="border-style: solid; border-width: thin 0px 0px thin; border-color: #666666 #666666 #000000 #666666;" class="col_123"><a href="javascript:openPopup('popup.aspx?sesja=5!14.3!4!4')"><asp:Label CssClass="normal" ID="tab_143_w05_c04" runat="server" Text="0"></asp:Label></a></td>
+                <td class="center" style="border-style: solid; border-width: thin 0px 0px thin; border-color: #666666 #666666 #000000 #666666;" class="col_123"><a href="javascript:openPopup('popup.aspx?sesja=5!14.3!5!4')"><asp:Label CssClass="normal" ID="tab_143_w05_c05" runat="server" Text="0"></asp:Label></a></td>
+                <td class="center" style="border-style: solid; border-width: thin 0px 0px thin; border-color: #666666 #666666 #000000 #666666;" class="col_123"><a href="javascript:openPopup('popup.aspx?sesja=5!14.3!6!4')"><asp:Label CssClass="normal" ID="tab_143_w05_c06" runat="server" Text="0"></asp:Label></a></td>
+                <td class="center" style="border-style: solid; border-width: thin 0px 0px thin; border-color: #666666 #666666 #000000 #666666;" class="col_123"><a href="javascript:openPopup('popup.aspx?sesja=5!14.3!7!4')"><asp:Label CssClass="normal" ID="tab_143_w05_c07" runat="server" Text="0"></asp:Label></a></td>
+                <td class="center" style="border-style: solid; border-width: thin thin 0px thin; border-color: #666666 #000000 #000000 #666666;" class="col_123"><a href="javascript:openPopup('popup.aspx?sesja=5!14.3!8!4')"><asp:Label CssClass="normal" ID="tab_143_w05_c08" runat="server" Text="0"></asp:Label></a></td>
             </tr>
             <tr>
                 <td align="justify" style="border-style: solid; border-width: thin 0px thin thin; border-color: #666666; padding-left: 30px;" class="col_121">Inne</td>
-                <td align="center" style="border-style: solid; border-width: thin 0px thin thin; border-color: #666666 #666666 #000000 #000000;" class="col_36">06</td>
-                <td align="center" style="border-style: solid; border-width: thin 0px thin thin; border-color: #666666 #666666 #000000 #666666;" class="col_123"><a href="javascript:openPopup('popup.aspx?sesja=6!14.3!1!4')"><asp:Label CssClass="normal" ID="tab_143_w06_c01" runat="server" Text="0"></asp:Label></a></td>
-                <td align="center" style="border-style: solid; border-width: thin 0px thin thin; border-color: #666666 #666666 #000000 #666666;" class="col_123"><a href="javascript:openPopup('popup.aspx?sesja=6!14.3!2!4')"><asp:Label CssClass="normal" ID="tab_143_w06_c02" runat="server" Text="0"></asp:Label></a></td>
-                <td align="center" style="border-style: solid; border-width: thin 0px thin thin; border-color: #666666 #666666 #000000 #666666;" class="col_123"><a href="javascript:openPopup('popup.aspx?sesja=6!14.3!3!4')"><asp:Label CssClass="normal" ID="tab_143_w06_c03" runat="server" Text="0"></asp:Label></a></td>
-                <td align="center" style="border-style: solid; border-width: thin 0px thin thin; border-color: #666666 #666666 #000000 #666666;" class="col_123"><a href="javascript:openPopup('popup.aspx?sesja=6!14.3!4!4')"><asp:Label CssClass="normal" ID="tab_143_w06_c04" runat="server" Text="0"></asp:Label></a></td>
-                <td align="center" style="border-style: solid; border-width: thin 0px thin thin; border-color: #666666 #666666 #000000 #666666;" class="col_123"><a href="javascript:openPopup('popup.aspx?sesja=6!14.3!5!4')"><asp:Label CssClass="normal" ID="tab_143_w06_c05" runat="server" Text="0"></asp:Label></a></td>
-                <td align="center" style="border-style: solid; border-width: thin 0px thin thin; border-color: #666666 #666666 #000000 #666666;" class="col_123"><a href="javascript:openPopup('popup.aspx?sesja=6!14.3!6!4')"><asp:Label CssClass="normal" ID="tab_143_w06_c06" runat="server" Text="0"></asp:Label></a></td>
-                <td align="center" style="border-style: solid; border-width: thin 0px thin thin; border-color: #666666 #666666 #000000 #666666;" class="col_123"><a href="javascript:openPopup('popup.aspx?sesja=6!14.3!7!4')"><asp:Label CssClass="normal" ID="tab_143_w06_c07" runat="server" Text="0"></asp:Label></a></td>
-                <td align="center" style="border-style: solid; border-width: thin; border-color: #666666 #000000 #000000 #666666;" class="col_123"><a href="javascript:openPopup('popup.aspx?sesja=6!14.3!8!4')"><asp:Label CssClass="normal" ID="tab_143_w06_c08" runat="server" Text="0"></asp:Label></a></td>
+                <td class="center" style="border-style: solid; border-width: thin 0px thin thin; border-color: #666666 #666666 #000000 #000000;" class="col_36">06</td>
+                <td class="center" style="border-style: solid; border-width: thin 0px thin thin; border-color: #666666 #666666 #000000 #666666;" class="col_123"><a href="javascript:openPopup('popup.aspx?sesja=6!14.3!1!4')"><asp:Label CssClass="normal" ID="tab_143_w06_c01" runat="server" Text="0"></asp:Label></a></td>
+                <td class="center" style="border-style: solid; border-width: thin 0px thin thin; border-color: #666666 #666666 #000000 #666666;" class="col_123"><a href="javascript:openPopup('popup.aspx?sesja=6!14.3!2!4')"><asp:Label CssClass="normal" ID="tab_143_w06_c02" runat="server" Text="0"></asp:Label></a></td>
+                <td class="center" style="border-style: solid; border-width: thin 0px thin thin; border-color: #666666 #666666 #000000 #666666;" class="col_123"><a href="javascript:openPopup('popup.aspx?sesja=6!14.3!3!4')"><asp:Label CssClass="normal" ID="tab_143_w06_c03" runat="server" Text="0"></asp:Label></a></td>
+                <td class="center" style="border-style: solid; border-width: thin 0px thin thin; border-color: #666666 #666666 #000000 #666666;" class="col_123"><a href="javascript:openPopup('popup.aspx?sesja=6!14.3!4!4')"><asp:Label CssClass="normal" ID="tab_143_w06_c04" runat="server" Text="0"></asp:Label></a></td>
+                <td class="center" style="border-style: solid; border-width: thin 0px thin thin; border-color: #666666 #666666 #000000 #666666;" class="col_123"><a href="javascript:openPopup('popup.aspx?sesja=6!14.3!5!4')"><asp:Label CssClass="normal" ID="tab_143_w06_c05" runat="server" Text="0"></asp:Label></a></td>
+                <td class="center" style="border-style: solid; border-width: thin 0px thin thin; border-color: #666666 #666666 #000000 #666666;" class="col_123"><a href="javascript:openPopup('popup.aspx?sesja=6!14.3!6!4')"><asp:Label CssClass="normal" ID="tab_143_w06_c06" runat="server" Text="0"></asp:Label></a></td>
+                <td class="center" style="border-style: solid; border-width: thin 0px thin thin; border-color: #666666 #666666 #000000 #666666;" class="col_123"><a href="javascript:openPopup('popup.aspx?sesja=6!14.3!7!4')"><asp:Label CssClass="normal" ID="tab_143_w06_c07" runat="server" Text="0"></asp:Label></a></td>
+                <td class="center" style="border-style: solid; border-width: thin; border-color: #666666 #000000 #000000 #666666;" class="col_123"><a href="javascript:openPopup('popup.aspx?sesja=6!14.3!8!4')"><asp:Label CssClass="normal" ID="tab_143_w06_c08" runat="server" Text="0"></asp:Label></a></td>
             </tr>
             </table>
              <span style="font-size: xx-small; font-family: Arial, Helvetica, sans-serif">W przypadku wezwania biegłego do uzupełnienia rachunku, za datę złożenia rachunku uznaje się datę jego uzupełnienia</span><br />
@@ -10150,47 +10222,47 @@ normal"><span style="font-size:12.0pt;mso-fareast-font-family:Symbol"> Kontrolka
            <asp:Label ID="Label5" runat="server">Dział 15.2 Terminowość sporządzania tłumaczeń pisemnych </asp:Label>
 
               <br />
-        <table cellpadding="0" cellspacing="0" style="width:100%;">
+        <table  style="width:100%;">
             <tr>
-                <td align="center" style="border-left: thin solid #666666; border-right: 0px solid #666666; border-top: thin solid #666666; border-bottom: 0px solid #666666; border-width: thin thin 0px thin;" class="mssGrayMiddle" colspan="8">Liczba sporządzonych tłumaczeń pisemnych</td>
+                <td class="center" style="border-left: thin solid #666666; border-right: 0px solid #666666; border-top: thin solid #666666; border-bottom: 0px solid #666666; border-width: thin thin 0px thin;" class="mssGrayMiddle" colspan="8">Liczba sporządzonych tłumaczeń pisemnych</td>
             </tr>
             <tr>
-                <td align="center" style="border-style: solid; border-width: thin 0px 0px thin; border-color: #666666; width: 142px;" class="col_140" rowspan="2">razem
+                <td class="center" style="border-style: solid; border-width: thin 0px 0px thin; border-color: #666666; width: 142px;" class="col_140" rowspan="2">razem
                     <br />
                     (kol.1= 2 do 5 =
                     <br />
                     6 do 8)</td>
-                <td align="center" style="border-left: thin solid #666666; border-right: 0px solid #666666; border-top: thin solid #666666; border-bottom: 0px solid #666666;" class="col_140" rowspan="2">w ustalonym terminie</td>
-                <td align="center" style="border-left: thin solid #666666; border-right: 0px solid #666666; border-top: thin solid #666666; border-bottom: 0px solid #666666;" colspan="3">po ustalonym terminie </td>
-                <td align="center" style="border-style: solid; border-width: thin thin 0px thin; border-color: #666666;" colspan="3">wg czasu wydania opinii</td>
+                <td class="center" style="border-left: thin solid #666666; border-right: 0px solid #666666; border-top: thin solid #666666; border-bottom: 0px solid #666666;" class="col_140" rowspan="2">w ustalonym terminie</td>
+                <td class="center" style="border-left: thin solid #666666; border-right: 0px solid #666666; border-top: thin solid #666666; border-bottom: 0px solid #666666;" colspan="3">po ustalonym terminie </td>
+                <td class="center" style="border-style: solid; border-width: thin thin 0px thin; border-color: #666666;" colspan="3">wg czasu wydania opinii</td>
             </tr>
             <tr>
-                <td align="center" style="border-style: solid; border-width: thin 0px 0px thin; border-color: #666666; width: 142px;" class="col_140">do 30dni</td>
-                <td align="center" style="border-style: solid; border-width: thin 0px 0px thin; border-color: #666666; width: 142px;" class="col_140">pow. 1 do 3 miesięcy</td>
-                <td align="center" style="border-style: solid; border-width: thin 0px 0px thin; border-color: #666666;" class="col_140">pow. 3 miesięcy</td>
-                <td align="center" style="border-style: solid; border-width: thin 0px 0px thin; border-color: #666666;" class="col_140">do 30 dni</td>
-                <td align="center" style="border-style: solid; border-width: thin 0px 0px thin; border-color: #666666;" class="col_140">pow. 1 do 3 miesięcy</td>
-                <td align="center" style="border-style: solid; border-width: thin thin 0px thin; border-color: #666666;" class="col_140">pow. 3 miesięcy</td>
+                <td class="center" style="border-style: solid; border-width: thin 0px 0px thin; border-color: #666666; width: 142px;" class="col_140">do 30dni</td>
+                <td class="center" style="border-style: solid; border-width: thin 0px 0px thin; border-color: #666666; width: 142px;" class="col_140">pow. 1 do 3 miesięcy</td>
+                <td class="center" style="border-style: solid; border-width: thin 0px 0px thin; border-color: #666666;" class="col_140">pow. 3 miesięcy</td>
+                <td class="center" style="border-style: solid; border-width: thin 0px 0px thin; border-color: #666666;" class="col_140">do 30 dni</td>
+                <td class="center" style="border-style: solid; border-width: thin 0px 0px thin; border-color: #666666;" class="col_140">pow. 1 do 3 miesięcy</td>
+                <td class="center" style="border-style: solid; border-width: thin thin 0px thin; border-color: #666666;" class="col_140">pow. 3 miesięcy</td>
             </tr>
             <tr>
-                <td align="center" style="border-left: thin solid #666666; border-right: 0px solid #666666; border-top: thin solid #666666; border-bottom: 0px solid #666666; width: 142px;" class="col_140">1</td>
-                <td align="center" style="border-style: solid; border-width: thin 0px 0px thin; border-color: #666666;" class="col_140">2</td>
-                <td align="center" style="border-style: solid; border-width: thin 0px 0px thin; border-color: #666666;" class="col_140">3</td>
-                <td align="center" style="border-style: solid; border-width: thin 0px 0px thin; border-color: #666666;" class="col_140">4</td>
-                <td align="center" style="border-style: solid; border-width: thin 0px 0px thin; border-color: #666666; width: 142px;" class="col_140">5</td>
-                <td align="center" style="border-style: solid; border-width: thin 0px 0px thin; border-color: #666666; width: 142px;" class="col_140">6</td>
-                <td align="center" style="border-style: solid; border-width: thin 0px 0px thin; border-color: #666666; width: 142px;" class="col_140">7</td>
-                <td align="center" style="border-style: solid; border-width: thin thin 0px thin; border-color: #666666; width: 142px;" class="col_140">8</td>
+                <td class="center" style="border-left: thin solid #666666; border-right: 0px solid #666666; border-top: thin solid #666666; border-bottom: 0px solid #666666; width: 142px;" class="col_140">1</td>
+                <td class="center" style="border-style: solid; border-width: thin 0px 0px thin; border-color: #666666;" class="col_140">2</td>
+                <td class="center" style="border-style: solid; border-width: thin 0px 0px thin; border-color: #666666;" class="col_140">3</td>
+                <td class="center" style="border-style: solid; border-width: thin 0px 0px thin; border-color: #666666;" class="col_140">4</td>
+                <td class="center" style="border-style: solid; border-width: thin 0px 0px thin; border-color: #666666; width: 142px;" class="col_140">5</td>
+                <td class="center" style="border-style: solid; border-width: thin 0px 0px thin; border-color: #666666; width: 142px;" class="col_140">6</td>
+                <td class="center" style="border-style: solid; border-width: thin 0px 0px thin; border-color: #666666; width: 142px;" class="col_140">7</td>
+                <td class="center" style="border-style: solid; border-width: thin thin 0px thin; border-color: #666666; width: 142px;" class="col_140">8</td>
             </tr>
             <tr>
-                <td align="center" style="border-style: solid; border-width: thin 0px thin thin; border-color: #000000 #666666 #000000 #000000;" class="col_140"> <a href="javascript:openPopup('popup.aspx?sesja=1!15.2!1!4')"><asp:Label CssClass="normal" ID="tab_152_w01_c01" runat="server" Text="0"></asp:Label></a></td>
-                <td align="center" style="border-style: solid; border-width: thin 0px thin thin; border-color: #000000 #666666 #000000 #666666;" class="col_140"> <a href="javascript:openPopup('popup.aspx?sesja=1!15.2!2!4')"><asp:Label CssClass="normal" ID="tab_152_w01_c02" runat="server" Text="0"></asp:Label></a></td>
-                <td align="center" style="border-style: solid; border-width: thin 0px thin thin; border-color: #000000 #666666 #000000 #666666;" class="col_140"> <a href="javascript:openPopup('popup.aspx?sesja=1!15.2!3!4')"><asp:Label CssClass="normal" ID="tab_152_w01_c03" runat="server" Text="0"></asp:Label></a></td>
-                <td align="center" style="border-style: solid; border-width: thin 0px thin thin; border-color: #000000 #666666 #000000 #666666;" class="col_140"> <a href="javascript:openPopup('popup.aspx?sesja=1!15.2!4!4')"><asp:Label CssClass="normal" ID="tab_152_w01_c04" runat="server" Text="0"></asp:Label></a></td>
-                <td align="center" style="border-style: solid; border-width: thin 0px thin thin; border-color: #000000 #666666 #000000 #666666;" class="col_140"> <a href="javascript:openPopup('popup.aspx?sesja=1!15.2!5!4')"><asp:Label CssClass="normal" ID="tab_152_w01_c05" runat="server" Text="0"></asp:Label></a></td>
-                <td align="center" style="border-style: solid; border-width: thin 0px thin thin; border-color: #000000 #666666 #000000 #666666;" class="col_140"> <a href="javascript:openPopup('popup.aspx?sesja=1!15.2!6!4')"><asp:Label CssClass="normal" ID="tab_152_w01_c06" runat="server" Text="0"></asp:Label></a></td>
-                <td align="center" style="border-style: solid; border-width: thin 0px thin thin; border-color: #000000 #666666 #000000 #666666;" class="col_140"> <a href="javascript:openPopup('popup.aspx?sesja=1!15.2!7!4')"><asp:Label CssClass="normal" ID="tab_152_w01_c07" runat="server" Text="0"></asp:Label></a></td>
-                <td align="center" style="border-style: solid; border-width: thin; border-color: #000000 #666666 #666666 #666666;" class="col_140"> <a href="javascript:openPopup('popup.aspx?sesja=1!15.2!8!4')"><asp:Label CssClass="normal" ID="tab_152_w01_c08" runat="server" Text="0"></asp:Label></a></td>
+                <td class="center" style="border-style: solid; border-width: thin 0px thin thin; border-color: #000000 #666666 #000000 #000000;" class="col_140"> <a href="javascript:openPopup('popup.aspx?sesja=1!15.2!1!4')"><asp:Label CssClass="normal" ID="tab_152_w01_c01" runat="server" Text="0"></asp:Label></a></td>
+                <td class="center" style="border-style: solid; border-width: thin 0px thin thin; border-color: #000000 #666666 #000000 #666666;" class="col_140"> <a href="javascript:openPopup('popup.aspx?sesja=1!15.2!2!4')"><asp:Label CssClass="normal" ID="tab_152_w01_c02" runat="server" Text="0"></asp:Label></a></td>
+                <td class="center" style="border-style: solid; border-width: thin 0px thin thin; border-color: #000000 #666666 #000000 #666666;" class="col_140"> <a href="javascript:openPopup('popup.aspx?sesja=1!15.2!3!4')"><asp:Label CssClass="normal" ID="tab_152_w01_c03" runat="server" Text="0"></asp:Label></a></td>
+                <td class="center" style="border-style: solid; border-width: thin 0px thin thin; border-color: #000000 #666666 #000000 #666666;" class="col_140"> <a href="javascript:openPopup('popup.aspx?sesja=1!15.2!4!4')"><asp:Label CssClass="normal" ID="tab_152_w01_c04" runat="server" Text="0"></asp:Label></a></td>
+                <td class="center" style="border-style: solid; border-width: thin 0px thin thin; border-color: #000000 #666666 #000000 #666666;" class="col_140"> <a href="javascript:openPopup('popup.aspx?sesja=1!15.2!5!4')"><asp:Label CssClass="normal" ID="tab_152_w01_c05" runat="server" Text="0"></asp:Label></a></td>
+                <td class="center" style="border-style: solid; border-width: thin 0px thin thin; border-color: #000000 #666666 #000000 #666666;" class="col_140"> <a href="javascript:openPopup('popup.aspx?sesja=1!15.2!6!4')"><asp:Label CssClass="normal" ID="tab_152_w01_c06" runat="server" Text="0"></asp:Label></a></td>
+                <td class="center" style="border-style: solid; border-width: thin 0px thin thin; border-color: #000000 #666666 #000000 #666666;" class="col_140"> <a href="javascript:openPopup('popup.aspx?sesja=1!15.2!7!4')"><asp:Label CssClass="normal" ID="tab_152_w01_c07" runat="server" Text="0"></asp:Label></a></td>
+                <td class="center" style="border-style: solid; border-width: thin; border-color: #000000 #666666 #666666 #666666;" class="col_140"> <a href="javascript:openPopup('popup.aspx?sesja=1!15.2!8!4')"><asp:Label CssClass="normal" ID="tab_152_w01_c08" runat="server" Text="0"></asp:Label></a></td>
             </tr>
         </table>
              <br />
@@ -10203,42 +10275,42 @@ normal"><span style="font-size:12.0pt;mso-fareast-font-family:Symbol"> Kontrolka
            <asp:Label ID="Label17" runat="server">Dział 15.3 Terminowość przyznawania wynagrodzeń za sporządzenie tłumaczeń pisemnych i ustnych oraz za stawiennictwo</asp:Label>
 
               <br />
-        <table cellpadding="0" cellspacing="0" style="width:100%;">
+        <table  style="width:100%;">
             <tr>
-                <td align="center" style="border-left: thin solid #666666; border-right: 0px solid #666666; border-top: thin solid #666666; border-bottom: 0px solid #666666;" class="auto-style2" colspan="4">Postanowienia o przyznaniu wynagrodzenia wg czasu od złożenia rachunku</td>
-                <td align="center" style="border-style: solid; border-width: thin thin 0px thin; border-color: #000000 #666666 #666666 #666666;" colspan="4">Skierowanie rachunku do oddziału finansowego
+                <td class="center" style="border-left: thin solid #666666; border-right: 0px solid #666666; border-top: thin solid #666666; border-bottom: 0px solid #666666;" class="auto-style2" colspan="4">Postanowienia o przyznaniu wynagrodzenia wg czasu od złożenia rachunku</td>
+                <td class="center" style="border-style: solid; border-width: thin thin 0px thin; border-color: #000000 #666666 #666666 #666666;" colspan="4">Skierowanie rachunku do oddziału finansowego
                     <br />
                     wg czasu od postanowienia o przyznaniu wynagrodzenia</td>
             </tr>
             <tr>
-                <td align="center" style="border-style: solid; border-width: thin 0px 0px thin; border-color: #666666; width: 142px;" class="col_140">razem (kol.2-4) </td>
-                <td align="center" style="border-left: thin solid #666666; border-right: 0px solid #666666; border-top: thin solid #666666; border-bottom: 0px solid #666666;" class="col_140">do 14 dni</td>
-                <td align="center" style="border-style: solid; border-width: thin 0px 0px thin; border-color: #666666; width: 142px;" class="col_140">pow. 14 do 30dni</td>
-                <td align="center" style="border-style: solid; border-width: thin 0px 0px thin; border-color: #666666; width: 142px;" class="col_140">pow.yżej miesiąca</td>
-                <td align="center" style="border-style: solid; border-width: thin 0px 0px thin; border-color: #666666;" class="col_140">razem (ko. 4-8)</td>
-                <td align="center" style="border-style: solid; border-width: thin 0px 0px thin; border-color: #666666;" class="col_140">do 14 dni</td>
-                <td align="center" style="border-style: solid; border-width: thin 0px 0px thin; border-color: #666666;" class="col_140">pow. 14 do 30dni</td>
-                <td align="center" style="border-style: solid; border-width: thin thin 0px thin; border-color: #000000 #666666 #666666 #666666;" class="col_140">powyżej miesiąca</td>
+                <td class="center" style="border-style: solid; border-width: thin 0px 0px thin; border-color: #666666; width: 142px;" class="col_140">razem (kol.2-4) </td>
+                <td class="center" style="border-left: thin solid #666666; border-right: 0px solid #666666; border-top: thin solid #666666; border-bottom: 0px solid #666666;" class="col_140">do 14 dni</td>
+                <td class="center" style="border-style: solid; border-width: thin 0px 0px thin; border-color: #666666; width: 142px;" class="col_140">pow. 14 do 30dni</td>
+                <td class="center" style="border-style: solid; border-width: thin 0px 0px thin; border-color: #666666; width: 142px;" class="col_140">pow.yżej miesiąca</td>
+                <td class="center" style="border-style: solid; border-width: thin 0px 0px thin; border-color: #666666;" class="col_140">razem (ko. 4-8)</td>
+                <td class="center" style="border-style: solid; border-width: thin 0px 0px thin; border-color: #666666;" class="col_140">do 14 dni</td>
+                <td class="center" style="border-style: solid; border-width: thin 0px 0px thin; border-color: #666666;" class="col_140">pow. 14 do 30dni</td>
+                <td class="center" style="border-style: solid; border-width: thin thin 0px thin; border-color: #000000 #666666 #666666 #666666;" class="col_140">powyżej miesiąca</td>
             </tr>
             <tr>
-                <td align="center" style="border-left: thin solid #666666; border-right: 0px solid #666666; border-top: thin solid #666666; border-bottom: 0px solid #666666; " class="auto-style10">1</td>
-                <td align="center" style="border-style: solid; border-width: thin 0px 0px thin; border-color: #666666;" class="auto-style11">2</td>
-                <td align="center" style="border-style: solid; border-width: thin 0px 0px thin; border-color: #666666;" class="auto-style11">3</td>
-                <td align="center" style="border-style: solid; border-width: thin 0px 0px thin; border-color: #666666;" class="auto-style11">4</td>
-                <td align="center" style="border-left: thin solid #666666; border-right: 0px solid #666666; border-top: thin solid #666666; border-bottom: 0px solid #666666;" class="auto-style10">5</td>
-                <td align="center" style="border-left: thin solid #666666; border-right: 0px solid #666666; border-top: thin solid #666666; border-bottom: 0px solid #666666;" class="auto-style10">6</td>
-                <td align="center" style="border-left: thin solid #666666; border-right: 0px solid #666666; border-top: thin solid #666666; border-bottom: 0px solid #666666;" class="auto-style10">7</td>
-                <td align="center" style="border-style: solid; border-width: thin thin 0px thin; border-color: #000000 #666666 #666666 #666666; " class="auto-style10">8</td>
+                <td class="center" style="border-left: thin solid #666666; border-right: 0px solid #666666; border-top: thin solid #666666; border-bottom: 0px solid #666666; " class="auto-style10">1</td>
+                <td class="center" style="border-style: solid; border-width: thin 0px 0px thin; border-color: #666666;" class="auto-style11">2</td>
+                <td class="center" style="border-style: solid; border-width: thin 0px 0px thin; border-color: #666666;" class="auto-style11">3</td>
+                <td class="center" style="border-style: solid; border-width: thin 0px 0px thin; border-color: #666666;" class="auto-style11">4</td>
+                <td class="center" style="border-left: thin solid #666666; border-right: 0px solid #666666; border-top: thin solid #666666; border-bottom: 0px solid #666666;" class="auto-style10">5</td>
+                <td class="center" style="border-left: thin solid #666666; border-right: 0px solid #666666; border-top: thin solid #666666; border-bottom: 0px solid #666666;" class="auto-style10">6</td>
+                <td class="center" style="border-left: thin solid #666666; border-right: 0px solid #666666; border-top: thin solid #666666; border-bottom: 0px solid #666666;" class="auto-style10">7</td>
+                <td class="center" style="border-style: solid; border-width: thin thin 0px thin; border-color: #000000 #666666 #666666 #666666; " class="auto-style10">8</td>
             </tr>
             <tr>
-                <td align="center" style="border-left: thin solid #666666; border-right: 0px solid #666666; border-top: thin solid #000000; border-bottom: 0px solid #666666; width: 142px; border-color: #000000 #666666 #000000 #666666; border-width: thin 0px thin thin;" class="col_140"> <a href="javascript:openPopup('popup.aspx?sesja=1!15.3!1!4')"><asp:Label CssClass="normal" ID="tab_153_w01_c01" runat="server" Text="0"></asp:Label></a></td>
-                <td align="center" style="border-style: solid; border-width: thin 0px thin thin; border-color: #000000 #666666 #000000 #666666;" class="col_140"> <a href="javascript:openPopup('popup.aspx?sesja=1!15.3!2!4')"><asp:Label CssClass="normal" ID="tab_153_w01_c02" runat="server" Text="0"></asp:Label></a></td>
-                <td align="center" style="border-style: solid; border-width: thin 0px thin thin; border-color: #000000 #666666 #000000 #666666;" class="col_140"> <a href="javascript:openPopup('popup.aspx?sesja=1!15.3!3!4')"><asp:Label CssClass="normal" ID="tab_153_w01_c03" runat="server" Text="0"></asp:Label></a></td>
-                <td align="center" style="border-style: solid; border-width: thin 0px thin thin; border-color: #000000 #666666 #000000 #666666;" class="col_140"> <a href="javascript:openPopup('popup.aspx?sesja=1!15.3!4!4')"><asp:Label CssClass="normal" ID="tab_153_w01_c04" runat="server" Text="0"></asp:Label></a></td>
-                <td align="center" style="border-style: solid; border-width: thin 0px thin thin; border-color: #000000 #666666 #000000 #666666;" class="col_140"> <a href="javascript:openPopup('popup.aspx?sesja=1!15.3!5!4')"><asp:Label CssClass="normal" ID="tab_153_w01_c05" runat="server" Text="0"></asp:Label></a></td>
-                <td align="center" style="border-style: solid; border-width: thin 0px thin thin; border-color: #000000 #666666 #000000 #666666;" class="col_140"> <a href="javascript:openPopup('popup.aspx?sesja=1!15.3!6!4')"><asp:Label CssClass="normal" ID="tab_153_w01_c06" runat="server" Text="0"></asp:Label></a></td>
-                <td align="center" style="border-style: solid; border-width: thin 0px thin thin; border-color: #000000 #666666 #000000 #666666;" class="col_140"> <a href="javascript:openPopup('popup.aspx?sesja=1!15.3!7!4')"><asp:Label CssClass="normal" ID="tab_153_w01_c07" runat="server" Text="0"></asp:Label></a></td>
-                <td align="center" style="border-style: solid; border-width: thin; border-color: #000000 #666666 #666666 #666666;" class="col_140"> <a href="javascript:openPopup('popup.aspx?sesja=1!15.3!8!4')"><asp:Label CssClass="normal" ID="tab_153_w01_c08" runat="server" Text="0"></asp:Label></a></td>
+                <td class="center" style="border-left: thin solid #666666; border-right: 0px solid #666666; border-top: thin solid #000000; border-bottom: 0px solid #666666; width: 142px; border-color: #000000 #666666 #000000 #666666; border-width: thin 0px thin thin;" class="col_140"> <a href="javascript:openPopup('popup.aspx?sesja=1!15.3!1!4')"><asp:Label CssClass="normal" ID="tab_153_w01_c01" runat="server" Text="0"></asp:Label></a></td>
+                <td class="center" style="border-style: solid; border-width: thin 0px thin thin; border-color: #000000 #666666 #000000 #666666;" class="col_140"> <a href="javascript:openPopup('popup.aspx?sesja=1!15.3!2!4')"><asp:Label CssClass="normal" ID="tab_153_w01_c02" runat="server" Text="0"></asp:Label></a></td>
+                <td class="center" style="border-style: solid; border-width: thin 0px thin thin; border-color: #000000 #666666 #000000 #666666;" class="col_140"> <a href="javascript:openPopup('popup.aspx?sesja=1!15.3!3!4')"><asp:Label CssClass="normal" ID="tab_153_w01_c03" runat="server" Text="0"></asp:Label></a></td>
+                <td class="center" style="border-style: solid; border-width: thin 0px thin thin; border-color: #000000 #666666 #000000 #666666;" class="col_140"> <a href="javascript:openPopup('popup.aspx?sesja=1!15.3!4!4')"><asp:Label CssClass="normal" ID="tab_153_w01_c04" runat="server" Text="0"></asp:Label></a></td>
+                <td class="center" style="border-style: solid; border-width: thin 0px thin thin; border-color: #000000 #666666 #000000 #666666;" class="col_140"> <a href="javascript:openPopup('popup.aspx?sesja=1!15.3!5!4')"><asp:Label CssClass="normal" ID="tab_153_w01_c05" runat="server" Text="0"></asp:Label></a></td>
+                <td class="center" style="border-style: solid; border-width: thin 0px thin thin; border-color: #000000 #666666 #000000 #666666;" class="col_140"> <a href="javascript:openPopup('popup.aspx?sesja=1!15.3!6!4')"><asp:Label CssClass="normal" ID="tab_153_w01_c06" runat="server" Text="0"></asp:Label></a></td>
+                <td class="center" style="border-style: solid; border-width: thin 0px thin thin; border-color: #000000 #666666 #000000 #666666;" class="col_140"> <a href="javascript:openPopup('popup.aspx?sesja=1!15.3!7!4')"><asp:Label CssClass="normal" ID="tab_153_w01_c07" runat="server" Text="0"></asp:Label></a></td>
+                <td class="center" style="border-style: solid; border-width: thin; border-color: #000000 #666666 #666666 #666666;" class="col_140"> <a href="javascript:openPopup('popup.aspx?sesja=1!15.3!8!4')"><asp:Label CssClass="normal" ID="tab_153_w01_c08" runat="server" Text="0"></asp:Label></a></td>
             </tr>
         </table>
              <span style="font-size: xx-small; font-family: Arial, Helvetica, sans-serif">W przypadku wezwania biegłego do uzupełnienia rachunku, za datę złożenia rachunku uznaje się datę jego uzupełnienia</span><br />

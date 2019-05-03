@@ -23,9 +23,7 @@
                 text-align: left;
             }
 
-            .auto-style4 {
-                width: 100 %;
-            }
+           
 
             .auto-style5 {
                 font-family: "Segoe UI";
@@ -86,7 +84,7 @@
 
      <div id="Div2"  style="z-index:10; ">
         <div style="margin-left:auto;margin-right:auto;text-align: center; width:auto; ">
-            <table border="1.a" bordercolor="#000000" cellpadding="5" cellspacing="0" style="page-break-before: always" width="100%">
+            <table  bordercolor="#000000" cellpadding="5" cellspacing="0" style="page-break-before: always" width="100%">
                 <colgroup>
                     <col width="209" />
                     <col width="290" />
@@ -265,7 +263,7 @@ AR-SA;mso-bidi-font-weight:bold">zgodnie z PBSSP <span style="color: red; backgr
        <strong>Dział 1.1.c. </strong>(dział 1.1.1 wiersz 108 + dział 1.1.2 wiersz 58 kolumna 3 lit. c) skarga o stwierdzenie niezgodności z prawem łącznie I i II instancja<br />
        <div id='1.1.c'>
 
-    <table cellpadding="0" cellspacing="0" class="auto-style4">
+    <table style="width:100%" >
         <tr>
     <td  class="borderAll center" colspan="3">Wyszczególnienie </td>
     <td  class="borderAll center col_110 center borderAll ">Liczby spraw</td>
@@ -317,7 +315,7 @@ AR-SA;mso-bidi-font-weight:bold">zgodnie z PBSSP <span style="color: red; backgr
             <strong>Dział 1.1.d.</strong> Zażalenia w ramach właściwości poziomej
             <br />
 
-    <table>
+    <table style="width:100%" >
  <tr>
      <td class="borderAll" colspan="2">Zażalenia rozpoznane w trybie art. 3942§1 kpc w sprawach:</td>
 <td class="borderAll center col_100">Pozostało z ubiegłego roku</td>
@@ -362,7 +360,8 @@ AR-SA;mso-bidi-font-weight:bold">zgodnie z PBSSP <span style="color: red; backgr
        <br />
 
         <div id='1.1.e'>
- <strong> Dział 1.1.e</strong> (dział 1.1.2 wiersz 57 kolumna 3 lit. e) skarga kasacyjna<table>
+ <strong> Dział 1.1.e</strong> (dział 1.1.2 wiersz 57 kolumna 3 lit. e) skarga kasacyjna
+            <table style="width:100%" >
   <tr>
     <td  class="borderAll wciecie" colspan="3">Wyszczególnienie</td>
     <td  class="borderAll center center borderAll ">Liczby spraw</td>
@@ -423,7 +422,7 @@ AR-SA;mso-bidi-font-weight:bold">zgodnie z PBSSP <span style="color: red; backgr
        <br />
         <div id='1.1.f'>
  <strong> Dział 1.1.f</strong> Ustanowienie pełnomocnika z urzędu
-    <table cellpadding="0" cellspacing="0" style="width: 100%; ">
+    <table  style="width: 100%; ">
  <tr>    <td  class="center borderAll" colspan="2">Repertorium lub wykaz</td>
 <td class="center borderAll">Liczba spraw w których doszło do ustanowienia pełnomocnika z urzędu (radca prawny, adwokat)</td>
 <td class="center borderAll">W tym liczba wyznaczonych pełnomocników w wyniku zwolnienia poprzedniego pełnomocnika (od I 2012)</td>
@@ -453,7 +452,7 @@ AR-SA;mso-bidi-font-weight:bold">zgodnie z PBSSP <span style="color: red; backgr
 
        <br />
         <div id='1.1.g'>
- <strong> Dział 1.1.g</strong> Sprawy mediacyjne<table cellpadding="0" cellspacing="0" style="width: 100%; ">
+ <strong> Dział 1.1.g</strong> Sprawy mediacyjne<table  style="width: 100%; ">
  <tr>    <td  class="center borderAll" colspan="5" rowspan="2">Sądowe</td>
 <td class="center borderAll" colspan="3">Sprawy</td>
 </tr>
@@ -8912,7 +8911,7 @@ AR-SA;mso-bidi-font-weight:bold">zgodnie z PBSSP <span style="color: red; backgr
        <br />
        <div id='3'>
  <strong> Dział 3</strong> Wyznaczenie pierwszej rozprawy / posiedzenia spraw
-    <table cellpadding="0" cellspacing="0">
+    <table >
  <tr>    <td  class="center borderAll" colspan="3" rowspan="2"> Rodzaje spraw z repertorium </td>    <td class="center borderAll" colspan="8"> Od daty wpływu sprawy w danym lub poprzednim okresie sprawozdawczym do pierwszej rozprawy/posiedzenia w okresie sprawozdawczym upłynął okres</td>
 </tr>
  <tr>    <td class="center borderAll"> razem (kol. od 2 do 8)</td>
@@ -8989,7 +8988,7 @@ AR-SA;mso-bidi-font-weight:bold">zgodnie z PBSSP <span style="color: red; backgr
         <br />
         <div id="4.1.a">
             <strong>Dział 4.1.a</strong> Terminowość postępowania międzyinstancyjnego w pierwszej instancji
-            <table cellpadding="0" cellspacing="0">
+            <table >
                 <tr>
                     <td class="center borderAll" colspan="2" rowspan="2">Środki odwoławcze, które zostały
                         <br />
@@ -9070,7 +9069,7 @@ AR-SA;mso-bidi-font-weight:bold">zgodnie z PBSSP <span style="color: red; backgr
         <br />
         <div id="4.1.b">
             <strong>Dział 4.1.b</strong> Terminowość obiegu międzyinstancyjnego spraw odwoławczych
-            <table cellpadding="0" cellspacing="0">
+            <table >
                 <tr>
                     <td class="center borderAll" colspan="2" rowspan="2">Wpłynęło spraw</td>
                     <td class="center borderAll" rowspan="2">Ogółem (kol. 2 do 7) </td>
@@ -9149,7 +9148,7 @@ AR-SA;mso-bidi-font-weight:bold">zgodnie z PBSSP <span style="color: red; backgr
         <br />
         <div id="4.2">
             <strong>Dział 4.2</strong> Liczba spraw, w których po wydaniu orzeczenia sądu odwoławczego akta
-            <table cellpadding="0" cellspacing="0">
+            <table >
                 <tr>
                     <td class="center borderAll" colspan="2" rowspan="2">Rodzaje spraw
                         <br />
@@ -9224,7 +9223,7 @@ AR-SA;mso-bidi-font-weight:bold">zgodnie z PBSSP <span style="color: red; backgr
         <br />
         <div id="5.1">
             <strong>Dział 5.1</strong> Szczegółowe rozliczenie skargi (wykaz S)
-            <table cellpadding="0" cellspacing="0">
+            <table >
                 <tr>
                     <td class="center borderAll" colspan="4" rowspan="4">Wyszczególnienie</td>
                     <td class="center borderAll" rowspan="4">Pozostało z ubiegłego roku</td>
@@ -9814,7 +9813,7 @@ AR-SA;mso-bidi-font-weight:bold">zgodnie z PBSSP <span style="color: red; backgr
         <br />
         <div id="5.2">
             <strong>Dział 5.2</strong> Kontrolka skarg (w wydziale, którego sprawy skarga dotyczy) (§ 448<sup>5</sup> ust. 1 zarządzenia Ministra Sprawiedliwości z dnia 12 grudnia 2003 r.
-            <table cellpadding="0" cellspacing="0">
+            <table >
                 <tr>
                     <td class="center borderAll" colspan="2" rowspan="2">Wyszczególnienie </td>
                     <td class="center borderAll" rowspan="2">Wpłynęło </td>
@@ -9869,7 +9868,7 @@ AR-SA;mso-bidi-font-weight:bold">zgodnie z PBSSP <span style="color: red; backgr
         <br />
         <div id="6">
             <strong>Dział 6</strong> Sprawy gospodarcze wielotomowe
-            <table cellpadding="0" cellspacing="0">
+            <table >
                 <tr>
                     <td class="center borderAll" colspan="4" rowspan="2">SPRAWY z rep. </td>
                     <td class="center borderAll" colspan="7">Sprawy gospodarcze - Liczba spraw </td>
@@ -10277,7 +10276,7 @@ AR-SA;mso-bidi-font-weight:bold">zgodnie z PBSSP <span style="color: red; backgr
         <br />
         <div id="6.1">
             <strong>Dział 6.1</strong> Obsada Sądu (Wydziału)
-            <table cellpadding="0" cellspacing="0">
+            <table >
                 <tr>
                     <td class="center borderAll">Wyszczególnienie </td>
                     <td class="center borderAll">&nbsp;</td>
@@ -10328,7 +10327,7 @@ AR-SA;mso-bidi-font-weight:bold">zgodnie z PBSSP <span style="color: red; backgr
         <br />
          <div id="6.2">
              <strong>Dział 6.1</strong> Obsada Sądu (Wydziału)
-             <table cellpadding="0" cellspacing="0">
+             <table >
                  <tr>
                      <td class="center borderAll" colspan="2">Wyszczególnienie </td>
                      <td class="center borderAll">Liczba sędziów SO i wakujących stanowisk sędziowskich w ramach limitu (na ostatni dzień okresu statystycznego)</td>
@@ -10761,7 +10760,7 @@ AR-SA;mso-bidi-font-weight:bold">zgodnie z PBSSP <span style="color: red; backgr
         <br />
         <div id="6.3">
             <strong>Dział 6.2</strong> Obsada Sądu (Wydziału)
-            <table cellpadding="0" cellspacing="0">
+            <table >
                 <tr>
                     <td class="center borderAll" colspan="3">Treść</td>
                     <td class="center borderAll" colspan="3">Liczba według limitu etatów na ostatni dzień okresu statystycznego</td>
@@ -11054,7 +11053,7 @@ AR-SA;mso-bidi-font-weight:bold">zgodnie z PBSSP <span style="color: red; backgr
         <br />
        <div id='7.1'>
  <strong> Dział 7.1</strong> Liczba biegłych/podmiotów wydających opinie w sprawach  (z wył. tłumaczy przysięgłych)
-    <table cellpadding="0" cellspacing="0">
+    <table >
  <tr>    <td  class="center borderAll" colspan="3" rowspan="2"> Sprawy wg repertoriów</td>    <td class="center borderAll" colspan="4"> Liczba powołanych biegłych</td>
 </tr>
  <tr>    <td class="center borderAll"> Razem (kol. 2-4)</td>
@@ -11122,7 +11121,7 @@ AR-SA;mso-bidi-font-weight:bold">zgodnie z PBSSP <span style="color: red; backgr
         <br />
         <div id="7.2">
             <strong>Dział 7.2</strong> Terminowość sporządzania opinii pisemnych (z wył. tłumaczy przysięgłych)
-            <table cellpadding="0" cellspacing="0">
+            <table >
                 <tr>
                     <td class="center borderAll" colspan="3" rowspan="3">Sprawy wg repertoriów</td>
                     <td class="center borderAll" colspan="8">Liczba sporządzonych opinii</td>
@@ -11327,7 +11326,7 @@ AR-SA;mso-bidi-font-weight:bold">zgodnie z PBSSP <span style="color: red; backgr
         <br />
          <div id='7.3'>
  <strong> Dział 7.3</strong> Terminowość przyznawania wynagrodzeń za sporządzenie opinii pisemnych i ustnych oraz za stawiennictwo (z wył. tłumaczy przysięgłych)
-    <table cellpadding="0" cellspacing="0">
+    <table >
  <tr>    <td  class="center borderAll" colspan="3" rowspan="2"> Sprawy wg repertoriów</td>    <td class="center borderAll" colspan="4"> Postanowienia o przyznaniu wynagrodzenia wg czasu od złożenia rachunku </td>
 <td class="center borderAll" colspan="4">Skierowanie rachunku do oddziału finansowego wg czasu od postanowienia o przyznaniu wynagrodzenia</td>
 </tr>
