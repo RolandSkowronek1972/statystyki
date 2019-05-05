@@ -50,32 +50,15 @@ namespace stat2018
                 Date2.Date = DateTime.Parse(datyMSS.DataKoncowa());
                 Session["ustawDate1o"] = "X";
             }
-            Session["data_1"] = Date1.Date.ToShortDateString();
-            Session["data_2"] = Date2.Date.ToShortDateString();
+            Session["data_1"] = datyMSS.DataPoczatkowa();
+            Session["data_2"] = datyMSS.DataKoncowa();
             przemiel();
         }// end of Page_Load
 
         protected void przemiel()
         {
             Session["sesja"] = "s3030";
-            try
-            {
-                DateTime dTime = DateTime.Now;
-                dTime = dTime.AddMonths(-1);
-                if (Date1.Text.Length == 0)
-                {
-                    Date1.Text = dTime.Year.ToString() + "-" + dTime.Month.ToString("D2") + "-01";
-                }
-                if (Date2.Text.Length == 0)
-                {
-                    Date2.Text = dTime.Year.ToString() + "-" + dTime.Month.ToString("D2") + "-" + DateTime.DaysInMonth(dTime.Year, dTime.Month).ToString("D2");
-                }
-
-                Session["data_1"] = Date1.Text.Trim();
-                Session["data_2"] = Date2.Text.Trim();
-            }
-            catch
-            { }
+          
             string idWydzialu = "'" + (string)Session["id_dzialu"] + "'";
             //id_dzialu.Text = (string)Session["txt_dzialu"];
 

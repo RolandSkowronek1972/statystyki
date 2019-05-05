@@ -757,7 +757,8 @@ word-wrap: break-word;
 }
 
 .col_180 {
-        text-align:center;
+    width: 180px;
+    text-align: center;
 }
 
 .col_185_min {
