@@ -135,54 +135,5 @@ namespace stat2018
             }
         }
 
-        /*
-        public MemoryStream xxlTable(DataTable dT)
-        {
-            //======================
-            using (MemoryStream ms = new MemoryStream())
-            using (Document document = new Document(PageSize.A4.Rotate(), 25, 25, 30, 30))
-            using (iTextSharp.text.pdf.PdfWriter writer = iTextSharp.text.pdf.PdfWriter.GetInstance(document, ms))
-            {
-                document.Open();
-                document.Add(new Paragraph(" "));
-
-                // tabela pierwsza
-                int i = 0;
-                //dT = new DataTable();
-
-                // przetważanie tabeli
-                if (dT.Rows.Count > 0)
-                {
-                    int il_kolumn = dT.Columns.Count;
-                    iTextSharp.text.pdf.PdfPTable table = new iTextSharp.text.pdf.PdfPTable(il_kolumn);
-                    for (int ij = 0; ij < il_kolumn; ij++)
-                    {
-                        string dana = dT.Columns[ij].ColumnName.ToString();
-                        iTextSharp.text.pdf.PdfPCell cell = new iTextSharp.text.pdf.PdfPCell(new Phrase(dana));
-                        cell.BackgroundColor = iTextSharp.text.BaseColor.LIGHT_GRAY;
-                        table.AddCell(cell);
-                    }// end for
-                    foreach (DataRow dR in dT.Rows)
-                    {
-                        // loop po wierszach
-                        for (int j = 0; j < il_kolumn; j++)
-                        {
-                            // loop po kolumnach
-                            string dana = dR[j].ToString().Trim();
-                            iTextSharp.text.pdf.PdfPCell cell = new iTextSharp.text.pdf.PdfPCell(new Phrase(dana));
-                            table.AddCell(cell);
-                        } //end for
-                    }// end foreach
-                    document.Add(table);
-                }// end of if
-                document.Close();
-                document.Close();
-                writer.Close();
-                ms.Close();
-                //======================
-                return ms;
-            }
-        }
-        */
     }
 }

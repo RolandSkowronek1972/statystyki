@@ -11,7 +11,6 @@ namespace stat2018
     {
         public static BaseFont NewFont = BaseFont.CreateFont(Environment.GetEnvironmentVariable("SystemRoot") + "\\fonts\\sylfaen.ttf", BaseFont.IDENTITY_H, BaseFont.EMBEDDED);
 
-        //  static BaseFont NewFont = BaseFont.CreateFont(BaseFont.HELVETICA,BaseFont.CP1257 , BaseFont.EMBEDDED);
         private Font fontPL1 = new Font(NewFont, 10f, Font.NORMAL, BaseColor.BLACK);
 
         public Font plFont1 = new Font(NewFont, 10f, Font.NORMAL, BaseColor.BLACK);
@@ -63,15 +62,7 @@ namespace stat2018
             return sedzia + " " + stanowisko;
         }// end of wyciagnij_kwerende
 
-        /*
-        public string wyciagnij_sedziego_xl(string id_sedziego)
-        {
-            DataTable parameters = Common.makeParameterTable();
-            parameters.Rows.Add("@id_sedziego", id_sedziego.Trim());
-            return Common.getQuerryValue("ELECT distinct imie + ' ' + nazwisko + ' ' + (COALESCE( stanowisko ,'') ) as sedzia  FROM tbl_statystyki_tbl_x5 where id_sedziego=@id_sedziego", con_str, parameters);
-        }// end of wyciagnij_kwerende
-        */
-
+   
         public string wyciagnij_tytul(string tabela, string kolumna, string id_dzialu)
         {
             DataTable parameters = Common.makeParameterTable();
@@ -92,16 +83,6 @@ namespace stat2018
 
             return Common.getQuerryValue("SELECT  opis FROM  kwerendy where id_tabeli=@tabela and id_kolumny=@kolumna and id_wydzial=@dzial and id_wiersza=@id_wiersza", con_str, parameters);
         }// end of wyciagnij_kwerende
-
-        /*
-        public string podajFunkcjeSedziegol(int idFunkcji)
-        {
-            DataTable parameters = Common.makeParameterTable();
-            parameters.Rows.Add("@ident", idFunkcji);
-
-            return Common.getQuerryValue("SELECT nazwa  FROM funkcje where ident=@ident", con_str, parameters);
-        }// end of wyciagnij_kwerende
-        */
 
         public string czy_dostepny(string user, string id_wydzialu, string domain)
         {
@@ -162,12 +143,6 @@ namespace stat2018
             return result;
         }// end of CzyPracowal
 
-        public string podajCS()
-        {
-            return con_str;
-        }//end of podajCS
-
-      
         public DataSet pod_tabela(string cs, string kwerenda, string poczatek, string koniec, string id_sedziego)
         {
             var conn = new SqlConnection(cs);
@@ -264,18 +239,7 @@ namespace stat2018
             return result;
         }
 
-        /*
-                public string wyciagnijDaneNt(string kw, DateTime poczatek, DateTime koniec, string cs)
-                {
-                    DataTable parametry = Common.makeParameterTable();
-                    parametry.Rows.Add("@data_1", poczatek);
-                    parametry.Rows.Add("@data_2", koniec);
-
-                    return Common.getQuerryValue(kw, cs, parametry);
-                }
-                */
-
-        public string wyciagnijDane(int id_dzialu, int id_wiersza, int id_kolumny, DateTime poczatek, DateTime koniec, int id_tabeli)
+            public string wyciagnijDane(int id_dzialu, int id_wiersza, int id_kolumny, DateTime poczatek, DateTime koniec, int id_tabeli)
         {
             string result = string.Empty;
             string cs = podajConnectionString(id_dzialu);
@@ -301,7 +265,6 @@ namespace stat2018
 
             Common.runQuerry("insert into tbl_statystyki_tbl_01 (opis,id_,id_dzialu,id_tabeli) values (@opis,@id,@id_dzialu,@id_tabeli)", con_str, parametry);
         }
-
         public void updateWiersz(int kolumna, int id, string opis, int id_tabeli)
         {
             string txt = getColumnName(kolumna);
@@ -363,7 +326,6 @@ namespace stat2018
 
             return "1";
         }// end of generuj_dane_do_tabeli
-
         public DataTable generuj_dane_do_tabeli_wierszy_przestawnych1(DateTime poczatek, DateTime koniec, string id_dzialu, int id_tabeli, int id_pozycji)
         {
             string kwerenda = string.Empty;
@@ -649,121 +611,7 @@ namespace stat2018
             return Common.getQuerryValue("SELECT  sad FROM     wydzialy where ident=@id_sadu", con_str, parameters);
         }// end of nazwaSadu
 
-        /*
-        public DataTable DzienneDanePracownika(string data, string idPracownika, int idKolumny, string connectionString)
-        {
-            //wyciagnac kwerende
-
-            var conn = new SqlConnection(con_str);
-
-            string kwerenda = string.Empty;
-
-            SqlCommand sqlCmd;
-            using (sqlCmd = new SqlCommand())
-            {
-                sqlCmd = new SqlCommand("SELECT         kewrendaPodgladu FROM            tbl_ocenaPracownikaKwerendy where idKolumny=@idKolumny ", conn);
-                try
-                {
-                    conn.Open();
-                    sqlCmd.Parameters.AddWithValue("@idKolumny", idKolumny);
-                    kwerenda = sqlCmd.ExecuteScalar().ToString();
-                    conn.Close();
-                }
-                catch
-                { }
-            } // end of using
-
-            DataTable result = new DataTable();
-
-            DataTable parameters = new DataTable();
-            parameters.Columns.Add("name", typeof(String));
-            parameters.Columns.Add("value", typeof(String));
-
-            parameters.Rows.Add("@idPracownika", idPracownika);
-            parameters.Rows.Add("@data", data);
-            result = Common.getDataTable(kwerenda, connectionString, parameters);
-
-            return result;
-        }
-        */
-        /*
-        public DataTable listaSpraw(string connectionString)
-        {
-            DataTable result = new DataTable();
-
-            DataTable parameters = new DataTable();
-            parameters.Columns.Add("name", typeof(String));
-            parameters.Columns.Add("value", typeof(String));
-
-            result = Common.getDataTable("select d.nazwisko, d.imie, st.nazwa, (select symbol from repertorium where numer=s.repertorium) rep, s.numer, s.rok  from sprawa s, strona t, dane_strony d, status st where s.czyus = 0 and t.czyus = 0 and s.ident = t.id_sprawy and t.id_danych = d.ident and t.id_statusu = st.ident ", connectionString, parameters);
-
-            return result;
-        }
-        */
-        /*
-        public DataTable listaSpraw(string connectionString, int idDzialu, string imie, string nazwisko)
-        {
-            DataTable result = new DataTable();
-
-            DataTable parameters = Common.makeParameterTable();
-
-            string kewrenda = Common.odczytajWartosc("listaSpraw01");
-            parameters.Rows.Add("@imie", imie);
-            parameters.Rows.Add("@nazwisko", nazwisko);
-            //result = Common.getDataTable("select rtrim(imie)+' '+rtrim(nazwisko), ident from pracownik where [czyskreslono]=0 order by nazwisko", connectionString, parameters);
-
-            result = Common.getDataTable(kewrenda, connectionString, parameters);
-
-            return result;
-        }
-        */
-        /*
-        public DataTable listaPracownikow(string connectionString, int idDzialu)
-        {
-            DataTable parameters = Common.makeParameterTable();
-
-            string kwerenda = Common.odczytajWartosc("listaPracownikow01");
-            parameters.Rows.Add("@id_dzialu", idDzialu);
-            return Common.getDataTable(kwerenda, connectionString, parameters);
-        }
-        */
-        /*
-        public DataTable listaPracownikow(string connectionString, string kwerenda)
-        {
-            DataTable parameters = Common.makeParameterTable();
-            return Common.getDataTable(kwerenda, connectionString, parameters);
-        }
-
-        public DataTable listaWydzialow()
-        {
-            DataTable parameters = Common.makeParameterTable();
-            return Common.getDataTable("SELECT DISTINCT [nazwa], [cs] FROM [wydzialy] ORDER BY [nazwa]", con_str, parameters);
-        }
-        */
-        /*
-        public DataTable listaWydzialownew()
-        {
-            DataTable parameters = new DataTable();
-            string kwerenda = "SELECT     opis, wartosc FROM konfig WHERE(klucz LIKE 'listaPracownikow_0% ')";
-            return Common.getDataTable(kwerenda, con_str, parameters);
-        }
-
-        public DataTable listaSedziow(string connectionString, int idDzialu)
-        {
-            DataTable parameters = Common.makeParameterTable();
-            parameters.Rows.Add("@id_dzialu", idDzialu);
-            return Common.getDataTable("SELECT [ident],[nazwisko],[imie],[funkcja],[tytul]  FROM [sedzia] where [czyskreslono]=0 order by nazwisko", connectionString, parameters);
-        }
-
-        public string generuj_dane_do_tabeli_(int id_dzialu, int id_tabeli, DateTime poczatek, DateTime koniec, string plik)
-        {
-            //Common.log.Debug("Początek przetwarzania danych w pliku" + plik + " identyfikator tabeli: " + id_tabeli);
-            string odp = generuj_dane_do_tabeli_(id_dzialu, id_tabeli, poczatek, koniec);
-            //Common.log.Debug("Koniec przetwarzania danych w pliku" + plik + " identyfikator tabeli: " + id_tabeli);
-            return odp;
-        }
-        */
-
+      
         public string generuj_dane_do_tabeli_(int id_dzialu, int id_tabeli, DateTime poczatek, DateTime koniec)
         {
             string status = string.Empty;
@@ -1033,238 +881,6 @@ namespace stat2018
             return ds_x;
         }
 
-        /*
-        private DataSet kwerendy_mss1r(string cs, string kwe, int id_dzialu, string id_tabeli, DateTime poczatek, DateTime koniec)
-        {
-            DataSet ds_x = new DataSet();
-            try
-            {
-                SqlConnection conn_x = new SqlConnection(cs);
-                conn_x.Open();
-                SqlDataAdapter da_x = new SqlDataAdapter();
-
-                da_x.SelectCommand = new SqlCommand(kwe, conn_x);
-                da_x.SelectCommand.Parameters.AddWithValue("@id_dzialu", id_dzialu);
-                da_x.SelectCommand.Parameters.AddWithValue("@id_tabeli", id_tabeli);
-                da_x.SelectCommand.Parameters.AddWithValue("@data_1", poczatek);
-                da_x.SelectCommand.Parameters.AddWithValue("@data_2", koniec);
-                da_x.Fill(ds_x);
-                conn_x.Close();
-            }
-            catch
-            {
-                return null;
-                // status = status + "Bład odczytu kwerendy " + kwe + "  " + ev.Message + "<br>";
-            }
-            return ds_x;
-        }
-        */
-        /*
-        public DataTable generuj_dane_do_tabeli_typ2_new2018(int id_dzialu, int id_tabeli, DateTime poczatek, DateTime koniec, int il_kolumn, string tenplik)
-        {
-            string status = string.Empty;
-            //Common.log.Info(tenplik + " :Generowanie tabeli danych: Rozpoczęcie");
-            var conn = new SqlConnection(con_str);
-
-            DataTable dTable = new DataTable();
-            //Common.log.Info(tenplik + " :Generowanie tabeli danych: Pobieranie connectionstringa");
-
-            string cs = PobierzConnectionString(id_dzialu);
-
-            string kwerenda = string.Empty;
-
-            DataTable parameters = Common.makeParameterTable();
-            parameters.Rows.Add("@id_tabeli", id_tabeli);
-            parameters.Rows.Add("@id_dzialu", id_dzialu);
-            //Common.log.Info(tenplik + " :Generowanie tabeli danych: Wyciądnięcie kwerend dla tabeli :"+id_tabeli);
-            DataTable dT1 = Common.getDataTable("SELECT id_kolumny,[kwerenda] FROM [kwerendy] where id_tabeli=@id_tabeli and id_wydzial=@id_dzialu order by id_kolumny", con_str, parameters);
-
-            // zaladowanie do tabeli
-            int il_wierszy = 0;
-            try
-            {
-                il_wierszy = dT1.Rows.Count;
-            }
-            catch { }
-
-            if (il_wierszy == 0)
-            {
-                //Common.log.Info(tenplik + " :Generowanie tabeli danych: Brak kwerend dla tabeli : "+ id_tabeli);
-                return null;
-            }
-
-            // tworzenie tabeli
-
-            dTable.Columns.Add("id", typeof(int));
-            dTable.Columns.Add("id_sedziego", typeof(int));
-            dTable.Columns.Add("Funkcja", typeof(string));
-            dTable.Columns.Add("Stanowisko", typeof(string));
-            dTable.Columns.Add("Imie", typeof(string));
-            dTable.Columns.Add("Nazwisko", typeof(string));
-            dTable.Columns.Add("id_tabeli", typeof(string));
-            for (int i = 1; i <= il_kolumn; i++)
-            {
-                DataColumn column = new DataColumn();
-
-                column.DataType = System.Type.GetType("System.Int32");
-                column.AllowDBNull = false;
-                column.ColumnName = getColumnName(i);
-                column.DefaultValue = "0";
-                dTable.Columns.Add(column);
-                //Common.log.Info(tenplik + " :Generowanie tabeli danych: Ilosć kwerend dla tabeli : " + id_tabeli+ " : "+ il_wierszy.ToString());
-            }
-
-            // sa kwerendy
-            //wyselekcjonuj kwerendy z sedziami col=0
-            DataRow[] kwerendySedziow = dT1.Select("id_kolumny=0");
-            if (kwerendySedziow.Length == 0)
-            {
-                //Common.log.Info(tenplik + " :Generowanie tabeli danych: Brak kwerend wyciągających sedziów dla tabeli : " + id_tabeli );
-                return null;
-            }
-            DataRow[] kwerendyDanych = dT1.Select("id_kolumny>0");
-            if (kwerendyDanych.Length == 0)
-            {
-                //Common.log.Info(tenplik + " :Generowanie tabeli danych: ilość kwerend wyciągających dane  dla tabeli : " + id_tabeli + "=" +kwerendyDanych.Length  );
-            }
-            /*
-             dTable.Columns.Add("id", typeof(int));
-                dTable.Columns.Add("id_sedziego", typeof(int));
-                dTable.Columns.Add("Funkcja", typeof(string));
-                dTable.Columns.Add("Stanowisko", typeof(string));
-                dTable.Columns.Add("Imie", typeof(string));
-                dTable.Columns.Add("Nazwisko", typeof(string));
-                dTable.Columns.Add("id_tabeli", typeof(string));
-            */
-        // ladowanie danych sedziów
-        /*
-        try
-        {
-            //Common.log.Info(tenplik + " :Generowanie tabeli danych: Wpisywanie danych sedziów dla tabeli : " + id_tabeli );
-            int i = 1;
-            foreach (var wiersz in kwerendySedziow)
-            {
-                string kwerendaSedziego = wiersz[1].ToString();
-                DataTable tabelaSedziow = Common.getDataTable(kwerendaSedziego, cs);
-                foreach (DataRow Sedzia in tabelaSedziow.Rows)
-                {
-                    DataRow daneSedziego = dTable.NewRow();
-                    daneSedziego[0] = i;
-                    daneSedziego[1] = int.Parse(Sedzia[0].ToString());        //id sedziego
-                    daneSedziego[2] = funkcja(int.Parse(Sedzia[3].ToString().Trim()));                     //funkcja
-                    daneSedziego[3] = stanowisko(int.Parse(Sedzia[4].ToString().Trim()));                     //stanowisko
-                    daneSedziego[4] = Sedzia[1].ToString();                     //imie
-                    daneSedziego[5] = Sedzia[2].ToString();                     //nazwisko
-                    daneSedziego[6] = id_tabeli;                                //id tabeli
-                    dTable.Rows.Add(daneSedziego);
-                }
-            }
-        }
-        catch (Exception ex)
-        {
-            //Common.log.Error(tenplik + " :Generowanie tabeli danych: Wpisywanie danych sedziów dla tabeli : " + id_tabeli+ " " +ex.Message );
-        }
-        // wpisywanie danych dla sedziów
-
-        foreach (var wiersz in kwerendyDanych)
-        {
-            string kolumna = wiersz[1].ToString();
-            string kwerendaDanych = wiersz[1].ToString();
-            DataTable parametry = Common.makeParameterTable();
-            parameters.Rows.Add("@data_1", poczatek);
-            parameters.Rows.Add("@data_2", koniec);
-
-            DataTable tabelaDanychDlaSedziow = Common.getDataTable(kwerendaDanych, cs, parametry);
-
-            // przepisanie danych sedziow
-            foreach (DataRow dRow in tabelaDanychDlaSedziow.Rows)
-            {
-                string idSedziego = dRow[0].ToString().Trim();
-            }
-        }
-
-        try
-        {
-            // DataTable dT = dsKwerendy.Tables[0];
-
-            foreach (DataRow dRow in dT1.Rows)
-            {
-                string id_kol = dRow[0].ToString().Trim();
-                string kwe = dRow[1].ToString().Trim();
-                ////############################################  ladowanie danych tabela 2 ##############################
-
-                DataSet dSet = kwerendy_xl(cs, kwe, id_dzialu, id_tabeli, poczatek, koniec);
-
-                // odczyt sedziów
-                DataTable nowa = new DataTable();
-
-                try
-                {
-                    nowa = dSet.Tables[0];
-                }
-                catch (Exception ec)
-                {
-                    status = status + "Bład odczytu tabeli z danymi sędziów" + "<br>" + ec.Message + "<br>";
-                }
-
-                int j = 1;
-                foreach (DataRow dR in nowa.Rows)
-                {
-                    switch (id_kol)
-                    {
-                        case "0":
-                            {
-                                try
-                                {
-                                    // załadowanie danych do pierwszych kolumn
-                                    j++;
-                                    DataRow dr1 = dTable.NewRow();
-                                    dr1[0] = j;//lp
-                                    dr1[1] = dR[0].ToString().Trim();// id sedziego
-                                    dr1[2] = funkcja(int.Parse(dR[3].ToString().Trim()));//funkcja
-                                    dr1[3] = stanowisko(int.Parse(dR[4].ToString().Trim())); ;//stanowisko
-                                    dr1[4] = dR[1].ToString().Trim();
-                                    dr1[5] = dR[2].ToString().Trim();//idtmie nazwisko
-                                    dr1[6] = id_tabeli.ToString();
-                                    dTable.Rows.Add(dr1);
-                                    status = status + "wpisywanie danych o sedziach do pierwszych kolumn" + "<br>";
-                                }
-                                catch (Exception ex2)
-                                { }
-                            }
-                            break;
-
-                        default:
-                            {
-                                string querry = "id_sedziego=" + dR[1].ToString().Trim();
-                                string sedzia = dR[1].ToString().Trim();
-                                int index = 0;
-                                foreach (DataRow dr in dTable.Rows)
-                                {
-                                    try
-                                    {
-                                        index++;
-                                        string nr_sedziego = dr[1].ToString();
-                                        if (nr_sedziego == sedzia)
-                                        {
-                                            dTable.Rows[index][getColumnName(int.Parse(id_kol))] = dR[0];
-                                        }
-                                    }
-                                    catch (Exception ex3)
-                                    { }
-                                }
-                            }
-                            break;
-                    }//end of switch
-                }
-            }
-        }
-        catch (Exception ex)
-        { }//end of try
-
-        return dTable;
-    }// end of generuj_dane_do_tabeli_5
-*/
 
         public DataTable generuj_dane_do_tabeli_typ2_new(int id_dzialu, int id_tabeli, DateTime poczatek, DateTime koniec, int il_kolumn)
         {
@@ -1494,163 +1110,5 @@ namespace stat2018
         }// end of generuj_dane_do_tabeli_mss2
 
        
-
-        #region private methode
-        /*
-        private DataTable generuj_dane_sedziow(int id_dzialu, int id_tabeli)
-
-        {
-            DataTable parametry = Common.makeParameterTable();
-            parametry.Rows.Add("@id_wydzial", id_dzialu);
-            parametry.Rows.Add("@id_tabeli", id_tabeli);
-            string kwerendaSedziow = "SELECT DISTINCT kwerenda FROM   kwerendy WHERE   (id_wydzial = @id_wydzial) AND (id_tabeli = @id_tabeli) AND (id_wiersza = 0) AND (id_kolumny = 0)";
-
-            string connectionString = podajConnectionString(id_dzialu);
-            string kwerenda = Common.getQuerryValue(kwerendaSedziow, con_str, parametry);
-            return Common.getDataTable(kwerenda, connectionString);
-        }// end of generuj_dane_sedziow
-        
-        public DataTable generujDaneDoTabeli(int id_dzialu, int id_tabeli, DateTime pocztek, DateTime koniec)
-
-        {
-            DataTable parametry = Common.makeParameterTable();
-            parametry.Rows.Add("@id_wydzial", id_dzialu);
-            parametry.Rows.Add("@id_tabeli", id_tabeli);
-            string kwerenda = "SELECT DISTINCT kwerenda, id_kolumny FROM   kwerendy WHERE        (id_wydzial = @id_wydzial) AND (id_tabeli = @id_tabeli) AND (id_wiersza = 0) AND (id_kolumny > 0)";
-            // wuciaga kewrendy danych
-            DataTable kwerendy = Common.getDataTable(kwerenda, con_str, parametry);
-
-            if (kwerendy.Rows.Count == 0)
-            {
-                return null;
-            }
-            DataTable dTResult = new DataTable();
-            dTResult.Columns.Add("dana", typeof(string));
-            dTResult.Columns.Add("id_sedziego", typeof(string));
-            dTResult.Columns.Add("kolumna", typeof(string));
-            DataTable parametryKwerendydanych = Common.makeParameterTable();
-            parametryKwerendydanych.Rows.Add("@data_1", pocztek);
-            parametryKwerendydanych.Rows.Add("@data_2", koniec);
-
-            foreach (DataRow dRow in kwerendy.Rows)
-            {
-                // odczyta dane
-                DataTable dana = Common.getDataTable(dRow[0].ToString().Trim(), podajConnectionString(id_dzialu), parametryKwerendydanych);
-                if (dana.Rows.Count > 0)
-                {
-                    foreach (DataRow droww in dana.Rows)
-                    {
-                        DataRow resultRow = dTResult.NewRow();
-                        resultRow[0] = droww[0].ToString(); //dana
-                        resultRow[1] = droww[1].ToString(); //id sedziego
-                        resultRow[2] = dRow[1].ToString(); // klomna
-                        dTResult.Rows.Add(resultRow);
-                    }
-                }
-            }
-            return dTResult;
-        }// end of generuj_dane_sedziow
-*/
-        /*
-        private DataTable TabelaTyp1(int iloscKolumn)
-        {
-            DataTable outputTable = new DataTable();
-            for (int i = 1; i < iloscKolumn; i++)
-            {
-                string identyfikatorKolumny = "d" + i.ToString("D1");
-                outputTable.Columns.Add("identyfikatorKolumny", typeof(int));
-            }
-            return outputTable;
-        }
-       
-
-        private DataTable TabelaTyp2()
-        {
-            DataTable outputTable = new DataTable();
-            outputTable.Columns.Add("lp", typeof(int));
-            outputTable.Columns.Add("idSedziegi", typeof(int));
-            outputTable.Columns.Add("sedzia", typeof(string));
-            outputTable.Columns.Add("funkcja", typeof(string));
-            outputTable.Columns.Add("etat", typeof(int));
-            outputTable.Columns.Add("nieobecnosci", typeof(int));
-            outputTable.Columns.Add("obsady", typeof(double));
-            outputTable.Columns.Add("dniPracy", typeof(int));
-            outputTable.Columns.Add("czasNaWokandzie", typeof(TimeSpan));
-            outputTable.Columns.Add("dniNaWokandzie", typeof(double));
-            outputTable.Columns.Add("dniWokand", typeof(double));
-            outputTable.Columns.Add("pocztaWyslana1", typeof(int));
-            outputTable.Columns.Add("ilPocztyNaDniBezWokand", typeof(double));
-            outputTable.Columns.Add("ilosCzynnsci1", typeof(int));
-            outputTable.Columns.Add("iloscCzynnosciNaDniBezWokand1", typeof(double));
-            outputTable.Columns.Add("ilPocztyNaJednaCzynnoscWykonana", typeof(double));
-            outputTable.Columns.Add("ilosCzynnsci2", typeof(int));
-            outputTable.Columns.Add("iloscCzynnosciNaDniBezWokand2", typeof(double));
-            outputTable.Columns.Add("SumaCzynnosci", typeof(int));
-            outputTable.Columns.Add("iloscCzynnosciNaDniBezWokand3", typeof(double));
-            outputTable.Columns.Add("iloscCzynnosciBezOkreslonejdatyWykonani", typeof(double));
-
-            return outputTable;
-        }
-
-        private DataTable danejednegoSedziego(DataTable daneSedziow, int idSedziego)
-        {
-            DataRow[] daneSedziego;
-
-            DataTable sedzia = new DataTable();
-            sedzia.Columns.Add("kolumna", typeof(int));
-            sedzia.Columns.Add("wartosc", typeof(string));
-            string txt = "id_sedziego='" + idSedziego.ToString().Trim() + "'";
-            daneSedziego = daneSedziow.Select(txt);
-            foreach (DataRow dRow in daneSedziego)
-            {
-                DataRow wierszSedziego = sedzia.NewRow();
-                wierszSedziego[0] = dRow[0];
-                wierszSedziego[1] = dRow[1];
-                sedzia.Rows.Add(wierszSedziego);
-            }
-            return sedzia;
-        }
- */
-        /// <summary>
-        ///
-        /// </summary>
-        /// <param name="idDzialu"></param>
-        /// <param name="idTabeli"></param>
-        /// <param name="poczatek"></param>
-        /// <param name="koniec"></param>
-        /// <param name="typTabeli"></param>
-        /// <returns></returns>
-        /*
-        public DataTable generatorDanychTabeliSedziowskiej(int idDzialu, int idTabeli, DateTime poczatek, DateTime koniec, int typTabeli)
-        {
-            DataTable sedziowie = generuj_dane_sedziow(idDzialu, idTabeli);
-            if (sedziowie.Rows.Count == 0)
-            {
-                return null;
-            }
-            DataTable daneStatystyczne = generujDaneDoTabeli(idDzialu, idTabeli, poczatek, koniec);
-
-            DataTable wyniki = TabelaTyp2();
-            int licznik = 1;
-            foreach (DataRow sedzia in sedziowie.Rows)
-            {
-                DataRow wierszStatystyczny = wyniki.NewRow();
-                wierszStatystyczny[0] = licznik;
-                wierszStatystyczny[1] = sedzia[0];
-                wierszStatystyczny[2] = sedzia[1].ToString().Trim() + " " + sedzia[2].ToString().Trim();
-                wierszStatystyczny[3] = funkcja(int.Parse(sedzia[4].ToString().Trim()));
-                DataTable daneNatematSedziego = danejednegoSedziego(daneStatystyczne, int.Parse(sedzia[0].ToString().Trim()));
-                foreach (DataRow wierszDanych in daneNatematSedziego.Rows)
-                {
-                    int kolumna = int.Parse(wierszDanych[1].ToString().Trim());
-                    wierszStatystyczny[3 + kolumna] = wierszDanych[0];
-                }
-                wyniki.Rows.Add(wierszStatystyczny);
-            }
-            return wyniki;
-        }
-        */
-
-        #endregion private methode
     } // end of class
 }

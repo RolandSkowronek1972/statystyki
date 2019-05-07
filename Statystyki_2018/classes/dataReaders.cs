@@ -1,10 +1,16 @@
-﻿using OfficeOpenXml;
+﻿/*
+Last Update:
+     - version 1.190414
+Creation date: 2018-11-21
+
+*/
+
+using OfficeOpenXml;
 using System;
 using System.Collections.Generic;
 using System.Configuration;
 using System.Data;
 using System.Data.SqlClient;
-
 using System.Linq;
 
 namespace stat2018
@@ -236,33 +242,6 @@ namespace stat2018
             parameters.Rows.Add("@_id", id_);
             return Common.getQuerryValue("SELECT   rtrim([nazwa]) FROM [funkcje]  where [rodzaj]=2 and ident=@_id", con_str, parameters);
         }
-
-        /*
-        private DataSet kwerendy_xl(string cs, string kwe, int id_dzialu, int id_tabeli, DateTime poczatek, DateTime koniec)
-        {
-            DataSet ds_x = new DataSet();
-            try
-            {
-                SqlConnection conn_x = new SqlConnection(cs);
-                conn_x.Open();
-                SqlDataAdapter da_x = new SqlDataAdapter();
-
-                da_x.SelectCommand = new SqlCommand(kwe, conn_x);
-                da_x.SelectCommand.Parameters.AddWithValue("@id_dzialu", id_dzialu);
-                da_x.SelectCommand.Parameters.AddWithValue("@id_tabeli", id_tabeli);
-                da_x.SelectCommand.Parameters.AddWithValue("@data_1", poczatek);
-                da_x.SelectCommand.Parameters.AddWithValue("@data_2", koniec);
-                da_x.Fill(ds_x);
-                conn_x.Close();
-            }
-            catch (Exception ev)
-            {
-                return null;
-                // status = status + "Bład odczytu kwerendy " + kwe + "  " + ev.Message + "<br>";
-            }
-            return ds_x;
-        }
-        */
 
         public DataTable generuj_dane_do_tabeli_sedziowskiej_2018(int id_dzialu, int id_tabeli, DateTime poczatek, DateTime koniec, int il_kolumn, string tenplik)
         {

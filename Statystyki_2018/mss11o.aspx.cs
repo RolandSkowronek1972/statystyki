@@ -15,7 +15,7 @@ namespace stat2018
         public common cm = new common();
         public dataReaders dr = new dataReaders();
         public datyDoMSS datyMSS = new datyDoMSS();
-        private DateTime dataPoczatkuOkresu = DateTime.Parse ( "1900-01-01");
+        private DateTime dataPoczatkuOkresu = DateTime.Parse("1900-01-01");
         private DateTime dataKoncaOkresu = DateTime.Parse("1900-01-01");
 
         protected void Page_Load(object sender, EventArgs e)
@@ -64,7 +64,6 @@ namespace stat2018
 
         protected void odswierz()
         {
-            
             string idWydzialu = "'" + (string)Session["id_dzialu"] + "'";
             id_dzialu.Text = (string)Session["txt_dzialu"];
 
@@ -86,7 +85,9 @@ namespace stat2018
                 tabelaGlowna.AppendLine(tworztabeleMSS("1.1.b", naglowekTabeliDzialu_1_1_b(), tabelaBocznaDzialu_1_1_b(), tabelaDanych, 1, 3, 1, 4, idWydzialuNumerycznie, false, "Zażalenia w ramach właściwości poziomej (dotyczy dz. 1.1.1.2, w. 2 i 15 lit. b)"));
                 tabelaGlowna.AppendLine(tworztabeleMSS("1.1.c", naglowekTabeliDzialu_1_1_c(), tabelaBocznaDzialu_1_1_c(), tabelaDanych, 1, 9, 2, 1, idWydzialuNumerycznie, false, "W tym: (skarga kasacyjna) (dział 1.1.1.2. wiersz 17 kol. 3 lit. c)"));
                 tabelaGlowna.AppendLine(tworztabeleMSS("1.1.d", naglowekTabeliDzialu_1_1_d(), tabelaBocznaDzialu_1_1_d(), tabelaDanych, 4, 10, 1, 15, idWydzialuNumerycznie, false, "Ewidencja spraw z zakresu ubezpieczeń społecznych – wg podmiotów"));
-                
+                tabelaGlowna.AppendLine(tworztabeleMSS("1.1.d", naglowekTabeliDzialu_1_1_d(), tabelaBocznaDzialu_1_1_d(), tabelaDanych, 4, 10, 1, 15, idWydzialuNumerycznie, false, "Ewidencja spraw z zakresu ubezpieczeń społecznych – wg podmiotów"));
+                tabelaGlowna.AppendLine(tworztabeleMSS("1.1.2.1", naglowekTabeliDzialu_1_1_2_1(), tabelaBocznaDzialu_1_1_2_1(), tabelaDanych, 5, 85, 4, 15, idWydzialuNumerycznie, true, "Ewidencja spraw z zakresu prawa pracy –ogółem oraz I instancja"));
+
 
                 tblControl.Text = tabelaGlowna.ToString();
                 tablePlaceHolder.Controls.Add(tblControl);
@@ -606,6 +607,7 @@ namespace stat2018
         }
 
         #endregion dzial 1.1.1.2
+
         #region dzial 1.1.a
 
         private DataTable naglowekTabeliDzialu_1_1_a()
@@ -617,6 +619,7 @@ namespace stat2018
             dT.Rows.Add(new Object[] { 1, 3, 1, 1, "center", "Liczba spraw" });
             return dT;
         }
+
         private DataTable tabelaBocznaDzialu_1_1_a()
         {
             DataTable dT = schematTabeli();
@@ -625,7 +628,6 @@ namespace stat2018
             dT.Rows.Add(new Object[] { 1, 1, 2, 1, "wciecie borderAll", "Przekazanych Sądowi Najwyższemu ze skargą o stwierdzenie niezgodności z prawem" });
 
             dT.Rows.Add(new Object[] { 2, 1, 2, 1, "wciecie borderAll", "Przesłanych z Sądu Najwyższego w okresie sprawozdawczym (w.02 =w. 03 do 07)" });
-
 
             dT.Rows.Add(new Object[] { 3, 1, 1, 5, "wciecie borderAll", "w których Sąd Najwyższy" });
             dT.Rows.Add(new Object[] { 3, 2, 1, 1, "wciecie borderAll", "odmówił przyjęcia skargi (art.424<sup>9</sup> kpc)" });
@@ -636,7 +638,9 @@ namespace stat2018
 
             return dT;
         }
-        #endregion
+
+        #endregion dzial 1.1.a
+
         #region dzial 1.1.b
 
         private DataTable naglowekTabeliDzialu_1_1_b()
@@ -652,6 +656,7 @@ namespace stat2018
 
             return dT;
         }
+
         private DataTable tabelaBocznaDzialu_1_1_b()
         {
             DataTable dT = schematTabeli();
@@ -663,14 +668,16 @@ namespace stat2018
             dT.Rows.Add(new Object[] { 3, 1, 1, 1, "wciecie borderAll", "Uz" });
             return dT;
         }
-        #endregion
+
+        #endregion dzial 1.1.b
+
         #region dzial 1.1.c
 
         private DataTable naglowekTabeliDzialu_1_1_c()
         {
-
             return naglowekTabeliDzialu_1_1_a();
         }
+
         private DataTable tabelaBocznaDzialu_1_1_c()
         {
             DataTable dT = schematTabeli();
@@ -691,12 +698,13 @@ namespace stat2018
 
             return dT;
         }
-        #endregion
+
+        #endregion dzial 1.1.c
+
         #region dzial 1.1.d
 
         private DataTable naglowekTabeliDzialu_1_1_d()
         {
-
             DataTable dT = schematTabeli();
             dT.Clear();
             //                         W  K  CS RS   style"    text"
@@ -726,6 +734,7 @@ namespace stat2018
             dT.Rows.Add(new Object[] { 4, 14, 1, 1, "center col_100", "w tym w wyniku cofnięcia pozwu/wniosku/skargi" });
             return dT;
         }
+
         private DataTable tabelaBocznaDzialu_1_1_d()
         {
             DataTable dT = schematTabeli();
@@ -744,8 +753,263 @@ namespace stat2018
 
             return dT;
         }
-        #endregion
 
+        #endregion dzial 1.1.d
+
+        #region dzial 1.1.2.1
+
+        private DataTable naglowekTabeliDzialu_1_1_2_1()
+        {
+            DataTable dT = schematTabeli();
+            dT.Clear();
+            //                         W  K  CS RS   style"    text"
+            dT.Rows.Add(new Object[] { 1, 1, 4, 5, "center", "SPRAWY Z REPERTORIUM" });
+            //dT.Rows.Add(new Object[] { 1, 4, 1, 5, "center", "Symbol" });
+            dT.Rows.Add(new Object[] { 1, 5, 1, 5, "center col_100", "Pozostało z ubiegłego roku" });
+            dT.Rows.Add(new Object[] { 1, 6, 1, 5, "center", "Wpłynęło razem" });
+            dT.Rows.Add(new Object[] { 1, 7, 10, 1, "center ", "Załatwiono" });
+            dT.Rows.Add(new Object[] { 1, 17, 2, 2, "center col_100", "Odroczono" });
+            dT.Rows.Add(new Object[] { 1, 18, 1, 5, "center col_100", "Pozostało na okres następny" });
+
+            dT.Rows.Add(new Object[] { 2, 7, 1, 4, "center col_100", "Razem" });
+            dT.Rows.Add(new Object[] { 2, 8, 9, 1, "center col_100", "z tego" });
+
+            dT.Rows.Add(new Object[] { 3, 8, 1, 3, "center col_100", "uwzględniono w całości lub w części" });
+            dT.Rows.Add(new Object[] { 3, 9, 1, 3, "center col_100", "oddalono" });
+            dT.Rows.Add(new Object[] { 3, 10, 1, 3, "center col_100", "zwrócono" });
+            dT.Rows.Add(new Object[] { 3, 11, 1, 3, "center col_100", "odrzucono" });
+            dT.Rows.Add(new Object[] { 3, 12, 4, 1, "center col_100", "umorzono" });
+            dT.Rows.Add(new Object[] { 3, 16, 1, 3, "center col_100", "Inne załatwienia" });
+
+            dT.Rows.Add(new Object[] { 3, 17, 1, 3, "center col_100", "ogółem" });
+            dT.Rows.Add(new Object[] { 3, 18, 1, 3, "center col_100", "w tym publikację orzeczenia" });
+
+            dT.Rows.Add(new Object[] { 4, 12, 1, 2, "center col_100", "ogółem" });
+            dT.Rows.Add(new Object[] { 4, 13, 3, 1, "center ", "w tym w wyniku" });
+
+            dT.Rows.Add(new Object[] { 5, 13, 1, 1, "center col_100", "zawarcia ugody przed sądem" });
+            dT.Rows.Add(new Object[] { 5, 14, 1, 1, "center col_100", "w tym w wyniku cofnięcia pozwu/wniosku/skargi" });
+            dT.Rows.Add(new Object[] { 5, 15, 1, 1, "center col_100", "mediacji" });
+
+            return dT;
+        }
+
+        private DataTable tabelaBocznaDzialu_1_1_2_1()
+        {
+            DataTable dT = schematTabeli();
+            dT.Clear();
+            //                         W  K  CS RS   style"    text"
+            dT.Rows.Add(new Object[] { 1, 1, 3, 1, "wciecie borderAll", "OGÓŁEM  I i II instancja (wiersze 02+dz. 1.1.2.2. w. 01)" });
+            dT.Rows.Add(new Object[] { 1, 4, 1, 1, " center", "-" });
+            dT.Rows.Add(new Object[] { 2, 1, 3, 1, "wciecie borderAll", "Ogółem I instancja( w. 02=w. 03+69+70+84+85)" });
+            dT.Rows.Add(new Object[] { 2, 4, 1, 1, " center", "-" });
+            dT.Rows.Add(new Object[] { 3, 1, 3, 1, "wciecie borderAll", "rep. P – razem (wiersze 04 do 15, 18 do 68)" });
+            dT.Rows.Add(new Object[] { 3, 4, 1, 1, " center", "-" });
+            dT.Rows.Add(new Object[] { 4, 1, 3, 1, "wciecie borderAll", "Związane z innym sposobem ustania stosunku pracy" });
+            dT.Rows.Add(new Object[] { 4, 4, 1, 1, " center", "404" });
+
+            dT.Rows.Add(new Object[] { 5, 1, 2, 2, "wciecie borderAll", "O nawiązanie stosunku pracy i roszczenia o odszkodowanie za niezawarcie umowy przyrzeczonej dotyczy " });
+            dT.Rows.Add(new Object[] { 5, 3, 1, 1, "wciecie ", "kobiet" });
+            dT.Rows.Add(new Object[] { 5, 4, 1, 1, " center", "406dk" });
+            dT.Rows.Add(new Object[] { 6, 3, 1, 1, "wciecie ", "mężczyzn" });
+            dT.Rows.Add(new Object[] { 6, 4, 1, 1, " center", "406m" });
+            dT.Rows.Add(new Object[] { 7, 1, 2, 2, "wciecie borderAll", "O wynagrodzenie za pracę (z wyjątkiem objętych symbolami 401, 402, 404, 409 i 467)  dotyczy " });
+            dT.Rows.Add(new Object[] { 7, 3, 1, 1, "wciecie ", "kobiet" });
+            dT.Rows.Add(new Object[] { 7, 4, 1, 1, " center", "406dk" });
+            dT.Rows.Add(new Object[] { 8, 3, 1, 1, "wciecie ", "mężczyzn" });
+            dT.Rows.Add(new Object[] { 8, 4, 1, 1, " center", "406m" });
+            dT.Rows.Add(new Object[] { 9, 1, 3, 1, "wciecie borderAll", "O wynagrodzenie za pracę w godzinach nadliczbowych" });
+            dT.Rows.Add(new Object[] { 9, 4, 1, 1, " center", "404" });
+
+            dT.Rows.Add(new Object[] { 10, 1, 1, 5, "wciecie ", "O urlop" });
+            dT.Rows.Add(new Object[] { 10, 2, 2, 1, "wciecie ", "wypoczynkowy lub ekwiwalent pieniężny za urlop" });
+            dT.Rows.Add(new Object[] { 10, 4, 1, 1, " center", "410" });
+            dT.Rows.Add(new Object[] { 11, 2, 1, 2, "wciecie ", "Macierzyński" });
+            dT.Rows.Add(new Object[] { 11, 3, 1, 1, " center", "kobiet" });
+            dT.Rows.Add(new Object[] { 11, 4, 1, 1, " center", "410macdk" });
+
+            dT.Rows.Add(new Object[] { 12, 3, 1, 1, " center", "mężczyzn" });
+            dT.Rows.Add(new Object[] { 12, 4, 1, 1, " center", "410macdm" });
+
+            dT.Rows.Add(new Object[] { 13, 2, 1, 2, "wciecie ", "wychowawczy" });
+            dT.Rows.Add(new Object[] { 13, 3, 1, 1, " center", "kobiet" });
+            dT.Rows.Add(new Object[] { 13, 4, 1, 1, " center", "410wychdk" });
+
+            dT.Rows.Add(new Object[] { 14, 3, 1, 1, " center", "mężczyzn" });
+            dT.Rows.Add(new Object[] { 14, 4, 1, 1, " center", "410wychdm" });
+
+            dT.Rows.Add(new Object[] { 15, 1, 1, 3, "wciecie ", "Związane ze szczególną ochroną pracy kobiet" });
+            dT.Rows.Add(new Object[] { 15, 2, 2, 1, "wciecie ", "razem" });
+            dT.Rows.Add(new Object[] { 15, 4, 1, 1, " center", "411" });
+            dT.Rows.Add(new Object[] { 16, 2, 1, 2, "wciecie ", "w tym" });
+            dT.Rows.Add(new Object[] { 16, 3, 1, 1, " center", "w ciąży" });
+            dT.Rows.Add(new Object[] { 16, 4, 1, 1, " center", "411c" });
+
+            dT.Rows.Add(new Object[] { 17, 3, 1, 1, " center", "karmiących dziecko piersią w okresie czasu pracy" });
+            dT.Rows.Add(new Object[] { 17, 4, 1, 1, " center", "411p" });
+
+            dT.Rows.Add(new Object[] { 18, 1, 3, 1, "wciecie borderAll", "Roszczenia dotyczące uprawnień pracowników związanych z rodzicielstwem /określone w dziale ósmym Kodeksu pracy (z wyłączeniem spraw o symbolach 401c, 410mac, 410wych, 411c i 411p)" });
+            dT.Rows.Add(new Object[] { 18, 4, 1, 1, " center", "482" });
+            dT.Rows.Add(new Object[] { 19, 1, 3, 1, "wciecie borderAll", "Związane ze szczególną ochroną pracy młodocianych" });
+            dT.Rows.Add(new Object[] { 19, 4, 1, 1, " center", "412" });
+            dT.Rows.Add(new Object[] { 20, 1, 3, 1, "wciecie borderAll", "O świadczenia z tytułu czasowej niezdolności do pracy" });
+            dT.Rows.Add(new Object[] { 20, 4, 1, 1, " center", "420" });
+
+            dT.Rows.Add(new Object[] { 21, 1, 2, 3, "wciecie borderAll", "O odprawę" });
+            dT.Rows.Add(new Object[] { 21, 3, 1, 1, "wciecie borderAll", "Rentową" });
+            dT.Rows.Add(new Object[] { 21, 4, 1, 1, " center", "421r" });
+
+            dT.Rows.Add(new Object[] { 22, 3, 1, 1, "wciecie borderAll", "Emerytalną" });
+            dT.Rows.Add(new Object[] { 22, 4, 1, 1, " center", "421em" });
+
+            dT.Rows.Add(new Object[] { 23, 3, 1, 1, "wciecie borderAll", "pieniężną z tytułu rozwiązania stosunku pracy z przyczyn niedotyczących pracowników" });
+            dT.Rows.Add(new Object[] { 23, 4, 1, 1, " center", "422" });
+
+            dT.Rows.Add(new Object[] { 24, 1, 3, 1, "wciecie borderAll", "O nagrody jubileuszowe" });
+            dT.Rows.Add(new Object[] { 24, 4, 1, 1, " center", "423" });
+            dT.Rows.Add(new Object[] { 25, 1, 3, 1, "wciecie borderAll", "Dotyczące dochodzenia świadczeń z Funduszu Gwarantowanych Świadczeń Pracowniczych na podstawie ustawy z dnia 13 lipca 2006 r. o ochronie roszczeń pracowniczych w razie niewypłacalności pracodawcy (Dz.U. z 2018 r. poz. 1433)" });
+            dT.Rows.Add(new Object[] { 25, 4, 1, 1, " center", "430" });
+
+            dT.Rows.Add(new Object[] { 26, 1, 3, 1, "wciecie borderAll", "Dotyczące powództwa związków zawodowych o zwrot funduszowi świadczeń socjalnych środków wydatkowanych niezgodnie z przepisami ustawy lub o przekazanie należnych środków na fundusz – ustawa z 4 marca 1994 r. o zakładowym funduszu świadczeń socjalnych (Dz.U. z 2017 r. poz. 2191 ze zm.)" });
+            dT.Rows.Add(new Object[] { 26, 4, 1, 1, " center", "431" });
+            dT.Rows.Add(new Object[] { 27, 1, 3, 1, "wciecie borderAll", "O uchylenie uchwały organu spółdzielni, w wypadku gdy treść uchwały dotyczy spółdzielczego stosunku pracy" });
+            dT.Rows.Add(new Object[] { 27, 4, 1, 1, " center", "435" });
+            dT.Rows.Add(new Object[] { 28, 1, 3, 1, "wciecie borderAll", "O roszczenia na tle spółdzielczej umowy o pracę" });
+            dT.Rows.Add(new Object[] { 28, 4, 1, 1, " center", "439" });
+
+            dT.Rows.Add(new Object[] { 29, 1, 3, 1, "wciecie borderAll", "O odszkodowanie należne pracownikowi za okres obowiązywania zakazu konkurencji" });
+            dT.Rows.Add(new Object[] { 29, 4, 1, 1, " center", "450" });
+            dT.Rows.Add(new Object[] { 30, 1, 3, 1, "wciecie borderAll", "O odszkodowanie z tytułu wypadku przy pracy lub choroby zawodowej (nie dotyczy wypadku przy pracy w gospodarstwie rolnym)" });
+            dT.Rows.Add(new Object[] { 30, 4, 1, 1, " center", "451" });
+            dT.Rows.Add(new Object[] { 31, 1, 3, 1, "wciecie borderAll", "O ustalenie wypadku przy pracy lub choroby zawodowej" });
+            dT.Rows.Add(new Object[] { 31, 4, 1, 1, " center", "452" });
+            dT.Rows.Add(new Object[] { 32, 1, 3, 1, "wciecie borderAll", "Inne, pozostające w związku z wypadkiem lub chorobą zawodową" });
+            dT.Rows.Add(new Object[] { 32, 4, 1, 1, " center", "455" });
+            dT.Rows.Add(new Object[] { 33, 1, 3, 1, "wciecie borderAll", "O świadczenia dochodzone od pracodawcy na podstawie przepisów prawa cywilnego" });
+            dT.Rows.Add(new Object[] { 33, 4, 1, 1, " center", "455c" });
+            dT.Rows.Add(new Object[] { 34, 1, 3, 1, "wciecie borderAll", "Pozbawienie tytułu wykonawczego wykonalności (art. 840 kpc)" });
+            dT.Rows.Add(new Object[] { 34, 4, 1, 1, " center", "456" });
+            dT.Rows.Add(new Object[] { 35, 1, 3, 1, "wciecie borderAll", "Spory pracowników i byłych pracowników (także rolników i rybaków) o wydanie bezpłatnych akcji" });
+            dT.Rows.Add(new Object[] { 35, 4, 1, 1, " center", "457" });
+
+            dT.Rows.Add(new Object[] { 36, 1, 2, 2, "wciecie borderAll", "O odszkodowanie z tytułu naruszenia zasady równego traktowania w zatrudnieniu dotyczy (art. 183<sup>d</sup> kp)" });
+            dT.Rows.Add(new Object[] { 36, 1, 3, 1, "wciecie borderAll", "kobiet" });
+            dT.Rows.Add(new Object[] { 36, 4, 1, 1, " center", "458dk" });
+            dT.Rows.Add(new Object[] { 37, 1, 3, 1, "wciecie borderAll", "mężczyzn" });
+            dT.Rows.Add(new Object[] { 37, 4, 1, 1, " center", "458m" });
+
+            dT.Rows.Add(new Object[] { 38, 1, 2, 2, "wciecie borderAll", "O odszkodowanie w związku z  molestowaniem seksualnym, jako jedną z form dyskryminacji w miejscu pracy (art.183<sup>a</sup>§ 6 kp w zw. z art. 183<sup>d</sup> kp)" });
+            dT.Rows.Add(new Object[] { 38, 1, 3, 1, "wciecie borderAll", "kobiet" });
+            dT.Rows.Add(new Object[] { 38, 4, 1, 1, " center", "459dk" });
+            dT.Rows.Add(new Object[] { 39, 1, 3, 1, "wciecie borderAll", "mężczyzn" });
+            dT.Rows.Add(new Object[] { 39, 4, 1, 1, " center", "459dm" });
+
+            dT.Rows.Add(new Object[] { 40, 1, 2, 2, "wciecie borderAll", "O zadośćuczynienie w związku z mobbingiem (art. 94<sup>3</sup>§3 kp) " });
+            dT.Rows.Add(new Object[] { 40, 1, 3, 1, "wciecie borderAll", "kobiet" });
+            dT.Rows.Add(new Object[] { 40, 4, 1, 1, " center", "462dk" });
+            dT.Rows.Add(new Object[] { 41, 1, 3, 1, "wciecie borderAll", "mężczyzn" });
+            dT.Rows.Add(new Object[] { 41, 4, 1, 1, " center", "462dm" });
+
+            dT.Rows.Add(new Object[] { 42, 1, 2, 2, "wciecie borderAll", "O odszkodowanie  w związku z mobbingiem (art. 94<sup>3</sup>§3 kp) " });
+            dT.Rows.Add(new Object[] { 42, 1, 3, 1, "wciecie borderAll", "kobiet" });
+            dT.Rows.Add(new Object[] { 42, 4, 1, 1, " center", "463dk" });
+            dT.Rows.Add(new Object[] { 43, 1, 3, 1, "wciecie borderAll", "mężczyzn" });
+            dT.Rows.Add(new Object[] { 43, 4, 1, 1, " center", "463dm" });
+
+            dT.Rows.Add(new Object[] { 44, 1, 3, 1, "wciecie borderAll", "Dyskryminacja w zatrudnieniu (art. 113 kp)" });
+            dT.Rows.Add(new Object[] { 44, 4, 1, 1, " center", "461" });
+
+            dT.Rows.Add(new Object[] { 45, 1, 3, 1, "wciecie borderAll", "O roszczenia niemajątkowe wynikające z naruszenia dóbr osobistych pracownika" });
+            dT.Rows.Add(new Object[] { 45, 4, 1, 1, " center", "480" });
+            dT.Rows.Add(new Object[] { 46, 1, 3, 1, "wciecie borderAll", "O ustalenie wykonywania pracy w szczególnych warunkach lub pracy o szczególnym charakterze" });
+            dT.Rows.Add(new Object[] { 46, 4, 1, 1, " center", "485" });
+            dT.Rows.Add(new Object[] { 47, 1, 3, 1, "wciecie borderAll", "Inne sprawy o ustalenie na podstawie art. 189 kpc wynikające ze stosunku pracy" });
+            dT.Rows.Add(new Object[] { 47, 4, 1, 1, " center", "466" });
+            dT.Rows.Add(new Object[] { 48, 1, 3, 1, "wciecie borderAll", "O odprawę pośmiertną" });
+            dT.Rows.Add(new Object[] { 48, 4, 1, 1, " center", "468" });
+            dT.Rows.Add(new Object[] { 49, 1, 3, 1, "wciecie borderAll", "O premię lub nagrodę" });
+            dT.Rows.Add(new Object[] { 49, 4, 1, 1, " center", "439" });
+            dT.Rows.Add(new Object[] { 50, 1, 3, 1, "wciecie borderAll", "O wydanie dokumentu związanego ze stosunkiem pracy, innego niż świadectwo pracy (np. Rp7, PIT)" });
+            dT.Rows.Add(new Object[] { 50, 4, 1, 1, " center", "470" });
+            dT.Rows.Add(new Object[] { 51, 1, 3, 1, "wciecie borderAll", "O diety i inne świadczenia związane z podróżą służbową, " });
+            dT.Rows.Add(new Object[] { 51, 4, 1, 1, " center", "472" });
+            dT.Rows.Add(new Object[] { 52, 1, 3, 1, "wciecie borderAll", "O ekwiwalent za używanie własnej odzieży i obuwia roboczego oraz pranie odzieży roboczej" });
+            dT.Rows.Add(new Object[] { 52, 4, 1, 1, " center", "473" });
+            dT.Rows.Add(new Object[] { 53, 1, 3, 1, "wciecie borderAll", "O świadczenia z zakładowego funduszu świadczeń socjalnych" });
+            dT.Rows.Add(new Object[] { 53, 4, 1, 1, " center", "475" });
+            dT.Rows.Add(new Object[] { 54, 1, 3, 1, "wciecie borderAll", "O jednorazową odprawę warunkową z tytułu nabycia prawa do świadczenia przedemerytalnego" });
+            dT.Rows.Add(new Object[] { 54, 4, 1, 1, " center", "476" });
+            dT.Rows.Add(new Object[] { 55, 1, 3, 1, "wciecie borderAll", "O deputat węglowy (wydanie bezpłatnego węgla w naturze) lub o ekwiwalent pieniężny z tytułu prawa do bezpłatnego węgla" });
+            dT.Rows.Add(new Object[] { 55, 4, 1, 1, " center", "477" });
+            dT.Rows.Add(new Object[] { 56, 1, 3, 1, "wciecie borderAll", "O koszty używania przez pracownika prywatnego samochodu do celów służbowych" });
+            dT.Rows.Add(new Object[] { 56, 4, 1, 1, " center", "474" });
+            dT.Rows.Add(new Object[] { 57, 1, 3, 1, "wciecie borderAll", "O inne, niż przewidziane wyżej, świadczenia wynikające z układów zbiorowych pracy lub porozumień zbiorowych (pakietów socjalnych)" });
+            dT.Rows.Add(new Object[] { 57, 4, 1, 1, " center", "478" });
+            dT.Rows.Add(new Object[] { 58, 1, 3, 1, "wciecie borderAll", "O roszczenia związane z podnoszeniem kwalifikacji zawodowych pracowników" });
+            dT.Rows.Add(new Object[] { 58, 4, 1, 1, " center", "479" });
+            dT.Rows.Add(new Object[] { 59, 1, 1, 4, "wciecie borderAll", "O odszkodowanie" });
+            dT.Rows.Add(new Object[] { 59, 2, 1, 2, "wciecie borderAll", "za mienie" });
+            dT.Rows.Add(new Object[] { 59, 3, 1, 1, "wciecie borderAll", "nie powierzone" });
+            dT.Rows.Add(new Object[] { 59, 4, 1, 1, " center", "415" });
+            dT.Rows.Add(new Object[] { 60, 3, 1, 1, "wciecie borderAll", "powierzone łącznie ze sprawami z tytułu odpowiedzialności wspólnej " });
+            dT.Rows.Add(new Object[] { 60, 4, 1, 1, " center", "416" });
+            dT.Rows.Add(new Object[] { 61, 2, 2, 1, "wciecie borderAll", "przysługujące pracodawcy w razie nieuzasadnionego rozwiązania przez pracownika umowy o pracę bez wypowiedzenia" });
+            dT.Rows.Add(new Object[] { 61, 4, 1, 1, " center", "417" });
+            dT.Rows.Add(new Object[] { 62, 2, 2, 1, "wciecie borderAll", "z tytułu naruszenia przez pracownika zakazu konkurencji" });
+            dT.Rows.Add(new Object[] { 62, 4, 1, 1, " center", "417" });
+
+            dT.Rows.Add(new Object[] { 63, 1, 3, 1, "wciecie borderAll", "O świadczenia dochodzone od pracowników na podstawie przepisów prawa cywilnego" });
+            dT.Rows.Add(new Object[] { 63, 4, 1, 1, " center", "414" });
+            dT.Rows.Add(new Object[] { 64, 1, 3, 1, "wciecie borderAll", "O ustalenie wykonywania pracy u innego pracodawcy w okresie urlopu bezpłatnego" });
+            dT.Rows.Add(new Object[] { 64, 4, 1, 1, " center", "485" });
+            dT.Rows.Add(new Object[] { 65, 1, 3, 1, "wciecie borderAll", "O zwrot mienia powierzonego" });
+            dT.Rows.Add(new Object[] { 65, 4, 1, 1, " center", "486" });
+            dT.Rows.Add(new Object[] { 66, 1, 3, 1, "wciecie borderAll", "O zwrot kosztów poniesionych przez pracodawcę w związku z podnoszeniem kwalifikacji zawodowych pracowników" });
+            dT.Rows.Add(new Object[] { 66, 4, 1, 1, " center", "487" });
+            dT.Rows.Add(new Object[] { 67, 1, 3, 1, "wciecie borderAll", "O roszczenia niemajątkowe wynikające z naruszenia dóbr osobistych pracodawcy" });
+            dT.Rows.Add(new Object[] { 67, 4, 1, 1, " center", "488" });
+            dT.Rows.Add(new Object[] { 68, 1, 3, 1, "wciecie borderAll", "Inne bez symbolu i o symbolu wyżej niewymienionym" });
+            dT.Rows.Add(new Object[] { 68, 4, 1, 1, " center", "-" });
+            dT.Rows.Add(new Object[] { 69, 1, 3, 1, "wciecie borderAll", "Rep. Np (nakazowe, upominawcze i europejskie postępowanie nakazowe)" });
+            dT.Rows.Add(new Object[] { 69, 4, 1, 1, " center", "-" });
+            dT.Rows.Add(new Object[] { 70, 1, 3, 1, "wciecie borderAll", "Rep. Po -  (wiersz  71 do 83)" });
+            dT.Rows.Add(new Object[] { 70, 4, 1, 1, " center", "-" });
+
+            dT.Rows.Add(new Object[] { 71, 1, 3, 1, "wciecie borderAll", "O nadanie klauzuli wykonalności" });
+            dT.Rows.Add(new Object[] { 72, 4, 1, 1, " center", "104" });
+            dT.Rows.Add(new Object[] { 73, 1, 3, 1, "wciecie borderAll", "O zwolnienie od kosztów sądowych i/lub ustanowienie radcy prawnego, adwokata" });
+            dT.Rows.Add(new Object[] { 73, 4, 1, 1, " center", "105" });
+            dT.Rows.Add(new Object[] { 74, 1, 3, 1, "wciecie borderAll", "Uznanie orzeczenia sądu zagranicznego" });
+            dT.Rows.Add(new Object[] { 74, 4, 1, 1, " center", "107" });
+            dT.Rows.Add(new Object[] { 75, 1, 3, 1, "wciecie borderAll", "O wyznaczenie sądu" });
+            dT.Rows.Add(new Object[] { 75, 4, 1, 1, " center", "108" });
+            dT.Rows.Add(new Object[] { 76, 1, 3, 1, "wciecie borderAll", "O wyłączenie sędziego" });
+            dT.Rows.Add(new Object[] { 76, 4, 1, 1, " center", "109" });
+            dT.Rows.Add(new Object[] { 77, 1, 3, 1, "wciecie borderAll", "O odtworzenie akt " });
+            dT.Rows.Add(new Object[] { 77, 4, 1, 1, " center", "111" });
+            dT.Rows.Add(new Object[] { 78, 1, 3, 1, "wciecie borderAll", "O uznanie i stwierdzenie wykonalności wyroku sądu polubownego wydanego za granicą " });
+            dT.Rows.Add(new Object[] { 78, 4, 1, 1, " center", "113" });
+            dT.Rows.Add(new Object[] { 79, 1, 3, 1, "wciecie borderAll", "Dotyczące pomocy sądowej" });
+            dT.Rows.Add(new Object[] { 79, 4, 1, 1, " center", "135" });
+            dT.Rows.Add(new Object[] { 80, 1, 3, 1, "wciecie borderAll", "O zabezpieczenie roszczenia przed wszczęciem postępowania" });
+            dT.Rows.Add(new Object[] { 80, 4, 1, 1, " center", "136" });
+            dT.Rows.Add(new Object[] { 81, 1, 3, 1, "wciecie borderAll", "O zabezpieczenie dowodu przed wszczęciem postępowania" });
+            dT.Rows.Add(new Object[] { 81, 4, 1, 1, " center", "138a" });
+
+            dT.Rows.Add(new Object[] { 82, 1, 3, 1, "wciecie borderAll", "W sprawie odmowy rejestracji ponadzakładowego układu zbiorowego pracy " });
+            dT.Rows.Add(new Object[] { 82, 4, 1, 1, " center", "114a" });
+
+            dT.Rows.Add(new Object[] { 83, 1, 3, 1, "wciecie borderAll", "Inne bez symbolu i o symbolu wyżej niewymienionym" });
+            dT.Rows.Add(new Object[] { 83, 4, 1, 1, " center", "-" });
+            dT.Rows.Add(new Object[] { 84, 1, 3, 1, "wciecie borderAll", "Wykaz Kas-z wnioski o rozstrzygnięcie sporu zakładowego przez kolegium arbitrażu społecznego" });
+            dT.Rows.Add(new Object[] { 84, 4, 1, 1, " center", "-" });
+            dT.Rows.Add(new Object[] { 85, 1, 3, 1, "wciecie borderAll", "WSC skarga o stwierdzenie niezgodności z prawem – I inst." });
+            dT.Rows.Add(new Object[] { 85, 4, 1, 1, " center", "-" });
+
+            return dT;
+        }
+
+        #endregion dzial 1.1.2.1
 
         #endregion dane do tabeli
     }

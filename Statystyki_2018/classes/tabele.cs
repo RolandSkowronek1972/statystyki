@@ -22,7 +22,6 @@ namespace stat2018
             HeaderCell.RowSpan = rows;
             return HeaderCell;
         }
-
         public GridViewRow Grw(object sender)
         {
             GridViewRow HeaderGridRow = null;
@@ -285,7 +284,6 @@ namespace stat2018
                 }
             }
         }
-
         public void makeSumRow(DataTable table, GridViewRowEventArgs e, int przesuniecie)
         {
             DataTable tabelka = tabellaLiczbowa(table);
@@ -950,8 +948,6 @@ namespace stat2018
                 {
                     Arkusz.Cells[wiersz, kolumna, wiersz + rowSpan, kolumna + colSpan].Merge = true;
                     Arkusz.Cells[wiersz, kolumna, wiersz + rowSpan, kolumna + colSpan].Style.Border.BorderAround(OfficeOpenXml.Style.ExcelBorderStyle.Thin, System.Drawing.Color.Black);
-
-                    //Arkusz.Cells[wiersz, kolumna].Style.Border.BorderAround(OfficeOpenXml.Style.ExcelBorderStyle.Thin, System.Drawing.Color.Black);
                 }
                 catch (Exception ex)
                 {
@@ -960,7 +956,6 @@ namespace stat2018
             }
             Arkusz.Cells[wiersz, kolumna].Style.ShrinkToFit = true;
             Arkusz.Cells[wiersz, kolumna].Style.Border.BorderAround(OfficeOpenXml.Style.ExcelBorderStyle.Thin, System.Drawing.Color.Black);
-
             Arkusz.Cells[wiersz, kolumna].Value = tekst;
         }
 

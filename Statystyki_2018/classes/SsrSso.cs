@@ -1,11 +1,8 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
+using System.Configuration;
 using System.Data;
 using System.Data.SqlClient;
-using System.Data.Sql;
-using System.Configuration;
+
 namespace stat2018
 {
     public class SsrSso
@@ -13,44 +10,9 @@ namespace stat2018
         public common cm = new common();
         public string con_str = ConfigurationManager.ConnectionStrings["wap"].ConnectionString;
 
-     
-
-        public bool isLicence(string idWydzial)
-        {
-            bool result = false;
-
-
-            var conn = new SqlConnection(con_str);
-            using (SqlCommand sqlCmd = new SqlCommand("SELECT DISTINCT licencja FROM   wydzialy WHERE        (ident = @idWydzial)", conn))
-            {
-                try
-                {
-                    conn.Open();
-                    sqlCmd.Parameters.AddWithValue("@idWydzial", idWydzial);
-
-                    if (sqlCmd.ExecuteScalar().ToString().Trim() == "1")
-                    {
-                        result = true;
-                    }
-                    conn.Close();
-
-                }
-#pragma warning disable CS0168 // The variable 'ex' is declared but never used
-                catch (Exception ex)
-#pragma warning restore CS0168 // The variable 'ex' is declared but never used
-                {
-                    conn.Close();
-                }
-            } // end of using
-
-            conn.Close();
-
-            return result;
-        }
-
+    
         public DataTable getTabData1(string idWydzial, string idZakladki, string idSekcji, string idWiersza, string connectionString, DateTime dataPoczatku, DateTime dataKonca, int idSedziego)
         {
-
             DataTable dT = new DataTable();
             //section 1
             string query = "SELECT DISTINCT id_kolumny, kwerenda     FROM kwerendy2 WHERE (  id_zakladki =@id_zakladki) AND(id_sekcji = @id_sekcji) AND (id_wydzial = @id_wydzial) AND(id_wiersza = @id_wiersza) order by id_kolumny";
@@ -92,11 +54,8 @@ namespace stat2018
                 ddR[1] = dF[0].ToString();
 
                 result.Rows.Add(ddR);
-
-
             }
             return result;
         }
-
     }
 }

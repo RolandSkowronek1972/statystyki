@@ -20,23 +20,26 @@ namespace stat2018
 
         {
             var datadzisiejsza = DateTime.Now;
+            return datadzisiejsza.Year - 1 + "-01-01";
+            /*
+            var datadzisiejsza = DateTime.Now;
             switch (datadzisiejsza.Month)
             {
                 case 1: return datadzisiejsza.Year - 1 + "-01-01";
                 case 2:
                 case 3:
-                case 4: return datadzisiejsza.Year + "-01-01";
+                case 4:
                 case 5:
                 case 6:
-                case 7: return datadzisiejsza.Year + "-04-01";
+                case 7:
                 case 8:
                 case 9:
-                case 10: return datadzisiejsza.Year + "-07-01";
+                case 10:
                 case 11:
-                case 12: return datadzisiejsza.Year + "-10-01";
+                case 12:
                 default:
                     return datadzisiejsza.ToShortDateString();
-            }
+            }*/
         }// end of DataPoczatkowa
 
         public string DataKoncowa()

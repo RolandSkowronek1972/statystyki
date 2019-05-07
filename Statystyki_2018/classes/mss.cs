@@ -11,7 +11,7 @@ namespace stat2018
     {
         public common cm = new common();
         public string con_str = ConfigurationManager.ConnectionStrings["wap"].ConnectionString;
-
+        /*
         public bool isLicence(string idWydzial)
         {
             bool result = false;
@@ -38,6 +38,7 @@ namespace stat2018
             } // end of using
             return result;
         }
+        */
 
         public string kofUpdate(string id, string nr)
         {
@@ -292,7 +293,6 @@ namespace stat2018
         {
             DataTable parameters = cm.makeParameterTable();
             parameters.Rows.Add("@ident", id_dzialu);
-
             return cm.getQuerryValue("SELECT cs  FROM wydzialy_mss where ident=@ident ", con_str, parameters);
         }
 
@@ -313,7 +313,6 @@ namespace stat2018
         {
             DataTable parameters = cm.makeParameterTable();
             parameters.Rows.Add("@ident", id_sadu);
-
             return cm.getQuerryValue("SELECT sad  FROM wydzialy_mss where ident=@ident ", con_str, parameters);
         }// end of nazwaSadu
 
@@ -420,7 +419,6 @@ namespace stat2018
                 try
                 {
                     conn.Open();
-
                     sqlCmd.Parameters.AddWithValue("@kolumna", kolumna.Trim());
                     sqlCmd.Parameters.AddWithValue("@tabela", tabela.Trim());
                     sqlCmd.Parameters.AddWithValue("@dzial", id_dzialu.Trim());

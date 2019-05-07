@@ -211,7 +211,7 @@ namespace stat2018
         }// end of getQuerryValue
 
         //==================================================
-      
+
         public DataTable makeParameterTable()
         {
             DataTable parameters = new DataTable();
