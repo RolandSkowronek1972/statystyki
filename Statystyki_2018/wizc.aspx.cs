@@ -206,9 +206,9 @@ namespace stat2018
             DataTable tabelka01 = dr. generuj_dane_do_tabeli_wierszy2018(Date1.Date, Date2.Date, (string)Session["id_dzialu"], 7, 10,27, tenPlik);
             Session["tabelka007"] = tabelka01;
             pisz("tab_7_", 2, 16, tabelka01);
-         //   tab_7_w03_c01.Text = tabelka01.Rows[3][1].ToString().Trim();
-         //   tab_7_w04_c01.Text = tabelka01.Rows[4][1].ToString().Trim();
-         //   tab_7_w05_c01.Text = tabelka01.Rows[5][1].ToString().Trim();
+               tab_7_w03_c01.Text = tabelka01.Rows[3][1].ToString().Trim();
+               tab_7_w04_c01.Text = tabelka01.Rows[4][1].ToString().Trim();
+               tab_7_w05_c01.Text = tabelka01.Rows[5][1].ToString().Trim();
         }
 
         protected void tabela_8()

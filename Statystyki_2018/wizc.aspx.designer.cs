@@ -310,22 +310,22 @@ namespace stat2018 {
         protected global::System.Web.UI.WebControls.Label Label11;
         
         /// <summary>
-        /// tab_6_w01_c1 control.
+        /// tab_6_w01_c01 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox tab_6_w01_c1;
+        protected global::System.Web.UI.WebControls.TextBox tab_6_w01_c01;
         
         /// <summary>
-        /// tab_6_w02_c1 control.
+        /// tab_6_w02_c01 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox tab_6_w02_c1;
+        protected global::System.Web.UI.WebControls.TextBox tab_6_w02_c01;
         
         /// <summary>
         /// Label10 control.
