@@ -55,22 +55,54 @@
 
     <div>
 
-        <dx:ASPxGridView ID="grid" runat="server" EnableTheming="True" OnDataBinding="dataBinding" Theme="Moderno">
+        <dx:ASPxGridView ID="grid" 
+            runat="server" 
+            EnableTheming="True" 
+            OnDataBinding="dataBinding" 
+            Theme="Moderno"
+            EnableCallbackAnimation="True" 
+             ViewStateMode="Enabled">
            
-              <Settings ShowFilterRow="True" EnableFilterControlPopupMenuScrolling="True" ShowFilterBar="Auto" ShowFilterRowMenu="True" ShowGroupFooter="VisibleAlways" ShowHeaderFilterButton="True" ShowFooter="True" />
-         
+              <SettingsDetail ExportMode="All" />
+           
+           <SettingsPager AlwaysShowPager="True" 
+           NumericButtonCount="200" PageSize="1000">
+            </SettingsPager>
+            <Settings 
+                ShowFilterRow="True" 
+                EnableFilterControlPopupMenuScrolling="True" 
+                ShowFilterBar="Auto" 
+                ShowFilterRowMenu="True" 
+                ShowGroupFooter="VisibleAlways" />
+            <SettingsDataSecurity 
+                AllowDelete="False" 
+                AllowEdit="False" 
+                AllowInsert="False" />
+            <Styles>
+                <Header Wrap="True">
+                </Header>
+                <Cell Wrap="False">
+                </Cell>
+            </Styles>
+          
+            
         </dx:ASPxGridView>
         <br />
 
-        <dx:ASPxGridViewExporter ID="ASPxGridViewExporter1" runat="server" GridViewID="grid" PaperKind="A4" ExportedRowType="All" PrintSelectCheckBox="True" OnRenderBrick="ASPxGridViewExporter1_RenderBrick">
+        <dx:ASPxGridViewExporter ID="ASPxGridViewExporter1" 
+            runat="server" 
+            GridViewID="grid" 
+            PaperKind="A4" 
+            ExportedRowType="All" 
+            PrintSelectCheckBox="True" 
+            OnRenderBrick="ASPxGridViewExporter1_RenderBrick">
             <Styles>
                 <Header Wrap="True">
                 </Header>
             </Styles>
         </dx:ASPxGridViewExporter>
         <br />
-        <br />
-        <br />
+       
     </div>
     <asp:Label ID="Label1" runat="server" meta:resourcekey="Label1Resource1"></asp:Label>
 </asp:Content>

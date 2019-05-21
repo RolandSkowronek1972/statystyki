@@ -55,11 +55,27 @@
 
     <div>
 
-        <dx:ASPxGridView ID="ASPxGridView1" runat="server" ClientInstanceName="grid" AutoGenerateColumns="False" Theme="Moderno" EnableCallbackAnimation="True" OnDataBinding="GridDataBinding" ViewStateMode="Enabled"  >
-            <SettingsPager AlwaysShowPager="True" NumericButtonCount="200" PageSize="1000">
+        <dx:ASPxGridView ID="ASPxGridView1" 
+            runat="server" 
+            ClientInstanceName="grid" 
+            AutoGenerateColumns="False" 
+            Theme="Moderno" 
+            EnableCallbackAnimation="True" 
+            OnDataBinding="GridDataBinding" 
+            ViewStateMode="Enabled"  >
+            <SettingsPager AlwaysShowPager="True" 
+           NumericButtonCount="200" PageSize="1000">
             </SettingsPager>
-            <Settings ShowFilterRow="True" EnableFilterControlPopupMenuScrolling="True" ShowFilterBar="Auto" ShowFilterRowMenu="True" ShowGroupFooter="VisibleAlways" />
-            <SettingsDataSecurity AllowDelete="False" AllowEdit="False" AllowInsert="False" />
+            <Settings 
+                ShowFilterRow="True" 
+                EnableFilterControlPopupMenuScrolling="True" 
+                ShowFilterBar="Auto" 
+                ShowFilterRowMenu="True" 
+                ShowGroupFooter="VisibleAlways" />
+            <SettingsDataSecurity 
+                AllowDelete="False" 
+                AllowEdit="False" 
+                AllowInsert="False" />
             <Styles>
                 <Header Wrap="True">
                 </Header>
@@ -70,7 +86,12 @@
 
         <asp:SqlDataSource ID="SqlDataSource1" runat="server" CancelSelectOnNullParameter="False" ConnectionString="<%$ ConnectionStrings:wap %>" SelectCommand="SELECT TOP (0) ident, nazwa, rodzaj FROM funkcje"></asp:SqlDataSource>
 
-        <dx:ASPxGridViewExporter ID="ASPxGridViewExporter1" runat="server" GridViewID="ASPxGridView1" PaperKind="A4" ExportedRowType="All" PrintSelectCheckBox="True" OnRenderBrick="ASPxGridViewExporter1_RenderBrick">
+        <dx:ASPxGridViewExporter ID="ASPxGridViewExporter1" 
+            runat="server" GridViewID="ASPxGridView1" 
+            PaperKind="A4" 
+            ExportedRowType="All" 
+            PrintSelectCheckBox="True" 
+            OnRenderBrick="ASPxGridViewExporter1_RenderBrick">
             <Styles>
                 <Header Wrap="True">
                 </Header>

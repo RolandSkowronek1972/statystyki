@@ -227,28 +227,7 @@ namespace stat2018
             Session["exporter"] = ASPxGridViewExporter1;
             ScriptManager.RegisterStartupScript(Page, Page.GetType(), "print2", "JavaScript:window.open('kontrolkaDruk.aspx')", true);
         }
-        /*
-        public static void WriteResponse(HttpResponse response, byte[] filearray, string type)
-        {
-            response.ClearContent();
-            response.Buffer = true;
-            response.Cache.SetCacheability(HttpCacheability.Private);
-            response.ContentType = "application/pdf";
-            ContentDisposition contentDisposition = new ContentDisposition();
-            contentDisposition.FileName = "Kontrolka.pdf";
-            contentDisposition.DispositionType = type;
-            response.AddHeader("Content-Disposition", contentDisposition.ToString());
-            response.BinaryWrite(filearray);
-            HttpContext.Current.ApplicationInstance.CompleteRequest();
-            try
-            {
-                response.End();
-            }
-            catch
-            {
-            }
-        }
-        */
+     
         protected void GridDataBinding(object sender, EventArgs e)
         {
             string kwerenda = (string)Session["kw"];

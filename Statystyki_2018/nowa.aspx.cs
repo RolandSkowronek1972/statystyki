@@ -43,6 +43,7 @@ namespace stat2018
 
         protected void Druk(object sender, EventArgs e)
         {
+            ASPxGridViewExporter1.WritePdfToResponse ("kontrolka-" + DateTime.Now.ToShortDateString());
             Session["exporter"] = ASPxGridViewExporter1;
             ScriptManager.RegisterStartupScript(Page, Page.GetType(), "print2", "JavaScript:window.open('kontrolkaDruk.aspx')", true);
         
@@ -153,6 +154,7 @@ namespace stat2018
                     grid.DataColumns[name].Settings.AllowHeaderFilter = DevExpress.Utils.DefaultBoolean.True;
                 }
             }
+            ASPxGridViewExporter1.DataBind();
         }
 
         private DataTable GetTable(DateTime dataPoczatkowa, DateTime dataKoncowa, string ident)
@@ -173,8 +175,11 @@ namespace stat2018
 
         protected void Excell(object sender, EventArgs e)
         {
+            ASPxGridViewExporter1.WriteXlsxToResponse("kontrolka - " + DateTime.Now.ToShortDateString());
+            /*ASPxGridViewExporter1.DataBind();
             Session["exporter"] = ASPxGridViewExporter1;
             ScriptManager.RegisterStartupScript(Page, Page.GetType(), "print2", "JavaScript:window.open('kontrolkaExcell.aspx')", true);
+      */
         }
 
         protected void ASPxGridViewExporter1_RenderBrick(object sender, DevExpress.Web.ASPxGridViewExportRenderingEventArgs e)
