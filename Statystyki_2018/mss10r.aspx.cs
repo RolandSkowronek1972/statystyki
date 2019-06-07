@@ -2535,7 +2535,7 @@ namespace stat2018
 
             try
             {
-                Label11.Visible = ms.debug(int.Parse(yyx));
+                Label11.Visible = cl.debug(int.Parse(yyx));
             }
             catch
             {
@@ -2557,7 +2557,7 @@ namespace stat2018
                 }
                 catch
                 { }
-               
+
                 Label28.Text = cl.podajUzytkownika(User_id, domain);
                 Label29.Text = DateTime.Now.ToLongDateString();
                 try
@@ -2627,7 +2627,7 @@ namespace stat2018
                         listaTabelek.Rows.Add(rowik);
                     }
                     var output = new StringBuilder();
- 
+
                     output = ms.raportTXT(listaTabelek, tabela2, idRaportu.Text.Trim(), idSad.Text);
 
                     Response.Clear();
@@ -2635,7 +2635,7 @@ namespace stat2018
                     Response.ContentType = "application/text";
                     Response.AddHeader("Content-Disposition", "attachment;filename=" + idRaportu.Text.Trim() + ".csv");
                     Response.Output.Write(output);
-                 
+
                     Response.Flush();
                     Response.End();
                 }

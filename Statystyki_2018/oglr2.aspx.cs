@@ -181,7 +181,7 @@ namespace stat2018
                 }
 
                 //cm.log.Info("OGLR2: wczytywanie danych do tabeli 7");
-                tabelkaGW7 = cl.generuj_dane_do_tabeli_typ2_new(int.Parse((string)Session["id_dzialu"]), 7, Date1.Date, Date2.Date, 33);
+                tabelkaGW7 = dr.generuj_dane_do_tabeli_typ2_new(int.Parse((string)Session["id_dzialu"]), 7, Date1.Date, Date2.Date, 33);
                 Session["tabelkaGW007"] = tabelkaGW7;
                 Gridview7.DataSource = null;
                 Gridview7.DataSourceID = null;

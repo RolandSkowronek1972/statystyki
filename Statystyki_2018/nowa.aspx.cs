@@ -153,6 +153,14 @@ namespace stat2018
                     grid.DataColumns[name].SettingsHeaderFilter.Mode = GridHeaderFilterMode.DateRangePicker;
                     grid.DataColumns[name].Settings.AllowHeaderFilter = DevExpress.Utils.DefaultBoolean.True;
                 }
+                
+            }
+            foreach (var col in grid.Columns)
+            {
+                if (col is GridViewDataColumn)
+                {
+                    ((GridViewDataColumn)col).Settings.AutoFilterCondition = AutoFilterCondition.Contains;
+                }
             }
             ASPxGridViewExporter1.DataBind();
         }

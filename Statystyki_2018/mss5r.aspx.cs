@@ -3803,7 +3803,7 @@ namespace stat2018
 
             try
             {
-                Label11.Visible = ms.debug(int.Parse(yyx));
+                Label11.Visible = cl.debug(int.Parse(yyx));
             }
             catch
             {

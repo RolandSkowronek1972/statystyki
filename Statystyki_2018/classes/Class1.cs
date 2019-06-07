@@ -23,7 +23,7 @@ namespace stat2018
 
         public string con_str = ConfigurationManager.ConnectionStrings["wap"].ConnectionString;
         public string con_str_wcyw = ConfigurationManager.ConnectionStrings["wcywConnectionString"].ConnectionString;
-
+        /*
         public string[] splitData(string arg)
         {
             string[] stringSeparators = new string[] { "#" };
@@ -31,7 +31,7 @@ namespace stat2018
             stTab = arg.Split(stringSeparators, StringSplitOptions.None);
             return stTab;
         }
-
+        */
         private string getColumnName(int i)
         {
             string txt = string.Empty;
@@ -128,7 +128,7 @@ namespace stat2018
             parameters.Rows.Add("@user_id", result);
             return Common.getQuerryValue("SELECT COUNT(*) FROM     uprawnienia WHERE  (id_uzytkownika = @user_id) AND (id_wydzialu =@id_wydzialu)", con_str_wcyw, parameters);
         }// czy_dostepny
-
+        /*
         public bool czyPracowal(string idPracownika, string data, string ConnectionString)
         {
             bool result = false;
@@ -142,7 +142,7 @@ namespace stat2018
             }
             return result;
         }// end of CzyPracowal
-
+        */
         public DataSet pod_tabela(string cs, string kwerenda, string poczatek, string koniec, string id_sedziego)
         {
             var conn = new SqlConnection(cs);
@@ -840,21 +840,8 @@ namespace stat2018
 
         //================================================================================================
 
-        private string funkcja(int id_)
-        {
-            DataTable parameters = Common.makeParameterTable();
-            parameters.Rows.Add("@_id", id_);
-            return Common.getQuerryValue("SELECT   rtrim([nazwa]) FROM [funkcje]  where [rodzaj]=1 and ident=@_id", con_str, parameters);
-        } // end of funkcja
 
-        private string stanowisko(int id_)
-        {
-            DataTable parameters = Common.makeParameterTable();
-            parameters.Rows.Add("@_id", id_);
-            return Common.getQuerryValue("SELECT   rtrim([nazwa]) FROM [funkcje]  where [rodzaj]=2 and ident=@_id", con_str, parameters);
-        }
-
-        private DataSet kwerendy_xl(string cs, string kwe, int id_dzialu, int id_tabeli, DateTime poczatek, DateTime koniec)
+        public DataSet kwerendy_xl(string cs, string kwe, int id_dzialu, int id_tabeli, DateTime poczatek, DateTime koniec)
         {
             DataSet ds_x = new DataSet();
             try
@@ -882,159 +869,7 @@ namespace stat2018
         }
 
 
-        public DataTable generuj_dane_do_tabeli_typ2_new(int id_dzialu, int id_tabeli, DateTime poczatek, DateTime koniec, int il_kolumn)
-        {
-            string status = string.Empty;
-            status = status + "pompowanie danch do tabeli: " + id_tabeli.ToString() + "<br>";
-            var conn = new SqlConnection(con_str);
-
-            DataTable dTable = new DataTable();
-            string cs = podajConnectionString(id_dzialu);
-
-            string kwerenda = string.Empty;
-            DataSet dsKwerendy = new DataSet();
-            string opis = string.Empty;
-            // kwerenda + cs do datasetu
-
-            dsKwerendy = new DataSet();
-
-            DataTable parameters = new DataTable();
-            parameters.Columns.Add("name", typeof(String));
-            parameters.Columns.Add("value", typeof(String));
-
-            parameters.Rows.Add("@id_tabeli", id_tabeli);
-            parameters.Rows.Add("@id_dzialu", id_dzialu);
-
-            DataTable dT1 = Common.getDataTable("SELECT id_kolumny,[kwerenda] FROM [kwerendy] where id_tabeli=@id_tabeli and id_wydzial=@id_dzialu order by id_kolumny", con_str, parameters);
-
-            // zaladowanie do tabeli
-            int il_wierszy = 0;
-            try
-            {
-                il_wierszy = dT1.Rows.Count;
-            }
-            catch { }
-
-            if (il_wierszy == 0)
-            {
-                // brak kwerend odcztującch
-                status = status + "brak kwerend odcztujących" + "<br>";
-            }
-            else
-            {
-                dTable.Columns.Add("id", typeof(int));
-                dTable.Columns.Add("id_sedziego", typeof(int));
-                dTable.Columns.Add("Funkcja", typeof(string));
-                dTable.Columns.Add("Stanowisko", typeof(string));
-                dTable.Columns.Add("Imie", typeof(string));
-                dTable.Columns.Add("Nazwisko", typeof(string));
-                dTable.Columns.Add("id_tabeli", typeof(string));
-                for (int i = 1; i <= il_kolumn; i++)
-                {
-                    DataColumn column = new DataColumn();
-
-                    column.DataType = System.Type.GetType("System.Int32");
-                    column.AllowDBNull = false;
-                    column.ColumnName = getColumnName(i);
-                    column.DefaultValue = "0";
-                    dTable.Columns.Add(column);
-                }
-
-                // sa kwerendy
-                try
-                {
-                    status = status + "są kwerendy odcztujące, il: " + dsKwerendy.Tables[0].Rows.Count.ToString() + "<br>";
-                }
-                catch (Exception)
-                { }
-
-                try
-                {
-                    // DataTable dT = dsKwerendy.Tables[0];
-
-                    foreach (DataRow dRow in dT1.Rows)
-                    {
-                        string id_kol = dRow[0].ToString().Trim();
-                        string kwe = dRow[1].ToString().Trim();
-                        ////############################################  ladowanie danych tabela 2 ##############################
-
-                        DataSet dSet = kwerendy_xl(cs, kwe, id_dzialu, id_tabeli, poczatek, koniec);
-
-                        // odczyt sedziów
-                        DataTable nowa = new DataTable();
-
-                        try
-                        {
-                            nowa = dSet.Tables[0];
-                        }
-                        catch (Exception ec)
-                        {
-                            status = status + "Bład odczytu tabeli z danymi sędziów" + "<br>" + ec.Message + "<br>";
-                        }
-
-                        int j = 1;
-                        foreach (DataRow dR in nowa.Rows)
-                        {
-                            switch (id_kol)
-                            {
-                                case "0":
-                                    {
-                                        try
-                                        {
-                                            // załadowanie danych do pierwszych kolumn
-                                            j++;
-                                            DataRow dr1 = dTable.NewRow();
-                                            dr1[0] = j - 1;//lp
-                                            dr1[1] = dR[0].ToString().Trim();// id sedziego
-                                            dr1[2] = funkcja(int.Parse(dR[3].ToString().Trim()));//funkcja
-                                            dr1[3] = stanowisko(int.Parse(dR[4].ToString().Trim())); ;//stanowisko
-                                            dr1[4] = dR[1].ToString().Trim();
-                                            dr1[5] = dR[2].ToString().Trim();//idtmie nazwisko
-                                            dr1[6] = id_tabeli.ToString();
-                                            dTable.Rows.Add(dr1);
-                                            status = status + "wpisywanie danych o sedziach do pierwszych kolumn" + "<br>";
-                                        }
-                                        catch
-                                        { }
-                                    }
-                                    break;
-
-                                default:
-                                    {
-                                        string querry = "id_sedziego=" + dR[1].ToString().Trim();
-                                        string sedzia = dR[1].ToString().Trim();
-                                        int index = 0;
-                                        foreach (DataRow dr in dTable.Rows)
-                                        {
-                                            try
-                                            {
-                                                string nr_sedziego = dr[1].ToString();
-                                                if (nr_sedziego == sedzia)
-                                                {
-                                                    dTable.Rows[index][getColumnName(int.Parse(id_kol))] = dR[0];
-                                                }
-                                                index++;
-                                            }
-#pragma warning disable CS0168 // The variable 'ex3' is declared but never used
-                                            catch (Exception ex3)
-#pragma warning restore CS0168 // The variable 'ex3' is declared but never used
-                                            { }
-                                        }
-                                    }
-                                    break;
-                            }//end of switch
-                        }
-                    }
-                }
-#pragma warning disable CS0168 // The variable 'ex' is declared but never used
-                catch (Exception ex)
-#pragma warning restore CS0168 // The variable 'ex' is declared but never used
-                { }//end of try
-            }// end of if
-
-            return dTable;
-        }// end of generuj_dane_do_tabeli_5
-
+      
         public DataTable generuj_dane_do_tabeli_mss2(int id_dzialu, DateTime poczatek, DateTime koniec, int il_kolumn)
         {
             string status = string.Empty;

@@ -159,7 +159,7 @@
 			</P>
 			<P CLASS="western" STYLE="margin-left: 0.42cm; margin-top: 0.07cm">
 			<FONT FACE="Arial, sans-serif"><FONT SIZE=2 STYLE="font-size: 9pt">zgodnie
-			z PBSSP 2017 r.</FONT></FONT></P>
+			z PBSSP 2019 r.</FONT></FONT></P>
 		</TD>
 	</TR>
 </TABLE>
@@ -167,7 +167,7 @@
          <br />
          <br />
      </div>
-   <div id="zalatwienia"  class="page-break">
+   <div id="1.1.1.a.1"  class="page-break">
     <br />
 
          <asp:Label ID="tabela1Label" runat="server"></asp:Label>
@@ -178,19 +178,19 @@
                <td class="center" colspan="6" style="border-left: thin solid #666666; border-right: 0px solid #666666; border-top: thin solid #666666; border-bottom: 0px solid #666666; border-width: thin thin 0px thin;">Liczba spraw, w których nastąpiło przekroczenie terminu 14 dni od dnia wpływu wniosku lub zawiadomienia o przyjęciu do szpitala psychiatrychnego</td>
            </tr>
            <tr>
-               <td class="center" style="border-style: solid; border-width: thin 0px 0px thin; border-color: #666666; width: 191px;">Razem&nbsp; (kol. 2 fo 6)</td>
-               <td class="center" style="border-style: solid; border-width: thin 0px 0px thin; border-color: #666666; width: 191px;">do 7 dni </td>
-               <td class="center" style="border-style: solid; border-width: thin 0px 0px thin; border-color: #666666; width: 191px;">powyżej 7 do 14 dni</td>
-               <td class="center" style="border-style: solid; border-width: thin 0px 0px thin; border-color: #666666; width: 191px;">powyżej 14 do 21 dni</td>
-               <td class="center" style="border-style: solid; border-width: thin 0px 0px thin; border-color: #666666; width: 191px;">powyżej 21 do30 dni</td>
-               <td class="center" style="border-style: solid; border-width: thin thin 0px thin; border-color: #666666; width: 191px;">Ponad 30 dni</td>
+               <td class="center borderAll col_190" >Razem&nbsp; (kol. 2 fo 6)</td>
+               <td class="center borderAll col_190">do 7 dni </td>
+               <td class="center borderAll col_190">powyżej 7 do 14 dni</td>
+               <td class="center borderAll col_190">powyżej 14 do 21 dni</td>
+               <td class="center borderAll col_190">powyżej 21 do30 dni</td>
+               <td class="center borderAll col_190">Ponad 30 dni</td>
            </tr>
            <tr>
-               <td class="center mssGrayMiddle" style="border-left: thin solid #666666; border-right: 0px solid #666666; border-top: thin solid #666666; border-bottom: 0px solid #666666; ">1</td>
-               <td class="center mssGrayMiddle" style="border-style: solid; border-width: thin 0px 0px thin; border-color: #666666; width: 191px;" >2</td>
-               <td class="center mssGrayMiddle" style="border-style: solid; border-width: thin 0px 0px thin; border-color: #666666; width: 191px;">3</td>
-               <td class="center mssGrayMiddle" style="border-style: solid; border-width: thin 0px 0px thin; border-color: #666666; width: 191px;" >4</td>
-               <td class="center mssGrayMiddle" style="border-style: solid; border-width: thin 0px 0px thin; border-color: #666666; width: 191px;" >5</td>
+               <td class="center mssGrayMiddle borderAll col_190">1</td>
+               <td class="center mssGrayMiddle borderAll col_190" >2</td>
+               <td class="center mssGrayMiddle borderAll col_190">3</td>
+               <td class="center mssGrayMiddle borderAll col_190" >4</td>
+               <td class="center mssGrayMiddle borderAll col_190" >5</td>
                <td class="center mssGrayMiddle" style="border-left: thin solid #666666; border-right: 0px solid #666666; border-top: thin solid #666666; border-bottom: 0px solid #666666; border-width: thin thin 0px thin;" >6</td>
            </tr>
            <tr>

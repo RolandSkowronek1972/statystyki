@@ -19,7 +19,7 @@ namespace stat2018
             parameters.Rows.Add("@login", user_);
             parameters.Rows.Add("@passwd", haslo);
             string odp = cm.getQuerryValue("SELECT ident FROM uzytkownik where rtrim(login)=@login and rtrim(password)=@passwd ", cm.con_str, parameters);
-            //cm.log.Debug("Logowanie: identyfikator użytkownika: " + user_ + " to " + odp);
+            cm.log.Info("Logowanie: identyfikator użytkownika: " + user_ + " to " + odp);
             return odp;
         } // end of loguj
 

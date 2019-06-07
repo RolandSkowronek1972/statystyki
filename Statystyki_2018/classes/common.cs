@@ -10,7 +10,7 @@ namespace stat2018
         public string con_str = ConfigurationManager.ConnectionStrings["wap"].ConnectionString;
         public string con_str_wcyw = ConfigurationManager.ConnectionStrings["wcywConnectionString"].ConnectionString;
         public log_4_net log = new log_4_net();
-
+        /*
         public string[] splitData(string arg)
         {
             string[] stringSeparators = new string[] { "#" };
@@ -18,7 +18,7 @@ namespace stat2018
             stTab = arg.Split(stringSeparators, StringSplitOptions.None);
             return stTab;
         }
-
+        */
         public string podajMiesiac(int numerMiesiaca)
         {
             switch (numerMiesiaca)

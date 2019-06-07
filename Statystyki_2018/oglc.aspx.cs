@@ -134,7 +134,7 @@ namespace stat2018
             {
                 cm.log.Info(tenPlik + ": rozpoczęcie tworzenia tabeli 1");
             }
-            DataTable tabelka01 = dr.generuj_dane_do_tabeli_sedziowskiej_2018(int.Parse(idDzialu), 3, Date1.Date, Date2.Date, 35, tenPlik);
+            DataTable tabelka01 = dr.generuj_dane_do_tabeli_sedziowskiej_2018(int.Parse(idDzialu), 1, Date1.Date, Date2.Date, 35, tenPlik);
             Session["tabelka001"] = tabelka01;
             gwTabela1.DataSource = null;
             gwTabela1.DataSourceID = null;

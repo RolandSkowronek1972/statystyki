@@ -20,7 +20,7 @@ namespace stat2018
 
         {
             var datadzisiejsza = DateTime.Now;
-            return datadzisiejsza.Year - 1 + "-01-01";
+            return datadzisiejsza.Year   + "-01-01";
             /*
             var datadzisiejsza = DateTime.Now;
             switch (datadzisiejsza.Month)

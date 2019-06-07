@@ -68,12 +68,13 @@
            <SettingsPager AlwaysShowPager="True" 
            NumericButtonCount="200" PageSize="1000">
             </SettingsPager>
+
             <Settings 
                 ShowFilterRow="True" 
                 EnableFilterControlPopupMenuScrolling="True" 
                 ShowFilterBar="Auto" 
                 ShowFilterRowMenu="True" 
-                ShowGroupFooter="VisibleAlways" />
+                ShowGroupFooter="VisibleAlways" ShowFooter="True" ShowHeaderFilterButton="True" />
             <SettingsDataSecurity 
                 AllowDelete="False" 
                 AllowEdit="False" 
