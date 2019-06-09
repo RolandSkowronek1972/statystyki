@@ -117,6 +117,12 @@ namespace stat2018
                 tabelaGlowna.AppendLine(ms.tworztabeleMSS("2.3", naglowekTabeliDzialu_2_3(), tabelaBocznaDzialu_2_3(), tabelaDanych, 1, 3, 2, 7, idWydzialuNumerycznie, true, "Czas trwania wszystkich mediacji w sprawie od dnia wydania postanowienia o skierowaniu stron do mediacji do dnia zakończenia mediacji ", tenPlik));
                 tabelaGlowna.AppendLine(ms.tworztabeleMSS("2.3.1", naglowekTabeliDzialu_2_3_1(), tabelaBocznaDzialu_2_3_1(), tabelaDanych, 1, 3, 2, 7, idWydzialuNumerycznie, true, "Czas trwania mediacji niezakończonych w sprawie od dnia wydania postanowienia o skierowaniu stron do mediacji do ostatniego dnia okresu sprawozdawczego", tenPlik));
 
+                tabelaGlowna.AppendLine(ms.tworztabeleMSS("3", naglowekTabeliDzialu_3(), tabelaBocznaDzialu_3(), tabelaDanych, 2, 8, 2, 8, idWydzialuNumerycznie, true, "Wyznaczenie pierwszej rozprawy/posiedzenia spraw (od dnia wpływu/wpisu sprawy, wraz ze sprawami zawieszonymi poprzednio zakreślonymi, do dnia, w którym odbyła się pierwsza rozprawa/posiedzenie) ", tenPlik));
+                tabelaGlowna.AppendLine(ms.tworztabeleMSS("3.1.a", naglowekTabeliDzialu_3_1_a(), tabelaBocznaDzialu_3_1_a(), tabelaDanych, 2, 2, 1, 7, idWydzialuNumerycznie, true, "Terminowość postępowania międzyinstancyjnego  w pierwszej instancji", tenPlik));
+                tabelaGlowna.AppendLine(ms.tworztabeleMSS("3.1.b", naglowekTabeliDzialu_3_1_b(), tabelaBocznaDzialu_3_1_b(), tabelaDanych, 2, 4, 1, 7, idWydzialuNumerycznie, true, "Terminowość obiegu międzyinstancyjnego spraw odwoławczych (Ua, Uz, Pa,Pz)", tenPlik));
+                tabelaGlowna.AppendLine(ms.tworztabeleMSS("3.2", naglowekTabeliDzialu_3_2(), tabelaBocznaDzialu_3_2(), tabelaDanych, 2, 4, 1, 7, idWydzialuNumerycznie, true, "Liczba spraw, w których po wydaniu orzeczenia sądu odwoławczego akta zwrócono sądowi I instancji", tenPlik));
+                tabelaGlowna.AppendLine(ms.tworztabeleMSS("4.1", naglowekTabeliDzialu_4_1(), tabelaBocznaDzialu_4_1(), tabelaDanych, 4, 24, 3, 13, idWydzialuNumerycznie, true, "Szczegółowe rozliczenie skargi (Wykaz S)", tenPlik));
+                tabelaGlowna.AppendLine(ms.tworztabeleMSS("4.2", naglowekTabeliDzialu_4_2(), tabelaBocznaDzialu_4_2(), tabelaDanych, 2, 2, 1, 7, idWydzialuNumerycznie, true, "Szczegółowe rozliczenie skargi (Wykaz S)", tenPlik));
 
 
 
@@ -2213,7 +2219,8 @@ namespace stat2018
         }
 
         #endregion dzial 2.3
-        #region dzial 2.3
+
+        #region dzial 2.3.1
 
         private DataTable naglowekTabeliDzialu_2_3_1()
         {
@@ -2231,6 +2238,269 @@ namespace stat2018
 
         #endregion dzial 2.3.1
 
+        #region dzial 3
+
+        private DataTable naglowekTabeliDzialu_3()
+        {
+            DataTable dT = schematTabeli();
+            dT.Clear();
+            //                         W  K  CS RS   style"    text"
+            dT.Rows.Add(new Object[] { 1, 1, 2, 2, "center", "Rodzaje sprawz repertorium" });
+            dT.Rows.Add(new Object[] { 1, 3, 9, 1, "center", "Od daty wpływu sprawy w danym lub poprzednim okresie sprawozdawczym do pierwszej rozprawy (posiedzenia)w okresie sprawozdawczym upłynął okres" });
+
+            dT.Rows.Add(new Object[] { 2, 3, 1, 1, "center col_120", "Razem(kol. od 2 do 8)" });
+            dT.Rows.Add(new Object[] { 2, 4, 1, 1, "center col_120", "Do 1 miesiąca" });
+            dT.Rows.Add(new Object[] { 2, 5, 1, 1, "center col_120", "Powyżej 1 do 2 miesięcy" });
+            dT.Rows.Add(new Object[] { 2, 6, 1, 1, "center col_120", "Powyżej 2 do 3 miesięcy" });
+            dT.Rows.Add(new Object[] { 2, 7, 1, 1, "center col_120", "Powyżej 3 do 4 miesięcy" });
+            dT.Rows.Add(new Object[] { 2, 8, 1, 1, "center col_120", "Powyżej 4 do 6 miesięcy" });
+            dT.Rows.Add(new Object[] { 2, 9, 1, 1, "center col_120", "Powyżej 6 do 12 miesięcy" });
+            dT.Rows.Add(new Object[] { 2, 10, 1, 1, "center col_120", "Ponad 12 miesięcy" });
+
+            return dT;
+
+        }
+
+        private DataTable tabelaBocznaDzialu_3()
+        {
+            DataTable dT = schematTabeli();
+            dT.Clear();
+            //                         W  K  CS RS   style"    text"
+            dT.Rows.Add(new Object[] { 1, 1, 1, 4, "wciecie borderAll", "SO I instancja" });
+            dT.Rows.Add(new Object[] { 1, 2, 1, 1, "wciecie borderAll", "U" });
+            dT.Rows.Add(new Object[] { 2, 2, 1, 1, "wciecie borderAll", "P" });
+            dT.Rows.Add(new Object[] { 3, 2, 1, 1, "wciecie borderAll", "Np" });
+            dT.Rows.Add(new Object[] { 4, 2, 1, 1, "wciecie borderAll", "Po" });
+
+
+            dT.Rows.Add(new Object[] { 5, 1, 1, 4, "wciecie borderAll", "SO II instancja" });
+            dT.Rows.Add(new Object[] { 5, 2, 1, 1, "wciecie borderAll", "Ua" });
+            dT.Rows.Add(new Object[] { 6, 2, 1, 1, "wciecie borderAll", "Uz " });
+            dT.Rows.Add(new Object[] { 7, 2, 1, 1, "wciecie borderAll", "Pa apelacyjne" });
+            dT.Rows.Add(new Object[] { 8, 2, 1, 1, "wciecie borderAll", "Pa zażaleniowe" });
+
+            return dT;
+        }
+
+        #endregion dzial 3
+
+        #region dzial 3.1.a
+
+        private DataTable naglowekTabeliDzialu_3_1_a()
+        {
+            DataTable dT = schematTabeli();
+            dT.Clear();
+            //                         W  K  CS RS   style"    text"
+            dT.Rows.Add(new Object[] { 1, 1, 1, 2, "center", "Środki odwoławcze, które zostały przekazane  do rozpoznania sądowi II instancji" });
+            dT.Rows.Add(new Object[] { 1, 3, 1, 2, "center col_120", "Ogółem(kol. 2 do 7)" });
+
+            dT.Rows.Add(new Object[] { 1, 4, 6, 1, "center", "Z tego od daty orzeczenia sądu okręgowego do daty przekazania do sądu II instancji upłynął okres" });
+
+            dT.Rows.Add(new Object[] { 2, 4, 1, 1, "center col_120", "do 2 miesięcy" });
+            dT.Rows.Add(new Object[] { 2, 5, 1, 1, "center col_120", "pow. 2 do 3 mies." });
+            dT.Rows.Add(new Object[] { 2, 6, 1, 1, "center col_120", "pow. 3 do 6 mies." });
+            dT.Rows.Add(new Object[] { 2, 7, 1, 1, "center col_120", "pow.6 do 12 miesięcy" });
+            dT.Rows.Add(new Object[] { 2, 8, 1, 1, "center col_120", "pow. 12 mies. do 2 lat" });
+            dT.Rows.Add(new Object[] { 2, 9, 1, 1, "center col_120", "ponad 2 lata" });
+
+
+            return dT;
+
+        }
+
+        private DataTable tabelaBocznaDzialu_3_1_a()
+        {
+            DataTable dT = schematTabeli();
+            dT.Clear();
+            //                         W  K  CS RS   style"    text"
+            dT.Rows.Add(new Object[] { 1, 1, 1, 1, "wciecie borderAll", "Apelacje" });
+
+            dT.Rows.Add(new Object[] { 2, 1, 1, 1, "wciecie borderAll", "Zażalenia" });
+            return dT;
+        }
+
+        #endregion dzial 3.1.a
+
+        #region dzial 3.1.b
+
+        private DataTable naglowekTabeliDzialu_3_1_b()
+        {
+
+            return naglowekTabeliDzialu_3_1_a();
+
+        }
+
+        private DataTable tabelaBocznaDzialu_3_1_b()
+        {
+            DataTable dT = schematTabeli();
+            dT.Clear();
+            //                         W  K  CS RS   style"    text"
+            dT.Rows.Add(new Object[] { 1, 1, 1, 1, "wciecie borderAll", "Ua (apelacyjne)" });
+            dT.Rows.Add(new Object[] { 2, 1, 1, 1, "wciecie borderAll", "Uz (zażaleniowe)" });
+            dT.Rows.Add(new Object[] { 3, 1, 1, 1, "wciecie borderAll", "Pa (apelacyjne)" });
+            dT.Rows.Add(new Object[] { 4, 1, 1, 1, "wciecie borderAll", "Pz (zażaleniowe)" });
+            return dT;
+        }
+
+        #endregion dzial 3.1.b
+
+        #region dzial 3.2
+
+        private DataTable naglowekTabeliDzialu_3_2()
+        {
+
+            DataTable dT = schematTabeli();
+            dT.Clear();
+            //                         W  K  CS RS   style"    text"
+            dT.Rows.Add(new Object[] { 1, 1, 1, 2, "center", "Rodzaje sprawz repertorium" });
+            dT.Rows.Add(new Object[] { 1, 3, 1, 2, "center col_120", "Ogółem(kol. 2 do 7)" });
+
+            dT.Rows.Add(new Object[] { 1, 4, 6, 1, "center", "W terminie" });
+
+            dT.Rows.Add(new Object[] { 2, 4, 1, 1, "center col_120", "do miesiąca" });
+            dT.Rows.Add(new Object[] { 2, 5, 1, 1, "center col_120", "pow. 1 do 2 mies." });
+            dT.Rows.Add(new Object[] { 2, 6, 1, 1, "center col_120", "pow. 2 do 3 mies." });
+            dT.Rows.Add(new Object[] { 2, 7, 1, 1, "center col_120", "pow. 3 do 6 miesięcy" });
+            dT.Rows.Add(new Object[] { 2, 8, 1, 1, "center col_120", "pow. 6 do 9 miesięcy" });
+            dT.Rows.Add(new Object[] { 2, 9, 1, 1, "center col_120", "ponad 9 miesięcy" });
+
+
+            return dT;
+        }
+
+        private DataTable tabelaBocznaDzialu_3_2()
+        {
+
+            return tabelaBocznaDzialu_3_1_b();
+        }
+
+        #endregion dzial 3.3
+
+        #region dzial 4.1
+
+        private DataTable naglowekTabeliDzialu_4_1()
+        {
+
+            DataTable dT = schematTabeli();
+            dT.Clear();
+            //                         W  K  CS RS   style"    text"
+            dT.Rows.Add(new Object[] { 1, 1, 3, 4, "center", "Wyszczególnienie" });
+            dT.Rows.Add(new Object[] { 1, 5, 1, 4, "center col_120", "Pozostało z ubiegłego roku" });
+            dT.Rows.Add(new Object[] { 1, 6, 1, 4, "center col_120", "Wplynęło" });
+
+            dT.Rows.Add(new Object[] { 1, 7, 6, 1, "center", "Załatwiono" });
+            dT.Rows.Add(new Object[] { 1, 12, 4, 1, "center", "Pozostało" });
+            dT.Rows.Add(new Object[] { 1, 16, 1, 4, "center col_120", "Ogólna kwota zasądzonych odszkodowań(w złotych)" });
+
+            dT.Rows.Add(new Object[] { 2, 7, 1, 3, "center col_120", "Ogółem" });
+            dT.Rows.Add(new Object[] { 2, 8, 5, 1, "center col_120", "w tym" });
+            dT.Rows.Add(new Object[] { 2, 12, 1, 3, "center col_120", "Ogółem" });
+            dT.Rows.Add(new Object[] { 2, 13, 3, 1, "center col_120", "w tym od wpływu" });
+
+            dT.Rows.Add(new Object[] { 3, 8, 2, 1, "center col_120", "uwzględniono w całości lub w części" });
+            dT.Rows.Add(new Object[] { 3, 9, 1, 2, "center col_120", "oddalono" });
+            dT.Rows.Add(new Object[] { 3, 10, 1, 2, "center col_120", "odrzucono" });
+            dT.Rows.Add(new Object[] { 3, 11, 1, 2, "center col_120", "w inny sposób" });
+
+            dT.Rows.Add(new Object[] { 3, 13, 1, 2, "center col_120", "do  2 mies." });
+            dT.Rows.Add(new Object[] { 3, 14, 1, 2, "center col_120", "pow. 2 do 4 mies." });
+            dT.Rows.Add(new Object[] { 3, 15, 1, 2, "center col_120", "ponad 4 mies." });
+
+            dT.Rows.Add(new Object[] { 4, 7, 1, 1, "center col_120", "razem" });
+            dT.Rows.Add(new Object[] { 4, 8, 1, 1, "center col_120", "w tym przez zasądzenie kwoty pieniężnej" });
+
+            return dT;
+        }
+
+        private DataTable tabelaBocznaDzialu_4_1()
+        {
+
+            DataTable dT = schematTabeli();
+            dT.Clear();
+            //                         W  K  CS RS   style"    text"
+            dT.Rows.Add(new Object[] { 1, 1, 3, 1, "wciecie borderAll", "Ogółem ubezpieczeń (wiersze od 02 do 12) " });
+
+            dT.Rows.Add(new Object[] { 2, 1, 1, 11, "wciecie borderAll", "Skarga na:" });
+            dT.Rows.Add(new Object[] { 2, 2, 2, 1, "wciecie borderAll", "zbyt odległe wyznaczenie terminu pierwszej rozprawy" });
+            dT.Rows.Add(new Object[] { 3, 2, 2, 1, "wciecie borderAll", "długość przerwy (odroczenia) między rozprawami" });
+            dT.Rows.Add(new Object[] { 4, 2, 2, 1, "wciecie borderAll", "zwłokę wykonania opinii przez biegłych, albo zasięganie przez sędziów wciąż nowych opinii" });
+            dT.Rows.Add(new Object[] { 5, 2, 2, 1, "wciecie borderAll", "nadużywanie zawieszania postępowania" });
+            dT.Rows.Add(new Object[] { 6, 2, 2, 1, "wciecie borderAll", "przewlekłość trwania tzw. czynności wstępnych" });
+            dT.Rows.Add(new Object[] { 7, 2, 2, 1, "wciecie borderAll", "przewlekłość postępowania międzyinstancyjnego" });
+
+            dT.Rows.Add(new Object[] { 8, 2, 1, 2, "wciecie borderAll", "przewlekłość postępowania międzyinstancyjnego" });
+            dT.Rows.Add(new Object[] { 8, 3, 1, 1, "wciecie borderAll", "sąd" });
+            dT.Rows.Add(new Object[] { 9, 3, 1, 1, "wciecie borderAll", "Komornik" });
+
+            dT.Rows.Add(new Object[] { 10, 2, 2, 1, "wciecie borderAll", "bezczynność w podejmowaniu czynności procesowych" });
+            dT.Rows.Add(new Object[] { 11, 2, 2, 1, "wciecie borderAll", "nieterminowość sporządzania uzasadnień" });
+            dT.Rows.Add(new Object[] { 12, 2, 2, 1, "wciecie borderAll", "inne" });
+
+            dT.Rows.Add(new Object[] { 13, 1, 3, 1, "wciecie borderAll", "Ogółem pracy (wiersze od 14 do 24)" });
+
+            dT.Rows.Add(new Object[] { 14, 1, 1, 11, "wciecie borderAll", "Skarga na:" });
+            dT.Rows.Add(new Object[] { 14, 2, 2, 1, "wciecie borderAll", "zbyt odległe wyznaczenie terminu pierwszej rozprawy" });
+            dT.Rows.Add(new Object[] { 15, 2, 2, 1, "wciecie borderAll", "długość przerwy (odroczenia) między rozprawami" });
+            dT.Rows.Add(new Object[] { 16, 2, 2, 1, "wciecie borderAll", "zwłokę wykonania opinii przez biegłych, albo zasięganie przez sędziów wciąż nowych opinii" });
+            dT.Rows.Add(new Object[] { 17, 2, 2, 1, "wciecie borderAll", "nadużywanie zawieszania postępowania" });
+            dT.Rows.Add(new Object[] { 18, 2, 2, 1, "wciecie borderAll", "przewlekłość trwania tzw. czynności wstępnych" });
+            dT.Rows.Add(new Object[] { 19, 2, 2, 1, "wciecie borderAll", "przewlekłość postępowania międzyinstancyjnego" });
+
+            dT.Rows.Add(new Object[] { 20, 2, 1, 2, "wciecie borderAll", "przewlekłość postępowania międzyinstancyjnego" });
+            dT.Rows.Add(new Object[] { 20, 3, 1, 1, "wciecie borderAll", "sąd" });
+            dT.Rows.Add(new Object[] { 21, 3, 1, 1, "wciecie borderAll", "Komornik" });
+
+            dT.Rows.Add(new Object[] { 22, 2, 2, 1, "wciecie borderAll", "bezczynność w podejmowaniu czynności procesowych" });
+            dT.Rows.Add(new Object[] { 23, 2, 2, 1, "wciecie borderAll", "nieterminowość sporządzania uzasadnień" });
+            dT.Rows.Add(new Object[] { 24, 2, 2, 1, "wciecie borderAll", "inne" });
+
+
+
+
+            return dT;
+        }
+
+        #endregion dzial 3.3
+
+
+        #region dzial 4.2
+
+        private DataTable naglowekTabeliDzialu_4_2()
+        {
+
+            DataTable dT = schematTabeli();
+            dT.Clear();
+            //                         W  K  CS RS   style"    text"
+            dT.Rows.Add(new Object[] { 1, 1, 1, 2, "center", "Wyszczególnienie" });
+            dT.Rows.Add(new Object[] { 1, 3, 1, 2, "center col_120", "Wpłynęło" });
+            dT.Rows.Add(new Object[] { 1, 4, 1, 2, "center col_120", "Przesłano do sądu właściwego" });
+
+            dT.Rows.Add(new Object[] { 1, 5, 3, 1, "center", "Rozpoznanie skargi" });
+            dT.Rows.Add(new Object[] { 1, 8, 1, 2, "center col_120", "Zarządzono wypłatę przez Skarb Państwa" });
+            dT.Rows.Add(new Object[] { 1, 9, 1, 2, "center col_120", "Kwota (w złotych)" });
+            dT.Rows.Add(new Object[] { 2, 6, 1, 1, "center col_120", "uwzględniono" });
+            dT.Rows.Add(new Object[] { 2, 7, 1, 1, "center col_120", "oddalono" });
+            dT.Rows.Add(new Object[] { 2, 8, 1, 1, "center col_120", "inne" });
+
+            return dT;
+        }
+
+        private DataTable tabelaBocznaDzialu_4_2()
+        {
+
+            DataTable dT = schematTabeli();
+            dT.Clear();
+            //                         W  K  CS RS   style"    text"
+            dT.Rows.Add(new Object[] { 1, 1, 1, 1, "wciecie borderAll", "Skargi na pracę sądu (sprawy ubezpieczeń)" });
+
+            dT.Rows.Add(new Object[] { 2, 1, 1, 11, "wciecie borderAll", "Skargi na pracę sądu (sprawy pracy)" });
+
+
+
+            return dT;
+        }
+
+        #endregion dzial 4.2
 
         #endregion dane do tabeli
     }
