@@ -110,6 +110,12 @@ namespace stat2018
                 tabelaGlowna.AppendLine(ms.tworztabeleMSS("2.1.1.1.a", naglowekTabeliDzialu_2_1_1_1_a(), tabelaBocznaDzialu_2_1_1_1_a(), tabelaDanych, 2, 9, 2, 11, idWydzialuNumerycznie, true, "Sprawy zawieszone nie zakreślone od dnia pierwotnego wpisu do repertorium (wykazane w dziale 2.1.1.) (łącznie z czasem trwania mediacji)", tenPlik));
                 tabelaGlowna.AppendLine(ms.tworztabeleMSS("2.1.1.1.a.1", naglowekTabeliDzialu_2_1_1_1_a_1(), tabelaBocznaDzialu_2_1_1_1_a_1(), tabelaDanych, 2, 9, 2, 11, idWydzialuNumerycznie, true, "Sprawy zawieszone nie zakreślone od dnia pierwotnego wpisu do repertorium (wykazane w dziale 2.1.1.) (bez czasu trwania mediacji w sprawach wszczętych po 1 stycznia 2016r.)", tenPlik));
                 tabelaGlowna.AppendLine(ms.tworztabeleMSS("2.1.2.1", naglowekTabeliDzialu_2_1_2_1(), tabelaBocznaDzialu_2_1_2_1(), tabelaDanych, 2, 9, 2, 11, idWydzialuNumerycznie, true, "Liczba spraw zakreślonych w urządzeniu ewidencyjnym w wyniku zawieszenia postępowania (bez czasu trwania mediacji w sprawach wszczętych po 1 stycznia 2016r.)", tenPlik));
+                tabelaGlowna.AppendLine(ms.tworztabeleMSS("2.2", naglowekTabeliDzialu_2_2(), tabelaBocznaDzialu_2_2(), tabelaDanych, 1, 13, 2, 9, idWydzialuNumerycznie, true, "Czas trwania postępowania sądowego (w sądzie okręgowym I instancji - od dnia pierwszej rejestracji w sądzie I instancji do uprawomocnienia się sprawy w I instancji a w sądzie okręgowym II instancji od dnia pierwszej rejestracji w sądzie rejonowym (I instancji) do dnia wydania orzeczenia w sądzie okręgowym II instancji lub od dnia wpływu sprawy do sądu okręgowego (II instancji do dnia wydania orzeczenia w II instancji)) (łącznie z czasem trwania mediacji)", tenPlik));
+                tabelaGlowna.AppendLine(ms.tworztabeleMSS("2.2.a", naglowekTabeliDzialu_2_2_a(), tabelaBocznaDzialu_2_2_a(), tabelaDanych, 1, 13, 2, 9, idWydzialuNumerycznie, true, "Czas trwania postępowania sądowego (w sądzie okręgowym I instancji - od dnia pierwszej rejestracji w sądzie I instancji do uprawomocnienia się sprawy merytorycznie zakończonej (wyrokiem, orzeczeniem) w I instancji a w sądzie okręgowym II instancji od dnia pierwszej rejestracji w sądzie rejonowym (I instancji) do dnia wydania orzeczenia merytorycznie kończącego sprawę (wyrokiem, orzeczeniem) w sądzie okręgowym II instancji lub od dnia wpływu sprawy do sądu okręgowego (II instancji do dnia wydania orzeczenia w II instancji)) (łącznie z czasem trwania mediacji)", tenPlik));
+                tabelaGlowna.AppendLine(ms.tworztabeleMSS("2.2.1", naglowekTabeliDzialu_2_2_1(), tabelaBocznaDzialu_2_2_1(), tabelaDanych, 1, 13, 2, 9, idWydzialuNumerycznie, true, "Czas trwania postępowania sądowego (w sądzie okręgowym I instancji - od dnia pierwszej rejestracji w sądzie I instancji do uprawomocnienia się sprawy w I instancji a w sądzie okręgowym II instancji od dnia pierwszej rejestracji w sądzie rejonowym (I instancji) do dnia wydania orzeczenia w sądzie okręgowym II instancji lub od dnia wpływu sprawy do sądu okręgowego (II instancji do dnia wydania orzeczenia w II instancji)) (dok.) (bez czasu trwania mediacji w sprawach wszczętych po 1 stycznia 2016r.)", tenPlik));
+                tabelaGlowna.AppendLine(ms.tworztabeleMSS("2.2.1.a", naglowekTabeliDzialu_2_2_1_a(), tabelaBocznaDzialu_2_2_1_a(), tabelaDanych, 1, 13, 2, 9, idWydzialuNumerycznie, true, "Czas trwania postępowania sądowego (w sądzie okręgowym I instancji - od dnia pierwszej rejestracji w sądzie I instancji do uprawomocnienia się sprawy merytorycznie zakończonej (wyrokiem, orzeczeniem) w I instancji a w sądzie okręgowym II instancji od dnia pierwszej rejestracji w sądzie rejonowym (I instancji) do dnia wydania orzeczenia merytorycznie kończącego sprawę (wyrokiem, orzeczeniem) w sądzie okręgowym II instancji lub od dnia wpływu sprawy do sądu okręgowego (II instancji do dnia wydania orzeczenia w II instancji)) (bez czasu trwania mediacji w sprawach wszczętych po 1 stycznia 2016r.)", tenPlik));
+                tabelaGlowna.AppendLine(ms.tworztabeleMSS("2.3", naglowekTabeliDzialu_2_3(), tabelaBocznaDzialu_2_3(), tabelaDanych, 1, 3, 2, 7, idWydzialuNumerycznie, true, "Czas trwania wszystkich mediacji w sprawie od dnia wydania postanowienia o skierowaniu stron do mediacji do dnia zakończenia mediacji ", tenPlik));
+                tabelaGlowna.AppendLine(ms.tworztabeleMSS("2.3.1", naglowekTabeliDzialu_2_3_1(), tabelaBocznaDzialu_2_3_1(), tabelaDanych, 1, 3, 2, 7, idWydzialuNumerycznie, true, "Czas trwania mediacji niezakończonych w sprawie od dnia wydania postanowienia o skierowaniu stron do mediacji do ostatniego dnia okresu sprawozdawczego", tenPlik));
 
 
 
@@ -2074,7 +2080,156 @@ namespace stat2018
 
         #endregion dzial 2.1.2
 
+        #region dzial 2.2
 
+        private DataTable naglowekTabeliDzialu_2_2()
+        {
+            DataTable dT = schematTabeli();
+            dT.Clear();
+            //                         W  K  CS RS   style"    text"
+            dT.Rows.Add(new Object[] { 1, 1, 2, 1, "center", "SPRAWY wg repertoriów / wykazów" });
+            dT.Rows.Add(new Object[] { 1, 3, 1, 1, "center col_80", "Razem(kol. od 2 do 9)" });
+            dT.Rows.Add(new Object[] { 1, 4, 1, 1, "center col_80", "Do 3 miesięcy" });
+            dT.Rows.Add(new Object[] { 1, 5, 1, 1, "center col_80", "Powyżej 3 do 6 miesięcy" });
+            dT.Rows.Add(new Object[] { 1, 6, 1, 1, "center col_80", "Powyżej 6 do 12 miesięcy" });
+            dT.Rows.Add(new Object[] { 1, 7, 1, 1, "center col_80", "Powyżej 12 miesięcy  do 2 lat" });
+            dT.Rows.Add(new Object[] { 1, 8, 1, 1, "center col_80", "Powyżej 2 do 3 lat" });
+            dT.Rows.Add(new Object[] { 1, 9, 1, 1, "center col_80", "Powyżej 3 do 5 lat" });
+            dT.Rows.Add(new Object[] { 1, 10, 1, 1, "center col_80", "Powyżej 5 do 8 lat" });
+            dT.Rows.Add(new Object[] { 1, 11, 1, 1, "center col_80", "Ponad 8 lat" });
+            return dT;
+
+        }
+
+        private DataTable tabelaBocznaDzialu_2_2()
+        {
+            DataTable dT = schematTabeli();
+            dT.Clear();
+            //                         W  K  CS RS   style"    text"
+            dT.Rows.Add(new Object[] { 1, 1, 1, 4, "wciecie borderAll", "SO I instancja" });
+            dT.Rows.Add(new Object[] { 1, 2, 1, 1, "wciecie borderAll", "U" });
+            dT.Rows.Add(new Object[] { 2, 2, 1, 1, "wciecie borderAll", "P" });
+            dT.Rows.Add(new Object[] { 3, 2, 1, 1, "wciecie borderAll", "Np" });
+            dT.Rows.Add(new Object[] { 4, 2, 1, 1, "wciecie borderAll", "Po" });
+
+            dT.Rows.Add(new Object[] { 5, 1, 1, 9, "wciecie borderAll", "SO II instancja" });
+            dT.Rows.Add(new Object[] { 5, 2, 1, 1, "wciecie borderAll", "U  " });
+            dT.Rows.Add(new Object[] { 6, 2, 1, 1, "wciecie borderAll", "Ua" });
+            dT.Rows.Add(new Object[] { 7, 2, 1, 1, "wciecie borderAll", "Uz ogółem" });
+            dT.Rows.Add(new Object[] { 8, 2, 1, 1, "wciecie borderAll", "w tym Uz (sprawy kończące postępowanie w I instancji)" });
+            dT.Rows.Add(new Object[] { 9, 2, 1, 1, "wciecie borderAll", "P" });
+            dT.Rows.Add(new Object[] { 10, 2, 1, 1, "wciecie borderAll", "Po" });
+            dT.Rows.Add(new Object[] { 11, 2, 1, 1, "wciecie borderAll", "Pa apelacyjne" });
+            dT.Rows.Add(new Object[] { 12, 2, 1, 1, "wciecie borderAll", "Pz zażaleniowe ogółem" });
+            dT.Rows.Add(new Object[] { 13, 2, 1, 1, "wciecie borderAll", "w tym Pz (sprawy kończące postępowanie w I instancji)" });
+
+            return dT;
+        }
+
+        #endregion dzial 2.2
+        #region dzial 2.2.a
+
+        private DataTable naglowekTabeliDzialu_2_2_a()
+        {
+
+            return naglowekTabeliDzialu_2_2();
+
+        }
+
+        private DataTable tabelaBocznaDzialu_2_2_a()
+        {
+
+            return tabelaBocznaDzialu_2_2();
+        }
+
+        #endregion dzial 2.2.a
+        #region dzial 2.2.1
+
+        private DataTable naglowekTabeliDzialu_2_2_1()
+        {
+
+            return naglowekTabeliDzialu_2_2();
+
+        }
+
+        private DataTable tabelaBocznaDzialu_2_2_1()
+        {
+
+            return tabelaBocznaDzialu_2_2();
+        }
+
+        #endregion dzial 2.2.a
+        #region dzial 2.2.1.a
+
+        private DataTable naglowekTabeliDzialu_2_2_1_a()
+        {
+
+            return naglowekTabeliDzialu_2_2();
+
+        }
+
+        private DataTable tabelaBocznaDzialu_2_2_1_a()
+        {
+
+            return tabelaBocznaDzialu_2_2();
+        }
+
+        #endregion dzial 2.2.1.a.
+
+
+        #region dzial 2.3
+
+        private DataTable naglowekTabeliDzialu_2_3()
+        {
+            DataTable dT = schematTabeli();
+            dT.Clear();
+            //                         W  K  CS RS   style"    text"
+            dT.Rows.Add(new Object[] { 1, 1, 2, 1, "center", "SPRAWY wg repertoriów / wykazów" });
+            dT.Rows.Add(new Object[] { 1, 3, 1, 1, "center col_120", "Razem(kol. od 2 do 7)" });
+            dT.Rows.Add(new Object[] { 1, 4, 1, 1, "center col_120", "Do 1 miesiąca" });
+            dT.Rows.Add(new Object[] { 1, 5, 1, 1, "center col_120", "Powyżej 1 do 2 miesięcy" });
+            dT.Rows.Add(new Object[] { 1, 6, 1, 1, "center col_120", "Powyżej 2 do 3 miesięcy" });
+            dT.Rows.Add(new Object[] { 1, 7, 1, 1, "center col_120", "Powyżej 3 do 6 miesięcy" });
+            dT.Rows.Add(new Object[] { 1, 8, 1, 1, "center col_120", "Powyżej 6 do 9 miesięcy" });
+            dT.Rows.Add(new Object[] { 1, 9, 1, 1, "center col_120", "Ponad 9 miesięcy" });
+
+            return dT;
+
+        }
+
+        private DataTable tabelaBocznaDzialu_2_3()
+        {
+            DataTable dT = schematTabeli();
+            dT.Clear();
+            //                         W  K  CS RS   style"    text"
+            dT.Rows.Add(new Object[] { 1, 1, 1, 1, "wciecie borderAll", "SO I instancja" });
+            dT.Rows.Add(new Object[] { 1, 2, 1, 1, "wciecie borderAll", "P" });
+
+            dT.Rows.Add(new Object[] { 2, 1, 1, 2, "wciecie borderAll", "SO II instancja" });
+            dT.Rows.Add(new Object[] { 2, 2, 1, 1, "wciecie borderAll", "U  " });
+            dT.Rows.Add(new Object[] { 3, 2, 1, 1, "wciecie borderAll", "Pa apelacyjne" });
+
+            return dT;
+        }
+
+        #endregion dzial 2.3
+        #region dzial 2.3
+
+        private DataTable naglowekTabeliDzialu_2_3_1()
+        {
+
+            return naglowekTabeliDzialu_2_3();
+
+        }
+
+        private DataTable tabelaBocznaDzialu_2_3_1()
+        {
+
+
+            return tabelaBocznaDzialu_2_3();
+        }
+
+        #endregion dzial 2.3.1
 
 
         #endregion dane do tabeli
