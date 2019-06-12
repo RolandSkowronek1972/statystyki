@@ -32,7 +32,7 @@ namespace stat2018
             }
             if (!IsPostBack)
             {
-                //cm.log.Debug("otwarcie formularza: " + tenPlik);
+                cm.log.Info("otwarcie formularza: " + tenPlik);
                 try
                 {
                     // file read with version
@@ -123,6 +123,9 @@ namespace stat2018
                 tabelaGlowna.AppendLine(ms.tworztabeleMSS("3.2", naglowekTabeliDzialu_3_2(), tabelaBocznaDzialu_3_2(), tabelaDanych, 2, 4, 1, 7, idWydzialuNumerycznie, true, "Liczba spraw, w których po wydaniu orzeczenia sądu odwoławczego akta zwrócono sądowi I instancji", tenPlik));
                 tabelaGlowna.AppendLine(ms.tworztabeleMSS("4.1", naglowekTabeliDzialu_4_1(), tabelaBocznaDzialu_4_1(), tabelaDanych, 4, 24, 3, 13, idWydzialuNumerycznie, true, "Szczegółowe rozliczenie skargi (Wykaz S)", tenPlik));
                 tabelaGlowna.AppendLine(ms.tworztabeleMSS("4.2", naglowekTabeliDzialu_4_2(), tabelaBocznaDzialu_4_2(), tabelaDanych, 2, 2, 1, 7, idWydzialuNumerycznie, true, "Szczegółowe rozliczenie skargi (Wykaz S)", tenPlik));
+                tabelaGlowna.AppendLine(ms.tworztabeleMSS("5", naglowekTabeliDzialu_5(), tabelaBocznaDzialu_5(), tabelaDanych, 4, 22, 5, 10, idWydzialuNumerycznie, true, "Szczegółowe rozliczenie skargi (Wykaz S)", tenPlik));
+                tabelaGlowna.AppendLine(ms.tworztabeleMSS("6", naglowekTabeliDzialu_6(), tabelaBocznaDzialu_6(), tabelaDanych, 2, 24, 3, 7, idWydzialuNumerycznie, true, "Szczegółowe rozliczenie skargi (Wykaz S)", tenPlik));
+                tabelaGlowna.AppendLine(ms.tworztabeleMSS("7.1", naglowekTabeliDzialu_7_1(), tabelaBocznaDzialu_7_1(), tabelaDanych, 1, 4, 1, 35, idWydzialuNumerycznie, true, "Szczegółowe rozliczenie skargi (Wykaz S)", tenPlik));
 
 
 
@@ -2501,7 +2504,245 @@ namespace stat2018
         }
 
         #endregion dzial 4.2
+        #region dzial 5
 
+        private DataTable naglowekTabeliDzialu_5()
+        {
+            DataTable dT = schematTabeli();
+            dT.Clear();
+            //                         W  K  CS RS   style"    text"
+            dT.Rows.Add(new Object[] { 1, 1, 5, 4, "center", "Wyszczególnienie rodzajów spraw według wykazu spraw podlegających symbolizacji" });
+            dT.Rows.Add(new Object[] { 1, 5, 3, 1, "center col_120", "Liczba" });
+            dT.Rows.Add(new Object[] { 1, 9, 1, 3, "center col_120", "Łączna wysokość zasądzonych odszkodowań (zł)" });
+            dT.Rows.Add(new Object[] { 1, 10, 1, 3, "center", "Łączna wysokość zadośćuczynienia (zł)" });
+
+            dT.Rows.Add(new Object[] { 1, 11, 3, 1, "center col_120", "Liczba" });
+            dT.Rows.Add(new Object[] { 1, 14, 1, 3, "center col_120", "Łączna wysokość zasądzonych odszkodowań (zł)" });
+            dT.Rows.Add(new Object[] { 1, 15, 1, 3, "center", "Łączna wysokość zadośćuczynienia (zł)" });
+
+            dT.Rows.Add(new Object[] { 2, 5, 1, 2, "center col_120", "spraw" });
+            dT.Rows.Add(new Object[] { 2, 6, 2, 1, "center col_120", "osób którym zasądzono" });
+
+            dT.Rows.Add(new Object[] { 2, 11, 1, 2, "center col_120", "spraw" });
+            dT.Rows.Add(new Object[] { 2, 12, 2, 1, "center col_120", "osób którym zasądzono" });
+
+            dT.Rows.Add(new Object[] { 3, 6, 1, 1, "center col_120", "odszkodowania" });
+            dT.Rows.Add(new Object[] { 3, 7, 1, 1, "center col_120", "zadośćuczynienia" });
+
+            dT.Rows.Add(new Object[] { 3, 12, 1, 1, "center col_120", "odszkodowania" });
+            dT.Rows.Add(new Object[] { 3, 13, 1, 1, "center col_120", "zadośćuczynienia" });
+
+            dT.Rows.Add(new Object[] { 4, 5, 5, 1, "center col_120", "I instancja" });
+            dT.Rows.Add(new Object[] { 4, 13, 5, 1, "center col_120", "II instancja" });
+            return dT;
+        }
+
+        private DataTable tabelaBocznaDzialu_5()
+        {
+            DataTable dT = schematTabeli();
+            dT.Clear();
+            //                         W  K  CS RS   style"    text"
+            dT.Rows.Add(new Object[] { 1, 1, 4, 1, "wciecie borderAll", "Ogółem w sprawach ubezpieczeń(w. 02 do 05)" });
+            dT.Rows.Add(new Object[] { 1, 4, 1, 1, "center borderAll", "-" });
+
+            dT.Rows.Add(new Object[] { 2, 1, 1, 2, "wciecie borderAll", "Odszkodowania z tytułu " });
+            dT.Rows.Add(new Object[] { 2, 2, 3, 1, "wciecie borderAll", "wypadku przy pracy rolniczej lub rolniczej choroby zawodowej" });
+            dT.Rows.Add(new Object[] { 2, 4, 1, 1, "center borderAll", "514" });
+            dT.Rows.Add(new Object[] { 3, 2, 3, 1, "wciecie borderAll", "wypadku przy pracy lub choroby zawodowej" });
+            dT.Rows.Add(new Object[] { 3, 4, 1, 1, "center borderAll", "516" });
+
+            dT.Rows.Add(new Object[] { 4, 1, 4, 1, "wciecie borderAll", "Odszkodowania przysługujące w razie wypadków lub chorób pozostających w związku ze służbą wojskową, w Policji, Agencji Bezpieczeństwa Wewnętrznego, Agencji Wywiadu, Służby Kontrwywiadu Wojskowego, Służby Wywiadu Wojskowego, Centralnego Biura Antykorupcyjnego, Biura Ochrony Rządu, Straży Granicznej, Służbie Więziennej, Państwowej Straży Pożarnej i Służbie Celnej" });
+            dT.Rows.Add(new Object[] { 4, 4, 1, 1, "center borderAll", "559" });
+
+            dT.Rows.Add(new Object[] { 5, 1, 4, 1, "wciecie borderAll", "Inne " });
+            dT.Rows.Add(new Object[] { 5, 4, 1, 1, "center borderAll", "-" });
+
+            dT.Rows.Add(new Object[] { 6, 1, 4, 1, "wciecie borderAll", "Ogółem w sprawach z zakresu prawa pracy (w.06=w.07 do 22) " });
+            dT.Rows.Add(new Object[] { 6, 4, 1, 1, "center borderAll", "-" });
+            dT.Rows.Add(new Object[] { 7, 1, 4, 1, "wciecie borderAll", "O odszkodowanie z tytułu niewydania w terminie świadectwa pracy lub wydania niewłaściwego świadectwa pracy " });
+            dT.Rows.Add(new Object[] { 7, 4, 1, 1, "center borderAll", "405" });
+            dT.Rows.Add(new Object[] { 8, 1, 4, 1, "wciecie borderAll", "O odszkodowanie należne pracownikowi za okres obowiązywania zakazu konkurencji " });
+            dT.Rows.Add(new Object[] { 8, 4, 1, 1, "center borderAll", "450" });
+            dT.Rows.Add(new Object[] { 9, 1, 4, 1, "wciecie borderAll", "O odszkodowanie z tytułu wypadku przy pracy lub choroby zawodowej (nie dotyczy wypadku przy pracy w gospodarstwie rolnym) " });
+            dT.Rows.Add(new Object[] { 9, 4, 1, 1, "center borderAll", "451" });
+
+            dT.Rows.Add(new Object[] { 10, 1, 1, 2, "wciecie borderAll", "O odszkodowanie z tytułu naruszenia zasady równego traktowania w zatrudnieniu dotyczy (art. 18<sup>3d</sup> kp)" });
+            dT.Rows.Add(new Object[] { 10, 2, 3, 1, "wciecie borderAll", "kobiet" });
+            dT.Rows.Add(new Object[] { 10, 4, 1, 1, "center borderAll", "458dk" });
+            dT.Rows.Add(new Object[] { 11, 2, 3, 1, "wciecie borderAll", "mężczyzn" });
+            dT.Rows.Add(new Object[] { 11, 4, 1, 1, "center borderAll", "458m" });
+
+            dT.Rows.Add(new Object[] { 12, 1, 1, 2, "wciecie borderAll", "O odszkodowanie w związku z  molestowaniem seksualnym, jako jedną z form dyskryminacji w miejscu pracy (art.18<sup>3a</sup> § 6 k.p. w zw. z art. 18<sup>3d</sup> kp) " });
+            dT.Rows.Add(new Object[] { 12, 2, 3, 1, "wciecie borderAll", "kobiet" });
+            dT.Rows.Add(new Object[] { 12, 4, 1, 1, "center borderAll", "459dk" });
+            dT.Rows.Add(new Object[] { 13, 2, 3, 1, "wciecie borderAll", "mężczyzn" });
+            dT.Rows.Add(new Object[] { 13, 4, 1, 1, "center borderAll", "459m" });
+
+            dT.Rows.Add(new Object[] { 14, 1, 1, 2, "wciecie borderAll", "O zadośćuczynienie w związku z mobbingiem (art. 94<sup>3</sup>§3 kp)" });
+            dT.Rows.Add(new Object[] { 14, 2, 3, 1, "wciecie borderAll", "kobiet" });
+            dT.Rows.Add(new Object[] { 14, 4, 1, 1, "center borderAll", "459dk" });
+            dT.Rows.Add(new Object[] { 15, 2, 3, 1, "wciecie borderAll", "mężczyzn" });
+            dT.Rows.Add(new Object[] { 15, 4, 1, 1, "center borderAll", "459m" });
+
+            dT.Rows.Add(new Object[] { 16, 1, 1, 2, "wciecie borderAll", "O zadośćuczynienie w związku z mobbingiem (art. 94<sup>3</sup>§4 kp)" });
+            dT.Rows.Add(new Object[] { 16, 2, 3, 1, "wciecie borderAll", "kobiet" });
+            dT.Rows.Add(new Object[] { 16, 4, 1, 1, "center borderAll", "463dk" });
+            dT.Rows.Add(new Object[] { 17, 2, 3, 1, "wciecie borderAll", "mężczyzn" });
+            dT.Rows.Add(new Object[] { 17, 4, 1, 1, "center borderAll", "463dm" });
+
+            dT.Rows.Add(new Object[] { 18, 1, 1, 4, "wciecie borderAll", "O odszkodowanie" });
+            dT.Rows.Add(new Object[] { 18, 2, 1, 2, "wciecie borderAll", "za mienie" });
+
+            dT.Rows.Add(new Object[] { 18, 3, 2, 1, "wciecie borderAll", "nie powierzone" });
+            dT.Rows.Add(new Object[] { 18, 4, 1, 1, "center borderAll", "415" });
+            dT.Rows.Add(new Object[] { 19, 3, 2, 1, "wciecie borderAll", "powierzone łącznie ze sprawami z tytułu odpowiedzialności wspólnej " });
+            dT.Rows.Add(new Object[] { 19, 4, 1, 1, "center borderAll", "416m" });
+
+            dT.Rows.Add(new Object[] { 20, 2, 3, 1, "wciecie borderAll", "przysługujące pracodawcy w razie nieuzasadnionego rozwiązania przez pracownika umowy o pracę bez wypowiedzenia" });
+            dT.Rows.Add(new Object[] { 20, 4, 1, 1, "center borderAll", "417" });
+            dT.Rows.Add(new Object[] { 21, 2, 3, 1, "wciecie borderAll", "z tytułu naruszenia przez pracownika zakazu konkurencji" });
+            dT.Rows.Add(new Object[] { 21, 4, 1, 1, "center borderAll", "418" });
+            dT.Rows.Add(new Object[] { 22, 1, 4, 1, "wciecie borderAll", "Inne" });
+            dT.Rows.Add(new Object[] { 22, 4, 1, 1, "center borderAll", "-" });
+
+            return dT;
+        }
+
+        #endregion dzial 5
+
+        #region dzial 6
+
+        private DataTable naglowekTabeliDzialu_6()
+        {
+            DataTable dT = schematTabeli();
+            dT.Clear();
+            //                         W  K  CS RS   style"    text"
+            dT.Rows.Add(new Object[] { 1, 1, 3, 2, "center", "SPRAWY z rep." });
+            dT.Rows.Add(new Object[] { 1, 5, 7, 1, "center ", "Sprawy z zakresu ubezpieczeń społecznych wielotomowe Liczba spraw" });
+
+            dT.Rows.Add(new Object[] { 2, 5, 1, 1, "center col_120", "zbiorczo pow. 5 tomów (kol. od 2 do 7)" });
+            dT.Rows.Add(new Object[] { 2, 6, 1, 1, "center col_120", "pow. 5 do 10 tomów" });
+            dT.Rows.Add(new Object[] { 2, 7, 1, 1, "center col_120", "pow. 10 do 20 tomów" });
+            dT.Rows.Add(new Object[] { 2, 8, 1, 1, "center col_120", "pow. 20 do 30 tomów" });
+            dT.Rows.Add(new Object[] { 2, 9, 1, 1, "center col_120", "pow. 30 do 50 tomów" });
+            dT.Rows.Add(new Object[] { 2, 10, 1, 1, "center col_120", "pow. 50 do 100 tomów" });
+            dT.Rows.Add(new Object[] { 2, 11, 1, 1, "center col_120", "powyżej 100 tomów " });
+            return dT;
+        }
+
+        private DataTable tabelaBocznaDzialu_6()
+        {
+            DataTable dT = schematTabeli();
+            dT.Clear();
+            //                         W  K  CS RS   style"    text"
+            dT.Rows.Add(new Object[] { 1, 1, 1, 7, "wciecie borderAll", "U" });
+            dT.Rows.Add(new Object[] { 1, 2, 2, 1, "center borderAll", "wpływ w okresie sprawozdawczym" });
+            dT.Rows.Add(new Object[] { 2, 2, 1, 2, "wciecie borderAll", "w tym  " });
+            dT.Rows.Add(new Object[] { 2, 3, 1, 1, "wciecie borderAll", "wpływ w wyniku przekazania z innej jednostki" });
+            dT.Rows.Add(new Object[] { 3, 3, 1, 1, "wciecie borderAll", "w wyniku zwrotu pozwu" });
+
+            dT.Rows.Add(new Object[] { 4, 2, 2, 1, "wciecie borderAll", "załatwienie w okresie sprawozdawczym " });
+            dT.Rows.Add(new Object[] { 5, 2, 1, 2, "wciecie borderAll", "w tym  " });
+            dT.Rows.Add(new Object[] { 5, 3, 1, 1, "wciecie borderAll", "załatwienie w wyniku przekazania do innej jednostki" });
+            dT.Rows.Add(new Object[] { 6, 3, 1, 1, "wciecie borderAll", "w wyniku zwrotu pozwu" });
+            dT.Rows.Add(new Object[] { 7, 2, 2, 1, "wciecie borderAll", "pozostało na następny okres sprawozdawczy" });
+
+            dT.Rows.Add(new Object[] { 8, 1, 1, 5, "wciecie borderAll", "Ua" });
+            dT.Rows.Add(new Object[] { 8, 2, 2, 1, "wciecie borderAll", "wpływ w okresie sprawozdawczym" });
+            dT.Rows.Add(new Object[] { 9, 2, 2, 1, "wciecie borderAll", "w tym wpływ w wyniku przekazania z innej jednostki" });
+            dT.Rows.Add(new Object[] { 10, 2, 2, 1, "wciecie borderAll", "załatwienie w okresie sprawozdawczym" });
+            dT.Rows.Add(new Object[] { 11, 2, 2, 1, "wciecie borderAll", "w tym załatwienie w wyniku przekazania do innej jednostki" });
+            dT.Rows.Add(new Object[] { 12, 2, 2, 1, "wciecie borderAll", "pozostało na następny okres sprawozdawczy" });
+
+            dT.Rows.Add(new Object[] { 13, 1, 1, 7, "wciecie borderAll", "P" });
+            dT.Rows.Add(new Object[] { 13, 2, 2, 1, "center borderAll", "wpływ w okresie sprawozdawczym" });
+            dT.Rows.Add(new Object[] { 14, 2, 1, 2, "wciecie borderAll", "w tym  " });
+            dT.Rows.Add(new Object[] { 14, 3, 1, 1, "wciecie borderAll", "wpływ w wyniku przekazania z innej jednostki" });
+            dT.Rows.Add(new Object[] { 15, 3, 1, 1, "wciecie borderAll", "w wyniku zwrotu pozwu" });
+            dT.Rows.Add(new Object[] { 16, 2, 2, 1, "wciecie borderAll", "załatwienie w okresie sprawozdawczym " });
+
+            dT.Rows.Add(new Object[] { 17, 2, 1, 2, "wciecie borderAll", "w tym  " });
+            dT.Rows.Add(new Object[] { 17, 3, 1, 1, "wciecie borderAll", "załatwienie w wyniku przekazania do innej jednostki" });
+            dT.Rows.Add(new Object[] { 18, 3, 1, 1, "wciecie borderAll", "w wyniku zwrotu pozwu" });
+            dT.Rows.Add(new Object[] { 19, 2, 2, 1, "wciecie borderAll", "pozostało na następny okres sprawozdawczy" });
+
+            dT.Rows.Add(new Object[] { 20, 1, 1, 5, "wciecie borderAll", "Ua" });
+            dT.Rows.Add(new Object[] { 20, 2, 2, 1, "wciecie borderAll", "wpływ w okresie sprawozdawczym" });
+            dT.Rows.Add(new Object[] { 21, 2, 2, 1, "wciecie borderAll", "w tym wpływ w wyniku przekazania z innej jednostki" });
+            dT.Rows.Add(new Object[] { 22, 2, 2, 1, "wciecie borderAll", "załatwienie w okresie sprawozdawczym" });
+            dT.Rows.Add(new Object[] { 23, 2, 2, 1, "wciecie borderAll", "w tym załatwienie w wyniku przekazania do innej jednostki" });
+            dT.Rows.Add(new Object[] { 24, 2, 2, 1, "wciecie borderAll", "pozostało na następny okres sprawozdawczy" });
+            return dT;
+        }
+
+        #endregion dzial 6
+        #region dzial 7.1
+
+        private DataTable naglowekTabeliDzialu_7_1()
+        {
+            DataTable dT = schematTabeli();
+            dT.Clear();
+            //                         W  K  CS RS   style"    text"
+            dT.Rows.Add(new Object[] { 1, 1, 1, 1, "center", "Wyszczególnienie" });
+            dT.Rows.Add(new Object[] { 1, 3, 1, 1, "center ", "Sprawy z zakresu ubezpieczeń społecznych wielotomowe Liczba spraw" });
+
+            dT.Rows.Add(new Object[] { 1, 4, 1, 1, "center ", "Liczba sędziów SO i wakujących stanowisk sędziowskich w ramach limitu (na ostatni dzień okresu statystycznego)" });
+
+            dT.Rows.Add(new Object[] { 1, 5, 1, 1, "center ", "Liczba sędziów SO i wakujących stanowisk sędziowskich w ramach limitu (w okresie statystycznym)" });
+            dT.Rows.Add(new Object[] { 1, 6, 1, 1, "center ", "Obsada średnio-okresowa (sędziowie SO) z wyłączeniem sędziów funkcyjnych, delegowanych do pełnienia czynności w Ministerstwie Sprawiedliwości, KSSiP oraz sędziów SO delegowanych w trybie art. 77 § 1 usp na czas nieokreślony lub na czas określony orzekających w pełnym lub niepełnym wymiarze w SA czy też wykonujących czynności orzecznicze na mocy ustawy i delegowanych do pełnienia czynności orzeczniczych w pełnym  lub niepełnym wymiarze w innym SO czy SR" });
+            dT.Rows.Add(new Object[] { 1, 7, 1, 1, "center ", "Liczba sędziów SO z wyłączeniem sędziów funkcyjnych, delegowanych do pełnienia czynności w Ministerstwie Sprawiedliwości , KSSiP oraz sędziów SO delegowanych w trybie art. 77 § 1 usp na czas nieokreślony lub na czas określony orzekających w pełnym lub niepełnym wymiarze w SA czy też wykonujących czynności orzecznicze na mocy ustawy i delegowanych do pełnienia czynności orzeczniczych w pełnym  lub niepełnym wymiarze w innym SO czy SR" });
+            dT.Rows.Add(new Object[] { 1, 8, 1, 1, "center ", "Obsada średniookresowa sędziów SO delegowanych w trybie art. 77 § 1 usp na czas nieokreślony lub na czas określony orzekających w pełnym wymiarze w SA" });
+            dT.Rows.Add(new Object[] { 1, 9, 1, 1, "center ", "Liczba  sędziów SO delegowanych w trybie art. 77 § 1 usp na czas nieokreślony lub na czas określony orzekających w pełnym wymiarze w SA" });
+            dT.Rows.Add(new Object[] { 1, 10, 1, 1, "center ", "Obsada średniookresowa sędziów SO delegowanych w trybie art. 77 § 1 usp na czas nieokreślony lub na czas określony orzekających w niepełnym wymiarze czy też wykonujących czynności orzecznicze na mocy ustawy w SA" });
+            dT.Rows.Add(new Object[] { 1, 11, 1, 1, "center ", "Liczba  sędziów SO delegowanych w trybie art. 77 § 1 usp na czas nieokreślony lub na czas określony orzekających w niepełnym wymiarze  czy też wykonujących czynności orzecznicze na mocy ustawy w SA" });
+            dT.Rows.Add(new Object[] { 1, 12, 1, 1, "center ", "Obsada średniookresowa sędziów SO  w ramach limitu  delegowanych do pełnienia czynności w Ministerstwie Sprawiedliwości" });
+            dT.Rows.Add(new Object[] { 1, 13, 1, 1, "center ", "Liczba sędziów SO delegowanych do pełnienia czynności w Ministerstwie Sprawiedliwości" });
+            dT.Rows.Add(new Object[] { 1, 14, 1, 1, "center ", "Obsada średniookresowa sędziów SO  w  ramach limitu delegowanych do pełnienia czynności w Krajowej Szkole Sądownictwa i Prokuratury" });
+            dT.Rows.Add(new Object[] { 1, 15, 1, 1, "center ", "Liczba sędziów SO delegowanych do pełnienia czynności w Krajowej Szkole Sądownictwa i Prokuratury" });
+            dT.Rows.Add(new Object[] { 1, 16, 1, 1, "center ", "Obsada sędziów SA delegowanych do pełnienia  czynności orzeczniczych w pełnym  lub niepełnym wymiarze w SO" });
+            dT.Rows.Add(new Object[] { 1, 17, 1, 1, "center ", "Liczba sędziów SA delegowanych do pełnienia   czynności orzeczniczych w pełnym  lub niepełnym wymiarze w   SO" });
+            dT.Rows.Add(new Object[] { 1, 18, 1, 1, "center ", "Obsada sędziów  SO delegowanych do pełnienia  czynności orzeczniczych w pełnym wymiarze w SR" });
+            dT.Rows.Add(new Object[] { 1, 19, 1, 1, "center ", "Liczba sędziów SO delegowanych do pełnienia czynności orzeczniczych w pełnym wymiarze w  SR" });
+            dT.Rows.Add(new Object[] { 1, 20, 1, 1, "center ", "Obsada sędziów  SO delegowanych do pełnienia  czynności orzeczniczych w niepełnym wymiarze  czy też wykonujących czynności orzecznicze na mocy ustawy w SR" });
+            dT.Rows.Add(new Object[] { 1, 21, 1, 1, "center ", "Liczba sędziów SO delegowanych do pełnienia czynności orzeczniczych w niepełnym wymiarze czy też wykonujących czynności orzecznicze na mocy ustawy w  SR" });
+            dT.Rows.Add(new Object[] { 1, 22, 1, 1, "center ", "Obsada sędziów danego SO delegowanych do pełnienia czynności orzeczniczych w pełnym wymiarze w innym SO" });
+            dT.Rows.Add(new Object[] { 1, 23, 1, 1, "center ", "Liczba sędziów  danego SO delegowanych do pełnienia czynności orzeczniczych w pełnym wymiarze w innym SO" });
+            dT.Rows.Add(new Object[] { 1, 24, 1, 1, "center ", "Obsada sędziów danego SO delegowanych do pełnienia czynności orzeczniczych w niepełnym wymiarze czy też wykonujących czynności orzecznicze na mocy ustawy w innym SO" });
+            dT.Rows.Add(new Object[] { 1, 25, 1, 1, "center ", "Liczba sędziów  danego SO delegowanych do pełnienia czynności orzeczniczych w niepełnym wymiarze czy też wykonujących czynności orzecznicze na mocy ustawy w innym SO" });
+            dT.Rows.Add(new Object[] { 1, 26, 1, 1, "center ", "Obsada sędziów innego SO delegowanych do pełnienia  czynności orzeczniczych w pełnym  lub niepełnym wymiarze czy też wykonujących czynności orzecznicze na mocy ustawy w danym SO" });
+            dT.Rows.Add(new Object[] { 1, 27, 1, 1, "center ", "Liczba sędziów innego SO delegowanych do pełnienia   czynności orzeczniczych w  pełnym  lun niepełnym wymiarze czy też wykonujących czynności orzecznicze na mocy ustawy w danym SO" });
+            dT.Rows.Add(new Object[] { 1, 28, 1, 1, "center ", "Obsada średnio-okresowa (sędziowie funkcyjni SO) I wersja" });
+            dT.Rows.Add(new Object[] { 1, 29, 1, 1, "center ", "Obsada średniookresowa (sędziowie funkcyjni SO) II wersja" });
+            dT.Rows.Add(new Object[] { 1, 30, 1, 1, "center ", "Liczba sędziów SO- funkcyjnych  tego sądu w ramach limitu na ostatni dzień okresu statystycznego" });
+            dT.Rows.Add(new Object[] { 1, 31, 1, 1, "center ", "Liczba sędziów SO- funkcyjnych  tego sądu w ramach limitu w okresie statystycznym" });
+            dT.Rows.Add(new Object[] { 1, 32, 1, 1, "center ", "Obsada średniookresowa (sędziowie SR delegowani w trybie art. 77 § 1 usp na czas nieokreślony lub na czas określony orzekający w pełnym wymiarze) " });
+            dT.Rows.Add(new Object[] { 1, 33, 1, 1, "center ", "Liczba  sędziów SR delegowanych w trybie art. 77 § 1 usp na czas nieokreślony lub na czas określony orzekających w pełnym wymiarze" });
+            dT.Rows.Add(new Object[] { 1, 34, 1, 1, "center ", "Obsada średniookresowa (sędziowie SR delegowani w trybie art. 77 § 1 usp na czas nieokreślony lub na czas określony orzekających w  niepełnym wymiarze czy też wykonujących czynności orzecznicze na mocy ustawy) " });
+            dT.Rows.Add(new Object[] { 1, 35, 1, 1, "center ", "Liczba  sędziów SR delegowanych w trybie art. 77 § 1 usp na czas nieokreślony lub na czas określony orzekających w  niepełnym wymiarze czy też wykonujących czynności orzecznicze na mocy ustawy" });
+            dT.Rows.Add(new Object[] { 1, 36, 1, 1, "center ", "Obsada średniookresowa sędziów SR delegowanych w trybie art. 77 § 8 i 9 usp" });
+            dT.Rows.Add(new Object[] { 1, 37, 1, 1, "center ", "Liczba sędziów SR delegowanych w trybie art. 77 § 8 i 9 usp" });
+            dT.Rows.Add(new Object[] { 1, 38, 1, 1, "center ", "Łączna liczba sesji w danym okresie statystycznym (rozprawy i posiedzenia) sędziów SO z wyłączeniem sędziów funkcyjnych  sędziów delegowanych w trybie art. 77 § 1 usp na czas nieokreślony lub na czas określony orzekający w pełnym lub niepełnym wymiarze, czy też wykonujących czynności orzecznicze na mocy ustawy sędziów SO delegowanych do pełnienia  czynności orzeczniczych do innego i z innego sądu okręgowego lub do SR czy też delegowanych w trybie art. 77 § 9 usp i i sędziów delegowanych do MS, KSSiP" });
+            dT.Rows.Add(new Object[] { 1, 39, 1, 1, "center ", "Średniookresowa liczba sesji w danym okresie statystycznym (rozprawy i posiedzenia) jednego sędziego SO z wyłączeniem sędziów funkcyjnych  sędziów delegowanych w trybie art. 77 § 1 usp na czas nieokreślony lub na czas określony orzekający w pełnym lub niepełnym wymiarze czy też wykonujących czynności orzecznicze na mocy ustawy,  sędziów SO delegowanych do pełnienia  czynności orzeczniczych do innego i z innego sądu okręgowego lub do SR czy też delegowanych w trybie art. 77 § 9 usp i i sędziów delegowanych do MS, KSSiP" });
+            dT.Rows.Add(new Object[] { 1, 40, 1, 1, "center ", "Liczba obsadzonych etatów (na ostatni dzień okresu statystycznego)" });
+            dT.Rows.Add(new Object[] { 1, 41, 1, 1, "center ", "Liczba obsadzonych etatów (w okresie statystycznym)" });
+
+
+            return dT;
+        }
+
+        private DataTable tabelaBocznaDzialu_7_1()
+        {
+            DataTable dT = schematTabeli();
+            dT.Clear();
+            //                         W  K  CS RS   style"    text"
+            dT.Rows.Add(new Object[] { 1, 1, 1, 1, "wciecie borderAll", "Zbiorczo sędziowie pionu pracy i ubezpieczeń społecznych" });
+            dT.Rows.Add(new Object[] { 2, 1, 1, 1, "center borderAll", "Sędziowie wydz. pracy i ubezp. społ." });
+            dT.Rows.Add(new Object[] { 3, 1, 1, 1, "wciecie borderAll", "Sędziowie wydziału pracy" });
+            dT.Rows.Add(new Object[] { 4, 1, 1, 1, "wciecie borderAll", "Sędziowie wydziału ubezpieczeń społecznych" });
+            return dT;
+        }
+
+        #endregion dzial 7.1
         #endregion dane do tabeli
     }
 }
