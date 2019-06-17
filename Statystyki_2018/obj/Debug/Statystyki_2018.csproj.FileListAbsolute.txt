@@ -511,3 +511,4 @@ C:\myProjects\prv\statystyki\Statystyki_2018\obj\Debug\Statystyki_2018.csproj.Co
 C:\myProjects\prv\statystyki\Statystyki_2018\obj\Debug\Statystyki_2018.csproj.CopyComplete
 C:\myProjects\prv\statystyki\Statystyki_2018\obj\Debug\stat2018.dll
 C:\myProjects\prv\statystyki\Statystyki_2018\obj\Debug\stat2018.pdb
+C:\myProjects\prv\statystyki\Statystyki_2018\obj\Debug\Statystyki_2018.csprojAssemblyReference.cache

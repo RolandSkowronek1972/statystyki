@@ -536,59 +536,59 @@ namespace stat2018
                 //------------
                 MyWorksheet1.Cells[rowik + 6, 1, rowik + 17, 3].Merge = true;
                 MyWorksheet1.Cells[rowik + 6, 1].Value = "RAZEM";
-                MyWorksheet1.Cells[rowik + 6, 1].Style.Border.BorderAround(OfficeOpenXml.Style.ExcelBorderStyle.Thin, System.Drawing.Color.Black);
+                MyWorksheet1.Cells[rowik + 6, 1, rowik + 17, 3].Style.Border.BorderAround(OfficeOpenXml.Style.ExcelBorderStyle.Thin, System.Drawing.Color.Black);
 
-                MyWorksheet1.Cells[rowik + 6, 4, rowik + 6, 20].Merge = true;
+                MyWorksheet1.Cells[rowik + 6, 4, rowik + 6,14].Merge = true;
                 MyWorksheet1.Cells[rowik + 6, 4].Value = "Zaległość z poprzedniego miesiąca";
-                MyWorksheet1.Cells[rowik + 6, 4].Style.Border.BorderAround(OfficeOpenXml.Style.ExcelBorderStyle.Thin, System.Drawing.Color.Black);
+                MyWorksheet1.Cells[rowik + 6, 4, rowik + 6, 14].Style.Border.BorderAround(OfficeOpenXml.Style.ExcelBorderStyle.Thin, System.Drawing.Color.Black);
 
-                MyWorksheet1.Cells[rowik + 7, 4, rowik + 7, 20].Merge = true;
+                MyWorksheet1.Cells[rowik + 7, 4, rowik + 7,14].Merge = true;
                 MyWorksheet1.Cells[rowik + 7, 4].Value = "Wpływ";
-                MyWorksheet1.Cells[rowik + 7, 4].Style.Border.BorderAround(OfficeOpenXml.Style.ExcelBorderStyle.Thin, System.Drawing.Color.Black);
+                MyWorksheet1.Cells[rowik + 7, 4, rowik + 7, 14].Style.Border.BorderAround(OfficeOpenXml.Style.ExcelBorderStyle.Thin, System.Drawing.Color.Black);
 
-                MyWorksheet1.Cells[rowik + 8, 4, rowik + 8, 20].Merge = true;
+                MyWorksheet1.Cells[rowik + 8, 4, rowik + 8,14].Merge = true;
                 MyWorksheet1.Cells[rowik + 8, 4].Value = "Załatwienia";
-                MyWorksheet1.Cells[rowik + 8, 4].Style.Border.BorderAround(OfficeOpenXml.Style.ExcelBorderStyle.Thin, System.Drawing.Color.Black);
+                MyWorksheet1.Cells[rowik + 8, 4, rowik + 8, 14].Style.Border.BorderAround(OfficeOpenXml.Style.ExcelBorderStyle.Thin, System.Drawing.Color.Black);
 
-                MyWorksheet1.Cells[rowik + 9, 4, rowik + 9, 20].Merge = true;
+                MyWorksheet1.Cells[rowik + 9, 4, rowik + 9,14].Merge = true;
                 MyWorksheet1.Cells[rowik + 9, 4].Value = "Pozostało na następny miesiąc";
-                MyWorksheet1.Cells[rowik + 9, 4].Style.Border.BorderAround(OfficeOpenXml.Style.ExcelBorderStyle.Thin, System.Drawing.Color.Black);
+                MyWorksheet1.Cells[rowik + 9, 4, rowik + 9, 14].Style.Border.BorderAround(OfficeOpenXml.Style.ExcelBorderStyle.Thin, System.Drawing.Color.Black);
 
-                MyWorksheet1.Cells[rowik + 10, 4, rowik + 10, 20].Merge = true;
+                MyWorksheet1.Cells[rowik + 10, 4, rowik + 10,14].Merge = true;
                 MyWorksheet1.Cells[rowik + 10, 4].Value = "powyżej 3 - 6 miesięcy";
-                MyWorksheet1.Cells[rowik + 10, 4].Style.Border.BorderAround(OfficeOpenXml.Style.ExcelBorderStyle.Thin, System.Drawing.Color.Black);
+                MyWorksheet1.Cells[rowik + 10, 4, rowik + 10, 14].Style.Border.BorderAround(OfficeOpenXml.Style.ExcelBorderStyle.Thin, System.Drawing.Color.Black);
 
-                MyWorksheet1.Cells[rowik + 11, 4, rowik + 11, 20].Merge = true;
+                MyWorksheet1.Cells[rowik + 11, 4, rowik + 11,14].Merge = true;
 
                 MyWorksheet1.Cells[rowik + 11, 4].Value = " powyżej 6 - 12 miesięcy";
-                MyWorksheet1.Cells[rowik + 11, 4].Style.Border.BorderAround(OfficeOpenXml.Style.ExcelBorderStyle.Thin, System.Drawing.Color.Black);
+                MyWorksheet1.Cells[rowik + 11, 4, rowik + 11, 14].Style.Border.BorderAround(OfficeOpenXml.Style.ExcelBorderStyle.Thin, System.Drawing.Color.Black);
 
-                MyWorksheet1.Cells[rowik + 12, 4, rowik + 12, 20].Merge = true;
+                MyWorksheet1.Cells[rowik + 12, 4, rowik + 12,14].Merge = true;
                 MyWorksheet1.Cells[rowik + 12, 4].Value = " ponad 12 miesięcy";
-                MyWorksheet1.Cells[rowik + 12, 4].Style.Border.BorderAround(OfficeOpenXml.Style.ExcelBorderStyle.Thin, System.Drawing.Color.Black);
+                MyWorksheet1.Cells[rowik + 12, 4, rowik + 12, 14].Style.Border.BorderAround(OfficeOpenXml.Style.ExcelBorderStyle.Thin, System.Drawing.Color.Black);
 
                 MyWorksheet1.Cells[rowik + 13, 4, rowik + 17, 6].Merge = true;
                 MyWorksheet1.Cells[rowik + 13, 4].Value = " w tym";
-                MyWorksheet1.Cells[rowik + 13, 7, rowik + 13, 20].Merge = true;
+                MyWorksheet1.Cells[rowik + 13, 7, rowik + 13,14].Merge = true;
                 MyWorksheet1.Cells[rowik + 13, 7].Value = "powyżej 12 miesiecy  - 2 lat";
-                MyWorksheet1.Cells[rowik + 13, 4].Style.Border.BorderAround(OfficeOpenXml.Style.ExcelBorderStyle.Thin, System.Drawing.Color.Black);
-                MyWorksheet1.Cells[rowik + 13, 7].Style.Border.BorderAround(OfficeOpenXml.Style.ExcelBorderStyle.Thin, System.Drawing.Color.Black);
+                MyWorksheet1.Cells[rowik + 13, 4 ,rowik + 17, 6].Style.Border.BorderAround(OfficeOpenXml.Style.ExcelBorderStyle.Thin, System.Drawing.Color.Black);
+                MyWorksheet1.Cells[rowik + 13, 7,rowik + 13, 14].Style.Border.BorderAround(OfficeOpenXml.Style.ExcelBorderStyle.Thin, System.Drawing.Color.Black);
 
-                MyWorksheet1.Cells[rowik + 14, 7, rowik + 14, 20].Merge = true;
+                MyWorksheet1.Cells[rowik + 14, 7, rowik + 14,14].Merge = true;
                 MyWorksheet1.Cells[rowik + 14, 7].Value = "powyżej 2 lat - do 3 lat";
-                MyWorksheet1.Cells[rowik + 14, 7].Style.Border.BorderAround(OfficeOpenXml.Style.ExcelBorderStyle.Thin, System.Drawing.Color.Black);
+                MyWorksheet1.Cells[rowik + 14, 7, rowik + 14, 14].Style.Border.BorderAround(OfficeOpenXml.Style.ExcelBorderStyle.Thin, System.Drawing.Color.Black);
 
-                MyWorksheet1.Cells[rowik + 15, 7, rowik + 15, 20].Merge = true;
+                MyWorksheet1.Cells[rowik + 15, 7, rowik + 15,14].Merge = true;
                 MyWorksheet1.Cells[rowik + 15, 7].Value = "powyżej 3 lat - do 5 lat";
-                MyWorksheet1.Cells[rowik + 15, 7].Style.Border.BorderAround(OfficeOpenXml.Style.ExcelBorderStyle.Thin, System.Drawing.Color.Black);
+                MyWorksheet1.Cells[rowik + 15, 7, rowik + 15, 14].Style.Border.BorderAround(OfficeOpenXml.Style.ExcelBorderStyle.Thin, System.Drawing.Color.Black);
 
-                MyWorksheet1.Cells[rowik + 16, 7, rowik + 16, 20].Merge = true;
+                MyWorksheet1.Cells[rowik + 16, 7, rowik + 16,14].Merge = true;
                 MyWorksheet1.Cells[rowik + 16, 7].Value = "powyżej 5 lat - do 8 lat";
-                MyWorksheet1.Cells[rowik + 16, 7].Style.Border.BorderAround(OfficeOpenXml.Style.ExcelBorderStyle.Thin, System.Drawing.Color.Black);
+                MyWorksheet1.Cells[rowik + 16, 7, rowik + 16, 14].Style.Border.BorderAround(OfficeOpenXml.Style.ExcelBorderStyle.Thin, System.Drawing.Color.Black);
 
-                MyWorksheet1.Cells[rowik + 17, 7, rowik + 17, 20].Merge = true;
+                MyWorksheet1.Cells[rowik + 17, 7, rowik + 17,14].Merge = true;
                 MyWorksheet1.Cells[rowik + 17, 7].Value = "ponad 8 lat";
-                MyWorksheet1.Cells[rowik + 17, 7].Style.Border.BorderAround(OfficeOpenXml.Style.ExcelBorderStyle.Thin, System.Drawing.Color.Black);
+                MyWorksheet1.Cells[rowik + 17, 7, rowik + 17, 14].Style.Border.BorderAround(OfficeOpenXml.Style.ExcelBorderStyle.Thin, System.Drawing.Color.Black);
 
                 DataTable tabelka001 = (DataTable)Session["tabelka002"];
 
@@ -608,8 +608,8 @@ namespace stat2018
                         {
                             MyWorksheet1.Cells[rowik + 6, 15].Value = dR[1].ToString().Trim();
                         }
-                        MyWorksheet1.Cells[rowik + 6, 15].Style.ShrinkToFit = true;
-                        MyWorksheet1.Cells[rowik + 6, 15].Style.Border.BorderAround(OfficeOpenXml.Style.ExcelBorderStyle.Thin, System.Drawing.Color.Black);
+                        MyWorksheet1.Cells[rowik + 6, 15, rowik + 6, 16].Style.ShrinkToFit = true;
+                        MyWorksheet1.Cells[rowik + 6, 15, rowik + 6, 16].Style.Border.BorderAround(OfficeOpenXml.Style.ExcelBorderStyle.Thin, System.Drawing.Color.Black);
 
                         for (int i = 2; i < 5; i++)
                         {
@@ -636,7 +636,7 @@ namespace stat2018
                             MyWorksheet1.Cells[rowik + 6, 20].Value = dR[5].ToString().Trim();
                         }
                         MyWorksheet1.Cells[rowik + 6, 20].Style.ShrinkToFit = true;
-                        MyWorksheet1.Cells[rowik + 6, 20].Style.Border.BorderAround(OfficeOpenXml.Style.ExcelBorderStyle.Thin, System.Drawing.Color.Black);
+                        MyWorksheet1.Cells[rowik + 6, 20, rowik + 6, 21].Style.Border.BorderAround(OfficeOpenXml.Style.ExcelBorderStyle.Thin, System.Drawing.Color.Black);
                         // pojedyncze
                         for (int i = 6; i < 8; i++)
                         {

@@ -182,8 +182,143 @@
             <br />
 
             <asp:Label ID="kod011" runat="server"></asp:Label>
-          
+            <br />
+
+              <div id='Terminowość sporządzania tłumaczeń pisemnych' class="page-break" >
                <asp:PlaceHolder runat="server" ID="tablePlaceHolder"></asp:PlaceHolder>
+
+ <br/>
+ <strong> Dział 10.2 Terminowość sporządzania tłumaczeń pisemnych</strong>&nbsp;
+    <table  style="width: 100%; ">
+ <tr>    <td class="center borderAll" colspan="8"> Liczba sporządzonych tłumaczeń pisemnych</td>
+</tr>
+ <tr>    <td class="center borderAll" rowspan="2"> razem
+     <br />
+     (kol.1= 2 do 5 = 6 do 8)</td>
+<td class="center borderAll" rowspan="2">w ustalonym terminie</td>
+<td class="center borderAll" colspan="3">po ustalonym terminie</td>
+<td class="center borderAll" colspan="3">wg czasu wydania tłumaczenia</td>
+</tr>
+ <tr>    
+<td class="center borderAll">do 30 dni</td>
+<td class="center borderAll">pow. 1 do 3 miesięcy</td>
+<td class="center borderAll">pow. 3 miesięcy</td>
+<td class="center borderAll">do 30 dni</td>
+<td class="center borderAll">pow. 1 do 3 miesięcy</td>
+<td class="center borderAll">pow. 3 miesięcy</td>
+</tr>
+ <tr>    <td class="center borderAll">1</td>
+<td class="center borderAll">2</td>
+<td class="center borderAll">3</td>
+<td class="center borderAll">4</td>
+<td class="center borderAll">5</td>
+<td class="center borderAll">6</td>
+<td class="center borderAll">7</td>
+<td class="center borderAll">8</td>
+</tr>
+  <tr>
+    <td  class="col_120 center borderAll "><a href="javascript:openPopup('popup.aspx?sesja=1!10.2!1!4')"><asp:Label CssClass="normal" ID="tab_102_w01_c01" runat="server" Text="0"></asp:Label></a></td>
+    <td  class="col_120 center borderAll "><a href="javascript:openPopup('popup.aspx?sesja=1!10.2!2!4')"><asp:Label CssClass="normal" ID="tab_102_w01_c02" runat="server" Text="0"></asp:Label></a></td>
+    <td  class="col_120 center borderAll "><a href="javascript:openPopup('popup.aspx?sesja=1!10.2!3!4')"><asp:Label CssClass="normal" ID="tab_102_w01_c03" runat="server" Text="0"></asp:Label></a></td>
+    <td  class="col_120 center borderAll "><a href="javascript:openPopup('popup.aspx?sesja=1!10.2!4!4')"><asp:Label CssClass="normal" ID="tab_102_w01_c04" runat="server" Text="0"></asp:Label></a></td>
+    <td  class="col_120 center borderAll "><a href="javascript:openPopup('popup.aspx?sesja=1!10.2!5!4')"><asp:Label CssClass="normal" ID="tab_102_w01_c05" runat="server" Text="0"></asp:Label></a></td>
+    <td  class="col_120 center borderAll "><a href="javascript:openPopup('popup.aspx?sesja=1!10.2!6!4')"><asp:Label CssClass="normal" ID="tab_102_w01_c06" runat="server" Text="0"></asp:Label></a></td>
+    <td  class="col_120 center borderAll "><a href="javascript:openPopup('popup.aspx?sesja=1!10.2!7!4')"><asp:Label CssClass="normal" ID="tab_102_w01_c07" runat="server" Text="0"></asp:Label></a></td>
+    <td  class="col_120 center borderAll "><a href="javascript:openPopup('popup.aspx?sesja=1!10.2!8!4')"><asp:Label CssClass="normal" ID="tab_102_w01_c08" runat="server" Text="0"></asp:Label></a></td>
+  </tr>
+    </table>
+ </div>
+
+            <br />
+
+<div id='Terminowość przyznawania wynagrodzeń za sporządzenie tłumaczeń pisemnych i ustnych oraz za stawiennictwo' class="page-break" >
+ <br/>
+ <strong> Dział 10.3 Terminowość przyznawania wynagrodzeń za sporządzenie tłumaczeń pisemnych i ustnych oraz za stawiennictwo</strong>&nbsp;
+    <table  style="width: 100%; ">
+ <tr>    <td class="center borderAll" colspan="4"> Postanowienia o przyznaniu wynagrodzenia wg czasu od złożenia rachunku</td>
+<td class="center borderAll" colspan="4">Skierowanie rachunku do oddziału finansowego wg czasu od postanowienia o przyznaniu wynagrodzenia</td>
+</tr>
+ <tr>    <td class="center borderAll"> razem (kol.2-4)</td>
+<td class="center borderAll">do 14 dni</td>
+<td class="center borderAll">pow. 14 do 30 dni</td>
+<td class="center borderAll">powyżej miesiąca</td>
+<td class="center borderAll">razem (kol. 6-8)</td>
+<td class="center borderAll">do 14 dni</td>
+<td class="center borderAll">pow.14 do 30 dni</td>
+<td class="center borderAll">powyżej miesiąca </td>
+</tr>
+ <tr>    <td class="center borderAll">1</td>
+<td class="center borderAll">2</td>
+<td class="center borderAll">3</td>
+<td class="center borderAll">4</td>
+<td class="center borderAll">5</td>
+<td class="center borderAll">6</td>
+<td class="center borderAll">7</td>
+<td class="center borderAll">8</td>
+</tr>
+  <tr>
+    <td  class="col_120 center borderAll "><a href="javascript:openPopup('popup.aspx?sesja=1!10.3!1!4')"><asp:Label CssClass="normal" ID="tab_103_w01_c01" runat="server" Text="0"></asp:Label></a></td>
+    <td  class="col_120 center borderAll "><a href="javascript:openPopup('popup.aspx?sesja=1!10.3!2!4')"><asp:Label CssClass="normal" ID="tab_103_w01_c02" runat="server" Text="0"></asp:Label></a></td>
+    <td  class="col_120 center borderAll "><a href="javascript:openPopup('popup.aspx?sesja=1!10.3!3!4')"><asp:Label CssClass="normal" ID="tab_103_w01_c03" runat="server" Text="0"></asp:Label></a></td>
+    <td  class="col_120 center borderAll "><a href="javascript:openPopup('popup.aspx?sesja=1!10.3!4!4')"><asp:Label CssClass="normal" ID="tab_103_w01_c04" runat="server" Text="0"></asp:Label></a></td>
+    <td  class="col_120 center borderAll "><a href="javascript:openPopup('popup.aspx?sesja=1!10.3!5!4')"><asp:Label CssClass="normal" ID="tab_103_w01_c05" runat="server" Text="0"></asp:Label></a></td>
+    <td  class="col_120 center borderAll "><a href="javascript:openPopup('popup.aspx?sesja=1!10.3!6!4')"><asp:Label CssClass="normal" ID="tab_103_w01_c06" runat="server" Text="0"></asp:Label></a></td>
+    <td  class="col_120 center borderAll "><a href="javascript:openPopup('popup.aspx?sesja=1!10.3!7!4')"><asp:Label CssClass="normal" ID="tab_103_w01_c07" runat="server" Text="0"></asp:Label></a></td>
+    <td  class="col_120 center borderAll "><a href="javascript:openPopup('popup.aspx?sesja=1!10.3!8!4')"><asp:Label CssClass="normal" ID="tab_103_w01_c08" runat="server" Text="0"></asp:Label></a></td>
+  </tr>
+    </table>
+ </div>
+               <br />
+ &nbsp;<div class="page-break">
+                <strong>Dział 11 </strong>Obciążenia administracyjne respondentów
+
+                 <br />
+                <br />
+                Proszę podać czas (w minutach) przeznaczony na:<br />
+                <br />
+
+                <table style="width: 100%;">
+                    <tr>
+                        <td class="col_100">&nbsp;</td>
+                        <td>przygotowanie danych dla potrzeb wypełnianego formularza</td>
+                        <td class="borderAll col_100">
+                            <asp:TextBox ID="TextBox1" runat="server"></asp:TextBox>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>&nbsp;</td>
+                        <td>&nbsp;</td>
+                        <td>&nbsp;</td>
+                    </tr>
+                    <tr>
+                        <td>&nbsp;</td>
+                        <td>wypełnienie formularza</td>
+                        <td class="borderAll col_100">
+                            <asp:TextBox ID="TextBox2" runat="server"></asp:TextBox>
+                        </td>
+                    </tr>
+                </table>
+
+                <br />
+            </div>
+
+                <table style="width: 100%;">
+                    <tr>
+                        <td class="col_100">&nbsp;</td>
+                        <td>Wyjaśnienia dotyczące sprawozdania można uzyskać pod numerem telefonu </td>
+                        <td class=" col_180">
+                            .......................................................</td>
+                    </tr>
+                    <tr>
+                        <td>&nbsp;</td>
+                        <td>&nbsp;</td>
+                        <td>&nbsp;</td>
+                    </tr>
+                    </table>
+
+            <br />
+            </strong>
+            <br />
 
             <br />
         </div>

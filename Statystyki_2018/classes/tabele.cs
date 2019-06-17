@@ -517,39 +517,52 @@ namespace stat2018
                     int dodatek = 0;
                     if (lp)
                     {
-                        dodatek++;
-                        Arkusz.Cells[wiersz, przesunięcieX + dodatek].Style.ShrinkToFit = true;
-                        Arkusz.Cells[wiersz, przesunięcieX + dodatek].Style.Border.BorderAround(OfficeOpenXml.Style.ExcelBorderStyle.Thin, System.Drawing.Color.Black);
-                        Arkusz.Cells[wiersz, przesunięcieX + dodatek].Value = wiersz - przesuniecieY + 1;
+                        try
+                        {
+                            dodatek++;
+                            Arkusz.Cells[wiersz, przesunięcieX + dodatek].Style.ShrinkToFit = true;
+                            Arkusz.Cells[wiersz, przesunięcieX + dodatek].Style.Border.BorderAround(OfficeOpenXml.Style.ExcelBorderStyle.Thin, System.Drawing.Color.Black);
+                            Arkusz.Cells[wiersz, przesunięcieX + dodatek].Value = wiersz - przesuniecieY + 1;
+                        }
+                        catch (Exception ex)
+                        {
+
+                            cm.log.Error("tworzArkuszwExcle- lp " + ex.Message);
+                        }
+                       
                     }
                     if (stanowisko)
                     {
-                        dodatek++;
-                        Arkusz.Cells[wiersz, przesunięcieX + dodatek].Style.ShrinkToFit = true;
-                        Arkusz.Cells[wiersz, przesunięcieX + dodatek].Style.Border.BorderAround(OfficeOpenXml.Style.ExcelBorderStyle.Thin, System.Drawing.Color.Black);
-                        try
+                            try
                         {
+                            dodatek++;
+                            Arkusz.Cells[wiersz, przesunięcieX + dodatek].Style.ShrinkToFit = true;
+                            Arkusz.Cells[wiersz, przesunięcieX + dodatek].Style.Border.BorderAround(OfficeOpenXml.Style.ExcelBorderStyle.Thin, System.Drawing.Color.Black);
+
                             string value = (dR["stanowisko"].ToString().Trim());
                             Arkusz.Cells[wiersz, przesunięcieX + dodatek].Value = value;
                         }
-                        catch (Exception)
+                        catch (Exception ex)
                         {
                             Arkusz.Cells[wiersz, przesunięcieX + dodatek].Value = "";
+                            cm.log.Error("tworzArkuszwExcle- stanowisko " + ex.Message);
                         }
                     }
                     if (funkcja)
                     {
-                        dodatek++;
-                        Arkusz.Cells[wiersz, przesunięcieX + dodatek].Style.ShrinkToFit = true;
-                        Arkusz.Cells[wiersz, przesunięcieX + dodatek].Style.Border.BorderAround(OfficeOpenXml.Style.ExcelBorderStyle.Thin, System.Drawing.Color.Green);
-                        try
+                           try
                         {
+                            dodatek++;
+                            Arkusz.Cells[wiersz, przesunięcieX + dodatek].Style.ShrinkToFit = true;
+                            Arkusz.Cells[wiersz, przesunięcieX + dodatek].Style.Border.BorderAround(OfficeOpenXml.Style.ExcelBorderStyle.Thin, System.Drawing.Color.Green);
+
                             string value = (dR["funkcja"].ToString().Trim());
                             Arkusz.Cells[wiersz, przesunięcieX + dodatek].Value = value;
                         }
-                        catch (Exception)
+                        catch (Exception ex)
                         {
                             Arkusz.Cells[wiersz, przesunięcieX + dodatek].Value = "";
+                            cm.log.Error("tworzArkuszwExcle- lp " + ex.Message);
                         }
                     }
                     if (nazwiskoiImeieOsobno)
@@ -567,9 +580,10 @@ namespace stat2018
                             value = (dR["imie"].ToString().Trim());
                             Arkusz.Cells[wiersz, przesunięcieX + dodatek].Value = value;
                         }
-                        catch (Exception)
+                        catch (Exception ex)
                         {
                             Arkusz.Cells[wiersz, przesunięcieX + dodatek].Value = "";
+                            cm.log.Error("tworzArkuszwExcle- lp " + ex.Message);
                         }
                     }
                     else
@@ -582,10 +596,12 @@ namespace stat2018
                             Arkusz.Cells[wiersz, przesunięcieX + dodatek].Style.ShrinkToFit = true;
                             Arkusz.Cells[wiersz, przesunięcieX + dodatek].Style.Border.BorderAround(OfficeOpenXml.Style.ExcelBorderStyle.Thin, System.Drawing.Color.Black);
                         }
-                        catch
-                        { }
+                        catch (Exception ex)
+                        {
+                            cm.log.Error("tworzArkuszwExcle- lp " + ex.Message);
+                        }
                     }
-
+/*
                     for (int i = 1; i < iloscKolumn; i++)
                     {
                         try
@@ -607,7 +623,7 @@ namespace stat2018
                             cm.log.Error("Excell " + ex.Message);
                         }
                     }
-                    wiersz++;
+                  */  wiersz++;
                     dod = dodatek;
                 }
 
