@@ -89,12 +89,12 @@ namespace stat2018
             {
                 cm.log.Info(tenPlik + ": rozpoczęcie tworzenia tabeli 2");
 
-                DataTable tabelka02 = dr.generuj_dane_do_tabeli_wierszy2018(Date1.Date, Date2.Date, (string)Session["id_dzialu"], 2, 11, 22, tenPlik);
+                DataTable tabelka02 = dr.generuj_dane_do_tabeli_wierszy2018(Date1.Date, Date2.Date, (string)Session["id_dzialu"], 2, 11, 29, tenPlik);
                 Session["tabelka002"] = tabelka02;
 
                 cm.log.Info(tenPlik + ": rozpoczęcie tworzenia tabeli 1");
 
-                DataTable tabelka01 = dr.generuj_dane_do_tabeli_sedziowskiej_2018(int.Parse(idDzialu), 1, Date1.Date, Date2.Date, 23, tenPlik);
+                DataTable tabelka01 = dr.generuj_dane_do_tabeli_sedziowskiej_2018(int.Parse(idDzialu), 1, Date1.Date, Date2.Date, 29, tenPlik);
                 Session["tabelka001"] = tabelka01;
                 GridView1.DataSourceID = null;
                 GridView1.DataSource = null;
@@ -203,7 +203,10 @@ namespace stat2018
             dT_01.Rows.Add(new Object[] { "3", "w terminie ustawowym", "1", "3" });
             dT_01.Rows.Add(new Object[] { "3", "po upływie terminu ustawowego", "1", "3" });
             dT_01.Rows.Add(new Object[] { "3", "w tym nieuspra-<br/>wiedliwione", "1", "3" });
-
+            dT_01.Rows.Add(new Object[] { "3", "Razem", "1", "3" });
+            dT_01.Rows.Add(new Object[] { "3", "w terminie ustawowym", "1", "3" });
+            dT_01.Rows.Add(new Object[] { "3", "po upływie terminu ustawowego", "1", "3" });
+            dT_01.Rows.Add(new Object[] { "3", "w tym nieuspra-<br/>wiedliwione", "1", "3" });
             dT_01.Rows.Add(new Object[] { "3", "C", "3", "1" });
             dT_01.Rows.Add(new Object[] { "3", "Cgg", "1", "3" });
             dT_01.Rows.Add(new Object[] { "3", "Ns", "3", "1" });
@@ -227,6 +230,9 @@ namespace stat2018
             dT_01.Rows.Add(new Object[] { "4", "Nieobecność", "2", "1" });
             dT_01.Rows.Add(new Object[] { "4", "Terminowość sporządzania uzasadnień ", "4", "1" });
             dT_01.Rows.Add(new Object[] { "4", "Uzasadnienia <br/>wygłoszone ", "1", "4" });
+            dT_01.Rows.Add(new Object[] { "4", "Terminowość sporządzania uzasadnień orzeczeń merytorycznych C i NS ", "4", "1" });
+            dT_01.Rows.Add(new Object[] { "4", "Uzasadnienia <br/>wygłoszone ", "1", "4" });
+
             dT_01.Rows.Add(new Object[] { "4", "ZAŁATWIENIA ", "13", "1" });
             dT_01.Rows.Add(new Object[] { "4", "Uwagi ", "1", "4" });
 
@@ -238,15 +244,15 @@ namespace stat2018
 
             dT_02.Clear();
 
-            dT_02.Rows.Add(new Object[] { "1", "C", "2", "1", "h" });
-            dT_02.Rows.Add(new Object[] { "1", "Cgg", "2", "1", "h", "120" });
-            dT_02.Rows.Add(new Object[] { "1", "Ns", "2", "1", "h" });
-            dT_02.Rows.Add(new Object[] { "1", "Nc", "2", "1", "h", "120" });
-            dT_02.Rows.Add(new Object[] { "1", "Co", "2", "1", "h", "120" });
-            dT_02.Rows.Add(new Object[] { "1", "Cps", "2", "1", "h", "120" });
-            dT_02.Rows.Add(new Object[] { "1", "WSC", "2", "1", "h", "120" });
+            dT_02.Rows.Add(new Object[] { "1", "C", "1", "1", "h" });
+            dT_02.Rows.Add(new Object[] { "1", "Cgg", "1", "1", "h", "120" });
+            dT_02.Rows.Add(new Object[] { "1", "Ns", "1", "1", "h" });
+            dT_02.Rows.Add(new Object[] { "1", "Nc", "1", "1", "h", "120" });
+            dT_02.Rows.Add(new Object[] { "1", "Co", "1", "1", "h", "120" });
+            dT_02.Rows.Add(new Object[] { "1", "Cps", "1", "1", "h", "120" });
+            dT_02.Rows.Add(new Object[] { "1", "WSC", "1", "1", "h", "120" });
 
-            dT_02.Rows.Add(new Object[] { "1", "Razem", "2", "1", "h", "120" });
+            dT_02.Rows.Add(new Object[] { "1", "Razem", "1", "1", "h", "120" });
 
             dT_02.Rows.Add(new Object[] { "2", "L.p.", "1", "2", "h", "10" });
             dT_02.Rows.Add(new Object[] { "2", "funkcja", "1", "2", "h", "130" });
@@ -324,7 +330,7 @@ namespace stat2018
                 int rowik = 0;
                 ExcelWorksheet MyWorksheet1 = MyExcel.Workbook.Worksheets[1];
 
-                MyWorksheet1 = tb.tworzArkuszwExcle(MyExcel.Workbook.Worksheets[1], (DataTable)Session["tabelka001"], 27, 0, 10, true, false, true, true, true);
+                MyWorksheet1 = tb.tworzArkuszwExcle(MyExcel.Workbook.Worksheets[1], (DataTable)Session["tabelka001"], 28, 0, 10, true, false, true, true, true);
 
                 rowik = ((DataTable)Session["tabelka001"]).Rows.Count + 3;
 
@@ -343,30 +349,30 @@ namespace stat2018
                 //------------
                 MyWorksheet1.Cells[rowik + 7, 1, rowik + 16, 3].Merge = true;
                 MyWorksheet1.Cells[rowik + 7, 1].Value = " Zaległość";
-                MyWorksheet1.Cells[rowik + 7, 4, rowik + 7, 14].Merge = true;
+                MyWorksheet1.Cells[rowik + 7, 4, rowik + 7, 19].Merge = true;
                 MyWorksheet1.Cells[rowik + 7, 4].Value = "Zaległość z poprzedniego miesiąca";
-                MyWorksheet1.Cells[rowik + 8, 4, rowik + 8, 14].Merge = true;
+                MyWorksheet1.Cells[rowik + 8, 4, rowik + 8, 19].Merge = true;
                 MyWorksheet1.Cells[rowik + 8, 4].Value = "Wpływ";
-                MyWorksheet1.Cells[rowik + 9, 4, rowik + 9, 14].Merge = true;
+                MyWorksheet1.Cells[rowik + 9, 4, rowik + 9, 19].Merge = true;
                 MyWorksheet1.Cells[rowik + 9, 4].Value = "Załatwienia";
-                MyWorksheet1.Cells[rowik + 10, 4, rowik + 10, 14].Merge = true;
+                MyWorksheet1.Cells[rowik + 10, 4, rowik + 10, 19].Merge = true;
                 MyWorksheet1.Cells[rowik + 10, 4].Value = "Pozostało na następny miesiąc";
-                MyWorksheet1.Cells[rowik + 11, 4, rowik + 11, 14].Merge = true;
+                MyWorksheet1.Cells[rowik + 11, 4, rowik + 11, 19].Merge = true;
                 MyWorksheet1.Cells[rowik + 11, 4].Value = "powyżej 3-6 m-cy";
-                MyWorksheet1.Cells[rowik + 12, 4, rowik + 12, 14].Merge = true;
+                MyWorksheet1.Cells[rowik + 12, 4, rowik + 12, 19].Merge = true;
                 MyWorksheet1.Cells[rowik + 12, 4].Value = "powyżej 6-12 m-cy";
-                MyWorksheet1.Cells[rowik + 13, 4, rowik + 13, 14].Merge = true;
+                MyWorksheet1.Cells[rowik + 13, 4, rowik + 13, 19].Merge = true;
                 MyWorksheet1.Cells[rowik + 13, 4].Value = "ponad 12 miesięcy";
                 MyWorksheet1.Cells[rowik + 14, 4, rowik + 16, 5].Merge = true;
                 MyWorksheet1.Cells[rowik + 14, 4].Value = "w tym ";
 
-                MyWorksheet1.Cells[rowik + 14, 6, rowik + 14, 14].Merge = true;
+                MyWorksheet1.Cells[rowik + 14, 6, rowik + 14, 19].Merge = true;
                 MyWorksheet1.Cells[rowik + 14, 6].Value = "zawieszone";
 
-                MyWorksheet1.Cells[rowik + 15, 6, rowik + 15, 14].Merge = true;
+                MyWorksheet1.Cells[rowik + 15, 6, rowik + 15, 19].Merge = true;
                 MyWorksheet1.Cells[rowik + 15, 6].Value = "powyżej 3 do 5 lat";
 
-                MyWorksheet1.Cells[rowik + 16, 6, rowik + 16, 14].Merge = true;
+                MyWorksheet1.Cells[rowik + 16, 6, rowik + 16, 19].Merge = true;
                 MyWorksheet1.Cells[rowik + 16, 6].Value = "ponad 5 letnie";
 
                 DataTable tabelka001 = (DataTable)Session["tabelka002"];
@@ -375,26 +381,34 @@ namespace stat2018
 
                 {
                     // druga mesge 3
-                    MyWorksheet1.Cells[rowik + 7 + i, 15, rowik + 7 + i, 17].Merge = true;
-                    MyWorksheet1.Cells[rowik + 7 + i, 15].Value = tabelka001.Rows[i][1].ToString();
+                    MyWorksheet1.Cells[rowik + 7 + i, 20, rowik + 7 + i, 22].Merge = true;
+                    MyWorksheet1.Cells[rowik + 7 + i, 20].Value = tabelka001.Rows[i][1].ToString();
                     // druga kolumna pojedynacza
-                    MyWorksheet1.Cells[rowik + 7 + i, 18].Value = tabelka001.Rows[i][2].ToString();
-                    MyWorksheet1.Cells[rowik + 7 + i, 19, rowik + 7 + i, 21].Merge = true;
-                    MyWorksheet1.Cells[rowik + 7 + i, 19].Value = tabelka001.Rows[i + 1][3].ToString();
+                    MyWorksheet1.Cells[rowik + 7 + i, 23].Value = tabelka001.Rows[i][2].ToString();
+                    MyWorksheet1.Cells[rowik + 7 + i, 24, rowik + 7 + i, 26].Merge = true;
+                    MyWorksheet1.Cells[rowik + 7 + i, 24].Value = tabelka001.Rows[i + 1][3].ToString();
                 }
 
-                for (int i = 0; i < 10; i++)
+                for (int i = 0; i < 9; i++)
                 {
-                    for (int j = 0; j < 7; j++)
+                    for (int j = 0; j < 6; j++)
                     {
                         try
                         {
-                            MyWorksheet1.Cells[rowik + 7 + i, j + 22].Value = tabelka001.Rows[i][j + 4].ToString();
+                            MyWorksheet1.Cells[rowik + 7 + i, j + 27].Value = tabelka001.Rows[i][j + 4].ToString();
+                            MyWorksheet1.Cells[rowik + 7 + i, j + 27].Style.Border.BorderAround(OfficeOpenXml.Style.ExcelBorderStyle.Thin, System.Drawing.Color.Black);
+                            MyWorksheet1.Cells[rowik + 7 + i, j + 28].Style.Border.BorderAround(OfficeOpenXml.Style.ExcelBorderStyle.Thin, System.Drawing.Color.Black);
+
                         }
                         catch
                         { }
                     }
                 }
+
+                ExcelWorksheet MyWorksheet2 = MyExcel.Workbook.Worksheets[2];
+
+                MyWorksheet2 = tb.tworzArkuszwExcle(MyExcel.Workbook.Worksheets[2], (DataTable)Session["tabelka003"], 12, 0,8, true, false, true, true, true);
+
 
                 try
                 {
@@ -455,7 +469,7 @@ namespace stat2018
         private GridViewRow wierszTabelia3(DataTable tabelka01, int idWiersza, string idtabeli, string tekst)
         {
             GridViewRow NewTotalRow = new GridViewRow(0, 0, DataControlRowType.DataRow, DataControlRowState.Insert);
-            NewTotalRow.Cells.Add(tb.cela(tekst, 1, 7, "borderTopLeft  "));
+            NewTotalRow.Cells.Add(tb.cela(tekst, 1, 12, "borderTopLeft  "));
 
             NewTotalRow.Cells.Add(tb.cela("<a class='normal' href=\"javascript: openPopup('popup.aspx?sesja=" + idWiersza.ToString().Trim() + "!2!1!3')\">" + tabelka01.Rows[idWiersza - 1][1].ToString().Trim() + "</a>", 1, 3, "borderTopLeft"));
             NewTotalRow.Cells.Add(tb.cela("<a class='normal' href=\"javascript: openPopup('popup.aspx?sesja=" + idWiersza.ToString().Trim() + "!2!2!3')\">" + tabelka01.Rows[idWiersza - 1][2].ToString().Trim() + "</a>", 1, 1, "borderTopLeft"));
@@ -475,7 +489,7 @@ namespace stat2018
 
             GridViewRow NewTotalRow = new GridViewRow(0, 0, DataControlRowType.DataRow, DataControlRowState.Insert);
             NewTotalRow.Cells.Add(tb.cela("w tym", 3, 3, "borderTopLeft col_260"));
-            NewTotalRow.Cells.Add(tb.cela(tekst, 1, 7, "borderTopLeft  "));
+            NewTotalRow.Cells.Add(tb.cela(tekst, 1, 12, "borderTopLeft  "));
 
             NewTotalRow.Cells.Add(tb.cela("<a class='normal' href=\"javascript: openPopup('popup.aspx?sesja=" + idWiersza.ToString().Trim() + "!2!1!3')\">" + tabelka01.Rows[idWiersza - 1][1].ToString().Trim() + "</a>", 1, 3, "borderTopLeft"));
             NewTotalRow.Cells.Add(tb.cela("<a class='normal' href=\"javascript: openPopup('popup.aspx?sesja=" + idWiersza.ToString().Trim() + "!2!2!3')\">" + tabelka01.Rows[idWiersza - 1][2].ToString().Trim() + "</a>", 1, 1, "borderTopLeft"));
@@ -495,7 +509,7 @@ namespace stat2018
 
             GridViewRow NewTotalRow = new GridViewRow(0, 0, DataControlRowType.DataRow, DataControlRowState.Insert);
             NewTotalRow.Cells.Add(tb.cela("zaległość", 10, 3, "borderTopLeft col_260"));
-            NewTotalRow.Cells.Add(tb.cela(tekst, 1, 10, "borderTopLeft  "));
+            NewTotalRow.Cells.Add(tb.cela(tekst, 1, 15, "borderTopLeft  "));
             NewTotalRow.Cells.Add(tb.cela("<a class='normal' href=\"javascript: openPopup('popup.aspx?sesja=" + idWiersza.ToString().Trim() + "!2!1!3')\">" + tabelka01.Rows[idWiersza - 1][1].ToString().Trim() + "</a>", 1, 3, "borderTopLeft"));
             NewTotalRow.Cells.Add(tb.cela("<a class='normal' href=\"javascript: openPopup('popup.aspx?sesja=" + idWiersza.ToString().Trim() + "!2!2!3')\">" + tabelka01.Rows[idWiersza - 1][2].ToString().Trim() + "</a>", 1, 1, "borderTopLeft"));
             NewTotalRow.Cells.Add(tb.cela("<a class='normal' href=\"javascript: openPopup('popup.aspx?sesja=" + idWiersza.ToString().Trim() + "!2!3!3')\">" + tabelka01.Rows[idWiersza - 1][3].ToString().Trim() + "</a>", 1, 3, "borderTopLeft"));
@@ -513,7 +527,7 @@ namespace stat2018
             // nowy wiersz
 
             GridViewRow NewTotalRow = new GridViewRow(0, 0, DataControlRowType.DataRow, DataControlRowState.Insert);
-            NewTotalRow.Cells.Add(tb.cela(tekst, 1, 10, "borderTopLeft  "));
+            NewTotalRow.Cells.Add(tb.cela(tekst, 1, 15, "borderTopLeft  "));
 
             NewTotalRow.Cells.Add(tb.cela("<a class='normal' href=\"javascript: openPopup('popup.aspx?sesja=" + idWiersza.ToString().Trim() + "!2!1!3')\">" + tabelka01.Rows[idWiersza - 1][1].ToString().Trim() + "</a>", 1, 3, "borderTopLeft"));
             NewTotalRow.Cells.Add(tb.cela("<a class='normal' href=\"javascript: openPopup('popup.aspx?sesja=" + idWiersza.ToString().Trim() + "!2!2!3')\">" + tabelka01.Rows[idWiersza - 1][2].ToString().Trim() + "</a>", 1, 1, "borderTopLeft"));

@@ -127,6 +127,7 @@
     <Content Include="aopc2.aspx" />
     <Content Include="aoppe.aspx" />
     <Content Include="aopp.aspx" />
+    <Content Include="mss16r.aspx" />
     <Content Include="nowa.aspx" />
     <Content Include="kontrolkaExcell.aspx" />
     <Content Include="kontrolkaDruk.aspx" />
@@ -196,7 +197,6 @@
     <Content Include="kontrolka.aspx" />
     <Content Include="mss10r.aspx" />
     <Content Include="mss11r.aspx" />
-    <Content Include="mss16r.aspx" />
     <Content Include="mss1r.aspx" />
     <Content Include="mss40r.aspx" />
     <Content Include="mss5r.aspx" />
@@ -419,6 +419,13 @@
     <Compile Include="classes\datyDoMSS.cs" />
     <Compile Include="classes\log_4_net.cs" />
     <Compile Include="GlobalSuppressions.cs" />
+    <Compile Include="mss16r.aspx.cs">
+      <DependentUpon>mss16r.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="mss16r.aspx.designer.cs">
+      <DependentUpon>mss16r.aspx</DependentUpon>
+    </Compile>
     <Compile Include="nowa.aspx.cs">
       <DependentUpon>nowa.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -747,13 +754,6 @@
     </Compile>
     <Compile Include="mss11r.aspx.designer.cs">
       <DependentUpon>mss11r.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="mss16r.aspx.cs">
-      <DependentUpon>mss16r.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="mss16r.aspx.designer.cs">
-      <DependentUpon>mss16r.aspx</DependentUpon>
     </Compile>
     <Compile Include="mss1r.aspx.cs">
       <DependentUpon>mss1r.aspx</DependentUpon>

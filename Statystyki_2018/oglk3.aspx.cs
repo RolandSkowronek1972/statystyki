@@ -1051,7 +1051,7 @@ namespace stat2018
             tabelaNaglowkowa.Rows.Add(new Object[] { "1", "W", "1", "1", "h", "60" });//
 
 
-            tabelaNaglowkowa.Rows.Add(new Object[] { "2", "L.p.", "1", "2", "h", "10" });
+          //  tabelaNaglowkowa.Rows.Add(new Object[] { "2", "L.p.", "1", "2", "h", "10" });
             tabelaNaglowkowa.Rows.Add(new Object[] { "2", "Nazwisko i imię Sędziego", "1", "2", "h", "130" });
             tabelaNaglowkowa.Rows.Add(new Object[] { "2", "Efektywny okres orzekania", "1", "2", "h", "60" });
             tabelaNaglowkowa.Rows.Add(new Object[] { "2", "Ilość sesji", "3", "1", "h", "45" });

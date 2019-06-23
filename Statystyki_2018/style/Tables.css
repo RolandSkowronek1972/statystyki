@@ -464,38 +464,37 @@ word-wrap: break-word;
 }
 
 .col_41_5 {
-        width:41.5px;
- text-align:center;
-  min-height:41.5px;
-    max-height:41.5px;
-   }
+    width: 41.5px;
+    text-align: center;
+    min-width: 41.5px;
+    max-width: 41.5px;
+}
 .col_42 {
-        width:42px;
- text-align:center;
-  min-height:42px;
-    max-height:42px;
-   }
+    width: 42px;
+    text-align: center;
+    min-width: 42px;
+    max-width: 42px;
+}
 
 .col_45 {
-        width:45px;
- text-align:center;
-  min-height:45px;
-    max-height:45px;
+    width: 45px;
+    text-align: center;
+    max-width: 45px;
 }
 
 
 .col_46 {
-    min-height:46px;
-    max-height:46px;
-        width:46px;
- text-align:center;
+    min-width: 46px;
+    max-width: 46px;
+    width: 46px;
+    text-align: center;
 }
 
 
 .col_49 {
     column-width:49px;
-    min-height:49px;
-    max-height:49px;
+    min-width:49px;
+    max-width:49px;
         width:49px;
  text-align:center;
 }
@@ -635,11 +634,10 @@ word-wrap: break-word;
 
 
 .col_100 {
-    max-width:100px;
-    min-height:100%;
-        text-align:center;
- word-wrap: break-word;
-
+    max-width: 100px;
+    min-width: 100%;
+    text-align: center;
+    word-wrap: break-word;
 }
 
 .col_103 {

@@ -203,7 +203,7 @@ namespace stat2018
                 cm.log.Info(tenPlik + ": rozpoczęcie tworzenia tabeli 7");
             }
 
-            DataTable tabelka01 = dr. generuj_dane_do_tabeli_wierszy2018(Date1.Date, Date2.Date, (string)Session["id_dzialu"], 7, 10,27, tenPlik);
+            DataTable tabelka01 = dr. generuj_dane_do_tabeli_wierszy2018(Date1.Date, Date2.Date, (string)Session["id_dzialu"], 7, 6,27, tenPlik);
             Session["tabelka007"] = tabelka01;
             pisz("tab_7_", 2, 16, tabelka01);
                tab_7_w03_c01.Text = tabelka01.Rows[3][1].ToString().Trim();

@@ -2371,13 +2371,13 @@ namespace stat2018 {
         protected global::System.Web.UI.WebControls.Label Label60_17;
         
         /// <summary>
-        /// Label41 control.
+        /// infoLabel17 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label41;
+        protected global::System.Web.UI.WebControls.Label infoLabel17;
         
         /// <summary>
         /// gwTabela17 control.

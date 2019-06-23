@@ -241,18 +241,50 @@ namespace stat2018
                 DataTable tabela2 = ms.generuj_dane_do_tabeli_mss2(int.Parse((string)Session["id_dzialu"]), Date1.Date, Date2.Date, 21);
                 //wypełnianie lebeli
 
-                #region "tabela 1.1.a.1"
+                #region "tabela 1.1.1.a"
+                //tab_111a_
+                idTabeli = "'1.1.1.a'";
+                idWiersza = "'1'";
+                tab_111a_w01_c01.Text = dr.wyciagnijWartosc(tabela2, "idWydzial=" + idWydzialu + " and idTabeli=" + idTabeli + " and idWiersza =" + idWiersza + " and idkolumny='1'", tenPlik);
+                idWiersza = "'2'";
+                tab_111a_w02_c01.Text = dr.wyciagnijWartosc(tabela2, "idWydzial=" + idWydzialu + " and idTabeli=" + idTabeli + " and idWiersza =" + idWiersza + " and idkolumny='1'", tenPlik);
+
+                #endregion "tabela 1.1.a.2"
+
+                #region "tabela 1.1.1.a.1"
+
+                idTabeli = "'1.1.1.a.1'";
+                idWiersza = "'1'";
+                tab_111a1_w01_col01.Text = dr.wyciagnijWartosc(tabela2, "idWydzial=" + idWydzialu + " and idTabeli=" + idTabeli + " and idWiersza =" + idWiersza + " and idkolumny='1'", tenPlik);
+
+                #endregion "tabela 1.1.a.1"
+
                 
-                pisz("tab_111a1_",6 , 1, tabela2, "'1.1.1.a.1'", idWydzialu);
-          #endregion "tabela 1.1.a.1"
+                #region "tabela 1.1.a.1"
+
+                pisz("tab_111a1_",1 , 6, tabela2, "'1.1.1.a.1'", idWydzialu);
+                #endregion "tabela 1.1.a.1"
+
 
                 #region "tabela 1.1.a.2"
+/*
+                #region "tabela 1.1.1.a"
+
+                pisz("tab_111a_", 1, 6, tabela2, "'1.1.1.a'", idWydzialu);
+                #endregion "tabela 1.1.1.a"
+                */
+
+                #region "tabela 1.1.1.a.2"
 
                 idTabeli = "'1.1.1.a.2'";
                 idWiersza = "'1'";
                 tab_111a2_w01_col01.Text = dr.wyciagnijWartosc(tabela2, "idWydzial=" + idWydzialu + " and idTabeli=" + idTabeli + " and idWiersza =" + idWiersza + " and idkolumny='1'", tenPlik);
 
                 #endregion "tabela 1.1.a.2"
+               
+                #region "1.1.1.a.1";
+                pisz("tab_111a1_", 1, 6, tabela2, "'1.1.1.a.1'", idWydzialu);
+                #endregion ;
 
                 #region "tabela 1.1.1.b"
 
@@ -657,8 +689,13 @@ namespace stat2018
                 pisz("tab_1_1_7_", 14,5, tabela2, "'1.1.7'", idWydzialu);
                 #endregion "1.1.7";
 
+
+                #region "1.1.7.a";
+                pisz("tab_1_1_7_a_", 5,14, tabela2, "'1.1.7.a'", idWydzialu);
+                #endregion "1.1.7.a";
+
                 #region "1.1.7.b";
-                pisz("tab_1_1_7_b_", 12, 7, tabela2, "'1.1.7.b'", idWydzialu);
+                pisz("tab_1_1_7_b_", 7, 12, tabela2, "'1.1.7.b'", idWydzialu);
                 #endregion "1.1.7.b";
 
 
@@ -727,6 +764,12 @@ namespace stat2018
                 #region "1.2.b";
                 pisz("tab_12b_", 24, 7, tabela2, "'1.2.b'", idWydzialu);
                 #endregion ;
+
+                #region "1.2.c";
+                pisz("tab_12c_", 4, 3, tabela2, "'1.2.c'", idWydzialu);
+                #endregion ;
+
+
 
                 #region "1.2.1"
                 pisz("tab_121_", 10, 28, tabela2, "'1.2.1'", idWydzialu);
@@ -2587,6 +2630,7 @@ namespace stat2018
                 tab_153_w01_c08.Text = dr.wyciagnijWartosc(tabela2, "idWydzial=" + idWydzialu + " and idTabeli=" + idTabeli + " and idWiersza =" + idWiersza + " and idkolumny='8'", tenPlik);
 
                 #endregion 15.3
+                #endregion 
             }
             catch
             { }

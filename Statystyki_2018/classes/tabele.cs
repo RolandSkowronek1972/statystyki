@@ -294,7 +294,7 @@ namespace stat2018
             object sumObject;
             int ilKolumn = e.Row.Cells.Count;
             e.Row.Cells[0 + przesuniecie].Text = "Ogółem";
-            for (int i = 1; i < e.Row.Cells.Count - 1; i++)
+            for (int i = 1; i < e.Row.Cells.Count ; i++)
             {
                 try
                 {
@@ -601,7 +601,7 @@ namespace stat2018
                             cm.log.Error("tworzArkuszwExcle- lp " + ex.Message);
                         }
                     }
-/*
+
                     for (int i = 1; i < iloscKolumn; i++)
                     {
                         try
@@ -623,7 +623,7 @@ namespace stat2018
                             cm.log.Error("Excell " + ex.Message);
                         }
                     }
-                  */  wiersz++;
+                    wiersz++;
                     dod = dodatek;
                 }
 

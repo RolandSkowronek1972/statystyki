@@ -467,13 +467,6 @@
                                    </ItemTemplate>
                    <ItemStyle  CssClass = "col_60"/>
                 </asp:TemplateField>
-        <asp:TemplateField HeaderText = "d_12" SortExpression = "d_01" > 
-                <ItemTemplate >
-          <a href = "javascript:openPopup('popup.aspx?sesja=<%# Eval("id_sedziego")+ "!"+Eval("id_tabeli") +"!14!2"%>')" ><asp:Label ID = "Label_gwTabela13128" runat = "server" Text = '<%# Eval("d_14")%>' CssClass = "normal" ></asp:Label> </a>
-                                   </ItemTemplate>
-                   <ItemStyle  CssClass = "col_60"/>
-                </asp:TemplateField>
-     
      
         </Columns>
         <FooterStyle CssClass="gray" />

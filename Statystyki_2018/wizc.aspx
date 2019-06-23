@@ -454,7 +454,7 @@
                     <td class="center borderAll" colspan="3">relacje etatów</td>
                 </tr>
                 <tr>
-                    <td class="center borderAll">liczba sędziów i wakujących stanowisk sędziowskich w ramach limitu w okresie statystycznym</td>
+                    <td class="center borderAll">liczba sędziów i wakujących stanowisk sędziowskich w ramach limitu w okresie statys-tycznym</td>
                     <td class="center borderAll">*obsada średnio-okresowa </td>
                     <td class="center borderAll">% do limitu</td>
                     <td class="center borderAll">liczba refere-ndarzy w ramach limitu w okresie statysty-cznym</td>
@@ -463,7 +463,7 @@
                     <td class="center borderAll">liczba asystentów w ramach limitu w okresie statysty-cznym</td>
                     <td class="center borderAll">*obsada średnio-okresowa </td>
                     <td class="center borderAll">% do limitu</td>
-                    <td class="center borderAll">liczba urzędników w okresie statystycznym</td>
+                    <td class="center borderAll">liczba urzęd-ników w okresie statys-tycznym</td>
                     <td class="center borderAll">*obsada średnio-okresowa </td>
                     <td class="center borderAll">% do limitu</td>
                     <td class="center borderAll">liczba asystentów sędziów przypadająca na jednego sędziego</td>

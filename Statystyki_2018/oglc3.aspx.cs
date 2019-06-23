@@ -103,6 +103,10 @@ namespace stat2018
                 infoLabel12.Visible = cl.debug(int.Parse(idDzialu));
                 infoLabel13.Visible = cl.debug(int.Parse(idDzialu));
                 infoLabel14.Visible = cl.debug(int.Parse(idDzialu));
+              
+                infoLabel16.Visible = cl.debug(int.Parse(idDzialu));
+                infoLabel17.Visible = cl.debug(int.Parse(idDzialu));
+              
             }
             catch
             {
@@ -110,6 +114,7 @@ namespace stat2018
                 infoLabel1.Visible = false;
                 infoLabel5.Visible = false;
                 infoLabel2.Visible = false;
+
             }
         }
 
@@ -142,7 +147,8 @@ namespace stat2018
             tabela_14();
             tabela_15();
             tabela_16();
-
+            tabela_17();
+            tabela_18();
             dateLabel01.Text = Date1.Date.ToShortDateString() + " - " + Date2.Date.ToShortDateString();
             dateLabel02.Text = Date1.Date.ToShortDateString() + " - " + Date2.Date.ToShortDateString();
             dateLabel3.Text = Date1.Date.ToShortDateString() + " - " + Date2.Date.ToShortDateString();
@@ -625,6 +631,25 @@ namespace stat2018
                 DataTable dT = tb.naglowek(path, 12);
                 tb.makeHeader(dT, gwTabela12);
             }
+        }
+
+
+        protected void naglowekTabeli_gwTabela16(object sender, GridViewRowEventArgs e)
+        {
+            if (e.Row.RowType == DataControlRowType.Header)
+            {
+                DataTable dT = tb.naglowek(path, 8);
+                tb.makeHeader(dT, gwTabela16);
+            }
+        }
+        protected void naglowekTabeli_gwTabela17(object sender, GridViewRowEventArgs e)
+        {
+            if (e.Row.RowType == DataControlRowType.Header)
+            {
+                DataTable dT = tb.naglowek(path, 8);
+                tb.makeHeader(dT, gwTabela17);
+            }
+
         }
 
         protected void stopkaTabeli_gwTabela14(object sender, GridViewRowEventArgs e)
@@ -1154,5 +1179,7 @@ namespace stat2018
                 tb.makeSumRow(table, e, 0);
             }
         }
+
+       
     }
 }

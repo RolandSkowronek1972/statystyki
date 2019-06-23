@@ -1407,9 +1407,9 @@
 
          <div class="page-break">
                                     &nbsp;<asp:Label ID="Label60_16" runat="server">REFERENTARZE LICZBA POSIEDZEŃ JAWNYCH</asp:Label>
-                                    &nbsp;<asp:Label ID="infoLabel16" runat="server" Text="tabela 16  \/\/\/" Visible="False"></asp:Label>
+                                    &nbsp;<asp:Label ID="infoLabel16" runat="server" Text="tabela 17  \/\/\/" Visible="False"></asp:Label>
                                     <br />
-                                    <asp:GridView ID="gwTabela16" runat="server" OnRowCreated="naglowekTabeli_gwTabela8" AutoGenerateColumns="False" OnRowDataBound="stopkaTabeli_gwTabela16" Width="100%" ShowHeader="False" ShowFooter="True">
+                                    <asp:GridView ID="gwTabela16" runat="server" OnRowCreated="naglowekTabeli_gwTabela16" AutoGenerateColumns="False" OnRowDataBound="stopkaTabeli_gwTabela16" Width="100%" ShowHeader="False" ShowFooter="True">
                                         <Columns>
 
                                             <asp:TemplateField HeaderText="imie" SortExpression="imie">
@@ -1531,9 +1531,9 @@
                                 </div>
             <div id="tabela17" class="page-break">
                                     &nbsp;<asp:Label ID="Label60_17" runat="server">REFERENTARZE LICZBA POSIEDZEŃ NIE JAWNYCH</asp:Label>
-                                    &nbsp;<asp:Label ID="Label41" runat="server" Text="tabela 17  \/\/\/" Visible="False"></asp:Label>
+                                    &nbsp;<asp:Label ID="infoLabel17" runat="server" Text="tabela 18  \/\/\/" Visible="False"></asp:Label>
                                     <br />
-                                    <asp:GridView ID="gwTabela17" runat="server" OnRowCreated="naglowekTabeli_gwTabela8" AutoGenerateColumns="False" OnRowDataBound="stopkaTabeli_gwTabela17" Width="100%" ShowHeader="False" ShowFooter="True">
+                                    <asp:GridView ID="gwTabela17" runat="server" OnRowCreated="naglowekTabeli_gwTabela17" AutoGenerateColumns="False" OnRowDataBound="stopkaTabeli_gwTabela17" Width="100%" ShowHeader="False" ShowFooter="True">
                                         <Columns>
 
                                             <asp:TemplateField HeaderText="imie" SortExpression="imie">
@@ -2314,9 +2314,13 @@
                                         </Columns>
                                         <FooterStyle BackColor="#CCCCCC" />
                                     </asp:GridView>
-                                    <asp:PlaceHolder runat="server" ID="tablePlaceHolder"></asp:PlaceHolder>
+                                  
                                 </div>
                                 <br />
+          <div class="page-break">
+              content
+                <asp:PlaceHolder runat="server" ID="tablePlaceHolder"></asp:PlaceHolder>
+              </div>
                                 <div id="debag">
                                     <br />
                                     <br />

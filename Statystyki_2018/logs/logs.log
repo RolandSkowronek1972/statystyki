@@ -1,18 +1,104 @@
-2019-06-17 06:44:00,068  INFO stat2018.log_4_net - Site1.Master:Brak przeniesienia z logowania identyfikatora numerycznego Uzytkownika! 
-2019-06-17 06:44:00,120  INFO stat2018.log_4_net - Odwolanie do obiektu nie zostalo ustawione na wystapienie obiektu.
-2019-06-17 06:46:28,853  INFO stat2018.log_4_net - Logowanie: identyfikator uzytkownika: test to 1
-2019-06-17 06:52:08,413  INFO stat2018.log_4_net - Header: Rozpoczecie procedury tworzenia elementów menu wyloguj
-2019-06-17 06:52:14,243  INFO stat2018.log_4_net - okrk.aspx: rozpoczecie tworzenia tabeli 2
-2019-06-17 06:52:14,328  INFO stat2018.log_4_net - okrk.aspx: rozpoczecie tworzenia tabeli 2
-2019-06-17 06:52:14,380  INFO stat2018.log_4_net - sumowanie w stopce : Okreslony argument jest spoza zakresu prawidlowych wartosci.
-Nazwa parametru: index
-2019-06-17 06:52:14,381  INFO stat2018.log_4_net - okrk.aspx: rozpoczecie tworzenia tabeli 2
-2019-06-17 06:52:14,424  INFO stat2018.log_4_net - okrk.aspx: rozpoczecie tworzenia tabeli 3
-2019-06-17 06:52:14,456  INFO stat2018.log_4_net - sumowanie w stopce : Nie mozna odnalezc kolumny [d_01].
-2019-06-17 06:52:14,456  INFO stat2018.log_4_net - sumowanie w stopce : Nie mozna odnalezc kolumny [d_02].
-2019-06-17 06:52:14,456  INFO stat2018.log_4_net - sumowanie w stopce : Nie mozna odnalezc kolumny [d_03].
-2019-06-17 06:52:14,456  INFO stat2018.log_4_net - sumowanie w stopce : Nie mozna odnalezc kolumny [d_04].
-2019-06-17 06:52:14,456  INFO stat2018.log_4_net - sumowanie w stopce : Nie mozna odnalezc kolumny [d_05].
-2019-06-17 06:52:14,456  INFO stat2018.log_4_net - sumowanie w stopce : Nie mozna odnalezc kolumny [d_06].
-2019-06-17 06:52:17,675  INFO stat2018.log_4_net - Excell Odwolanie do obiektu nie zostalo ustawione na wystapienie obiektu.
-2019-06-17 06:52:18,258  INFO stat2018.log_4_net - okrk.aspx Trwalo przerywanie watku.
+2019-06-23 18:06:11,497  INFO stat2018.log_4_net - Site1.Master:Brak przeniesienia z logowania identyfikatora numerycznego Uzytkownika! 
+2019-06-23 18:06:11,613  INFO stat2018.log_4_net - Odwolanie do obiektu nie zostalo ustawione na wystapienie obiektu.
+2019-06-23 18:06:12,577  INFO stat2018.log_4_net - Logowanie: identyfikator uzytkownika: test to 1
+2019-06-23 18:11:42,248  INFO stat2018.log_4_net - Header: Rozpoczecie procedury tworzenia elementów menu wyloguj
+2019-06-23 18:12:14,221  INFO stat2018.log_4_net - oglk3.aspx: rozpoczecie tworzenia tabeli 2
+2019-06-23 18:12:14,298  INFO stat2018.log_4_net - oglk3.aspx: rozpoczecie tworzenia tabeli 4
+2019-06-23 18:12:14,337  INFO stat2018.log_4_net - oglk3.aspx: rozpoczecie tworzenia tabeli 5
+2019-06-23 18:12:14,355  INFO stat2018.log_4_net - oglk3.aspx: rozpoczecie tworzenia tabeli 6
+2019-06-23 18:12:14,374  INFO stat2018.log_4_net - oglk3.aspx: rozpoczecie tworzenia tabeli 7
+2019-06-23 18:12:14,396  INFO stat2018.log_4_net - oglk3.aspx: rozpoczecie tworzenia tabeli 8
+2019-06-23 18:12:14,406  INFO stat2018.log_4_net - oglk3.aspx: rozpoczecie tworzenia tabeli 9
+2019-06-23 18:12:14,411  INFO stat2018.log_4_net - oglk3.aspx: rozpoczecie tworzenia tabeli 10
+2019-06-23 18:12:14,414  INFO stat2018.log_4_net - oglk3.aspx: rozpoczecie tworzenia tabeli 11
+2019-06-23 18:12:14,430  INFO stat2018.log_4_net - oglk3.aspx: rozpoczecie tworzenia tabeli 13
+2019-06-23 18:12:14,461  INFO stat2018.log_4_net - oglk3.aspx: rozpoczecie tworzenia tabeli 12
+2019-06-23 18:12:14,483  INFO stat2018.log_4_net - oglk3.aspx: rozpoczecie tworzenia tabeli 13
+2019-06-23 18:12:20,318  INFO stat2018.log_4_net - oglc3.aspx: rozpoczecie tworzenia tabeli 1
+2019-06-23 18:12:20,323  INFO stat2018.log_4_net - oglc3.aspx: rozpoczecie tworzenia tabeli 2
+2019-06-23 18:12:20,725  INFO stat2018.log_4_net - oglc3.aspx: rozpoczecie tworzenia stopki tabeli 2
+2019-06-23 18:12:20,726  INFO stat2018.log_4_net - oglc3.aspx: rozpoczecie tworzenia tabeli 3
+2019-06-23 18:12:20,729  INFO stat2018.log_4_net - oglc3.aspx: rozpoczecie tworzenia tabeli 4
+2019-06-23 18:12:20,734  INFO stat2018.log_4_net - oglc3.aspx: rozpoczecie tworzenia tabeli 5
+2019-06-23 18:12:20,739  INFO stat2018.log_4_net - oglc3.aspx: rozpoczecie tworzenia tabeli 6
+2019-06-23 18:12:20,742  INFO stat2018.log_4_net - oglc3.aspx: rozpoczecie tworzenia tabeli 7
+2019-06-23 18:12:20,801  INFO stat2018.log_4_net - oglc3.aspx: rozpoczecie tworzenia stopki tabeli 7
+2019-06-23 18:12:20,803  INFO stat2018.log_4_net - oglc3.aspx: rozpoczecie tworzenia tabeli 8
+2019-06-23 18:12:20,875  INFO stat2018.log_4_net - oglc3.aspx: rozpoczecie tworzenia stopki tabeli 8
+2019-06-23 18:12:20,877  INFO stat2018.log_4_net - oglc3.aspx: rozpoczecie tworzenia tabeli 9
+2019-06-23 18:12:20,881  INFO stat2018.log_4_net - oglc3.aspx: rozpoczecie tworzenia tabeli 10
+2019-06-23 18:12:20,887  INFO stat2018.log_4_net - oglc3.aspx: rozpoczecie tworzenia tabeli 11
+2019-06-23 18:12:20,961  INFO stat2018.log_4_net - oglc3.aspx: rozpoczecie tworzenia stopki tabeli 11
+2019-06-23 18:12:20,964  INFO stat2018.log_4_net - oglc3.aspx: rozpoczecie tworzenia tabeli 12
+2019-06-23 18:12:21,054  INFO stat2018.log_4_net - oglc3.aspx: rozpoczecie tworzenia stopki tabeli 12
+2019-06-23 18:12:21,056  INFO stat2018.log_4_net - oglc3.aspx: rozpoczecie tworzenia tabeli 13
+2019-06-23 18:12:21,064  INFO stat2018.log_4_net - oglc3.aspx: rozpoczecie tworzenia tabeli 14
+2019-06-23 18:12:21,071  INFO stat2018.log_4_net - oglc3.aspx: rozpoczecie tworzenia tabeli 15
+2019-06-23 18:12:21,203  INFO stat2018.log_4_net - oglc3.aspx: rozpoczecie tworzenia stopki tabeli 15
+2019-06-23 18:12:21,205  INFO stat2018.log_4_net - oglc3.aspx: rozpoczecie tworzenia tabeli 16
+2019-06-23 18:12:21,239  INFO stat2018.log_4_net - oglc3.aspx: rozpoczecie tworzenia HTML 16
+2019-06-23 18:12:21,255  INFO stat2018.log_4_net - oglc3.aspx: Koniec tworzenia tabeli 16
+2019-06-23 18:12:21,257  INFO stat2018.log_4_net - oglc3.aspx: rozpoczecie tworzenia tabeli 17
+2019-06-23 18:12:21,409  INFO stat2018.log_4_net - oglc3.aspx: rozpoczecie tworzenia stopki tabeli 15
+2019-06-23 18:12:21,418  INFO stat2018.log_4_net - oglc3.aspx: rozpoczecie tworzenia tabeli 18
+2019-06-23 18:14:04,344  INFO stat2018.log_4_net - tabele.dll->makeHeader: Odwolanie do obiektu nie zostalo ustawione na wystapienie obiektu.
+2019-06-23 18:14:04,344  INFO stat2018.log_4_net - tabele.dll->makeHeader: Odwolanie do obiektu nie zostalo ustawione na wystapienie obiektu.
+2019-06-23 18:14:04,345  INFO stat2018.log_4_net - tabele.dll->makeHeader: Odwolanie do obiektu nie zostalo ustawione na wystapienie obiektu.
+2019-06-23 18:14:04,347  INFO stat2018.log_4_net - tabele.dll->makeHeader: Odwolanie do obiektu nie zostalo ustawione na wystapienie obiektu.
+2019-06-23 18:14:04,347  INFO stat2018.log_4_net - tabele.dll->makeHeader: Odwolanie do obiektu nie zostalo ustawione na wystapienie obiektu.
+2019-06-23 18:14:04,353  INFO stat2018.log_4_net - oglc3.aspx: rozpoczecie tworzenia tabeli 1
+2019-06-23 18:14:04,357  INFO stat2018.log_4_net - oglc3.aspx: rozpoczecie tworzenia tabeli 2
+2019-06-23 18:14:04,395  INFO stat2018.log_4_net - oglc3.aspx: rozpoczecie tworzenia stopki tabeli 2
+2019-06-23 18:14:04,396  INFO stat2018.log_4_net - oglc3.aspx: rozpoczecie tworzenia tabeli 3
+2019-06-23 18:14:04,398  INFO stat2018.log_4_net - oglc3.aspx: rozpoczecie tworzenia tabeli 4
+2019-06-23 18:14:04,404  INFO stat2018.log_4_net - oglc3.aspx: rozpoczecie tworzenia tabeli 5
+2019-06-23 18:14:04,407  INFO stat2018.log_4_net - oglc3.aspx: rozpoczecie tworzenia tabeli 6
+2019-06-23 18:14:04,409  INFO stat2018.log_4_net - oglc3.aspx: rozpoczecie tworzenia tabeli 7
+2019-06-23 18:14:04,444  INFO stat2018.log_4_net - oglc3.aspx: rozpoczecie tworzenia stopki tabeli 7
+2019-06-23 18:14:04,445  INFO stat2018.log_4_net - oglc3.aspx: rozpoczecie tworzenia tabeli 8
+2019-06-23 18:14:04,499  INFO stat2018.log_4_net - oglc3.aspx: rozpoczecie tworzenia stopki tabeli 8
+2019-06-23 18:14:04,500  INFO stat2018.log_4_net - oglc3.aspx: rozpoczecie tworzenia tabeli 9
+2019-06-23 18:14:04,502  INFO stat2018.log_4_net - oglc3.aspx: rozpoczecie tworzenia tabeli 10
+2019-06-23 18:14:04,508  INFO stat2018.log_4_net - oglc3.aspx: rozpoczecie tworzenia tabeli 11
+2019-06-23 18:14:04,544  INFO stat2018.log_4_net - oglc3.aspx: rozpoczecie tworzenia stopki tabeli 11
+2019-06-23 18:14:04,544  INFO stat2018.log_4_net - oglc3.aspx: rozpoczecie tworzenia tabeli 12
+2019-06-23 18:14:04,580  INFO stat2018.log_4_net - oglc3.aspx: rozpoczecie tworzenia stopki tabeli 12
+2019-06-23 18:14:04,580  INFO stat2018.log_4_net - oglc3.aspx: rozpoczecie tworzenia tabeli 13
+2019-06-23 18:14:04,584  INFO stat2018.log_4_net - oglc3.aspx: rozpoczecie tworzenia tabeli 14
+2019-06-23 18:14:04,586  INFO stat2018.log_4_net - oglc3.aspx: rozpoczecie tworzenia tabeli 15
+2019-06-23 18:14:04,680  INFO stat2018.log_4_net - oglc3.aspx: rozpoczecie tworzenia stopki tabeli 15
+2019-06-23 18:14:04,681  INFO stat2018.log_4_net - oglc3.aspx: rozpoczecie tworzenia tabeli 16
+2019-06-23 18:14:04,710  INFO stat2018.log_4_net - oglc3.aspx: rozpoczecie tworzenia HTML 16
+2019-06-23 18:14:04,714  INFO stat2018.log_4_net - oglc3.aspx: Koniec tworzenia tabeli 16
+2019-06-23 18:14:04,714  INFO stat2018.log_4_net - oglc3.aspx: rozpoczecie tworzenia tabeli 17
+2019-06-23 18:14:04,797  INFO stat2018.log_4_net - oglc3.aspx: rozpoczecie tworzenia stopki tabeli 15
+2019-06-23 18:14:04,801  INFO stat2018.log_4_net - oglc3.aspx: rozpoczecie tworzenia tabeli 18
+2019-06-23 18:14:04,850  INFO stat2018.log_4_net - oglc3.aspx: rozpoczecie tworzenia stopki tabeli 15
+2019-06-23 18:14:04,862  INFO stat2018.log_4_net - oglc3.aspx: rozpoczecie tworzenia tabeli 1
+2019-06-23 18:14:04,873  INFO stat2018.log_4_net - oglc3.aspx: rozpoczecie tworzenia tabeli 2
+2019-06-23 18:14:04,908  INFO stat2018.log_4_net - oglc3.aspx: rozpoczecie tworzenia stopki tabeli 2
+2019-06-23 18:14:04,909  INFO stat2018.log_4_net - oglc3.aspx: rozpoczecie tworzenia tabeli 3
+2019-06-23 18:14:04,912  INFO stat2018.log_4_net - oglc3.aspx: rozpoczecie tworzenia tabeli 4
+2019-06-23 18:14:04,917  INFO stat2018.log_4_net - oglc3.aspx: rozpoczecie tworzenia tabeli 5
+2019-06-23 18:14:04,921  INFO stat2018.log_4_net - oglc3.aspx: rozpoczecie tworzenia tabeli 6
+2019-06-23 18:14:04,926  INFO stat2018.log_4_net - oglc3.aspx: rozpoczecie tworzenia tabeli 7
+2019-06-23 18:14:05,020  INFO stat2018.log_4_net - oglc3.aspx: rozpoczecie tworzenia stopki tabeli 7
+2019-06-23 18:14:05,021  INFO stat2018.log_4_net - oglc3.aspx: rozpoczecie tworzenia tabeli 8
+2019-06-23 18:14:05,075  INFO stat2018.log_4_net - oglc3.aspx: rozpoczecie tworzenia stopki tabeli 8
+2019-06-23 18:14:05,076  INFO stat2018.log_4_net - oglc3.aspx: rozpoczecie tworzenia tabeli 9
+2019-06-23 18:14:05,078  INFO stat2018.log_4_net - oglc3.aspx: rozpoczecie tworzenia tabeli 10
+2019-06-23 18:14:05,084  INFO stat2018.log_4_net - oglc3.aspx: rozpoczecie tworzenia tabeli 11
+2019-06-23 18:14:05,118  INFO stat2018.log_4_net - oglc3.aspx: rozpoczecie tworzenia stopki tabeli 11
+2019-06-23 18:14:05,119  INFO stat2018.log_4_net - oglc3.aspx: rozpoczecie tworzenia tabeli 12
+2019-06-23 18:14:05,148  INFO stat2018.log_4_net - oglc3.aspx: rozpoczecie tworzenia stopki tabeli 12
+2019-06-23 18:14:05,148  INFO stat2018.log_4_net - oglc3.aspx: rozpoczecie tworzenia tabeli 13
+2019-06-23 18:14:05,151  INFO stat2018.log_4_net - oglc3.aspx: rozpoczecie tworzenia tabeli 14
+2019-06-23 18:14:05,153  INFO stat2018.log_4_net - oglc3.aspx: rozpoczecie tworzenia tabeli 15
+2019-06-23 18:14:05,229  INFO stat2018.log_4_net - oglc3.aspx: rozpoczecie tworzenia stopki tabeli 15
+2019-06-23 18:14:05,230  INFO stat2018.log_4_net - oglc3.aspx: rozpoczecie tworzenia tabeli 16
+2019-06-23 18:14:05,254  INFO stat2018.log_4_net - oglc3.aspx: rozpoczecie tworzenia HTML 16
+2019-06-23 18:14:05,258  INFO stat2018.log_4_net - oglc3.aspx: Koniec tworzenia tabeli 16
+2019-06-23 18:14:05,259  INFO stat2018.log_4_net - oglc3.aspx: rozpoczecie tworzenia tabeli 17
+2019-06-23 18:14:05,338  INFO stat2018.log_4_net - oglc3.aspx: rozpoczecie tworzenia stopki tabeli 15
+2019-06-23 18:14:05,343  INFO stat2018.log_4_net - oglc3.aspx: rozpoczecie tworzenia tabeli 18
+2019-06-23 18:14:05,377  INFO stat2018.log_4_net - oglc3.aspx: rozpoczecie tworzenia stopki tabeli 15
