@@ -424,6 +424,7 @@ C:\myProjects\prv\statystyki\Statystyki_2018\bin\stat2018.pdb
 C:\myProjects\prv\statystyki\Statystyki_2018\bin\DevExpress.Data.v17.1.dll
 C:\myProjects\prv\statystyki\Statystyki_2018\bin\DevExpress.Office.v17.1.Core.dll
 C:\myProjects\prv\statystyki\Statystyki_2018\bin\DevExpress.Printing.v17.1.Core.dll
+C:\myProjects\prv\statystyki\Statystyki_2018\bin\DevExpress.RichEdit.v17.1.Core.dll
 C:\myProjects\prv\statystyki\Statystyki_2018\bin\DevExpress.Utils.v17.1.dll
 C:\myProjects\prv\statystyki\Statystyki_2018\bin\DevExpress.Web.ASPxThemes.v17.1.dll
 C:\myProjects\prv\statystyki\Statystyki_2018\bin\DevExpress.Web.Resources.v17.1.dll
@@ -431,7 +432,6 @@ C:\myProjects\prv\statystyki\Statystyki_2018\bin\DevExpress.Web.v17.1.dll
 C:\myProjects\prv\statystyki\Statystyki_2018\bin\DevExpress.XtraPrinting.v17.1.dll
 C:\myProjects\prv\statystyki\Statystyki_2018\bin\Microsoft.Data.Edm.dll
 C:\myProjects\prv\statystyki\Statystyki_2018\bin\DevExpress.Pdf.v17.1.Core.dll
-C:\myProjects\prv\statystyki\Statystyki_2018\bin\DevExpress.RichEdit.v17.1.Core.dll
 C:\myProjects\prv\statystyki\Statystyki_2018\bin\DevExpress.XtraBars.v17.1.dll
 C:\myProjects\prv\statystyki\Statystyki_2018\bin\DevExpress.XtraEditors.v17.1.dll
 C:\myProjects\prv\statystyki\Statystyki_2018\bin\DevExpress.XtraTreeList.v17.1.dll
@@ -440,11 +440,11 @@ C:\myProjects\prv\statystyki\Statystyki_2018\bin\DevExpress.Sparkline.v17.1.Core
 C:\myProjects\prv\statystyki\Statystyki_2018\bin\DevExpress.Data.v17.1.xml
 C:\myProjects\prv\statystyki\Statystyki_2018\bin\DevExpress.Printing.v17.1.Core.xml
 C:\myProjects\prv\statystyki\Statystyki_2018\bin\DevExpress.Office.v17.1.Core.xml
+C:\myProjects\prv\statystyki\Statystyki_2018\bin\DevExpress.RichEdit.v17.1.Core.xml
 C:\myProjects\prv\statystyki\Statystyki_2018\bin\DevExpress.Utils.v17.1.xml
 C:\myProjects\prv\statystyki\Statystyki_2018\bin\DevExpress.Web.v17.1.xml
 C:\myProjects\prv\statystyki\Statystyki_2018\bin\DevExpress.XtraPrinting.v17.1.xml
 C:\myProjects\prv\statystyki\Statystyki_2018\bin\DevExpress.Pdf.v17.1.Core.xml
-C:\myProjects\prv\statystyki\Statystyki_2018\bin\DevExpress.RichEdit.v17.1.Core.xml
 C:\myProjects\prv\statystyki\Statystyki_2018\bin\DevExpress.XtraBars.v17.1.xml
 C:\myProjects\prv\statystyki\Statystyki_2018\bin\DevExpress.XtraEditors.v17.1.xml
 C:\myProjects\prv\statystyki\Statystyki_2018\bin\DevExpress.XtraTreeList.v17.1.xml
@@ -462,6 +462,10 @@ C:\myProjects\prv\statystyki\Statystyki_2018\bin\de\DevExpress.Office.v17.1.Core
 C:\myProjects\prv\statystyki\Statystyki_2018\bin\es\DevExpress.Office.v17.1.Core.resources.dll
 C:\myProjects\prv\statystyki\Statystyki_2018\bin\ja\DevExpress.Office.v17.1.Core.resources.dll
 C:\myProjects\prv\statystyki\Statystyki_2018\bin\ru\DevExpress.Office.v17.1.Core.resources.dll
+C:\myProjects\prv\statystyki\Statystyki_2018\bin\de\DevExpress.RichEdit.v17.1.Core.resources.dll
+C:\myProjects\prv\statystyki\Statystyki_2018\bin\es\DevExpress.RichEdit.v17.1.Core.resources.dll
+C:\myProjects\prv\statystyki\Statystyki_2018\bin\ja\DevExpress.RichEdit.v17.1.Core.resources.dll
+C:\myProjects\prv\statystyki\Statystyki_2018\bin\ru\DevExpress.RichEdit.v17.1.Core.resources.dll
 C:\myProjects\prv\statystyki\Statystyki_2018\bin\de\DevExpress.Utils.v17.1.resources.dll
 C:\myProjects\prv\statystyki\Statystyki_2018\bin\es\DevExpress.Utils.v17.1.resources.dll
 C:\myProjects\prv\statystyki\Statystyki_2018\bin\ja\DevExpress.Utils.v17.1.resources.dll
@@ -482,10 +486,6 @@ C:\myProjects\prv\statystyki\Statystyki_2018\bin\de\DevExpress.Pdf.v17.1.Core.re
 C:\myProjects\prv\statystyki\Statystyki_2018\bin\es\DevExpress.Pdf.v17.1.Core.resources.dll
 C:\myProjects\prv\statystyki\Statystyki_2018\bin\ja\DevExpress.Pdf.v17.1.Core.resources.dll
 C:\myProjects\prv\statystyki\Statystyki_2018\bin\ru\DevExpress.Pdf.v17.1.Core.resources.dll
-C:\myProjects\prv\statystyki\Statystyki_2018\bin\de\DevExpress.RichEdit.v17.1.Core.resources.dll
-C:\myProjects\prv\statystyki\Statystyki_2018\bin\es\DevExpress.RichEdit.v17.1.Core.resources.dll
-C:\myProjects\prv\statystyki\Statystyki_2018\bin\ja\DevExpress.RichEdit.v17.1.Core.resources.dll
-C:\myProjects\prv\statystyki\Statystyki_2018\bin\ru\DevExpress.RichEdit.v17.1.Core.resources.dll
 C:\myProjects\prv\statystyki\Statystyki_2018\bin\de\DevExpress.XtraBars.v17.1.resources.dll
 C:\myProjects\prv\statystyki\Statystyki_2018\bin\es\DevExpress.XtraBars.v17.1.resources.dll
 C:\myProjects\prv\statystyki\Statystyki_2018\bin\ja\DevExpress.XtraBars.v17.1.resources.dll
@@ -506,9 +506,9 @@ C:\myProjects\prv\statystyki\Statystyki_2018\bin\de\DevExpress.Sparkline.v17.1.C
 C:\myProjects\prv\statystyki\Statystyki_2018\bin\es\DevExpress.Sparkline.v17.1.Core.resources.dll
 C:\myProjects\prv\statystyki\Statystyki_2018\bin\ja\DevExpress.Sparkline.v17.1.Core.resources.dll
 C:\myProjects\prv\statystyki\Statystyki_2018\bin\ru\DevExpress.Sparkline.v17.1.Core.resources.dll
+C:\myProjects\prv\statystyki\Statystyki_2018\obj\Debug\Statystyki_2018.csprojAssemblyReference.cache
 C:\myProjects\prv\statystyki\Statystyki_2018\obj\Debug\stat2018.dll.licenses
 C:\myProjects\prv\statystyki\Statystyki_2018\obj\Debug\Statystyki_2018.csproj.CoreCompileInputs.cache
 C:\myProjects\prv\statystyki\Statystyki_2018\obj\Debug\Statystyki_2018.csproj.CopyComplete
 C:\myProjects\prv\statystyki\Statystyki_2018\obj\Debug\stat2018.dll
 C:\myProjects\prv\statystyki\Statystyki_2018\obj\Debug\stat2018.pdb
-C:\myProjects\prv\statystyki\Statystyki_2018\obj\Debug\Statystyki_2018.csprojAssemblyReference.cache

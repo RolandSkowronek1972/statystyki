@@ -128,6 +128,7 @@
     <Content Include="aoppe.aspx" />
     <Content Include="aopp.aspx" />
     <Content Include="mss16r.aspx" />
+    <Content Include="mss19r.aspx" />
     <Content Include="nowa.aspx" />
     <Content Include="kontrolkaExcell.aspx" />
     <Content Include="kontrolkaDruk.aspx" />
@@ -155,6 +156,7 @@
     <Content Include="oglc.aspx" />
     <Content Include="Scripts\jQuery.print.js" />
     <Content Include="test.aspx" />
+    <Content Include="obba.aspx" />
     <Content Include="wab.aspx" />
     <Content Include="okrk.aspx" />
     <Content Include="okrr.aspx" />
@@ -258,9 +260,7 @@
     <Content Include="version.txt" />
     <Content Include="Web.config" />
     <Content Include="Template\aopc.xlsx" />
-    <None Include="Web.config.old">
-      <SubType>Designer</SubType>
-    </None>
+    <Content Include="Template\obba.xlsx" />
     <None Include="Properties\PublishProfiles\file.pubxml" />
     <Content Include="Template\akac.xlsx" />
     <Content Include="Template\akac2.xlsx" />
@@ -317,12 +317,6 @@
     <Content Include="Template\aopk2.xlsx" />
     <Content Include="Template\aopk.xlsx" />
     <Content Include="Template\oglc3.xlsx" />
-    <None Include="Web.config.Debug.old">
-      <DependentUpon>Web.config.old</DependentUpon>
-    </None>
-    <None Include="Web.config.Release.old">
-      <DependentUpon>Web.config.old</DependentUpon>
-    </None>
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -425,6 +419,13 @@
     </Compile>
     <Compile Include="mss16r.aspx.designer.cs">
       <DependentUpon>mss16r.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="mss19r.aspx.cs">
+      <DependentUpon>mss19r.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="mss19r.aspx.designer.cs">
+      <DependentUpon>mss19r.aspx</DependentUpon>
     </Compile>
     <Compile Include="nowa.aspx.cs">
       <DependentUpon>nowa.aspx</DependentUpon>
@@ -615,6 +616,13 @@
     </Compile>
     <Compile Include="test.aspx.designer.cs">
       <DependentUpon>test.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="obba.aspx.cs">
+      <DependentUpon>obba.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="obba.aspx.designer.cs">
+      <DependentUpon>obba.aspx</DependentUpon>
     </Compile>
     <Compile Include="wab.aspx.cs">
       <DependentUpon>wab.aspx</DependentUpon>

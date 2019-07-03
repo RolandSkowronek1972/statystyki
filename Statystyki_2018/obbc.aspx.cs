@@ -347,7 +347,6 @@ namespace stat2018
                 MyWorksheet1 = tb.tworzArkuszwExcle(MyExcel.Workbook.Worksheets[3], table3, 4, 0, 3, false, false, false, false, false);
 
                 // czwarta
-
                 DataTable table4 = (DataTable)Session["tabelka005"];
                 cm.log.Info("oobc trzecia tabela ilosc wierszy " + table4.Rows.Count.ToString());
 

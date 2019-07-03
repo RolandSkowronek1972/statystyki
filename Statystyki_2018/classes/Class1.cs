@@ -32,6 +32,7 @@ namespace stat2018
             return stTab;
         }
         */
+
         private string getColumnName(int i)
         {
             string txt = string.Empty;
@@ -62,7 +63,19 @@ namespace stat2018
             return sedzia + " " + stanowisko;
         }// end of wyciagnij_kwerende
 
-   
+        public string wyciagnij_sedziegoXXL(string id_sedziego)
+        {
+            DataTable parameters = Common.makeParameterTable();
+            parameters.Rows.Add("@id_sedziego", id_sedziego.Trim());
+            string sedzia = Common.getQuerryValue("SELECT distinct imie + ' ' + nazwisko   FROM tbl_statystyki_tbl_x5 where id_sedziego=@id_sedziego ", con_str, parameters);
+
+            parameters = Common.makeParameterTable();
+            parameters.Rows.Add("@id_sedziego", id_sedziego.Trim());
+            string stanowisko = Common.getQuerryValue("SELECT distinct  (COALESCE( stanowisko ,'') ) as sedzia  FROM tbl_statystyki_tbl_x5 where id_sedziego=@id_sedziego ", con_str, parameters);
+
+            return sedzia + " " + stanowisko;
+        }// end of wyciagnij_kwerende
+
         public string wyciagnij_tytul(string tabela, string kolumna, string id_dzialu)
         {
             DataTable parameters = Common.makeParameterTable();
@@ -128,6 +141,7 @@ namespace stat2018
             parameters.Rows.Add("@user_id", result);
             return Common.getQuerryValue("SELECT COUNT(*) FROM     uprawnienia WHERE  (id_uzytkownika = @user_id) AND (id_wydzialu =@id_wydzialu)", con_str_wcyw, parameters);
         }// czy_dostepny
+
         /*
         public bool czyPracowal(string idPracownika, string data, string ConnectionString)
         {
@@ -143,6 +157,7 @@ namespace stat2018
             return result;
         }// end of CzyPracowal
         */
+
         public DataSet pod_tabela(string cs, string kwerenda, string poczatek, string koniec, string id_sedziego)
         {
             var conn = new SqlConnection(cs);
@@ -239,7 +254,7 @@ namespace stat2018
             return result;
         }
 
-            public string wyciagnijDane(int id_dzialu, int id_wiersza, int id_kolumny, DateTime poczatek, DateTime koniec, int id_tabeli)
+        public string wyciagnijDane(int id_dzialu, int id_wiersza, int id_kolumny, DateTime poczatek, DateTime koniec, int id_tabeli)
         {
             string result = string.Empty;
             string cs = podajConnectionString(id_dzialu);
@@ -265,6 +280,7 @@ namespace stat2018
 
             Common.runQuerry("insert into tbl_statystyki_tbl_01 (opis,id_,id_dzialu,id_tabeli) values (@opis,@id,@id_dzialu,@id_tabeli)", con_str, parametry);
         }
+
         public void updateWiersz(int kolumna, int id, string opis, int id_tabeli)
         {
             string txt = getColumnName(kolumna);
@@ -326,6 +342,7 @@ namespace stat2018
 
             return "1";
         }// end of generuj_dane_do_tabeli
+
         public DataTable generuj_dane_do_tabeli_wierszy_przestawnych1(DateTime poczatek, DateTime koniec, string id_dzialu, int id_tabeli, int id_pozycji)
         {
             string kwerenda = string.Empty;
@@ -421,7 +438,7 @@ namespace stat2018
                 il_wierszy = ddT.Rows.Count;
             }
             catch { }
-            string cs =podajConnectionString (id_dzialu);
+            string cs = podajConnectionString(id_dzialu);
             if (il_wierszy == 0)
             {
                 // brak kwerend odcztującch
@@ -600,7 +617,6 @@ namespace stat2018
                 }
             } // end of using
             */
-          
         }// end of debug
 
         public string nazwaSadu(string id_sadu)
@@ -611,7 +627,6 @@ namespace stat2018
             return Common.getQuerryValue("SELECT  sad FROM     wydzialy where ident=@id_sadu", con_str, parameters);
         }// end of nazwaSadu
 
-      
         public string generuj_dane_do_tabeli_(int id_dzialu, int id_tabeli, DateTime poczatek, DateTime koniec)
         {
             string status = string.Empty;
@@ -840,7 +855,6 @@ namespace stat2018
 
         //================================================================================================
 
-
         public DataSet kwerendy_xl(string cs, string kwe, int id_dzialu, int id_tabeli, DateTime poczatek, DateTime koniec)
         {
             DataSet ds_x = new DataSet();
@@ -868,8 +882,6 @@ namespace stat2018
             return ds_x;
         }
 
-
-      
         public DataTable generuj_dane_do_tabeli_mss2(int id_dzialu, DateTime poczatek, DateTime koniec, int il_kolumn)
         {
             string status = string.Empty;
@@ -943,7 +955,5 @@ namespace stat2018
 
             return dTResult;
         }// end of generuj_dane_do_tabeli_mss2
-
-       
     } // end of class
 }

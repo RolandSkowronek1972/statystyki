@@ -65,7 +65,6 @@ namespace stat2018
             //naglowek
             cm.log.Info("MSS 16r iloscWierszyNaglowka: " + iloscWierszyNaglowka.ToString());
 
-
             DataTable header = naglowek;
             try
             {
@@ -101,13 +100,10 @@ namespace stat2018
                                 {
                                     sekcjaStyle = " " + style + " ";
                                 }
-                                //    if ((j == 1)&&(!lp))
-                                //    {
-                                //        sekcjaColspan = "colspan ='" + (colspan+1).ToString() + "' ";
-                                //    }
+                               
                                 kodStony.AppendLine("<td  class ='borderAll  " + sekcjaStyle + "'" + sekcjaColspan + sekcjaRowspan + ">" + tekst + "</td>");
                             }
-                            //
+                            
                         }
                         catch (Exception ex)
                         {
@@ -126,23 +122,21 @@ namespace stat2018
             try
             {
                 for (int j = 0; j < iloscKolumnPoIteracji + 1; j++)
-            {
-                if ((j == 0) && (!lp))
                 {
-
-                    kodStony.AppendLine("<td  class='borderAll center' colspan='" + (iloscKolumnPrzedIteracja + 1) + "'>" + j.ToString() + "</td>");
+                    if ((j == 0) && (!lp))
+                    {
+                        kodStony.AppendLine("<td  class='borderAll center' colspan='" + (iloscKolumnPrzedIteracja + 1) + "'>" + j.ToString() + "</td>");
+                    }
+                    else
+                    {
+                        kodStony.AppendLine("<td  class='borderAll center' >" + j.ToString() + "</td>");
+                    }
                 }
-                else
-                {
-                    kodStony.AppendLine("<td  class='borderAll center' >" + j.ToString() + "</td>");
-                }
-            }
             }
             catch (Exception ex)
             {
                 cm.log.Error("MSS 16r Error: " + ex.Message);
             }
-
 
             //tabela główna
             try
@@ -242,6 +236,7 @@ namespace stat2018
                 //wypełnianie lebeli
 
                 #region "tabela 1.1.1.a"
+
                 //tab_111a_
                 idTabeli = "'1.1.1.a'";
                 idWiersza = "'1'";
@@ -249,30 +244,21 @@ namespace stat2018
                 idWiersza = "'2'";
                 tab_111a_w02_c01.Text = dr.wyciagnijWartosc(tabela2, "idWydzial=" + idWydzialu + " and idTabeli=" + idTabeli + " and idWiersza =" + idWiersza + " and idkolumny='1'", tenPlik);
 
-                #endregion "tabela 1.1.a.2"
+                #endregion "tabela 1.1.1.a"
 
                 #region "tabela 1.1.1.a.1"
 
                 idTabeli = "'1.1.1.a.1'";
                 idWiersza = "'1'";
-                tab_111a1_w01_col01.Text = dr.wyciagnijWartosc(tabela2, "idWydzial=" + idWydzialu + " and idTabeli=" + idTabeli + " and idWiersza =" + idWiersza + " and idkolumny='1'", tenPlik);
+                //   tab_111a1_w01_col01.Text = dr.wyciagnijWartosc(tabela2, "idWydzial=" + idWydzialu + " and idTabeli=" + idTabeli + " and idWiersza =" + idWiersza + " and idkolumny='1'", tenPlik);
 
-                #endregion "tabela 1.1.a.1"
+                #endregion "tabela 1.1.1.a.1"
 
-                
                 #region "tabela 1.1.a.1"
 
-                pisz("tab_111a1_",1 , 6, tabela2, "'1.1.1.a.1'", idWydzialu);
+                pisz("tab_111a1_", 1, 6, tabela2, "'1.1.1.a.1'", idWydzialu);
+
                 #endregion "tabela 1.1.a.1"
-
-
-                #region "tabela 1.1.a.2"
-/*
-                #region "tabela 1.1.1.a"
-
-                pisz("tab_111a_", 1, 6, tabela2, "'1.1.1.a'", idWydzialu);
-                #endregion "tabela 1.1.1.a"
-                */
 
                 #region "tabela 1.1.1.a.2"
 
@@ -280,11 +266,13 @@ namespace stat2018
                 idWiersza = "'1'";
                 tab_111a2_w01_col01.Text = dr.wyciagnijWartosc(tabela2, "idWydzial=" + idWydzialu + " and idTabeli=" + idTabeli + " and idWiersza =" + idWiersza + " and idkolumny='1'", tenPlik);
 
-                #endregion "tabela 1.1.a.2"
-               
+                #endregion "tabela 1.1.1.a.2"
+
                 #region "1.1.1.a.1";
+
                 pisz("tab_111a1_", 1, 6, tabela2, "'1.1.1.a.1'", idWydzialu);
-                #endregion ;
+
+                #endregion "1.1.1.a.1";
 
                 #region "tabela 1.1.1.b"
 
@@ -309,7 +297,9 @@ namespace stat2018
                 #endregion "1.1.1.d";
 
                 #region "1.1.1.e";
+
                 pisz("tab_111e_", 9, 2, tabela2, "'1.1.1.e'", idWydzialu);
+
                 #endregion "1.1.1.e";
 
                 #region "1.1.1.f";
@@ -661,47 +651,55 @@ namespace stat2018
                 tab_112c_w37_c03.Text = dr.wyciagnijWartosc(tabela2, "idWydzial=" + idWydzialu + " and idTabeli=" + idTabeli + " and idWiersza =" + idWiersza + " and idkolumny='3'", tenPlik);
 
                 #endregion "1.1.2.c";
-                //1.1.3
 
                 #region "1.1.3";
-                pisz("tab_113_", 6, 1, tabela2, "'1.1.3'", idWydzialu);
-                #endregion ;
 
+                pisz("tab_113_", 6, 1, tabela2, "'1.1.3'", idWydzialu);
+
+                #endregion "1.1.3";
 
                 #region "1.1.4";
-               
-                pisz("tab_1_1_4_", 3, 1, tabela2, "'1.1.4'", idWydzialu);
-                #endregion "1.1.4";
-                #region "1.1.5";
-                pisz("tab_115_", 3, 1, tabela2, "'1.1.5'", idWydzialu);
-                #endregion ;
 
+                pisz("tab_1_1_4_", 3, 1, tabela2, "'1.1.4'", idWydzialu);
+
+                #endregion "1.1.4";
+
+                #region "1.1.5";
+
+                pisz("tab_115_", 3, 1, tabela2, "'1.1.5'", idWydzialu);
+
+                #endregion "1.1.5";
 
                 #region "1.1.6";
 
                 idWiersza = "'1'";
                 pisz("tab_1_1_6_", 9, 1, tabela2, "'1.1.6'", idWydzialu);
-             
+
                 #endregion "1.1.6";
 
                 #region "1.1.7";
 
-                pisz("tab_1_1_7_", 14,5, tabela2, "'1.1.7'", idWydzialu);
+                pisz("tab_1_1_7_", 14, 5, tabela2, "'1.1.7'", idWydzialu);
+
                 #endregion "1.1.7";
 
-
                 #region "1.1.7.a";
-                pisz("tab_1_1_7_a_", 5,14, tabela2, "'1.1.7.a'", idWydzialu);
+
+                pisz("tab_tab_117a_", 5, 14, tabela2, "'1.1.7.a'", idWydzialu);
+
                 #endregion "1.1.7.a";
 
                 #region "1.1.7.b";
+
                 pisz("tab_1_1_7_b_", 7, 12, tabela2, "'1.1.7.b'", idWydzialu);
+
                 #endregion "1.1.7.b";
 
-
                 #region "1.1.7.c";
+
                 pisz("tab_117c_", 1, 5, tabela2, "'1.1.7.c'", idWydzialu);
-                #endregion ;
+
+                #endregion "1.1.7.c";
 
                 #region "1.1.8";
 
@@ -757,25 +755,35 @@ namespace stat2018
 
                 #endregion "1.1.9";
 
-             
+                #region "1.1.10";
+
+                pisz("tab_1110", 3, 3, tabela2, "'1.1.10'", idWydzialu);
+
+                #endregion "1.1.10";
+
                 #region "1.2.a";
+
                 pisz("tab_12a_", 22, 7, tabela2, "'1.2.a'", idWydzialu);
-                #endregion ;
+
+                #endregion "1.2.a";
+
                 #region "1.2.b";
+
                 pisz("tab_12b_", 24, 7, tabela2, "'1.2.b'", idWydzialu);
-                #endregion ;
+
+                #endregion "1.2.b";
 
                 #region "1.2.c";
+
                 pisz("tab_12c_", 4, 3, tabela2, "'1.2.c'", idWydzialu);
-                #endregion ;
 
-
+                #endregion "1.2.c";
 
                 #region "1.2.1"
-                pisz("tab_121_", 10, 28, tabela2, "'1.2.1'", idWydzialu);
-                #endregion
 
-               
+                pisz("tab_121_", 10, 28, tabela2, "'1.2.1'", idWydzialu);
+
+                #endregion "1.2.1"
 
                 #region "1.2.2";
 
@@ -1573,13 +1581,14 @@ namespace stat2018
 
                 idTabeli = "'2.1.1'";
                 pisz("tab_2_1_1_", 5, 11, tabela2, "'2.1.1'", idWydzialu);
+
                 #endregion "2.1.1";
-                //tab_2_1_1_1_
 
                 #region "2.1.1.1";
 
                 idTabeli = "'2.1.1.1'";
                 pisz("tab_2_1_1_1_", 5, 11, tabela2, "'2.1.1.1'", idWydzialu);
+
                 #endregion "2.1.1.1";
 
                 #region "2.1.1.a";
@@ -1649,55 +1658,13 @@ namespace stat2018
                 #endregion "2.1.1.a";
 
                 #region "2.1.2"
-                pisz("tab_2_1_2_",5,11, tabela2, "'2.1.2'", idWydzialu);
-                #endregion
 
-              
+                pisz("tab_2_1_2_", 5, 11, tabela2, "'2.1.2'", idWydzialu);
+
+                #endregion "2.1.2"
 
                 #region "2.2";
-
-                idTabeli = "'2.2'";
-                idWiersza = "'1'";
-                tab_2_2_w01_c01.Text = dr.wyciagnijWartosc(tabela2, "idWydzial=" + idWydzialu + " and idTabeli=" + idTabeli + " and idWiersza =" + idWiersza + " and idkolumny='1'", tenPlik);
-                tab_2_2_w01_c02.Text = dr.wyciagnijWartosc(tabela2, "idWydzial=" + idWydzialu + " and idTabeli=" + idTabeli + " and idWiersza =" + idWiersza + " and idkolumny='2'", tenPlik);
-                tab_2_2_w01_c03.Text = dr.wyciagnijWartosc(tabela2, "idWydzial=" + idWydzialu + " and idTabeli=" + idTabeli + " and idWiersza =" + idWiersza + " and idkolumny='3'", tenPlik);
-                tab_2_2_w01_c04.Text = dr.wyciagnijWartosc(tabela2, "idWydzial=" + idWydzialu + " and idTabeli=" + idTabeli + " and idWiersza =" + idWiersza + " and idkolumny='4'", tenPlik);
-                tab_2_2_w01_c05.Text = dr.wyciagnijWartosc(tabela2, "idWydzial=" + idWydzialu + " and idTabeli=" + idTabeli + " and idWiersza =" + idWiersza + " and idkolumny='5'", tenPlik);
-                tab_2_2_w01_c06.Text = dr.wyciagnijWartosc(tabela2, "idWydzial=" + idWydzialu + " and idTabeli=" + idTabeli + " and idWiersza =" + idWiersza + " and idkolumny='6'", tenPlik);
-                tab_2_2_w01_c07.Text = dr.wyciagnijWartosc(tabela2, "idWydzial=" + idWydzialu + " and idTabeli=" + idTabeli + " and idWiersza =" + idWiersza + " and idkolumny='7'", tenPlik);
-                tab_2_2_w01_c08.Text = dr.wyciagnijWartosc(tabela2, "idWydzial=" + idWydzialu + " and idTabeli=" + idTabeli + " and idWiersza =" + idWiersza + " and idkolumny='8'", tenPlik);
-                tab_2_2_w01_c09.Text = dr.wyciagnijWartosc(tabela2, "idWydzial=" + idWydzialu + " and idTabeli=" + idTabeli + " and idWiersza =" + idWiersza + " and idkolumny='9'", tenPlik);
-                idWiersza = "'2'";
-                tab_2_2_w02_c01.Text = dr.wyciagnijWartosc(tabela2, "idWydzial=" + idWydzialu + " and idTabeli=" + idTabeli + " and idWiersza =" + idWiersza + " and idkolumny='1'", tenPlik);
-                tab_2_2_w02_c02.Text = dr.wyciagnijWartosc(tabela2, "idWydzial=" + idWydzialu + " and idTabeli=" + idTabeli + " and idWiersza =" + idWiersza + " and idkolumny='2'", tenPlik);
-                tab_2_2_w02_c03.Text = dr.wyciagnijWartosc(tabela2, "idWydzial=" + idWydzialu + " and idTabeli=" + idTabeli + " and idWiersza =" + idWiersza + " and idkolumny='3'", tenPlik);
-                tab_2_2_w02_c04.Text = dr.wyciagnijWartosc(tabela2, "idWydzial=" + idWydzialu + " and idTabeli=" + idTabeli + " and idWiersza =" + idWiersza + " and idkolumny='4'", tenPlik);
-                tab_2_2_w02_c05.Text = dr.wyciagnijWartosc(tabela2, "idWydzial=" + idWydzialu + " and idTabeli=" + idTabeli + " and idWiersza =" + idWiersza + " and idkolumny='5'", tenPlik);
-                tab_2_2_w02_c06.Text = dr.wyciagnijWartosc(tabela2, "idWydzial=" + idWydzialu + " and idTabeli=" + idTabeli + " and idWiersza =" + idWiersza + " and idkolumny='6'", tenPlik);
-                tab_2_2_w02_c07.Text = dr.wyciagnijWartosc(tabela2, "idWydzial=" + idWydzialu + " and idTabeli=" + idTabeli + " and idWiersza =" + idWiersza + " and idkolumny='7'", tenPlik);
-                tab_2_2_w02_c08.Text = dr.wyciagnijWartosc(tabela2, "idWydzial=" + idWydzialu + " and idTabeli=" + idTabeli + " and idWiersza =" + idWiersza + " and idkolumny='8'", tenPlik);
-                tab_2_2_w02_c09.Text = dr.wyciagnijWartosc(tabela2, "idWydzial=" + idWydzialu + " and idTabeli=" + idTabeli + " and idWiersza =" + idWiersza + " and idkolumny='9'", tenPlik);
-                idWiersza = "'3'";
-                tab_2_2_w03_c01.Text = dr.wyciagnijWartosc(tabela2, "idWydzial=" + idWydzialu + " and idTabeli=" + idTabeli + " and idWiersza =" + idWiersza + " and idkolumny='1'", tenPlik);
-                tab_2_2_w03_c02.Text = dr.wyciagnijWartosc(tabela2, "idWydzial=" + idWydzialu + " and idTabeli=" + idTabeli + " and idWiersza =" + idWiersza + " and idkolumny='2'", tenPlik);
-                tab_2_2_w03_c03.Text = dr.wyciagnijWartosc(tabela2, "idWydzial=" + idWydzialu + " and idTabeli=" + idTabeli + " and idWiersza =" + idWiersza + " and idkolumny='3'", tenPlik);
-                tab_2_2_w03_c04.Text = dr.wyciagnijWartosc(tabela2, "idWydzial=" + idWydzialu + " and idTabeli=" + idTabeli + " and idWiersza =" + idWiersza + " and idkolumny='4'", tenPlik);
-                tab_2_2_w03_c05.Text = dr.wyciagnijWartosc(tabela2, "idWydzial=" + idWydzialu + " and idTabeli=" + idTabeli + " and idWiersza =" + idWiersza + " and idkolumny='5'", tenPlik);
-                tab_2_2_w03_c06.Text = dr.wyciagnijWartosc(tabela2, "idWydzial=" + idWydzialu + " and idTabeli=" + idTabeli + " and idWiersza =" + idWiersza + " and idkolumny='6'", tenPlik);
-                tab_2_2_w03_c07.Text = dr.wyciagnijWartosc(tabela2, "idWydzial=" + idWydzialu + " and idTabeli=" + idTabeli + " and idWiersza =" + idWiersza + " and idkolumny='7'", tenPlik);
-                tab_2_2_w03_c08.Text = dr.wyciagnijWartosc(tabela2, "idWydzial=" + idWydzialu + " and idTabeli=" + idTabeli + " and idWiersza =" + idWiersza + " and idkolumny='8'", tenPlik);
-                tab_2_2_w03_c09.Text = dr.wyciagnijWartosc(tabela2, "idWydzial=" + idWydzialu + " and idTabeli=" + idTabeli + " and idWiersza =" + idWiersza + " and idkolumny='9'", tenPlik);
-                idWiersza = "'4'";
-                tab_2_2_w04_c01.Text = dr.wyciagnijWartosc(tabela2, "idWydzial=" + idWydzialu + " and idTabeli=" + idTabeli + " and idWiersza =" + idWiersza + " and idkolumny='1'", tenPlik);
-                tab_2_2_w04_c02.Text = dr.wyciagnijWartosc(tabela2, "idWydzial=" + idWydzialu + " and idTabeli=" + idTabeli + " and idWiersza =" + idWiersza + " and idkolumny='2'", tenPlik);
-                tab_2_2_w04_c03.Text = dr.wyciagnijWartosc(tabela2, "idWydzial=" + idWydzialu + " and idTabeli=" + idTabeli + " and idWiersza =" + idWiersza + " and idkolumny='3'", tenPlik);
-                tab_2_2_w04_c04.Text = dr.wyciagnijWartosc(tabela2, "idWydzial=" + idWydzialu + " and idTabeli=" + idTabeli + " and idWiersza =" + idWiersza + " and idkolumny='4'", tenPlik);
-                tab_2_2_w04_c05.Text = dr.wyciagnijWartosc(tabela2, "idWydzial=" + idWydzialu + " and idTabeli=" + idTabeli + " and idWiersza =" + idWiersza + " and idkolumny='5'", tenPlik);
-                tab_2_2_w04_c06.Text = dr.wyciagnijWartosc(tabela2, "idWydzial=" + idWydzialu + " and idTabeli=" + idTabeli + " and idWiersza =" + idWiersza + " and idkolumny='6'", tenPlik);
-                tab_2_2_w04_c07.Text = dr.wyciagnijWartosc(tabela2, "idWydzial=" + idWydzialu + " and idTabeli=" + idTabeli + " and idWiersza =" + idWiersza + " and idkolumny='7'", tenPlik);
-                tab_2_2_w04_c08.Text = dr.wyciagnijWartosc(tabela2, "idWydzial=" + idWydzialu + " and idTabeli=" + idTabeli + " and idWiersza =" + idWiersza + " and idkolumny='8'", tenPlik);
-                tab_2_2_w04_c09.Text = dr.wyciagnijWartosc(tabela2, "idWydzial=" + idWydzialu + " and idTabeli=" + idTabeli + " and idWiersza =" + idWiersza + " and idkolumny='9'", tenPlik);
-
+                    pisz("tab_2_2_", 4, 9, tabela2, "'2.2'", idWydzialu);
                 #endregion "2.2";
 
                 #region "tabel 2.2.a"
@@ -1953,7 +1920,6 @@ namespace stat2018
                 idWiersza = "'1'";
                 tab_4_w01_c01.Text = dr.wyciagnijWartosc(tabela2, "idWydzial=" + idWydzialu + " and idTabeli=" + idTabeli + " and idWiersza =" + idWiersza + " and idkolumny='1'", tenPlik);
                 idWiersza = "'2'";
-
                 tab_4_w02_c01.Text = dr.wyciagnijWartosc(tabela2, "idWydzial=" + idWydzialu + " and idTabeli=" + idTabeli + " and idWiersza =" + idWiersza + " and idkolumny='1'", tenPlik);
 
                 #region "5";
@@ -2630,7 +2596,7 @@ namespace stat2018
                 tab_153_w01_c08.Text = dr.wyciagnijWartosc(tabela2, "idWydzial=" + idWydzialu + " and idTabeli=" + idTabeli + " and idWiersza =" + idWiersza + " and idkolumny='8'", tenPlik);
 
                 #endregion 15.3
-                #endregion 
+
             }
             catch
             { }
@@ -2683,17 +2649,13 @@ namespace stat2018
                 dT.Rows.Add(new Object[] { 4, 2, 1, 1, "wciecie borderAll", "zakładzie leczniczym " });
                 dT.Rows.Add(new Object[] { 5, 2, 1, 1, "wciecie borderAll", "młodzieżowym ośrodku wychowawczym" });
                 dT.Rows.Add(new Object[] { 6, 2, 1, 1, "wciecie borderAll", "domu pomocy społecznej" });
-
             }
             catch (Exception ex)
             {
                 cm.log.Error("tabelaBocznaDzialu_1_1_3 " + ex.Message);
             }
 
-
-
             return dT;
-
         }
 
         private DataTable naglowekTabeliDzialu_1_1_3()
@@ -2712,7 +2674,6 @@ namespace stat2018
             {
                 cm.log.Error("naglowekTabeliDzialu_1_1_3 " + ex.Message);
             }
-
 
             return dT;
         }
@@ -2763,7 +2724,7 @@ namespace stat2018
                 if (((Date1.Date.Day == 1) && (Date2.Date.Day == last_day)) && ((Date1.Date.Month == Date2.Date.Month)))
                 {
                     // cały miesiąc
-                    tabela1Label.Text = "Dział 1.1.1.a.1 Liczba spraw o umieszczenie w szpitalu psychiatrycznym bez zgody, w którym natąpiło przekroczenie terminu 14 dni od dnia wpływu wniosku lub zawiadomienia o przyjęciu do szpitala psychiatrycznego osoby chorej psychicznie lub z zaburzeniami psychicznymi wymaganego w celu odbycia rozprawy [art. 45 ust. 1 ustawy z dnia 19 sierpnia 1994 r. o ochronie zdrowia psychicznego (Dz. U. z 2016 r., poz. 546 )] za miesiąc " + strMonthName + " " + Date2.Date.Year.ToString() + " roku.";
+                    //     tabela1Label.Text = "Dział 1.1.1.a.1 Liczba spraw o umieszczenie w szpitalu psychiatrycznym bez zgody, w którym natąpiło przekroczenie terminu 14 dni od dnia wpływu wniosku lub zawiadomienia o przyjęciu do szpitala psychiatrycznego osoby chorej psychicznie lub z zaburzeniami psychicznymi wymaganego w celu odbycia rozprawy [art. 45 ust. 1 ustawy z dnia 19 sierpnia 1994 r. o ochronie zdrowia psychicznego (Dz. U. z 2016 r., poz. 546 )] za miesiąc " + strMonthName + " " + Date2.Date.Year.ToString() + " roku.";
                     //      tabela2Label.Text = "Dział 1.1.1.a.2. Liczba spraw o umieszczenie w szpitalu psychiatrycznym bez zgody, w których wydano zarządzenie o doprowadzeniu osoby pozostającej w szpitalu, a której postępowanie bezpośrednio dotyczy na rozprawę, stosownie do możliwości przewidzianej w przepisie art. 46 ust. 1a ustawy z dnia 19 sierpnia 1994 r. o ochronie zdrowia psychicznego (Dz. U. z 2016 r., poz. 546) za miesiąc " + strMonthName + " " + Date2.Date.Year.ToString() + " roku.";
                     //    tabela3Label.Text = "Dział 4.1. Terminowość postępowania międzyinstancyjnego w pierwszej instancji za miesiąc " + strMonthName + " " + Date2.Date.Year.ToString() + " roku.";
                     tabela4Label.Text = "Dział 2.2.a. Czas trwania postępowania sądowego od dnia pierwszej rejestracji do dnia uprawomocnienia się sprawy merytorycznie zakończonej (wyrokiem, orzeczeniem) w I instancji (łącznie z czasem trwania mediacji) za miesiąc " + strMonthName + " " + Date2.Date.Year.ToString() + " roku.";
@@ -2775,8 +2736,8 @@ namespace stat2018
                 }
                 else
                 {
-                    tabela1Label.Text = "Dział 1.1.1.a.1 Liczba spraw o umieszczenie w szpitalu psychiatrycznym bez zgody, w którym natąpiło przekroczenie terminu 14 dni od dnia wpływu wniosku lub zawiadomienia o przyjęciu do szpitala psychiatrycznego osoby chorej psychicznie wymaganego w celu odbycia rozprawy [art. 45 ust. 1 ustawy z dnia 19 sierpnia 1994 r. o ochronie zdrowia psychicznego (Dz. U. z 2016 r., poz. 546 )] za okres od:  " + Date1.Text + " do  " + Date2.Text;
-  
+                    //    tabela1Label.Text = "Dział 1.1.1.a.1 Liczba spraw o umieszczenie w szpitalu psychiatrycznym bez zgody, w którym natąpiło przekroczenie terminu 14 dni od dnia wpływu wniosku lub zawiadomienia o przyjęciu do szpitala psychiatrycznego osoby chorej psychicznie wymaganego w celu odbycia rozprawy [art. 45 ust. 1 ustawy z dnia 19 sierpnia 1994 r. o ochronie zdrowia psychicznego (Dz. U. z 2016 r., poz. 546 )] za okres od:  " + Date1.Text + " do  " + Date2.Text;
+
                     tabela4Label.Text = "Dział 2.2.a. Czas trwania postępowania sądowego od dnia pierwszej rejestracji do dnia uprawomocnienia się sprawy merytorycznie zakończonej (wyrokiem, orzeczeniem) w I instancji (łącznie z czasem trwania mediacji) za okres od " + Date1.Text + " do  " + Date2.Text;
 
                     tabela5Label.Text = "Dział 11.1. Terminowość postępowania międzyinstancyjnego  w pierwszej instancji za okres od " + Date1.Text + " do  " + Date2.Text;
@@ -2872,9 +2833,7 @@ namespace stat2018
             dT.Columns.Add("style", typeof(string));
             dT.Columns.Add("text", typeof(string));
 
-            
             return dT;
         }
-
     }
 }

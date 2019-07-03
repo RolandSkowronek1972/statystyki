@@ -1,5 +1,4 @@
 ﻿<%@ Page Title="" Language="C#" UICulture="pl" Culture="pl-PL" MasterPageFile="~/Site1.Master" AutoEventWireup="true" CodeBehind="okrd.aspx.cs" Inherits="stat2018.okrd" %>
-<%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="ajaxToolkit" %>
 <%@ Register assembly="DevExpress.Web.v17.1, Version=17.1.15.0,  Culture=neutral,  PublicKeyToken=b88d1754d700e49a" namespace="DevExpress.Web" tagprefix="dx" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
@@ -48,8 +47,7 @@
             </td>
             <td style="width:auto;padding-left:5px;">
                 
-                <asp:LinkButton ID="LinkButton56" runat="server" OnClick="Button1_Click" CssClass="ax_box" Visible="False">DRUKUJ</asp:LinkButton>
-            </td>
+                &nbsp;</td>
             <td style="width:auto;padding-left:5px;">
                  <asp:LinkButton ID="LinkButton57" runat="server" CssClass="ax_box" OnClick="Button3_Click">Zapisz do Excel</asp:LinkButton>
             </td>
@@ -63,10 +61,7 @@
 
    <div style="width:1150px; margin: 0 auto 0 auto; position:relative;top:60px;" class="content">
 
-          <div id="tabela1"  style="z-index:10; "> 
-  &nbsp;</div>
-
-
+        
 
      <div id="Div2"  style="z-index:10; "> 
         <div style="margin-left:auto;margin-right:auto;text-align: center; width:auto; "> 
@@ -76,7 +71,7 @@
   
 
      </div>
-   <div id="zalatwienia"  class="page-break"> 
+   <div id="zalatwienia" > 
     <br />
     
 

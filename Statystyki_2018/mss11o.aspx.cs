@@ -72,7 +72,7 @@ namespace stat2018
                 string idTabeli = string.Empty;
                 string idWiersza = string.Empty;
                 int idWydzialuNumerycznie = int.Parse((string)Session["id_dzialu"]);
-                DataTable tabelaDanych = ms.generuj_dane_do_tabeli_mss2(idWydzialuNumerycznie, Date1.Date, Date2.Date, 21);
+                DataTable tabelaDanych = ms.generuj_dane_do_tabeli_mss2(idWydzialuNumerycznie, Date1.Date, Date2.Date,60);
                 //wypełnianie lebeli
 
                 Label tblControl = new Label { ID = "kod01" };

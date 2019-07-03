@@ -59,6 +59,12 @@ namespace stat2018
                                     tabelaMSS(int.Parse(id_), id_tabeli, int.Parse(kolumna));
                                 }
                                 break;
+                            case "5":
+                                {
+                                    //wierszowa XXL
+                                   tabelaXXL(int.Parse(id_), int.Parse(id_tabeli), int.Parse(kolumna));
+                                }
+                                break;
                             default:
                                 break;
                         }
@@ -268,6 +274,65 @@ namespace stat2018
             }
             Label2.Text = tytul;
             string sedzia = cl.wyciagnij_sedziego(id_sedziego.ToString());
+            if (sedzia == "Odwołanie do obiektu nie zostało ustawione na wystąpienie obiektu.")
+            {
+                sedzia = "";
+                Label1.Text = sedzia;
+            }
+            Label1.Text = sedzia;
+            Page.Header.Title = Label1.Text.Trim() + " " + Label2.Text.Trim();
+        }
+
+        protected void tabelaXXL(int id_sedziego, int id_tabeli, int id_kolumny)
+        {
+            string kw = string.Empty;
+            string cs = string.Empty;
+
+            //  Session["bb"] = e.CommandName.ToString();
+            string id_dzialu = (string)Session["id_dzialu"];
+
+            string date1 = (string)Session["data_1"];
+            string date2 = (string)Session["data_2"];
+
+            if (!string.IsNullOrEmpty(id_tabeli.ToString().Trim()))
+            {
+
+                cs = cl.podajConnectionString(int.Parse((string)Session["id_dzialu"]));
+                kw = cl.podajKwerendePodgladu(int.Parse(id_dzialu), 0, id_kolumny, id_tabeli);
+
+
+            }
+            GridView1.DataSource = null;
+            GridView1.DataSourceID = null;
+
+
+            try
+            {
+
+                DataSet dane = new DataSet();
+                dane.Tables.Clear();
+                dane = cl.pod_tabela(cs, kw, date1, date2, id_sedziego.ToString());
+                GridView1.DataSource = dane.Tables[0];
+                Session["data_table"] = dane.Tables[0];
+                GridView1.AutoGenerateColumns = true;
+                GridView1.DataBind();
+                GridView1.Visible = true;
+            }
+            catch (Exception ex)
+            {
+                cm.log.Error("popup " + ex.Message);
+                GridView1.DataSource = null;
+                GridView1.DataSourceID = null;
+                GridView1.Visible = false;
+            }
+            string tytul = cl.wyciagnij_tytul(id_tabeli.ToString(), id_kolumny.ToString(), id_dzialu);
+            if (tytul == "Odwołanie do obiektu nie zostało ustawione na wystąpienie obiektu.")
+            {
+                tytul = "";
+                Label2.Text = tytul;
+            }
+            Label2.Text = tytul;
+            string sedzia = cl.wyciagnij_sedziegoXXL(id_sedziego.ToString());
             if (sedzia == "Odwołanie do obiektu nie zostało ustawione na wystąpienie obiektu.")
             {
                 sedzia = "";

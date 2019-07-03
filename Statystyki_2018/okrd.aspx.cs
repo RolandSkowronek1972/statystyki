@@ -345,13 +345,7 @@ namespace stat2018
 
         }
 
-        protected void Button1_Click(object sender, EventArgs e)
-        {
-            przemiel();
-            ScriptManager.RegisterStartupScript(this.Page, Page.GetType(), "print2", "JavaScript: window.print();", true);
-            // ScriptManager.RegisterStartupScript(this.Page, Page.GetType(), "print", "window.open('raport_01_print.aspx', '')", true);
-        }
-
+      
         protected void Button3_Click(object sender, EventArgs e)
         {
             string path = Server.MapPath("Template") + "\\okrd.xlsx";

@@ -82,7 +82,7 @@
            <asp:Label ID="infoLabel1" runat="server" Text="tabela  1" Visible="False"></asp:Label>
            <br />
         
-<asp:GridView ID="gwTabela1" runat="server" OnRowCreated="naglowekTabeli_gwTabela1"  AutoGenerateColumns="False"  OnRowDataBound="stopkaTabeli_gwTabela1"  Width = "100%" ShowHeader = "False" ShowFooter = "True"  >
+<asp:GridView ID="gwTabela1" runat="server" OnRowCreated="naglowekTabeli_gwTabela1"  AutoGenerateColumns="False"  OnRowDataBound="stopkaTabeli_gwTabela1"  Width = "100%" ShowHeader = "False" ShowFooter = "True" BorderStyle="Solid" BorderWidth="1px" CssClass="borderAll"  >
     
 
        <Columns>
@@ -1366,6 +1366,8 @@
         </Columns>
 
        <FooterStyle CssClass="gray" />
+
+       <RowStyle BorderStyle="Solid" CssClass="borderAll" />
 
     </asp:GridView>
 

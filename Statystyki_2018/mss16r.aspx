@@ -167,44 +167,6 @@
          <br />
          <br />
      </div>
-   <div id="1.1.1.a.1"  class="page-break">
-    <br />
-
-         <asp:Label ID="tabela1Label" runat="server"></asp:Label>
-
-       <br />
-       <table  style="width:100%;">
-           <tr>
-               <td class="center" colspan="6" style="border-left: thin solid #666666; border-right: 0px solid #666666; border-top: thin solid #666666; border-bottom: 0px solid #666666; border-width: thin thin 0px thin;">Liczba spraw, w których nastąpiło przekroczenie terminu 14 dni od dnia wpływu wniosku lub zawiadomienia o przyjęciu do szpitala psychiatrychnego</td>
-           </tr>
-           <tr>
-               <td class="center borderAll col_190" >Razem&nbsp; (kol. 2 fo 6)</td>
-               <td class="center borderAll col_190">do 7 dni </td>
-               <td class="center borderAll col_190">powyżej 7 do 14 dni</td>
-               <td class="center borderAll col_190">powyżej 14 do 21 dni</td>
-               <td class="center borderAll col_190">powyżej 21 do30 dni</td>
-               <td class="center borderAll col_190">Ponad 30 dni</td>
-           </tr>
-           <tr>
-               <td class="center mssGrayMiddle borderAll col_190">1</td>
-               <td class="center mssGrayMiddle borderAll col_190" >2</td>
-               <td class="center mssGrayMiddle borderAll col_190">3</td>
-               <td class="center mssGrayMiddle borderAll col_190" >4</td>
-               <td class="center mssGrayMiddle borderAll col_190" >5</td>
-               <td class="center mssGrayMiddle" style="border-left: thin solid #666666; border-right: 0px solid #666666; border-top: thin solid #666666; border-bottom: 0px solid #666666; border-width: thin thin 0px thin;" >6</td>
-           </tr>
-           <tr>
-               <td class="center" style="border: thin solid #000000;" ><a href="javascript:openPopup('popup.aspx?sesja=1!1.1.1.a.1!1!4')"><asp:Label CssClass="normal" ID="tab_111a1_w01_col01" runat="server" Text="0"></asp:Label></a></td>
-               <td class="center" style="border: thin solid #000000;" ><a href="javascript:openPopup('popup.aspx?sesja=1!1.1.1.a.1!2!4')"><asp:Label CssClass="normal" ID="tab_111a1_w01_col02" runat="server" Text="0"></asp:Label></a></td>
-               <td class="center" style="border: thin solid #000000;" ><a href="javascript:openPopup('popup.aspx?sesja=1!1.1.1.a.1!3!4')"><asp:Label CssClass="normal" ID="tab_111a1_w01_col03" runat="server" Text="0"></asp:Label></a></td>
-               <td class="center" style="border: thin solid #000000;" ><a href="javascript:openPopup('popup.aspx?sesja=1!1.1.1.a.1!4!4')"><asp:Label CssClass="normal" ID="tab_111a1_w01_col04" runat="server" Text="0"></asp:Label></a></td>
-               <td class="center" style="border: thin solid #000000;" ><a href="javascript:openPopup('popup.aspx?sesja=1!1.1.1.a.1!5!4')"><asp:Label CssClass="normal" ID="tab_111a1_w01_col05" runat="server" Text="0"></asp:Label></a></td>
-               <td class="center" style="border: thin solid #000000;" ><a href="javascript:openPopup('popup.aspx?sesja=1!1.1.1.a.1!6!4')"><asp:Label CssClass="normal" ID="tab_111a1_w01_col06" runat="server" Text="0"></asp:Label></a></td>
-           </tr>
-           </table>
-       <br />
-    <br />
-       </div>
 
        <div id='111a' class="page-break" >
        <table style="width:100%;" >
@@ -216,7 +178,7 @@
 
                     stacjonarnych</td>
                  <td  class="center">
-                    <a href="javascript:openPopup('popup.aspx?sesja=1!1.1.1.a!1!4')"> <asp:TextBox ID="tab_111a_w01_c01" runat="server" ReadOnly="True" CssClass="col_155"></asp:TextBox></a>
+                    <a href="javascript:openPopup('popup.aspx?sesja=1!1.1.1.a!1!4')"> <asp:Label ID="tab_111a_w01_c01" runat="server" ReadOnly="True" CssClass="col_155">0</asp:Label></a>
                 </td>
             </tr>
            <tr>
@@ -226,7 +188,7 @@
 
                       nie stacjonarnych
                       <td  class="center">
-                    <a href="javascript:openPopup('popup.aspx?sesja=2!1.1.1.a!1!4')"> <asp:TextBox ID="tab_111a_w02_c01" runat="server" ReadOnly="True" CssClass="col_155"></asp:TextBox></a>
+                    <a href="javascript:openPopup('popup.aspx?sesja=2!1.1.1.a!1!4')"> <asp:Label ID="tab_111a_w02_c01" runat="server" ReadOnly="True" CssClass="col_155">0</asp:Label></a>
                 </td>
                       </td>
             </tr>
@@ -269,7 +231,7 @@
     </table>
  </div>
 
-    <div id="wyznaczenia"  class="page-break">
+    <div id="1.1.1.a.2."  class="page-break">
         <table style="width:100%;" >
             <tr>
                 <td style="width: 1000px">
@@ -1478,286 +1440,6 @@
 
           <br />
 
-          <div id="1.1.7">
-              <strong>Dział 1.1.7</strong> Sprawy Nw (wykonywane środki wobec nieletnich)
-             <table  style="width: 100%; ">
-                  <tr>
-                      <td class="center borderAll" colspan="2" rowspan="4">Wykonywane środki </td>
-                      <td class="center borderAll" rowspan="4">Stan w ostatnim dniu poprze-dniego okresu sprawoz-dawczego </td>
-                      <td class="center borderAll" rowspan="4">Przybyło</td>
-                      <td class="center borderAll" colspan="10">U B Y Ł O&nbsp;&nbsp; Z&nbsp;&nbsp; P O W O D U</td>
-                      <td class="center borderAll" rowspan="4">Stan w ostatnim dniu okresu sprawoz-dawczego</td>
-                      <td class="center borderAll" rowspan="4">Wykony-wane środki</td>
-                  </tr>
-                  <tr>
-                      <td class="center borderAll" rowspan="3">ogółem (rubr. 4 do 12) </td>
-                      <td class="center borderAll" rowspan="3">uchylenia środka</td>
-                      <td class="center borderAll" rowspan="3">upływu wieku</td>
-                      <td class="center borderAll" colspan="2">odwołania warunkowego </td>
-                      <td class="center borderAll" colspan="2">orzeczenia</td>
-                      <td class="center borderAll" rowspan="3">zmiany rodzaju środka</td>
-                      <td class="center borderAll" rowspan="3">przekazania innemu sądowi</td>
-                      <td class="center borderAll" rowspan="3">innego</td>
-                  </tr>
-                  <tr>
-                      <td class="center borderAll">zawieszenia</td>
-                      <td class="center borderAll">zwolnienia</td>
-                      <td class="center borderAll" rowspan="2">zakładu poprawczego</td>
-                      <td class="center borderAll" rowspan="2">kary</td>
-                  </tr>
-                  <tr>
-                      <td class="center borderAll" colspan="2">zakładu poprawczego</td>
-                  </tr>
-                  <tr>
-                      <td class="center borderAll" colspan="2">0</td>
-                      <td class="center borderAll">1</td>
-                      <td class="center borderAll">2</td>
-                      <td class="center borderAll">3</td>
-                      <td class="center borderAll">4</td>
-                      <td class="center borderAll">5</td>
-                      <td class="center borderAll">6</td>
-                      <td class="center borderAll">7</td>
-                      <td class="center borderAll">8</td>
-                      <td class="center borderAll">9</td>
-                      <td class="center borderAll">10</td>
-                      <td class="center borderAll">11</td>
-                      <td class="center borderAll">12</td>
-                      <td class="center borderAll">13</td>
-                      <td class="center borderAll">14</td>
-                  </tr>
-                  <tr>
-                      <td class="borderAll wciecie">Zobowiązanie do określonego postępowania</td>
-                      <td class="borderAll col_36">1</td>
-                      <td class="col_60 center borderAll "><a href="javascript:openPopup('popup.aspx?sesja=1!1.1.7!1!4')">
-                          <asp:Label ID="tab_1_1_7_w01_c01" runat="server" CssClass="normal" Text="0"></asp:Label>
-                          </a></td>
-                      <td class="col_60 center borderAll "><a href="javascript:openPopup('popup.aspx?sesja=1!1.1.7!2!4')">
-                          <asp:Label ID="tab_1_1_7_w01_c02" runat="server" CssClass="normal" Text="0"></asp:Label>
-                          </a></td>
-                      <td class="col_60 center borderAll "><a href="javascript:openPopup('popup.aspx?sesja=1!1.1.7!3!4')">
-                          <asp:Label ID="tab_1_1_7_w01_c03" runat="server" CssClass="normal" Text="0"></asp:Label>
-                          </a></td>
-                      <td class="col_60 center borderAll "><a href="javascript:openPopup('popup.aspx?sesja=1!1.1.7!4!4')">
-                          <asp:Label ID="tab_1_1_7_w01_c04" runat="server" CssClass="normal" Text="0"></asp:Label>
-                          </a></td>
-                      <td class="col_60 center borderAll "><a href="javascript:openPopup('popup.aspx?sesja=1!1.1.7!5!4')">
-                          <asp:Label ID="tab_1_1_7_w01_c05" runat="server" CssClass="normal" Text="0"></asp:Label>
-                          </a></td>
-                      <td class="col_60 center borderAll "><a href="javascript:openPopup('popup.aspx?sesja=1!1.1.7!6!4')">
-                          <asp:Label ID="tab_1_1_7_w01_c06" runat="server" CssClass="normal" Text="0"></asp:Label>
-                          </a></td>
-                      <td class="col_60 center borderAll "><a href="javascript:openPopup('popup.aspx?sesja=1!1.1.7!7!4')">
-                          <asp:Label ID="tab_1_1_7_w01_c07" runat="server" CssClass="normal" Text="0"></asp:Label>
-                          </a></td>
-                      <td class="col_60 center borderAll "><a href="javascript:openPopup('popup.aspx?sesja=1!1.1.7!8!4')">
-                          <asp:Label ID="tab_1_1_7_w01_c08" runat="server" CssClass="normal" Text="0"></asp:Label>
-                          </a></td>
-                      <td class="col_60 center borderAll "><a href="javascript:openPopup('popup.aspx?sesja=1!1.1.7!9!4')">
-                          <asp:Label ID="tab_1_1_7_w01_c09" runat="server" CssClass="normal" Text="0"></asp:Label>
-                          </a></td>
-                      <td class="col_60 center borderAll "><a href="javascript:openPopup('popup.aspx?sesja=1!1.1.7!10!4')">
-                          <asp:Label ID="tab_1_1_7_w01_c10" runat="server" CssClass="normal" Text="0"></asp:Label>
-                          </a></td>
-                      <td class="col_60 center borderAll "><a href="javascript:openPopup('popup.aspx?sesja=1!1.1.7!11!4')">
-                          <asp:Label ID="tab_1_1_7_w01_c11" runat="server" CssClass="normal" Text="0"></asp:Label>
-                          </a></td>
-                      <td class="col_60 center borderAll "><a href="javascript:openPopup('popup.aspx?sesja=1!1.1.7!12!4')">
-                          <asp:Label ID="tab_1_1_7_w01_c12" runat="server" CssClass="normal" Text="0"></asp:Label>
-                          </a></td>
-                      <td class="col_60 center borderAll "><a href="javascript:openPopup('popup.aspx?sesja=1!1.1.7!13!4')">
-                          <asp:Label ID="tab_1_1_7_w01_c13" runat="server" CssClass="normal" Text="0"></asp:Label>
-                          </a></td>
-                      <td class="col_60 center borderAll "><a href="javascript:openPopup('popup.aspx?sesja=1!1.1.7!14!4')">
-                          <asp:Label ID="tab_1_1_7_w01_c14" runat="server" CssClass="normal" Text="0"></asp:Label>
-                          </a></td>
-                  </tr>
-                  <tr>
-                      <td class="borderAll wciecie">Nadzór odpowiedzialny rodziców lub opiekunów</td>
-                      <td class="borderAll col_36">2</td>
-                      <td class="col_60 center borderAll "><a href="javascript:openPopup('popup.aspx?sesja=2!1.1.7!1!4')">
-                          <asp:Label ID="tab_1_1_7_w02_c01" runat="server" CssClass="normal" Text="0"></asp:Label>
-                          </a></td>
-                      <td class="col_60 center borderAll "><a href="javascript:openPopup('popup.aspx?sesja=2!1.1.7!2!4')">
-                          <asp:Label ID="tab_1_1_7_w02_c02" runat="server" CssClass="normal" Text="0"></asp:Label>
-                          </a></td>
-                      <td class="col_60 center borderAll "><a href="javascript:openPopup('popup.aspx?sesja=2!1.1.7!3!4')">
-                          <asp:Label ID="tab_1_1_7_w02_c03" runat="server" CssClass="normal" Text="0"></asp:Label>
-                          </a></td>
-                      <td class="col_60 center borderAll "><a href="javascript:openPopup('popup.aspx?sesja=2!1.1.7!4!4')">
-                          <asp:Label ID="tab_1_1_7_w02_c04" runat="server" CssClass="normal" Text="0"></asp:Label>
-                          </a></td>
-                      <td class="col_60 center borderAll "><a href="javascript:openPopup('popup.aspx?sesja=2!1.1.7!5!4')">
-                          <asp:Label ID="tab_1_1_7_w02_c05" runat="server" CssClass="normal" Text="0"></asp:Label>
-                          </a></td>
-                      <td class="col_60 center borderAll "><a href="javascript:openPopup('popup.aspx?sesja=2!1.1.7!6!4')">
-                          <asp:Label ID="tab_1_1_7_w02_c06" runat="server" CssClass="normal" Text="0"></asp:Label>
-                          </a></td>
-                      <td class="col_60 center borderAll "><a href="javascript:openPopup('popup.aspx?sesja=2!1.1.7!7!4')">
-                          <asp:Label ID="tab_1_1_7_w02_c07" runat="server" CssClass="normal" Text="0"></asp:Label>
-                          </a></td>
-                      <td class="col_60 center borderAll "><a href="javascript:openPopup('popup.aspx?sesja=2!1.1.7!8!4')">
-                          <asp:Label ID="tab_1_1_7_w02_c08" runat="server" CssClass="normal" Text="0"></asp:Label>
-                          </a></td>
-                      <td class="col_60 center borderAll "><a href="javascript:openPopup('popup.aspx?sesja=2!1.1.7!9!4')">
-                          <asp:Label ID="tab_1_1_7_w02_c09" runat="server" CssClass="normal" Text="0"></asp:Label>
-                          </a></td>
-                      <td class="col_60 center borderAll "><a href="javascript:openPopup('popup.aspx?sesja=2!1.1.7!10!4')">
-                          <asp:Label ID="tab_1_1_7_w02_c10" runat="server" CssClass="normal" Text="0"></asp:Label>
-                          </a></td>
-                      <td class="col_60 center borderAll "><a href="javascript:openPopup('popup.aspx?sesja=2!1.1.7!11!4')">
-                          <asp:Label ID="tab_1_1_7_w02_c11" runat="server" CssClass="normal" Text="0"></asp:Label>
-                          </a></td>
-                      <td class="col_60 center borderAll "><a href="javascript:openPopup('popup.aspx?sesja=2!1.1.7!12!4')">
-                          <asp:Label ID="tab_1_1_7_w02_c12" runat="server" CssClass="normal" Text="0"></asp:Label>
-                          </a></td>
-                      <td class="col_60 center borderAll "><a href="javascript:openPopup('popup.aspx?sesja=2!1.1.7!13!4')">
-                          <asp:Label ID="tab_1_1_7_w02_c13" runat="server" CssClass="normal" Text="0"></asp:Label>
-                          </a></td>
-                      <td class="col_60 center borderAll "><a href="javascript:openPopup('popup.aspx?sesja=2!1.1.7!14!4')">
-                          <asp:Label ID="tab_1_1_7_w02_c14" runat="server" CssClass="normal" Text="0"></asp:Label>
-                          </a></td>
-                  </tr>
-                  <tr>
-                      <td class="borderAll wciecie">Nadzór organizacji, zakładu pracy, osoby godnej zaufania</td>
-                      <td class="borderAll col_36">3</td>
-                      <td class="col_60 center borderAll "><a href="javascript:openPopup('popup.aspx?sesja=3!1.1.7!1!4')">
-                          <asp:Label ID="tab_1_1_7_w03_c01" runat="server" CssClass="normal" Text="0"></asp:Label>
-                          </a></td>
-                      <td class="col_60 center borderAll "><a href="javascript:openPopup('popup.aspx?sesja=3!1.1.7!2!4')">
-                          <asp:Label ID="tab_1_1_7_w03_c02" runat="server" CssClass="normal" Text="0"></asp:Label>
-                          </a></td>
-                      <td class="col_60 center borderAll "><a href="javascript:openPopup('popup.aspx?sesja=3!1.1.7!3!4')">
-                          <asp:Label ID="tab_1_1_7_w03_c03" runat="server" CssClass="normal" Text="0"></asp:Label>
-                          </a></td>
-                      <td class="col_60 center borderAll "><a href="javascript:openPopup('popup.aspx?sesja=3!1.1.7!4!4')">
-                          <asp:Label ID="tab_1_1_7_w03_c04" runat="server" CssClass="normal" Text="0"></asp:Label>
-                          </a></td>
-                      <td class="col_60 center borderAll "><a href="javascript:openPopup('popup.aspx?sesja=3!1.1.7!5!4')">
-                          <asp:Label ID="tab_1_1_7_w03_c05" runat="server" CssClass="normal" Text="0"></asp:Label>
-                          </a></td>
-                      <td class="col_60 center borderAll "><a href="javascript:openPopup('popup.aspx?sesja=3!1.1.7!6!4')">
-                          <asp:Label ID="tab_1_1_7_w03_c06" runat="server" CssClass="normal" Text="0"></asp:Label>
-                          </a></td>
-                      <td class="col_60 center borderAll "><a href="javascript:openPopup('popup.aspx?sesja=3!1.1.7!7!4')">
-                          <asp:Label ID="tab_1_1_7_w03_c07" runat="server" CssClass="normal" Text="0"></asp:Label>
-                          </a></td>
-                      <td class="col_60 center borderAll "><a href="javascript:openPopup('popup.aspx?sesja=3!1.1.7!8!4')">
-                          <asp:Label ID="tab_1_1_7_w03_c08" runat="server" CssClass="normal" Text="0"></asp:Label>
-                          </a></td>
-                      <td class="col_60 center borderAll "><a href="javascript:openPopup('popup.aspx?sesja=3!1.1.7!9!4')">
-                          <asp:Label ID="tab_1_1_7_w03_c09" runat="server" CssClass="normal" Text="0"></asp:Label>
-                          </a></td>
-                      <td class="col_60 center borderAll "><a href="javascript:openPopup('popup.aspx?sesja=3!1.1.7!10!4')">
-                          <asp:Label ID="tab_1_1_7_w03_c10" runat="server" CssClass="normal" Text="0"></asp:Label>
-                          </a></td>
-                      <td class="col_60 center borderAll "><a href="javascript:openPopup('popup.aspx?sesja=3!1.1.7!11!4')">
-                          <asp:Label ID="tab_1_1_7_w03_c11" runat="server" CssClass="normal" Text="0"></asp:Label>
-                          </a></td>
-                      <td class="col_60 center borderAll "><a href="javascript:openPopup('popup.aspx?sesja=3!1.1.7!12!4')">
-                          <asp:Label ID="tab_1_1_7_w03_c12" runat="server" CssClass="normal" Text="0"></asp:Label>
-                          </a></td>
-                      <td class="col_60 center borderAll "><a href="javascript:openPopup('popup.aspx?sesja=3!1.1.7!13!4')">
-                          <asp:Label ID="tab_1_1_7_w03_c13" runat="server" CssClass="normal" Text="0"></asp:Label>
-                          </a></td>
-                      <td class="col_60 center borderAll "><a href="javascript:openPopup('popup.aspx?sesja=3!1.1.7!14!4')">
-                          <asp:Label ID="tab_1_1_7_w03_c14" runat="server" CssClass="normal" Text="0"></asp:Label>
-                          </a></td>
-                  </tr>
-                  <tr>
-                      <td class="borderAll wciecie">Nadzór kuratora</td>
-                      <td class="borderAll col_36">4</td>
-                      <td class="col_60 center borderAll "><a href="javascript:openPopup('popup.aspx?sesja=4!1.1.7!1!4')">
-                          <asp:Label ID="tab_1_1_7_w04_c01" runat="server" CssClass="normal" Text="0"></asp:Label>
-                          </a></td>
-                      <td class="col_60 center borderAll "><a href="javascript:openPopup('popup.aspx?sesja=4!1.1.7!2!4')">
-                          <asp:Label ID="tab_1_1_7_w04_c02" runat="server" CssClass="normal" Text="0"></asp:Label>
-                          </a></td>
-                      <td class="col_60 center borderAll "><a href="javascript:openPopup('popup.aspx?sesja=4!1.1.7!3!4')">
-                          <asp:Label ID="tab_1_1_7_w04_c03" runat="server" CssClass="normal" Text="0"></asp:Label>
-                          </a></td>
-                      <td class="col_60 center borderAll "><a href="javascript:openPopup('popup.aspx?sesja=4!1.1.7!4!4')">
-                          <asp:Label ID="tab_1_1_7_w04_c04" runat="server" CssClass="normal" Text="0"></asp:Label>
-                          </a></td>
-                      <td class="col_60 center borderAll "><a href="javascript:openPopup('popup.aspx?sesja=4!1.1.7!5!4')">
-                          <asp:Label ID="tab_1_1_7_w04_c05" runat="server" CssClass="normal" Text="0"></asp:Label>
-                          </a></td>
-                      <td class="col_60 center borderAll "><a href="javascript:openPopup('popup.aspx?sesja=4!1.1.7!6!4')">
-                          <asp:Label ID="tab_1_1_7_w04_c06" runat="server" CssClass="normal" Text="0"></asp:Label>
-                          </a></td>
-                      <td class="col_60 center borderAll "><a href="javascript:openPopup('popup.aspx?sesja=4!1.1.7!7!4')">
-                          <asp:Label ID="tab_1_1_7_w04_c07" runat="server" CssClass="normal" Text="0"></asp:Label>
-                          </a></td>
-                      <td class="col_60 center borderAll "><a href="javascript:openPopup('popup.aspx?sesja=4!1.1.7!8!4')">
-                          <asp:Label ID="tab_1_1_7_w04_c08" runat="server" CssClass="normal" Text="0"></asp:Label>
-                          </a></td>
-                      <td class="col_60 center borderAll "><a href="javascript:openPopup('popup.aspx?sesja=4!1.1.7!9!4')">
-                          <asp:Label ID="tab_1_1_7_w04_c09" runat="server" CssClass="normal" Text="0"></asp:Label>
-                          </a></td>
-                      <td class="col_60 center borderAll "><a href="javascript:openPopup('popup.aspx?sesja=4!1.1.7!10!4')">
-                          <asp:Label ID="tab_1_1_7_w04_c10" runat="server" CssClass="normal" Text="0"></asp:Label>
-                          </a></td>
-                      <td class="col_60 center borderAll "><a href="javascript:openPopup('popup.aspx?sesja=4!1.1.7!11!4')">
-                          <asp:Label ID="tab_1_1_7_w04_c11" runat="server" CssClass="normal" Text="0"></asp:Label>
-                          </a></td>
-                      <td class="col_60 center borderAll "><a href="javascript:openPopup('popup.aspx?sesja=4!1.1.7!12!4')">
-                          <asp:Label ID="tab_1_1_7_w04_c12" runat="server" CssClass="normal" Text="0"></asp:Label>
-                          </a></td>
-                      <td class="col_60 center borderAll "><a href="javascript:openPopup('popup.aspx?sesja=4!1.1.7!13!4')">
-                          <asp:Label ID="tab_1_1_7_w04_c13" runat="server" CssClass="normal" Text="0"></asp:Label>
-                          </a></td>
-                      <td class="col_60 center borderAll "><a href="javascript:openPopup('popup.aspx?sesja=4!1.1.7!14!4')">
-                          <asp:Label ID="tab_1_1_7_w04_c14" runat="server" CssClass="normal" Text="0"></asp:Label>
-                          </a></td>
-                  </tr>
-                  <tr>
-                      <td class="borderAll wciecie">Skierowanie do ośrodka kuratorskiego </td>
-                      <td class="borderAll col_36">5</td>
-                      <td class="col_60 center borderAll "><a href="javascript:openPopup('popup.aspx?sesja=5!1.1.7!1!4')">
-                          <asp:Label ID="tab_1_1_7_w05_c01" runat="server" CssClass="normal" Text="0"></asp:Label>
-                          </a></td>
-                      <td class="col_60 center borderAll "><a href="javascript:openPopup('popup.aspx?sesja=5!1.1.7!2!4')">
-                          <asp:Label ID="tab_1_1_7_w05_c02" runat="server" CssClass="normal" Text="0"></asp:Label>
-                          </a></td>
-                      <td class="col_60 center borderAll "><a href="javascript:openPopup('popup.aspx?sesja=5!1.1.7!3!4')">
-                          <asp:Label ID="tab_1_1_7_w05_c03" runat="server" CssClass="normal" Text="0"></asp:Label>
-                          </a></td>
-                      <td class="col_60 center borderAll "><a href="javascript:openPopup('popup.aspx?sesja=5!1.1.7!4!4')">
-                          <asp:Label ID="tab_1_1_7_w05_c04" runat="server" CssClass="normal" Text="0"></asp:Label>
-                          </a></td>
-                      <td class="col_60 center borderAll "><a href="javascript:openPopup('popup.aspx?sesja=5!1.1.7!5!4')">
-                          <asp:Label ID="tab_1_1_7_w05_c05" runat="server" CssClass="normal" Text="0"></asp:Label>
-                          </a></td>
-                      <td class="col_60 center borderAll "><a href="javascript:openPopup('popup.aspx?sesja=5!1.1.7!6!4')">
-                          <asp:Label ID="tab_1_1_7_w05_c06" runat="server" CssClass="normal" Text="0"></asp:Label>
-                          </a></td>
-                      <td class="col_60 center borderAll "><a href="javascript:openPopup('popup.aspx?sesja=5!1.1.7!7!4')">
-                          <asp:Label ID="tab_1_1_7_w05_c07" runat="server" CssClass="normal" Text="0"></asp:Label>
-                          </a></td>
-                      <td class="col_60 center borderAll "><a href="javascript:openPopup('popup.aspx?sesja=5!1.1.7!8!4')">
-                          <asp:Label ID="tab_1_1_7_w05_c08" runat="server" CssClass="normal" Text="0"></asp:Label>
-                          </a></td>
-                      <td class="col_60 center borderAll "><a href="javascript:openPopup('popup.aspx?sesja=5!1.1.7!9!4')">
-                          <asp:Label ID="tab_1_1_7_w05_c09" runat="server" CssClass="normal" Text="0"></asp:Label>
-                          </a></td>
-                      <td class="col_60 center borderAll "><a href="javascript:openPopup('popup.aspx?sesja=5!1.1.7!10!4')">
-                          <asp:Label ID="tab_1_1_7_w05_c10" runat="server" CssClass="normal" Text="0"></asp:Label>
-                          </a></td>
-                      <td class="col_60 center borderAll "><a href="javascript:openPopup('popup.aspx?sesja=5!1.1.7!11!4')">
-                          <asp:Label ID="tab_1_1_7_w05_c11" runat="server" CssClass="normal" Text="0"></asp:Label>
-                          </a></td>
-                      <td class="col_60 center borderAll "><a href="javascript:openPopup('popup.aspx?sesja=5!1.1.7!12!4')">
-                          <asp:Label ID="tab_1_1_7_w05_c12" runat="server" CssClass="normal" Text="0"></asp:Label>
-                          </a></td>
-                      <td class="col_60 center borderAll "><a href="javascript:openPopup('popup.aspx?sesja=5!1.1.7!13!4')">
-                          <asp:Label ID="tab_1_1_7_w05_c13" runat="server" CssClass="normal" Text="0"></asp:Label>
-                          </a></td>
-                      <td class="col_60 center borderAll "><a href="javascript:openPopup('popup.aspx?sesja=5!1.1.7!14!4')">
-                          <asp:Label ID="tab_1_1_7_w05_c14" runat="server" CssClass="normal" Text="0"></asp:Label>
-                          </a></td>
-                  </tr>
-              </table>
-          </div>
-          <br />
        <div id='Kartoteka „a”' class="page-break" >
  <br/>
  <strong> Dział 1.1.7.a.&nbsp; </strong> 
@@ -1896,7 +1578,9 @@
     </table>
  </div>
           <div id="1.1.7.b">
-              <strong>Dział 1.1.7.b</strong> Sprawy Nw (wykonywane środki wobec nieletnich)
+              <strong>
+              <br />
+              Dział 1.1.7.b</strong> Sprawy Nw (wykonywane środki wobec nieletnich)
              <table  style="width: 100%; ">
                   <tr>
                       <td class="center borderAll" colspan="2" rowspan="2">Wykonywane środki – umieszczenie w </td>
@@ -2400,9 +2084,9 @@
    <tr>
     <td  class="borderAll  col_60 wciecie">RC</td>
   <td  class="borderAll col_36">1</td>
-    <td  class="col_250 center borderAll "><a href="javascript:openPopup('popup.aspx?sesja=1!1.1.10!1!4')"><asp:Label CssClass="normal" ID="Label8" runat="server" Text="0"></asp:Label></a></td>
-    <td  class="col_250 center borderAll "><a href="javascript:openPopup('popup.aspx?sesja=1!1.1.10!2!4')"><asp:Label CssClass="normal" ID="Label10" runat="server" Text="0"></asp:Label></a></td>
-    <td  class="col_250 center borderAll "><a href="javascript:openPopup('popup.aspx?sesja=1!1.1.10!3!4')"><asp:Label CssClass="normal" ID="Label12" runat="server" Text="0"></asp:Label></a></td>
+    <td  class="col_250 center borderAll "><a href="javascript:openPopup('popup.aspx?sesja=1!1.1.10!1!4')"><asp:Label CssClass="normal" ID="tab_1110_w01_c01" runat="server" Text="0"></asp:Label></a></td>
+    <td  class="col_250 center borderAll "><a href="javascript:openPopup('popup.aspx?sesja=1!1.1.10!2!4')"><asp:Label CssClass="normal" ID="tab_1110_w01_c02" runat="server" Text="0"></asp:Label></a></td>
+    <td  class="col_250 center borderAll "><a href="javascript:openPopup('popup.aspx?sesja=1!1.1.10!3!4')"><asp:Label CssClass="normal" ID="tab_1110_w01_c03" runat="server" Text="0"></asp:Label></a></td>
   </tr>
   <tr>
     <td  class="borderAll  col_60 wciecie">RNc</td>
@@ -6469,7 +6153,239 @@
                  </tr>
               </table>
           </div>
+        <br />
+          <div id="2.1.1.1.1" class="page-break">
+              <strong>Dział 2.1.1.1</strong> Sprawy od dnia pierwotnego wpisu do repertorium
+             <table  style="width: 100%; ">
+                  <tr>
+                      <td class="center borderAll" rowspan="2" colspan="2">SPRAWY według
+                          <br />
+                          repertoriów</td>
+                      <td class="center borderAll" rowspan="2">Symbol </td>
+                      <td class="center borderAll" rowspan="2">Lp.</td>
+                      <td class="center borderAll" colspan="11">Liczba spraw niezałatwionych pozostających od daty pierwszego wpływu do sądu</td>
+                  </tr>
+                  <tr>
+                      <td class="center borderAll">razem (kol. 2, 3)</td>
+                      <td class="center borderAll">do 3 miesięcy</td>
+                      <td class="center borderAll">suma powyżej 3 miesięcy (kol. od 4 do 6)</td>
+                      <td class="center borderAll">powyżej 3 do 6 miesięcy </td>
+                      <td class="center borderAll">powyżej 6 do 12 miesięcy</td>
+                      <td class="center borderAll">suma powyżej 12 miesięcy (kol. od 7 do 11)</td>
+                      <td class="center borderAll">powyżej 12 miesięcy do 2 lat</td>
+                      <td class="center borderAll">powyżej 2 do 3 lat</td>
+                      <td class="center borderAll">powyżej 3 do 5 lat</td>
+                      <td class="center borderAll">powyżej 5 do 8 lat</td>
+                      <td class="center borderAll">ponad 8 lat</td>
+                  </tr>
+                  <tr>
+                      <td class="center borderAll" colspan="4">0</td>
+                      <td class="center borderAll">1</td>
+                      <td class="center borderAll">2</td>
+                      <td class="center borderAll">3</td>
+                      <td class="center borderAll">4</td>
+                      <td class="center borderAll">5</td>
+                      <td class="center borderAll">6</td>
+                      <td class="center borderAll">7</td>
+                      <td class="center borderAll">8</td>
+                      <td class="center borderAll">9</td>
+                      <td class="center borderAll">10</td>
+                      <td class="center borderAll">11</td>
+                  </tr>
+                  <tr>
+                      <td class="borderAll wciecie" colspan="2">ogółem</td>
+                      <td class="borderAll wciecie">--</td>
+                      <td class="borderAll col_36">1</td>
+                      <td class="col_90 center borderAll "><a href="javascript:openPopup('popup.aspx?sesja=1!2.1.1.1!1!4')">
+                          <asp:Label ID="tab_2_1_1_1_w01_c01" runat="server" CssClass="normal" Text="0"></asp:Label>
+                          </a></td>
+                      <td class="col_90 center borderAll "><a href="javascript:openPopup('popup.aspx?sesja=1!2.1.1.1!2!4')">
+                          <asp:Label ID="tab_2_1_1_1_w01_c02" runat="server" CssClass="normal" Text="0"></asp:Label>
+                          </a></td>
+                      <td class="col_90 center borderAll "><a href="javascript:openPopup('popup.aspx?sesja=1!2.1.1.1!3!4')">
+                          <asp:Label ID="tab_2_1_1_1_w01_c03" runat="server" CssClass="normal" Text="0"></asp:Label>
+                          </a></td>
+                      <td class="col_90 center borderAll "><a href="javascript:openPopup('popup.aspx?sesja=1!2.1.1.1!4!4')">
+                          <asp:Label ID="tab_2_1_1_1_w01_c04" runat="server" CssClass="normal" Text="0"></asp:Label>
+                          </a></td>
+                      <td class="col_90 center borderAll "><a href="javascript:openPopup('popup.aspx?sesja=1!2.1.1.1!5!4')">
+                          <asp:Label ID="tab_2_1_1_1_w01_c05" runat="server" CssClass="normal" Text="0"></asp:Label>
+                          </a></td>
+                      <td class="col_90 center borderAll "><a href="javascript:openPopup('popup.aspx?sesja=1!2.1.1.1!6!4')">
+                          <asp:Label ID="tab_2_1_1_1_w01_c06" runat="server" CssClass="normal" Text="0"></asp:Label>
+                          </a></td>
+                      <td class="col_90 center borderAll "><a href="javascript:openPopup('popup.aspx?sesja=1!2.1.1.1!7!4')">
+                          <asp:Label ID="tab_2_1_1_1_w01_c07" runat="server" CssClass="normal" Text="0"></asp:Label>
+                          </a></td>
+                      <td class="col_90 center borderAll "><a href="javascript:openPopup('popup.aspx?sesja=1!2.1.1.1!8!4')">
+                          <asp:Label ID="tab_2_1_1_1_w01_c08" runat="server" CssClass="normal" Text="0"></asp:Label>
+                          </a></td>
+                      <td class="col_90 center borderAll "><a href="javascript:openPopup('popup.aspx?sesja=1!2.1.1.1!9!4')">
+                          <asp:Label ID="tab_2_1_1_1_w01_c09" runat="server" CssClass="normal" Text="0"></asp:Label>
+                          </a></td>
+                      <td class="col_90 center borderAll "><a href="javascript:openPopup('popup.aspx?sesja=1!2.1.1.1!10!4')">
+                          <asp:Label ID="tab_2_1_1_1_w01_c10" runat="server" CssClass="normal" Text="0"></asp:Label>
+                          </a></td>
+                      <td class="col_90 center borderAll "><a href="javascript:openPopup('popup.aspx?sesja=1!2.1.1.1!11!4')">
+                          <asp:Label ID="tab_2_1_1_1_w01_c11" runat="server" CssClass="normal" Text="0"></asp:Label>
+                          </a></td>
+                  </tr>
+                  <tr>
+                      <td class="borderAll wciecie" rowspan="4">w tym</td>
+                      <td class="borderAll wciecie">RC</td>
+                      <td class="borderAll wciecie">--</td>
+                      <td class="borderAll col_36">2</td>
+                      <td class="col_90 center borderAll "><a href="javascript:openPopup('popup.aspx?sesja=2!2.1.1.1!1!4')">
+                          <asp:Label ID="tab_2_1_1_1_w02_c01" runat="server" CssClass="normal" Text="0"></asp:Label>
+                          </a></td>
+                      <td class="col_90 center borderAll "><a href="javascript:openPopup('popup.aspx?sesja=2!2.1.1.1!2!4')">
+                          <asp:Label ID="tab_2_1_1_1_w02_c02" runat="server" CssClass="normal" Text="0"></asp:Label>
+                          </a></td>
+                      <td class="col_90 center borderAll "><a href="javascript:openPopup('popup.aspx?sesja=2!2.1.1.1!3!4')">
+                          <asp:Label ID="tab_2_1_1_1_w02_c03" runat="server" CssClass="normal" Text="0"></asp:Label>
+                          </a></td>
+                      <td class="col_90 center borderAll "><a href="javascript:openPopup('popup.aspx?sesja=2!2.1.1.1!4!4')">
+                          <asp:Label ID="tab_2_1_1_1_w02_c04" runat="server" CssClass="normal" Text="0"></asp:Label>
+                          </a></td>
+                      <td class="col_90 center borderAll "><a href="javascript:openPopup('popup.aspx?sesja=2!2.1.1.1!5!4')">
+                          <asp:Label ID="tab_2_1_1_1_w02_c05" runat="server" CssClass="normal" Text="0"></asp:Label>
+                          </a></td>
+                      <td class="col_90 center borderAll "><a href="javascript:openPopup('popup.aspx?sesja=2!2.1.1.1!6!4')">
+                          <asp:Label ID="tab_2_1_1_1_w02_c06" runat="server" CssClass="normal" Text="0"></asp:Label>
+                          </a></td>
+                      <td class="col_90 center borderAll "><a href="javascript:openPopup('popup.aspx?sesja=2!2.1.1.1!7!4')">
+                          <asp:Label ID="tab_2_1_1_1_w02_c07" runat="server" CssClass="normal" Text="0"></asp:Label>
+                          </a></td>
+                      <td class="col_90 center borderAll "><a href="javascript:openPopup('popup.aspx?sesja=2!2.1.1.1!8!4')">
+                          <asp:Label ID="tab_2_1_1_1_w02_c08" runat="server" CssClass="normal" Text="0"></asp:Label>
+                          </a></td>
+                      <td class="col_90 center borderAll "><a href="javascript:openPopup('popup.aspx?sesja=2!2.1.1.1!9!4')">
+                          <asp:Label ID="tab_2_1_1_1_w02_c09" runat="server" CssClass="normal" Text="0"></asp:Label>
+                          </a></td>
+                      <td class="col_90 center borderAll "><a href="javascript:openPopup('popup.aspx?sesja=2!2.1.1.1!10!4')">
+                          <asp:Label ID="tab_2_1_1_1_w02_c10" runat="server" CssClass="normal" Text="0"></asp:Label>
+                          </a></td>
+                      <td class="col_90 center borderAll "><a href="javascript:openPopup('popup.aspx?sesja=2!2.1.1.1!11!4')">
+                          <asp:Label ID="tab_2_1_1_1_w02_c11" runat="server" CssClass="normal" Text="0"></asp:Label>
+                          </a></td>
+                  </tr>
+                  <tr>
+                      <td class="borderAll wciecie">RNs</td>
+                      <td class="borderAll wciecie">--</td>
+                      <td class="borderAll col_36">3</td>
+                      <td class="col_90 center borderAll "><a href="javascript:openPopup('popup.aspx?sesja=3!2.1.1.1!1!4')">
+                          <asp:Label ID="tab_2_1_1_1_w03_c01" runat="server" CssClass="normal" Text="0"></asp:Label>
+                          </a></td>
+                      <td class="col_90 center borderAll "><a href="javascript:openPopup('popup.aspx?sesja=3!2.1.1.1!2!4')">
+                          <asp:Label ID="tab_2_1_1_1_w03_c02" runat="server" CssClass="normal" Text="0"></asp:Label>
+                          </a></td>
+                      <td class="col_90 center borderAll "><a href="javascript:openPopup('popup.aspx?sesja=3!2.1.1.1!3!4')">
+                          <asp:Label ID="tab_2_1_1_1_w03_c03" runat="server" CssClass="normal" Text="0"></asp:Label>
+                          </a></td>
+                      <td class="col_90 center borderAll "><a href="javascript:openPopup('popup.aspx?sesja=3!2.1.1.1!4!4')">
+                          <asp:Label ID="tab_2_1_1_1_w03_c04" runat="server" CssClass="normal" Text="0"></asp:Label>
+                          </a></td>
+                      <td class="col_90 center borderAll "><a href="javascript:openPopup('popup.aspx?sesja=3!2.1.1.1!5!4')">
+                          <asp:Label ID="tab_2_1_1_1_w03_c05" runat="server" CssClass="normal" Text="0"></asp:Label>
+                          </a></td>
+                      <td class="col_90 center borderAll "><a href="javascript:openPopup('popup.aspx?sesja=3!2.1.1.1!6!4')">
+                          <asp:Label ID="tab_2_1_1_1_w03_c06" runat="server" CssClass="normal" Text="0"></asp:Label>
+                          </a></td>
+                      <td class="col_90 center borderAll "><a href="javascript:openPopup('popup.aspx?sesja=3!2.1.1.1!7!4')">
+                          <asp:Label ID="tab_2_1_1_1_w03_c07" runat="server" CssClass="normal" Text="0"></asp:Label>
+                          </a></td>
+                      <td class="col_90 center borderAll "><a href="javascript:openPopup('popup.aspx?sesja=3!2.1.1.1!8!4')">
+                          <asp:Label ID="tab_2_1_1_1_w03_c08" runat="server" CssClass="normal" Text="0"></asp:Label>
+                          </a></td>
+                      <td class="col_90 center borderAll "><a href="javascript:openPopup('popup.aspx?sesja=3!2.1.1.1!9!4')">
+                          <asp:Label ID="tab_2_1_1_1_w03_c09" runat="server" CssClass="normal" Text="0"></asp:Label>
+                          </a></td>
+                      <td class="col_90 center borderAll "><a href="javascript:openPopup('popup.aspx?sesja=3!2.1.1.1!10!4')">
+                          <asp:Label ID="tab_2_1_1_1_w03_c10" runat="server" CssClass="normal" Text="0"></asp:Label>
+                          </a></td>
+                      <td class="col_90 center borderAll "><a href="javascript:openPopup('popup.aspx?sesja=3!2.1.1.1!11!4')">
+                          <asp:Label ID="tab_2_1_1_1_w03_c11" runat="server" CssClass="normal" Text="0"></asp:Label>
+                          </a></td>
+                  </tr>
+                  <tr>
+                      <td class="borderAll wciecie">Nsm</td>
+                      <td class="borderAll wciecie">--</td>
+                      <td class="borderAll col_36">4</td>
+                      <td class="col_90 center borderAll "><a href="javascript:openPopup('popup.aspx?sesja=4!2.1.1.1!1!4')">
+                          <asp:Label ID="tab_2_1_1_1_w04_c01" runat="server" CssClass="normal" Text="0"></asp:Label>
+                          </a></td>
+                      <td class="col_90 center borderAll "><a href="javascript:openPopup('popup.aspx?sesja=4!2.1.1.1!2!4')">
+                          <asp:Label ID="tab_2_1_1_1_w04_c02" runat="server" CssClass="normal" Text="0"></asp:Label>
+                          </a></td>
+                      <td class="col_90 center borderAll "><a href="javascript:openPopup('popup.aspx?sesja=4!2.1.1.1!3!4')">
+                          <asp:Label ID="tab_2_1_1_1_w04_c03" runat="server" CssClass="normal" Text="0"></asp:Label>
+                          </a></td>
+                      <td class="col_90 center borderAll "><a href="javascript:openPopup('popup.aspx?sesja=4!2.1.1.1!4!4')">
+                          <asp:Label ID="tab_2_1_1_1_w04_c04" runat="server" CssClass="normal" Text="0"></asp:Label>
+                          </a></td>
+                      <td class="col_90 center borderAll "><a href="javascript:openPopup('popup.aspx?sesja=4!2.1.1.1!5!4')">
+                          <asp:Label ID="tab_2_1_1_1_w04_c05" runat="server" CssClass="normal" Text="0"></asp:Label>
+                          </a></td>
+                      <td class="col_90 center borderAll "><a href="javascript:openPopup('popup.aspx?sesja=4!2.1.1.1!6!4')">
+                          <asp:Label ID="tab_2_1_1_1_w04_c06" runat="server" CssClass="normal" Text="0"></asp:Label>
+                          </a></td>
+                      <td class="col_90 center borderAll "><a href="javascript:openPopup('popup.aspx?sesja=4!2.1.1.1!7!4')">
+                          <asp:Label ID="tab_2_1_1_1_w04_c07" runat="server" CssClass="normal" Text="0"></asp:Label>
+                          </a></td>
+                      <td class="col_90 center borderAll "><a href="javascript:openPopup('popup.aspx?sesja=4!2.1.1.1!8!4')">
+                          <asp:Label ID="tab_2_1_1_1_w04_c08" runat="server" CssClass="normal" Text="0"></asp:Label>
+                          </a></td>
+                      <td class="col_90 center borderAll "><a href="javascript:openPopup('popup.aspx?sesja=4!2.1.1.1!9!4')">
+                          <asp:Label ID="tab_2_1_1_1_w04_c09" runat="server" CssClass="normal" Text="0"></asp:Label>
+                          </a></td>
+                      <td class="col_90 center borderAll "><a href="javascript:openPopup('popup.aspx?sesja=4!2.1.1.1!10!4')">
+                          <asp:Label ID="tab_2_1_1_1_w04_c10" runat="server" CssClass="normal" Text="0"></asp:Label>
+                          </a></td>
+                      <td class="col_90 center borderAll "><a href="javascript:openPopup('popup.aspx?sesja=4!2.1.1.1!11!4')">
+                          <asp:Label ID="tab_2_1_1_1_w04_c11" runat="server" CssClass="normal" Text="0"></asp:Label>
+                          </a></td>
+                  </tr>
+                 <tr>
+                      <td class="borderAll wciecie">Nkd</td>
+                      <td class="borderAll wciecie">--</td>
+                      <td class="borderAll col_36">4</td>
+                      <td class="col_90 center borderAll "><a href="javascript:openPopup('popup.aspx?sesja=5!2.1.1.1!1!4')">
+                          <asp:Label ID="tab_2_1_1_1_w05_c01" runat="server" CssClass="normal" Text="0"></asp:Label>
+                          </a></td>
+                      <td class="col_90 center borderAll "><a href="javascript:openPopup('popup.aspx?sesja=5!2.1.1.1!2!4')">
+                          <asp:Label ID="tab_2_1_1_1_w05_c02" runat="server" CssClass="normal" Text="0"></asp:Label>
+                          </a></td>
+                      <td class="col_90 center borderAll "><a href="javascript:openPopup('popup.aspx?sesja=5!2.1.1.1!3!4')">
+                          <asp:Label ID="tab_2_1_1_1_w05_c03" runat="server" CssClass="normal" Text="0"></asp:Label>
+                          </a></td>
+                      <td class="col_90 center borderAll "><a href="javascript:openPopup('popup.aspx?sesja=5!2.1.1.1!4!4')">
+                          <asp:Label ID="tab_2_1_1_1_w05_c04" runat="server" CssClass="normal" Text="0"></asp:Label>
+                          </a></td>
+                      <td class="col_90 center borderAll "><a href="javascript:openPopup('popup.aspx?sesja=5!2.1.1.1!5!4')">
+                          <asp:Label ID="tab_2_1_1_1_w05_c05" runat="server" CssClass="normal" Text="0"></asp:Label>
+                          </a></td>
+                      <td class="col_90 center borderAll "><a href="javascript:openPopup('popup.aspx?sesja=5!2.1.1.1!6!4')">
+                          <asp:Label ID="tab_2_1_1_1_w05_c06" runat="server" CssClass="normal" Text="0"></asp:Label>
+                          </a></td>
+                      <td class="col_90 center borderAll "><a href="javascript:openPopup('popup.aspx?sesja=5!2.1.1.1!7!4')">
+                          <asp:Label ID="tab_2_1_1_1_w05_c07" runat="server" CssClass="normal" Text="0"></asp:Label>
+                          </a></td>
+                      <td class="col_90 center borderAll "><a href="javascript:openPopup('popup.aspx?sesja=5!2.1.1.1!8!4')">
+                          <asp:Label ID="tab_2_1_1_1_w05_c08" runat="server" CssClass="normal" Text="0"></asp:Label>
+                          </a></td>
+                      <td class="col_90 center borderAll "><a href="javascript:openPopup('popup.aspx?sesja=5!2.1.1.1!9!4')">
+                          <asp:Label ID="tab_2_1_1_1_w05_c09" runat="server" CssClass="normal" Text="0"></asp:Label>
+                          </a></td>
+                      <td class="col_90 center borderAll "><a href="javascript:openPopup('popup.aspx?sesja=5!2.1.1.1!10!4')">
+                          <asp:Label ID="tab_2_1_1_1_w05_c10" runat="server" CssClass="normal" Text="0"></asp:Label>
+                          </a></td>
+                      <td class="col_90 center borderAll "><a href="javascript:openPopup('popup.aspx?sesja=5!2.1.1.1!11!4')">
+                          <asp:Label ID="tab_2_1_1_1_w05_c11" runat="server" CssClass="normal" Text="0"></asp:Label>
+                          </a></td>
 
+                 </tr>
+              </table>
+          </div>
           <br />
 <div id="2.1.1.a" class="page-break">
               <strong>Dział 2.1.1.a</strong> Sprawy zawieszone nie zakreślone od dnia pierwotnego wpisu do repertorium (wykazane w dziale 2.1.1.) (łącznie z czasem trwania mediacji)
@@ -6703,239 +6619,7 @@
                  </tr>
               </table>
           </div>       
-       <br />
-          <div id="2.1.1.1.1" class="page-break">
-              <strong>Dział 2.1.1.1.1</strong> Sprawy od dnia pierwotnego wpisu do repertorium
-             <table  style="width: 100%; ">
-                  <tr>
-                      <td class="center borderAll" rowspan="2" colspan="2">SPRAWY według
-                          <br />
-                          repertoriów</td>
-                      <td class="center borderAll" rowspan="2">Symbol </td>
-                      <td class="center borderAll" rowspan="2">Lp.</td>
-                      <td class="center borderAll" colspan="11">Liczba spraw niezałatwionych pozostających od daty pierwszego wpływu do sądu</td>
-                  </tr>
-                  <tr>
-                      <td class="center borderAll">razem (kol. 2, 3)</td>
-                      <td class="center borderAll">do 3 miesięcy</td>
-                      <td class="center borderAll">suma powyżej 3 miesięcy (kol. od 4 do 6)</td>
-                      <td class="center borderAll">powyżej 3 do 6 miesięcy </td>
-                      <td class="center borderAll">powyżej 6 do 12 miesięcy</td>
-                      <td class="center borderAll">suma powyżej 12 miesięcy (kol. od 7 do 11)</td>
-                      <td class="center borderAll">powyżej 12 miesięcy do 2 lat</td>
-                      <td class="center borderAll">powyżej 2 do 3 lat</td>
-                      <td class="center borderAll">powyżej 3 do 5 lat</td>
-                      <td class="center borderAll">powyżej 5 do 8 lat</td>
-                      <td class="center borderAll">ponad 8 lat</td>
-                  </tr>
-                  <tr>
-                      <td class="center borderAll" colspan="4">0</td>
-                      <td class="center borderAll">1</td>
-                      <td class="center borderAll">2</td>
-                      <td class="center borderAll">3</td>
-                      <td class="center borderAll">4</td>
-                      <td class="center borderAll">5</td>
-                      <td class="center borderAll">6</td>
-                      <td class="center borderAll">7</td>
-                      <td class="center borderAll">8</td>
-                      <td class="center borderAll">9</td>
-                      <td class="center borderAll">10</td>
-                      <td class="center borderAll">11</td>
-                  </tr>
-                  <tr>
-                      <td class="borderAll wciecie" colspan="2">ogółem</td>
-                      <td class="borderAll wciecie">--</td>
-                      <td class="borderAll col_36">1</td>
-                      <td class="col_90 center borderAll "><a href="javascript:openPopup('popup.aspx?sesja=1!2.1.1.1!1!4')">
-                          <asp:Label ID="tab_2_1_1_1_w01_c01" runat="server" CssClass="normal" Text="0"></asp:Label>
-                          </a></td>
-                      <td class="col_90 center borderAll "><a href="javascript:openPopup('popup.aspx?sesja=1!2.1.1.1!2!4')">
-                          <asp:Label ID="tab_2_1_1_1_w01_c02" runat="server" CssClass="normal" Text="0"></asp:Label>
-                          </a></td>
-                      <td class="col_90 center borderAll "><a href="javascript:openPopup('popup.aspx?sesja=1!2.1.1.1!3!4')">
-                          <asp:Label ID="tab_2_1_1_1_w01_c03" runat="server" CssClass="normal" Text="0"></asp:Label>
-                          </a></td>
-                      <td class="col_90 center borderAll "><a href="javascript:openPopup('popup.aspx?sesja=1!2.1.1.1!4!4')">
-                          <asp:Label ID="tab_2_1_1_1_w01_c04" runat="server" CssClass="normal" Text="0"></asp:Label>
-                          </a></td>
-                      <td class="col_90 center borderAll "><a href="javascript:openPopup('popup.aspx?sesja=1!2.1.1.1!5!4')">
-                          <asp:Label ID="tab_2_1_1_1_w01_c05" runat="server" CssClass="normal" Text="0"></asp:Label>
-                          </a></td>
-                      <td class="col_90 center borderAll "><a href="javascript:openPopup('popup.aspx?sesja=1!2.1.1.1!6!4')">
-                          <asp:Label ID="tab_2_1_1_1_w01_c06" runat="server" CssClass="normal" Text="0"></asp:Label>
-                          </a></td>
-                      <td class="col_90 center borderAll "><a href="javascript:openPopup('popup.aspx?sesja=1!2.1.1.1!7!4')">
-                          <asp:Label ID="tab_2_1_1_1_w01_c07" runat="server" CssClass="normal" Text="0"></asp:Label>
-                          </a></td>
-                      <td class="col_90 center borderAll "><a href="javascript:openPopup('popup.aspx?sesja=1!2.1.1.1!8!4')">
-                          <asp:Label ID="tab_2_1_1_1_w01_c08" runat="server" CssClass="normal" Text="0"></asp:Label>
-                          </a></td>
-                      <td class="col_90 center borderAll "><a href="javascript:openPopup('popup.aspx?sesja=1!2.1.1.1!9!4')">
-                          <asp:Label ID="tab_2_1_1_1_w01_c09" runat="server" CssClass="normal" Text="0"></asp:Label>
-                          </a></td>
-                      <td class="col_90 center borderAll "><a href="javascript:openPopup('popup.aspx?sesja=1!2.1.1.1!10!4')">
-                          <asp:Label ID="tab_2_1_1_1_w01_c10" runat="server" CssClass="normal" Text="0"></asp:Label>
-                          </a></td>
-                      <td class="col_90 center borderAll "><a href="javascript:openPopup('popup.aspx?sesja=1!2.1.1.1!11!4')">
-                          <asp:Label ID="tab_2_1_1_1_w01_c11" runat="server" CssClass="normal" Text="0"></asp:Label>
-                          </a></td>
-                  </tr>
-                  <tr>
-                      <td class="borderAll wciecie" rowspan="4">w tym</td>
-                      <td class="borderAll wciecie">RC</td>
-                      <td class="borderAll wciecie">--</td>
-                      <td class="borderAll col_36">2</td>
-                      <td class="col_90 center borderAll "><a href="javascript:openPopup('popup.aspx?sesja=2!2.1.1.1!1!4')">
-                          <asp:Label ID="tab_2_1_1_1_w02_c01" runat="server" CssClass="normal" Text="0"></asp:Label>
-                          </a></td>
-                      <td class="col_90 center borderAll "><a href="javascript:openPopup('popup.aspx?sesja=2!2.1.1.1!2!4')">
-                          <asp:Label ID="tab_2_1_1_1_w02_c02" runat="server" CssClass="normal" Text="0"></asp:Label>
-                          </a></td>
-                      <td class="col_90 center borderAll "><a href="javascript:openPopup('popup.aspx?sesja=2!2.1.1.1!3!4')">
-                          <asp:Label ID="tab_2_1_1_1_w02_c03" runat="server" CssClass="normal" Text="0"></asp:Label>
-                          </a></td>
-                      <td class="col_90 center borderAll "><a href="javascript:openPopup('popup.aspx?sesja=2!2.1.1.1!4!4')">
-                          <asp:Label ID="tab_2_1_1_1_w02_c04" runat="server" CssClass="normal" Text="0"></asp:Label>
-                          </a></td>
-                      <td class="col_90 center borderAll "><a href="javascript:openPopup('popup.aspx?sesja=2!2.1.1.1!5!4')">
-                          <asp:Label ID="tab_2_1_1_1_w02_c05" runat="server" CssClass="normal" Text="0"></asp:Label>
-                          </a></td>
-                      <td class="col_90 center borderAll "><a href="javascript:openPopup('popup.aspx?sesja=2!2.1.1.1!6!4')">
-                          <asp:Label ID="tab_2_1_1_1_w02_c06" runat="server" CssClass="normal" Text="0"></asp:Label>
-                          </a></td>
-                      <td class="col_90 center borderAll "><a href="javascript:openPopup('popup.aspx?sesja=2!2.1.1.1!7!4')">
-                          <asp:Label ID="tab_2_1_1_1_w02_c07" runat="server" CssClass="normal" Text="0"></asp:Label>
-                          </a></td>
-                      <td class="col_90 center borderAll "><a href="javascript:openPopup('popup.aspx?sesja=2!2.1.1.1!8!4')">
-                          <asp:Label ID="tab_2_1_1_1_w02_c08" runat="server" CssClass="normal" Text="0"></asp:Label>
-                          </a></td>
-                      <td class="col_90 center borderAll "><a href="javascript:openPopup('popup.aspx?sesja=2!2.1.1.1!9!4')">
-                          <asp:Label ID="tab_2_1_1_1_w02_c09" runat="server" CssClass="normal" Text="0"></asp:Label>
-                          </a></td>
-                      <td class="col_90 center borderAll "><a href="javascript:openPopup('popup.aspx?sesja=2!2.1.1.1!10!4')">
-                          <asp:Label ID="tab_2_1_1_1_w02_c10" runat="server" CssClass="normal" Text="0"></asp:Label>
-                          </a></td>
-                      <td class="col_90 center borderAll "><a href="javascript:openPopup('popup.aspx?sesja=2!2.1.1.1!11!4')">
-                          <asp:Label ID="tab_2_1_1_1_w02_c11" runat="server" CssClass="normal" Text="0"></asp:Label>
-                          </a></td>
-                  </tr>
-                  <tr>
-                      <td class="borderAll wciecie">RNs</td>
-                      <td class="borderAll wciecie">--</td>
-                      <td class="borderAll col_36">3</td>
-                      <td class="col_90 center borderAll "><a href="javascript:openPopup('popup.aspx?sesja=3!2.1.1.1!1!4')">
-                          <asp:Label ID="tab_2_1_1_1_w03_c01" runat="server" CssClass="normal" Text="0"></asp:Label>
-                          </a></td>
-                      <td class="col_90 center borderAll "><a href="javascript:openPopup('popup.aspx?sesja=3!2.1.1.1!2!4')">
-                          <asp:Label ID="tab_2_1_1_1_w03_c02" runat="server" CssClass="normal" Text="0"></asp:Label>
-                          </a></td>
-                      <td class="col_90 center borderAll "><a href="javascript:openPopup('popup.aspx?sesja=3!2.1.1.1!3!4')">
-                          <asp:Label ID="tab_2_1_1_1_w03_c03" runat="server" CssClass="normal" Text="0"></asp:Label>
-                          </a></td>
-                      <td class="col_90 center borderAll "><a href="javascript:openPopup('popup.aspx?sesja=3!2.1.1.1!4!4')">
-                          <asp:Label ID="tab_2_1_1_1_w03_c04" runat="server" CssClass="normal" Text="0"></asp:Label>
-                          </a></td>
-                      <td class="col_90 center borderAll "><a href="javascript:openPopup('popup.aspx?sesja=3!2.1.1.1!5!4')">
-                          <asp:Label ID="tab_2_1_1_1_w03_c05" runat="server" CssClass="normal" Text="0"></asp:Label>
-                          </a></td>
-                      <td class="col_90 center borderAll "><a href="javascript:openPopup('popup.aspx?sesja=3!2.1.1.1!6!4')">
-                          <asp:Label ID="tab_2_1_1_1_w03_c06" runat="server" CssClass="normal" Text="0"></asp:Label>
-                          </a></td>
-                      <td class="col_90 center borderAll "><a href="javascript:openPopup('popup.aspx?sesja=3!2.1.1.1!7!4')">
-                          <asp:Label ID="tab_2_1_1_1_w03_c07" runat="server" CssClass="normal" Text="0"></asp:Label>
-                          </a></td>
-                      <td class="col_90 center borderAll "><a href="javascript:openPopup('popup.aspx?sesja=3!2.1.1.1!8!4')">
-                          <asp:Label ID="tab_2_1_1_1_w03_c08" runat="server" CssClass="normal" Text="0"></asp:Label>
-                          </a></td>
-                      <td class="col_90 center borderAll "><a href="javascript:openPopup('popup.aspx?sesja=3!2.1.1.1!9!4')">
-                          <asp:Label ID="tab_2_1_1_1_w03_c09" runat="server" CssClass="normal" Text="0"></asp:Label>
-                          </a></td>
-                      <td class="col_90 center borderAll "><a href="javascript:openPopup('popup.aspx?sesja=3!2.1.1.1!10!4')">
-                          <asp:Label ID="tab_2_1_1_1_w03_c10" runat="server" CssClass="normal" Text="0"></asp:Label>
-                          </a></td>
-                      <td class="col_90 center borderAll "><a href="javascript:openPopup('popup.aspx?sesja=3!2.1.1.1!11!4')">
-                          <asp:Label ID="tab_2_1_1_1_w03_c11" runat="server" CssClass="normal" Text="0"></asp:Label>
-                          </a></td>
-                  </tr>
-                  <tr>
-                      <td class="borderAll wciecie">Nsm</td>
-                      <td class="borderAll wciecie">--</td>
-                      <td class="borderAll col_36">4</td>
-                      <td class="col_90 center borderAll "><a href="javascript:openPopup('popup.aspx?sesja=4!2.1.1.1!1!4')">
-                          <asp:Label ID="tab_2_1_1_1_w04_c01" runat="server" CssClass="normal" Text="0"></asp:Label>
-                          </a></td>
-                      <td class="col_90 center borderAll "><a href="javascript:openPopup('popup.aspx?sesja=4!2.1.1.1!2!4')">
-                          <asp:Label ID="tab_2_1_1_1_w04_c02" runat="server" CssClass="normal" Text="0"></asp:Label>
-                          </a></td>
-                      <td class="col_90 center borderAll "><a href="javascript:openPopup('popup.aspx?sesja=4!2.1.1.1!3!4')">
-                          <asp:Label ID="tab_2_1_1_1_w04_c03" runat="server" CssClass="normal" Text="0"></asp:Label>
-                          </a></td>
-                      <td class="col_90 center borderAll "><a href="javascript:openPopup('popup.aspx?sesja=4!2.1.1.1!4!4')">
-                          <asp:Label ID="tab_2_1_1_1_w04_c04" runat="server" CssClass="normal" Text="0"></asp:Label>
-                          </a></td>
-                      <td class="col_90 center borderAll "><a href="javascript:openPopup('popup.aspx?sesja=4!2.1.1.1!5!4')">
-                          <asp:Label ID="tab_2_1_1_1_w04_c05" runat="server" CssClass="normal" Text="0"></asp:Label>
-                          </a></td>
-                      <td class="col_90 center borderAll "><a href="javascript:openPopup('popup.aspx?sesja=4!2.1.1.1!6!4')">
-                          <asp:Label ID="tab_2_1_1_1_w04_c06" runat="server" CssClass="normal" Text="0"></asp:Label>
-                          </a></td>
-                      <td class="col_90 center borderAll "><a href="javascript:openPopup('popup.aspx?sesja=4!2.1.1.1!7!4')">
-                          <asp:Label ID="tab_2_1_1_1_w04_c07" runat="server" CssClass="normal" Text="0"></asp:Label>
-                          </a></td>
-                      <td class="col_90 center borderAll "><a href="javascript:openPopup('popup.aspx?sesja=4!2.1.1.1!8!4')">
-                          <asp:Label ID="tab_2_1_1_1_w04_c08" runat="server" CssClass="normal" Text="0"></asp:Label>
-                          </a></td>
-                      <td class="col_90 center borderAll "><a href="javascript:openPopup('popup.aspx?sesja=4!2.1.1.1!9!4')">
-                          <asp:Label ID="tab_2_1_1_1_w04_c09" runat="server" CssClass="normal" Text="0"></asp:Label>
-                          </a></td>
-                      <td class="col_90 center borderAll "><a href="javascript:openPopup('popup.aspx?sesja=4!2.1.1.1!10!4')">
-                          <asp:Label ID="tab_2_1_1_1_w04_c10" runat="server" CssClass="normal" Text="0"></asp:Label>
-                          </a></td>
-                      <td class="col_90 center borderAll "><a href="javascript:openPopup('popup.aspx?sesja=4!2.1.1.1!11!4')">
-                          <asp:Label ID="tab_2_1_1_1_w04_c11" runat="server" CssClass="normal" Text="0"></asp:Label>
-                          </a></td>
-                  </tr>
-                 <tr>
-                      <td class="borderAll wciecie">Nkd</td>
-                      <td class="borderAll wciecie">--</td>
-                      <td class="borderAll col_36">4</td>
-                      <td class="col_90 center borderAll "><a href="javascript:openPopup('popup.aspx?sesja=5!2.1.1.1!1!4')">
-                          <asp:Label ID="tab_2_1_1_1_w05_c01" runat="server" CssClass="normal" Text="0"></asp:Label>
-                          </a></td>
-                      <td class="col_90 center borderAll "><a href="javascript:openPopup('popup.aspx?sesja=5!2.1.1.1!2!4')">
-                          <asp:Label ID="tab_2_1_1_1_w05_c02" runat="server" CssClass="normal" Text="0"></asp:Label>
-                          </a></td>
-                      <td class="col_90 center borderAll "><a href="javascript:openPopup('popup.aspx?sesja=5!2.1.1.1!3!4')">
-                          <asp:Label ID="tab_2_1_1_1_w05_c03" runat="server" CssClass="normal" Text="0"></asp:Label>
-                          </a></td>
-                      <td class="col_90 center borderAll "><a href="javascript:openPopup('popup.aspx?sesja=5!2.1.1.1!4!4')">
-                          <asp:Label ID="tab_2_1_1_1_w05_c04" runat="server" CssClass="normal" Text="0"></asp:Label>
-                          </a></td>
-                      <td class="col_90 center borderAll "><a href="javascript:openPopup('popup.aspx?sesja=5!2.1.1.1!5!4')">
-                          <asp:Label ID="tab_2_1_1_1_w05_c05" runat="server" CssClass="normal" Text="0"></asp:Label>
-                          </a></td>
-                      <td class="col_90 center borderAll "><a href="javascript:openPopup('popup.aspx?sesja=5!2.1.1.1!6!4')">
-                          <asp:Label ID="tab_2_1_1_1_w05_c06" runat="server" CssClass="normal" Text="0"></asp:Label>
-                          </a></td>
-                      <td class="col_90 center borderAll "><a href="javascript:openPopup('popup.aspx?sesja=5!2.1.1.1!7!4')">
-                          <asp:Label ID="tab_2_1_1_1_w05_c07" runat="server" CssClass="normal" Text="0"></asp:Label>
-                          </a></td>
-                      <td class="col_90 center borderAll "><a href="javascript:openPopup('popup.aspx?sesja=5!2.1.1.1!8!4')">
-                          <asp:Label ID="tab_2_1_1_1_w05_c08" runat="server" CssClass="normal" Text="0"></asp:Label>
-                          </a></td>
-                      <td class="col_90 center borderAll "><a href="javascript:openPopup('popup.aspx?sesja=5!2.1.1.1!9!4')">
-                          <asp:Label ID="tab_2_1_1_1_w05_c09" runat="server" CssClass="normal" Text="0"></asp:Label>
-                          </a></td>
-                      <td class="col_90 center borderAll "><a href="javascript:openPopup('popup.aspx?sesja=5!2.1.1.1!10!4')">
-                          <asp:Label ID="tab_2_1_1_1_w05_c10" runat="server" CssClass="normal" Text="0"></asp:Label>
-                          </a></td>
-                      <td class="col_90 center borderAll "><a href="javascript:openPopup('popup.aspx?sesja=5!2.1.1.1!11!4')">
-                          <asp:Label ID="tab_2_1_1_1_w05_c11" runat="server" CssClass="normal" Text="0"></asp:Label>
-                          </a></td>
-
-                 </tr>
-              </table>
-          </div>
+      
        <br />
 <div id="2.1.2" class="page-break">
               <strong>Dział 2.1.2</strong> Liczba spraw zakreślonych w urządzeniu ewidencyjnym w wyniku zawieszenia postępowania (łącznie z czasem trwania mediacji)

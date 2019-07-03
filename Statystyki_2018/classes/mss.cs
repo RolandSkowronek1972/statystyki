@@ -200,46 +200,48 @@ namespace stat2018
             }
             return "";
         }
-/*
-        public string uzupelnijDaneDoKOF2()
-        {
-            string result = string.Empty;
 
-            string kwerendaKOF = PobierzDana("kof");
-            string ConnectionString = PobierzCS("kof");
-
-            DataTable parameters = cm.makeParameterTable();
-
-            DataTable dane = cm.getDataTable(kwerendaKOF, ConnectionString, parameters);
-            foreach (DataRow dRow in dane.Rows)
-            {
-                string idSprawy = dRow[0].ToString().Trim();
-
-                string wydzial = dRow[1].ToString().Trim();
-                string sygnatura = dRow[2].ToString().Trim();
-                string d_wplywu = dRow[3].ToString().Trim();
-                string strona = dRow[4].ToString().Trim();
-                string pelnomocnik = dRow[5].ToString().Trim();
-                string przeciwko = dRow[6].ToString().Trim();
-
-                if (czyIstniejeWpiswKOF(idSprawy) == "0")
+        /*
+                public string uzupelnijDaneDoKOF2()
                 {
-                    //zapisz do kof
+                    string result = string.Empty;
 
-                    DataTable parameters2 = cm.makeParameterTable();
-                    parameters2.Rows.Add("id_sprawy", idSprawy);
-                    parameters2.Rows.Add("wydzial", wydzial);
-                    parameters2.Rows.Add("sygnatura", sygnatura);
-                    parameters2.Rows.Add("d_wplywu", d_wplywu);
-                    parameters2.Rows.Add("strona", strona);
-                    parameters2.Rows.Add("pelnomocnik", pelnomocnik);
-                    parameters2.Rows.Add("przeciwko", przeciwko);
-                    cm.runQuerry("INSERT      INTO     kof( id_sprawy, wydzial, sygnatura, d_wplywu, strona, pelnomocnik, przeciwko) VALUES (@id_sprawy, @wydzial, @sygnatura, @d_wplywu, @strona, @pelnomocnik, @przeciwko)", con_str, parameters2);
+                    string kwerendaKOF = PobierzDana("kof");
+                    string ConnectionString = PobierzCS("kof");
+
+                    DataTable parameters = cm.makeParameterTable();
+
+                    DataTable dane = cm.getDataTable(kwerendaKOF, ConnectionString, parameters);
+                    foreach (DataRow dRow in dane.Rows)
+                    {
+                        string idSprawy = dRow[0].ToString().Trim();
+
+                        string wydzial = dRow[1].ToString().Trim();
+                        string sygnatura = dRow[2].ToString().Trim();
+                        string d_wplywu = dRow[3].ToString().Trim();
+                        string strona = dRow[4].ToString().Trim();
+                        string pelnomocnik = dRow[5].ToString().Trim();
+                        string przeciwko = dRow[6].ToString().Trim();
+
+                        if (czyIstniejeWpiswKOF(idSprawy) == "0")
+                        {
+                            //zapisz do kof
+
+                            DataTable parameters2 = cm.makeParameterTable();
+                            parameters2.Rows.Add("id_sprawy", idSprawy);
+                            parameters2.Rows.Add("wydzial", wydzial);
+                            parameters2.Rows.Add("sygnatura", sygnatura);
+                            parameters2.Rows.Add("d_wplywu", d_wplywu);
+                            parameters2.Rows.Add("strona", strona);
+                            parameters2.Rows.Add("pelnomocnik", pelnomocnik);
+                            parameters2.Rows.Add("przeciwko", przeciwko);
+                            cm.runQuerry("INSERT      INTO     kof( id_sprawy, wydzial, sygnatura, d_wplywu, strona, pelnomocnik, przeciwko) VALUES (@id_sprawy, @wydzial, @sygnatura, @d_wplywu, @strona, @pelnomocnik, @przeciwko)", con_str, parameters2);
+                        }
+                    }
+                    return result;
                 }
-            }
-            return result;
-        }
-        */
+                */
+
         public DataTable generuj_dane_do_tabeli_mss2(int id_dzialu, DateTime poczatek, DateTime koniec, int il_kolumn)
         {
             //cm.log.Info("mss: rozpoczęcie popmpowania danych");
@@ -443,16 +445,15 @@ namespace stat2018
         //----------------------------------------------------------------
         //-------------- nowy schemat ------------------------------------
 
-        public string tworztabeleMSS(string idTabeli, DataTable naglowek, DataTable tabelaPrzedIteracja, DataTable dane, int iloscWierszyNaglowka, int iloscWierszyTabeli, int iloscKolumnPrzedIteracja, int iloscKolumnPoIteracji, int idWydzialu, bool lp, string tekstNadTabela,string tenPlik)
+        public string tworztabeleMSS(string idTabeli, DataTable naglowek, DataTable tabelaPrzedIteracja, DataTable dane, int iloscWierszyNaglowka, int iloscWierszyTabeli, int iloscKolumnPrzedIteracja, int iloscKolumnPoIteracji, int idWydzialu, bool lp, string tekstNadTabela, string tenPlik)
         {
             StringBuilder kodStony = new StringBuilder();
             string ciagWyjsciowy = string.Empty;
             kodStony.AppendLine("<div class='page-break'>");
             kodStony.AppendLine("<P><b>" + idTabeli + "</b> " + tekstNadTabela + " </P>");
-
             kodStony.AppendLine("<table style='width:100%'>");
             //naglowek
-            DataTable header = naglowek;
+            //   DataTable header = naglowek;
 
             for (int i = 1; i < iloscWierszyNaglowka + 1; i++)
             {
@@ -461,6 +462,7 @@ namespace stat2018
                 try
                 {
                     DataRow wiersz = wyciagnijWartosc(naglowek, " nrWiersza ='" + i.ToString() + "' and nrKolumny='1'", tenPlik);
+                    cm.log.Info("tabela : "+ idTabeli + " nrWiersza ='" + i.ToString() + "' and nrKolumny='1'");
                     if (wiersz != null)
                     {
                         int colspan = int.Parse(wiersz["colspan"].ToString().Trim());
@@ -490,13 +492,14 @@ namespace stat2018
                         }
                     }
                 }
-                catch (Exception ex)
+                catch
                 { }
 
                 for (int j = 2; j <= iloscKolumnPrzedIteracja + iloscKolumnPoIteracji + 1; j++)
                 {
                     try
                     {
+                        cm.log.Info(" nrWiersza ='" + i.ToString() + "' and nrKolumny='" + j.ToString() + "'");
                         DataRow wiersz = wyciagnijWartosc(naglowek, " nrWiersza ='" + i.ToString() + "' and nrKolumny='" + j.ToString() + "'", tenPlik);
                         if (wiersz != null)
                         {
@@ -524,7 +527,10 @@ namespace stat2018
 
                             kodStony.AppendLine("<td  class ='borderAll  " + sekcjaStyle + "'" + sekcjaColspan + sekcjaRowspan + ">" + tekst + "</td>");
                         }
-                        //
+                        else
+                        {
+                            cm.log.Error("MSS 11o LinqError: wiersz=null");
+                        }
                     }
                     catch (Exception ex)
                     {
@@ -590,7 +596,7 @@ namespace stat2018
                 kodStony.AppendLine("<td class='center borderAll col_26'>" + i.ToString() + "</td>");
                 for (int j = 1; j < iloscKolumnPoIteracji + 1; j++)
                 {
-                    string txt = dr.wyciagnijWartosc(dane, "idWydzial=" + idWydzialu + " and idTabeli=" + idTabeli + " and idWiersza ='" + i.ToString() + "' and idkolumny='" + j.ToString() + "'", tenPlik);
+                    string txt = dr.wyciagnijWartosc(dane, "idWydzial=" + idWydzialu + " and idTabeli='" + idTabeli + "' and idWiersza ='" + i.ToString() + "' and idkolumny='" + j.ToString() + "'", tenPlik);
                     string txt2 = "<a Class=\"normal\" href=\"javascript: openPopup('popup.aspx?sesja=" + i.ToString().ToString() + "!" + idTabeli + "!" + j.ToString() + "!2')\">" + txt + " </a>";
                     kodStony.AppendLine("<td class='center borderAll'>" + txt2 + "</td>");
                 }
@@ -603,7 +609,6 @@ namespace stat2018
             kodStony.AppendLine("<br/>");
             return kodStony.ToString();
         }
-
 
         public string tworztabeleMSS(string idTabeli, string napis, DataTable dane, int idWydzialu, string tenPlik)
         {
@@ -642,8 +647,10 @@ namespace stat2018
             //   var List<tabeleDoMSS> lista = new List <tabeleDoMSS>;
             return dT;
         }
-        private DataRow wyciagnijWartosc(DataTable ddT, string selectString,string tenPlik)
+
+        private DataRow wyciagnijWartosc(DataTable ddT, string selectString, string tenPlik)
         {
+            //aaa
             DataRow result = null;
             try
             {

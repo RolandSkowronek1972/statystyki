@@ -380,7 +380,7 @@
                         <ItemTemplate>
                             <asp:Label ID="funkcja" runat="server" Text='<%# Eval("funkcja") %>'></asp:Label>
                         </ItemTemplate>
-                        <ItemStyle CssClass="col_250" />
+                        <ItemStyle CssClass="col_150" />
                     </asp:TemplateField>
 
                     <asp:TemplateField HeaderText="imie" SortExpression="imie">
@@ -388,7 +388,7 @@
                         <ItemTemplate>
                             <asp:Label ID="syanowisko" runat="server" Text='<%# Eval("stanowisko") %>'></asp:Label>
                         </ItemTemplate>
-                        <ItemStyle CssClass="col_250" />
+                        <ItemStyle CssClass="col_150" />
                     </asp:TemplateField>
 
                     <asp:TemplateField HeaderText="imie" SortExpression="imie">
@@ -397,7 +397,7 @@
                             <asp:Label ID="Label10" runat="server" Text='<%# Eval("nazwisko") %>'></asp:Label>
                             &nbsp;<asp:Label ID="Label1" runat="server" Text='<%# Bind("imie") %>'></asp:Label>
                         </ItemTemplate>
-                        <ItemStyle CssClass="col_250" />
+                        <ItemStyle CssClass="col_150" />
                     </asp:TemplateField>
 
                     <asp:TemplateField HeaderText="d_02" SortExpression="d_02">

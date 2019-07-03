@@ -5,6 +5,7 @@ using System.IO;
 using System.Web.UI;
 using OfficeOpenXml;
 
+using System.Web.UI.WebControls;
 
 namespace stat2018
 {
@@ -160,7 +161,6 @@ namespace stat2018
                 tab_03_w01_c04.Text = tabelka01.Rows[0][4].ToString();
                 tab_03_w01_c05.Text = tabelka01.Rows[0][5].ToString();
                 tab_03_w01_c06.Text = tabelka01.Rows[0][6].ToString();
-
                 tab_03_w01_c07.Text = tabelka01.Rows[0][7].ToString();
                 tab_03_w01_c08.Text = tabelka01.Rows[0][8].ToString();
             
@@ -169,17 +169,43 @@ namespace stat2018
             {
                 cm.log.Error(tenPlik + " " + ex);
             }
+
+
+            try
+            {
+
+                DataTable tabelka01 = dr.generuj_dane_do_tabeli_wierszy2018(Date1.Date, Date2.Date, (string)Session["id_dzialu"], 4,4, 13, tenPlik);
+                Session["tabelka004"] = tabelka01;
+                pisz("tab_03_",4, 13, tabelka01);
+
+            }
+            catch (Exception ex)
+            {
+                cm.log.Error(tenPlik + " " + ex);
+            }
+
+            try
+            {
+
+                DataTable tabelka01 = dr.generuj_dane_do_tabeli_wierszy2018(Date1.Date, Date2.Date, (string)Session["id_dzialu"], 5, 3, 3, tenPlik);
+                Session["tabelka004"] = tabelka01;
+                pisz("tab_05_", 3, 3, tabelka01);
+
+            }
+            catch (Exception ex)
+            {
+                cm.log.Error(tenPlik + " " + ex);
+            }
+
             // dopasowanie opisów
             makeLabels();
-
+            Label11.Visible = false;
             try
             {
                 Label11.Visible = cl.debug(int.Parse(yyx));
             }
             catch
-            {
-                Label11.Visible = false;
-            }
+            {}
 
             Label11.Text = txt;
             Label3.Text = cl.nazwaSadu((string)Session["id_dzialu"]);
@@ -301,6 +327,29 @@ namespace stat2018
                     cm.log.Error(tenPlik + " Generowanie pliku Excell " + ex.Message);
                 }
 
+
+
+                //czwarta 
+                try
+                {
+                    DataTable tabelka001 = (DataTable)Session["tabelka004"];
+
+                    ExcelWorksheet MyWorksheet2 = MyExcel.Workbook.Worksheets[4];
+                    for (int j = 0; j < 4; j++)
+                    {
+                        for (int i = 0; i < 7; i++)
+                        {
+                            tb.komorkaExcela(MyWorksheet2,j+ 4, 1 + i, tabelka001.Rows[i][j].ToString().Trim(), false, 0, 0);
+
+                        }
+                    }
+                   
+
+                }
+                catch (Exception ex)
+                {
+                    cm.log.Error(tenPlik + " Generowanie pliku Excell " + ex.Message);
+                }
                 try
                 {
                     MyExcel.SaveAs(fNewFile);
@@ -336,7 +385,27 @@ namespace stat2018
             makeLabels();
         }
 
+        protected void pisz(string Template, int iloscWierszy, int iloscKolumn, DataTable dane)
+        {
+            for (int wiersz = 1; wiersz <= iloscWierszy; wiersz++)
+            {
+                for (int kolumna = 1; kolumna <= iloscKolumn; kolumna++)
+                {
+                    string controlName = Template + "w" + wiersz.ToString("D2") + "_c" + kolumna.ToString("D2");
+                    Label tb = (Label)this.Master.FindControl("ContentPlaceHolder1").FindControl(controlName);
+                    if (tb != null)
+                    {
+                        try
+                        {
+                            tb.Text = dane.Rows[wiersz - 1][kolumna].ToString().Trim();
+                        }
+                        catch
+                        { }
+                    }
+                }
+            }
+        }// end of pisz
 
- 
+
     }
 }

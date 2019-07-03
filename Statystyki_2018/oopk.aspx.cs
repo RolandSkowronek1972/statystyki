@@ -566,7 +566,7 @@ namespace stat2018
                 DataTable table = view.ToTable();
                 object sumObject;
 
-                for (int i = 1; i < 94; i++)
+                for (int i = 1; i < 103; i++)
                 {
                     string txt = "d_";
                     string digit = i.ToString("D2");
