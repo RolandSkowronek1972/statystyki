@@ -249,5 +249,33 @@ namespace stat2018
             }
             return false;
         }
+
+        public DataTable schematTabeli()
+        {
+            DataTable dT = new DataTable();
+            dT.Columns.Clear();
+            dT.Columns.Add("nrWiersza", typeof(int));
+            dT.Columns.Add("nrKolumny", typeof(int));
+            dT.Columns.Add("colspan", typeof(int));
+            dT.Columns.Add("rowspan", typeof(int));
+            dT.Columns.Add("style", typeof(string));
+            dT.Columns.Add("text", typeof(string));
+
+            //   var List<tabeleDoMSS> lista = new List <tabeleDoMSS>;
+            return dT;
+        }
+
+        public class komorka
+        {
+            public int wiersz;
+            public int kolumna;
+            public string text;
+            public int kolSpan;
+            public int rowSpan;
+
+            public string styl;
+            
+          
+        }
     } // end of common
 }

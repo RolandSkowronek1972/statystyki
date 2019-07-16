@@ -25,7 +25,8 @@
     <NuGetPackageImportStamp>
     </NuGetPackageImportStamp>
     <TargetFrameworkProfile />
-    <Use64BitIISExpress />
+    <Use64BitIISExpress>
+    </Use64BitIISExpress>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -115,6 +116,7 @@
     <Reference Include="System.XML" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="adm.aspx" />
     <Content Include="aglg.aspx" />
     <Content Include="aglc.aspx" />
     <Content Include="agl.aspx" />
@@ -127,6 +129,7 @@
     <Content Include="aopc2.aspx" />
     <Content Include="aoppe.aspx" />
     <Content Include="aopp.aspx" />
+    <Content Include="Headers\header1.xml" />
     <Content Include="mss16r.aspx" />
     <Content Include="mss19r.aspx" />
     <Content Include="nowa.aspx" />
@@ -143,6 +146,7 @@
     <Content Include="aglg2.aspx" />
     <Content Include="obbr.aspx" />
     <Content Include="obbk.aspx" />
+    <Content Include="oglp.aspx" />
     <Content Include="oktkr.aspx" />
     <Content Include="oktp.aspx" />
     <Content Include="oktr.aspx" />
@@ -241,6 +245,7 @@
     <Content Include="msstabele\mss5r.xlsx" />
     <Content Include="Template\aopc2.xlsx" />
     <Content Include="libman.json" />
+    <Content Include="Headers\Header001.json" />
     <None Include="Properties\PublishProfiles\FolderProfile.pubxml" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -317,6 +322,7 @@
     <Content Include="Template\aopk2.xlsx" />
     <Content Include="Template\aopk.xlsx" />
     <Content Include="Template\oglc3.xlsx" />
+    <Content Include="Template\oglp.xlsx" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -333,6 +339,13 @@
     <Content Include="style\Tables.css" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="adm.aspx.cs">
+      <DependentUpon>adm.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="adm.aspx.designer.cs">
+      <DependentUpon>adm.aspx</DependentUpon>
+    </Compile>
     <Compile Include="aglg.aspx.cs">
       <DependentUpon>aglg.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -532,6 +545,13 @@
     </Compile>
     <Compile Include="obbk.aspx.designer.cs">
       <DependentUpon>obbk.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="oglp.aspx.cs">
+      <DependentUpon>oglp.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="oglp.aspx.designer.cs">
+      <DependentUpon>oglp.aspx</DependentUpon>
     </Compile>
     <Compile Include="oktkr.aspx.cs">
       <DependentUpon>oktkr.aspx</DependentUpon>

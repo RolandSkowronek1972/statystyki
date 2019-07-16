@@ -93,8 +93,8 @@ namespace stat2018
             }
             catch
             { }
-            string yyx = (string)Session["id_dzialu"];
-            string txt = string.Empty; //
+            string id_dzialu = (string)Session["id_dzialu"];
+           // string txt = string.Empty; //
             try
             {
                 
@@ -176,7 +176,7 @@ namespace stat2018
 
                 DataTable tabelka01 = dr.generuj_dane_do_tabeli_wierszy2018(Date1.Date, Date2.Date, (string)Session["id_dzialu"], 4,4, 13, tenPlik);
                 Session["tabelka004"] = tabelka01;
-                pisz("tab_03_",4, 13, tabelka01);
+                pisz("tab_4_",4, 13, tabelka01);
 
             }
             catch (Exception ex)
@@ -188,8 +188,8 @@ namespace stat2018
             {
 
                 DataTable tabelka01 = dr.generuj_dane_do_tabeli_wierszy2018(Date1.Date, Date2.Date, (string)Session["id_dzialu"], 5, 3, 3, tenPlik);
-                Session["tabelka004"] = tabelka01;
-                pisz("tab_05_", 3, 3, tabelka01);
+                Session["tabelka005"] = tabelka01;
+                pisz("tab_5_", 3, 3, tabelka01);
 
             }
             catch (Exception ex)
@@ -202,12 +202,12 @@ namespace stat2018
             Label11.Visible = false;
             try
             {
-                Label11.Visible = cl.debug(int.Parse(yyx));
+                Label11.Visible = cl.debug(int.Parse(id_dzialu));
             }
             catch
             {}
 
-            Label11.Text = txt;
+         //   Label11.Text = txt;
             Label3.Text = cl.nazwaSadu((string)Session["id_dzialu"]);
 
 
@@ -393,14 +393,23 @@ namespace stat2018
                 {
                     string controlName = Template + "w" + wiersz.ToString("D2") + "_c" + kolumna.ToString("D2");
                     Label tb = (Label)this.Master.FindControl("ContentPlaceHolder1").FindControl(controlName);
+                    cm.log.Info("WAB " + controlName);
                     if (tb != null)
                     {
                         try
                         {
+                           
                             tb.Text = dane.Rows[wiersz - 1][kolumna].ToString().Trim();
+                            cm.log.Info("WAB " + controlName + " wartosc:"+ tb.Text);
                         }
-                        catch
-                        { }
+                        catch (Exception exc)
+                        {
+                            cm.log.Error("WAB błąd: " + exc.Message);
+                        }
+                    }
+                    else
+                    {
+                        cm.log.Info("WAB tb= null");
                     }
                 }
             }

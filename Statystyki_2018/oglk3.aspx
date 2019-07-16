@@ -1066,7 +1066,7 @@
                </div>
                  
 <div class="page-break">
-&nbsp;<asp:Label ID="Label43" runat="server">Terminowość przyznawania wynagrodzeń i wypłaty biegłym i tłumaczom</asp:Label>
+&nbsp;<asp:Label ID="Label43" runat="server">Orzeczenia II Instancji na podstawie Kontrolki uzasadnień</asp:Label>
           &nbsp;<asp:Label ID="infoLabel15" runat="server" Text="tabela 14  \/\/\/" Visible="False"></asp:Label>
            <br />
         

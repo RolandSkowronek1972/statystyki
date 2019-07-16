@@ -70,7 +70,7 @@ namespace stat2018
             }
             catch
             {
-                Server.Transfer("default.aspx");
+           //     Server.Transfer("default.aspx");
             }
         }// end of Page_Load
 

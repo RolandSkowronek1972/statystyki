@@ -377,7 +377,7 @@ namespace stat2018
                 DataView view = (DataView)statystyki.Select(DataSourceSelectArguments.Empty);
                 tabele tb = new tabele();
                 DataTable table = view.ToTable();
-                tb.tworzArkuszwExcle(MyWorksheet, table, 114, 0, 7, true, false, false, false, true);
+                tb.tworzArkuszwExcle(MyWorksheet, table, 114, 0, 7, true, true, false, false, true);
 
                 try
                 {

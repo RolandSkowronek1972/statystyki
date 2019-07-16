@@ -85,7 +85,6 @@ namespace stat2018
                 tabelaGlowna.AppendLine(ms.tworztabeleMSS("1.1.b", naglowekTabeliDzialu_1_1_b(), tabelaBocznaDzialu_1_1_b(), tabelaDanych, 1, 3, 1, 4, idWydzialuNumerycznie, false, "Zażalenia w ramach właściwości poziomej (dotyczy dz. 1.1.1.2, w. 2 i 15 lit. b)", tenPlik));
                 tabelaGlowna.AppendLine(ms.tworztabeleMSS("1.1.c", naglowekTabeliDzialu_1_1_c(), tabelaBocznaDzialu_1_1_c(), tabelaDanych, 1, 9, 2, 1, idWydzialuNumerycznie, false, "W tym: (skarga kasacyjna) (dział 1.1.1.2. wiersz 17 kol. 3 lit. c)", tenPlik));
                 tabelaGlowna.AppendLine(ms.tworztabeleMSS("1.1.d", naglowekTabeliDzialu_1_1_d(), tabelaBocznaDzialu_1_1_d(), tabelaDanych, 4, 10, 1, 15, idWydzialuNumerycznie, false, "Ewidencja spraw z zakresu ubezpieczeń społecznych – wg podmiotów", tenPlik));
-                tabelaGlowna.AppendLine(ms.tworztabeleMSS("1.1.d", naglowekTabeliDzialu_1_1_d(), tabelaBocznaDzialu_1_1_d(), tabelaDanych, 4, 10, 1, 15, idWydzialuNumerycznie, false, "Ewidencja spraw z zakresu ubezpieczeń społecznych – wg podmiotów", tenPlik));
                 tabelaGlowna.AppendLine(ms.tworztabeleMSS("1.1.2.1", naglowekTabeliDzialu_1_1_2_1(), tabelaBocznaDzialu_1_1_2_1(), tabelaDanych, 5, 84, 4, 15, idWydzialuNumerycznie, true, "Ewidencja spraw z zakresu prawa pracy –ogółem oraz I instancja", tenPlik));
                 tabelaGlowna.AppendLine(ms.tworztabeleMSS("1.1.2.2", naglowekTabeliDzialu_1_1_2_2(), tabelaBocznaDzialu_1_1_2_2(), tabelaDanych, 5, 97, 7, 15, idWydzialuNumerycznie, true, "Dział 1.1.2.2 Ewidencja spraw z zakresu prawa pracy – II instancja", tenPlik));
                 tabelaGlowna.AppendLine(ms.tworztabeleMSS("1.1.3.a", "Dział 1.1.3.a. Wpływ spraw (liczba), w których z roszczeniem wystąpiła większa grupa pracowników (co najmniej 10 pracowników) (Dział 1.1.2.1. wiersz 03 kol. 2 lit. a)", tabelaDanych, idWydzialuNumerycznie, tenPlik));
@@ -125,7 +124,7 @@ namespace stat2018
                 tabelaGlowna.AppendLine(ms.tworztabeleMSS("4.2", naglowekTabeliDzialu_4_2(), tabelaBocznaDzialu_4_2(), tabelaDanych, 2, 2, 1, 7, idWydzialuNumerycznie, true, "Szczegółowe rozliczenie skargi (Wykaz S)", tenPlik));
                 tabelaGlowna.AppendLine(ms.tworztabeleMSS("5", naglowekTabeliDzialu_5(), tabelaBocznaDzialu_5(), tabelaDanych, 4, 22, 5, 10, idWydzialuNumerycznie, true, "Szczegółowe rozliczenie skargi (Wykaz S)", tenPlik));
                 tabelaGlowna.AppendLine(ms.tworztabeleMSS("6", naglowekTabeliDzialu_6(), tabelaBocznaDzialu_6(), tabelaDanych, 2, 24, 3, 7, idWydzialuNumerycznie, true, "Szczegółowe rozliczenie skargi (Wykaz S)", tenPlik));
-                tabelaGlowna.AppendLine(ms.tworztabeleMSS("7.1", naglowekTabeliDzialu_7_1(), tabelaBocznaDzialu_7_1(), tabelaDanych, 1, 4, 1, 35, idWydzialuNumerycznie, true, "Szczegółowe rozliczenie skargi (Wykaz S)", tenPlik));
+                tabelaGlowna.AppendLine(ms.tworztabeleMSS("7.1", naglowekTabeliDzialu_7_1(), tabelaBocznaDzialu_7_1(), tabelaDanych, 1, 4, 1, 38, idWydzialuNumerycznie, true, "Szczegółowe rozliczenie skargi (Wykaz S)", tenPlik));
                 tabelaGlowna.AppendLine(ms.tworztabeleMSS("7.2", naglowekTabeliDzialu_7_2(), tabelaBocznaDzialu_7_2(), tabelaDanych, 1, 13, 3, 6, idWydzialuNumerycznie, true, "Obsada Sądu (Wydziału)", tenPlik));
                 tabelaGlowna.AppendLine(ms.tworztabeleMSS("8.a", naglowekTabeliDzialu_8_a(), tabelaBocznaDzialu_8_a(), tabelaDanych, 3, 28, 2, 5, idWydzialuNumerycznie, true, "Dyskryminacja w zatrudnieniu (dane dotyczą osób poszkodowanych) 1) ", tenPlik));
                 tabelaGlowna.AppendLine(ms.tworztabeleMSS("9.1", naglowekTabeliDzialu_9_1(), tabelaBocznaDzialu_9_1(), tabelaDanych, 2, 7, 2, 4, idWydzialuNumerycznie, true, "Liczba biegłych/podmiotów wydających opinie w sprawach  (z wył. tłumaczy przysięgłych) ", tenPlik));
@@ -1126,19 +1125,19 @@ namespace stat2018
             dT.Rows.Add(new Object[] { 36, 1, 2, 2, "wciecie borderAll", "O odszkodowanie z tytułu naruszenia zasady równego traktowania w zatrudnieniu dotyczy (art. 183<sup>d</sup> kp)" });
             dT.Rows.Add(new Object[] { 36, 3, 1, 1, "wciecie borderAll", "kobiet" });
             dT.Rows.Add(new Object[] { 36, 4, 1, 1, " center", "458dk" });
-            dT.Rows.Add(new Object[] { 37, 1, 2, 1, "wciecie borderAll", "mężczyzn" });
+            dT.Rows.Add(new Object[] { 37, 1, 1, 1, "wciecie borderAll", "mężczyzn" });
             dT.Rows.Add(new Object[] { 37, 4, 1, 1, " center", "458m" });
 
             dT.Rows.Add(new Object[] { 38, 1, 2, 2, "wciecie borderAll", "O odszkodowanie w związku z  molestowaniem seksualnym, jako jedną z form dyskryminacji w miejscu pracy (art.183<sup>a</sup>§ 6 kp w zw. z art. 183<sup>d</sup> kp)" });
             dT.Rows.Add(new Object[] { 38, 3, 1, 1, "wciecie borderAll", "kobiet" });
             dT.Rows.Add(new Object[] { 38, 4, 1, 1, " center", "459dk" });
-            dT.Rows.Add(new Object[] { 39, 1, 2, 1, "wciecie borderAll", "mężczyzn" });
+            dT.Rows.Add(new Object[] { 39, 1, 1, 1, "wciecie borderAll", "mężczyzn" });
             dT.Rows.Add(new Object[] { 39, 4, 1, 1, " center", "459dm" });
 
             dT.Rows.Add(new Object[] { 40, 1, 2, 2, "wciecie borderAll", "O zadośćuczynienie w związku z mobbingiem (art. 94<sup>3</sup>§3 kp) " });
-            dT.Rows.Add(new Object[] { 40, 1, 3, 1, "wciecie borderAll", "kobiet" });
+            dT.Rows.Add(new Object[] { 40, 1, 1, 1, "wciecie borderAll", "kobiet" });
             dT.Rows.Add(new Object[] { 40, 4, 1, 1, " center", "462dk" });
-            dT.Rows.Add(new Object[] { 41, 1, 2, 1, "wciecie borderAll", "mężczyzn" });
+            dT.Rows.Add(new Object[] { 41, 1, 1, 1, "wciecie borderAll", "mężczyzn" });
             dT.Rows.Add(new Object[] { 41, 4, 1, 1, " center", "462dm" });
 
             dT.Rows.Add(new Object[] { 42, 1, 2, 2, "wciecie borderAll", "O odszkodowanie  w związku z mobbingiem (art. 94<sup>3</sup>§3 kp) " });
@@ -1219,7 +1218,7 @@ namespace stat2018
             dT.Rows.Add(new Object[] { 76, 1, 3, 1, "wciecie borderAll", "O odtworzenie akt " });
             dT.Rows.Add(new Object[] { 76, 4, 1, 1, " center", "111" });
             dT.Rows.Add(new Object[] { 77, 1, 3, 1, "wciecie borderAll", "O uznanie i stwierdzenie wykonalności wyroku sądu polubownego wydanego za granicą " });
-            dT.Rows.Add(new Object[] { 77, 4, 1, 1, " center", "113" });
+            dT.Rows.Add(new Object[] { 77, 4, 1, 1, " center", "117" });
             dT.Rows.Add(new Object[] { 78, 1, 3, 1, "wciecie borderAll", "Dotyczące pomocy sądowej" });
             dT.Rows.Add(new Object[] { 78, 4, 1, 1, " center", "135" });
             dT.Rows.Add(new Object[] { 79, 1, 3, 1, "wciecie borderAll", "O zabezpieczenie roszczenia przed wszczęciem postępowania" });

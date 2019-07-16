@@ -1165,7 +1165,7 @@ namespace stat2018
             if (e.Row.RowType == DataControlRowType.Footer)
             {
                 cm.log.Info(tenPlik + ": rozpoczęcie tworzenia stopki tabeli 15");
-                DataTable table = (DataTable)Session["tabelka016"];
+                DataTable table = (DataTable)Session["tabelka017"];
                 tb.makeSumRow(table, e, 0);
             }
         }
@@ -1175,7 +1175,7 @@ namespace stat2018
             if (e.Row.RowType == DataControlRowType.Footer)
             {
                 cm.log.Info(tenPlik + ": rozpoczęcie tworzenia stopki tabeli 15");
-                DataTable table = (DataTable)Session["tabelka017"];
+                DataTable table = (DataTable)Session["tabelka018"];
                 tb.makeSumRow(table, e, 0);
             }
         }

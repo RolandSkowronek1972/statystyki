@@ -1,29 +1,21 @@
-2019-06-27 14:50:49,207  INFO stat2018.log_4_net - Site1.Master:Brak przeniesienia z logowania identyfikatora numerycznego Uzytkownika! 
-2019-06-27 14:50:49,247  INFO stat2018.log_4_net - Odwolanie do obiektu nie zostalo ustawione na wystapienie obiektu.
-2019-06-27 14:50:57,913  INFO stat2018.log_4_net - Logowanie: identyfikator uzytkownika: test to 1
-2019-06-27 14:50:57,994  INFO stat2018.log_4_net - Header: Rozpoczecie procedury tworzenia elementów menu wyloguj
-2019-06-27 14:51:10,638  INFO stat2018.log_4_net - oopr.aspx Okreslony argument jest spoza zakresu prawidlowych wartosci.
+2019-07-15 17:13:02,679  INFO stat2018.log_4_net - Logowanie: identyfikator uzytkownika: test to 6
+2019-07-15 17:13:03,677  INFO stat2018.log_4_net - Header: Rozpoczecie procedury tworzenia elementów menu wyloguj
+2019-07-15 17:13:13,287  INFO stat2018.log_4_net - oglk3.aspx: rozpoczecie tworzenia tabeli 2
+2019-07-15 17:13:13,489  INFO stat2018.log_4_net - oglk3.aspx: rozpoczecie tworzenia tabeli 4
+2019-07-15 17:13:13,692  INFO stat2018.log_4_net - oglk3.aspx: rozpoczecie tworzenia tabeli 5
+2019-07-15 17:13:13,770  INFO stat2018.log_4_net - oglk3.aspx: rozpoczecie tworzenia tabeli 6
+2019-07-15 17:13:13,817  INFO stat2018.log_4_net - oglk3.aspx: rozpoczecie tworzenia tabeli 7
+2019-07-15 17:13:13,895  INFO stat2018.log_4_net - oglk3.aspx: rozpoczecie tworzenia tabeli 8
+2019-07-15 17:13:13,911  INFO stat2018.log_4_net - oglk3.aspx: rozpoczecie tworzenia tabeli 9
+2019-07-15 17:13:13,926  INFO stat2018.log_4_net - oglk3.aspx: rozpoczecie tworzenia tabeli 10
+2019-07-15 17:13:13,942  INFO stat2018.log_4_net - Error getQuerryValue : Invalid object name 'kns_dz_nal'.
+2019-07-15 17:13:13,942  INFO stat2018.log_4_net - oglk3.aspx: rozpoczecie tworzenia tabeli 11
+2019-07-15 17:13:14,020  INFO stat2018.log_4_net - oglk3.aspx: rozpoczecie tworzenia tabeli 13
+2019-07-15 17:13:14,113  INFO stat2018.log_4_net - oglk3.aspx: rozpoczecie tworzenia tabeli 12
+2019-07-15 17:13:14,176  INFO stat2018.log_4_net - oglk3.aspx: rozpoczecie tworzenia tabeli 13
+2019-07-15 17:17:50,764  INFO stat2018.log_4_net - oglk2.aspx Nie mozna rzutowac obiektu typu 'System.Web.UI.WebControls.TextBox' na typ 'System.Web.UI.WebControls.Label'.
+2019-07-15 17:17:50,796  INFO stat2018.log_4_net - sumowanie w stopce : Okreslony argument jest spoza zakresu prawidlowych wartosci.
 Nazwa parametru: index
-2019-06-27 14:54:21,096  INFO stat2018.log_4_net - Error getQuerryValue : Odwolanie do obiektu nie zostalo ustawione na wystapienie obiektu.
-2019-06-27 15:04:11,294  INFO stat2018.log_4_net - aopg.aspx: rozpoczecie tworzenia tabeli 1
-2019-06-27 15:04:11,589  INFO stat2018.log_4_net - sumowanie w stopce : Okreslony argument jest spoza zakresu prawidlowych wartosci.
-Nazwa parametru: index
-2019-06-27 15:04:11,590  INFO stat2018.log_4_net - aopg.aspx: rozpoczecie tworzenia tabeli 2
-2019-06-27 15:04:11,684  INFO stat2018.log_4_net - sumowanie w stopce : Okreslony argument jest spoza zakresu prawidlowych wartosci.
-Nazwa parametru: index
-2019-06-27 15:04:20,270  INFO stat2018.log_4_net - Error getQuerryValue : Object reference not set to an instance of an object.
-2019-06-27 15:04:20,271  INFO stat2018.log_4_net - popup Object reference not set to an instance of an object.
-2019-06-27 15:04:20,274  INFO stat2018.log_4_net - Error getQuerryValue : Object reference not set to an instance of an object.
-2019-06-27 15:40:01,835  INFO stat2018.log_4_net - Logowanie: identyfikator uzytkownika: test to 1
-2019-06-27 15:40:01,839  INFO stat2018.log_4_net - Header: Rozpoczecie procedury tworzenia elementów menu wyloguj
-2019-06-27 15:40:02,060  INFO stat2018.log_4_net - aopg.aspx: rozpoczecie tworzenia tabeli 1
-2019-06-27 15:40:02,380  INFO stat2018.log_4_net - sumowanie w stopce : Okreslony argument jest spoza zakresu prawidlowych wartosci.
-Nazwa parametru: index
-2019-06-27 15:40:02,383  INFO stat2018.log_4_net - aopg.aspx: rozpoczecie tworzenia tabeli 2
-2019-06-27 15:40:02,648  INFO stat2018.log_4_net - sumowanie w stopce : Okreslony argument jest spoza zakresu prawidlowych wartosci.
-Nazwa parametru: index
-2019-06-27 15:40:09,914  INFO stat2018.log_4_net - oopr.aspx Okreslony argument jest spoza zakresu prawidlowych wartosci.
-Nazwa parametru: index
-2019-06-27 15:40:19,682  INFO stat2018.log_4_net - Error getQuerryValue : Odwolanie do obiektu nie zostalo ustawione na wystapienie obiektu.
-2019-06-27 15:43:20,179  INFO stat2018.log_4_net - Error getQuerryValue : Odwolanie do obiektu nie zostalo ustawione na wystapienie obiektu.
-2019-06-27 15:43:20,742  INFO stat2018.log_4_net - obbk.aspx Trwalo przerywanie watku.
+2019-07-15 17:17:50,811  INFO stat2018.log_4_net - oglk2.aspx Nie mozna rzutowac obiektu typu 'System.Web.UI.WebControls.TextBox' na typ 'System.Web.UI.WebControls.Label'.
+2019-07-15 17:17:50,827  INFO stat2018.log_4_net - Error getQuerryValue : Invalid object name 'kns_dz_nal'.
+2019-07-15 17:17:50,842  INFO stat2018.log_4_net - Error getQuerryValue : Incorrect syntax near 'sprawa'.

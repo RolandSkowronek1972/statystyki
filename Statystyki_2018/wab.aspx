@@ -106,40 +106,40 @@
                  <td class="borderAll col_95 center">% powyżej 30<br/> dni do razem </td>
              </tr>
              <tr>
-                 <td class="borderAll center"> <a href="javascript:openPopup('popup.aspx?sesja=1!1!1!3')"><asp:Label ID="tab_01_w01_c01" CssClass="normal" runat="server" Text="0"></asp:Label> </a>
+                 <td class="borderAll center col_100"> <a href="javascript:openPopup('popup.aspx?sesja=1!1!1!3')"><asp:Label ID="tab_01_w01_c01" CssClass="normal" runat="server" Text="0"></asp:Label> </a>
                      
                  </td>
-                 <td class="borderAll center">
+                 <td class="borderAll center col_100">
                 <a href="javascript:openPopup('popup.aspx?sesja=1!1!2!3')"><asp:Label ID="tab_01_w01_c02" CssClass="normal" runat="server" Text="0"></asp:Label> </a>
                  </td>
-                 <td class="borderAll center">
+                 <td class="borderAll center col_100">
                 <a href="javascript:openPopup('popup.aspx?sesja=1!1!3!3')"><asp:Label ID="tab_01_w01_c03" CssClass="normal" runat="server" Text="0"></asp:Label> </a>
                  </td>
-                 <td class="borderAll center">
+                 <td class="borderAll center col_100">
                 <a href="javascript:openPopup('popup.aspx?sesja=1!1!4!3')"><asp:Label ID="tab_01_w01_c04" CssClass="normal" runat="server" Text="0"></asp:Label> </a>
                  </td>
-                 <td class="borderAll center">
+                 <td class="borderAll center col_100">
                 <a href="javascript:openPopup('popup.aspx?sesja=1!1!5!3')"><asp:Label ID="tab_01_w01_c05" CssClass="normal" runat="server" Text="0"></asp:Label> </a>
                  </td>
-                 <td class="borderAll center">
+                 <td class="borderAll center col_100">
                 <a href="javascript:openPopup('popup.aspx?sesja=1!1!6!3')"><asp:Label ID="tab_01_w01_c06" CssClass="normal" runat="server" Text="0"></asp:Label> </a>
                  </td>
-                 <td class="borderAll center">
+                 <td class="borderAll center col_100">
                 <a href="javascript:openPopup('popup.aspx?sesja=1!1!7!3')"><asp:Label ID="tab_01_w01_c07" CssClass="normal" runat="server" Text="0"></asp:Label> </a>
                  </td>
-                 <td class="borderAll center">
+                 <td class="borderAll center col_100">
                 <a href="javascript:openPopup('popup.aspx?sesja=1!1!8!3')"><asp:Label ID="tab_01_w01_c08" CssClass="normal" runat="server" Text="0"></asp:Label> </a>
                  </td>
-                 <td class="borderAll center">
+                 <td class="borderAll center col_100">
                 <a href="javascript:openPopup('popup.aspx?sesja=1!1!9!3')"><asp:Label ID="tab_01_w01_c09" CssClass="normal" runat="server" Text="0"></asp:Label> </a>
                  </td>
-                 <td class="borderAll center">
+                 <td class="borderAll center col_100">
                 <a href="javascript:openPopup('popup.aspx?sesja=1!1!10!3')"><asp:Label ID="tab_01_w01_c10" CssClass="normal" runat="server" Text="0"></asp:Label> </a>
                  </td>
-                 <td class="borderAll center">
+                 <td class="borderAll center col_100">
                 <a href="javascript:openPopup('popup.aspx?sesja=1!1!11!3')"><asp:Label ID="tab_01_w01_c11" CssClass="normal" runat="server" Text="0"></asp:Label> </a>
                  </td>
-                 <td class="borderAll center">
+                 <td class="borderAll center col_100">
                 <a href="javascript:openPopup('popup.aspx?sesja=1!1!12!3')"><asp:Label ID="tab_01_w01_c12" CssClass="normal" runat="server" Text="0"></asp:Label> </a>
                  </td>
              </tr>
@@ -202,7 +202,6 @@
                        <td class="borderAll center col_80"><a href="javascript:openPopup('popup.aspx?sesja=1!2!14!3')"><asp:Label ID="tab_02_w01_c14" CssClass="normal" runat="server" Text="0"></asp:Label> </a></td>
                    </tr>
                </table>
-               <br />
                <br />
         <br 
                aa

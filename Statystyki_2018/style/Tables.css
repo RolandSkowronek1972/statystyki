@@ -635,7 +635,7 @@ word-wrap: break-word;
 
 .col_100 {
     max-width: 100px;
-    min-width: 100%;
+    min-width: 100px;
     text-align: center;
     word-wrap: break-word;
 }

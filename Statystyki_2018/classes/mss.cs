@@ -597,7 +597,7 @@ namespace stat2018
                 for (int j = 1; j < iloscKolumnPoIteracji + 1; j++)
                 {
                     string txt = dr.wyciagnijWartosc(dane, "idWydzial=" + idWydzialu + " and idTabeli='" + idTabeli + "' and idWiersza ='" + i.ToString() + "' and idkolumny='" + j.ToString() + "'", tenPlik);
-                    string txt2 = "<a Class=\"normal\" href=\"javascript: openPopup('popup.aspx?sesja=" + i.ToString().ToString() + "!" + idTabeli + "!" + j.ToString() + "!2')\">" + txt + " </a>";
+                    string txt2 = "<a Class=\"normal\" href=\"javascript: openPopup('popup.aspx?sesja=" + i.ToString().ToString() + "!" + idTabeli + "!" + j.ToString() + "!4')\">" + txt + " </a>";
                     kodStony.AppendLine("<td class='center borderAll'>" + txt2 + "</td>");
                 }
                 kodStony.AppendLine("</tr>");
@@ -619,11 +619,11 @@ namespace stat2018
             kodStony.AppendLine("<tr>");
             try
             {
-                txt = dr.wyciagnijWartosc(dane, "idWydzial=" + idWydzialu + " and idTabeli=" + idTabeli + " and idWiersza ='1' and idkolumny='1'", tenPlik);
+                txt = dr.wyciagnijWartosc(dane, "idWydzial=" + idWydzialu + " and idTabeli='" + idTabeli + "' and idWiersza ='1' and idkolumny='1'", tenPlik);
             }
             catch { }
             kodStony.AppendLine("<td  class ='col_700 wciecie'>" + napis + "</td>");
-            string txt2 = "<a Class=\"normal center \" href=\"javascript: openPopup('popup.aspx?sesja=1!" + idTabeli + "!1!2')\">" + txt + " </a>";
+            string txt2 = "<a Class=\"normal center \" href=\"javascript: openPopup('popup.aspx?sesja=1!" + idTabeli + "!1!4')\">" + txt + " </a>";
             kodStony.AppendLine("<td class='center borderAll col_250'>" + txt2 + "</td>");
             kodStony.AppendLine("</tr>");
 

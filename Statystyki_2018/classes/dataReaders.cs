@@ -589,6 +589,10 @@ namespace stat2018
 
         public string wyciagnijWartosc(DataTable ddT, string selectString, string tenPlik)
         {
+            if ((string.IsNullOrEmpty ( selectString)) || (ddT==null))
+            {
+                return "0";
+            }
             string result = "0";
             try
             {
