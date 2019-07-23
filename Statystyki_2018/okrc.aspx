@@ -472,15 +472,7 @@
                         <ItemStyle CssClass="col_45" />
                     </asp:TemplateField>
 
-                    <asp:TemplateField HeaderText="d_07" SortExpression="d_07">
-                        <ItemTemplate>
-                            <a href="javascript:openPopup('popup.aspx?sesja=<%# Eval("id_sedziego")+ "!"+Eval("id_tabeli") +"!9!2"%>')">
-                                <asp:Label ID="Label209" runat="server" Text='<%# Eval("d_09")%>' CssClass="normal"></asp:Label>
-                            </a>
-                        </ItemTemplate>
-                        <ItemStyle CssClass="col_45" />
-                    </asp:TemplateField>
-
+               
                   
 
                     <asp:TemplateField HeaderText="d_15" SortExpression="d_01">

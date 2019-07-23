@@ -257,8 +257,7 @@ namespace stat2018
             dT_02.Rows.Add(new Object[] { "2", "L.p.", "1", "2", "h", "10" });
             dT_02.Rows.Add(new Object[] { "2", "funkcja", "1", "2", "h", "130" });
             dT_02.Rows.Add(new Object[] { "2", "stanowisko", "1", "2", "h", "60" });
-            dT_02.Rows.Add(new Object[] { "2", "imie", "1", "2", "h", "45" });
-            dT_02.Rows.Add(new Object[] { "2", "nazwisko", "1", "2", "h", "45" });
+            dT_02.Rows.Add(new Object[] { "2", "imie i nazwisko", "1", "2", "h", "45" });
             dT_02.Rows.Add(new Object[] { "2", "WYZNACZENIA", "8", "1", "h" });
             dT_02.Rows.Add(new Object[] { "2", "Uwagi", "1", "2", "h", "45" });
             Session["header_02"] = dT_02;

@@ -181,7 +181,6 @@ namespace stat2018
         {
             if (e.Row.RowType == DataControlRowType.Header)
             {
-                DataTable dT = (DataTable)Session["header_01"];//tb.naglowek(path, 1);
                 tb.makeHeader( header_01(), gwTabela1);
             }
         }
@@ -190,8 +189,7 @@ namespace stat2018
         {
             if (e.Row.RowType == DataControlRowType.Header)
             {
-                System.Web.UI.WebControls.GridView sn = new System.Web.UI.WebControls.GridView();
-                tb.makeHeader(sn, header_02(), gwTabela2);
+                tb.makeHeader( header_02(), gwTabela2);
             }
         }
 

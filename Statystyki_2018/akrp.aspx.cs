@@ -141,7 +141,7 @@ namespace stat2018
                 // pierwsza
                 
                 MyWorksheet1 = tb.tworzArkuszwExcleBezSedziow(MyExcel.Workbook.Worksheets[1], (DataTable)Session["tabelka001"], 12, 14, 1, 5, false);
-                MyWorksheet1 = tb.tworzArkuszwExcle(MyExcel.Workbook.Worksheets[2], (DataTable)Session["tabelka002"], 27, 0, 5, false, true,true, true     , true);
+                MyWorksheet1 = tb.tworzArkuszwExcle(MyExcel.Workbook.Worksheets[2], (DataTable)Session["tabelka002"], 31, 0, 5, false, true,true, true     , true);
                 MyWorksheet1 = tb.tworzArkuszwExcle(MyExcel.Workbook.Worksheets[3], (DataTable)Session["tabelka003"], 15, 0, 5, false, true, true, true, true);
 
                 try
@@ -210,10 +210,9 @@ namespace stat2018
         {
             if (e.Row.RowType == DataControlRowType.Header)
             {
-                System.Web.UI.WebControls.GridView sn = new System.Web.UI.WebControls.GridView();
                 string path = Server.MapPath("~\\Template\\" + tenPlikNazwa + ".xlsx");
                 DataTable dT = (DataTable)Session["header_02"];//tb.naglowek(path, 2);
-                tb.makeHeader(sn, dT, gwTabela2);
+                tb.makeHeader(dT, gwTabela2);
             }
         }
 
@@ -222,9 +221,8 @@ namespace stat2018
         {
             if (e.Row.RowType == DataControlRowType.Header)
             {
-                System.Web.UI.WebControls.GridView sn = new System.Web.UI.WebControls.GridView();
                 DataTable dT = (DataTable)Session["header_03"];//tb.naglowek(path, 2);
-                tb.makeHeader(sn, dT, gwTabela3);
+                tb.makeHeader(dT, gwTabela3);
             }
         }
 
@@ -353,6 +351,11 @@ namespace stat2018
             dT_02.Rows.Add(new Object[] { "3", "w tym ilość uzasadnień zwróconych po terminie ustawowym bądź przedłużonym", "2", "1", "h" });
             dT_02.Rows.Add(new Object[] { "3", "Uzasadnienia wygłoszone", "1", "3", "h" });
             dT_02.Rows.Add(new Object[] { "3", "Nieobecności (ilość dni)", "2", "1", "h" });
+            dT_02.Rows.Add(new Object[] { "3", "U", "1", "3", "h" });
+            dT_02.Rows.Add(new Object[] { "3", "Ua", "1", "3", "h" });
+            dT_02.Rows.Add(new Object[] { "3", "P", "1", "3", "h" });
+            dT_02.Rows.Add(new Object[] { "3", "Pa", "1", "3", "h" });
+
             dT_02.Rows.Add(new Object[] { "3", "ETAT", "1", "3", "h" });
             dT_02.Rows.Add(new Object[] { "3", "Ilość sporządzonych uzasadnień", "1", "3", "h" });     
             dT_02.Rows.Add(new Object[] { "3", "Ilość uzasadnień zwróconych po terminie ustawowym bądź przedłużonym", "2", "1", "h" });

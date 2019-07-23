@@ -85,6 +85,8 @@ namespace stat2018
             DataTable tabelka03 = dr.generuj_dane_do_tabeli_sedziowskiej_2018(idWydzial, 11, Date1.Date, Date2.Date, 100, tenPlik);
             Session["tabelka011"] = tabelka03;
             tworztabelkeHTML3("K3", idWydzial, 11, tabelka03);
+
+            tabela_12();
         }
 
         private void tabela_01(int idWydzialu, int idtabeli)
@@ -224,6 +226,19 @@ namespace stat2018
             pisz("tab_8_", 8, 12, tabelka01);
         }
 
+        protected void tabela_12()
+        {
+            string idDzialu = (string)Session["id_dzialu"];
+            if (cl.debug(int.Parse(idDzialu)))
+            {
+                cm.log.Info(tenPlik + ": rozpoczęcie tworzenia tabeli 8");
+            }
+
+            DataTable tabelka01 = dr.generuj_dane_do_tabeli_wierszy2018(Date1.Date, Date2.Date, (string)Session["id_dzialu"], 12, 8, 15, tenPlik);
+            Session["tabelka008"] = tabelka01;
+            pisz("tab_12_", 12, 8, tabelka01);
+        }
+        //tab_12_w01_c01
         protected void tworzPlikExcell(object sender, EventArgs e)
         {
             //excell
@@ -326,7 +341,7 @@ namespace stat2018
                 builder.Append(tb.komorkaHTML(licznik.ToString(), 0, 2, "borderAll center col_36"));
                 builder.Append(tb.komorkaHTML(wierszZtabeli["imie"].ToString() + " " + wierszZtabeli["nazwisko"].ToString(), 0, 2, "borderAll center col_100"));
                 builder.Append(tb.komorkaHTML(wierszZtabeli["funkcja"].ToString(), 0, 2, "borderAll center col_100"));
-                builder.Append(tb.komorkaHTML("Liczba / % spraw na dzień rozpoczęcia wizytacji albo na dzień zamknięcia referatu – dla sędziów przydzielonych do innych wydziałów przed tym dniem", 0, 0, "borderAll center col_100"));
+                builder.Append(tb.komorkaHTML("Liczba / % spraw na dzień rozpoczęcia wizytacji albo na dzień zamknięcia referatu – dla sędziów przydzielonych do innych wydziałów przed tym dniem", 0, 0, "borderAll center col_250 smallFt"));
 
                 for (int i = 1; i < 18; i++)
                 {
@@ -335,7 +350,7 @@ namespace stat2018
                 }
                 builder.AppendLine("</tr>");
                 builder.AppendLine("<tr>");
-                builder.Append(tb.komorkaHTML("Liczba / % spraw na dzień rozpoczęcia poprzedniej wizytacji albo na dzień utworzenia referatu –dla sędziów przydzielonych do wydziału po tym dniu", 0, 0, "borderAll center col_100"));
+                builder.Append(tb.komorkaHTML("Liczba / % spraw na dzień rozpoczęcia poprzedniej wizytacji albo na dzień utworzenia referatu –dla sędziów przydzielonych do wydziału po tym dniu", 0, 0, "borderAll center col_250 smallFt"));
                 for (int i = 19; i < 36; i++)
                 {
                     string txt = "<a Class=\"normal\" href=\"javascript: openPopup('popup.aspx?sesja=" + wierszZtabeli["id_sedziego"].ToString() + "!" + idtabeli + "!" + i.ToString() + "!2')\">" + wierszZtabeli["D_" + i.ToString("D2")].ToString() + " </a>";
@@ -406,7 +421,7 @@ namespace stat2018
                 builder.Append(tb.komorkaHTML(licznik.ToString(), 0, 2, "borderAll center col_36"));
                 builder.Append(tb.komorkaHTML(wierszZtabeli["imie"].ToString() + " " + wierszZtabeli["nazwisko"].ToString(), 0, 2, "borderAll center col_100"));
                 builder.Append(tb.komorkaHTML(wierszZtabeli["funkcja"].ToString(), 0, 2, "borderAll center col_100"));
-                builder.Append(tb.komorkaHTML("Liczba / % spraw na dzień rozpoczęcia wizytacji albo na dzień zamknięcia referatu – dla sędziów przydzielonych do innych wydziałów przed tym dniem", 0, 0, "borderAll center col_100"));
+                builder.Append(tb.komorkaHTML("Liczba / % spraw na dzień rozpoczęcia wizytacji albo na dzień zamknięcia referatu – dla sędziów przydzielonych do innych wydziałów przed tym dniem", 0, 0, "borderAll center col_250 smallFt"));
 
                 for (int i = 1; i < 17; i++)
                 {
@@ -415,7 +430,7 @@ namespace stat2018
                 }
                 builder.AppendLine("</tr>");
                 builder.AppendLine("<tr>");
-                builder.Append(tb.komorkaHTML("Liczba / % spraw na dzień rozpoczęcia poprzedniej wizytacji albo na dzień utworzenia referatu –dla sędziów przydzielonych do wydziału po tym dniu", 0, 0, "borderAll center col_100"));
+                builder.Append(tb.komorkaHTML("Liczba / % spraw na dzień rozpoczęcia poprzedniej wizytacji albo na dzień utworzenia referatu –dla sędziów przydzielonych do wydziału po tym dniu", 0, 0, "borderAll center col_250 smallFt"));
                 for (int i = 18; i < 34; i++)
                 {
                     string txt = "<a Class=\"normal\" href=\"javascript: openPopup('popup.aspx?sesja=" + wierszZtabeli["id_sedziego"].ToString() + "!" + idtabeli + "!" + i.ToString() + "!2')\">" + wierszZtabeli["D_" + i.ToString("D2")].ToString() + " </a>";
@@ -452,8 +467,8 @@ namespace stat2018
             builder.AppendLine("<td class='borderAll center col_100'>Funkcja</td>");
             builder.AppendLine("<td class='borderAll center col_100'>pomoc asystenta</td>");
             builder.AppendLine("<td class='borderAll center'>kategoria spraw</td>");
-            builder.AppendLine("<td class='borderAll center'>rok</td>");
-            builder.AppendLine("<td class='borderAll center'>wpływ	</td>");
+            builder.AppendLine("<td class='borderAll center col_100'>rok</td>");
+            builder.AppendLine("<td class='borderAll center col_100'>wpływ	</td>");
             builder.AppendLine("<td class='borderAll center col_100'>załat- wienia</td>");
             builder.AppendLine("<td class='borderAll center col_100'>pozos- tałość</td>");
             builder.AppendLine("<td class='borderAll center col_100'>sprawy zawieszone</td>");

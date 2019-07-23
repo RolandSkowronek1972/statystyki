@@ -60,6 +60,7 @@ namespace stat2018
             Session["data_1"] = datyMSS.DataPoczatkowa();
             Session["data_2"] = datyMSS.DataKoncowa();
             odswierz();
+            makeLabels();
         }// end of Page_Load
 
         protected void odswierz()
@@ -72,7 +73,7 @@ namespace stat2018
                 string idTabeli = string.Empty;
                 string idWiersza = string.Empty;
                 int idWydzialuNumerycznie = int.Parse((string)Session["id_dzialu"]);
-                DataTable tabelaDanych = ms.generuj_dane_do_tabeli_mss2(idWydzialuNumerycznie, Date1.Date, Date2.Date,60);
+                DataTable tabelaDanych = ms.generuj_dane_do_tabeli_mss2(idWydzialuNumerycznie, Date1.Date, Date2.Date, 60);
                 //wypełnianie lebeli
 
                 Label tblControl = new Label { ID = "kod01" };
@@ -86,14 +87,14 @@ namespace stat2018
                 tabelaGlowna.AppendLine(ms.tworztabeleMSS("1.1.c", naglowekTabeliDzialu_1_1_c(), tabelaBocznaDzialu_1_1_c(), tabelaDanych, 1, 9, 2, 1, idWydzialuNumerycznie, false, "W tym: (skarga kasacyjna) (dział 1.1.1.2. wiersz 17 kol. 3 lit. c)", tenPlik));
                 tabelaGlowna.AppendLine(ms.tworztabeleMSS("1.1.d", naglowekTabeliDzialu_1_1_d(), tabelaBocznaDzialu_1_1_d(), tabelaDanych, 4, 10, 1, 15, idWydzialuNumerycznie, false, "Ewidencja spraw z zakresu ubezpieczeń społecznych – wg podmiotów", tenPlik));
                 tabelaGlowna.AppendLine(ms.tworztabeleMSS("1.1.2.1", naglowekTabeliDzialu_1_1_2_1(), tabelaBocznaDzialu_1_1_2_1(), tabelaDanych, 5, 84, 4, 15, idWydzialuNumerycznie, true, "Ewidencja spraw z zakresu prawa pracy –ogółem oraz I instancja", tenPlik));
-                tabelaGlowna.AppendLine(ms.tworztabeleMSS("1.1.2.2", naglowekTabeliDzialu_1_1_2_2(), tabelaBocznaDzialu_1_1_2_2(), tabelaDanych, 5, 97, 7, 15, idWydzialuNumerycznie, true, "Dział 1.1.2.2 Ewidencja spraw z zakresu prawa pracy – II instancja", tenPlik));
+                tabelaGlowna.AppendLine(ms.tworztabeleMSS("1.1.2.2", naglowekTabeliDzialu_1_1_2_2(), tabelaBocznaDzialu_1_1_2_2(), tabelaDanych, 5, 97, 7, 15, idWydzialuNumerycznie, true, "Ewidencja spraw z zakresu prawa pracy – II instancja", tenPlik));
                 tabelaGlowna.AppendLine(ms.tworztabeleMSS("1.1.3.a", "Dział 1.1.3.a. Wpływ spraw (liczba), w których z roszczeniem wystąpiła większa grupa pracowników (co najmniej 10 pracowników) (Dział 1.1.2.1. wiersz 03 kol. 2 lit. a)", tabelaDanych, idWydzialuNumerycznie, tenPlik));
                 tabelaGlowna.AppendLine(ms.tworztabeleMSS("1.1.3.b", "Dział 1.1.3.b. Załatwiono spraw (liczba), w których z roszczeniem wystąpiła większa grupa pracowników (co najmniej 10 pracowników) (dział 1.1.2.1. wiersz 03 kol. 3 lit. b)", tabelaDanych, idWydzialuNumerycznie, tenPlik));
                 tabelaGlowna.AppendLine(ms.tworztabeleMSS("1.1.3.c", naglowekTabeliDzialu_1_1_3_c(), tabelaBocznaDzialu_1_1_3_c(), tabelaDanych, 2, 3, 2, 2, idWydzialuNumerycznie, true, "Ewidencja spraw z zakresu prawa pracy –ogółem oraz I instancja", tenPlik));
                 tabelaGlowna.AppendLine(ms.tworztabeleMSS("1.1.3.d", naglowekTabeliDzialu_1_1_3_d(), tabelaBocznaDzialu_1_1_3_d(), tabelaDanych, 1, 7, 2, 1, idWydzialuNumerycznie, true, "Dział 1.1.3.d. W tym: (skargi o stwierdzenie niezgodności z prawem łącznie I i II instancja) (dział 1.1.2.1 w. 85 kol. 3 + dział 1.1.2.2 w. 96 kol. 3 lit. d)    ", tenPlik));
                 tabelaGlowna.AppendLine(ms.tworztabeleMSS("1.1.3.e", naglowekTabeliDzialu_1_1_3_e(), tabelaBocznaDzialu_1_1_3_e(), tabelaDanych, 1, 3, 1, 4, idWydzialuNumerycznie, true, "W tym: (skargi o stwierdzenie niezgodności z prawem łącznie I i II instancja) (dział 1.1.2.1 w. 85 kol. 3 + dział 1.1.2.2 w. 96 kol. 3 lit. d)    ", tenPlik));
                 tabelaGlowna.AppendLine(ms.tworztabeleMSS("1.1.3.f", naglowekTabeliDzialu_1_1_3_f(), tabelaBocznaDzialu_1_1_3_f(), tabelaDanych, 1, 9, 2, 1, idWydzialuNumerycznie, true, "W tym: (skargi kasacyjne)  (dział 1.1.2.2. wiersz 95 kol. 3 lit. f)", tenPlik));
-                tabelaGlowna.AppendLine(ms.tworztabeleMSS("1.1.3.g", naglowekTabeliDzialu_1_1_3_g(), tabelaBocznaDzialu_1_1_3_g(), tabelaDanych, 2, 19, 4, 3, idWydzialuNumerycznie, true, "W tym: (skargi kasacyjne)  (dział 1.1.2.2. wiersz 95 kol. 3 lit. f)", tenPlik));
+                tabelaGlowna.AppendLine(ms.tworztabeleMSS("1.1.3.g", naglowekTabeliDzialu_1_1_3_g(), tabelaBocznaDzialu_1_1_3_g(), tabelaDanych, 2, 18, 4, 3, idWydzialuNumerycznie, true, "W tym: (skargi kasacyjne)  (dział 1.1.2.2. wiersz 95 kol. 3 lit. f)", tenPlik));
                 tabelaGlowna.AppendLine(ms.tworztabeleMSS("1.1.3.h", naglowekTabeliDzialu_1_1_3_h(), tabelaBocznaDzialu_1_1_3_h(), tabelaDanych, 3, 1, 1, 5, idWydzialuNumerycznie, true, "W tym: (skargi kasacyjne)  (dział 1.1.2.2. wiersz 95 kol. 3 lit. f)", tenPlik));
                 tabelaGlowna.AppendLine(ms.tworztabeleMSS("1.1.3.i", "Dział 1.1.3.i.  Liczba wyznaczonych ławników (osoby)", tabelaDanych, idWydzialuNumerycznie, tenPlik));
                 tabelaGlowna.AppendLine(ms.tworztabeleMSS("1.1.3.j", naglowekTabeliDzialu_1_1_3_j(), tabelaBocznaDzialu_1_1_3_j(), tabelaDanych, 1, 5, 2, 1, idWydzialuNumerycznie, true, "W tym: (skargi kasacyjne)  (dział 1.1.2.2. wiersz 95 kol. 3 lit. f)", tenPlik));
@@ -106,9 +107,12 @@ namespace stat2018
                 tabelaGlowna.AppendLine(ms.tworztabeleMSS("1.4", naglowekTabeliDzialu_1_4(), tabelaBocznaDzialu_1_4(), tabelaDanych, 3, 21, 3, 14, idWydzialuNumerycznie, true, "Terminowość sporządzania uzasadnień", tenPlik));
                 tabelaGlowna.AppendLine(ms.tworztabeleMSS("2.1.1", naglowekTabeliDzialu_2_1_1(), tabelaBocznaDzialu_2_1_1(), tabelaDanych, 2, 9, 2, 11, idWydzialuNumerycznie, true, "Sprawy od dnia pierwotnego wpisu do repertorium  (łącznie z czasem trwania mediacji)", tenPlik));
                 tabelaGlowna.AppendLine(ms.tworztabeleMSS("2.1.1.1", naglowekTabeliDzialu_2_1_1_1(), tabelaBocznaDzialu_2_1_1_1(), tabelaDanych, 2, 9, 2, 11, idWydzialuNumerycznie, true, "Sprawy od dnia pierwotnego wpisu do repertorium  (łącznie z czasem trwania mediacji)", tenPlik));
-                tabelaGlowna.AppendLine(ms.tworztabeleMSS("2.1.1.1.a", naglowekTabeliDzialu_2_1_1_1_a(), tabelaBocznaDzialu_2_1_1_1_a(), tabelaDanych, 2, 9, 2, 11, idWydzialuNumerycznie, true, "Sprawy zawieszone nie zakreślone od dnia pierwotnego wpisu do repertorium (wykazane w dziale 2.1.1.) (łącznie z czasem trwania mediacji)", tenPlik));
-                tabelaGlowna.AppendLine(ms.tworztabeleMSS("2.1.1.1.a.1", naglowekTabeliDzialu_2_1_1_1_a_1(), tabelaBocznaDzialu_2_1_1_1_a_1(), tabelaDanych, 2, 9, 2, 11, idWydzialuNumerycznie, true, "Sprawy zawieszone nie zakreślone od dnia pierwotnego wpisu do repertorium (wykazane w dziale 2.1.1.) (bez czasu trwania mediacji w sprawach wszczętych po 1 stycznia 2016r.)", tenPlik));
+                tabelaGlowna.AppendLine(ms.tworztabeleMSS("2.1.1.a", naglowekTabeliDzialu_2_1_1_1_a(), tabelaBocznaDzialu_2_1_1_1_a(), tabelaDanych, 2, 9, 2, 11, idWydzialuNumerycznie, true, "Sprawy zawieszone nie zakreślone od dnia pierwotnego wpisu do repertorium (wykazane w dziale 2.1.1.) (łącznie z czasem trwania mediacji)", tenPlik));
+                tabelaGlowna.AppendLine(ms.tworztabeleMSS("2.1.1.a.1", naglowekTabeliDzialu_2_1_1_1_a_1(), tabelaBocznaDzialu_2_1_1_1_a_1(), tabelaDanych, 2, 9, 2, 11, idWydzialuNumerycznie, true, "Sprawy zawieszone nie zakreślone od dnia pierwotnego wpisu do repertorium (wykazane w dziale 2.1.1.) (bez czasu trwania mediacji w sprawach wszczętych po 1 stycznia 2016r.)", tenPlik));
+                tabelaGlowna.AppendLine(ms.tworztabeleMSS("2.1.2", naglowekTabeliDzialu_2_1_2(), tabelaBocznaDzialu_2_1_2(), tabelaDanych, 2, 9, 2, 11, idWydzialuNumerycznie, true, "Liczba spraw zakreślonych w urządzeniu ewidencyjnym w wyniku zawieszenia postępowania(łącznie z czasem trwania mediacji)", tenPlik));
+
                 tabelaGlowna.AppendLine(ms.tworztabeleMSS("2.1.2.1", naglowekTabeliDzialu_2_1_2_1(), tabelaBocznaDzialu_2_1_2_1(), tabelaDanych, 2, 9, 2, 11, idWydzialuNumerycznie, true, "Liczba spraw zakreślonych w urządzeniu ewidencyjnym w wyniku zawieszenia postępowania (bez czasu trwania mediacji w sprawach wszczętych po 1 stycznia 2016r.)", tenPlik));
+
                 tabelaGlowna.AppendLine(ms.tworztabeleMSS("2.2", naglowekTabeliDzialu_2_2(), tabelaBocznaDzialu_2_2(), tabelaDanych, 1, 13, 2, 9, idWydzialuNumerycznie, true, "Czas trwania postępowania sądowego (w sądzie okręgowym I instancji - od dnia pierwszej rejestracji w sądzie I instancji do uprawomocnienia się sprawy w I instancji a w sądzie okręgowym II instancji od dnia pierwszej rejestracji w sądzie rejonowym (I instancji) do dnia wydania orzeczenia w sądzie okręgowym II instancji lub od dnia wpływu sprawy do sądu okręgowego (II instancji do dnia wydania orzeczenia w II instancji)) (łącznie z czasem trwania mediacji)", tenPlik));
                 tabelaGlowna.AppendLine(ms.tworztabeleMSS("2.2.a", naglowekTabeliDzialu_2_2_a(), tabelaBocznaDzialu_2_2_a(), tabelaDanych, 1, 13, 2, 9, idWydzialuNumerycznie, true, "Czas trwania postępowania sądowego (w sądzie okręgowym I instancji - od dnia pierwszej rejestracji w sądzie I instancji do uprawomocnienia się sprawy merytorycznie zakończonej (wyrokiem, orzeczeniem) w I instancji a w sądzie okręgowym II instancji od dnia pierwszej rejestracji w sądzie rejonowym (I instancji) do dnia wydania orzeczenia merytorycznie kończącego sprawę (wyrokiem, orzeczeniem) w sądzie okręgowym II instancji lub od dnia wpływu sprawy do sądu okręgowego (II instancji do dnia wydania orzeczenia w II instancji)) (łącznie z czasem trwania mediacji)", tenPlik));
                 tabelaGlowna.AppendLine(ms.tworztabeleMSS("2.2.1", naglowekTabeliDzialu_2_2_1(), tabelaBocznaDzialu_2_2_1(), tabelaDanych, 1, 13, 2, 9, idWydzialuNumerycznie, true, "Czas trwania postępowania sądowego (w sądzie okręgowym I instancji - od dnia pierwszej rejestracji w sądzie I instancji do uprawomocnienia się sprawy w I instancji a w sądzie okręgowym II instancji od dnia pierwszej rejestracji w sądzie rejonowym (I instancji) do dnia wydania orzeczenia w sądzie okręgowym II instancji lub od dnia wpływu sprawy do sądu okręgowego (II instancji do dnia wydania orzeczenia w II instancji)) (dok.) (bez czasu trwania mediacji w sprawach wszczętych po 1 stycznia 2016r.)", tenPlik));
@@ -130,16 +134,19 @@ namespace stat2018
                 tabelaGlowna.AppendLine(ms.tworztabeleMSS("9.1", naglowekTabeliDzialu_9_1(), tabelaBocznaDzialu_9_1(), tabelaDanych, 2, 7, 2, 4, idWydzialuNumerycznie, true, "Liczba biegłych/podmiotów wydających opinie w sprawach  (z wył. tłumaczy przysięgłych) ", tenPlik));
                 tabelaGlowna.AppendLine(ms.tworztabeleMSS("9.2", naglowekTabeliDzialu_9_2(), tabelaBocznaDzialu_9_2(), tabelaDanych, 3, 7, 2, 8, idWydzialuNumerycznie, true, "Terminowość sporządzania opinii pisemnych (z wył. tłumaczy przysięgłych)", tenPlik));
                 tabelaGlowna.AppendLine(ms.tworztabeleMSS("9.3", naglowekTabeliDzialu_9_3(), tabelaBocznaDzialu_9_3(), tabelaDanych, 2, 7, 2, 8, idWydzialuNumerycznie, true, "Terminowość przyznawania wynagrodzeń za sporządzenie opinii pisemnych i ustnych oraz za stawiennictwo (z wył. tłumaczy przysięgłych)", tenPlik));
-                tabelaGlowna.AppendLine(ms.tworztabeleMSS("10.1", "Liczba powołań tłumaczy  ", tabelaDanych, idWydzialuNumerycznie, tenPlik));
+                tabelaGlowna.AppendLine(ms.tworztabeleMSS("10.1", "Dział 10.1 Liczba powołań tłumaczy  ", tabelaDanych, idWydzialuNumerycznie, tenPlik));
+
                 #region "10.2";
+
                 pisz("tab_102_", 1, 8, tabelaDanych, "'10.2'", idWydzialu);
-                #endregion ;
+
+                #endregion "10.2";
 
                 #region "10.3";
+
                 pisz("tab_103_", 1, 8, tabelaDanych, "'10.3'", idWydzialu);
-                #endregion ;
 
-
+                #endregion "10.3";
 
                 tblControl.Text = tabelaGlowna.ToString();
                 tablePlaceHolder.Controls.Add(tblControl);
@@ -203,6 +210,7 @@ namespace stat2018
             catch
             { }
         }
+
         protected void pisz(string Template, int iloscWierszy, int iloscKolumn, DataTable dane, string idTabeli, string idWydzialu)
         {
             for (int wiersz = 1; wiersz <= iloscWierszy; wiersz++)
@@ -218,6 +226,31 @@ namespace stat2018
                 }
             }
         }// end of pisz
+
+        protected void makeLabels()
+        {
+            try
+            {
+                string User_id = string.Empty;
+                string domain = string.Empty;
+                User_id = (string)Session["user_id"];
+                domain = (string)Session["damain"];
+
+                id_dzialu.Text = (string)Session["txt_dzialu"];
+                Label27.Text = id_dzialu.Text;
+                Label28.Text = cl.podajUzytkownika(User_id, domain);
+                Label29.Text = DateTime.Now.ToLongDateString();
+
+                Label30.Text = System.IO.File.ReadAllText(Server.MapPath(@"~//version.txt")).ToString().Trim();
+            }
+            catch (Exception)
+            {
+
+               
+            }
+               
+           
+        }
 
         #region dane do tabeli
 
@@ -1135,15 +1168,15 @@ namespace stat2018
             dT.Rows.Add(new Object[] { 39, 4, 1, 1, " center", "459dm" });
 
             dT.Rows.Add(new Object[] { 40, 1, 2, 2, "wciecie borderAll", "O zadośćuczynienie w związku z mobbingiem (art. 94<sup>3</sup>§3 kp) " });
-            dT.Rows.Add(new Object[] { 40, 1, 1, 1, "wciecie borderAll", "kobiet" });
+            dT.Rows.Add(new Object[] { 40, 2, 1, 1, "wciecie borderAll", "kobiet" });
             dT.Rows.Add(new Object[] { 40, 4, 1, 1, " center", "462dk" });
             dT.Rows.Add(new Object[] { 41, 1, 1, 1, "wciecie borderAll", "mężczyzn" });
             dT.Rows.Add(new Object[] { 41, 4, 1, 1, " center", "462dm" });
 
             dT.Rows.Add(new Object[] { 42, 1, 2, 2, "wciecie borderAll", "O odszkodowanie  w związku z mobbingiem (art. 94<sup>3</sup>§3 kp) " });
-            dT.Rows.Add(new Object[] { 42, 1, 3, 1, "wciecie borderAll", "kobiet" });
+            dT.Rows.Add(new Object[] { 42, 2, 1, 1, "wciecie borderAll", "kobiet" });
             dT.Rows.Add(new Object[] { 42, 4, 1, 1, " center", "463dk" });
-            dT.Rows.Add(new Object[] { 43, 1, 2, 1, "wciecie borderAll", "mężczyzn" });
+            dT.Rows.Add(new Object[] { 43, 1, 1, 1, "wciecie borderAll", "mężczyzn" });
             dT.Rows.Add(new Object[] { 43, 4, 1, 1, " center", "463dm" });
 
             dT.Rows.Add(new Object[] { 44, 1, 3, 1, "wciecie borderAll", "Dyskryminacja w zatrudnieniu (art. 113 kp)" });
@@ -1220,7 +1253,7 @@ namespace stat2018
             dT.Rows.Add(new Object[] { 77, 1, 3, 1, "wciecie borderAll", "O uznanie i stwierdzenie wykonalności wyroku sądu polubownego wydanego za granicą " });
             dT.Rows.Add(new Object[] { 77, 4, 1, 1, " center", "117" });
             dT.Rows.Add(new Object[] { 78, 1, 3, 1, "wciecie borderAll", "Dotyczące pomocy sądowej" });
-            dT.Rows.Add(new Object[] { 78, 4, 1, 1, " center", "135" });
+            dT.Rows.Add(new Object[] { 78, 4, 1, 1, " center", "113" });
             dT.Rows.Add(new Object[] { 79, 1, 3, 1, "wciecie borderAll", "O zabezpieczenie roszczenia przed wszczęciem postępowania" });
             dT.Rows.Add(new Object[] { 79, 4, 1, 1, " center", "136" });
             dT.Rows.Add(new Object[] { 80, 1, 3, 1, "wciecie borderAll", "O zabezpieczenie dowodu przed wszczęciem postępowania" });
@@ -1767,9 +1800,10 @@ namespace stat2018
             dT.Rows.Add(new Object[] { 2, 18, 1, 3, "center col_120", "Razem załatwionych spraw na rozprawie sędziowie SR (suma kol.18,19,20)" });
             dT.Rows.Add(new Object[] { 2, 19, 3, 1, "center ", "Sędziowie SR" });
             dT.Rows.Add(new Object[] { 2, 22, 1, 3, "center col_120", "inni sędziowie" });
-            dT.Rows.Add(new Object[] { 2, 25, 1, 3, "center col_120", "Załatwienie razem (suma kol. 23, 35, 39, 40)" });
-            dT.Rows.Add(new Object[] { 2, 26, 1, 3, "center col_120", "Razem załatwionych spraw na posiedzeniu sędziowie SO (suma kol.24,25,34)" });
-            dT.Rows.Add(new Object[] { 2, 24, 10, 1, "center col_120", "Sędziowie SO" });
+
+            dT.Rows.Add(new Object[] { 2, 23, 1, 3, "center col_120", "Załatwienie razem (suma kol. 23, 35, 39, 40)" });
+            dT.Rows.Add(new Object[] { 2, 24, 1, 3, "center col_120", "Razem załatwionych spraw na posiedzeniu sędziowie SO (suma kol.24,25,34)" });
+            dT.Rows.Add(new Object[] { 2, 25, 10, 1, "center col_120", "Sędziowie SO" });
             dT.Rows.Add(new Object[] { 2, 36, 1, 3, "center col_120", "Razem załatwionych spraw na posiedzeniu sędziowie SR (suma kol.36,37,38)" });
             dT.Rows.Add(new Object[] { 2, 37, 3, 1, "center ", "Sędziowie SR" });
             dT.Rows.Add(new Object[] { 2, 38, 1, 3, "center col_120", "inni sędziowie" });
@@ -1783,7 +1817,11 @@ namespace stat2018
             dT.Rows.Add(new Object[] { 3, 19, 1, 2, "center col_120", "sędziów SR delegowanych w trybie art. 77 §1 usp na czas nieokreślony lub na czas określony, orzekających w pełnym wymiarze" });
             dT.Rows.Add(new Object[] { 3, 20, 1, 2, "center col_120", "sędziów SR delegowanych w trybie art. 77 §1 usp na czas nieokreślony lub na czas określony, orzekających w niepełnym wymiarze" });
             dT.Rows.Add(new Object[] { 3, 21, 1, 2, "center col_120", "sędziów SR delegowanych w trybie art. 77 § 9 usp" });
-            dT.Rows.Add(new Object[] { 3, 26, 8, 1, "center col_120", "z tego" });
+
+            dT.Rows.Add(new Object[] { 3, 25, 1, 2, "center col_120", "sędziów SO z wyłączeniem sędziów funkcyjnych" });
+            dT.Rows.Add(new Object[] { 3, 26, 1, 2, "center col_120", "sędziów funkcyjnych SO (suma kol. od 26 do 33)" });
+
+            dT.Rows.Add(new Object[] { 3, 27, 8, 1, "center col_120", "z tego" });
             dT.Rows.Add(new Object[] { 3, 35, 1, 2, "center col_120", "inni" });
             dT.Rows.Add(new Object[] { 3, 37, 1, 2, "center col_120", "sędziów SR delegowanych w trybie art. 77 §1 usp" });
             dT.Rows.Add(new Object[] { 3, 38, 1, 2, "center col_120", "sędziów SR delegowanych w trybie art. 77 §1 usp " });
@@ -1909,7 +1947,6 @@ namespace stat2018
 
             dT.Rows.Add(new Object[] { 2, 12, 1, 1, "center col_120", "inne" });
             return dT;
-
         }
 
         private DataTable tabelaBocznaDzialu_1_3()
@@ -1921,8 +1958,7 @@ namespace stat2018
             dT.Rows.Add(new Object[] { 2, 1, 1, 1, "wciecie borderAll", "Zwrot pism po bezskutecznym upływie terminu do ich uzupełnienia i opłacenia " });
             dT.Rows.Add(new Object[] { 3, 1, 1, 1, "wciecie borderAll", "Wydawanie nakazów zapłaty w postępowaniu upominawczym" });
             dT.Rows.Add(new Object[] { 4, 1, 1, 1, "wciecie borderAll", "O nadanie klauzuli wykonalności" });
-
-            dT.Rows.Add(new Object[] { 4, 1, 1, 1, "wciecie borderAll", "Inne" });
+            dT.Rows.Add(new Object[] { 5, 1, 1, 1, "wciecie borderAll", "Inne" });
             return dT;
         }
 
@@ -1957,7 +1993,6 @@ namespace stat2018
             dT.Rows.Add(new Object[] { 3, 10, 1, 1, "center col_120", "w tym nieuspra-wiedliwione" });
 
             return dT;
-
         }
 
         private DataTable tabelaBocznaDzialu_1_4()
@@ -1996,9 +2031,6 @@ namespace stat2018
             dT.Rows.Add(new Object[] { 20, 3, 1, 1, "wciecie borderAll", "Pa" });
             dT.Rows.Add(new Object[] { 21, 3, 1, 1, "wciecie borderAll", "Pz" });
 
-
-
-
             dT.Rows.Add(new Object[] { 4, 1, 1, 1, "wciecie borderAll", "Inne" });
             return dT;
         }
@@ -2028,7 +2060,6 @@ namespace stat2018
             dT.Rows.Add(new Object[] { 2, 12, 1, 1, "center col_120", "powyżej 5 do 8 lat" });
             dT.Rows.Add(new Object[] { 2, 13, 1, 1, "center col_120", "ponad 8 lat" });
             return dT;
-
         }
 
         private DataTable tabelaBocznaDzialu_2_1_1()
@@ -2049,71 +2080,77 @@ namespace stat2018
             return dT;
         }
 
-        #endregion dzial 2.2.1
+        #endregion dzial 2.1.1
+
         #region dzial 2.1.1.1
 
         private DataTable naglowekTabeliDzialu_2_1_1_1()
         {
-
             return naglowekTabeliDzialu_2_1_1();
-
         }
 
         private DataTable tabelaBocznaDzialu_2_1_1_1()
         {
-
             return tabelaBocznaDzialu_2_1_1();
         }
 
-        #endregion dzial 2.2.1.1
+        #endregion dzial 2.1.1.1
+
         #region dzial 2.1.1.a
 
         private DataTable naglowekTabeliDzialu_2_1_1_1_a()
         {
-
             return naglowekTabeliDzialu_2_1_1();
-
         }
 
         private DataTable tabelaBocznaDzialu_2_1_1_1_a()
         {
-
             return tabelaBocznaDzialu_2_1_1();
         }
 
-        #endregion dzial 2.2.1.1
+        #endregion dzial 2.1.1.a
+
         #region dzial 2.1.1.a.1
 
         private DataTable naglowekTabeliDzialu_2_1_1_1_a_1()
         {
-
             return naglowekTabeliDzialu_2_1_1();
-
         }
 
         private DataTable tabelaBocznaDzialu_2_1_1_1_a_1()
         {
-
             return tabelaBocznaDzialu_2_1_1();
         }
 
-        #endregion dzial 2.2.1.1.a.1
-        #region dzial 2.1.2.1
+        #endregion dzial 2.1.1.a.1
 
-        private DataTable naglowekTabeliDzialu_2_1_2_1()
+        #region dzial 2.1.2
+
+        private DataTable naglowekTabeliDzialu_2_1_2()
         {
-
             return naglowekTabeliDzialu_2_1_1();
-
         }
 
-        private DataTable tabelaBocznaDzialu_2_1_2_1()
+        private DataTable tabelaBocznaDzialu_2_1_2()
         {
-
             return tabelaBocznaDzialu_2_1_1();
         }
 
         #endregion dzial 2.1.2
+
+        #region dzial 2.1.2.1
+
+        private DataTable naglowekTabeliDzialu_2_1_2_1()
+        {
+            return naglowekTabeliDzialu_2_1_1();
+        }
+
+        private DataTable tabelaBocznaDzialu_2_1_2_1()
+        {
+            return tabelaBocznaDzialu_2_1_1();
+        }
+
+        #endregion dzial 2.1.2.1
 
         #region dzial 2.2
 
@@ -2133,7 +2170,6 @@ namespace stat2018
             dT.Rows.Add(new Object[] { 1, 10, 1, 1, "center col_80", "Powyżej 5 do 8 lat" });
             dT.Rows.Add(new Object[] { 1, 11, 1, 1, "center col_80", "Ponad 8 lat" });
             return dT;
-
         }
 
         private DataTable tabelaBocznaDzialu_2_2()
@@ -2162,55 +2198,48 @@ namespace stat2018
         }
 
         #endregion dzial 2.2
+
         #region dzial 2.2.a
 
         private DataTable naglowekTabeliDzialu_2_2_a()
         {
-
             return naglowekTabeliDzialu_2_2();
-
         }
 
         private DataTable tabelaBocznaDzialu_2_2_a()
         {
-
             return tabelaBocznaDzialu_2_2();
         }
 
         #endregion dzial 2.2.a
+
         #region dzial 2.2.1
 
         private DataTable naglowekTabeliDzialu_2_2_1()
         {
-
             return naglowekTabeliDzialu_2_2();
-
         }
 
         private DataTable tabelaBocznaDzialu_2_2_1()
         {
-
             return tabelaBocznaDzialu_2_2();
         }
 
-        #endregion dzial 2.2.a
+        #endregion dzial 2.2.1
+
         #region dzial 2.2.1.a
 
         private DataTable naglowekTabeliDzialu_2_2_1_a()
         {
-
             return naglowekTabeliDzialu_2_2();
-
         }
 
         private DataTable tabelaBocznaDzialu_2_2_1_a()
         {
-
             return tabelaBocznaDzialu_2_2();
         }
 
-        #endregion dzial 2.2.1.a.
-
+        #endregion dzial 2.2.1.a
 
         #region dzial 2.3
 
@@ -2229,7 +2258,6 @@ namespace stat2018
             dT.Rows.Add(new Object[] { 1, 9, 1, 1, "center col_120", "Ponad 9 miesięcy" });
 
             return dT;
-
         }
 
         private DataTable tabelaBocznaDzialu_2_3()
@@ -2253,15 +2281,11 @@ namespace stat2018
 
         private DataTable naglowekTabeliDzialu_2_3_1()
         {
-
             return naglowekTabeliDzialu_2_3();
-
         }
 
         private DataTable tabelaBocznaDzialu_2_3_1()
         {
-
-
             return tabelaBocznaDzialu_2_3();
         }
 
@@ -2287,7 +2311,6 @@ namespace stat2018
             dT.Rows.Add(new Object[] { 2, 10, 1, 1, "center col_120", "Ponad 12 miesięcy" });
 
             return dT;
-
         }
 
         private DataTable tabelaBocznaDzialu_3()
@@ -2300,7 +2323,6 @@ namespace stat2018
             dT.Rows.Add(new Object[] { 2, 2, 1, 1, "wciecie borderAll", "P" });
             dT.Rows.Add(new Object[] { 3, 2, 1, 1, "wciecie borderAll", "Np" });
             dT.Rows.Add(new Object[] { 4, 2, 1, 1, "wciecie borderAll", "Po" });
-
 
             dT.Rows.Add(new Object[] { 5, 1, 1, 4, "wciecie borderAll", "SO II instancja" });
             dT.Rows.Add(new Object[] { 5, 2, 1, 1, "wciecie borderAll", "Ua" });
@@ -2332,9 +2354,7 @@ namespace stat2018
             dT.Rows.Add(new Object[] { 2, 8, 1, 1, "center col_120", "pow. 12 mies. do 2 lat" });
             dT.Rows.Add(new Object[] { 2, 9, 1, 1, "center col_120", "ponad 2 lata" });
 
-
             return dT;
-
         }
 
         private DataTable tabelaBocznaDzialu_3_1_a()
@@ -2354,9 +2374,7 @@ namespace stat2018
 
         private DataTable naglowekTabeliDzialu_3_1_b()
         {
-
             return naglowekTabeliDzialu_3_1_a();
-
         }
 
         private DataTable tabelaBocznaDzialu_3_1_b()
@@ -2377,15 +2395,12 @@ namespace stat2018
 
         private DataTable naglowekTabeliDzialu_3_2()
         {
-
             DataTable dT = schematTabeli();
             dT.Clear();
             //                         W  K  CS RS   style"    text"
             dT.Rows.Add(new Object[] { 1, 1, 1, 2, "center", "Rodzaje sprawz repertorium" });
             dT.Rows.Add(new Object[] { 1, 3, 1, 2, "center col_120", "Ogółem(kol. 2 do 7)" });
-
             dT.Rows.Add(new Object[] { 1, 4, 6, 1, "center", "W terminie" });
-
             dT.Rows.Add(new Object[] { 2, 4, 1, 1, "center col_120", "do miesiąca" });
             dT.Rows.Add(new Object[] { 2, 5, 1, 1, "center col_120", "pow. 1 do 2 mies." });
             dT.Rows.Add(new Object[] { 2, 6, 1, 1, "center col_120", "pow. 2 do 3 mies." });
@@ -2393,23 +2408,20 @@ namespace stat2018
             dT.Rows.Add(new Object[] { 2, 8, 1, 1, "center col_120", "pow. 6 do 9 miesięcy" });
             dT.Rows.Add(new Object[] { 2, 9, 1, 1, "center col_120", "ponad 9 miesięcy" });
 
-
             return dT;
         }
 
         private DataTable tabelaBocznaDzialu_3_2()
         {
-
             return tabelaBocznaDzialu_3_1_b();
         }
 
-        #endregion dzial 3.3
+        #endregion dzial 3.2
 
         #region dzial 4.1
 
         private DataTable naglowekTabeliDzialu_4_1()
         {
-
             DataTable dT = schematTabeli();
             dT.Clear();
             //                         W  K  CS RS   style"    text"
@@ -2443,7 +2455,6 @@ namespace stat2018
 
         private DataTable tabelaBocznaDzialu_4_1()
         {
-
             DataTable dT = schematTabeli();
             dT.Clear();
             //                         W  K  CS RS   style"    text"
@@ -2483,20 +2494,15 @@ namespace stat2018
             dT.Rows.Add(new Object[] { 23, 2, 2, 1, "wciecie borderAll", "nieterminowość sporządzania uzasadnień" });
             dT.Rows.Add(new Object[] { 24, 2, 2, 1, "wciecie borderAll", "inne" });
 
-
-
-
             return dT;
         }
 
-        #endregion dzial 3.3
-
+        #endregion dzial 4.1
 
         #region dzial 4.2
 
         private DataTable naglowekTabeliDzialu_4_2()
         {
-
             DataTable dT = schematTabeli();
             dT.Clear();
             //                         W  K  CS RS   style"    text"
@@ -2516,7 +2522,6 @@ namespace stat2018
 
         private DataTable tabelaBocznaDzialu_4_2()
         {
-
             DataTable dT = schematTabeli();
             dT.Clear();
             //                         W  K  CS RS   style"    text"
@@ -2524,12 +2529,11 @@ namespace stat2018
 
             dT.Rows.Add(new Object[] { 2, 1, 1, 11, "wciecie borderAll", "Skargi na pracę sądu (sprawy pracy)" });
 
-
-
             return dT;
         }
 
         #endregion dzial 4.2
+
         #region dzial 5
 
         private DataTable naglowekTabeliDzialu_5()
@@ -2702,6 +2706,7 @@ namespace stat2018
         }
 
         #endregion dzial 6
+
         #region dzial 7.1
 
         private DataTable naglowekTabeliDzialu_7_1()
@@ -2752,7 +2757,6 @@ namespace stat2018
             dT.Rows.Add(new Object[] { 1, 40, 1, 1, "center ", "Liczba obsadzonych etatów (na ostatni dzień okresu statystycznego)" });
             dT.Rows.Add(new Object[] { 1, 41, 1, 1, "center ", "Liczba obsadzonych etatów (w okresie statystycznym)" });
 
-
             return dT;
         }
 
@@ -2785,7 +2789,6 @@ namespace stat2018
             dT.Rows.Add(new Object[] { 1, 8, 1, 1, "center ", "w tym obsada osób świadczących usługi na rzecz e-sądu" });
             dT.Rows.Add(new Object[] { 1, 9, 1, 1, "center ", "Liczba obsadzonych etatów na ostatni dzień okresu statystycznego" });
             dT.Rows.Add(new Object[] { 1, 10, 1, 1, "center ", "Liczba obsadzonych etatów w okresie statystycznym)" });
-
 
             return dT;
         }
@@ -2840,7 +2843,6 @@ namespace stat2018
             dT.Rows.Add(new Object[] { 3, 6, 1, 1, "center col_120", "oddalono" });
             dT.Rows.Add(new Object[] { 3, 7, 1, 1, "center col_120", "umorzono" });
             dT.Rows.Add(new Object[] { 3, 8, 1, 1, "center col_120", "inne" });
-
 
             return dT;
         }
@@ -2924,7 +2926,6 @@ namespace stat2018
             dT.Rows.Add(new Object[] { 2, 5, 1, 1, "center col_120 ", "biegli spoza listy" });
             dT.Rows.Add(new Object[] { 2, 6, 1, 1, "center col_120", "inne  podmioty" });
 
-
             return dT;
         }
 
@@ -2949,7 +2950,6 @@ namespace stat2018
 
         #endregion dzial 9.1
 
-
         #region dzial 9.2
 
         private DataTable naglowekTabeliDzialu_9_2()
@@ -2972,14 +2972,11 @@ namespace stat2018
             dT.Rows.Add(new Object[] { 3, 9, 1, 1, "center col_120", "pow. 1 do 3 miesięcy" });
             dT.Rows.Add(new Object[] { 3, 10, 1, 1, "center col_120", "pow. 3 miesięcy" });
 
-
-
             return dT;
         }
 
         private DataTable tabelaBocznaDzialu_9_2()
         {
-
             return tabelaBocznaDzialu_9_1();
         }
 
@@ -3006,20 +3003,18 @@ namespace stat2018
             dT.Rows.Add(new Object[] { 2, 9, 1, 1, "center col_120 ", "pow. 14 do 30 dni" });
             dT.Rows.Add(new Object[] { 2, 10, 1, 1, "center col_120", "powyżej miesiąca" });
 
-
-
             return dT;
         }
 
         private DataTable tabelaBocznaDzialu_9_3()
         {
-
             return tabelaBocznaDzialu_9_1();
         }
 
         #endregion dzial 9.3
 
-
         #endregion dane do tabeli
+
+       
     }
 }

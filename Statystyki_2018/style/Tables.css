@@ -459,8 +459,9 @@ word-wrap: break-word;
 }
 
 .col_40 {
-        width:40px;
- text-align:center;
+    width: 40px;
+    min-width: 40px;
+    text-align: center;
 }
 
 .col_41_5 {
@@ -736,7 +737,7 @@ word-wrap: break-word;
 .col_160Fest {
     width: 160px;
     text-align: center;
-    min-width:250px;
+    min-width:160px;
 }
 
 .col_167 {
@@ -789,8 +790,9 @@ word-wrap: break-word;
  
 }
 .col_250 {
-        width:250px;
- text-align:center;
+    width: 250px;
+    text-align: center;
+    min-width: 250px;
 }
 
 .col_246 {
@@ -1766,3 +1768,4 @@ position: relative;
       .brp {
          page-break-after: always;
       }
+      

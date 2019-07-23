@@ -982,6 +982,7 @@ namespace stat2018
                 return null;
             }
             IList<string> komorki = new List<string>();
+            
             DataTable schematNaglowka = new DataTable();
             schematNaglowka.Columns.Add("wiersz", typeof(int));
             schematNaglowka.Columns.Add("kolumna", typeof(int));
