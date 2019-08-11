@@ -1269,14 +1269,13 @@ namespace stat2018
             dT.Clear();
             //                         W  K  CS RS   style"    text"
             dT.Rows.Add(new Object[] { 1, 1, 2, 1, "center", "Treść" });
-
-            dT.Rows.Add(new Object[] { 1, 5, 1, 1, "center ", "Liczba według limitu etatów na ostatni dzień okresu statystycznego" });
-            dT.Rows.Add(new Object[] { 1, 6, 1, 1, "center ", "w tym liczba według limitu etatów świadczących usługi na rzecz e-sądu" });
-            dT.Rows.Add(new Object[] { 1, 7, 1, 1, "center ", "Liczba według limitu etatów w okresie statystycznym" });
-            dT.Rows.Add(new Object[] { 1, 8, 1, 1, "center ", "Obsada średniookresowa" });
-            dT.Rows.Add(new Object[] { 1, 9, 1, 1, "center ", "W tym obsada osób świadczących usługi na rzecz e-sądu" });
-            dT.Rows.Add(new Object[] { 1, 10, 1, 1, "center ", "Liczba obsadzonych etatów na ostatni dzień okresu statystycznego" });
-            dT.Rows.Add(new Object[] { 1, 11, 1, 1, "center ", "Liczba obsadzonych etatów w okresie statystycznym)" });
+            dT.Rows.Add(new Object[] { 1, 4, 1, 1, "center ", "Liczba według limitu etatów na ostatni dzień okresu statystycznego" });
+            dT.Rows.Add(new Object[] { 1, 5, 1, 1, "center ", "w tym liczba według limitu etatów świadczących usługi na rzecz e-sądu" });
+            dT.Rows.Add(new Object[] { 1, 6, 1, 1, "center ", "Liczba według limitu etatów w okresie statystycznym" });
+            dT.Rows.Add(new Object[] { 1, 7, 1, 1, "center ", "Obsada średniookresowa" });
+            dT.Rows.Add(new Object[] { 1, 8, 1, 1, "center ", "W tym obsada osób świadczących usługi na rzecz e-sądu" });
+            dT.Rows.Add(new Object[] { 1, 9, 1, 1, "center ", "Liczba obsadzonych etatów na ostatni dzień okresu statystycznego" });
+            dT.Rows.Add(new Object[] { 1, 10, 1, 1, "center ", "Liczba obsadzonych etatów w okresie statystycznym)" });
             
 
             return dT;

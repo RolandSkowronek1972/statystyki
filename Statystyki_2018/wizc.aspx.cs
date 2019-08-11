@@ -47,7 +47,6 @@ namespace stat2018
             catch
             { }
             odswiez();
-            //  debug();
         }
 
         protected void Odswiez(object sender, EventArgs e)
@@ -87,6 +86,36 @@ namespace stat2018
             tworztabelkeHTML3("K3", idWydzial, 11, tabelka03);
 
             tabela_12();
+
+            DataTable tabelka13 = dr.generuj_dane_do_tabeli_sedziowskiej_2018(idWydzial, 13, Date1.Date, Date2.Date, 100, tenPlik);
+            Session["tabelka013"] = tabelka13;
+            tworztabelkeHTML13("K13", idWydzial, 13, tabelka13);
+
+            tabela_14();
+            tabela_15();
+            tabela_16();
+
+            DataTable tabelka17 = dr.generuj_dane_do_tabeli_sedziowskiej_2018(idWydzial, 17, Date1.Date, Date2.Date, 120, tenPlik);
+            Session["tabelka017"] = tabelka17;
+            tworztabelkeHTML17("K17", idWydzial, 17, tabelka17, "liczba spraw", "SSR", "IV.5.1. Czas trwania postępowania sądowego od dnia pierwszej rejestracji do dnia zakończenia sprawy w danej instancji w referatach poszczególnych sędziów (liczba spraw)", "Tabela 17");
+
+            DataTable tabelka18 = dr.generuj_dane_do_tabeli_sedziowskiej_2018(idWydzial, 18, Date1.Date, Date2.Date, 120, tenPlik);
+            Session["tabelka018"] = tabelka18;
+            tworztabelkeHTML17("K18", idWydzial, 17, tabelka18, "%", "SSR", " IV.5.1.Czas trwania postępowania sądowego od dnia pierwszej rejestracji do dnia zakończenia sprawy w danej instancji w referatach poszczególnych sędziów(liczba spraw)", "Tabela 18");
+
+            DataTable tabelka19 = dr.generuj_dane_do_tabeli_sedziowskiej_2018(idWydzial, 19, Date1.Date, Date2.Date, 120, tenPlik);
+            Session["tabelka019"] = tabelka19;
+            tworztabelkeHTML17("K19", idWydzial, 17, tabelka18, "liczba spraw", "", " IV.5.1.Czas trwania postępowania sądowego od dnia pierwszej rejestracji do dnia zakończenia sprawy w danej instancji w referatach poszczególnych sędziów(liczba spraw)", "Tabela 19");
+
+            DataTable tabelka20 = dr.generuj_dane_do_tabeli_sedziowskiej_2018(idWydzial, 20, Date1.Date, Date2.Date, 120, tenPlik);
+            Session["tabelka020"] = tabelka20;
+            tworztabelkeHTML17("K20", idWydzial, 20, tabelka20, "%", "", " IV.5.1.Czas trwania postępowania sądowego od dnia pierwszej rejestracji do dnia zakończenia sprawy w danej instancji w referatach poszczególnych sędziów(liczba spraw)", "Tabela 20");
+
+            tabela_21();
+            tabela_22();
+            DataTable tabelka23 = dr.generuj_dane_do_tabeli_sedziowskiej_2018(idWydzial, 23, Date1.Date, Date2.Date, 130, tenPlik);
+            Session["tabelka023"] = tabelka23;
+            tworztabelkeHTML23("K23", idWydzial, 23, tabelka23, "liczba sporządzonych uzasadnień", "", "", "Tabela 23");
         }
 
         private void tabela_01(int idWydzialu, int idtabeli)
@@ -96,7 +125,7 @@ namespace stat2018
                 cm.log.Info(tenPlik + ": rozpoczęcie tworzenia tabeli 1");
             }
 
-            DataTable tabelka01 = dr. generuj_dane_do_tabeli_wierszy2018(Date1.Date, Date2.Date, idWydzialu.ToString(), idtabeli, 6, 1, tenPlik);
+            DataTable tabelka01 = dr.generuj_dane_do_tabeli_wierszy2018(Date1.Date, Date2.Date, idWydzialu.ToString(), idtabeli, 6, 1, tenPlik);
             Session["tabelka001"] = tabelka01;
             try
             {
@@ -120,7 +149,7 @@ namespace stat2018
                 cm.log.Info(tenPlik + ": rozpoczęcie tworzenia tabeli 2");
             }
 
-            DataTable tabelka01 = dr. generuj_dane_do_tabeli_wierszy2018(Date1.Date, Date2.Date, idWydzialu.ToString(), idtabeli, 6, 1, tenPlik);
+            DataTable tabelka01 = dr.generuj_dane_do_tabeli_wierszy2018(Date1.Date, Date2.Date, idWydzialu.ToString(), idtabeli, 6, 1, tenPlik);
             Session["tabelka002"] = tabelka01;
             try
             {
@@ -134,7 +163,7 @@ namespace stat2018
             catch (Exception ex)
             {
                 cm.log.Error("wizc : " + ex.Message);
-             }
+            }
         }
 
         protected void tabela_3()
@@ -192,7 +221,7 @@ namespace stat2018
                 cm.log.Info(tenPlik + ": rozpoczęcie tworzenia tabeli 6");
             }
 
-            DataTable tabelka01 = dr. generuj_dane_do_tabeli_wierszy2018(Date1.Date, Date2.Date, (string)Session["id_dzialu"], 6, 2, 1, tenPlik);
+            DataTable tabelka01 = dr.generuj_dane_do_tabeli_wierszy2018(Date1.Date, Date2.Date, (string)Session["id_dzialu"], 6, 2, 1, tenPlik);
             Session["tabelka006"] = tabelka01;
             pisztb("tab_6_", 2, 1, tabelka01);
         }
@@ -205,12 +234,12 @@ namespace stat2018
                 cm.log.Info(tenPlik + ": rozpoczęcie tworzenia tabeli 7");
             }
 
-            DataTable tabelka01 = dr. generuj_dane_do_tabeli_wierszy2018(Date1.Date, Date2.Date, (string)Session["id_dzialu"], 7, 6,27, tenPlik);
+            DataTable tabelka01 = dr.generuj_dane_do_tabeli_wierszy2018(Date1.Date, Date2.Date, (string)Session["id_dzialu"], 7, 6, 27, tenPlik);
             Session["tabelka007"] = tabelka01;
             pisz("tab_7_", 2, 16, tabelka01);
-               tab_7_w03_c01.Text = tabelka01.Rows[2][1].ToString().Trim();
-               tab_7_w04_c01.Text = tabelka01.Rows[3][1].ToString().Trim();
-               tab_7_w05_c01.Text = tabelka01.Rows[4][1].ToString().Trim();
+            tab_7_w03_c01.Text = tabelka01.Rows[2][1].ToString().Trim();
+            tab_7_w04_c01.Text = tabelka01.Rows[3][1].ToString().Trim();
+            tab_7_w05_c01.Text = tabelka01.Rows[4][1].ToString().Trim();
         }
 
         protected void tabela_8()
@@ -221,7 +250,7 @@ namespace stat2018
                 cm.log.Info(tenPlik + ": rozpoczęcie tworzenia tabeli 8");
             }
 
-            DataTable tabelka01 = dr. generuj_dane_do_tabeli_wierszy2018(Date1.Date, Date2.Date, (string)Session["id_dzialu"], 8, 8, 12, tenPlik);
+            DataTable tabelka01 = dr.generuj_dane_do_tabeli_wierszy2018(Date1.Date, Date2.Date, (string)Session["id_dzialu"], 8, 8, 12, tenPlik);
             Session["tabelka008"] = tabelka01;
             pisz("tab_8_", 8, 12, tabelka01);
         }
@@ -238,7 +267,74 @@ namespace stat2018
             Session["tabelka008"] = tabelka01;
             pisz("tab_12_", 12, 8, tabelka01);
         }
+
+        protected void tabela_14()
+        {
+            string idDzialu = (string)Session["id_dzialu"];
+            if (cl.debug(int.Parse(idDzialu)))
+            {
+                cm.log.Info(tenPlik + ": rozpoczęcie tworzenia tabeli 8");
+            }
+
+            DataTable tabelka01 = dr.generuj_dane_do_tabeli_wierszy2018(Date1.Date, Date2.Date, (string)Session["id_dzialu"], 14, 3, 2, tenPlik);
+            Session["tabelka014"] = tabelka01;
+            pisz("tab_14_", 3, 1, tabelka01);
+        }
+
+        protected void tabela_15()
+        {
+            string idDzialu = (string)Session["id_dzialu"];
+            if (cl.debug(int.Parse(idDzialu)))
+            {
+                cm.log.Info(tenPlik + ": rozpoczęcie tworzenia tabeli 15");
+            }
+
+            DataTable tabelka01 = dr.generuj_dane_do_tabeli_wierszy2018(Date1.Date, Date2.Date, (string)Session["id_dzialu"], 8, 8, 15, tenPlik);
+            Session["tabelka015"] = tabelka01;
+            pisz("tab_15_", 8, 12, tabelka01);
+        }
+
+        protected void tabela_16()
+        {
+            string idDzialu = (string)Session["id_dzialu"];
+            if (cl.debug(int.Parse(idDzialu)))
+            {
+                cm.log.Info(tenPlik + ": rozpoczęcie tworzenia tabeli 16");
+            }
+
+            DataTable tabelka01 = dr.generuj_dane_do_tabeli_wierszy2018(Date1.Date, Date2.Date, (string)Session["id_dzialu"], 8, 8, 16, tenPlik);
+            Session["tabelka016"] = tabelka01;
+            pisz("tab_16_", 8, 12, tabelka01);
+        }
+
+        protected void tabela_21()
+        {
+            string idDzialu = (string)Session["id_dzialu"];
+            if (cl.debug(int.Parse(idDzialu)))
+            {
+                cm.log.Info(tenPlik + ": rozpoczęcie tworzenia tabeli 16");
+            }
+
+            DataTable tabelka01 = dr.generuj_dane_do_tabeli_wierszy2018(Date1.Date, Date2.Date, (string)Session["id_dzialu"], 2, 4, 21, tenPlik);
+            Session["tabelka021"] = tabelka01;
+            pisz("tab_21_", 1, 3, tabelka01);
+        }
+
         //tab_12_w01_c01
+
+        protected void tabela_22()
+        {
+            string idDzialu = (string)Session["id_dzialu"];
+            if (cl.debug(int.Parse(idDzialu)))
+            {
+                cm.log.Info(tenPlik + ": rozpoczęcie tworzenia tabeli 22");
+            }
+
+            DataTable tabelka01 = dr.generuj_dane_do_tabeli_wierszy2018(Date1.Date, Date2.Date, (string)Session["id_dzialu"], 8, 8, 22, tenPlik);
+            Session["tabelka022"] = tabelka01;
+            pisz("tab_22_", 9, 16, tabelka01);
+        }
+
         protected void tworzPlikExcell(object sender, EventArgs e)
         {
             //excell
@@ -296,7 +392,6 @@ namespace stat2018
 
             Label tblControl = new Label { ID = idKontrolki };
             tblControl.Width = 1150;
-           
 
             StringBuilder builder = new StringBuilder();
             builder.AppendLine("<table style='width: 1150px;'>");
@@ -368,9 +463,9 @@ namespace stat2018
 
         protected void tworztabelkeHTML2(string idKontrolki, int idWydzialu, int idtabeli, DataTable dane)
         {
-            if (dane==null)
+            if (dane == null)
             {
-                cm.log.Error(tenPlik + " Brak danych do tabeli dynamicznej HTML" );
+                cm.log.Error(tenPlik + " Brak danych do tabeli dynamicznej HTML");
                 return;
             }
             var tblControl = new Label { ID = idKontrolki };
@@ -448,7 +543,7 @@ namespace stat2018
 
         protected void tworztabelkeHTML3(string idKontrolki, int idWydzialu, int idtabeli, DataTable dane)
         {
-            if (dane==null )
+            if (dane == null)
             {
                 cm.log.Error(tenPlik + " Brak danych do tabeli dynamicznej HTML");
                 return;
@@ -483,7 +578,7 @@ namespace stat2018
             builder.AppendLine("</tr>");
 
             //ilosc sedziów
-        //    int licznik = 1;
+            //    int licznik = 1;
             foreach (DataRow wierszZtabeli in dane.Rows)
             {
                 builder.AppendLine("<tr>");
@@ -585,6 +680,419 @@ namespace stat2018
             builder.Append(" </div>");
             tblControl.Text = builder.ToString();
             tablePlaceHolder.Controls.Add(tblControl);
+        }
+
+        protected void tworztabelkeHTML13(string idKontrolki, int idWydzialu, int idtabeli, DataTable dane)
+        {
+            if (dane == null)
+            {
+                cm.log.Error(tenPlik + " Brak danych do tabeli dynamicznej HTML");
+                return;
+            }
+            var tblControl = new Label { ID = idKontrolki };
+            tblControl.Width = 1150;
+
+            StringBuilder builder = new StringBuilder();
+            builder.Append(" <div class='page-break'>");
+            builder.AppendLine("<br/>");
+            builder.AppendLine("<table style='width: 1150px;'>");
+            //header
+            builder.AppendLine("<tr>");
+            builder.AppendLine("<td class='borderAll center col_100'>imię i nazwisko</td>");
+            builder.AppendLine("<td class='borderAll center col_100'>Funkcja</td>");
+            builder.AppendLine("<td class='borderAll center col_100'>pomoc asystenta</td>");
+            builder.AppendLine("<td class='borderAll center'>kategoria spraw</td>");
+            builder.AppendLine("<td class='borderAll center col_100'>rok</td>");
+            builder.AppendLine("<td class='borderAll center col_100'>wpływ	</td>");
+            builder.AppendLine("<td class='borderAll center col_100'>załat- wienia</td>");
+            builder.AppendLine("<td class='borderAll center col_100'>pozos- tałość</td>");
+            builder.AppendLine("<td class='borderAll center col_100'>sprawy zawieszone</td>");
+            builder.AppendLine("<td class='borderAll center col_100'>wpływ na referendarza sądowego według liczby referendarzy i wakujących stanowisk referendarskich w ramach limitu</td>");
+            builder.AppendLine("<td class='borderAll center col_100'>załatwienia  na referendarza sądowego według liczby referendarzy i wakujących stanowisk referendarskich w ramach limitu</td>");
+            builder.AppendLine("<td class='borderAll center col_100'>pozostałość na referendarza według liczby referendarzy i wakujących stanowisk referendarskich w ramach limitu</td>");
+            builder.AppendLine("<td class='borderAll center col_100' wpływ na referendarza sądowego według obsady średniookresowej (efektywnego czasu pracy)</td>");
+            builder.AppendLine("<td class='borderAll center col_100' >wpływ na referendarza sądowego według obsady średniookresowej (efektywnego czasu pracy)</td>");
+            builder.AppendLine("<td class='borderAll center col_100' >wpływ na referendarza sądowego według obsady średniookresowej (efektywnego czasu pracy)</td>");
+            builder.AppendLine("<td class='borderAll center col_100' >wskaźnik pozostałości</td>");
+            builder.AppendLine("<td class='borderAll center col_100' >efektywny czas pracy</td>");
+            builder.AppendLine("</tr>");
+
+            //ilosc sedziów
+            //    int licznik = 1;
+            foreach (DataRow wierszZtabeli in dane.Rows)
+            {
+                builder.AppendLine("<tr>");
+
+                builder.Append(tb.komorkaHTML("Referendarz " + wierszZtabeli["imie"].ToString() + " " + wierszZtabeli["nazwisko"].ToString(), 0, 6, "borderAll center col_100"));
+                builder.Append(tb.komorkaHTML(wierszZtabeli["funkcja"].ToString(), 0, 6, "borderAll center col_100"));
+                builder.Append(tb.komorkaHTML("<a Class=\"normal\" href=\"javascript: openPopup('popup.aspx?sesja=" + wierszZtabeli["id_sedziego"].ToString() + "!" + idtabeli + "!2')\">" + wierszZtabeli["D_01"].ToString() + " </a>", 0, 6, "borderAll center col_100"));
+
+                builder.Append(tb.komorkaHTML("C", 0, 0, "borderAll center col_100"));
+
+                for (int i = 2; i < 15; i++)
+                {
+                    string txt = "<a Class=\"normal\" href=\"javascript: openPopup('popup.aspx?sesja=" + wierszZtabeli["id_sedziego"].ToString() + "!" + idtabeli + "!" + i.ToString() + "!2')\">" + wierszZtabeli["D_" + i.ToString("D2")].ToString() + " </a>";
+                    builder.AppendLine(tb.komorkaHTML(txt, 0, 0, "borderAll center col_50"));
+                }
+                builder.AppendLine("</tr>");
+                builder.AppendLine("<tr>");
+
+                builder.Append(tb.komorkaHTML("Cgg", 0, 0, "borderAll center col_100"));
+                for (int i = 16; i < 29; i++)
+                {
+                    string txt = "<a Class=\"normal\" href=\"javascript: openPopup('popup.aspx?sesja=" + wierszZtabeli["id_sedziego"].ToString() + "!" + idtabeli + "!" + i.ToString() + "!2')\">" + wierszZtabeli["D_" + i.ToString("D2")].ToString() + " </a>";
+                    builder.AppendLine(tb.komorkaHTML(txt, 0, 0, "borderAll center col_50"));
+                }
+                builder.AppendLine("</tr>");
+                builder.AppendLine("<tr>");
+                builder.Append(tb.komorkaHTML("Co", 0, 0, "borderAll center col_100"));
+                for (int i = 30; i < 43; i++)
+                {
+                    string txt = "<a Class=\"normal\" href=\"javascript: openPopup('popup.aspx?sesja=" + wierszZtabeli["id_sedziego"].ToString() + "!" + idtabeli + "!" + i.ToString() + "!2')\">" + wierszZtabeli["D_" + i.ToString("D2")].ToString() + " </a>";
+                    builder.AppendLine(tb.komorkaHTML(txt, 0, 0, "borderAll center col_50"));
+                }
+                builder.AppendLine("</tr>");
+                builder.AppendLine("<tr>");
+                builder.Append(tb.komorkaHTML("Cps", 0, 0, "borderAll center col_100"));
+                for (int i = 44; i < 57; i++)
+                {
+                    string txt = "<a Class=\"normal\" href=\"javascript: openPopup('popup.aspx?sesja=" + wierszZtabeli["id_sedziego"].ToString() + "!" + idtabeli + "!" + i.ToString() + "!2')\">" + wierszZtabeli["D_" + i.ToString("D2")].ToString() + " </a>";
+                    builder.AppendLine(tb.komorkaHTML(txt, 0, 0, "borderAll center col_50"));
+                }
+                builder.AppendLine("</tr>");
+                builder.AppendLine("<tr>");
+                builder.Append(tb.komorkaHTML("Nc", 0, 0, "borderAll center col_100"));
+                for (int i = 58; i < 71; i++)
+                {
+                    string txt = "<a Class=\"normal\" href=\"javascript: openPopup('popup.aspx?sesja=" + wierszZtabeli["id_sedziego"].ToString() + "!" + idtabeli + "!" + i.ToString() + "!2')\">" + wierszZtabeli["D_" + i.ToString("D2")].ToString() + " </a>";
+                    builder.AppendLine(tb.komorkaHTML(txt, 0, 0, "borderAll center col_50"));
+                }
+                builder.AppendLine("</tr>");
+
+                builder.AppendLine("<tr>");
+                builder.Append(tb.komorkaHTML("Ns", 0, 0, "borderAll center col_100"));
+                for (int i = 72; i < 85; i++)
+                {
+                    string txt = "<a Class=\"normal\" href=\"javascript: openPopup('popup.aspx?sesja=" + wierszZtabeli["id_sedziego"].ToString() + "!" + idtabeli + "!" + i.ToString() + "!2')\">" + wierszZtabeli["D_" + i.ToString("D2")].ToString() + " </a>";
+                    builder.AppendLine(tb.komorkaHTML(txt, 0, 0, "borderAll center col_50"));
+                }
+                builder.AppendLine("</tr>");
+                builder.AppendLine("<tr>");
+                builder.AppendLine(tb.komorkaHTML("RAZEM", 2, 0, "borderAll center col_50"));
+                builder.AppendLine(tb.komorkaHTML("<a Class =\"normal\" href=\"javascript: openPopup('popup.aspx?sesja=" + wierszZtabeli["id_sedziego"].ToString() + "!" + idtabeli + "!86!2')\">" + wierszZtabeli["D_86"].ToString() + " </a>", 3, 0, "borderAll center col_100"));
+                builder.AppendLine(tb.komorkaHTML("<a Class =\"normal\" href=\"javascript: openPopup('popup.aspx?sesja=" + wierszZtabeli["id_sedziego"].ToString() + "!" + idtabeli + "!87!2')\">" + wierszZtabeli["D_87"].ToString() + " </a > ", 0, 0, "borderAll center col_50"));
+                builder.AppendLine(tb.komorkaHTML("<a Class =\"normal\" href=\"javascript: openPopup('popup.aspx?sesja=" + wierszZtabeli["id_sedziego"].ToString() + "!" + idtabeli + "!88!2')\">" + wierszZtabeli["D_88"].ToString() + " </a > ", 0, 0, "borderAll center col_50"));
+                builder.AppendLine(tb.komorkaHTML("<a Class =\"normal\" href=\"javascript: openPopup('popup.aspx?sesja=" + wierszZtabeli["id_sedziego"].ToString() + "!" + idtabeli + "!89!2')\">" + wierszZtabeli["D_89"].ToString() + " </a > ", 0, 0, "borderAll center col_50"));
+
+                builder.AppendLine(tb.komorkaHTML("", 3, 2, "borderAll center col_150"));
+
+                builder.AppendLine(tb.komorkaHTML("<a Class =\"normal\" href=\"javascript: openPopup('popup.aspx?sesja=" + wierszZtabeli["id_sedziego"].ToString() + "!" + idtabeli + "!90!2')\">" + wierszZtabeli["D_90"].ToString() + " </a > ", 0, 0, "borderAll center col_50"));
+                builder.AppendLine(tb.komorkaHTML("<a Class =\"normal\" href=\"javascript: openPopup('popup.aspx?sesja=" + wierszZtabeli["id_sedziego"].ToString() + "!" + idtabeli + "!91!2')\">" + wierszZtabeli["D_91"].ToString() + " </a > ", 0, 0, "borderAll center col_50"));
+                builder.AppendLine(tb.komorkaHTML("<a Class =\"normal\" href=\"javascript: openPopup('popup.aspx?sesja=" + wierszZtabeli["id_sedziego"].ToString() + "!" + idtabeli + "!92!2')\">" + wierszZtabeli["D_92"].ToString() + " </a > ", 0, 0, "borderAll center col_50"));
+                builder.AppendLine(tb.komorkaHTML("<a Class =\"normal\" href=\"javascript: openPopup('popup.aspx?sesja=" + wierszZtabeli["id_sedziego"].ToString() + "!" + idtabeli + "!93!2')\">" + wierszZtabeli["D_93"].ToString() + " </a > ", 0, 0, "borderAll center col_50"));
+                builder.AppendLine(tb.komorkaHTML("<a Class =\"normal\" href=\"javascript: openPopup('popup.aspx?sesja=" + wierszZtabeli["id_sedziego"].ToString() + "!" + idtabeli + "!94!2')\">" + wierszZtabeli["D_94"].ToString() + " </a > ", 0, 0, "borderAll center col_50"));
+                builder.AppendLine(tb.komorkaHTML("<a Class =\"normal\" href=\"javascript: openPopup('popup.aspx?sesja=" + wierszZtabeli["id_sedziego"].ToString() + "!" + idtabeli + "!95!2')\">" + wierszZtabeli["D_95"].ToString() + " </a > ", 0, 0, "borderAll center col_50"));
+
+                builder.AppendLine("</tr>");
+                builder.AppendLine("<tr>");
+                builder.AppendLine(tb.komorkaHTML("OGÓŁEM za okres oceny", 2, 0, "borderAll center col_50"));
+                builder.AppendLine(tb.komorkaHTML("<a Class =\"normal\" href=\"javascript: openPopup('popup.aspx?sesja=" + wierszZtabeli["id_sedziego"].ToString() + "!" + idtabeli + "!2!86')\">000 </a>", 3, 0, "borderAll center col_100"));
+                builder.AppendLine(tb.komorkaHTML("<a Class =\"normal\" href=\"javascript: openPopup('popup.aspx?sesja=" + wierszZtabeli["id_sedziego"].ToString() + "!" + idtabeli + "!2!86')\">000 </a>", 0, 0, "borderAll center col_50"));
+                builder.AppendLine(tb.komorkaHTML("<a Class =\"normal\" href=\"javascript: openPopup('popup.aspx?sesja=" + wierszZtabeli["id_sedziego"].ToString() + "!" + idtabeli + "!2!86')\">000 </a>", 0, 0, "borderAll center col_50"));
+                builder.AppendLine(tb.komorkaHTML("<a Class =\"normal\" href=\"javascript: openPopup('popup.aspx?sesja=" + wierszZtabeli["id_sedziego"].ToString() + "!" + idtabeli + "!2!86')\">000 </a>", 0, 0, "borderAll center col_50"));
+
+                //     builder.AppendLine(tb.komorkaHTML("<a Class =\"normal\" href=\"javascript: openPopup('popup.aspx?sesja="+ wierszZtabeli["id_sedziego"].ToString() + "!"+idtabeli+"!2!86')\">000 </a>", 3, 2, "borderAll center col_150"));
+
+                builder.AppendLine(tb.komorkaHTML("<a Class =\"normal\" href=\"javascript: openPopup('popup.aspx?sesja=" + wierszZtabeli["id_sedziego"].ToString() + "!" + idtabeli + "!2!86')\">000 </a>", 0, 0, "borderAll center col_50"));
+                builder.AppendLine(tb.komorkaHTML("<a Class =\"normal\" href=\"javascript: openPopup('popup.aspx?sesja=" + wierszZtabeli["id_sedziego"].ToString() + "!" + idtabeli + "!2!86')\">000 </a>", 0, 0, "borderAll center col_50"));
+                builder.AppendLine(tb.komorkaHTML("<a Class =\"normal\" href=\"javascript: openPopup('popup.aspx?sesja=" + wierszZtabeli["id_sedziego"].ToString() + "!" + idtabeli + "!2!86')\">000 </a>", 0, 0, "borderAll center col_50"));
+                builder.AppendLine(tb.komorkaHTML("<a Class =\"normal\" href=\"javascript: openPopup('popup.aspx?sesja=" + wierszZtabeli["id_sedziego"].ToString() + "!" + idtabeli + "!2!86')\">000 </a>", 0, 0, "borderAll center col_50"));
+                builder.AppendLine(tb.komorkaHTML("<a Class =\"normal\" href=\"javascript: openPopup('popup.aspx?sesja=" + wierszZtabeli["id_sedziego"].ToString() + "!" + idtabeli + "!2!86')\">000 </a>", 0, 0, "borderAll center col_50"));
+                builder.AppendLine(tb.komorkaHTML("<a Class =\"normal\" href=\"javascript: openPopup('popup.aspx?sesja=" + wierszZtabeli["id_sedziego"].ToString() + "!" + idtabeli + "!2!86')\">000 </a>", 0, 0, "borderAll center col_50"));
+
+                builder.AppendLine("</tr>");
+                //licznik++;
+            }
+            //footer
+            //   builder.AppendLine("</tr>");
+
+            builder.Append("</table>");
+            builder.Append(" </div>");
+            tblControl.Text = builder.ToString();
+            tablePlaceHolder13.Controls.Add(tblControl);
+        }
+
+        protected void tworztabelkeHTML17(string idKontrolki, int idWydzialu, int idtabeli, DataTable dane, string tekst, string funkcjaSR, string opisDzialu, string nrTabeli)
+        {
+            if (dane == null)
+            {
+                cm.log.Error(tenPlik + " Brak danych do tabeli dynamicznej HTML");
+                return;
+            }
+            var tblControl = new Label { ID = idKontrolki };
+            tblControl.Width = 1150;
+
+            StringBuilder builder = new StringBuilder();
+            builder.Append(" <div class='page-break'>");
+            builder.AppendLine("<p>" + opisDzialu + "</p>");
+            if (cl.debug(idWydzialu))
+            {
+                builder.AppendLine("<p>" + nrTabeli + "</p>");
+            }
+            builder.AppendLine("<br/>");
+            builder.AppendLine("<table style='width: 1150px;'>");
+            //header
+            builder.AppendLine("<tr>");
+            builder.AppendLine("<td rowspan=2 class='borderAll center col_81'>imię i nazwisko</td>");
+            builder.AppendLine("<td rowspan=2 class='borderAll center col_81'>Funkcja</td>");
+            builder.AppendLine("<td rowspan=2 class='borderAll center col_81'>pomoc asystenta</td>");
+            builder.AppendLine("<td rowspan=2 class='borderAll center'>kategoria spraw</td>");
+            builder.AppendLine("<td rowspan=2 class='borderAll center col_81'>rok</td>");
+            builder.AppendLine("<td colspan=13 class='borderAll center col_81'>" + tekst + "	</td>");
+            builder.AppendLine("</tr>");
+            builder.AppendLine("<tr>");
+            builder.AppendLine("<td  class='borderAll center col_81'>do 3 miesięcy</td>");
+            builder.AppendLine("<td  class='borderAll center col_81'>suma powyżej 3 miesięcy</td>");
+            builder.AppendLine("<td  class='borderAll center col_81'>powyżej  3 do 6  miesięcy</td>");
+            builder.AppendLine("<td  class='borderAll center col_81'>powyżej  6 do 12 miesięcy</td>");
+            builder.AppendLine("<td  class='borderAll center col_81'>powyżej  6 do 12 miesięcy</td>");
+            builder.AppendLine("<td  class='borderAll center col_81'>suma powyżej 12 miesięcy</td>");
+            builder.AppendLine("<td  class='borderAll center col_81'>powyżej 12 miesięcy do 2 lat</td>");
+            builder.AppendLine("<td  class='borderAll center col_81'>powyżej 2 do 3 lat</td>");
+            builder.AppendLine("<td  class='borderAll center col_81'>suma powyżej 3 lat</td>");
+            builder.AppendLine("<td  class='borderAll center col_81'>powyżej 3 do 5 lat</td>");
+            builder.AppendLine("<td  class='borderAll center col_81'>powyżej 5 do 8 lat</td>");
+            builder.AppendLine("<td  class='borderAll center col_81'>ponad 8 lat</td>");
+            builder.AppendLine("<td  class='borderAll center col_81'>SUMA</td>");
+
+            builder.AppendLine("</tr>");
+
+            //ilosc sedziów
+            //    int licznik = 1;
+            foreach (DataRow wierszZtabeli in dane.Rows)
+            {
+                builder.AppendLine("<tr>");
+
+                builder.Append(tb.komorkaHTML(funkcjaSR + wierszZtabeli["imie"].ToString() + " " + wierszZtabeli["nazwisko"].ToString(), 0, 6, "borderAll center "));
+                builder.Append(tb.komorkaHTML(wierszZtabeli["funkcja"].ToString(), 0, 6, "borderAll center "));
+                builder.Append(tb.komorkaHTML("<a Class=\"normal\" href=\"javascript: openPopup('popup.aspx?sesja=" + wierszZtabeli["id_sedziego"].ToString() + "!" + idtabeli + "!2')\">" + wierszZtabeli["D_01"].ToString() + " </a>", 0, 6, "borderAll center "));
+
+                builder.Append(tb.komorkaHTML("C", 0, 0, "borderAll center "));
+
+                for (int i = 2; i < 16; i++)
+                {
+                    string txt = "<a Class=\"normal\" href=\"javascript: openPopup('popup.aspx?sesja=" + wierszZtabeli["id_sedziego"].ToString() + "!" + idtabeli + "!" + i.ToString() + "!2')\">" + wierszZtabeli["D_" + i.ToString("D2")].ToString() + " </a>";
+                    builder.AppendLine(tb.komorkaHTML(txt, 0, 0, "borderAll center "));
+                }
+                builder.AppendLine("</tr>");
+                builder.AppendLine("<tr>");
+
+                builder.Append(tb.komorkaHTML("Cgg", 0, 0, "borderAll center "));
+                for (int i = 16; i < 30; i++)
+                {
+                    string txt = "<a Class=\"normal\" href=\"javascript: openPopup('popup.aspx?sesja=" + wierszZtabeli["id_sedziego"].ToString() + "!" + idtabeli + "!" + i.ToString() + "!2')\">" + wierszZtabeli["D_" + i.ToString("D2")].ToString() + " </a>";
+                    builder.AppendLine(tb.komorkaHTML(txt, 0, 0, "borderAll center "));
+                }
+                builder.AppendLine("</tr>");
+                builder.AppendLine("<tr>");
+                builder.Append(tb.komorkaHTML("Co", 0, 0, "borderAll center "));
+                for (int i = 30; i < 44; i++)
+                {
+                    string txt = "<a Class=\"normal\" href=\"javascript: openPopup('popup.aspx?sesja=" + wierszZtabeli["id_sedziego"].ToString() + "!" + idtabeli + "!" + i.ToString() + "!2')\">" + wierszZtabeli["D_" + i.ToString("D2")].ToString() + " </a>";
+                    builder.AppendLine(tb.komorkaHTML(txt, 0, 0, "borderAll center "));
+                }
+                builder.AppendLine("</tr>");
+                builder.AppendLine("<tr>");
+                builder.Append(tb.komorkaHTML("Cps", 0, 0, "borderAll center "));
+                for (int i = 44; i < 58; i++)
+                {
+                    string txt = "<a Class=\"normal\" href=\"javascript: openPopup('popup.aspx?sesja=" + wierszZtabeli["id_sedziego"].ToString() + "!" + idtabeli + "!" + i.ToString() + "!2')\">" + wierszZtabeli["D_" + i.ToString("D2")].ToString() + " </a>";
+                    builder.AppendLine(tb.komorkaHTML(txt, 0, 0, "borderAll center "));
+                }
+                builder.AppendLine("</tr>");
+                builder.AppendLine("<tr>");
+                builder.Append(tb.komorkaHTML("Nc", 0, 0, "borderAll center "));
+                for (int i = 58; i < 72; i++)
+                {
+                    string txt = "<a Class=\"normal\" href=\"javascript: openPopup('popup.aspx?sesja=" + wierszZtabeli["id_sedziego"].ToString() + "!" + idtabeli + "!" + i.ToString() + "!2')\">" + wierszZtabeli["D_" + i.ToString("D2")].ToString() + " </a>";
+                    builder.AppendLine(tb.komorkaHTML(txt, 0, 0, "borderAll center "));
+                }
+                builder.AppendLine("</tr>");
+
+                builder.AppendLine("<tr>");
+                builder.Append(tb.komorkaHTML("Ns", 0, 0, "borderAll center "));
+                for (int i = 72; i < 86; i++)
+                {
+                    string txt = "<a Class=\"normal\" href=\"javascript: openPopup('popup.aspx?sesja=" + wierszZtabeli["id_sedziego"].ToString() + "!" + idtabeli + "!" + i.ToString() + "!2')\">" + wierszZtabeli["D_" + i.ToString("D2")].ToString() + " </a>";
+                    builder.AppendLine(tb.komorkaHTML(txt, 0, 0, "borderAll center "));
+                }
+                builder.AppendLine("</tr>");
+
+                builder.AppendLine("<tr>");
+                builder.AppendLine(tb.komorkaHTML("RAZEM", 2, 0, "borderAll center "));
+                for (int i = 86; i < 102; i++)
+                {
+                    string txt = "<a Class=\"normal\" href=\"javascript: openPopup('popup.aspx?sesja=" + wierszZtabeli["id_sedziego"].ToString() + "!" + idtabeli + "!" + i.ToString() + "!2')\">" + wierszZtabeli["D_" + i.ToString("D2")].ToString() + " </a>";
+                    builder.AppendLine(tb.komorkaHTML(txt, 0, 0, "borderAll center  gray"));
+                }
+                builder.AppendLine("</tr>");
+                builder.AppendLine("<tr>");
+                builder.AppendLine(tb.komorkaHTML("OGÓŁEM za okres oceny", 2, 0, "borderAll center "));
+                for (int i = 102; i < 118; i++)
+                {
+                    string txt = "<a Class=\"normal\" href=\"javascript: openPopup('popup.aspx?sesja=" + wierszZtabeli["id_sedziego"].ToString() + "!" + idtabeli + "!" + i.ToString() + "!2')\">" + wierszZtabeli["D_" + i.ToString("D2")].ToString() + " </a>";
+                    builder.AppendLine(tb.komorkaHTML(txt, 0, 0, "borderAll center  gray"));
+                }
+                builder.AppendLine("</tr>");
+
+                //licznik++;
+            }
+            //footer
+            //   builder.AppendLine("</tr>");
+
+            builder.Append("</table>");
+            builder.Append(" </div>");
+            tblControl.Text = builder.ToString();
+            tablePlaceHolder17.Controls.Add(tblControl);
+        }
+
+        protected void tworztabelkeHTML23(string idKontrolki, int idWydzialu, int idtabeli, DataTable dane, string tekst, string funkcjaSR, string opisDzialu, string nrTabeli)
+        {
+            if (dane == null)
+            {
+                cm.log.Error(tenPlik + " Brak danych do tabeli dynamicznej HTML");
+                return;
+            }
+            var tblControl = new Label { ID = idKontrolki };
+            tblControl.Width = 1150;
+
+            StringBuilder builder = new StringBuilder();
+            builder.Append(" <div class='page-break'>");
+            builder.AppendLine("<p>" + opisDzialu + "</p>");
+            if (cl.debug(idWydzialu))
+            {
+                builder.AppendLine("<p>" + nrTabeli + "</p>");
+            }
+            builder.AppendLine("<br/>");
+            builder.AppendLine("<table style='width: 1150px;'>");
+            //header
+            builder.AppendLine("<tr>");
+            builder.AppendLine("<td rowspan=3 class='borderAll center col_81'>imię i nazwisko</td>");
+            builder.AppendLine("<td rowspan=3 class='borderAll center col_81'>Funkcja</td>");
+            builder.AppendLine("<td rowspan=3 class='borderAll center col_81'>pomoc asystenta</td>");
+            builder.AppendLine("<td rowspan=3 class='borderAll center'>kategoria spraw</td>");
+            builder.AppendLine("<td rowspan=3 class='borderAll center col_81'>rok</td>");
+            builder.AppendLine("<td colspan=10 class='borderAll center '>" + tekst + "	</td>");
+            builder.AppendLine("<td colspan=5 class='borderAll center '>roztrzygnięcie II instancji*	</td>");
+
+            builder.AppendLine("</tr>");
+
+            builder.AppendLine("<tr>");
+            builder.AppendLine("<td rowspan=2 class='borderAll center col_81'>ogółem</td>");
+            builder.AppendLine("<td rowspan=2 class='borderAll center col_81'>w terminie ustawowym</td>");
+            builder.AppendLine("<td colspan=8 class='borderAll center col_81'>po upływie terminu ustawowego</td>");
+            builder.AppendLine("<td rowspan=2 class='borderAll center col_81'>liczba spraw  poddanych kontroli instancyjnej</td>");
+            builder.AppendLine("<td rowspan=2 class='borderAll center col_81'>utrzymano w mocy</td>");
+            builder.AppendLine("<td rowspan=2 class='borderAll center col_81'>zmieniono</td>");
+            builder.AppendLine("<td rowspan=2 class='borderAll center col_81'>uchylono i przekazano do ponownego roztrzygnięcia</td>");
+            builder.AppendLine("<td rowspan=2 class='borderAll center col_81'>załatwiono w inny sposób</td>");
+            builder.AppendLine("</tr>");
+            builder.AppendLine("<tr>");
+
+            builder.AppendLine("<td  class='borderAll center col_81'>1-14 dni</td>");
+            builder.AppendLine("<td  class='borderAll center col_81'>w tym nieusprawiedliwione</td>");
+            builder.AppendLine("<td  class='borderAll center col_81'>15-30 dni</td>");
+            builder.AppendLine("<td  class='borderAll center col_81'>w tym nieusprawiedliwione</td>");
+            builder.AppendLine("<td  class='borderAll center col_81'>pow.1 do 3 mies.</td>");
+            builder.AppendLine("<td  class='borderAll center col_81'>w tym nieusprawiedliwione</td>");
+            builder.AppendLine("<td  class='borderAll center col_81'>ponad 3 mies.</td>");
+            builder.AppendLine("<td  class='borderAll center col_81'>w tym nieusprawiedliwione</td>");
+
+            builder.AppendLine("</tr>");
+
+            //ilosc sedziów
+            //    int licznik = 1;
+            foreach (DataRow wierszZtabeli in dane.Rows)
+            {
+                builder.AppendLine("<tr>");
+
+                builder.Append(tb.komorkaHTML(funkcjaSR + wierszZtabeli["imie"].ToString() + " " + wierszZtabeli["nazwisko"].ToString(), 0, 6, "borderAll center "));
+                builder.Append(tb.komorkaHTML(wierszZtabeli["funkcja"].ToString(), 0, 6, "borderAll center "));
+                builder.Append(tb.komorkaHTML("<a Class=\"normal\" href=\"javascript: openPopup('popup.aspx?sesja=" + wierszZtabeli["id_sedziego"].ToString() + "!" + idtabeli + "!2')\">" + wierszZtabeli["D_01"].ToString() + " </a>", 0, 6, "borderAll center "));
+
+                builder.Append(tb.komorkaHTML("C", 0, 0, "borderAll center "));
+
+                for (int i = 2; i < 18; i++)
+                {
+                    string txt = "<a Class=\"normal\" href=\"javascript: openPopup('popup.aspx?sesja=" + wierszZtabeli["id_sedziego"].ToString() + "!" + idtabeli + "!" + i.ToString() + "!2')\">" + wierszZtabeli["D_" + i.ToString("D2")].ToString() + " </a>";
+                    builder.AppendLine(tb.komorkaHTML(txt, 0, 0, "borderAll center "));
+                }
+                builder.AppendLine("</tr>");
+                builder.AppendLine("<tr>");
+
+                builder.Append(tb.komorkaHTML("Cgg", 0, 0, "borderAll center "));
+                for (int i = 18; i < 34; i++)
+                {
+                    string txt = "<a Class=\"normal\" href=\"javascript: openPopup('popup.aspx?sesja=" + wierszZtabeli["id_sedziego"].ToString() + "!" + idtabeli + "!" + i.ToString() + "!2')\">" + wierszZtabeli["D_" + i.ToString("D2")].ToString() + " </a>";
+                    builder.AppendLine(tb.komorkaHTML(txt, 0, 0, "borderAll center "));
+                }
+                builder.AppendLine("</tr>");
+                builder.AppendLine("<tr>");
+                builder.Append(tb.komorkaHTML("Co", 0, 0, "borderAll center "));
+                for (int i = 34; i < 50; i++)
+                {
+                    string txt = "<a Class=\"normal\" href=\"javascript: openPopup('popup.aspx?sesja=" + wierszZtabeli["id_sedziego"].ToString() + "!" + idtabeli + "!" + i.ToString() + "!2')\">" + wierszZtabeli["D_" + i.ToString("D2")].ToString() + " </a>";
+                    builder.AppendLine(tb.komorkaHTML(txt, 0, 0, "borderAll center "));
+                }
+                builder.AppendLine("</tr>");
+                builder.AppendLine("<tr>");
+                builder.Append(tb.komorkaHTML("Cps", 0, 0, "borderAll center "));
+                for (int i = 50; i < 64; i++)
+                {
+                    string txt = "<a Class=\"normal\" href=\"javascript: openPopup('popup.aspx?sesja=" + wierszZtabeli["id_sedziego"].ToString() + "!" + idtabeli + "!" + i.ToString() + "!2')\">" + wierszZtabeli["D_" + i.ToString("D2")].ToString() + " </a>";
+                    builder.AppendLine(tb.komorkaHTML(txt, 0, 0, "borderAll center "));
+                }
+                builder.AppendLine("</tr>");
+                builder.AppendLine("<tr>");
+                builder.Append(tb.komorkaHTML("Nc", 0, 0, "borderAll center "));
+                for (int i = 64; i < 78; i++)
+                {
+                    string txt = "<a Class=\"normal\" href=\"javascript: openPopup('popup.aspx?sesja=" + wierszZtabeli["id_sedziego"].ToString() + "!" + idtabeli + "!" + i.ToString() + "!2')\">" + wierszZtabeli["D_" + i.ToString("D2")].ToString() + " </a>";
+                    builder.AppendLine(tb.komorkaHTML(txt, 0, 0, "borderAll center "));
+                }
+                builder.AppendLine("</tr>");
+
+                builder.AppendLine("<tr>");
+                builder.Append(tb.komorkaHTML("Ns", 0, 0, "borderAll center "));
+                for (int i = 78; i < 92; i++)
+                {
+                    string txt = "<a Class=\"normal\" href=\"javascript: openPopup('popup.aspx?sesja=" + wierszZtabeli["id_sedziego"].ToString() + "!" + idtabeli + "!" + i.ToString() + "!2')\">" + wierszZtabeli["D_" + i.ToString("D2")].ToString() + " </a>";
+                    builder.AppendLine(tb.komorkaHTML(txt, 0, 0, "borderAll center "));
+                }
+                builder.AppendLine("</tr>");
+
+                builder.AppendLine("<tr>");
+                builder.AppendLine(tb.komorkaHTML("RAZEM", 2, 0, "borderAll center "));
+                for (int i = 92; i < 108; i++)
+                {
+                    string txt = "<a Class=\"normal\" href=\"javascript: openPopup('popup.aspx?sesja=" + wierszZtabeli["id_sedziego"].ToString() + "!" + idtabeli + "!" + i.ToString() + "!2')\">" + wierszZtabeli["D_" + i.ToString("D2")].ToString() + " </a>";
+                    builder.AppendLine(tb.komorkaHTML(txt, 0, 0, "borderAll center  gray"));
+                }
+                builder.AppendLine("</tr>");
+                builder.AppendLine("<tr>");
+                builder.AppendLine(tb.komorkaHTML("OGÓŁEM za okres oceny", 2, 0, "borderAll center "));
+                for (int i = 108; i < 124; i++)
+                {
+                    string txt = "<a Class=\"normal\" href=\"javascript: openPopup('popup.aspx?sesja=" + wierszZtabeli["id_sedziego"].ToString() + "!" + idtabeli + "!" + i.ToString() + "!2')\">" + wierszZtabeli["D_" + i.ToString("D2")].ToString() + " </a>";
+                    builder.AppendLine(tb.komorkaHTML(txt, 0, 0, "borderAll center  gray"));
+                }
+                builder.AppendLine("</tr>");
+            }
+
+            builder.Append("</table>");
+            builder.Append(" </div>");
+            tblControl.Text = builder.ToString();
+            tablePlaceHolder23.Controls.Add(tblControl);
         }
 
         protected void pisz(string Template, int iloscWierszy, int iloscKolumn, DataTable dane)

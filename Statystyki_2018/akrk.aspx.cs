@@ -350,6 +350,13 @@ namespace stat2018
             dT_02.Rows.Add(new Object[] { "3", "Uzasadnienia wygłoszone", "1", "3", "h" });
             dT_02.Rows.Add(new Object[] { "3", "Nieobecności (ilość dni)", "2", "1", "h" });
             dT_02.Rows.Add(new Object[] { "3", "ETAT", "1", "3", "h" });
+            dT_02.Rows.Add(new Object[] { "3", "załatwienia merytoryczne K", "1", "3", "h" });
+            dT_02.Rows.Add(new Object[] { "3", "załatwienia merytoryczne Ka", "1", "3", "h" });
+            dT_02.Rows.Add(new Object[] { "3", "załatwienia merytoryczne Ka", "1", "3", "h" });
+            dT_02.Rows.Add(new Object[] { "3", "wyroki łączne K", "1", "3", "h" });
+            dT_02.Rows.Add(new Object[] { "3", "wyroki łączne Ka", "1", "3", "h" });
+            dT_02.Rows.Add(new Object[] { "3", "Tryby szybkie (335,338a,336,387 kpk)", "1", "3", "h" });
+           
             dT_02.Rows.Add(new Object[] { "3", "Ilość sporządzonych uzasadnień", "1", "3", "h" });     
             dT_02.Rows.Add(new Object[] { "3", "Ilość uzasadnień zwróconych po terminie ustawowym bądź przedłużonym", "2", "1", "h" });
             dT_02.Rows.Add(new Object[] { "3", "Uzasadnienia wygłoszone", "1", "3", "h" });

@@ -229,26 +229,24 @@ namespace stat2018
                     string nazwaKolumny = "d_" + i.ToString("D2");
                     double liczba = 0;
                     dana = Drow[nazwaKolumny].ToString();
-                    try
+                    if (string.IsNullOrEmpty(dana.Trim()))
                     {
-                        liczba = double.Parse(dana);
+                        dana = "0";
                     }
-                    catch (Exception ex)
+                    else
                     {
                         try
                         {
                             dana = dana.Replace(".", ",");
-                            if (string.IsNullOrEmpty(dana))
-                            {
-                                dana = "0";
-                            }
                             liczba = double.Parse(dana);
                         }
-                        catch (Exception)
+                        catch (Exception ex)
                         {
                             cm.log.Error("tabellaLiczbowa: " + ex.Message + " : " + dana.ToString());
                         }
-                    } // end of try
+
+                    }
+                   
                     wierszTymczasowy[nazwaKolumny] = liczba;
                 }
                 tabelaRobocza.Rows.Add(wierszTymczasowy);

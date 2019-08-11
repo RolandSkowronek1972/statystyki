@@ -395,7 +395,7 @@ namespace stat2018
             }
             DataTable tabelka01 = dr.generuj_dane_do_tabeli_wierszy2018(Date1.Date, Date2.Date, (string)Session["id_dzialu"], 14, 8, 5, tenPlik);
             Session["tabelka014"] = tabelka01;
-            pisz("tab_14_", 8, 5, tabelka01);
+            pisz("tab_14_", 8, 6, tabelka01);
         }
 
         protected void tabela_15()

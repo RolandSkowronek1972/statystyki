@@ -357,6 +357,11 @@ namespace stat2018
             dT_02.Rows.Add(new Object[] { "3", "Pa", "1", "3", "h" });
 
             dT_02.Rows.Add(new Object[] { "3", "ETAT", "1", "3", "h" });
+            dT_02.Rows.Add(new Object[] { "3", "załatwienia merytoryczne U", "1", "3", "h" });
+            dT_02.Rows.Add(new Object[] { "3", "załatwienia merytoryczne Ua", "1", "3", "h" });
+            dT_02.Rows.Add(new Object[] { "3", "załatwienia merytoryczne P", "1", "3", "h" });
+            dT_02.Rows.Add(new Object[] { "3", "załatwienia merytoryczne Pa", "1", "3", "h" });
+
             dT_02.Rows.Add(new Object[] { "3", "Ilość sporządzonych uzasadnień", "1", "3", "h" });     
             dT_02.Rows.Add(new Object[] { "3", "Ilość uzasadnień zwróconych po terminie ustawowym bądź przedłużonym", "2", "1", "h" });
             dT_02.Rows.Add(new Object[] { "3", "Uzasadnienia wygłoszone", "1", "3", "h" });

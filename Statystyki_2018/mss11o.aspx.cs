@@ -1255,7 +1255,7 @@ namespace stat2018
             dT.Rows.Add(new Object[] { 78, 1, 3, 1, "wciecie borderAll", "Dotyczące pomocy sądowej" });
             dT.Rows.Add(new Object[] { 78, 4, 1, 1, " center", "113" });
             dT.Rows.Add(new Object[] { 79, 1, 3, 1, "wciecie borderAll", "O zabezpieczenie roszczenia przed wszczęciem postępowania" });
-            dT.Rows.Add(new Object[] { 79, 4, 1, 1, " center", "136" });
+            dT.Rows.Add(new Object[] { 79, 4, 1, 1, " center", "135" });
             dT.Rows.Add(new Object[] { 80, 1, 3, 1, "wciecie borderAll", "O zabezpieczenie dowodu przed wszczęciem postępowania" });
             dT.Rows.Add(new Object[] { 80, 4, 1, 1, " center", "138a" });
             dT.Rows.Add(new Object[] { 81, 1, 3, 1, "wciecie borderAll", "W sprawie odmowy rejestracji ponadzakładowego układu zbiorowego pracy " });
@@ -1803,7 +1803,7 @@ namespace stat2018
 
             dT.Rows.Add(new Object[] { 2, 23, 1, 3, "center col_120", "Załatwienie razem (suma kol. 23, 35, 39, 40)" });
             dT.Rows.Add(new Object[] { 2, 24, 1, 3, "center col_120", "Razem załatwionych spraw na posiedzeniu sędziowie SO (suma kol.24,25,34)" });
-            dT.Rows.Add(new Object[] { 2, 25, 10, 1, "center col_120", "Sędziowie SO" });
+            dT.Rows.Add(new Object[] { 2, 25, 11, 1, "center col_120", "Sędziowie SO" });
             dT.Rows.Add(new Object[] { 2, 36, 1, 3, "center col_120", "Razem załatwionych spraw na posiedzeniu sędziowie SR (suma kol.36,37,38)" });
             dT.Rows.Add(new Object[] { 2, 37, 3, 1, "center ", "Sędziowie SR" });
             dT.Rows.Add(new Object[] { 2, 38, 1, 3, "center col_120", "inni sędziowie" });
@@ -1826,12 +1826,11 @@ namespace stat2018
             dT.Rows.Add(new Object[] { 3, 37, 1, 2, "center col_120", "sędziów SR delegowanych w trybie art. 77 §1 usp" });
             dT.Rows.Add(new Object[] { 3, 38, 1, 2, "center col_120", "sędziów SR delegowanych w trybie art. 77 §1 usp " });
             dT.Rows.Add(new Object[] { 3, 39, 1, 2, "center col_120", "na czas nieokreślony lub na czas określony, orzekających w niepełnym wymiarze" });
-            dT.Rows.Add(new Object[] { 3, 40, 1, 2, "center col_120", " sędziów SR delegowanych w trybie art. 77 § 9 usp" });
-
+        
             dT.Rows.Add(new Object[] { 4, 9, 1, 1, "center col_120", "prezesa" });
             dT.Rows.Add(new Object[] { 4, 10, 1, 1, "center col_120", "wiceprezesa" });
-            dT.Rows.Add(new Object[] { 4, 11, 1, 1, "center col_120", "przewodniczącego wydziału" });
-            dT.Rows.Add(new Object[] { 4, 12, 1, 1, "center col_120", "zastępcę przewodniczącego wydziału" });
+            dT.Rows.Add(new Object[] { 4, 11, 1, 1, "center col_120", "przewod-niczącego wydziału" });
+            dT.Rows.Add(new Object[] { 4, 12, 1, 1, "center col_120", "zastępcę przewod-niczącego wydziału" });
             dT.Rows.Add(new Object[] { 4, 13, 1, 1, "center col_120", "kierownika sekcji" });
             dT.Rows.Add(new Object[] { 4, 14, 1, 1, "center col_120", "wizytatorów" });
             dT.Rows.Add(new Object[] { 4, 15, 1, 1, "center col_120", "innych funkcyjnych tego sądu z tego pionu" });
@@ -1839,8 +1838,8 @@ namespace stat2018
 
             dT.Rows.Add(new Object[] { 4, 27, 1, 1, "center col_120", "prezesa" });
             dT.Rows.Add(new Object[] { 4, 28, 1, 1, "center col_120", "wiceprezesa" });
-            dT.Rows.Add(new Object[] { 4, 29, 1, 1, "center col_120", "przewodniczącego wydziału" });
-            dT.Rows.Add(new Object[] { 4, 30, 1, 1, "center col_120", "zastępcę przewodniczącego wydziału" });
+            dT.Rows.Add(new Object[] { 4, 29, 1, 1, "center col_120", "przewod-niczącego wydziału" });
+            dT.Rows.Add(new Object[] { 4, 30, 1, 1, "center col_120", "zastępcę przewod-niczącego wydziału" });
             dT.Rows.Add(new Object[] { 4, 31, 1, 1, "center col_120", "kierownika sekcji" });
             dT.Rows.Add(new Object[] { 4, 32, 1, 1, "center col_120", "wizytatorów" });
             dT.Rows.Add(new Object[] { 4, 33, 1, 1, "center col_120", "innych funkcyjnych tego sądu z tego pionu" });

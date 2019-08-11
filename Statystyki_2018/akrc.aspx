@@ -734,6 +734,18 @@
                                    </ItemTemplate>
                    <ItemStyle  CssClass = "borderAll center col_40"/>
                 </asp:TemplateField>
+              <asp:TemplateField HeaderText = "d_28" SortExpression = "d_01" > 
+                <ItemTemplate >
+          <a href = "javascript:openPopup('popup.aspx?sesja=<%# Eval("id_sedziego")+ "!"+Eval("id_tabeli") +"!29!2"%>')" ><asp:Label ID = "Label_gwTabela2129" runat = "server" Text = '<%# Eval("d_29")%>' CssClass = "normal" ></asp:Label> </a>
+                                   </ItemTemplate>
+                   <ItemStyle  CssClass = "borderAll center col_40"/>
+                </asp:TemplateField>
+              <asp:TemplateField HeaderText = "d_28" SortExpression = "d_01" > 
+                <ItemTemplate >
+          <a href = "javascript:openPopup('popup.aspx?sesja=<%# Eval("id_sedziego")+ "!"+Eval("id_tabeli") +"!30!2"%>')" ><asp:Label ID = "Label_gwTabela2130" runat = "server" Text = '<%# Eval("d_30")%>' CssClass = "normal" ></asp:Label> </a>
+                                   </ItemTemplate>
+                   <ItemStyle  CssClass = "borderAll center col_40"/>
+                </asp:TemplateField>
    
         </Columns>
     </asp:GridView>

@@ -319,10 +319,7 @@ namespace stat2018
             dT_02.Rows.Add(new Object[] { "3", "Uzasadnienia wygłoszone", "1", "3", "h" });
             dT_02.Rows.Add(new Object[] { "3", "Nieobecności (ilość dni)", "2", "1", "h" });
             dT_02.Rows.Add(new Object[] { "3", "ETAT", "1", "3", "h" });
-            dT_02.Rows.Add(new Object[] { "3", "U", "1", "3", "h" });
-            dT_02.Rows.Add(new Object[] { "3", "Ua", "1", "3", "h" });
-            dT_02.Rows.Add(new Object[] { "3", "P", "1", "3", "h" });
-            dT_02.Rows.Add(new Object[] { "3", "Pa", "1", "3", "h" });
+           
             dT_02.Rows.Add(new Object[] { "3", "GC merytoryczne", "1", "3", "h" });
             dT_02.Rows.Add(new Object[] { "3", "Ga merytoryczne", "1", "3", "h" });
             dT_02.Rows.Add(new Object[] { "3", "Ilość sporządzonych uzasadnień", "1", "3", "h" });

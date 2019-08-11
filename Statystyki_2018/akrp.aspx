@@ -686,7 +686,30 @@
                                    </ItemTemplate>
                    <ItemStyle  CssClass = "borderAll center col_40"/>
                 </asp:TemplateField>
-   
+    <asp:TemplateField HeaderText = "d_26" SortExpression = "d_01" > 
+                <ItemTemplate >
+          <a href = "javascript:openPopup('popup.aspx?sesja=<%# Eval("id_sedziego")+ "!"+Eval("id_tabeli") +"!31!2"%>')" ><asp:Label ID = "Label_gwTabela2131" runat = "server" Text = '<%# Eval("d_31")%>' CssClass = "normal" ></asp:Label> </a>
+                                   </ItemTemplate>
+                   <ItemStyle  CssClass = "borderAll center col_40"/>
+                </asp:TemplateField>
+             <asp:TemplateField HeaderText = "d_26" SortExpression = "d_01" > 
+                <ItemTemplate >
+          <a href = "javascript:openPopup('popup.aspx?sesja=<%# Eval("id_sedziego")+ "!"+Eval("id_tabeli") +"!32!2"%>')" ><asp:Label ID = "Label_gwTabela2132" runat = "server" Text = '<%# Eval("d_32")%>' CssClass = "normal" ></asp:Label> </a>
+                                   </ItemTemplate>
+                   <ItemStyle  CssClass = "borderAll center col_40"/>
+                </asp:TemplateField>
+             <asp:TemplateField HeaderText = "d_26" SortExpression = "d_01" > 
+                <ItemTemplate >
+          <a href = "javascript:openPopup('popup.aspx?sesja=<%# Eval("id_sedziego")+ "!"+Eval("id_tabeli") +"!33!2"%>')" ><asp:Label ID = "Label_gwTabela2133" runat = "server" Text = '<%# Eval("d_33")%>' CssClass = "normal" ></asp:Label> </a>
+                                   </ItemTemplate>
+                   <ItemStyle  CssClass = "borderAll center col_40"/>
+                </asp:TemplateField>
+             <asp:TemplateField HeaderText = "d_26" SortExpression = "d_01" > 
+                <ItemTemplate >
+          <a href = "javascript:openPopup('popup.aspx?sesja=<%# Eval("id_sedziego")+ "!"+Eval("id_tabeli") +"!34!2"%>')" ><asp:Label ID = "Label_gwTabela2134" runat = "server" Text = '<%# Eval("d_34")%>' CssClass = "normal" ></asp:Label> </a>
+                                   </ItemTemplate>
+                   <ItemStyle  CssClass = "borderAll center col_40"/>
+                </asp:TemplateField>
         </Columns>
                    <FooterStyle BackColor="#CCCCCC" />
     </asp:GridView>

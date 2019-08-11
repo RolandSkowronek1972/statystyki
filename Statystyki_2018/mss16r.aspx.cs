@@ -2071,7 +2071,7 @@ namespace stat2018
             DataTable dT = schematTabeli();
             dT.Clear();
             //                         W  K  CS RS   style"    text"
-            dT.Rows.Add(new Object[] { 1, 1, 2, 1, "wciecie borderAll", "Sędziowie pionu rodzinnego " });
+            dT.Rows.Add(new Object[] { 1, 1, 1, 1, "wciecie borderAll", "Sędziowie pionu rodzinnego " });
 
             return dT;
         }
