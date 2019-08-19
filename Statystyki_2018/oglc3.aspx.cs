@@ -393,7 +393,7 @@ namespace stat2018
             {
                 cm.log.Info(tenPlik + ": rozpoczęcie tworzenia tabeli 14");
             }
-            DataTable tabelka01 = dr.generuj_dane_do_tabeli_wierszy2018(Date1.Date, Date2.Date, (string)Session["id_dzialu"], 14, 8, 5, tenPlik);
+            DataTable tabelka01 = dr.generuj_dane_do_tabeli_wierszy2018(Date1.Date, Date2.Date, (string)Session["id_dzialu"], 14, 8, 7  , tenPlik);
             Session["tabelka014"] = tabelka01;
             pisz("tab_14_", 8, 6, tabelka01);
         }

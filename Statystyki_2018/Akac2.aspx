@@ -44,8 +44,8 @@
                 <asp:LinkButton ID="LinkButton54" runat="server" CssClass="ax_box" OnClick="LinkButton54_Click">  Odśwież</asp:LinkButton>
             </td>
             <td style="width:auto;padding-left:5px;">
-                  <asp:LinkButton ID="LinkButton55" runat="server"   OnClick="LinkButton55_Click" CssClass="ax_box"> Drukuj </asp:LinkButton>
-            </td>
+                       <input id="Button1" class="ax_box" style="border-style: none; padding: 0px" type="button" onclick="JavaScript: window.print();" value="Drukuj" /></td>
+          
             <td style="width:auto;padding-left:5px;">
                 
              

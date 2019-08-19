@@ -698,11 +698,11 @@ namespace stat2018
                     table3.Columns.Remove("funkcja");
                     table3.Columns.Remove("Id_tabeli");
                 }
-                catch (Exception)
+                catch
                 {
                 }
 
-                MyWorksheet3 = tabela.tworzArkuszwExcle(MyExcel.Workbook.Worksheets[3], table, 12, 1, 5, false, false);
+                MyWorksheet3 = tabela.tworzArkuszwExcle(MyExcel.Workbook.Worksheets[3], table, 12, 1, 5, false, false, false, false, false);
 
                 rowik = 3;
                 przesuniecieX = -3;

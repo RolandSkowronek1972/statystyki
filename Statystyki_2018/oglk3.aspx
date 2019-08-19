@@ -55,7 +55,11 @@
             </td>
             <td style="width:auto;padding-left:5px;"></td>
                   <td style="width:auto;padding-left:5px;">
-                  <input id="Button1" class="ax_box" style="border-style: none; padding: 0px" type="button" onclick="JavaScript: window.print();" value="Drukuj" /></td>
+                  <input id="Button1" class="ax_box" style="border-style: none; padding: 0px" type="button" onclick="JavaScript: window.print();" value="Drukuj" />
+
+
+
+                  </td>
             
            
             <td style="width:auto;padding-left:5px;">

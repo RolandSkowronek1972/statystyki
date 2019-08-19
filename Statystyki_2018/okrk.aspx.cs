@@ -666,11 +666,8 @@ namespace stat2018
                 ExcelWorksheet MyWorksheet2 = MyExcel.Workbook.Worksheets[2];
 
                 MyWorksheet2 = tabela.tworzArkuszwExcle(MyExcel.Workbook.Worksheets[2], (DataTable)Session["tabelka003"], 17, 0, 9, true, false, true, true, true);
-
-                MyWorksheet2 = tabela.tworzArkuszwExcle(MyExcel.Workbook.Worksheets[3], (DataTable)Session["tabelkaGW004"], 12, 1, 5, false, false);
-                // piąta
-
-                MyWorksheet2 = tabela.tworzArkuszwExcle(MyExcel.Workbook.Worksheets[4], (DataTable)Session["tabelkaGW005"], 7, 0, 4, true, false, false, false, false);
+                MyWorksheet2 = tabela.tworzArkuszwExcle(MyExcel.Workbook.Worksheets[3], (DataTable)Session["tabelkaGW004"], 12, 1, 5, false, false,false,false,false);
+                 MyWorksheet2 = tabela.tworzArkuszwExcle(MyExcel.Workbook.Worksheets[4], (DataTable)Session["tabelkaGW005"], 7, 0, 4, true, false, false, false, false);
 
                 try
                 {

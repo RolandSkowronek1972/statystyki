@@ -10,6 +10,19 @@ namespace stat2018
         public string con_str = ConfigurationManager.ConnectionStrings["wap"].ConnectionString;
         public string con_str_wcyw = ConfigurationManager.ConnectionStrings["wcywConnectionString"].ConnectionString;
         public log_4_net log = new log_4_net();
+
+        public enum Rodzaje
+        {
+            admin = 0,// (możliwość nadawania uprawnień)
+            miesięczne = 1,
+            kontrolki = 2,
+            MSS = 3,
+            kof = 4,
+            wyszukiwarka = 5,
+            pracownik = 6,
+            potwierdzenie = 1
+        }
+
         /*
         public string[] splitData(string arg)
         {
@@ -19,6 +32,7 @@ namespace stat2018
             return stTab;
         }
         */
+
         public string podajMiesiac(int numerMiesiaca)
         {
             switch (numerMiesiaca)
@@ -274,8 +288,6 @@ namespace stat2018
             public int rowSpan;
 
             public string styl;
-            
-          
         }
     } // end of common
 }

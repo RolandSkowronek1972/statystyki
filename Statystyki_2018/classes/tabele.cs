@@ -22,6 +22,7 @@ namespace stat2018
             HeaderCell.RowSpan = rows;
             return HeaderCell;
         }
+
         public GridViewRow Grw(object sender)
         {
             GridViewRow HeaderGridRow = null;
@@ -244,9 +245,8 @@ namespace stat2018
                         {
                             cm.log.Error("tabellaLiczbowa: " + ex.Message + " : " + dana.ToString());
                         }
-
                     }
-                   
+
                     wierszTymczasowy[nazwaKolumny] = liczba;
                 }
                 tabelaRobocza.Rows.Add(wierszTymczasowy);
@@ -282,6 +282,7 @@ namespace stat2018
                 }
             }
         }
+
         public void makeSumRow(DataTable table, GridViewRowEventArgs e, int przesuniecie)
         {
             DataTable tabelka = tabellaLiczbowa(table);
@@ -292,7 +293,7 @@ namespace stat2018
             object sumObject;
             int ilKolumn = e.Row.Cells.Count;
             e.Row.Cells[0 + przesuniecie].Text = "Ogółem";
-            for (int i = 1; i < e.Row.Cells.Count ; i++)
+            for (int i = 1; i < e.Row.Cells.Count; i++)
             {
                 try
                 {
@@ -469,7 +470,7 @@ namespace stat2018
             {
                 return null;
             }
-            tworzArkuszwExcle(Arkusz, daneDoArkusza, iloscKolumn, przesunięcieX, przesuniecieY, lp, false);
+            //   tworzArkuszwExcle(Arkusz, daneDoArkusza, iloscKolumn, przesunięcieX, przesuniecieY, lp, false);
             // tu dodać sumę
 
             ExcelWorksheet tymczasowy = tworzArkuszwExcle(Arkusz, daneDoArkusza, iloscKolumn, przesunięcieX, przesuniecieY, lp, false);
@@ -524,14 +525,12 @@ namespace stat2018
                         }
                         catch (Exception ex)
                         {
-
                             cm.log.Error("tworzArkuszwExcle- lp " + ex.Message);
                         }
-                       
                     }
                     if (stanowisko)
                     {
-                            try
+                        try
                         {
                             dodatek++;
                             Arkusz.Cells[wiersz, przesunięcieX + dodatek].Style.ShrinkToFit = true;
@@ -548,7 +547,7 @@ namespace stat2018
                     }
                     if (funkcja)
                     {
-                           try
+                        try
                         {
                             dodatek++;
                             Arkusz.Cells[wiersz, przesunięcieX + dodatek].Style.ShrinkToFit = true;
@@ -980,7 +979,7 @@ namespace stat2018
                 return null;
             }
             IList<string> komorki = new List<string>();
-            
+
             DataTable schematNaglowka = new DataTable();
             schematNaglowka.Columns.Add("wiersz", typeof(int));
             schematNaglowka.Columns.Add("kolumna", typeof(int));

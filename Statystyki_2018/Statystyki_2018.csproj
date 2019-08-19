@@ -138,6 +138,7 @@
     <Content Include="akrc.aspx" />
     <Content Include="mss11o.aspx" />
     <Content Include="mss5o.aspx" />
+    <Content Include="okt2.aspx" />
     <Content Include="oglc3.aspx" />
     <Content Include="aopg.aspx" />
     <Content Include="oglk3.aspx" />
@@ -161,6 +162,7 @@
     <Content Include="Scripts\jQuery.print.js" />
     <Content Include="test.aspx" />
     <Content Include="obba.aspx" />
+    <Content Include="UserControlls\Rodzaje.ascx" />
     <Content Include="wab.aspx" />
     <Content Include="okrk.aspx" />
     <Content Include="okrr.aspx" />
@@ -246,6 +248,7 @@
     <Content Include="Template\aopc2.xlsx" />
     <Content Include="libman.json" />
     <Content Include="Headers\Header001.json" />
+    <Content Include="XMLHeaders\okt2.xml" />
     <None Include="Properties\PublishProfiles\FolderProfile.pubxml" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -425,6 +428,8 @@
     </Compile>
     <Compile Include="classes\datyDoMSS.cs" />
     <Compile Include="classes\log_4_net.cs" />
+    <Compile Include="classes\Uprawnienia.cs" />
+    <Compile Include="classes\XMLHeaders.cs" />
     <Compile Include="GlobalSuppressions.cs" />
     <Compile Include="mss16r.aspx.cs">
       <DependentUpon>mss16r.aspx</DependentUpon>
@@ -481,6 +486,13 @@
     </Compile>
     <Compile Include="mss5o.aspx.designer.cs">
       <DependentUpon>mss5o.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="okt2.aspx.cs">
+      <DependentUpon>okt2.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="okt2.aspx.designer.cs">
+      <DependentUpon>okt2.aspx</DependentUpon>
     </Compile>
     <Compile Include="oglc3.aspx.cs">
       <DependentUpon>oglc3.aspx</DependentUpon>
@@ -643,6 +655,13 @@
     </Compile>
     <Compile Include="obba.aspx.designer.cs">
       <DependentUpon>obba.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControlls\Rodzaje.ascx.cs">
+      <DependentUpon>Rodzaje.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControlls\Rodzaje.ascx.designer.cs">
+      <DependentUpon>Rodzaje.ascx</DependentUpon>
     </Compile>
     <Compile Include="wab.aspx.cs">
       <DependentUpon>wab.aspx</DependentUpon>

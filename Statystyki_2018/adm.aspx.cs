@@ -27,5 +27,28 @@ namespace stat2018
             enumerator.Reset();
             
         }
+
+        protected void zapisDanych(object sender, DevExpress.Web.Data.ASPxDataUpdatedEventArgs e)
+        {
+            try
+            {
+               
+                var miesieczne = e.NewValues["rodzaj"];
+                var mss = e.NewValues["mss"];
+                var kontrolki = e.NewValues["kontrolka"];
+                var kof = e.NewValues["kof"];
+                var wyszukiwarka = e.NewValues["wyszukiwarka"];
+                var pracownik = e.NewValues["pracownik"];
+
+            }
+            catch (Exception ex)
+            {
+                var error = ex.Message;
+                string blad = error.ToString();
+              
+            }
+            
+
+        }
     }
 }
