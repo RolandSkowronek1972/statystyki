@@ -136,18 +136,10 @@
                             <asp:BoundField DataField="id" HeaderText="L.p." SortExpression="id">
                                 <ItemStyle Width="15px" />
                             </asp:BoundField>
-                            <asp:BoundField DataField="funkcja" HeaderText="funkcja"
-                                SortExpression="funkcja">
-                                <ItemStyle CssClass="t2_funkcja" />
-                            </asp:BoundField>
-                            <asp:BoundField DataField="stanowisko" HeaderText="stanowisko"
-                                SortExpression="stanowisko">
-                                <ItemStyle CssClass="tx_stanowisko" />
-                            </asp:BoundField>
+                           
+                         
                             <asp:TemplateField HeaderText="imie" SortExpression="imie">
-                                <EditItemTemplate>
-                                    <asp:TextBox ID="TextBox14" runat="server" Text='<%# Bind("imie") %>'></asp:TextBox>
-                                </EditItemTemplate>
+                               
                                 <ItemTemplate>
                                     <asp:Label ID="Label10" runat="server" Text='<%# Eval("nazwisko") %>'></asp:Label>
                                     &nbsp;<asp:Label ID="Label1" runat="server" Text='<%# Bind("imie") %>'></asp:Label>

@@ -94,15 +94,6 @@ namespace stat2018 {
         protected global::System.Web.UI.WebControls.GridView gwTabela2;
         
         /// <summary>
-        /// tablePlaceHolder control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.PlaceHolder tablePlaceHolder;
-        
-        /// <summary>
         /// Label27 control.
         /// </summary>
         /// <remarks>

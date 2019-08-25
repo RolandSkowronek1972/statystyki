@@ -86,7 +86,7 @@
        <asp:Label ID="infoLabel2" runat="server" Text="Tabela 1\/" Visible="False"></asp:Label>
        <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" 
         DataSourceID="tabela_1" OnRowCreated="GridView1_RowCreated" 
-        Width="1150px" ShowHeader="False" OnRowDataBound="GridView1_RowDataBound" ShowFooter="True">
+        Width="1150px" ShowHeader="False" OnRowDataBound="GridView1_RowDataBound">
         <Columns>
             <asp:BoundField DataField="id" HeaderText="L.p." SortExpression="id">
             <ItemStyle  CssClass="col_25" />
@@ -265,7 +265,7 @@
     <div id="wyznaczenia"  class="page-break"> 
         <asp:Label ID="lbTabela2Title" runat="server"></asp:Label>
     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-        <asp:Label ID="infoLabel3" runat="server" Text="Tabela 3 \/" Visible="False"></asp:Label>
+        <asp:Label ID="infoLabel3" runat="server" Text="Tabela 2 \/" Visible="False"></asp:Label>
     <asp:GridView ID="GridView2" runat="server" AutoGenerateColumns="False" 
         DataSourceID="tabela_2" onrowcreated="GridView3_RowCreated" Width="100%" ShowHeader="False" OnRowDataBound="GridView3_RowDataBound" ShowFooter="True">
         <Columns>
@@ -356,7 +356,7 @@
     <div id="Div11"  class="page-break"> 
     <asp:Label ID="Label15" runat="server"></asp:Label>
 
-    &nbsp;<asp:Label ID="infoLabel5" runat="server" Text="Tabela 4 \/" Visible="False"></asp:Label>
+    &nbsp;<asp:Label ID="infoLabel5" runat="server" Text="Tabela 3 \/" Visible="False"></asp:Label>
         <asp:GridView ID="GridView3" runat="server" AutoGenerateColumns="False" 
         DataSourceID="tabela_3" onrowcreated="GridView5_RowCreated" Width="100%" ShowHeader="False" OnRowDataBound="GridView5_RowDataBound" ShowFooter="True">
         <Columns>
@@ -523,7 +523,7 @@
        <div id="Div11"  class="page-break"> 
     &nbsp;<asp:Label ID="Label7" runat="server"></asp:Label>
 &nbsp;
-    &nbsp;<asp:Label ID="infoLabel4" runat="server" Text="Tabela 5 \/" Visible="False"></asp:Label>
+    &nbsp;<asp:Label ID="infoLabel4" runat="server" Text="Tabela 4 \/" Visible="False"></asp:Label>
            <br />
            <table style="width:100%;">
                <tr>
@@ -577,7 +577,7 @@
        <div id="Div11"  class="page-break"> 
     <asp:Label ID="Label2" runat="server"></asp:Label>
 
-    &nbsp;<asp:Label ID="Label5" runat="server" Text="Tabela 6 \/" Visible="False"></asp:Label>
+    &nbsp;<asp:Label ID="Label5" runat="server" Text="Tabela 5 \/" Visible="False"></asp:Label>
         <asp:GridView ID="GridView4" runat="server" AutoGenerateColumns="False" 
         DataSourceID="Tabela_4" onrowcreated="GridView4_RowCreated1" Width="100%" ShowHeader="False" OnRowDataBound="GridView4_RowDataBound1" ShowFooter="True" OnSelectedIndexChanged="GridView4_SelectedIndexChanged">
         <Columns>
@@ -696,9 +696,7 @@
     <div id="debag" >
           <br />
      <br />
-        Raport statystyczny 
-                     nat="server">    &nbsp;Sporzadzone dn.
-            <asp:Label ID="Label29" runat="server"></asp:Label>&nbsp;przez&nbsp;
+          Raport statystyczny&nbsp;    &nbsp;Sporzadzone dn. <asp:Label ID="Label29" runat="server"></asp:Label>&nbsp;przez&nbsp;
 &nbsp;&nbsp;
             <asp:Label ID="Label28" runat="server"></asp:Label>
 &nbsp;<asp:Label ID="Label30" runat="server"></asp:Label>

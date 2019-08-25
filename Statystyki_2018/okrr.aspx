@@ -14,6 +14,22 @@
                   left: 0;
                   right: 0;
               }
+                  @media print {
+              @page {
+                 
+                 
+                 size: 29cm 21.7cm;
+                  margin: 0mm 0mm 0mm 0mm;
+                
+              }
+
+              div {
+                  transform: translate(0, 0);
+                  -webkit-transform: translate(0, 0 ); /* Saf3.1+, Chrome */
+                  -moz-transform: translate(0, 0); /* FF3.5+ */
+                
+              }
+          }
       </style>
 
     <script src="Scripts/rls.js"></script>

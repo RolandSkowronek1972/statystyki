@@ -765,7 +765,7 @@ namespace stat2018
                 tb.makeHeader(dT, GridView6);
             }
         }
-
+/*
         protected void makeSumRow(DataTable table, GridViewRowEventArgs e, int przesunięcie)
         {
             object sumObject;
@@ -781,7 +781,7 @@ namespace stat2018
                 catch (Exception)
                 { }
             }
-        }
+        }*/
 
         protected void GridView1_RowDataBound(object sender, GridViewRowEventArgs e)
         {

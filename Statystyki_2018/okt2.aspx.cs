@@ -10,7 +10,6 @@ using System;
 using System.Data;
 using System.Globalization;
 using System.IO;
-using System.Text;
 using System.Web.UI.WebControls;
 
 namespace stat2018
@@ -90,15 +89,10 @@ namespace stat2018
                 Label28.Text = cl.podajUzytkownika(User_id, domain);
                 Label29.Text = DateTime.Now.ToLongDateString();
                 Label30.Text = System.IO.File.ReadAllText(Server.MapPath(@"~//version.txt")).ToString().Trim();
-
-              
-              
             }
             catch
             {
-              
                 infoLabel2.Visible = false;
-
             }
         }
 
@@ -109,13 +103,9 @@ namespace stat2018
 
         protected void odswiez()
         {
-            if (Session["id_dzialu"] == null)
-            {
-                return;
-            }
-
-            tabela_1();
+            if (Session["id_dzialu"] == null) return;
             
+            tabela_1();
         }
 
         protected void tworzPlikExcell(object sender, EventArgs e)
@@ -150,7 +140,6 @@ namespace stat2018
                 MyWorksheet1 = tb.tworzArkuszwExcle(MyExcel.Workbook.Worksheets[8], (DataTable)Session["tabelka0016"], 4, 0, 3, false, false, false, false, false);
                 MyWorksheet1 = tb.tworzArkuszwExcle(MyExcel.Workbook.Worksheets[9], (DataTable)Session["tabelka0017"], 7, 0, 3, false, false, false, false, false);
 
-
                 MyWorksheet1 = tb.tworzArkuszwExcleBezSedziow(MyExcel.Workbook.Worksheets[10], (DataTable)Session["tabelka008"], 4, 2, 2, 2, false);
                 MyWorksheet1 = tb.tworzArkuszwExcleBezSedziow(MyExcel.Workbook.Worksheets[11], (DataTable)Session["tabelka009"], 1, 11, 2, 2, false);
                 MyWorksheet1 = tb.tworzArkuszwExcleBezSedziow(MyExcel.Workbook.Worksheets[12], (DataTable)Session["tabelka010"], 4, 3, 2, 1, false);
@@ -175,13 +164,12 @@ namespace stat2018
             }//end of using
         }
 
-    
         protected void tabela_1()
         {
             string idDzialu = (string)Session["id_dzialu"];
             if (cl.debug(int.Parse(idDzialu)))
             {
-                cm.log.Info(tenPlik + ": rozpoczęcie tworzenia tabeli 2");
+                cm.log.Info(tenPlik + ": rozpoczęcie tworzenia tabeli 1");
             }
             DataTable tabelka01 = dr.generuj_dane_do_tabeli_sedziowskiej_2018(int.Parse(idDzialu), 1, Date1.Date, Date2.Date, 25, tenPlik);
             Session["tabelka001"] = tabelka01;
@@ -191,9 +179,6 @@ namespace stat2018
             gwTabela2.DataBind();
         }
 
-
-
-    
         protected void naglowekTabeli_gwTabela2(object sender, GridViewRowEventArgs e)
         {
             if (e.Row.RowType == DataControlRowType.Header)
@@ -208,19 +193,15 @@ namespace stat2018
             }
         }
 
-      
         protected void stopkaTabeli_gwTabela2(object sender, GridViewRowEventArgs e)
         {
             if (e.Row.RowType == DataControlRowType.Footer)
             {
-                cm.log.Info(tenPlik + ": rozpoczęcie tworzenia stopki tabeli 2");
-                tb.makeSumRow((DataTable)Session["tabelka002"], e, 0);
+                cm.log.Info(tenPlik + ": rozpoczęcie tworzenia stopki tabeli 1");
+                tb.makeSumRow((DataTable)Session["tabelka001"], e, 0);
             }
         }
 
-      
-
-      
         private DataTable makeheader02()
         {
             #region tabela  2 ()
@@ -261,9 +242,5 @@ namespace stat2018
 
             #endregion tabela  2 ()
         }
-
-
-
-       
     }
 }

@@ -1,1 +1,5 @@
-2019-08-19 16:58:57,954  INFO stat2018.log_4_net - Logowanie: identyfikator uzytkownika: test to 6
+2019-08-25 19:16:05,445  INFO stat2018.log_4_net - Logowanie: identyfikator uzytkownika: test to 6
+2019-08-25 19:16:05,975  INFO stat2018.log_4_net - Header: Rozpoczecie procedury tworzenia elementów menu wyloguj
+2019-08-25 22:27:22,856  INFO stat2018.log_4_net - oopr.aspx Trwalo przerywanie watku.
+2019-08-25 22:27:27,720  INFO stat2018.log_4_net - Logowanie: identyfikator uzytkownika: test to 6
+2019-08-25 22:27:27,725  INFO stat2018.log_4_net - Header: Rozpoczecie procedury tworzenia elementów menu wyloguj

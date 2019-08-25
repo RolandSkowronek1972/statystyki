@@ -14,7 +14,7 @@ namespace stat2018
         public enum Rodzaje
         {
             admin = 0,// (możliwość nadawania uprawnień)
-            miesięczne = 1,
+            miesieczne = 1,
             kontrolki = 2,
             MSS = 3,
             kof = 4,

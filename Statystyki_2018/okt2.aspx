@@ -240,14 +240,7 @@
               
                    
 
-                                <br />
-                                <br />
-          <div class="page-break">
-              content
-                <asp:PlaceHolder runat="server" ID="tablePlaceHolder"></asp:PlaceHolder>
-              </div>
                                 <div id="debag">
-                                    <br />
                                     <br />
                                     Raport statystyczny
                      <asp:Label ID="Label27" runat="server"></asp:Label>

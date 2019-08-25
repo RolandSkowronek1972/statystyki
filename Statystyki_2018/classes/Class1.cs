@@ -704,14 +704,22 @@ namespace stat2018
 
                                         string ttxx = dR[0].ToString().Trim();
                                         parameters.Rows.Add("@value", dR[0].ToString().Trim());
-                                        try
+                                        if (dR.ItemArray.Length>0)      
                                         {
-                                            parameters.Rows.Add("@id_", dR[1].ToString().Trim());
+                                            try
+                                            {
+                                                parameters.Rows.Add("@id_", dR[1].ToString().Trim());
+                                            }
+                                            catch
+                                            {
+                                                parameters.Rows.Add("@id_", "0");
+                                            }
                                         }
-                                        catch
+                                        else
                                         {
                                             parameters.Rows.Add("@id_", "0");
                                         }
+
 
                                         parameters.Rows.Add("@id_tabeli", id_tabeli);
                                         parameters.Rows.Add("@id_dzialu", id_dzialu);

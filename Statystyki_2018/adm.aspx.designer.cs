@@ -13,13 +13,13 @@ namespace stat2018 {
     public partial class adm {
         
         /// <summary>
-        /// ASPxGridView1 control.
+        /// ASPxGridView2 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::DevExpress.Web.ASPxGridView ASPxGridView1;
+        protected global::DevExpress.Web.ASPxGridView ASPxGridView2;
         
         /// <summary>
         /// SqlDataSource1 control.
@@ -29,5 +29,23 @@ namespace stat2018 {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.SqlDataSource SqlDataSource1;
+        
+        /// <summary>
+        /// Panel1 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Panel Panel1;
+        
+        /// <summary>
+        /// zarzadzanieUprawnieniami2 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::stat2018.UserControlls.zarzadzanieUprawnieniami zarzadzanieUprawnieniami2;
     }
 }

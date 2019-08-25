@@ -1113,18 +1113,7 @@ namespace stat2018
             tabelaNaglowkowa.Rows.Add(new Object[] { "2", "Efektywny okres orzekania", "1", "2" });
             tabelaNaglowkowa.Rows.Add(new Object[] { "2", "Ilość wyznaczonych spraw", "6", "1" });
 
-            /*  tabelaNaglowkowa.Rows.Add(new Object[] { "1", "utrzymano  w mocy", "1", "1", "h" });
-              tabelaNaglowkowa.Rows.Add(new Object[] { "1", "uchylono ", "1", "1", "h" });
-              tabelaNaglowkowa.Rows.Add(new Object[] { "1", "Kop", "1", "1" });
-              tabelaNaglowkowa.Rows.Add(new Object[] { "1", "zmienionoKp", "1", "1" });
-              tabelaNaglowkowa.Rows.Add(new Object[] { "1", "częściowo uchylono", "1", "1" });
-              tabelaNaglowkowa.Rows.Add(new Object[] { "1", "pozostawiono bez rozpoznania ", "1", "1" });
-
-              tabelaNaglowkowa.Rows.Add(new Object[] { "2", "Sędzia", "1", "2" });
-              tabelaNaglowkowa.Rows.Add(new Object[] { "2", "Rodzaje orzeczeń ", "1", "2" });
-              tabelaNaglowkowa.Rows.Add(new Object[] { "2", "Razem", "6", "1" });
-
-      */
+         
             return tabelaNaglowkowa;
         }
 

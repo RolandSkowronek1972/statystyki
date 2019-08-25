@@ -1257,11 +1257,11 @@ namespace stat2018
             dT.Rows.Add(new Object[] { 79, 1, 3, 1, "wciecie borderAll", "O zabezpieczenie roszczenia przed wszczęciem postępowania" });
             dT.Rows.Add(new Object[] { 79, 4, 1, 1, " center", "135" });
             dT.Rows.Add(new Object[] { 80, 1, 3, 1, "wciecie borderAll", "O zabezpieczenie dowodu przed wszczęciem postępowania" });
-            dT.Rows.Add(new Object[] { 80, 4, 1, 1, " center", "138a" });
+            dT.Rows.Add(new Object[] { 80, 4, 1, 1, " center", "186" });
             dT.Rows.Add(new Object[] { 81, 1, 3, 1, "wciecie borderAll", "W sprawie odmowy rejestracji ponadzakładowego układu zbiorowego pracy " });
-            dT.Rows.Add(new Object[] { 81, 4, 1, 1, " center", "114a" });
+            dT.Rows.Add(new Object[] { 81, 4, 1, 1, " center", "138a" });
             dT.Rows.Add(new Object[] { 82, 1, 3, 1, "wciecie borderAll", "Inne bez symbolu i o symbolu wyżej niewymienionym" });
-            dT.Rows.Add(new Object[] { 82, 4, 1, 1, " center", "-" });
+            dT.Rows.Add(new Object[] { 82, 4, 1, 1, " center", "114a" });
             dT.Rows.Add(new Object[] { 83, 1, 3, 1, "wciecie borderAll", "Wykaz Kas-z wnioski o rozstrzygnięcie sporu zakładowego przez kolegium arbitrażu społecznego" });
             dT.Rows.Add(new Object[] { 83, 4, 1, 1, " center", "-" });
             dT.Rows.Add(new Object[] { 84, 1, 3, 1, "wciecie borderAll", "WSC skarga o stwierdzenie niezgodności z prawem – I inst." });

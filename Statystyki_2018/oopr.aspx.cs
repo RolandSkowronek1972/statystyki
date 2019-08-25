@@ -48,7 +48,7 @@ namespace stat2018
             Session["data_1"] = Date1.Date.ToShortDateString();
             Session["data_2"] = Date2.Date.ToShortDateString();
 
-            clearHedersSession();
+          
 
             try
             {
@@ -77,17 +77,7 @@ namespace stat2018
             }
         }// end of Page_Load
 
-        protected void clearHedersSession()
-        {
-            Session["header_01"] = null;
-            Session["header_02"] = null;
-            Session["header_03"] = null;
-            Session["header_04"] = null;
-            Session["header_05"] = null;
-            Session["header_06"] = null;
-            Session["header_07"] = null;
-            Session["header_08"] = null;
-        }
+      
 
         protected void przemiel()
         {
@@ -121,8 +111,7 @@ namespace stat2018
 
         #region "nagłowki tabel"
 
-        protected void makeHeader()
-        {
+       private DataTable Header01()       {
             #region tabela  1 (wierszowa)
 
             DataTable dT_01 = new DataTable();
@@ -293,7 +282,7 @@ namespace stat2018
             dT_01.Rows.Add(new Object[] { "6", "UWAGI", "1", "5", "h" });
             dT_01.Rows.Add(new Object[] { "6", "Kolumna kontrolna (wyznaczenia>=załatwienia)", "2", "2", "h" });
 
-            Session["header_01"] = dT_01;
+            return dT_01;
 
             #endregion tabela  1 (wierszowa)
         }
@@ -302,10 +291,8 @@ namespace stat2018
         {
             if (e.Row.RowType == DataControlRowType.Header)
             {
-                System.Web.UI.WebControls.GridView sn = new System.Web.UI.WebControls.GridView();
-                makeHeader();
-                DataTable dT = (DataTable)Session["header_01"];//dr.naglowek("\\Template\\oopr.xlsx", 1); //
-                tb.makeHeader(sn, dT, GridView1);
+              
+                tb.makeHeader(Header01(), GridView1);
             }
         }
 
@@ -412,22 +399,13 @@ namespace stat2018
         {
             if (e.Row.RowType == DataControlRowType.Footer)
             {
-                e.Row.Cells[2].Text = "Razem";
-
-                DataView view = (DataView)statystyki.Select(DataSourceSelectArguments.Empty);
-
-                DataTable table = view.ToTable();
-                object sumObject;
                 try
                 {
-                    for (int i = 1; i < 118; i++)
-                    {
-                        string txt = "d_";
-                        string digit = i.ToString("D2");
-                        txt = txt + digit;
-                        sumObject = table.Compute("Sum(" + txt + ")", "");
-                        e.Row.Cells[2 + i].Text = sumObject.ToString();
-                    }
+                    DataView view = (DataView)statystyki.Select(DataSourceSelectArguments.Empty);
+
+                    DataTable table = view.ToTable();
+
+                    tb.makeSumRow(table, e, 0, "Razem");
                 }
                 catch (Exception ex)
                 {

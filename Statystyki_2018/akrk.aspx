@@ -884,14 +884,7 @@
                             </ItemTemplate>
                             <ItemStyle CssClass="borderAll center col_40" />
                         </asp:TemplateField>
-                            <asp:TemplateField HeaderText="d_28" SortExpression="d_01">
-                            <ItemTemplate>
-                                <a href="javascript:openPopup('popup.aspx?sesja=<%# Eval("id_sedziego")+ "!"+Eval("id_tabeli") +"!34!2"%>')">
-                                    <asp:Label ID="Label_gwTabela2134" runat="server" Text='<%# Eval("d_34")%>' CssClass="normal"></asp:Label>
-                                </a>
-                            </ItemTemplate>
-                            <ItemStyle CssClass="borderAll center col_40" />
-                        </asp:TemplateField>
+                     
                     </Columns>
                     <FooterStyle BackColor="#CCCCCC" />
                 </asp:GridView>
