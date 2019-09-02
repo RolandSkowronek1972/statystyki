@@ -58,7 +58,7 @@
 
         <div id="Div2" style="z-index: 10;">
             <div style="margin-left: auto; margin-right: auto; text-align: center; width: auto;">
-                <asp:Label ID="Label3" runat="server" Text="Sąd " Style="font-weight: 700"></asp:Label>
+                <asp:Label ID="Label3" runat="server" Text="" Style="font-weight: 700"></asp:Label>
                 <br />
             </div>
 

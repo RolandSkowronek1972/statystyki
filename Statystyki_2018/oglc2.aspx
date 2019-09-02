@@ -84,8 +84,7 @@
     <asp:Label ID="tabela2Label" runat="server"></asp:Label>
        &nbsp;&nbsp;&nbsp;&nbsp;
        <asp:Label ID="infoLabel2" runat="server" Text="Tabela 1\/" Visible="False"></asp:Label>
-       <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" 
-        DataSourceID="tabela_1" OnRowCreated="GridView1_RowCreated" 
+       <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" OnRowCreated="GridView1_RowCreated" 
         Width="1150px" ShowHeader="False" OnRowDataBound="GridView1_RowDataBound">
         <Columns>
             <asp:BoundField DataField="id" HeaderText="L.p." SortExpression="id">
@@ -252,22 +251,13 @@
            <HeaderStyle Wrap="False" />
            <RowStyle Wrap="False" />
     </asp:GridView>
-    <asp:SqlDataSource ID="tabela_1" runat="server" 
-        ConnectionString="<%$ ConnectionStrings:wap %>" 
-        
-        SelectCommand="SELECT ROW_NUMBER() OVER( ORDER BY ident ) AS id, ident, imie, nazwisko, funkcja, stanowisko, d_01, d_02, d_03, d_04, d_05, d_06, d_07, d_08, d_09, d_10, d_11, d_12, d_13, d_14, d_15, d_16, d_17, d_18, d_19, d_20, d_21, d_22, d_23, d_24, d_25, d_26, d_27, d_28,d_29, d_30, d_31, sesja, id_sedziego, id_dzialu, id_tabeli FROM tbl_statystyki_tbl_02 WHERE (id_tabeli = 1) AND (id_dzialu = @id_dzialu) ORDER BY id">
-        <SelectParameters>
-            <asp:SessionParameter Name="id_dzialu" SessionField="id_dzialu" />
-        </SelectParameters>
-    </asp:SqlDataSource>
        <br />
        </div>
     <div id="wyznaczenia"  class="page-break"> 
         <asp:Label ID="lbTabela2Title" runat="server"></asp:Label>
     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-        <asp:Label ID="infoLabel3" runat="server" Text="Tabela 2 \/" Visible="False"></asp:Label>
-    <asp:GridView ID="GridView2" runat="server" AutoGenerateColumns="False" 
-        DataSourceID="tabela_2" onrowcreated="GridView3_RowCreated" Width="100%" ShowHeader="False" OnRowDataBound="GridView3_RowDataBound" ShowFooter="True">
+        <asp:Label ID="infoLabel3" runat="server" Text="Tabela 3 \/" Visible="False"></asp:Label>
+    &nbsp;t3<asp:GridView ID="GridView2" runat="server" AutoGenerateColumns="False" onrowcreated="GridView3_RowCreated" Width="100%" ShowHeader="False" OnRowDataBound="GridView3_RowDataBound" ShowFooter="True">
         <Columns>
             <asp:BoundField DataField="id" HeaderText="L.p." SortExpression="id">
             <ItemStyle Width="15px" />
@@ -341,14 +331,6 @@
         <FooterStyle Font-Bold="True" HorizontalAlign="Center" />
         <RowStyle Height="25px" />
     </asp:GridView>
-    <asp:SqlDataSource ID="tabela_2" runat="server" 
-        ConnectionString="<%$ ConnectionStrings:wap %>" 
-        
-        SelectCommand="SELECT ROW_NUMBER() OVER( ORDER BY ident ) AS id,  ident, imie, nazwisko, funkcja, stanowisko, d_01, d_02, d_03, d_04, d_05, d_06, d_07, d_08, d_09, d_10, d_11, d_12, d_13, d_14, d_15, d_16, d_17, d_18, d_19, d_20, d_21, d_22,d_23, d_24,d_24,d_25,d_26,d_27,d_28,d_29,d_30, sesja, id_sedziego, id_dzialu, id_tabeli FROM tbl_statystyki_tbl_02 WHERE (id_tabeli = 3) AND (id_dzialu = @id_dzialu) ORDER BY id">
-        <SelectParameters>
-            <asp:SessionParameter Name="id_dzialu" SessionField="id_dzialu" />
-        </SelectParameters>
-    </asp:SqlDataSource>
         <br />
         </div>
     
@@ -356,9 +338,8 @@
     <div id="Div11"  class="page-break"> 
     <asp:Label ID="Label15" runat="server"></asp:Label>
 
-    &nbsp;<asp:Label ID="infoLabel5" runat="server" Text="Tabela 3 \/" Visible="False"></asp:Label>
-        <asp:GridView ID="GridView3" runat="server" AutoGenerateColumns="False" 
-        DataSourceID="tabela_3" onrowcreated="GridView5_RowCreated" Width="100%" ShowHeader="False" OnRowDataBound="GridView5_RowDataBound" ShowFooter="True">
+    &nbsp;<asp:Label ID="infoLabel5" runat="server" Text="Tabela 4 \/" Visible="False"></asp:Label>
+        &nbsp;<asp:GridView ID="GridView3" runat="server" AutoGenerateColumns="False" onrowcreated="GridView5_RowCreated" Width="100%" ShowHeader="False" OnRowDataBound="GridView5_RowDataBound" ShowFooter="True">
         <Columns>
             <asp:BoundField DataField="id" HeaderText="L.p." SortExpression="id">
             <ItemStyle Width="15px" />
@@ -510,20 +491,12 @@
         </Columns>
             <FooterStyle Font-Bold="True" HorizontalAlign="Center" />
     </asp:GridView>
-    <asp:SqlDataSource ID="tabela_3" runat="server" 
-        ConnectionString="<%$ ConnectionStrings:wap %>" 
-        
-        SelectCommand="SELECT ROW_NUMBER() OVER (ORDER BY ident) AS id, ident, imie, nazwisko, funkcja, stanowisko, d_01, d_02, d_03, d_04, d_05, d_06, d_07, d_08, d_09, d_10, d_11, d_12, d_13, d_14, d_15, d_16, d_17, d_18, d_19, d_20, d_21, d_22, d_23, d_24,d_25, d_26, sesja, id_sedziego, id_tabeli FROM tbl_statystyki_tbl_02 WHERE (id_tabeli = 4) AND (id_dzialu = @id_dzialu) ORDER BY id">
-        <SelectParameters>
-            <asp:SessionParameter Name="id_dzialu" SessionField="id_dzialu" />
-        </SelectParameters>
-    </asp:SqlDataSource>
         <br />
         </div>
        <div id="Div11"  class="page-break"> 
     &nbsp;<asp:Label ID="Label7" runat="server"></asp:Label>
 &nbsp;
-    &nbsp;<asp:Label ID="infoLabel4" runat="server" Text="Tabela 4 \/" Visible="False"></asp:Label>
+    &nbsp;<asp:Label ID="infoLabel4" runat="server" Text="Tabela 5 \/" Visible="False"></asp:Label>
            <br />
            <table style="width:100%;">
                <tr>
@@ -577,9 +550,8 @@
        <div id="Div11"  class="page-break"> 
     <asp:Label ID="Label2" runat="server"></asp:Label>
 
-    &nbsp;<asp:Label ID="Label5" runat="server" Text="Tabela 5 \/" Visible="False"></asp:Label>
-        <asp:GridView ID="GridView4" runat="server" AutoGenerateColumns="False" 
-        DataSourceID="Tabela_4" onrowcreated="GridView4_RowCreated1" Width="100%" ShowHeader="False" OnRowDataBound="GridView4_RowDataBound1" ShowFooter="True" OnSelectedIndexChanged="GridView4_SelectedIndexChanged">
+    &nbsp;<asp:Label ID="Label5" runat="server" Text="Tabela 6 \/" Visible="False"></asp:Label>
+           <asp:GridView ID="GridView4" runat="server" AutoGenerateColumns="False" onrowcreated="GridView4_RowCreated1" Width="100%" ShowHeader="False" OnRowDataBound="GridView4_RowDataBound1" ShowFooter="True">
         <Columns>
             <asp:BoundField DataField="id" HeaderText="L.p." SortExpression="id">
             <ItemStyle Width="15px" />
@@ -682,14 +654,6 @@
         </Columns>
             <FooterStyle Font-Bold="True" HorizontalAlign="Center" />
     </asp:GridView>
-    <asp:SqlDataSource ID="Tabela_4" runat="server" 
-        ConnectionString="<%$ ConnectionStrings:wap %>" 
-        
-        SelectCommand="SELECT ROW_NUMBER() OVER (ORDER BY ident) AS id, ident, imie, nazwisko, funkcja, stanowisko, d_01, d_02, d_03, d_04, d_05, d_06, d_07, d_08, d_09, d_10, d_11, d_12, d_13, d_14, d_15, d_16, d_17, d_18, d_19, d_20, d_21, d_22, d_23, d_24,d_25, d_26, sesja, id_sedziego, id_tabeli FROM tbl_statystyki_tbl_02 WHERE (id_tabeli = 6) AND (id_dzialu = @id_dzialu) ORDER BY id">
-        <SelectParameters>
-            <asp:SessionParameter Name="id_dzialu" SessionField="id_dzialu" />
-        </SelectParameters>
-    </asp:SqlDataSource>
         <br />
         </div>
 

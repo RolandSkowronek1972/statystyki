@@ -58,24 +58,6 @@ namespace stat2018 {
         protected global::System.Web.UI.WebControls.LinkButton LinkButton55;
         
         /// <summary>
-        /// LinkButton56 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.LinkButton LinkButton56;
-        
-        /// <summary>
-        /// LinkButton57 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.LinkButton LinkButton57;
-        
-        /// <summary>
         /// Label3 control.
         /// </summary>
         /// <remarks>

@@ -81,12 +81,12 @@ namespace stat2018
                 StringBuilder tabelaGlowna = new StringBuilder();
                 tabelaGlowna.AppendLine(ms.tworztabeleMSS("1", naglowekTabeliDzialu_1(), tabelaBocznaDzialu_1(), tabelaDanych, 1, 1, 1, 4, idWydzialuNumerycznie, false, "Ewidencja spraw z zakresu prawa pracy i ubezpieczeń społecznych – ogółem I i II instancja", tenPlik));
                 tabelaGlowna.AppendLine(ms.tworztabeleMSS("1.1.1.1", naglowekTabeliDzialu_1_1_1_1(), tabelaBocznaDzialu_1_1_1_1(), tabelaDanych, 4, 42, 4, 16, idWydzialuNumerycznie, true, "Ewidencja spraw z zakresu ubezpieczeń społecznych – ogółem oraz I instancja", tenPlik));
-                tabelaGlowna.AppendLine(ms.tworztabeleMSS("1.1.1.2", naglowekTabeliDzialu_1_1_1_2(), tabelaBocznaDzialu_1_1_1_2(), tabelaDanych, 4, 19, 2, 16, idWydzialuNumerycznie, true, "Ewidencja spraw z zakresu ubezpieczeń społecznych – II instancja", tenPlik));
+                tabelaGlowna.AppendLine(ms.tworztabeleMSS("1.1.1.2", naglowekTabeliDzialu_1_1_1_2(), tabelaBocznaDzialu_1_1_1_2(), tabelaDanych, 4, 19, 2, 15, idWydzialuNumerycznie, true, "Ewidencja spraw z zakresu ubezpieczeń społecznych – II instancja", tenPlik));
                 tabelaGlowna.AppendLine(ms.tworztabeleMSS("1.1.a", naglowekTabeliDzialu_1_1_a(), tabelaBocznaDzialu_1_1_a(), tabelaDanych, 1, 7, 2, 1, idWydzialuNumerycznie, false, "Ewidencja spraw z zakresu ubezpieczeń społecznych – II instancja", tenPlik));
                 tabelaGlowna.AppendLine(ms.tworztabeleMSS("1.1.b", naglowekTabeliDzialu_1_1_b(), tabelaBocznaDzialu_1_1_b(), tabelaDanych, 1, 3, 1, 4, idWydzialuNumerycznie, false, "Zażalenia w ramach właściwości poziomej (dotyczy dz. 1.1.1.2, w. 2 i 15 lit. b)", tenPlik));
                 tabelaGlowna.AppendLine(ms.tworztabeleMSS("1.1.c", naglowekTabeliDzialu_1_1_c(), tabelaBocznaDzialu_1_1_c(), tabelaDanych, 1, 9, 2, 1, idWydzialuNumerycznie, false, "W tym: (skarga kasacyjna) (dział 1.1.1.2. wiersz 17 kol. 3 lit. c)", tenPlik));
                 tabelaGlowna.AppendLine(ms.tworztabeleMSS("1.1.d", naglowekTabeliDzialu_1_1_d(), tabelaBocznaDzialu_1_1_d(), tabelaDanych, 4, 10, 1, 15, idWydzialuNumerycznie, false, "Ewidencja spraw z zakresu ubezpieczeń społecznych – wg podmiotów", tenPlik));
-                tabelaGlowna.AppendLine(ms.tworztabeleMSS("1.1.2.1", naglowekTabeliDzialu_1_1_2_1(), tabelaBocznaDzialu_1_1_2_1(), tabelaDanych, 5, 84, 4, 15, idWydzialuNumerycznie, true, "Ewidencja spraw z zakresu prawa pracy –ogółem oraz I instancja", tenPlik));
+                tabelaGlowna.AppendLine(ms.tworztabeleMSS("1.1.2.1", naglowekTabeliDzialu_1_1_2_1(), tabelaBocznaDzialu_1_1_2_1(), tabelaDanych, 5, 85, 4, 15, idWydzialuNumerycznie, true, "Ewidencja spraw z zakresu prawa pracy –ogółem oraz I instancja", tenPlik));
                 tabelaGlowna.AppendLine(ms.tworztabeleMSS("1.1.2.2", naglowekTabeliDzialu_1_1_2_2(), tabelaBocznaDzialu_1_1_2_2(), tabelaDanych, 5, 97, 7, 15, idWydzialuNumerycznie, true, "Ewidencja spraw z zakresu prawa pracy – II instancja", tenPlik));
                 tabelaGlowna.AppendLine(ms.tworztabeleMSS("1.1.3.a", "Dział 1.1.3.a. Wpływ spraw (liczba), w których z roszczeniem wystąpiła większa grupa pracowników (co najmniej 10 pracowników) (Dział 1.1.2.1. wiersz 03 kol. 2 lit. a)", tabelaDanych, idWydzialuNumerycznie, tenPlik));
                 tabelaGlowna.AppendLine(ms.tworztabeleMSS("1.1.3.b", "Dział 1.1.3.b. Załatwiono spraw (liczba), w których z roszczeniem wystąpiła większa grupa pracowników (co najmniej 10 pracowników) (dział 1.1.2.1. wiersz 03 kol. 3 lit. b)", tabelaDanych, idWydzialuNumerycznie, tenPlik));
@@ -474,7 +474,7 @@ namespace stat2018
             DataTable dT = schematTabeli();
             dT.Clear();
             //                         W  K  CS RS   style"    text"
-            dT.Rows.Add(new Object[] { 1, 1, 3, 4, "center", "SPRAWY WG REPERTORIÓW LUB WYKAZÓW  " });
+            dT.Rows.Add(new Object[] { 1, 1, 2, 4, "center", "SPRAWY WG REPERTORIÓW LUB WYKAZÓW  " });
             dT.Rows.Add(new Object[] { 1, 4, 1, 4, "center", "Pozostało z ubiegłego roku   " });
             dT.Rows.Add(new Object[] { 1, 5, 1, 4, "center", "WPŁYNĘŁO razem" });
             dT.Rows.Add(new Object[] { 1, 6, 10, 1, "center", "Załatwiono" });
@@ -1258,14 +1258,17 @@ namespace stat2018
             dT.Rows.Add(new Object[] { 79, 4, 1, 1, " center", "135" });
             dT.Rows.Add(new Object[] { 80, 1, 3, 1, "wciecie borderAll", "O zabezpieczenie dowodu przed wszczęciem postępowania" });
             dT.Rows.Add(new Object[] { 80, 4, 1, 1, " center", "186" });
-            dT.Rows.Add(new Object[] { 81, 1, 3, 1, "wciecie borderAll", "W sprawie odmowy rejestracji ponadzakładowego układu zbiorowego pracy " });
+            dT.Rows.Add(new Object[] { 81, 1, 3, 1, "wciecie borderAll", "W sprawie stwierdzenia reprezentatywności ponadzakładowej organizacji związkowej " });
             dT.Rows.Add(new Object[] { 81, 4, 1, 1, " center", "138a" });
-            dT.Rows.Add(new Object[] { 82, 1, 3, 1, "wciecie borderAll", "Inne bez symbolu i o symbolu wyżej niewymienionym" });
+            dT.Rows.Add(new Object[] { 82, 1, 3, 1, "wciecie borderAll", "W sprawie odmowy rejestracji ponadzakładowego układu zbiorowego pracy" });
             dT.Rows.Add(new Object[] { 82, 4, 1, 1, " center", "114a" });
-            dT.Rows.Add(new Object[] { 83, 1, 3, 1, "wciecie borderAll", "Wykaz Kas-z wnioski o rozstrzygnięcie sporu zakładowego przez kolegium arbitrażu społecznego" });
+
+            dT.Rows.Add(new Object[] { 83, 1, 3, 1, "wciecie borderAll", "Inne bez symbolu i o symbolu wyżej niewymienionym" });
             dT.Rows.Add(new Object[] { 83, 4, 1, 1, " center", "-" });
-            dT.Rows.Add(new Object[] { 84, 1, 3, 1, "wciecie borderAll", "WSC skarga o stwierdzenie niezgodności z prawem – I inst." });
+            dT.Rows.Add(new Object[] { 84, 1, 3, 1, "wciecie borderAll", "Wykaz Kas-z wnioski o rozstrzygnięcie sporu zakładowego przez kolegium arbitrażu społecznego" });
             dT.Rows.Add(new Object[] { 84, 4, 1, 1, " center", "-" });
+            dT.Rows.Add(new Object[] { 85, 1, 3, 1, "wciecie borderAll", "WSC skarga o stwierdzenie niezgodności z prawem – I inst." });
+            dT.Rows.Add(new Object[] { 85, 4, 1, 1, " center", "-" });
 
             return dT;
         }

@@ -98,13 +98,6 @@
                             <asp:LinkButton ID="LinkButton54" runat="server" class="ax_box" OnClick="LinkButton54_Click">  Odśwież</asp:LinkButton>
                         </td>
                         <td style="width: auto; padding-left: 5px;">
-                            <asp:LinkButton ID="LinkButton55" runat="server" class="ax_box" OnClick="LinkButton55_Click" CssClass="ax_box"> Drukuj </asp:LinkButton>
-                        </td>
-                        <td style="width: auto; padding-left: 5px;">
-
-                            <asp:LinkButton ID="LinkButton56" runat="server" OnClick="Button1_Click" CssClass="ax_box" Visible="False">DRUKUJ</asp:LinkButton>
-                        </td>
-                        <td style="width: auto; padding-left: 5px;">
                             <asp:LinkButton ID="LinkButton57" runat="server" CssClass="ax_box" OnClick="Button3_Click">Zapisz do Excel</asp:LinkButton>
                         </td>
                     </tr>
@@ -130,8 +123,7 @@
                 <ContentTemplate>
                     <asp:Timer ID="Timer1" runat="server" OnTick="TimerTick" Interval="2000">
                     </asp:Timer>
-                    <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False"
-                        DataSourceID="statystyki" OnRowCreated="grvMergeHeader_RowCreated" ShowHeader="False" Width="100%" CssClass="GridView1" ShowFooter="True" OnRowDataBound="GridView1_RowDataBound">
+                    <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" OnRowCreated="grvMergeHeader_RowCreated" ShowHeader="False" Width="100%" CssClass="GridView1" ShowFooter="True" OnRowDataBound="GridView1_RowDataBound">
                         <Columns>
                             <asp:BoundField DataField="id" HeaderText="L.p." SortExpression="id">
                                 <ItemStyle Width="15px" />
@@ -1102,134 +1094,17 @@
                                 </ItemTemplate>
                                 <ItemStyle CssClass="col_80_fest center" />
                             </asp:TemplateField>
+                                 <asp:TemplateField HeaderText="d_104" SortExpression="d_104">
+                                <ItemTemplate>
+                                    <a href="javascript:openPopup('popup.aspx?sesja=<%# Eval("id_sedziego")+ "!5!109!5"%>')">
+                                        <asp:Label ID="Label1109" runat="server" Text='<%# Eval("d_109")%>' CssClass="normal"></asp:Label>
+                                    </a>
+                                </ItemTemplate>
+                                <ItemStyle CssClass="col_80_fest center" />
+                            </asp:TemplateField>
                         </Columns>
                         <FooterStyle HorizontalAlign="Center" />
                     </asp:GridView>
-                    <asp:SqlDataSource ID="statystyki" runat="server"
-                        ConnectionString="<%$ ConnectionStrings:wap %>"
-                        SelectCommand="
-	SELECT ROW_NUMBER() OVER( ORDER BY ident ) AS id,
-	 [ident]
-      ,[imie]
-      ,[nazwisko]
-      ,[funkcja]
-      ,[stanowisko]
-      ,[id_sedziego]
-      ,[d_01]
-      ,[d_02]
-      ,[d_03]
-      ,[d_04]
-      ,[d_05]
-      ,[d_06]
-      ,[d_07]
-      ,[d_08]
-      ,[d_09]
-      ,[d_10]
-      ,[d_11]
-      ,[d_12]
-      ,[d_13]
-      ,[d_14]
-      ,[d_15]
-      ,[d_16]
-      ,[d_17]
-      ,[d_18]
-      ,[d_19]
-      ,[d_20]
-      ,[d_21]
-      ,[d_22]
-      ,[d_23]
-      ,[d_24]
-      ,[d_25]
-      ,[d_26]
-      ,[d_27]
-      ,[d_28]
-      ,[d_29]
-      ,[d_30]
-      ,[d_31]
-      ,[d_32]
-      ,[d_33]
-      ,[d_34]
-      ,[d_35]
-      ,[d_36]
-      ,[d_37]
-      ,[d_38]
-      ,[d_39]
-      ,[d_40]
-      ,[d_41]
-      ,[d_42]
-      ,[d_43]
-      ,[d_44]
-      ,[d_45]
-      ,[d_46]
-      ,[d_47]
-      ,[d_48]
-      ,[d_49]
-      ,[d_50]
-      ,[d_51]
-      ,[d_52]
-      ,[d_53]
-      ,[d_54]
-      ,[d_55]
-      ,[d_56]
-      ,[d_57]
-      ,[d_58]
-      ,[d_59]
-      ,[d_60]
-      ,[d_61]
-      ,[d_62]
-      ,[d_63]
-      ,[d_64]
-      ,[d_65]
-      ,[d_66]
-      ,[d_67]
-      ,[d_68]
-      ,[d_69]
-      ,[d_70]
-      ,[d_71]
-      ,[d_72]
-      ,[d_73]
-      ,[d_74]
-      ,[d_75]
-      ,[d_76]
-      ,[d_77]
-      ,[d_78]
-      ,[d_79]
-      ,[d_80]
-      ,[d_81]
-      ,[d_82]
-      ,[d_83]
-      ,[d_84]
-      ,[d_85]
-      ,[d_86]
-      ,[d_87]
-      ,[d_88]
-      ,[d_89]
-      ,[d_90]
-      ,[d_91]
-      ,[d_92]
-      ,[d_93]
-      ,[d_94]
-      ,[d_95]
-      ,[d_96]
-      ,[d_97]
-      ,[d_98]
-      ,[d_99]
-      ,[d_100]
-      ,[d_101]
-      ,[d_102]
-      ,[d_103]
-      ,[d_104]
-      ,[d_105]
-      ,[d_106]
-      ,[d_107]
-      ,[d_108]
-      ,[d_109]
-  FROM tbl_statystyki_tbl_x5
-   WHERE (id_dzialu = @id_dzialu) ORDER BY id">
-                        <SelectParameters>
-                            <asp:SessionParameter Name="id_dzialu" SessionField="id_dzialu" DefaultValue="" />
-                        </SelectParameters>
-                    </asp:SqlDataSource>
 
                     <asp:Image ID="imgLoader" runat="server" ImageUrl="~/img/ajax-loader.gif" />
                 </ContentTemplate>

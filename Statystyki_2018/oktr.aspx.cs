@@ -451,22 +451,7 @@ namespace stat2018
             makeLabels();
         }
 
-        protected void makeSumRow(DataTable table, GridViewRowEventArgs e)
-        {
-            object sumObject;
-            int ilKolumn = e.Row.Cells.Count;
-            e.Row.Cells[1].Text = "Ogółem";
-            for (int i = 1; i < e.Row.Cells.Count; i++)
-            {
-                try
-                {
-                    sumObject = table.Compute("Sum(" + "d_" + (i - 1).ToString("D2") + ")", "");
-                    e.Row.Cells[i].Text = sumObject.ToString();
-                }
-                catch (Exception)
-                { }
-            }
-        }
+   
 
         protected void Gridview1_RowDataBound(object sender, GridViewRowEventArgs e)
         {
@@ -474,7 +459,7 @@ namespace stat2018
             {
                 DataTable table = ((DataView)daneDoTabeli1.Select(DataSourceSelectArguments.Empty)).ToTable();
 
-                makeSumRow(table, e);
+                tabela. makeSumRow(table, e);
             }
             if (e.Row.RowType == DataControlRowType.DataRow)
             {
@@ -486,9 +471,9 @@ namespace stat2018
         {
             if (e.Row.RowType == DataControlRowType.Header)
             {
-                System.Web.UI.WebControls.GridView sn = new System.Web.UI.WebControls.GridView();
+               
                 DataTable dT = (DataTable)Session["header_01"];
-                tabela.makeHeader(sn, dT, Tabela1);
+                tabela.makeHeader( dT, Tabela1);
             }
             else
             {
@@ -537,9 +522,9 @@ namespace stat2018
         {
             if (e.Row.RowType == DataControlRowType.Header)
             {
-                System.Web.UI.WebControls.GridView sn = new System.Web.UI.WebControls.GridView();
+               
                 DataTable dT = (DataTable)Session["header_03"];
-                tabela.makeHeader(sn, dT, Gridview3);
+                tabela.makeHeader( dT, Gridview3);
             }
         }
 

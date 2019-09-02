@@ -78,7 +78,7 @@ namespace stat2018
 
         protected void przemiel()
         {
-            string yyx = (string)Session["id_dzialu"];
+            string dzial = (string)Session["id_dzialu"];
             string txt = string.Empty;
             cl.deleteRowTable();
 
@@ -95,11 +95,16 @@ namespace stat2018
             try
             {
                 //cm.log.Info(tenPlik + ": rozpoczęcie tworzenia tabeli 1");
-                txt = txt + cl.generuj_dane_do_tabeli_(int.Parse((string)Session["id_dzialu"]), 1, Date1.Date, Date2.Date);
-                //cm.log.Info(tenPlik + ": rozpoczęcie tworzenia tabeli 3");
-                txt = txt + cl.generuj_dane_do_tabeli_(int.Parse((string)Session["id_dzialu"]), 3, Date1.Date, Date2.Date);
+                Session["tabela01"] = dr.tworzTabele(int.Parse(dzial), 1, Date1.Date, Date2.Date, 20, GridView1, tenPlik);
+                GridView1.DataBind();
+                Session["tabela03"] = dr.tworzTabele(int.Parse(dzial), 3, Date1.Date, Date2.Date, 17, GridView2, tenPlik);
+                GridView2.DataBind();
                 //cm.log.Info(tenPlik + ": rozpoczęcie tworzenia tabeli 4");
-                txt = txt + cl.generuj_dane_do_tabeli_(int.Parse((string)Session["id_dzialu"]), 4, Date1.Date, Date2.Date);
+                //txt = txt + cl.generuj_dane_do_tabeli_(int.Parse((string)Session["id_dzialu"]), 4, Date1.Date, Date2.Date);
+                Session["tabela04"] = dr.tworzTabele(int.Parse(dzial), 4, Date1.Date, Date2.Date, 30, GridView3, tenPlik);
+                GridView3.DataBind();
+                Session["tabela06"] = dr.tworzTabele(int.Parse(dzial), 6, Date1.Date, Date2.Date, 30, GridView4, tenPlik);
+                GridView4.DataBind();
             }
             catch (Exception ex)
             {
@@ -110,9 +115,6 @@ namespace stat2018
                 //cm.log.Info(tenPlik + ": rozpoczęcie tworzenia tabeli 5");
                 DataTable tabelka04 = dr.generuj_dane_do_tabeli_wierszy2018(Date1.Date, Date2.Date, (string)Session["id_dzialu"], 5, 20, 20, tenPlik);
                 Session["tabelka004"] = tabelka04;
-                
-                //cm.log.Info(tenPlik + ": rozpoczęcie tworzenia tabeli 6");
-                txt = txt + cl.generuj_dane_do_tabeli_(int.Parse((string)Session["id_dzialu"]), 6, Date1.Date, Date2.Date);
 
                 tab_04_w01_c01.Text = tabelka04.Rows[0][1].ToString().Trim();
                 tab_04_w01_c2.Text = tabelka04.Rows[0][2].ToString().Trim();
@@ -121,6 +123,8 @@ namespace stat2018
                 tab_04_w01_c5.Text = tabelka04.Rows[0][5].ToString().Trim();
                 tab_04_w01_c6.Text = tabelka04.Rows[0][6].ToString().Trim();
                 tab_04_w01_c7.Text = tabelka04.Rows[0][7].ToString().Trim();
+                //cm.log.Info(tenPlik + ": rozpoczęcie tworzenia tabeli 6");
+                //   txt = txt + cl.generuj_dane_do_tabeli_(int.Parse((string)Session["id_dzialu"]), 6, Date1.Date, Date2.Date);
 
                 // wypełnianie danych labeli
             }
@@ -132,19 +136,13 @@ namespace stat2018
             // dopasowanie opisów
             makeLabels();
 
-            GridView1.DataBind();
-            GridView2.DataBind();
-            GridView3.DataBind();
-
-            txt = txt + "GridView1 liczba wierszy: " + GridView1.Rows.Count.ToString() + Environment.NewLine;
-
             try
             {
-                Label11.Visible = cl.debug(int.Parse(yyx));
-                infoLabel2.Visible = cl.debug(int.Parse(yyx));
-                infoLabel3.Visible = cl.debug(int.Parse(yyx));
-                infoLabel4.Visible = cl.debug(int.Parse(yyx));
-                infoLabel5.Visible = cl.debug(int.Parse(yyx));
+                Label11.Visible = cl.debug(int.Parse(dzial));
+                infoLabel2.Visible = cl.debug(int.Parse(dzial));
+                infoLabel3.Visible = cl.debug(int.Parse(dzial));
+                infoLabel4.Visible = cl.debug(int.Parse(dzial));
+                infoLabel5.Visible = cl.debug(int.Parse(dzial));
             }
             catch
             {
@@ -402,25 +400,17 @@ namespace stat2018
         {
             string path = Server.MapPath("Template") + "\\oglc2.xlsx";
             FileInfo existingFile = new FileInfo(path);
-
             string download = Server.MapPath("Template") + @"\oglc2";
-
             FileInfo fNewFile = new FileInfo(download + "_.xlsx");
 
-            // pierwsza tabelka
-            DataView view1 = (DataView)tabela_1.Select(DataSourceSelectArguments.Empty);
-
-            DataTable table = view1.ToTable();
-
+            DataTable table = (DataTable)Session["tabela01"];
             using (ExcelPackage MyExcel = new ExcelPackage(existingFile))
             {
                 // pierwsza
-
                 int rowik = 0;
-
                 ExcelWorksheet MyWorksheet1 = MyExcel.Workbook.Worksheets[1];
 
-                MyWorksheet1 = tabela.tworzArkuszwExcle(MyExcel.Workbook.Worksheets[1], table, 17, 0, 4, false, false, false, false, false);
+                MyWorksheet1 = tabela.tworzArkuszwExcle(MyExcel.Workbook.Worksheets[1], (DataTable)Session["tabela01"], 18, 0, 4, false, false, false, false, false);
                 rowik = table.Rows.Count - 3;
                 MyWorksheet1.Cells[rowik + 7, 1, rowik + 7, 4].Merge = true;
                 MyWorksheet1.Cells[rowik + 7, 1].Value = "Zaległość z poprzedniego miesiąca";
@@ -450,33 +440,33 @@ namespace stat2018
                     {
                         try
                         {
-                            MyWorksheet1.Cells[rowik + 7, i + 5].Value = double.Parse(dR[i - 1].ToString().Trim());
+                            MyWorksheet1.Cells[rowik + 7, i + 3].Value = double.Parse(dR[i - 1].ToString().Trim());
                         }
                         catch
                         {
-                            MyWorksheet1.Cells[rowik + 7, i + 5].Value = dR[i - 1].ToString().Trim();
+                            MyWorksheet1.Cells[rowik + 7, i + 3].Value = dR[i - 1].ToString().Trim();
                         }
 
-                        MyWorksheet1.Cells[rowik + 7, i + 5].Style.ShrinkToFit = true;
-                        MyWorksheet1.Cells[rowik + 7, i + 5].Style.Border.BorderAround(OfficeOpenXml.Style.ExcelBorderStyle.Thin, System.Drawing.Color.Black);
+                        MyWorksheet1.Cells[rowik + 7, i + 3].Style.ShrinkToFit = true;
+                        MyWorksheet1.Cells[rowik + 7, i + 3].Style.Border.BorderAround(OfficeOpenXml.Style.ExcelBorderStyle.Thin, System.Drawing.Color.Black);
                     }
                     rowik++;
                 }
-
-                // trzecia
+                 // trzecia
 
                 ExcelWorksheet MyWorksheet2 = MyExcel.Workbook.Worksheets[2];
-                DataView view2 = (DataView)tabela_2.Select(DataSourceSelectArguments.Empty);
-                DataTable table2 = view2.ToTable();
-
+                DataTable table2 = (DataTable)Session["tabela03"];
                 MyWorksheet2 = tabela.tworzArkuszwExcle(MyExcel.Workbook.Worksheets[2], table2, 8, 0, 3, false, false, false, false, false);
 
                 // czwarta
 
                 ExcelWorksheet MyWorksheet5 = MyExcel.Workbook.Worksheets[3];
-                DataView view4 = (DataView)tabela_3.Select(DataSourceSelectArguments.Empty);
-                DataTable table4 = view2.ToTable();
-                MyWorksheet2 = tabela.tworzArkuszwExcle(MyExcel.Workbook.Worksheets[3], table4, 16, 0, 3, false, false, false, false, false);
+
+                DataTable table4 = (DataTable)Session["tabela04"];
+                MyWorksheet2 = tabela.tworzArkuszwExcle(MyExcel.Workbook.Worksheets[3], table4, 17, 0, 4, false, false, false, false, false);
+
+                DataTable table6 = (DataTable)Session["tabela06"];
+                MyWorksheet2 = tabela.tworzArkuszwExcle(MyExcel.Workbook.Worksheets[5], table6, 10, 0, 4, false, false, false, false, false);
 
                 try
                 {
@@ -514,7 +504,6 @@ namespace stat2018
         {
             if (e.Row.RowType == DataControlRowType.Header)
             {
-               
                 tabela.makeHeader((DataTable)Session["header_01"], GridView1);
             }
             else
@@ -529,11 +518,6 @@ namespace stat2018
 
         protected void GridView1_RowDataBound(object sender, GridViewRowEventArgs e)
         {
-            if (e.Row.RowType == DataControlRowType.Footer)
-            {
-                DataTable table = ((DataView)tabela_1.Select(DataSourceSelectArguments.Empty)).ToTable();
-              //  tabela.makeSumRow(table, e);
-            }
             if (e.Row.RowType == DataControlRowType.DataRow)
             {
                 storid = Convert.ToInt32(DataBinder.Eval(e.Row.DataItem, "id").ToString());
@@ -544,22 +528,9 @@ namespace stat2018
         {
             if (e.Row.RowType == DataControlRowType.Footer)
             {
-                DataTable table = ((DataView)tabela_2.Select(DataSourceSelectArguments.Empty)).ToTable();
-                tabela.makeSumRow(table, e);
+                DataTable table = (DataTable)Session["tabela03"];
+                tabela.makeSumRow(table, e, 1);
             }
-        }
-
-        protected void GridView5_RowDataBound(object sender, GridViewRowEventArgs e)
-        {
-            if (e.Row.RowType == DataControlRowType.Footer)
-            {
-                DataTable table = ((DataView)tabela_3.Select(DataSourceSelectArguments.Empty)).ToTable();
-                tabela.makeSumRow(table, e,2);
-            }
-        }
-
-        protected void GridView4_SelectedIndexChanged(object sender, EventArgs e)
-        {
         }
 
         protected void GridView4_RowCreated(object sender, GridViewRowEventArgs e)
@@ -575,8 +546,8 @@ namespace stat2018
         {
             if (e.Row.RowType == DataControlRowType.Footer)
             {
-                DataTable table = ((DataView)Tabela_4.Select(DataSourceSelectArguments.Empty)).ToTable();
-                tabela.makeSumRow(table, e);
+                DataTable table = (DataTable)Session["tabela04"];
+                tabela.makeSumRow(table, e, 1);
             }
         }
 
@@ -584,9 +555,8 @@ namespace stat2018
         {
             if (e.Row.RowType == DataControlRowType.Header)
             {
-               
                 DataTable dT = (DataTable)Session["header_05"];
-                tabela.makeHeader( dT, GridView4);
+                tabela.makeHeader(dT, GridView4);
             }
         }
 
@@ -594,11 +564,10 @@ namespace stat2018
         {
             if (e.Row.RowType == DataControlRowType.Footer)
             {
-                DataTable table = ((DataView)Tabela_4.Select(DataSourceSelectArguments.Empty)).ToTable();
-                tabela.makeSumRow(table, e);
+                tabela.makeSumRow((DataTable)Session["tabela06"], e);
             }
         }
-       
+
         public void AddNewRow(object sender, GridViewRowEventArgs e)
         {
             GridView GridView1 = (GridView)sender;
@@ -620,7 +589,7 @@ namespace stat2018
 
             idWiersza = 5;
             GridView1.Controls[0].Controls.AddAt(e.Row.RowIndex + rowIndex, tabela.wierszTabeli(tabelka01, 17, idWiersza, idtabeli, "0-3 miesiący ", 1, 1, "normal", "borderTopLeft col_60 normal", "w tym", 7, 2, "borderTopLeft normal"));
-       
+
             idWiersza = 6;
             GridView1.Controls[0].Controls.AddAt(e.Row.RowIndex + rowIndex, tabela.wierszTabeli(tabelka01, 17, idWiersza, idtabeli, "3-6 miesięcy", 1, 1, "normal", "borderTopLeft col_60 normal"));
 
@@ -638,6 +607,14 @@ namespace stat2018
 
             idWiersza = 11;
             GridView1.Controls[0].Controls.AddAt(e.Row.RowIndex + rowIndex, tabela.wierszTabeli(tabelka01, 17, idWiersza, idtabeli, "Powyżej 60 miesięcy </br>(powyżej</br> 5 lat)", 1, 1, "normal", "borderTopLeft col_60 normal"));
+        }
+
+        protected void GridView5_RowDataBound(object sender, GridViewRowEventArgs e)
+        {
+            if (e.Row.RowType == DataControlRowType.Footer)
+            {
+                tabela.makeSumRow((DataTable)Session["tabela04"], e);
+            }
         }
     }
 }

@@ -165,8 +165,7 @@ ORDER BY id_">
             <br />
 
             <asp:label id="Label19" runat="server" viewstatemode="Enabled"></asp:label>
-            <asp:gridview id="GridView1" runat="server" autogeneratecolumns="False"
-                datasourceid="statystyki" onrowcreated="grvMergeHeader_RowCreated"
+            <asp:gridview id="GridView1" runat="server" autogeneratecolumns="False" onrowcreated="grvMergeHeader_RowCreated"
                 onselectedindexchanged="GridView1_SelectedIndexChanged"
                 width="100%" showheader="False">
         <Columns>
@@ -314,19 +313,11 @@ ORDER BY id_">
             </asp:TemplateField>
         </Columns>
     </asp:gridview>
-            <asp:sqldatasource id="statystyki" runat="server"
-                connectionstring="<%$ ConnectionStrings:wap %>"
-                selectcommand="SELECT ROW_NUMBER() OVER( ORDER BY ident ) AS id, ident, imie, nazwisko, funkcja, stanowisko, d_01, d_02, d_03, d_04, d_05, d_06, d_07, d_08, d_09, d_10, d_11, d_12, d_13, d_14, d_15, d_16, d_17, d_18, d_19, d_20, d_21, d_22, sesja, id_sedziego, id_dzialu, id_tabeli FROM tbl_statystyki_tbl_02 WHERE (id_tabeli = 2) AND (id_dzialu = @id_dzialu) ORDER BY id">
-        <SelectParameters>
-            <asp:SessionParameter Name="id_dzialu" SessionField="id_dzialu" />
-        </SelectParameters>
-    </asp:sqldatasource>
             <br />
         </div>
         <div id="wyznaczenia" class="page-break">
             &nbsp;<asp:label id="Label17" runat="server" enableviewstate="False" viewstatemode="Disabled"></asp:label>
-            <asp:gridview id="GridView3" runat="server" autogeneratecolumns="False"
-                datasourceid="tabela_3" onrowcreated="GridView3_RowCreated" width="100%" showheader="False" OnSelectedIndexChanged="GridView3_SelectedIndexChanged">
+            <asp:gridview id="GridView3" runat="server" autogeneratecolumns="False" onrowcreated="GridView3_RowCreated" width="100%" showheader="False">
         <Columns>
             <asp:BoundField DataField="id" HeaderText="id" SortExpression="id" />
             <asp:BoundField DataField="funkcja" HeaderText="funkcja"
@@ -427,20 +418,13 @@ ORDER BY id_">
         </Columns>
     </asp:gridview>
 
-            <asp:sqldatasource id="tabela_3" runat="server"
-                connectionstring="<%$ ConnectionStrings:wap %>"
-                selectcommand="SELECT ROW_NUMBER() OVER( ORDER BY ident ) AS id,  ident, imie, nazwisko, funkcja, stanowisko, d_01, d_02, d_03, d_04, d_05, d_06, d_07, d_08, d_09, d_10, d_11, d_12, d_13, d_14, d_15, d_16, d_17, d_18, d_19, d_20, d_21, d_22, sesja, id_sedziego, id_dzialu, id_tabeli FROM tbl_statystyki_tbl_02 WHERE (id_tabeli = 3) AND (id_dzialu = @id_dzialu) ORDER BY id">
- <SelectParameters>
-            <asp:SessionParameter Name="id_dzialu" SessionField="id_dzialu" />
-        </SelectParameters>
-    </asp:sqldatasource>        </div>
+         </div>
 
         <br />
         <div id="Div1" class="page-break">
             &nbsp;<asp:label id="Label15" runat="server"></asp:label>
             &nbsp;
-    &nbsp;<asp:gridview id="GridView4" runat="server" autogeneratecolumns="False"
-        datasourceid="tabela_4" onrowcreated="GridView4_RowCreated" width="100%" showheader="False">
+    &nbsp;<asp:gridview id="GridView4" runat="server" autogeneratecolumns="False" onrowcreated="GridView4_RowCreated" width="100%" showheader="False">
         <Columns>
             <asp:BoundField DataField="id" HeaderText="id" SortExpression="id" />
             <asp:BoundField DataField="funkcja" HeaderText="funkcja"
@@ -538,13 +522,6 @@ ORDER BY id_">
             </asp:TemplateField>
         </Columns>
     </asp:gridview>
-            <asp:sqldatasource id="tabela_4" runat="server"
-                connectionstring="<%$ ConnectionStrings:wap %>"
-                selectcommand="SELECT ROW_NUMBER() OVER( ORDER BY ident ) AS id, ident, imie, nazwisko, funkcja, stanowisko, d_01, d_02, d_03, d_04, d_05, d_06, d_07, d_08, d_09, d_10, d_11, d_12, d_13, d_14, d_15, d_16, d_17, d_18, d_19, d_20, d_21, d_22, sesja, id_sedziego,id_tabeli FROM tbl_statystyki_tbl_02 WHERE  (id_tabeli = 4) AND (id_dzialu = @id_dzialu) ORDER BY id">
-        <SelectParameters>
-            <asp:SessionParameter Name="id_dzialu" SessionField="id_dzialu" />
-        </SelectParameters>
-    </asp:sqldatasource>
             <br />
             Raport statystyczny 
                     <asp:Label ID="Label27" runat="server"></asp:Label>

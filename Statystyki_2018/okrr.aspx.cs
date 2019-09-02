@@ -563,6 +563,7 @@ namespace stat2018
                         tabela.komorkaExcela(MyWorksheet, przesuniecieWdol + 10 + i, j + 19, tabelka001.Rows[i][j+1].ToString(), false, 0, 0);
                     }
                 }
+
                 ExcelWorksheet MyWorksheet2 = MyExcel.Workbook.Worksheets[2];
                 DataView view = (DataView)tabela_2.Select(DataSourceSelectArguments.Empty);
                 DataTable table2 = view.ToTable();
@@ -571,18 +572,14 @@ namespace stat2018
                 // trzecia
 
                 ExcelWorksheet MyWorksheet3 = MyExcel.Workbook.Worksheets[3];
-
                 DataView view2 = (DataView)tabela_3.Select(DataSourceSelectArguments.Empty);
-
                 DataTable table3 = view2.ToTable();
                 MyWorksheet3 = tabela.tworzArkuszwExcle(MyExcel.Workbook.Worksheets[4], table3, 26, 0, 5, true, false, false, false, false);
 
                 // czwarta
 
                 ExcelWorksheet MyWorksheet4 = MyExcel.Workbook.Worksheets[4];
-
                 DataView view3 = (DataView)tabela_4.Select(DataSourceSelectArguments.Empty);
-
                 DataTable table4 = view3.ToTable();
                 MyWorksheet4 = tabela.tworzArkuszwExcle(MyExcel.Workbook.Worksheets[5], table4, 17, 0, 4, true, false, false, false, false);
 
@@ -612,7 +609,6 @@ namespace stat2018
 
         protected void LinkButton55_Click(object sender, EventArgs e)
         {
-         
             przemiel();
             ScriptManager.RegisterStartupScript(this.Page, Page.GetType(), "print2", "JavaScript: window.print();", true);
             makeLabels();

@@ -1,6 +1,4 @@
 ﻿using System;
-using DevExpress.Web;
-using System.Linq;
 using System.Data;
 
 namespace stat2018.UserControlls
@@ -9,6 +7,7 @@ namespace stat2018.UserControlls
     {
         private common cm = new common();
         public listaFormularzy ls = new listaFormularzy();
+
         public enum Rodzaje
         {
             admin = 0,// (możliwość nadawania uprawnień)
@@ -23,62 +22,73 @@ namespace stat2018.UserControlls
 
         protected void Page_Load(object sender, EventArgs e)
         {
-
             if (!IsPostBack)
             {
                 CBRodzaje.Value = "Statystyki miesięczne";
-               // FillCityCombo("1");
-                //FillCityCombo("Mexico");
-            }
-         //   CBRodzaje.Items.Clear();
-                /*       DevExpress.Web.ListEditItemCollection listaRodzai = new DevExpress.Web.ListEditItemCollection();
-            DevExpress.Web.ListEditItem listEditItem = new DevExpress.Web.ListEditItem();
-            if (CBRodzaje.Items.Count == 0)
-            {
-                listEditItem.Text = "Statystyki miesięczne";
-                listEditItem.Value = Rodzaje.miesieczne;
-                CBRodzaje.Items.Add(listEditItem);
-                listEditItem = new DevExpress.Web.ListEditItem
-
+                if (CBRodzaje.SelectedIndex==-1)
                 {
-                    Text = "Kontrolki",
-                    Value = Rodzaje.kontrolki
-                };
-                CBRodzaje.Items.Add(listEditItem);
-
-                listEditItem = new DevExpress.Web.ListEditItem
-                {
-                    Text = "MSS",
-                    Value = Rodzaje.MSS
-                };
-                CBRodzaje.Items.Add(listEditItem);
-
-                listEditItem = new DevExpress.Web.ListEditItem
-                {
-                    Text = "Kof",
-                    Value = Rodzaje.kof
-                };
-                CBRodzaje.Items.Add(listEditItem);
-
-                listEditItem = new DevExpress.Web.ListEditItem
-                {
-                    Text = "Wyszukiwarka",
-                    Value = Rodzaje.wyszukiwarka
-                };
-                CBRodzaje.Items.Add(listEditItem);
-
-                listEditItem = new DevExpress.Web.ListEditItem
-                {
-                    Text = "Pracownik",
-                    Value = Rodzaje.pracownik
-                };
-                */
-               // CBRodzaje.Items.Add(listEditItem);
-
-                CBRodzaje.SelectedIndex = 0;
-           
+                    if (CBRodzaje.Items.Count>=0)
+                    {
+                        CBRodzaje.SelectedIndex = 0;
+                        FillCityCombo(CBRodzaje.SelectedItem.Value.ToString());
+                    }
+                    
+                }
                 
-            
+                // FillCityCombo("1");
+                //FillCityCombo("Mexico");
+              //  CBRodzaje.Items.Clear();
+             //   DevExpress.Web.ListEditItemCollection listaRodzai = new DevExpress.Web.ListEditItemCollection();
+                DevExpress.Web.ListEditItem listEditItem = new DevExpress.Web.ListEditItem();
+                if (CBRodzaje.Items.Count == 0)
+                {
+                    listEditItem.Text = "Statystyki miesięczne";
+                    listEditItem.Value = (int)Rodzaje.miesieczne;
+                    CBRodzaje.Items.Add(listEditItem);
+                    listEditItem = new DevExpress.Web.ListEditItem
+
+                    {
+                        Text = "Kontrolki",
+                        Value = (int)Rodzaje.kontrolki
+                    };
+                    CBRodzaje.Items.Add(listEditItem);
+
+                    listEditItem = new DevExpress.Web.ListEditItem
+                    {
+                        Text = "MSS",
+                        Value = (int)Rodzaje.MSS
+                    };
+                    CBRodzaje.Items.Add(listEditItem);
+
+                    listEditItem = new DevExpress.Web.ListEditItem
+                    {
+                        Text = "Kof",
+                        Value = (int)Rodzaje.kof
+                    };
+                    CBRodzaje.Items.Add(listEditItem);
+
+                    listEditItem = new DevExpress.Web.ListEditItem
+                    {
+                        Text = "Wyszukiwarka",
+                        Value = (int)Rodzaje.wyszukiwarka
+                    };
+                    CBRodzaje.Items.Add(listEditItem);
+
+                    listEditItem = new DevExpress.Web.ListEditItem
+                    {
+                        Text = "Pracownik",
+                        Value = (int)Rodzaje.pracownik
+                    };
+
+                //    CBRodzaje.Items.Add(listEditItem);
+
+                    CBRodzaje.SelectedIndex = 0;
+                //    FillCityCombo(CBRodzaje.SelectedItem.Value.ToString());
+
+
+                }
+            }
+     
         }
 
         protected void FillCityCombo(string countryName)
@@ -92,29 +102,29 @@ namespace stat2018.UserControlls
             result.Columns.Add(ident);
             result.Columns.Add(nazwa);
             result.Columns.Add(rodzaj);
-
-            using (var context = ls.listaFormularze() )
+           
+            using (var context = ls.listaFormularze())
             {
                 string filter = " rodzaj=" + countryName;
-                var jedenRodzaj = context.Select (filter,"ident ASC");
+                var jedenRodzaj = context.Select(filter, "ident ASC");
                 foreach (var wiersz in jedenRodzaj)
                 {
                     DataRow nowyWiersz = result.NewRow();
                     nowyWiersz["ident"] = wiersz[0];
                     nowyWiersz["nazwa"] = wiersz[1];
                     nowyWiersz["rodzaj"] = wiersz[2];
-                    result.Rows.Add(nowyWiersz );
+                    result.Rows.Add(nowyWiersz);
                 }
-                CBListaFormularzy.DataSource = result ;
-                CBListaFormularzy.DataBind();
-                if (result !=null)
-                {
-                    string minValue = result.Rows[0][0].ToString();
-                    CBListaFormularzy.Value = minValue;
-                }
-                //var col = result.Select( "ident=min(ident)");
 
-                
+            }
+
+            int ilosc = result.Rows.Count;
+            if ((result != null) && (result.Rows.Count > 0))
+            {
+                CBListaFormularzy.DataSource = result;
+                CBListaFormularzy.DataBind();
+                string minValue = result.Rows[0][0].ToString();
+                CBListaFormularzy.Value = minValue;
             }
         }
 
@@ -122,6 +132,5 @@ namespace stat2018.UserControlls
         {
             FillCityCombo(e.Parameter);
         }
-       
     }
 }

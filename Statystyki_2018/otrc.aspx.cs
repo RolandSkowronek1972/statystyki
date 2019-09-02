@@ -44,11 +44,10 @@ namespace stat2018
                 Date2.Date = DateTime.Parse(dTime.Year.ToString() + "-" + dTime.Month.ToString("D2") + "-" + DateTime.DaysInMonth(dTime.Year, dTime.Month).ToString("D2"));
             }
 
-            Session["data_1"] =Date1.Date.Year.ToString()+"-"+  Date1.Date.Month.ToString ("D2")+"-"+Date1.Date.Day.ToString ("D2");
+            Session["data_1"] = Date1.Date.Year.ToString() + "-" + Date1.Date.Month.ToString("D2") + "-" + Date1.Date.Day.ToString("D2");
             cm.log.Info(tenPlik + ": data początku okresy statystycznego w sesji dla popupów " + (string)Session["data_1"]);
             Session["data_2"] = Date2.Date.Year.ToString() + "-" + Date2.Date.Month.ToString("D2") + "-" + Date2.Date.Day.ToString("D2");
             cm.log.Info(tenPlik + ": data początku okresy statystycznego w sesji dla popupów " + (string)Session["data_"]);
-
 
             clearHedersSession();
 
@@ -67,7 +66,7 @@ namespace stat2018
                     {
                         var fileContents = System.IO.File.ReadAllText(Server.MapPath(@"~//version.txt"));    // file read with version
                         this.Title = "Statystyki " + fileContents.ToString().Trim();
-                        przemiel();
+                        odswiez();
                         makeLabels();
                     }
                 }
@@ -84,42 +83,38 @@ namespace stat2018
             Session["header_02"] = null;
             Session["header_03"] = null;
             Session["header_04"] = null;
-            Session["header_05"] = null;
-            Session["header_06"] = null;
-            Session["header_07"] = null;
-            Session["header_08"] = null;
         }
 
-        protected void przemiel()
+        protected void odswiez()
         {
-            string yyx = (string)Session["id_dzialu"];
-            id_dzialu.Text = (string)Session["txt_dzialu"];
-            string txt = string.Empty; //
-            txt = "id dzialu=" + yyx + "<br/>";
-            txt = txt + cl.clear_maim_db();
-
-            txt = txt + cl.generuj_dane_do_tabeli_wierszy(Date1.Date, Date2.Date, yyx, 1);
-            GridView2.DataBind();
-
+            int idDzialu = 0;
             try
             {
-                txt = txt + cl.generuj_dane_do_tabeli_(int.Parse((string)Session["id_dzialu"]), 2, Date1.Date, Date2.Date);
-                txt = txt + cl.generuj_dane_do_tabeli_(int.Parse((string)Session["id_dzialu"]), 3, Date1.Date, Date2.Date);
-                txt = txt + cl.generuj_dane_do_tabeli_(int.Parse((string)Session["id_dzialu"]), 4, Date1.Date, Date2.Date);
-                txt = txt + cl.uzupelnij_statusy();
+                idDzialu = int.Parse((string)Session["id_dzialu"]);
             }
             catch
+            { }
+            if (idDzialu == 0)
             {
+                cm.log.Error(tenPlik + " Error: brak dzialu");
+                return;
             }
+
+            id_dzialu.Text = (string)Session["txt_dzialu"];
+            string txt = "id dzialu=" + idDzialu.ToString() + "<br/>";
+            txt = txt + cl.clear_maim_db();
+            txt = txt + cl.generuj_dane_do_tabeli_wierszy(Date1.Date, Date2.Date, idDzialu.ToString(), 1);
+            GridView2.DataBind();
+            Session["tabelka002"] = dr.tworzTabele(idDzialu, 2, Date1.Date, Date2.Date, 19, GridView1, tenPlik);
+            Session["tabelka003"] = dr.tworzTabele(idDzialu, 3, Date1.Date, Date2.Date, 10, GridView3, tenPlik);
+            Session["tabelka004"] = dr.tworzTabele(idDzialu, 4, Date1.Date, Date2.Date, 9, GridView4, tenPlik);
+
             // dopasowanie opisów
             makeLabels();
-            GridView1.DataBind();
-            GridView2.DataBind();
-            GridView3.DataBind();
-            GridView4.DataBind();
+
             try
             {
-                Label11.Visible = cl.debug(int.Parse(yyx));
+                Label11.Visible = cl.debug(idDzialu);
             }
             catch
             {
@@ -729,9 +724,7 @@ namespace stat2018
 
             string path = Server.MapPath("Template") + "\\otrc.xlsx";
             FileInfo existingFile = new FileInfo(path);
-
             string download = Server.MapPath("Template") + @"\otrc";
-
             FileInfo fNewFile = new FileInfo(download + "_.xlsx");
 
             // pierwsza tabelka
@@ -739,11 +732,11 @@ namespace stat2018
             using (ExcelPackage MyExcel = new ExcelPackage(existingFile))
             {
                 // pierwsza
+
                 ExcelWorksheet MyWorksheet1 = MyExcel.Workbook.Worksheets[1];
                 DataView view = (DataView)dane_do_tabeli_1.Select(DataSourceSelectArguments.Empty);
                 DataTable table = view.ToTable();
 
-                DataTable dane = (DataTable)Session["tabelkaGW002"];
                 for (int i = 0; i < 10; i++)
                 {
                     for (int j = 0; j < 10; j++)
@@ -752,31 +745,16 @@ namespace stat2018
                         {
                             MyWorksheet1.Cells[3 + j, i].Style.ShrinkToFit = true;
                             MyWorksheet1.Cells[3 + j, i].Style.Border.BorderAround(OfficeOpenXml.Style.ExcelBorderStyle.Thin, System.Drawing.Color.Black);
-
                             MyWorksheet1.Cells[3 + j, i].Value = table.Rows[j][i].ToString();
                         }
                         catch
                         { }
                     }
                 }
-
                 // druga
-
-                DataView view2 = (DataView)dane_do_tabeli_2.Select(DataSourceSelectArguments.Empty);
-                DataTable table2 = view2.ToTable();
-                MyWorksheet1 = tabela.tworzArkuszwExcelPrzestawiony(MyExcel.Workbook.Worksheets[2], table2, 20, 0, 4, true, false, true, true, true);
-
-                // trzecia
-
-                DataView view3 = (DataView)tabela_3.Select(DataSourceSelectArguments.Empty);
-                DataTable table3 = view3.ToTable();
-                MyWorksheet1 = tabela.tworzArkuszwExcle(MyExcel.Workbook.Worksheets[3], table3, 10, 0, 3, true, false, true, true, true);
-
-                // czwarta
-
-                DataView view4 = (DataView)tabela_4.Select(DataSourceSelectArguments.Empty);
-                DataTable table4 = view4.ToTable();
-                MyWorksheet1 = tabela.tworzArkuszwExcle(MyExcel.Workbook.Worksheets[4], table4, 9, 0, 3, true, false, true, true, true);
+                MyWorksheet1 = tabela.tworzArkuszwExcle(MyExcel.Workbook.Worksheets[2], (DataTable)Session["tabelka002"], 20, 0, 4, true, false, true, true, true);
+                MyWorksheet1 = tabela.tworzArkuszwExcle(MyExcel.Workbook.Worksheets[3], (DataTable)Session["tabelka003"], 10, 0, 3, true, false, true, true, true);
+                MyWorksheet1 = tabela.tworzArkuszwExcle(MyExcel.Workbook.Worksheets[4], (DataTable)Session["tabelka004"], 9, 0, 3, true, false, true, true, true);
 
                 try
                 {
@@ -797,7 +775,7 @@ namespace stat2018
 
         protected void LinkButton54_Click(object sender, EventArgs e)
         {
-            przemiel();
+            odswiez();
         }
 
         protected void LinkButton55_Click(object sender, EventArgs e)

@@ -5,13 +5,12 @@ Creation date: 2018-11-21
 
 */
 
-using OfficeOpenXml;
 using System;
-using System.Collections.Generic;
 using System.Configuration;
 using System.Data;
 using System.Data.SqlClient;
 using System.Linq;
+using System.Web.UI.WebControls;
 
 namespace stat2018
 {
@@ -589,7 +588,7 @@ namespace stat2018
 
         public string wyciagnijWartosc(DataTable ddT, string selectString, string tenPlik)
         {
-            if ((string.IsNullOrEmpty ( selectString)) || (ddT==null))
+            if ((string.IsNullOrEmpty(selectString)) || (ddT == null))
             {
                 return "0";
             }
@@ -633,6 +632,7 @@ namespace stat2018
             return result;
         }
 
+        /*
         public DataTable generuj_dane_do_tabeli_typ2_new(int id_dzialu, int id_tabeli, DateTime poczatek, DateTime koniec, int il_kolumn)
         {
             string status = string.Empty;
@@ -783,68 +783,36 @@ namespace stat2018
 
             return dTable;
         }// end of generuj_dane_do_tabeli_5
-        /*
-        protected IList<int> okreslKomorke(int wierszPoczatkowy, int kolumnaPoczatkowa, int iloscWierszy, int iloscKolumn, ExcelWorksheet worksheet)
-        {
-            IList<int> wyniki = new List<int>();
-            int rowSpan = 0;
-            int colSpan = 0;
-
-            bool mergedY = false;
-
-            for (int i = wierszPoczatkowy; i <= iloscWierszy; i++)
-            {
-                object baseE = worksheet.Cells[i, kolumnaPoczatkowa];
-
-                ExcelCellBase celka = (ExcelCellBase)baseE;
-                bool polaczony = (bool)celka.GetType().GetProperty("Merge").GetValue(celka, null);
-                var text = celka.GetType().GetProperty("Value").GetValue(celka, null);
-                if (!polaczony)
-                {
-                    break;
-                }
-                else
-                {
-                    if (mergedY)
-                    {
-                        if (text != null)
-                        {
-                            break;
-                        }
-                    }
-                    mergedY = true;
-                }
-                rowSpan++;
-            }
-            bool mergedX = false;
-            for (int j = kolumnaPoczatkowa; j <= iloscKolumn; j++)
-            {
-                object baseE = worksheet.Cells[wierszPoczatkowy, j];
-
-                ExcelCellBase celka = (ExcelCellBase)baseE;
-                bool polaczony = (bool)celka.GetType().GetProperty("Merge").GetValue(celka, null);
-                var text = celka.GetType().GetProperty("Value").GetValue(celka, null);
-                if (!polaczony)
-                {
-                    break;
-                }
-                else
-                {
-                    if (mergedX)
-                    {
-                        if (text != null)
-                        {
-                            break;
-                        }
-                    }
-                    mergedX = true;
-                }
-                colSpan++;
-            }
-            wyniki.Add(rowSpan);
-            wyniki.Add(colSpan);
-            return wyniki;
-        }
         */
+
+        public DataTable tworzTabele(int idDzialu, int idTabeli, DateTime dataPoczatku, DateTime dataKonca, int iloscKolumn, GridView kontrolka, string tenPlik)
+        {
+            if (cl.debug(idDzialu))
+            {
+                Common.log.Info(tenPlik + ": rozpoczęcie tworzenia tabeli 2");
+            }
+            DataTable tabelka = generuj_dane_do_tabeli_sedziowskiej_2018(idDzialu, idTabeli, dataPoczatku, dataKonca, iloscKolumn, tenPlik);
+            kontrolka.DataSource = null;
+            kontrolka.DataSourceID = null;
+            kontrolka.DataSource = tabelka;
+            kontrolka.DataBind();
+            return tabelka;
+        }
+
+        public DataTable tworzTabele(int idDzialu, int idTabeli, DateTime dataPoczatku, DateTime dataKonca, int iloscKolumn, GridView kontrolka,string nazwaSesji, string tenPlik)
+        {
+            if (cl.debug(idDzialu))
+            {
+                Common.log.Info(tenPlik + ": rozpoczęcie tworzenia tabeli 2");
+            }
+            DataTable tabelka = generuj_dane_do_tabeli_sedziowskiej_2018(idDzialu, idTabeli, dataPoczatku, dataKonca, iloscKolumn, tenPlik);
+            
+            kontrolka.DataSource = null;
+            kontrolka.DataSourceID = null;
+            kontrolka.DataSource = tabelka;
+            kontrolka.DataBind();
+            return tabelka;
+        }
+
     } // end of class
 }

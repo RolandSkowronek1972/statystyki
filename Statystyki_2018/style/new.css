@@ -34,9 +34,14 @@ height: 100%;
 
 margin: 0% 0% 0% 0%; filter: progid:DXImageTransform.Microsoft.BasicImage(Rotation=3);
 }
-
-
-.tbl_manu {
+.horizont {
+    @media print {
+        transform: translate(-25mm, 0) scale(0.8);
+        -webkit-transform: translate(-25mm, 0) scale(0.8);
+        -moz-transform: translate(-25mm, 0) scale(0.8);
+    }
+}
+    .tbl_manu {
   width: 1150px;
   margin: 0px auto 0px auto;
   position: relative;

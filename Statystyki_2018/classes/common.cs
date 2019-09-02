@@ -263,7 +263,6 @@ namespace stat2018
             }
             return false;
         }
-
         public DataTable schematTabeli()
         {
             DataTable dT = new DataTable();

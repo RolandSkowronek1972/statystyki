@@ -94,15 +94,6 @@ namespace stat2018 {
         protected global::System.Web.UI.WebControls.GridView GridView1;
         
         /// <summary>
-        /// tabela_1 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.SqlDataSource tabela_1;
-        
-        /// <summary>
         /// lbTabela2Title control.
         /// </summary>
         /// <remarks>
@@ -130,15 +121,6 @@ namespace stat2018 {
         protected global::System.Web.UI.WebControls.GridView GridView2;
         
         /// <summary>
-        /// tabela_2 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.SqlDataSource tabela_2;
-        
-        /// <summary>
         /// Label15 control.
         /// </summary>
         /// <remarks>
@@ -164,15 +146,6 @@ namespace stat2018 {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.GridView GridView3;
-        
-        /// <summary>
-        /// tabela_3 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.SqlDataSource tabela_3;
         
         /// <summary>
         /// Label7 control.
@@ -281,15 +254,6 @@ namespace stat2018 {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.GridView GridView4;
-        
-        /// <summary>
-        /// Tabela_4 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.SqlDataSource Tabela_4;
         
         /// <summary>
         /// Label29 control.

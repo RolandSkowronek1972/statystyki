@@ -5,6 +5,7 @@
         var lastCountry = null;
       function OnCountryChanged(CBRodzaje) {
         
+
             if (CBListaFormularzy.InCallback())
                 lastCountry = CBRodzaje.GetValue().toString();
 

@@ -1570,6 +1570,15 @@ namespace stat2018 {
         protected global::System.Web.UI.WebControls.PlaceHolder tablePlaceHolder;
         
         /// <summary>
+        /// tablePlaceHolder3 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.PlaceHolder tablePlaceHolder3;
+        
+        /// <summary>
         /// infoLabel12 control.
         /// </summary>
         /// <remarks>

@@ -779,7 +779,7 @@
     <colSpan>1</colSpan>
     <rowSpan>2</rowSpan>
     <hv>h</hv>
-    <text>Ogółem</text>
+    <text>ogółem (wszystkie kategorie spraw)</text>
   </komorka>
   <komorka>
     <wiersz>2</wiersz>
@@ -1249,7 +1249,7 @@
   <komorka>
     <wiersz>1</wiersz>
     <kolumna>62</kolumna>
-    <colSpan>11</colSpan>
+    <colSpan>10</colSpan>
     <rowSpan>1</rowSpan>
     <hv>h</hv>
     <text>POZOSTAŁOŚĆ na następny m-c</text>

@@ -12,7 +12,6 @@ namespace stat2018
         public static BaseFont NewFont = BaseFont.CreateFont(Environment.GetEnvironmentVariable("SystemRoot") + "\\fonts\\sylfaen.ttf", BaseFont.IDENTITY_H, BaseFont.EMBEDDED);
 
         private Font fontPL1 = new Font(NewFont, 10f, Font.NORMAL, BaseColor.BLACK);
-
         public Font plFont1 = new Font(NewFont, 10f, Font.NORMAL, BaseColor.BLACK);
         public Font plFont = new Font(NewFont, 10f, Font.NORMAL, BaseColor.BLACK);
         public Font plFont2 = new Font(NewFont, 10f, Font.NORMAL, BaseColor.BLACK);
@@ -31,8 +30,8 @@ namespace stat2018
             stTab = arg.Split(stringSeparators, StringSplitOptions.None);
             return stTab;
         }
-        */
-
+       
+            */
         private string getColumnName(int i)
         {
             string txt = string.Empty;
@@ -46,7 +45,7 @@ namespace stat2018
             }
             return txt;
         }
-
+         
         //====================================================================================================================================
         public string wyciagnij_sedziego(string id_sedziego)
         {
@@ -277,20 +276,18 @@ namespace stat2018
             parametry.Rows.Add("@id", id);
             parametry.Rows.Add("@id_dzialu", id_dzialu);
             parametry.Rows.Add("@id_tabeli", id_tabeli);
-
             Common.runQuerry("insert into tbl_statystyki_tbl_01 (opis,id_,id_dzialu,id_tabeli) values (@opis,@id,@id_dzialu,@id_tabeli)", con_str, parametry);
         }
 
         public void updateWiersz(int kolumna, int id, string opis, int id_tabeli)
         {
-            string txt = getColumnName(kolumna);
+            string txt =  getColumnName(kolumna);
             // skasowanie tabeli i wcyw
 
             DataTable parametry = Common.makeParameterTable();
             parametry.Rows.Add("@opis", opis);
             parametry.Rows.Add("@id", id);
             parametry.Rows.Add("@id_tabeli", id_tabeli);
-
             Common.runQuerry("update tbl_statystyki_tbl_01 set " + txt + "=@opis where id_=@id and id_tabeli=@id_tabeli", con_str, parametry);
         }
 
@@ -646,7 +643,7 @@ namespace stat2018
                 il_wierszy = ddT.Rows.Count;
             }
             catch { }
-
+            Common.log.Info("generuj_dane_do_tabeli_ ilosc kwerend " + il_wierszy.ToString()); 
             if (il_wierszy == 0)
             {
                 // brak kwerend odcztującch
@@ -664,6 +661,7 @@ namespace stat2018
                         string id_kol = dRow[0].ToString().Trim();
                         string kwe = dRow[1].ToString().Trim();
                         string cs = podajConnectionString(id_dzialu);
+                        Common.log.Info("kwerenda " + kwe);
                         ////############################################  ladowanie danych tabela 2 ##############################
                         // odczyt sedziów
                         parameters = Common.makeParameterTable();
@@ -698,8 +696,7 @@ namespace stat2018
 
                                 default:
                                     {
-                                        string txt = string.Empty;
-                                        txt = getColumnName(int.Parse(id_kol.Trim()));
+                                        string txt ="d_"+ int.Parse(id_kol.Trim()).ToString("D2");
                                         parameters = Common.makeParameterTable();
 
                                         string ttxx = dR[0].ToString().Trim();
@@ -727,6 +724,7 @@ namespace stat2018
 
                                         //                                        string tvxt = dR[0].ToString().Trim();
                                         //                                      string tvxts = dR[1].ToString().Trim();
+                                        Common.log.Info("update tbl_statystyki_tbl_02 " + txt);
                                         Common.runQuerry("update tbl_statystyki_tbl_02 set " + txt + "=@value, sesja=@sesja where id_sedziego=@id_ and id_tabeli=@id_tabeli and id_dzialu=@id_dzialu", con_str, parameters);
                                     }
                                     break;
@@ -824,7 +822,7 @@ namespace stat2018
 
                                 default:
                                     {
-                                        string txt = getColumnName(int.Parse(id_kol));
+                                        string txt = "d_" + getColumnName(int.Parse(id_kol));
                                         // załadowanie danych do pierwszych kolumn
                                         using (sqlCmd = new SqlCommand())
                                         {
@@ -854,7 +852,7 @@ namespace stat2018
                         }
                     }
                 }
-                catch (Exception)
+                catch 
                 { }//end of try
             }// end of if
 
@@ -862,7 +860,7 @@ namespace stat2018
         }// end of generuj_dane_do_tabeli_5
 
         //================================================================================================
-
+        /*
         public DataSet kwerendy_xl(string cs, string kwe, int id_dzialu, int id_tabeli, DateTime poczatek, DateTime koniec)
         {
             DataSet ds_x = new DataSet();
@@ -889,7 +887,7 @@ namespace stat2018
             }
             return ds_x;
         }
-
+        */
         public DataTable generuj_dane_do_tabeli_mss2(int id_dzialu, DateTime poczatek, DateTime koniec, int il_kolumn)
         {
             string status = string.Empty;

@@ -312,6 +312,11 @@ namespace stat2018
         public void makeSumRow(DataTable table, GridViewRowEventArgs e, int przesuniecie, string razem)
         {
             DataTable tabelka = tabellaLiczbowa(table);
+            if (tabelka == null)
+            {
+                cm.log.Error("Brak danych do sumowania");
+                return ;
+            }
             object sumObject;
             int ilKolumn = e.Row.Cells.Count;
             e.Row.Cells[0 + przesuniecie].Text = razem;
@@ -334,6 +339,11 @@ namespace stat2018
         public void makeSumRow(DataTable table, GridViewRowEventArgs e, int przesuniecie, int polaczenie)
         {
             DataTable tabelka = tabellaLiczbowa(table);
+            if (tabelka == null)
+            {
+                cm.log.Error("Brak danych do sumowania");
+                return ;
+            }
             object sumObject;
             int ilKolumn = e.Row.Cells.Count;
             e.Row.Cells[0].ColumnSpan = polaczenie;
@@ -366,6 +376,11 @@ namespace stat2018
         public GridViewRow PodsumowanieTabeli(DataTable dane, int iloscKolumn, string cssStyleDlaTabeli)
         {
             DataTable tabelka = tabellaLiczbowa(dane);
+            if (tabelka==null)
+            {
+                cm.log.Error("Brak danych do sumowania" );
+                return null;
+            }
             object sumObject;
             GridViewRow NewTotalRow = new GridViewRow(0, 0, DataControlRowType.DataRow, DataControlRowState.Insert);
             NewTotalRow.Cells.Add(cela("Razem", 1, 2, cssStyleDlaTabeli));
@@ -374,12 +389,16 @@ namespace stat2018
                 try
                 {
                     string idkolumny = "d_" + (i).ToString("D2");
+                    cm.log.Info("idkolumny =" + idkolumny);
                     sumObject = tabelka.Compute("Sum(" + idkolumny + ")", "");
 
                     NewTotalRow.Cells.Add(cela(sumObject.ToString(), 1, 1, cssStyleDlaTabeli));
                 }
-                catch
-                { }
+                
+                 catch (Exception ex)
+                {
+                    cm.log.Error("sumowanie w stopce : " + ex.Message);
+                }
             }
             return NewTotalRow;
         }

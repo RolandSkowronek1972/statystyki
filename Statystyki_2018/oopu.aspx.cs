@@ -1427,7 +1427,6 @@ namespace stat2018
                 try
                 {
                     ExcelWorksheet MyWorksheet = MyExcel.Workbook.Worksheets[1];
-
                     DataView view = (DataView)statystyki.Select(DataSourceSelectArguments.Empty);
 
                     DataTable table = view.ToTable();

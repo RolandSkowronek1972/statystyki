@@ -60,7 +60,6 @@
     <Reference Include="DevExpress.Data.v17.1, Version=17.1.15.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.Printing.v17.1.Core, Version=17.1.15.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.Office.v17.1.Core, Version=17.1.15.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
-    <Reference Include="DevExpress.RichEdit.v17.1.Core, Version=17.1.15.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.Utils.v17.1, Version=17.1.15.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.Web.ASPxThemes.v17.1, Version=17.1.15.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.Web.Resources.v17.1, Version=17.1.15.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
@@ -245,7 +244,6 @@
     <Content Include="wyszukiwarkaspraw.aspx" />
     <Content Include="msstabele\mss5r.xlsx" />
     <Content Include="Template\aopc2.xlsx" />
-    <Content Include="libman.json" />
     <Content Include="XMLHeaders\aglc3.xml" />
     <Content Include="XMLHeaders\aglc1.xml" />
     <Content Include="XMLHeaders\oopc.xml" />
@@ -327,6 +325,7 @@
     <Content Include="Template\aopk.xlsx" />
     <Content Include="Template\oglc3.xlsx" />
     <Content Include="Template\oglp.xlsx" />
+    <Content Include="Template\otrr.xlsx" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -430,7 +429,6 @@
     <Compile Include="classes\datyDoMSS.cs" />
     <Compile Include="classes\listaFormularzy.cs" />
     <Compile Include="classes\log_4_net.cs" />
-    <Compile Include="classes\Uprawnienia.cs" />
     <Compile Include="classes\XMLHeaders.cs" />
     <Compile Include="GlobalSuppressions.cs" />
     <Compile Include="mss16r.aspx.cs">

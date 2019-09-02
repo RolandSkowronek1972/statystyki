@@ -14,12 +14,8 @@ namespace stat2018
         private string path = string.Empty;
         private const string tenPlik = "wizc.aspx";
         public string tenPlikNazwa = "wizc";
-#pragma warning disable CS0414 // The field 'wizc.storid' is assigned but its value is never used
         private int storid = 0;
-#pragma warning restore CS0414 // The field 'wizc.storid' is assigned but its value is never used
-#pragma warning disable CS0414 // The field 'wizc.rowIndex' is assigned but its value is never used
         private int rowIndex = 1;
-#pragma warning restore CS0414 // The field 'wizc.rowIndex' is assigned but its value is never used
 
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -64,7 +60,6 @@ namespace stat2018
             //odswiezenie danych
             tabela_01(idWydzial, 1);
             tabela_02(idWydzial, 2);
-
             tabela_3();
             tabela_4();
             tabela_5();
@@ -75,7 +70,7 @@ namespace stat2018
 
             DataTable tabelka01 = dr.generuj_dane_do_tabeli_sedziowskiej_2018(idWydzial, 9, Date1.Date, Date2.Date, 36, tenPlik);
             Session["tabelka009"] = tabelka01;
-            tworztabelkeHTML("K1", idWydzial, 9, tabelka01);
+            tworztabelkeHTML("KX1", idWydzial, 9, tabelka01);
 
             DataTable tabelka02 = dr.generuj_dane_do_tabeli_sedziowskiej_2018(idWydzial, 10, Date1.Date, Date2.Date, 36, tenPlik);
             Session["tabelka010"] = tabelka02;
@@ -459,6 +454,7 @@ namespace stat2018
 
             tblControl.Text = builder.ToString();
             tablePlaceHolder.Controls.Add(tblControl);
+            tblControl.Dispose();
         }
 
         protected void tworztabelkeHTML2(string idKontrolki, int idWydzialu, int idtabeli, DataTable dane)
@@ -679,7 +675,7 @@ namespace stat2018
             builder.Append("</table>");
             builder.Append(" </div>");
             tblControl.Text = builder.ToString();
-            tablePlaceHolder.Controls.Add(tblControl);
+            tablePlaceHolder3.Controls.Add(tblControl);
         }
 
         protected void tworztabelkeHTML13(string idKontrolki, int idWydzialu, int idtabeli, DataTable dane)
@@ -1141,8 +1137,8 @@ namespace stat2018
         {
             if (e.Row.RowType == DataControlRowType.Footer)
             {
-                DataTable table = (DataTable)Session["tabelka005"];
-                tb.makeSumRow(table, e, 0);
+               
+                tb.makeSumRow((DataTable)Session["tabelka005"], e, 0);
             }
         }
 

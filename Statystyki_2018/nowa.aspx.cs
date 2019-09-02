@@ -11,7 +11,6 @@ namespace stat2018
     {
         public wyszukiwarka w1 = new wyszukiwarka();
         public common cm = new common();
-        public log_4_net log = new log_4_net();
 
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -63,11 +62,18 @@ namespace stat2018
             string kw = cm.getQuerryValue("SELECT wartosc FROM            konfig  WHERE        (ident = @ident)", cm.con_str, parameters);
             string cs = cm.getQuerryValue("SELECT ConnectionString FROM            konfig  WHERE        (ident = @ident)", cm.con_str, parameters);
 
-            parameters = cm.makeParameterTable();
             parameters.Rows.Add("@data_1", dataPoczatkowa);
             parameters.Rows.Add("@data_2", dataKoncowa);
-            DataTable dT = cm.getDataTable(kw, cs, parameters);
-            int ilr = dT.Rows.Count;
+            DataTable dT = new DataTable();
+            try
+            {
+                dT = cm.getDataTable(kw, cs, parameters);
+                int ilr = dT.Rows.Count;
+            }
+            catch (Exception)
+            {
+            }
+
             return dT;
         }
 
@@ -168,8 +174,8 @@ namespace stat2018
                 GridViewDataColumn id = new GridViewDataColumn();
                 id.FieldName = name;
                 //  grid.Columns.Add(id);
-                log.Info("kontrolka reftype: " + typRef.FullName);
-                log.Info("kontrolka type: " + typ.FullName);
+                cm.log.Info("kontrolka reftype: " + typRef.FullName);
+                cm.log.Info("kontrolka type: " + typ.FullName);
                 if (typ == typRef)
                 {
                     grid.DataColumns[name].SettingsHeaderFilter.Mode = GridHeaderFilterMode.DateRangePicker;

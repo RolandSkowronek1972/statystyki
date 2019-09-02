@@ -77,14 +77,12 @@ namespace stat2018
 
         protected void odswiez()
         {
-            
-            if ( Session["id_dzialu"]==null)
+            if (Session["id_dzialu"] == null)
             {
                 return;
             }
             try
             {
-              
                 DataTable tabela1 = dr.generuj_dane_do_tabeli_sedziowskiej_2018(int.Parse((string)Session["id_dzialu"]), 1, Date1.Date, Date2.Date, 22, tenPlik);
                 Session["tabela01"] = tabela1;
                 GridView1.DataSource = null;
@@ -99,8 +97,6 @@ namespace stat2018
 
             // dopasowanie opisów
             makeLabels();
-          
-         
             Label3.Text = cl.nazwaSadu((string)Session["id_dzialu"]);
         }
 
@@ -129,7 +125,6 @@ namespace stat2018
             dT_02.Columns.Add("Column4", typeof(string));
             dT_02.Columns.Add("Column5", typeof(string));
             dT_02.Columns.Add("Column6", typeof(string));
-          
 
             string dataWyswietlana = string.Empty;
 
@@ -151,20 +146,17 @@ namespace stat2018
             dT_01.Rows.Add(new Object[] { "2", "L.p. ", "1", "2" });
             dT_01.Rows.Add(new Object[] { "2", "Imie i nazwisko", "1", "2" });
             dT_01.Rows.Add(new Object[] { "2", "Funkcja", "1", "1" });
-
             dT_01.Rows.Add(new Object[] { "2", "Etat", "1", "1" });
             dT_01.Rows.Add(new Object[] { "2", "nieob.", "1", "1" });
             dT_01.Rows.Add(new Object[] { "2", "Obsady", "1", "1" });
             dT_01.Rows.Add(new Object[] { "2", "Dni pracy", "1", "1" });
             dT_01.Rows.Add(new Object[] { "2", "czas na wokandzie", "1", "1" });
             dT_01.Rows.Add(new Object[] { "2", "dni wokandy", "1", "1" });
-
             dT_01.Rows.Add(new Object[] { "2", "Dni pracy bez wokandy", "1", "1" });
             dT_01.Rows.Add(new Object[] { "2", "wysłana poczta ", "1", "1" });
             dT_01.Rows.Add(new Object[] { "2", "ilość poczty na dni bez wokandy", "1", "1" });
             dT_01.Rows.Add(new Object[] { "2", "ilość czynności ", "1", "1" });
             dT_01.Rows.Add(new Object[] { "2", "ilość czynności na dni bez wokand", "1", "1" });
-
             dT_01.Rows.Add(new Object[] { "2", "ilość poczty na jedną czynność wykonaną", "1", "1" });
             dT_01.Rows.Add(new Object[] { "2", "ilość czynności ", "1", "1" });
             dT_01.Rows.Add(new Object[] { "2", "ilość czynności na dni bez wokand", "1", "1" });
@@ -288,27 +280,20 @@ namespace stat2018
         {
             string path = Server.MapPath("Template") + "\\okrd.xlsx";
             FileInfo existingFile = new FileInfo(path);
-
             string download = Server.MapPath("Template") + @"\okrd";
-
             FileInfo fNewFile = new FileInfo(download + "_.xlsx");
 
             // pierwsza tabelka
 
             using (ExcelPackage MyExcel = new ExcelPackage(existingFile))
             {
-                // pierwsza
-
-
-
                 try
                 {
                     ExcelWorksheet MyWorksheet1 = MyExcel.Workbook.Worksheets[1];
 
-                    MyWorksheet1 = tabela.tworzArkuszwExcle(MyExcel.Workbook.Worksheets[1], (DataTable)Session["tabela01"], 18, 0, 4, false, false, false, true, false);
+                    MyWorksheet1 = tabela.tworzArkuszwExcle(MyExcel.Workbook.Worksheets[1], (DataTable)Session["tabela01"], 19, 0, 4, false, false, false, false, false);
 
                     MyExcel.SaveAs(fNewFile);
-
                     this.Response.Clear();
                     this.Response.ContentType = "application/vnd.ms-excel";
                     this.Response.AddHeader("Content-Disposition", "attachment;filename=" + fNewFile.Name);
@@ -329,15 +314,12 @@ namespace stat2018
             odswiez();
         }
 
-       
-
         protected void GridView1_RowCreated(object sender, GridViewRowEventArgs e)
         {
             if (e.Row.RowType == DataControlRowType.Header)
             {
-             
                 DataTable dT = (DataTable)Session["header_01"];
-                tabela.makeHeader( dT, GridView1);
+                tabela.makeHeader(dT, GridView1);
             }
         }
 
