@@ -22,73 +22,7 @@ namespace stat2018.UserControlls
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            if (!IsPostBack)
-            {
-                CBRodzaje.Value = "Statystyki miesięczne";
-                if (CBRodzaje.SelectedIndex==-1)
-                {
-                    if (CBRodzaje.Items.Count>=0)
-                    {
-                        CBRodzaje.SelectedIndex = 0;
-                        FillCityCombo(CBRodzaje.SelectedItem.Value.ToString());
-                    }
-                    
-                }
-                
-                // FillCityCombo("1");
-                //FillCityCombo("Mexico");
-              //  CBRodzaje.Items.Clear();
-             //   DevExpress.Web.ListEditItemCollection listaRodzai = new DevExpress.Web.ListEditItemCollection();
-                DevExpress.Web.ListEditItem listEditItem = new DevExpress.Web.ListEditItem();
-                if (CBRodzaje.Items.Count == 0)
-                {
-                    listEditItem.Text = "Statystyki miesięczne";
-                    listEditItem.Value = (int)Rodzaje.miesieczne;
-                    CBRodzaje.Items.Add(listEditItem);
-                    listEditItem = new DevExpress.Web.ListEditItem
-
-                    {
-                        Text = "Kontrolki",
-                        Value = (int)Rodzaje.kontrolki
-                    };
-                    CBRodzaje.Items.Add(listEditItem);
-
-                    listEditItem = new DevExpress.Web.ListEditItem
-                    {
-                        Text = "MSS",
-                        Value = (int)Rodzaje.MSS
-                    };
-                    CBRodzaje.Items.Add(listEditItem);
-
-                    listEditItem = new DevExpress.Web.ListEditItem
-                    {
-                        Text = "Kof",
-                        Value = (int)Rodzaje.kof
-                    };
-                    CBRodzaje.Items.Add(listEditItem);
-
-                    listEditItem = new DevExpress.Web.ListEditItem
-                    {
-                        Text = "Wyszukiwarka",
-                        Value = (int)Rodzaje.wyszukiwarka
-                    };
-                    CBRodzaje.Items.Add(listEditItem);
-
-                    listEditItem = new DevExpress.Web.ListEditItem
-                    {
-                        Text = "Pracownik",
-                        Value = (int)Rodzaje.pracownik
-                    };
-
-                //    CBRodzaje.Items.Add(listEditItem);
-
-                    CBRodzaje.SelectedIndex = 0;
-                //    FillCityCombo(CBRodzaje.SelectedItem.Value.ToString());
-
-
-                }
-            }
-     
+           
         }
 
         protected void FillCityCombo(string countryName)
@@ -102,7 +36,7 @@ namespace stat2018.UserControlls
             result.Columns.Add(ident);
             result.Columns.Add(nazwa);
             result.Columns.Add(rodzaj);
-           
+
             using (var context = ls.listaFormularze())
             {
                 string filter = " rodzaj=" + countryName;
@@ -115,7 +49,6 @@ namespace stat2018.UserControlls
                     nowyWiersz["rodzaj"] = wiersz[2];
                     result.Rows.Add(nowyWiersz);
                 }
-
             }
 
             int ilosc = result.Rows.Count;
@@ -131,6 +64,82 @@ namespace stat2018.UserControlls
         protected void CBListaFormularzy_Callback(object sender, DevExpress.Web.CallbackEventArgsBase e)
         {
             FillCityCombo(e.Parameter);
+        }
+
+        protected void dodajUprawnienia(object sender, EventArgs e)
+        {
+            var wartosc = CBListaFormularzy.Value;
+            CBListaFormularzy.Value = wartosc.ToString();
+        }
+        protected void Page_Init(object sender, System.EventArgs e)
+        {
+            DevExpress.Web.ListEditItem listEditItem = new DevExpress.Web.ListEditItem();
+            if (CBRodzaje.Items.Count == 0)
+            {
+                listEditItem.Text = "Statystyki miesięczne";
+                listEditItem.Value = (int)Rodzaje.miesieczne;
+                CBRodzaje.Items.Add(listEditItem);
+                listEditItem = new DevExpress.Web.ListEditItem
+
+                {
+                    Text = "Kontrolki",
+                    Value = (int)Rodzaje.kontrolki
+                };
+                CBRodzaje.Items.Add(listEditItem);
+
+                listEditItem = new DevExpress.Web.ListEditItem
+                {
+                    Text = "MSS",
+                    Value = (int)Rodzaje.MSS
+                };
+                CBRodzaje.Items.Add(listEditItem);
+
+                listEditItem = new DevExpress.Web.ListEditItem
+                {
+                    Text = "Kof",
+                    Value = (int)Rodzaje.kof
+                };
+                CBRodzaje.Items.Add(listEditItem);
+
+                listEditItem = new DevExpress.Web.ListEditItem
+                {
+                    Text = "Wyszukiwarka",
+                    Value = (int)Rodzaje.wyszukiwarka
+                };
+                CBRodzaje.Items.Add(listEditItem);
+
+                listEditItem = new DevExpress.Web.ListEditItem
+                {
+                    Text = "Pracownik",
+                    Value = (int)Rodzaje.pracownik
+                };
+
+                //    CBRodzaje.Items.Add(listEditItem);
+
+                CBRodzaje.SelectedIndex = 0;
+                //    FillCityCombo(CBRodzaje.SelectedItem.Value.ToString());
+            }
+            /*
+            if (!IsPostBack)
+            {
+                CBRodzaje.SelectedIndex = 0;
+                FillCityCombo(CBRodzaje.SelectedItem.Value.ToString());
+            }
+            */
+            // CBRodzaje.Value = "Statystyki miesięczne";
+            if (CBRodzaje.SelectedIndex == -1)
+            {
+                CBRodzaje.DataBind();
+                CBRodzaje.SelectedIndex = 0;
+
+                try
+                {
+                    string txt = CBRodzaje.SelectedItem.Value.ToString();
+                    FillCityCombo(CBRodzaje.SelectedItem.Value.ToString());
+                }
+                catch
+                { }
+            }
         }
     }
 }

@@ -1103,7 +1103,7 @@
                                 <ItemStyle CssClass="col_80_fest center" />
                             </asp:TemplateField>
                         </Columns>
-                        <FooterStyle HorizontalAlign="Center" />
+                        <FooterStyle HorizontalAlign="Center" BackColor="#CCCCCC" CssClass="gray" />
                     </asp:GridView>
 
                     <asp:Image ID="imgLoader" runat="server" ImageUrl="~/img/ajax-loader.gif" />

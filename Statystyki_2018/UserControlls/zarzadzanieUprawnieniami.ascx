@@ -28,7 +28,7 @@
     <ClientSideEvents EndCallback=" OnEndCallback" />
 </dx:ASPxComboBox></div>
 <div style="width:20%">
-    <dx:ASPxButton ID="ASPxButton3" runat="server" Text="Dodaj uprawnienia" Theme="Moderno">
+    <dx:ASPxButton ID="ASPxButton3" runat="server" Text="Dodaj uprawnienia" Theme="Moderno" OnClick="dodajUprawnienia">
     </dx:ASPxButton>
     </div>
 <div style="width:20%">

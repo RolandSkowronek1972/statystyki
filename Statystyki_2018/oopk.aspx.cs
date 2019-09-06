@@ -80,7 +80,7 @@ namespace stat2018
 
             try
             {
-                Session["tabela01"] = dr.tworzTabele(int.Parse(dzial), 5, Date1.Date, Date2.Date, 120, GridView1, tenPlik);
+                Session["tabelka001"] = dr.tworzTabele(int.Parse(dzial), 5, Date1.Date, Date2.Date, 120, GridView1, tenPlik);
             }
             catch
             { }
@@ -360,7 +360,7 @@ namespace stat2018
             {
                 ExcelWorksheet MyWorksheet = MyExcel.Workbook.Worksheets[1];
 
-                tb.tworzArkuszwExcle(MyWorksheet, (DataTable)Session["tabela01"], 105, 0, 7, true, true, false, false, true);
+                tb.tworzArkuszwExcle(MyWorksheet, (DataTable)Session["tabelka001"], 105, 0, 7, true, true, false, false, true);
 
                 try
                 {
@@ -392,7 +392,7 @@ namespace stat2018
             if (e.Row.RowType == DataControlRowType.Footer)
 
             {
-                tb.makeSumRow((DataTable)Session["tabela01"], e, 110, 5);
+                tb.makeSumRow((DataTable)Session["tabelka001"], e, 110, 5);
             }
         }
     }
