@@ -46,7 +46,7 @@
     </div>
     </div>
 </div>
-      <div style="width:1150px; margin: 0 auto 0 auto; position:relative;top:60px;" class="content">
+      <div style="width:1150px; margin: 0 auto 0 auto; position:relative;top:60px;" >
         <div id="Div2" style="z-index: 10;">
             <div style="margin-left: auto; margin-right: auto; text-align: center; width: auto;">
                 <asp:label id="Label3" runat="server" text="Sąd " style="font-weight: 700"></asp:label>

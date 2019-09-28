@@ -15,6 +15,7 @@ namespace stat2018
 {
     public partial class adm : System.Web.UI.Page
     {
+        common cm = new common();
         protected void Page_Load(object sender, EventArgs e)
         {
 
@@ -49,6 +50,13 @@ namespace stat2018
             }
             
 
+        }
+
+        protected void startEdycji(object sender, DevExpress.Web.Data.ASPxStartRowEditingEventArgs e)
+        {
+            
+         Session ["identyfikatorUzytkownika"]= e.EditingKeyValue.ToString();
+            cm.log.Info("Administracja id uzytkownika =" + e.EditingKeyValue.ToString());
         }
     }
 }

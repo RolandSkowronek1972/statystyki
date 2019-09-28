@@ -75,63 +75,69 @@ namespace stat2018
             }
         }
 
-        public DataTable getDataTable(string kwerenda, string connStr, DataTable parameters)
+        public DataTable getDataTable(string kwerenda, string connStr, DataTable parameters,string tenPlik)
         {
             DataSet dataSet = new DataSet();
-            using (SqlDataAdapter dataAdapter = new SqlDataAdapter(kwerenda, connStr))
-            {
-                foreach (DataRow row in parameters.Rows)
-                {
-                    dataAdapter.SelectCommand.Parameters.AddWithValue(row[0].ToString().Trim(), row[1].ToString().Trim());
-                }
-                try
-                {
-                    dataAdapter.Fill(dataSet);
-                }
-                catch
-                { }
-            }
-            if (dataSet.Tables.Count != 0)
-            {
-                return dataSet.Tables[0];
-            }
-            return null;
-        } // end of getDataTable
-
-        public DataTable getDataTable(string kwerenda, string connStr)
-        {
-            //log.Info("Start getDataTable");
-            DataTable result = new DataTable();
-            var conn = new SqlConnection(connStr);
-
-            DataSet dsKwerendy = new DataSet();
-            dsKwerendy = new DataSet();
             try
             {
-                //log.Info("Open DB connection");
-                conn.Open();
-                //log.Info("DB connection is open");
-                SqlDataAdapter daMenu = new SqlDataAdapter();
-                daMenu.SelectCommand = new SqlCommand(kwerenda, conn);
-                //log.Info("Executing querry");
-                daMenu.Fill(dsKwerendy);
-                //log.Info("Querry is executed");
+                using (SqlDataAdapter dataAdapter = new SqlDataAdapter(kwerenda, connStr))
+                {
+                    if (parameters != null)
+                    {
+                        foreach (DataRow row in parameters.Rows)
+                        {
+                            log.Info("parametetr name= " + row[0].ToString().Trim() + " wartosc: " + row[1].ToString().Trim());
+                            dataAdapter.SelectCommand.Parameters.AddWithValue(row[0].ToString().Trim(), row[1].ToString().Trim());
+                        }
+                    }
 
-                conn.Close();
-                //log.Info("DB  is closed");
-
-                result = dsKwerendy.Tables[0];
+                    dataAdapter.Fill(dataSet);
+                }
             }
-#pragma warning disable CS0168 // The variable 'ex' is declared but never used
             catch (Exception ex)
-#pragma warning restore CS0168 // The variable 'ex' is declared but never used
             {
-                //log.Error("Error : " + ex.Message);
-                conn.Close();
+                log.Error(tenPlik + " Error getDataTable : " + ex.Message);
             }
 
-            return result;
+            return dataSet.Tables.Count != 0 ? dataSet.Tables[0] : null;
         } // end of getDataTable
+
+        public DataTable getDataTable(string kwerenda, string connStr,string tenPlik)
+        {
+            return getDataTable(kwerenda, connStr, null, tenPlik);
+        } // end of getDataTable
+        public void runQuerry(string kwerenda, string connStr, DataTable parameters,string tenplik)
+        {
+            //log.Info("runQuerry is started");
+
+            var conn = new SqlConnection(connStr);
+            using (SqlCommand sqlCmd = new SqlCommand(kwerenda, conn))
+            {
+                try
+                {
+                    //log.Info("Open DB connection");
+                    conn.Open();
+                    //log.Info("DB connection is open");
+                    if (parameters != null)
+                    {
+                        foreach (DataRow row in parameters.Rows)
+                        {
+                            sqlCmd.Parameters.AddWithValue(row[0].ToString().Trim(), row[1].ToString().Trim());
+                        }
+                    }
+                    //log.Info("Start querry execution");
+                    sqlCmd.ExecuteScalar();
+                    //log.Info("Execution done. ");
+                    conn.Close();
+                    //log.Info("Close DB connection");
+                }
+                catch (Exception ex)
+                {
+                    log.Error(tenplik+ " Error runQuerry : " + ex.Message);
+                    conn.Close();
+                }
+            } // end of using
+        }
 
         public void runQuerry(string kwerenda, string connStr, DataTable parameters)
         {
@@ -168,33 +174,13 @@ namespace stat2018
 
         public void runQuerry(string kwerenda, string connStr)
         {
-            //log.Info("runQuerry is started");
-            var conn = new SqlConnection(connStr);
-            using (SqlCommand sqlCmd = new SqlCommand(kwerenda, conn))
-            {
-                try
-                {
-                    //log.Info("Open DB connection");
-                    conn.Open();
-                    //log.Info("DB connection is open");
-                    //log.Info("Start querry execution");
-                    sqlCmd.ExecuteScalar();
-                    //log.Info("Execution done. ");
-                    conn.Close();
-                    //log.Info("Close DB connection");
-                }
-                catch (Exception ex)
-                {
-                    log.Error("Error runQuerry : " + ex.Message);
-                    conn.Close();
-                }
-            } // end of using
+            runQuerry(kwerenda, connStr, null);
         }
 
         public string getQuerryValue(string kwerenda, string connStr, DataTable parameters)
         {
             //log.Info("Start getQuerryValue");
-            string result = string.Empty;
+          
             using (SqlCommand sqlCmd = new SqlCommand(kwerenda, new SqlConnection(connStr)))
             {
                 try
@@ -210,10 +196,10 @@ namespace stat2018
                         }
                     }
                     //log.Info("Start querry execution");
-                    result = sqlCmd.ExecuteScalar().ToString();
-                    //log.Info("Execution done, result is: " + result);
+                    var result = sqlCmd.ExecuteScalar();
                     sqlCmd.Connection.Close();
-                    //log.Info("Close DB connection");
+
+                    return result != null ? result.ToString() : informacja(kwerenda, "");
                 }
                 catch (Exception ex)
                 {
@@ -221,11 +207,48 @@ namespace stat2018
                     sqlCmd.Connection.Close();
                 }
             } // end of using
-            return result;
+            return "";
+        }// end of getQuerryValue
+        public string getQuerryValue(string kwerenda, string connStr, DataTable parameters,string  tenplik)
+        {
+            //log.Info("Start getQuerryValue");
+            //  string result = string.Empty ;
+            using (SqlCommand sqlCmd = new SqlCommand(kwerenda, new SqlConnection(connStr)))
+            {
+                try
+                {
+                    //log.Info("Open DB connection");
+                    sqlCmd.Connection.Open();
+                    //log.Info("DB connection is open");
+                    if (parameters != null)
+                    {
+                        foreach (DataRow row in parameters.Rows)
+                        {
+                            sqlCmd.Parameters.AddWithValue(row[0].ToString().Trim(), row[1].ToString().Trim());
+                        }
+                    }
+                    //log.Info("Start querry execution");
+                    var result = sqlCmd.ExecuteScalar();
+                    sqlCmd.Connection.Close();
+
+                    return result != null ? result.ToString() : informacja(kwerenda, tenplik );
+                }
+                catch (Exception ex)
+                {
+                    log.Error(tenplik + " Error getQuerryValue : " + ex.Message);
+                    sqlCmd.Connection.Close();
+                }
+            } // end of using
+            return "";
         }// end of getQuerryValue
 
+        private string informacja(string kwerenda,string tenplik)
+        {
+            log.Error(tenplik + " Kwerenda : " + kwerenda +" nie zwróciła żadnej warości" );
+            return string.Empty ;
+        }
         //==================================================
-
+       
         public DataTable makeParameterTable()
         {
             DataTable parameters = new DataTable();
@@ -239,6 +262,7 @@ namespace stat2018
             DataTable parameters = makeParameterTable();
             parameters.Rows.Add("@klucz", klucz.Trim());
             return getQuerryValue("SELECT DISTINCT wartosc FROM  konfig WHERE klucz=rtrim(@klucz)", con_str, parameters);
+
         }
 
         //====================================================================================================================================
@@ -263,6 +287,7 @@ namespace stat2018
             }
             return false;
         }
+
         public DataTable schematTabeli()
         {
             DataTable dT = new DataTable();
@@ -274,19 +299,7 @@ namespace stat2018
             dT.Columns.Add("style", typeof(string));
             dT.Columns.Add("text", typeof(string));
 
-            //   var List<tabeleDoMSS> lista = new List <tabeleDoMSS>;
             return dT;
-        }
-
-        public class komorka
-        {
-            public int wiersz;
-            public int kolumna;
-            public string text;
-            public int kolSpan;
-            public int rowSpan;
-
-            public string styl;
         }
     } // end of common
 }

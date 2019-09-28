@@ -104,9 +104,12 @@
       <HintPath>..\..\statystyki-popup\Bin\NPOI.OpenXmlFormats.dll</HintPath>
     </Reference>
     <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="System.DirectoryServices.AccountManagement" />
     <Reference Include="System.Drawing" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.ApplicationServices" />
     <Reference Include="System.Data" />
@@ -161,7 +164,7 @@
     <Content Include="Scripts\jQuery.print.js" />
     <Content Include="test.aspx" />
     <Content Include="obba.aspx" />
-    <Content Include="UserControlls\zarzadzanieUprawnieniami.ascx" />
+    <Content Include="UserControlls\ZarzadzanieFormularzami.ascx" />
     <Content Include="wab.aspx" />
     <Content Include="okrk.aspx" />
     <Content Include="okrr.aspx" />
@@ -657,12 +660,12 @@
     <Compile Include="obba.aspx.designer.cs">
       <DependentUpon>obba.aspx</DependentUpon>
     </Compile>
-    <Compile Include="UserControlls\zarzadzanieUprawnieniami.ascx.cs">
-      <DependentUpon>zarzadzanieUprawnieniami.ascx</DependentUpon>
+    <Compile Include="UserControlls\ZarzadzanieFormularzami.ascx.cs">
+      <DependentUpon>ZarzadzanieFormularzami.ascx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="UserControlls\zarzadzanieUprawnieniami.ascx.designer.cs">
-      <DependentUpon>zarzadzanieUprawnieniami.ascx</DependentUpon>
+    <Compile Include="UserControlls\ZarzadzanieFormularzami.ascx.designer.cs">
+      <DependentUpon>ZarzadzanieFormularzami.ascx</DependentUpon>
     </Compile>
     <Compile Include="wab.aspx.cs">
       <DependentUpon>wab.aspx</DependentUpon>
@@ -1073,6 +1076,9 @@
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Properties\licenses.licx" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

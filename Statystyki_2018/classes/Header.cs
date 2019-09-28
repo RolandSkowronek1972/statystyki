@@ -1,13 +1,8 @@
-﻿using System.Collections.Generic;
-using System.Data;
-using System.IO;
-using System.Web.Script.Serialization;
-
-
+﻿using System.Data;
 
 namespace stat2018
 {
-    public class Header: common
+    public class Header : common
     {
         //public common cm = new common();
 
@@ -32,7 +27,7 @@ namespace stat2018
                 kwerenda = "SELECT DISTINCT konfig.ident, konfig.opis, konfig.wartosc, konfig.klucz FROM uprawnienia INNER JOIN konfig ON uprawnienia.id_wydzialu - 100 = konfig.ident WHERE        (uprawnienia.id_uzytkownika = @identyfikatorUzytkownika) AND (uprawnienia.id_wydzialu > 100) AND (uprawnienia.id_wydzialu < 200) AND (rtrim(konfig.klucz) = 'kontrolka') order by konfig.opis";
                 //   kwerenda = "SELECT ident, opis, wartosc FROM konfig  WHERE(klucz = 'kontrolka')";               // normalny użytkownik
             }
-            DataTable dTable = getDataTable(kwerenda, con_str, parametry);
+            DataTable dTable = getDataTable(kwerenda, con_str, parametry, "naglowek");
             foreach (DataRow dRow in dTable.Rows)
             {
                 DevExpress.Web.MenuItem mm2 = new DevExpress.Web.MenuItem(dRow[1].ToString().Trim(), dRow[0].ToString().Trim(), "", "nowa.aspx?id=" + dRow[0].ToString().Trim(), "_self");
@@ -80,7 +75,7 @@ namespace stat2018
                 //kwerenda = "SELECT distinct uprawnienia.id_wydzialu, wydzialy.nazwa, wydzialy.plik FROM uprawnienia RIGHT OUTER JOIN   wydzialy ON uprawnienia.id_wydzialu = wydzialy.ident   where uprawnienia.id_uzytkownika = @identyfikatorUzytkownika";
             }
             //log.Info("Header: odczyt działów przypisanych do uzytkownika id= "+ identyfikatorUzytkownika);
-            DataTable dTable = getDataTable(kwerenda, con_str, parametry);
+            DataTable dTable = getDataTable(kwerenda, con_str, parametry, "");
             //log.Info("Header: Uzytkownika id= " + identyfikatorUzytkownika+ " ma prawa do "+dTable.Rows.Count.ToString () +" wydziałów");
 
             foreach (DataRow dRow in dTable.Rows)
@@ -114,7 +109,7 @@ namespace stat2018
                 kwerenda = "SELECT DISTINCT wydzialy_mss.ident as id_wydzialu, wydzialy_mss.nazwa, wydzialy_mss.plik FROM  uprawnienia LEFT OUTER JOIN wydzialy_mss ON uprawnienia.id_wydzialu = wydzialy_mss.ident + 200 WHERE        (uprawnienia.id_uzytkownika = @identyfikatorUzytkownika) AND (uprawnienia.id_wydzialu >= 200) AND (wydzialy_mss.ident IS NOT NULL) order by wydzialy_mss.nazwa";
                 //SELECT DISTINCT wydzialy_mss.ident as id_wydzialu, wydzialy_mss.nazwa, wydzialy_mss.plik FROM  uprawnienia LEFT OUTER JOIN wydzialy_mss ON uprawnienia.id_wydzialu = wydzialy_mss.ident + 200 WHERE        (uprawnienia.id_uzytkownika = 8) AND (uprawnienia.id_wydzialu >= 200) AND (wydzialy_mss.ident IS NOT NULL)
             }
-            DataTable dTable = getDataTable(kwerenda, con_str, parametry);
+            DataTable dTable = getDataTable(kwerenda, con_str, parametry,"Naglowki");
             foreach (DataRow dRow in dTable.Rows)
             {
                 DevExpress.Web.MenuItem mm2 = new DevExpress.Web.MenuItem(dRow[1].ToString().Trim(), dRow[0].ToString().Trim(), "", dRow[2].ToString().Trim() + "?w=" + dRow[0].ToString().Trim(), "_self");
@@ -149,7 +144,22 @@ namespace stat2018
 
             return mm1;
         }
+        public DevExpress.Web.MenuItem daneDoManuAdmin()
+        {
+            //czy admin
+            //log.Info("Header: Rozpoczęcie procedury tworzenia elementów menu statystyk MS-S");
 
+            DevExpress.Web.MenuItem mm1 = new DevExpress.Web.MenuItem("Administracja");
+            DevExpress.Web.MenuItem mm2 = new DevExpress.Web.MenuItem();
+
+            mm2 = new DevExpress.Web.MenuItem("Panel Administracyjny", "", "", "adm.aspx", "_self");
+            mm2.ItemStyle.Width = 300;
+            mm2.ItemStyle.Paddings.PaddingLeft = 30;
+            mm1.Items.Add(mm2);
+
+
+            return mm1;
+        }
         public DevExpress.Web.MenuItem wyloguj()
         {
             //czy admin
@@ -164,24 +174,6 @@ namespace stat2018
 
             mm1.Items.Add(mm2);
             return mm1;
-        }
-        // json
-
-        public DataTable  OdczytajPlikJson(string tenplik)
-        {
-            DataTable naglowek =  schematTabeli();
-            if (tenplik == null)
-            {
-                throw new System.ArgumentNullException(nameof(tenplik));
-            }
-            using (StreamReader r = new StreamReader("file.json"))
-            {
-                string json = r.ReadToEnd();
-                komorka facebookFriends = new JavaScriptSerializer().Deserialize<komorka>(json);
-              
-              //  List<komorka> items = JsonConvert.DeserializeObject<List<komorka>>(json);
-            }
-            return null;
         }
     }
 }

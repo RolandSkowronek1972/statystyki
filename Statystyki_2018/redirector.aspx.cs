@@ -5,8 +5,10 @@ namespace stat2018
 {
     public partial class redirector : System.Web.UI.Page
     {
+        common cm = new common();
         protected void Page_Load(object sender, EventArgs e)
         {
+            cm.log.Info("start redirektora  " + DateTime.Now.ToLongTimeString());
             CultureInfo newCulture = (CultureInfo)CultureInfo.CurrentCulture.Clone();
             newCulture.DateTimeFormat = CultureInfo.GetCultureInfo("PL").DateTimeFormat;
             System.Threading.Thread.CurrentThread.CurrentCulture = newCulture;

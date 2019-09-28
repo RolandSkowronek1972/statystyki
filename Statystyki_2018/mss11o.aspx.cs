@@ -180,7 +180,7 @@ namespace stat2018
                 }
                 if (!string.IsNullOrEmpty(idWydzialu))
                 {
-                    DataTable tabela2 = cl.generuj_dane_do_tabeli_mss2(int.Parse((string)Session["id_dzialu"]), Date1.Date, Date2.Date, 21); //dane
+                    DataTable tabela2 = cl.generuj_dane_do_tabeli_mss2(int.Parse((string)Session["id_dzialu"]), Date1.Date, Date2.Date, 21,tenPlik); //dane
                     var distinctRows = (from DataRow dRow in tabela2.Rows select dRow["idTabeli"]).Distinct(); //lista tabelek
                     DataTable listaTabelek = new DataTable();
                     listaTabelek.Columns.Add("tabela", typeof(string));
@@ -365,7 +365,7 @@ namespace stat2018
             dT.Rows.Add(new Object[] { 9, 1, 3, 1, "wciecie borderAll", "O rentę z tytułu niezdolności do pracy przewidzianą dla inwalidów wojennych i wojskowych oraz ich rodzin" });
             dT.Rows.Add(new Object[] { 9, 4, 1, 1, "wciecie borderAll", "508" });
 
-            dT.Rows.Add(new Object[] { 10, 3, 1, 1, "wciecie borderAll", "O prawo do" });
+            dT.Rows.Add(new Object[] { 10, 1, 1, 3, "wciecie borderAll", "O prawo do" });
             dT.Rows.Add(new Object[] { 10, 2, 2, 1, "wciecie borderAll", "renty rolniczej z tytułu niezdolności do pracy" });
             dT.Rows.Add(new Object[] { 10, 4, 1, 1, "wciecie borderAll", "518" });
 
@@ -2821,7 +2821,7 @@ namespace stat2018
             dT.Rows.Add(new Object[] { 10, 1, 1, 3, "wciecie borderAll", "Wydział ubezpieczeń społecznych" });
             dT.Rows.Add(new Object[] { 10, 2, 2, 1, "center borderAll", "referendarze" });
             dT.Rows.Add(new Object[] { 11, 2, 1, 2, "wciecie borderAll", "pracownicy administracyjni" });
-            dT.Rows.Add(new Object[] { 11, 2, 1, 1, "wciecie borderAll", "urzędnicy" });
+            dT.Rows.Add(new Object[] { 11, 3, 1, 1, "wciecie borderAll", "urzędnicy" });
             dT.Rows.Add(new Object[] { 12, 3, 1, 1, "wciecie borderAll", "asystenci sędziów" });
             dT.Rows.Add(new Object[] { 13, 3, 3, 1, "wciecie borderAll", "asystenci sędziów" });
             return dT;

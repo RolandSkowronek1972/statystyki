@@ -269,7 +269,7 @@ namespace stat2018
             txt = "File name: onsg.aspx";
 
             txt = txt + cl.clear_maim_db();
-            txt = txt + cl.generuj_dane_do_tabeli_wierszy(Date1.Date, Date2.Date, yyx, 1);
+            txt = txt + cl.generuj_dane_do_tabeli_wierszy(Date1.Date, Date2.Date, yyx, 1,tenPlik);
             GridView2.DataBind();
 
 

@@ -13,6 +13,7 @@ namespace stat2018
         public Class1 cl = new Class1();
         public common cm = new common();
         private tabele tb = new tabele();
+        public dataReaders dr = new dataReaders();
         public const string tenPlik = "oopr.aspx";
 
         protected void Page_Load(object sender, EventArgs e)
@@ -51,7 +52,7 @@ namespace stat2018
             {
                 string user = (string)Session["userIdNum"];
                 string dzial = (string)Session["id_dzialu"];
-                bool dost = cm.dostep(dzial, user);
+                bool dost = true;// cm.dostep(dzial, user);
                 if (!dost)
                 {
                     Server.Transfer("default.aspx?info='Użytkownik " + user + " nie praw do działu nr " + dzial + "'");
@@ -70,7 +71,7 @@ namespace stat2018
             catch (Exception ex)
             {
                 cm.log.Error(tenPlik + " " + ex.Message);
-                Server.Transfer("default.aspx");
+              //  Server.Transfer("default.aspx");
             }
         }// end of Page_Load
 
@@ -78,29 +79,25 @@ namespace stat2018
         {
             string dzial = (string)Session["id_dzialu"];
             id_dzialu.Text = (string)Session["txt_dzialu"];
-            string txt = string.Empty; //
-
-            txt = txt + cl.clear_maim_db_xl();
-            try
-            {
-                txt = txt + cl.generuj_dane_do_tabeli_XXL(int.Parse(dzial), 5, Date1.Date, Date2.Date);              
-            }
-            catch
-            { }
+            tabela_1();
             // dopasowanie opisów
             makeLabels();
-            GridView1.DataBind();
-            try
-            {
-                Label11.Visible = cl.debug(int.Parse((string)Session["id_dzialu"]));
-            }
-            catch
-            {
-                Label11.Visible = false;
-            }
-
-            Label11.Text = txt;
             Label3.Text = cl.nazwaSadu((string)Session["id_dzialu"]);
+        }
+
+        protected void tabela_1()
+        {
+            string idDzialu = (string)Session["id_dzialu"];
+            if (cl.debug(int.Parse(idDzialu)))
+            {
+                cm.log.Info(tenPlik + ": rozpoczęcie tworzenia tabeli 1");
+            }
+            DataTable tabelka01 = dr.generuj_dane_do_tabeli_sedziowskiej_2018(int.Parse(idDzialu), 5, Date1.Date, Date2.Date, 260, tenPlik);
+            Session["tabelka001"] = tabelka01;
+            GridView1.DataSource = null;
+            GridView1.DataSourceID = null;
+            GridView1.DataSource = tabelka01;
+            GridView1.DataBind();
         }
 
         #region "nagłowki tabel"
@@ -389,8 +386,8 @@ namespace stat2018
             {
                 try
                 {
-                    DataView view = (DataView)statystyki.Select(DataSourceSelectArguments.Empty);
-                    tb.makeSumRow(view.ToTable(), e, 1, "Razem");
+                   
+                    tb.makeSumRow((DataTable)Session["tabelka001"], e, 1, "Razem");
                 }
                 catch (Exception ex)
                 {

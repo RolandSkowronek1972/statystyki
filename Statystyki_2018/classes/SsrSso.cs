@@ -28,7 +28,7 @@ namespace stat2018
             parameters.Rows.Add("@id_wydzial", idWydzial);
             parameters.Rows.Add("@id_wiersza", idWiersza);
 
-            dT = cm.getDataTable(query, con_str, parameters);
+            dT = cm.getDataTable(query, con_str, parameters,"ssr");
 
             result.Columns.Add("columna", typeof(String));
             result.Columns.Add("wartosc", typeof(String));
@@ -47,7 +47,7 @@ namespace stat2018
                 parameters.Rows.Add("@data2", dataKonca);
                 string kwerenda = dR[1].ToString().Trim();
                 parameters.Rows.Add("@id_sedziego", idSedziego);
-                DataTable ddT = cm.getDataTable(kwerenda, con_str, parameters);
+                DataTable ddT = cm.getDataTable(kwerenda, con_str, parameters,"ssr");
                 DataRow ddR = result.NewRow();
                 ddR[0] = dR[0].ToString().Trim();
                 DataRow dF = ddT.Rows[0];

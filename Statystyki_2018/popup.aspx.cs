@@ -154,7 +154,94 @@ namespace stat2018
                         tabelaDanych = (DataTable)Session["tabelka002"];
                     }
                     break;
-
+                case 3:
+                    {
+                        tabelaDanych = (DataTable)Session["tabelka003"];
+                    }
+                    break;
+                case 4:
+                    {
+                        tabelaDanych = (DataTable)Session["tabelka004"];
+                    }
+                    break;
+                case 5:
+                    {
+                        tabelaDanych = (DataTable)Session["tabelka005"];
+                    }
+                    break;
+                case 6:
+                    {
+                        tabelaDanych = (DataTable)Session["tabelka006"];
+                    }
+                    break;
+                case 7:
+                    {
+                        tabelaDanych = (DataTable)Session["tabelka007"];
+                    }
+                    break;
+                case 8:
+                    {
+                        tabelaDanych = (DataTable)Session["tabelka008"];
+                    }
+                    break;
+                case 9:
+                    {
+                        tabelaDanych = (DataTable)Session["tabelka009"];
+                    }
+                    break;
+                case 10:
+                    {
+                        tabelaDanych = (DataTable)Session["tabelka010"];
+                    }
+                    break;
+                case 11:
+                    {
+                        tabelaDanych = (DataTable)Session["tabelka011"];
+                    }
+                    break;
+                case 12:
+                    {
+                        tabelaDanych = (DataTable)Session["tabelka012"];
+                    }
+                    break;
+                case 13:
+                    {
+                        tabelaDanych = (DataTable)Session["tabelka013"];
+                    }
+                    break;
+                case 14:
+                    {
+                        tabelaDanych = (DataTable)Session["tabelka014"];
+                    }
+                    break;
+                case 15:
+                    {
+                        tabelaDanych = (DataTable)Session["tabelka015"];
+                    }
+                    break;
+                case 16:
+                    {
+                        tabelaDanych = (DataTable)Session["tabelka016"];
+                    }
+                    break;
+                case 17:
+                    {
+                        tabelaDanych = (DataTable)Session["tabelka017"];
+                    }
+                    break;
+                case 18:
+                    {
+                        tabelaDanych = (DataTable)Session["tabelka018"];
+                    }
+                    break;
+                case 19:
+                    {
+                        tabelaDanych = (DataTable)Session["tabelka019"];
+                    }
+                    break;
+                case 20: {       tabelaDanych = (DataTable)Session["tabelka020"];
+                    }
+                    break;
                 default:
                     break;
             }
@@ -166,18 +253,15 @@ namespace stat2018
            
             string selectText = "id_sedziego=" + id_sedziego.ToString();
 
-
             DataRow[] jedenWiersz = tabelaDanych.Select(selectText);
             string sedzia = string.Empty;
             if (jedenWiersz.Length > 0)
             {
-
                 sedzia = jedenWiersz[0][5].ToString() + " " + jedenWiersz[0][4].ToString();
             }
-            if (sedzia == "Odwołanie do obiektu nie zostało ustawione na wystąpienie obiektu.")
+            else
             {
                 sedzia = "";
-                Label1.Text = sedzia;
             }
             Label1.Text = sedzia;
             Page.Header.Title = Label1.Text.Trim() + " " + Label2.Text.Trim();

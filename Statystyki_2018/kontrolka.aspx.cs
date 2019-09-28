@@ -120,7 +120,7 @@ namespace stat2018
             DataTable parameters = cm.makeParameterTable();
             parameters.Rows.Add("@data_1", data1.Date.ToShortDateString());
             parameters.Rows.Add("@data_2", data2.Date.ToShortDateString());
-            DataTable dT = cm.getDataTable(kwerenda, connectionString, parameters);
+            DataTable dT = cm.getDataTable(kwerenda, connectionString, parameters,"kontrolka");
 
             Session["data1"] = data1.Date.ToShortDateString();
             Session["data2"] = data2.Date.ToShortDateString();
@@ -236,7 +236,7 @@ namespace stat2018
             DataTable parameters = cm.makeParameterTable();
             parameters.Rows.Add("@data_1", data1.Text);
             parameters.Rows.Add("@data_2", data2.Text);
-            DataTable dT = cm.getDataTable(kwerenda, connectionString, parameters);
+            DataTable dT = cm.getDataTable(kwerenda, connectionString, parameters, "wyszukiwarka");
 
             Session["data1"] = data1.Text.Trim();
             Session["data2"] = data2.Text.Trim();

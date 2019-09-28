@@ -94,21 +94,44 @@ namespace stat2018
 
             DataTable tabelka18 = dr.generuj_dane_do_tabeli_sedziowskiej_2018(idWydzial, 18, Date1.Date, Date2.Date, 120, tenPlik);
             Session["tabelka018"] = tabelka18;
-            tworztabelkeHTML17("K18", idWydzial, 17, tabelka18, "%", "SSR", " IV.5.1.Czas trwania postępowania sądowego od dnia pierwszej rejestracji do dnia zakończenia sprawy w danej instancji w referatach poszczególnych sędziów(liczba spraw)", "Tabela 18");
+            tworztabelkeHTML17("K18", idWydzial, 18, tabelka18, "%", "SSR", " IV.5.2.Czas trwania postępowania sądowego od dnia pierwszej rejestracji do dnia zakończenia sprawy w danej instancji w referatach poszczególnych sędziów(liczba spraw)", "Tabela 18");
 
             DataTable tabelka19 = dr.generuj_dane_do_tabeli_sedziowskiej_2018(idWydzial, 19, Date1.Date, Date2.Date, 120, tenPlik);
             Session["tabelka019"] = tabelka19;
-            tworztabelkeHTML17("K19", idWydzial, 17, tabelka18, "liczba spraw", "", " IV.5.1.Czas trwania postępowania sądowego od dnia pierwszej rejestracji do dnia zakończenia sprawy w danej instancji w referatach poszczególnych sędziów(liczba spraw)", "Tabela 19");
+            tworztabelkeHTML19("K19", idWydzial, 19, tabelka19, "liczba spraw", "", " IV.5.3.Czas trwania postępowania sądowego od dnia pierwszej rejestracji do dnia zakończenia sprawy w danej instancji w referatach poszczególnych sędziów(liczba spraw)", "Tabela 19");
             //
             DataTable tabelka20 = dr.generuj_dane_do_tabeli_sedziowskiej_2018(idWydzial, 20, Date1.Date, Date2.Date, 120, tenPlik);
             Session["tabelka020"] = tabelka20;
-            tworztabelkeHTML17("K20", idWydzial, 20, tabelka20, "%", "", " IV.5.1.Czas trwania postępowania sądowego od dnia pierwszej rejestracji do dnia zakończenia sprawy w danej instancji w referatach poszczególnych sędziów(liczba spraw)", "Tabela 20");
+            tworztabelkeHTML17("K20", idWydzial, 20, tabelka20, "%", "", " IV.5.4.Czas trwania postępowania sądowego od dnia pierwszej rejestracji do dnia zakończenia sprawy w danej instancji w referatach poszczególnych sędziów(liczba spraw)", "Tabela 20");
 
             tabela_21();
             tabela_22();
             DataTable tabelka23 = dr.generuj_dane_do_tabeli_sedziowskiej_2018(idWydzial, 23, Date1.Date, Date2.Date, 130, tenPlik);
             Session["tabelka023"] = tabelka23;
-            tworztabelkeHTML23("K23", idWydzial, 23, tabelka23, "liczba sporządzonych uzasadnień", "", "", "Tabela 23");
+            tworztabelkeHTML23("K23", idWydzial, 23, tabelka23, "Liczba sporządzonych uzasadnień", "", "", "Tabela 23");
+            tabela_24();
+            tabela_25();
+
+            DataTable tabelka26 = dr.generuj_dane_do_tabeli_sedziowskiej_2018(idWydzial, 26, Date1.Date, Date2.Date, 130, tenPlik);
+            Session["tabelka026"] = tabelka26;
+            tworztabelkeHTML26("K26", idWydzial, 26, tabelka26, "liczba spraw", "", "IV. 7.3.Struktura pozostałości (referaty poszczególnych sędziów – liczba spraw)", "Tabela 26");
+
+            DataTable tabelka27 = dr.generuj_dane_do_tabeli_sedziowskiej_2018(idWydzial, 27, Date1.Date, Date2.Date, 130, tenPlik);
+            Session["tabelka027"] = tabelka27;
+            tworztabelkeHTML26("K27", idWydzial, 27, tabelka27, "% spraw", "", "IV. 7.4.Struktura pozostałości (referaty poszczególnych sędziów – %)", "Tabela 27");
+
+            DataTable tabelka28 = dr.generuj_dane_do_tabeli_sedziowskiej_2018(idWydzial, 27, Date1.Date, Date2.Date, 130, tenPlik);
+            Session["tabelka028"] = tabelka28;
+            tworztabelkeHTML26("K28", idWydzial, 28, tabelka28, "liczba spraw", "", "IV. 7.5.Struktura pozostałości (referaty poszczególnych referendarzy sądowych – liczba spraw)", "Tabela 28");
+
+            DataTable tabelka29 = dr.generuj_dane_do_tabeli_sedziowskiej_2018(idWydzial, 27, Date1.Date, Date2.Date, 130, tenPlik);
+            Session["tabelka029"] = tabelka29;
+            tworztabelkeHTML26("K29", idWydzial, 29, tabelka29, "% spraw", "", "IV. 7.5.Struktura pozostałości (referaty poszczególnych referendarzy sądowych – liczba spraw)", "Tabela 28");
+
+            tabela_30();
+            tabela_31();
+            tabela_32();
+            tabela_33();
         }
 
         private void tabela_01(int idWydzialu, int idtabeli)
@@ -551,8 +574,8 @@ namespace stat2018
             try
             {
                 tab_14_w01_c01.Text = tabelka01.Rows[0][1].ToString().Trim();
-                tab_14_w02_c01.Text = tabelka01.Rows[0][2].ToString().Trim();
-                tab_14_w03_c01.Text = tabelka01.Rows[0][3].ToString().Trim();
+                tab_14_w02_c01.Text = tabelka01.Rows[1][1].ToString().Trim();
+                tab_14_w03_c01.Text = tabelka01.Rows[2][1].ToString().Trim();
             }
             catch (Exception)
             {
@@ -568,122 +591,126 @@ namespace stat2018
                 cm.log.Info(tenPlik + ": rozpoczęcie tworzenia tabeli 15");
             }
 
-            DataTable tabelka01 = dr.generuj_dane_do_tabeli_wierszy2018(Date1.Date, Date2.Date, (string)Session["id_dzialu"], 8, 8, 15, tenPlik);
+            DataTable tabelka01 = dr.generuj_dane_do_tabeli_wierszy2018(Date1.Date, Date2.Date, (string)Session["id_dzialu"], 15, 8, 15, tenPlik);
             Session["tabelka015"] = tabelka01;
+            try
+            {
+                tab_15_w01_c01.Text = tabelka01.Rows[0][1].ToString().Trim();
+                tab_15_w01_c02.Text = tabelka01.Rows[0][2].ToString().Trim();
+                tab_15_w01_c03.Text = tabelka01.Rows[0][3].ToString().Trim();
+                tab_15_w01_c04.Text = tabelka01.Rows[0][4].ToString().Trim();
+                tab_15_w01_c05.Text = tabelka01.Rows[0][5].ToString().Trim();
+                tab_15_w01_c06.Text = tabelka01.Rows[0][6].ToString().Trim();
+                tab_15_w01_c07.Text = tabelka01.Rows[0][7].ToString().Trim();
+                tab_15_w01_c08.Text = tabelka01.Rows[0][8].ToString().Trim();
+                tab_15_w01_c09.Text = tabelka01.Rows[0][9].ToString().Trim();
+                tab_15_w01_c10.Text = tabelka01.Rows[0][10].ToString().Trim();
+                tab_15_w01_c11.Text = tabelka01.Rows[0][11].ToString().Trim();
+                tab_15_w01_c12.Text = tabelka01.Rows[0][12].ToString().Trim();
+                tab_15_w01_c13.Text = tabelka01.Rows[0][13].ToString().Trim();
 
-            tab_15_w01_c01.Text = tabelka01.Rows[0][1].ToString().Trim();
-            tab_15_w01_c02.Text = tabelka01.Rows[0][2].ToString().Trim();
-            tab_15_w01_c03.Text = tabelka01.Rows[0][3].ToString().Trim();
-            tab_15_w01_c04.Text = tabelka01.Rows[0][4].ToString().Trim();
-            tab_15_w01_c05.Text = tabelka01.Rows[0][5].ToString().Trim();
-            tab_15_w01_c06.Text = tabelka01.Rows[0][6].ToString().Trim();
-            tab_15_w01_c07.Text = tabelka01.Rows[0][7].ToString().Trim();
-            tab_15_w01_c08.Text = tabelka01.Rows[0][8].ToString().Trim();
-            tab_15_w01_c09.Text = tabelka01.Rows[0][9].ToString().Trim();
-            tab_15_w01_c10.Text = tabelka01.Rows[0][10].ToString().Trim();
-            tab_15_w01_c11.Text = tabelka01.Rows[0][11].ToString().Trim();
-            tab_15_w01_c12.Text = tabelka01.Rows[0][12].ToString().Trim();
-            tab_15_w01_c13.Text = tabelka01.Rows[0][13].ToString().Trim();
+                tab_15_w02_c01.Text = tabelka01.Rows[1][1].ToString().Trim();
+                tab_15_w02_c02.Text = tabelka01.Rows[1][2].ToString().Trim();
+                tab_15_w02_c03.Text = tabelka01.Rows[1][3].ToString().Trim();
+                tab_15_w02_c04.Text = tabelka01.Rows[1][4].ToString().Trim();
+                tab_15_w02_c05.Text = tabelka01.Rows[1][5].ToString().Trim();
+                tab_15_w02_c06.Text = tabelka01.Rows[1][6].ToString().Trim();
+                tab_15_w02_c07.Text = tabelka01.Rows[1][7].ToString().Trim();
+                tab_15_w02_c08.Text = tabelka01.Rows[1][8].ToString().Trim();
+                tab_15_w02_c09.Text = tabelka01.Rows[1][9].ToString().Trim();
+                tab_15_w02_c10.Text = tabelka01.Rows[1][10].ToString().Trim();
+                tab_15_w02_c11.Text = tabelka01.Rows[1][11].ToString().Trim();
+                tab_15_w02_c12.Text = tabelka01.Rows[1][12].ToString().Trim();
+                tab_15_w02_c13.Text = tabelka01.Rows[1][13].ToString().Trim();
 
-            tab_15_w02_c01.Text = tabelka01.Rows[1][1].ToString().Trim();
-            tab_15_w02_c02.Text = tabelka01.Rows[1][2].ToString().Trim();
-            tab_15_w02_c03.Text = tabelka01.Rows[1][3].ToString().Trim();
-            tab_15_w02_c04.Text = tabelka01.Rows[1][4].ToString().Trim();
-            tab_15_w02_c05.Text = tabelka01.Rows[1][5].ToString().Trim();
-            tab_15_w02_c06.Text = tabelka01.Rows[1][6].ToString().Trim();
-            tab_15_w02_c07.Text = tabelka01.Rows[1][7].ToString().Trim();
-            tab_15_w02_c08.Text = tabelka01.Rows[1][8].ToString().Trim();
-            tab_15_w02_c09.Text = tabelka01.Rows[1][9].ToString().Trim();
-            tab_15_w02_c10.Text = tabelka01.Rows[1][10].ToString().Trim();
-            tab_15_w02_c11.Text = tabelka01.Rows[1][11].ToString().Trim();
-            tab_15_w02_c12.Text = tabelka01.Rows[1][12].ToString().Trim();
-            tab_15_w02_c13.Text = tabelka01.Rows[1][13].ToString().Trim();
+                tab_15_w03_c01.Text = tabelka01.Rows[2][1].ToString().Trim();
+                tab_15_w03_c02.Text = tabelka01.Rows[2][2].ToString().Trim();
+                tab_15_w03_c03.Text = tabelka01.Rows[2][3].ToString().Trim();
+                tab_15_w03_c04.Text = tabelka01.Rows[2][4].ToString().Trim();
+                tab_15_w03_c05.Text = tabelka01.Rows[2][5].ToString().Trim();
+                tab_15_w03_c06.Text = tabelka01.Rows[2][6].ToString().Trim();
+                tab_15_w03_c07.Text = tabelka01.Rows[2][7].ToString().Trim();
+                tab_15_w03_c08.Text = tabelka01.Rows[2][8].ToString().Trim();
+                tab_15_w03_c09.Text = tabelka01.Rows[2][9].ToString().Trim();
+                tab_15_w03_c10.Text = tabelka01.Rows[2][10].ToString().Trim();
+                tab_15_w03_c11.Text = tabelka01.Rows[2][11].ToString().Trim();
+                tab_15_w03_c12.Text = tabelka01.Rows[2][12].ToString().Trim();
+                tab_15_w03_c13.Text = tabelka01.Rows[2][13].ToString().Trim();
 
-            tab_15_w03_c01.Text = tabelka01.Rows[2][1].ToString().Trim();
-            tab_15_w03_c02.Text = tabelka01.Rows[2][2].ToString().Trim();
-            tab_15_w03_c03.Text = tabelka01.Rows[2][3].ToString().Trim();
-            tab_15_w03_c04.Text = tabelka01.Rows[2][4].ToString().Trim();
-            tab_15_w03_c05.Text = tabelka01.Rows[2][5].ToString().Trim();
-            tab_15_w03_c06.Text = tabelka01.Rows[2][6].ToString().Trim();
-            tab_15_w03_c07.Text = tabelka01.Rows[2][7].ToString().Trim();
-            tab_15_w03_c08.Text = tabelka01.Rows[2][8].ToString().Trim();
-            tab_15_w03_c09.Text = tabelka01.Rows[2][9].ToString().Trim();
-            tab_15_w03_c10.Text = tabelka01.Rows[2][10].ToString().Trim();
-            tab_15_w03_c11.Text = tabelka01.Rows[2][11].ToString().Trim();
-            tab_15_w03_c12.Text = tabelka01.Rows[2][12].ToString().Trim();
-            tab_15_w03_c13.Text = tabelka01.Rows[2][13].ToString().Trim();
+                tab_15_w04_c01.Text = tabelka01.Rows[3][1].ToString().Trim();
+                tab_15_w04_c02.Text = tabelka01.Rows[3][2].ToString().Trim();
+                tab_15_w04_c03.Text = tabelka01.Rows[3][3].ToString().Trim();
+                tab_15_w04_c04.Text = tabelka01.Rows[3][4].ToString().Trim();
+                tab_15_w04_c05.Text = tabelka01.Rows[3][5].ToString().Trim();
+                tab_15_w04_c06.Text = tabelka01.Rows[3][6].ToString().Trim();
+                tab_15_w04_c07.Text = tabelka01.Rows[3][7].ToString().Trim();
+                tab_15_w04_c08.Text = tabelka01.Rows[3][8].ToString().Trim();
+                tab_15_w04_c09.Text = tabelka01.Rows[3][9].ToString().Trim();
+                tab_15_w04_c10.Text = tabelka01.Rows[3][10].ToString().Trim();
+                tab_15_w04_c11.Text = tabelka01.Rows[3][11].ToString().Trim();
+                tab_15_w04_c12.Text = tabelka01.Rows[3][12].ToString().Trim();
+                tab_15_w04_c13.Text = tabelka01.Rows[3][13].ToString().Trim();
 
-            tab_15_w04_c01.Text = tabelka01.Rows[3][1].ToString().Trim();
-            tab_15_w04_c02.Text = tabelka01.Rows[3][2].ToString().Trim();
-            tab_15_w04_c03.Text = tabelka01.Rows[3][3].ToString().Trim();
-            tab_15_w04_c04.Text = tabelka01.Rows[3][4].ToString().Trim();
-            tab_15_w04_c05.Text = tabelka01.Rows[3][5].ToString().Trim();
-            tab_15_w04_c06.Text = tabelka01.Rows[3][6].ToString().Trim();
-            tab_15_w04_c07.Text = tabelka01.Rows[3][7].ToString().Trim();
-            tab_15_w04_c08.Text = tabelka01.Rows[3][8].ToString().Trim();
-            tab_15_w04_c09.Text = tabelka01.Rows[3][9].ToString().Trim();
-            tab_15_w04_c10.Text = tabelka01.Rows[3][10].ToString().Trim();
-            tab_15_w04_c11.Text = tabelka01.Rows[3][11].ToString().Trim();
-            tab_15_w04_c12.Text = tabelka01.Rows[3][12].ToString().Trim();
-            tab_15_w04_c13.Text = tabelka01.Rows[3][13].ToString().Trim();
+                tab_15_w05_c01.Text = tabelka01.Rows[4][1].ToString().Trim();
+                tab_15_w05_c02.Text = tabelka01.Rows[4][2].ToString().Trim();
+                tab_15_w05_c03.Text = tabelka01.Rows[4][3].ToString().Trim();
+                tab_15_w05_c04.Text = tabelka01.Rows[4][4].ToString().Trim();
+                tab_15_w05_c05.Text = tabelka01.Rows[4][5].ToString().Trim();
+                tab_15_w05_c06.Text = tabelka01.Rows[4][6].ToString().Trim();
+                tab_15_w05_c07.Text = tabelka01.Rows[4][7].ToString().Trim();
+                tab_15_w05_c08.Text = tabelka01.Rows[4][8].ToString().Trim();
+                tab_15_w05_c09.Text = tabelka01.Rows[4][9].ToString().Trim();
+                tab_15_w05_c10.Text = tabelka01.Rows[4][10].ToString().Trim();
+                tab_15_w05_c11.Text = tabelka01.Rows[4][11].ToString().Trim();
+                tab_15_w05_c12.Text = tabelka01.Rows[4][12].ToString().Trim();
+                tab_15_w05_c13.Text = tabelka01.Rows[4][13].ToString().Trim();
 
-            tab_15_w05_c01.Text = tabelka01.Rows[4][1].ToString().Trim();
-            tab_15_w05_c02.Text = tabelka01.Rows[4][2].ToString().Trim();
-            tab_15_w05_c03.Text = tabelka01.Rows[4][3].ToString().Trim();
-            tab_15_w05_c04.Text = tabelka01.Rows[4][4].ToString().Trim();
-            tab_15_w05_c05.Text = tabelka01.Rows[4][5].ToString().Trim();
-            tab_15_w05_c06.Text = tabelka01.Rows[4][6].ToString().Trim();
-            tab_15_w05_c07.Text = tabelka01.Rows[4][7].ToString().Trim();
-            tab_15_w05_c08.Text = tabelka01.Rows[4][8].ToString().Trim();
-            tab_15_w05_c09.Text = tabelka01.Rows[4][9].ToString().Trim();
-            tab_15_w05_c10.Text = tabelka01.Rows[4][10].ToString().Trim();
-            tab_15_w05_c11.Text = tabelka01.Rows[4][11].ToString().Trim();
-            tab_15_w05_c12.Text = tabelka01.Rows[4][12].ToString().Trim();
-            tab_15_w05_c13.Text = tabelka01.Rows[4][13].ToString().Trim();
+                tab_15_w06_c01.Text = tabelka01.Rows[5][1].ToString().Trim();
+                tab_15_w06_c02.Text = tabelka01.Rows[5][2].ToString().Trim();
+                tab_15_w06_c03.Text = tabelka01.Rows[5][3].ToString().Trim();
+                tab_15_w06_c04.Text = tabelka01.Rows[5][4].ToString().Trim();
+                tab_15_w06_c05.Text = tabelka01.Rows[5][5].ToString().Trim();
+                tab_15_w06_c06.Text = tabelka01.Rows[5][6].ToString().Trim();
+                tab_15_w06_c07.Text = tabelka01.Rows[5][7].ToString().Trim();
+                tab_15_w06_c08.Text = tabelka01.Rows[5][8].ToString().Trim();
+                tab_15_w06_c09.Text = tabelka01.Rows[5][9].ToString().Trim();
+                tab_15_w06_c10.Text = tabelka01.Rows[5][10].ToString().Trim();
+                tab_15_w06_c11.Text = tabelka01.Rows[5][11].ToString().Trim();
+                tab_15_w06_c12.Text = tabelka01.Rows[5][12].ToString().Trim();
+                tab_15_w06_c13.Text = tabelka01.Rows[5][13].ToString().Trim();
 
-            tab_15_w06_c01.Text = tabelka01.Rows[5][1].ToString().Trim();
-            tab_15_w06_c02.Text = tabelka01.Rows[5][2].ToString().Trim();
-            tab_15_w06_c03.Text = tabelka01.Rows[5][3].ToString().Trim();
-            tab_15_w06_c04.Text = tabelka01.Rows[5][4].ToString().Trim();
-            tab_15_w06_c05.Text = tabelka01.Rows[5][5].ToString().Trim();
-            tab_15_w06_c06.Text = tabelka01.Rows[5][6].ToString().Trim();
-            tab_15_w06_c07.Text = tabelka01.Rows[5][7].ToString().Trim();
-            tab_15_w06_c08.Text = tabelka01.Rows[5][8].ToString().Trim();
-            tab_15_w06_c09.Text = tabelka01.Rows[5][9].ToString().Trim();
-            tab_15_w06_c10.Text = tabelka01.Rows[5][10].ToString().Trim();
-            tab_15_w06_c11.Text = tabelka01.Rows[5][11].ToString().Trim();
-            tab_15_w06_c12.Text = tabelka01.Rows[5][12].ToString().Trim();
-            tab_15_w06_c13.Text = tabelka01.Rows[5][13].ToString().Trim();
+                tab_15_w07_c01.Text = tabelka01.Rows[6][1].ToString().Trim();
+                tab_15_w07_c02.Text = tabelka01.Rows[6][2].ToString().Trim();
+                tab_15_w07_c03.Text = tabelka01.Rows[6][3].ToString().Trim();
+                tab_15_w07_c04.Text = tabelka01.Rows[6][4].ToString().Trim();
+                tab_15_w07_c05.Text = tabelka01.Rows[6][5].ToString().Trim();
+                tab_15_w07_c06.Text = tabelka01.Rows[6][6].ToString().Trim();
+                tab_15_w07_c07.Text = tabelka01.Rows[6][7].ToString().Trim();
+                tab_15_w07_c08.Text = tabelka01.Rows[6][8].ToString().Trim();
+                tab_15_w07_c09.Text = tabelka01.Rows[6][9].ToString().Trim();
+                tab_15_w07_c10.Text = tabelka01.Rows[6][10].ToString().Trim();
+                tab_15_w07_c11.Text = tabelka01.Rows[6][11].ToString().Trim();
+                tab_15_w07_c12.Text = tabelka01.Rows[6][12].ToString().Trim();
+                tab_15_w07_c13.Text = tabelka01.Rows[6][13].ToString().Trim();
 
-            tab_15_w07_c01.Text = tabelka01.Rows[6][1].ToString().Trim();
-            tab_15_w07_c02.Text = tabelka01.Rows[6][2].ToString().Trim();
-            tab_15_w07_c03.Text = tabelka01.Rows[6][3].ToString().Trim();
-            tab_15_w07_c04.Text = tabelka01.Rows[6][4].ToString().Trim();
-            tab_15_w07_c05.Text = tabelka01.Rows[6][5].ToString().Trim();
-            tab_15_w07_c06.Text = tabelka01.Rows[6][6].ToString().Trim();
-            tab_15_w07_c07.Text = tabelka01.Rows[6][7].ToString().Trim();
-            tab_15_w07_c08.Text = tabelka01.Rows[6][8].ToString().Trim();
-            tab_15_w07_c09.Text = tabelka01.Rows[6][9].ToString().Trim();
-            tab_15_w07_c10.Text = tabelka01.Rows[6][10].ToString().Trim();
-            tab_15_w07_c11.Text = tabelka01.Rows[6][11].ToString().Trim();
-            tab_15_w07_c12.Text = tabelka01.Rows[6][12].ToString().Trim();
-            tab_15_w07_c13.Text = tabelka01.Rows[6][13].ToString().Trim();
-
-            //     tab_15_w08_c01.Text = tabelka01.Rows[7][1].ToString().Trim();
-            tab_15_w08_c02.Text = tabelka01.Rows[7][2].ToString().Trim();
-            tab_15_w08_c03.Text = tabelka01.Rows[7][3].ToString().Trim();
-            tab_15_w08_c04.Text = tabelka01.Rows[7][4].ToString().Trim();
-            tab_15_w08_c05.Text = tabelka01.Rows[7][5].ToString().Trim();
-            tab_15_w08_c06.Text = tabelka01.Rows[7][6].ToString().Trim();
-            tab_15_w08_c07.Text = tabelka01.Rows[7][7].ToString().Trim();
-            tab_15_w08_c08.Text = tabelka01.Rows[7][8].ToString().Trim();
-            tab_15_w08_c09.Text = tabelka01.Rows[7][9].ToString().Trim();
-            tab_15_w08_c10.Text = tabelka01.Rows[7][10].ToString().Trim();
-            tab_15_w08_c11.Text = tabelka01.Rows[7][11].ToString().Trim();
-            tab_15_w08_c12.Text = tabelka01.Rows[7][12].ToString().Trim();
-            tab_15_w08_c13.Text = tabelka01.Rows[7][13].ToString().Trim();
-
-            //  pisz("tab_15_", 8, 12, tabelka01);
+                //     tab_15_w08_c01.Text = tabelka01.Rows[7][1].ToString().Trim();
+                tab_15_w08_c02.Text = tabelka01.Rows[7][2].ToString().Trim();
+                tab_15_w08_c03.Text = tabelka01.Rows[7][3].ToString().Trim();
+                tab_15_w08_c04.Text = tabelka01.Rows[7][4].ToString().Trim();
+                tab_15_w08_c05.Text = tabelka01.Rows[7][5].ToString().Trim();
+                tab_15_w08_c06.Text = tabelka01.Rows[7][6].ToString().Trim();
+                tab_15_w08_c07.Text = tabelka01.Rows[7][7].ToString().Trim();
+                tab_15_w08_c08.Text = tabelka01.Rows[7][8].ToString().Trim();
+                tab_15_w08_c09.Text = tabelka01.Rows[7][9].ToString().Trim();
+                tab_15_w08_c10.Text = tabelka01.Rows[7][10].ToString().Trim();
+                tab_15_w08_c11.Text = tabelka01.Rows[7][11].ToString().Trim();
+                tab_15_w08_c12.Text = tabelka01.Rows[7][12].ToString().Trim();
+                tab_15_w08_c13.Text = tabelka01.Rows[7][13].ToString().Trim();
+            }
+            catch (Exception ex)
+            {
+                cm.log.Error("wizc  tab_15: " + ex.Message);
+            }
         }
 
         protected void tabela_16()
@@ -694,7 +721,7 @@ namespace stat2018
                 cm.log.Info(tenPlik + ": rozpoczęcie tworzenia tabeli 16");
             }
 
-            DataTable tabelka01 = dr.generuj_dane_do_tabeli_wierszy2018(Date1.Date, Date2.Date, (string)Session["id_dzialu"], 8, 8, 16, tenPlik);
+            DataTable tabelka01 = dr.generuj_dane_do_tabeli_wierszy2018(Date1.Date, Date2.Date, (string)Session["id_dzialu"], 16, 8, 14, tenPlik);
             Session["tabelka016"] = tabelka01;
             //   pisz("tab_16_", 8, 12, tabelka01);
             try
@@ -824,15 +851,25 @@ namespace stat2018
                 cm.log.Info(tenPlik + ": rozpoczęcie tworzenia tabeli 16");
             }
 
-            DataTable tabelka01 = dr.generuj_dane_do_tabeli_wierszy2018(Date1.Date, Date2.Date, (string)Session["id_dzialu"], 2, 4, 21, tenPlik);
+            DataTable tabelka01 = dr.generuj_dane_do_tabeli_wierszy2018(Date1.Date, Date2.Date, (string)Session["id_dzialu"], 21, 5, 2, tenPlik);
             Session["tabelka021"] = tabelka01;
-            //   pisz("tab_21_", 1, 3, tabelka01);
-            tab_21_w01_c01.Text = tabelka01.Rows[0][1].ToString().Trim();
-            tab_21_w01_c02.Text = tabelka01.Rows[0][2].ToString().Trim();
-            tab_21_w01_c03.Text = tabelka01.Rows[0][3].ToString().Trim();
-        }
 
-        //tab_12_w01_c01
+            if (tabelka01 == null)
+            {
+                return;
+            }
+            try
+            {
+                tab_21_w01_c01.Text = tabelka01.Rows[0][1].ToString().Trim();
+                tab_21_w02_c01.Text = tabelka01.Rows[1][1].ToString().Trim();
+                tab_21_w03_c01.Text = tabelka01.Rows[2][1].ToString().Trim();
+                tab_21_w04_c01.Text = tabelka01.Rows[3][1].ToString().Trim();
+            }
+            catch (Exception ex)
+            {
+                cm.log.Error("wizc  tab 21: " + ex.Message);
+            }
+        }
 
         protected void tabela_22()
         {
@@ -842,7 +879,7 @@ namespace stat2018
                 cm.log.Info(tenPlik + ": rozpoczęcie tworzenia tabeli 22");
             }
 
-            DataTable tabelka01 = dr.generuj_dane_do_tabeli_wierszy2018(Date1.Date, Date2.Date, (string)Session["id_dzialu"], 8, 8, 22, tenPlik);
+            DataTable tabelka01 = dr.generuj_dane_do_tabeli_wierszy2018(Date1.Date, Date2.Date, (string)Session["id_dzialu"], 22, 9, 18, tenPlik);
             Session["tabelka022"] = tabelka01;
             //   pisz("tab_22_", 9, 16, tabelka01);
             try
@@ -985,6 +1022,429 @@ namespace stat2018
             }
             catch (Exception)
             {
+            }
+        }
+
+        protected void tabela_24()
+        {
+            string idDzialu = (string)Session["id_dzialu"];
+            if (cl.debug(int.Parse(idDzialu)))
+            {
+                cm.log.Info(tenPlik + ": rozpoczęcie tworzenia tabeli 24");
+            }
+
+            DataTable tabela024 = dr.generuj_dane_do_tabeli_wierszy2018(Date1.Date, Date2.Date, (string)Session["id_dzialu"], 24, 9, 15, tenPlik);
+            Session["tabelka024"] = tabela024;
+
+            try
+            {
+                //  wiersz 1
+                tab_24_w01_c01.Text = tabela024.Rows[0][1].ToString().Trim();
+                tab_24_w01_c02.Text = tabela024.Rows[0][2].ToString().Trim();
+                tab_24_w01_c03.Text = tabela024.Rows[0][3].ToString().Trim();
+                tab_24_w01_c04.Text = tabela024.Rows[0][4].ToString().Trim();
+                tab_24_w01_c05.Text = tabela024.Rows[0][5].ToString().Trim();
+                tab_24_w01_c06.Text = tabela024.Rows[0][6].ToString().Trim();
+                tab_24_w01_c07.Text = tabela024.Rows[0][7].ToString().Trim();
+                tab_24_w01_c08.Text = tabela024.Rows[0][8].ToString().Trim();
+                tab_24_w01_c09.Text = tabela024.Rows[0][9].ToString().Trim();
+                tab_24_w01_c10.Text = tabela024.Rows[0][10].ToString().Trim();
+                tab_24_w01_c11.Text = tabela024.Rows[0][11].ToString().Trim();
+                tab_24_w01_c12.Text = tabela024.Rows[0][12].ToString().Trim();
+                tab_24_w01_c13.Text = tabela024.Rows[0][13].ToString().Trim();
+                tab_24_w01_c14.Text = tabela024.Rows[0][14].ToString().Trim();
+                //  wiersz 2
+                tab_24_w02_c01.Text = tabela024.Rows[1][1].ToString().Trim();
+                tab_24_w02_c02.Text = tabela024.Rows[1][2].ToString().Trim();
+                tab_24_w02_c03.Text = tabela024.Rows[1][3].ToString().Trim();
+                tab_24_w02_c04.Text = tabela024.Rows[1][4].ToString().Trim();
+                tab_24_w02_c05.Text = tabela024.Rows[1][5].ToString().Trim();
+                tab_24_w02_c06.Text = tabela024.Rows[1][6].ToString().Trim();
+                tab_24_w02_c07.Text = tabela024.Rows[1][7].ToString().Trim();
+                tab_24_w02_c08.Text = tabela024.Rows[1][8].ToString().Trim();
+                tab_24_w02_c09.Text = tabela024.Rows[1][9].ToString().Trim();
+                tab_24_w02_c10.Text = tabela024.Rows[1][10].ToString().Trim();
+                tab_24_w02_c11.Text = tabela024.Rows[1][11].ToString().Trim();
+                tab_24_w02_c12.Text = tabela024.Rows[1][12].ToString().Trim();
+                tab_24_w02_c13.Text = tabela024.Rows[1][13].ToString().Trim();
+                tab_24_w02_c14.Text = tabela024.Rows[1][14].ToString().Trim();
+                //  wiersz 3
+                tab_24_w03_c01.Text = tabela024.Rows[2][1].ToString().Trim();
+                tab_24_w03_c02.Text = tabela024.Rows[2][2].ToString().Trim();
+                tab_24_w03_c03.Text = tabela024.Rows[2][3].ToString().Trim();
+                tab_24_w03_c04.Text = tabela024.Rows[2][4].ToString().Trim();
+                tab_24_w03_c05.Text = tabela024.Rows[2][5].ToString().Trim();
+                tab_24_w03_c06.Text = tabela024.Rows[2][6].ToString().Trim();
+                tab_24_w03_c07.Text = tabela024.Rows[2][7].ToString().Trim();
+                tab_24_w03_c08.Text = tabela024.Rows[2][8].ToString().Trim();
+                tab_24_w03_c09.Text = tabela024.Rows[2][9].ToString().Trim();
+                tab_24_w03_c10.Text = tabela024.Rows[2][10].ToString().Trim();
+                tab_24_w03_c11.Text = tabela024.Rows[2][11].ToString().Trim();
+                tab_24_w03_c12.Text = tabela024.Rows[2][12].ToString().Trim();
+                tab_24_w03_c13.Text = tabela024.Rows[2][13].ToString().Trim();
+                tab_24_w03_c14.Text = tabela024.Rows[2][14].ToString().Trim();
+                //  wiersz 4
+                tab_24_w04_c01.Text = tabela024.Rows[3][1].ToString().Trim();
+                tab_24_w04_c02.Text = tabela024.Rows[3][2].ToString().Trim();
+                tab_24_w04_c03.Text = tabela024.Rows[3][3].ToString().Trim();
+                tab_24_w04_c04.Text = tabela024.Rows[3][4].ToString().Trim();
+                tab_24_w04_c05.Text = tabela024.Rows[3][5].ToString().Trim();
+                tab_24_w04_c06.Text = tabela024.Rows[3][6].ToString().Trim();
+                tab_24_w04_c07.Text = tabela024.Rows[3][7].ToString().Trim();
+                tab_24_w04_c08.Text = tabela024.Rows[3][8].ToString().Trim();
+                tab_24_w04_c09.Text = tabela024.Rows[3][9].ToString().Trim();
+                tab_24_w04_c10.Text = tabela024.Rows[3][10].ToString().Trim();
+                tab_24_w04_c11.Text = tabela024.Rows[3][11].ToString().Trim();
+                tab_24_w04_c12.Text = tabela024.Rows[3][12].ToString().Trim();
+                tab_24_w04_c13.Text = tabela024.Rows[3][13].ToString().Trim();
+                tab_24_w04_c14.Text = tabela024.Rows[3][14].ToString().Trim();
+                //  wiersz 5
+                tab_24_w05_c01.Text = tabela024.Rows[4][1].ToString().Trim();
+                tab_24_w05_c02.Text = tabela024.Rows[4][2].ToString().Trim();
+                tab_24_w05_c03.Text = tabela024.Rows[4][3].ToString().Trim();
+                tab_24_w05_c04.Text = tabela024.Rows[4][4].ToString().Trim();
+                tab_24_w05_c05.Text = tabela024.Rows[4][5].ToString().Trim();
+                tab_24_w05_c06.Text = tabela024.Rows[4][6].ToString().Trim();
+                tab_24_w05_c07.Text = tabela024.Rows[4][7].ToString().Trim();
+                tab_24_w05_c08.Text = tabela024.Rows[4][8].ToString().Trim();
+                tab_24_w05_c09.Text = tabela024.Rows[4][9].ToString().Trim();
+                tab_24_w05_c10.Text = tabela024.Rows[4][10].ToString().Trim();
+                tab_24_w05_c11.Text = tabela024.Rows[4][11].ToString().Trim();
+                tab_24_w05_c12.Text = tabela024.Rows[4][12].ToString().Trim();
+                tab_24_w05_c13.Text = tabela024.Rows[4][13].ToString().Trim();
+                tab_24_w05_c14.Text = tabela024.Rows[4][14].ToString().Trim();
+                //  wiersz 6
+                tab_24_w06_c01.Text = tabela024.Rows[5][1].ToString().Trim();
+                tab_24_w06_c02.Text = tabela024.Rows[5][2].ToString().Trim();
+                tab_24_w06_c03.Text = tabela024.Rows[5][3].ToString().Trim();
+                tab_24_w06_c04.Text = tabela024.Rows[5][4].ToString().Trim();
+                tab_24_w06_c05.Text = tabela024.Rows[5][5].ToString().Trim();
+                tab_24_w06_c06.Text = tabela024.Rows[5][6].ToString().Trim();
+                tab_24_w06_c07.Text = tabela024.Rows[5][7].ToString().Trim();
+                tab_24_w06_c08.Text = tabela024.Rows[5][8].ToString().Trim();
+                tab_24_w06_c09.Text = tabela024.Rows[5][9].ToString().Trim();
+                tab_24_w06_c10.Text = tabela024.Rows[5][10].ToString().Trim();
+                tab_24_w06_c11.Text = tabela024.Rows[5][11].ToString().Trim();
+                tab_24_w06_c12.Text = tabela024.Rows[5][12].ToString().Trim();
+                tab_24_w06_c13.Text = tabela024.Rows[5][13].ToString().Trim();
+                tab_24_w06_c14.Text = tabela024.Rows[5][14].ToString().Trim();
+                //  wiersz 7
+                tab_24_w07_c01.Text = tabela024.Rows[6][1].ToString().Trim();
+                tab_24_w07_c02.Text = tabela024.Rows[6][2].ToString().Trim();
+                tab_24_w07_c03.Text = tabela024.Rows[6][3].ToString().Trim();
+                tab_24_w07_c04.Text = tabela024.Rows[6][4].ToString().Trim();
+                tab_24_w07_c05.Text = tabela024.Rows[6][5].ToString().Trim();
+                tab_24_w07_c06.Text = tabela024.Rows[6][6].ToString().Trim();
+                tab_24_w07_c07.Text = tabela024.Rows[6][7].ToString().Trim();
+                tab_24_w07_c08.Text = tabela024.Rows[6][8].ToString().Trim();
+                tab_24_w07_c09.Text = tabela024.Rows[6][9].ToString().Trim();
+                tab_24_w07_c10.Text = tabela024.Rows[6][10].ToString().Trim();
+                tab_24_w07_c11.Text = tabela024.Rows[6][11].ToString().Trim();
+                tab_24_w07_c12.Text = tabela024.Rows[6][12].ToString().Trim();
+                tab_24_w07_c13.Text = tabela024.Rows[6][13].ToString().Trim();
+                tab_24_w07_c14.Text = tabela024.Rows[6][14].ToString().Trim();
+            }
+            catch (Exception ex)
+            {
+                cm.log.Error("wizc  tab 24: " + ex.Message);
+            }
+        }
+
+        protected void tabela_25()
+        {
+            string idDzialu = (string)Session["id_dzialu"];
+            if (cl.debug(int.Parse(idDzialu)))
+            {
+                cm.log.Info(tenPlik + ": rozpoczęcie tworzenia tabeli 25");
+            }
+
+            DataTable tabela025 = dr.generuj_dane_do_tabeli_wierszy2018(Date1.Date, Date2.Date, (string)Session["id_dzialu"], 25, 9, 15, tenPlik);
+            Session["tabelka024"] = tabela025;
+
+            try
+            {
+                //  wiersz 1
+                tab_25_w01_c01.Text = tabela025.Rows[0][1].ToString().Trim();
+                tab_25_w01_c02.Text = tabela025.Rows[0][2].ToString().Trim();
+                tab_25_w01_c03.Text = tabela025.Rows[0][3].ToString().Trim();
+                tab_25_w01_c04.Text = tabela025.Rows[0][4].ToString().Trim();
+                tab_25_w01_c05.Text = tabela025.Rows[0][5].ToString().Trim();
+                tab_25_w01_c06.Text = tabela025.Rows[0][6].ToString().Trim();
+                tab_25_w01_c07.Text = tabela025.Rows[0][7].ToString().Trim();
+                tab_25_w01_c08.Text = tabela025.Rows[0][8].ToString().Trim();
+                tab_25_w01_c09.Text = tabela025.Rows[0][9].ToString().Trim();
+                tab_25_w01_c10.Text = tabela025.Rows[0][10].ToString().Trim();
+                tab_25_w01_c11.Text = tabela025.Rows[0][11].ToString().Trim();
+                tab_25_w01_c12.Text = tabela025.Rows[0][12].ToString().Trim();
+                tab_25_w01_c13.Text = tabela025.Rows[0][13].ToString().Trim();
+                tab_25_w01_c14.Text = tabela025.Rows[0][14].ToString().Trim();
+                //  wiersz 2
+                tab_25_w02_c01.Text = tabela025.Rows[1][1].ToString().Trim();
+                tab_25_w02_c02.Text = tabela025.Rows[1][2].ToString().Trim();
+                tab_25_w02_c03.Text = tabela025.Rows[1][3].ToString().Trim();
+                tab_25_w02_c04.Text = tabela025.Rows[1][4].ToString().Trim();
+                tab_25_w02_c05.Text = tabela025.Rows[1][5].ToString().Trim();
+                tab_25_w02_c06.Text = tabela025.Rows[1][6].ToString().Trim();
+                tab_25_w02_c07.Text = tabela025.Rows[1][7].ToString().Trim();
+                tab_25_w02_c08.Text = tabela025.Rows[1][8].ToString().Trim();
+                tab_25_w02_c09.Text = tabela025.Rows[1][9].ToString().Trim();
+                tab_25_w02_c10.Text = tabela025.Rows[1][10].ToString().Trim();
+                tab_25_w02_c11.Text = tabela025.Rows[1][11].ToString().Trim();
+                tab_25_w02_c12.Text = tabela025.Rows[1][12].ToString().Trim();
+                tab_25_w02_c13.Text = tabela025.Rows[1][13].ToString().Trim();
+                tab_25_w02_c14.Text = tabela025.Rows[1][14].ToString().Trim();
+                //  wiersz 3
+                tab_25_w03_c01.Text = tabela025.Rows[2][1].ToString().Trim();
+                tab_25_w03_c02.Text = tabela025.Rows[2][2].ToString().Trim();
+                tab_25_w03_c03.Text = tabela025.Rows[2][3].ToString().Trim();
+                tab_25_w03_c04.Text = tabela025.Rows[2][4].ToString().Trim();
+                tab_25_w03_c05.Text = tabela025.Rows[2][5].ToString().Trim();
+                tab_25_w03_c06.Text = tabela025.Rows[2][6].ToString().Trim();
+                tab_25_w03_c07.Text = tabela025.Rows[2][7].ToString().Trim();
+                tab_25_w03_c08.Text = tabela025.Rows[2][8].ToString().Trim();
+                tab_25_w03_c09.Text = tabela025.Rows[2][9].ToString().Trim();
+                tab_25_w03_c10.Text = tabela025.Rows[2][10].ToString().Trim();
+                tab_25_w03_c11.Text = tabela025.Rows[2][11].ToString().Trim();
+                tab_25_w03_c12.Text = tabela025.Rows[2][12].ToString().Trim();
+                tab_25_w03_c13.Text = tabela025.Rows[2][13].ToString().Trim();
+                tab_25_w03_c14.Text = tabela025.Rows[2][14].ToString().Trim();
+                //  wiersz 4
+                tab_25_w04_c01.Text = tabela025.Rows[3][1].ToString().Trim();
+                tab_25_w04_c02.Text = tabela025.Rows[3][2].ToString().Trim();
+                tab_25_w04_c03.Text = tabela025.Rows[3][3].ToString().Trim();
+                tab_25_w04_c04.Text = tabela025.Rows[3][4].ToString().Trim();
+                tab_25_w04_c05.Text = tabela025.Rows[3][5].ToString().Trim();
+                tab_25_w04_c06.Text = tabela025.Rows[3][6].ToString().Trim();
+                tab_25_w04_c07.Text = tabela025.Rows[3][7].ToString().Trim();
+                tab_25_w04_c08.Text = tabela025.Rows[3][8].ToString().Trim();
+                tab_25_w04_c09.Text = tabela025.Rows[3][9].ToString().Trim();
+                tab_25_w04_c10.Text = tabela025.Rows[3][10].ToString().Trim();
+                tab_25_w04_c11.Text = tabela025.Rows[3][11].ToString().Trim();
+                tab_25_w04_c12.Text = tabela025.Rows[3][12].ToString().Trim();
+                tab_25_w04_c13.Text = tabela025.Rows[3][13].ToString().Trim();
+                tab_25_w04_c14.Text = tabela025.Rows[3][14].ToString().Trim();
+                //  wiersz 5
+                tab_25_w05_c01.Text = tabela025.Rows[4][1].ToString().Trim();
+                tab_25_w05_c02.Text = tabela025.Rows[4][2].ToString().Trim();
+                tab_25_w05_c03.Text = tabela025.Rows[4][3].ToString().Trim();
+                tab_25_w05_c04.Text = tabela025.Rows[4][4].ToString().Trim();
+                tab_25_w05_c05.Text = tabela025.Rows[4][5].ToString().Trim();
+                tab_25_w05_c06.Text = tabela025.Rows[4][6].ToString().Trim();
+                tab_25_w05_c07.Text = tabela025.Rows[4][7].ToString().Trim();
+                tab_25_w05_c08.Text = tabela025.Rows[4][8].ToString().Trim();
+                tab_25_w05_c09.Text = tabela025.Rows[4][9].ToString().Trim();
+                tab_25_w05_c10.Text = tabela025.Rows[4][10].ToString().Trim();
+                tab_25_w05_c11.Text = tabela025.Rows[4][11].ToString().Trim();
+                tab_25_w05_c12.Text = tabela025.Rows[4][12].ToString().Trim();
+                tab_25_w05_c13.Text = tabela025.Rows[4][13].ToString().Trim();
+                tab_25_w05_c14.Text = tabela025.Rows[4][14].ToString().Trim();
+                //  wiersz 6
+                tab_25_w06_c01.Text = tabela025.Rows[5][1].ToString().Trim();
+                tab_25_w06_c02.Text = tabela025.Rows[5][2].ToString().Trim();
+                tab_25_w06_c03.Text = tabela025.Rows[5][3].ToString().Trim();
+                tab_25_w06_c04.Text = tabela025.Rows[5][4].ToString().Trim();
+                tab_25_w06_c05.Text = tabela025.Rows[5][5].ToString().Trim();
+                tab_25_w06_c06.Text = tabela025.Rows[5][6].ToString().Trim();
+                tab_25_w06_c07.Text = tabela025.Rows[5][7].ToString().Trim();
+                tab_25_w06_c08.Text = tabela025.Rows[5][8].ToString().Trim();
+                tab_25_w06_c09.Text = tabela025.Rows[5][9].ToString().Trim();
+                tab_25_w06_c10.Text = tabela025.Rows[5][10].ToString().Trim();
+                tab_25_w06_c11.Text = tabela025.Rows[5][11].ToString().Trim();
+                tab_25_w06_c12.Text = tabela025.Rows[5][12].ToString().Trim();
+                tab_25_w06_c13.Text = tabela025.Rows[5][13].ToString().Trim();
+                tab_25_w06_c14.Text = tabela025.Rows[5][14].ToString().Trim();
+                //  wiersz 7
+                tab_25_w07_c01.Text = tabela025.Rows[6][1].ToString().Trim();
+                tab_25_w07_c02.Text = tabela025.Rows[6][2].ToString().Trim();
+                tab_25_w07_c03.Text = tabela025.Rows[6][3].ToString().Trim();
+                tab_25_w07_c04.Text = tabela025.Rows[6][4].ToString().Trim();
+                tab_25_w07_c05.Text = tabela025.Rows[6][5].ToString().Trim();
+                tab_25_w07_c06.Text = tabela025.Rows[6][6].ToString().Trim();
+                tab_25_w07_c07.Text = tabela025.Rows[6][7].ToString().Trim();
+                tab_25_w07_c08.Text = tabela025.Rows[6][8].ToString().Trim();
+                tab_25_w07_c09.Text = tabela025.Rows[6][9].ToString().Trim();
+                tab_25_w07_c10.Text = tabela025.Rows[6][10].ToString().Trim();
+                tab_25_w07_c11.Text = tabela025.Rows[6][11].ToString().Trim();
+                tab_25_w07_c12.Text = tabela025.Rows[6][12].ToString().Trim();
+                tab_25_w07_c13.Text = tabela025.Rows[6][13].ToString().Trim();
+                tab_25_w07_c14.Text = tabela025.Rows[6][14].ToString().Trim();
+            }
+            catch (Exception ex)
+            {
+                cm.log.Error("wizc  tab 24: " + ex.Message);
+            }
+        }
+
+        protected void tabela_30()
+        {
+            string idDzialu = (string)Session["id_dzialu"];
+            if (cl.debug(int.Parse(idDzialu)))
+            {
+                cm.log.Info(tenPlik + ": rozpoczęcie tworzenia tabeli 30");
+            }
+
+            DataTable tabelka01 = dr.generuj_dane_do_tabeli_wierszy2018(Date1.Date, Date2.Date, (string)Session["id_dzialu"], 30, 5, 2, tenPlik);
+            Session["tabelka021"] = tabelka01;
+
+            if (tabelka01 == null)
+            {
+                return;
+            }
+            try
+            {
+                tab_30_w01_c01.Text = tabelka01.Rows[0][1].ToString().Trim();
+                tab_30_w02_c01.Text = tabelka01.Rows[1][1].ToString().Trim();
+                tab_30_w03_c01.Text = tabelka01.Rows[2][1].ToString().Trim();
+                tab_30_w04_c01.Text = tabelka01.Rows[3][1].ToString().Trim();
+            }
+            catch (Exception ex)
+            {
+                cm.log.Error("wizc  tab 21: " + ex.Message);
+            }
+        }
+
+        protected void tabela_31()
+        {
+            string idDzialu = (string)Session["id_dzialu"];
+            if (cl.debug(int.Parse(idDzialu)))
+            {
+                cm.log.Info(tenPlik + ": rozpoczęcie tworzenia tabeli 31");
+            }
+
+            DataTable tabela031 = dr.generuj_dane_do_tabeli_wierszy2018(Date1.Date, Date2.Date, (string)Session["id_dzialu"], 31, 7, 14, tenPlik);
+            Session["tabelka031"] = tabela031;
+
+            if (tabela031 == null)
+            {
+                return;
+            }
+            try
+            {
+                //  wiersz 1
+                tab_31_w01_c01.Text = tabela031.Rows[0][1].ToString().Trim();
+                tab_31_w01_c02.Text = tabela031.Rows[0][2].ToString().Trim();
+                tab_31_w01_c03.Text = tabela031.Rows[0][3].ToString().Trim();
+                tab_31_w01_c04.Text = tabela031.Rows[0][4].ToString().Trim();
+                tab_31_w01_c05.Text = tabela031.Rows[0][5].ToString().Trim();
+                tab_31_w01_c06.Text = tabela031.Rows[0][6].ToString().Trim();
+                tab_31_w01_c07.Text = tabela031.Rows[0][7].ToString().Trim();
+                tab_31_w01_c08.Text = tabela031.Rows[0][8].ToString().Trim();
+                //  wiersz 2
+                tab_31_w02_c01.Text = tabela031.Rows[1][1].ToString().Trim();
+                tab_31_w02_c02.Text = tabela031.Rows[1][2].ToString().Trim();
+                tab_31_w02_c03.Text = tabela031.Rows[1][3].ToString().Trim();
+                tab_31_w02_c04.Text = tabela031.Rows[1][4].ToString().Trim();
+                tab_31_w02_c05.Text = tabela031.Rows[1][5].ToString().Trim();
+                tab_31_w02_c06.Text = tabela031.Rows[1][6].ToString().Trim();
+                tab_31_w02_c07.Text = tabela031.Rows[1][7].ToString().Trim();
+                tab_31_w02_c08.Text = tabela031.Rows[1][8].ToString().Trim();
+                //  wiersz 3
+                tab_31_w03_c01.Text = tabela031.Rows[2][1].ToString().Trim();
+                tab_31_w03_c02.Text = tabela031.Rows[2][2].ToString().Trim();
+                tab_31_w03_c03.Text = tabela031.Rows[2][3].ToString().Trim();
+                tab_31_w03_c04.Text = tabela031.Rows[2][4].ToString().Trim();
+                tab_31_w03_c05.Text = tabela031.Rows[2][5].ToString().Trim();
+                tab_31_w03_c06.Text = tabela031.Rows[2][6].ToString().Trim();
+                tab_31_w03_c07.Text = tabela031.Rows[2][7].ToString().Trim();
+                tab_31_w03_c08.Text = tabela031.Rows[2][8].ToString().Trim();
+                //  wiersz 4
+                tab_31_w04_c01.Text = tabela031.Rows[3][1].ToString().Trim();
+                tab_31_w04_c02.Text = tabela031.Rows[3][2].ToString().Trim();
+                tab_31_w04_c03.Text = tabela031.Rows[3][3].ToString().Trim();
+                tab_31_w04_c04.Text = tabela031.Rows[3][4].ToString().Trim();
+                tab_31_w04_c05.Text = tabela031.Rows[3][5].ToString().Trim();
+                tab_31_w04_c06.Text = tabela031.Rows[3][6].ToString().Trim();
+                tab_31_w04_c07.Text = tabela031.Rows[3][7].ToString().Trim();
+                tab_31_w04_c08.Text = tabela031.Rows[3][8].ToString().Trim();
+                //  wiersz 5
+                tab_31_w05_c01.Text = tabela031.Rows[4][1].ToString().Trim();
+                tab_31_w05_c02.Text = tabela031.Rows[4][2].ToString().Trim();
+                tab_31_w05_c03.Text = tabela031.Rows[4][3].ToString().Trim();
+                tab_31_w05_c04.Text = tabela031.Rows[4][4].ToString().Trim();
+                tab_31_w05_c05.Text = tabela031.Rows[4][5].ToString().Trim();
+                tab_31_w05_c06.Text = tabela031.Rows[4][6].ToString().Trim();
+                tab_31_w05_c07.Text = tabela031.Rows[4][7].ToString().Trim();
+                tab_31_w05_c08.Text = tabela031.Rows[4][8].ToString().Trim();
+                //  wiersz 6
+                tab_31_w06_c01.Text = tabela031.Rows[5][1].ToString().Trim();
+                tab_31_w06_c02.Text = tabela031.Rows[5][2].ToString().Trim();
+                tab_31_w06_c03.Text = tabela031.Rows[5][3].ToString().Trim();
+                tab_31_w06_c04.Text = tabela031.Rows[5][4].ToString().Trim();
+                tab_31_w06_c05.Text = tabela031.Rows[5][5].ToString().Trim();
+                tab_31_w06_c06.Text = tabela031.Rows[5][6].ToString().Trim();
+                tab_31_w06_c07.Text = tabela031.Rows[5][7].ToString().Trim();
+                tab_31_w06_c08.Text = tabela031.Rows[5][8].ToString().Trim();
+                //  wiersz 7
+                tab_31_w07_c01.Text = tabela031.Rows[6][1].ToString().Trim();
+                tab_31_w07_c02.Text = tabela031.Rows[6][2].ToString().Trim();
+                tab_31_w07_c03.Text = tabela031.Rows[6][3].ToString().Trim();
+                tab_31_w07_c04.Text = tabela031.Rows[6][4].ToString().Trim();
+                tab_31_w07_c05.Text = tabela031.Rows[6][5].ToString().Trim();
+                tab_31_w07_c06.Text = tabela031.Rows[6][6].ToString().Trim();
+                tab_31_w07_c07.Text = tabela031.Rows[6][7].ToString().Trim();
+                tab_31_w07_c08.Text = tabela031.Rows[6][8].ToString().Trim();
+            }
+            catch (Exception ex)
+            {
+                cm.log.Error("wizc  tab 31: " + ex.Message);
+            }
+        }
+
+        protected void tabela_32()
+        {
+            string idDzialu = (string)Session["id_dzialu"];
+            if (cl.debug(int.Parse(idDzialu)))
+            {
+                cm.log.Info(tenPlik + ": rozpoczęcie tworzenia tabeli 31");
+            }
+
+            DataTable tabela032 = dr.generuj_dane_do_tabeli_wierszy2018(Date1.Date, Date2.Date, (string)Session["id_dzialu"], 32, 7, 14, tenPlik);
+            Session["tabelka032"] = tabela032;
+
+            if (tabela032 == null)
+            {
+                return;
+            }
+            try
+            {
+                //  wiersz 1
+                tab_32_w01_c01.Text = tabela032.Rows[0][1].ToString().Trim();
+                //  wiersz 2
+                tab_32_w02_c01.Text = tabela032.Rows[1][1].ToString().Trim();
+                //  wiersz 3
+                tab_32_w03_c01.Text = tabela032.Rows[2][1].ToString().Trim();
+                //  wiersz 4
+                tab_32_w04_c01.Text = tabela032.Rows[3][1].ToString().Trim();
+            }
+            catch (Exception ex)
+            {
+                cm.log.Error("wizc  tab 31: " + ex.Message);
+            }
+        }
+
+        protected void tabela_33()
+        {
+            string idDzialu = (string)Session["id_dzialu"];
+            if (cl.debug(int.Parse(idDzialu)))
+            {
+                cm.log.Info(tenPlik + ": rozpoczęcie tworzenia tabeli 31");
+            }
+
+            DataTable tabela033 = dr.generuj_dane_do_tabeli_wierszy2018(Date1.Date, Date2.Date, (string)Session["id_dzialu"], 33, 7, 14, tenPlik);
+            Session["tabelka033"] = tabela033;
+
+            if (tabela033 == null)
+            {
+                return;
+            }
+            try
+            {
+                //  wiersz 1
+                tab_33_w01_c01.Text = tabela033.Rows[0][1].ToString().Trim();
+            }
+            catch (Exception ex)
+            {
+                cm.log.Error("wizc  tab 33: " + ex.Message);
             }
         }
 
@@ -1503,13 +1963,12 @@ namespace stat2018
             builder.AppendLine("<td rowspan=2 class='borderAll center col_81'>pomoc asystenta</td>");
             builder.AppendLine("<td rowspan=2 class='borderAll center'>kategoria spraw</td>");
             builder.AppendLine("<td rowspan=2 class='borderAll center col_81'>rok</td>");
-            builder.AppendLine("<td colspan=13 class='borderAll center col_81'>" + tekst + "	</td>");
+            builder.AppendLine("<td colspan=12 class='borderAll center col_81'>" + tekst + "	</td>");
             builder.AppendLine("</tr>");
             builder.AppendLine("<tr>");
             builder.AppendLine("<td  class='borderAll center col_81'>do 3 miesięcy</td>");
             builder.AppendLine("<td  class='borderAll center col_81'>suma powyżej 3 miesięcy</td>");
             builder.AppendLine("<td  class='borderAll center col_81'>powyżej  3 do 6  miesięcy</td>");
-            builder.AppendLine("<td  class='borderAll center col_81'>powyżej  6 do 12 miesięcy</td>");
             builder.AppendLine("<td  class='borderAll center col_81'>powyżej  6 do 12 miesięcy</td>");
             builder.AppendLine("<td  class='borderAll center col_81'>suma powyżej 12 miesięcy</td>");
             builder.AppendLine("<td  class='borderAll center col_81'>powyżej 12 miesięcy do 2 lat</td>");
@@ -1530,11 +1989,11 @@ namespace stat2018
 
                 builder.Append(tb.komorkaHTML(funkcjaSR + wierszZtabeli["imie"].ToString() + " " + wierszZtabeli["nazwisko"].ToString(), 0, 6, "borderAll center "));
                 builder.Append(tb.komorkaHTML(wierszZtabeli["funkcja"].ToString(), 0, 6, "borderAll center "));
-                builder.Append(tb.komorkaHTML("<a Class=\"normal\" href=\"javascript: openPopup('popup.aspx?sesja=" + wierszZtabeli["id_sedziego"].ToString() + "!" + idtabeli + "!2')\">" + wierszZtabeli["D_01"].ToString() + " </a>", 0, 6, "borderAll center "));
+                builder.Append(tb.komorkaHTML("<a Class=\"normal\" href=\"javascript: openPopup('popup.aspx?sesja=" + wierszZtabeli["id_sedziego"].ToString() + "!" + idtabeli + "!1!2')\">" + wierszZtabeli["D_01"].ToString() + " </a>", 0, 6, "borderAll center "));
 
                 builder.Append(tb.komorkaHTML("C", 0, 0, "borderAll center "));
 
-                for (int i = 2; i < 16; i++)
+                for (int i = 2; i < 15; i++)
                 {
                     string txt = "<a Class=\"normal\" href=\"javascript: openPopup('popup.aspx?sesja=" + wierszZtabeli["id_sedziego"].ToString() + "!" + idtabeli + "!" + i.ToString() + "!2')\">" + wierszZtabeli["D_" + i.ToString("D2")].ToString() + " </a>";
                     builder.AppendLine(tb.komorkaHTML(txt, 0, 0, "borderAll center "));
@@ -1543,7 +2002,7 @@ namespace stat2018
                 builder.AppendLine("<tr>");
 
                 builder.Append(tb.komorkaHTML("Cgg", 0, 0, "borderAll center "));
-                for (int i = 16; i < 30; i++)
+                for (int i = 15; i < 28; i++)
                 {
                     string txt = "<a Class=\"normal\" href=\"javascript: openPopup('popup.aspx?sesja=" + wierszZtabeli["id_sedziego"].ToString() + "!" + idtabeli + "!" + i.ToString() + "!2')\">" + wierszZtabeli["D_" + i.ToString("D2")].ToString() + " </a>";
                     builder.AppendLine(tb.komorkaHTML(txt, 0, 0, "borderAll center "));
@@ -1551,7 +2010,7 @@ namespace stat2018
                 builder.AppendLine("</tr>");
                 builder.AppendLine("<tr>");
                 builder.Append(tb.komorkaHTML("Co", 0, 0, "borderAll center "));
-                for (int i = 30; i < 44; i++)
+                for (int i = 28; i < 41; i++)
                 {
                     string txt = "<a Class=\"normal\" href=\"javascript: openPopup('popup.aspx?sesja=" + wierszZtabeli["id_sedziego"].ToString() + "!" + idtabeli + "!" + i.ToString() + "!2')\">" + wierszZtabeli["D_" + i.ToString("D2")].ToString() + " </a>";
                     builder.AppendLine(tb.komorkaHTML(txt, 0, 0, "borderAll center "));
@@ -1559,7 +2018,7 @@ namespace stat2018
                 builder.AppendLine("</tr>");
                 builder.AppendLine("<tr>");
                 builder.Append(tb.komorkaHTML("Cps", 0, 0, "borderAll center "));
-                for (int i = 44; i < 58; i++)
+                for (int i = 41; i < 54; i++)
                 {
                     string txt = "<a Class=\"normal\" href=\"javascript: openPopup('popup.aspx?sesja=" + wierszZtabeli["id_sedziego"].ToString() + "!" + idtabeli + "!" + i.ToString() + "!2')\">" + wierszZtabeli["D_" + i.ToString("D2")].ToString() + " </a>";
                     builder.AppendLine(tb.komorkaHTML(txt, 0, 0, "borderAll center "));
@@ -1567,7 +2026,7 @@ namespace stat2018
                 builder.AppendLine("</tr>");
                 builder.AppendLine("<tr>");
                 builder.Append(tb.komorkaHTML("Nc", 0, 0, "borderAll center "));
-                for (int i = 58; i < 72; i++)
+                for (int i = 54; i < 67; i++)
                 {
                     string txt = "<a Class=\"normal\" href=\"javascript: openPopup('popup.aspx?sesja=" + wierszZtabeli["id_sedziego"].ToString() + "!" + idtabeli + "!" + i.ToString() + "!2')\">" + wierszZtabeli["D_" + i.ToString("D2")].ToString() + " </a>";
                     builder.AppendLine(tb.komorkaHTML(txt, 0, 0, "borderAll center "));
@@ -1576,7 +2035,7 @@ namespace stat2018
 
                 builder.AppendLine("<tr>");
                 builder.Append(tb.komorkaHTML("Ns", 0, 0, "borderAll center "));
-                for (int i = 72; i < 86; i++)
+                for (int i = 67; i < 80; i++)
                 {
                     string txt = "<a Class=\"normal\" href=\"javascript: openPopup('popup.aspx?sesja=" + wierszZtabeli["id_sedziego"].ToString() + "!" + idtabeli + "!" + i.ToString() + "!2')\">" + wierszZtabeli["D_" + i.ToString("D2")].ToString() + " </a>";
                     builder.AppendLine(tb.komorkaHTML(txt, 0, 0, "borderAll center "));
@@ -1585,7 +2044,7 @@ namespace stat2018
 
                 builder.AppendLine("<tr>");
                 builder.AppendLine(tb.komorkaHTML("RAZEM", 2, 0, "borderAll center "));
-                for (int i = 86; i < 102; i++)
+                for (int i = 80; i < 95; i++)
                 {
                     string txt = "<a Class=\"normal\" href=\"javascript: openPopup('popup.aspx?sesja=" + wierszZtabeli["id_sedziego"].ToString() + "!" + idtabeli + "!" + i.ToString() + "!2')\">" + wierszZtabeli["D_" + i.ToString("D2")].ToString() + " </a>";
                     builder.AppendLine(tb.komorkaHTML(txt, 0, 0, "borderAll center  gray"));
@@ -1593,7 +2052,138 @@ namespace stat2018
                 builder.AppendLine("</tr>");
                 builder.AppendLine("<tr>");
                 builder.AppendLine(tb.komorkaHTML("OGÓŁEM za okres oceny", 2, 0, "borderAll center "));
-                for (int i = 102; i < 118; i++)
+                for (int i = 95; i < 110; i++)
+                {
+                    string txt = "<a Class=\"normal\" href=\"javascript: openPopup('popup.aspx?sesja=" + wierszZtabeli["id_sedziego"].ToString() + "!" + idtabeli + "!" + i.ToString() + "!2')\">" + wierszZtabeli["D_" + i.ToString("D2")].ToString() + " </a>";
+                    builder.AppendLine(tb.komorkaHTML(txt, 0, 0, "borderAll center  gray"));
+                }
+                builder.AppendLine("</tr>");
+
+                //licznik++;
+            }
+            //footer
+
+            builder.Append("</table>");
+            builder.Append(" </div>");
+            tblControl.Text = builder.ToString();
+            tablePlaceHolder17.Controls.Add(tblControl);
+        }
+
+        protected void tworztabelkeHTML19(string idKontrolki, int idWydzialu, int idtabeli, DataTable dane, string tekst, string funkcjaSR, string opisDzialu, string nrTabeli)
+        {
+            if (dane == null)
+            {
+                cm.log.Error(tenPlik + " Brak danych do tabeli dynamicznej HTML");
+                return;
+            }
+            var tblControl = new Label { ID = idKontrolki };
+            tblControl.Width = 1150;
+
+            StringBuilder builder = new StringBuilder();
+            builder.Append(" <div class='page-break'>");
+            builder.AppendLine("<p>" + opisDzialu + "</p>");
+            if (cl.debug(idWydzialu))
+            {
+                builder.AppendLine("<p>" + nrTabeli + "</p>");
+            }
+            builder.AppendLine("<br/>");
+            builder.AppendLine("<table style='width: 1150px;'>");
+            //header
+            builder.AppendLine("<tr>");
+            builder.AppendLine("<td rowspan=2 class='borderAll center col_81'>imię i nazwisko</td>");
+            builder.AppendLine("<td rowspan=2 class='borderAll center col_81'>Funkcja</td>");
+
+            builder.AppendLine("<td rowspan=2 class='borderAll center'>kategoria spraw</td>");
+            builder.AppendLine("<td rowspan=2 class='borderAll center col_81'>rok</td>");
+            builder.AppendLine("<td colspan=12 class='borderAll center col_81'>" + tekst + "	</td>");
+            builder.AppendLine("</tr>");
+            builder.AppendLine("<tr>");
+            builder.AppendLine("<td  class='borderAll center col_81'>do 3 miesięcy</td>");
+            builder.AppendLine("<td  class='borderAll center col_81'>suma powyżej 3 miesięcy</td>");
+            builder.AppendLine("<td  class='borderAll center col_81'>powyżej  3 do 6  miesięcy</td>");
+            builder.AppendLine("<td  class='borderAll center col_81'>powyżej  6 do 12 miesięcy</td>");
+            builder.AppendLine("<td  class='borderAll center col_81'>suma powyżej 12 miesięcy</td>");
+            builder.AppendLine("<td  class='borderAll center col_81'>powyżej 12 miesięcy do 2 lat</td>");
+            builder.AppendLine("<td  class='borderAll center col_81'>powyżej 2 do 3 lat</td>");
+            builder.AppendLine("<td  class='borderAll center col_81'>suma powyżej 3 lat</td>");
+            builder.AppendLine("<td  class='borderAll center col_81'>powyżej 3 do 5 lat</td>");
+            builder.AppendLine("<td  class='borderAll center col_81'>powyżej 5 do 8 lat</td>");
+            builder.AppendLine("<td  class='borderAll center col_81'>ponad 8 lat</td>");
+            builder.AppendLine("<td  class='borderAll center col_81'>SUMA</td>");
+
+            builder.AppendLine("</tr>");
+
+            //ilosc sedziów
+            //    int licznik = 1;
+            foreach (DataRow wierszZtabeli in dane.Rows)
+            {
+                builder.AppendLine("<tr>");
+
+                builder.Append(tb.komorkaHTML(funkcjaSR + wierszZtabeli["imie"].ToString() + " " + wierszZtabeli["nazwisko"].ToString(), 0, 6, "borderAll center "));
+                builder.Append(tb.komorkaHTML(wierszZtabeli["funkcja"].ToString(), 0, 6, "borderAll center "));
+
+                builder.Append(tb.komorkaHTML("C", 0, 0, "borderAll center "));
+
+                for (int i = 1; i < 14; i++)
+                {
+                    string txt = "<a Class=\"normal\" href=\"javascript: openPopup('popup.aspx?sesja=" + wierszZtabeli["id_sedziego"].ToString() + "!" + idtabeli + "!" + i.ToString() + "!2')\">" + wierszZtabeli["D_" + i.ToString("D2")].ToString() + " </a>";
+                    builder.AppendLine(tb.komorkaHTML(txt, 0, 0, "borderAll center "));
+                }
+                builder.AppendLine("</tr>");
+                builder.AppendLine("<tr>");
+
+                builder.Append(tb.komorkaHTML("Cgg", 0, 0, "borderAll center "));
+                for (int i = 14; i < 27; i++)
+                {
+                    string txt = "<a Class=\"normal\" href=\"javascript: openPopup('popup.aspx?sesja=" + wierszZtabeli["id_sedziego"].ToString() + "!" + idtabeli + "!" + i.ToString() + "!2')\">" + wierszZtabeli["D_" + i.ToString("D2")].ToString() + " </a>";
+                    builder.AppendLine(tb.komorkaHTML(txt, 0, 0, "borderAll center "));
+                }
+                builder.AppendLine("</tr>");
+                builder.AppendLine("<tr>");
+                builder.Append(tb.komorkaHTML("Co", 0, 0, "borderAll center "));
+                for (int i = 27; i < 40; i++)
+                {
+                    string txt = "<a Class=\"normal\" href=\"javascript: openPopup('popup.aspx?sesja=" + wierszZtabeli["id_sedziego"].ToString() + "!" + idtabeli + "!" + i.ToString() + "!2')\">" + wierszZtabeli["D_" + i.ToString("D2")].ToString() + " </a>";
+                    builder.AppendLine(tb.komorkaHTML(txt, 0, 0, "borderAll center "));
+                }
+                builder.AppendLine("</tr>");
+                builder.AppendLine("<tr>");
+                builder.Append(tb.komorkaHTML("Cps", 0, 0, "borderAll center "));
+                for (int i = 40; i < 53; i++)
+                {
+                    string txt = "<a Class=\"normal\" href=\"javascript: openPopup('popup.aspx?sesja=" + wierszZtabeli["id_sedziego"].ToString() + "!" + idtabeli + "!" + i.ToString() + "!2')\">" + wierszZtabeli["D_" + i.ToString("D2")].ToString() + " </a>";
+                    builder.AppendLine(tb.komorkaHTML(txt, 0, 0, "borderAll center "));
+                }
+                builder.AppendLine("</tr>");
+                builder.AppendLine("<tr>");
+                builder.Append(tb.komorkaHTML("Nc", 0, 0, "borderAll center "));
+                for (int i = 53; i < 66; i++)
+                {
+                    string txt = "<a Class=\"normal\" href=\"javascript: openPopup('popup.aspx?sesja=" + wierszZtabeli["id_sedziego"].ToString() + "!" + idtabeli + "!" + i.ToString() + "!2')\">" + wierszZtabeli["D_" + i.ToString("D2")].ToString() + " </a>";
+                    builder.AppendLine(tb.komorkaHTML(txt, 0, 0, "borderAll center "));
+                }
+                builder.AppendLine("</tr>");
+
+                builder.AppendLine("<tr>");
+                builder.Append(tb.komorkaHTML("Ns", 0, 0, "borderAll center "));
+                for (int i = 66; i < 79; i++)
+                {
+                    string txt = "<a Class=\"normal\" href=\"javascript: openPopup('popup.aspx?sesja=" + wierszZtabeli["id_sedziego"].ToString() + "!" + idtabeli + "!" + i.ToString() + "!2')\">" + wierszZtabeli["D_" + i.ToString("D2")].ToString() + " </a>";
+                    builder.AppendLine(tb.komorkaHTML(txt, 0, 0, "borderAll center "));
+                }
+                builder.AppendLine("</tr>");
+
+                builder.AppendLine("<tr>");
+                builder.AppendLine(tb.komorkaHTML("RAZEM", 2, 0, "borderAll center "));
+                for (int i = 79; i < 93; i++)
+                {
+                    string txt = "<a Class=\"normal\" href=\"javascript: openPopup('popup.aspx?sesja=" + wierszZtabeli["id_sedziego"].ToString() + "!" + idtabeli + "!" + i.ToString() + "!2')\">" + wierszZtabeli["D_" + i.ToString("D2")].ToString() + " </a>";
+                    builder.AppendLine(tb.komorkaHTML(txt, 0, 0, "borderAll center  gray"));
+                }
+                builder.AppendLine("</tr>");
+                builder.AppendLine("<tr>");
+                builder.AppendLine(tb.komorkaHTML("OGÓŁEM za okres oceny", 2, 0, "borderAll center "));
+                for (int i = 93; i < 107; i++)
                 {
                     string txt = "<a Class=\"normal\" href=\"javascript: openPopup('popup.aspx?sesja=" + wierszZtabeli["id_sedziego"].ToString() + "!" + idtabeli + "!" + i.ToString() + "!2')\">" + wierszZtabeli["D_" + i.ToString("D2")].ToString() + " </a>";
                     builder.AppendLine(tb.komorkaHTML(txt, 0, 0, "borderAll center  gray"));
@@ -1748,6 +2338,128 @@ namespace stat2018
             builder.Append(" </div>");
             tblControl.Text = builder.ToString();
             tablePlaceHolder23.Controls.Add(tblControl);
+        }
+
+        protected void tworztabelkeHTML26(string idKontrolki, int idWydzialu, int idtabeli, DataTable dane, string tekst, string funkcjaSR, string opisDzialu, string nrTabeli)
+        {
+            if (dane == null)
+            {
+                cm.log.Error(tenPlik + " Brak danych do tabeli dynamicznej HTML");
+                return;
+            }
+            var tblControl = new Label { ID = idKontrolki };
+            tblControl.Width = 1150;
+
+            StringBuilder builder = new StringBuilder();
+            builder.Append(" <div class='page-break'>");
+            builder.AppendLine("<p>" + opisDzialu + "</p>");
+            if (cl.debug(idWydzialu))
+            {
+                builder.AppendLine("<p>" + nrTabeli + "</p>");
+            }
+            builder.AppendLine("<br/>");
+            builder.AppendLine("<table style='width: 1150px;'>");
+            //header
+            builder.AppendLine("<tr>");
+            builder.AppendLine("<td rowspan=2 class='borderAll center col_81'>imię i nazwisko</td>");
+            builder.AppendLine("<td rowspan=2 class='borderAll center col_81'>Funkcja</td>");
+            builder.AppendLine("<td rowspan=2 class='borderAll center col_81'>pomoc asystenta</td>");
+            builder.AppendLine("<td rowspan=2 class='borderAll center'>kategoria spraw</td>");
+            builder.AppendLine("<td rowspan=2 class='borderAll center col_81'>rok</td>");
+            builder.AppendLine("<td colspan=12 class='borderAll center col_81'>" + tekst + "	</td>");
+            builder.AppendLine("</tr>");
+            builder.AppendLine("<tr>");
+            builder.AppendLine("<td  class='borderAll center col_81'>do 3 miesięcy</td>");
+            builder.AppendLine("<td  class='borderAll center col_81'>suma powyżej 3 miesięcy</td>");
+            builder.AppendLine("<td  class='borderAll center col_81'>powyżej  3 do 6  miesięcy</td>");
+            builder.AppendLine("<td  class='borderAll center col_81'>powyżej  6 do 12 miesięcy</td>");
+            builder.AppendLine("<td  class='borderAll center col_81'>suma powyżej 12 miesięcy</td>");
+            builder.AppendLine("<td  class='borderAll center col_81'>powyżej 12 miesięcy do 2 lat</td>");
+            builder.AppendLine("<td  class='borderAll center col_81'>powyżej 2 do 3 lat</td>");
+            builder.AppendLine("<td  class='borderAll center col_81'>suma powyżej 3 lat</td>");
+            builder.AppendLine("<td  class='borderAll center col_81'>powyżej 3 do 5 lat</td>");
+            builder.AppendLine("<td  class='borderAll center col_81'>powyżej 5 do 8 lat</td>");
+            builder.AppendLine("<td  class='borderAll center col_81'>ponad 8 lat</td>");
+            builder.AppendLine("<td  class='borderAll center col_81'>SUMA</td>");
+
+            builder.AppendLine("</tr>");
+
+            //ilosc sedziów
+            //    int licznik = 1;
+            foreach (DataRow wierszZtabeli in dane.Rows)
+            {
+                builder.AppendLine("<tr>");
+
+                builder.Append(tb.komorkaHTML(funkcjaSR + wierszZtabeli["imie"].ToString() + " " + wierszZtabeli["nazwisko"].ToString(), 0, 6, "borderAll center "));
+                builder.Append(tb.komorkaHTML(wierszZtabeli["funkcja"].ToString(), 0, 6, "borderAll center "));
+                builder.Append(tb.komorkaHTML("<a Class=\"normal\" href=\"javascript: openPopup('popup.aspx?sesja=" + wierszZtabeli["id_sedziego"].ToString() + "!" + idtabeli + "!1!2')\">" + wierszZtabeli["D_01"].ToString() + " </a>", 0, 6, "borderAll center "));
+
+                builder.Append(tb.komorkaHTML("C", 0, 0, "borderAll center "));
+
+                for (int i = 2; i < 15; i++)
+                {
+                    string txt = "<a Class=\"normal\" href=\"javascript: openPopup('popup.aspx?sesja=" + wierszZtabeli["id_sedziego"].ToString() + "!" + idtabeli + "!" + i.ToString() + "!2')\">" + wierszZtabeli["D_" + i.ToString("D2")].ToString() + " </a>";
+                    builder.AppendLine(tb.komorkaHTML(txt, 0, 0, "borderAll center "));
+                }
+                builder.AppendLine("</tr>");
+                builder.AppendLine("<tr>");
+
+                builder.Append(tb.komorkaHTML("Cgg", 0, 0, "borderAll center "));
+                for (int i = 15; i < 28; i++)
+                {
+                    string txt = "<a Class=\"normal\" href=\"javascript: openPopup('popup.aspx?sesja=" + wierszZtabeli["id_sedziego"].ToString() + "!" + idtabeli + "!" + i.ToString() + "!2')\">" + wierszZtabeli["D_" + i.ToString("D2")].ToString() + " </a>";
+                    builder.AppendLine(tb.komorkaHTML(txt, 0, 0, "borderAll center "));
+                }
+                builder.AppendLine("</tr>");
+                builder.AppendLine("<tr>");
+                builder.Append(tb.komorkaHTML("Co", 0, 0, "borderAll center "));
+                for (int i = 28; i < 41; i++)
+                {
+                    string txt = "<a Class=\"normal\" href=\"javascript: openPopup('popup.aspx?sesja=" + wierszZtabeli["id_sedziego"].ToString() + "!" + idtabeli + "!" + i.ToString() + "!2')\">" + wierszZtabeli["D_" + i.ToString("D2")].ToString() + " </a>";
+                    builder.AppendLine(tb.komorkaHTML(txt, 0, 0, "borderAll center "));
+                }
+                builder.AppendLine("</tr>");
+                builder.AppendLine("<tr>");
+                builder.Append(tb.komorkaHTML("Cps", 0, 0, "borderAll center "));
+                for (int i = 41; i < 54; i++)
+                {
+                    string txt = "<a Class=\"normal\" href=\"javascript: openPopup('popup.aspx?sesja=" + wierszZtabeli["id_sedziego"].ToString() + "!" + idtabeli + "!" + i.ToString() + "!2')\">" + wierszZtabeli["D_" + i.ToString("D2")].ToString() + " </a>";
+                    builder.AppendLine(tb.komorkaHTML(txt, 0, 0, "borderAll center "));
+                }
+                builder.AppendLine("</tr>");
+                builder.AppendLine("<tr>");
+                builder.Append(tb.komorkaHTML("Nc", 0, 0, "borderAll center "));
+                for (int i = 54; i < 67; i++)
+                {
+                    string txt = "<a Class=\"normal\" href=\"javascript: openPopup('popup.aspx?sesja=" + wierszZtabeli["id_sedziego"].ToString() + "!" + idtabeli + "!" + i.ToString() + "!2')\">" + wierszZtabeli["D_" + i.ToString("D2")].ToString() + " </a>";
+                    builder.AppendLine(tb.komorkaHTML(txt, 0, 0, "borderAll center "));
+                }
+                builder.AppendLine("</tr>");
+
+                builder.AppendLine("<tr>");
+                builder.Append(tb.komorkaHTML("Ns", 0, 0, "borderAll center "));
+                for (int i = 67; i < 80; i++)
+                {
+                    string txt = "<a Class=\"normal\" href=\"javascript: openPopup('popup.aspx?sesja=" + wierszZtabeli["id_sedziego"].ToString() + "!" + idtabeli + "!" + i.ToString() + "!2')\">" + wierszZtabeli["D_" + i.ToString("D2")].ToString() + " </a>";
+                    builder.AppendLine(tb.komorkaHTML(txt, 0, 0, "borderAll center "));
+                }
+                builder.AppendLine("</tr>");
+
+                builder.AppendLine("<tr>");
+                builder.AppendLine(tb.komorkaHTML("RAZEM", 2, 0, "borderAll center "));
+                for (int i = 80; i < 95; i++)
+                {
+                    string txt = "<a Class=\"normal\" href=\"javascript: openPopup('popup.aspx?sesja=" + wierszZtabeli["id_sedziego"].ToString() + "!" + idtabeli + "!" + i.ToString() + "!2')\">" + wierszZtabeli["D_" + i.ToString("D2")].ToString() + " </a>";
+                    builder.AppendLine(tb.komorkaHTML(txt, 0, 0, "borderAll center  gray"));
+                }
+                builder.AppendLine("</tr>");
+            }
+            //footer
+
+            builder.Append("</table>");
+            builder.Append(" </div>");
+            tblControl.Text = builder.ToString();
+            tablePlaceHolder26.Controls.Add(tblControl);
         }
 
         protected void pisz(string Template, int iloscWierszy, int iloscKolumn, DataTable dane)

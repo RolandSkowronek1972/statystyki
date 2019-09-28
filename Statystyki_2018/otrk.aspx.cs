@@ -74,10 +74,7 @@ namespace stat2018
             Session["header_02"] = null;
             Session["header_03"] = null;
             Session["header_04"] = null;
-            Session["header_05"] = null;
-            Session["header_06"] = null;
-            Session["header_07"] = null;
-            Session["header_08"] = null;
+           
         }
 
         protected void przemiel()
@@ -86,7 +83,7 @@ namespace stat2018
             id_dzialu.Text = (string)Session["txt_dzialu"];
             string txt = string.Empty;
             txt = txt + cl.clear_maim_db();
-            txt = txt + cl.generuj_dane_do_tabeli_wierszy(Date1.Date, Date2.Date, idDzialu, 1);
+            txt = txt + cl.generuj_dane_do_tabeli_wierszy(Date1.Date, Date2.Date, idDzialu, 1,tenPlik);
             GridView2.DataBind();
 
             try
@@ -94,6 +91,9 @@ namespace stat2018
                 Session["tabelka002"] = dr.tworzTabele(int.Parse(idDzialu), 2, Date1.Date, Date2.Date, 19, GridView1, tenPlik);
                 Session["tabelka003"] = dr.tworzTabele(int.Parse(idDzialu), 3, Date1.Date, Date2.Date, 10, GridView3, tenPlik);
                 Session["tabelka004"] = dr.tworzTabele(int.Parse(idDzialu), 4, Date1.Date, Date2.Date, 9, GridView4, tenPlik);
+                GridView1.DataBind();
+                GridView3.DataBind();
+                GridView4.DataBind();
                 /*
                 txt = txt + cl.generuj_dane_do_tabeli_(int.Parse((string)Session["id_dzialu"]), 2, Date1.Date, Date2.Date);
 
@@ -110,7 +110,7 @@ namespace stat2018
 
             makeLabels();
 
-            GridView3.DataBind();
+           
             Label11.Visible = cl.debug(int.Parse(idDzialu));
             Label11.Text = txt;
             Label3.Text = cl.nazwaSadu((string)Session["id_dzialu"]);

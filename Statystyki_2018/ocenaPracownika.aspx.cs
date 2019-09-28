@@ -1,24 +1,20 @@
 ﻿using System;
-using System.Data;
-using System.IO;
 using System.Configuration;
+using System.Data;
+
 namespace stat2018
 {
-
-  
     public partial class ocenaPracownika : System.Web.UI.Page
     {
+
         public wyszukiwarka w1 = new wyszukiwarka();
 
         public Class1 cl = new Class1();
 
         public string con_str = ConfigurationManager.ConnectionStrings["wap"].ConnectionString;
 
-
-
         protected void Page_Load(object sender, EventArgs e)
         {
-
             //string date = Request.Form[Date1.Text];
             if (!IsPostBack)
             {
@@ -29,8 +25,6 @@ namespace stat2018
                     {
                         var fileContents = System.IO.File.ReadAllText(Server.MapPath(@"~//version.txt"));
                         this.Title = "Statystyki " + fileContents.ToString().Trim();
-
-
                     }
                     catch
                     {
@@ -47,10 +41,8 @@ namespace stat2018
                             cl.nazwaSadu((string)Session["id_dzialu"]);
                             Session["id_dzialu"] = "1";
                             //Server.Transfer("default.aspx");
-
                         }
                         //zaladowanie danych pracowników w zależności od wydzialu
-
                     }
                     //==============
                 }
@@ -58,21 +50,16 @@ namespace stat2018
                 {
                     //Server.Transfer("default.aspx");
                 }
-
-
             }
-
-
 
             ASPxComboBox1.Items.Clear();
             DataTable dT = new DataTable();
-            dT = w1.PobierzOpisy("pracownik");
+            dT = w1.PobierzOpisy("pracownik", "Pracownik");
             //     dT = cl.listaWydzialow();
             foreach (DataRow dR in dT.Rows)
             {
                 ASPxComboBox1.Items.Add(dR[0].ToString());
             }
-
 
             if (ASPxComboBox1.SelectedIndex == -1)
             {
@@ -83,30 +70,23 @@ namespace stat2018
             if (string.IsNullOrEmpty(data1.Text.Trim()))
             {
                 data1.Text = DateTime.Parse(DateTime.Now.Year.ToString() + "-01-01").ToShortDateString();
-
             }
 
             if (string.IsNullOrEmpty(data2.Text.Trim()))
             {
                 data2.Text = DateTime.Now.ToShortDateString();
             }
-
-
         }// end of Page_Load
-
-
-
 
         protected void zapelnijTabeleLudzi()
         {
-
             //zmiana wydzialu
             try
             {
                 string nazwa = ASPxComboBox1.Text.Trim();
                 DataTable ludziki = new DataTable();
                 string kwerenda = w1.PobierzDana2(nazwa);
-                string connectionString = w1.PobierzConnectionString(nazwa);
+                string connectionString = w1.PobierzConnectionString(nazwa,"ocena pracownika");
                 ludziki = w1.PobierzListePracowników(kwerenda, connectionString);
                 if (ludziki != null)
                 {
@@ -121,30 +101,23 @@ namespace stat2018
                         ASPxComboBox2.SelectedIndex = 0;
                     }
                 }
-
             }
 #pragma warning disable CS0168 // The variable 'ex' is declared but never used
             catch (Exception ex)
 #pragma warning restore CS0168 // The variable 'ex' is declared but never used
             {
-
-
             }
-
-
         }
-
 
         protected void zapelnijTabeleLudzi2()
         {
-
             //zmiana wydzialu
             try
             {
                 string nazwa = ASPxComboBox1.Text.Trim();
                 DataTable ludziki = new DataTable();
                 string kwerenda = w1.PobierzDana2(nazwa);
-                string connectionString = w1.PobierzConnectionString(nazwa);
+                string connectionString = w1.PobierzConnectionString(nazwa,"ocena pracownika");
                 Session["connectionString"] = connectionString;
                 ludziki = w1.PobierzListePracowników(kwerenda, connectionString);
                 if (ludziki != null)
@@ -155,16 +128,11 @@ namespace stat2018
                     {
                         ASPxComboBox2.Items.Add(dRR[0].ToString());
                     }
-
                 }
-
             }
             catch
-            {            }
-
-
+            { }
         }
-
 
         protected void ASPxComboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -201,15 +169,13 @@ namespace stat2018
                 DataTable datyPracy = new DataTable();
                 string nazwa = ASPxComboBox1.Text.Trim();
 
-                string connectionString = w1.PobierzConnectionString(nazwa);
+                string connectionString = w1.PobierzConnectionString(nazwa, "ocena pracownika");
 
                 Label5.Text = Label5.Text + " Connection string do bazy : " + connectionString + "</br>" + Environment.NewLine;
 
-                DataTable kwerendy = w1.PobierzKwerendy(con_str);
-
+                DataTable kwerendy = w1.PobierzKwerendy(con_str, "ocena pracownika");
 
                 expression = "idKolumny =1";
-
 
                 // Use the Select method to find all rows matching the filter.
                 foundRows = kwerendy.Select(expression);
@@ -220,7 +186,6 @@ namespace stat2018
                 }
 
                 Label5.Text = Label5.Text + " Kwerenda  : " + kwerenda + "</br>" + Environment.NewLine;
-
 
                 datyPracy = w1.listaDniPracownika(idPracownika, DateTime.Parse(data1.Text.Trim()), DateTime.Parse(data2.Text.Trim()), kwerenda, connectionString);
                 DataTable lista = new DataTable();
@@ -278,7 +243,6 @@ namespace stat2018
                     Raportdzienny[4] = val4;
                     Raportdzienny[5] = val5;
                     lista.Rows.Add(Raportdzienny);
-
                 }
                 ASPxGridView1.Columns.Clear();
                 ASPxGridView1.DataSource = lista;
@@ -286,16 +250,13 @@ namespace stat2018
                 ASPxGridView1.AutoGenerateColumns = true;
 
                 ASPxGridView1.DataBind();
-
-
             }
             catch (Exception ex)
             {
                 Label5.Text = Label5.Text + "Komunikat błedu : " + ex + "</br>" + Environment.NewLine;
             }
-
-
         }
+
         protected string GetValue(DataTable dT, string expression)
         {
             string result = string.Empty;
@@ -310,7 +271,6 @@ namespace stat2018
             }
 
             return result;
-
         }
 
         protected void drucz(object sender, EventArgs e)
@@ -322,14 +282,7 @@ namespace stat2018
 
             ASPxGridViewExporter1.Landscape = true;
 
-
             ASPxGridViewExporter1.WritePdfToResponse("ocena.pdf", false, new DevExpress.XtraPrinting.PdfExportOptions() { ShowPrintDialogOnOpen = true });
-
         }
     }
-
-
-
-
-
 }

@@ -204,7 +204,7 @@ namespace stat2018
             string idDzialu = (string)Session["id_dzialu"];
             if (cl.debug(int.Parse(idDzialu)))
             {
-                //cm.log.Info(tenPlik + ": rozpoczęcie tworzenia tabeli 1");
+                cm.log.Info(tenPlik + ": rozpoczęcie tworzenia tabeli 1");
             }
             DataTable tabelka01 = dr.generuj_dane_do_tabeli_sedziowskiej_2018(int.Parse(idDzialu), 1, Date1.Date, Date2.Date, 35, tenPlik);
             Session["tabelka001"] = tabelka01;
@@ -1113,7 +1113,6 @@ namespace stat2018
             tabelaNaglowkowa.Rows.Add(new Object[] { "2", "Efektywny okres orzekania", "1", "2" });
             tabelaNaglowkowa.Rows.Add(new Object[] { "2", "Ilość wyznaczonych spraw", "6", "1" });
 
-         
             return tabelaNaglowkowa;
         }
 

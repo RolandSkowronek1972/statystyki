@@ -57,17 +57,19 @@ namespace stat2018
             //log.Debug("uruchomienie logowania");
 
             bool result = true;
+            log.Info("rozpoczecie logowania "+ DateTime.Now.ToLongTimeString());
             try
             {
                 using (PrincipalContext pc = new PrincipalContext(ContextType.Domain, TextBox3.Text.Trim()))
                 {
                     try
                     {
-                        //log.Info("sprawdzanie logowania domenowego");
+                        log.Info("rozpoczecie logowania domenowego " + DateTime.Now.ToLongTimeString());
                         result = pc.ValidateCredentials(TextBox1.Text.Trim(), TextBox2.Text.Trim());
                         if (result)
                         {
-                            //log.Info("Logowanie domenowe się powiodło");
+                            log.Info("wynik logowania domenowego " + DateTime.Now.ToLongTimeString());
+                            log.Info("Logowanie domenowe się powiodło");
                             Session["damain"] = "1";
                             string id = Logowanie.podajIdUzytkownikaDomenowego(TextBox1.Text);
                             Session["user_id"] = TextBox1.Text.Trim();
@@ -77,9 +79,11 @@ namespace stat2018
                         }
                         else
                         {
+                            log.Info("rozpoczecie logowania z bazy danych " + DateTime.Now.ToLongTimeString());
                             Session["damain"] = "0";
                             //log.Info("Logowanie użytkowników z bazy danych");
                             string id = Logowanie.loguj(TextBox1.Text.Trim(), TextBox2.Text.Trim());
+                            log.Info("wynik logowania z bazy danych " + DateTime.Now.ToLongTimeString());
                             int ident = 0;
                             try
                             {
@@ -87,15 +91,11 @@ namespace stat2018
                             }
                             catch
                             {
-                                //log.Error("Logowanie: bład odczytu uzytkownika z bazy danych ");
-                                string resutt = Logowanie.CzyJestUzytkownikwBazie(TextBox1.Text.Trim());
-                                if (resutt == "0")
-                                {
-                                    //log.Error("Logowanie: uzytkownik: "+TextBox1.Text.Trim ()+" nie istnieje w bazie danych!!! ");
-                                }
+                               
                             }
                             if (ident > 0)
                             {
+                                log.Info("uzytkownik zgodny " + DateTime.Now.ToLongTimeString());
                                 //log.Info("Logowanie poprawne!!! identyfikator użytkownika: " + TextBox1.Text.Trim() + " identyfikator: " + id);
                                 result = true;
                                 Session["user_id"] = TextBox1.Text.Trim();
@@ -115,19 +115,21 @@ namespace stat2018
                     }
                 }
             }
-#pragma warning disable CS0168 // The variable 'ex' is declared but never used
-            catch (Exception ex)
-#pragma warning restore CS0168 // The variable 'ex' is declared but never used
+
+            catch
+
             {
+                log.Info("bład logowania domenowego  " + DateTime.Now.ToLongTimeString());
+
                 //log.Error("Logowanie domenowe się nie powiodło");
                 Session["damain"] = "0";
                 //log.Info("Logowanie użytkowników z bazy danych");
-
+                log.Info("próba logowania z bazy  " + DateTime.Now.ToLongTimeString());
                 string id = Logowanie.loguj(TextBox1.Text.Trim(), TextBox2.Text.Trim());
                 if (id != "")
                 {
-                    //log.Info("Logowanie poprawne!!! Nazwa uzytkownika: " + TextBox1.Text.Trim() + " identyfikator: " + id);
-                    result = true;
+                    log.Info("logowania z bazy poprawne  " + DateTime.Now.ToLongTimeString());
+                     result = true;
                     Session["user_id"] = TextBox1.Text.Trim();
                     Session["userIdNum"] = id;
                     Session["identyfikatorUzytkownika"] = id;
@@ -147,6 +149,7 @@ namespace stat2018
                 Session["manu3"] = null;
                 Session["manu4"] = null;
                 Session["user_id"] = TextBox1.Text.Trim();
+                log.Info("uruchomienie  redirector.aspx " + DateTime.Now.ToLongTimeString());
                 Server.Transfer("redirector.aspx");
             }
             else

@@ -88,22 +88,22 @@ namespace stat2018
                 //cm.log.Info(tenPlik + ": rozpoczęcie tworzenia tabeli 2");
 
                 DataTable tabelka01 = dr.generuj_dane_do_tabeli_wierszy2018(Date1.Date, Date2.Date, (string)Session["id_dzialu"], 2, 20, 20, tenPlik);
-                Session["tabelka001"] = tabelka01;
+                Session["tabelka002"] = tabelka01;
             }
             catch
             { }
             try
             {
                 //cm.log.Info(tenPlik + ": rozpoczęcie tworzenia tabeli 1");
-                Session["tabela01"] = dr.tworzTabele(int.Parse(dzial), 1, Date1.Date, Date2.Date, 20, GridView1, tenPlik);
+                Session["tabelka001"] = dr.tworzTabele(int.Parse(dzial), 1, Date1.Date, Date2.Date, 20, GridView1, tenPlik);
                 GridView1.DataBind();
-                Session["tabela03"] = dr.tworzTabele(int.Parse(dzial), 3, Date1.Date, Date2.Date, 17, GridView2, tenPlik);
+                Session["tabelka003"] = dr.tworzTabele(int.Parse(dzial), 3, Date1.Date, Date2.Date, 17, GridView2, tenPlik);
                 GridView2.DataBind();
                 //cm.log.Info(tenPlik + ": rozpoczęcie tworzenia tabeli 4");
                 //txt = txt + cl.generuj_dane_do_tabeli_(int.Parse((string)Session["id_dzialu"]), 4, Date1.Date, Date2.Date);
-                Session["tabela04"] = dr.tworzTabele(int.Parse(dzial), 4, Date1.Date, Date2.Date, 30, GridView3, tenPlik);
+                Session["tabelka004"] = dr.tworzTabele(int.Parse(dzial), 4, Date1.Date, Date2.Date, 30, GridView3, tenPlik);
                 GridView3.DataBind();
-                Session["tabela06"] = dr.tworzTabele(int.Parse(dzial), 6, Date1.Date, Date2.Date, 30, GridView4, tenPlik);
+                Session["tabelka006"] = dr.tworzTabele(int.Parse(dzial), 6, Date1.Date, Date2.Date, 30, GridView4, tenPlik);
                 GridView4.DataBind();
             }
             catch (Exception ex)
@@ -114,7 +114,7 @@ namespace stat2018
             {
                 //cm.log.Info(tenPlik + ": rozpoczęcie tworzenia tabeli 5");
                 DataTable tabelka04 = dr.generuj_dane_do_tabeli_wierszy2018(Date1.Date, Date2.Date, (string)Session["id_dzialu"], 5, 20, 20, tenPlik);
-                Session["tabelka004"] = tabelka04;
+                Session["tabelka005"] = tabelka04;
 
                 tab_04_w01_c01.Text = tabelka04.Rows[0][1].ToString().Trim();
                 tab_04_w01_c2.Text = tabelka04.Rows[0][2].ToString().Trim();
@@ -124,9 +124,7 @@ namespace stat2018
                 tab_04_w01_c6.Text = tabelka04.Rows[0][6].ToString().Trim();
                 tab_04_w01_c7.Text = tabelka04.Rows[0][7].ToString().Trim();
                 //cm.log.Info(tenPlik + ": rozpoczęcie tworzenia tabeli 6");
-                //   txt = txt + cl.generuj_dane_do_tabeli_(int.Parse((string)Session["id_dzialu"]), 6, Date1.Date, Date2.Date);
 
-                // wypełnianie danych labeli
             }
             catch (Exception ex)
             {
@@ -403,14 +401,14 @@ namespace stat2018
             string download = Server.MapPath("Template") + @"\oglc2";
             FileInfo fNewFile = new FileInfo(download + "_.xlsx");
 
-            DataTable table = (DataTable)Session["tabela01"];
+            DataTable table = (DataTable)Session["tabelka001"];
             using (ExcelPackage MyExcel = new ExcelPackage(existingFile))
             {
                 // pierwsza
                 int rowik = 0;
                 ExcelWorksheet MyWorksheet1 = MyExcel.Workbook.Worksheets[1];
 
-                MyWorksheet1 = tabela.tworzArkuszwExcle(MyExcel.Workbook.Worksheets[1], (DataTable)Session["tabela01"], 18, 0, 4, false, false, false, false, false);
+                MyWorksheet1 = tabela.tworzArkuszwExcle(MyExcel.Workbook.Worksheets[1], (DataTable)Session["tabelka001"], 18, 0, 4, false, false, false, false, false);
                 rowik = table.Rows.Count - 3;
                 MyWorksheet1.Cells[rowik + 7, 1, rowik + 7, 4].Merge = true;
                 MyWorksheet1.Cells[rowik + 7, 1].Value = "Zaległość z poprzedniego miesiąca";
@@ -432,7 +430,7 @@ namespace stat2018
                 MyWorksheet1.Cells[rowik + 16, 2].Value = " 36-60 miesięcy (3-5 lat)";
 
                 MyWorksheet1.Cells[rowik + 17, 2].Value = " Powyżej 60 miesięcy (powyżej 5 lat)";
-                DataTable tabelka001 = (DataTable)Session["tabelka001"];
+                DataTable tabelka001 = (DataTable)Session["tabelka002"];
 
                 foreach (DataRow dR in tabelka001.Rows)
                 {
@@ -455,17 +453,17 @@ namespace stat2018
                  // trzecia
 
                 ExcelWorksheet MyWorksheet2 = MyExcel.Workbook.Worksheets[2];
-                DataTable table2 = (DataTable)Session["tabela03"];
+                DataTable table2 = (DataTable)Session["tabelka003"];
                 MyWorksheet2 = tabela.tworzArkuszwExcle(MyExcel.Workbook.Worksheets[2], table2, 8, 0, 3, false, false, false, false, false);
 
                 // czwarta
 
                 ExcelWorksheet MyWorksheet5 = MyExcel.Workbook.Worksheets[3];
 
-                DataTable table4 = (DataTable)Session["tabela04"];
+                DataTable table4 = (DataTable)Session["tabelka004"];
                 MyWorksheet2 = tabela.tworzArkuszwExcle(MyExcel.Workbook.Worksheets[3], table4, 17, 0, 4, false, false, false, false, false);
 
-                DataTable table6 = (DataTable)Session["tabela06"];
+                DataTable table6 = (DataTable)Session["tabelka006"];
                 MyWorksheet2 = tabela.tworzArkuszwExcle(MyExcel.Workbook.Worksheets[5], table6, 10, 0, 4, false, false, false, false, false);
 
                 try
@@ -528,7 +526,7 @@ namespace stat2018
         {
             if (e.Row.RowType == DataControlRowType.Footer)
             {
-                DataTable table = (DataTable)Session["tabela03"];
+                DataTable table = (DataTable)Session["tabelka003"];
                 tabela.makeSumRow(table, e, 1);
             }
         }
@@ -546,7 +544,7 @@ namespace stat2018
         {
             if (e.Row.RowType == DataControlRowType.Footer)
             {
-                DataTable table = (DataTable)Session["tabela04"];
+                DataTable table = (DataTable)Session["tabelka004"];
                 tabela.makeSumRow(table, e, 1);
             }
         }
@@ -564,7 +562,7 @@ namespace stat2018
         {
             if (e.Row.RowType == DataControlRowType.Footer)
             {
-                tabela.makeSumRow((DataTable)Session["tabela06"], e);
+                tabela.makeSumRow((DataTable)Session["tabelka006"], e);
             }
         }
 
@@ -573,7 +571,7 @@ namespace stat2018
             GridView GridView1 = (GridView)sender;
             GridViewRow NewTotalRow = new GridViewRow(0, 0, DataControlRowType.DataRow, DataControlRowState.Insert);
             string idtabeli = "2";
-            DataTable tabelka01 = (DataTable)Session["tabelka001"];
+            DataTable tabelka01 = (DataTable)Session["tabelka002"];
 
             int idWiersza = 1;
             GridView1.Controls[0].Controls.AddAt(e.Row.RowIndex + rowIndex, tabela.wierszTabeli(tabelka01, 17, idWiersza, idtabeli, "Zaległość z poprzedniego miesiąca", 3, 1, "normal", "borderTopLeft col_60 normal"));
@@ -613,7 +611,7 @@ namespace stat2018
         {
             if (e.Row.RowType == DataControlRowType.Footer)
             {
-                tabela.makeSumRow((DataTable)Session["tabela04"], e);
+                tabela.makeSumRow((DataTable)Session["tabelka004"], e);
             }
         }
     }

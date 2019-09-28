@@ -899,7 +899,7 @@ namespace stat2018
         {
             if (e.Row.RowType == DataControlRowType.Footer)
             {
-                tb.makeSumRow((DataTable)Session["tabelka009"], e, 0);
+                tb.makeSumRow((DataTable)Session["tabelka009"], e, 0, "Razem");
             }
         }
 
@@ -908,7 +908,7 @@ namespace stat2018
             if (e.Row.RowType == DataControlRowType.Footer)
             {
                 DataTable table = (DataTable)Session["tabelka007"];
-                tb.makeSumRow(table, e, 0);
+                tb.makeSumRow(table, e, 0,"Razem");
             }
         }
 
@@ -917,7 +917,7 @@ namespace stat2018
             if (e.Row.RowType == DataControlRowType.Footer)
             {
                 DataTable table = (DataTable)Session["tabelka006"];
-                tb.makeSumRow(table, e, 0);
+                tb.makeSumRow(table, e, 0, "Razem");
             }
         }
 

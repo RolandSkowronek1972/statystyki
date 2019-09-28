@@ -413,7 +413,7 @@ namespace stat2018
             txt = txt + "id działu=" + yyx + "</br>";
             txt = txt + cl.clear_maim_db();
             cl.deleteRowTable();
-            txt = txt + cl.generuj_dane_do_tabeli_wierszy(Date1.Date, Date2.Date, yyx, 1);
+            txt = txt + cl.generuj_dane_do_tabeli_wierszy(Date1.Date, Date2.Date, yyx, 1,tenPlik);
 
             GridView1.DataBind();
 
@@ -427,7 +427,7 @@ namespace stat2018
             catch
             {
             }
-            txt = txt + cl.generuj_dane_do_tabeli_wierszy(Date1.Date, Date2.Date, yyx, 6);
+            txt = txt + cl.generuj_dane_do_tabeli_wierszy(Date1.Date, Date2.Date, yyx, 6,tenPlik);
             //GridView6.DataBind();
             // dopasowanie opisów
             makeLabels();

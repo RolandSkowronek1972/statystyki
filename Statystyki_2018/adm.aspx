@@ -2,9 +2,9 @@
 
 <%@ Register Assembly="DevExpress.Web.v17.1, Version=17.1.15.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" Namespace="DevExpress.Web" TagPrefix="dx" %>
 
-<%@ Register Src="UserControlls/zarzadzanieUprawnieniami.ascx" TagName="zarzadzanieUprawnieniami" TagPrefix="uc2" %>
+<%@ Register src="UserControlls/ZarzadzanieFormularzami.ascx" tagname="ZarzadzanieFormularzami" tagprefix="uc3" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-    <dx:ASPxGridView ID="ASPxGridView2" runat="server" AutoGenerateColumns="False" DataSourceID="SqlDataSource1" EnableTheming="True" KeyFieldName="ident" Theme="PlasticBlue" Width="100%">
+    <dx:ASPxGridView ID="ASPxGridView2" runat="server" AutoGenerateColumns="False" DataSourceID="SqlDataSource1" EnableTheming="True" KeyFieldName="ident" Theme="PlasticBlue" Width="100%" OnStartRowEditing="startEdycji">
         <SettingsEditing Mode="EditForm">
         </SettingsEditing>
         <Settings ShowFilterRow="True" />
@@ -13,8 +13,8 @@
               <dx:ASPxGridViewTemplateReplacement ID="Editors" ReplacementType="EditFormEditors"
                                             runat="server">
                                         </dx:ASPxGridViewTemplateReplacement>
-          
-             <uc2:zarzadzanieUprawnieniami ID="zarzadzanieUprawnieniami1" runat="server" />
+    <uc3:ZarzadzanieFormularzami ID="ZarzadzanieFormularzami1" runat="server" />      
+            
                 <div style="text-align: right; padding: 2px">
                     <dx:ASPxGridViewTemplateReplacement ID="UpdateButton" ReplacementType="EditFormUpdateButton"
                         runat="server">
@@ -90,12 +90,11 @@ UPDATE  uprawnienia SET       id_uzytkownika =@ident,  id_wydzialu =1, rodzaj =@
     </asp:SqlDataSource>
 
     <br />
-   
-    <asp:Panel ID="Panel1" runat="server" style="visibility: collapse;">
-        <uc2:zarzadzanieUprawnieniami ID="zarzadzanieUprawnieniami2" runat="server" Visible="True" />
-    </asp:Panel>
-   
     <br />
+    
+    <br />
+
+   
     <br />
     <br />
     <br />

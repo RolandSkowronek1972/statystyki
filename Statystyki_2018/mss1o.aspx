@@ -72,7 +72,7 @@
            </div>
       </div>
      
-   <div style="width:1150px; margin: 0 auto 0 auto; position:relative;" class="content">
+   <div style="width:1150px; margin: 0 auto 0 auto; position:relative;" >
 
           <div id="tabela1"  style="z-index:10; visibility:hidden;"> 
         <div style="margin-left:auto;margin-right:auto;text-align: center; width:auto; "> 

@@ -4,6 +4,7 @@ Last Update:
 Creation date: 2018-11-21
 
 */
+
 using NPOI.HPSF;
 using NPOI.HSSF.UserModel;
 using NPOI.SS.UserModel;
@@ -111,10 +112,9 @@ namespace stat2018
 
             try
             {
-                txt = txt + cl.generuj_dane_do_tabeli_wierszy(DateTime.Parse(Date1.Text), DateTime.Parse(Date2.Text), yyx, 1);
+                txt = txt + cl.generuj_dane_do_tabeli_wierszy(DateTime.Parse(Date1.Text), DateTime.Parse(Date2.Text), yyx, 1, tenPlik);
                 GridView2.DataBind();
                 txt = txt + cl.generuj_dane_do_tabeli_(dzial, 2, DateTime.Parse(Date1.Text), DateTime.Parse(Date2.Text));
-
                 txt = txt + cl.generuj_dane_do_tabeli_(int.Parse((string)Session["id_dzialu"]), 3, DateTime.Parse(Date1.Text), DateTime.Parse(Date2.Text));
                 txt = txt + cl.generuj_dane_do_tabeli_(int.Parse((string)Session["id_dzialu"]), 4, DateTime.Parse(Date1.Text), DateTime.Parse(Date2.Text));
                 txt = txt + cl.uzupelnij_statusy();

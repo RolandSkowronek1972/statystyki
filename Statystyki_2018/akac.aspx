@@ -53,7 +53,7 @@
         </div>
     </div>
 
-    <div style="width: 1150px; margin: 0 auto 0 auto; position: relative; top: 60px; z-index: 11;" class="content">
+    <div style="width: 1150px; margin: 0 auto 0 auto; position: relative; top: 60px; z-index: 11;" >
 
         <div id="Div2" style="z-index: 10;">
             <div style="margin-left: auto; margin-right: auto; text-align: center; width: auto;">

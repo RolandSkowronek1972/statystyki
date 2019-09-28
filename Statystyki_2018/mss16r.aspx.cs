@@ -1801,7 +1801,7 @@ namespace stat2018
                 }
                 if (!string.IsNullOrEmpty(idWydzialu))
                 {
-                    DataTable tabela2 = cl.generuj_dane_do_tabeli_mss2(int.Parse((string)Session["id_dzialu"]), Date1.Date, Date2.Date, 21); //dane
+                    DataTable tabela2 = cl.generuj_dane_do_tabeli_mss2(int.Parse((string)Session["id_dzialu"]), Date1.Date, Date2.Date, 21,tenPlik); //dane
                     var distinctRows = (from DataRow dRow in tabela2.Rows select dRow["idTabeli"]).Distinct(); //lista tabelek
                     DataTable listaTabelek = new DataTable();
                     listaTabelek.Columns.Add("tabela", typeof(string));

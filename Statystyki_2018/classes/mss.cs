@@ -91,7 +91,7 @@ namespace stat2018
             cm.runQuerry("delete from kof where numer_of is null", con_str);
 
             //cm.log.Info("KOF: start odczytu danych z tabeli KOF: " + DateTime.Now.ToString());
-            DataTable kofGlowny = cm.getDataTable("select id_sprawy from kof", con_str);
+            DataTable kofGlowny = cm.getDataTable("select id_sprawy from kof", con_str,"KOF");
             //cm.log.Info("KOF: Koniec odczytu danych z tabeli KOF: " + DateTime.Now.ToString());
 
             //cm.log.Info("KOF: " + "start odczytu danych do KOF ");
@@ -102,16 +102,16 @@ namespace stat2018
 
             DataTable parameters = cm.makeParameterTable();
 
-            DataTable KwerendyDoKOF = cm.getDataTable(kwerenda, con_str, parameters);
+            DataTable KwerendyDoKOF = cm.getDataTable(kwerenda, con_str, parameters,"KOF");
             //cm.log.Info("KOF: odczytano " + KwerendyDoKOF.Rows.Count.ToString() + " kwerend z tabeli konfig z kluczem kof.");
 
             foreach (DataRow dRow in KwerendyDoKOF.Rows)
             {
                 //cm.log.Info("KOF: kwerenda z tabeli konfig z kluczem KOF: " + dRow[0].ToString().Trim() + " Connectionstring z tabeli konfig z kluczem KOF: " + dRow[1].ToString().Trim());
-                DataTable dane = cm.getDataTable(dRow[0].ToString().Trim(), dRow[1].ToString().Trim());
+                DataTable dane = cm.getDataTable(dRow[0].ToString().Trim(), dRow[1].ToString().Trim(),"KOF");
                 if (dane.Rows.Count == 0)
                 {
-                    //cm.log.Info("KOF: Brak danych w imporcie danych : " + DateTime.Now.ToString());
+                    cm.log.Info("KOF: Brak danych w imporcie danych : " + DateTime.Now.ToString());
                     continue;
                 }
                 //cm.log.Info("KOF: Usunięcie duplikatów między bazą kof a nowo zaimpoertowanymi danymi : " + DateTime.Now.ToString());
@@ -252,7 +252,7 @@ namespace stat2018
 
             DataTable parameters = cm.makeParameterTable();
             parameters.Rows.Add("@id_dzialu", id_dzialu);
-            DataTable dT1 = cm.getDataTable("SELECT [id_wydzial] ,[id_tabeli] ,[id_kolumny],[id_wiersza] ,[kwerenda]  FROM kwerenda_mss where  id_wydzial=@id_dzialu order by id_kolumny", con_str, parameters);
+            DataTable dT1 = cm.getDataTable("SELECT [id_wydzial] ,[id_tabeli] ,[id_kolumny],[id_wiersza] ,[kwerenda]  FROM kwerenda_mss where  id_wydzial=@id_dzialu order by id_kolumny", con_str, parameters,"");
             //cm.log.Info("mss: pobrano "+ dT1.Rows.Count + " kwerend odczytujących dane");
 
             if (dT1.Rows.Count == 0)
@@ -339,7 +339,7 @@ namespace stat2018
             parameters.Rows.Add("@data_2", koniec);
             parameters.Rows.Add("@id_sedziego", id_sedziego);
 
-            DataTable dT1 = cm.getDataTable(kwerenda, cs, parameters);
+            DataTable dT1 = cm.getDataTable(kwerenda, cs, parameters,"popup");
             return dT1;
         }
 

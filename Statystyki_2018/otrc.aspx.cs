@@ -73,7 +73,7 @@ namespace stat2018
             }
             catch
             {
-                Server.Transfer("default.aspx");
+              //  Server.Transfer("default.aspx");
             }
         }// end of Page_Load
 
@@ -103,23 +103,23 @@ namespace stat2018
             id_dzialu.Text = (string)Session["txt_dzialu"];
             string txt = "id dzialu=" + idDzialu.ToString() + "<br/>";
             txt = txt + cl.clear_maim_db();
-            txt = txt + cl.generuj_dane_do_tabeli_wierszy(Date1.Date, Date2.Date, idDzialu.ToString(), 1);
+            txt = txt + cl.generuj_dane_do_tabeli_wierszy(Date1.Date, Date2.Date, idDzialu.ToString(), 1,tenPlik);
             GridView2.DataBind();
             Session["tabelka002"] = dr.tworzTabele(idDzialu, 2, Date1.Date, Date2.Date, 19, GridView1, tenPlik);
             Session["tabelka003"] = dr.tworzTabele(idDzialu, 3, Date1.Date, Date2.Date, 10, GridView3, tenPlik);
             Session["tabelka004"] = dr.tworzTabele(idDzialu, 4, Date1.Date, Date2.Date, 9, GridView4, tenPlik);
-
+            GridView1.DataBind();
+            GridView3.DataBind();
+            GridView4.DataBind();
             // dopasowanie opisów
             makeLabels();
-
+            Label11.Visible = false;
             try
             {
                 Label11.Visible = cl.debug(idDzialu);
             }
             catch
-            {
-                Label11.Visible = false;
-            }
+            { }
 
             Label11.Text = txt;
             Label3.Text = cl.nazwaSadu((string)Session["id_dzialu"]);

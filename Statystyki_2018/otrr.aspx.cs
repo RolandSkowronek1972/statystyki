@@ -97,7 +97,7 @@ namespace stat2018
             string txt = string.Empty; //
             txt = txt + cl.clear_maim_db();
 
-            txt = txt + cl.generuj_dane_do_tabeli_wierszy(Date1.Date, Date2.Date, idDzialu, 1);
+            txt = txt + cl.generuj_dane_do_tabeli_wierszy(Date1.Date, Date2.Date, idDzialu, 1,tenPlik);
             GridView2.DataBind();
 
             try
@@ -114,7 +114,9 @@ namespace stat2018
             }
             // dopasowanie opisów
             makeLabels();
-       
+            GridView1.DataBind();
+            GridView3.DataBind();
+            GridView4.DataBind();
             Label11.Visible = cl.debug(int.Parse(idDzialu));
           
             Label3.Text = cl.nazwaSadu((string)Session["id_dzialu"]);

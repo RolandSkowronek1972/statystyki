@@ -77,7 +77,7 @@ namespace stat2018
 
             ASPxComboBox1.Items.Clear();
             DataTable dT = new DataTable();
-            dT = w1.PobierzOpisy("wyszukiwarka");
+            dT = w1.PobierzOpisy("wyszukiwarka","wyszukiwarka");
           
             foreach (DataRow dR in dT.Rows)
             {
@@ -198,7 +198,7 @@ namespace stat2018
         protected void szukaj(object sender, EventArgs e)
         {
             string nazwa = ASPxComboBox1.Items[ASPxComboBox1.SelectedIndex].Text.Trim();
-            string connectionString = w1.PobierzConnectionString(nazwa);
+            string connectionString = w1.PobierzConnectionString(nazwa,"wyszukiwarka");
             string kwerenda = w1.PobierzDana2(nazwa);
             Session["connectionString"] = connectionString;
             Session["kwerenda"] = kwerenda;

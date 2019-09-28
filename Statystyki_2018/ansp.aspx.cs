@@ -415,7 +415,7 @@ namespace stat2018
             txt = txt + "id działu=" + yyx + "</br>";
             txt = txt + cl.clear_maim_db();
             cl.deleteRowTable();
-            txt = txt + cl.generuj_dane_do_tabeli_wierszy(Date1.Date, Date2.Date, yyx, 1);
+            txt = txt + cl.generuj_dane_do_tabeli_wierszy(Date1.Date, Date2.Date, yyx, 1, tenPlik);
 
             GridView1.DataBind();
 
@@ -423,13 +423,12 @@ namespace stat2018
             {
                 txt = txt + cl.generuj_dane_do_tabeli_(int.Parse((string)Session["id_dzialu"]), 2, Date1.Date, Date2.Date);
                 txt = txt + cl.generuj_dane_do_tabeli_(int.Parse((string)Session["id_dzialu"]), 3, Date1.Date, Date2.Date);
-
                 txt = txt + cl.uzupelnij_statusy();
             }
             catch
             {
             }
-            txt = txt + cl.generuj_dane_do_tabeli_wierszy(Date1.Date, Date2.Date, yyx, 6);
+            txt = txt + cl.generuj_dane_do_tabeli_wierszy(Date1.Date, Date2.Date, yyx, 6, tenPlik);
 
             // dopasowanie opisów
             makeLabels();
@@ -668,24 +667,14 @@ namespace stat2018
                 {
                     // cały miesiąc
                     Label17.Text = "Wyznaczenia za miesiąc " + strMonthName + " " + Date2.Date.Year.ToString() + " roku.";
-                    //Label15.Text = "Załatwienia za miesiąc " + strMonthName + " " + Date2.Date.Year.ToString() + " roku.";
-                    //Stan referatów sędziów na koniec miesiąca
-                    //Label15.Text = "Stan referatów sędziów na koniec miesiąca " + strMonthName + " " + Date2.Date.Year.ToString() + " roku.";
-                    //Informacje o ruchu sprawa za miesiąc: 
                     Label5.Text = "Informacje o ruchu sprawa za miesiąc:  " + strMonthName + " " + Date2.Date.Year.ToString() + " roku.";
-                    // Label35.Text = "Pozostało na następny miesiąc w miesiącu:  " + strMonthName + " " + Date2.Date.Year.ToString() + " roku.";
-                    //	Label27.Text = "za miesiąc:  " + strMonthName + " " + Date2.Date.Year.ToString() + " roku.";
                     Label19.Text = "Załatwienia  z ubieglego miesiąca w miesiącu:  " + strMonthName + " " + Date2.Date.Year.ToString() + " roku.";
-                    //Pozostało z ubieglego miesiąca
+                   
                 }
                 else
                 {
                     Label17.Text = "Wyznaczenia za okres od " + Date1.Text + " do  " + Date2.Text;
-                    //Label15.Text = "Załatwienia za okres od" + Date1.Text + " do  " + Date2.Text;
-                    //Label15.Text = "Stan referatów sędziów za okres od " + Date1.Text + " do  " + Date2.Text;
                     Label5.Text = "Informacje o ruchu sprawa za okres od:  " + Date1.Text + " do  " + Date2.Text;
-                    //Label27.Text = "za okres od:  " + Date1.Text + " do  " + Date2.Text;
-                    //Label35.Text = "Wyznaczenia na następny z okresu od:  " + Date1.Text + " do  " + Date2.Text;
                     Label19.Text = "Załatwienia  z ubieglego miesiąca w okresie od:   " + Date1.Text + " do  " + Date2.Text;
                 }
             }

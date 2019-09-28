@@ -407,8 +407,8 @@ namespace stat2018
             {
 
 
-                txt = txt + cl.generuj_dane_do_tabeli_wierszy(Date1.Date, Date2.Date, yyx, 1);
-                txt = txt + cl.generuj_dane_do_tabeli_wierszy(Date1.Date, Date2.Date, yyx, 10);
+                txt = txt + cl.generuj_dane_do_tabeli_wierszy(Date1.Date, Date2.Date, yyx, 1,tenPlik);
+                txt = txt + cl.generuj_dane_do_tabeli_wierszy(Date1.Date, Date2.Date, yyx, 10,tenPlik);
 
 
                 DataTable dt1 = new DataTable();
@@ -447,8 +447,8 @@ namespace stat2018
 
 
 
-                dt2 = cl.generuj_dane_do_tabeli_przestawnych(int.Parse((string)Session["id_dzialu"]), 1001, Date1.Date, Date2.Date);
-                dt4 = cl.generuj_dane_do_tabeli_przestawnych(int.Parse((string)Session["id_dzialu"]), 1003, Date1.Date, Date2.Date);
+                dt2 = cl.generuj_dane_do_tabeli_przestawnych(int.Parse((string)Session["id_dzialu"]), 1001, Date1.Date, Date2.Date,tenPlik);
+                dt4 = cl.generuj_dane_do_tabeli_przestawnych(int.Parse((string)Session["id_dzialu"]), 1003, Date1.Date, Date2.Date,tenPlik);
 
 
                 GridView14.DataSource = null;
@@ -483,9 +483,9 @@ namespace stat2018
                 dt_all.Columns.Add("d_06", typeof(int));
 
                 dt1 = cl.generuj_dane_do_tabeli_wierszy_przestawnych1(Date1.Date, Date2.Date, yyx, 2000, 1);
-                dt2 = cl.generuj_dane_do_tabeli_przestawnych(int.Parse((string)Session["id_dzialu"]), 2001, Date1.Date, Date2.Date);
+                dt2 = cl.generuj_dane_do_tabeli_przestawnych(int.Parse((string)Session["id_dzialu"]), 2001, Date1.Date, Date2.Date,tenPlik);
                 dt3 = cl.generuj_dane_do_tabeli_wierszy_przestawnych1(Date1.Date, Date2.Date, yyx, 2002, 1);
-                dt4 = cl.generuj_dane_do_tabeli_przestawnych(int.Parse((string)Session["id_dzialu"]), 2003, Date1.Date, Date2.Date);
+                dt4 = cl.generuj_dane_do_tabeli_przestawnych(int.Parse((string)Session["id_dzialu"]), 2003, Date1.Date, Date2.Date,tenPlik);
 
                 GridView17.DataSource = null;
                 GridView17.ShowHeader = false;

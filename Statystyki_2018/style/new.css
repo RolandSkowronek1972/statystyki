@@ -195,25 +195,6 @@ a:active{color:#292929}
 
 /*  panele */
 
- .Panel_1_cal
-    {
-        border-bottom: 2px solid white;
-    background-color: #D8E0E2;
-    margin-right: auto;
-    margin-left: auto;
-    -webkit-box-shadow: 2px 2px 3px 4px rgba(50, 50, 50, 0.41);
-    -moz-box-shadow: 2px 2px 3px 4px rgba(50, 50, 50, 0.41);
-    box-shadow: 2px 2px 3px 4px rgba(50, 50, 50, 0.41);
-        
-        
-        position:absolute;
-        top:661px;
-       
-        left:569px;
-        width:350px;
-        height:180px;
-        }
-        
 
         
         .Panel_2_2
@@ -243,11 +224,6 @@ a:active{color:#292929}
         width:800px;
         height:450px; top: 188px; }
 
-.tabela_top
-{
-    vertical-align:text-top;
-    text-align:center;
-    }
 
   
 .dataBar {

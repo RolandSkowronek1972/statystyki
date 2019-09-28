@@ -59,7 +59,7 @@ namespace stat2018
             return cm.getQuerryValue("SELECT [wartosc]  FROM [konfig] where rtrim(opis)=@klucz ", con_str, parametry);
         }
         
-        public string PobierzConnectionString(string klucz)
+        public string PobierzConnectionString(string klucz,string tenPlik)
         {
             string result = string.Empty;
             string kwerenda = "SELECT [ConnectionString]  FROM [konfig] where rtrim(opis) =@klucz ";
@@ -69,9 +69,9 @@ namespace stat2018
             parametry.Rows.Add("@klucz", klucz);
             return cm.getQuerryValue(kwerenda, con_str, parametry);
         }
-        public DataTable PobierzKwerendy(string connStr)
+        public DataTable PobierzKwerendy(string connStr,string tenPlik)
         {
-            return cm.getDataTable("SELECT distinct   [idKolumny]      ,[kwerenda]       ,[kewrendaPodgladu]  FROM [tbl_ocenaPracownikaKwerendy]", con_str, cm.makeParameterTable());
+            return cm.getDataTable("SELECT distinct   [idKolumny]      ,[kwerenda]       ,[kewrendaPodgladu]  FROM [tbl_ocenaPracownikaKwerendy]", con_str, cm.makeParameterTable(), tenPlik);
         }
 
         public string PobierzKwerendePracownika(string kolumna)
@@ -80,7 +80,7 @@ namespace stat2018
         }
 
 
-     
+     /*
         public DataTable PobierzDane(string klucz)
         {
             string kwerenda = "SELECT [wartosc]  FROM [konfig] where klucz=@klucz ";
@@ -88,19 +88,19 @@ namespace stat2018
             parameters.Rows.Add("@klucz", klucz);
             return cm.getDataTable(kwerenda, con_str, parameters);
         }
-
+        */
         public DataTable PobierzListePracowników(string kwerenda, string connectionString)
         {
-            return cm.getDataTable(kwerenda, connectionString);
+            return cm.getDataTable(kwerenda, connectionString,"");
         }
-
+        /*
         public DataTable listaSpraw(string connectionString)
         {
  
             return  cm.getDataTable("select d.nazwisko, d.imie, st.nazwa, (select symbol from repertorium where numer=s.repertorium) rep, s.numer, s.rok  from sprawa s, strona t, dane_strony d, status st where s.czyus = 0 and t.czyus = 0 and s.ident = t.id_sprawy and t.id_danych = d.ident and t.id_statusu = st.ident ", connectionString);
             
         }
-
+        */
         public DataTable listaDniPracownika(string idPracownika, DateTime data1, DateTime data2, string kwerenda, string connectionString)
         {
            
@@ -109,20 +109,20 @@ namespace stat2018
             parameters.Rows.Add("@idPracownika", idPracownika);
             parameters.Rows.Add("@data1", data1);
             parameters.Rows.Add("@data2", data2);
-            return  cm.getDataTable(kwerenda, connectionString, parameters);
+            return  cm.getDataTable(kwerenda, connectionString, parameters,"Pracownik");
 
           
 
         }
 
-        public DataTable PobierzOpisy(string klucz)
+        public DataTable PobierzOpisy(string klucz,string tenPlik)
         {
            
             string kwerenda = "SELECT [opis],ident  FROM [konfig] where klucz=@klucz ";
             DataTable parameters = cm.makeParameterTable();
             parameters.Rows.Add("@klucz", klucz);
 
-            return   cm.getDataTable(kwerenda, con_str, parameters);
+            return   cm.getDataTable(kwerenda, con_str, parameters, tenPlik);
         }
 
         public string DaneNaDzien(string kwerenda, string connectionString, string data, string idPracownika)

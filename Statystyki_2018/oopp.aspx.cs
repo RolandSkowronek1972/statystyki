@@ -97,7 +97,7 @@ namespace stat2018
             {
                 if (string.IsNullOrEmpty(dzial) != true)
                 {
-                    txt = txt + cl.generuj_dane_do_tabeli_XXL(int.Parse(dzial), 5, Date1.Date, Date2.Date);
+                    txt = txt + cl.generuj_dane_do_tabeli_XXL(int.Parse(dzial), 5, Date1.Date, Date2.Date,tenPlik);
                     txt = txt + cl.uzupelnij_statusy_Xl();
                 }
             }

@@ -2,16 +2,14 @@
 using NPOI.HSSF.UserModel;
 using NPOI.SS.UserModel;
 using System;
-using System.Web.UI;
-using System.Web.UI.WebControls;
 using System.Data;
 using System.Globalization;
 using System.IO;
+using System.Web.UI;
+using System.Web.UI.WebControls;
 
 namespace stat2018
 {
-    
-
     public partial class otrg : System.Web.UI.Page
     {
         public Class1 cl = new Class1();
@@ -19,16 +17,15 @@ namespace stat2018
         public common cm = new common();
         public tabele tb = new tabele();
         public dataReaders dr = new dataReaders();
-        const string tenPlik = "otrg.aspx";
+        private const string tenPlik = "otrg.aspx";
 
-        
         protected void Page_Load(object sender, EventArgs e)
         {
             string idWydzial = Request.QueryString["w"];
             if (idWydzial != null)
             {
                 Session["id_dzialu"] = idWydzial;
-            //    //cm.log.Info(tenPlik + ": id wydzialu=" + idWydzial);
+                //    //cm.log.Info(tenPlik + ": id wydzialu=" + idWydzial);
             }
             else
             {
@@ -62,9 +59,9 @@ namespace stat2018
                     }
                 }
             }
-            catch 
+            catch
             {
-                 Server.Transfer("default.aspx");
+                Server.Transfer("default.aspx");
             }
         }// end of Page_Load
 
@@ -105,16 +102,14 @@ namespace stat2018
             Session["data_2"] = Date2.Text;
             string yyx = (string)Session["id_dzialu"];
             id_dzialu.Text = (string)Session["txt_dzialu"];
-            string txt = string.Empty; //
+            string txt = string.Empty; 
             txt = txt + cl.clear_maim_db();
-            txt = txt + cl.generuj_dane_do_tabeli_wierszy(DateTime.Parse(Date1.Text), DateTime.Parse(Date2.Text), yyx, 1);
+            txt = txt + cl.generuj_dane_do_tabeli_wierszy(DateTime.Parse(Date1.Text), DateTime.Parse(Date2.Text), yyx, 1, tenPlik);
             GridView1.DataBind();
-
 
             try
             {
                 txt = txt + cl.generuj_dane_do_tabeli_(int.Parse((string)Session["id_dzialu"]), 2, DateTime.Parse(Date1.Text), DateTime.Parse(Date2.Text));
-
                 txt = txt + cl.generuj_dane_do_tabeli_(int.Parse((string)Session["id_dzialu"]), 3, DateTime.Parse(Date1.Text), DateTime.Parse(Date2.Text));
                 txt = txt + cl.generuj_dane_do_tabeli_(int.Parse((string)Session["id_dzialu"]), 4, DateTime.Parse(Date1.Text), DateTime.Parse(Date2.Text));
                 txt = txt + cl.uzupelnij_statusy();
@@ -125,7 +120,6 @@ namespace stat2018
             // dopasowanie opisów
             makeLabels();
             GridView2.DataBind();
-            GridView1.DataBind();
             GridView3.DataBind();
             GridView4.DataBind();
 
@@ -174,7 +168,6 @@ namespace stat2018
                 HeaderCell.ColumnSpan = 1;
                 HeaderGridRow.Cells.Add(HeaderCell);
                 GridView1.Controls[0].Controls.AddAt(0, HeaderGridRow);
-
 
                 HeaderCell = new TableCell();
                 HeaderCell.Text = "GCps";
@@ -457,7 +450,6 @@ namespace stat2018
                 HeaderCell.RowSpan = 1;
                 HeaderGridRow.Cells.Add(HeaderCell);
                 GridView2.Controls[0].Controls.AddAt(0, HeaderGridRow);
-
             }
         }
 
@@ -478,8 +470,6 @@ namespace stat2018
                 HeaderCell.RowSpan = 1;
                 HeaderGridRow.Cells.Add(HeaderCell);
                 GridView3.Controls[0].Controls.AddAt(0, HeaderGridRow);
-
-
 
                 HeaderCell = new TableCell();
                 HeaderCell.Text = "GNS";
@@ -637,16 +627,12 @@ namespace stat2018
                 HeaderGridRow.VerticalAlign = VerticalAlign.Top;
                 TableCell HeaderCell = new TableCell();
 
-
-
                 HeaderCell = new TableCell();
                 HeaderCell.Text = "GC";
                 HeaderCell.ColumnSpan = 1;
                 HeaderCell.RowSpan = 1;
                 HeaderGridRow.Cells.Add(HeaderCell);
                 GridView4.Controls[0].Controls.AddAt(0, HeaderGridRow);
-
-
 
                 HeaderCell = new TableCell();
                 HeaderCell.Text = "GNS";
@@ -788,9 +774,6 @@ namespace stat2018
 
         #endregion "nagłowki tabel"
 
-
-
-
         protected void makeLabels()
         {
             try
@@ -816,7 +799,7 @@ namespace stat2018
                 { }
                 string strMonthName = CultureInfo.CurrentCulture.DateTimeFormat.GetMonthName(DateTime.Parse(Date2.Text).Month);
                 int last_day = DateTime.DaysInMonth(DateTime.Parse(Date2.Text).Year, DateTime.Parse(Date2.Text).Month);
-                if ((DateTime.Parse (Date1.Text).Day == 1) && (DateTime.Parse(Date2.Text).Day == last_day) && (DateTime.Parse(Date1.Text).Month == DateTime.Parse(Date2.Text).Month))
+                if ((DateTime.Parse(Date1.Text).Day == 1) && (DateTime.Parse(Date2.Text).Day == last_day) && (DateTime.Parse(Date1.Text).Month == DateTime.Parse(Date2.Text).Month))
                 {
                     // cały miesiąc
                     Label19.Text = "Załatwienia za miesiąc " + strMonthName + " " + DateTime.Parse(Date2.Text).Year.ToString() + " roku.";
@@ -834,14 +817,11 @@ namespace stat2018
                     Label15.Text = "Stan referatów sędziów za okres od " + Date1.Text + " do  " + Date2.Text;
                     Label5.Text = "Informacje o ruchu sprawa za okres od:  " + Date1.Text + " do  " + Date2.Text;
                     Label27.Text = "za okres od:  " + Date1.Text + " do  " + Date2.Text;
-
                 }
             }
             catch
             {
-
             }
-
         }
 
         protected void Button1_Click(object sender, EventArgs e)
@@ -852,7 +832,6 @@ namespace stat2018
 
         protected void Button3_Click(object sender, EventArgs e)
         {
-
             // execel begin
             string filename = "statystykiWydzialGospodarczy.xls";
             Response.ContentType = "application/vnd.ms-excel";
@@ -867,9 +846,6 @@ namespace stat2018
             Response.End();
         }
 
-
-
-
         private void InitializeWorkbook()
         {
             hssfworkbook = new HSSFWorkbook();
@@ -879,8 +855,6 @@ namespace stat2018
             si.Title = "statystyki";
             hssfworkbook.SummaryInformation = si;
         }
-
-
 
         private MemoryStream WriteToStream()
         {
@@ -895,13 +869,9 @@ namespace stat2018
         {
             ISheet sheet0 = hssfworkbook.CreateSheet("Ruch spraw");
 
-
             DataView view = (DataView)dane_do_tabeli_1.Select(DataSourceSelectArguments.Empty);
 
             DataTable table = view.ToTable();
-
-
-
 
             IRow row0 = sheet0.CreateRow(0);
             table.TableName = "Załatwienia";
@@ -914,8 +884,6 @@ namespace stat2018
             sheet0.AddMergedRegion(crs);
             crs = new NPOI.SS.Util.CellRangeAddress(0, 0, 1, 14);
             sheet0.AddMergedRegion(crs);
-
-
 
             row0 = sheet0.CreateRow(1);
 
@@ -1267,8 +1235,6 @@ namespace stat2018
             makeLabels();
             ScriptManager.RegisterStartupScript(this.Page, Page.GetType(), "print2", "JavaScript: window.print();", true);
             makeLabels();
-
         }
-
     }
 }

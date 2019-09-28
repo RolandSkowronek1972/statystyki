@@ -76,7 +76,7 @@ function myFunction() {
      </div>  
     
 
-   <div style="width:1150px; margin: 0 auto 0 auto; position:relative;top:30px;" class="content">
+   <div style="width:1150px; margin: 0 auto 0 auto; position:relative;top:30px;" >
 
 
 

@@ -93,7 +93,7 @@ namespace stat2018
             {
                 //cm.log.Info("OGLR2: wczytywanie danych do tabeli 1");
                 tabelkaGW1 = dr.generuj_dane_do_tabeli_sedziowskiej_2018(int.Parse((string)Session["id_dzialu"]), 1, Date1.Date, Date2.Date, 30, tenPlik);
-                Session["tabelkaGW001"] = tabelkaGW1;
+                Session["tabelka001"] = tabelkaGW1;
                 Tabela1.DataSource = null;
                 Tabela1.DataSourceID = null;
                 Tabela1.DataSource = tabelkaGW1;
@@ -101,7 +101,7 @@ namespace stat2018
 
                 //cm.log.Info("OGLR2: wczytywanie danych do tabeli 2");
                 tabelkaGW2 = dr.generuj_dane_do_tabeli_sedziowskiej_2018(int.Parse((string)Session["id_dzialu"]), 2, Date1.Date, Date2.Date, 30, tenPlik);
-                Session["tabelkaGW002"] = tabelkaGW2;
+                Session["tabelka002"] = tabelkaGW2;
                 Gridview2.DataSource = null;
                 Gridview2.DataSourceID = null;
                 Gridview2.DataSource = tabelkaGW2;
@@ -109,7 +109,7 @@ namespace stat2018
 
                 //cm.log.Info("OGLR2: wczytywanie danych do tabeli 3");
                 tabelkaGW3 = dr.generuj_dane_do_tabeli_sedziowskiej_2018(int.Parse((string)Session["id_dzialu"]), 3, Date1.Date, Date2.Date, 30, tenPlik);
-                Session["tabelkaGW003"] = tabelkaGW3;
+                Session["tabelka003"] = tabelkaGW3;
                 Gridview3.DataSource = null;
                 Gridview3.DataSourceID = null;
                 Gridview3.DataSource = tabelkaGW3;
@@ -118,7 +118,7 @@ namespace stat2018
                 {
                     //cm.log.Info("OGLR2: wczytywanie danych do tabeli 4");
                     tabelkaGW4 = dr.generuj_dane_do_tabeli_wierszy2018(Date1.Date, Date2.Date, (string)Session["id_dzialu"], 4, 1, 8, tenPlik);
-                    Session["tabelkaGW004"] = tabelkaGW4;
+                    Session["tabelka004"] = tabelkaGW4;
 
                     tab_05_w01_c1.Text = tabelkaGW4.Rows[0][1].ToString().Trim();
                     tab_05_w01_c2.Text = tabelkaGW4.Rows[0][2].ToString().Trim();
@@ -135,7 +135,7 @@ namespace stat2018
                     //cm.log.Info("OGLR2: wczytywanie danych do tabeli 5");
                     tabelkaGW5 = dr.generuj_dane_do_tabeli_wierszy2018(Date1.Date, Date2.Date, (string)Session["id_dzialu"], 5, 8, 2, tenPlik);
 
-                    Session["tabelkaGW005"] = tabelkaGW5;
+                    Session["tabelka005"] = tabelkaGW5;
                     tab_06_w01_c01.Text = tabelkaGW5.Rows[0][1].ToString().Trim();
                     tab_06_w02_c01.Text = tabelkaGW5.Rows[1][1].ToString().Trim();
                     tab_06_w03_c01.Text = tabelkaGW5.Rows[2][1].ToString().Trim();
@@ -153,7 +153,7 @@ namespace stat2018
                 {
                     //cm.log.Info("OGLR2: wczytywanie danych do tabeli 6");
                     tabelkaGW6 = dr.generuj_dane_do_tabeli_sedziowskiej_2018(int.Parse((string)Session["id_dzialu"]), 6, Date1.Date, Date2.Date, 30, tenPlik);
-                    Session["tabelkaGW006"] = tabelkaGW6;
+                    Session["tabelka006"] = tabelkaGW6;
                     Gridview6.DataSource = null;
                     Gridview6.DataSourceID = null;
                     Gridview6.DataSource = tabelkaGW6;
@@ -165,10 +165,10 @@ namespace stat2018
                 }
 
                 //cm.log.Info("OGLR2: wczytywanie danych do tabeli 7");
-                Session["tabelkaGW007"] = dr.tworzTabele(int.Parse((string)Session["id_dzialu"]), 4, Date1.Date, Date2.Date, 9, Gridview7, tenPlik);
+                Session["tabelka007"] = dr.tworzTabele(int.Parse((string)Session["id_dzialu"]), 4, Date1.Date, Date2.Date, 9, Gridview7, tenPlik);
 
         //        tabelkaGW7 = dr.generuj_dane_do_tabeli_typ2_new(int.Parse((string)Session["id_dzialu"]), 7, Date1.Date, Date2.Date, 33);
-        //        Session["tabelkaGW007"] = tabelkaGW7;
+        //        Session["tabelka007"] = tabelkaGW7;
         //        Gridview7.DataSource = null;
         //        Gridview7.DataSourceID = null;
         //        Gridview7.DataSource = tabelkaGW7;
@@ -540,7 +540,7 @@ namespace stat2018
                 // pierwsza
 
                 ExcelWorksheet MyWorksheet1 = MyExcel.Workbook.Worksheets[1];
-                DataTable table = (DataTable)Session["tabelkaGW001"];
+                DataTable table = (DataTable)Session["tabelka001"];
                 table.Columns.Remove("id");
                 table.Columns.Remove("id_sedziego");
                 table.Columns.Remove("stanowisko");
@@ -552,7 +552,7 @@ namespace stat2018
 
                 ExcelWorksheet MyWorksheet2 = MyExcel.Workbook.Worksheets[2];
 
-                table = (DataTable)Session["tabelkaGW002"];
+                table = (DataTable)Session["tabelka002"];
                 table.Columns.Remove("id");
                 table.Columns.Remove("id_sedziego");
                 table.Columns.Remove("stanowisko");
@@ -565,7 +565,7 @@ namespace stat2018
 
                 ExcelWorksheet MyWorksheet3 = MyExcel.Workbook.Worksheets[3];
 
-                table = (DataTable)Session["tabelkaGW003"];
+                table = (DataTable)Session["tabelka003"];
                 table.Columns.Remove("id");
                 table.Columns.Remove("id_sedziego");
                 table.Columns.Remove("stanowisko");
@@ -575,7 +575,7 @@ namespace stat2018
                 MyWorksheet3 = tabela.tworzArkuszwExcle(MyExcel.Workbook.Worksheets[3], table, 12, 1, 5, false, false, false, false, false);
 
                 // czwarta statyczna
-                DataTable dane = (DataTable)Session["tabelkaGW005"];
+                DataTable dane = (DataTable)Session["tabelka005"];
                 ExcelWorksheet MyWorksheet4 = MyExcel.Workbook.Worksheets[4];
                 try
                 {
@@ -593,7 +593,7 @@ namespace stat2018
                 }
 
                 //piata statyczna
-                DataTable dane2 = (DataTable)Session["tabelkaGW005"];
+                DataTable dane2 = (DataTable)Session["tabelka005"];
                 ExcelWorksheet MyWorksheet5 = MyExcel.Workbook.Worksheets[5];
                 try
                 {
@@ -610,7 +610,7 @@ namespace stat2018
 
                 ExcelWorksheet MyWorksheet6 = MyExcel.Workbook.Worksheets[6];
 
-                table = (DataTable)Session["tabelkaGW006"];
+                table = (DataTable)Session["tabelka006"];
                 table.Columns.Remove("id");
                 table.Columns.Remove("id_sedziego");
                 table.Columns.Remove("stanowisko");
@@ -623,7 +623,7 @@ namespace stat2018
 
                 ExcelWorksheet MyWorksheet7 = MyExcel.Workbook.Worksheets[7];
 
-                table = (DataTable)Session["tabelkaGW007"];
+                table = (DataTable)Session["tabelka007"];
                 table.Columns.Remove("id");
                 table.Columns.Remove("id_sedziego");
                 table.Columns.Remove("stanowisko");
@@ -743,7 +743,7 @@ namespace stat2018
         {
             if (e.Row.RowType == DataControlRowType.Footer)
             {
-                DataTable table = (DataTable)Session["tabelkaGW001"];
+                DataTable table = (DataTable)Session["tabelka001"];
                 tabela.makeSumRow(table, e);
             }
         }
@@ -782,7 +782,7 @@ namespace stat2018
         {
             if (e.Row.RowType == DataControlRowType.Footer)
             {
-                DataTable table = (DataTable)Session["tabelkaGW002"];
+                DataTable table = (DataTable)Session["tabelka002"];
                 tabela.makeSumRow(table, e);
             }
         }
@@ -791,7 +791,7 @@ namespace stat2018
         {
             if (e.Row.RowType == DataControlRowType.Footer)
             {
-                DataTable table = (DataTable)Session["tabelkaGW003"];
+                DataTable table = (DataTable)Session["tabelka003"];
                 tabela.makeSumRow(table, e);
             }
         }
@@ -810,7 +810,7 @@ namespace stat2018
         {
             if (e.Row.RowType == DataControlRowType.Footer)
             {
-                DataTable table = (DataTable)Session["tabelkaGW007"];
+                DataTable table = (DataTable)Session["tabelka007"];
                 tabela.makeSumRow(table, e);
             }
         }
@@ -819,7 +819,7 @@ namespace stat2018
         {
             if (e.Row.RowType == DataControlRowType.Footer)
             {
-                DataTable table = (DataTable)Session["tabelkaGW006"];
+                DataTable table = (DataTable)Session["tabelka006"];
                 tabela.makeSumRow(table, e);
             }
         }

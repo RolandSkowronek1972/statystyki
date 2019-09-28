@@ -14,7 +14,7 @@ namespace stat2018
             result.Columns.Add(nazwa);
             result.Columns.Add(rodzaj);
 
-            return  getDataTable("SELECT  [ident]  ,[nazwa], '1' as rodzaj FROM wydzialy UNION ALL SELECT ident, opis as nazwa, '2' AS rodzaj FROM  konfig WHERE(klucz = 'kontrolka') UNION ALL SELECT[ident],[nazwa], '3' as rodzaj FROM wydzialy_mss UNION ALL  SELECT ident, opis, '4' AS rodzaj FROM  konfig  WHERE(klucz = 'kof') UNION ALL SELECT ident, opis as nazwa, '5' AS rodzaj FROM  konfig WHERE(klucz = 'wyszukiwarka') UNION ALL SELECT ident, opis as nazwa, '6' AS rodzaj FROM  konfig WHERE(klucz = 'pracownik') ", con_str);
+            return  getDataTable("SELECT  [ident]  ,[nazwa], '1' as rodzaj FROM wydzialy UNION ALL SELECT ident, opis as nazwa, '2' AS rodzaj FROM  konfig WHERE(klucz = 'kontrolka') UNION ALL SELECT[ident],[nazwa], '3' as rodzaj FROM wydzialy_mss UNION ALL  SELECT ident, opis, '4' AS rodzaj FROM  konfig  WHERE(klucz = 'kof') UNION ALL SELECT ident, opis as nazwa, '5' AS rodzaj FROM  konfig WHERE(klucz = 'wyszukiwarka') UNION ALL SELECT ident, opis as nazwa, '6' AS rodzaj FROM  konfig WHERE(klucz = 'pracownik') ", con_str,"");
             /*
             if (miesieczne != null)
             {

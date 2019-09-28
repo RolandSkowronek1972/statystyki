@@ -54,7 +54,7 @@ namespace stat2018
             DataBindX();
         }
 
-        private DataTable GetTable(DateTime dataPoczatkowa, DateTime dataKoncowa, string ident)
+        private DataTable GetTable(DateTime dataPoczatkowa, DateTime dataKoncowa, string ident,string tenPlik)
         {
             DataTable parameters = cm.makeParameterTable();
 
@@ -67,7 +67,7 @@ namespace stat2018
             DataTable dT = new DataTable();
             try
             {
-                dT = cm.getDataTable(kw, cs, parameters);
+                dT = cm.getDataTable(kw, cs, parameters, tenPlik);
                 int ilr = dT.Rows.Count;
             }
             catch (Exception)
@@ -100,7 +100,7 @@ namespace stat2018
             {
                 return;
             }
-            DataTable dane = GetTable(data1.Date, data2.Date, ident);
+            DataTable dane = GetTable(data1.Date, data2.Date, ident,"databind");
             grid.DataSource = dane;
             try
             {

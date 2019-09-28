@@ -15,6 +15,19 @@
     left: 0;
     right: 0;
 }
+ @media print {
+            @page {
+                size: 29cm 21.7cm;
+                margin: 10mm 10mm 10mm 10mm;
+            }
+
+            .horizont {
+                transform: translate(-15mm, 0) scale(0.9);
+                -webkit-transform: translate(-15mm, 0) scale(0.9);
+                -moz-transform: translate(-15mm, 0) scale(0.9);
+            }
+        }
+
 
               </style>
       <script src="Scripts/rls.js"></script>
@@ -54,9 +67,9 @@
     
     </table>
       </div>
-       <div style="width:1150px; margin: 0 auto 0 auto; position:relative;top:30px;" class="content landscape">
+       <div style="width:1150px; margin: 0 auto 0 auto; position:relative;top:30px;" >
            <br />
-               <div>
+               <div class="horizont">
 &nbsp;<asp:Label ID="Label1" runat="server" Text="Informacja statystyczna o ruchu spraw "></asp:Label>
            &nbsp;&nbsp;&nbsp;
            <asp:Label ID="infoLabel1" runat="server" Text="tabela  1 + 2 \/\/\/" Visible="False"></asp:Label>

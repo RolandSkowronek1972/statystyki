@@ -11,24 +11,11 @@
             font-family: Arial;
         }
 
-        .modal {
-            position: fixed;
-            z-index: 999;
-            height: 100%;
-            width: 100%;
-            top: 0;
-            background-color: Black;
-            filter: alpha(opacity=60);
-            opacity: 0.6;
-            -moz-opacity: 0.8;
-        }
-
         .center {
             z-index: 1000;
             margin: 300px auto;
             padding: 10px;
             width: 130px;
-            background-color: White;
             border-radius: 10px;
             filter: alpha(opacity=100);
             opacity: 1;
@@ -70,7 +57,6 @@
                 right: 0;
             }
     </style>
-    
 
     <script src="Scripts/rls.js"></script>
 
@@ -128,10 +114,9 @@
                             <asp:BoundField DataField="id" HeaderText="L.p." SortExpression="id">
                                 <ItemStyle Width="15px" />
                             </asp:BoundField>
-                           
-                         
+
                             <asp:TemplateField HeaderText="imie" SortExpression="imie">
-                               
+
                                 <ItemTemplate>
                                     <asp:Label ID="Label10" runat="server" Text='<%# Eval("nazwisko") %>'></asp:Label>
                                     &nbsp;<asp:Label ID="Label1" runat="server" Text='<%# Bind("imie") %>'></asp:Label>
@@ -145,15 +130,16 @@
                                         <asp:Label ID="Label1001" runat="server" Text='<%# Eval("d_01")%>' CssClass="normal"></asp:Label>
                                     </a>
                                 </ItemTemplate>
-                                <ItemStyle CssClass="col_80_fest center" BackColor="#cccccc" />
+                                <ItemStyle CssClass="col_80_fest center" />
                             </asp:TemplateField>
+
                             <asp:TemplateField HeaderText="d_02" SortExpression="d_02">
                                 <ItemTemplate>
                                     <a href="javascript:openPopup('popup.aspx?sesja=<%# Eval("id_sedziego")+ "!5!2!5"%>')">
                                         <asp:Label ID="Label1002" runat="server" Text='<%# Eval("d_02")%>' CssClass="normal"></asp:Label>
                                     </a>
                                 </ItemTemplate>
-                                <ItemStyle CssClass="col_80_fest center" Width="150px" />
+                                <ItemStyle CssClass="col_80_fest center" Width="150px" BackColor="#ccccccc" />
                             </asp:TemplateField>
                             <asp:TemplateField HeaderText="d_03" SortExpression="d_03">
                                 <ItemTemplate>
@@ -162,7 +148,7 @@
                                     </a>
                                 </ItemTemplate>
                                 <ItemStyle CssClass="col_80_fest center" />
-                            </asp:TemplateField>    
+                            </asp:TemplateField>
                             <asp:TemplateField HeaderText="d_04" SortExpression="d_04">
 
                                 <ItemTemplate>
@@ -221,7 +207,7 @@
                                         <asp:Label ID="Label1010" runat="server" Text='<%# Eval("d_10")%>' CssClass="normal"></asp:Label>
                                     </a>
                                 </ItemTemplate>
-                                <ItemStyle CssClass="col_80_fest center" BackColor="#CCCCCC" />
+                                <ItemStyle CssClass="col_80_fest center" />
                             </asp:TemplateField>
 
                             <asp:TemplateField HeaderText="d_11" SortExpression="d_11">
@@ -232,7 +218,7 @@
                                         <asp:Label ID="Label1011" runat="server" Text='<%# Eval("d_11")%>' CssClass="normal"></asp:Label>
                                     </a>
                                 </ItemTemplate>
-                                <ItemStyle CssClass="col_80_fest center" BackColor="#CCCCCC" />
+                                <ItemStyle CssClass="col_80_fest center" />
                             </asp:TemplateField>
                             <asp:TemplateField HeaderText="d_12" SortExpression="d_12">
                                 <ItemTemplate>
@@ -240,7 +226,7 @@
                                         <asp:Label ID="Label1012" runat="server" Text='<%# Eval("d_12")%>' CssClass="normal"></asp:Label>
                                     </a>
                                 </ItemTemplate>
-                                <ItemStyle CssClass="col_80_fest center" />
+                                <ItemStyle CssClass="col_80_fest center gray" />
                             </asp:TemplateField>
                             <asp:TemplateField HeaderText="d_13" SortExpression="d_13">
                                 <ItemTemplate>
@@ -248,7 +234,7 @@
                                         <asp:Label ID="Label1013" runat="server" Text='<%# Eval("d_13")%>' CssClass="normal"></asp:Label>
                                     </a>
                                 </ItemTemplate>
-                                <ItemStyle CssClass="col_80_fest center" />
+                                <ItemStyle CssClass="col_80_fest center gray" />
                             </asp:TemplateField>
 
                             <asp:TemplateField HeaderText="d_15" SortExpression="d_15">
@@ -348,7 +334,7 @@
                                         <asp:Label ID="Label1024" runat="server" Text='<%# Eval("d_24")%>' CssClass="normal"></asp:Label>
                                     </a>
                                 </ItemTemplate>
-                                <ItemStyle CssClass="col_80_fest center" BackColor="#CCCCCC" />
+                                <ItemStyle CssClass="col_80_fest center" />
                             </asp:TemplateField>
                             <asp:TemplateField HeaderText="d_25" SortExpression="d_25">
                                 <ItemTemplate>
@@ -356,7 +342,7 @@
                                         <asp:Label ID="Label1025" runat="server" Text='<%# Eval("d_25")%>' CssClass="normal"></asp:Label>
                                     </a>
                                 </ItemTemplate>
-                                <ItemStyle CssClass="col_80_fest center" BackColor="#CCCCCC" />
+                                <ItemStyle CssClass="col_80_fest center " />
                             </asp:TemplateField>
 
                             <asp:TemplateField HeaderText="d_26" SortExpression="d_26">
@@ -365,7 +351,7 @@
                                         <asp:Label ID="Label1026" runat="server" Text='<%# Eval("d_26")%>' CssClass="normal"></asp:Label>
                                     </a>
                                 </ItemTemplate>
-                                <ItemStyle CssClass="col_80_fest center" />
+                                <ItemStyle CssClass="col_80_fest center gray" />
                             </asp:TemplateField>
 
                             <asp:TemplateField HeaderText="d_27" SortExpression="d_27">
@@ -374,7 +360,7 @@
                                         <asp:Label ID="Label1027" runat="server" Text='<%# Eval("d_27")%>' CssClass="normal"></asp:Label>
                                     </a>
                                 </ItemTemplate>
-                                <ItemStyle CssClass="col_80_fest center" />
+                                <ItemStyle CssClass="col_80_fest center gray" />
                             </asp:TemplateField>
 
                             <asp:TemplateField HeaderText="d_28" SortExpression="d_28">
@@ -471,7 +457,7 @@
                                         <asp:Label ID="Label1038" runat="server" Text='<%# Eval("d_38")%>' CssClass="normal"></asp:Label>
                                     </a>
                                 </ItemTemplate>
-                                <ItemStyle CssClass="col_80_fest center" BackColor="#ccccccc" />
+                                <ItemStyle CssClass="col_80_fest center"  />
                             </asp:TemplateField>
 
                             <asp:TemplateField HeaderText="d_39" SortExpression="d_39">
@@ -480,7 +466,7 @@
                                         <asp:Label ID="Label1039" runat="server" Text='<%# Eval("d_39")%>' CssClass="normal"></asp:Label>
                                     </a>
                                 </ItemTemplate>
-                                <ItemStyle CssClass="col_80_fest center" />
+                                <ItemStyle CssClass="col_80_fest center " />
                             </asp:TemplateField>
 
                             <asp:TemplateField HeaderText="d_30" SortExpression="d_30">
@@ -489,7 +475,7 @@
                                         <asp:Label ID="Label1040" runat="server" Text='<%# Eval("d_40")%>' CssClass="normal"></asp:Label>
                                     </a>
                                 </ItemTemplate>
-                                <ItemStyle CssClass="col_80_fest center" />
+                                <ItemStyle CssClass="col_80_fest center gray " />
                             </asp:TemplateField>
 
                             <asp:TemplateField HeaderText="d_31" SortExpression="d_31">
@@ -550,7 +536,7 @@
                                         <asp:Label ID="Label1047" runat="server" Text='<%# Eval("d_47")%>' CssClass="normal"></asp:Label>
                                     </a>
                                 </ItemTemplate>
-                                <ItemStyle CssClass="col_80_fest center" BackColor="#ccccccc" />
+                                <ItemStyle CssClass="col_80_fest center"  />
                             </asp:TemplateField>
 
                             <asp:TemplateField HeaderText="d_38" SortExpression="d_38">
@@ -568,7 +554,7 @@
                                         <asp:Label ID="Label1049" runat="server" Text='<%# Eval("d_49")%>' CssClass="normal"></asp:Label>
                                     </a>
                                 </ItemTemplate>
-                                <ItemStyle CssClass="col_80_fest center" />
+                                <ItemStyle CssClass="col_80_fest center " />
                             </asp:TemplateField>
 
                             <asp:TemplateField HeaderText="d_50" SortExpression="d_50">
@@ -577,7 +563,7 @@
                                         <asp:Label ID="Label1050" runat="server" Text='<%# Eval("d_50")%>' CssClass="normal"></asp:Label>
                                     </a>
                                 </ItemTemplate>
-                                <ItemStyle CssClass="col_80_fest center" BackColor="#cccccc" />
+                                <ItemStyle CssClass="col_80_fest center gray" />
                             </asp:TemplateField>
 
                             <asp:TemplateField HeaderText="d_51" SortExpression="d_51">
@@ -603,7 +589,7 @@
                                         <asp:Label ID="Label1053" runat="server" Text='<%# Eval("d_53")%>' CssClass="normal"></asp:Label>
                                     </a>
                                 </ItemTemplate>
-                                <ItemStyle CssClass="col_80_fest center" />
+                                <ItemStyle CssClass="col_80_fest center gray" />
                             </asp:TemplateField>
 
                             <asp:TemplateField HeaderText="d_54" SortExpression="d_54">
@@ -621,7 +607,7 @@
                                         <asp:Label ID="Label1055" runat="server" Text='<%# Eval("d_55")%>' CssClass="normal"></asp:Label>
                                     </a>
                                 </ItemTemplate>
-                                <ItemStyle CssClass="col_80_fest center" BackColor="#cccccc" />
+                                <ItemStyle CssClass="col_80_fest center" />
                             </asp:TemplateField>
 
                             <asp:TemplateField HeaderText="d_56" SortExpression="d_56">
@@ -630,7 +616,7 @@
                                         <asp:Label ID="Label1056" runat="server" Text='<%# Eval("d_56")%>' CssClass="normal"></asp:Label>
                                     </a>
                                 </ItemTemplate>
-                                <ItemStyle CssClass="col_80_fest center" BackColor="#cccccc" />
+                                <ItemStyle CssClass="col_80_fest center gray" />
                             </asp:TemplateField>
 
                             <asp:TemplateField HeaderText="d_57" SortExpression="d_57">
@@ -676,7 +662,7 @@
                                         <asp:Label ID="Label1061" runat="server" Text='<%# Eval("d_61")%>' CssClass="normal"></asp:Label>
                                     </a>
                                 </ItemTemplate>
-                                <ItemStyle CssClass="col_80_fest center" />
+                                <ItemStyle CssClass="col_80_fest center gray" />
                             </asp:TemplateField>
                             <asp:TemplateField HeaderText="d_52" SortExpression="d_52">
                                 <ItemTemplate>
@@ -684,7 +670,7 @@
                                         <asp:Label ID="Label1062" runat="server" Text='<%# Eval("d_62")%>' CssClass="normal"></asp:Label>
                                     </a>
                                 </ItemTemplate>
-                                <ItemStyle CssClass="col_80_fest center" />
+                                <ItemStyle CssClass="col_80_fest center gray" />
                             </asp:TemplateField>
                             <asp:TemplateField HeaderText="d_53" SortExpression="d_53">
                                 <ItemTemplate>
@@ -710,7 +696,7 @@
                                         <asp:Label ID="Label1065" runat="server" Text='<%# Eval("d_65")%>' CssClass="normal"></asp:Label>
                                     </a>
                                 </ItemTemplate>
-                                <ItemStyle CssClass="col_80_fest center" BackColor="#cccccc" />
+                                <ItemStyle CssClass="col_80_fest center" />
                             </asp:TemplateField>
 
                             <asp:TemplateField HeaderText="d_56" SortExpression="d_56">
@@ -773,7 +759,7 @@
                                         <asp:Label ID="Label1072" runat="server" Text='<%# Eval("d_72")%>' CssClass="normal"></asp:Label>
                                     </a>
                                 </ItemTemplate>
-                                <ItemStyle CssClass="col_80_fest center" />
+                                <ItemStyle CssClass="col_80_fest center gray" />
                             </asp:TemplateField>
                             <asp:TemplateField HeaderText="d_53" SortExpression="d_53">
                                 <ItemTemplate>
@@ -844,7 +830,7 @@
                                         <asp:Label ID="Label1080" runat="server" Text='<%# Eval("d_80")%>' CssClass="normal"></asp:Label>
                                     </a>
                                 </ItemTemplate>
-                                <ItemStyle CssClass="col_80_fest center" BackColor="#cccccc" />
+                                <ItemStyle CssClass="col_80_fest center" />
                             </asp:TemplateField>
 
                             <asp:TemplateField HeaderText="d_51" SortExpression="d_51">
@@ -854,7 +840,7 @@
                                         <asp:Label ID="Label1081" runat="server" Text='<%# Eval("d_81")%>' CssClass="normal"></asp:Label>
                                     </a>
                                 </ItemTemplate>
-                                <ItemStyle CssClass="col_80_fest center" />
+                                <ItemStyle CssClass="col_80_fest center gray" />
                             </asp:TemplateField>
                             <asp:TemplateField HeaderText="d_52" SortExpression="d_52">
                                 <ItemTemplate>
@@ -943,7 +929,7 @@
                                         <asp:Label ID="Label1091" runat="server" Text='<%# Eval("d_91")%>' CssClass="normal"></asp:Label>
                                     </a>
                                 </ItemTemplate>
-                                <ItemStyle CssClass="col_80_fest center" BackColor="#cccccc" />
+                                <ItemStyle CssClass="col_80_fest center" />
                             </asp:TemplateField>
 
                             <asp:TemplateField HeaderText="d_92" SortExpression="d_92">
@@ -1013,7 +999,7 @@
                                         <asp:Label ID="Label1093" runat="server" Text='<%# Eval("d_99")%>' CssClass="normal"></asp:Label>
                                     </a>
                                 </ItemTemplate>
-                                <ItemStyle CssClass="col_80_fest center" BackColor="#dddddd" />
+                                <ItemStyle CssClass="col_80_fest center"  />
                             </asp:TemplateField>
 
                             <asp:TemplateField HeaderText="d_100" SortExpression="d_100">
@@ -1058,7 +1044,7 @@
                                         <asp:Label ID="Label1104" runat="server" Text='<%# Eval("d_104")%>' CssClass="normal"></asp:Label>
                                     </a>
                                 </ItemTemplate>
-                                <ItemStyle CssClass="col_80_fest center" />
+                                <ItemStyle CssClass="col_80_fest center gray" />
                             </asp:TemplateField>
                             <asp:TemplateField HeaderText="d_104" SortExpression="d_104">
                                 <ItemTemplate>
@@ -1066,7 +1052,7 @@
                                         <asp:Label ID="Label1105" runat="server" Text='<%# Eval("d_105")%>' CssClass="normal"></asp:Label>
                                     </a>
                                 </ItemTemplate>
-                                <ItemStyle CssClass="col_80_fest center" />
+                                <ItemStyle CssClass="col_80_fest center " />
                             </asp:TemplateField>
                             <asp:TemplateField HeaderText="d_104" SortExpression="d_104">
                                 <ItemTemplate>
@@ -1094,7 +1080,7 @@
                                 </ItemTemplate>
                                 <ItemStyle CssClass="col_80_fest center" />
                             </asp:TemplateField>
-                                 <asp:TemplateField HeaderText="d_104" SortExpression="d_104">
+                            <asp:TemplateField HeaderText="d_104" SortExpression="d_104">
                                 <ItemTemplate>
                                     <a href="javascript:openPopup('popup.aspx?sesja=<%# Eval("id_sedziego")+ "!5!109!5"%>')">
                                         <asp:Label ID="Label1109" runat="server" Text='<%# Eval("d_109")%>' CssClass="normal"></asp:Label>
@@ -1103,7 +1089,7 @@
                                 <ItemStyle CssClass="col_80_fest center" />
                             </asp:TemplateField>
                         </Columns>
-                        <FooterStyle HorizontalAlign="Center" BackColor="#CCCCCC" CssClass="gray" />
+                        <FooterStyle HorizontalAlign="Center" CssClass="gray" />
                     </asp:GridView>
 
                     <asp:Image ID="imgLoader" runat="server" ImageUrl="~/img/ajax-loader.gif" />

@@ -406,6 +406,8 @@ E:\priv\my Projects\prv\Statystyki_2018\Statystyki_2018\obj\Debug\stat2018.dll.l
 E:\priv\my Projects\prv\Statystyki_2018\Statystyki_2018\obj\Debug\Statystyki_2018.csproj.CoreCompileInputs.cache
 E:\priv\my Projects\prv\Statystyki_2018\Statystyki_2018\obj\Debug\stat2018.dll
 E:\priv\my Projects\prv\Statystyki_2018\Statystyki_2018\obj\Debug\stat2018.pdb
+C:\myProjects\prv\statystyki\Statystyki_2018\obj\Debug\stat2018.dll.licenses
+C:\myProjects\prv\statystyki\Statystyki_2018\obj\Debug\Statystyki_2018.csproj.CoreCompileInputs.cache
 C:\myProjects\prv\statystyki\Statystyki_2018\bin\roslyn\csc.exe
 C:\myProjects\prv\statystyki\Statystyki_2018\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
 C:\myProjects\prv\statystyki\Statystyki_2018\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
@@ -506,8 +508,6 @@ C:\myProjects\prv\statystyki\Statystyki_2018\bin\de\DevExpress.Sparkline.v17.1.C
 C:\myProjects\prv\statystyki\Statystyki_2018\bin\es\DevExpress.Sparkline.v17.1.Core.resources.dll
 C:\myProjects\prv\statystyki\Statystyki_2018\bin\ja\DevExpress.Sparkline.v17.1.Core.resources.dll
 C:\myProjects\prv\statystyki\Statystyki_2018\bin\ru\DevExpress.Sparkline.v17.1.Core.resources.dll
-C:\myProjects\prv\statystyki\Statystyki_2018\obj\Debug\stat2018.dll.licenses
-C:\myProjects\prv\statystyki\Statystyki_2018\obj\Debug\Statystyki_2018.csproj.CoreCompileInputs.cache
 C:\myProjects\prv\statystyki\Statystyki_2018\obj\Debug\Statystyki_2018.csproj.CopyComplete
 C:\myProjects\prv\statystyki\Statystyki_2018\obj\Debug\stat2018.dll
 C:\myProjects\prv\statystyki\Statystyki_2018\obj\Debug\stat2018.pdb

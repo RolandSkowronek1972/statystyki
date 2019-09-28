@@ -71,7 +71,7 @@ namespace stat2018
             }
             catch
             {
-                Server.Transfer("default.aspx");
+                //  Server.Transfer("default.aspx");
             }
         }// end of Page_Load
 
@@ -90,24 +90,15 @@ namespace stat2018
         protected void odswiez()
         {
             string yyx = (string)Session["id_dzialu"];
-
-            string txt = string.Empty; //
-                                       //   cl.deleteRowTable();
-        //    tabela_1();
-            txt = txt + cl.clear_maim_db();
             try
             {
-                //cm.log.Info(tenPlik+ "ładowanie danych do tabeli 2");
-                DataTable tabelka01 = dr.generuj_dane_do_tabeli_wierszy2018(Date1.Date, Date2.Date, (string)Session["id_dzialu"], 2, 20, 20, tenPlik);
+                cm.log.Info(tenPlik + "ładowanie danych do tabeli 100");
+                DataTable tabelka01 = dr.generuj_dane_do_tabeli_wierszy2018(Date1.Date, Date2.Date, (string)Session["id_dzialu"], 100, 20, 20, tenPlik);
                 Session["tabelka100"] = tabelka01;
-
-                //cm.log.Info(tenPlik + "ładowanie danych do tabeli 1");
-                string info = dr.generuj_dane_do_tabeli_(int.Parse((string)Session["id_dzialu"]), 1, Date1.Date, Date2.Date, tenPlik);
-                //cm.log.Info(tenPlik + "Koniec ładowania danych do tabeli 1 "+ info);
             }
             catch (Exception ex)
             {
-                cm.log.Error(tenPlik + " " + ex.Message);
+                cm.log.Error(tenPlik + " tabela 100  " + ex.Message);
             }
             tabela_1();
             tabela_2();
@@ -119,13 +110,16 @@ namespace stat2018
             tabela_8();
             tabela_9();
             tabela_10();
+            gwTabela1.DataBind();
+            gwTabela2.DataBind();
+            gwTabela3.DataBind();
+            gwTabela5.DataBind();
+            gwTabela6.DataBind();
+            GwTabela7.DataBind();
+            GwTable10.DataBind();
+
             // dopasowanie opisów
             makeLabels();
-
-            //GridView1.DataBind();
-
-        //    txt = txt + "GridView1 liczba wierszy: " + GridView1.Rows.Count.ToString() + Environment.NewLine;
-
             try
             {
                 Label11.Visible = cl.debug(int.Parse(yyx));
@@ -143,7 +137,6 @@ namespace stat2018
                 infoLabel5.Visible = false;
             }
 
-            Label11.Text = txt;
             Label3.Text = cl.nazwaSadu((string)Session["id_dzialu"]);
         }
 
@@ -208,16 +201,28 @@ namespace stat2018
             dT_06.Columns.Add("Column6", typeof(string));
 
             dT_01.Clear();
-            dT_01.Rows.Add(new Object[] { "1", "C", "1", "1" });
-            dT_01.Rows.Add(new Object[] { "1", "Ns", "1", "1" });
-            dT_01.Rows.Add(new Object[] { "1", "Nsm", "1", "1" });
-            dT_01.Rows.Add(new Object[] { "1", "Co", "1", "1" });
-            dT_01.Rows.Add(new Object[] { "1", "Nmo", "1", "1" });
-            dT_01.Rows.Add(new Object[] { "1", "Cps", "1", "1" });
-            dT_01.Rows.Add(new Object[] { "1", "Nkd", "1", "1" });
-            dT_01.Rows.Add(new Object[] { "1", "Łącznie", "1", "1" });
-            dT_01.Rows.Add(new Object[] { "2", "Ruch spraw", "1", "2" });
-            dT_01.Rows.Add(new Object[] { "2", "sprawy wg. repertoriów lub wykazów", "8", "1" });
+            dT_01.Rows.Add(new Object[] { "1", "p", "1", "1" });
+            dT_01.Rows.Add(new Object[] { "1", "Np", "1", "1" });
+            dT_01.Rows.Add(new Object[] { "1", "Po", "1", "1" });
+            dT_01.Rows.Add(new Object[] { "1", "Razem z zakresu prawa pracy", "1", "1" });
+
+            dT_01.Rows.Add(new Object[] { "2", "Imię i nazwisko sędziego", "1", "2" });
+            dT_01.Rows.Add(new Object[] { "2", "Wpływ", "1", "2" });
+            dT_01.Rows.Add(new Object[] { "2", "Ilość sesji", "1", "2" });
+            dT_01.Rows.Add(new Object[] { "2", "Załatwienia", "4", "1" });
+
+            string strMonthName = CultureInfo.CurrentCulture.DateTimeFormat.GetMonthName(Date2.Date.Month);
+            int last_day = DateTime.DaysInMonth(Date2.Date.Year, Date2.Date.Month);
+            if (((Date1.Date.Day == 1) && (Date2.Date.Day == last_day)) && ((Date1.Date.Month == Date2.Date.Month)))
+            {
+                // cały miesiąc
+                dT_01.Rows.Add(new Object[] { "3", "Informacja z ruchu spraw za miesiąc " + strMonthName + " " + Date2.Date.Year.ToString() + " roku.", "7", "1" });
+            }
+            else
+            {
+                dT_01.Rows.Add(new Object[] { "3", "Informacja z ruchu spraw za okres od " + Date1.Text + " do  " + Date2.Text, "7", "1" });
+            }
+
             Session["header_01"] = dT_01;
 
             #endregion tabela  1 (wierszowa)
@@ -395,7 +400,6 @@ namespace stat2018
             #endregion tabela  5 ()
         }
 
-    
         protected void StopkaTabeliGridview1(object sender, GridViewRowEventArgs e)
         {
             if (e.Row.RowType == DataControlRowType.Footer)
@@ -624,17 +628,11 @@ namespace stat2018
                 if (((Date1.Date.Day == 1) && (Date2.Date.Day == last_day)) && ((Date1.Date.Month == Date2.Date.Month)))
                 {
                     // cały miesiąc
-                    tabela2Label.Text = "Informacja z ruchu spraw za miesiąc " + strMonthName + " " + Date2.Date.Year.ToString() + " roku.";
-                    //         Label17.Text = "Informacja z wpływu spraw za miesiąc " + strMonthName + " " + Date2.Date.Year.ToString() + " roku.";
                     Label2.Text = "Ewidencja spraw odroczonych  za miesiąc " + strMonthName + " " + Date2.Date.Year.ToString() + " roku.";
-                    //     Label15.Text = "Załatwienia na koniec miesiąca " + strMonthName + " " + Date2.Date.Year.ToString() + " roku.";
                 }
                 else
                 {
-                    tabela2Label.Text = "Informacja z ruchu spraw za okres od " + Date1.Text + " do  " + Date2.Text;
-                    //       Label17.Text = "Informacja z wpływu spraw za okres od" + Date1.Text + " do  " + Date2.Text;
                     Label2.Text = "Ewidencja spraw odroczonych za okres od " + Date1.Text + " do  " + Date2.Text;
-                    //    Label15.Text = "Załatwienia za okres od " + Date1.Text + " do  " + Date2.Text;
                 }
             }
             catch
@@ -782,31 +780,6 @@ namespace stat2018
             }//end of using
         }
 
-        protected void tabela_1alt()
-        {
-            string idDzialu = (string)Session["id_dzialu"];
-            if (cl.debug(int.Parse(idDzialu)))
-            {
-                //cm.log.Info(tenPlik + ": rozpoczęcie tworzenia tabeli 1");
-            }
-
-            try
-            {
-                //cm.log.Info(tenPlik + "ładowanie danych do tabeli 1");
-                string info = dr.generuj_dane_do_tabeli_(int.Parse((string)Session["id_dzialu"]), 1, Date1.Date, Date2.Date, tenPlik);
-                //cm.log.Info(tenPlik + "Koniec ładowania danych do tabeli 1 "+ info);
-            }
-            catch (Exception ex)
-            {
-                cm.log.Error(tenPlik + " " + ex.Message);
-            }
-
-            DataTable tabelka01 = dr.generuj_dane_do_tabeli_sedziowskiej_2018(int.Parse(idDzialu), 1, Date1.Date, Date2.Date, 6, tenPlik);
-            Session["tabelka001"] = tabelka01;
-
-            //  gwTabela1.DataBind();
-        }
-
         protected void tabela_1()
         {
             if (Session["id_dzialu"] == null)
@@ -816,16 +789,22 @@ namespace stat2018
             string idDzialu = (string)Session["id_dzialu"];
             if (cl.debug(int.Parse(idDzialu)))
             {
-                //cm.log.Info(tenPlik + ": rozpoczęcie tworzenia tabeli 1");
+                cm.log.Info(tenPlik + ": rozpoczęcie tworzenia tabeli 1");
             }
-            DataTable tabelka01 = dr.generuj_dane_do_tabeli_sedziowskiej_2018(int.Parse(idDzialu), 1, Date1.Date, Date2.Date, 15, tenPlik);
-            Session["tabelka001"] = tabelka01;
-            gwTabela1.DataSource = null;
-            gwTabela1.DataSourceID = null;
-            gwTabela1.DataSource = tabelka01;
-            gwTabela1.DataBind();
+            try
+            {
+                DataTable tabelka01 = dr.generuj_dane_do_tabeli_sedziowskiej_2018(int.Parse(idDzialu), 1, Date1.Date, Date2.Date, 15, tenPlik);
+                Session["tabelka001"] = tabelka01;
+                gwTabela1.DataSource = null;
+                gwTabela1.DataSourceID = null;
+                gwTabela1.DataSource = tabelka01;
+                gwTabela1.DataBind();
+            }
+            catch (Exception ex)
+            {
+                cm.log.Error(tenPlik + " tabela 1 " + ex.Message);
+            }
         }
-
 
         protected void tabela_2()
         {
@@ -834,12 +813,19 @@ namespace stat2018
             {
                 cm.log.Info(tenPlik + ": rozpoczęcie tworzenia tabeli 2");
             }
-            DataTable tabelka01 = dr.generuj_dane_do_tabeli_sedziowskiej_2018(int.Parse(idDzialu), 2, Date1.Date, Date2.Date, 11, tenPlik);
-            Session["tabelka002"] = tabelka01;
-            gwTabela2.DataSource = null;
-            gwTabela2.DataSourceID = null;
-            gwTabela2.DataSource = tabelka01;
-            gwTabela2.DataBind();
+            try
+            {
+                DataTable tabelka01 = dr.generuj_dane_do_tabeli_sedziowskiej_2018(int.Parse(idDzialu), 2, Date1.Date, Date2.Date, 13, tenPlik);
+                Session["tabelka002"] = tabelka01;
+                gwTabela2.DataSource = null;
+                gwTabela2.DataSourceID = null;
+                gwTabela2.DataSource = tabelka01;
+                gwTabela2.DataBind();
+            }
+            catch (Exception ex)
+            {
+                cm.log.Error(tenPlik + " tabela 2 " + ex.Message);
+            }
         }
 
         protected void tabela_3()
@@ -849,12 +835,19 @@ namespace stat2018
             {
                 //cm.log.Info(tenPlik + ": rozpoczęcie tworzenia tabeli 1");
             }
-            DataTable tabelka01 = dr.generuj_dane_do_tabeli_sedziowskiej_2018(int.Parse(idDzialu), 3, Date1.Date, Date2.Date, 3, tenPlik);
-            Session["tabelka003"] = tabelka01;
-            gwTabela3.DataSource = null;
-            gwTabela3.DataSourceID = null;
-            gwTabela3.DataSource = tabelka01;
-            gwTabela3.DataBind();
+            try
+            {
+                DataTable tabelka01 = dr.generuj_dane_do_tabeli_sedziowskiej_2018(int.Parse(idDzialu), 3, Date1.Date, Date2.Date, 13, tenPlik);
+                Session["tabelka003"] = tabelka01;
+                gwTabela3.DataSource = null;
+                gwTabela3.DataSourceID = null;
+                gwTabela3.DataSource = tabelka01;
+                gwTabela3.DataBind();
+            }
+            catch (Exception ex)
+            {
+                cm.log.Error(tenPlik + " tabela 3 " + ex.Message);
+            }
         }
 
         protected void tabela_4()
@@ -865,10 +858,16 @@ namespace stat2018
             {
                 cm.log.Info(tenPlik + ": rozpoczęcie tworzenia tabeli 4");
             }
-
-            DataTable tabelka01 = dr.generuj_dane_do_tabeli_wierszy2018(Date1.Date, Date2.Date, (string)Session["id_dzialu"], 4, 4, 2, tenPlik);
-            Session["tabelka004"] = tabelka01;
-            pisz("tab_4_", 4, 4, tabelka01);
+            try
+            {
+                DataTable tabelka01 = dr.generuj_dane_do_tabeli_wierszy2018(Date1.Date, Date2.Date, (string)Session["id_dzialu"], 4, 4, 4, tenPlik);
+                Session["tabelka004"] = tabelka01;
+                pisz("tab_4_", 4, 4, tabelka01);
+            }
+            catch (Exception ex)
+            {
+                cm.log.Error(tenPlik + " tabela 4 " + ex.Message);
+            }
         }
 
         protected void tabela_5()
@@ -878,12 +877,19 @@ namespace stat2018
             {
                 cm.log.Info(tenPlik + ": rozpoczęcie tworzenia tabeli 5");
             }
-            DataTable tabelka01 = dr.generuj_dane_do_tabeli_sedziowskiej_2018(int.Parse(idDzialu), 5, Date1.Date, Date2.Date, 2, tenPlik);
+            DataTable tabelka01 = dr.generuj_dane_do_tabeli_sedziowskiej_2018(int.Parse(idDzialu), 5, Date1.Date, Date2.Date, 12, tenPlik);
             Session["tabelka005"] = tabelka01;
-            gwTabela5.DataSource = null;
-            gwTabela5.DataSourceID = null;
-            gwTabela5.DataSource = tabelka01;
-            gwTabela5.DataBind();
+            try
+            {
+                gwTabela5.DataSource = null;
+                gwTabela5.DataSourceID = null;
+                gwTabela5.DataSource = tabelka01;
+                gwTabela5.DataBind();
+            }
+            catch (Exception ex)
+            {
+                cm.log.Error(tenPlik + " tabela 5 " + ex.Message);
+            }
         }
 
         protected void tabela_6()
@@ -893,12 +899,19 @@ namespace stat2018
             {
                 cm.log.Info(tenPlik + ": rozpoczęcie tworzenia tabeli 6");
             }
-            DataTable tabelka01 = dr.generuj_dane_do_tabeli_sedziowskiej_2018(int.Parse(idDzialu), 6, Date1.Date, Date2.Date, 12, tenPlik);
-            Session["tabelka006"] = tabelka01;
-            gwTabela6.DataSource = null;
-            gwTabela6.DataSourceID = null;
-            gwTabela6.DataSource = tabelka01;
-            gwTabela6.DataBind();
+            try
+            {
+                DataTable tabelka01 = dr.generuj_dane_do_tabeli_sedziowskiej_2018(int.Parse(idDzialu), 6, Date1.Date, Date2.Date, 12, tenPlik);
+                Session["tabelka006"] = tabelka01;
+                gwTabela6.DataSource = null;
+                gwTabela6.DataSourceID = null;
+                gwTabela6.DataSource = tabelka01;
+                gwTabela6.DataBind();
+            }
+            catch (Exception ex)
+            {
+                cm.log.Error(tenPlik + " tabela 6 " + ex.Message);
+            }
         }
 
         protected void tabela_7()
@@ -908,12 +921,19 @@ namespace stat2018
             {
                 cm.log.Info(tenPlik + ": rozpoczęcie tworzenia tabeli 7");
             }
-            DataTable tabelka01 = dr.generuj_dane_do_tabeli_sedziowskiej_2018(int.Parse(idDzialu), 7, Date1.Date, Date2.Date, 12, tenPlik);
-            Session["tabelka007"] = tabelka01;
-            GwTabela7.DataSource = null;
-            GwTabela7.DataSourceID = null;
-            GwTabela7.DataSource = tabelka01;
-            GwTabela7.DataBind();
+            try
+            {
+                DataTable tabelka01 = dr.generuj_dane_do_tabeli_sedziowskiej_2018(int.Parse(idDzialu), 7, Date1.Date, Date2.Date, 22, tenPlik);
+                Session["tabelka007"] = tabelka01;
+                GwTabela7.DataSource = null;
+                GwTabela7.DataSourceID = null;
+                GwTabela7.DataSource = tabelka01;
+                GwTabela7.DataBind();
+            }
+            catch (Exception ex)
+            {
+                cm.log.Error(tenPlik + " tabela 7 " + ex.Message);
+            }
         }
 
         private void tabela_8()
@@ -921,12 +941,18 @@ namespace stat2018
             string idDzialu = (string)Session["id_dzialu"];
             if (cl.debug(int.Parse(idDzialu)))
             {
-                cm.log.Info(tenPlik + ": rozpoczęcie tworzenia tabeli 4");
+                cm.log.Info(tenPlik + ": rozpoczęcie tworzenia tabeli 8");
             }
-
-            DataTable tabelka01 = dr.generuj_dane_do_tabeli_wierszy2018(Date1.Date, Date2.Date, (string)Session["id_dzialu"], 8, 15, 2, tenPlik);
-            Session["tabelka008"] = tabelka01;
-            pisz("tab_8_", 4, 4, tabelka01);
+            try
+            {
+                DataTable tabelka01 = dr.generuj_dane_do_tabeli_wierszy2018(Date1.Date, Date2.Date, (string)Session["id_dzialu"], 8, 13, 3, tenPlik);
+                Session["tabelka008"] = tabelka01;
+                pisz("tab_8_",12, 2, tabelka01);
+            }
+            catch (Exception ex)
+            {
+                cm.log.Error(tenPlik + " tabela 8 " + ex.Message);
+            }
         }
 
         private void tabela_9()
@@ -936,10 +962,16 @@ namespace stat2018
             {
                 cm.log.Info(tenPlik + ": rozpoczęcie tworzenia tabeli 4");
             }
-
-            DataTable tabelka01 = dr.generuj_dane_do_tabeli_wierszy2018(Date1.Date, Date2.Date, (string)Session["id_dzialu"], 9, 1, 15, tenPlik);
-            Session["tabelka009"] = tabelka01;
-            pisz("tab_9_", 1, 15, tabelka01);
+            try
+            {
+                DataTable tabelka01 = dr.generuj_dane_do_tabeli_wierszy2018(Date1.Date, Date2.Date, (string)Session["id_dzialu"], 9, 2, 15, tenPlik);
+                Session["tabelka009"] = tabelka01;
+                pisz("tab_9_", 2, 15, tabelka01);
+            }
+            catch (Exception ex)
+            {
+                cm.log.Error(tenPlik + " tabela 9 " + ex.Message);
+            }
         }
 
         private void tabela_10()
@@ -949,12 +981,19 @@ namespace stat2018
             {
                 cm.log.Info(tenPlik + ": rozpoczęcie tworzenia tabeli 10");
             }
-            DataTable tabelka01 = dr.generuj_dane_do_tabeli_sedziowskiej_2018(int.Parse(idDzialu), 10, Date1.Date, Date2.Date, 22, tenPlik);
-            Session["tabelka010"] = tabelka01;
-            GwTable10.DataSource = null;
-            GwTable10.DataSourceID = null;
-            GwTable10.DataSource = tabelka01;
-            GwTable10.DataBind();
+            try
+            {
+                DataTable tabelka01 = dr.generuj_dane_do_tabeli_sedziowskiej_2018(int.Parse(idDzialu), 10, Date1.Date, Date2.Date,12, tenPlik);
+                Session["tabelka010"] = tabelka01;
+                GwTable10.DataSource = null;
+                GwTable10.DataSourceID = null;
+                GwTable10.DataSource = tabelka01;
+                GwTable10.DataBind();
+            }
+            catch (Exception ex)
+            {
+                cm.log.Error(tenPlik + " tabela 9 " + ex.Message);
+            }
         }
 
         #endregion generowane danych do tabel

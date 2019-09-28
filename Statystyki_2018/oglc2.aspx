@@ -61,7 +61,7 @@
      </div>  
     
 
-   <div style="width:1150px; margin: 0 auto 0 auto; position:relative;top:60px;" class="content">
+   <div style="width:1150px; margin: 0 auto 0 auto; position:relative;top:60px;" >
 
 
 
@@ -103,7 +103,7 @@
                  <asp:TemplateField HeaderText="d_02" SortExpression="d_02">
                
                 <ItemTemplate>
-                      <a href="javascript:openPopup('popup.aspx?sesja=<%# Eval("id_sedziego")+ "!"+Eval("id_tabeli") +"!1!2"%>')"><asp:Label ID="Label201" runat="server" Text='<%# Eval("d_01")%>' CssClass="normal"></asp:Label> </a>
+                      <a href="javascript:openPopup('popup.aspx?sesja=<%# Eval("id_sedziego")+ "!"+Eval("id_tabeli") +"!1!7"%>')"><asp:Label ID="Label201" runat="server" Text='<%# Eval("d_01")%>' CssClass="normal"></asp:Label> </a>
     
                  </ItemTemplate>
                   <ItemStyle  CssClass="col_50" />
@@ -112,7 +112,7 @@
             <asp:TemplateField HeaderText="d_02" SortExpression="d_02">
               
                 <ItemTemplate>
-                        <a href="javascript:openPopup('popup.aspx?sesja=<%# Eval("id_sedziego")+ "!"+Eval("id_tabeli") +"!2!2"%>')"><asp:Label ID="Label204" runat="server" Text='<%# Eval("d_02")%>' CssClass="normal"></asp:Label> </a>
+                        <a href="javascript:openPopup('popup.aspx?sesja=<%# Eval("id_sedziego")+ "!"+Eval("id_tabeli") +"!2!7"%>')"><asp:Label ID="Label204" runat="server" Text='<%# Eval("d_02")%>' CssClass="normal"></asp:Label> </a>
              
                 </ItemTemplate>
                
@@ -138,56 +138,56 @@
             <asp:TemplateField HeaderText="d_05" SortExpression="d_05">
                
                 <ItemTemplate>
-                 <a href="javascript:openPopup('popup.aspx?sesja=<%# Eval("id_sedziego")+ "!"+Eval("id_tabeli") +"!5!2"%>')"><asp:Label ID="Label205" runat="server" Text='<%# Eval("d_05")%>' CssClass="normal"></asp:Label> </a>
+                 <a href="javascript:openPopup('popup.aspx?sesja=<%# Eval("id_sedziego")+ "!"+Eval("id_tabeli") +"!5!7"%>')"><asp:Label ID="Label205" runat="server" Text='<%# Eval("d_05")%>' CssClass="normal"></asp:Label> </a>
                 </ItemTemplate>
                   <ItemStyle  CssClass="col_50" />
             </asp:TemplateField>
             <asp:TemplateField HeaderText="d_06" SortExpression="d_06">
                
                 <ItemTemplate>
-                        <a href="javascript:openPopup('popup.aspx?sesja=<%# Eval("id_sedziego")+ "!"+Eval("id_tabeli") +"!6!2"%>')"><asp:Label ID="Label206" runat="server" Text='<%# Eval("d_06")%>' CssClass="normal"></asp:Label> </a>
+                        <a href="javascript:openPopup('popup.aspx?sesja=<%# Eval("id_sedziego")+ "!"+Eval("id_tabeli") +"!6!7"%>')"><asp:Label ID="Label206" runat="server" Text='<%# Eval("d_06")%>' CssClass="normal"></asp:Label> </a>
                 </ItemTemplate>
                   <ItemStyle  CssClass="col_50" />
             </asp:TemplateField>
 
             <asp:TemplateField HeaderText="d_07" SortExpression="d_07">
                 <ItemTemplate>
-                      <a href="javascript:openPopup('popup.aspx?sesja=<%# Eval("id_sedziego")+ "!"+Eval("id_tabeli") +"!7!2"%>')"><asp:Label ID="Label207" runat="server" Text='<%# Eval("d_07")%>' CssClass="normal"></asp:Label> </a>
+                      <a href="javascript:openPopup('popup.aspx?sesja=<%# Eval("id_sedziego")+ "!"+Eval("id_tabeli") +"!7!7"%>')"><asp:Label ID="Label207" runat="server" Text='<%# Eval("d_07")%>' CssClass="normal"></asp:Label> </a>
                 </ItemTemplate>
                   <ItemStyle  CssClass="col_50" />
             </asp:TemplateField>
         
             <asp:TemplateField HeaderText="d_07" SortExpression="d_07">
                 <ItemTemplate>
-                    <a href="javascript:openPopup('popup.aspx?sesja=<%# Eval("id_sedziego")+ "!"+Eval("id_tabeli") +"!8!2"%>')"><asp:Label ID="Label208" runat="server" Text='<%# Eval("d_08")%>' CssClass="normal"></asp:Label> </a>    
+                    <a href="javascript:openPopup('popup.aspx?sesja=<%# Eval("id_sedziego")+ "!"+Eval("id_tabeli") +"!8!7"%>')"><asp:Label ID="Label208" runat="server" Text='<%# Eval("d_08")%>' CssClass="normal"></asp:Label> </a>    
                 </ItemTemplate>
                   <ItemStyle  CssClass="col_50" />
             </asp:TemplateField>
 
             <asp:TemplateField HeaderText="d_07" SortExpression="d_07">
                 <ItemTemplate>
-                      <a href="javascript:openPopup('popup.aspx?sesja=<%# Eval("id_sedziego")+ "!"+Eval("id_tabeli") +"!9!2"%>')"><asp:Label ID="Label209" runat="server" Text='<%# Eval("d_09")%>' CssClass="normal"></asp:Label> </a>
+                      <a href="javascript:openPopup('popup.aspx?sesja=<%# Eval("id_sedziego")+ "!"+Eval("id_tabeli") +"!9!7"%>')"><asp:Label ID="Label209" runat="server" Text='<%# Eval("d_09")%>' CssClass="normal"></asp:Label> </a>
                 </ItemTemplate>
                   <ItemStyle  CssClass="col_50" />
             </asp:TemplateField>
         
                <asp:TemplateField HeaderText="d_07" SortExpression="d_07">
                 <ItemTemplate>
-                  <a href="javascript:openPopup('popup.aspx?sesja=<%# Eval("id_sedziego")+ "!"+Eval("id_tabeli") +"!10!2"%>')"><asp:Label ID="Label210" runat="server" Text='<%# Eval("d_10")%>' CssClass="normal"></asp:Label> </a>
+                  <a href="javascript:openPopup('popup.aspx?sesja=<%# Eval("id_sedziego")+ "!"+Eval("id_tabeli") +"!10!7"%>')"><asp:Label ID="Label210" runat="server" Text='<%# Eval("d_10")%>' CssClass="normal"></asp:Label> </a>
                 </ItemTemplate>
                   <ItemStyle  CssClass="col_50" />
             </asp:TemplateField>
 
                <asp:TemplateField HeaderText="d_07" SortExpression="d_07">
                 <ItemTemplate>
-                <a href="javascript:openPopup('popup.aspx?sesja=<%# Eval("id_sedziego")+ "!"+Eval("id_tabeli") +"!11!2"%>')"><asp:Label ID="Label211" runat="server" Text='<%# Eval("d_11")%>' CssClass="normal"></asp:Label> </a>    
+                <a href="javascript:openPopup('popup.aspx?sesja=<%# Eval("id_sedziego")+ "!"+Eval("id_tabeli") +"!11!7"%>')"><asp:Label ID="Label211" runat="server" Text='<%# Eval("d_11")%>' CssClass="normal"></asp:Label> </a>    
                 </ItemTemplate>
                   <ItemStyle  CssClass="col_50" />
             </asp:TemplateField>
 
                <asp:TemplateField HeaderText="d_07" SortExpression="d_07">
                 <ItemTemplate>
-                      <a href="javascript:openPopup('popup.aspx?sesja=<%# Eval("id_sedziego")+ "!"+Eval("id_tabeli") +"!12!2"%>')"><asp:Label ID="Label212" runat="server" Text='<%# Eval("d_12")%>' CssClass="normal"></asp:Label> </a> 
+                      <a href="javascript:openPopup('popup.aspx?sesja=<%# Eval("id_sedziego")+ "!"+Eval("id_tabeli") +"!12!7"%>')"><asp:Label ID="Label212" runat="server" Text='<%# Eval("d_12")%>' CssClass="normal"></asp:Label> </a> 
           
                       
                 </ItemTemplate>
@@ -196,7 +196,7 @@
           
                <asp:TemplateField HeaderText="d_07" SortExpression="d_07">
                 <ItemTemplate>
-                      <a href="javascript:openPopup('popup.aspx?sesja=<%# Eval("id_sedziego")+ "!"+Eval("id_tabeli") +"!13!2"%>')"><asp:Label ID="Label213" runat="server" Text='<%# Eval("d_13")%>' CssClass="normal"></asp:Label> </a> 
+                      <a href="javascript:openPopup('popup.aspx?sesja=<%# Eval("id_sedziego")+ "!"+Eval("id_tabeli") +"!13!7"%>')"><asp:Label ID="Label213" runat="server" Text='<%# Eval("d_13")%>' CssClass="normal"></asp:Label> </a> 
           
                       
                 </ItemTemplate>
@@ -205,7 +205,7 @@
           
                <asp:TemplateField HeaderText="d_07" SortExpression="d_07">
                 <ItemTemplate>
-                      <a href="javascript:openPopup('popup.aspx?sesja=<%# Eval("id_sedziego")+ "!"+Eval("id_tabeli") +"!14!2"%>')"><asp:Label ID="Label214" runat="server" Text='<%# Eval("d_14")%>' CssClass="normal"></asp:Label> </a> 
+                      <a href="javascript:openPopup('popup.aspx?sesja=<%# Eval("id_sedziego")+ "!"+Eval("id_tabeli") +"!14!7"%>')"><asp:Label ID="Label214" runat="server" Text='<%# Eval("d_14")%>' CssClass="normal"></asp:Label> </a> 
           
                       
                 </ItemTemplate>
@@ -223,7 +223,7 @@
             
                <asp:TemplateField HeaderText="d_07" SortExpression="d_07">
                 <ItemTemplate>
-                      <a href="javascript:openPopup('popup.aspx?sesja=<%# Eval("id_sedziego")+ "!"+Eval("id_tabeli") +"!16!2"%>')"><asp:Label ID="Label216" runat="server" Text='<%# Eval("d_16")%>' CssClass="normal"></asp:Label> </a> 
+                      <a href="javascript:openPopup('popup.aspx?sesja=<%# Eval("id_sedziego")+ "!"+Eval("id_tabeli") +"!16!7"%>')"><asp:Label ID="Label216" runat="server" Text='<%# Eval("d_16")%>' CssClass="normal"></asp:Label> </a> 
           
                       
                 </ItemTemplate>
@@ -275,7 +275,7 @@
            <asp:TemplateField HeaderText="d_01" SortExpression="d_01">
                
                 <ItemTemplate>
-                      <a href="javascript:openPopup('popup.aspx?sesja=<%# Eval("id_sedziego")+ "!"+Eval("id_tabeli") +"!1!2"%>')"><asp:Label ID="Label301" runat="server" Text='<%# Eval("d_01")%>' CssClass="normal"></asp:Label> </a>
+                      <a href="javascript:openPopup('popup.aspx?sesja=<%# Eval("id_sedziego")+ "!"+Eval("id_tabeli") +"!1!7"%>')"><asp:Label ID="Label301" runat="server" Text='<%# Eval("d_01")%>' CssClass="normal"></asp:Label> </a>
     
                      
                 </ItemTemplate>
@@ -284,7 +284,7 @@
             <asp:TemplateField HeaderText="d_02" SortExpression="d_02">
                
                 <ItemTemplate>
-                      <a href="javascript:openPopup('popup.aspx?sesja=<%# Eval("id_sedziego")+ "!"+Eval("id_tabeli") +"!2!2"%>')"><asp:Label ID="Label302" runat="server" Text='<%# Eval("d_02")%>' CssClass="normal"></asp:Label> </a>
+                      <a href="javascript:openPopup('popup.aspx?sesja=<%# Eval("id_sedziego")+ "!"+Eval("id_tabeli") +"!2!7"%>')"><asp:Label ID="Label302" runat="server" Text='<%# Eval("d_02")%>' CssClass="normal"></asp:Label> </a>
     
                  </ItemTemplate>
                   <ItemStyle  CssClass="col_46" />
@@ -292,7 +292,7 @@
             <asp:TemplateField HeaderText="d_03" SortExpression="d_03">
                
                 <ItemTemplate>
-                        <a href="javascript:openPopup('popup.aspx?sesja=<%# Eval("id_sedziego")+ "!"+Eval("id_tabeli") +"!3!2"%>')"><asp:Label ID="Label303" runat="server" Text='<%# Eval("d_03")%>' CssClass="normal"></asp:Label> </a>
+                        <a href="javascript:openPopup('popup.aspx?sesja=<%# Eval("id_sedziego")+ "!"+Eval("id_tabeli") +"!3!7"%>')"><asp:Label ID="Label303" runat="server" Text='<%# Eval("d_03")%>' CssClass="normal"></asp:Label> </a>
     
                 </ItemTemplate>
                   <ItemStyle  CssClass="col_46" />
@@ -300,7 +300,7 @@
             <asp:TemplateField HeaderText="d_04" SortExpression="d_04">
               
                 <ItemTemplate>
-                        <a href="javascript:openPopup('popup.aspx?sesja=<%# Eval("id_sedziego")+ "!"+Eval("id_tabeli") +"!4!2"%>')"><asp:Label ID="Label304" runat="server" Text='<%# Eval("d_04")%>' CssClass="normal"></asp:Label> </a>
+                        <a href="javascript:openPopup('popup.aspx?sesja=<%# Eval("id_sedziego")+ "!"+Eval("id_tabeli") +"!4!7"%>')"><asp:Label ID="Label304" runat="server" Text='<%# Eval("d_04")%>' CssClass="normal"></asp:Label> </a>
              
                 </ItemTemplate>
                   <ItemStyle  CssClass="col_46" />
@@ -308,21 +308,21 @@
             <asp:TemplateField HeaderText="d_05" SortExpression="d_05">
                
                 <ItemTemplate>
-                 <a href="javascript:openPopup('popup.aspx?sesja=<%# Eval("id_sedziego")+ "!"+Eval("id_tabeli") +"!5!2"%>')"><asp:Label ID="Label305" runat="server" Text='<%# Eval("d_05")%>' CssClass="normal"></asp:Label> </a>
+                 <a href="javascript:openPopup('popup.aspx?sesja=<%# Eval("id_sedziego")+ "!"+Eval("id_tabeli") +"!5!7"%>')"><asp:Label ID="Label305" runat="server" Text='<%# Eval("d_05")%>' CssClass="normal"></asp:Label> </a>
                 </ItemTemplate>
                   <ItemStyle  CssClass="col_46" />
             </asp:TemplateField>
             <asp:TemplateField HeaderText="d_06" SortExpression="d_06">
                
                 <ItemTemplate>
-                        <a href="javascript:openPopup('popup.aspx?sesja=<%# Eval("id_sedziego")+ "!"+Eval("id_tabeli") +"!6!2"%>')"><asp:Label ID="Label306" runat="server" Text='<%# Eval("d_06")%>' CssClass="normal"></asp:Label> </a>
+                        <a href="javascript:openPopup('popup.aspx?sesja=<%# Eval("id_sedziego")+ "!"+Eval("id_tabeli") +"!6!7"%>')"><asp:Label ID="Label306" runat="server" Text='<%# Eval("d_06")%>' CssClass="normal"></asp:Label> </a>
                 </ItemTemplate>
                   <ItemStyle  CssClass="col_46" />
             </asp:TemplateField>
                <asp:TemplateField HeaderText="d_06" SortExpression="d_06">
                
                 <ItemTemplate>
-                        <a href="javascript:openPopup('popup.aspx?sesja=<%# Eval("id_sedziego")+ "!"+Eval("id_tabeli") +"!7!2"%>')"><asp:Label ID="Label307" runat="server" Text='<%# Eval("d_07")%>' CssClass="normal"></asp:Label> </a>
+                        <a href="javascript:openPopup('popup.aspx?sesja=<%# Eval("id_sedziego")+ "!"+Eval("id_tabeli") +"!7!7"%>')"><asp:Label ID="Label307" runat="server" Text='<%# Eval("d_07")%>' CssClass="normal"></asp:Label> </a>
                 </ItemTemplate>
                   <ItemStyle  CssClass="col_46" />
             </asp:TemplateField>
@@ -357,7 +357,7 @@
               <asp:TemplateField HeaderText="d_01" SortExpression="d_01">
                
                 <ItemTemplate>
-                      <a href="javascript:openPopup('popup.aspx?sesja=<%# Eval("id_sedziego")+ "!"+Eval("id_tabeli") +"!1!2"%>')"><asp:Label ID="Label401" runat="server" Text='<%# Eval("d_01")%>' CssClass="normal"></asp:Label> </a>
+                      <a href="javascript:openPopup('popup.aspx?sesja=<%# Eval("id_sedziego")+ "!"+Eval("id_tabeli") +"!1!7"%>')"><asp:Label ID="Label401" runat="server" Text='<%# Eval("d_01")%>' CssClass="normal"></asp:Label> </a>
     
                      
                 </ItemTemplate>
@@ -366,7 +366,7 @@
             <asp:TemplateField HeaderText="d_02" SortExpression="d_02">
                
                 <ItemTemplate>
-                      <a href="javascript:openPopup('popup.aspx?sesja=<%# Eval("id_sedziego")+ "!"+Eval("id_tabeli") +"!2!2"%>')"><asp:Label ID="Label402" runat="server" Text='<%# Eval("d_02")%>' CssClass="normal"></asp:Label> </a>
+                      <a href="javascript:openPopup('popup.aspx?sesja=<%# Eval("id_sedziego")+ "!"+Eval("id_tabeli") +"!2!7"%>')"><asp:Label ID="Label402" runat="server" Text='<%# Eval("d_02")%>' CssClass="normal"></asp:Label> </a>
     
                  </ItemTemplate>
                   <ItemStyle  CssClass="col_60" />
@@ -374,7 +374,7 @@
             <asp:TemplateField HeaderText="d_03" SortExpression="d_03">
                
                 <ItemTemplate>
-                        <a href="javascript:openPopup('popup.aspx?sesja=<%# Eval("id_sedziego")+ "!"+Eval("id_tabeli") +"!3!2"%>')"><asp:Label ID="Label403" runat="server" Text='<%# Eval("d_03")%>' CssClass="normal"></asp:Label> </a>
+                        <a href="javascript:openPopup('popup.aspx?sesja=<%# Eval("id_sedziego")+ "!"+Eval("id_tabeli") +"!3!7"%>')"><asp:Label ID="Label403" runat="server" Text='<%# Eval("d_03")%>' CssClass="normal"></asp:Label> </a>
     
                 </ItemTemplate>
                   <ItemStyle  CssClass="col_60" />
@@ -382,7 +382,7 @@
       <asp:TemplateField HeaderText="d_04" SortExpression="d_04">
               
                 <ItemTemplate>
-                        <a href="javascript:openPopup('popup.aspx?sesja=<%# Eval("id_sedziego")+ "!"+Eval("id_tabeli") +"!4!2"%>')"><asp:Label ID="Label404" runat="server" Text='<%# Eval("d_04")%>' CssClass="normal"></asp:Label> </a>
+                        <a href="javascript:openPopup('popup.aspx?sesja=<%# Eval("id_sedziego")+ "!"+Eval("id_tabeli") +"!4!7"%>')"><asp:Label ID="Label404" runat="server" Text='<%# Eval("d_04")%>' CssClass="normal"></asp:Label> </a>
              
                 </ItemTemplate>
                   <ItemStyle  CssClass="col_60" />
@@ -390,7 +390,7 @@
             <asp:TemplateField HeaderText="d_04" SortExpression="d_04">
               
                 <ItemTemplate>
-                        <a href="javascript:openPopup('popup.aspx?sesja=<%# Eval("id_sedziego")+ "!"+Eval("id_tabeli") +"!5!2"%>')"><asp:Label ID="Label405" runat="server" Text='<%# Eval("d_05")%>' CssClass="normal"></asp:Label> </a>
+                        <a href="javascript:openPopup('popup.aspx?sesja=<%# Eval("id_sedziego")+ "!"+Eval("id_tabeli") +"!5!7"%>')"><asp:Label ID="Label405" runat="server" Text='<%# Eval("d_05")%>' CssClass="normal"></asp:Label> </a>
              
                 </ItemTemplate>
                   <ItemStyle  CssClass="col_60" />
@@ -398,7 +398,7 @@
             <asp:TemplateField HeaderText="d_04" SortExpression="d_04">
               
                 <ItemTemplate>
-                        <a href="javascript:openPopup('popup.aspx?sesja=<%# Eval("id_sedziego")+ "!"+Eval("id_tabeli") +"!6!2"%>')"><asp:Label ID="Label406" runat="server" Text='<%# Eval("d_06")%>' CssClass="normal"></asp:Label> </a>
+                        <a href="javascript:openPopup('popup.aspx?sesja=<%# Eval("id_sedziego")+ "!"+Eval("id_tabeli") +"!6!7"%>')"><asp:Label ID="Label406" runat="server" Text='<%# Eval("d_06")%>' CssClass="normal"></asp:Label> </a>
              
                 </ItemTemplate>
                   <ItemStyle  CssClass="col_60" />
@@ -406,7 +406,7 @@
             <asp:TemplateField HeaderText="d_04" SortExpression="d_04">
               
                 <ItemTemplate>
-                        <a href="javascript:openPopup('popup.aspx?sesja=<%# Eval("id_sedziego")+ "!"+Eval("id_tabeli") +"!7!2"%>')"><asp:Label ID="Label407" runat="server" Text='<%# Eval("d_07")%>' CssClass="normal"></asp:Label> </a>
+                        <a href="javascript:openPopup('popup.aspx?sesja=<%# Eval("id_sedziego")+ "!"+Eval("id_tabeli") +"!7!7"%>')"><asp:Label ID="Label407" runat="server" Text='<%# Eval("d_07")%>' CssClass="normal"></asp:Label> </a>
              
                 </ItemTemplate>
                   <ItemStyle  CssClass="col_60" />
@@ -414,7 +414,7 @@
             <asp:TemplateField HeaderText="d_04" SortExpression="d_04">
               
                 <ItemTemplate>
-                        <a href="javascript:openPopup('popup.aspx?sesja=<%# Eval("id_sedziego")+ "!"+Eval("id_tabeli") +"!8!2"%>')"><asp:Label ID="Label408" runat="server" Text='<%# Eval("d_08")%>' CssClass="normal"></asp:Label> </a>
+                        <a href="javascript:openPopup('popup.aspx?sesja=<%# Eval("id_sedziego")+ "!"+Eval("id_tabeli") +"!8!7"%>')"><asp:Label ID="Label408" runat="server" Text='<%# Eval("d_08")%>' CssClass="normal"></asp:Label> </a>
              
                 </ItemTemplate>
                   <ItemStyle  CssClass="col_60" />
@@ -422,7 +422,7 @@
             <asp:TemplateField HeaderText="d_04" SortExpression="d_04">
               
                 <ItemTemplate>
-                        <a href="javascript:openPopup('popup.aspx?sesja=<%# Eval("id_sedziego")+ "!"+Eval("id_tabeli") +"!9!2"%>')"><asp:Label ID="Label409" runat="server" Text='<%# Eval("d_09")%>' CssClass="normal"></asp:Label> </a>
+                        <a href="javascript:openPopup('popup.aspx?sesja=<%# Eval("id_sedziego")+ "!"+Eval("id_tabeli") +"!9!7"%>')"><asp:Label ID="Label409" runat="server" Text='<%# Eval("d_09")%>' CssClass="normal"></asp:Label> </a>
              
                 </ItemTemplate>
                   <ItemStyle  CssClass="col_60" />
@@ -430,7 +430,7 @@
             <asp:TemplateField HeaderText="d_04" SortExpression="d_04">
               
                 <ItemTemplate>
-                        <a href="javascript:openPopup('popup.aspx?sesja=<%# Eval("id_sedziego")+ "!"+Eval("id_tabeli") +"!10!2"%>')"><asp:Label ID="Label410" runat="server" Text='<%# Eval("d_10")%>' CssClass="normal"></asp:Label> </a>
+                        <a href="javascript:openPopup('popup.aspx?sesja=<%# Eval("id_sedziego")+ "!"+Eval("id_tabeli") +"!10!7"%>')"><asp:Label ID="Label410" runat="server" Text='<%# Eval("d_10")%>' CssClass="normal"></asp:Label> </a>
              
                 </ItemTemplate>
                   <ItemStyle  CssClass="col_60" />
@@ -438,7 +438,7 @@
             <asp:TemplateField HeaderText="d_04" SortExpression="d_04">
               
                 <ItemTemplate>
-                        <a href="javascript:openPopup('popup.aspx?sesja=<%# Eval("id_sedziego")+ "!"+Eval("id_tabeli") +"!11!2"%>')"><asp:Label ID="Label411" runat="server" Text='<%# Eval("d_11")%>' CssClass="normal"></asp:Label> </a>
+                        <a href="javascript:openPopup('popup.aspx?sesja=<%# Eval("id_sedziego")+ "!"+Eval("id_tabeli") +"!11!7"%>')"><asp:Label ID="Label411" runat="server" Text='<%# Eval("d_11")%>' CssClass="normal"></asp:Label> </a>
              
                 </ItemTemplate>
                   <ItemStyle  CssClass="col_60" />
@@ -446,7 +446,7 @@
             <asp:TemplateField HeaderText="d_04" SortExpression="d_04">
               
                 <ItemTemplate>
-                        <a href="javascript:openPopup('popup.aspx?sesja=<%# Eval("id_sedziego")+ "!"+Eval("id_tabeli") +"!12!2"%>')"><asp:Label ID="Label412" runat="server" Text='<%# Eval("d_12")%>' CssClass="normal"></asp:Label> </a>
+                        <a href="javascript:openPopup('popup.aspx?sesja=<%# Eval("id_sedziego")+ "!"+Eval("id_tabeli") +"!12!7"%>')"><asp:Label ID="Label412" runat="server" Text='<%# Eval("d_12")%>' CssClass="normal"></asp:Label> </a>
              
                 </ItemTemplate>
                   <ItemStyle  CssClass="col_60" />
@@ -454,7 +454,7 @@
             <asp:TemplateField HeaderText="d_04" SortExpression="d_04">
               
                 <ItemTemplate>
-                        <a href="javascript:openPopup('popup.aspx?sesja=<%# Eval("id_sedziego")+ "!"+Eval("id_tabeli") +"!13!2"%>')"><asp:Label ID="Label413" runat="server" Text='<%# Eval("d_13")%>' CssClass="normal"></asp:Label> </a>
+                        <a href="javascript:openPopup('popup.aspx?sesja=<%# Eval("id_sedziego")+ "!"+Eval("id_tabeli") +"!13!7"%>')"><asp:Label ID="Label413" runat="server" Text='<%# Eval("d_13")%>' CssClass="normal"></asp:Label> </a>
              
                 </ItemTemplate>
                   <ItemStyle  CssClass="col_60" />
@@ -462,7 +462,7 @@
       <asp:TemplateField HeaderText="d_04" SortExpression="d_04">
               
                 <ItemTemplate>
-                        <a href="javascript:openPopup('popup.aspx?sesja=<%# Eval("id_sedziego")+ "!"+Eval("id_tabeli") +"!14!2"%>')"><asp:Label ID="Label404" runat="server" Text='<%# Eval("d_14")%>' CssClass="normal"></asp:Label> </a>
+                        <a href="javascript:openPopup('popup.aspx?sesja=<%# Eval("id_sedziego")+ "!"+Eval("id_tabeli") +"!14!7"%>')"><asp:Label ID="Label404" runat="server" Text='<%# Eval("d_14")%>' CssClass="normal"></asp:Label> </a>
              
                 </ItemTemplate>
                   <ItemStyle  CssClass="col_60" />
@@ -470,7 +470,7 @@
                   <asp:TemplateField HeaderText="d_04" SortExpression="d_04">
               
                 <ItemTemplate>
-                        <a href="javascript:openPopup('popup.aspx?sesja=<%# Eval("id_sedziego")+ "!"+Eval("id_tabeli") +"!15!2"%>')"><asp:Label ID="Label414" runat="server" Text='<%# Eval("d_15")%>' CssClass="normal"></asp:Label> </a>
+                        <a href="javascript:openPopup('popup.aspx?sesja=<%# Eval("id_sedziego")+ "!"+Eval("id_tabeli") +"!15!7"%>')"><asp:Label ID="Label414" runat="server" Text='<%# Eval("d_15")%>' CssClass="normal"></asp:Label> </a>
              
                 </ItemTemplate>
                   <ItemStyle  CssClass="col_60" />
@@ -479,7 +479,7 @@
           <asp:TemplateField HeaderText="d_04" SortExpression="d_04">
               
                 <ItemTemplate>
-                        <a href="javascript:openPopup('popup.aspx?sesja=<%# Eval("id_sedziego")+ "!"+Eval("id_tabeli") +"!16!2"%>')"><asp:Label ID="Label415" runat="server" Text='<%# Eval("d_16")%>' CssClass="normal"></asp:Label> </a>
+                        <a href="javascript:openPopup('popup.aspx?sesja=<%# Eval("id_sedziego")+ "!"+Eval("id_tabeli") +"!16!7"%>')"><asp:Label ID="Label415" runat="server" Text='<%# Eval("d_16")%>' CssClass="normal"></asp:Label> </a>
              
                 </ItemTemplate>
                   <ItemStyle  CssClass="col_60" />
@@ -569,7 +569,7 @@
               <asp:TemplateField HeaderText="d_01" SortExpression="d_01">
                
                 <ItemTemplate>
-                      <a href="javascript:openPopup('popup.aspx?sesja=<%# Eval("id_sedziego")+ "!"+Eval("id_tabeli") +"!1!2"%>')"><asp:Label ID="Label401" runat="server" Text='<%# Eval("d_01")%>' CssClass="normal"></asp:Label> </a>
+                      <a href="javascript:openPopup('popup.aspx?sesja=<%# Eval("id_sedziego")+ "!"+Eval("id_tabeli") +"!1!7"%>')"><asp:Label ID="Label401" runat="server" Text='<%# Eval("d_01")%>' CssClass="normal"></asp:Label> </a>
     
                      
                 </ItemTemplate>
@@ -578,7 +578,7 @@
             <asp:TemplateField HeaderText="d_02" SortExpression="d_02">
                
                 <ItemTemplate>
-                      <a href="javascript:openPopup('popup.aspx?sesja=<%# Eval("id_sedziego")+ "!"+Eval("id_tabeli") +"!2!2"%>')"><asp:Label ID="Label402" runat="server" Text='<%# Eval("d_02")%>' CssClass="normal"></asp:Label> </a>
+                      <a href="javascript:openPopup('popup.aspx?sesja=<%# Eval("id_sedziego")+ "!"+Eval("id_tabeli") +"!2!7"%>')"><asp:Label ID="Label402" runat="server" Text='<%# Eval("d_02")%>' CssClass="normal"></asp:Label> </a>
     
                  </ItemTemplate>
                   <ItemStyle  CssClass="col_91" />
@@ -586,7 +586,7 @@
             <asp:TemplateField HeaderText="d_03" SortExpression="d_03">
                
                 <ItemTemplate>
-                        <a href="javascript:openPopup('popup.aspx?sesja=<%# Eval("id_sedziego")+ "!"+Eval("id_tabeli") +"!3!2"%>')"><asp:Label ID="Label403" runat="server" Text='<%# Eval("d_03")%>' CssClass="normal"></asp:Label> </a>
+                        <a href="javascript:openPopup('popup.aspx?sesja=<%# Eval("id_sedziego")+ "!"+Eval("id_tabeli") +"!3!7"%>')"><asp:Label ID="Label403" runat="server" Text='<%# Eval("d_03")%>' CssClass="normal"></asp:Label> </a>
     
                 </ItemTemplate>
                   <ItemStyle  CssClass="col_91" />
@@ -594,7 +594,7 @@
       <asp:TemplateField HeaderText="d_04" SortExpression="d_04">
               
                 <ItemTemplate>
-                        <a href="javascript:openPopup('popup.aspx?sesja=<%# Eval("id_sedziego")+ "!"+Eval("id_tabeli") +"!4!2"%>')"><asp:Label ID="Label404" runat="server" Text='<%# Eval("d_04")%>' CssClass="normal"></asp:Label> </a>
+                        <a href="javascript:openPopup('popup.aspx?sesja=<%# Eval("id_sedziego")+ "!"+Eval("id_tabeli") +"!4!7"%>')"><asp:Label ID="Label404" runat="server" Text='<%# Eval("d_04")%>' CssClass="normal"></asp:Label> </a>
              
                 </ItemTemplate>
                   <ItemStyle  CssClass="col_91" />
@@ -602,7 +602,7 @@
             <asp:TemplateField HeaderText="d_04" SortExpression="d_04">
               
                 <ItemTemplate>
-                        <a href="javascript:openPopup('popup.aspx?sesja=<%# Eval("id_sedziego")+ "!"+Eval("id_tabeli") +"!5!2"%>')"><asp:Label ID="Label405" runat="server" Text='<%# Eval("d_05")%>' CssClass="normal"></asp:Label> </a>
+                        <a href="javascript:openPopup('popup.aspx?sesja=<%# Eval("id_sedziego")+ "!"+Eval("id_tabeli") +"!5!7"%>')"><asp:Label ID="Label405" runat="server" Text='<%# Eval("d_05")%>' CssClass="normal"></asp:Label> </a>
              
                 </ItemTemplate>
                   <ItemStyle  CssClass="col_91" />
@@ -610,7 +610,7 @@
             <asp:TemplateField HeaderText="d_04" SortExpression="d_04">
               
                 <ItemTemplate>
-                        <a href="javascript:openPopup('popup.aspx?sesja=<%# Eval("id_sedziego")+ "!"+Eval("id_tabeli") +"!6!2"%>')"><asp:Label ID="Label406" runat="server" Text='<%# Eval("d_06")%>' CssClass="normal"></asp:Label> </a>
+                        <a href="javascript:openPopup('popup.aspx?sesja=<%# Eval("id_sedziego")+ "!"+Eval("id_tabeli") +"!6!7"%>')"><asp:Label ID="Label406" runat="server" Text='<%# Eval("d_06")%>' CssClass="normal"></asp:Label> </a>
              
                 </ItemTemplate>
                   <ItemStyle  CssClass="col_91" />
@@ -618,7 +618,7 @@
             <asp:TemplateField HeaderText="d_04" SortExpression="d_04">
               
                 <ItemTemplate>
-                        <a href="javascript:openPopup('popup.aspx?sesja=<%# Eval("id_sedziego")+ "!"+Eval("id_tabeli") +"!7!2"%>')"><asp:Label ID="Label407" runat="server" Text='<%# Eval("d_07")%>' CssClass="normal"></asp:Label> </a>
+                        <a href="javascript:openPopup('popup.aspx?sesja=<%# Eval("id_sedziego")+ "!"+Eval("id_tabeli") +"!7!7"%>')"><asp:Label ID="Label407" runat="server" Text='<%# Eval("d_07")%>' CssClass="normal"></asp:Label> </a>
              
                 </ItemTemplate>
                   <ItemStyle  CssClass="col_91" />
@@ -626,7 +626,7 @@
             <asp:TemplateField HeaderText="d_04" SortExpression="d_04">
               
                 <ItemTemplate>
-                        <a href="javascript:openPopup('popup.aspx?sesja=<%# Eval("id_sedziego")+ "!"+Eval("id_tabeli") +"!8!2"%>')"><asp:Label ID="Label408" runat="server" Text='<%# Eval("d_08")%>' CssClass="normal"></asp:Label> </a>
+                        <a href="javascript:openPopup('popup.aspx?sesja=<%# Eval("id_sedziego")+ "!"+Eval("id_tabeli") +"!8!7"%>')"><asp:Label ID="Label408" runat="server" Text='<%# Eval("d_08")%>' CssClass="normal"></asp:Label> </a>
              
                 </ItemTemplate>
                   <ItemStyle  CssClass="col_91" />
@@ -634,7 +634,7 @@
             <asp:TemplateField HeaderText="d_04" SortExpression="d_04">
               
                 <ItemTemplate>
-                        <a href="javascript:openPopup('popup.aspx?sesja=<%# Eval("id_sedziego")+ "!"+Eval("id_tabeli") +"!9!2"%>')"><asp:Label ID="Label409" runat="server" Text='<%# Eval("d_09")%>' CssClass="normal"></asp:Label> </a>
+                        <a href="javascript:openPopup('popup.aspx?sesja=<%# Eval("id_sedziego")+ "!"+Eval("id_tabeli") +"!9!7"%>')"><asp:Label ID="Label409" runat="server" Text='<%# Eval("d_09")%>' CssClass="normal"></asp:Label> </a>
              
                 </ItemTemplate>
                   <ItemStyle  CssClass="col_91" />
@@ -642,7 +642,7 @@
          <asp:TemplateField HeaderText="d_04" SortExpression="d_04">
               
                 <ItemTemplate>
-                        <a href="javascript:openPopup('popup.aspx?sesja=<%# Eval("id_sedziego")+ "!"+Eval("id_tabeli") +"!10!2"%>')"><asp:Label ID="Label410" runat="server" Text='<%# Eval("d_10")%>' CssClass="normal"></asp:Label> </a>
+                        <a href="javascript:openPopup('popup.aspx?sesja=<%# Eval("id_sedziego")+ "!"+Eval("id_tabeli") +"!10!7"%>')"><asp:Label ID="Label410" runat="server" Text='<%# Eval("d_10")%>' CssClass="normal"></asp:Label> </a>
              
                 </ItemTemplate>
                   <ItemStyle  CssClass="col_91" />

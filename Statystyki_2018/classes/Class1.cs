@@ -7,6 +7,18 @@ using System.Data.SqlClient;
 
 namespace stat2018
 {
+    public enum Rodzaje
+    {
+        admin = 0,// (możliwość nadawania uprawnień)
+        miesieczne = 1,
+        MSS = 2,
+        kontrolki = 3,
+        kof = 4,
+        wyszukiwarka = 5,
+        pracownik = 6,
+        potwierdzenie = 1
+    }
+    
     public class Class1
     {
         public static BaseFont NewFont = BaseFont.CreateFont(Environment.GetEnvironmentVariable("SystemRoot") + "\\fonts\\sylfaen.ttf", BaseFont.IDENTITY_H, BaseFont.EMBEDDED);
@@ -30,8 +42,9 @@ namespace stat2018
             stTab = arg.Split(stringSeparators, StringSplitOptions.None);
             return stTab;
         }
-       
+
             */
+
         private string getColumnName(int i)
         {
             string txt = string.Empty;
@@ -45,7 +58,7 @@ namespace stat2018
             }
             return txt;
         }
-         
+
         //====================================================================================================================================
         public string wyciagnij_sedziego(string id_sedziego)
         {
@@ -57,7 +70,7 @@ namespace stat2018
 
             parameters = Common.makeParameterTable();
             parameters.Rows.Add("@id_sedziego", id_sedziego.Trim());
-            string stanowisko = Common.getQuerryValue("SELECT distinct  (COALESCE( stanowisko ,'') ) as sedzia  FROM tbl_statystyki_tbl_02 where id_sedziego=@id_sedziego ", con_str, parameters);
+            string stanowisko = Common.getQuerryValue("SELECT distinct  (COALESCE( stanowisko ,'') ) as sedzia  FROM tbl_statystyki_tbl_02 where id_sedziego=@id_sedziego ", con_str, parameters,"");
 
             return sedzia + " " + stanowisko;
         }// end of wyciagnij_kwerende
@@ -253,7 +266,7 @@ namespace stat2018
             return result;
         }
 
-        public string wyciagnijDane(int id_dzialu, int id_wiersza, int id_kolumny, DateTime poczatek, DateTime koniec, int id_tabeli)
+        public string wyciagnijDane(int id_dzialu, int id_wiersza, int id_kolumny, DateTime poczatek, DateTime koniec, int id_tabeli,string tenplik)
         {
             string result = string.Empty;
             string cs = podajConnectionString(id_dzialu);
@@ -264,31 +277,31 @@ namespace stat2018
                 DataTable parametry = Common.makeParameterTable();
                 parametry.Rows.Add("@data_1", poczatek);
                 parametry.Rows.Add("@data_2", koniec);
-                result = Common.getQuerryValue(kw, cs, parametry);
+                result = Common.getQuerryValue(kw, cs, parametry,tenplik);
             }
             return result;
         }
 
-        public void tworzWiersz(int id, string opis, int id_dzialu, int id_tabeli)
+        public void tworzWiersz(int id, string opis, int id_dzialu, int id_tabeli,string tenplik)
         {
             DataTable parametry = Common.makeParameterTable();
             parametry.Rows.Add("@opis", opis);
             parametry.Rows.Add("@id", id);
             parametry.Rows.Add("@id_dzialu", id_dzialu);
             parametry.Rows.Add("@id_tabeli", id_tabeli);
-            Common.runQuerry("insert into tbl_statystyki_tbl_01 (opis,id_,id_dzialu,id_tabeli) values (@opis,@id,@id_dzialu,@id_tabeli)", con_str, parametry);
+            Common.runQuerry("insert into tbl_statystyki_tbl_01 (opis,id_,id_dzialu,id_tabeli) values (@opis,@id,@id_dzialu,@id_tabeli)", con_str, parametry,tenplik);
         }
 
-        public void updateWiersz(int kolumna, int id, string opis, int id_tabeli)
+        public void updateWiersz(int kolumna, int id, string opis, int id_tabeli,string tenplik)
         {
-            string txt =  getColumnName(kolumna);
+            string txt = getColumnName(kolumna);
             // skasowanie tabeli i wcyw
 
             DataTable parametry = Common.makeParameterTable();
             parametry.Rows.Add("@opis", opis);
             parametry.Rows.Add("@id", id);
             parametry.Rows.Add("@id_tabeli", id_tabeli);
-            Common.runQuerry("update tbl_statystyki_tbl_01 set " + txt + "=@opis where id_=@id and id_tabeli=@id_tabeli", con_str, parametry);
+            Common.runQuerry("update tbl_statystyki_tbl_01 set " + txt + "=@opis where id_=@id and id_tabeli=@id_tabeli", con_str, parametry,tenplik);
         }
 
         public void deleteRowTable()
@@ -296,7 +309,7 @@ namespace stat2018
             Common.runQuerry("delete from  tbl_statystyki_tbl_01", con_str);
         }// end of deleteRowTable
 
-        public string generuj_dane_do_tabeli_wierszy(DateTime poczatek, DateTime koniec, string id_dzialu, int id_tabeli)
+        public string generuj_dane_do_tabeli_wierszy(DateTime poczatek, DateTime koniec, string id_dzialu, int id_tabeli,string tenPlik)
 
         {
             string kwerenda = string.Empty;
@@ -311,13 +324,13 @@ namespace stat2018
                     {
                         try
                         {
-                            string dana = wyciagnijDane(int.Parse(id_dzialu), i, j, poczatek, koniec, id_tabeli);
+                            string dana = wyciagnijDane(int.Parse(id_dzialu), i, j, poczatek, koniec, id_tabeli, tenPlik);
                             if (j == 0)
                             {
                                 // poczatek wiersza
                                 if (string.IsNullOrEmpty(dana.Trim()) != true)
                                 {
-                                    tworzWiersz(i, dana, int.Parse(id_dzialu), id_tabeli);
+                                    tworzWiersz(i, dana, int.Parse(id_dzialu), id_tabeli, tenPlik);
                                 }
                             }
                             else
@@ -325,7 +338,7 @@ namespace stat2018
                                 //srodek wiersza
                                 if (!string.IsNullOrEmpty(dana.Trim()))
                                 {
-                                    updateWiersz(j, i, dana, id_tabeli);
+                                    updateWiersz(j, i, dana, id_tabeli,tenPlik);
                                 }
                             }
                         }
@@ -339,7 +352,7 @@ namespace stat2018
 
             return "1";
         }// end of generuj_dane_do_tabeli
-
+     
         public DataTable generuj_dane_do_tabeli_wierszy_przestawnych1(DateTime poczatek, DateTime koniec, string id_dzialu, int id_tabeli, int id_pozycji)
         {
             string kwerenda = string.Empty;
@@ -368,7 +381,7 @@ namespace stat2018
                         try
                         {
                             dR[0] = i.ToString();
-                            string dana = wyciagnijDane(int.Parse(id_dzialu), i, j, poczatek, koniec, id_tabeli);
+                            string dana = wyciagnijDane(int.Parse(id_dzialu), i, j, poczatek, koniec, id_tabeli,"");
 
                             if (j != 0)
                             {
@@ -398,7 +411,7 @@ namespace stat2018
             return tab_1000;
         }// end of generuj_dane_do_tabeli
 
-        public DataTable generuj_dane_do_tabeli_przestawnych(int id_dzialu, int id_tabeli, DateTime poczatek, DateTime koniec)
+        public DataTable generuj_dane_do_tabeli_przestawnych(int id_dzialu, int id_tabeli, DateTime poczatek, DateTime koniec,string tenPlik)
         {
             DataTable tab_1000 = new DataTable();
             tab_1000.Columns.Add("id_sedziego", typeof(int));
@@ -428,7 +441,7 @@ namespace stat2018
             parameters.Rows.Add("@id_dzialu", id_dzialu);
             parameters.Rows.Add("@id_tabeli", id_tabeli);
 
-            DataTable ddT = Common.getDataTable("SELECT distinct id_kolumny,[kwerenda] FROM [kwerendy] where id_tabeli=@id_tabeli and id_wydzial=@id_dzialu order by id_kolumny", con_str, parameters);
+            DataTable ddT = Common.getDataTable("SELECT distinct id_kolumny,[kwerenda] FROM [kwerendy] where id_tabeli=@id_tabeli and id_wydzial=@id_dzialu order by id_kolumny", con_str, parameters, tenPlik);
             int il_wierszy = 0;
             try
             {
@@ -466,7 +479,7 @@ namespace stat2018
                         parameters.Rows.Add("@data_1", poczatek);
                         parameters.Rows.Add("@data_2", koniec);
 
-                        ddT = Common.getDataTable(kwe, cs, parameters);
+                        ddT = Common.getDataTable(kwe, cs, parameters, tenPlik);
                         //pętla ładująca dane dane sedzw
                         int lp = 0;
                         foreach (DataRow dR in ddT.Rows)
@@ -575,45 +588,7 @@ namespace stat2018
             DataTable parametry = Common.makeParameterTable();
             parametry.Rows.Add("@ident", wydzial);
 
-            string odp = Common.getQuerryValue("SELECT debug FROM  wydzialy where ident=@ident", con_str, parametry);
-
-            if (odp == "1")
-            {
-                return true;
-            }
-            else
-            {
-                return false;
-            }
-            /*
-            var conn = new SqlConnection(con_str);
-            SqlCommand sqlCmd;
-
-            // skasowanie tabeli i wcyw
-
-            using (sqlCmd = new SqlCommand())
-            {
-                sqlCmd = new SqlCommand("SELECT debug FROM  wydzialy where ident=@ident", conn);
-                try
-                {
-                    conn.Open();
-                    sqlCmd.Parameters.AddWithValue("@ident", wydzial);
-                    string odp = sqlCmd.ExecuteScalar().ToString();
-                    conn.Close();
-                    if (odp == "1")
-                    {
-                        return true;
-                    }
-                    else
-                    {
-                        return false;
-                    }
-                }
-                catch
-                {
-                }
-            } // end of using
-            */
+            return Common.getQuerryValue("SELECT debug FROM  wydzialy where ident=@ident", con_str, parametry) == "1" ? true : false;
         }// end of debug
 
         public string nazwaSadu(string id_sadu)
@@ -631,114 +606,101 @@ namespace stat2018
             var conn = new SqlConnection(con_str);
             string kwerenda = string.Empty;
             DataTable parameters = Common.makeParameterTable();
-
-            DataRow parametrRow = parameters.NewRow();
             parameters.Rows.Add("@id_dzialu", id_dzialu);
             parameters.Rows.Add("@id_tabeli", id_tabeli);
 
-            DataTable ddT = Common.getDataTable("SELECT id_kolumny,[kwerenda] FROM [kwerendy] where id_tabeli=@id_tabeli and id_wydzial=@id_dzialu order by id_kolumny", con_str, parameters);
-            int il_wierszy = 0;
+            DataTable ddT = Common.getDataTable("SELECT id_kolumny,[kwerenda] FROM [kwerendy] where id_tabeli=@id_tabeli and id_wydzial=@id_dzialu order by id_kolumny", con_str, parameters,"");
+            if (ddT==null)
+            {
+                return status;
+            }
+           
+           
+            Common.log.Info("generuj_dane_do_tabeli_ ilosc kwerend " + ddT.Rows.Count.ToString());
             try
             {
-                il_wierszy = ddT.Rows.Count;
-            }
-            catch { }
-            Common.log.Info("generuj_dane_do_tabeli_ ilosc kwerend " + il_wierszy.ToString()); 
-            if (il_wierszy == 0)
-            {
-                // brak kwerend odcztującch
-                status = status + "brak kwerend odcztujących" + "<br>";
-            }
-            else
-            {
-                // sa kwerendy
-                status = status + "są kwerendy odcztujące, il: " + ddT.Rows.Count.ToString() + "<br>";
-                //getTable
-                try
+                foreach (DataRow dRow in ddT.Rows)
                 {
-                    foreach (DataRow dRow in ddT.Rows)
+                    string id_kol = dRow[0].ToString().Trim();
+                    string kwe = dRow[1].ToString().Trim();
+                    string cs = podajConnectionString(id_dzialu);
+                    Common.log.Info("kwerenda " + kwe);
+                    ////############################################  ladowanie danych tabela 2 ##############################
+                    // odczyt sedziów
+                    parameters = Common.makeParameterTable();
+
+                    parameters.Rows.Add("@id_dzialu", id_dzialu);
+                    parameters.Rows.Add("@id_tabeli", id_tabeli);
+                    parameters.Rows.Add("@data_1", poczatek);
+                    parameters.Rows.Add("@data_2", koniec);
+
+                    ddT = Common.getDataTable(kwe, cs, parameters,"");
+                    //pętla ładująca dane dane sedzw
+
+                    foreach (DataRow dR in ddT.Rows)
                     {
-                        string id_kol = dRow[0].ToString().Trim();
-                        string kwe = dRow[1].ToString().Trim();
-                        string cs = podajConnectionString(id_dzialu);
-                        Common.log.Info("kwerenda " + kwe);
-                        ////############################################  ladowanie danych tabela 2 ##############################
-                        // odczyt sedziów
-                        parameters = Common.makeParameterTable();
-
-                        parameters.Rows.Add("@id_dzialu", id_dzialu);
-                        parameters.Rows.Add("@id_tabeli", id_tabeli);
-                        parameters.Rows.Add("@data_1", poczatek);
-                        parameters.Rows.Add("@data_2", koniec);
-
-                        ddT = Common.getDataTable(kwe, cs, parameters);
-                        //pętla ładująca dane dane sedzw
-
-                        foreach (DataRow dR in ddT.Rows)
+                        switch (id_kol)
                         {
-                            switch (id_kol)
-                            {
-                                case "0":
-                                    {
-                                        parameters = Common.makeParameterTable();
-                                        parameters.Rows.Add("@imie", dR[1].ToString().Trim());
-                                        parameters.Rows.Add("@nazwisko", dR[2].ToString().Trim());
-                                        parameters.Rows.Add("@funkcja", dR[3].ToString().Trim());
-                                        parameters.Rows.Add("@stanowisko", dR[4].ToString().Trim());
-                                        parameters.Rows.Add("@id_sedziego", dR[0].ToString().Trim());
-                                        parameters.Rows.Add("@id_tabeli", id_tabeli);
-                                        parameters.Rows.Add("@id_dzialu", id_dzialu);
-                                        parameters.Rows.Add("@sesja", "s3030");
-                                        Common.runQuerry("insert into tbl_statystyki_tbl_02 (imie,nazwisko,funkcja,stanowisko,id_sedziego,sesja,id_tabeli,id_dzialu) values (@imie,@nazwisko,@funkcja,@stanowisko,@id_sedziego,@sesja,@id_tabeli,@id_dzialu)", con_str, parameters);
-                                        // załadowanie danych do pierwszych kolumn
-                                    }
-                                    break;
+                            case "0":
+                                {
+                                    parameters = Common.makeParameterTable();
+                                    parameters.Rows.Add("@imie", dR[1].ToString().Trim());
+                                    parameters.Rows.Add("@nazwisko", dR[2].ToString().Trim());
+                                    parameters.Rows.Add("@funkcja", dR[3].ToString().Trim());
+                                    parameters.Rows.Add("@stanowisko", dR[4].ToString().Trim());
+                                    parameters.Rows.Add("@id_sedziego", dR[0].ToString().Trim());
+                                    parameters.Rows.Add("@id_tabeli", id_tabeli);
+                                    parameters.Rows.Add("@id_dzialu", id_dzialu);
+                                    parameters.Rows.Add("@sesja", "s3030");
+                                    Common.runQuerry("insert into tbl_statystyki_tbl_02 (imie,nazwisko,funkcja,stanowisko,id_sedziego,sesja,id_tabeli,id_dzialu) values (@imie,@nazwisko,@funkcja,@stanowisko,@id_sedziego,@sesja,@id_tabeli,@id_dzialu)", con_str, parameters);
+                                    // załadowanie danych do pierwszych kolumn
+                                }
+                                break;
 
-                                default:
-                                    {
-                                        string txt ="d_"+ int.Parse(id_kol.Trim()).ToString("D2");
-                                        parameters = Common.makeParameterTable();
+                            default:
+                                {
+                                    string txt = "d_" + int.Parse(id_kol.Trim()).ToString("D2");
+                                    parameters = Common.makeParameterTable();
 
-                                        string ttxx = dR[0].ToString().Trim();
-                                        parameters.Rows.Add("@value", dR[0].ToString().Trim());
-                                        if (dR.ItemArray.Length>0)      
+                                    string ttxx = dR[0].ToString().Trim();
+                                    parameters.Rows.Add("@value", dR[0].ToString().Trim());
+                                    if (dR.ItemArray.Length > 0)
+                                    {
+                                        try
                                         {
-                                            try
-                                            {
-                                                parameters.Rows.Add("@id_", dR[1].ToString().Trim());
-                                            }
-                                            catch
-                                            {
-                                                parameters.Rows.Add("@id_", "0");
-                                            }
+                                            parameters.Rows.Add("@id_", dR[1].ToString().Trim());
                                         }
-                                        else
+                                        catch
                                         {
                                             parameters.Rows.Add("@id_", "0");
                                         }
-
-
-                                        parameters.Rows.Add("@id_tabeli", id_tabeli);
-                                        parameters.Rows.Add("@id_dzialu", id_dzialu);
-                                        parameters.Rows.Add("@sesja", "s3030");
-
-                                        //                                        string tvxt = dR[0].ToString().Trim();
-                                        //                                      string tvxts = dR[1].ToString().Trim();
-                                        Common.log.Info("update tbl_statystyki_tbl_02 " + txt);
-                                        Common.runQuerry("update tbl_statystyki_tbl_02 set " + txt + "=@value, sesja=@sesja where id_sedziego=@id_ and id_tabeli=@id_tabeli and id_dzialu=@id_dzialu", con_str, parameters);
                                     }
-                                    break;
-                            }
+                                    else
+                                    {
+                                        parameters.Rows.Add("@id_", "0");
+                                    }
+
+                                    parameters.Rows.Add("@id_tabeli", id_tabeli);
+                                    parameters.Rows.Add("@id_dzialu", id_dzialu);
+                                    parameters.Rows.Add("@sesja", "s3030");
+
+                                    //                                        string tvxt = dR[0].ToString().Trim();
+                                    //                                      string tvxts = dR[1].ToString().Trim();
+                                    Common.log.Info("update tbl_statystyki_tbl_02 " + txt);
+                                    Common.runQuerry("update tbl_statystyki_tbl_02 set " + txt + "=@value, sesja=@sesja where id_sedziego=@id_ and id_tabeli=@id_tabeli and id_dzialu=@id_dzialu", con_str, parameters);
+                                }
+                                break;
                         }
                     }
                 }
-                catch
-                { }//end of try
-            }// end of if
+            }
+            catch
+            { }//end of try
+           
             return status;
         }// end of generuj_dane_do_tabeli_3
 
-        public string generuj_dane_do_tabeli_XXL(int id_dzialu, int id_tabeli, DateTime poczatek, DateTime koniec)
+        public string generuj_dane_do_tabeli_XXL(int id_dzialu, int id_tabeli, DateTime poczatek, DateTime koniec,string tenPlik)
         {
             string status = string.Empty;
             status = status + "pompowanie danch do tabeli: " + id_tabeli.ToString() + "<br>";
@@ -755,7 +717,7 @@ namespace stat2018
             parameters.Rows.Add("@id_dzialu", id_dzialu);
             parameters.Rows.Add("@id_tabeli", id_tabeli);
 
-            DataTable dT1 = Common.getDataTable("SELECT id_kolumny,[kwerenda] FROM [kwerendy] where id_tabeli=@id_tabeli and id_wydzial=@id_dzialu order by id_kolumny", con_str, parameters);
+            DataTable dT1 = Common.getDataTable("SELECT id_kolumny,[kwerenda] FROM [kwerendy] where id_tabeli=@id_tabeli and id_wydzial=@id_dzialu order by id_kolumny", con_str, parameters, tenPlik);
 
             // zaladowanie do tabeli
             int il_wierszy = 0;
@@ -794,7 +756,7 @@ namespace stat2018
                         parameters.Rows.Add("@data_1", poczatek);
                         parameters.Rows.Add("@data_2", koniec);
 
-                        DataTable ddT = Common.getDataTable(kwe, cs, parameters);
+                        DataTable ddT = Common.getDataTable(kwe, cs, parameters,tenPlik);
 
                         //pętla ładująca dane dane sedzw
 
@@ -852,7 +814,7 @@ namespace stat2018
                         }
                     }
                 }
-                catch 
+                catch
                 { }//end of try
             }// end of if
 
@@ -888,7 +850,8 @@ namespace stat2018
             return ds_x;
         }
         */
-        public DataTable generuj_dane_do_tabeli_mss2(int id_dzialu, DateTime poczatek, DateTime koniec, int il_kolumn)
+
+        public DataTable generuj_dane_do_tabeli_mss2(int id_dzialu, DateTime poczatek, DateTime koniec, int il_kolumn,string tenPlik)
         {
             string status = string.Empty;
             status = status + "pompowanie danch do tabeli<br>";
@@ -909,7 +872,7 @@ namespace stat2018
             parameters.Columns.Add("value", typeof(String));
 
             parameters.Rows.Add("@id_dzialu", id_dzialu);
-            DataTable dT1 = Common.getDataTable("SELECT [id_wydzial] ,[id_tabeli] ,[id_kolumny],[id_wiersza] ,[kwerenda]  FROM [kwerenda_mss] where  id_wydzial=@id_dzialu order by id_kolumny", con_str, parameters);
+            DataTable dT1 = Common.getDataTable("SELECT [id_wydzial] ,[id_tabeli] ,[id_kolumny],[id_wiersza] ,[kwerenda]  FROM [kwerenda_mss] where  id_wydzial=@id_dzialu order by id_kolumny", con_str, parameters, tenPlik);
 
             // zaladowanie do tabeli
             int il_wierszy = 0;
