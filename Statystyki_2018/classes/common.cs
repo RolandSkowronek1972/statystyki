@@ -86,17 +86,16 @@ namespace stat2018
                     {
                         foreach (DataRow row in parameters.Rows)
                         {
-                            log.Info("parametetr name= " + row[0].ToString().Trim() + " wartosc: " + row[1].ToString().Trim());
+                            log.Info(tenPlik + " getDataTable - parametetr name= " + row[0].ToString().Trim() + " wartosc: " + row[1].ToString().Trim());
                             dataAdapter.SelectCommand.Parameters.AddWithValue(row[0].ToString().Trim(), row[1].ToString().Trim());
                         }
                     }
-
                     dataAdapter.Fill(dataSet);
                 }
             }
             catch (Exception ex)
             {
-                log.Error(tenPlik + " Error getDataTable : " + ex.Message);
+                log.Error(tenPlik +" Kwerenda: "+ kwerenda+ " Error getDataTable : " + ex.Message);
             }
 
             return dataSet.Tables.Count != 0 ? dataSet.Tables[0] : null;

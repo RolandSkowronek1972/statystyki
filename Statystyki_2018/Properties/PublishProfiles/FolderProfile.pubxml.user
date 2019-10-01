@@ -10,43 +10,43 @@ by editing this MSBuild file. In order to learn more about this please visit htt
   </PropertyGroup>
   <ItemGroup>
     <File Include="adm.aspx">
-      <publishTime>09/25/2019 18:25:58</publishTime>
+      <publishTime>10/01/2019 17:46:29</publishTime>
     </File>
     <File Include="agl.aspx">
-      <publishTime>07/09/2019 14:52:35</publishTime>
+      <publishTime>09/07/2019 14:52:35</publishTime>
     </File>
     <File Include="aglc.aspx">
-      <publishTime>07/09/2019 14:52:35</publishTime>
+      <publishTime>09/07/2019 14:52:35</publishTime>
     </File>
     <File Include="aglg.aspx">
-      <publishTime>07/09/2019 14:52:35</publishTime>
+      <publishTime>09/07/2019 14:52:35</publishTime>
     </File>
     <File Include="aglg2.aspx">
       <publishTime>08/17/2019 18:17:52</publishTime>
     </File>
     <File Include="akac.aspx">
-      <publishTime>07/09/2019 14:52:35</publishTime>
+      <publishTime>09/07/2019 14:52:35</publishTime>
     </File>
     <File Include="Akac2.aspx">
-      <publishTime>07/09/2019 14:52:35</publishTime>
+      <publishTime>09/07/2019 14:52:35</publishTime>
     </File>
     <File Include="akak.aspx">
-      <publishTime>07/09/2019 14:52:35</publishTime>
+      <publishTime>09/07/2019 14:52:35</publishTime>
     </File>
     <File Include="akak2.aspx">
-      <publishTime>07/09/2019 14:52:36</publishTime>
+      <publishTime>09/07/2019 14:52:36</publishTime>
     </File>
     <File Include="akap.aspx">
-      <publishTime>07/09/2019 14:52:36</publishTime>
+      <publishTime>09/07/2019 14:52:36</publishTime>
     </File>
     <File Include="akap2.aspx">
-      <publishTime>07/09/2019 14:52:36</publishTime>
+      <publishTime>09/07/2019 14:52:36</publishTime>
     </File>
     <File Include="akape.aspx">
-      <publishTime>07/09/2019 14:52:36</publishTime>
+      <publishTime>09/07/2019 14:52:36</publishTime>
     </File>
     <File Include="akrc.aspx">
-      <publishTime>03/08/2019 10:45:28</publishTime>
+      <publishTime>08/03/2019 10:45:28</publishTime>
     </File>
     <File Include="akrg.aspx">
       <publishTime>08/11/2019 10:54:34</publishTime>
@@ -55,37 +55,37 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>08/20/2019 20:09:26</publishTime>
     </File>
     <File Include="akrp.aspx">
-      <publishTime>03/08/2019 09:47:30</publishTime>
+      <publishTime>08/03/2019 09:47:30</publishTime>
     </File>
     <File Include="ansc.aspx">
-      <publishTime>07/09/2019 14:52:36</publishTime>
+      <publishTime>09/07/2019 14:52:36</publishTime>
     </File>
     <File Include="ansk.aspx">
-      <publishTime>07/09/2019 14:52:36</publishTime>
+      <publishTime>09/07/2019 14:52:36</publishTime>
     </File>
     <File Include="ansp.aspx">
-      <publishTime>07/09/2019 14:52:36</publishTime>
+      <publishTime>09/07/2019 14:52:36</publishTime>
     </File>
     <File Include="aopc.aspx">
-      <publishTime>05/09/2019 20:54:01</publishTime>
+      <publishTime>09/05/2019 20:54:01</publishTime>
     </File>
     <File Include="aopc2.aspx">
-      <publishTime>05/09/2019 22:54:34</publishTime>
+      <publishTime>09/05/2019 22:54:34</publishTime>
     </File>
     <File Include="aopg.aspx">
-      <publishTime>05/09/2019 22:54:34</publishTime>
+      <publishTime>09/05/2019 22:54:34</publishTime>
     </File>
     <File Include="aopk.aspx">
-      <publishTime>05/09/2019 22:54:34</publishTime>
+      <publishTime>09/05/2019 22:54:34</publishTime>
     </File>
     <File Include="aopk2.aspx">
-      <publishTime>05/09/2019 22:54:34</publishTime>
+      <publishTime>09/05/2019 22:54:34</publishTime>
     </File>
     <File Include="aopp.aspx">
-      <publishTime>05/09/2019 23:02:21</publishTime>
+      <publishTime>09/05/2019 23:02:21</publishTime>
     </File>
     <File Include="aoppe.aspx">
-      <publishTime>05/09/2019 22:57:43</publishTime>
+      <publishTime>09/05/2019 22:57:43</publishTime>
     </File>
     <File Include="bin/AjaxControlToolkit.dll">
       <publishTime>08/13/2014 06:30:48</publishTime>
@@ -283,7 +283,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>07/06/2018 11:03:48</publishTime>
     </File>
     <File Include="bin/EPPlus.dll">
-      <publishTime>08/01/2016 09:00:08</publishTime>
+      <publishTime>01/08/2016 09:00:08</publishTime>
     </File>
     <File Include="bin/es/DevExpress.Data.v17.1.resources.dll">
       <publishTime>04/12/2019 20:14:34</publishTime>
@@ -367,7 +367,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>01/08/2019 12:40:59</publishTime>
     </File>
     <File Include="bin/itextsharp.dll">
-      <publishTime>10/03/2015 14:59:14</publishTime>
+      <publishTime>03/10/2015 14:59:14</publishTime>
     </File>
     <File Include="bin/ja/DevExpress.Data.v17.1.resources.dll">
       <publishTime>04/12/2019 20:14:34</publishTime>
@@ -451,7 +451,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>01/08/2019 12:40:59</publishTime>
     </File>
     <File Include="bin/log4net.dll">
-      <publishTime>08/03/2017 19:26:22</publishTime>
+      <publishTime>03/08/2017 19:26:22</publishTime>
     </File>
     <File Include="bin/Microsoft.Data.Edm.dll">
       <publishTime>02/26/2016 10:33:06</publishTime>
@@ -583,10 +583,10 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>01/08/2019 12:40:59</publishTime>
     </File>
     <File Include="bin/stat2018.dll">
-      <publishTime>09/28/2019 23:02:40</publishTime>
+      <publishTime>10/01/2019 18:55:22</publishTime>
     </File>
     <File Include="bin/stat2018.pdb">
-      <publishTime>09/28/2019 23:02:40</publishTime>
+      <publishTime>10/01/2019 18:55:22</publishTime>
     </File>
     <File Include="default.aspx">
       <publishTime>09/11/2019 22:23:06</publishTime>
@@ -598,73 +598,73 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>07/15/2019 17:58:46</publishTime>
     </File>
     <File Include="img/ajax-loader.gif">
-      <publishTime>10/01/2018 16:41:54</publishTime>
+      <publishTime>01/10/2018 16:41:54</publishTime>
     </File>
     <File Include="img/alert.JPG">
-      <publishTime>10/01/2018 16:41:54</publishTime>
+      <publishTime>01/10/2018 16:41:54</publishTime>
     </File>
     <File Include="img/bg-signin-divider.png">
-      <publishTime>10/01/2018 16:41:54</publishTime>
+      <publishTime>01/10/2018 16:41:54</publishTime>
     </File>
     <File Include="img/calendar.png">
-      <publishTime>10/01/2018 16:41:54</publishTime>
+      <publishTime>01/10/2018 16:41:54</publishTime>
     </File>
     <File Include="img/cal_1.jpg">
-      <publishTime>10/01/2018 16:41:54</publishTime>
+      <publishTime>01/10/2018 16:41:54</publishTime>
     </File>
     <File Include="img/cancel.png">
-      <publishTime>10/01/2018 16:41:54</publishTime>
+      <publishTime>01/10/2018 16:41:54</publishTime>
     </File>
     <File Include="img/cd-top-arrow.svg">
-      <publishTime>10/01/2018 16:41:54</publishTime>
+      <publishTime>01/10/2018 16:41:54</publishTime>
     </File>
     <File Include="img/collapse.jpg">
-      <publishTime>10/01/2018 16:41:54</publishTime>
+      <publishTime>01/10/2018 16:41:54</publishTime>
     </File>
     <File Include="img/collapse_blue.jpg">
-      <publishTime>10/01/2018 16:41:54</publishTime>
+      <publishTime>01/10/2018 16:41:54</publishTime>
     </File>
     <File Include="img/details.jpg">
-      <publishTime>10/01/2018 16:41:54</publishTime>
+      <publishTime>01/10/2018 16:41:54</publishTime>
     </File>
     <File Include="img/edit.jpg">
-      <publishTime>10/01/2018 16:41:54</publishTime>
+      <publishTime>01/10/2018 16:41:54</publishTime>
     </File>
     <File Include="img/expand.jpg">
-      <publishTime>10/01/2018 16:41:54</publishTime>
+      <publishTime>01/10/2018 16:41:54</publishTime>
     </File>
     <File Include="img/expand_blue.jpg">
-      <publishTime>10/01/2018 16:41:54</publishTime>
+      <publishTime>01/10/2018 16:41:54</publishTime>
     </File>
     <File Include="img/images.png">
-      <publishTime>10/01/2018 16:41:54</publishTime>
+      <publishTime>01/10/2018 16:41:54</publishTime>
     </File>
     <File Include="img/minus.jpg">
-      <publishTime>10/01/2018 16:41:54</publishTime>
+      <publishTime>01/10/2018 16:41:54</publishTime>
     </File>
     <File Include="img/ok_1.png">
-      <publishTime>10/01/2018 16:41:54</publishTime>
+      <publishTime>01/10/2018 16:41:54</publishTime>
     </File>
     <File Include="img/plus-icon.png">
-      <publishTime>10/01/2018 16:41:54</publishTime>
+      <publishTime>01/10/2018 16:41:54</publishTime>
     </File>
     <File Include="img/pobrane.jpg">
-      <publishTime>10/01/2018 16:41:54</publishTime>
+      <publishTime>01/10/2018 16:41:54</publishTime>
     </File>
     <File Include="img/str1.png">
-      <publishTime>10/01/2018 16:41:54</publishTime>
+      <publishTime>01/10/2018 16:41:54</publishTime>
     </File>
     <File Include="img/str2.png">
-      <publishTime>10/01/2018 16:41:54</publishTime>
+      <publishTime>01/10/2018 16:41:54</publishTime>
     </File>
     <File Include="img/stralka.jpg">
-      <publishTime>10/01/2018 16:41:54</publishTime>
+      <publishTime>01/10/2018 16:41:54</publishTime>
     </File>
     <File Include="img/whitePoint.png">
-      <publishTime>10/01/2018 16:41:54</publishTime>
+      <publishTime>01/10/2018 16:41:54</publishTime>
     </File>
     <File Include="img/zamknij.jpg">
-      <publishTime>10/01/2018 16:41:54</publishTime>
+      <publishTime>01/10/2018 16:41:54</publishTime>
     </File>
     <File Include="kof.aspx">
       <publishTime>04/12/2019 07:51:16</publishTime>
@@ -685,37 +685,37 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>12/12/2018 21:05:26</publishTime>
     </File>
     <File Include="mss10r.aspx">
-      <publishTime>07/09/2019 14:52:36</publishTime>
+      <publishTime>09/07/2019 14:52:36</publishTime>
     </File>
     <File Include="mss11o.aspx">
-      <publishTime>07/09/2019 14:52:36</publishTime>
+      <publishTime>09/07/2019 14:52:36</publishTime>
     </File>
     <File Include="mss11r.aspx">
       <publishTime>04/20/2019 14:05:43</publishTime>
     </File>
     <File Include="mss16r.aspx">
-      <publishTime>07/09/2019 14:52:37</publishTime>
+      <publishTime>09/07/2019 14:52:37</publishTime>
     </File>
     <File Include="mss19o.aspx">
-      <publishTime>07/09/2019 14:52:37</publishTime>
+      <publishTime>09/07/2019 14:52:37</publishTime>
     </File>
     <File Include="mss19o2.aspx">
       <publishTime>08/23/2018 03:18:34</publishTime>
     </File>
     <File Include="mss19r.aspx">
-      <publishTime>07/09/2019 14:52:37</publishTime>
+      <publishTime>09/07/2019 14:52:37</publishTime>
     </File>
     <File Include="mss1o.aspx">
-      <publishTime>07/09/2019 14:52:38</publishTime>
+      <publishTime>09/07/2019 14:52:38</publishTime>
     </File>
     <File Include="mss1r.aspx">
-      <publishTime>07/09/2019 14:52:38</publishTime>
+      <publishTime>09/07/2019 14:52:38</publishTime>
     </File>
     <File Include="mss40r.aspx">
       <publishTime>04/12/2019 07:51:19</publishTime>
     </File>
     <File Include="mss5o.aspx">
-      <publishTime>07/09/2019 14:52:38</publishTime>
+      <publishTime>09/07/2019 14:52:38</publishTime>
     </File>
     <File Include="mss5r.aspx">
       <publishTime>04/16/2019 21:53:03</publishTime>
@@ -730,109 +730,109 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>05/21/2019 22:30:34</publishTime>
     </File>
     <File Include="obba.aspx">
-      <publishTime>07/09/2019 14:52:39</publishTime>
+      <publishTime>09/07/2019 14:52:39</publishTime>
     </File>
     <File Include="obbc.aspx">
-      <publishTime>07/09/2019 19:13:08</publishTime>
+      <publishTime>09/07/2019 19:13:08</publishTime>
     </File>
     <File Include="obbk.aspx">
-      <publishTime>07/09/2019 19:28:41</publishTime>
+      <publishTime>09/07/2019 19:28:41</publishTime>
     </File>
     <File Include="obbp.aspx">
-      <publishTime>07/09/2019 14:06:43</publishTime>
+      <publishTime>09/07/2019 14:06:43</publishTime>
     </File>
     <File Include="obbr.aspx">
-      <publishTime>07/09/2019 19:29:37</publishTime>
+      <publishTime>09/07/2019 19:29:37</publishTime>
     </File>
     <File Include="ocenaPracownika.aspx">
       <publishTime>04/12/2019 07:51:20</publishTime>
     </File>
     <File Include="oglc.aspx">
-      <publishTime>07/09/2019 14:52:39</publishTime>
+      <publishTime>09/07/2019 14:52:39</publishTime>
     </File>
     <File Include="oglc2.aspx">
-      <publishTime>07/09/2019 14:52:39</publishTime>
+      <publishTime>09/07/2019 14:52:39</publishTime>
     </File>
     <File Include="oglc3.aspx">
-      <publishTime>06/09/2019 17:26:11</publishTime>
+      <publishTime>09/06/2019 17:26:11</publishTime>
     </File>
     <File Include="oglk.aspx">
-      <publishTime>07/09/2019 14:52:39</publishTime>
+      <publishTime>09/07/2019 14:52:39</publishTime>
     </File>
     <File Include="oglk2.aspx">
-      <publishTime>07/09/2019 14:52:39</publishTime>
+      <publishTime>09/07/2019 14:52:39</publishTime>
     </File>
     <File Include="oglk3.aspx">
-      <publishTime>06/09/2019 17:18:57</publishTime>
+      <publishTime>09/06/2019 17:18:57</publishTime>
     </File>
     <File Include="oglp.aspx">
-      <publishTime>08/09/2019 15:45:58</publishTime>
+      <publishTime>09/08/2019 15:45:58</publishTime>
     </File>
     <File Include="oglr.aspx">
-      <publishTime>07/09/2019 14:52:39</publishTime>
+      <publishTime>09/07/2019 14:52:39</publishTime>
     </File>
     <File Include="oglr2.aspx">
-      <publishTime>07/09/2019 14:52:39</publishTime>
+      <publishTime>09/07/2019 14:52:39</publishTime>
     </File>
     <File Include="okrc.aspx">
-      <publishTime>07/09/2019 19:20:46</publishTime>
+      <publishTime>09/07/2019 19:20:46</publishTime>
     </File>
     <File Include="okrd.aspx">
-      <publishTime>07/09/2019 14:52:39</publishTime>
+      <publishTime>09/07/2019 14:52:39</publishTime>
     </File>
     <File Include="okrk.aspx">
-      <publishTime>07/09/2019 14:52:39</publishTime>
+      <publishTime>09/07/2019 14:52:39</publishTime>
     </File>
     <File Include="okrp.aspx">
-      <publishTime>07/09/2019 19:13:08</publishTime>
+      <publishTime>10/01/2019 18:29:24</publishTime>
     </File>
     <File Include="okrr.aspx">
       <publishTime>08/31/2019 12:03:42</publishTime>
     </File>
     <File Include="oksr.aspx">
-      <publishTime>07/09/2019 14:52:39</publishTime>
+      <publishTime>09/07/2019 14:52:39</publishTime>
     </File>
     <File Include="okt2.aspx">
       <publishTime>08/20/2019 20:12:05</publishTime>
     </File>
     <File Include="oktc.aspx">
-      <publishTime>07/09/2019 14:52:39</publishTime>
+      <publishTime>09/07/2019 14:52:39</publishTime>
     </File>
     <File Include="oktg.aspx">
-      <publishTime>07/09/2019 14:52:39</publishTime>
+      <publishTime>09/07/2019 14:52:39</publishTime>
     </File>
     <File Include="oktk.aspx">
-      <publishTime>07/09/2019 14:52:40</publishTime>
+      <publishTime>09/07/2019 14:52:40</publishTime>
     </File>
     <File Include="oktkr.aspx">
-      <publishTime>07/09/2019 14:52:40</publishTime>
+      <publishTime>09/07/2019 14:52:40</publishTime>
     </File>
     <File Include="oktp.aspx">
-      <publishTime>07/09/2019 14:52:40</publishTime>
+      <publishTime>09/07/2019 14:52:40</publishTime>
     </File>
     <File Include="oktr.aspx">
-      <publishTime>07/09/2019 14:52:40</publishTime>
+      <publishTime>09/07/2019 14:52:40</publishTime>
     </File>
     <File Include="onsc.aspx">
-      <publishTime>07/09/2019 14:52:40</publishTime>
+      <publishTime>09/07/2019 14:52:40</publishTime>
     </File>
     <File Include="onsg.aspx">
-      <publishTime>07/09/2019 14:52:40</publishTime>
+      <publishTime>09/07/2019 14:52:40</publishTime>
     </File>
     <File Include="onsk.aspx">
-      <publishTime>07/09/2019 14:52:40</publishTime>
+      <publishTime>09/07/2019 14:52:40</publishTime>
     </File>
     <File Include="onsp.aspx">
-      <publishTime>07/09/2019 14:52:40</publishTime>
+      <publishTime>09/07/2019 14:52:40</publishTime>
     </File>
     <File Include="onsr.aspx">
-      <publishTime>07/09/2019 14:52:40</publishTime>
+      <publishTime>09/07/2019 14:52:40</publishTime>
     </File>
     <File Include="onsu.aspx">
-      <publishTime>07/09/2019 14:52:40</publishTime>
+      <publishTime>09/07/2019 14:52:40</publishTime>
     </File>
     <File Include="oopc.aspx">
-      <publishTime>07/09/2019 12:44:19</publishTime>
+      <publishTime>09/07/2019 12:44:19</publishTime>
     </File>
     <File Include="oopk.aspx">
       <publishTime>08/29/2019 08:31:51</publishTime>
@@ -841,31 +841,31 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>06/30/2019 16:49:53</publishTime>
     </File>
     <File Include="oopr.aspx">
-      <publishTime>07/09/2019 11:41:05</publishTime>
+      <publishTime>09/07/2019 11:41:05</publishTime>
     </File>
     <File Include="oopu.aspx">
       <publishTime>06/30/2019 16:49:51</publishTime>
     </File>
     <File Include="otrc.aspx">
-      <publishTime>07/09/2019 20:24:39</publishTime>
+      <publishTime>09/07/2019 20:24:39</publishTime>
     </File>
     <File Include="otrg.aspx">
-      <publishTime>07/09/2019 14:52:40</publishTime>
+      <publishTime>09/07/2019 14:52:40</publishTime>
     </File>
     <File Include="otrk.aspx">
-      <publishTime>07/09/2019 16:06:06</publishTime>
+      <publishTime>09/07/2019 16:06:06</publishTime>
     </File>
     <File Include="otrkd.aspx">
-      <publishTime>07/09/2019 14:52:41</publishTime>
+      <publishTime>09/07/2019 14:52:41</publishTime>
     </File>
     <File Include="otrkr.aspx">
-      <publishTime>07/09/2019 14:52:41</publishTime>
+      <publishTime>09/07/2019 14:52:41</publishTime>
     </File>
     <File Include="otrp.aspx">
-      <publishTime>07/09/2019 14:52:41</publishTime>
+      <publishTime>09/07/2019 14:52:41</publishTime>
     </File>
     <File Include="otrr.aspx">
-      <publishTime>07/09/2019 16:06:01</publishTime>
+      <publishTime>09/07/2019 16:06:01</publishTime>
     </File>
     <File Include="packages.config">
       <publishTime>09/23/2019 17:52:15</publishTime>
@@ -877,13 +877,13 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>02/12/2019 16:17:55</publishTime>
     </File>
     <File Include="Scripts/ai.0.15.0-build58334.js">
-      <publishTime>10/01/2018 16:37:32</publishTime>
+      <publishTime>01/10/2018 16:37:32</publishTime>
     </File>
     <File Include="Scripts/ai.0.15.0-build58334.min.js">
-      <publishTime>10/01/2018 16:37:32</publishTime>
+      <publishTime>01/10/2018 16:37:32</publishTime>
     </File>
     <File Include="Scripts/custom.js">
-      <publishTime>10/01/2018 16:37:32</publishTime>
+      <publishTime>01/10/2018 16:37:32</publishTime>
     </File>
     <File Include="Scripts/jquery-1.10.2.js">
       <publishTime>10/01/2018 16:37:32</publishTime>
@@ -895,16 +895,16 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>10/01/2018 16:37:32</publishTime>
     </File>
     <File Include="Scripts/jquery-1.8.3.js">
-      <publishTime>12/01/2018 11:22:54</publishTime>
+      <publishTime>01/12/2018 11:22:54</publishTime>
     </File>
     <File Include="Scripts/jquery-1.8.3.min.js">
-      <publishTime>12/01/2018 11:19:22</publishTime>
+      <publishTime>01/12/2018 11:19:22</publishTime>
     </File>
     <File Include="Scripts/jquery-latest.min.js">
-      <publishTime>10/01/2018 16:37:32</publishTime>
+      <publishTime>01/10/2018 16:37:32</publishTime>
     </File>
     <File Include="Scripts/jquery-ui.min.js">
-      <publishTime>10/01/2018 16:37:32</publishTime>
+      <publishTime>01/10/2018 16:37:32</publishTime>
     </File>
     <File Include="Scripts/jquery.divascookies-0.6.min.js">
       <publishTime>12/14/2018 22:39:53</publishTime>
@@ -913,7 +913,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>03/14/2018 02:18:47</publishTime>
     </File>
     <File Include="Scripts/main.js">
-      <publishTime>10/01/2018 16:37:32</publishTime>
+      <publishTime>01/10/2018 16:37:32</publishTime>
     </File>
     <File Include="Scripts/modernizr.js">
       <publishTime>12/14/2018 22:39:54</publishTime>
@@ -931,28 +931,28 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>12/25/2018 05:29:26</publishTime>
     </File>
     <File Include="style/new.css">
-      <publishTime>07/09/2019 15:04:52</publishTime>
+      <publishTime>09/07/2019 15:04:52</publishTime>
     </File>
     <File Include="style/popup.css">
-      <publishTime>05/01/2018 16:57:44</publishTime>
+      <publishTime>01/05/2018 16:57:44</publishTime>
     </File>
     <File Include="style/ssrocena.css">
       <publishTime>12/18/2018 20:51:16</publishTime>
     </File>
     <File Include="style/style.css">
-      <publishTime>07/09/2019 15:10:12</publishTime>
+      <publishTime>09/07/2019 15:10:12</publishTime>
     </File>
     <File Include="style/Tables.css">
-      <publishTime>07/09/2019 15:07:57</publishTime>
+      <publishTime>09/07/2019 15:07:57</publishTime>
     </File>
     <File Include="temp.aspx">
       <publishTime>01/08/2019 17:39:08</publishTime>
     </File>
     <File Include="template.aspx">
-      <publishTime>07/09/2019 14:52:42</publishTime>
+      <publishTime>09/07/2019 14:52:42</publishTime>
     </File>
     <File Include="Template/agl.xlsx">
-      <publishTime>06/08/2018 08:52:28</publishTime>
+      <publishTime>08/06/2018 08:52:28</publishTime>
     </File>
     <File Include="Template/aglc.xlsx">
       <publishTime>08/20/2019 17:18:52</publishTime>
@@ -961,31 +961,31 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>01/23/2019 20:31:52</publishTime>
     </File>
     <File Include="Template/akac.xlsx">
-      <publishTime>10/01/2018 18:29:12</publishTime>
+      <publishTime>01/10/2018 18:29:12</publishTime>
     </File>
     <File Include="Template/akac2.xlsx">
-      <publishTime>10/01/2018 18:29:12</publishTime>
+      <publishTime>01/10/2018 18:29:12</publishTime>
     </File>
     <File Include="Template/akap.xlsx">
-      <publishTime>10/01/2018 18:29:12</publishTime>
+      <publishTime>01/10/2018 18:29:12</publishTime>
     </File>
     <File Include="Template/akap2.xlsx">
-      <publishTime>10/01/2018 18:29:12</publishTime>
+      <publishTime>01/10/2018 18:29:12</publishTime>
     </File>
     <File Include="Template/akape.xls">
-      <publishTime>10/01/2018 18:29:12</publishTime>
+      <publishTime>01/10/2018 18:29:12</publishTime>
     </File>
     <File Include="Template/akrc.xlsx">
-      <publishTime>03/08/2019 10:53:48</publishTime>
+      <publishTime>08/03/2019 10:53:48</publishTime>
     </File>
     <File Include="Template/akrg.xlsx">
       <publishTime>07/23/2019 16:52:56</publishTime>
     </File>
     <File Include="Template/akrk.xlsx">
-      <publishTime>03/08/2019 10:40:39</publishTime>
+      <publishTime>08/03/2019 10:40:39</publishTime>
     </File>
     <File Include="Template/akrp.xlsx">
-      <publishTime>03/08/2019 09:30:53</publishTime>
+      <publishTime>08/03/2019 09:30:53</publishTime>
     </File>
     <File Include="Template/aopc.xlsx">
       <publishTime>04/24/2019 10:56:49</publishTime>
@@ -1024,7 +1024,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>11/17/2018 01:53:53</publishTime>
     </File>
     <File Include="Template/oglc.xlsx">
-      <publishTime>10/01/2018 18:29:12</publishTime>
+      <publishTime>01/10/2018 18:29:12</publishTime>
     </File>
     <File Include="Template/oglc2.xlsx">
       <publishTime>03/03/2018 05:48:58</publishTime>
@@ -1039,7 +1039,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>08/08/2018 10:08:45</publishTime>
     </File>
     <File Include="Template/oglk3.xlsx">
-      <publishTime>11/12/2018 18:58:43</publishTime>
+      <publishTime>12/11/2018 18:58:43</publishTime>
     </File>
     <File Include="Template/oglp.xlsx">
       <publishTime>07/08/2019 07:56:04</publishTime>
@@ -1060,10 +1060,10 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>03/28/2018 17:30:10</publishTime>
     </File>
     <File Include="Template/okrp.xlsx">
-      <publishTime>05/06/2018 16:58:23</publishTime>
+      <publishTime>10/01/2019 18:39:44</publishTime>
     </File>
     <File Include="Template/okrr.xlsx">
-      <publishTime>01/03/2018 15:58:42</publishTime>
+      <publishTime>03/01/2018 15:58:42</publishTime>
     </File>
     <File Include="Template/OKTC.xlsx">
       <publishTime>04/05/2018 22:36:08</publishTime>
@@ -1072,10 +1072,10 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>05/08/2018 21:40:58</publishTime>
     </File>
     <File Include="Template/oktk.xlsx">
-      <publishTime>10/01/2018 18:29:12</publishTime>
+      <publishTime>01/10/2018 18:29:12</publishTime>
     </File>
     <File Include="Template/oktkr.xlsx">
-      <publishTime>07/08/2018 15:18:52</publishTime>
+      <publishTime>08/07/2018 15:18:52</publishTime>
     </File>
     <File Include="Template/oktp.xlsx">
       <publishTime>12/13/2018 15:57:55</publishTime>
@@ -1099,7 +1099,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>08/26/2019 18:31:10</publishTime>
     </File>
     <File Include="Template/oopp.xlsx">
-      <publishTime>10/01/2018 18:29:12</publishTime>
+      <publishTime>01/10/2018 18:29:12</publishTime>
     </File>
     <File Include="Template/oopp_.xlsx">
       <publishTime>10/01/2018 18:29:12</publishTime>
@@ -1111,7 +1111,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>01/10/2018 18:29:12</publishTime>
     </File>
     <File Include="Template/oopu.xlsx">
-      <publishTime>10/01/2018 18:29:12</publishTime>
+      <publishTime>01/10/2018 18:29:12</publishTime>
     </File>
     <File Include="Template/oopu_.xlsx">
       <publishTime>10/01/2018 18:29:12</publishTime>
@@ -1123,22 +1123,22 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>08/29/2019 21:06:29</publishTime>
     </File>
     <File Include="Template/RaportCywilny01.xlsx">
-      <publishTime>10/01/2018 18:29:12</publishTime>
+      <publishTime>01/10/2018 18:29:12</publishTime>
     </File>
     <File Include="Template/RaportKarny.xlsx">
-      <publishTime>10/01/2018 18:29:12</publishTime>
+      <publishTime>01/10/2018 18:29:12</publishTime>
     </File>
     <File Include="Template/SamsungIF_Rg.woff">
-      <publishTime>10/01/2018 18:29:12</publishTime>
+      <publishTime>01/10/2018 18:29:12</publishTime>
     </File>
     <File Include="Template/SSRocena.xlsx">
-      <publishTime>10/01/2018 18:29:12</publishTime>
+      <publishTime>01/10/2018 18:29:12</publishTime>
     </File>
     <File Include="Template/SSRocena1.xlsx">
-      <publishTime>10/01/2018 18:29:12</publishTime>
+      <publishTime>01/10/2018 18:29:12</publishTime>
     </File>
     <File Include="Template/statystykiWydzialCywilny.xlsx">
-      <publishTime>10/01/2018 18:29:12</publishTime>
+      <publishTime>01/10/2018 18:29:12</publishTime>
     </File>
     <File Include="Template/wab.xlsx">
       <publishTime>06/25/2019 23:07:54</publishTime>
@@ -1159,7 +1159,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>08/17/2019 21:46:05</publishTime>
     </File>
     <File Include="UserControlls/ZarzadzanieFormularzami.ascx">
-      <publishTime>09/28/2019 23:01:10</publishTime>
+      <publishTime>10/01/2019 17:40:44</publishTime>
     </File>
     <File Include="UserControlls/zarzadzanieUprawnieniami.ascx">
       <publishTime>09/16/2019 17:55:40</publishTime>
@@ -1168,10 +1168,10 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>09/19/2019 18:44:09</publishTime>
     </File>
     <File Include="version.txt">
-      <publishTime>09/28/2019 23:01:10</publishTime>
+      <publishTime>10/01/2019 18:54:21</publishTime>
     </File>
     <File Include="wab.aspx">
-      <publishTime>07/09/2019 14:52:42</publishTime>
+      <publishTime>09/07/2019 14:52:42</publishTime>
     </File>
     <File Include="Web.config">
       <publishTime>09/25/2019 21:55:48</publishTime>
@@ -1183,7 +1183,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>01/08/2019 17:39:27</publishTime>
     </File>
     <File Include="wizc.aspx">
-      <publishTime>09/16/2019 17:50:28</publishTime>
+      <publishTime>09/30/2019 19:19:02</publishTime>
     </File>
     <File Include="wizytacjaCywilny.aspx">
       <publishTime>01/08/2019 17:39:27</publishTime>

@@ -61,8 +61,8 @@ namespace stat2018
             DataTable outputTable = new DataTable();
             for (int i = 1; i <= iloscKolumn + 1; i++)
             {
-                outputTable.Columns.Add("d" + i.ToString("D2").Trim(), typeof(string));
-                outputTable.Columns["d" + i.ToString("D2").Trim()].DefaultValue = "0";
+                outputTable.Columns.Add("d_" + i.ToString("D2").Trim(), typeof(string));
+                outputTable.Columns["d_" + i.ToString("D2").Trim()].DefaultValue = "0";
             }
 
             DataTable kwerendy = new DataTable();
@@ -80,6 +80,7 @@ namespace stat2018
                 return null;
             }
             string cs = cl.podajConnectionString(int.Parse(id_dzialu));
+            string kw = string.Empty;
             for (int i = 1; i <= iloscWierszy; i++) //po wierszach
             {
                 DataRow dR = outputTable.NewRow();
@@ -93,7 +94,7 @@ namespace stat2018
                         if (foundRows.Count() != 0)                      
                         {
                             DataRow dr = foundRows[0];
-                            string kw = dr[2].ToString();
+                            kw = dr[2].ToString();
                             //wpisanie danych
                             try
                             {
@@ -101,7 +102,7 @@ namespace stat2018
                             }
                             catch (Exception ex)
                             {
-                                Common.log.Error(kod + " " + ex.Message);
+                                Common.log.Error(tenPlik +" Kwerenda: "+ kw  +" bład "+ kod + " " + ex.Message);
                             }
                         }
                     }

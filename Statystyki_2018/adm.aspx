@@ -3,10 +3,65 @@
 <%@ Register Assembly="DevExpress.Web.v17.1, Version=17.1.15.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" Namespace="DevExpress.Web" TagPrefix="dx" %>
 
 <%@ Register src="UserControlls/ZarzadzanieFormularzami.ascx" tagname="ZarzadzanieFormularzami" tagprefix="uc3" %>
+
+
+
+
 <asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
+    <style>
+        .butn1 {
+  ;
+        background-position: 0% 0%;
+background-image: linear-gradient(to bottom, #ffd900, #f56200)!important !important ;
+            -webkit-border-radius: 8!important;
+            -moz-border-radius: 8!important;
+            border-radius: 8px!important;
+            font-family: Arial!important;
+            color: #ffffff!important;
+            font-size: 20px!important;
+            padding: 5px 30px 5px 30px !important;;
+            text-decoration: none !important;
+            background-color: #ffd900 !important;
+            background-repeat: repeat !important;
+            background-attachment: scroll !important;
+        }
+
+.butn1:hover {
+  background: #3cb0fd;
+  background-image: -webkit-linear-gradient(top, #3cb0fd, #3498db)!important;
+  background-image: -moz-linear-gradient(top, #3cb0fd, #3498db)!important;
+  background-image: -ms-linear-gradient(top, #3cb0fd, #3498db)!important;
+  background-image: -o-linear-gradient(top, #3cb0fd, #3498db)!important;
+  background-image: linear-gradient(to bottom, #3cb0fd, #3498db)!important;
+  text-decoration: none!important;
+}
+   
+
+</style>
     <dx:ASPxGridView ID="ASPxGridView2" runat="server" AutoGenerateColumns="False" DataSourceID="SqlDataSource1" EnableTheming="True" KeyFieldName="ident" Theme="PlasticBlue" Width="100%" OnStartRowEditing="startEdycji">
         <SettingsEditing Mode="EditForm">
         </SettingsEditing>
+         <SettingsCommandButton>
+             <EditButton Text ="Edytuj"></EditButton>
+             <NewButton Text="Nowy użytkownik"></NewButton>
+             <DeleteButton Text="Usuń">
+                 <Styles>
+                    
+                 </Styles>
+             </DeleteButton>
+            <CancelButton Text="Anuluj">
+                <Styles>
+                    <Style CssClass="butn1">
+                    </Style>
+                </Styles>
+            </CancelButton>
+            <UpdateButton Text="Zapisz">
+                <Styles>
+                    <Style CssClass="butn1">
+                    </Style>
+                </Styles>
+             </UpdateButton>
+        </SettingsCommandButton>
         <Settings ShowFilterRow="True" />
           <Templates>
         <EditForm>
@@ -43,7 +98,7 @@
             </Items>
         </EditFormLayoutProperties>
         <Columns>
-            <dx:GridViewCommandColumn ShowDeleteButton="True" ShowEditButton="True" ShowNewButtonInHeader="True" VisibleIndex="0" ShowCancelButton="True" ShowNewButton="True" ShowUpdateButton="True">
+            <dx:GridViewCommandColumn ShowDeleteButton="True" ShowEditButton="True" VisibleIndex="0" ShowCancelButton="True" ShowNewButton="True" ShowUpdateButton="True" ShowNewButtonInHeader="True">
             </dx:GridViewCommandColumn>
             <dx:GridViewDataTextColumn FieldName="ident" ReadOnly="True" Visible="False" VisibleIndex="1">
                 <EditFormSettings Visible="False" />

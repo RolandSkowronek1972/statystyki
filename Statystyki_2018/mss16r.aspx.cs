@@ -53,8 +53,8 @@ namespace stat2018
             }
             Session["data_1"] = datyMSS.DataPoczatkowa();
             Session["data_2"] = datyMSS.DataKoncowa();
-            Date1.Date=DateTime .Parse ( datyMSS.DataPoczatkowa());
-            Date2.Date= DateTime.Parse(datyMSS.DataPoczatkowa ());
+         //   Date1.Date=DateTime .Parse ( datyMSS.DataPoczatkowa());
+         //   Date2.Date= DateTime.Parse(datyMSS.DataKoncowa());
             przemiel();
             makeLabels();
         }// end of Page_Load

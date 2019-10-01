@@ -109,6 +109,7 @@ namespace stat2018
             DataTable tabelka23 = dr.generuj_dane_do_tabeli_sedziowskiej_2018(idWydzial, 23, Date1.Date, Date2.Date, 130, tenPlik);
             Session["tabelka023"] = tabelka23;
             tworztabelkeHTML23("K23", idWydzial, 23, tabelka23, "Liczba sporządzonych uzasadnień", "", "", "Tabela 23");
+
             tabela_24();
             tabela_25();
 
@@ -132,6 +133,8 @@ namespace stat2018
             tabela_31();
             tabela_32();
             tabela_33();
+
+            makeLabels();
         }
 
         private void tabela_01(int idWydzialu, int idtabeli)
@@ -298,14 +301,16 @@ namespace stat2018
                 tab_7_w02_c14.Text = tabelka01.Rows[13][2].ToString().Trim();
                 tab_7_w02_c15.Text = tabelka01.Rows[14][2].ToString().Trim();
                 tab_7_w02_c16.Text = tabelka01.Rows[15][2].ToString().Trim();
+
+                tab_7_w03_c01.Text = tabelka01.Rows[2][1].ToString().Trim();
+                tab_7_w04_c01.Text = tabelka01.Rows[3][1].ToString().Trim();
+                tab_7_w05_c01.Text = tabelka01.Rows[4][1].ToString().Trim();
             }
             catch (Exception ex)
             {
                 cm.log.Error("wizc : " + ex.Message);
             }
-            tab_7_w03_c01.Text = tabelka01.Rows[2][1].ToString().Trim();
-            tab_7_w04_c01.Text = tabelka01.Rows[3][1].ToString().Trim();
-            tab_7_w05_c01.Text = tabelka01.Rows[4][1].ToString().Trim();
+        
         }
 
         protected void tabela_8()
@@ -1024,6 +1029,7 @@ namespace stat2018
             {
             }
         }
+
 
         protected void tabela_24()
         {
@@ -2338,6 +2344,36 @@ namespace stat2018
             builder.Append(" </div>");
             tblControl.Text = builder.ToString();
             tablePlaceHolder23.Controls.Add(tblControl);
+        }
+        protected void makeLabels()
+        {
+            try
+            {
+                string User_id = string.Empty;
+                string domain = string.Empty;
+                try
+                {
+                    User_id = (string)Session["user_id"];
+                    domain = (string)Session["damain"];
+                }
+                catch
+                { }
+                Label3.Text = cl.nazwaSadu((string)Session["id_dzialu"]);
+
+                Label28.Text = cl.podajUzytkownika(User_id, domain);
+                Label29.Text = DateTime.Now.ToLongDateString();
+                try
+                {
+                    Label30.Text = System.IO.File.ReadAllText(Server.MapPath(@"~//version.txt")).ToString().Trim();
+                }
+                catch
+                { }
+
+               
+            }
+            catch
+            {
+            }
         }
 
         protected void tworztabelkeHTML26(string idKontrolki, int idWydzialu, int idtabeli, DataTable dane, string tekst, string funkcjaSR, string opisDzialu, string nrTabeli)
