@@ -25,12 +25,12 @@ namespace stat2018
                     export.Styles.Header.Wrap = DevExpress.Utils.DefaultBoolean.True;
                     export.MaxColumnWidth = 180;
                     pcl.Component = export;
-                    pcl.Margins.Left = pcl.Margins.Right = 50;
+                    pcl.Margins.Left = pcl.Margins.Right = 10;
 
                     pcl.Landscape = true;
                     pcl.CreateDocument(false);
                     pcl.PrintingSystem.Document.AutoFitToPagesWidth = 0;
-
+                    
                     pcl.ExportToPdf(ms);
                     WriteResponse(this.Response, ms.ToArray(), System.Net.Mime.DispositionTypeNames.Inline.ToString());
                 }

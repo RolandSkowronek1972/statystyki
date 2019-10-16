@@ -11,28 +11,6 @@ namespace stat2018
         public string con_str_wcyw = ConfigurationManager.ConnectionStrings["wcywConnectionString"].ConnectionString;
         public log_4_net log = new log_4_net();
 
-        public enum Rodzaje
-        {
-            admin = 0,// (możliwość nadawania uprawnień)
-            miesieczne = 1,
-            kontrolki = 2,
-            MSS = 3,
-            kof = 4,
-            wyszukiwarka = 5,
-            pracownik = 6,
-            potwierdzenie = 1
-        }
-
-        /*
-        public string[] splitData(string arg)
-        {
-            string[] stringSeparators = new string[] { "#" };
-            string[] stTab = null;
-            stTab = arg.Split(stringSeparators, StringSplitOptions.None);
-            return stTab;
-        }
-        */
-
         public string podajMiesiac(int numerMiesiaca)
         {
             switch (numerMiesiaca)
@@ -75,7 +53,7 @@ namespace stat2018
             }
         }
 
-        public DataTable getDataTable(string kwerenda, string connStr, DataTable parameters,string tenPlik)
+        public DataTable getDataTable(string kwerenda, string connStr, DataTable parameters, string tenPlik)
         {
             DataSet dataSet = new DataSet();
             try
@@ -95,17 +73,18 @@ namespace stat2018
             }
             catch (Exception ex)
             {
-                log.Error(tenPlik +" Kwerenda: "+ kwerenda+ " Error getDataTable : " + ex.Message);
+                log.Error(tenPlik + " Kwerenda: " + kwerenda + " Error getDataTable : " + ex.Message);
             }
 
             return dataSet.Tables.Count != 0 ? dataSet.Tables[0] : null;
         } // end of getDataTable
 
-        public DataTable getDataTable(string kwerenda, string connStr,string tenPlik)
+        public DataTable getDataTable(string kwerenda, string connStr, string tenPlik)
         {
             return getDataTable(kwerenda, connStr, null, tenPlik);
         } // end of getDataTable
-        public void runQuerry(string kwerenda, string connStr, DataTable parameters,string tenplik)
+
+        public void runQuerry(string kwerenda, string connStr, DataTable parameters, string tenplik)
         {
             //log.Info("runQuerry is started");
 
@@ -132,7 +111,7 @@ namespace stat2018
                 }
                 catch (Exception ex)
                 {
-                    log.Error(tenplik+ " Error runQuerry : " + ex.Message);
+                    log.Error(tenplik + " Error runQuerry : " + ex.Message);
                     conn.Close();
                 }
             } // end of using
@@ -159,7 +138,7 @@ namespace stat2018
                     }
                     //log.Info("Start querry execution");
                     sqlCmd.ExecuteScalar();
-                    //log.Info("Execution done. ");
+                    log.Info("runQuerry Execution done. ");
                     conn.Close();
                     //log.Info("Close DB connection");
                 }
@@ -179,7 +158,7 @@ namespace stat2018
         public string getQuerryValue(string kwerenda, string connStr, DataTable parameters)
         {
             //log.Info("Start getQuerryValue");
-          
+
             using (SqlCommand sqlCmd = new SqlCommand(kwerenda, new SqlConnection(connStr)))
             {
                 try
@@ -208,7 +187,8 @@ namespace stat2018
             } // end of using
             return "";
         }// end of getQuerryValue
-        public string getQuerryValue(string kwerenda, string connStr, DataTable parameters,string  tenplik)
+
+        public string getQuerryValue(string kwerenda, string connStr, DataTable parameters, string tenplik)
         {
             //log.Info("Start getQuerryValue");
             //  string result = string.Empty ;
@@ -230,7 +210,7 @@ namespace stat2018
                     var result = sqlCmd.ExecuteScalar();
                     sqlCmd.Connection.Close();
 
-                    return result != null ? result.ToString() : informacja(kwerenda, tenplik );
+                    return result != null ? result.ToString() : informacja(kwerenda, tenplik);
                 }
                 catch (Exception ex)
                 {
@@ -241,13 +221,14 @@ namespace stat2018
             return "";
         }// end of getQuerryValue
 
-        private string informacja(string kwerenda,string tenplik)
+        private string informacja(string kwerenda, string tenplik)
         {
-            log.Error(tenplik + " Kwerenda : " + kwerenda +" nie zwróciła żadnej warości" );
-            return string.Empty ;
+            log.Error(tenplik + " Kwerenda : " + kwerenda + " nie zwróciła żadnej warości");
+            return string.Empty;
         }
+
         //==================================================
-       
+
         public DataTable makeParameterTable()
         {
             DataTable parameters = new DataTable();
@@ -261,7 +242,6 @@ namespace stat2018
             DataTable parameters = makeParameterTable();
             parameters.Rows.Add("@klucz", klucz.Trim());
             return getQuerryValue("SELECT DISTINCT wartosc FROM  konfig WHERE klucz=rtrim(@klucz)", con_str, parameters);
-
         }
 
         //====================================================================================================================================
@@ -287,6 +267,7 @@ namespace stat2018
             return false;
         }
 
+        /*
         public DataTable schematTabeli()
         {
             DataTable dT = new DataTable();
@@ -299,6 +280,6 @@ namespace stat2018
             dT.Columns.Add("text", typeof(string));
 
             return dT;
-        }
+        }*/
     } // end of common
 }

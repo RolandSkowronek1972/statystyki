@@ -239,7 +239,7 @@ namespace stat2018
         public DataTable generuj_dane_do_tabeli_sedziowskiej_2018(int id_dzialu, int id_tabeli, DateTime poczatek, DateTime koniec, int il_kolumn, string tenPlik)
         {
             string status = string.Empty;
-            //Common.log.Info(tenPlik + " :Generowanie tabeli danych: Rozpoczęcie");
+            Common.log.Info(tenPlik + " :Generowanie tabeli danych: Rozpoczęcie");
 
             DataTable dTable = new DataTable();
             //Common.log.Info(tenPlik + " :Generowanie tabeli danych: Pobieranie connectionstringa");
@@ -259,27 +259,7 @@ namespace stat2018
 
             // tworzenie tabeli
             dTable = tabelaSedziowska(il_kolumn);
-            /*
-            dTable.Columns.Add("id", typeof(int));
-            dTable.Columns.Add("id_sedziego", typeof(int));
-            dTable.Columns.Add("Funkcja", typeof(string));
-            dTable.Columns.Add("Stanowisko", typeof(string));
-            dTable.Columns.Add("Imie", typeof(string));
-            dTable.Columns.Add("Nazwisko", typeof(string));
-            dTable.Columns.Add("id_tabeli", typeof(string));
-            for (int i = 1; i <= il_kolumn; i++)
-            {
-                DataColumn column = new DataColumn();
-
-                column.DataType = typeof(string);
-                column.AllowDBNull = false;
-                column.ColumnName = getColumnName(i);
-                column.DefaultValue = "0";
-                dTable.Columns.Add(column);
-          
-            }
-            */
-            // sa kwerendy
+           //sa kwerendy
             //wyselekcjonuj kwerendy z sedziami col=0
             DataRow[] kwerendySedziow = dT1.Select("id_kolumny=0");
             Common.log.Info(tenPlik + " :Generowanie tabeli danych: Ilość kwerend wyciągających dla sedziów dla tabeli : " + id_tabeli + " wynosi:" + kwerendySedziow.Length.ToString ());
@@ -322,29 +302,28 @@ namespace stat2018
                             dTable.Rows.Add(daneSedziego);
                             i++;
                         }
-                        catch
-                        { }
+                        catch (Exception ex)
+                        {
+                            Common.log.Error(tenPlik + " :Generowanie tabeli danych:1 Wpisywanie danych sedziów dla tabeli : " + id_tabeli + " " + ex.Message);
+                        }
                     }
                 }
             }
             catch (Exception ex)
             {
-                string exx = ex.Message;
-                Common.log.Error(tenPlik + " :Generowanie tabeli danych: Wpisywanie danych sedziów dla tabeli : " + id_tabeli + " " + ex.Message);
+                Common.log.Error(tenPlik + " :Generowanie tabeli danych:2 Wpisywanie danych sedziów dla tabeli : " + id_tabeli + " " + ex.Message);
             }
-            // wpisywanie danych dla sedziów
+            Common.log.Info(tenPlik + " wpisywanie danych dla sedziów");
             try
             {
                 foreach (var wiersz in kwerendyDanych)
                 {
-                    string kolumna = wiersz[0].ToString();
+                    int  kolumna =int.Parse ( wiersz[0].ToString());
                     string kwerendaDanych = wiersz[1].ToString();
                     DataTable parametry = Common.makeParameterTable();
                     parametry.Rows.Add("@data_1", poczatek.ToShortDateString());
                     parametry.Rows.Add("@data_2", koniec.ToShortDateString());
-                   
                     DataTable tabelaDanychDlaSedziow = Common.getDataTable(kwerendaDanych, cs, parametry, tenPlik);
-
                     // przepisanie danych sedziow
                     int index = 0;
 
@@ -354,9 +333,6 @@ namespace stat2018
                         {
                             string idSedziego = dRow[1].ToString().Trim();
                             //linq znajdz wiersz z sedzim
-                            // pobierz index
-                            //                     dTable.Rows[index][getColumnName(int.Parse(kolumna))] = warosc;
-
                             string warosc = dRow[0].ToString().Trim();
                             index = 0;
                             foreach (DataRow dr in dTable.Rows)
@@ -368,41 +344,63 @@ namespace stat2018
                                 string nr_sedziego = dr[1].ToString();
                                 if (nr_sedziego == idSedziego)
                                 {
-                                    dTable.Rows[index][getColumnName(int.Parse(kolumna))] = warosc;
+                                    dTable.Rows[index][getColumnName(kolumna)] = warosc;
                                 }
                                 index++;
                             }
                         }
-                        catch
-                        { }
+                        catch (Exception ex)
+                        {
+                            Common.log.Error(tenPlik + " :wpisywanie do tabeli danych dla tabeli : " + id_tabeli + " " + ex.Message);
+                        }
                     }
                 }
             }
-            catch
-            { }
-
+            catch (Exception ex)
+            {
+                Common.log.Error(tenPlik + " :wpisywanie danych dla sedziów : " + id_tabeli + " " + ex.Message);
+            }
             // uzupelnienie funkcji
-            DataTable stanowiska = Common.getDataTable("SELECT distinct ident ,nazwa FROM stanowiska", con_str, tenPlik);
-           
-            foreach (DataRow wierszDanych in dTable.Rows)
+
+            return dTable;
+        }// end of generuj_dane_do_tabeli_5
+
+
+        private DataTable tabelaZDanymi ( DataTable dTable, DataTable tabelaDanychDlaSedziow,int kolumna, int tabela, string tenPlik)
+        {
+            int index = 0;
+            foreach (DataRow dRow in tabelaDanychDlaSedziow.Rows)
             {
                 try
                 {
-                    string idFunkcji = wierszDanych["stanowisko"].ToString().Trim();
+                    string idSedziego = dRow[1].ToString().Trim();
+                    //linq znajdz wiersz z sedzim
+                    // pobierz index
 
-                    var results = from myRow in stanowiska.AsEnumerable()
-                                  where myRow.Field<string>("nazwa") == idFunkcji
-                                  select myRow;
+                    string warosc = dRow[0].ToString().Trim();
+                    index = 0;
+                    foreach (DataRow dr in dTable.Rows)
+                    {
+                        if (dr.ItemArray.Length < 2)
+                        {
+                            continue;
+                        }
+                        string nr_sedziego = dr[1].ToString();
+                        if (nr_sedziego == idSedziego)
+                        {
+                            dTable.Rows[index][getColumnName(kolumna)] = warosc;
+                        }
+                        index++;
+                    }
                 }
                 catch (Exception ex)
                 {
-                    Common.log.Error(tenPlik + " :Generowanie tabeli danych: uzupelnianie stanowisk : "  + ex.Message);
+                    Common.log.Error(tenPlik + " :wpisywanie do tabeli danych dla tabeli : " + tabela.ToString () + " " + ex.Message);
 
                 }
-
             }
-            return dTable;
-        }// end of generuj_dane_do_tabeli_5
+            return null;
+        }
         public DataTable generuj_dane_do_tabeli_sedziowskiej_2019(int id_dzialu, int id_tabeli, DateTime poczatek, DateTime koniec, int il_kolumn, string tenPlik)
         {
             string status = string.Empty;

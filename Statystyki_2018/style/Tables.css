@@ -734,10 +734,11 @@
 
 .col_200F {
     width: 200px;
+    min-width: 250px;
+
 }
 
 .col_250 {
-    width: 250px;
     text-align: center;
     min-width: 250px;
 }
@@ -1798,6 +1799,7 @@ height: 42px;*/
     top: 0px;
     height: 24px;
     cursor: pointer;
+    left: 0px;
 }
 
 .ax_X:hover {

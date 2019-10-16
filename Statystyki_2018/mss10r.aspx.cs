@@ -59,11 +59,11 @@ namespace stat2018
                     Server.Transfer("default.aspx");
                 }
             }
-            przemiel();
+            odswiez();
             makeLabels();
         }// end of Page_Load
 
-        protected void przemiel()
+        protected void odswiez()
         {
             string yyx = (string)Session["id_dzialu"];
 
@@ -2576,7 +2576,7 @@ namespace stat2018
 
         protected void LinkButton54_Click(object sender, EventArgs e)
         {
-            przemiel();
+            odswiez();
         }
 
         private string wyciagnijWartosc(DataTable ddT, string selectString)

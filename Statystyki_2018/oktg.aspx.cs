@@ -62,7 +62,7 @@ namespace stat2018
                         this.Title = "Statystyki " + fileContents.ToString().Trim();
                         clearHedersSession();
                         makeHeader();
-                        przemiel();
+                        odswiez();
                         makeLabels();
                     }
                 }
@@ -85,7 +85,7 @@ namespace stat2018
             Session["header_08"] = null;
         }
 
-        protected void przemiel()
+        protected void odswiez()
         {
             string idDzialu = (string)Session["id_dzialu"];
             string txt = string.Empty;
@@ -135,8 +135,6 @@ namespace stat2018
                 cm.log.Error("OGLR2: " + ex.Message);
             }
 
-            // dopasowanie opisów
-            makeLabels();
 
             try
             {
@@ -150,7 +148,7 @@ namespace stat2018
             }
 
             Label11.Text = txt;
-            Label3.Text = cl.nazwaSadu((string)Session["id_dzialu"]);
+        
         }
 
         #region "nagłowki tabel"
@@ -335,24 +333,44 @@ namespace stat2018
 
                 ExcelWorksheet MyWorksheet1 = MyExcel.Workbook.Worksheets[1];
                 DataTable table = (DataTable)Session["tabelkaGW001"];
-                table.Columns.Remove("id");
-                table.Columns.Remove("id_sedziego");
-                table.Columns.Remove("stanowisko");
-                table.Columns.Remove("funkcja");
-                table.Columns.Remove("id_tabeli");
-                MyWorksheet1 = tabela.tworzArkuszwExcle(MyExcel.Workbook.Worksheets[1], table, 14, 1, 6, true, false, false, false, false);
+             
+                MyWorksheet1 = tabela.tworzArkuszwExcle(MyExcel.Workbook.Worksheets[1], table, 15,0, 6, true, true, false, false, false,true);
 
+
+                int iloscWierszy = table.Rows.Count;
+                tabela.komorkaExcela(MyExcel.Workbook.Worksheets[1], iloscWierszy + 7, 1, "Pozostało z okresu poprzedniego", true, 0, 3);
+                tabela.komorkaExcela(MyExcel.Workbook.Worksheets[1], iloscWierszy + 8, 1, "Wpływ spraw", true, 0, 3);
+                tabela.komorkaExcela(MyExcel.Workbook.Worksheets[1], iloscWierszy + 9, 1, "załatwienia", true, 0, 3);
+                tabela.komorkaExcela(MyExcel.Workbook.Worksheets[1], iloscWierszy + 10, 1, "pozostałość na okres następny", true, 0, 3);
+                tabela.komorkaExcela(MyExcel.Workbook.Worksheets[1], iloscWierszy + 11, 1, "Zaległość", true, 4, 2);
+                tabela.komorkaExcela(MyExcel.Workbook.Worksheets[1], iloscWierszy + 11, 4, "3-6 miesiecy", false, 0, 0);
+                tabela.komorkaExcela(MyExcel.Workbook.Worksheets[1], iloscWierszy + 12, 4, "6-12 miesiecy", false, 0, 0);
+                tabela.komorkaExcela(MyExcel.Workbook.Worksheets[1], iloscWierszy + 13, 4, "12 m-cy do 2 lat)", false, 0, 0);
+                tabela.komorkaExcela(MyExcel.Workbook.Worksheets[1], iloscWierszy + 14, 4, "2-3 lat", false, 0, 0);
+                tabela.komorkaExcela(MyExcel.Workbook.Worksheets[1], iloscWierszy + 15, 4, "powyżej 3 lat", false, 0, 0);
                 //druga
+                DataTable table2 = (DataTable)Session["tabelkaGW002"];
+                try
+                {
+                    for (int i = 0; i < 9; i++)
+                    {
+                        for (int j = 0; j < 6; j++)
+                        {
+                            string value = table2.Rows[i][j+1].ToString();
+                            tabela.komorkaExcela(MyExcel.Workbook.Worksheets[1], iloscWierszy + 7+i, j+5, value, false, 0, 0);
 
+                        }
+                    }
+                }
+                catch (Exception)
+                {
+
+                    throw;
+                }
                 ExcelWorksheet MyWorksheet2 = MyExcel.Workbook.Worksheets[2];
                 table = (DataTable)Session["tabelkaGW003"];
-                table.Columns.Remove("id");
-                table.Columns.Remove("id_sedziego");
-                table.Columns.Remove("stanowisko");
-                table.Columns.Remove("funkcja");
-                table.Columns.Remove("id_tabeli");
-
-                MyWorksheet2 = tabela.tworzArkuszwExcle(MyExcel.Workbook.Worksheets[2], table, 7, 1, 6, true, false, false, false, false);
+            
+                MyWorksheet2 = tabela.tworzArkuszwExcle(MyExcel.Workbook.Worksheets[2], table, 7, 0, 5, true, false, false, false, false,false );
 
                 try
                 {
@@ -370,45 +388,22 @@ namespace stat2018
                 }
             }//end of using
 
-            przemiel();
+            odswiez();
         }
 
         protected void LinkButton54_Click(object sender, EventArgs e)
         {
-            przemiel();
+            odswiez();
         }
 
-        protected void LinkButton55_Click(object sender, EventArgs e)
-        {
-            przemiel();
-            ScriptManager.RegisterStartupScript(this.Page, Page.GetType(), "print2", "JavaScript: window.print();", true);
-            makeLabels();
-        }
-
-        protected void makeSumRow(DataTable table, GridViewRowEventArgs e)
-        {
-            object sumObject;
-            int ilKolumn = e.Row.Cells.Count;
-            e.Row.Cells[1].Text = "Ogółem";
-            for (int i = 1; i < e.Row.Cells.Count; i++)
-            {
-                try
-                {
-                    sumObject = table.Compute("Sum(" + "d_" + (i - 1).ToString("D2") + ")", "");
-                    e.Row.Cells[i].Text = sumObject.ToString();
-                }
-                catch (Exception)
-                { }
-            }
-        }
-
+     
+      
         protected void Gridview1_RowDataBound(object sender, GridViewRowEventArgs e)
         {
             if (e.Row.RowType == DataControlRowType.Footer)
             {
-                DataTable table = ((DataView)daneDoTabeli1.Select(DataSourceSelectArguments.Empty)).ToTable();
-
-                makeSumRow(table, e);
+                DataTable table = (DataTable)Session["tabelkaGW001"];
+                tabela. makeSumRow(table, e);
             }
             if (e.Row.RowType == DataControlRowType.DataRow)
             {
@@ -420,9 +415,9 @@ namespace stat2018
         {
             if (e.Row.RowType == DataControlRowType.Header)
             {
-                System.Web.UI.WebControls.GridView sn = new System.Web.UI.WebControls.GridView();
+               
                 DataTable dT = (DataTable)Session["header_01"];
-                tabela.makeHeader(sn, dT, Tabela1);
+                tabela.makeHeader(dT, Tabela1);
             }
             else
             {
@@ -446,9 +441,9 @@ namespace stat2018
         {
             if (e.Row.RowType == DataControlRowType.Header)
             {
-                System.Web.UI.WebControls.GridView sn = new System.Web.UI.WebControls.GridView();
+               
                 DataTable dT = (DataTable)Session["header_01"];
-                tb.makeHeader(sn, dT, Tabela1);
+                tb.makeHeader( dT, Tabela1);
             }
             else
             {
@@ -501,7 +496,7 @@ namespace stat2018
             GridView GridView1 = (GridView)sender;
             string idtabeli = "2";
 
-            GridView1.Controls[0].Controls.AddAt(e.Row.RowIndex + rowIndex, tabela.PodsumowanieTabeli((DataTable)Session["tabelkaGW001"], 16, "normal borderTopLeft"));
+            GridView1.Controls[0].Controls.AddAt(e.Row.RowIndex + rowIndex, tabela.PodsumowanieTabeli((DataTable)Session["tabelkaGW001"], 16, "normal borderTopLeft gray"));
 
             // nowy wiersz
             int idWiersza = 1;

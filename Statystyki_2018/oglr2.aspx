@@ -1,19 +1,20 @@
 ﻿<%@ Page Title="" Language="C#" UICulture="pl" Culture="pl-PL" MasterPageFile="~/Site1.Master" AutoEventWireup="true" CodeBehind="oglr2.aspx.cs" Inherits="stat2018.oglr2" %>
+
 <%@ Register Assembly="DevExpress.Web.v17.1, Version=17.1.15.0,  Culture=neutral,  PublicKeyToken=b88d1754d700e49a" Namespace="DevExpress.Web" TagPrefix="dx" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <style>
-          #menu {
-              position: relative;
-          }
+        #menu {
+            position: relative;
+        }
 
-              #menu.scrolling {
-                  position: fixed;
-                  top: 0;
-                  left: 0;
-                  right: 0;
-              }
-      </style>
+            #menu.scrolling {
+                position: fixed;
+                top: 0;
+                left: 0;
+                right: 0;
+            }
+    </style>
     <script src="Scripts/rls.js"></script>
     <div class="noprint">
         <div id="menu" style="background-color: #f7f7f7; z-index: 9999">
@@ -52,7 +53,7 @@
         </div>
     </div>
 
-    <div style="width: 1150px; margin: 0 auto 0 auto; position: relative; top: 60px;" >
+    <div style="width: 1150px; margin: 0 auto 0 auto; position: relative; top: 60px;">
 
         <div id="Div2" style="z-index: 10;">
             <div style="margin-left: auto; margin-right: auto; text-align: center; width: auto;">
@@ -67,7 +68,7 @@
             &nbsp;&nbsp;&nbsp;&nbsp;
        <asp:Label ID="infoLabel2" runat="server" Text="Tabela 1\/" Visible="False"></asp:Label>
             <br />
-            <asp:GridView ID="Tabela1" runat="server" OnRowCreated="naglowekTabeli_Tabela1" AutoGenerateColumns="False" OnRowDataBound="stopkaTabeli_Tabela1" DataSourceID="daneDoTabeli1" Width="100%" ShowHeader="False" ShowFooter="True">
+            <asp:GridView ID="Tabela1" runat="server" OnRowCreated="naglowekTabeli_Tabela1" AutoGenerateColumns="False" OnRowDataBound="stopkaTabeli_Tabela1" Width="100%" ShowHeader="False" ShowFooter="True">
                 <Columns>
                     <asp:BoundField DataField="id" HeaderText="L.p." SortExpression="id">
                         <ItemStyle Width="15px" />
@@ -311,12 +312,6 @@
                     </asp:TemplateField>
                 </Columns>
             </asp:GridView>
-            <asp:SqlDataSource ID="daneDoTabeli1" runat="server" ConnectionString="<%$ConnectionStrings:wap %>"
-                SelectCommand="SELECT ROW_NUMBER() OVER( ORDER BY ident ) AS id, ident, imie, nazwisko, funkcja, stanowisko, d_01, d_02, d_03, d_04, d_05, d_06, d_07, d_08, d_09, d_10, d_11, d_12, d_13, d_14, d_15, d_16, d_17, d_18, d_19, d_20, d_21, d_22, d_23, d_24, d_25, d_26, d_27, d_28,d_29, d_30, d_31, sesja, id_sedziego, id_dzialu, id_tabeli FROM tbl_statystyki_tbl_02 WHERE (id_tabeli = 1) AND (id_dzialu = @id_dzialu) ORDER BY id">
-                <SelectParameters>
-                    <asp:SessionParameter Name="id_dzialu" SessionField="id_dzialu" />
-                </SelectParameters>
-            </asp:SqlDataSource>
 
             <br />
         </div>
@@ -493,13 +488,6 @@
                 </Columns>
             </asp:GridView>
             <br />
-            <asp:SqlDataSource ID="tabela_3" runat="server"
-                ConnectionString="<%$ ConnectionStrings:wap %>"
-                SelectCommand="SELECT ROW_NUMBER() OVER( ORDER BY ident ) AS id,  ident, imie, nazwisko, funkcja, stanowisko, d_01, d_02, d_03, d_04, d_05, d_06, d_07, d_08, d_09, d_10, d_11, d_12, d_13, d_14, d_15, d_16, d_17, d_18, d_19, d_20, d_21, d_22,d_23, d_24,d_24,d_25,d_26,d_27,d_28,d_29,d_30, sesja, id_sedziego, id_dzialu, id_tabeli FROM tbl_statystyki_tbl_02 WHERE (id_tabeli = 3) AND (id_dzialu = @id_dzialu) ORDER BY id">
-                <SelectParameters>
-                    <asp:SessionParameter Name="id_dzialu" SessionField="id_dzialu" />
-                </SelectParameters>
-            </asp:SqlDataSource>
             <br />
         </div>
 
@@ -534,37 +522,36 @@
                 </tr>
                 <tr>
                     <td class="col_160 borderAll">
-                        <a href="javascript:openPopup('popup.aspx?sesja=1!4!1!3')">
+                        <a href="javascript:openPopup('popup.aspx?sesja=1!4!1!1')">
                             <asp:Label ID="tab_05_w01_c1" runat="server" Text="0"></asp:Label></a>
                     </td>
                     <td class="col_160 borderAll">
-                        <a href="javascript:openPopup('popup.aspx?sesja=2!4!1!3')">
+                        <a href="javascript:openPopup('popup.aspx?sesja=1!4!2!1')">
                             <asp:Label ID="tab_05_w01_c2" runat="server" Text="0"></asp:Label></a>
                     </td>
                     <td class="col_160 borderAll">
-                        <a href="javascript:openPopup('popup.aspx?sesja=3!4!1!3')">
+                        <a href="javascript:openPopup('popup.aspx?sesja=1!4!3!1')">
                             <asp:Label ID="tab_05_w01_c3" runat="server" Text="0"></asp:Label></a>
                     </td>
                     <td class="col_160 borderAll">
-                        <a href="javascript:openPopup('popup.aspx?sesja=4!4!1!3')">
+                        <a href="javascript:openPopup('popup.aspx?sesja=1!4!4!1')">
                             <asp:Label ID="tab_05_w01_c4" runat="server" Text="0"></asp:Label></a>
                     </td>
                     <td class="col_160 borderAll">
-                        <a href="javascript:openPopup('popup.aspx?sesja=5!4!1!3')">
+                        <a href="javascript:openPopup('popup.aspx?sesja=1!4!5!1')">
                             <asp:Label ID="tab_05_w01_c5" runat="server" Text="0"></asp:Label></a>
                     </td>
                     <td class="col_160 borderAll">
-                        <a href="javascript:openPopup('popup.aspx?sesja=6!4!1!3')">
+                        <a href="javascript:openPopup('popup.aspx?sesja=1!4!6!1')">
                             <asp:Label ID="tab_05_w01_c6" runat="server" Text="0"></asp:Label></a>
                     </td>
                     <td class="col_160 borderAll">
-                        <a href="javascript:openPopup('popup.aspx?sesja=7!4!1!3')">
+                        <a href="javascript:openPopup('popup.aspx?sesja=1!4!7!1')">
                             <asp:Label ID="tab_05_w01_c7" runat="server" Text="0"></asp:Label></a>
                     </td>
                 </tr>
             </table>
 
-            <br />
             <br />
         </div>
 
@@ -790,13 +777,6 @@
                     </asp:TemplateField>
                 </Columns>
             </asp:GridView>
-            <asp:SqlDataSource ID="tabela_6" runat="server"
-                ConnectionString="<%$ ConnectionStrings:wap %>"
-                SelectCommand="SELECT ROW_NUMBER() OVER( ORDER BY ident ) AS id,  ident, imie, nazwisko, funkcja, stanowisko, d_01, d_02, d_03, d_04, d_05, d_06, d_07, d_08, d_09, d_10, d_11, d_12, d_13, d_14, d_15, d_16, d_17, d_18, d_19, d_20, d_21, d_22,d_23, d_24,d_24,d_25,d_26,d_27,d_28,d_29,d_30, sesja, id_sedziego, id_dzialu, id_tabeli FROM tbl_statystyki_tbl_02 WHERE (id_tabeli = 6) AND (id_dzialu = @id_dzialu) ORDER BY id">
-                <SelectParameters>
-                    <asp:SessionParameter Name="id_dzialu" SessionField="id_dzialu" />
-                </SelectParameters>
-            </asp:SqlDataSource>
             <br />
         </div>
 

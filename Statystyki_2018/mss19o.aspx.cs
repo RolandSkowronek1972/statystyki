@@ -56,12 +56,12 @@ namespace stat2018
             }
             Session["data_1"] = datyMSS.DataPoczatkowa();
             Session["data_2"] = datyMSS.DataKoncowa();
-            przemiel();
+            odswiez();
         
         }// end of Page_Load
 
 
-        protected void przemiel()
+        protected void odswiez()
         {
            
 
@@ -5427,7 +5427,7 @@ namespace stat2018
         
         protected void LinkButton54_Click(object sender, EventArgs e)
         {
-            przemiel();
+            odswiez();
         }
 
        

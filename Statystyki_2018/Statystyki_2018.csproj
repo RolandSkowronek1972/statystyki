@@ -120,6 +120,9 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="adm.aspx" />
+    <Content Include="aktpe.aspx" />
+    <Content Include="aktk2.aspx" />
+    <Content Include="aktk.aspx" />
     <Content Include="aglg.aspx" />
     <Content Include="aglc.aspx" />
     <Content Include="agl.aspx" />
@@ -140,6 +143,7 @@
     <Content Include="akrc.aspx" />
     <Content Include="mss11o.aspx" />
     <Content Include="mss5o.aspx" />
+    <Content Include="okrr.aspx" />
     <Content Include="okt2.aspx" />
     <Content Include="oglc3.aspx" />
     <Content Include="aopg.aspx" />
@@ -154,6 +158,7 @@
     <Content Include="oktp.aspx" />
     <Content Include="oktr.aspx" />
     <Content Include="mss19o.aspx" />
+    <Content Include="style\MUstyles.css" />
     <Content Include="template.aspx" />
     <Content Include="oktg.aspx" />
     <Content Include="okrc.aspx" />
@@ -167,7 +172,7 @@
     <Content Include="UserControlls\ZarzadzanieFormularzami.ascx" />
     <Content Include="wab.aspx" />
     <Content Include="okrk.aspx" />
-    <Content Include="okrr.aspx" />
+    <Content Include="okrrold.aspx" />
     <Content Include="oglk2.aspx" />
     <Content Include="akac.aspx" />
     <Content Include="Akac2.aspx" />
@@ -244,10 +249,17 @@
     <Content Include="Scripts\jquery-1.8.3.js" />
     <Content Include="Scripts\jquery-1.8.3.min.js" />
     <Content Include="obbc.aspx" />
+    <Content Include="wizk.aspx" />
     <Content Include="wizc.aspx" />
     <Content Include="wyszukiwarkaspraw.aspx" />
     <Content Include="msstabele\mss5r.xlsx" />
     <Content Include="Template\aopc2.xlsx" />
+    <Content Include="XMLHeaders\aktpe2.xml" />
+    <Content Include="XMLHeaders\aktpe1.xml" />
+    <Content Include="XMLHeaders\aktk2_2.xml" />
+    <Content Include="XMLHeaders\aktk2_1.xml" />
+    <Content Include="XMLHeaders\aktk2.xml" />
+    <Content Include="XMLHeaders\aktk1.xml" />
     <Content Include="XMLHeaders\aglc3.xml" />
     <Content Include="XMLHeaders\aglc1.xml" />
     <Content Include="XMLHeaders\oopc.xml" />
@@ -330,6 +342,9 @@
     <Content Include="Template\oglc3.xlsx" />
     <Content Include="Template\oglp.xlsx" />
     <Content Include="Template\otrr.xlsx" />
+    <Content Include="Template\aktk.xlsx" />
+    <Content Include="Template\aktk2.xlsx" />
+    <Content Include="Template\aktpe.xlsx" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -352,6 +367,27 @@
     </Compile>
     <Compile Include="adm.aspx.designer.cs">
       <DependentUpon>adm.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="aktpe.aspx.cs">
+      <DependentUpon>aktpe.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="aktpe.aspx.designer.cs">
+      <DependentUpon>aktpe.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="aktk2.aspx.cs">
+      <DependentUpon>aktk2.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="aktk2.aspx.designer.cs">
+      <DependentUpon>aktk2.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="aktk.aspx.cs">
+      <DependentUpon>aktk.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="aktk.aspx.designer.cs">
+      <DependentUpon>aktk.aspx</DependentUpon>
     </Compile>
     <Compile Include="aglg.aspx.cs">
       <DependentUpon>aglg.aspx</DependentUpon>
@@ -490,6 +526,13 @@
     </Compile>
     <Compile Include="mss5o.aspx.designer.cs">
       <DependentUpon>mss5o.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="okrr.aspx.cs">
+      <DependentUpon>okrr.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="okrr.aspx.designer.cs">
+      <DependentUpon>okrr.aspx</DependentUpon>
     </Compile>
     <Compile Include="okt2.aspx.cs">
       <DependentUpon>okt2.aspx</DependentUpon>
@@ -681,12 +724,12 @@
     <Compile Include="okrk.aspx.designer.cs">
       <DependentUpon>okrk.aspx</DependentUpon>
     </Compile>
-    <Compile Include="okrr.aspx.cs">
-      <DependentUpon>okrr.aspx</DependentUpon>
+    <Compile Include="okrrold.aspx.cs">
+      <DependentUpon>okrrold.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="okrr.aspx.designer.cs">
-      <DependentUpon>okrr.aspx</DependentUpon>
+    <Compile Include="okrrold.aspx.designer.cs">
+      <DependentUpon>okrrold.aspx</DependentUpon>
     </Compile>
     <Compile Include="oglk2.aspx.cs">
       <DependentUpon>oglk2.aspx</DependentUpon>
@@ -1051,6 +1094,13 @@
     </Compile>
     <Compile Include="obbc.aspx.designer.cs">
       <DependentUpon>obbc.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="wizk.aspx.cs">
+      <DependentUpon>wizk.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="wizk.aspx.designer.cs">
+      <DependentUpon>wizk.aspx</DependentUpon>
     </Compile>
     <Compile Include="wizc.aspx.cs">
       <DependentUpon>wizc.aspx</DependentUpon>

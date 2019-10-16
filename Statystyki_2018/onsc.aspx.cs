@@ -53,7 +53,7 @@ public partial class onsc : System.Web.UI.Page
                         this.Title = "Statystyki " + fileContents.ToString().Trim();
                         clearHedersSession();
                         makeHeader();
-                        przemiel();
+                        odswiez();
                         makeLabels();
                     }
                 }
@@ -308,7 +308,7 @@ public partial class onsc : System.Web.UI.Page
 
         }
 
-        protected void przemiel()
+        protected void odswiez()
         {
            
             string yyx = (string)Session["id_dzialu"];
@@ -812,7 +812,7 @@ public partial class onsc : System.Web.UI.Page
 
         protected void LinkButton54_Click(object sender, EventArgs e)
         {
-            przemiel();
+            odswiez();
         }
 
         protected void LinkButton55_Click(object sender, EventArgs e)

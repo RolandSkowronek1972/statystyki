@@ -14,6 +14,22 @@
                 left: 0;
                 right: 0;
             }
+              @media print {
+              @page {
+                 
+                 
+                 size: 29cm 21.7cm;
+                  margin: 0mm 0mm 0mm 0mm;
+               
+              }
+
+              div {
+                  transform: translate(0, 0);
+                  -webkit-transform: translate(0, 0 ); /* Saf3.1+, Chrome */
+                  -moz-transform: translate(0, 0); /* FF3.5+ */
+                
+              }
+          }
     </style>
     <script src="Scripts/jquery-1.8.3.js"></script>
 
@@ -62,7 +78,7 @@
 
             <br />
         </div>
-        <div id="zalatwienia" class="page-break">
+        <div id="zalatwienia" >
             <br />
 
             <asp:Label ID="tabela2Label" runat="server"></asp:Label>
@@ -93,7 +109,7 @@
                             <asp:Label ID="Label6" runat="server" Text='<%# Eval("nazwisko") %>'></asp:Label>
                             <asp:Label ID="Label8" runat="server" Text='<%# Bind("imie") %>'></asp:Label>
                         </ItemTemplate>
-                        <ItemStyle CssClass="t2_nazwisko" />
+                        <ItemStyle CssClass="col_185_min" />
                     </asp:TemplateField>
                     <asp:TemplateField HeaderText="d_01" SortExpression="d_01">
                         <ItemTemplate>
@@ -101,7 +117,7 @@
                                 <asp:Label ID="Label_Gridview1101" runat="server" Text='<%# Eval("d_01")%>' CssClass="normal"></asp:Label>
                             </a>
                         </ItemTemplate>
-                        <ItemStyle CssClass="col_37" />
+                        <ItemStyle CssClass="col_40" />
                     </asp:TemplateField>
                     <asp:TemplateField HeaderText="d_02" SortExpression="d_01">
                         <ItemTemplate>
@@ -109,23 +125,23 @@
                                 <asp:Label ID="Label_Gridview1102" runat="server" Text='<%# Eval("d_02")%>' CssClass="normal"></asp:Label>
                             </a>
                         </ItemTemplate>
-                        <ItemStyle CssClass="col_37" />
+                        <ItemStyle CssClass="col_40" />
                     </asp:TemplateField>
                     <asp:TemplateField HeaderText="d_03" SortExpression="d_01">
                         <ItemTemplate>
                             <a href="javascript:openPopup('popup.aspx?sesja=<%# Eval("id_sedziego")+ "!"+Eval("id_tabeli") +"!3!6"%>')">
-                                <asp:Label ID="Label_Gridview1103" runat="server" Text='<%# Eval("d_03")%>' CssClass="normal"></asp:Label>
+                                <asp:Textbox ID="Label_Gridview1103" runat="server" Text='<%# Eval("d_03")%>' CssClass="normal center col_40"></asp:Textbox>
                             </a>
                         </ItemTemplate>
-                        <ItemStyle CssClass="col_37" />
+                        <ItemStyle CssClass="col_40" />
                     </asp:TemplateField>
                     <asp:TemplateField HeaderText="d_04" SortExpression="d_01">
                         <ItemTemplate>
                             <a href="javascript:openPopup('popup.aspx?sesja=<%# Eval("id_sedziego")+ "!"+Eval("id_tabeli") +"!4!6"%>')">
-                                <asp:Label ID="Label_Gridview1104" runat="server" Text='<%# Eval("d_04")%>' CssClass="normal"></asp:Label>
+                                <asp:Textbox ID="Label_Gridview1104"  runat="server" Text='<%# Eval("d_04")%>' CssClass="normal center col_40"></asp:Textbox>
                             </a>
                         </ItemTemplate>
-                        <ItemStyle CssClass="col_37" />
+                        <ItemStyle CssClass="col_40" />
                     </asp:TemplateField>
                     <asp:TemplateField HeaderText="d_05" SortExpression="d_01">
                         <ItemTemplate>
@@ -133,7 +149,7 @@
                                 <asp:Label ID="Label_Gridview1105" runat="server" Text='<%# Eval("d_05")%>' CssClass="normal"></asp:Label>
                             </a>
                         </ItemTemplate>
-                        <ItemStyle CssClass="col_37" />
+                        <ItemStyle CssClass="col_40" />
                     </asp:TemplateField>
                     <asp:TemplateField HeaderText="d_06" SortExpression="d_01">
                         <ItemTemplate>
@@ -141,7 +157,7 @@
                                 <asp:Label ID="Label_Gridview1106" runat="server" Text='<%# Eval("d_06")%>' CssClass="normal"></asp:Label>
                             </a>
                         </ItemTemplate>
-                        <ItemStyle CssClass="col_37" />
+                        <ItemStyle CssClass="col_40" />
                     </asp:TemplateField>
                     <asp:TemplateField HeaderText="d_07" SortExpression="d_01">
                         <ItemTemplate>
@@ -149,7 +165,7 @@
                                 <asp:Label ID="Label_Gridview1107" runat="server" Text='<%# Eval("d_07")%>' CssClass="normal"></asp:Label>
                             </a>
                         </ItemTemplate>
-                        <ItemStyle CssClass="col_37" />
+                        <ItemStyle CssClass="col_40" />
                     </asp:TemplateField>
                     <asp:TemplateField HeaderText="d_08" SortExpression="d_01">
                         <ItemTemplate>
@@ -157,7 +173,7 @@
                                 <asp:Label ID="Label_Gridview1108" runat="server" Text='<%# Eval("d_08")%>' CssClass="normal"></asp:Label>
                             </a>
                         </ItemTemplate>
-                        <ItemStyle CssClass="col_37" />
+                        <ItemStyle CssClass="col_40" />
                     </asp:TemplateField>
                     <asp:TemplateField HeaderText="d_09" SortExpression="d_01">
                         <ItemTemplate>
@@ -165,7 +181,7 @@
                                 <asp:Label ID="Label_Gridview1109" runat="server" Text='<%# Eval("d_09")%>' CssClass="normal"></asp:Label>
                             </a>
                         </ItemTemplate>
-                        <ItemStyle CssClass="col_37" />
+                        <ItemStyle CssClass="col_40" />
                     </asp:TemplateField>
                     <asp:TemplateField HeaderText="d_10" SortExpression="d_01">
                         <ItemTemplate>
@@ -173,7 +189,7 @@
                                 <asp:Label ID="Label_Gridview1110" runat="server" Text='<%# Eval("d_10")%>' CssClass="normal"></asp:Label>
                             </a>
                         </ItemTemplate>
-                        <ItemStyle CssClass="col_37" />
+                        <ItemStyle CssClass="col_40 gray" />
                     </asp:TemplateField>
                     <asp:TemplateField HeaderText="d_11" SortExpression="d_01">
                         <ItemTemplate>
@@ -181,7 +197,7 @@
                                 <asp:Label ID="Label_Gridview1111" runat="server" Text='<%# Eval("d_11")%>' CssClass="normal"></asp:Label>
                             </a>
                         </ItemTemplate>
-                        <ItemStyle CssClass="col_37" />
+                        <ItemStyle CssClass="col_40" />
                     </asp:TemplateField>
                     <asp:TemplateField HeaderText="d_12" SortExpression="d_01">
                         <ItemTemplate>
@@ -189,7 +205,7 @@
                                 <asp:Label ID="Label_Gridview1112" runat="server" Text='<%# Eval("d_12")%>' CssClass="normal"></asp:Label>
                             </a>
                         </ItemTemplate>
-                        <ItemStyle CssClass="col_37" />
+                        <ItemStyle CssClass="col_40" />
                     </asp:TemplateField>
                     <asp:TemplateField HeaderText="d_13" SortExpression="d_01">
                         <ItemTemplate>
@@ -197,7 +213,7 @@
                                 <asp:Label ID="Label_Gridview1113" runat="server" Text='<%# Eval("d_13")%>' CssClass="normal"></asp:Label>
                             </a>
                         </ItemTemplate>
-                        <ItemStyle CssClass="col_37" />
+                        <ItemStyle CssClass="col_40" />
                     </asp:TemplateField>
                     <asp:TemplateField HeaderText="d_14" SortExpression="d_01">
                         <ItemTemplate>
@@ -205,7 +221,7 @@
                                 <asp:Label ID="Label_Gridview1114" runat="server" Text='<%# Eval("d_14")%>' CssClass="normal"></asp:Label>
                             </a>
                         </ItemTemplate>
-                        <ItemStyle CssClass="col_37" />
+                        <ItemStyle CssClass="col_40" />
                     </asp:TemplateField>
                     <asp:TemplateField HeaderText="d_15" SortExpression="d_01">
                         <ItemTemplate>
@@ -213,7 +229,7 @@
                                 <asp:Label ID="Label_Gridview1115" runat="server" Text='<%# Eval("d_15")%>' CssClass="normal"></asp:Label>
                             </a>
                         </ItemTemplate>
-                        <ItemStyle CssClass="col_37" />
+                        <ItemStyle CssClass="col_40" />
                     </asp:TemplateField>
                     <asp:TemplateField HeaderText="d_16" SortExpression="d_01">
                         <ItemTemplate>
@@ -221,7 +237,7 @@
                                 <asp:Label ID="Label_Gridview1116" runat="server" Text='<%# Eval("d_16")%>' CssClass="normal"></asp:Label>
                             </a>
                         </ItemTemplate>
-                        <ItemStyle CssClass="col_37" />
+                        <ItemStyle CssClass="col_40" />
                     </asp:TemplateField>
                     <asp:TemplateField HeaderText="d_17" SortExpression="d_01">
                         <ItemTemplate>
@@ -229,7 +245,7 @@
                                 <asp:Label ID="Label_Gridview1117" runat="server" Text='<%# Eval("d_17")%>' CssClass="normal"></asp:Label>
                             </a>
                         </ItemTemplate>
-                        <ItemStyle CssClass="col_37" />
+                        <ItemStyle CssClass="col_40" />
                     </asp:TemplateField>
                          <asp:TemplateField HeaderText="d_17" SortExpression="d_01">
                         <ItemTemplate>
@@ -237,7 +253,7 @@
                                 <asp:Label ID="Label_Gridview1118" runat="server" Text='<%# Eval("d_18")%>' CssClass="normal"></asp:Label>
                             </a>
                         </ItemTemplate>
-                        <ItemStyle CssClass="col_37" />
+                        <ItemStyle CssClass="col_40" />
                     </asp:TemplateField>
                    
                          <asp:TemplateField HeaderText="d_17" SortExpression="d_01">
@@ -246,7 +262,7 @@
                                 <asp:Label ID="Label_Gridview1119" runat="server" Text='<%# Eval("d_19")%>' CssClass="normal"></asp:Label>
                             </a>
                         </ItemTemplate>
-                        <ItemStyle CssClass="col_37" />
+                        <ItemStyle CssClass="col_40" />
                     </asp:TemplateField>
                         <asp:TemplateField HeaderText="d_17" SortExpression="d_01">
                         <ItemTemplate>
@@ -254,7 +270,7 @@
                                 <asp:Label ID="Label_Gridview1120" runat="server" Text='<%# Eval("d_20")%>' CssClass="normal"></asp:Label>
                             </a>
                         </ItemTemplate>
-                        <ItemStyle CssClass="col_37" />
+                        <ItemStyle CssClass="col_40" />
                     </asp:TemplateField>
                         <asp:TemplateField HeaderText="d_17" SortExpression="d_01">
                         <ItemTemplate>
@@ -262,7 +278,7 @@
                                 <asp:Label ID="Label_Gridview1121" runat="server" Text='<%# Eval("d_21")%>' CssClass="normal"></asp:Label>
                             </a>
                         </ItemTemplate>
-                        <ItemStyle CssClass="col_37" />
+                        <ItemStyle CssClass="col_40" />
                     </asp:TemplateField>
                         <asp:TemplateField HeaderText="d_17" SortExpression="d_01">
                         <ItemTemplate>
@@ -270,7 +286,7 @@
                                 <asp:Label ID="Label_Gridview1122" runat="server" Text='<%# Eval("d_22")%>' CssClass="normal"></asp:Label>
                             </a>
                         </ItemTemplate>
-                        <ItemStyle CssClass="col_37" />
+                        <ItemStyle CssClass="col_40" />
                     </asp:TemplateField>
                      
                         <asp:TemplateField HeaderText="d_17" SortExpression="d_01">
@@ -279,14 +295,14 @@
                                 <asp:Label ID="Label_Gridview1123" runat="server" Text='<%# Eval("d_23")%>' CssClass="normal"></asp:Label>
                             </a>
                         </ItemTemplate>
-                        <ItemStyle CssClass="col_37" />
+                        <ItemStyle CssClass="col_40 gray" />
                     </asp:TemplateField>
                     
                     <asp:TemplateField HeaderText="d_18" SortExpression="d_01">
                         <ItemTemplate>
                             <asp:TextBox ID="TextBox29" runat="server"></asp:TextBox>
                         </ItemTemplate>
-                        <ItemStyle CssClass="col_37" />
+                        <ItemStyle CssClass="col_40" />
                     </asp:TemplateField>
                 </Columns>
             </asp:GridView>
@@ -321,7 +337,7 @@
                                 <asp:Label ID="Label_Gridview2101" runat="server" Text='<%# Eval("d_01")%>' CssClass="normal"></asp:Label>
                             </a>
                         </ItemTemplate>
-                        <ItemStyle CssClass="col_37" />
+                        <ItemStyle CssClass="col_40" />
                     </asp:TemplateField>
                     <asp:TemplateField HeaderText="d_02" SortExpression="d_01">
                         <ItemTemplate>
@@ -329,7 +345,7 @@
                                 <asp:Label ID="Label_Gridview2102" runat="server" Text='<%# Eval("d_02")%>' CssClass="normal"></asp:Label>
                             </a>
                         </ItemTemplate>
-                        <ItemStyle CssClass="col_37" />
+                        <ItemStyle CssClass="col_40" />
                     </asp:TemplateField>
                     <asp:TemplateField HeaderText="d_03" SortExpression="d_01">
                         <ItemTemplate>
@@ -337,7 +353,7 @@
                                 <asp:Label ID="Label_Gridview2103" runat="server" Text='<%# Eval("d_03")%>' CssClass="normal"></asp:Label>
                             </a>
                         </ItemTemplate>
-                        <ItemStyle CssClass="col_37" />
+                        <ItemStyle CssClass="col_40" />
                     </asp:TemplateField>
                     <asp:TemplateField HeaderText="d_04" SortExpression="d_01">
                         <ItemTemplate>
@@ -345,7 +361,7 @@
                                 <asp:Label ID="Label_Gridview2104" runat="server" Text='<%# Eval("d_04")%>' CssClass="normal"></asp:Label>
                             </a>
                         </ItemTemplate>
-                        <ItemStyle CssClass="col_37" />
+                        <ItemStyle CssClass="col_40" />
                     </asp:TemplateField>
                     <asp:TemplateField HeaderText="d_05" SortExpression="d_01">
                         <ItemTemplate>
@@ -353,7 +369,7 @@
                                 <asp:Label ID="Label_Gridview2105" runat="server" Text='<%# Eval("d_05")%>' CssClass="normal"></asp:Label>
                             </a>
                         </ItemTemplate>
-                        <ItemStyle CssClass="col_37" />
+                        <ItemStyle CssClass="col_40" />
                     </asp:TemplateField>
                     <asp:TemplateField HeaderText="d_06" SortExpression="d_01">
                         <ItemTemplate>
@@ -361,7 +377,7 @@
                                 <asp:Label ID="Label_Gridview2106" runat="server" Text='<%# Eval("d_06")%>' CssClass="normal"></asp:Label>
                             </a>
                         </ItemTemplate>
-                        <ItemStyle CssClass="col_37" />
+                        <ItemStyle CssClass="col_40" />
                     </asp:TemplateField>
                     <asp:TemplateField HeaderText="d_07" SortExpression="d_01">
                         <ItemTemplate>
@@ -369,7 +385,7 @@
                                 <asp:Label ID="Label_Gridview2107" runat="server" Text='<%# Eval("d_07")%>' CssClass="normal"></asp:Label>
                             </a>
                         </ItemTemplate>
-                        <ItemStyle CssClass="col_37" />
+                        <ItemStyle CssClass="col_40" />
                     </asp:TemplateField>
                     <asp:TemplateField HeaderText="d_08" SortExpression="d_01">
                         <ItemTemplate>
@@ -377,7 +393,7 @@
                                 <asp:Label ID="Label_Gridview2108" runat="server" Text='<%# Eval("d_08")%>' CssClass="normal"></asp:Label>
                             </a>
                         </ItemTemplate>
-                        <ItemStyle CssClass="col_37" />
+                        <ItemStyle CssClass="col_40" />
                     </asp:TemplateField>
                     <asp:TemplateField HeaderText="d_08" SortExpression="d_01">
                         <ItemTemplate>
@@ -385,7 +401,7 @@
                                 <asp:Label ID="Label_Gridview2109" runat="server" Text='<%# Eval("d_09")%>' CssClass="normal"></asp:Label>
                             </a>
                         </ItemTemplate>
-                        <ItemStyle CssClass="col_37" />
+                        <ItemStyle CssClass="col_40" />
                     </asp:TemplateField>
                 </Columns>
             </asp:GridView>

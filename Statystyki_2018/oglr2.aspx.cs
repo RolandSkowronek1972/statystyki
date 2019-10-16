@@ -52,7 +52,7 @@ namespace stat2018
                         this.Title = "Statystyki " + fileContents.ToString().Trim();
                         clearHedersSession();
                         makeHeader();
-                        przemiel();
+                        odswiez();
                         makeLabels();
                     }
                 }
@@ -75,7 +75,7 @@ namespace stat2018
             Session["header_08"] = null;
         }
 
-        protected void przemiel()
+        protected void odswiez()
         {
             string idDzialu = (string)Session["id_dzialu"];
             string txt = string.Empty;
@@ -119,7 +119,7 @@ namespace stat2018
                     //cm.log.Info("OGLR2: wczytywanie danych do tabeli 4");
                     tabelkaGW4 = dr.generuj_dane_do_tabeli_wierszy2018(Date1.Date, Date2.Date, (string)Session["id_dzialu"], 4, 1, 8, tenPlik);
                     Session["tabelka004"] = tabelkaGW4;
-
+                    //pisz("tab_05_", 10, 9, tabela02);
                     tab_05_w01_c1.Text = tabelkaGW4.Rows[0][1].ToString().Trim();
                     tab_05_w01_c2.Text = tabelkaGW4.Rows[0][2].ToString().Trim();
                     tab_05_w01_c3.Text = tabelkaGW4.Rows[0][3].ToString().Trim();
@@ -128,8 +128,10 @@ namespace stat2018
                     tab_05_w01_c6.Text = tabelkaGW4.Rows[0][6].ToString().Trim();
                     tab_05_w01_c7.Text = tabelkaGW4.Rows[0][7].ToString().Trim();
                 }
-                catch
-                { }
+                catch (Exception ex)
+                {
+                    cm.log.Error(tenPlik +" tabela 4 "+ex.Message);
+                }
                 try
                 {
                     //cm.log.Info("OGLR2: wczytywanie danych do tabeli 5");
@@ -519,7 +521,7 @@ namespace stat2018
 
         protected void Button1_Click(object sender, EventArgs e)
         {
-            przemiel();
+            odswiez();
             ScriptManager.RegisterStartupScript(this.Page, Page.GetType(), "print2", "JavaScript: window.print();", true);
             // ScriptManager.RegisterStartupScript(this.Page, Page.GetType(), "print", "window.open('raport_01_print.aspx', '')", true);
         }
@@ -650,18 +652,18 @@ namespace stat2018
                 }
             }//end of using
 
-            przemiel();
+            odswiez();
         }
 
         protected void LinkButton54_Click(object sender, EventArgs e)
         {
-            przemiel();
+            odswiez();
         }
 
         protected void LinkButton55_Click(object sender, EventArgs e)
         {
             makeLabels();
-            przemiel();
+            odswiez();
             ScriptManager.RegisterStartupScript(this.Page, Page.GetType(), "print2", "JavaScript: window.print();", true);
             makeLabels();
         }
@@ -687,7 +689,7 @@ namespace stat2018
         {
             if (e.Row.RowType == DataControlRowType.Footer)
             {
-                DataTable table = ((DataView)daneDoTabeli1.Select(DataSourceSelectArguments.Empty)).ToTable();
+                DataTable table = (DataTable)Session["tabelka001"];
 
                 makeSumRow(table, e);
             }
@@ -701,9 +703,9 @@ namespace stat2018
         {
             if (e.Row.RowType == DataControlRowType.Header)
             {
-                System.Web.UI.WebControls.GridView sn = new System.Web.UI.WebControls.GridView();
+             
                 DataTable dT = (DataTable)Session["header_02"];
-                tabela.makeHeader(sn, dT, Gridview2);
+                tabela.makeHeader( dT, Gridview2);
             }
         }
 
@@ -715,9 +717,9 @@ namespace stat2018
         {
             if (e.Row.RowType == DataControlRowType.Header)
             {
-                System.Web.UI.WebControls.GridView sn = new System.Web.UI.WebControls.GridView();
+               
                 DataTable dT = (DataTable)Session["header_01"];
-                tabela.makeHeader(sn, dT, Tabela1);
+                tabela.makeHeader(dT, Tabela1);
             }
         }
 
@@ -733,9 +735,9 @@ namespace stat2018
         {
             if (e.Row.RowType == DataControlRowType.Header)
             {
-                System.Web.UI.WebControls.GridView sn = new System.Web.UI.WebControls.GridView();
+             
                 DataTable dT = (DataTable)Session["header_01"];
-                tabela.makeHeader(sn, dT, Tabela1);
+                tabela.makeHeader( dT, Tabela1);
             }
         }
 
@@ -752,9 +754,9 @@ namespace stat2018
         {
             if (e.Row.RowType == DataControlRowType.Header)
             {
-                System.Web.UI.WebControls.GridView sn = new System.Web.UI.WebControls.GridView();
+              
                 DataTable dT = (DataTable)Session["header_02"];
-                tabela.makeHeader(sn, dT, Gridview2);
+                tabela.makeHeader( dT, Gridview2);
             }
         }
 
@@ -762,9 +764,9 @@ namespace stat2018
         {
             if (e.Row.RowType == DataControlRowType.Header)
             {
-                System.Web.UI.WebControls.GridView sn = new System.Web.UI.WebControls.GridView();
+              
                 DataTable dT = (DataTable)Session["header_03"];
-                tabela.makeHeader(sn, dT, Gridview3);
+                tabela.makeHeader( dT, Gridview3);
             }
         }
 
@@ -772,9 +774,9 @@ namespace stat2018
         {
             if (e.Row.RowType == DataControlRowType.Header)
             {
-                System.Web.UI.WebControls.GridView sn = new System.Web.UI.WebControls.GridView();
+                
                 DataTable dT = (DataTable)Session["header_07"];
-                tabela.makeHeader(sn, dT, Gridview6);
+                tabela.makeHeader( dT, Gridview6);
             }
         }
 
@@ -800,9 +802,9 @@ namespace stat2018
         {
             if (e.Row.RowType == DataControlRowType.Header)
             {
-                System.Web.UI.WebControls.GridView sn = new System.Web.UI.WebControls.GridView();
+               
                 DataTable dT = (DataTable)Session["header_08"];
-                tabela.makeHeader(sn, dT, Gridview7);
+                tabela.makeHeader( dT, Gridview7);
             }
         }
 
@@ -823,5 +825,28 @@ namespace stat2018
                 tabela.makeSumRow(table, e);
             }
         }
+
+        protected void pisz(string Template, int iloscWierszy, int iloscKolumn, DataTable dane)
+        {
+            for (int wiersz = 1; wiersz <= iloscWierszy; wiersz++)
+            {
+                for (int kolumna = 1; kolumna <= iloscKolumn; kolumna++)
+                {
+                    string controlName = Template + "w" + wiersz.ToString("D2") + "_c" + kolumna.ToString("D2");
+                    Label tb = (Label)this.Master.FindControl("ContentPlaceHolder1").FindControl(controlName);
+                    if (tb != null)
+                    {
+                        try
+                        {
+                            tb.Text = dane.Rows[wiersz - 1][kolumna].ToString().Trim();
+                        }
+                        catch
+                        {
+                        }
+                    }
+                }
+            }
+        }// end of pisz
+
     }
 }

@@ -57,7 +57,7 @@ namespace stat2018
                     {
                         var fileContents = System.IO.File.ReadAllText(Server.MapPath(@"~//version.txt"));    // file read with version
                         this.Title = "Statystyki " + fileContents.ToString().Trim();
-                        przemiel();
+                        odswiez();
                         makeLabels();
                     }
                 }
@@ -77,7 +77,7 @@ namespace stat2018
            
         }
 
-        protected void przemiel()
+        protected void odswiez()
         {
             string idDzialu = (string)Session["id_dzialu"];
             id_dzialu.Text = (string)Session["txt_dzialu"];
@@ -666,7 +666,7 @@ namespace stat2018
 
         protected void LinkButton54_Click(object sender, EventArgs e)
         {
-            przemiel();
+            odswiez();
         }
 
         protected void LinkButton55_Click(object sender, EventArgs e)

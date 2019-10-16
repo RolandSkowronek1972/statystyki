@@ -53,7 +53,7 @@ namespace stat2018
                         this.Title = "Statystyki " + fileContents.ToString().Trim();
                         clearHedersSession();
                         makeHeader();
-                        przemiel();
+                        odswiez();
                         makeLabels();
                     }
                 }
@@ -405,7 +405,7 @@ namespace stat2018
             #endregion tabela  10 ()
         }
 
-        protected void przemiel()
+        protected void odswiez()
         {
             string yyx = (string)Session["id_dzialu"];
 
@@ -1123,7 +1123,7 @@ namespace stat2018
 
         protected void LinkButton54_Click(object sender, EventArgs e)
         {
-            przemiel();
+            odswiez();
             makeHeader();
         }
     }

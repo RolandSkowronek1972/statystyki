@@ -55,7 +55,7 @@ namespace stat2018
             Session["data_2"] = datyMSS.DataKoncowa();
          //   Date1.Date=DateTime .Parse ( datyMSS.DataPoczatkowa());
          //   Date2.Date= DateTime.Parse(datyMSS.DataKoncowa());
-            przemiel();
+            odswiez();
             makeLabels();
         }// end of Page_Load
 
@@ -221,7 +221,7 @@ namespace stat2018
             }
         }// end of pisz
 
-        protected void przemiel()
+        protected void odswiez()
         {
             string idWydzialu = "'" + (string)Session["id_dzialu"] + "'";
             int idWydzialuNumerycznie = int.Parse((string)Session["id_dzialu"]);
@@ -1780,7 +1780,7 @@ namespace stat2018
 
         protected void LinkButton54_Click(object sender, EventArgs e)
         {
-            przemiel();
+            odswiez();
         }
 
         protected void makeCSVFile(object sender, EventArgs e)

@@ -49,24 +49,6 @@ namespace stat2018 {
         protected global::System.Web.UI.WebControls.LinkButton LinkButton54;
         
         /// <summary>
-        /// LinkButton55 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.LinkButton LinkButton55;
-        
-        /// <summary>
-        /// LinkButton56 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.LinkButton LinkButton56;
-        
-        /// <summary>
         /// LinkButton57 control.
         /// </summary>
         /// <remarks>
@@ -112,13 +94,13 @@ namespace stat2018 {
         protected global::System.Web.UI.WebControls.Label infoLabel01;
         
         /// <summary>
-        /// GridView6 control.
+        /// GridView1 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.GridView GridView6;
+        protected global::System.Web.UI.WebControls.GridView GridView1;
         
         /// <summary>
         /// lbTabela2 control.
@@ -139,22 +121,13 @@ namespace stat2018 {
         protected global::System.Web.UI.WebControls.Label infoLabel2;
         
         /// <summary>
-        /// GridView1 control.
+        /// GridView3 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.GridView GridView1;
-        
-        /// <summary>
-        /// tabela_2 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.SqlDataSource tabela_2;
+        protected global::System.Web.UI.WebControls.GridView GridView3;
         
         /// <summary>
         /// lbTabela3 control.
@@ -175,22 +148,13 @@ namespace stat2018 {
         protected global::System.Web.UI.WebControls.Label infoLabel3;
         
         /// <summary>
-        /// GridView3 control.
+        /// GridView4 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.GridView GridView3;
-        
-        /// <summary>
-        /// tabela_3 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.SqlDataSource tabela_3;
+        protected global::System.Web.UI.WebControls.GridView GridView4;
         
         /// <summary>
         /// lbTabela4 control.
@@ -211,22 +175,13 @@ namespace stat2018 {
         protected global::System.Web.UI.WebControls.Label infoLabel4;
         
         /// <summary>
-        /// GridView4 control.
+        /// GridView5 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.GridView GridView4;
-        
-        /// <summary>
-        /// tabela_4 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.SqlDataSource tabela_4;
+        protected global::System.Web.UI.WebControls.GridView GridView5;
         
         /// <summary>
         /// Label27 control.

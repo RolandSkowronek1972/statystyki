@@ -57,7 +57,7 @@ namespace stat2018
                     {
                         var fileContents = System.IO.File.ReadAllText(Server.MapPath(@"~//version.txt"));    // file read with version
                         this.Title = "Statystyki " + fileContents.ToString().Trim();
-                        przemiel();
+                        odswiez();
                     }
                 }
             }
@@ -67,7 +67,7 @@ namespace stat2018
             }
         }// end of Page_Load
 
-        protected void przemiel()
+        protected void odswiez()
         {
             try
             {
@@ -203,17 +203,17 @@ namespace stat2018
                 }
             }//end of using
 
-            przemiel();
+            odswiez();
         }
 
         protected void LinkButton54_Click(object sender, EventArgs e)
         {
-            przemiel();
+            odswiez();
         }
 
         protected void LinkButton55_Click(object sender, EventArgs e)
         {
-            przemiel();
+            odswiez();
             ScriptManager.RegisterStartupScript(this.Page, Page.GetType(), "print2", "JavaScript: window.print();", true);
         }
 

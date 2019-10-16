@@ -3,7 +3,6 @@ using DevExpress.XtraPrinting;
 using System;
 using System.Data;
 using System.Drawing;
-using System.Web.UI;
 
 namespace stat2018
 {
@@ -22,9 +21,27 @@ namespace stat2018
                 Session["valueX"] = Request.QueryString["id"];
                 //  }
                 DateTime dTime = DateTime.Now.AddMonths(-1);
+
+                string ident = (string)Session["valueX"];
+                if (string.IsNullOrEmpty(ident))
+                {
+                    return;
+                }
+
+                DataTable parameters = cm.makeParameterTable();
+                parameters.Rows.Add("@ident", ident);
+
+                DateTime dataOd = DateTime.Parse(dTime.Year.ToString() + "-" + dTime.Month.ToString("D2") + "-01");
+                try
+                {
+                    dataOd = DateTime.Parse(cm.getQuerryValue("SELECT Data_od FROM konfig  WHERE (ident = @ident)", cm.con_str, parameters));
+                }
+                catch
+                { }
+
                 if (data1.Text.Length == 0)
                 {
-                    data1.Date = DateTime.Parse(dTime.Year.ToString() + "-" + dTime.Month.ToString("D2") + "-01");
+                    data1.Date = dataOd;
                 }
 
                 if (data2.Text.Length == 0)
@@ -44,9 +61,28 @@ namespace stat2018
 
         protected void Druk(object sender, EventArgs e)
         {
-            ASPxGridViewExporter1.WritePdfToResponse("kontrolka-" + DateTime.Now.ToShortDateString());
+            string ident = (string)Session["valueX"];
+
+            ASPxGridViewExporter1.Landscape = true;
+
+            DataTable parameters = cm.makeParameterTable();
+            parameters.Rows.Add("@ident", ident);
+            string nazwa = string.Empty;
+
+            try
+            {
+                nazwa = cm.getQuerryValue("SELECT opis FROM konfig  WHERE (ident = @ident)", cm.con_str, parameters);
+            }
+            catch
+            { }
+            ASPxGridViewExporter1.ReportHeader = nazwa;
             Session["exporter"] = ASPxGridViewExporter1;
-            ScriptManager.RegisterStartupScript(Page, Page.GetType(), "print2", "JavaScript:window.open('kontrolkaDruk.aspx')", true);
+            ASPxGridViewExporter1.LeftMargin = 5;
+            ASPxGridViewExporter1.RightMargin = 5;
+            ASPxGridViewExporter1.TopMargin = 0;
+            ASPxGridViewExporter1.BottomMargin = 0;
+            ASPxGridViewExporter1.WritePdfToResponse("kontrolka-" + DateTime.Now.ToShortDateString());
+            //   ScriptManager.RegisterStartupScript(Page, Page.GetType(), "print2", "JavaScript:window.open('kontrolkaDruk.aspx')", true);
         }
 
         protected void dataBinding(object sender, EventArgs e)
@@ -54,7 +90,7 @@ namespace stat2018
             DataBindX();
         }
 
-        private DataTable GetTable(DateTime dataPoczatkowa, DateTime dataKoncowa, string ident,string tenPlik)
+        private DataTable GetTable(DateTime dataPoczatkowa, DateTime dataKoncowa, string ident, string tenPlik)
         {
             DataTable parameters = cm.makeParameterTable();
 
@@ -100,7 +136,7 @@ namespace stat2018
             {
                 return;
             }
-            DataTable dane = GetTable(data1.Date, data2.Date, ident,"databind");
+            DataTable dane = GetTable(data1.Date, data2.Date, ident, "databind");
             grid.DataSource = dane;
             try
             {

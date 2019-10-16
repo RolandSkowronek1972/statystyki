@@ -49,15 +49,6 @@ namespace stat2018 {
         protected global::System.Web.UI.WebControls.LinkButton LinkButton54;
         
         /// <summary>
-        /// LinkButton55 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.LinkButton LinkButton55;
-        
-        /// <summary>
         /// LinkButton57 control.
         /// </summary>
         /// <remarks>
@@ -103,15 +94,6 @@ namespace stat2018 {
         protected global::System.Web.UI.WebControls.GridView Tabela1;
         
         /// <summary>
-        /// daneDoTabeli1 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.SqlDataSource daneDoTabeli1;
-        
-        /// <summary>
         /// lbTabela3Title control.
         /// </summary>
         /// <remarks>
@@ -137,15 +119,6 @@ namespace stat2018 {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.GridView Gridview3;
-        
-        /// <summary>
-        /// tabela_3 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.SqlDataSource tabela_3;
         
         /// <summary>
         /// Label27 control.

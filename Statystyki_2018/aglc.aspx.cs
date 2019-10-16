@@ -49,7 +49,7 @@ namespace stat2018
                     {
                         var fileContents = System.IO.File.ReadAllText(Server.MapPath(@"~//version.txt"));    // file read with version
                         this.Title = "Statystyki " + fileContents.ToString().Trim();
-                        przemiel();
+                        odswiez();
                         makeLabels();
                     }
                 }
@@ -60,7 +60,7 @@ namespace stat2018
             }
         }// end of Page_Load
 
-        protected void przemiel()
+        protected void odswiez()
         {
             string id_dzialu = (string)Session["id_dzialu"];
             string txt = string.Empty;
@@ -68,7 +68,7 @@ namespace stat2018
             //tabela 1
             try
             {
-                DataTable Tabela2 = dr.generuj_dane_do_tabeli_sedziowskiej_2018(int.Parse(id_dzialu), 1, Date1.Date, Date2.Date, 28, tenPlik);
+                DataTable Tabela2 = dr.generuj_dane_do_tabeli_sedziowskiej_2019(int.Parse(id_dzialu), 1, Date1.Date, Date2.Date, 28, tenPlik);
                 Session["tabelka001"] = Tabela2;
                 gwTabela1.DataSource = null;
                 gwTabela1.DataSourceID = null;
@@ -289,7 +289,7 @@ namespace stat2018
 
         protected void Button1_Click(object sender, EventArgs e)
         {
-            przemiel();
+            odswiez();
             ScriptManager.RegisterStartupScript(this.Page, Page.GetType(), "print2", "JavaScript: window.print();", true);
             // ScriptManager.RegisterStartupScript(this.Page, Page.GetType(), "print", "window.open('raport_01_print.aspx', '')", true);
         }
@@ -341,18 +341,18 @@ namespace stat2018
                 }
             }//end of using
 
-            przemiel();
+            odswiez();
         }
 
         protected void LinkButton54_Click(object sender, EventArgs e)
         {
-            przemiel();
+            odswiez();
         }
 
         protected void LinkButton55_Click(object sender, EventArgs e)
         {
             makeLabels();
-            przemiel();
+            odswiez();
             ScriptManager.RegisterStartupScript(this.Page, Page.GetType(), "print2", "JavaScript: window.print();", true);
             makeLabels();
         }

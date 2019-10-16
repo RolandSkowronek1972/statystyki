@@ -52,10 +52,10 @@ namespace stat2018
             }
             Session["data_1"] = datyMSS.DataPoczatkowa();
             Session["data_2"] = datyMSS.DataKoncowa();
-            przemiel();
+            odswiez();
         }// end of Page_Load
 
-        protected void przemiel()
+        protected void odswiez()
         {
             Session["sesja"] = "s3030";
           
@@ -6739,7 +6739,7 @@ namespace stat2018
 
         protected void LinkButton54_Click(object sender, EventArgs e)
         {
-            przemiel();
+            odswiez();
         }
 
         private string wyciagnijWartosc(DataTable ddT, string selectString)

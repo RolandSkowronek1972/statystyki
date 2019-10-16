@@ -57,7 +57,7 @@ namespace stat2018
                         var fileContents = System.IO.File.ReadAllText(Server.MapPath(@"~//version.txt"));    // file read with version
                         this.Title = "Statystyki " + fileContents.ToString().Trim();
 
-                        przemiel();
+                        odswiez();
                         makeLabels();
                     }
                 }
@@ -75,7 +75,7 @@ namespace stat2018
             imgLoader.Visible = false;
         }
 
-        protected void przemiel()
+        protected void odswiez()
         {
             Timer1.Enabled = true;
             imgLoader.Visible = true;
@@ -197,7 +197,7 @@ namespace stat2018
 
         protected void LinkButton54_Click(object sender, EventArgs e)
         {
-            przemiel();
+            odswiez();
         }
 
         protected void GridView1_RowDataBound(object sender, GridViewRowEventArgs e)

@@ -59,26 +59,13 @@ margin: 0% 0% 0% 0%; filter: progid:DXImageTransform.Microsoft.BasicImage(Rotati
           filter: progid:DXImageTransform.Microsoft.BasicImage(Rotation=3);
   }
 
-@media print
-{
-     
-  @page {
-       size:A4 landscape;
-          margin: 0;
-          tab-size:99;
-          page-break-before: always;
-          page-break-after: always;
-          margin-left:200em;
-          margin-right :200em;
-  }
-    td {
+@media print {
 
-          page-break-before: always;
-          page-break-after: always;
+
+    .noprint {
+        display: none;
     }
-.noprint {display:none;}
-
-
+}
 .btn_search {
   font-family: Arial;
   color: #120112;

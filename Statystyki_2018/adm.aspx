@@ -1,54 +1,55 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site1.Master" AutoEventWireup="true" CodeBehind="adm.aspx.cs" Inherits="stat2018.adm" %>
 
 <%@ Register Assembly="DevExpress.Web.v17.1, Version=17.1.15.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" Namespace="DevExpress.Web" TagPrefix="dx" %>
-
-<%@ Register src="UserControlls/ZarzadzanieFormularzami.ascx" tagname="ZarzadzanieFormularzami" tagprefix="uc3" %>
-
-
-
+<%@ Register Src="UserControlls/ZarzadzanieFormularzami.ascx" TagName="ZarzadzanieFormularzami" TagPrefix="uc3" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <style>
         .butn1 {
-  ;
-        background-position: 0% 0%;
-background-image: linear-gradient(to bottom, #ffd900, #f56200)!important !important ;
-            -webkit-border-radius: 8!important;
-            -moz-border-radius: 8!important;
-            border-radius: 8px!important;
-            font-family: Arial!important;
-            color: #ffffff!important;
-            font-size: 20px!important;
-            padding: 5px 30px 5px 30px !important;;
+            background-position: 0% 0%;
+            background-image: linear-gradient(to bottom, #F6D014, #D04411) !important;
+            -webkit-border-radius: 6px !important;
+            -moz-border-radius: 6px !important;
+            border-radius: 6px !important;
+            height: 10px !important;
+            line-height: 10px !important;
+            color: #FFFFFF !important;
+            font-family: Open Sans !important;
+            width: 129px !important;
+            font-size: 20px !important;
+            font-weight: 200 !important;
+            padding: 13px !important;
+            text-shadow: 1px 1px 20px #000000 !important;
+            border: solid #FFFFFF 1px !important;
             text-decoration: none !important;
-            background-color: #ffd900 !important;
+            display: inline-block !important;
+            cursor: pointer !important;
+            background-color: #F6D014 !important;
             background-repeat: repeat !important;
             background-attachment: scroll !important;
         }
 
-.butn1:hover {
-  background: #3cb0fd;
-  background-image: -webkit-linear-gradient(top, #3cb0fd, #3498db)!important;
-  background-image: -moz-linear-gradient(top, #3cb0fd, #3498db)!important;
-  background-image: -ms-linear-gradient(top, #3cb0fd, #3498db)!important;
-  background-image: -o-linear-gradient(top, #3cb0fd, #3498db)!important;
-  background-image: linear-gradient(to bottom, #3cb0fd, #3498db)!important;
-  text-decoration: none!important;
-}
-   
-
-</style>
-    <dx:ASPxGridView ID="ASPxGridView2" runat="server" AutoGenerateColumns="False" DataSourceID="SqlDataSource1" EnableTheming="True" KeyFieldName="ident" Theme="PlasticBlue" Width="100%" OnStartRowEditing="startEdycji">
+            .butn1:hover {
+                background-position: 0% 0%;
+                background-image: linear-gradient(to bottom, #F6D014, #F6450F) !important;
+                text-decoration: none !important;
+                background-color: #F6D014 !important;
+                background-repeat: repeat !important;
+                background-attachment: scroll !important;
+            }
+    </style>
+    <dx:ASPxGridView ID="grid1" runat="server" AutoGenerateColumns="False" DataSourceID="SqlDataSource1" EnableTheming="True" KeyFieldName="ident" Theme="Moderno" Width="100%" OnStartRowEditing="startEdycji" OnInitNewRow="startWprowadzaniaUzytkownika" OnRowInserting="wprowadzanieDoBazyDanychnowegoUsera" OnRowDeleting="grid1_RowDeleting" OnRowUpdated="poEdycji">
+        <SettingsPager PageSize="30">
+        </SettingsPager>
         <SettingsEditing Mode="EditForm">
         </SettingsEditing>
-         <SettingsCommandButton>
-             <EditButton Text ="Edytuj"></EditButton>
-             <NewButton Text="Nowy użytkownik"></NewButton>
-             <DeleteButton Text="Usuń">
-                 <Styles>
-                    
-                 </Styles>
-             </DeleteButton>
+        <SettingsCommandButton>
+            <EditButton Text="Edytuj"></EditButton>
+            <NewButton Text="Nowy użytkownik"></NewButton>
+            <DeleteButton Text="Usuń">
+                <Styles>
+                </Styles>
+            </DeleteButton>
             <CancelButton Text="Anuluj">
                 <Styles>
                     <Style CssClass="butn1">
@@ -60,26 +61,23 @@ background-image: linear-gradient(to bottom, #ffd900, #f56200)!important !import
                     <Style CssClass="butn1">
                     </Style>
                 </Styles>
-             </UpdateButton>
+            </UpdateButton>
         </SettingsCommandButton>
         <Settings ShowFilterRow="True" />
-          <Templates>
-        <EditForm>
-              <dx:ASPxGridViewTemplateReplacement ID="Editors" ReplacementType="EditFormEditors"
-                                            runat="server">
-                                        </dx:ASPxGridViewTemplateReplacement>
-    <uc3:ZarzadzanieFormularzami ID="ZarzadzanieFormularzami1" runat="server" />      
-            
+        <Templates>
+            <EditForm>
+                <dx:ASPxGridViewTemplateReplacement ID="Editors" ReplacementType="EditFormEditors"
+                    runat="server"></dx:ASPxGridViewTemplateReplacement>
+                <uc3:ZarzadzanieFormularzami ID="ZarzadzanieFormularzami1" runat="server" />
+
                 <div style="text-align: right; padding: 2px">
                     <dx:ASPxGridViewTemplateReplacement ID="UpdateButton" ReplacementType="EditFormUpdateButton"
-                        runat="server">
-                    </dx:ASPxGridViewTemplateReplacement>
+                        runat="server"></dx:ASPxGridViewTemplateReplacement>
                     <dx:ASPxGridViewTemplateReplacement ID="CancelButton" ReplacementType="EditFormCancelButton"
-                        runat="server">
-                    </dx:ASPxGridViewTemplateReplacement>
+                        runat="server"></dx:ASPxGridViewTemplateReplacement>
                 </div>
-        </EditForm>
-    </Templates>
+            </EditForm>
+        </Templates>
         <SettingsBehavior ConfirmDelete="True" />
         <EditFormLayoutProperties ColCount="5">
             <Items>
@@ -98,58 +96,60 @@ background-image: linear-gradient(to bottom, #ffd900, #f56200)!important !import
             </Items>
         </EditFormLayoutProperties>
         <Columns>
-            <dx:GridViewCommandColumn ShowDeleteButton="True" ShowEditButton="True" VisibleIndex="0" ShowCancelButton="True" ShowNewButton="True" ShowUpdateButton="True" ShowNewButtonInHeader="True">
+            <dx:GridViewCommandColumn ShowDeleteButton="True" ShowNewButtonInHeader="true" ShowEditButton="True" VisibleIndex="0" ShowCancelButton="True" ShowNewButton="False" ShowUpdateButton="True">
             </dx:GridViewCommandColumn>
             <dx:GridViewDataTextColumn FieldName="ident" ReadOnly="True" Visible="False" VisibleIndex="1">
                 <EditFormSettings Visible="False" />
             </dx:GridViewDataTextColumn>
-            <dx:GridViewDataTextColumn FieldName="imie" VisibleIndex="2">
+            <dx:GridViewDataTextColumn FieldName="imie" VisibleIndex="2" Caption="Imie">
             </dx:GridViewDataTextColumn>
-            <dx:GridViewDataTextColumn FieldName="nazwisko" VisibleIndex="3">
+            <dx:GridViewDataTextColumn FieldName="nazwisko" VisibleIndex="3" Caption="Nazwisko">
             </dx:GridViewDataTextColumn>
-            <dx:GridViewDataTextColumn FieldName="login" ReadOnly="True" VisibleIndex="4">
+            <dx:GridViewDataTextColumn FieldName="login" VisibleIndex="4" Caption="Login">
+                <PropertiesTextEdit>
+                    <ValidationSettings RequiredField-IsRequired="true" ErrorText="Pole jest wymagane!!!">
+                        <RequiredField IsRequired="True"></RequiredField>
+                    </ValidationSettings>
+                </PropertiesTextEdit>
             </dx:GridViewDataTextColumn>
-            <dx:GridViewDataTextColumn FieldName="password" Visible="False" VisibleIndex="5">
+            <dx:GridViewDataTextColumn FieldName="password" Visible="False" VisibleIndex="6">
             </dx:GridViewDataTextColumn>
-            <dx:GridViewDataTextColumn FieldName="login_domenowy" VisibleIndex="6">
+            <dx:GridViewDataTextColumn FieldName="login_domenowy" VisibleIndex="7" Name="login_domenowy" Caption="Login domenowy">
             </dx:GridViewDataTextColumn>
-            <dx:GridViewDataCheckColumn FieldName="admin" VisibleIndex="7">
+            <dx:GridViewDataCheckColumn FieldName="admin" VisibleIndex="8" Caption="Administrator">
             </dx:GridViewDataCheckColumn>
         </Columns>
+        <Styles>
+            <AlternatingRow BackColor="#DCDCDC">
+            </AlternatingRow>
+        </Styles>
     </dx:ASPxGridView>
-    <div style="max-height:1px; height: 1px; width: 1px;">
-   </div>
-        <br />
-    <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:wap %>" DeleteCommand="DELETE FROM uzytkownik WHERE (ident = @ident)" InsertCommand="INSERT INTO uzytkownik(imie, nazwisko, login, password, login_domenowy, admin) VALUES (@imie, @nazwisko, @login, @password, @login_domenowy, @admin)" SelectCommand="SELECT DISTINCT ident, imie, nazwisko, login, password, login_domenowy, admin, (SELECT COUNT(*) AS Expr1 FROM uprawnienia WHERE (rodzaj = 1) AND (id_uzytkownika = uzytkownik.ident)) AS miesieczne, (SELECT COUNT(*) AS Expr1 FROM uprawnienia AS uprawnienia_1 WHERE (rodzaj = 2) AND (id_uzytkownika = uzytkownik.ident)) AS mss, (SELECT COUNT(*) AS Expr1 FROM uprawnienia AS uprawnienia_1 WHERE (rodzaj = 3) AND (id_uzytkownika = uzytkownik.ident)) AS kof, (SELECT COUNT(*) AS Expr1 FROM uprawnienia AS uprawnienia_1 WHERE (rodzaj = 4) AND (id_uzytkownika = uzytkownik.ident)) AS kontrolka, (SELECT COUNT(*) AS Expr1 FROM uprawnienia AS uprawnienia_1 WHERE (rodzaj = 5) AND (id_uzytkownika = uzytkownik.ident)) AS wyszukiwarka, (SELECT COUNT(*) AS Expr1 FROM uprawnienia AS uprawnienia_1 WHERE (rodzaj = 6) AND (id_uzytkownika = uzytkownik.ident)) AS pracownik FROM uzytkownik ORDER BY nazwisko" UpdateCommand="UPDATE uzytkownik SET imie = @imie, nazwisko = @nazwisko, login_domenowy = @login_domenowy, admin = @admin WHERE (login = @login)
-UPDATE  uprawnienia SET       id_uzytkownika =@ident,  id_wydzialu =1, rodzaj =@rodzaj">
+    <div style="max-height: 1px; height: 1px; width: 1px;">
+    </div>
+    <br />
+    <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:wap %>" DeleteCommand="DELETE FROM uzytkownik WHERE (ident = @ident);
+DELETE FROM uprawnienia
+WHERE (id_uzytkownika = @ident)
+"
+        InsertCommand="SELECT imie, nazwisko, login, password, login_domenowy, admin FROM uzytkownik" SelectCommand="SELECT DISTINCT ident, imie, nazwisko, login, password, login_domenowy, admin FROM uzytkownik ORDER BY nazwisko" UpdateCommand="UPDATE uzytkownik SET imie = @imie, nazwisko = @nazwisko, login_domenowy = @login_domenowy, login = @login, admin = @admin WHERE (ident = @ident)">
         <DeleteParameters>
             <asp:Parameter Name="ident" />
         </DeleteParameters>
-        <InsertParameters>
-            <asp:Parameter Name="imie" />
-            <asp:Parameter Name="nazwisko" />
-            <asp:Parameter Name="login" />
-            <asp:Parameter Name="password" />
-            <asp:Parameter Name="login_domenowy" />
-            <asp:Parameter Name="admin" />
-        </InsertParameters>
         <UpdateParameters>
             <asp:Parameter Name="imie" />
             <asp:Parameter Name="nazwisko" />
             <asp:Parameter Name="login_domenowy" />
-            <asp:Parameter Name="admin" />
             <asp:Parameter Name="login" />
+            <asp:Parameter Name="admin" />
             <asp:Parameter Name="ident" />
-            <asp:Parameter Name="rodzaj" />
         </UpdateParameters>
     </asp:SqlDataSource>
 
     <br />
     <br />
-    
+
     <br />
 
-   
     <br />
     <br />
     <br />

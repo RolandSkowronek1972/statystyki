@@ -1,23 +1,20 @@
 ﻿using System;
 using System.Data;
-using System.Globalization;
-using System.IO;
-using System.Web.UI;
 using System.Web.UI.WebControls;
 
 using System.Xml;
 
 namespace stat2018
 {
-    public class XMLHeaders:common
+    public class XMLHeaders : common
     {
-        tabele Tabele = new tabele();
-        public void getHeaderFromXML( string path, System.Web.UI.WebControls.GridView GridViewX)
+        private tabele Tabele = new tabele();
+
+        public void getHeaderFromXML(string path, System.Web.UI.WebControls.GridView GridViewX)
         {
-           
-            if (string.IsNullOrEmpty (path) )
+            if (string.IsNullOrEmpty(path))
             {
-             //   return null;
+                //   return null;
             }
             System.Web.UI.WebControls.GridView sn = new System.Web.UI.WebControls.GridView();
             DataTable schematNaglowka = new DataTable();
@@ -27,35 +24,44 @@ namespace stat2018
             schematNaglowka.Columns.Add("rowSpan", typeof(int));
             schematNaglowka.Columns.Add("colSpan", typeof(int));
             schematNaglowka.Columns.Add("hv", typeof(string));
-
+            schematNaglowka.Columns.Add("css", typeof(string));
             XmlDocument doc = new XmlDocument();
             doc.Load(path);
             int i = doc.DocumentElement.ChildNodes.Count;
             foreach (XmlNode node in doc.DocumentElement.ChildNodes)
             {
+                try
+                {
+                    string style = string.Empty;
+                    int wiersz = int.Parse(node["wiersz"].InnerText);
+                    int kolumna = int.Parse(node["kolumna"].InnerText);
+                    string text = node["text"].InnerText;
+                    int rowspan = int.Parse(node["rowSpan"].InnerText);
+                    int colspan = int.Parse(node["colSpan"].InnerText);
+                    string hv = node["hv"].InnerText;
+                    try
+                    {
+                        style = node["style"].InnerText;
+                    }
+                    catch
+                    { }
 
-                
-                string text = node["text"].InnerText;
-                int kolumna = int.Parse(node["kolumna"].InnerText);
-                int wiersz = int.Parse(node["wiersz"].InnerText);
-                int rowspan = int.Parse(node["rowSpan"].InnerText);
-                int colspan = int.Parse(node["colSpan"].InnerText);
-                string hv = node["hv"].InnerText;
-
-
-                DataRow dataRow = schematNaglowka.NewRow();
-                dataRow["text"] = text;
-                dataRow["wiersz"] = wiersz;
-                dataRow["kolumna"] = kolumna;
-                dataRow["rowSpan"] = rowspan;
-                dataRow["colspan"] = colspan;
-                dataRow["hv"] = colspan;
-                schematNaglowka.Rows.Add(dataRow);
-          
-                
+                    DataRow dataRow = schematNaglowka.NewRow();
+                    dataRow["text"] = text;
+                    dataRow["wiersz"] = wiersz;
+                    dataRow["kolumna"] = kolumna;
+                    dataRow["rowSpan"] = rowspan;
+                    dataRow["colspan"] = colspan;
+                    dataRow["hv"] = hv;
+                    dataRow["css"] = style;
+                    schematNaglowka.Rows.Add(dataRow);
+                }
+                catch (Exception ex)
+                {
+                    log.Error("XML Header " + ex.Message);
+                }
             }
 
-           
             try
             {
                 int row = 0;
@@ -68,7 +74,7 @@ namespace stat2018
                     if (int.Parse(dR["wiersz"].ToString().Trim()) != row)
                     {
                         GridView HeaderGrid = (GridView)sn;
-                        HeaderGridRow = Tabele. Grw(sn);
+                        HeaderGridRow = Tabele.Grw(sn);
                         row = int.Parse(dR["wiersz"].ToString().Trim());
                         try
                         {
@@ -85,7 +91,10 @@ namespace stat2018
                     {
                         stl.CssClass = "horizontaltext";
                     }
-
+                    if (!string.IsNullOrEmpty(dR["css"].ToString().Trim()))
+                    {
+                        stl.CssClass = stl.CssClass + " " + dR["css"].ToString().Trim();
+                    }
                     HeaderCell = new TableCell();
                     HeaderCell.Text = dR["text"].ToString().Trim();
                     HeaderCell.Style.Clear();
@@ -100,7 +109,6 @@ namespace stat2018
             {
                 log.Error("tabele.dll->makeHeader: " + ex.Message);
             } // end of try
-          
         }
     }
 }

@@ -25,7 +25,7 @@ namespace stat2018
         private const int style = 6;
        
 
-        protected void przemiel()
+        protected void odswiez()
         {
             string tenPlikNazwa = "aglg2";
             Label2.Text = "";
@@ -230,7 +230,7 @@ namespace stat2018
                 TextBox1.Text = sText.ToString();
 
             }
-            //  przemiel();
+            //  odswiez();
         }
 
 

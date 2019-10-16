@@ -79,6 +79,7 @@
                 AllowDelete="False" 
                 AllowEdit="False" 
                 AllowInsert="False" />
+              <SettingsSearchPanel ShowClearButton="True" Visible="True" />
             <Styles>
                 <Header Wrap="True">
                 </Header>

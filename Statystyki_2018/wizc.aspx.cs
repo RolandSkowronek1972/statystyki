@@ -121,11 +121,11 @@ namespace stat2018
             Session["tabelka027"] = tabelka27;
             tworztabelkeHTML26("K27", idWydzial, 27, tabelka27, "% spraw", "", "IV. 7.4.Struktura pozostałości (referaty poszczególnych sędziów – %)", "Tabela 27");
 
-            DataTable tabelka28 = dr.generuj_dane_do_tabeli_sedziowskiej_2018(idWydzial, 27, Date1.Date, Date2.Date, 130, tenPlik);
+            DataTable tabelka28 = dr.generuj_dane_do_tabeli_sedziowskiej_2018(idWydzial, 28, Date1.Date, Date2.Date, 130, tenPlik);
             Session["tabelka028"] = tabelka28;
             tworztabelkeHTML26("K28", idWydzial, 28, tabelka28, "liczba spraw", "", "IV. 7.5.Struktura pozostałości (referaty poszczególnych referendarzy sądowych – liczba spraw)", "Tabela 28");
 
-            DataTable tabelka29 = dr.generuj_dane_do_tabeli_sedziowskiej_2018(idWydzial, 27, Date1.Date, Date2.Date, 130, tenPlik);
+            DataTable tabelka29 = dr.generuj_dane_do_tabeli_sedziowskiej_2018(idWydzial, 29, Date1.Date, Date2.Date, 130, tenPlik);
             Session["tabelka029"] = tabelka29;
             tworztabelkeHTML26("K29", idWydzial, 29, tabelka29, "% spraw", "", "IV. 7.5.Struktura pozostałości (referaty poszczególnych referendarzy sądowych – liczba spraw)", "Tabela 28");
 
