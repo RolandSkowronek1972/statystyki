@@ -1,195 +1,78 @@
-2019-10-16 07:08:35,890  INFO stat2018.log_4_net - rozpoczecie logowania 07:08:35
-2019-10-16 07:08:36,066  INFO stat2018.log_4_net - blad logowania domenowego  07:08:36
-2019-10-16 07:08:36,066  INFO stat2018.log_4_net - próba logowania z bazy  07:08:36
-2019-10-16 07:08:36,810  INFO stat2018.log_4_net - Logowanie: identyfikator uzytkownika: test to 6
-2019-10-16 07:08:36,810  INFO stat2018.log_4_net - logowania z bazy poprawne  07:08:36
-2019-10-16 07:08:36,929  INFO stat2018.log_4_net - uruchomienie  redirector.aspx 07:08:36
-2019-10-16 07:08:37,291  INFO stat2018.log_4_net - start redirektora  07:08:37
-2019-10-16 07:08:37,301  INFO stat2018.log_4_net - start tworzenia Ste1   07:08:37
-2019-10-16 07:08:37,301  INFO stat2018.log_4_net - start tworzenia menu  daneDoManuMiesieczne  07:08:37
-2019-10-16 07:08:37,374  INFO stat2018.log_4_net -  getDataTable - parametetr name= @identyfikatorUzytkownika wartosc: 6
-2019-10-16 07:08:37,491  INFO stat2018.log_4_net - start tworzenia menu  daneDoManuKontrolek 07:08:37
-2019-10-16 07:08:37,499  INFO stat2018.log_4_net - naglowek getDataTable - parametetr name= @identyfikatorUzytkownika wartosc: 6
-2019-10-16 07:08:37,522  INFO stat2018.log_4_net - start tworzenia menu  daneDoManuMSS 07:08:37
-2019-10-16 07:08:37,530  INFO stat2018.log_4_net - Naglowki getDataTable - parametetr name= @identyfikatorUzytkownika wartosc: 6
-2019-10-16 07:08:37,557  INFO stat2018.log_4_net - start tworzenia menu daneDoManuInne  07:08:37
-2019-10-16 07:08:37,574  INFO stat2018.log_4_net - start tworzenia menu wyloguj  07:08:37
-2019-10-16 07:08:37,577  INFO stat2018.log_4_net - Header: Rozpoczecie procedury tworzenia elementów menu wyloguj
-2019-10-16 07:08:37,588  INFO stat2018.log_4_net - koniec tworzenia manu   07:08:37
-2019-10-16 07:08:50,621  INFO stat2018.log_4_net - oglp.aspxladowanie danych do tabeli 100
-2019-10-16 07:08:50,625  INFO stat2018.log_4_net - oglp.aspx getDataTable - parametetr name= @id_wydzial wartosc: 3
-2019-10-16 07:08:50,625  INFO stat2018.log_4_net - oglp.aspx getDataTable - parametetr name= @id_tabeli wartosc: 100
-2019-10-16 07:08:50,671  INFO stat2018.log_4_net - oglp.aspx DR0003-> : odczyt kwerend: brak kwerend do doczytu danych
-2019-10-16 07:08:50,685  INFO stat2018.log_4_net - oglp.aspx :Generowanie tabeli danych: Rozpoczecie
-2019-10-16 07:08:50,688  INFO stat2018.log_4_net - oglp.aspx :Generowanie tabeli danych: Wyciadniecie kwerend dla tabeli :1
-2019-10-16 07:08:50,688  INFO stat2018.log_4_net - oglp.aspx getDataTable - parametetr name= @id_tabeli wartosc: 1
-2019-10-16 07:08:50,688  INFO stat2018.log_4_net - oglp.aspx getDataTable - parametetr name= @id_dzialu wartosc: 3
-2019-10-16 07:08:50,694  INFO stat2018.log_4_net - oglp.aspx :Generowanie tabeli danych: Brak kwerend dla tabeli : 1
-2019-10-16 07:08:50,696  INFO stat2018.log_4_net - oglp.aspx :Generowanie tabeli danych: Rozpoczecie
-2019-10-16 07:08:50,696  INFO stat2018.log_4_net - oglp.aspx :Generowanie tabeli danych: Wyciadniecie kwerend dla tabeli :2
-2019-10-16 07:08:50,696  INFO stat2018.log_4_net - oglp.aspx getDataTable - parametetr name= @id_tabeli wartosc: 2
-2019-10-16 07:08:50,697  INFO stat2018.log_4_net - oglp.aspx getDataTable - parametetr name= @id_dzialu wartosc: 3
-2019-10-16 07:08:50,702  INFO stat2018.log_4_net - oglp.aspx :Generowanie tabeli danych: Ilosc kwerend wyciagajacych dla sedziów dla tabeli : 2 wynosi:1
-2019-10-16 07:08:50,702  INFO stat2018.log_4_net - oglp.aspx :Generowanie tabeli danych: Ilosc kwerend wyciagajacych dla danych dla tabeli : 2 wynosi:1
-2019-10-16 07:08:50,702  INFO stat2018.log_4_net - oglp.aspx :Generowanie tabeli danych: Wpisywanie danych sedziów dla tabeli : 2
-2019-10-16 07:08:50,702  INFO stat2018.log_4_net - oglp.aspx getDataTable - parametetr name= @data_1 wartosc: 2019-09-01
-2019-10-16 07:08:50,703  INFO stat2018.log_4_net - oglp.aspx getDataTable - parametetr name= @data_2 wartosc: 2019-09-30
-2019-10-16 07:08:50,744  INFO stat2018.log_4_net - oglp.aspx wpisywanie danych dla sedziów
-2019-10-16 07:08:50,745  INFO stat2018.log_4_net - oglp.aspx getDataTable - parametetr name= @data_1 wartosc: 2019-09-01
-2019-10-16 07:08:50,745  INFO stat2018.log_4_net - oglp.aspx getDataTable - parametetr name= @data_2 wartosc: 2019-09-30
-2019-10-16 07:08:50,796  INFO stat2018.log_4_net - oglp.aspx getDataTable - parametetr name= @data_1 wartosc: 2019-09-01
-2019-10-16 07:08:50,796  INFO stat2018.log_4_net - oglp.aspx getDataTable - parametetr name= @data_2 wartosc: 2019-09-30
-2019-10-16 07:08:50,831  INFO stat2018.log_4_net - oglp.aspx getDataTable - parametetr name= @data_1 wartosc: 2019-09-01
-2019-10-16 07:08:50,832  INFO stat2018.log_4_net - oglp.aspx getDataTable - parametetr name= @data_2 wartosc: 2019-09-30
-2019-10-16 07:08:50,851  INFO stat2018.log_4_net - oglp.aspx getDataTable - parametetr name= @data_1 wartosc: 2019-09-01
-2019-10-16 07:08:50,851  INFO stat2018.log_4_net - oglp.aspx getDataTable - parametetr name= @data_2 wartosc: 2019-09-30
-2019-10-16 07:08:50,853  INFO stat2018.log_4_net - oglp.aspx getDataTable - parametetr name= @data_1 wartosc: 2019-09-01
-2019-10-16 07:08:50,853  INFO stat2018.log_4_net - oglp.aspx getDataTable - parametetr name= @data_2 wartosc: 2019-09-30
-2019-10-16 07:08:50,857  INFO stat2018.log_4_net - oglp.aspx getDataTable - parametetr name= @data_1 wartosc: 2019-09-01
-2019-10-16 07:08:50,857  INFO stat2018.log_4_net - oglp.aspx getDataTable - parametetr name= @data_2 wartosc: 2019-09-30
-2019-10-16 07:08:50,859  INFO stat2018.log_4_net - oglp.aspx getDataTable - parametetr name= @data_1 wartosc: 2019-09-01
-2019-10-16 07:08:50,860  INFO stat2018.log_4_net - oglp.aspx getDataTable - parametetr name= @data_2 wartosc: 2019-09-30
-2019-10-16 07:08:50,862  INFO stat2018.log_4_net - oglp.aspx getDataTable - parametetr name= @data_1 wartosc: 2019-09-01
-2019-10-16 07:08:50,862  INFO stat2018.log_4_net - oglp.aspx getDataTable - parametetr name= @data_2 wartosc: 2019-09-30
-2019-10-16 07:08:50,865  INFO stat2018.log_4_net - oglp.aspx getDataTable - parametetr name= @data_1 wartosc: 2019-09-01
-2019-10-16 07:08:50,865  INFO stat2018.log_4_net - oglp.aspx getDataTable - parametetr name= @data_2 wartosc: 2019-09-30
-2019-10-16 07:08:51,129  INFO stat2018.log_4_net - oglp.aspx :Generowanie tabeli danych: Rozpoczecie
-2019-10-16 07:08:51,130  INFO stat2018.log_4_net - oglp.aspx :Generowanie tabeli danych: Wyciadniecie kwerend dla tabeli :3
-2019-10-16 07:08:51,130  INFO stat2018.log_4_net - oglp.aspx getDataTable - parametetr name= @id_tabeli wartosc: 3
-2019-10-16 07:08:51,130  INFO stat2018.log_4_net - oglp.aspx getDataTable - parametetr name= @id_dzialu wartosc: 3
-2019-10-16 07:08:51,134  INFO stat2018.log_4_net - oglp.aspx :Generowanie tabeli danych: Ilosc kwerend wyciagajacych dla sedziów dla tabeli : 3 wynosi:1
-2019-10-16 07:08:51,134  INFO stat2018.log_4_net - oglp.aspx :Generowanie tabeli danych: Ilosc kwerend wyciagajacych dla danych dla tabeli : 3 wynosi:1
-2019-10-16 07:08:51,134  INFO stat2018.log_4_net - oglp.aspx :Generowanie tabeli danych: Wpisywanie danych sedziów dla tabeli : 3
-2019-10-16 07:08:51,134  INFO stat2018.log_4_net - oglp.aspx getDataTable - parametetr name= @data_1 wartosc: 2019-09-01
-2019-10-16 07:08:51,134  INFO stat2018.log_4_net - oglp.aspx getDataTable - parametetr name= @data_2 wartosc: 2019-09-30
-2019-10-16 07:08:51,140  INFO stat2018.log_4_net - oglp.aspx wpisywanie danych dla sedziów
-2019-10-16 07:08:51,141  INFO stat2018.log_4_net - oglp.aspx getDataTable - parametetr name= @data_1 wartosc: 2019-09-01
-2019-10-16 07:08:51,141  INFO stat2018.log_4_net - oglp.aspx getDataTable - parametetr name= @data_2 wartosc: 2019-09-30
-2019-10-16 07:08:51,163  INFO stat2018.log_4_net - oglp.aspx Kwerenda: SELECT COUNT(sprawa.ident),sedzia.ident FROM sedzia, sprawa,rozprawa WHERE sprawa.repertorium = 1 and ((( sedzia.czyus=0 and sedzia.czyskreslono = 0 )  and   ( sprawa.d_wplywu >= '1-1-2000 0:0:0.000' )   AND  rozprawa.czyus = 0   and d_rozprawy >= @data_1  and d_rozprawy <= @data_2   and	  rozprawa.id_sprawy = sprawa.ident  and sedzia.ident = rozprawa.id_sedziego_sprawa    and   rozprawa.id_sedziego is null  AND ( sprawa.czyus = 0 ) AND  (sprawa.ident)     in (select id_sprawy from rozprawa,termin where id_terminu = termin.ident and      rozprawa.czyus = 0 and d_rozprawy >= @data_1  and d_rozprawy <= @data_2      and sedzia.ident = rozprawa.id_sedziego_sprawa and rozprawa.id_sedziego is null))      or   (( sedzia.czyus=0 and sedzia.czyskreslono = 0 )  and ( sprawa.d_wplywu >= '1-1-2000 0:0:0.000' ) and rozprawa.czyus = 0   and d_rozprawy >= @data_1  and d_rozprawy <= @data_2 and rozprawa.id_sprawy = sprawa.ident  and sedzia.ident = rozprawa.id_sedziego and rozprawa.id_sedziego is not null   AND( sprawa.czyus = 0 )  AND(sprawa.ident) in (select id_sprawy  from rozprawa,termin  where id_terminu = termin.ident and rozprawa.czyus = 0  and d_rozprawy >= @data_1  and d_rozprawy <= @data_2  and sedzia.ident = rozprawa.id_sedziego and rozprawa.id_sedziego is not null)))  GROUP BY sedzia.ident  Error getDataTable : Invalid column name 'id_sedziego_sprawa'.
-Invalid column name 'id_sedziego_sprawa'.
-2019-10-16 07:08:51,163  INFO stat2018.log_4_net - oglp.aspx :wpisywanie danych dla sedziów : 3 Odwolanie do obiektu nie zostalo ustawione na wystapienie obiektu.
-2019-10-16 07:08:51,187  INFO stat2018.log_4_net - oglp.aspx getDataTable - parametetr name= @id_wydzial wartosc: 3
-2019-10-16 07:08:51,187  INFO stat2018.log_4_net - oglp.aspx getDataTable - parametetr name= @id_tabeli wartosc: 4
-2019-10-16 07:08:51,190  INFO stat2018.log_4_net - oglp.aspx DR0003-> : odczyt kwerend: brak kwerend do doczytu danych
-2019-10-16 07:08:51,193  INFO stat2018.log_4_net - oglp.aspx :Generowanie tabeli danych: Rozpoczecie
-2019-10-16 07:08:51,193  INFO stat2018.log_4_net - oglp.aspx :Generowanie tabeli danych: Wyciadniecie kwerend dla tabeli :5
-2019-10-16 07:08:51,193  INFO stat2018.log_4_net - oglp.aspx getDataTable - parametetr name= @id_tabeli wartosc: 5
-2019-10-16 07:08:51,193  INFO stat2018.log_4_net - oglp.aspx getDataTable - parametetr name= @id_dzialu wartosc: 3
-2019-10-16 07:08:51,194  INFO stat2018.log_4_net - oglp.aspx :Generowanie tabeli danych: Brak kwerend dla tabeli : 5
-2019-10-16 07:08:51,196  INFO stat2018.log_4_net - oglp.aspx :Generowanie tabeli danych: Rozpoczecie
-2019-10-16 07:08:51,196  INFO stat2018.log_4_net - oglp.aspx :Generowanie tabeli danych: Wyciadniecie kwerend dla tabeli :6
-2019-10-16 07:08:51,196  INFO stat2018.log_4_net - oglp.aspx getDataTable - parametetr name= @id_tabeli wartosc: 6
-2019-10-16 07:08:51,196  INFO stat2018.log_4_net - oglp.aspx getDataTable - parametetr name= @id_dzialu wartosc: 3
-2019-10-16 07:08:51,197  INFO stat2018.log_4_net - oglp.aspx :Generowanie tabeli danych: Brak kwerend dla tabeli : 6
-2019-10-16 07:08:51,200  INFO stat2018.log_4_net - oglp.aspx :Generowanie tabeli danych: Rozpoczecie
-2019-10-16 07:08:51,201  INFO stat2018.log_4_net - oglp.aspx :Generowanie tabeli danych: Wyciadniecie kwerend dla tabeli :7
-2019-10-16 07:08:51,201  INFO stat2018.log_4_net - oglp.aspx getDataTable - parametetr name= @id_tabeli wartosc: 7
-2019-10-16 07:08:51,201  INFO stat2018.log_4_net - oglp.aspx getDataTable - parametetr name= @id_dzialu wartosc: 3
-2019-10-16 07:08:51,202  INFO stat2018.log_4_net - oglp.aspx :Generowanie tabeli danych: Brak kwerend dla tabeli : 7
-2019-10-16 07:08:51,203  INFO stat2018.log_4_net - oglp.aspx getDataTable - parametetr name= @id_wydzial wartosc: 3
-2019-10-16 07:08:51,203  INFO stat2018.log_4_net - oglp.aspx getDataTable - parametetr name= @id_tabeli wartosc: 8
-2019-10-16 07:08:51,204  INFO stat2018.log_4_net - oglp.aspx DR0003-> : odczyt kwerend: brak kwerend do doczytu danych
-2019-10-16 07:08:51,206  INFO stat2018.log_4_net - oglp.aspx getDataTable - parametetr name= @id_wydzial wartosc: 3
-2019-10-16 07:08:51,206  INFO stat2018.log_4_net - oglp.aspx getDataTable - parametetr name= @id_tabeli wartosc: 9
-2019-10-16 07:08:51,207  INFO stat2018.log_4_net - oglp.aspx DR0003-> : odczyt kwerend: brak kwerend do doczytu danych
-2019-10-16 07:08:51,208  INFO stat2018.log_4_net - oglp.aspx :Generowanie tabeli danych: Rozpoczecie
-2019-10-16 07:08:51,208  INFO stat2018.log_4_net - oglp.aspx :Generowanie tabeli danych: Wyciadniecie kwerend dla tabeli :10
-2019-10-16 07:08:51,209  INFO stat2018.log_4_net - oglp.aspx getDataTable - parametetr name= @id_tabeli wartosc: 10
-2019-10-16 07:08:51,209  INFO stat2018.log_4_net - oglp.aspx getDataTable - parametetr name= @id_dzialu wartosc: 3
-2019-10-16 07:08:51,215  INFO stat2018.log_4_net - oglp.aspx :Generowanie tabeli danych: Brak kwerend dla tabeli : 10
-2019-10-16 07:08:51,289  INFO stat2018.log_4_net - start tworzenia Ste1   07:08:51
-2019-10-16 07:08:51,289  INFO stat2018.log_4_net - start tworzenia menu   07:08:51
-2019-10-16 07:08:51,290  INFO stat2018.log_4_net - koniec tworzenia manu   07:08:51
-2019-10-16 07:09:07,505  INFO stat2018.log_4_net - oktg.aspx getDataTable - parametetr name= @id_wydzial wartosc: 3
-2019-10-16 07:09:07,506  INFO stat2018.log_4_net - oktg.aspx getDataTable - parametetr name= @id_tabeli wartosc: 2
-2019-10-16 07:09:07,506  INFO stat2018.log_4_net - oktg.aspx DR0003-> : odczyt kwerend: brak kwerend do doczytu danych
-2019-10-16 07:09:07,506  INFO stat2018.log_4_net - oktg.aspx :Generowanie tabeli danych: Rozpoczecie
-2019-10-16 07:09:07,507  INFO stat2018.log_4_net - oktg.aspx :Generowanie tabeli danych: Wyciadniecie kwerend dla tabeli :1
-2019-10-16 07:09:07,507  INFO stat2018.log_4_net - oktg.aspx getDataTable - parametetr name= @id_tabeli wartosc: 1
-2019-10-16 07:09:07,507  INFO stat2018.log_4_net - oktg.aspx getDataTable - parametetr name= @id_dzialu wartosc: 3
-2019-10-16 07:09:07,508  INFO stat2018.log_4_net - oktg.aspx :Generowanie tabeli danych: Brak kwerend dla tabeli : 1
-2019-10-16 07:09:07,508  INFO stat2018.log_4_net - oktg.aspx :Generowanie tabeli danych: Rozpoczecie
-2019-10-16 07:09:07,508  INFO stat2018.log_4_net - oktg.aspx :Generowanie tabeli danych: Wyciadniecie kwerend dla tabeli :3
-2019-10-16 07:09:07,508  INFO stat2018.log_4_net - oktg.aspx getDataTable - parametetr name= @id_tabeli wartosc: 3
-2019-10-16 07:09:07,508  INFO stat2018.log_4_net - oktg.aspx getDataTable - parametetr name= @id_dzialu wartosc: 3
-2019-10-16 07:09:07,510  INFO stat2018.log_4_net - oktg.aspx :Generowanie tabeli danych: Ilosc kwerend wyciagajacych dla sedziów dla tabeli : 3 wynosi:1
-2019-10-16 07:09:07,510  INFO stat2018.log_4_net - oktg.aspx :Generowanie tabeli danych: Ilosc kwerend wyciagajacych dla danych dla tabeli : 3 wynosi:1
-2019-10-16 07:09:07,510  INFO stat2018.log_4_net - oktg.aspx :Generowanie tabeli danych: Wpisywanie danych sedziów dla tabeli : 3
-2019-10-16 07:09:07,510  INFO stat2018.log_4_net - oktg.aspx getDataTable - parametetr name= @data_1 wartosc: 2019-09-01
-2019-10-16 07:09:07,510  INFO stat2018.log_4_net - oktg.aspx getDataTable - parametetr name= @data_2 wartosc: 2019-09-30
-2019-10-16 07:09:07,514  INFO stat2018.log_4_net - oktg.aspx wpisywanie danych dla sedziów
-2019-10-16 07:09:07,514  INFO stat2018.log_4_net - oktg.aspx getDataTable - parametetr name= @data_1 wartosc: 2019-09-01
-2019-10-16 07:09:07,514  INFO stat2018.log_4_net - oktg.aspx getDataTable - parametetr name= @data_2 wartosc: 2019-09-30
-2019-10-16 07:09:07,516  INFO stat2018.log_4_net - oktg.aspx Kwerenda: SELECT COUNT(sprawa.ident),sedzia.ident FROM sedzia, sprawa,rozprawa WHERE sprawa.repertorium = 1 and ((( sedzia.czyus=0 and sedzia.czyskreslono = 0 )  and   ( sprawa.d_wplywu >= '1-1-2000 0:0:0.000' )   AND  rozprawa.czyus = 0   and d_rozprawy >= @data_1  and d_rozprawy <= @data_2   and	  rozprawa.id_sprawy = sprawa.ident  and sedzia.ident = rozprawa.id_sedziego_sprawa    and   rozprawa.id_sedziego is null  AND ( sprawa.czyus = 0 ) AND  (sprawa.ident)     in (select id_sprawy from rozprawa,termin where id_terminu = termin.ident and      rozprawa.czyus = 0 and d_rozprawy >= @data_1  and d_rozprawy <= @data_2      and sedzia.ident = rozprawa.id_sedziego_sprawa and rozprawa.id_sedziego is null))      or   (( sedzia.czyus=0 and sedzia.czyskreslono = 0 )  and ( sprawa.d_wplywu >= '1-1-2000 0:0:0.000' ) and rozprawa.czyus = 0   and d_rozprawy >= @data_1  and d_rozprawy <= @data_2 and rozprawa.id_sprawy = sprawa.ident  and sedzia.ident = rozprawa.id_sedziego and rozprawa.id_sedziego is not null   AND( sprawa.czyus = 0 )  AND(sprawa.ident) in (select id_sprawy  from rozprawa,termin  where id_terminu = termin.ident and rozprawa.czyus = 0  and d_rozprawy >= @data_1  and d_rozprawy <= @data_2  and sedzia.ident = rozprawa.id_sedziego and rozprawa.id_sedziego is not null)))  GROUP BY sedzia.ident  Error getDataTable : Invalid column name 'id_sedziego_sprawa'.
-Invalid column name 'id_sedziego_sprawa'.
-2019-10-16 07:09:07,516  INFO stat2018.log_4_net - oktg.aspx :wpisywanie danych dla sedziów : 3 Odwolanie do obiektu nie zostalo ustawione na wystapienie obiektu.
-2019-10-16 07:09:07,533  INFO stat2018.log_4_net - start tworzenia Ste1   07:09:07
-2019-10-16 07:09:07,533  INFO stat2018.log_4_net - start tworzenia menu   07:09:07
-2019-10-16 07:09:07,533  INFO stat2018.log_4_net - koniec tworzenia manu   07:09:07
-2019-10-16 07:09:13,311  INFO stat2018.log_4_net - oktg.aspx getDataTable - parametetr name= @id_wydzial wartosc: 10
-2019-10-16 07:09:13,311  INFO stat2018.log_4_net - oktg.aspx getDataTable - parametetr name= @id_tabeli wartosc: 2
-2019-10-16 07:09:13,346  INFO stat2018.log_4_net - oktg.aspx :Generowanie tabeli danych: Rozpoczecie
-2019-10-16 07:09:13,347  INFO stat2018.log_4_net - oktg.aspx :Generowanie tabeli danych: Wyciadniecie kwerend dla tabeli :1
-2019-10-16 07:09:13,347  INFO stat2018.log_4_net - oktg.aspx getDataTable - parametetr name= @id_tabeli wartosc: 1
-2019-10-16 07:09:13,347  INFO stat2018.log_4_net - oktg.aspx getDataTable - parametetr name= @id_dzialu wartosc: 10
-2019-10-16 07:09:13,349  INFO stat2018.log_4_net - oktg.aspx :Generowanie tabeli danych: Ilosc kwerend wyciagajacych dla sedziów dla tabeli : 1 wynosi:1
-2019-10-16 07:09:13,349  INFO stat2018.log_4_net - oktg.aspx :Generowanie tabeli danych: Ilosc kwerend wyciagajacych dla danych dla tabeli : 1 wynosi:1
-2019-10-16 07:09:13,349  INFO stat2018.log_4_net - oktg.aspx :Generowanie tabeli danych: Wpisywanie danych sedziów dla tabeli : 1
-2019-10-16 07:09:13,349  INFO stat2018.log_4_net - oktg.aspx getDataTable - parametetr name= @data_1 wartosc: 2019-09-01
-2019-10-16 07:09:13,349  INFO stat2018.log_4_net - oktg.aspx getDataTable - parametetr name= @data_2 wartosc: 2019-09-30
-2019-10-16 07:09:13,360  INFO stat2018.log_4_net - oktg.aspx wpisywanie danych dla sedziów
-2019-10-16 07:09:13,361  INFO stat2018.log_4_net - oktg.aspx getDataTable - parametetr name= @data_1 wartosc: 2019-09-01
-2019-10-16 07:09:13,361  INFO stat2018.log_4_net - oktg.aspx getDataTable - parametetr name= @data_2 wartosc: 2019-09-30
-2019-10-16 07:09:13,376  INFO stat2018.log_4_net - oktg.aspx getDataTable - parametetr name= @data_1 wartosc: 2019-09-01
-2019-10-16 07:09:13,376  INFO stat2018.log_4_net - oktg.aspx getDataTable - parametetr name= @data_2 wartosc: 2019-09-30
-2019-10-16 07:09:13,385  INFO stat2018.log_4_net - oktg.aspx getDataTable - parametetr name= @data_1 wartosc: 2019-09-01
-2019-10-16 07:09:13,385  INFO stat2018.log_4_net - oktg.aspx getDataTable - parametetr name= @data_2 wartosc: 2019-09-30
-2019-10-16 07:09:13,388  INFO stat2018.log_4_net - oktg.aspx getDataTable - parametetr name= @data_1 wartosc: 2019-09-01
-2019-10-16 07:09:13,388  INFO stat2018.log_4_net - oktg.aspx getDataTable - parametetr name= @data_2 wartosc: 2019-09-30
-2019-10-16 07:09:13,392  INFO stat2018.log_4_net - oktg.aspx getDataTable - parametetr name= @data_1 wartosc: 2019-09-01
-2019-10-16 07:09:13,392  INFO stat2018.log_4_net - oktg.aspx getDataTable - parametetr name= @data_2 wartosc: 2019-09-30
-2019-10-16 07:09:13,398  INFO stat2018.log_4_net - oktg.aspx getDataTable - parametetr name= @data_1 wartosc: 2019-09-01
-2019-10-16 07:09:13,398  INFO stat2018.log_4_net - oktg.aspx getDataTable - parametetr name= @data_2 wartosc: 2019-09-30
-2019-10-16 07:09:13,401  INFO stat2018.log_4_net - oktg.aspx getDataTable - parametetr name= @data_1 wartosc: 2019-09-01
-2019-10-16 07:09:13,402  INFO stat2018.log_4_net - oktg.aspx getDataTable - parametetr name= @data_2 wartosc: 2019-09-30
-2019-10-16 07:09:13,407  INFO stat2018.log_4_net - oktg.aspx getDataTable - parametetr name= @data_1 wartosc: 2019-09-01
-2019-10-16 07:09:13,408  INFO stat2018.log_4_net - oktg.aspx getDataTable - parametetr name= @data_2 wartosc: 2019-09-30
-2019-10-16 07:09:13,410  INFO stat2018.log_4_net - oktg.aspx getDataTable - parametetr name= @data_1 wartosc: 2019-09-01
-2019-10-16 07:09:13,410  INFO stat2018.log_4_net - oktg.aspx getDataTable - parametetr name= @data_2 wartosc: 2019-09-30
-2019-10-16 07:09:13,444  INFO stat2018.log_4_net - idkolumny =d_01
-2019-10-16 07:09:13,444  INFO stat2018.log_4_net - idkolumny =d_02
-2019-10-16 07:09:13,444  INFO stat2018.log_4_net - idkolumny =d_03
-2019-10-16 07:09:13,444  INFO stat2018.log_4_net - idkolumny =d_04
-2019-10-16 07:09:13,444  INFO stat2018.log_4_net - idkolumny =d_05
-2019-10-16 07:09:13,444  INFO stat2018.log_4_net - idkolumny =d_06
-2019-10-16 07:09:13,444  INFO stat2018.log_4_net - idkolumny =d_07
-2019-10-16 07:09:13,444  INFO stat2018.log_4_net - idkolumny =d_08
-2019-10-16 07:09:13,444  INFO stat2018.log_4_net - idkolumny =d_09
-2019-10-16 07:09:13,444  INFO stat2018.log_4_net - idkolumny =d_10
-2019-10-16 07:09:13,444  INFO stat2018.log_4_net - idkolumny =d_11
-2019-10-16 07:09:13,444  INFO stat2018.log_4_net - idkolumny =d_12
-2019-10-16 07:09:13,444  INFO stat2018.log_4_net - idkolumny =d_13
-2019-10-16 07:09:13,444  INFO stat2018.log_4_net - idkolumny =d_14
-2019-10-16 07:09:13,444  INFO stat2018.log_4_net - idkolumny =d_15
-2019-10-16 07:09:13,448  INFO stat2018.log_4_net - oktg.aspx :Generowanie tabeli danych: Rozpoczecie
-2019-10-16 07:09:13,449  INFO stat2018.log_4_net - oktg.aspx :Generowanie tabeli danych: Wyciadniecie kwerend dla tabeli :3
-2019-10-16 07:09:13,449  INFO stat2018.log_4_net - oktg.aspx getDataTable - parametetr name= @id_tabeli wartosc: 3
-2019-10-16 07:09:13,449  INFO stat2018.log_4_net - oktg.aspx getDataTable - parametetr name= @id_dzialu wartosc: 10
-2019-10-16 07:09:13,450  INFO stat2018.log_4_net - oktg.aspx :Generowanie tabeli danych: Ilosc kwerend wyciagajacych dla sedziów dla tabeli : 3 wynosi:2
-2019-10-16 07:09:13,450  INFO stat2018.log_4_net - oktg.aspx :Generowanie tabeli danych: Ilosc kwerend wyciagajacych dla danych dla tabeli : 3 wynosi:2
-2019-10-16 07:09:13,450  INFO stat2018.log_4_net - oktg.aspx :Generowanie tabeli danych: Wpisywanie danych sedziów dla tabeli : 3
-2019-10-16 07:09:13,450  INFO stat2018.log_4_net - oktg.aspx getDataTable - parametetr name= @data_1 wartosc: 2019-09-01
-2019-10-16 07:09:13,450  INFO stat2018.log_4_net - oktg.aspx getDataTable - parametetr name= @data_2 wartosc: 2019-09-30
-2019-10-16 07:09:13,457  INFO stat2018.log_4_net - oktg.aspx getDataTable - parametetr name= @data_1 wartosc: 2019-09-01
-2019-10-16 07:09:13,457  INFO stat2018.log_4_net - oktg.aspx getDataTable - parametetr name= @data_2 wartosc: 2019-09-30
-2019-10-16 07:09:13,465  INFO stat2018.log_4_net - oktg.aspx wpisywanie danych dla sedziów
-2019-10-16 07:09:13,465  INFO stat2018.log_4_net - oktg.aspx getDataTable - parametetr name= @data_1 wartosc: 2019-09-01
-2019-10-16 07:09:13,465  INFO stat2018.log_4_net - oktg.aspx getDataTable - parametetr name= @data_2 wartosc: 2019-09-30
-2019-10-16 07:09:13,467  INFO stat2018.log_4_net - oktg.aspx Kwerenda: SELECT COUNT(sprawa.ident),sedzia.ident FROM sedzia, sprawa,rozprawa WHERE sprawa.repertorium = 1 and ((( sedzia.czyus=0 and sedzia.czyskreslono = 0 )  and   ( sprawa.d_wplywu >= '1-1-2000 0:0:0.000' )   AND  rozprawa.czyus = 0   and d_rozprawy >= @data_1  and d_rozprawy <= @data_2   and	  rozprawa.id_sprawy = sprawa.ident  and sedzia.ident = rozprawa.id_sedziego_sprawa    and   rozprawa.id_sedziego is null  AND ( sprawa.czyus = 0 ) AND  (sprawa.ident)     in (select id_sprawy from rozprawa,termin where id_terminu = termin.ident and      rozprawa.czyus = 0 and rozprawa.czymeryt = 1 and d_rozprawy >= @data_1  and d_rozprawy <= @data_2      and sedzia.ident = rozprawa.id_sedziego_sprawa and rozprawa.id_sedziego is null))      or   (( sedzia.czyus=0 and sedzia.czyskreslono = 0 )  and ( sprawa.d_wplywu >= '1-1-2000 0:0:0.000' ) and rozprawa.czyus = 0   and d_rozprawy >= @data_1  and d_rozprawy <= @data_2 and rozprawa.id_sprawy = sprawa.ident  and sedzia.ident = rozprawa.id_sedziego and rozprawa.id_sedziego is not null   AND( sprawa.czyus = 0 )  AND(sprawa.ident) in (select id_sprawy  from rozprawa,termin  where id_terminu = termin.ident and rozprawa.czyus = 0 and rozprawa.czymeryt = 1   and d_rozprawy >= @data_1  and d_rozprawy <= @data_2  and sedzia.ident = rozprawa.id_sedziego and rozprawa.id_sedziego is not null)))  GROUP BY sedzia.ident  Error getDataTable : Invalid column name 'id_sedziego_sprawa'.
-Invalid column name 'id_sedziego_sprawa'.
-2019-10-16 07:09:13,468  INFO stat2018.log_4_net - oktg.aspx :wpisywanie danych dla sedziów : 3 Odwolanie do obiektu nie zostalo ustawione na wystapienie obiektu.
-2019-10-16 07:09:13,474  INFO stat2018.log_4_net - start tworzenia Ste1   07:09:13
-2019-10-16 07:09:13,474  INFO stat2018.log_4_net - start tworzenia menu   07:09:13
-2019-10-16 07:09:13,475  INFO stat2018.log_4_net - koniec tworzenia manu   07:09:13
-2019-10-16 07:09:16,888  INFO stat2018.log_4_net - start tworzenia Ste1   07:09:16
-2019-10-16 07:09:17,341  INFO stat2018.log_4_net - oktg.aspx Trwalo przerywanie watku.
+2019-10-24 21:39:24,807  INFO stat2018.log_4_net - wizk.aspx: rozpoczecie tworzenia tabeli 5
+2019-10-24 21:39:24,873  INFO stat2018.log_4_net - wizk.aspx :Generowanie tabeli danych: Wyciadniecie kwerend dla tabeli :5
+2019-10-24 21:39:24,878  INFO stat2018.log_4_net - wizk.aspx getDataTable - parametetr name= @id_tabeli wartosc: 5
+2019-10-24 21:39:24,878  INFO stat2018.log_4_net - wizk.aspx getDataTable - parametetr name= @id_dzialu wartosc: 10
+2019-10-24 21:39:24,893  INFO stat2018.log_4_net - wizk.aspx :Generowanie tabeli danych: Wpisywanie danych sedziów dla tabeli : 5
+2019-10-24 21:39:24,893  INFO stat2018.log_4_net - wizk.aspx getDataTable - parametetr name= @data_1 wartosc: 2019-09-01
+2019-10-24 21:39:24,894  INFO stat2018.log_4_net - wizk.aspx getDataTable - parametetr name= @data_2 wartosc: 2019-09-30
+2019-10-24 21:39:24,929  INFO stat2018.log_4_net - wizk.aspx getDataTable - parametetr name= @data_1 wartosc: 2019-09-01
+2019-10-24 21:39:24,929  INFO stat2018.log_4_net - wizk.aspx getDataTable - parametetr name= @data_2 wartosc: 2019-09-30
+2019-10-24 21:39:24,932  INFO stat2018.log_4_net - wizk.aspx Kwerenda: SELECT  distinct      id_sedziego, id_sedziego  Error getDataTable : Invalid column name 'id_sedziego'.
+Invalid column name 'id_sedziego'.
+2019-10-24 21:39:24,972  INFO stat2018.log_4_net - start tworzenia Ste1   21:39:24
+2019-10-24 21:39:24,972  INFO stat2018.log_4_net - Site1.Master:Brak przeniesienia z logowania identyfikatora numerycznego Uzytkownika! 
+2019-10-24 21:39:24,973  INFO stat2018.log_4_net - Odwolanie do obiektu nie zostalo ustawione na wystapienie obiektu.
+2019-10-24 21:39:36,101  INFO stat2018.log_4_net -  Kwerenda : SELECT distinct podglad FROM kwerendy where id_wydzial=@id_wydzial and id_tabeli=@id_tabeli and id_kolumny=@id_kolumny and id_wiersza=@id_wiersza  nie zwrócila zadnej warosci
+2019-10-24 21:39:36,104  INFO stat2018.log_4_net - popup Object reference not set to an instance of an object.
+2019-10-24 21:39:36,119  INFO stat2018.log_4_net -  Kwerenda : SELECT  opis FROM  kwerendy where id_tabeli=@tabela and id_kolumny=@kolumna and id_wydzial=@dzial nie zwrócila zadnej warosci
+2019-10-24 21:39:36,123  INFO stat2018.log_4_net -  Kwerenda : SELECT distinct imie + ' ' + nazwisko   FROM tbl_statystyki_tbl_02 where id_sedziego=@id_sedziego  nie zwrócila zadnej warosci
+2019-10-24 21:39:36,130  INFO stat2018.log_4_net -  Kwerenda : SELECT distinct  (COALESCE( stanowisko ,'') ) as sedzia  FROM tbl_statystyki_tbl_02 where id_sedziego=@id_sedziego  nie zwrócila zadnej warosci
+2019-10-24 21:39:40,924  INFO stat2018.log_4_net -  Kwerenda : SELECT distinct podglad FROM kwerendy where id_wydzial=@id_wydzial and id_tabeli=@id_tabeli and id_kolumny=@id_kolumny and id_wiersza=@id_wiersza  nie zwrócila zadnej warosci
+2019-10-24 21:39:40,925  INFO stat2018.log_4_net - popup Object reference not set to an instance of an object.
+2019-10-24 21:39:40,930  INFO stat2018.log_4_net -  Kwerenda : SELECT  opis FROM  kwerendy where id_tabeli=@tabela and id_kolumny=@kolumna and id_wydzial=@dzial nie zwrócila zadnej warosci
+2019-10-24 21:39:40,932  INFO stat2018.log_4_net -  Kwerenda : SELECT distinct imie + ' ' + nazwisko   FROM tbl_statystyki_tbl_02 where id_sedziego=@id_sedziego  nie zwrócila zadnej warosci
+2019-10-24 21:39:40,944  INFO stat2018.log_4_net -  Kwerenda : SELECT distinct  (COALESCE( stanowisko ,'') ) as sedzia  FROM tbl_statystyki_tbl_02 where id_sedziego=@id_sedziego  nie zwrócila zadnej warosci
+2019-10-24 21:55:58,467  INFO stat2018.log_4_net - rozpoczecie logowania 21:55:58
+2019-10-24 21:56:03,220  INFO stat2018.log_4_net - blad logowania domenowego  21:56:03
+2019-10-24 21:56:03,221  INFO stat2018.log_4_net - próba logowania z bazy  21:56:03
+2019-10-24 21:56:03,240  INFO stat2018.log_4_net - Logowanie: identyfikator uzytkownika: test to 6
+2019-10-24 21:56:03,241  INFO stat2018.log_4_net - logowania z bazy poprawne  21:56:03
+2019-10-24 21:56:03,244  INFO stat2018.log_4_net - uruchomienie  redirector.aspx 21:56:03
+2019-10-24 21:56:03,395  INFO stat2018.log_4_net - start redirektora  21:56:03
+2019-10-24 21:56:03,396  INFO stat2018.log_4_net - start tworzenia Ste1   21:56:03
+2019-10-24 21:56:03,396  INFO stat2018.log_4_net - start tworzenia menu  daneDoManuMiesieczne  21:56:03
+2019-10-24 21:56:03,426  INFO stat2018.log_4_net -  getDataTable - parametetr name= @identyfikatorUzytkownika wartosc: 6
+2019-10-24 21:56:03,451  INFO stat2018.log_4_net - start tworzenia menu  daneDoManuKontrolek 21:56:03
+2019-10-24 21:56:03,459  INFO stat2018.log_4_net - naglowek getDataTable - parametetr name= @identyfikatorUzytkownika wartosc: 6
+2019-10-24 21:56:03,460  INFO stat2018.log_4_net - start tworzenia menu  daneDoManuMSS 21:56:03
+2019-10-24 21:56:03,466  INFO stat2018.log_4_net - Naglowki getDataTable - parametetr name= @identyfikatorUzytkownika wartosc: 6
+2019-10-24 21:56:03,467  INFO stat2018.log_4_net - start tworzenia menu daneDoManuInne  21:56:03
+2019-10-24 21:56:03,479  INFO stat2018.log_4_net - start tworzenia menu wyloguj  21:56:03
+2019-10-24 21:56:03,481  INFO stat2018.log_4_net - Header: Rozpoczecie procedury tworzenia elementów menu wyloguj
+2019-10-24 21:56:03,524  INFO stat2018.log_4_net - koniec tworzenia manu   21:56:03
+2019-10-24 21:56:04,833  INFO stat2018.log_4_net - rozpoczecie logowania 21:56:04
+2019-10-24 21:56:04,910  INFO stat2018.log_4_net - blad logowania domenowego  21:56:04
+2019-10-24 21:56:04,910  INFO stat2018.log_4_net - próba logowania z bazy  21:56:04
+2019-10-24 21:56:04,911  INFO stat2018.log_4_net - Logowanie: identyfikator uzytkownika: test to 6
+2019-10-24 21:56:04,912  INFO stat2018.log_4_net - logowania z bazy poprawne  21:56:04
+2019-10-24 21:56:04,913  INFO stat2018.log_4_net - uruchomienie  redirector.aspx 21:56:04
+2019-10-24 21:56:04,917  INFO stat2018.log_4_net - start redirektora  21:56:04
+2019-10-24 21:56:04,917  INFO stat2018.log_4_net - start tworzenia Ste1   21:56:04
+2019-10-24 21:56:04,917  INFO stat2018.log_4_net - start tworzenia menu  daneDoManuMiesieczne  21:56:04
+2019-10-24 21:56:04,988  INFO stat2018.log_4_net -  getDataTable - parametetr name= @identyfikatorUzytkownika wartosc: 6
+2019-10-24 21:56:04,992  INFO stat2018.log_4_net - start tworzenia menu  daneDoManuKontrolek 21:56:04
+2019-10-24 21:56:04,996  INFO stat2018.log_4_net - naglowek getDataTable - parametetr name= @identyfikatorUzytkownika wartosc: 6
+2019-10-24 21:56:04,997  INFO stat2018.log_4_net - start tworzenia menu  daneDoManuMSS 21:56:04
+2019-10-24 21:56:04,999  INFO stat2018.log_4_net - Naglowki getDataTable - parametetr name= @identyfikatorUzytkownika wartosc: 6
+2019-10-24 21:56:05,000  INFO stat2018.log_4_net - start tworzenia menu daneDoManuInne  21:56:05
+2019-10-24 21:56:05,011  INFO stat2018.log_4_net - start tworzenia menu wyloguj  21:56:05
+2019-10-24 21:56:05,012  INFO stat2018.log_4_net - Header: Rozpoczecie procedury tworzenia elementów menu wyloguj
+2019-10-24 21:56:05,028  INFO stat2018.log_4_net - koniec tworzenia manu   21:56:05
+2019-10-24 21:56:05,610  INFO stat2018.log_4_net - rozpoczecie logowania 21:56:05
+2019-10-24 21:56:05,639  INFO stat2018.log_4_net - blad logowania domenowego  21:56:05
+2019-10-24 21:56:05,639  INFO stat2018.log_4_net - próba logowania z bazy  21:56:05
+2019-10-24 21:56:05,670  INFO stat2018.log_4_net - Logowanie: identyfikator uzytkownika: test to 6
+2019-10-24 21:56:05,670  INFO stat2018.log_4_net - logowania z bazy poprawne  21:56:05
+2019-10-24 21:56:05,674  INFO stat2018.log_4_net - uruchomienie  redirector.aspx 21:56:05
+2019-10-24 21:56:05,677  INFO stat2018.log_4_net - start redirektora  21:56:05
+2019-10-24 21:56:05,677  INFO stat2018.log_4_net - start tworzenia Ste1   21:56:05
+2019-10-24 21:56:05,677  INFO stat2018.log_4_net - start tworzenia menu  daneDoManuMiesieczne  21:56:05
+2019-10-24 21:56:05,683  INFO stat2018.log_4_net -  getDataTable - parametetr name= @identyfikatorUzytkownika wartosc: 6
+2019-10-24 21:56:05,689  INFO stat2018.log_4_net - start tworzenia menu  daneDoManuKontrolek 21:56:05
+2019-10-24 21:56:05,690  INFO stat2018.log_4_net - naglowek getDataTable - parametetr name= @identyfikatorUzytkownika wartosc: 6
+2019-10-24 21:56:05,692  INFO stat2018.log_4_net - start tworzenia menu  daneDoManuMSS 21:56:05
+2019-10-24 21:56:05,693  INFO stat2018.log_4_net - Naglowki getDataTable - parametetr name= @identyfikatorUzytkownika wartosc: 6
+2019-10-24 21:56:05,695  INFO stat2018.log_4_net - start tworzenia menu daneDoManuInne  21:56:05
+2019-10-24 21:56:05,698  INFO stat2018.log_4_net - start tworzenia menu wyloguj  21:56:05
+2019-10-24 21:56:05,698  INFO stat2018.log_4_net - Header: Rozpoczecie procedury tworzenia elementów menu wyloguj
+2019-10-24 21:56:05,705  INFO stat2018.log_4_net - koniec tworzenia manu   21:56:05

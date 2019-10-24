@@ -129,6 +129,7 @@
     <Content Include="akrg.aspx" />
     <Content Include="akrp.aspx" />
     <Content Include="akrk.aspx" />
+    <Content Include="aopcN.aspx" />
     <Content Include="aopc.aspx" />
     <Content Include="aopk.aspx" />
     <Content Include="aopk2.aspx" />
@@ -158,6 +159,7 @@
     <Content Include="oktp.aspx" />
     <Content Include="oktr.aspx" />
     <Content Include="mss19o.aspx" />
+    <Content Include="passwordPopup.aspx" />
     <Content Include="style\MUstyles.css" />
     <Content Include="template.aspx" />
     <Content Include="oktg.aspx" />
@@ -424,6 +426,13 @@
     <Compile Include="akrk.aspx.designer.cs">
       <DependentUpon>akrk.aspx</DependentUpon>
     </Compile>
+    <Compile Include="aopcN.aspx.cs">
+      <DependentUpon>aopcN.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="aopcN.aspx.designer.cs">
+      <DependentUpon>aopcN.aspx</DependentUpon>
+    </Compile>
     <Compile Include="aopc.aspx.cs">
       <DependentUpon>aopc.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -639,6 +648,13 @@
     </Compile>
     <Compile Include="mss19o.aspx.designer.cs">
       <DependentUpon>mss19o.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="passwordPopup.aspx.cs">
+      <DependentUpon>passwordPopup.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="passwordPopup.aspx.designer.cs">
+      <DependentUpon>passwordPopup.aspx</DependentUpon>
     </Compile>
     <Compile Include="template.aspx.cs">
       <DependentUpon>template.aspx</DependentUpon>

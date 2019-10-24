@@ -127,9 +127,13 @@ namespace stat2018
                 ExcelWorksheet MyWorksheet1 = MyExcel.Workbook.Worksheets[1];
 
                 // pierwsza
+                tb.komorkaExcela(MyWorksheet1, 1, 1, "Ruch spraw w referatach sędziów" + koniecNaglowkanadtabela(Date1.Date, Date2.Date), false, 0, 1);
+                MyWorksheet1 = tb.tworzArkuszwExcle(MyExcel.Workbook.Worksheets[1], (DataTable)Session["tabelka001"], 212, 0, 8, true, true, false, false, false);
+                //koniecNaglowkanadtabela
+                ExcelWorksheet MyWorksheet2 = MyExcel.Workbook.Worksheets[2];
+                tb.komorkaExcela(MyWorksheet2, 1, 1, "Terminowość uzasadnień " + koniecNaglowkanadtabela(Date1.Date, Date2.Date), false, 0, 1);
 
-                MyWorksheet1 = tb.tworzArkuszwExcle(MyExcel.Workbook.Worksheets[1], (DataTable)Session["tabelka001"], 212, 0, 8, true, false, false, false, false);
-                MyWorksheet1 = tb.tworzArkuszwExcle(MyExcel.Workbook.Worksheets[2], (DataTable)Session["tabelka002"], 66, 0, 9, true, false, false, false, false);
+                MyWorksheet1 = tb.tworzArkuszwExcle(MyExcel.Workbook.Worksheets[2], (DataTable)Session["tabelka002"], 66, 0, 9, true, true, false, false, false);
 
                 try
                 {
@@ -145,6 +149,24 @@ namespace stat2018
                     cm.log.Error(tenPlik + " " + ex.Message);
                 }
             }//end of using
+        }
+
+        private string koniecNaglowkanadtabela(DateTime date1, DateTime date2)
+        {
+            string result = string.Empty;
+            string strMonthName = CultureInfo.CurrentCulture.DateTimeFormat.GetMonthName(date2.Month);
+            int last_day = DateTime.DaysInMonth(date2.Year, date2.Month);
+
+            if (((date2.Day == 1) && (date2.Day == last_day)) && ((date1.Month == date2.Month)))
+            {
+                // cały miesiąc
+                result = "In za miesiąc " + strMonthName + " " + date2.Date.Year.ToString() + " roku.";
+            }
+            else
+            {
+                result = " za okres od " + date1.ToShortDateString() + " do  " + date2.ToShortDateString();
+            }
+            return result;
         }
 
         protected void tabela_1()
@@ -181,7 +203,7 @@ namespace stat2018
         {
             if (e.Row.RowType == DataControlRowType.Header)
             {
-                tb.makeHeader( header_01(), gwTabela1);
+                tb.makeHeader(header_01(), gwTabela1);
             }
         }
 
@@ -189,7 +211,7 @@ namespace stat2018
         {
             if (e.Row.RowType == DataControlRowType.Header)
             {
-                tb.makeHeader( header_02(), gwTabela2);
+                tb.makeHeader(header_02(), gwTabela2);
             }
         }
 
@@ -266,11 +288,11 @@ namespace stat2018
                 tabelaNaglowkowa.Rows.Add(new Object[] { "1", "rozprawy", "1", "1", "h", "60" });
                 tabelaNaglowkowa.Rows.Add(new Object[] { "1", "posiedzenia", "1", "1", "h", "60" });
             }
-            for (int i = 0; i < 2; i++)
-            {
                 tabelaNaglowkowa.Rows.Add(new Object[] { "1", "ogółem (wszystkie kategorie spraw)", "1", "1", "h", "60" });
                 tabelaNaglowkowa.Rows.Add(new Object[] { "1", "Gc", "1", "1", "h", "60" });
-            }
+                tabelaNaglowkowa.Rows.Add(new Object[] { "1", "ogółem (wszystkie kategorie spraw)", "1", "1", "h", "60" });
+                tabelaNaglowkowa.Rows.Add(new Object[] { "1", "Ga", "1", "1", "h", "60" });
+            
 
             for (int i = 0; i < 2; i++)
             {
@@ -506,6 +528,5 @@ namespace stat2018
 
             return tabelaNaglowkowa;
         }
-     
     }
 }

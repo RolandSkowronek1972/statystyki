@@ -14,6 +14,20 @@
                 left: 0;
                 right: 0;
             }
+
+              @media print {
+            @page {
+                 size: 29cm 21.7cm;
+                margin: 5mm 5mm 5mm 5mm; /* change the margins as you want them to be. */
+                
+            }
+
+            .horizont {
+                transform: translate(0mm, 0) scale(0.95);
+                -webkit-transform: translate(0mm, 0) scale(0.95);
+                -moz-transform: translate(0mm, 0) scale(0.95);
+            }
+        }
     </style>
 
     <script src="Scripts/rls.js"></script>
@@ -63,7 +77,7 @@
 
             <br />
         </div>
-        <div id="zalatwienia" class="page-break">
+        <div id="zalatwienia" class="horizont">
             <br />
 
             <asp:Label ID="tabela2Label" runat="server"></asp:Label>
@@ -144,7 +158,7 @@
                                 <asp:Label ID="Label_Tabela1108" runat="server" Text='<%# Eval("d_08")%>' CssClass="normal"></asp:Label>
                             </a>
                         </ItemTemplate>
-                        <ItemStyle CssClass="col_30" />
+                        <ItemStyle CssClass="col_30 gray" />
                     </asp:TemplateField>
                     <asp:TemplateField HeaderText="d_09" SortExpression="d_01">
                         <ItemTemplate>

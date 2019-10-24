@@ -244,7 +244,7 @@ namespace stat2018.UserControlls
                 DataTable parametry = makeParameterTable();
                 parametry.Rows.Add("@idWydzialu", wydzial);
                 parametry.Rows.Add("@id_uzytkownika", uzytkownik);
-                runQuerry(" IF NOT EXISTS(SELECT * FROM uprawnienia WHERE id_wydzialu = @idWydzialu AND rodzaj = 3 AND id_uzytkownika = @id_uzytkownika)    BEGIN       insert INTO uprawnienia (id_wydzialu,rodzaj,id_uzytkownika) VALUES  (@idWydzialu,3,@id_uzytkownika)    END", con_str, parametry);
+                runQuerry(" IF NOT EXISTS(SELECT * FROM uprawnienia WHERE id_wydzialu = @idWydzialu AND rodzaj = 3 AND id_uzytkownika = @id_uzytkownika)    BEGIN       insert INTO uprawnienia (id_wydzialu,rodzaj,id_uzytkownika) VALUES  (@idWydzialu,3,@id_uzytkownika)    END", con_str, parametry,"Dodawanie uprawnień dla KOF");
             }
 
             public void usun(int wydzial, int uzytkownik)

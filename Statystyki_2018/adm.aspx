@@ -37,6 +37,9 @@
                 background-repeat: repeat !important;
                 background-attachment: scroll !important;
             }
+        .auto-style1 {
+            height: 83px;
+        }
     </style>
     <dx:ASPxGridView ID="grid1" runat="server" AutoGenerateColumns="False" DataSourceID="SqlDataSource1" EnableTheming="True" KeyFieldName="ident" Theme="Moderno" Width="100%" OnStartRowEditing="startEdycji" OnInitNewRow="startWprowadzaniaUzytkownika" OnRowInserting="wprowadzanieDoBazyDanychnowegoUsera" OnRowDeleting="grid1_RowDeleting" OnRowUpdated="poEdycji">
         <SettingsPager PageSize="30">
@@ -68,14 +71,26 @@
             <EditForm>
                 <dx:ASPxGridViewTemplateReplacement ID="Editors" ReplacementType="EditFormEditors"
                     runat="server"></dx:ASPxGridViewTemplateReplacement>
-                <uc3:ZarzadzanieFormularzami ID="ZarzadzanieFormularzami1" runat="server" />
-
-                <div style="text-align: right; padding: 2px">
+                 <div style="text-align: right; padding: 2px">
+                      <table style="width:100%;">
+        <tr>
+            <td rowspan="2"><uc3:ZarzadzanieFormularzami ID="ZarzadzanieFormularzami1" runat="server" /></td>
+            <td style="height: 30px; top: auto;display:flex;"><a  href="javascript: openPopup('passwordPopup.aspx')" class="butn1">Zmień hasło</a>
                     <dx:ASPxGridViewTemplateReplacement ID="UpdateButton" ReplacementType="EditFormUpdateButton"
                         runat="server"></dx:ASPxGridViewTemplateReplacement>
                     <dx:ASPxGridViewTemplateReplacement ID="CancelButton" ReplacementType="EditFormCancelButton"
-                        runat="server"></dx:ASPxGridViewTemplateReplacement>
+                        runat="server"></dx:ASPxGridViewTemplateReplacement></td>
+        </tr>
+        <tr>
+            <td></td>
+        </tr>
+    </table>
+                   
+                   
                 </div>
+             
+
+              
             </EditForm>
         </Templates>
         <SettingsBehavior ConfirmDelete="True" />
@@ -118,6 +133,7 @@
             </dx:GridViewDataTextColumn>
             <dx:GridViewDataCheckColumn FieldName="admin" VisibleIndex="8" Caption="Administrator">
             </dx:GridViewDataCheckColumn>
+            
         </Columns>
         <Styles>
             <AlternatingRow BackColor="#DCDCDC">
@@ -126,6 +142,7 @@
     </dx:ASPxGridView>
     <div style="max-height: 1px; height: 1px; width: 1px;">
     </div>
+   
     <br />
     <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:wap %>" DeleteCommand="DELETE FROM uzytkownik WHERE (ident = @ident);
 DELETE FROM uprawnienia
@@ -144,6 +161,9 @@ WHERE (id_uzytkownika = @ident)
             <asp:Parameter Name="ident" />
         </UpdateParameters>
     </asp:SqlDataSource>
+
+    <br />
+    <br />
 
     <br />
     <br />

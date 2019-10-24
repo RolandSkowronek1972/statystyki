@@ -108,6 +108,54 @@ namespace stat2018
                 cm.log.Error("tabele.dll->makeHeader: " + ex.Message);
             } // end of try
         }
+        public void makeHeaderDEV(System.Web.UI.WebControls.GridView GridViewName, DataTable dT, DevExpress.Web.ASPxGridView GridViewX)
+        {
+            try
+            {
+                int row = 0;
+                TableCell HeaderCell = new TableCell();
+               
+                GridViewRow HeaderGridRow = null;
+                string hv = "h";
+                Style stl = new Style();
+                foreach (DataRow dR in dT.Rows)
+                {
+                    if (int.Parse(dR[0].ToString().Trim()) > row)
+                    {
+                        GridView HeaderGrid = (GridView)GridViewName;
+                        HeaderGridRow = Grw(GridViewName);
+                        row = int.Parse(dR[0].ToString().Trim());
+                        try
+                        {
+                            hv = dR[4].ToString().Trim();
+                        }
+                        catch
+                        { }
+                    }
+                    if (hv == "v")
+                    {
+                        stl.CssClass = "verticaltext";
+                    }
+                    else
+                    {
+                        stl.CssClass = "horizontaltext";
+                    }
+
+                    HeaderCell = new TableCell();
+                    HeaderCell.Text = dR[1].ToString().Trim();
+                    HeaderCell.Style.Clear();
+                    HeaderCell.ApplyStyle(stl);
+                    HeaderCell.ColumnSpan = int.Parse(dR[2].ToString().Trim());
+                    HeaderCell.RowSpan = int.Parse(dR[3].ToString().Trim());
+                    HeaderGridRow.Cells.Add(HeaderCell);
+                    GridViewX.Controls[0].Controls.AddAt(0, HeaderGridRow);
+                }
+            }
+            catch (Exception ex)
+            {
+                cm.log.Error("tabele.dll->makeHeader: " + ex.Message);
+            } // end of try
+        }
 
         public void makeHeader(DataTable dT, System.Web.UI.WebControls.GridView GridViewX)
         {
@@ -158,6 +206,7 @@ namespace stat2018
             } // end of try
         }
 
+      
         public void makeHeaderT3(DataTable dT, System.Web.UI.WebControls.GridView GridViewX)
         {
             System.Web.UI.WebControls.GridView sn = new System.Web.UI.WebControls.GridView();
@@ -1343,8 +1392,8 @@ namespace stat2018
         {
             DataTable tabelaNaglowkowa = new DataTable();
             tabelaNaglowkowa.Columns.Clear();
-            tabelaNaglowkowa.Columns.Add("Column1", typeof(string));
-            tabelaNaglowkowa.Columns.Add("Column2", typeof(string));
+            tabelaNaglowkowa.Columns.Add("wiersz", typeof(string));
+            tabelaNaglowkowa.Columns.Add("text", typeof(string));
             tabelaNaglowkowa.Columns.Add("Column3", typeof(string));
             tabelaNaglowkowa.Columns.Add("Column4", typeof(string));
             tabelaNaglowkowa.Columns.Add("Column5", typeof(string));
