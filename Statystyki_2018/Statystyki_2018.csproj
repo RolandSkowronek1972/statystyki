@@ -129,6 +129,7 @@
     <Content Include="akrg.aspx" />
     <Content Include="akrp.aspx" />
     <Content Include="akrk.aspx" />
+    <Content Include="ooprN.aspx" />
     <Content Include="aopcN.aspx" />
     <Content Include="aopc.aspx" />
     <Content Include="aopk.aspx" />
@@ -256,6 +257,7 @@
     <Content Include="wyszukiwarkaspraw.aspx" />
     <Content Include="msstabele\mss5r.xlsx" />
     <Content Include="Template\aopc2.xlsx" />
+    <Content Include="XMLHeaders\wizk_1_13.xml" />
     <Content Include="XMLHeaders\aktpe2.xml" />
     <Content Include="XMLHeaders\aktpe1.xml" />
     <Content Include="XMLHeaders\aktk2_2.xml" />
@@ -425,6 +427,14 @@
     </Compile>
     <Compile Include="akrk.aspx.designer.cs">
       <DependentUpon>akrk.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="classes\devExpressXXL.cs" />
+    <Compile Include="ooprN.aspx.cs">
+      <DependentUpon>ooprN.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ooprN.aspx.designer.cs">
+      <DependentUpon>ooprN.aspx</DependentUpon>
     </Compile>
     <Compile Include="aopcN.aspx.cs">
       <DependentUpon>aopcN.aspx</DependentUpon>

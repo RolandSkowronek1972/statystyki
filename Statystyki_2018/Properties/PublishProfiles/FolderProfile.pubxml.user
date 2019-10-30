@@ -595,10 +595,10 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>01/08/2019 12:40:59</publishTime>
     </File>
     <File Include="bin/stat2018.dll">
-      <publishTime>10/24/2019 15:41:33</publishTime>
+      <publishTime>10/29/2019 22:43:20</publishTime>
     </File>
     <File Include="bin/stat2018.pdb">
-      <publishTime>10/24/2019 15:41:33</publishTime>
+      <publishTime>10/29/2019 22:43:20</publishTime>
     </File>
     <File Include="default.aspx">
       <publishTime>09/11/2019 22:23:06</publishTime>
@@ -858,6 +858,9 @@ by editing this MSBuild file. In order to learn more about this please visit htt
     <File Include="oopr.aspx">
       <publishTime>07/09/2019 11:41:05</publishTime>
     </File>
+    <File Include="ooprN.aspx">
+      <publishTime>10/25/2019 18:49:55</publishTime>
+    </File>
     <File Include="oopu.aspx">
       <publishTime>06/30/2019 16:49:51</publishTime>
     </File>
@@ -964,7 +967,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>07/09/2019 15:10:12</publishTime>
     </File>
     <File Include="style/Tables.css">
-      <publishTime>10/14/2019 20:56:01</publishTime>
+      <publishTime>10/27/2019 13:10:49</publishTime>
     </File>
     <File Include="temp.aspx">
       <publishTime>01/08/2019 17:39:08</publishTime>
@@ -1198,7 +1201,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>09/19/2019 18:44:09</publishTime>
     </File>
     <File Include="version.txt">
-      <publishTime>10/24/2019 15:41:05</publishTime>
+      <publishTime>10/29/2019 22:36:21</publishTime>
     </File>
     <File Include="wab.aspx">
       <publishTime>07/09/2019 14:52:42</publishTime>
@@ -1216,7 +1219,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>09/30/2019 19:19:02</publishTime>
     </File>
     <File Include="wizk.aspx">
-      <publishTime>10/15/2019 15:47:28</publishTime>
+      <publishTime>10/29/2019 18:34:40</publishTime>
     </File>
     <File Include="wizytacjaCywilny.aspx">
       <publishTime>01/08/2019 17:39:27</publishTime>
@@ -1253,6 +1256,9 @@ by editing this MSBuild file. In order to learn more about this please visit htt
     </File>
     <File Include="XMLHeaders/oopc.xml">
       <publishTime>08/28/2019 17:08:44</publishTime>
+    </File>
+    <File Include="XMLHeaders/wizk_1_13.xml">
+      <publishTime>10/29/2019 19:05:14</publishTime>
     </File>
   </ItemGroup>
 </Project>

@@ -177,18 +177,18 @@ namespace stat2018
 
 
             dT_01.Clear();
-            dT_01.Rows.Add(new Object[] { "1", "C", "1", "1" });
-            dT_01.Rows.Add(new Object[] { "1", "Ns", "1", "1" });
+            dT_01.Rows.Add(new Object[] { "1", "RC", "1", "1" });
+            dT_01.Rows.Add(new Object[] { "1", "RNs", "1", "1" });
             dT_01.Rows.Add(new Object[] { "1", "Nsm", "1", "1" });
-            dT_01.Rows.Add(new Object[] { "1", "Co", "1", "1" });
+            dT_01.Rows.Add(new Object[] { "1", "RCo", "1", "1" });
             dT_01.Rows.Add(new Object[] { "1", "Nmo", "1", "1" });
-            dT_01.Rows.Add(new Object[] { "1", "Cps", "1", "1" });
+            dT_01.Rows.Add(new Object[] { "1", "RCps", "1", "1" });
             dT_01.Rows.Add(new Object[] { "1", "Nkd", "1", "1" });
             dT_01.Rows.Add(new Object[] { "1", "Łącznie", "1", "1" });
             dT_01.Rows.Add(new Object[] { "2", "Ruch spraw", "1", "2" });
             dT_01.Rows.Add(new Object[] { "2", "sprawy wg. repertoriów lub wykazów", "8", "1" });
             Session["header_01"] = dT_01;
-            //  makeHeader2(sn, dT_01);
+            
             #endregion
 
 

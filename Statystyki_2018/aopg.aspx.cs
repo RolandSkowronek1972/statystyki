@@ -289,7 +289,7 @@ namespace stat2018
                 tabelaNaglowkowa.Rows.Add(new Object[] { "1", "posiedzenia", "1", "1", "h", "60" });
             }
                 tabelaNaglowkowa.Rows.Add(new Object[] { "1", "ogółem (wszystkie kategorie spraw)", "1", "1", "h", "60" });
-                tabelaNaglowkowa.Rows.Add(new Object[] { "1", "Gc", "1", "1", "h", "60" });
+                tabelaNaglowkowa.Rows.Add(new Object[] { "1", "GC", "1", "1", "h", "60" });
                 tabelaNaglowkowa.Rows.Add(new Object[] { "1", "ogółem (wszystkie kategorie spraw)", "1", "1", "h", "60" });
                 tabelaNaglowkowa.Rows.Add(new Object[] { "1", "Ga", "1", "1", "h", "60" });
             

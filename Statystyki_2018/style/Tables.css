@@ -769,7 +769,12 @@
 }
 
 .col_500 {
-    width: 492px;
+    width: 500px;
+}
+.col_500F {
+    width: 500px;
+    min-width:500px;
+    max-width:500px;
 }
 
 h1 {

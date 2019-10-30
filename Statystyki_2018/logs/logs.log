@@ -1,78 +1,12 @@
-2019-10-24 21:39:24,807  INFO stat2018.log_4_net - wizk.aspx: rozpoczecie tworzenia tabeli 5
-2019-10-24 21:39:24,873  INFO stat2018.log_4_net - wizk.aspx :Generowanie tabeli danych: Wyciadniecie kwerend dla tabeli :5
-2019-10-24 21:39:24,878  INFO stat2018.log_4_net - wizk.aspx getDataTable - parametetr name= @id_tabeli wartosc: 5
-2019-10-24 21:39:24,878  INFO stat2018.log_4_net - wizk.aspx getDataTable - parametetr name= @id_dzialu wartosc: 10
-2019-10-24 21:39:24,893  INFO stat2018.log_4_net - wizk.aspx :Generowanie tabeli danych: Wpisywanie danych sedziów dla tabeli : 5
-2019-10-24 21:39:24,893  INFO stat2018.log_4_net - wizk.aspx getDataTable - parametetr name= @data_1 wartosc: 2019-09-01
-2019-10-24 21:39:24,894  INFO stat2018.log_4_net - wizk.aspx getDataTable - parametetr name= @data_2 wartosc: 2019-09-30
-2019-10-24 21:39:24,929  INFO stat2018.log_4_net - wizk.aspx getDataTable - parametetr name= @data_1 wartosc: 2019-09-01
-2019-10-24 21:39:24,929  INFO stat2018.log_4_net - wizk.aspx getDataTable - parametetr name= @data_2 wartosc: 2019-09-30
-2019-10-24 21:39:24,932  INFO stat2018.log_4_net - wizk.aspx Kwerenda: SELECT  distinct      id_sedziego, id_sedziego  Error getDataTable : Invalid column name 'id_sedziego'.
-Invalid column name 'id_sedziego'.
-2019-10-24 21:39:24,972  INFO stat2018.log_4_net - start tworzenia Ste1   21:39:24
-2019-10-24 21:39:24,972  INFO stat2018.log_4_net - Site1.Master:Brak przeniesienia z logowania identyfikatora numerycznego Uzytkownika! 
-2019-10-24 21:39:24,973  INFO stat2018.log_4_net - Odwolanie do obiektu nie zostalo ustawione na wystapienie obiektu.
-2019-10-24 21:39:36,101  INFO stat2018.log_4_net -  Kwerenda : SELECT distinct podglad FROM kwerendy where id_wydzial=@id_wydzial and id_tabeli=@id_tabeli and id_kolumny=@id_kolumny and id_wiersza=@id_wiersza  nie zwrócila zadnej warosci
-2019-10-24 21:39:36,104  INFO stat2018.log_4_net - popup Object reference not set to an instance of an object.
-2019-10-24 21:39:36,119  INFO stat2018.log_4_net -  Kwerenda : SELECT  opis FROM  kwerendy where id_tabeli=@tabela and id_kolumny=@kolumna and id_wydzial=@dzial nie zwrócila zadnej warosci
-2019-10-24 21:39:36,123  INFO stat2018.log_4_net -  Kwerenda : SELECT distinct imie + ' ' + nazwisko   FROM tbl_statystyki_tbl_02 where id_sedziego=@id_sedziego  nie zwrócila zadnej warosci
-2019-10-24 21:39:36,130  INFO stat2018.log_4_net -  Kwerenda : SELECT distinct  (COALESCE( stanowisko ,'') ) as sedzia  FROM tbl_statystyki_tbl_02 where id_sedziego=@id_sedziego  nie zwrócila zadnej warosci
-2019-10-24 21:39:40,924  INFO stat2018.log_4_net -  Kwerenda : SELECT distinct podglad FROM kwerendy where id_wydzial=@id_wydzial and id_tabeli=@id_tabeli and id_kolumny=@id_kolumny and id_wiersza=@id_wiersza  nie zwrócila zadnej warosci
-2019-10-24 21:39:40,925  INFO stat2018.log_4_net - popup Object reference not set to an instance of an object.
-2019-10-24 21:39:40,930  INFO stat2018.log_4_net -  Kwerenda : SELECT  opis FROM  kwerendy where id_tabeli=@tabela and id_kolumny=@kolumna and id_wydzial=@dzial nie zwrócila zadnej warosci
-2019-10-24 21:39:40,932  INFO stat2018.log_4_net -  Kwerenda : SELECT distinct imie + ' ' + nazwisko   FROM tbl_statystyki_tbl_02 where id_sedziego=@id_sedziego  nie zwrócila zadnej warosci
-2019-10-24 21:39:40,944  INFO stat2018.log_4_net -  Kwerenda : SELECT distinct  (COALESCE( stanowisko ,'') ) as sedzia  FROM tbl_statystyki_tbl_02 where id_sedziego=@id_sedziego  nie zwrócila zadnej warosci
-2019-10-24 21:55:58,467  INFO stat2018.log_4_net - rozpoczecie logowania 21:55:58
-2019-10-24 21:56:03,220  INFO stat2018.log_4_net - blad logowania domenowego  21:56:03
-2019-10-24 21:56:03,221  INFO stat2018.log_4_net - próba logowania z bazy  21:56:03
-2019-10-24 21:56:03,240  INFO stat2018.log_4_net - Logowanie: identyfikator uzytkownika: test to 6
-2019-10-24 21:56:03,241  INFO stat2018.log_4_net - logowania z bazy poprawne  21:56:03
-2019-10-24 21:56:03,244  INFO stat2018.log_4_net - uruchomienie  redirector.aspx 21:56:03
-2019-10-24 21:56:03,395  INFO stat2018.log_4_net - start redirektora  21:56:03
-2019-10-24 21:56:03,396  INFO stat2018.log_4_net - start tworzenia Ste1   21:56:03
-2019-10-24 21:56:03,396  INFO stat2018.log_4_net - start tworzenia menu  daneDoManuMiesieczne  21:56:03
-2019-10-24 21:56:03,426  INFO stat2018.log_4_net -  getDataTable - parametetr name= @identyfikatorUzytkownika wartosc: 6
-2019-10-24 21:56:03,451  INFO stat2018.log_4_net - start tworzenia menu  daneDoManuKontrolek 21:56:03
-2019-10-24 21:56:03,459  INFO stat2018.log_4_net - naglowek getDataTable - parametetr name= @identyfikatorUzytkownika wartosc: 6
-2019-10-24 21:56:03,460  INFO stat2018.log_4_net - start tworzenia menu  daneDoManuMSS 21:56:03
-2019-10-24 21:56:03,466  INFO stat2018.log_4_net - Naglowki getDataTable - parametetr name= @identyfikatorUzytkownika wartosc: 6
-2019-10-24 21:56:03,467  INFO stat2018.log_4_net - start tworzenia menu daneDoManuInne  21:56:03
-2019-10-24 21:56:03,479  INFO stat2018.log_4_net - start tworzenia menu wyloguj  21:56:03
-2019-10-24 21:56:03,481  INFO stat2018.log_4_net - Header: Rozpoczecie procedury tworzenia elementów menu wyloguj
-2019-10-24 21:56:03,524  INFO stat2018.log_4_net - koniec tworzenia manu   21:56:03
-2019-10-24 21:56:04,833  INFO stat2018.log_4_net - rozpoczecie logowania 21:56:04
-2019-10-24 21:56:04,910  INFO stat2018.log_4_net - blad logowania domenowego  21:56:04
-2019-10-24 21:56:04,910  INFO stat2018.log_4_net - próba logowania z bazy  21:56:04
-2019-10-24 21:56:04,911  INFO stat2018.log_4_net - Logowanie: identyfikator uzytkownika: test to 6
-2019-10-24 21:56:04,912  INFO stat2018.log_4_net - logowania z bazy poprawne  21:56:04
-2019-10-24 21:56:04,913  INFO stat2018.log_4_net - uruchomienie  redirector.aspx 21:56:04
-2019-10-24 21:56:04,917  INFO stat2018.log_4_net - start redirektora  21:56:04
-2019-10-24 21:56:04,917  INFO stat2018.log_4_net - start tworzenia Ste1   21:56:04
-2019-10-24 21:56:04,917  INFO stat2018.log_4_net - start tworzenia menu  daneDoManuMiesieczne  21:56:04
-2019-10-24 21:56:04,988  INFO stat2018.log_4_net -  getDataTable - parametetr name= @identyfikatorUzytkownika wartosc: 6
-2019-10-24 21:56:04,992  INFO stat2018.log_4_net - start tworzenia menu  daneDoManuKontrolek 21:56:04
-2019-10-24 21:56:04,996  INFO stat2018.log_4_net - naglowek getDataTable - parametetr name= @identyfikatorUzytkownika wartosc: 6
-2019-10-24 21:56:04,997  INFO stat2018.log_4_net - start tworzenia menu  daneDoManuMSS 21:56:04
-2019-10-24 21:56:04,999  INFO stat2018.log_4_net - Naglowki getDataTable - parametetr name= @identyfikatorUzytkownika wartosc: 6
-2019-10-24 21:56:05,000  INFO stat2018.log_4_net - start tworzenia menu daneDoManuInne  21:56:05
-2019-10-24 21:56:05,011  INFO stat2018.log_4_net - start tworzenia menu wyloguj  21:56:05
-2019-10-24 21:56:05,012  INFO stat2018.log_4_net - Header: Rozpoczecie procedury tworzenia elementów menu wyloguj
-2019-10-24 21:56:05,028  INFO stat2018.log_4_net - koniec tworzenia manu   21:56:05
-2019-10-24 21:56:05,610  INFO stat2018.log_4_net - rozpoczecie logowania 21:56:05
-2019-10-24 21:56:05,639  INFO stat2018.log_4_net - blad logowania domenowego  21:56:05
-2019-10-24 21:56:05,639  INFO stat2018.log_4_net - próba logowania z bazy  21:56:05
-2019-10-24 21:56:05,670  INFO stat2018.log_4_net - Logowanie: identyfikator uzytkownika: test to 6
-2019-10-24 21:56:05,670  INFO stat2018.log_4_net - logowania z bazy poprawne  21:56:05
-2019-10-24 21:56:05,674  INFO stat2018.log_4_net - uruchomienie  redirector.aspx 21:56:05
-2019-10-24 21:56:05,677  INFO stat2018.log_4_net - start redirektora  21:56:05
-2019-10-24 21:56:05,677  INFO stat2018.log_4_net - start tworzenia Ste1   21:56:05
-2019-10-24 21:56:05,677  INFO stat2018.log_4_net - start tworzenia menu  daneDoManuMiesieczne  21:56:05
-2019-10-24 21:56:05,683  INFO stat2018.log_4_net -  getDataTable - parametetr name= @identyfikatorUzytkownika wartosc: 6
-2019-10-24 21:56:05,689  INFO stat2018.log_4_net - start tworzenia menu  daneDoManuKontrolek 21:56:05
-2019-10-24 21:56:05,690  INFO stat2018.log_4_net - naglowek getDataTable - parametetr name= @identyfikatorUzytkownika wartosc: 6
-2019-10-24 21:56:05,692  INFO stat2018.log_4_net - start tworzenia menu  daneDoManuMSS 21:56:05
-2019-10-24 21:56:05,693  INFO stat2018.log_4_net - Naglowki getDataTable - parametetr name= @identyfikatorUzytkownika wartosc: 6
-2019-10-24 21:56:05,695  INFO stat2018.log_4_net - start tworzenia menu daneDoManuInne  21:56:05
-2019-10-24 21:56:05,698  INFO stat2018.log_4_net - start tworzenia menu wyloguj  21:56:05
-2019-10-24 21:56:05,698  INFO stat2018.log_4_net - Header: Rozpoczecie procedury tworzenia elementów menu wyloguj
-2019-10-24 21:56:05,705  INFO stat2018.log_4_net - koniec tworzenia manu   21:56:05
+2019-10-30 22:10:56,359  INFO stat2018.log_4_net - start tworzenia Ste1   22:10:56
+2019-10-30 22:10:56,531  INFO stat2018.log_4_net - Site1.Master:Brak przeniesienia z logowania identyfikatora numerycznego Uzytkownika! 
+2019-10-30 22:10:56,621  INFO stat2018.log_4_net - Object reference not set to an instance of an object.
+2019-10-30 22:11:09,937  INFO stat2018.log_4_net - start tworzenia Ste1   22:11:09
+2019-10-30 22:11:14,828  INFO stat2018.log_4_net - Administracja id uzytkownika =39
+2019-10-30 22:11:15,105  INFO stat2018.log_4_net - zarzadzanie formularzami start
+2019-10-30 22:11:15,105  INFO stat2018.log_4_net - zarzadzanie formularzami idUsera=39
+2019-10-30 22:11:58,400  INFO stat2018.log_4_net - start tworzenia Ste1   22:11:58
+2019-10-30 22:12:04,679  INFO stat2018.log_4_net - start tworzenia Ste1   22:12:04
+2019-10-30 22:12:20,389  INFO stat2018.log_4_net - Administracja id uzytkownika =29
+2019-10-30 22:12:21,026  INFO stat2018.log_4_net - zarzadzanie formularzami start
+2019-10-30 22:12:21,027  INFO stat2018.log_4_net - zarzadzanie formularzami idUsera=29
