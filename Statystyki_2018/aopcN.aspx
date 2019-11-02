@@ -72,23 +72,21 @@
        <div  margin: 0 auto 0 auto; position:relative;top:30px;" >
              <div style="margin-left:auto;margin-right:auto;text-align: center; width:auto; "> 
             <asp:Label ID="LabelNazwaSadu" runat="server" Text="Sąd " style="font-weight: 700"></asp:Label>
-     <br />
-         </div> 
-  
-           <br />
-               <div style="margin-left:auto; margin-right:auto; display:table;">
+               <div><div style="align-content:flex-start">
 &nbsp;<asp:Label ID="Label1" runat="server" Text="Uzasadnienia"></asp:Label>
            &nbsp;&nbsp;&nbsp;
            <asp:Label ID="infoLabel1" runat="server" Text="tabela  1" Visible="False"></asp:Label>
+                   </div>
            <br />
                     <dx:ASPxGridView ID="ASPxGridView1" runat="server" AutoGenerateColumns="False" OnCustomSummaryCalculate="Suma" Theme="MetropolisBlue">
                         <SettingsPager PageSize="10100">
                         </SettingsPager>
-                        <Settings HorizontalScrollBarMode="Visible" />
+                        <Settings HorizontalScrollBarMode="Visible" UseFixedTableLayout="True" />
+      
+                        <SettingsResizing ColumnResizeMode="NextColumn" />
       
                         <SettingsDataSecurity AllowDelete="False" AllowEdit="False" AllowInsert="False" />
      
-				<Settings ShowFooter="True" />
                         <Styles>
                             <Footer CssClass="borderAll  gray" HorizontalAlign="Center">
                             </Footer>
@@ -101,6 +99,10 @@
                    <br />
     
                </div>
+     <br />
+         </div> 
+  
+           <br />
            <br />
          
              <div id="debag" >

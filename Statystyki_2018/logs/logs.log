@@ -1,12 +1,46 @@
-2019-10-30 22:10:56,359  INFO stat2018.log_4_net - start tworzenia Ste1   22:10:56
-2019-10-30 22:10:56,531  INFO stat2018.log_4_net - Site1.Master:Brak przeniesienia z logowania identyfikatora numerycznego Uzytkownika! 
-2019-10-30 22:10:56,621  INFO stat2018.log_4_net - Object reference not set to an instance of an object.
-2019-10-30 22:11:09,937  INFO stat2018.log_4_net - start tworzenia Ste1   22:11:09
-2019-10-30 22:11:14,828  INFO stat2018.log_4_net - Administracja id uzytkownika =39
-2019-10-30 22:11:15,105  INFO stat2018.log_4_net - zarzadzanie formularzami start
-2019-10-30 22:11:15,105  INFO stat2018.log_4_net - zarzadzanie formularzami idUsera=39
-2019-10-30 22:11:58,400  INFO stat2018.log_4_net - start tworzenia Ste1   22:11:58
-2019-10-30 22:12:04,679  INFO stat2018.log_4_net - start tworzenia Ste1   22:12:04
-2019-10-30 22:12:20,389  INFO stat2018.log_4_net - Administracja id uzytkownika =29
-2019-10-30 22:12:21,026  INFO stat2018.log_4_net - zarzadzanie formularzami start
-2019-10-30 22:12:21,027  INFO stat2018.log_4_net - zarzadzanie formularzami idUsera=29
+2019-11-02 11:20:26,999  INFO stat2018.log_4_net - rozpoczecie logowania 11:20:26
+2019-11-02 11:20:31,720  INFO stat2018.log_4_net - blad logowania domenowego  11:20:31
+2019-11-02 11:20:31,721  INFO stat2018.log_4_net - próba logowania z bazy  11:20:31
+2019-11-02 11:20:31,994  INFO stat2018.log_4_net - Logowanie: identyfikator uzytkownika: test to 6
+2019-11-02 11:20:31,994  INFO stat2018.log_4_net - logowania z bazy poprawne  11:20:31
+2019-11-02 11:20:32,011  INFO stat2018.log_4_net - uruchomienie  redirector.aspx 11:20:32
+2019-11-02 11:20:32,827  INFO stat2018.log_4_net - start redirektora  11:20:32
+2019-11-02 11:20:32,845  INFO stat2018.log_4_net - start tworzenia Ste1   11:20:32
+2019-11-02 11:20:32,845  INFO stat2018.log_4_net - start tworzenia menu  daneDoManuMiesieczne  11:20:32
+2019-11-02 11:20:32,870  INFO stat2018.log_4_net -  getDataTable - parametetr name= @identyfikatorUzytkownika wartosc: 6
+2019-11-02 11:20:32,904  INFO stat2018.log_4_net - start tworzenia menu  daneDoManuKontrolek 11:20:32
+2019-11-02 11:20:32,933  INFO stat2018.log_4_net - naglowek getDataTable - parametetr name= @identyfikatorUzytkownika wartosc: 6
+2019-11-02 11:20:32,959  INFO stat2018.log_4_net - start tworzenia menu  daneDoManuMSS 11:20:32
+2019-11-02 11:20:32,977  INFO stat2018.log_4_net - Naglowki getDataTable - parametetr name= @identyfikatorUzytkownika wartosc: 6
+2019-11-02 11:20:32,991  INFO stat2018.log_4_net - start tworzenia menu daneDoManuInne  11:20:32
+2019-11-02 11:20:33,012  INFO stat2018.log_4_net - start tworzenia menu wyloguj  11:20:33
+2019-11-02 11:20:33,016  INFO stat2018.log_4_net - Header: Rozpoczecie procedury tworzenia elementów menu wyloguj
+2019-11-02 11:20:33,036  INFO stat2018.log_4_net - koniec tworzenia manu   11:20:33
+2019-11-02 11:22:20,713  INFO stat2018.log_4_net - aopc.aspx: rozpoczecie tworzenia tabeli 1
+2019-11-02 11:22:20,754  INFO stat2018.log_4_net - aopc.aspx :Generowanie tabeli danych: Wyciadniecie kwerend dla tabeli :1
+2019-11-02 11:22:20,754  INFO stat2018.log_4_net - aopc.aspx getDataTable - parametetr name= @id_tabeli wartosc: 1
+2019-11-02 11:22:20,754  INFO stat2018.log_4_net - aopc.aspx getDataTable - parametetr name= @id_dzialu wartosc: 10
+2019-11-02 11:22:20,777  INFO stat2018.log_4_net - aopc.aspx :Generowanie tabeli danych: Wpisywanie danych sedziów dla tabeli : 1
+2019-11-02 11:22:20,777  INFO stat2018.log_4_net - aopc.aspx getDataTable - parametetr name= @data_1 wartosc: 2019-10-01
+2019-11-02 11:22:20,777  INFO stat2018.log_4_net - aopc.aspx getDataTable - parametetr name= @data_2 wartosc: 2019-10-31
+2019-11-02 11:22:20,874  INFO stat2018.log_4_net - aopc.aspx getDataTable - parametetr name= @data_1 wartosc: 2019-10-01
+2019-11-02 11:22:20,875  INFO stat2018.log_4_net - aopc.aspx getDataTable - parametetr name= @data_2 wartosc: 2019-10-31
+2019-11-02 11:22:20,906  INFO stat2018.log_4_net - aopc.aspx getDataTable - parametetr name= @data_1 wartosc: 2019-10-01
+2019-11-02 11:22:20,907  INFO stat2018.log_4_net - aopc.aspx getDataTable - parametetr name= @data_2 wartosc: 2019-10-31
+2019-11-02 11:22:20,929  INFO stat2018.log_4_net - aopc.aspx getDataTable - parametetr name= @data_1 wartosc: 2019-10-01
+2019-11-02 11:22:20,929  INFO stat2018.log_4_net - aopc.aspx getDataTable - parametetr name= @data_2 wartosc: 2019-10-31
+2019-11-02 11:22:20,974  INFO stat2018.log_4_net - aopc.aspx getDataTable - parametetr name= @data_1 wartosc: 2019-10-01
+2019-11-02 11:22:20,974  INFO stat2018.log_4_net - aopc.aspx getDataTable - parametetr name= @data_2 wartosc: 2019-10-31
+2019-11-02 11:22:20,994  INFO stat2018.log_4_net - aopc.aspx getDataTable - parametetr name= @data_1 wartosc: 2019-10-01
+2019-11-02 11:22:20,994  INFO stat2018.log_4_net - aopc.aspx getDataTable - parametetr name= @data_2 wartosc: 2019-10-31
+2019-11-02 11:22:21,015  INFO stat2018.log_4_net - aopc.aspx getDataTable - parametetr name= @data_1 wartosc: 2019-10-01
+2019-11-02 11:22:21,015  INFO stat2018.log_4_net - aopc.aspx getDataTable - parametetr name= @data_2 wartosc: 2019-10-31
+2019-11-02 11:22:21,026  INFO stat2018.log_4_net - aopc.aspx getDataTable - parametetr name= @data_1 wartosc: 2019-10-01
+2019-11-02 11:22:21,027  INFO stat2018.log_4_net - aopc.aspx getDataTable - parametetr name= @data_2 wartosc: 2019-10-31
+2019-11-02 11:22:21,044  INFO stat2018.log_4_net - aopc.aspx getDataTable - parametetr name= @data_1 wartosc: 2019-10-01
+2019-11-02 11:22:21,044  INFO stat2018.log_4_net - aopc.aspx getDataTable - parametetr name= @data_2 wartosc: 2019-10-31
+2019-11-02 11:22:21,053  INFO stat2018.log_4_net - aopc.aspx getDataTable - parametetr name= @data_1 wartosc: 2019-10-01
+2019-11-02 11:22:21,053  INFO stat2018.log_4_net - aopc.aspx getDataTable - parametetr name= @data_2 wartosc: 2019-10-31
+2019-11-02 11:22:22,281  INFO stat2018.log_4_net - start tworzenia Ste1   11:22:22
+2019-11-02 11:22:22,281  INFO stat2018.log_4_net - start tworzenia menu   11:22:22
+2019-11-02 11:22:22,286  INFO stat2018.log_4_net - koniec tworzenia manu   11:22:22

@@ -1,6 +1,6 @@
 ﻿/*
 Last Update:
-    - version 1.191021
+    - version 1.191001
 Creation date: 2019-10-17
 
 */
@@ -12,6 +12,7 @@ using System;
 using System.Data;
 using System.Globalization;
 using System.IO;
+using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
@@ -30,6 +31,7 @@ namespace stat2018
 
         protected void Page_Load(object sender, EventArgs e)
         {
+           
             string idWydzial = Request.QueryString["w"];
             try
             {
@@ -158,10 +160,9 @@ namespace stat2018
             ASPxGridView1.AutoGenerateColumns = true;
             ASPxGridView1.DataSource = tabelka01;
             ASPxGridView1.DataBind();
-
-            ASPxGridView1.Width = ((Request.Browser.ScreenPixelsWidth) * 2)+100 ;
+           
+            ASPxGridView1.Width =  ((Request.Browser.ScreenPixelsWidth) * 2)+240;
             ASPxGridView1.KeyFieldName = "id_sedziego";
-            LabelNazwaSadu.Text = ASPxGridView1.Width.Value .ToString ();
             ASPxGridView1.Columns.Clear();
             int szerokoscKolumny = 60;
             ASPxGridView1.Columns.Add(kolumnaDoTabeli("L.p.", "id", idDzialu, "", true, 36));

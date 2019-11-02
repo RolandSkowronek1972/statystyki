@@ -1,7 +1,12 @@
 ﻿.noWrap {
     white-space: nowrap;
 }
+.dopasowanie {
+width:auto;
+margin-left:5px;
+margin-right:5px;
 
+}
 .rotate {
     -moz-transform: rotate(-90.0deg); /* FF3.5+ */
     -o-transform: rotate(-90.0deg); /* Opera 10.5 */

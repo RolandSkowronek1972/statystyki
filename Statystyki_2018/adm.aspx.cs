@@ -1,5 +1,4 @@
-﻿using DevExpress.Web;
-using System;
+﻿using System;
 using System.Collections;
 using System.Data;
 
@@ -15,7 +14,7 @@ namespace stat2018
 
         protected void ASPxGridView1_RowInserting(object sender, DevExpress.Web.Data.ASPxDataInsertingEventArgs e)
         {
-            // e.NewValues=
+          
             IDictionaryEnumerator enumerator = e.NewValues.GetEnumerator();
             enumerator.Reset();
         }
@@ -42,20 +41,15 @@ namespace stat2018
         {
             Session["identyfikatorUzytkownika"] = e.EditingKeyValue.ToString();
             cm.log.Info("Administracja id uzytkownika =" + e.EditingKeyValue.ToString());
-           
         }
 
         protected void startWprowadzaniaUzytkownika(object sender, DevExpress.Web.Data.ASPxDataInitNewRowEventArgs e)
         {
-            //Session["identyfikatorUzytkownika"] = null;
+           
             string user = cm.getQuerryValue("INSERT INTO     uzytkownik ( imie, nazwisko, login, password, login_domenowy, admin) VALUES ('','',(select max(ident)+1 from uzytkownik),'','',0); select @@IDENTITY", cm.con_str, null, "adm");
             cm.log.Info("ADM stworzono użytkownika o ident= " + user);
             Session["identyfikatorUzytkownika"] = user;
-          
         }
-
-       
-       
 
         protected void wprowadzanieDoBazyDanychnowegoUsera(object sender, DevExpress.Web.Data.ASPxDataInsertingEventArgs e)
         {
@@ -75,7 +69,6 @@ namespace stat2018
                 cm.log.Error("Administracja - dodawanie usera " + ex.Message);
             }
 
-           
             try
             {
                 imie = e.NewValues[0].ToString();
@@ -138,7 +131,7 @@ namespace stat2018
             string identyfikatorUzytkownika = string.Empty;
             try
             {
-                identyfikatorUzytkownika =e.Values["ident"].ToString();
+                identyfikatorUzytkownika = e.Values["ident"].ToString();
                 cm.log.Info("Administracja - usuwanie uprawnien z uzytkownikiem ident" + identyfikatorUzytkownika);
             }
             catch (Exception ex)
@@ -149,7 +142,6 @@ namespace stat2018
             parametry.Rows.Add("@ident", identyfikatorUzytkownika);
             cm.runQuerry("DELETE FROM uprawnienia WHERE(id_uzytkownika = @ident)", cm.con_str, parametry, "administracja - wprowadzanie uzytkownika");
             grid1.DataBind();
-            //DELETE FROM uprawnienia WHERE(id_uzytkownika = @ident)
         }
 
         protected void poEdycji(object sender, DevExpress.Web.Data.ASPxDataUpdatedEventArgs e)
@@ -157,18 +149,14 @@ namespace stat2018
             grid1.DataBind();
             string[] klucz = new string[1];
             klucz[0] = "ident";
-                string uzytkownik =(string)Session["identyfikatorUzytkownika"];
+            string uzytkownik = (string)Session["identyfikatorUzytkownika"];
             for (int i = 0; i < grid1.VisibleRowCount; i++)
             {
-                string xxx = grid1.GetRowValues(i, klucz).ToString ();
-                bool v = grid1.GetRowValues(i, klucz) == uzytkownik;
-                if (v)
+                if (grid1.GetRowValues(i, klucz) == uzytkownik)
                 {
                     grid1.Selection.SelectRow(i);
                 }
             }
-            
-            //grid1.Selection.SelectRow(5);
         }
     }
 }
