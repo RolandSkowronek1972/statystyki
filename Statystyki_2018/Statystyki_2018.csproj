@@ -257,6 +257,9 @@
     <Content Include="wyszukiwarkaspraw.aspx" />
     <Content Include="msstabele\mss5r.xlsx" />
     <Content Include="Template\aopc2.xlsx" />
+    <Content Include="XMLHeaders\wizk_1_25.xml" />
+    <Content Include="XMLHeaders\wizk_1_20.xml" />
+    <Content Include="XMLHeaders\wizk_1_19.xml" />
     <Content Include="XMLHeaders\wizk_1_13.xml" />
     <Content Include="XMLHeaders\aktpe2.xml" />
     <Content Include="XMLHeaders\aktpe1.xml" />

@@ -170,14 +170,15 @@ namespace stat2018
                     {
                         ColspanTxt = " colspan='" + colspan.ToString() + "'";
                     }
-                    NaglowekTabeli.AppendLine("<td "+StyleTxt+RowspanTxt+colspan+" >"+text +"</td>");
-                    if (tenWiersz !=wiersz )
+                    if (tenWiersz != wiersz)
                     {
                         NaglowekTabeli.AppendLine("</tr>");
-                        NaglowekTabeli.AppendLine("</tr>");
+                        NaglowekTabeli.AppendLine("<tr>");
                         tenWiersz = wiersz;
 
                     }
+                    NaglowekTabeli.AppendLine("<td "+StyleTxt+RowspanTxt+ ColspanTxt + " >"+text +"</td>");
+                  
                 }
                 catch (Exception ex)
                 {

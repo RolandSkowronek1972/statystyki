@@ -150,6 +150,39 @@ namespace stat2018
             } // end of using
         }
 
+        public void runQuerry(string kwerenda, SqlConnection conn, DataTable parameters)
+        {
+            //log.Info("runQuerry is started");
+
+           
+            using (SqlCommand sqlCmd = new SqlCommand(kwerenda, conn))
+            {
+                try
+                {
+                    //log.Info("Open DB connection");
+                    conn.Open();
+                    //log.Info("DB connection is open");
+                    if (parameters != null)
+                    {
+                        foreach (DataRow row in parameters.Rows)
+                        {
+                            sqlCmd.Parameters.AddWithValue(row[0].ToString().Trim(), row[1].ToString().Trim());
+                        }
+                    }
+                    //log.Info("Start querry execution");
+                    sqlCmd.ExecuteScalar();
+                    log.Info("runQuerry Execution done. ");
+                    conn.Close();
+                    //log.Info("Close DB connection");
+                }
+                catch (Exception ex)
+                {
+                    log.Error("Error : " + ex.Message);
+                    conn.Close();
+                }
+            } // end of using
+        }
+
         public void runQuerry(string kwerenda, string connStr)
         {
             runQuerry(kwerenda, connStr, null);

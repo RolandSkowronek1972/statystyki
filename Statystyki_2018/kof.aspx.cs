@@ -4,11 +4,10 @@ namespace stat2018
 {
     public partial class kof : System.Web.UI.Page
     {
-
-
         public Class1 cl = new Class1();
         public mss ms = new mss();
         public common cm = new common();
+
         protected void Page_Load(object sender, EventArgs e)
         {
             string kofKonfig = "0";
@@ -24,6 +23,7 @@ namespace stat2018
                         }
 
                         break;
+
                     default:
                         {
                             DropDownList1.SelectedIndex = 1;
@@ -39,13 +39,14 @@ namespace stat2018
             string id_sprawy = e.Keys[0].ToString();
             ms.kofUpdate(id_sprawy, numer);
         }
+
         protected void hideAll()
         {
             edytowalny.Visible = false;
             wszystko.Visible = false;
             wypełniony.Visible = false;
-
         }
+
         protected void DropDownList1_SelectedIndexChanged(object sender, EventArgs e)
         {
             hideAll();
@@ -53,22 +54,22 @@ namespace stat2018
             {
                 case "1":
                     {
-
                         wszystko.Visible = true;
                     }
                     break;
+
                 case "2":
                     {
                         wypełniony.Visible = true;
-
                     }
                     break;
+
                 case "3":
                     {
                         edytowalny.Visible = true;
-
                     }
                     break;
+
                 default:
                     break;
             }
@@ -83,7 +84,6 @@ namespace stat2018
             ASPxGridView2.DataBind();
             ASPxGridView3.DataBind();
             LogLabel.Text = log;
-
         }
     }
 }

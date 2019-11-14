@@ -52,7 +52,9 @@ namespace stat2018
             DataTable parameters = cm.makeParameterTable();
             parameters.Rows.Add("@nr", nr.Trim());
             parameters.Rows.Add("@id", id);
-            cm.runQuerry("update kof set numer_of = @nr where ident = @id", con_str, parameters);
+            SqlConnection conn = new SqlConnection(ConnectionString+ " Connection Timeout=30");
+            
+            cm.runQuerry("update kof set numer_of = @nr where ident = @id", conn, parameters);
             return result;
         }
 
