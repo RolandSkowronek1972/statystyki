@@ -2275,32 +2275,32 @@
                     <td class="wciecie borderTopLeft" rowspan="2">Liczba kuratorów sądowych, którzy w okresie statystycznym wchodzili w skład </td>
                     <td class="wciecie borderTopLeft col_300">zespołów interdyscyplinarnych </td>
                       <td align="center" class="borderTopLeft col_36">01</td>
-					<td class="col_168 borderTopLeft"><a href="javascript:openPopup('popup.aspx?sesja=1!4.1.2!1!4')">  <asp:Label CssClass="normal" ID="tab_C411_w01_c01" runat="server" Text="0"></asp:Label>  </a></td>
-					<td class="col_168 borderTopLeft"><a href="javascript:openPopup('popup.aspx?sesja=1!4.1.2!2!4')">  <asp:Label CssClass="normal" ID="tab_C411_w01_c02" runat="server" Text="0"></asp:Label>  </a></td>
-					<td class="col_168 borderTopLeftRight"><a href="javascript:openPopup('popup.aspx?sesja=1!4.1.2!3!4')">  <asp:Label CssClass="normal" ID="tab_C411_w01_c03" runat="server" Text="0"></asp:Label>  </a></td>
+					<td class="col_168 borderTopLeft"><a href="javascript:openPopup('popup.aspx?sesja=1!4.1.1!1!4')">  <asp:Label CssClass="normal" ID="tab_C411_w01_c01" runat="server" Text="0"></asp:Label>  </a></td>
+					<td class="col_168 borderTopLeft"><a href="javascript:openPopup('popup.aspx?sesja=1!4.1.1!2!4')">  <asp:Label CssClass="normal" ID="tab_C411_w01_c02" runat="server" Text="0"></asp:Label>  </a></td>
+					<td class="col_168 borderTopLeftRight"><a href="javascript:openPopup('popup.aspx?sesja=1!4.1.1!3!4')">  <asp:Label CssClass="normal" ID="tab_C411_w01_c03" runat="server" Text="0"></asp:Label>  </a></td>
              
                   </tr>
                   <tr>
                       <td class="wciecie borderTopLeft col_300">grup roboczych </td>
                       <td align="center" class="borderTopLeft col_36">02</td>
-        			<td class="col_168 borderTopLeft"><a href="javascript:openPopup('popup.aspx?sesja=2!4.1.2!1!4')">  <asp:Label CssClass="normal" ID="tab_C411_w02_c01" runat="server" Text="0"></asp:Label>  </a></td>
-					<td class="col_168 borderTopLeft"><a href="javascript:openPopup('popup.aspx?sesja=2!4.1.2!2!4')">  <asp:Label CssClass="normal" ID="tab_C411_w02_c02" runat="server" Text="0"></asp:Label>  </a></td>
-					<td class="col_168 borderTopLeftRight"><a href="javascript:openPopup('popup.aspx?sesja=2!4.1.2!3!4')">  <asp:Label CssClass="normal" ID="tab_C411_w02_c03" runat="server" Text="0"></asp:Label>  </a></td>
+        			<td class="col_168 borderTopLeft"><a href="javascript:openPopup('popup.aspx?sesja=2!4.1.1!1!4')">  <asp:Label CssClass="normal" ID="tab_C411_w02_c01" runat="server" Text="0"></asp:Label>  </a></td>
+					<td class="col_168 borderTopLeft"><a href="javascript:openPopup('popup.aspx?sesja=2!4.1.1!2!4')">  <asp:Label CssClass="normal" ID="tab_C411_w02_c02" runat="server" Text="0"></asp:Label>  </a></td>
+					<td class="col_168 borderTopLeftRight"><a href="javascript:openPopup('popup.aspx?sesja=2!4.1.1!3!4')">  <asp:Label CssClass="normal" ID="tab_C411_w02_c03" runat="server" Text="0"></asp:Label>  </a></td>
                   </tr>
                   <tr>
                       <td class="wciecie borderTopLeftBottom" rowspan="2">Liczba kuratorów sądowych, którzy w ostatnim dniu okresu statystycznego wchodzili w skład </td>
                     <td class="wciecie borderTopLeft col_300">zespołów interdyscyplinarnych </td>
                       <td align="center" class="borderTopLeft col_36">03</td>
-        			<td class="col_168 borderTopLeft"><a href="javascript:openPopup('popup.aspx?sesja=3!4.1.2!1!4')">  <asp:Label CssClass="normal" ID="tab_C411_w03_c01" runat="server" Text="0"></asp:Label>  </a></td>
-					<td class="col_168 borderTopLeft"><a href="javascript:openPopup('popup.aspx?sesja=3!4.1.2!2!4')">  <asp:Label CssClass="normal" ID="tab_C411_w03_c02" runat="server" Text="0"></asp:Label>  </a></td>
-					<td class="col_168 borderTopLeftRight"><a href="javascript:openPopup('popup.aspx?sesja=3!4.1.2!3!4')">  <asp:Label CssClass="normal" ID="tab_C411_w03_c03" runat="server" Text="0"></asp:Label>  </a></td>
+        			<td class="col_168 borderTopLeft"><a href="javascript:openPopup('popup.aspx?sesja=3!4.1.1!1!4')">  <asp:Label CssClass="normal" ID="tab_C411_w03_c01" runat="server" Text="0"></asp:Label>  </a></td>
+					<td class="col_168 borderTopLeft"><a href="javascript:openPopup('popup.aspx?sesja=3!4.1.1!2!4')">  <asp:Label CssClass="normal" ID="tab_C411_w03_c02" runat="server" Text="0"></asp:Label>  </a></td>
+					<td class="col_168 borderTopLeftRight"><a href="javascript:openPopup('popup.aspx?sesja=3!4.1.1!3!4')">  <asp:Label CssClass="normal" ID="tab_C411_w03_c03" runat="server" Text="0"></asp:Label>  </a></td>
                   </tr>
                   <tr>
                       <td class="wciecie borderTopLeftBottom col_300">grup roboczych </td>
                       <td align="center" class="borderTopLeftBottom col_36">04</td>
-        			<td class="col_168 borderTopLeftBottom"><a href="javascript:openPopup('popup.aspx?sesja=4!4.1.2!1!4')">  <asp:Label CssClass="normal" ID="tab_C411_w04_c01" runat="server" Text="0"></asp:Label>  </a></td>
-					<td class="col_168 borderTopLeftBottom"><a href="javascript:openPopup('popup.aspx?sesja=4!4.1.2!2!4')">  <asp:Label CssClass="normal" ID="tab_C411_w04_c02" runat="server" Text="0"></asp:Label>  </a></td>
-					<td class="col_168 borderAll"><a href="javascript:openPopup('popup.aspx?sesja=4!4.1.2!3!4')">  <asp:Label CssClass="normal" ID="tab_C411_w04_c03" runat="server" Text="0"></asp:Label>  </a></td>
+        			<td class="col_168 borderTopLeftBottom"><a href="javascript:openPopup('popup.aspx?sesja=4!4.1.1!1!4')">  <asp:Label CssClass="normal" ID="tab_C411_w04_c01" runat="server" Text="0"></asp:Label>  </a></td>
+					<td class="col_168 borderTopLeftBottom"><a href="javascript:openPopup('popup.aspx?sesja=4!4.1.1!2!4')">  <asp:Label CssClass="normal" ID="tab_C411_w04_c02" runat="server" Text="0"></asp:Label>  </a></td>
+					<td class="col_168 borderAll"><a href="javascript:openPopup('popup.aspx?sesja=4!4.1.1!3!4')">  <asp:Label CssClass="normal" ID="tab_C411_w04_c03" runat="server" Text="0"></asp:Label>  </a></td>
                   </tr>
                         
                   </table>

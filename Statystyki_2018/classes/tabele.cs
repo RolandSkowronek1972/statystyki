@@ -42,6 +42,8 @@ namespace stat2018
                 wyjsciowa.Columns.Add("d_" + i.ToString("D2"), typeof(double));
             }
             DataTable tabelka = tabellaLiczbowa(table);
+            DataColumnCollection col = tabelka.Columns;
+
             object sumObject;
             DataRow wiersz = wyjsciowa.NewRow();
             for (int i = 1; i < ilKolumn; i++)
@@ -49,8 +51,12 @@ namespace stat2018
                 try
                 {
                     string idkolumny = "d_" + (i).ToString("D2");
-                    sumObject = tabelka.Compute("Sum(" + idkolumny + ")", "");
-                    wiersz[i] = double.Parse(sumObject.ToString());
+
+                    if (col.Contains(idkolumny))
+                    {
+                        sumObject = tabelka.Compute("Sum(" + idkolumny + ")", "");
+                        wiersz[i] = double.Parse(sumObject.ToString());
+                    }
                 }
                 catch (Exception ex)
                 {
@@ -108,13 +114,14 @@ namespace stat2018
                 cm.log.Error("tabele.dll->makeHeader: " + ex.Message);
             } // end of try
         }
+
         public void makeHeaderDEV(System.Web.UI.WebControls.GridView GridViewName, DataTable dT, DevExpress.Web.ASPxGridView GridViewX)
         {
             try
             {
                 int row = 0;
                 TableCell HeaderCell = new TableCell();
-               
+
                 GridViewRow HeaderGridRow = null;
                 string hv = "h";
                 Style stl = new Style();
@@ -206,7 +213,6 @@ namespace stat2018
             } // end of try
         }
 
-      
         public void makeHeaderT3(DataTable dT, System.Web.UI.WebControls.GridView GridViewX)
         {
             System.Web.UI.WebControls.GridView sn = new System.Web.UI.WebControls.GridView();
@@ -531,8 +537,7 @@ namespace stat2018
             return HeaderCell;
         }
 
-     
-        public ExcelWorksheet tworzArkuszwExcle(ExcelWorksheet Arkusz, DataTable daneDoArkusza, int iloscKolumn, int przesunięcieX, int przesuniecieY, bool lp, bool suma, bool stanowisko, bool funkcja, bool nazwiskoiImeieOsobno,bool obramowanieOststniej)
+        public ExcelWorksheet tworzArkuszwExcle(ExcelWorksheet Arkusz, DataTable daneDoArkusza, int iloscKolumn, int przesunięcieX, int przesuniecieY, bool lp, bool suma, bool stanowisko, bool funkcja, bool nazwiskoiImeieOsobno, bool obramowanieOststniej)
         {
             try
             {
@@ -635,7 +640,6 @@ namespace stat2018
                             {
                                 double value = double.Parse(dR[colunmName].ToString().Trim());
                                 Arkusz.Cells[wiersz, i + przesunięcieX + dodatek].Value = value;
-                                
                             }
                             catch
                             {
@@ -643,7 +647,6 @@ namespace stat2018
                             }
                             Arkusz.Cells[wiersz, przesunięcieX + dodatek + i].Style.Border.BorderAround(OfficeOpenXml.Style.ExcelBorderStyle.Thin, System.Drawing.Color.Black);
                             Arkusz.Cells[wiersz, i + przesunięcieX + dodatek].Style.HorizontalAlignment = OfficeOpenXml.Style.ExcelHorizontalAlignment.Center;
-                            
                         }
                         catch (Exception ex)
                         {
@@ -698,6 +701,7 @@ namespace stat2018
 
             return Arkusz;
         }
+
         public ExcelWorksheet tworzArkuszwExcle(ExcelWorksheet Arkusz, DataTable daneDoArkusza, int iloscKolumn, int przesunięcieX, int przesuniecieY, bool lp, bool suma, bool stanowisko, bool funkcja, bool nazwiskoiImeieOsobno)
         {
             try
@@ -801,7 +805,6 @@ namespace stat2018
                             {
                                 double value = double.Parse(dR[colunmName].ToString().Trim());
                                 Arkusz.Cells[wiersz, i + przesunięcieX + dodatek].Value = value;
-
                             }
                             catch
                             {
@@ -809,14 +812,13 @@ namespace stat2018
                             }
                             Arkusz.Cells[wiersz, przesunięcieX + dodatek + i].Style.Border.BorderAround(OfficeOpenXml.Style.ExcelBorderStyle.Thin, System.Drawing.Color.Black);
                             Arkusz.Cells[wiersz, i + przesunięcieX + dodatek].Style.HorizontalAlignment = OfficeOpenXml.Style.ExcelHorizontalAlignment.Center;
-
                         }
                         catch (Exception ex)
                         {
                             cm.log.Error("Excell " + ex.Message);
                         }
                     }
-                   
+
                     wiersz++;
                     dod = dodatek;
                 }
@@ -978,8 +980,8 @@ namespace stat2018
                             {
                                 Arkusz.Cells[wiersz, przesunięcieX + dodatek + i].Style.Fill.PatternType = OfficeOpenXml.Style.ExcelFillStyle.Solid;
                                 Arkusz.Cells[wiersz, przesunięcieX + dodatek + i].Style.Fill.BackgroundColor.SetColor(System.Drawing.Color.Gray);
-                                
-                                Arkusz.Cells[wiersz, i + przesunięcieX + dodatek].Value ="";
+
+                                Arkusz.Cells[wiersz, i + przesunięcieX + dodatek].Value = "";
                             }
                             else
                             {

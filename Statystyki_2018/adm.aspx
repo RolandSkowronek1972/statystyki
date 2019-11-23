@@ -41,7 +41,7 @@
             height: 83px;
         }
     </style>
-    <dx:ASPxGridView ID="grid1" runat="server" AutoGenerateColumns="False" DataSourceID="SqlDataSource1" EnableTheming="True" KeyFieldName="ident" Theme="Moderno" Width="100%" OnStartRowEditing="startEdycji" OnInitNewRow="startWprowadzaniaUzytkownika" OnRowInserting="wprowadzanieDoBazyDanychnowegoUsera" OnRowDeleting="grid1_RowDeleting" OnRowUpdated="poEdycji" ViewStateMode="Enabled">
+    <dx:ASPxGridView ID="grid1" runat="server" AutoGenerateColumns="False" DataSourceID="SqlDataSource1" EnableTheming="True" KeyFieldName="ident" Theme="Moderno" Width="100%" OnStartRowEditing="startEdycji" OnInitNewRow="startWprowadzaniaUzytkownika" OnRowInserting="wprowadzanieDoBazyDanychnowegoUsera" OnRowDeleting="grid1_RowDeleting" OnRowUpdated="poEdycji">
         <SettingsPager PageSize="30">
         </SettingsPager>
         <SettingsEditing Mode="EditForm">

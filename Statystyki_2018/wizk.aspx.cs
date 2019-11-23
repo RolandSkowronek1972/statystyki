@@ -7,7 +7,6 @@ Creation date: 2019-11-08
 
 using System;
 using System.Data;
-using System.Linq;
 using System.Text;
 using System.Web.UI.WebControls;
 
@@ -66,18 +65,18 @@ namespace stat2018
             }
             int idWydzial = int.Parse((string)Session["id_dzialu"]);
             //odswiezenie danych
-            /*        tabela_01(idWydzial, 1);
-                    tabela_02(idWydzial, 2);
-                    tabela_3();
-                    tabela_4();
-                    tabela_5();
-                    tabela_6();
-                    tabela_7();
-                    tabela_8();
-                    tabela_9();
-                    tabela_10();
-                    tabela_11();
-                    tabela_12();*/
+            tabela_01(idWydzial, 1);
+            tabela_02(idWydzial, 2);
+            tabela_3();
+            tabela_4();
+            tabela_5();
+            tabela_6();
+            tabela_7();
+            tabela_8();
+            tabela_9();
+            tabela_10();
+            tabela_11();
+            tabela_12();
             tabela_13();
             tabela_14();
             tabela_15();
@@ -97,7 +96,9 @@ namespace stat2018
             tabela_29();
             tabela_30();
             tabela_31();
-            tabela_31();
+            tabela_32();
+            tabela_33();
+
             makeLabels();
         }
 
@@ -2257,6 +2258,7 @@ namespace stat2018
             Session["tabelka029"] = tabelka01;
             tworztabelkeHTMLTabela30("tb29", idDzialu, 30, tabelka01);
         }
+
         protected void tabela_31()
         {
             int idDzialu = int.Parse((string)Session["id_dzialu"]);
@@ -2271,8 +2273,9 @@ namespace stat2018
                 return;
             }
             Session["tabelka031"] = tabelka01;
-            tworztabelkeHTMLTabela31( idDzialu, 31, tabelka01);
+            tworztabelkeHTMLTabela31(idDzialu, 31, tabelka01);
         }
+
         protected void tabela_32()
         {
             int idDzialu = int.Parse((string)Session["id_dzialu"]);
@@ -2289,6 +2292,7 @@ namespace stat2018
             Session["tabelka031"] = tabelka01;
             tworztabelkeHTMLTabela32(idDzialu, 32, tabelka01);
         }
+
         protected void tabela_33()
         {
             int idDzialu = int.Parse((string)Session["id_dzialu"]);
@@ -2296,15 +2300,16 @@ namespace stat2018
             {
                 cm.log.Info(tenPlik + ": rozpoczęcie tworzenia tabeli 33");
             }
-            DataTable tabelka01 = dr.generuj_dane_do_tabeli_sedziowskiej_2019(idDzialu, 33, Date1.Date, Date2.Date, 460, tenPlik);
+            DataTable tabelka01 = dr.generuj_dane_do_tabeli_sedziowskiej_2019(idDzialu, 20, Date1.Date, Date2.Date, 460, tenPlik);
             if (tabelka01 == null)
             {
                 cm.log.Error(tenPlik + " Brak danych dla tabeli 33!");
                 return;
             }
             Session["tabelka033"] = tabelka01;
-            tworztabelkeHTMLTabela32(idDzialu, 33, tabelka01);
+            tworztabelkeHTMLTabela33(idDzialu, 20, tabelka01);
         }
+
         protected void tworzPlikExcell(object sender, EventArgs e)
         {
             //excell
@@ -2328,6 +2333,11 @@ namespace stat2018
             }
 
             StringBuilder builder = new StringBuilder();
+            builder.AppendLine("<p>III.1. Sędziowie (wg objaśnień: w zestawieniu należy uwzględnić także sędziów delegowanych)</p>");
+            if (cl.debug(idWydzialu))
+            {
+                builder.AppendLine("<p>Tabela 3 </p>");
+            }
             builder.AppendLine("<table style='width: 1150px;'>");
             //header
             builder.AppendLine("<tr>");
@@ -2396,6 +2406,11 @@ namespace stat2018
             }
 
             StringBuilder builder = new StringBuilder();
+            builder.AppendLine("<p>III.1. Sędziowie (wg objaśnień: w zestawieniu należy uwzględnić także sędziów delegowanych)</p>");
+            if (cl.debug(idWydzialu))
+            {
+                builder.AppendLine("<p>Tabela 4 </p>");
+            }
             builder.AppendLine("<table style='width: 1150px;'>");
             //header
             builder.AppendLine("<tr>");
@@ -2758,37 +2773,6 @@ namespace stat2018
             PlaceHolderTB13.Dispose();
         }
 
-        private double[] sumaTabeli(DataTable dane, string IdentyfikatorTabeli, int dlugoscLinii)
-        {
-            double[] suma = new double[dlugoscLinii];
-
-            int iloscKolumn = dane.Columns.Count;
-            double[] sumatabeli = new double[iloscKolumn];
-            for (int i = 1; i < iloscKolumn; i++)
-            {
-                string nazwaKolumny = "d_" + i.ToString("D2");
-                try
-                {
-                    double sumka = dane.AsEnumerable().Sum(c => c.Field<double>(nazwaKolumny));
-                    sumatabeli[i] = sumka;
-                }
-                catch
-                { }
-            }
-            int licznik = 1;
-            for (int i = 1; i < iloscKolumn - 1; i++)
-            {
-                if (licznik == dlugoscLinii)
-                {
-                    licznik = 1;
-                }
-
-                licznik++;
-            }
-
-            return suma;
-        }
-
         protected void tworztabelkeHTMLTabela15(string idKontrolki, int idWydzialu, int idtabeli, DataTable dane)
         {
             if (dane == null)
@@ -2828,24 +2812,8 @@ namespace stat2018
                 licznik++;
                 // builder.AppendLine("</tr>");
             }
-            builder.AppendLine("<tr>");
-            builder.AppendLine(tb.komorkaHTML("Razem", 2, 4, "borderAll center col_100 gray"));
-            builder.Append(tb.komorkaHTML("sa", 3, 1, "borderAll center col_100 gray"));
-
-            for (int j = 0; j < 13; j++)
-            {
-                if ((j < 5) ^ (j > 7))
-                {
-                    builder.Append(tb.komorkaHTML("s" + j.ToString(), 0, 0, "borderAll center col_100 gray"));
-                }
-                else
-                {
-                    builder.Append(tb.komorkaHTML("", 0, 0, "borderAll center col_100"));
-                }
-            }
-
-            builder.AppendLine("</tr>");
-
+            //   string txt = sumka(dane, 12);
+            //   builder.Append(sumaTabeli(dane, 6, 12, 15));
             builder.Append("</table>");
             Label tblControl = new Label { Text = builder.ToString() };
             PlaceHolderTB15.Controls.Add(tblControl);
@@ -3364,7 +3332,7 @@ namespace stat2018
             PlaceHolderTB29.Dispose();
         }
 
-        protected void tworztabelkeHTMLTabela31( int idWydzialu, int idtabeli, DataTable dane)
+        protected void tworztabelkeHTMLTabela31(int idWydzialu, int idtabeli, DataTable dane)
         {
             if (dane == null)
             {
@@ -3438,6 +3406,7 @@ namespace stat2018
             PlaceHolderTB29.Controls.Add(tblControl);
             PlaceHolderTB29.Dispose();
         }
+
         protected void tworztabelkeHTMLTabela32(int idWydzialu, int idtabeli, DataTable dane)
         {
             if (dane == null)
@@ -3512,6 +3481,7 @@ namespace stat2018
             PlaceHolderTB29.Controls.Add(tblControl);
             PlaceHolderTB29.Dispose();
         }
+
         protected void tworztabelkeHTMLTabela33(int idWydzialu, int idtabeli, DataTable dane)
         {
             if (dane == null)
@@ -3534,6 +3504,7 @@ namespace stat2018
             builder.AppendLine("</tr>");
             //ilosc sedziów
             int licznik = 1;
+            int step = 12;
             foreach (DataRow wierszZtabeli in dane.Rows)
             {
                 builder.AppendLine("<tr>");
@@ -3541,7 +3512,7 @@ namespace stat2018
                 builder.Append(tb.komorkaHTML(wierszZtabeli["imie"].ToString() + " " + wierszZtabeli["nazwisko"].ToString(), 0, 6, "borderAll center col_100"));
                 builder.Append(tb.komorkaHTML(wierszZtabeli["id_sedziego"].ToString(), 0, 6, "borderAll center col_100"));
                 builder.Append(tb.komorkaHTML(wierszZtabeli["d_02"].ToString(), 0, 6, "borderAll center col_100"));
-                int step = 12;
+
                 builder.Append(tb.komorkaHTML("C", 0, 1, "borderAll center col_100"));
                 builder.Append(tworzPodSekcjeBezTR(1, step + 1, wierszZtabeli, idtabeli.ToString(), 0));
                 builder.Append(tb.komorkaHTML("Cgg", 0, 1, "borderAll center col_100"));
@@ -3556,30 +3527,6 @@ namespace stat2018
                 builder.Append(tworzPodSekcjeBezTR((step * 5) + 1, (step * 6) + 1, wierszZtabeli, idtabeli.ToString(), 0));
                 licznik++;
             }
-
-            builder.AppendLine("<tr>");
-            builder.AppendLine(tb.komorkaHTML("Razem", 2, 4, "borderAll center col_100 gray"));
-            for (int i = 0; i < 3; i++)
-            {
-                builder.Append(tb.komorkaHTML("sa" + i.ToString(), 3, 1, "borderAll center col_100 gray"));
-
-                for (int j = 0; j < 13; j++)
-                {
-                    if ((j < 5) ^ (j > 7))
-                    {
-                        builder.Append(tb.komorkaHTML("s" + j.ToString(), 0, 0, "borderAll center col_100 gray"));
-                    }
-                    else
-                    {
-                        builder.Append(tb.komorkaHTML("", 0, 0, "borderAll center col_100"));
-                    }
-                }
-                builder.AppendLine("</tr>");
-                builder.AppendLine("<tr>");
-            }
-
-            builder.AppendLine("</tr>");
-
             builder.Append("</table>");
 
             Label tblControl = new Label { Text = builder.ToString() };
@@ -3587,6 +3534,104 @@ namespace stat2018
             PlaceHolderTB29.Dispose();
         }
 
+        private string sumka(DataTable dane, int dlugoscLinii)
+        {
+            int ilosc = (dane.Columns.Count - 5) * dane.Rows.Count;
+            DataTable suma = tb.makeSumRow(dane, ilosc);
+            if (suma == null)
+            {
+                cm.log.Error(tenPlik + " bład w sumowaniu tabeli ");
+                return "";
+            }
+            DataTable dataTable = new DataTable();
+
+            for (int i = 0; i < dlugoscLinii; i++)
+            {
+                dataTable.Columns.Add("d_" + i.ToString("D2"), typeof(double));
+            }
+            StringBuilder builder = new StringBuilder();
+
+            DataRow dataRow = dataTable.NewRow();
+
+            int licznik = 0;
+
+            for (int i = 0; i < ilosc; i++)
+            {
+                cm.log.Info("dlugoscLinii=" + dlugoscLinii.ToString() + " ii=" + licznik.ToString());
+
+                try
+                {
+                    dataRow["d_" + licznik.ToString("D2")] = double.Parse(dataRow["d_" + licznik.ToString("D2")].ToString()) + double.Parse(suma.Rows[0][i].ToString());
+                }
+                catch
+                {
+                    licznik = 0;
+                }
+                licznik++;
+                double wart2 = long.Parse(suma.Rows[0][i].ToString());
+            }
+            return "";
+        }
+
+        private string sumaTabeli(DataTable dane, int iloscWierszy, int dlugoscLinii, int idtabeli)
+        {
+            //   List<double> items = new List<double>();
+            StringBuilder builder = new StringBuilder();
+            string sumaKoncowa = string.Empty;
+            long[] wierszSumujacy = new long[dlugoscLinii];
+            for (int i = 0; i < dlugoscLinii - 1; i++)
+            {
+                wierszSumujacy[i] = 0;
+            }
+
+            DataTable suma = tb.makeSumRow(dane, iloscWierszy * dlugoscLinii);
+            if (suma == null)
+            {
+                cm.log.Error(tenPlik + " bład w sumowaniu tabeli " + idtabeli.ToString());
+                return "";
+            }
+            cm.log.Info("iloscWierszy * dlugoscLinii=" + (iloscWierszy * dlugoscLinii).ToString());
+            // int licznik = 0;
+
+            //  for (int i = 0; i < iloscWierszy * dlugoscLinii; i++)
+            //    {
+            //   licznik++;
+            //   cm.log.Info("dlugoscLinii=" + dlugoscLinii.ToString()+" ii="+ licznik.ToString());
+            //    int wynikodejmowania = dlugoscLinii - licznik;
+            //       if (wynikodejmowania==0)
+            //     {
+            //    ii = wynikodejmowania;
+            //     }
+
+            //    string w2 = suma.Rows[0][i].ToString();
+            //   double wart2 = long.Parse(suma.Rows[0][i].ToString());
+            // wierszSumujacy[ii] = wierszSumujacy[ii] + long.Parse(suma.Rows[0][i].ToString());
+            //     }
+            for (int i = 0; i < 10; i++)
+            {
+                double wart2 = long.Parse(suma.Rows[0][i].ToString());
+            }
+            builder.AppendLine("<tr>");
+            builder.AppendLine(tb.komorkaHTML("Razem", 2, 4, "borderAll center col_100 gray"));
+
+            builder.Append(tb.komorkaHTML("sa", 3, 1, "borderAll center col_100 gray"));
+
+            for (int j = 0; j < dlugoscLinii - 1; j++)
+            {
+                if ((j < 5) ^ (j > 7))
+                {
+                    // builder.Append(tb.komorkaHTML(wierszSumujacy[j].ToString(), 0, 0, "borderAll center col_100 gray"));
+                }
+                else
+                {
+                    builder.Append(tb.komorkaHTML("", 0, 0, "borderAll center col_100"));
+                }
+            }
+
+            builder.AppendLine("</tr>");
+
+            return builder.ToString();
+        }
 
         protected void makeLabels()
         {

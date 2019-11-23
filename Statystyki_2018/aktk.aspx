@@ -62,7 +62,7 @@
         </table>
     </div>
 
-    <div style="width: 1150px; margin: 0 auto 0 auto; position: relative; margin-top: 60px; z-index: 11;">
+    <div style="padding-left:15px; margin: 0 auto 0 auto; position: relative; margin-top: 60px; z-index: 11;">
 
         <div id="tabela1" style="z-index: 10;">
             <div style="margin-left: auto; margin-right: auto; text-align: center; width: auto;">

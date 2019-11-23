@@ -50,6 +50,11 @@
 
         <div>
 
+            <asp:Label ID="Label3" runat="server"></asp:Label>
+            <br />
+            <br />
+            <br />
+
             <asp:Label ID="infoLabel01" runat="server" Text="dział 1 \/\/\/" Visible="False"></asp:Label>
             <br />
             <table style="width: 100%;">
@@ -62,25 +67,25 @@
                 <tr>
                     <td class="col_500 wciecie borderAll">I.1. Podstawa prawna przeprowadzenia wizytacji</td>
                     <td class="borderAll wciecie">
-                        <asp:TextBox ID="tab_1_w01_c01" runat="server" Width="90%" BorderStyle="None"></asp:TextBox>
+                        <asp:TextBox ID="tab_1_w01_c01" runat="server" Width="90%" BorderStyle="None" Height="60px" TextMode="MultiLine">0</asp:TextBox>
                     </td>
                 </tr>
                 <tr>
                     <td class="col_500 wciecie borderAll">1.4. Osoba/osoby przeprowadzająca/e wizytacjęI.2. Prezes sądu odpowiedzialny za przeprowadzenie wizytacji</td>
                     <td class="borderAll wciecie">
-                        <asp:TextBox ID="tab_1_w02_c01" runat="server" Rows="4" Width="90%" BorderStyle="None"></asp:TextBox>
+                        <asp:TextBox ID="tab_1_w02_c01" runat="server" Rows="4" Width="90%" BorderStyle="None" Height="60px" TextMode="MultiLine">0</asp:TextBox>
                     </td>
                 </tr>
                 <tr>
                     <td class="col_500 wciecie borderAll">I.3. Wizytowany wydział sądu</td>
                     <td class="borderAll wciecie">
-                        <asp:TextBox ID="tab_1_w03_c01" runat="server" Width="90%" BorderStyle="None"></asp:TextBox>
+                        <asp:TextBox ID="tab_1_w03_c01" runat="server" Width="90%" BorderStyle="None" Height="60px" TextMode="MultiLine">0</asp:TextBox>
                     </td>
                 </tr>
                 <tr>
                     <td class="col_500 wciecie borderAll">1.4. Osoba/osoby przeprowadzająca/e wizytację</td>
                     <td class="borderAll wciecie">
-                        <asp:TextBox ID="tab_1_w04_c01" runat="server" Width="90%" BorderStyle="None"></asp:TextBox>
+                        <asp:TextBox ID="tab_1_w04_c01" runat="server" Width="90%" BorderStyle="None" Height="60px" TextMode="MultiLine">0</asp:TextBox>
                     </td>
                 </tr>
                 <tr>
@@ -93,7 +98,7 @@
                 <tr>
                     <td class="col_500 wciecie borderAll">I.6. Okres objęty wizytacją</td>
                     <td class="borderAll wciecie">
-                        <asp:TextBox ID="tab_1_w06_c01" runat="server" Width="90%" BorderStyle="None"></asp:TextBox>
+                        <asp:TextBox ID="tab_1_w06_c01" runat="server" Width="90%" BorderStyle="None" Height="60px" TextMode="MultiLine"></asp:TextBox>
                     </td>
                 </tr>
             </table>
@@ -118,31 +123,31 @@
                 <tr>
                     <td class="col_500 wciecie borderAll">II.2. Osoba/osoby przeprowadzająca/e poprzednią wizytację</td>
                     <td class="borderAll wciecie">
-                        <asp:TextBox ID="tab_2_w02_c01" runat="server" Rows="4" TextMode="MultiLine" Width="90%" BorderStyle="None"></asp:TextBox>
+                        <asp:TextBox ID="tab_2_w02_c01" runat="server" Rows="4" TextMode="MultiLine" Width="90%" BorderStyle="None" Height="60px"></asp:TextBox>
                     </td>
                 </tr>
                 <tr>
                     <td class="col_500 wciecie borderAll">III.3. Okres objęty poprzednia wizytacją </td>
                     <td class="borderAll wciecie">
-                        <asp:TextBox ID="tab_2_w03_c01" runat="server" Width="90%" BorderStyle="None"></asp:TextBox>
+                        <asp:TextBox ID="tab_2_w03_c01" runat="server" Width="90%" BorderStyle="None" Height="60px" TextMode="MultiLine"></asp:TextBox>
                     </td>
                 </tr>
                 <tr>
                     <td class="col_500 wciecie borderAll">II.4. Wykonanie zarządzeń nadzorczych wydanych w wyniku przeprowadzenia poprzedniej wizytacji</td>
                     <td class="borderAll wciecie">
-                        <asp:TextBox ID="tab_2_w04_c01" runat="server" Rows="4" TextMode="MultiLine" Width="90%" BorderStyle="None"></asp:TextBox>
+                        <asp:TextBox ID="tab_2_w04_c01" runat="server" Rows="4" TextMode="MultiLine" Width="90%" BorderStyle="None" Height="60px"></asp:TextBox>
                     </td>
                 </tr>
                 <tr>
                     <td class="col_500 wciecie borderAll">II.5. Czynności nadzorcze podjęte po zakonczeniu poprzedniej wizytacji</td>
                     <td class="borderAll wciecie">
-                        <asp:TextBox ID="tab_2_w05_c01" runat="server" Rows="4" TextMode="MultiLine" Width="90%" BorderStyle="None"></asp:TextBox>
+                        <asp:TextBox ID="tab_2_w05_c01" runat="server" Rows="4" TextMode="MultiLine" Width="90%" BorderStyle="None" Height="60px"></asp:TextBox>
                     </td>
                 </tr>
                 <tr>
                     <td class="col_500 wciecie borderAll">II.6. Wykonanie zarządzeń nadzorczych wydanych w wyniku czynności nadzorczych, o których mowa w II.5.</td>
                     <td class="borderAll wciecie">
-                        <asp:TextBox ID="tab_2_w06_c01" runat="server" Rows="4" TextMode="MultiLine" Width="90%" BorderStyle="None"></asp:TextBox>
+                        <asp:TextBox ID="tab_2_w06_c01" runat="server" Rows="4" TextMode="MultiLine" Width="90%" BorderStyle="None" Height="60px"></asp:TextBox>
                     </td>
                 </tr>
             </table>
@@ -152,19 +157,13 @@
 
             <br />
 
-            <asp:Label ID="Label17" runat="server" Text="III.1. Sędziowie (wg objaśnień: w zestawieniu należy uwzględnić także sędziów delegowanych)"></asp:Label>
-            &nbsp;&nbsp;&nbsp;
-           <asp:Label ID="Label18" runat="server" Text="tabela  3 \/\/\/" Visible="True"></asp:Label>
-            <br />
             <asp:PlaceHolder runat="server" ID="PlaceHolderTB3"></asp:PlaceHolder>
             <br />
             <br />
         </div>
         <div class="page-break">
 
-            <asp:Label ID="Label1" runat="server" Text="III.1. Sędziowie (wg objaśnień: w zestawieniu należy uwzględnić także sędziów delegowanych)"></asp:Label>
             &nbsp;&nbsp;&nbsp;
-           <asp:Label ID="Label3" runat="server" Text="tabela  4 \/\/\/" Visible="True"></asp:Label>
             <br />
             <asp:PlaceHolder runat="server" ID="PlaceHolderTB4"></asp:PlaceHolder>
             <br />
@@ -426,22 +425,22 @@
             <br />
             <table style="width: 100%;">
                 <tr>
-                    <td class="col_250 center borderAll">III.5. Liczba osób wykonujących czynności na innej podstawie niż stosunek pracy, w tym stażyści z urzędów pracy ( podstawa zatrudnienia, okres wykonywania czynności)</td>
+                    <td class="wciecie borderAll">III.5. Liczba osób wykonujących czynności na innej podstawie niż stosunek pracy, w tym stażyści z urzędów pracy ( podstawa zatrudnienia, okres wykonywania czynności)</td>
                     <td class="col_500F center borderAll">
                         <a href="javascript: openPopup('popup.aspx?sesja=1!9!1!3')">
-                            <asp:TextBox CssClass="normal" ID="tab_9_w01_c01" runat="server" Text="0"></asp:TextBox></a></td>
+                            <asp:TextBox CssClass="normal" ID="tab_9_w01_c01" runat="server" Text="0" Width="90%"></asp:TextBox></a></td>
                 </tr>
                 <tr>
-                    <td class="col_250 center borderAll">III.6. Warunki pracy (liczba sal rozpraw itp., uwagi)</td>
+                    <td class="wciecie borderAll">III.6. Warunki pracy (liczba sal rozpraw itp., uwagi)</td>
                     <td class="col_500F center borderAll">
                         <a href="javascript: openPopup('popup.aspx?sesja=2!9!1!3')">
-                            <asp:TextBox CssClass="normal" ID="tab_9_w02_c01" runat="server" Text="0"></asp:TextBox></a></td>
+                            <asp:TextBox CssClass="normal" ID="tab_9_w02_c01" runat="server" Text="0" Width="90%"></asp:TextBox></a></td>
                 </tr>
                 <tr>
-                    <td class="col_250 center borderAll">III.7. Wnioski</td>
+                    <td class="wciecie borderAll">III.7. Wnioski</td>
                     <td class="col_500F center borderAll">
                         <a href="javascript: openPopup('popup.aspx?sesja=3!9!1!3')">
-                            <asp:TextBox CssClass="normal" ID="tab_9_w03_c01" runat="server" Text="0"></asp:TextBox></a></td>
+                            <asp:TextBox CssClass="normal" ID="tab_9_w03_c01" runat="server" Text="0" Width="90%"></asp:TextBox></a></td>
                 </tr>
             </table>
             <br />
@@ -4616,16 +4615,14 @@
          <td class="borderAll center">powyżej 2 do 3 lat</td>
          <td class="borderAll center">powyżej 3 do 5 lat</td>
          <td class="borderAll center">powyżej 5 do 8 lat
-             
          </td>
          <td class="borderAll center">ponad 8 lat
-             </td>
+         </td>
          <td class="borderAll col_81 gray">SUMA
-          </td>
+         </td>
      </tr>
      <tr>
-         <td class="borderAll col_81">
-             K</td>
+         <td class="borderAll col_81">K</td>
          <td class="borderAll col_81">
              <a href="javascript: openPopup('popup.aspx?sesja=1!26!1!3')">
                  <asp:Label CssClass="normal" ID="tab_26_w01_c01" runat="server" Text="0"></asp:Label></a></td>
@@ -4661,8 +4658,7 @@
                  <asp:Label CssClass="normal" ID="tab_26_w01_c11" runat="server" Text="0"></asp:Label></a></td>
      </tr>
      <tr>
-         <td class="borderAll col_81">
-             Kp</td>
+         <td class="borderAll col_81">Kp</td>
          <td class="borderAll col_81">
              <a href="javascript: openPopup('popup.aspx?sesja=2!26!1!3')">
                  <asp:Label CssClass="normal" ID="tab_26_w02_c01" runat="server" Text="0"></asp:Label></a></td>
@@ -4698,8 +4694,7 @@
                  <asp:Label CssClass="normal" ID="tab_26_w02_c11" runat="server" Text="0"></asp:Label></a></td>
      </tr>
      <tr>
-         <td class="borderAll col_81">
-             Ko</td>
+         <td class="borderAll col_81">Ko</td>
          <td class="borderAll col_81">
              <a href="javascript: openPopup('popup.aspx?sesja=3!26!1!3')">
                  <asp:Label CssClass="normal" ID="tab_26_w03_c01" runat="server" Text="0"></asp:Label></a></td>
@@ -4735,8 +4730,7 @@
                  <asp:Label CssClass="normal" ID="tab_26_w03_c11" runat="server" Text="0"></asp:Label></a></td>
      </tr>
      <tr>
-         <td class="borderAll col_81">
-             W</td>
+         <td class="borderAll col_81">W</td>
          <td class="borderAll col_81">
              <a href="javascript: openPopup('popup.aspx?sesja=4!26!1!3')">
                  <asp:Label CssClass="normal" ID="tab_26_w04_c01" runat="server" Text="0"></asp:Label></a></td>
@@ -4772,8 +4766,7 @@
                  <asp:Label CssClass="normal" ID="tab_26_w04_c11" runat="server" Text="0"></asp:Label></a></td>
      </tr>
      <tr>
-         <td class="borderAll col_81">
-             Kop</td>
+         <td class="borderAll col_81">Kop</td>
          <td class="borderAll col_81">
              <a href="javascript: openPopup('popup.aspx?sesja=5!26!1!3')">
                  <asp:Label CssClass="normal" ID="tab_26_w05_c01" runat="server" Text="0"></asp:Label></a></td>
@@ -4809,8 +4802,7 @@
                  <asp:Label CssClass="normal" ID="tab_26_w05_c11" runat="server" Text="0"></asp:Label></a></td>
      </tr>
      <tr>
-         <td class="borderAll col_81">
-             &nbsp;</td>
+         <td class="borderAll col_81">&nbsp;</td>
          <td class="borderAll col_81">
              <a href="javascript: openPopup('popup.aspx?sesja=6!26!1!3')">
                  <asp:Label CssClass="normal" ID="tab_26_w06_c01" runat="server" Text="0"></asp:Label></a></td>
@@ -4846,8 +4838,7 @@
                  <asp:Label CssClass="normal" ID="tab_26_w06_c11" runat="server" Text="0"></asp:Label></a></td>
      </tr>
      <tr>
-         <td class="borderAll col_81 gray">
-             Razem</td>
+         <td class="borderAll col_81 gray">Razem</td>
          <td class="borderAll col_81 gray">
              <a href="javascript: openPopup('popup.aspx?sesja=7!26!1!3')">
                  <asp:Label CssClass="normal" ID="tab_26_w07_c01" runat="server" Text="0"></asp:Label></a></td>
@@ -4882,7 +4873,7 @@
              <a href="javascript: openPopup('popup.aspx?sesja=7!26!11!3')">
                  <asp:Label CssClass="normal" ID="tab_26_w07_c11" runat="server" Text="0"></asp:Label></a></td>
      </tr>
-     </table>
+ </table>
         </div>
         <div id="TABELA27" class="page -break">
             <br />
@@ -4902,16 +4893,14 @@
          <td class="borderAll center">powyżej 2 do 3 lat</td>
          <td class="borderAll center">powyżej 3 do 5 lat</td>
          <td class="borderAll center">powyżej 5 do 8 lat
-             
          </td>
          <td class="borderAll center">ponad 8 lat
-             </td>
+         </td>
          <td class="borderAll col_81 gray">SUMA
-          </td>
+         </td>
      </tr>
      <tr>
-         <td class="borderAll col_81">
-             K</td>
+         <td class="borderAll col_81">K</td>
          <td class="borderAll col_81">
              <a href="javascript: openPopup('popup.aspx?sesja=1!27!1!3')">
                  <asp:Label CssClass="normal" ID="tab_27_w01_c01" runat="server" Text="0"></asp:Label></a></td>
@@ -4947,8 +4936,7 @@
                  <asp:Label CssClass="normal" ID="tab_27_w01_c11" runat="server" Text="0"></asp:Label></a></td>
      </tr>
      <tr>
-         <td class="borderAll col_81">
-             Kp</td>
+         <td class="borderAll col_81">Kp</td>
          <td class="borderAll col_81">
              <a href="javascript: openPopup('popup.aspx?sesja=2!27!1!3')">
                  <asp:Label CssClass="normal" ID="tab_27_w02_c01" runat="server" Text="0"></asp:Label></a></td>
@@ -4984,8 +4972,7 @@
                  <asp:Label CssClass="normal" ID="tab_27_w02_c11" runat="server" Text="0"></asp:Label></a></td>
      </tr>
      <tr>
-         <td class="borderAll col_81">
-             Ko</td>
+         <td class="borderAll col_81">Ko</td>
          <td class="borderAll col_81">
              <a href="javascript: openPopup('popup.aspx?sesja=3!27!1!3')">
                  <asp:Label CssClass="normal" ID="tab_27_w03_c01" runat="server" Text="0"></asp:Label></a></td>
@@ -5021,8 +5008,7 @@
                  <asp:Label CssClass="normal" ID="tab_27_w03_c11" runat="server" Text="0"></asp:Label></a></td>
      </tr>
      <tr>
-         <td class="borderAll col_81">
-             W</td>
+         <td class="borderAll col_81">W</td>
          <td class="borderAll col_81">
              <a href="javascript: openPopup('popup.aspx?sesja=4!27!1!3')">
                  <asp:Label CssClass="normal" ID="tab_27_w04_c01" runat="server" Text="0"></asp:Label></a></td>
@@ -5058,8 +5044,7 @@
                  <asp:Label CssClass="normal" ID="tab_27_w04_c11" runat="server" Text="0"></asp:Label></a></td>
      </tr>
      <tr>
-         <td class="borderAll col_81">
-             Kop</td>
+         <td class="borderAll col_81">Kop</td>
          <td class="borderAll col_81">
              <a href="javascript: openPopup('popup.aspx?sesja=5!27!1!3')">
                  <asp:Label CssClass="normal" ID="tab_27_w05_c01" runat="server" Text="0"></asp:Label></a></td>
@@ -5095,8 +5080,7 @@
                  <asp:Label CssClass="normal" ID="tab_27_w05_c11" runat="server" Text="0"></asp:Label></a></td>
      </tr>
      <tr>
-         <td class="borderAll col_81">
-             &nbsp;</td>
+         <td class="borderAll col_81">&nbsp;</td>
          <td class="borderAll col_81">
              <a href="javascript: openPopup('popup.aspx?sesja=6!27!1!3')">
                  <asp:Label CssClass="normal" ID="tab_27_w06_c01" runat="server" Text="0"></asp:Label></a></td>
@@ -5132,8 +5116,7 @@
                  <asp:Label CssClass="normal" ID="tab_27_w06_c11" runat="server" Text="0"></asp:Label></a></td>
      </tr>
      <tr>
-         <td class="borderAll col_81 gray">
-             Razem</td>
+         <td class="borderAll col_81 gray">Razem</td>
          <td class="borderAll col_81 gray">
              <a href="javascript: openPopup('popup.aspx?sesja=7!27!1!3')">
                  <asp:Label CssClass="normal" ID="tab_27_w07_c01" runat="server" Text="0"></asp:Label></a></td>
@@ -5168,7 +5151,7 @@
              <a href="javascript: openPopup('popup.aspx?sesja=7!27!11!3')">
                  <asp:Label CssClass="normal" ID="tab_27_w07_c11" runat="server" Text="0"></asp:Label></a></td>
      </tr>
-     </table>
+ </table>
         </div>
 
         <div id="TABELA28" class="page -break">
@@ -5189,16 +5172,14 @@
          <td class="borderAll center">powyżej 2 do 3 lat</td>
          <td class="borderAll center">powyżej 3 do 5 lat</td>
          <td class="borderAll center">powyżej 5 do 8 lat
-             
          </td>
          <td class="borderAll center">ponad 8 lat
-             </td>
+         </td>
          <td class="borderAll col_81 gray">SUMA
-          </td>
+         </td>
      </tr>
      <tr>
-         <td class="borderAll col_81">
-             K</td>
+         <td class="borderAll col_81">K</td>
          <td class="borderAll col_81">
              <a href="javascript: openPopup('popup.aspx?sesja=1!28!1!3')">
                  <asp:Label CssClass="normal" ID="tab_28_w01_c01" runat="server" Text="0"></asp:Label></a></td>
@@ -5234,8 +5215,7 @@
                  <asp:Label CssClass="normal" ID="tab_28_w01_c11" runat="server" Text="0"></asp:Label></a></td>
      </tr>
      <tr>
-         <td class="borderAll col_81">
-             Kp</td>
+         <td class="borderAll col_81">Kp</td>
          <td class="borderAll col_81">
              <a href="javascript: openPopup('popup.aspx?sesja=2!28!1!3')">
                  <asp:Label CssClass="normal" ID="tab_28_w02_c01" runat="server" Text="0"></asp:Label></a></td>
@@ -5271,8 +5251,7 @@
                  <asp:Label CssClass="normal" ID="tab_28_w02_c11" runat="server" Text="0"></asp:Label></a></td>
      </tr>
      <tr>
-         <td class="borderAll col_81">
-             Ko</td>
+         <td class="borderAll col_81">Ko</td>
          <td class="borderAll col_81">
              <a href="javascript: openPopup('popup.aspx?sesja=3!28!1!3')">
                  <asp:Label CssClass="normal" ID="tab_28_w03_c01" runat="server" Text="0"></asp:Label></a></td>
@@ -5308,8 +5287,7 @@
                  <asp:Label CssClass="normal" ID="tab_28_w03_c11" runat="server" Text="0"></asp:Label></a></td>
      </tr>
      <tr>
-         <td class="borderAll col_81">
-             W</td>
+         <td class="borderAll col_81">W</td>
          <td class="borderAll col_81">
              <a href="javascript: openPopup('popup.aspx?sesja=4!28!1!3')">
                  <asp:Label CssClass="normal" ID="tab_28_w04_c01" runat="server" Text="0"></asp:Label></a></td>
@@ -5345,8 +5323,7 @@
                  <asp:Label CssClass="normal" ID="tab_28_w04_c11" runat="server" Text="0"></asp:Label></a></td>
      </tr>
      <tr>
-         <td class="borderAll col_81">
-             Kop</td>
+         <td class="borderAll col_81">Kop</td>
          <td class="borderAll col_81">
              <a href="javascript: openPopup('popup.aspx?sesja=5!28!1!3')">
                  <asp:Label CssClass="normal" ID="tab_28_w05_c01" runat="server" Text="0"></asp:Label></a></td>
@@ -5382,8 +5359,7 @@
                  <asp:Label CssClass="normal" ID="tab_28_w05_c11" runat="server" Text="0"></asp:Label></a></td>
      </tr>
      <tr>
-         <td class="borderAll col_81">
-             &nbsp;</td>
+         <td class="borderAll col_81">&nbsp;</td>
          <td class="borderAll col_81">
              <a href="javascript: openPopup('popup.aspx?sesja=6!28!1!3')">
                  <asp:Label CssClass="normal" ID="tab_28_w06_c01" runat="server" Text="0"></asp:Label></a></td>
@@ -5419,8 +5395,7 @@
                  <asp:Label CssClass="normal" ID="tab_28_w06_c11" runat="server" Text="0"></asp:Label></a></td>
      </tr>
      <tr>
-         <td class="borderAll col_81 gray">
-             Razem</td>
+         <td class="borderAll col_81 gray">Razem</td>
          <td class="borderAll col_81 gray">
              <a href="javascript: openPopup('popup.aspx?sesja=7!28!1!3')">
                  <asp:Label CssClass="normal" ID="tab_28_w07_c01" runat="server" Text="0"></asp:Label></a></td>
@@ -5455,10 +5430,10 @@
              <a href="javascript: openPopup('popup.aspx?sesja=7!28!11!3')">
                  <asp:Label CssClass="normal" ID="tab_28_w07_c11" runat="server" Text="0"></asp:Label></a></td>
      </tr>
-     </table>
+ </table>
         </div>
-        
-          <div class="page-break">
+
+        <div class="page-break">
             <br />
             <asp:Label ID="Label22" runat="server" Text="IV. 7.3.Struktura pozostałości (referaty poszczególnych sędziów – liczba spraw)"></asp:Label>
             &nbsp;&nbsp;&nbsp;

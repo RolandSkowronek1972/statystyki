@@ -190,59 +190,14 @@ namespace stat2018
                         {
                             cm.log.Error("KOF: " + ex.Message);
                         }
-                        finally
-                        {
-                            // Close the SqlDataReader. The SqlBulkCopy
-                            // object is automatically closed at the end
-                            // of the using block.
-                            //cm.log.Info("KOF : zakończono wgrywanie danych do tabeli KOF : " + DateTime.Now.ToString());
-                        }
+                       
                     }
                 }
             }
             return "";
         }
 
-        /*
-                public string uzupelnijDaneDoKOF2()
-                {
-                    string result = string.Empty;
-
-                    string kwerendaKOF = PobierzDana("kof");
-                    string ConnectionString = PobierzCS("kof");
-
-                    DataTable parameters = cm.makeParameterTable();
-
-                    DataTable dane = cm.getDataTable(kwerendaKOF, ConnectionString, parameters);
-                    foreach (DataRow dRow in dane.Rows)
-                    {
-                        string idSprawy = dRow[0].ToString().Trim();
-
-                        string wydzial = dRow[1].ToString().Trim();
-                        string sygnatura = dRow[2].ToString().Trim();
-                        string d_wplywu = dRow[3].ToString().Trim();
-                        string strona = dRow[4].ToString().Trim();
-                        string pelnomocnik = dRow[5].ToString().Trim();
-                        string przeciwko = dRow[6].ToString().Trim();
-
-                        if (czyIstniejeWpiswKOF(idSprawy) == "0")
-                        {
-                            //zapisz do kof
-
-                            DataTable parameters2 = cm.makeParameterTable();
-                            parameters2.Rows.Add("id_sprawy", idSprawy);
-                            parameters2.Rows.Add("wydzial", wydzial);
-                            parameters2.Rows.Add("sygnatura", sygnatura);
-                            parameters2.Rows.Add("d_wplywu", d_wplywu);
-                            parameters2.Rows.Add("strona", strona);
-                            parameters2.Rows.Add("pelnomocnik", pelnomocnik);
-                            parameters2.Rows.Add("przeciwko", przeciwko);
-                            cm.runQuerry("INSERT      INTO     kof( id_sprawy, wydzial, sygnatura, d_wplywu, strona, pelnomocnik, przeciwko) VALUES (@id_sprawy, @wydzial, @sygnatura, @d_wplywu, @strona, @pelnomocnik, @przeciwko)", con_str, parameters2);
-                        }
-                    }
-                    return result;
-                }
-                */
+     
 
         public DataTable generuj_dane_do_tabeli_mss2(int id_dzialu, DateTime poczatek, DateTime koniec, int il_kolumn)
         {
