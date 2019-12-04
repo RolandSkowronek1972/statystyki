@@ -58,9 +58,9 @@
                 <asp:LinkButton ID="LinkButton54" runat="server" class="ax_box" OnClick="Odswiez">  Odśwież</asp:LinkButton>
             </td>
             <td style="width:auto;padding-left:5px;">
-                  <td style="width:auto;padding-left:5px;">
+                 
                   <input id="Button1" class="ax_box" style="border-style: none; padding: 0px" type="button" onclick="JavaScript: window.print();" value="Drukuj" /></td>
-            </td>
+            
            
             <td style="width:auto;padding-left:5px;">
                  <asp:LinkButton ID="LinkButton57" runat="server" CssClass="ax_box" OnClick="tworzPlikExcell">Zapisz do Excel</asp:LinkButton>
@@ -77,16 +77,26 @@
            &nbsp;&nbsp;&nbsp;
            <asp:Label ID="infoLabel1" runat="server" Text="tabela  1" Visible="False"></asp:Label>
                    </div>
+                   <asp:Panel ID="Panel1" runat="server" Width="100%">
+                   </asp:Panel>
            <br />
-                    <dx:ASPxGridView ID="ASPxGridView1" runat="server" AutoGenerateColumns="False" OnCustomSummaryCalculate="Suma" Theme="MetropolisBlue">
+                    <br />
+                   <br />
+                    <dx:ASPxGridView ID="ASPxGridView1" runat="server" AutoGenerateColumns="False" OnCustomSummaryCalculate="Suma" Theme="MetropolisBlue" EnableCallbackAnimation="True">
                         <SettingsPager PageSize="10100">
                         </SettingsPager>
-                        <Settings HorizontalScrollBarMode="Visible" UseFixedTableLayout="True" />
+                        <Settings HorizontalScrollBarMode="Visible" UseFixedTableLayout="True" ShowFooter="True" />
       
                         <SettingsResizing ColumnResizeMode="NextColumn" />
       
                         <SettingsDataSecurity AllowDelete="False" AllowEdit="False" AllowInsert="False" />
      
+                        <TotalSummary>
+                            <dx:ASPxSummaryItem  DisplayFormat="Ogółem" Visible="true" ShowInColumn="1"  />
+                        </TotalSummary>
+     <GroupSummary>  
+    <dx:ASPxSummaryItem FieldName="MyField" SummaryType="Sum" DisplayFormat="{0}" />  
+</GroupSummary>
                         <Styles>
                             <Footer CssClass="borderAll  gray" HorizontalAlign="Center">
                             </Footer>

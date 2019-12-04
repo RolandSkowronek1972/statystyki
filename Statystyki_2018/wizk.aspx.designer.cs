@@ -136,7 +136,7 @@ namespace stat2018 {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::DevExpress.Web.ASPxDateEdit tab_1_w05_c01;
+        protected global::System.Web.UI.WebControls.TextBox tab_1_w05_c01;
         
         /// <summary>
         /// tab_1_w06_c01 control.
@@ -172,7 +172,7 @@ namespace stat2018 {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::DevExpress.Web.ASPxDateEdit tab_2_w01_c01;
+        protected global::System.Web.UI.WebControls.TextBox tab_2_w01_c01;
         
         /// <summary>
         /// tab_2_w02_c01 control.

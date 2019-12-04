@@ -12,7 +12,6 @@ using System;
 using System.Data;
 using System.Globalization;
 using System.IO;
-using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
@@ -24,6 +23,7 @@ namespace stat2018
         public common cm = new common();
         public tabele tb = new tabele();
         public dataReaders dr = new dataReaders();
+        public devExpressXXL DevExpressXXL = new devExpressXXL();
 
         private const string tenPlik = "aopc.aspx";
         private const string tenPlikNazwa = "aopc";
@@ -103,7 +103,8 @@ namespace stat2018
 
             //odswiezenie danych
             tabela_1();
-            //    LabelNazwaSadu.Text = cl.nazwaSadu((string)Session["id_dzialu"]);
+           // LabelNazwaSadu.Text = Panel1.Width.ToString ();
+                LabelNazwaSadu.Text = cl.nazwaSadu((string)Session["id_dzialu"]);
         }
 
         protected void tworzPlikExcell(object sender, EventArgs e)
@@ -152,7 +153,7 @@ namespace stat2018
             {
                 cm.log.Info(tenPlik + ": rozpoczęcie tworzenia tabeli 1");
             }
-            DataTable tabelka01 = dr.generuj_dane_do_tabeli_sedziowskiej_2019(int.Parse(idDzialu), 1, Date1.Date, Date2.Date, 150, tenPlik);
+            DataTable tabelka01 = dr.konwertujNaPrzecinek( dr.generuj_dane_do_tabeli_sedziowskiej_2019(int.Parse(idDzialu), 1, Date1.Date, Date2.Date, 150, tenPlik));
             Session["tabelka001"] = tabelka01;
 
             ASPxGridView1.DataSource = null;
@@ -160,29 +161,29 @@ namespace stat2018
             ASPxGridView1.AutoGenerateColumns = true;
             ASPxGridView1.DataSource = tabelka01;
             ASPxGridView1.DataBind();
-           
-            ASPxGridView1.Width =  ((Request.Browser.ScreenPixelsWidth) * 2)+240;
+
+            ASPxGridView1.Width = Panel1.Width;// ((Request.Browser.ScreenPixelsWidth) * 2)+240;
             ASPxGridView1.KeyFieldName = "id_sedziego";
             ASPxGridView1.Columns.Clear();
             int szerokoscKolumny = 60;
-            ASPxGridView1.Columns.Add(kolumnaDoTabeli("L.p.", "id", idDzialu, "", true, 36));
-            ASPxGridView1.Columns.Add(kolumnaDoTabeli("Imie i nazwisko", "Imienazwisko", idDzialu, "", true, 250));
-            GridViewBandColumn kolumna001 = GetBoundColumn("1");
-            ASPxGridView1.Columns.Add(kolumnaDoTabeli("zaległość z roku 2018", "d_01", idDzialu, "", false, szerokoscKolumny));
+            ASPxGridView1.Columns.Add(DevExpressXXL.kolumnaDoTabeli("L.p.", "id", idDzialu, "", true, 36));
+            ASPxGridView1.Columns.Add(DevExpressXXL.kolumnaDoTabeli("Imie i nazwisko", "Imienazwisko", idDzialu, "", true, 250));
+            GridViewBandColumn kolumna001 = DevExpressXXL.GetBoundColumn("1");
+            ASPxGridView1.Columns.Add(DevExpressXXL.kolumnaDoTabeli("zaległość z roku 2018", "d_01", idDzialu, "", false, szerokoscKolumny));
 
-            GridViewDataTextColumn kolumna_d02 = (kolumnaDoTabeli("Ogółem", "d_02", idDzialu, "", false, szerokoscKolumny));
-            GridViewDataTextColumn kolumna_d03 = kolumnaDoTabeli("ogółem", "d_03", idDzialu, "", false, szerokoscKolumny);
-            GridViewDataTextColumn kolumna_d04 = kolumnaDoTabeli("o <br/>rozwód", "d_04", idDzialu, "", false, szerokoscKolumny);
-            GridViewDataTextColumn kolumna_d05 = kolumnaDoTabeli("o <br/>separację", "d_05", idDzialu, "", false, szerokoscKolumny);
-            GridViewDataTextColumn kolumna_d06 = kolumnaDoTabeli("Ns ogółem", "d_06", idDzialu, "", false, szerokoscKolumny);
-            GridViewDataTextColumn kolumna_d07 = kolumnaDoTabeli("w tym <hl><br/>Ns separacje", "d_07", idDzialu, "", false, szerokoscKolumny);
-            GridViewDataTextColumn kolumna_d08 = kolumnaDoTabeli("Ns - rej", "d_08", idDzialu, "", false, szerokoscKolumny);
-            GridViewDataTextColumn kolumna_d09 = kolumnaDoTabeli("Nc", "d_09", idDzialu, "", false, szerokoscKolumny);
-            GridViewDataTextColumn kolumna_d10 = kolumnaDoTabeli("Co ogółem", "d_10", idDzialu, "gray", false, szerokoscKolumny);
-            GridViewDataTextColumn kolumna_d11 = kolumnaDoTabeli("Co (wnioski o zwoln. od kosztów sąd. i ustanow. pełnom. przed złożeniem pozwu", "d_11", idDzialu, "", false, szerokoscKolumny);
-            GridViewDataTextColumn kolumna_d12 = kolumnaDoTabeli("Co- nadawanie klauzuli wykonalności orzeczeniu sądu zagranicznego+ (skład 3-os)", "d_12", idDzialu, "", false, szerokoscKolumny);
-            GridViewDataTextColumn kolumna_d13 = kolumnaDoTabeli("Co (do spraw pr. zakończonych)", "d_13", idDzialu, "", false, szerokoscKolumny);
-            GridViewDataTextColumn kolumna_d14 = kolumnaDoTabeli("WSC", "d_14", idDzialu, "", false, szerokoscKolumny);
+            GridViewDataTextColumn kolumna_d02 = (DevExpressXXL.kolumnaDoTabeli("Ogółem", "d_02", idDzialu, "", false, szerokoscKolumny));
+            GridViewDataTextColumn kolumna_d03 = DevExpressXXL.kolumnaDoTabeli("ogółem", "d_03", idDzialu, "", false, szerokoscKolumny);
+            GridViewDataTextColumn kolumna_d04 = DevExpressXXL.kolumnaDoTabeli("o <br/>rozwód", "d_04", idDzialu, "", false, szerokoscKolumny);
+            GridViewDataTextColumn kolumna_d05 = DevExpressXXL.kolumnaDoTabeli("o <br/>separację", "d_05", idDzialu, "", false, szerokoscKolumny);
+            GridViewDataTextColumn kolumna_d06 = DevExpressXXL.kolumnaDoTabeli("Ns ogółem", "d_06", idDzialu, "", false, szerokoscKolumny);
+            GridViewDataTextColumn kolumna_d07 = DevExpressXXL.kolumnaDoTabeli("w tym <hl><br/>Ns separacje", "d_07", idDzialu, "", false, szerokoscKolumny);
+            GridViewDataTextColumn kolumna_d08 = DevExpressXXL.kolumnaDoTabeli("Ns - rej", "d_08", idDzialu, "", false, szerokoscKolumny);
+            GridViewDataTextColumn kolumna_d09 = DevExpressXXL.kolumnaDoTabeli("Nc", "d_09", idDzialu, "", false, szerokoscKolumny);
+            GridViewDataTextColumn kolumna_d10 = DevExpressXXL.kolumnaDoTabeli("Co ogółem", "d_10", idDzialu, "gray", false, szerokoscKolumny);
+            GridViewDataTextColumn kolumna_d11 = DevExpressXXL.kolumnaDoTabeli("Co (wnioski o zwoln. od kosztów sąd. i ustanow. pełnom. przed złożeniem pozwu", "d_11", idDzialu, "", false, szerokoscKolumny);
+            GridViewDataTextColumn kolumna_d12 = DevExpressXXL.kolumnaDoTabeli("Co- nadawanie klauzuli wykonalności orzeczeniu sądu zagranicznego+ (skład 3-os)", "d_12", idDzialu, "", false, szerokoscKolumny);
+            GridViewDataTextColumn kolumna_d13 = DevExpressXXL.kolumnaDoTabeli("Co (do spraw pr. zakończonych)", "d_13", idDzialu, "", false, szerokoscKolumny);
+            GridViewDataTextColumn kolumna_d14 = DevExpressXXL.kolumnaDoTabeli("WSC", "d_14", idDzialu, "", false, szerokoscKolumny);
 
             GridViewBandColumn kolumna_wTym01 = new GridViewBandColumn();
             kolumna_wTym01.Caption = "w tym ";
@@ -220,144 +221,144 @@ namespace stat2018
             // koniec wplyw
             // wyznaczono
 
-            GridViewDataTextColumn kolumna_d15 = kolumnaDoTabeli("na rozprawę", "d_15", idDzialu, "", false, szerokoscKolumny);
-            GridViewDataTextColumn kolumna_d16 = kolumnaDoTabeli("na posiedzenie", "d_16", idDzialu, "", false, szerokoscKolumny);
-            GridViewDataTextColumn kolumna_d17 = kolumnaDoTabeli("na rozprawę", "d_17", idDzialu, "", false, szerokoscKolumny);
-            GridViewDataTextColumn kolumna_d18 = kolumnaDoTabeli("na posiedzenie", "d_18", idDzialu, "", false, szerokoscKolumny);
-            GridViewDataTextColumn kolumna_d19 = kolumnaDoTabeli("na rozprawę", "d_19", idDzialu, "", false, szerokoscKolumny);
-            GridViewDataTextColumn kolumna_d20 = kolumnaDoTabeli("na posiedzenie", "d_20", idDzialu, "", false, szerokoscKolumny);
-            GridViewDataTextColumn kolumna_d21 = kolumnaDoTabeli("na rozprawę", "d_21", idDzialu, "", false, szerokoscKolumny);
-            GridViewDataTextColumn kolumna_d22 = kolumnaDoTabeli("na posiedzenie", "d_22", idDzialu, "", false, szerokoscKolumny);
-            GridViewDataTextColumn kolumna_d23 = kolumnaDoTabeli("na rozprawę", "d_23", idDzialu, "", false, szerokoscKolumny);
-            GridViewDataTextColumn kolumna_d24 = kolumnaDoTabeli("na posiedzenie", "d_24", idDzialu, "", false, szerokoscKolumny);
-            GridViewDataTextColumn kolumna_d25 = kolumnaDoTabeli("na rozprawę", "d_25", idDzialu, "", false, szerokoscKolumny);
-            GridViewDataTextColumn kolumna_d26 = kolumnaDoTabeli("na posiedzenie", "d_26", idDzialu, "", false, szerokoscKolumny);
-            GridViewDataTextColumn kolumna_d27 = kolumnaDoTabeli("na rozprawę", "d_27", idDzialu, "", false, szerokoscKolumny);
-            GridViewDataTextColumn kolumna_d28 = kolumnaDoTabeli("na posiedzenie", "d_28", idDzialu, "", false, szerokoscKolumny);
-            GridViewDataTextColumn kolumna_d29 = kolumnaDoTabeli("na rozprawę", "d_29", idDzialu, "", false, szerokoscKolumny);
-            GridViewDataTextColumn kolumna_d30 = kolumnaDoTabeli("na posiedzenie", "d_30", idDzialu, "", false, szerokoscKolumny);
-            GridViewDataTextColumn kolumna_d31 = kolumnaDoTabeli("na rozprawę", "d_31", idDzialu, "", false, szerokoscKolumny);
-            GridViewDataTextColumn kolumna_d32 = kolumnaDoTabeli("na posiedzenie", "d_32", idDzialu, "", false, szerokoscKolumny);
-            GridViewDataTextColumn kolumna_d33 = kolumnaDoTabeli("na rozprawę", "d_33", idDzialu, "", false, szerokoscKolumny);
-            GridViewDataTextColumn kolumna_d34 = kolumnaDoTabeli("na posiedzenie", "d_34", idDzialu, "", false, szerokoscKolumny);
-            GridViewDataTextColumn kolumna_d35 = kolumnaDoTabeli("na rozprawę", "d_35", idDzialu, "", false, szerokoscKolumny);
-            GridViewDataTextColumn kolumna_d36 = kolumnaDoTabeli("na posiedzenie", "d_36", idDzialu, "", false, szerokoscKolumny);
-            GridViewDataTextColumn kolumna_d37 = kolumnaDoTabeli("na rozprawę", "d_37", idDzialu, "", false, szerokoscKolumny);
-            GridViewDataTextColumn kolumna_d38 = kolumnaDoTabeli("na posiedzenie", "d_38", idDzialu, "", false, szerokoscKolumny);
-            GridViewDataTextColumn kolumna_d39 = kolumnaDoTabeli("na rozprawę", "d_39", idDzialu, "", false, szerokoscKolumny);
-            GridViewDataTextColumn kolumna_d40 = kolumnaDoTabeli("na posiedzenie", "d_40", idDzialu, "", false, szerokoscKolumny);
-            GridViewDataTextColumn kolumna_d41 = kolumnaDoTabeli("na rozprawę", "d_41", idDzialu, "", false, szerokoscKolumny);
-            GridViewDataTextColumn kolumna_d42 = kolumnaDoTabeli("na posiedzenie", "d_42", idDzialu, "", false, szerokoscKolumny);
-            GridViewDataTextColumn kolumna_d43 = kolumnaDoTabeli("na rozprawę", "d_43", idDzialu, "gray", false, szerokoscKolumny);
-            GridViewDataTextColumn kolumna_d44 = kolumnaDoTabeli("na posiedzenie", "d_44", idDzialu, "gray", false, szerokoscKolumny);
-            GridViewDataTextColumn kolumna_d45 = kolumnaDoTabeli("na rozprawę", "d_45", idDzialu, "", false, szerokoscKolumny);
-            GridViewDataTextColumn kolumna_d46 = kolumnaDoTabeli("na posiedzenie", "d_46", idDzialu, "", false, szerokoscKolumny);
-            GridViewDataTextColumn kolumna_d47 = kolumnaDoTabeli("na rozprawę", "d_47", idDzialu, "", false, szerokoscKolumny);
-            GridViewDataTextColumn kolumna_d48 = kolumnaDoTabeli("na posiedzenie", "d_48", idDzialu, "", false, szerokoscKolumny);
-            GridViewDataTextColumn kolumna_d49 = kolumnaDoTabeli("na rozprawę", "d_49", idDzialu, "", false, szerokoscKolumny);
-            GridViewDataTextColumn kolumna_d50 = kolumnaDoTabeli("na posiedzenie", "d_50", idDzialu, "", false, szerokoscKolumny);
-            GridViewDataTextColumn kolumna_d51 = kolumnaDoTabeli("na rozprawę", "d_51", idDzialu, "", false, szerokoscKolumny);
-            GridViewDataTextColumn kolumna_d52 = kolumnaDoTabeli("na posiedzenie", "d_52", idDzialu, "", false, szerokoscKolumny);
-            GridViewDataTextColumn kolumna_d53 = kolumnaDoTabeli("na rozprawę", "d_53", idDzialu, "", false, szerokoscKolumny);
-            GridViewDataTextColumn kolumna_d54 = kolumnaDoTabeli("na posiedzenie", "d_54", idDzialu, "", false, szerokoscKolumny);
-            GridViewDataTextColumn kolumna_d55 = kolumnaDoTabeli("na rozprawę", "d_55", idDzialu, "", false, szerokoscKolumny);
-            GridViewDataTextColumn kolumna_d56 = kolumnaDoTabeli("na posiedzenie", "d_56", idDzialu, "", false, szerokoscKolumny);
-            GridViewDataTextColumn kolumna_d57 = kolumnaDoTabeli("na rozprawę", "d_57", idDzialu, "", false, szerokoscKolumny);
-            GridViewDataTextColumn kolumna_d58 = kolumnaDoTabeli("na posiedzenie", "d_58", idDzialu, "", false, szerokoscKolumny);
-            GridViewDataTextColumn kolumna_d59 = kolumnaDoTabeli("na rozprawę", "d_59", idDzialu, "", false, szerokoscKolumny);
-            GridViewDataTextColumn kolumna_d60 = kolumnaDoTabeli("na posiedzenie", "d_60", idDzialu, "", false, szerokoscKolumny);
-            GridViewDataTextColumn kolumna_d61 = kolumnaDoTabeli("na rozprawę", "d_61", idDzialu, "", false, szerokoscKolumny);
-            GridViewDataTextColumn kolumna_d62 = kolumnaDoTabeli("na posiedzenie", "d_62", idDzialu, "", false, szerokoscKolumny);
-            GridViewDataTextColumn kolumna_d63 = kolumnaDoTabeli("na rozprawę", "d_63", idDzialu, "", false, szerokoscKolumny);
-            GridViewDataTextColumn kolumna_d64 = kolumnaDoTabeli("na posiedzenie", "d_64", idDzialu, "", false, szerokoscKolumny);
-            GridViewDataTextColumn kolumna_d65 = kolumnaDoTabeli("na rozprawę", "d_65", idDzialu, "", false, szerokoscKolumny);
-            GridViewDataTextColumn kolumna_d66 = kolumnaDoTabeli("na posiedzenie", "d_66", idDzialu, "", false, szerokoscKolumny);
-            GridViewDataTextColumn kolumna_d67 = kolumnaDoTabeli("na rozprawę", "d_67", idDzialu, "", false, szerokoscKolumny);
-            GridViewDataTextColumn kolumna_d68 = kolumnaDoTabeli("na posiedzenie", "d_68", idDzialu, "", false, szerokoscKolumny);
-            GridViewDataTextColumn kolumna_d69 = kolumnaDoTabeli("na rozprawę", "d_69", idDzialu, "", false, szerokoscKolumny);
-            GridViewDataTextColumn kolumna_d70 = kolumnaDoTabeli("na posiedzenie", "d_70", idDzialu, "", false, szerokoscKolumny);
-            GridViewDataTextColumn kolumna_d71 = kolumnaDoTabeli("Ogółem", "d_71", idDzialu, "gray", false, szerokoscKolumny);
-            GridViewDataTextColumn kolumna_d72 = kolumnaDoTabeli("ogółem", "d_72", idDzialu, "gray", false, szerokoscKolumny);
-            GridViewDataTextColumn kolumna_d73 = kolumnaDoTabeli("o rozwód", "d_73", idDzialu, "", false, szerokoscKolumny);
-            GridViewDataTextColumn kolumna_d74 = kolumnaDoTabeli("o separację", "d_74", idDzialu, "", false, szerokoscKolumny);
-            GridViewDataTextColumn kolumna_d75 = kolumnaDoTabeli("ogółem", "d_75", idDzialu, "gray", false, szerokoscKolumny);
-            GridViewDataTextColumn kolumna_d76 = kolumnaDoTabeli("o rozwód", "d_76", idDzialu, "", false, szerokoscKolumny);
-            GridViewDataTextColumn kolumna_d77 = kolumnaDoTabeli("o rozwód", "d_77", idDzialu, "", false, szerokoscKolumny);
-            GridViewDataTextColumn kolumna_d78 = kolumnaDoTabeli("o rozwód", "d_78", idDzialu, "", false, szerokoscKolumny);
-            GridViewDataTextColumn kolumna_d79 = kolumnaDoTabeli("o rozwód", "d_79", idDzialu, "", false, szerokoscKolumny);
-            GridViewDataTextColumn kolumna_d80 = kolumnaDoTabeli("Ns", "d_80", idDzialu, "", false, szerokoscKolumny);
-            GridViewDataTextColumn kolumna_d81 = kolumnaDoTabeli("Ns-rej", "d_81", idDzialu, "", false, szerokoscKolumny);
-            GridViewDataTextColumn kolumna_d82 = kolumnaDoTabeli("Nc", "d_82", idDzialu, "", false, szerokoscKolumny);
-            GridViewDataTextColumn kolumna_d83 = kolumnaDoTabeli("Co", "d_83", idDzialu, "", false, szerokoscKolumny);
-            GridViewDataTextColumn kolumna_d84 = kolumnaDoTabeli("WSC", "d_84", idDzialu, "", false, szerokoscKolumny);
-            GridViewDataTextColumn kolumna_d85 = kolumnaDoTabeli("Ogółem", "d_85", idDzialu, "gray", false, szerokoscKolumny);
-            GridViewDataTextColumn kolumna_d86 = kolumnaDoTabeli("Rozprawy", "d_86", idDzialu, "", false, szerokoscKolumny);
-            GridViewDataTextColumn kolumna_d87 = kolumnaDoTabeli("Posiedzenia", "d_87", idDzialu, "", false, szerokoscKolumny);
-            GridViewDataTextColumn kolumna_d88 = kolumnaDoTabeli("ogółem", "d_88", idDzialu, "gray", false, szerokoscKolumny);
-            GridViewDataTextColumn kolumna_d89 = kolumnaDoTabeli("Rozprawy", "d_89", idDzialu, "", false, szerokoscKolumny);
-            GridViewDataTextColumn kolumna_d90 = kolumnaDoTabeli("Posiedzenia", "d_90", idDzialu, "", false, szerokoscKolumny);
-            GridViewDataTextColumn kolumna_d91 = kolumnaDoTabeli("ogółem (wszystkie kategorie spraw)", "d_91", idDzialu, "gray", false, szerokoscKolumny);
-            GridViewDataTextColumn kolumna_d92 = kolumnaDoTabeli("C", "d_92", idDzialu, "", false, szerokoscKolumny);
-            GridViewDataTextColumn kolumna_d93 = kolumnaDoTabeli("Ns", "d_93", idDzialu, "", false, szerokoscKolumny);
-            GridViewDataTextColumn kolumna_d94 = kolumnaDoTabeli("z teminem", "d_94", idDzialu, "", false, szerokoscKolumny);
-            GridViewDataTextColumn kolumna_d95 = kolumnaDoTabeli("bez wyznaczonego terminu", "d_95", idDzialu, "", false, szerokoscKolumny);
-            GridViewDataTextColumn kolumna_d96 = kolumnaDoTabeli("OGÓŁEM (wraz z publikacją orzeczeń)", "d_96", idDzialu, "gray", false, szerokoscKolumny);
-            GridViewDataTextColumn kolumna_d97 = kolumnaDoTabeli("Ogółem", "d_97", idDzialu, "gray", false, szerokoscKolumny);
-            GridViewDataTextColumn kolumna_d98 = kolumnaDoTabeli("ogółem", "d_98", idDzialu, "gray", false, szerokoscKolumny);
-            GridViewDataTextColumn kolumna_d99 = kolumnaDoTabeli("o rozwód", "d_99", idDzialu, "", false, szerokoscKolumny);
-            GridViewDataTextColumn kolumna_d100 = kolumnaDoTabeli("o separację", "d_100", idDzialu, "", false, szerokoscKolumny);
-            GridViewDataTextColumn kolumna_d101 = kolumnaDoTabeli("ogółem", "d_101", idDzialu, "gray", false, szerokoscKolumny);
-            GridViewDataTextColumn kolumna_d102 = kolumnaDoTabeli("o rozwód", "d_102", idDzialu, "", false, szerokoscKolumny);
-            GridViewDataTextColumn kolumna_d103 = kolumnaDoTabeli("o separację", "d_103", idDzialu, "", false, szerokoscKolumny);
-            GridViewDataTextColumn kolumna_d104 = kolumnaDoTabeli("o rozwód", "d_104", idDzialu, "", false, szerokoscKolumny);
-            GridViewDataTextColumn kolumna_d105 = kolumnaDoTabeli("o separację", "d_105", idDzialu, "", false, szerokoscKolumny);
-            GridViewDataTextColumn kolumna_d106 = kolumnaDoTabeli("Ns", "d_106", idDzialu, "", false, szerokoscKolumny);
-            GridViewDataTextColumn kolumna_d107 = kolumnaDoTabeli("Ns-rej", "d_107", idDzialu, "", false, szerokoscKolumny);
-            GridViewDataTextColumn kolumna_d108 = kolumnaDoTabeli("Nc", "d_108", idDzialu, "", false, szerokoscKolumny);
-            GridViewDataTextColumn kolumna_d109 = kolumnaDoTabeli("Co", "d_109", idDzialu, "", false, szerokoscKolumny);
-            GridViewDataTextColumn kolumna_d110 = kolumnaDoTabeli("WSC", "d_110", idDzialu, "", false, szerokoscKolumny);
-            GridViewDataTextColumn kolumna_d111 = kolumnaDoTabeli("Ogółem", "d_111", idDzialu, "gray", false, szerokoscKolumny);
-            GridViewDataTextColumn kolumna_d112 = kolumnaDoTabeli("zakreślonych", "d_112", idDzialu, "", false, szerokoscKolumny);
-            GridViewDataTextColumn kolumna_d113 = kolumnaDoTabeli("niezakreślonych", "d_113", idDzialu, "", false, szerokoscKolumny);
-            GridViewDataTextColumn kolumna_d114 = kolumnaDoTabeli("Ogółem", "d_114", idDzialu, "gray", false, szerokoscKolumny);
-            GridViewDataTextColumn kolumna_d115 = kolumnaDoTabeli("do 3 mies.", "d_115", idDzialu, "", false, szerokoscKolumny);
-            GridViewDataTextColumn kolumna_d116 = kolumnaDoTabeli("pow. 3 do 6 m - cy", "d_116", idDzialu, "gray", false, szerokoscKolumny);
-            GridViewDataTextColumn kolumna_d117 = kolumnaDoTabeli("pow. 6 do 12 m - cy", "d_117", idDzialu, "gray", false, szerokoscKolumny);
-            GridViewDataTextColumn kolumna_d118 = kolumnaDoTabeli("pow. 12 m-cy do 2 lat", "d_118", idDzialu, "", false, szerokoscKolumny);
-            GridViewDataTextColumn kolumna_d119 = kolumnaDoTabeli("pow. 2 do 3 lat", "d_119", idDzialu, "", false, szerokoscKolumny);
+            GridViewDataTextColumn kolumna_d15 = DevExpressXXL.kolumnaDoTabeli("na rozprawę", "d_15", idDzialu, "", false, szerokoscKolumny);
+            GridViewDataTextColumn kolumna_d16 = DevExpressXXL.kolumnaDoTabeli("na posiedzenie", "d_16", idDzialu, "", false, szerokoscKolumny);
+            GridViewDataTextColumn kolumna_d17 = DevExpressXXL.kolumnaDoTabeli("na rozprawę", "d_17", idDzialu, "", false, szerokoscKolumny);
+            GridViewDataTextColumn kolumna_d18 = DevExpressXXL.kolumnaDoTabeli("na posiedzenie", "d_18", idDzialu, "", false, szerokoscKolumny);
+            GridViewDataTextColumn kolumna_d19 = DevExpressXXL.kolumnaDoTabeli("na rozprawę", "d_19", idDzialu, "", false, szerokoscKolumny);
+            GridViewDataTextColumn kolumna_d20 = DevExpressXXL.kolumnaDoTabeli("na posiedzenie", "d_20", idDzialu, "", false, szerokoscKolumny);
+            GridViewDataTextColumn kolumna_d21 = DevExpressXXL.kolumnaDoTabeli("na rozprawę", "d_21", idDzialu, "", false, szerokoscKolumny);
+            GridViewDataTextColumn kolumna_d22 = DevExpressXXL.kolumnaDoTabeli("na posiedzenie", "d_22", idDzialu, "", false, szerokoscKolumny);
+            GridViewDataTextColumn kolumna_d23 = DevExpressXXL.kolumnaDoTabeli("na rozprawę", "d_23", idDzialu, "", false, szerokoscKolumny);
+            GridViewDataTextColumn kolumna_d24 = DevExpressXXL.kolumnaDoTabeli("na posiedzenie", "d_24", idDzialu, "", false, szerokoscKolumny);
+            GridViewDataTextColumn kolumna_d25 = DevExpressXXL.kolumnaDoTabeli("na rozprawę", "d_25", idDzialu, "", false, szerokoscKolumny);
+            GridViewDataTextColumn kolumna_d26 = DevExpressXXL.kolumnaDoTabeli("na posiedzenie", "d_26", idDzialu, "", false, szerokoscKolumny);
+            GridViewDataTextColumn kolumna_d27 = DevExpressXXL.kolumnaDoTabeli("na rozprawę", "d_27", idDzialu, "", false, szerokoscKolumny);
+            GridViewDataTextColumn kolumna_d28 = DevExpressXXL.kolumnaDoTabeli("na posiedzenie", "d_28", idDzialu, "", false, szerokoscKolumny);
+            GridViewDataTextColumn kolumna_d29 = DevExpressXXL.kolumnaDoTabeli("na rozprawę", "d_29", idDzialu, "", false, szerokoscKolumny);
+            GridViewDataTextColumn kolumna_d30 = DevExpressXXL.kolumnaDoTabeli("na posiedzenie", "d_30", idDzialu, "", false, szerokoscKolumny);
+            GridViewDataTextColumn kolumna_d31 = DevExpressXXL.kolumnaDoTabeli("na rozprawę", "d_31", idDzialu, "", false, szerokoscKolumny);
+            GridViewDataTextColumn kolumna_d32 = DevExpressXXL.kolumnaDoTabeli("na posiedzenie", "d_32", idDzialu, "", false, szerokoscKolumny);
+            GridViewDataTextColumn kolumna_d33 = DevExpressXXL.kolumnaDoTabeli("na rozprawę", "d_33", idDzialu, "", false, szerokoscKolumny);
+            GridViewDataTextColumn kolumna_d34 = DevExpressXXL.kolumnaDoTabeli("na posiedzenie", "d_34", idDzialu, "", false, szerokoscKolumny);
+            GridViewDataTextColumn kolumna_d35 = DevExpressXXL.kolumnaDoTabeli("na rozprawę", "d_35", idDzialu, "", false, szerokoscKolumny);
+            GridViewDataTextColumn kolumna_d36 = DevExpressXXL.kolumnaDoTabeli("na posiedzenie", "d_36", idDzialu, "", false, szerokoscKolumny);
+            GridViewDataTextColumn kolumna_d37 = DevExpressXXL.kolumnaDoTabeli("na rozprawę", "d_37", idDzialu, "", false, szerokoscKolumny);
+            GridViewDataTextColumn kolumna_d38 = DevExpressXXL.kolumnaDoTabeli("na posiedzenie", "d_38", idDzialu, "", false, szerokoscKolumny);
+            GridViewDataTextColumn kolumna_d39 = DevExpressXXL.kolumnaDoTabeli("na rozprawę", "d_39", idDzialu, "", false, szerokoscKolumny);
+            GridViewDataTextColumn kolumna_d40 = DevExpressXXL.kolumnaDoTabeli("na posiedzenie", "d_40", idDzialu, "", false, szerokoscKolumny);
+            GridViewDataTextColumn kolumna_d41 = DevExpressXXL.kolumnaDoTabeli("na rozprawę", "d_41", idDzialu, "", false, szerokoscKolumny);
+            GridViewDataTextColumn kolumna_d42 = DevExpressXXL.kolumnaDoTabeli("na posiedzenie", "d_42", idDzialu, "", false, szerokoscKolumny);
+            GridViewDataTextColumn kolumna_d43 = DevExpressXXL.kolumnaDoTabeli("na rozprawę", "d_43", idDzialu, "gray", false, szerokoscKolumny);
+            GridViewDataTextColumn kolumna_d44 = DevExpressXXL.kolumnaDoTabeli("na posiedzenie", "d_44", idDzialu, "gray", false, szerokoscKolumny);
+            GridViewDataTextColumn kolumna_d45 = DevExpressXXL.kolumnaDoTabeli("na rozprawę", "d_45", idDzialu, "", false, szerokoscKolumny);
+            GridViewDataTextColumn kolumna_d46 = DevExpressXXL.kolumnaDoTabeli("na posiedzenie", "d_46", idDzialu, "", false, szerokoscKolumny);
+            GridViewDataTextColumn kolumna_d47 = DevExpressXXL.kolumnaDoTabeli("na rozprawę", "d_47", idDzialu, "", false, szerokoscKolumny);
+            GridViewDataTextColumn kolumna_d48 = DevExpressXXL.kolumnaDoTabeli("na posiedzenie", "d_48", idDzialu, "", false, szerokoscKolumny);
+            GridViewDataTextColumn kolumna_d49 = DevExpressXXL.kolumnaDoTabeli("na rozprawę", "d_49", idDzialu, "", false, szerokoscKolumny);
+            GridViewDataTextColumn kolumna_d50 = DevExpressXXL.kolumnaDoTabeli("na posiedzenie", "d_50", idDzialu, "", false, szerokoscKolumny);
+            GridViewDataTextColumn kolumna_d51 = DevExpressXXL.kolumnaDoTabeli("na rozprawę", "d_51", idDzialu, "", false, szerokoscKolumny);
+            GridViewDataTextColumn kolumna_d52 = DevExpressXXL.kolumnaDoTabeli("na posiedzenie", "d_52", idDzialu, "", false, szerokoscKolumny);
+            GridViewDataTextColumn kolumna_d53 = DevExpressXXL.kolumnaDoTabeli("na rozprawę", "d_53", idDzialu, "", false, szerokoscKolumny);
+            GridViewDataTextColumn kolumna_d54 = DevExpressXXL.kolumnaDoTabeli("na posiedzenie", "d_54", idDzialu, "", false, szerokoscKolumny);
+            GridViewDataTextColumn kolumna_d55 = DevExpressXXL.kolumnaDoTabeli("na rozprawę", "d_55", idDzialu, "", false, szerokoscKolumny);
+            GridViewDataTextColumn kolumna_d56 = DevExpressXXL.kolumnaDoTabeli("na posiedzenie", "d_56", idDzialu, "", false, szerokoscKolumny);
+            GridViewDataTextColumn kolumna_d57 = DevExpressXXL.kolumnaDoTabeli("na rozprawę", "d_57", idDzialu, "", false, szerokoscKolumny);
+            GridViewDataTextColumn kolumna_d58 = DevExpressXXL.kolumnaDoTabeli("na posiedzenie", "d_58", idDzialu, "", false, szerokoscKolumny);
+            GridViewDataTextColumn kolumna_d59 = DevExpressXXL.kolumnaDoTabeli("na rozprawę", "d_59", idDzialu, "", false, szerokoscKolumny);
+            GridViewDataTextColumn kolumna_d60 = DevExpressXXL.kolumnaDoTabeli("na posiedzenie", "d_60", idDzialu, "", false, szerokoscKolumny);
+            GridViewDataTextColumn kolumna_d61 = DevExpressXXL.kolumnaDoTabeli("na rozprawę", "d_61", idDzialu, "", false, szerokoscKolumny);
+            GridViewDataTextColumn kolumna_d62 = DevExpressXXL.kolumnaDoTabeli("na posiedzenie", "d_62", idDzialu, "", false, szerokoscKolumny);
+            GridViewDataTextColumn kolumna_d63 = DevExpressXXL.kolumnaDoTabeli("na rozprawę", "d_63", idDzialu, "", false, szerokoscKolumny);
+            GridViewDataTextColumn kolumna_d64 = DevExpressXXL.kolumnaDoTabeli("na posiedzenie", "d_64", idDzialu, "", false, szerokoscKolumny);
+            GridViewDataTextColumn kolumna_d65 = DevExpressXXL.kolumnaDoTabeli("na rozprawę", "d_65", idDzialu, "", false, szerokoscKolumny);
+            GridViewDataTextColumn kolumna_d66 = DevExpressXXL.kolumnaDoTabeli("na posiedzenie", "d_66", idDzialu, "", false, szerokoscKolumny);
+            GridViewDataTextColumn kolumna_d67 = DevExpressXXL.kolumnaDoTabeli("na rozprawę", "d_67", idDzialu, "", false, szerokoscKolumny);
+            GridViewDataTextColumn kolumna_d68 = DevExpressXXL.kolumnaDoTabeli("na posiedzenie", "d_68", idDzialu, "", false, szerokoscKolumny);
+            GridViewDataTextColumn kolumna_d69 = DevExpressXXL.kolumnaDoTabeli("na rozprawę", "d_69", idDzialu, "", false, szerokoscKolumny);
+            GridViewDataTextColumn kolumna_d70 = DevExpressXXL.kolumnaDoTabeli("na posiedzenie", "d_70", idDzialu, "", false, szerokoscKolumny);
+            GridViewDataTextColumn kolumna_d71 = DevExpressXXL.kolumnaDoTabeli("Ogółem", "d_71", idDzialu, "gray", false, szerokoscKolumny);
+            GridViewDataTextColumn kolumna_d72 = DevExpressXXL.kolumnaDoTabeli("ogółem", "d_72", idDzialu, "gray", false, szerokoscKolumny);
+            GridViewDataTextColumn kolumna_d73 = DevExpressXXL.kolumnaDoTabeli("o rozwód", "d_73", idDzialu, "", false, szerokoscKolumny);
+            GridViewDataTextColumn kolumna_d74 = DevExpressXXL.kolumnaDoTabeli("o separację", "d_74", idDzialu, "", false, szerokoscKolumny);
+            GridViewDataTextColumn kolumna_d75 = DevExpressXXL.kolumnaDoTabeli("ogółem", "d_75", idDzialu, "gray", false, szerokoscKolumny);
+            GridViewDataTextColumn kolumna_d76 = DevExpressXXL.kolumnaDoTabeli("o rozwód", "d_76", idDzialu, "", false, szerokoscKolumny);
+            GridViewDataTextColumn kolumna_d77 = DevExpressXXL.kolumnaDoTabeli("o rozwód", "d_77", idDzialu, "", false, szerokoscKolumny);
+            GridViewDataTextColumn kolumna_d78 = DevExpressXXL.kolumnaDoTabeli("o rozwód", "d_78", idDzialu, "", false, szerokoscKolumny);
+            GridViewDataTextColumn kolumna_d79 = DevExpressXXL.kolumnaDoTabeli("o rozwód", "d_79", idDzialu, "", false, szerokoscKolumny);
+            GridViewDataTextColumn kolumna_d80 = DevExpressXXL.kolumnaDoTabeli("Ns", "d_80", idDzialu, "", false, szerokoscKolumny);
+            GridViewDataTextColumn kolumna_d81 = DevExpressXXL.kolumnaDoTabeli("Ns-rej", "d_81", idDzialu, "", false, szerokoscKolumny);
+            GridViewDataTextColumn kolumna_d82 = DevExpressXXL.kolumnaDoTabeli("Nc", "d_82", idDzialu, "", false, szerokoscKolumny);
+            GridViewDataTextColumn kolumna_d83 = DevExpressXXL.kolumnaDoTabeli("Co", "d_83", idDzialu, "", false, szerokoscKolumny);
+            GridViewDataTextColumn kolumna_d84 = DevExpressXXL.kolumnaDoTabeli("WSC", "d_84", idDzialu, "", false, szerokoscKolumny);
+            GridViewDataTextColumn kolumna_d85 = DevExpressXXL.kolumnaDoTabeli("Ogółem", "d_85", idDzialu, "gray", false, szerokoscKolumny);
+            GridViewDataTextColumn kolumna_d86 = DevExpressXXL.kolumnaDoTabeli("Rozprawy", "d_86", idDzialu, "", false, szerokoscKolumny);
+            GridViewDataTextColumn kolumna_d87 = DevExpressXXL.kolumnaDoTabeli("Posiedzenia", "d_87", idDzialu, "", false, szerokoscKolumny);
+            GridViewDataTextColumn kolumna_d88 = DevExpressXXL.kolumnaDoTabeli("ogółem", "d_88", idDzialu, "gray", false, szerokoscKolumny);
+            GridViewDataTextColumn kolumna_d89 = DevExpressXXL.kolumnaDoTabeli("Rozprawy", "d_89", idDzialu, "", false, szerokoscKolumny);
+            GridViewDataTextColumn kolumna_d90 = DevExpressXXL.kolumnaDoTabeli("Posiedzenia", "d_90", idDzialu, "", false, szerokoscKolumny);
+            GridViewDataTextColumn kolumna_d91 = DevExpressXXL.kolumnaDoTabeli("ogółem (wszystkie kategorie spraw)", "d_91", idDzialu, "gray", false, szerokoscKolumny);
+            GridViewDataTextColumn kolumna_d92 = DevExpressXXL.kolumnaDoTabeli("C", "d_92", idDzialu, "", false, szerokoscKolumny);
+            GridViewDataTextColumn kolumna_d93 = DevExpressXXL.kolumnaDoTabeli("Ns", "d_93", idDzialu, "", false, szerokoscKolumny);
+            GridViewDataTextColumn kolumna_d94 = DevExpressXXL.kolumnaDoTabeli("z teminem", "d_94", idDzialu, "", false, szerokoscKolumny);
+            GridViewDataTextColumn kolumna_d95 = DevExpressXXL.kolumnaDoTabeli("bez wyznaczonego terminu", "d_95", idDzialu, "", false, szerokoscKolumny);
+            GridViewDataTextColumn kolumna_d96 = DevExpressXXL.kolumnaDoTabeli("OGÓŁEM (wraz z publikacją orzeczeń)", "d_96", idDzialu, "gray", false, szerokoscKolumny);
+            GridViewDataTextColumn kolumna_d97 = DevExpressXXL.kolumnaDoTabeli("Ogółem", "d_97", idDzialu, "gray", false, szerokoscKolumny);
+            GridViewDataTextColumn kolumna_d98 = DevExpressXXL.kolumnaDoTabeli("ogółem", "d_98", idDzialu, "gray", false, szerokoscKolumny);
+            GridViewDataTextColumn kolumna_d99 = DevExpressXXL.kolumnaDoTabeli("o rozwód", "d_99", idDzialu, "", false, szerokoscKolumny);
+            GridViewDataTextColumn kolumna_d100 = DevExpressXXL.kolumnaDoTabeli("o separację", "d_100", idDzialu, "", false, szerokoscKolumny);
+            GridViewDataTextColumn kolumna_d101 = DevExpressXXL.kolumnaDoTabeli("ogółem", "d_101", idDzialu, "gray", false, szerokoscKolumny);
+            GridViewDataTextColumn kolumna_d102 = DevExpressXXL.kolumnaDoTabeli("o rozwód", "d_102", idDzialu, "", false, szerokoscKolumny);
+            GridViewDataTextColumn kolumna_d103 = DevExpressXXL.kolumnaDoTabeli("o separację", "d_103", idDzialu, "", false, szerokoscKolumny);
+            GridViewDataTextColumn kolumna_d104 = DevExpressXXL.kolumnaDoTabeli("o rozwód", "d_104", idDzialu, "", false, szerokoscKolumny);
+            GridViewDataTextColumn kolumna_d105 = DevExpressXXL.kolumnaDoTabeli("o separację", "d_105", idDzialu, "", false, szerokoscKolumny);
+            GridViewDataTextColumn kolumna_d106 = DevExpressXXL.kolumnaDoTabeli("Ns", "d_106", idDzialu, "", false, szerokoscKolumny);
+            GridViewDataTextColumn kolumna_d107 = DevExpressXXL.kolumnaDoTabeli("Ns-rej", "d_107", idDzialu, "", false, szerokoscKolumny);
+            GridViewDataTextColumn kolumna_d108 = DevExpressXXL.kolumnaDoTabeli("Nc", "d_108", idDzialu, "", false, szerokoscKolumny);
+            GridViewDataTextColumn kolumna_d109 = DevExpressXXL.kolumnaDoTabeli("Co", "d_109", idDzialu, "", false, szerokoscKolumny);
+            GridViewDataTextColumn kolumna_d110 = DevExpressXXL.kolumnaDoTabeli("WSC", "d_110", idDzialu, "", false, szerokoscKolumny);
+            GridViewDataTextColumn kolumna_d111 = DevExpressXXL.kolumnaDoTabeli("Ogółem", "d_111", idDzialu, "gray", false, szerokoscKolumny);
+            GridViewDataTextColumn kolumna_d112 = DevExpressXXL.kolumnaDoTabeli("zakreślonych", "d_112", idDzialu, "", false, szerokoscKolumny);
+            GridViewDataTextColumn kolumna_d113 = DevExpressXXL.kolumnaDoTabeli("niezakreślonych", "d_113", idDzialu, "", false, szerokoscKolumny);
+            GridViewDataTextColumn kolumna_d114 = DevExpressXXL.kolumnaDoTabeli("Ogółem", "d_114", idDzialu, "gray", false, szerokoscKolumny);
+            GridViewDataTextColumn kolumna_d115 = DevExpressXXL.kolumnaDoTabeli("do 3 mies.", "d_115", idDzialu, "", false, szerokoscKolumny);
+            GridViewDataTextColumn kolumna_d116 = DevExpressXXL.kolumnaDoTabeli("pow. 3 do 6 m - cy", "d_116", idDzialu, "gray", false, szerokoscKolumny);
+            GridViewDataTextColumn kolumna_d117 = DevExpressXXL.kolumnaDoTabeli("pow. 6 do 12 m - cy", "d_117", idDzialu, "gray", false, szerokoscKolumny);
+            GridViewDataTextColumn kolumna_d118 = DevExpressXXL.kolumnaDoTabeli("pow. 12 m-cy do 2 lat", "d_118", idDzialu, "", false, szerokoscKolumny);
+            GridViewDataTextColumn kolumna_d119 = DevExpressXXL.kolumnaDoTabeli("pow. 2 do 3 lat", "d_119", idDzialu, "", false, szerokoscKolumny);
 
-            GridViewDataTextColumn kolumna_d_120 = kolumnaDoTabeli("pow. 3 do 5 lat", "d_120", idDzialu, "", false, szerokoscKolumny);
-            GridViewDataTextColumn kolumna_d_121 = kolumnaDoTabeli("pow. 5 do 8 lat", "d_121", idDzialu, "", false, szerokoscKolumny);
-            GridViewDataTextColumn kolumna_d_122 = kolumnaDoTabeli("pow. 8 lat", "d_122", idDzialu, "", false, szerokoscKolumny);
-            GridViewDataTextColumn kolumna_d_123 = kolumnaDoTabeli("łącznie", "d_123", idDzialu, "", false, szerokoscKolumny);
-            GridViewDataTextColumn kolumna_d_124 = kolumnaDoTabeli("w terminie ustawowym 14 dni", "d_124", idDzialu, "", false, szerokoscKolumny);
-            GridViewDataTextColumn kolumna_d_125 = kolumnaDoTabeli("razem po terminie ustawowym", "d_125", idDzialu, "", false, szerokoscKolumny);
-            GridViewDataTextColumn kolumna_d_126 = kolumnaDoTabeli("nieuspra - wiedliwione", "d_126", idDzialu, "", false, szerokoscKolumny);
-            GridViewDataTextColumn kolumna_d_127 = kolumnaDoTabeli("1-14 dni", "d_127", idDzialu, "", false, szerokoscKolumny);
-            GridViewDataTextColumn kolumna_d_128 = kolumnaDoTabeli("w tym nieuspra - wiedliwione", "d_128", idDzialu, "", false, szerokoscKolumny);
-            GridViewDataTextColumn kolumna_d_129 = kolumnaDoTabeli("15-30 dni", "d_129", idDzialu, "", false, szerokoscKolumny);
+            GridViewDataTextColumn kolumna_d_120 = DevExpressXXL.kolumnaDoTabeli("pow. 3 do 5 lat", "d_120", idDzialu, "", false, szerokoscKolumny);
+            GridViewDataTextColumn kolumna_d_121 = DevExpressXXL.kolumnaDoTabeli("pow. 5 do 8 lat", "d_121", idDzialu, "", false, szerokoscKolumny);
+            GridViewDataTextColumn kolumna_d_122 = DevExpressXXL.kolumnaDoTabeli("pow. 8 lat", "d_122", idDzialu, "", false, szerokoscKolumny);
+            GridViewDataTextColumn kolumna_d_123 = DevExpressXXL.kolumnaDoTabeli("łącznie", "d_123", idDzialu, "", false, szerokoscKolumny);
+            GridViewDataTextColumn kolumna_d_124 = DevExpressXXL.kolumnaDoTabeli("w terminie ustawowym 14 dni", "d_124", idDzialu, "", false, szerokoscKolumny);
+            GridViewDataTextColumn kolumna_d_125 = DevExpressXXL.kolumnaDoTabeli("razem po terminie ustawowym", "d_125", idDzialu, "", false, szerokoscKolumny);
+            GridViewDataTextColumn kolumna_d_126 = DevExpressXXL.kolumnaDoTabeli("nieuspra - wiedliwione", "d_126", idDzialu, "", false, szerokoscKolumny);
+            GridViewDataTextColumn kolumna_d_127 = DevExpressXXL.kolumnaDoTabeli("1-14 dni", "d_127", idDzialu, "", false, szerokoscKolumny);
+            GridViewDataTextColumn kolumna_d_128 = DevExpressXXL.kolumnaDoTabeli("w tym nieuspra - wiedliwione", "d_128", idDzialu, "", false, szerokoscKolumny);
+            GridViewDataTextColumn kolumna_d_129 = DevExpressXXL.kolumnaDoTabeli("15-30 dni", "d_129", idDzialu, "", false, szerokoscKolumny);
 
-            GridViewDataTextColumn kolumna_d_130 = kolumnaDoTabeli("w tym nieuspra - wiedliwione", "d_130", idDzialu, "", false, szerokoscKolumny);
-            GridViewDataTextColumn kolumna_d_131 = kolumnaDoTabeli("powyżej 1 do 3 mies.", "d_131", idDzialu, "", false, szerokoscKolumny);
-            GridViewDataTextColumn kolumna_d_132 = kolumnaDoTabeli("w tym nieuspra - wiedliwione", "d_132", idDzialu, "", false, szerokoscKolumny);
-            GridViewDataTextColumn kolumna_d_133 = kolumnaDoTabeli("ponad 3 mies", "d_133", idDzialu, "", false, szerokoscKolumny);
-            GridViewDataTextColumn kolumna_d_134 = kolumnaDoTabeli("w tym nieuspra - wiedliwione", "d_134", idDzialu, "", false, szerokoscKolumny);
-            GridViewDataTextColumn kolumna_d_135 = kolumnaDoTabeli("ogółem", "d_135", idDzialu, "gray", false, szerokoscKolumny);
-            GridViewDataTextColumn kolumna_d_136 = kolumnaDoTabeli("w których wpłynął wniosek o transkrypcję", "d_136", idDzialu, "", false, szerokoscKolumny);
-            GridViewDataTextColumn kolumna_d_137 = kolumnaDoTabeli("razem", "d_137", idDzialu, "", false, szerokoscKolumny);
-            GridViewDataTextColumn kolumna_d_138 = kolumnaDoTabeli(" w których projekt został zaakceptowany przez sędziego", "d_138", idDzialu, "", false, szerokoscKolumny);
-            GridViewDataTextColumn kolumna_d_139 = kolumnaDoTabeli("wpływ", "d_139", idDzialu, "", false, szerokoscKolumny);
+            GridViewDataTextColumn kolumna_d_130 = DevExpressXXL.kolumnaDoTabeli("w tym nieuspra - wiedliwione", "d_130", idDzialu, "", false, szerokoscKolumny);
+            GridViewDataTextColumn kolumna_d_131 = DevExpressXXL.kolumnaDoTabeli("powyżej 1 do 3 mies.", "d_131", idDzialu, "", false, szerokoscKolumny);
+            GridViewDataTextColumn kolumna_d_132 = DevExpressXXL.kolumnaDoTabeli("w tym nieuspra - wiedliwione", "d_132", idDzialu, "", false, szerokoscKolumny);
+            GridViewDataTextColumn kolumna_d_133 = DevExpressXXL.kolumnaDoTabeli("ponad 3 mies", "d_133", idDzialu, "", false, szerokoscKolumny);
+            GridViewDataTextColumn kolumna_d_134 = DevExpressXXL.kolumnaDoTabeli("w tym nieuspra - wiedliwione", "d_134", idDzialu, "", false, szerokoscKolumny);
+            GridViewDataTextColumn kolumna_d_135 = DevExpressXXL.kolumnaDoTabeli("ogółem", "d_135", idDzialu, "gray", false, szerokoscKolumny);
+            GridViewDataTextColumn kolumna_d_136 = DevExpressXXL.kolumnaDoTabeli("w których wpłynął wniosek o transkrypcję", "d_136", idDzialu, "", false, szerokoscKolumny);
+            GridViewDataTextColumn kolumna_d_137 = DevExpressXXL.kolumnaDoTabeli("razem", "d_137", idDzialu, "", false, szerokoscKolumny);
+            GridViewDataTextColumn kolumna_d_138 = DevExpressXXL.kolumnaDoTabeli(" w których projekt został zaakceptowany przez sędziego", "d_138", idDzialu, "", false, szerokoscKolumny);
+            GridViewDataTextColumn kolumna_d_139 = DevExpressXXL.kolumnaDoTabeli("wpływ", "d_139", idDzialu, "", false, szerokoscKolumny);
 
-            GridViewDataTextColumn kolumna_d_140 = kolumnaDoTabeli("ogółem", "d_140", idDzialu, "", false, szerokoscKolumny);
-            GridViewDataTextColumn kolumna_d_141 = kolumnaDoTabeli("uwzględniono", "d_141", idDzialu, "", false, szerokoscKolumny);
-            GridViewDataTextColumn kolumna_d_142 = kolumnaDoTabeli("pozostałość", "d_142", idDzialu, "", false, szerokoscKolumny);
-            GridViewDataTextColumn kolumna_d_143 = kolumnaDoTabeli("liczba spraw, w których strony skierowano do mediacji", "d_143", idDzialu, "", false, szerokoscKolumny);
-            GridViewDataTextColumn kolumna_d_144 = kolumnaDoTabeli("iczba ugód zawartych przed mediatorem", "d_144", idDzialu, "", false, szerokoscKolumny);
-            GridViewDataTextColumn kolumna_d_145 = kolumnaDoTabeli("ogółem", "d_145", idDzialu, "gray", false, szerokoscKolumny);
-            GridViewDataTextColumn kolumna_d_146 = kolumnaDoTabeli("w tym : w których wpłynął wniosek o transkrypcję", "d_146", idDzialu, "", false, szerokoscKolumny);
-            GridViewDataTextColumn kolumna_d_147 = kolumnaDoTabeli("razem", "d_147", idDzialu, "", false, szerokoscKolumny);
-            GridViewDataTextColumn kolumna_d_148 = kolumnaDoTabeli("w tym, w których projekt został zaakceptowany przez sędziego", "d_148", idDzialu, "", false, szerokoscKolumny);
-            GridViewDataTextColumn kolumna_d_149 = kolumnaDoTabeli("wpływ", "d_149", idDzialu, "", false, szerokoscKolumny);
+            GridViewDataTextColumn kolumna_d_140 = DevExpressXXL.kolumnaDoTabeli("ogółem", "d_140", idDzialu, "", false, szerokoscKolumny);
+            GridViewDataTextColumn kolumna_d_141 = DevExpressXXL.kolumnaDoTabeli("uwzględniono", "d_141", idDzialu, "", false, szerokoscKolumny);
+            GridViewDataTextColumn kolumna_d_142 = DevExpressXXL.kolumnaDoTabeli("pozostałość", "d_142", idDzialu, "", false, szerokoscKolumny);
+            GridViewDataTextColumn kolumna_d_143 = DevExpressXXL.kolumnaDoTabeli("liczba spraw, w których strony skierowano do mediacji", "d_143", idDzialu, "", false, szerokoscKolumny);
+            GridViewDataTextColumn kolumna_d_144 = DevExpressXXL.kolumnaDoTabeli("iczba ugód zawartych przed mediatorem", "d_144", idDzialu, "", false, szerokoscKolumny);
+            GridViewDataTextColumn kolumna_d_145 = DevExpressXXL.kolumnaDoTabeli("ogółem", "d_145", idDzialu, "gray", false, szerokoscKolumny);
+            GridViewDataTextColumn kolumna_d_146 = DevExpressXXL.kolumnaDoTabeli("w tym : w których wpłynął wniosek o transkrypcję", "d_146", idDzialu, "", false, szerokoscKolumny);
+            GridViewDataTextColumn kolumna_d_147 = DevExpressXXL.kolumnaDoTabeli("razem", "d_147", idDzialu, "", false, szerokoscKolumny);
+            GridViewDataTextColumn kolumna_d_148 = DevExpressXXL.kolumnaDoTabeli("w tym, w których projekt został zaakceptowany przez sędziego", "d_148", idDzialu, "", false, szerokoscKolumny);
+            GridViewDataTextColumn kolumna_d_149 = DevExpressXXL.kolumnaDoTabeli("wpływ", "d_149", idDzialu, "", false, szerokoscKolumny);
 
             GridViewBandColumn kolumna_wyznaczono_ogolem_01 = new GridViewBandColumn();
             kolumna_wyznaczono_ogolem_01.Caption = "ogółem ";
@@ -824,7 +825,7 @@ namespace stat2018
 
             #region Liczba spraw, w których projekt uzasadnienia orzeczenia sporządził asystent
 
-            GridViewBandColumn liczbaSpraw = GetBoundColumn("Liczba spraw, w których projekt uzasadnienia orzeczenia sporządził asystent");
+            GridViewBandColumn liczbaSpraw = DevExpressXXL.GetBoundColumn("Liczba spraw, w których projekt uzasadnienia orzeczenia sporządził asystent");
             GridViewBandColumn liczbaSprawWtym = new GridViewBandColumn { Caption = "w tym" };
             liczbaSprawWtym.HeaderStyle.HorizontalAlign = HorizontalAlign.Center;
             liczbaSprawWtym.Columns.Add(kolumna_d_137);
@@ -856,11 +857,11 @@ namespace stat2018
 
             #region mediacje
 
-            GridViewBandColumn mediacje = GetBoundColumn("mediacje");
-            GridViewBandColumn mediacjeWplyw = GetBoundColumn("wpływ");
+            GridViewBandColumn mediacje = DevExpressXXL.GetBoundColumn("mediacje");
+            GridViewBandColumn mediacjeWplyw = DevExpressXXL.GetBoundColumn("wpływ");
             mediacjeWplyw.Columns.Add(kolumna_d_143);
             mediacje.Columns.Add(mediacjeWplyw);
-            GridViewBandColumn mediacjerozstrzygniecie = GetBoundColumn("wpływ");
+            GridViewBandColumn mediacjerozstrzygniecie = DevExpressXXL.GetBoundColumn("wpływ");
 
             mediacje.Columns.Add(kolumna_d_139);
             ASPxGridView1.Columns.Add(mediacje);
@@ -868,161 +869,22 @@ namespace stat2018
             #endregion mediacje
 
             ASPxGridView1.Columns.Add(kolumna_d_146);
-            GridViewBandColumn kolumnaKontrolna = GetBoundColumn("Kolumna kontrolna (wyznaczenia>=załatwień)");
+            GridViewBandColumn kolumnaKontrolna = DevExpressXXL.GetBoundColumn("Kolumna kontrolna (wyznaczenia>=załatwień)");
             kolumnaKontrolna.Columns.Add(kolumna_d_147);
             kolumnaKontrolna.Columns.Add(kolumna_d_148);
             ASPxGridView1.Columns.Add(kolumnaKontrolna);
 
             ASPxGridView1.TotalSummary.Clear();
+            ASPxGridView1.TotalSummary.Add(DevExpressXXL. komorkaSumujaca("Ogółem"));
             for (int i = 1; i < 149; i++)
             {
-                ASPxGridView1.TotalSummary.Add(komorkaSumujaca(i));
+                ASPxGridView1.TotalSummary.Add(DevExpressXXL. komorkaSumujaca(i));
             }
         }
 
-        private ASPxSummaryItem komorkaSumujaca(int FieldNr)
+        protected void Suma(object sender, CustomSummaryEventArgs e)
         {
-            string idPola = "d_" + FieldNr.ToString("D2");
-            ASPxSummaryItem _komorkaSumujaca = new ASPxSummaryItem
-            {
-                FieldName = idPola,
-                ShowInColumn = idPola,
-                SummaryType = SummaryItemType.Sum,
-                DisplayFormat = "{0}"
-            };
-            return _komorkaSumujaca;
-        }
 
-        private GridViewBandColumn GetBoundColumn(string caption)
-        {
-            GridViewBandColumn _getBoundColumn = new GridViewBandColumn { Caption = caption };
-            _getBoundColumn.HeaderStyle.Wrap = DevExpress.Utils.DefaultBoolean.True;
-            _getBoundColumn.HeaderStyle.HorizontalAlign = HorizontalAlign.Center;
-
-            return _getBoundColumn;
-        }
-
-        private GridViewBandColumn GetBoundColumn(string caption, string style)
-        {
-            GridViewBandColumn _getBoundColumn = GetBoundColumn(caption);
-            _getBoundColumn.HeaderStyle.CssClass = style;
-            return _getBoundColumn;
-        }
-
-        private GridViewDataTextColumn kolumnaDoTabeli(string Napis, string poleDanych, string identyfikatorWydzialu, string styl, bool isFixed)
-        {
-            GridViewDataTextColumn kolumna_ = new GridViewDataTextColumn
-            {
-                Caption = Napis,
-                FieldName = poleDanych,
-                Width = 36,
-                DataItemTemplate = new CustomTemplate { IdKolumny = poleDanych, IdTabeli = identyfikatorWydzialu }
-            };
-            kolumna_.HeaderStyle.HorizontalAlign = HorizontalAlign.Center;
-            kolumna_.CellStyle.CssClass = "normal center " + styl;
-            kolumna_.HeaderStyle.CssClass = styl;
-            kolumna_.HeaderStyle.Wrap = DevExpress.Utils.DefaultBoolean.True;
-            if (isFixed)
-            {
-                kolumna_.FixedStyle = GridViewColumnFixedStyle.Left;
-            }
-            return kolumna_;
-        }
-
-        private GridViewDataTextColumn kolumnaDoTabeli(string Napis, string poleDanych, string identyfikatorWydzialu, string styl, bool isFixed, int szerokoscKolumny)
-        {
-            GridViewDataTextColumn kolumna_ = new GridViewDataTextColumn
-            {
-                Caption = Napis,
-                FieldName = poleDanych,
-                Width = szerokoscKolumny,
-                DataItemTemplate = new CustomTemplate { IdKolumny = poleDanych, IdTabeli = identyfikatorWydzialu }
-            };
-            kolumna_.HeaderStyle.HorizontalAlign = HorizontalAlign.Center;
-            kolumna_.CellStyle.CssClass = "normal center " + styl;
-            kolumna_.HeaderStyle.CssClass = styl;
-            kolumna_.HeaderStyle.Wrap = DevExpress.Utils.DefaultBoolean.True;
-            if (isFixed)
-            {
-                kolumna_.FixedStyle = GridViewColumnFixedStyle.Left;
-            }
-            return kolumna_;
-        }
-
-        private GridViewBandColumn kolumnaDoTabeli(string Napis, string poleDanych, string identyfikatorWydzialu, string styl, bool isFixed, int szerokoscKolumny, bool numerKolumny)
-        {
-            string numerKolumnySTR = poleDanych.Replace("d_", "");
-
-            GridViewDataTextColumn kolumna_ = new GridViewDataTextColumn
-            {
-                Caption = int.Parse(numerKolumnySTR).ToString(),
-                FieldName = poleDanych,
-                Width = szerokoscKolumny,
-                DataItemTemplate = new CustomTemplate { IdKolumny = poleDanych, IdTabeli = identyfikatorWydzialu }
-            };
-            kolumna_.HeaderStyle.HorizontalAlign = HorizontalAlign.Center;
-            kolumna_.CellStyle.CssClass = "normal center " + styl;
-            kolumna_.HeaderStyle.CssClass = styl;
-            kolumna_.HeaderStyle.Wrap = DevExpress.Utils.DefaultBoolean.True;
-            if (isFixed)
-            {
-                kolumna_.FixedStyle = GridViewColumnFixedStyle.Left;
-            }
-
-            GridViewBandColumn kolumnaZNumerem = GetBoundColumn(Napis);
-            kolumnaZNumerem.Columns.Add(kolumna_);
-            return kolumnaZNumerem;
-        }
-
-     
-        protected void tworzenieNaglowka(object sender, ASPxGridViewTableRowEventArgs e)
-        {
-            DataTable dT = (DataTable)Session["header_01"];//tb.naglowek(path, 1);
-            GridViewBandColumn kolumn = new GridViewBandColumn();
-
-            //  ASPxGridView1.Columns["d_01"].HeaderTemplate =   "";
-
-            ///-------------
-        }
-
-        public class CustomTemplate : ITemplate
-        {
-            public string IdTabeli;
-            public string IdKolumny;
-
-            public void InstantiateIn(Control container)
-            {
-                GridViewDataItemTemplateContainer gcontainer = (GridViewDataItemTemplateContainer)container;
-                if (IdKolumny.Contains("d_"))
-                {
-                    try
-                    {
-                        string kolumna = IdKolumny.Replace("d_", "");
-                        Label lB1 = new Label();
-
-                        int kolumnaNum = int.Parse(kolumna);
-
-                        string funkcjaJavascript = "javascript:openPopup('popup.aspx?sesja=" + gcontainer.KeyValue + "!" + IdTabeli + "!" + kolumnaNum.ToString() + "!6')";
-                        lB1.Text = " <a href = " + funkcjaJavascript + ">" + DataBinder.Eval(gcontainer.DataItem, IdKolumny) + "</a>";
-                        gcontainer.Controls.Add(lB1);
-                    }
-                    catch
-                    { }
-                }
-                else
-                {
-                    Label lB1 = new Label
-                    {
-                        Text = DataBinder.Eval(gcontainer.DataItem, IdKolumny).ToString()
-                    };
-                    gcontainer.Controls.Add(lB1);
-                }
-            }
-        }
-
-        protected void Suma(object sender, DevExpress.Data.CustomSummaryEventArgs e)
-        {
-            ASPxSummaryItem sumItem = (ASPxSummaryItem)e.Item;
         }
     }
 }

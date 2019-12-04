@@ -20,11 +20,13 @@
                 size: 29cm 21.7cm;
                 margin: 5mm 5mm 5mm 5mm; /* change the margins as you want them to be. */
             }
-
+            .wide {
+            width:100%;
+            }
             .horizont {
-                transform: translate(-5mm, 0) scale(1);
-                -webkit-transform: translate(-5mm, 0) scale(1);
-                -moz-transform: translate(-5mm, 0) scale(1);
+                transform: translate(-45mm, 0) scale(0.55);
+                -webkit-transform: translate(-45mm, 0) scale(0.55);
+                -moz-transform: translate(-45mm, 0) scale(0.55);
             }
         }
     </style>
@@ -77,7 +79,7 @@
                 <br />
             </div>
         </div>
-        <div id="zalatwienia" >
+        <div id="zalatwienia" class="wide">
             <br />
 
             <asp:Label ID="tabela1Label" runat="server"></asp:Label>

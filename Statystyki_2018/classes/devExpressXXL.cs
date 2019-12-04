@@ -7,8 +7,18 @@ namespace stat2018
 {
     public class devExpressXXL
     {
-       
 
+        public GridViewBandColumn podKolumna(string[] teksty, int przesunieciedanych, string idDzialu, bool isFixet, int szerokoscKolumn, string tekstGlowny)
+        {
+            GridViewBandColumn result = GetBoundColumn(tekstGlowny);
+
+            for (int i = 0; i < teksty.Length; i++)
+            {
+                result.Columns.Add(kolumnaDoTabeli(teksty[i], "d_" + (i + przesunieciedanych).ToString("D2"), idDzialu, "", isFixet, szerokoscKolumn));
+            }
+
+            return result;
+        }
         public ASPxSummaryItem komorkaSumujaca(int FieldNr)
         {
             string idPola = "d_" + FieldNr.ToString("D2");
@@ -21,6 +31,21 @@ namespace stat2018
             };
             return _komorkaSumujaca;
         }
+        public ASPxSummaryItem komorkaSumujaca(string text)
+        {
+            string idPola = "Imienazwisko";
+            ASPxSummaryItem _komorkaSumujaca = new ASPxSummaryItem()
+            {
+                FieldName = idPola,
+                ShowInColumn = idPola,
+
+
+                SummaryType = SummaryItemType.Count,
+
+                DisplayFormat = text
+            };
+            return _komorkaSumujaca;
+        }
 
         public GridViewBandColumn GetBoundColumn(string caption)
         {
@@ -30,7 +55,6 @@ namespace stat2018
 
             return _getBoundColumn;
         }
-
         public GridViewBandColumn GetBoundColumn(string caption, string style)
         {
             GridViewBandColumn _getBoundColumn = GetBoundColumn(caption);
@@ -68,6 +92,7 @@ namespace stat2018
                 DataItemTemplate = new CustomTemplate { IdKolumny = poleDanych, IdTabeli = identyfikatorWydzialu }
             };
             kolumna_.HeaderStyle.HorizontalAlign = HorizontalAlign.Center;
+            kolumna_.CellStyle.Wrap = DevExpress.Utils.DefaultBoolean.True;
             kolumna_.CellStyle.CssClass = "normal center " + styl;
             kolumna_.HeaderStyle.CssClass = styl;
             kolumna_.HeaderStyle.Wrap = DevExpress.Utils.DefaultBoolean.True;

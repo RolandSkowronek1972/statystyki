@@ -117,6 +117,86 @@ namespace stat2018
             return outputTable;
         }// end of generuj_dane_do_tabeli
 
+        public DataTable generuj_dane_do_tabeli_z_miesiacami(DateTime poczatek, DateTime koniec, string id_dzialu, int id_tabeli,  int iloscKolumn, string tenPlik)
+
+        {
+
+            //Common.log.Info(tenPlik + kod +"-> : rozpoczęcie tworzenia tabeli z danymi");
+            DataTable outputTable = tabelaZmiesiacami(iloscKolumn);
+            DataTable parameters = Common.makeParameterTable();
+
+            DataRow parametrRow = parameters.NewRow();
+            parameters.Rows.Add("@id_wydzial", id_dzialu);
+            parameters.Rows.Add("@id_tabeli", id_tabeli);
+
+            //Common.log.Info(tenPlik + kod + "-> : odczyt kwerend");
+            DataTable ddT = Common.getDataTable("SELECT id_wiersza, id_kolumny, kwerenda  FROM kwerendy  where id_wiersza>0 and id_kolumny>0 and id_wydzial=@id_wydzial and  id_tabeli=@id_tabeli", con_str, parameters, tenPlik);
+            if (ddT.Rows.Count == 0)
+            {
+                Common.log.Info(tenPlik +  "-> : odczyt kwerend: brak kwerend do doczytu danych");
+                return null;
+            }
+            string cs = cl.podajConnectionString(int.Parse(id_dzialu));
+            string kw = string.Empty;
+
+            for (int i = 1; i < 13; i++) //po wierszach
+            {
+                DataRow dR = outputTable.NewRow();
+                dR["id"] = i;
+                dR["miesiac"] = Common.podajMiesiac(i);
+                for (int j = 1; j <= iloscKolumn; j++)//po kolumnach
+                {
+                    try
+                    {
+                        string selectString = "id_wiersza=" + (i) + " and " + "id_kolumny=" + j;
+                        DataRow[] foundRows;
+                        foundRows = ddT.Select(selectString);
+                        if (foundRows.Count() != 0)
+                        {
+                            DataRow dr = foundRows[0];
+                            kw = dr[2].ToString();
+                            //wpisanie danych
+                            try
+                            {
+                                dR[j+2] = wyciagnijDaneNt(kw, poczatek, koniec, cs, tenPlik);
+                            }
+                            catch (Exception ex)
+                            {
+                                Common.log.Error(tenPlik + " Kwerenda: " + kw + " bład " +  " " + ex.Message);
+                            }
+                        }
+                    }
+                    catch (Exception ex)
+                    {
+                        Common.log.Error(tenPlik+ " bład " + ex.Message);
+                        dR[j] = "0";
+                    }//end of try
+                }
+                outputTable.Rows.Add(dR);
+            }
+            return outputTable;
+        }// end of generuj_dane_do_tabeli
+
+
+        public DataTable konwertujNaPrzecinek(DataTable tabelaWejsciowa)
+        {
+            DataTable tabelaSkonwertowana = tabelaWejsciowa.Clone ();
+            tabelaSkonwertowana.Rows.Clear();
+            foreach (DataRow wiersz  in tabelaWejsciowa .Rows )
+            {
+                DataRow nowyWiersz = tabelaSkonwertowana.NewRow();
+                for (int i = 1; i < tabelaSkonwertowana.Columns.Count; i++)
+                {
+                    string wartosc = wiersz[i - 1].ToString();
+                    wartosc = wartosc.Replace(".", ",");
+                    nowyWiersz[i - 1] = wartosc;
+                }
+                tabelaSkonwertowana.Rows.Add(nowyWiersz);
+            }
+            return tabelaSkonwertowana;
+
+        }
+
         public string generuj_dane_do_tabeli_(int id_dzialu, int id_tabeli, DateTime poczatek, DateTime koniec, string tenPlik)
         {
             Common.log.Info("Początek przetwarzania danych w pliku" + tenPlik + " identyfikator tabeli: " + id_tabeli);
@@ -299,6 +379,7 @@ namespace stat2018
                             daneSedziego[4] = Sedzia[1].ToString().Trim();                     //imie
                             daneSedziego[5] = Sedzia[2].ToString().Trim();                     //nazwisko
                             daneSedziego[6] = id_tabeli;                                //id tabeli
+                            daneSedziego[7] = Sedzia[2].ToString().Trim()+ " "+ Sedzia[1].ToString().Trim(); 
                             dTable.Rows.Add(daneSedziego);
                             i++;
                         }
@@ -814,5 +895,33 @@ namespace stat2018
             }
             return dTable;
         }
+        private DataTable tabelaZmiesiacami(int il_kolumn)
+        {
+            DataTable dTable = new DataTable();
+            dTable.Columns.Add("id", typeof(int));
+            dTable.Columns.Add("miesiac", typeof(string));
+
+            for (int i = 1; i <= il_kolumn; i++)
+            {
+                DataColumn column = new DataColumn();
+
+                column.DataType = typeof(string);
+                column.AllowDBNull = false;
+                column.ColumnName = getColumnName(i);
+                column.DefaultValue = "0";
+                dTable.Columns.Add(column);
+
+            }
+            /*for (int i = 1; i < 13; i++)
+            {
+                DataRow nowyWiersz = dTable.NewRow();
+                nowyWiersz["id"] = i;
+                nowyWiersz["miesiac"] = Common.podajMiesiac(i);
+                dTable.Rows.Add(nowyWiersz);
+            }
+            */
+            return dTable;
+        }
+
     } // end of class
 }

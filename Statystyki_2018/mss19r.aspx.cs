@@ -37,7 +37,7 @@ namespace stat2018
                     var fileContents = System.IO.File.ReadAllText(Server.MapPath(@"~//version.txt"));
                     this.Title = "Statystyki " + fileContents.ToString().Trim();
                 }
-                catch (Exception ex)
+                catch 
                 {
                     Server.Transfer("default.aspx");
                 }

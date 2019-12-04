@@ -91,8 +91,7 @@
                 <tr>
                     <td class="col_500 wciecie borderAll">I.5. Termin przeprowadzenia wizytacji</td>
                     <td class="borderAll wciecie">
-                        <dx:ASPxDateEdit ID="tab_1_w05_c01" runat="server" Theme="Moderno" OnInit="tab_1_w02_c01_dateInit">
-                        </dx:ASPxDateEdit>
+                        <asp:TextBox ID="tab_1_w05_c01" runat="server" Width="90%" BorderStyle="None" Height="60px" TextMode="MultiLine">0</asp:TextBox>
                     </td>
                 </tr>
                 <tr>
@@ -116,8 +115,7 @@
                 <tr>
                     <td class="col_500 wciecie borderAll">II.1. Termin przeprowadzenia poprzedniej wizytacji</td>
                     <td class="borderAll wciecie">
-                        <dx:ASPxDateEdit ID="tab_2_w01_c01" runat="server" Theme="Moderno" OnInit="tab_2_w01_c01_dateInit">
-                        </dx:ASPxDateEdit>
+                        <asp:TextBox ID="tab_2_w01_c01" runat="server" Rows="4" TextMode="MultiLine" Width="90%" BorderStyle="None" Height="60px"></asp:TextBox>
                     </td>
                 </tr>
                 <tr>
@@ -428,19 +426,19 @@
                     <td class="wciecie borderAll">III.5. Liczba osób wykonujących czynności na innej podstawie niż stosunek pracy, w tym stażyści z urzędów pracy ( podstawa zatrudnienia, okres wykonywania czynności)</td>
                     <td class="col_500F center borderAll">
                         <a href="javascript: openPopup('popup.aspx?sesja=1!9!1!3')">
-                            <asp:TextBox CssClass="normal" ID="tab_9_w01_c01" runat="server" Text="0" Width="90%"></asp:TextBox></a></td>
+                            <asp:TextBox CssClass="normal" ID="tab_9_w01_c01" runat="server" Text="0" Width="90%" Height="60px" TextMode="MultiLine"></asp:TextBox></a></td>
                 </tr>
                 <tr>
                     <td class="wciecie borderAll">III.6. Warunki pracy (liczba sal rozpraw itp., uwagi)</td>
                     <td class="col_500F center borderAll">
                         <a href="javascript: openPopup('popup.aspx?sesja=2!9!1!3')">
-                            <asp:TextBox CssClass="normal" ID="tab_9_w02_c01" runat="server" Text="0" Width="90%"></asp:TextBox></a></td>
+                            <asp:TextBox CssClass="normal" ID="tab_9_w02_c01" runat="server" Text="0" Width="90%" Height="60px" TextMode="MultiLine"></asp:TextBox></a></td>
                 </tr>
                 <tr>
                     <td class="wciecie borderAll">III.7. Wnioski</td>
                     <td class="col_500F center borderAll">
                         <a href="javascript: openPopup('popup.aspx?sesja=3!9!1!3')">
-                            <asp:TextBox CssClass="normal" ID="tab_9_w03_c01" runat="server" Text="0" Width="90%"></asp:TextBox></a></td>
+                            <asp:TextBox CssClass="normal" ID="tab_9_w03_c01" runat="server" Text="0" Width="90%" Height="60px" TextMode="MultiLine"></asp:TextBox></a></td>
                 </tr>
             </table>
             <br />

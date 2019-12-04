@@ -26,7 +26,7 @@ namespace stat2018
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            string idWydzial = "10";//  Request.QueryString["w"];
+            string idWydzial =   Request.QueryString["w"];
             try
             {
                 if (idWydzial == null)
@@ -34,7 +34,7 @@ namespace stat2018
                     return;
                 }
                 Session["id_dzialu"] = idWydzial;
-                bool dost = true;// cm.dostep(idWydzial, (string)Session["identyfikatorUzytkownika"]);
+                bool dost = cm.dostep(idWydzial, (string)Session["identyfikatorUzytkownika"]);
                 if (!dost)
                 {
                     Server.Transfer("default.aspx?info='Użytkownik " + (string)Session["identyfikatorUzytkownika"] + " nie praw do działu nr " + idWydzial + "'");
@@ -2317,12 +2317,12 @@ namespace stat2018
 
         protected void tab_1_w02_c01_dateInit(object sender, EventArgs e)
         {
-            tab_1_w05_c01.Value = DateTime.Now;
+          //  tab_1_w05_c01.Value = DateTime.Now;
         }
 
         protected void tab_2_w01_c01_dateInit(object sender, EventArgs e)
         {
-            tab_2_w01_c01.Value = DateTime.Now;
+           // tab_2_w01_c01.Value = DateTime.Now;
         }
 
         protected void tworztabelkeHTMLTabela3(string idKontrolki, int idWydzialu, int idtabeli, DataTable dane)
@@ -2363,15 +2363,15 @@ namespace stat2018
             foreach (DataRow wierszZtabeli in dane.Rows)
             {
                 builder.AppendLine("<tr>");
-                builder.Append(tb.komorkaHTML(licznik.ToString(), 0, 3, "borderAll center col_36"));
-                builder.Append(tb.komorkaHTML(wierszZtabeli["imie"].ToString() + " " + wierszZtabeli["nazwisko"].ToString(), 0, 3, "borderAll center col_100"));
+                builder.Append(tb.komorkaHTML(licznik.ToString(), 0, 0, "borderAll center col_36"));
+                builder.Append(tb.komorkaHTML(wierszZtabeli["imie"].ToString() + " " + wierszZtabeli["nazwisko"].ToString(), 0, 0, "borderAll center col_100"));
 
                 for (int i = 1; i < 12; i++)
                 {
                     string txt = "<a Class=\"normal\" href=\"javascript: openPopup('popup.aspx?sesja=" + wierszZtabeli["id_sedziego"].ToString() + "!" + idtabeli + "!" + i.ToString() + "!2')\">" + wierszZtabeli["D_" + i.ToString("D2")].ToString() + " </a>";
                     builder.AppendLine(tb.komorkaHTML(txt, 0, 0, "borderAll center col_50"));
                 }
-                builder.AppendLine("</tr>");
+                builder.AppendLine("</tr>");/*
                 builder.AppendLine("<tr>");
                 for (int i = 12; i < 23; i++)
                 {
@@ -2386,8 +2386,9 @@ namespace stat2018
                     builder.AppendLine(tb.komorkaHTML(txt, 0, 0, "borderAll center col_50"));
                 }
 
+               
+                builder.AppendLine("</tr>");*/
                 licznik++;
-                builder.AppendLine("</tr>");
             }
             builder.Append("</table>");
 
@@ -2429,8 +2430,8 @@ namespace stat2018
             foreach (DataRow wierszZtabeli in dane.Rows)
             {
                 builder.AppendLine("<tr>");
-                builder.Append(tb.komorkaHTML(licznik.ToString(), 0, 3, "borderAll center col_36"));
-                builder.Append(tb.komorkaHTML(wierszZtabeli["imie"].ToString() + " " + wierszZtabeli["nazwisko"].ToString(), 0, 3, "borderAll center col_100"));
+                builder.Append(tb.komorkaHTML(licznik.ToString(), 0, 0, "borderAll center col_36"));
+                builder.Append(tb.komorkaHTML(wierszZtabeli["imie"].ToString() + " " + wierszZtabeli["nazwisko"].ToString(), 0, 0, "borderAll center col_100"));
 
                 for (int i = 1; i < 6; i++)
                 {
@@ -2438,6 +2439,7 @@ namespace stat2018
                     builder.AppendLine(tb.komorkaHTML(txt, 0, 0, "borderAll center col_50"));
                 }
                 builder.AppendLine("</tr>");
+                /*
                 builder.AppendLine("<tr>");
                 for (int i = 6; i < 11; i++)
                 {
@@ -2452,8 +2454,9 @@ namespace stat2018
                     builder.AppendLine(tb.komorkaHTML(txt, 0, 0, "borderAll center col_50"));
                 }
 
+               
+                builder.AppendLine("</tr>");*/
                 licznik++;
-                builder.AppendLine("</tr>");
             }
             builder.Append("</table>");
 
@@ -2498,10 +2501,10 @@ namespace stat2018
             foreach (DataRow wierszZtabeli in dane.Rows)
             {
                 builder.AppendLine("<tr>");
-                builder.Append(tb.komorkaHTML(licznik.ToString(), 0, 4, "borderAll center col_36"));
-                builder.Append(tb.komorkaHTML(wierszZtabeli["imie"].ToString() + " " + wierszZtabeli["nazwisko"].ToString(), 0, 4, "borderAll center col_100"));
+                builder.Append(tb.komorkaHTML(licznik.ToString(), 0, 0, "borderAll center col_36"));
+                builder.Append(tb.komorkaHTML(wierszZtabeli["imie"].ToString() + " " + wierszZtabeli["nazwisko"].ToString(), 0, 0, "borderAll center col_100"));
 
-                builder.Append(tworzSekcje(1, 12, 36, wierszZtabeli, idtabeli.ToString()));
+                builder.Append(tworzSekcje(1, 12, 13, wierszZtabeli, idtabeli.ToString()));
                 licznik++;
                 builder.AppendLine("</tr>");
             }
@@ -2539,10 +2542,10 @@ namespace stat2018
             foreach (DataRow wierszZtabeli in dane.Rows)
             {
                 builder.AppendLine("<tr>");
-                builder.Append(tb.komorkaHTML(licznik.ToString(), 0, 4, "borderAll center col_36"));
-                builder.Append(tb.komorkaHTML(wierszZtabeli["imie"].ToString() + " " + wierszZtabeli["nazwisko"].ToString(), 0, 4, "borderAll center col_100"));
+                builder.Append(tb.komorkaHTML(licznik.ToString(), 0, 1, "borderAll center col_36"));
+                builder.Append(tb.komorkaHTML(wierszZtabeli["imie"].ToString() + " " + wierszZtabeli["nazwisko"].ToString(), 0, 1, "borderAll center col_100"));
 
-                builder.Append(tworzSekcje(1, 7, 21, wierszZtabeli, idtabeli.ToString()));
+                builder.Append(tworzPodSekcje(1, 7,  wierszZtabeli, idtabeli.ToString()));
                 licznik++;
                 builder.AppendLine("</tr>");
             }
@@ -2581,7 +2584,7 @@ namespace stat2018
                 builder.Append(tb.komorkaHTML(licznik.ToString(), 0, 4, "borderAll center col_36"));
                 builder.Append(tb.komorkaHTML(wierszZtabeli["imie"].ToString() + " " + wierszZtabeli["nazwisko"].ToString(), 0, 4, "borderAll center col_100"));
 
-                builder.Append(tworzSekcje(1, 5, 15, wierszZtabeli, idtabeli.ToString()));
+                builder.Append(tworzPodSekcje(1, 5,  wierszZtabeli, idtabeli.ToString()));
                 licznik++;
                 builder.AppendLine("</tr>");
             }
@@ -2640,7 +2643,7 @@ namespace stat2018
                 builder.Append(tb.komorkaHTML(wierszZtabeli["d_01"].ToString(), 0, 3, "borderAll center col_100"));
                 builder.Append(tb.komorkaHTML(wierszZtabeli["d_02"].ToString(), 0, 3, "borderAll center col_100"));
 
-                builder.Append(tworzSekcje(3, 17, 36, wierszZtabeli, idtabeli.ToString()));
+                builder.Append(tworzPodSekcje(3, 17,  wierszZtabeli, idtabeli.ToString()));
                 licznik++;
                 builder.AppendLine("</tr>");
             }
@@ -2698,7 +2701,7 @@ namespace stat2018
                 builder.Append(tb.komorkaHTML(wierszZtabeli["d_01"].ToString(), 0, 3, "borderAll center col_100"));
                 builder.Append(tb.komorkaHTML(wierszZtabeli["d_02"].ToString(), 0, 3, "borderAll center col_100"));
 
-                builder.Append(tworzSekcje(3, 17, 36, wierszZtabeli, idtabeli.ToString()));
+                builder.Append(tworzPodSekcje(3, 17,  wierszZtabeli, idtabeli.ToString()));
                 licznik++;
                 builder.AppendLine("</tr>");
             }
