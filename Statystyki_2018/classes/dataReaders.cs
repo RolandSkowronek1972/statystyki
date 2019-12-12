@@ -180,6 +180,10 @@ namespace stat2018
 
         public DataTable konwertujNaPrzecinek(DataTable tabelaWejsciowa)
         {
+            if (tabelaWejsciowa==null)
+            {
+                return null;
+            }
             DataTable tabelaSkonwertowana = tabelaWejsciowa.Clone ();
             tabelaSkonwertowana.Rows.Clear();
             foreach (DataRow wiersz  in tabelaWejsciowa .Rows )
@@ -884,12 +888,13 @@ namespace stat2018
 
             for (int i = 1; i <= il_kolumn; i++)
             {
-                DataColumn column = new DataColumn();
-
-                column.DataType = typeof(string);
-                column.AllowDBNull = false;
-                column.ColumnName = getColumnName(i);
-                column.DefaultValue = "0";
+                DataColumn column = new DataColumn
+                {
+                    DataType = typeof(string),
+                    AllowDBNull = false,
+                    ColumnName = getColumnName(i),
+                    DefaultValue = "0"
+                };
                 dTable.Columns.Add(column);
 
             }

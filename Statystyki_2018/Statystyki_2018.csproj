@@ -130,8 +130,11 @@
     <Content Include="akrp.aspx" />
     <Content Include="akrk.aspx" />
     <Content Include="aopc2N.aspx" />
+    <Content Include="oopcN.aspx" />
     <Content Include="aoppN.aspx" />
-    <Content Include="ooprN.aspx" />
+    <Content Include="oopp.aspx" />
+    <Content Include="oopg.aspx" />
+    <Content Include="aoppNold.aspx" />
     <Content Include="aopcN.aspx" />
     <Content Include="aopc.aspx" />
     <Content Include="aopk.aspx" />
@@ -235,7 +238,7 @@
     <Content Include="onsu.aspx" />
     <Content Include="oopc.aspx" />
     <Content Include="oopk.aspx" />
-    <Content Include="oopp.aspx" />
+    <Content Include="oopp_stary.aspx" />
     <Content Include="oopr.aspx" />
     <Content Include="oopu.aspx" />
     <Content Include="otrc.aspx" />
@@ -355,6 +358,7 @@
     <Content Include="Template\aktk.xlsx" />
     <Content Include="Template\aktk2.xlsx" />
     <Content Include="Template\aktpe.xlsx" />
+    <Content Include="Template\oopg.xlsx" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -441,6 +445,13 @@
     <Compile Include="aopc2N.aspx.designer.cs">
       <DependentUpon>aopc2N.aspx</DependentUpon>
     </Compile>
+    <Compile Include="oopcN.aspx.cs">
+      <DependentUpon>oopcN.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="oopcN.aspx.designer.cs">
+      <DependentUpon>oopcN.aspx</DependentUpon>
+    </Compile>
     <Compile Include="aoppN.aspx.cs">
       <DependentUpon>aoppN.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -448,15 +459,29 @@
     <Compile Include="aoppN.aspx.designer.cs">
       <DependentUpon>aoppN.aspx</DependentUpon>
     </Compile>
-    <Compile Include="classes\CustomTemplate.cs" />
-    <Compile Include="classes\devExpressXXL.cs" />
-    <Compile Include="ooprN.aspx.cs">
-      <DependentUpon>ooprN.aspx</DependentUpon>
+    <Compile Include="oopp.aspx.cs">
+      <DependentUpon>oopp.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="ooprN.aspx.designer.cs">
-      <DependentUpon>ooprN.aspx</DependentUpon>
+    <Compile Include="oopp.aspx.designer.cs">
+      <DependentUpon>oopp.aspx</DependentUpon>
     </Compile>
+    <Compile Include="oopg.aspx.cs">
+      <DependentUpon>oopg.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="oopg.aspx.designer.cs">
+      <DependentUpon>oopg.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="aoppNold.aspx.cs">
+      <DependentUpon>aoppNold.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="aoppNold.aspx.designer.cs">
+      <DependentUpon>aoppNold.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="classes\CustomTemplate.cs" />
+    <Compile Include="classes\devExpressXXL.cs" />
     <Compile Include="aopcN.aspx.cs">
       <DependentUpon>aopcN.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -1022,12 +1047,12 @@
     <Compile Include="oopk.aspx.designer.cs">
       <DependentUpon>oopk.aspx</DependentUpon>
     </Compile>
-    <Compile Include="oopp.aspx.cs">
-      <DependentUpon>oopp.aspx</DependentUpon>
+    <Compile Include="oopp_stary.aspx.cs">
+      <DependentUpon>oopp_stary.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="oopp.aspx.designer.cs">
-      <DependentUpon>oopp.aspx</DependentUpon>
+    <Compile Include="oopp_stary.aspx.designer.cs">
+      <DependentUpon>oopp_stary.aspx</DependentUpon>
     </Compile>
     <Compile Include="oopr.aspx.cs">
       <DependentUpon>oopr.aspx</DependentUpon>

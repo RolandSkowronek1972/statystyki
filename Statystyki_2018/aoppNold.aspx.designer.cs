@@ -10,7 +10,7 @@
 namespace stat2018 {
     
     
-    public partial class oopp {
+    public partial class aoppNold {
         
         /// <summary>
         /// Label4 control.

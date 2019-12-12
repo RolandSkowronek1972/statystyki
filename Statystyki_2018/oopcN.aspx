@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" UICulture="pl" Culture="pl-PL" MasterPageFile="~/Site1.Master" AutoEventWireup="true" CodeBehind="ooprN.aspx.cs" Inherits="stat2018.ooprN" %>
+﻿<%@ Page Title="" Language="C#" UICulture="pl" Culture="pl-PL" MasterPageFile="~/Site1.Master" AutoEventWireup="true" CodeBehind="oopcN.aspx.cs" Inherits="stat2018.oopcN" %>
 
 <%@ Register assembly="DevExpress.Web.v17.1, Version=17.1.15.0,  Culture=neutral,  PublicKeyToken=b88d1754d700e49a" namespace="DevExpress.Web" tagprefix="dx" %>
 
@@ -21,7 +21,7 @@
                  
                  size: 29cm 21.7cm;
                   margin: 0mm 0mm 0mm 0mm;
-               
+                
               }
 
               div {
@@ -33,8 +33,8 @@
           }
               </style>
       <script src="Scripts/rls.js"></script>
-  
-     
+<asp:ScriptManager ID="ScriptManager1" runat="server">
+                            </asp:ScriptManager>     
      <div id="menu" class="manu_back noprint" style="height:40px;" > 
                   
    <table >
@@ -59,7 +59,7 @@
             </td>
             <td style="width:auto;padding-left:5px;">
                   <td style="width:auto;padding-left:5px;">
-                  <input id="Button1" class="ax_box" style="border-style: none; padding: 0px" type="button" onclick="JavaScript: window.print();" value="Drukuj" /></td>
+                      &nbsp;</td>
             </td>
            
             <td style="width:auto;padding-left:5px;">
@@ -76,20 +76,32 @@
          </div> 
   
            <br />
+            <asp:UpdatePanel ID="UpdatePanel1" runat="server">
+                <ContentTemplate>
+                    <asp:Timer ID="Timer1" runat="server" OnTick="TimerTick" Interval="2000">
+                    </asp:Timer>
                <div >
-&nbsp;<asp:Label ID="Label1" runat="server" Text="Uzasadnienia"></asp:Label>
+&nbsp;<asp:Label ID="Label1" runat="server" Text="Ruch spraw w referatach sędziów"></asp:Label>
            &nbsp;&nbsp;&nbsp;
            <asp:Label ID="infoLabel1" runat="server" Text="tabela  1" Visible="False"></asp:Label>
            <br />
-  
-                   <dx:ASPxGridView ID="ASPxGridView1" runat="server" AutoGenerateColumns="False" OnCustomSummaryCalculate="Suma" Theme="MetropolisBlue">
+        
+                   <br />
+    <dx:ASPxGridView ID="ASPxGridView1" runat="server" AutoGenerateColumns="False" OnCustomSummaryCalculate="Suma" Theme="MetropolisBlue" EnableCallbackAnimation="True">
                         <SettingsPager PageSize="10100">
                         </SettingsPager>
-                        <Settings HorizontalScrollBarMode="Visible" />
+                        <Settings HorizontalScrollBarMode="Visible" UseFixedTableLayout="True" ShowFooter="True" />
+      
+                        <SettingsResizing ColumnResizeMode="NextColumn" />
       
                         <SettingsDataSecurity AllowDelete="False" AllowEdit="False" AllowInsert="False" />
      
-				<Settings ShowFooter="True" />
+                        <TotalSummary>
+                            <dx:ASPxSummaryItem  DisplayFormat="Ogółem" Visible="true" ShowInColumn="1"  />
+                        </TotalSummary>
+     <GroupSummary>  
+    <dx:ASPxSummaryItem FieldName="MyField" SummaryType="Sum" DisplayFormat="{0}" />  
+</GroupSummary>
                         <Styles>
                             <Footer CssClass="borderAll  gray" HorizontalAlign="Center">
                             </Footer>
@@ -98,11 +110,46 @@
             </AlternatingRow>
         </Styles>
                    </dx:ASPxGridView>
+               </div>
+                         <asp:Image ID="imgLoader" runat="server" ImageUrl="~/img/ajax-loader.gif" />
+                </ContentTemplate>
+            </asp:UpdatePanel>
+           <br />
+               <asp:Panel ID="Panel1" runat="server" Width="100%">
+                   </asp:Panel>
+           <div class="page-break">
+&nbsp;<asp:Label ID="Label7" runat="server" Text="Wyznaczenia i załatwienia w referatach sędziów"></asp:Label>
+           &nbsp;&nbsp;&nbsp;
+           <asp:Label ID="infoLabel2" runat="server" Text="tabela 2" Visible="False"></asp:Label>
+               <br />
+        
+    <dx:ASPxGridView ID="ASPxGridView2" runat="server" AutoGenerateColumns="False" Theme="MetropolisBlue">
+                        <SettingsPager PageSize="10100">
+                        </SettingsPager>
+                        <Settings HorizontalScrollBarMode="Visible" UseFixedTableLayout="True" ShowFooter="True" />
+      
+                        <SettingsResizing ColumnResizeMode="NextColumn" />
+      
+                        <SettingsDataSecurity AllowDelete="False" AllowEdit="False" AllowInsert="False" />
+     
+                        <Styles>
+                            <Footer CssClass="borderAll  gray" HorizontalAlign="Center">
+                            </Footer>
+                        
+            <AlternatingRow BackColor="#DCDCDC">
+            </AlternatingRow>
+        </Styles>
+                   </dx:ASPxGridView>
+           <br />
+        
+
+
+
 
                    <br />
-    
+        
+
                </div>
-           <br />
          
              <div id="debag" >
           <br />

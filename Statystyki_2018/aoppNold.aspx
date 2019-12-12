@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" UICulture="pl" Culture="pl-PL" MasterPageFile="~/Site1.Master" AutoEventWireup="true" CodeBehind="oopp.aspx.cs" Inherits="stat2018.oopp" %>
+﻿<%@ Page Title="" Language="C#" UICulture="pl" Culture="pl-PL" MasterPageFile="~/Site1.Master" AutoEventWireup="true" CodeBehind="aoppNold.aspx.cs" Inherits="stat2018.aoppNold" %>
 
 <%@ Register assembly="DevExpress.Web.v17.1, Version=17.1.15.0,  Culture=neutral,  PublicKeyToken=b88d1754d700e49a" namespace="DevExpress.Web" tagprefix="dx" %>
 
@@ -106,11 +106,10 @@
             </AlternatingRow>
         </Styles>
                    </dx:ASPxGridView>
-                    <asp:Panel ID="Panel1" runat="server" Width="100%">
-                   </asp:Panel>
                </div>
            <br />
-              
+               <asp:Panel ID="Panel1" runat="server" Width="100%">
+                   </asp:Panel>
            <div class="page-break">
 &nbsp;<asp:Label ID="Label7" runat="server" Text="Wyznaczenia i załatwienia w referatach sędziów"></asp:Label>
            &nbsp;&nbsp;&nbsp;
