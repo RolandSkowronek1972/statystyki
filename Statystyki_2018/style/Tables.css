@@ -548,6 +548,7 @@ margin-right:5px;
 }
 
 .col_81 {
+    width: 81px;
     text-align: center;
 }
 
@@ -768,6 +769,10 @@ margin-right:5px;
     text-align: center;
 }
 
+.col_400 {
+    width: 400px;
+    
+}
 .col_492 {
     width: 492px;
     text-align: center;

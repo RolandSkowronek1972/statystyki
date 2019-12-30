@@ -24,9 +24,10 @@
             width:100%;
             }
             .horizont {
-                transform: translate(-45mm, 0) scale(0.55);
-                -webkit-transform: translate(-45mm, 0) scale(0.55);
-                -moz-transform: translate(-45mm, 0) scale(0.55);
+      
+                    transform: translate(0mm, 80mm) scale(0.65) rotate(90deg);
+            -webkit-transform: translate(0mm, 80mm) scale(0.65) rotate(90deg);
+            -moz-transform: translate(0mm, 80mm) scale(0.65) rotate(90deg);
             }
         }
     </style>
@@ -699,7 +700,7 @@
         </asp:SqlDataSource>
     </div>
     <br />
-    <div style="width: 1150px; margin: 0 auto 0 auto; position: relative; top: 60px;">
+    <div style="width: 1150px; margin: 0 auto 0 auto; position: relative; top: 60px;" class="page-break">
         <div id="debag">
             <br />
             <br />

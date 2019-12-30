@@ -1324,7 +1324,7 @@
         </Styles>
     </dx:ASPxGridView>
 
-    <asp:SqlDataSource ID="uprawniewnia" runat="server" ConnectionString="<%$ ConnectionStrings:wap %>" SelectCommand="SELECT ident, nazwa, CASE WHEN (SELECT COUNT(*) AS uprawnienia FROM uprawnienia WHERE rodzaj = 1 and (id_uzytkownika = @uzytkownika) AND (id_wydzialu = wydzialy.ident)) >= 1 THEN 1 ELSE 0 END AS uprawnienia FROM wydzialy order by nazwa" UpdateCommand="UPDATE wydzialy SET ident = 0 WHERE (ident IS NULL) ">
+    <asp:SqlDataSource ID="uprawniewnia" runat="server" ConnectionString="<%$ ConnectionStrings:wap %>" SelectCommand="SELECT ident, nazwa, CASE WHEN (SELECT COUNT(*) AS uprawnienia FROM uprawnienia WHERE rodzaj = 1 and (id_uzytkownika = @uzytkownika) AND (id_wydzialu = wydzialy.ident)) >= 1 THEN 1 ELSE 0 END AS uprawnienia FROM wydzialy order by nazwa" UpdateCommand="UPDATE wydzialy SET nazwa= ''  WHERE (nazwa IS NULL) ">
         <SelectParameters>
             <asp:SessionParameter Name="uzytkownika" SessionField="identyfikatorUzytkownika" />
         </SelectParameters>
@@ -1373,7 +1373,7 @@
         </Styles>
     </dx:ASPxGridView>
 
-    <asp:SqlDataSource ID="uprawniewniaKontrolki" runat="server" ConnectionString="<%$ ConnectionStrings:wap %>" SelectCommand="SELECT ident, opis AS nazwa, CASE WHEN                    (SELECT COUNT(*) AS uprawnienia                     FROM   uprawnienia                     WHERE rodzaj = 3 AND (id_uzytkownika = @uzytkownika) AND (id_wydzialu = konfig.ident)) >= 1 THEN 1 ELSE 0 END AS uprawnienia  FROM  konfig WHERE (klucz = 'kontrolka') order by nazwa" UpdateCommand="UPDATE wydzialy SET ident = 0 WHERE ident IS NULL ">
+    <asp:SqlDataSource ID="uprawniewniaKontrolki" runat="server" ConnectionString="<%$ ConnectionStrings:wap %>" SelectCommand="SELECT ident, opis AS nazwa, CASE WHEN                    (SELECT COUNT(*) AS uprawnienia                     FROM   uprawnienia                     WHERE rodzaj = 3 AND (id_uzytkownika = @uzytkownika) AND (id_wydzialu = konfig.ident)) >= 1 THEN 1 ELSE 0 END AS uprawnienia  FROM  konfig WHERE (klucz = 'kontrolka') order by nazwa" UpdateCommand="UPDATE wydzialy SET nazwa= ''  WHERE (nazwa IS NULL) ">
         <SelectParameters>
             <asp:SessionParameter Name="uzytkownika" SessionField="identyfikatorUzytkownika" />
         </SelectParameters>
@@ -1422,7 +1422,7 @@
         </Styles>
     </dx:ASPxGridView>
 
-    <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:wap %>" SelectCommand="SELECT ident, nazwa, CASE WHEN (SELECT COUNT(*) AS uprawnienia FROM uprawnienia WHERE (id_uzytkownika = @uzytkownika) AND  rodzaj=2 and (id_wydzialu = wydzialy_mss.ident)) >= 1 THEN 1 ELSE 0 END AS uprawnienia FROM wydzialy_mss order by nazwa" UpdateCommand="UPDATE wydzialy SET ident = 0 WHERE (ident IS NULL)">
+    <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:wap %>" SelectCommand="SELECT ident, nazwa, CASE WHEN (SELECT COUNT(*) AS uprawnienia FROM uprawnienia WHERE (id_uzytkownika = @uzytkownika) AND  rodzaj=2 and (id_wydzialu = wydzialy_mss.ident)) >= 1 THEN 1 ELSE 0 END AS uprawnienia FROM wydzialy_mss order by nazwa" UpdateCommand="UPDATE wydzialy SET nazwa= ''  WHERE (nazwa IS NULL) ">
         <SelectParameters>
             <asp:SessionParameter Name="uzytkownika" SessionField="identyfikatorUzytkownika" />
         </SelectParameters>
@@ -1475,7 +1475,7 @@
                     WHERE rodzaj = 4 AND (id_uzytkownika = @uzytkownika) AND (id_wydzialu = konfig.ident)) &gt;= 1 THEN 1 ELSE 0 END AS uprawnienia
 FROM  konfig
 WHERE (klucz = 'kof') order by nazwa"
-        UpdateCommand="UPDATE wydzialy SET ident = 0 WHERE (ident IS NULL) ">
+        UpdateCommand="UPDATE wydzialy SET nazwa= ''  WHERE (nazwa IS NULL) ">
         <SelectParameters>
             <asp:SessionParameter Name="uzytkownika" SessionField="identyfikatorUzytkownika" />
         </SelectParameters>
@@ -1530,7 +1530,7 @@ WHERE (klucz = 'kof') order by nazwa"
                     WHERE rodzaj = 5 AND (id_uzytkownika = @uzytkownika) AND (id_wydzialu = konfig.ident)) &gt;= 1 THEN 1 ELSE 0 END AS uprawnienia
 FROM  konfig
 WHERE (klucz = 'wyszukiwarka') order by nazwa"
-        UpdateCommand="UPDATE wydzialy SET ident = 0 WHERE (ident IS NULL) ">
+        UpdateCommand="UPDATE wydzialy SET nazwa= ''  WHERE (nazwa IS NULL) ">
         <SelectParameters>
             <asp:SessionParameter Name="uzytkownika" SessionField="identyfikatorUzytkownika" />
         </SelectParameters>
@@ -1579,7 +1579,7 @@ WHERE (klucz = 'wyszukiwarka') order by nazwa"
 
     <asp:SqlDataSource ID="uprawniewniaPracownik" runat="server" ConnectionString="<%$ ConnectionStrings:wap %>" SelectCommand="SELECT ident, opis AS nazwa, CASE WHEN
                    (SELECT COUNT(*) AS uprawnienia FROM   uprawnienia WHERE rodzaj = 6 AND (id_uzytkownika = @uzytkownika) AND (id_wydzialu = konfig.ident)) &gt;= 1 THEN 1 ELSE 0 END AS uprawnienia FROM  konfig WHERE (klucz = 'pracownik') order by nazwa"
-        UpdateCommand="UPDATE wydzialy SET ident = 0 WHERE (ident IS NULL) ">
+        UpdateCommand="UPDATE wydzialy SET nazwa= ''  WHERE (nazwa IS NULL) ">
         <SelectParameters>
             <asp:SessionParameter Name="uzytkownika" SessionField="identyfikatorUzytkownika" />
         </SelectParameters>

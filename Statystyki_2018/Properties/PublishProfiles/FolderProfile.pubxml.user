@@ -76,37 +76,58 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>07/09/2019 14:52:36</publishTime>
     </File>
     <File Include="aopc.aspx">
-      <publishTime>05/09/2019 20:54:01</publishTime>
+      <publishTime>12/20/2019 08:42:02</publishTime>
     </File>
     <File Include="aopc2.aspx">
-      <publishTime>05/09/2019 22:54:34</publishTime>
+      <publishTime>12/20/2019 08:41:58</publishTime>
     </File>
     <File Include="aopc2N.aspx">
-      <publishTime>04/12/2019 18:01:49</publishTime>
+      <publishTime>12/19/2019 09:01:05</publishTime>
+    </File>
+    <File Include="aopc2stary.aspx">
+      <publishTime>01/01/0001 00:00:00</publishTime>
     </File>
     <File Include="aopcN.aspx">
-      <publishTime>01/12/2019 15:33:39</publishTime>
+      <publishTime>12/18/2019 22:10:08</publishTime>
+    </File>
+    <File Include="aopcStary.aspx">
+      <publishTime>12/20/2019 08:42:03</publishTime>
     </File>
     <File Include="aopg.aspx">
-      <publishTime>10/12/2019 20:25:30</publishTime>
+      <publishTime>12/18/2019 21:55:43</publishTime>
+    </File>
+    <File Include="aopgStary.aspx">
+      <publishTime>12/17/2019 12:47:50</publishTime>
     </File>
     <File Include="aopk.aspx">
-      <publishTime>05/09/2019 22:54:34</publishTime>
+      <publishTime>12/18/2019 21:46:30</publishTime>
     </File>
     <File Include="aopk2.aspx">
-      <publishTime>05/09/2019 22:54:34</publishTime>
+      <publishTime>01/01/0001 00:00:00</publishTime>
+    </File>
+    <File Include="aopk2Stary.aspx">
+      <publishTime>12/19/2019 14:05:40</publishTime>
+    </File>
+    <File Include="aopkStary.aspx">
+      <publishTime>12/18/2019 21:42:50</publishTime>
     </File>
     <File Include="aopp.aspx">
-      <publishTime>05/09/2019 23:02:21</publishTime>
+      <publishTime>12/19/2019 18:50:38</publishTime>
     </File>
     <File Include="aoppe.aspx">
-      <publishTime>05/09/2019 22:57:43</publishTime>
+      <publishTime>12/19/2019 12:42:37</publishTime>
+    </File>
+    <File Include="aoppeStary.aspx">
+      <publishTime>12/17/2019 21:02:10</publishTime>
     </File>
     <File Include="aoppN.aspx">
-      <publishTime>12/12/2019 21:20:45</publishTime>
+      <publishTime>12/19/2019 12:36:00</publishTime>
     </File>
     <File Include="aoppNold.aspx">
       <publishTime>12/12/2019 21:07:48</publishTime>
+    </File>
+    <File Include="aoppStary.aspx">
+      <publishTime>12/19/2019 18:50:39</publishTime>
     </File>
     <File Include="bin/AjaxControlToolkit.dll">
       <publishTime>08/13/2014 06:30:48</publishTime>
@@ -604,10 +625,10 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>01/08/2019 12:40:59</publishTime>
     </File>
     <File Include="bin/stat2018.dll">
-      <publishTime>12/12/2019 22:33:24</publishTime>
+      <publishTime>12/30/2019 21:21:26</publishTime>
     </File>
     <File Include="bin/stat2018.pdb">
-      <publishTime>12/12/2019 22:33:24</publishTime>
+      <publishTime>12/30/2019 21:21:26</publishTime>
     </File>
     <File Include="default.aspx">
       <publishTime>09/11/2019 22:23:06</publishTime>
@@ -700,10 +721,13 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>04/12/2019 07:51:16</publishTime>
     </File>
     <File Include="libman.json">
-      <publishTime>04/10/2019 12:22:21</publishTime>
+      <publishTime>12/20/2019 17:44:09</publishTime>
     </File>
     <File Include="log4net.config">
       <publishTime>12/12/2018 21:05:26</publishTime>
+    </File>
+    <File Include="mss10e.aspx">
+      <publishTime>12/27/2019 18:20:13</publishTime>
     </File>
     <File Include="mss10r.aspx">
       <publishTime>07/09/2019 14:52:36</publishTime>
@@ -808,7 +832,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>06/10/2019 09:53:39</publishTime>
     </File>
     <File Include="okrr.aspx">
-      <publishTime>10/13/2019 16:45:50</publishTime>
+      <publishTime>12/20/2019 12:36:25</publishTime>
     </File>
     <File Include="okrrold.aspx">
       <publishTime>03/10/2019 15:47:06</publishTime>
@@ -829,13 +853,16 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>07/09/2019 14:52:40</publishTime>
     </File>
     <File Include="oktkr.aspx">
-      <publishTime>11/24/2019 11:03:37</publishTime>
+      <publishTime>12/20/2019 15:15:10</publishTime>
     </File>
     <File Include="oktp.aspx">
       <publishTime>07/09/2019 14:52:40</publishTime>
     </File>
     <File Include="oktr.aspx">
       <publishTime>07/09/2019 14:52:40</publishTime>
+    </File>
+    <File Include="onsa.aspx">
+      <publishTime>12/30/2019 19:36:11</publishTime>
     </File>
     <File Include="onsc.aspx">
       <publishTime>07/09/2019 14:52:40</publishTime>
@@ -856,34 +883,46 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>07/09/2019 14:52:40</publishTime>
     </File>
     <File Include="oopc.aspx">
-      <publishTime>07/09/2019 12:44:19</publishTime>
+      <publishTime>12/19/2019 18:56:51</publishTime>
     </File>
     <File Include="oopcN.aspx">
-      <publishTime>09/12/2019 18:26:20</publishTime>
+      <publishTime>12/19/2019 12:50:27</publishTime>
+    </File>
+    <File Include="oopcStary.aspx">
+      <publishTime>12/19/2019 18:56:52</publishTime>
     </File>
     <File Include="oopg.aspx">
-      <publishTime>12/11/2019 20:56:30</publishTime>
+      <publishTime>12/30/2019 21:13:48</publishTime>
     </File>
     <File Include="oopgN.aspx">
       <publishTime>12/05/2019 06:17:56</publishTime>
     </File>
     <File Include="oopk.aspx">
-      <publishTime>08/29/2019 08:31:51</publishTime>
+      <publishTime>12/19/2019 09:12:39</publishTime>
+    </File>
+    <File Include="oopk_stary.aspx">
+      <publishTime>12/15/2019 13:02:35</publishTime>
     </File>
     <File Include="oopp.aspx">
-      <publishTime>11/12/2019 17:10:08</publishTime>
+      <publishTime>12/19/2019 12:58:55</publishTime>
     </File>
     <File Include="oopp_stary.aspx">
       <publishTime>11/12/2019 09:11:59</publishTime>
     </File>
     <File Include="oopr.aspx">
-      <publishTime>10/30/2019 21:16:59</publishTime>
+      <publishTime>12/19/2019 22:40:02</publishTime>
     </File>
     <File Include="ooprN.aspx">
       <publishTime>10/25/2019 18:49:55</publishTime>
     </File>
+    <File Include="ooprStart.aspx">
+      <publishTime>12/19/2019 22:40:01</publishTime>
+    </File>
     <File Include="oopu.aspx">
-      <publishTime>06/30/2019 16:49:51</publishTime>
+      <publishTime>12/20/2019 10:39:16</publishTime>
+    </File>
+    <File Include="oopuStary.aspx">
+      <publishTime>12/20/2019 10:39:17</publishTime>
     </File>
     <File Include="otrc.aspx">
       <publishTime>07/09/2019 20:24:39</publishTime>
@@ -914,6 +953,9 @@ by editing this MSBuild file. In order to learn more about this please visit htt
     </File>
     <File Include="popup.aspx">
       <publishTime>11/16/2018 01:03:41</publishTime>
+    </File>
+    <File Include="Properties/AssemblyInfo.cs">
+      <publishTime>12/20/2019 17:42:43</publishTime>
     </File>
     <File Include="redirector.aspx">
       <publishTime>02/12/2019 16:17:55</publishTime>
@@ -988,7 +1030,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>07/09/2019 15:10:12</publishTime>
     </File>
     <File Include="style/Tables.css">
-      <publishTime>01/11/2019 20:17:40</publishTime>
+      <publishTime>12/30/2019 19:18:33</publishTime>
     </File>
     <File Include="temp.aspx">
       <publishTime>01/08/2019 17:39:08</publishTime>
@@ -997,7 +1039,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>07/09/2019 14:52:42</publishTime>
     </File>
     <File Include="Template/agl.xlsx">
-      <publishTime>06/08/2018 08:52:28</publishTime>
+      <publishTime>08/06/2018 08:52:28</publishTime>
     </File>
     <File Include="Template/aglc.xlsx">
       <publishTime>08/20/2019 17:18:52</publishTime>
@@ -1006,31 +1048,31 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>01/23/2019 20:31:52</publishTime>
     </File>
     <File Include="Template/akac.xlsx">
-      <publishTime>10/01/2018 18:29:12</publishTime>
+      <publishTime>01/10/2018 18:29:12</publishTime>
     </File>
     <File Include="Template/akac2.xlsx">
-      <publishTime>10/01/2018 18:29:12</publishTime>
+      <publishTime>01/10/2018 18:29:12</publishTime>
     </File>
     <File Include="Template/akap.xlsx">
-      <publishTime>10/01/2018 18:29:12</publishTime>
+      <publishTime>01/10/2018 18:29:12</publishTime>
     </File>
     <File Include="Template/akap2.xlsx">
-      <publishTime>10/01/2018 18:29:12</publishTime>
+      <publishTime>01/10/2018 18:29:12</publishTime>
     </File>
     <File Include="Template/akape.xls">
-      <publishTime>10/01/2018 18:29:12</publishTime>
+      <publishTime>01/10/2018 18:29:12</publishTime>
     </File>
     <File Include="Template/akrc.xlsx">
-      <publishTime>03/08/2019 10:53:48</publishTime>
+      <publishTime>08/03/2019 10:53:48</publishTime>
     </File>
     <File Include="Template/akrg.xlsx">
       <publishTime>07/23/2019 16:52:56</publishTime>
     </File>
     <File Include="Template/akrk.xlsx">
-      <publishTime>03/08/2019 10:40:39</publishTime>
+      <publishTime>08/03/2019 10:40:39</publishTime>
     </File>
     <File Include="Template/akrp.xlsx">
-      <publishTime>03/08/2019 09:30:53</publishTime>
+      <publishTime>08/03/2019 09:30:53</publishTime>
     </File>
     <File Include="Template/aktk.xlsx">
       <publishTime>10/13/2019 08:29:53</publishTime>
@@ -1078,7 +1120,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>11/17/2018 01:53:53</publishTime>
     </File>
     <File Include="Template/oglc.xlsx">
-      <publishTime>10/01/2018 18:29:12</publishTime>
+      <publishTime>01/10/2018 18:29:12</publishTime>
     </File>
     <File Include="Template/oglc2.xlsx">
       <publishTime>03/03/2018 05:48:58</publishTime>
@@ -1093,7 +1135,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>08/08/2018 10:08:45</publishTime>
     </File>
     <File Include="Template/oglk3.xlsx">
-      <publishTime>11/12/2018 18:58:43</publishTime>
+      <publishTime>12/11/2018 18:58:43</publishTime>
     </File>
     <File Include="Template/oglp.xlsx">
       <publishTime>07/08/2019 07:56:04</publishTime>
@@ -1114,10 +1156,10 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>03/28/2018 17:30:10</publishTime>
     </File>
     <File Include="Template/okrp.xlsx">
-      <publishTime>01/10/2019 18:39:44</publishTime>
+      <publishTime>10/01/2019 18:39:44</publishTime>
     </File>
     <File Include="Template/okrr.xlsx">
-      <publishTime>01/03/2018 15:58:42</publishTime>
+      <publishTime>03/01/2018 15:58:42</publishTime>
     </File>
     <File Include="Template/OKTC.xlsx">
       <publishTime>04/05/2018 22:36:08</publishTime>
@@ -1126,10 +1168,10 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>10/11/2019 22:02:15</publishTime>
     </File>
     <File Include="Template/oktk.xlsx">
-      <publishTime>10/01/2018 18:29:12</publishTime>
+      <publishTime>01/10/2018 18:29:12</publishTime>
     </File>
     <File Include="Template/oktkr.xlsx">
-      <publishTime>07/08/2018 15:18:52</publishTime>
+      <publishTime>08/07/2018 15:18:52</publishTime>
     </File>
     <File Include="Template/oktp.xlsx">
       <publishTime>12/13/2018 15:57:55</publishTime>
@@ -1156,7 +1198,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>08/26/2019 18:31:10</publishTime>
     </File>
     <File Include="Template/oopp.xlsx">
-      <publishTime>10/01/2018 18:29:12</publishTime>
+      <publishTime>01/10/2018 18:29:12</publishTime>
     </File>
     <File Include="Template/oopp_.xlsx">
       <publishTime>10/01/2018 18:29:12</publishTime>
@@ -1168,7 +1210,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>01/10/2018 18:29:12</publishTime>
     </File>
     <File Include="Template/oopu.xlsx">
-      <publishTime>10/01/2018 18:29:12</publishTime>
+      <publishTime>01/10/2018 18:29:12</publishTime>
     </File>
     <File Include="Template/oopu_.xlsx">
       <publishTime>10/01/2018 18:29:12</publishTime>
@@ -1180,22 +1222,22 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>08/29/2019 21:06:29</publishTime>
     </File>
     <File Include="Template/RaportCywilny01.xlsx">
-      <publishTime>10/01/2018 18:29:12</publishTime>
+      <publishTime>01/10/2018 18:29:12</publishTime>
     </File>
     <File Include="Template/RaportKarny.xlsx">
-      <publishTime>10/01/2018 18:29:12</publishTime>
+      <publishTime>01/10/2018 18:29:12</publishTime>
     </File>
     <File Include="Template/SamsungIF_Rg.woff">
-      <publishTime>10/01/2018 18:29:12</publishTime>
+      <publishTime>01/10/2018 18:29:12</publishTime>
     </File>
     <File Include="Template/SSRocena.xlsx">
-      <publishTime>10/01/2018 18:29:12</publishTime>
+      <publishTime>01/10/2018 18:29:12</publishTime>
     </File>
     <File Include="Template/SSRocena1.xlsx">
-      <publishTime>10/01/2018 18:29:12</publishTime>
+      <publishTime>01/10/2018 18:29:12</publishTime>
     </File>
     <File Include="Template/statystykiWydzialCywilny.xlsx">
-      <publishTime>10/01/2018 18:29:12</publishTime>
+      <publishTime>01/10/2018 18:29:12</publishTime>
     </File>
     <File Include="Template/wab.xlsx">
       <publishTime>06/25/2019 23:07:54</publishTime>
@@ -1216,7 +1258,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>08/17/2019 21:46:05</publishTime>
     </File>
     <File Include="UserControlls/ZarzadzanieFormularzami.ascx">
-      <publishTime>10/13/2019 19:10:01</publishTime>
+      <publishTime>12/13/2019 14:41:56</publishTime>
     </File>
     <File Include="UserControlls/zarzadzanieUprawnieniami.ascx">
       <publishTime>09/16/2019 17:55:40</publishTime>
@@ -1225,13 +1267,13 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>09/19/2019 18:44:09</publishTime>
     </File>
     <File Include="version.txt">
-      <publishTime>12/12/2019 22:46:34</publishTime>
+      <publishTime>12/30/2019 21:30:27</publishTime>
     </File>
     <File Include="wab.aspx">
       <publishTime>07/09/2019 14:52:42</publishTime>
     </File>
     <File Include="Web.config">
-      <publishTime>12/11/2019 21:42:35</publishTime>
+      <publishTime>12/13/2019 14:44:42</publishTime>
     </File>
     <File Include="WebForm1.aspx">
       <publishTime>01/08/2019 17:39:27</publishTime>
@@ -1243,7 +1285,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>09/30/2019 19:19:02</publishTime>
     </File>
     <File Include="wizk.aspx">
-      <publishTime>12/12/2019 07:31:35</publishTime>
+      <publishTime>12/29/2019 20:40:13</publishTime>
     </File>
     <File Include="wizytacjaCywilny.aspx">
       <publishTime>01/08/2019 17:39:27</publishTime>
@@ -1274,6 +1316,9 @@ by editing this MSBuild file. In order to learn more about this please visit htt
     </File>
     <File Include="XMLHeaders/aktpe2.xml">
       <publishTime>10/14/2019 15:39:35</publishTime>
+    </File>
+    <File Include="XMLHeaders/ansa.xml">
+      <publishTime>12/30/2019 19:36:11</publishTime>
     </File>
     <File Include="XMLHeaders/okt2.xml">
       <publishTime>08/15/2019 17:21:47</publishTime>

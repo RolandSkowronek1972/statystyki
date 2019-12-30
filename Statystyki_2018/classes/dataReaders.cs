@@ -158,7 +158,7 @@ namespace stat2018
                             //wpisanie danych
                             try
                             {
-                                dR[j+2] = wyciagnijDaneNt(kw, poczatek, koniec, cs, tenPlik);
+                                dR[j+1] = wyciagnijDaneNt(kw, poczatek, koniec, cs, tenPlik);
                             }
                             catch (Exception ex)
                             {

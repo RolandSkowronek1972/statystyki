@@ -67,6 +67,15 @@ namespace stat2018 {
         protected global::System.Web.UI.WebControls.Label LabelNazwaSadu;
         
         /// <summary>
+        /// Panel1 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Panel Panel1;
+        
+        /// <summary>
         /// Label1 control.
         /// </summary>
         /// <remarks>
@@ -85,13 +94,13 @@ namespace stat2018 {
         protected global::System.Web.UI.WebControls.Label infoLabel1;
         
         /// <summary>
-        /// gwTabela1 control.
+        /// ASPxGridView1 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.GridView gwTabela1;
+        protected global::DevExpress.Web.ASPxGridView ASPxGridView1;
         
         /// <summary>
         /// Label27 control.

@@ -249,6 +249,56 @@ namespace stat2018
 
             return dTResult;
         }// end of generuj_dane_do_tabeli_mss
+        public DataTable generuj_dane_do_tabeli_mss10e(int id_dzialu, DateTime poczatek, DateTime koniec, int il_kolumn)
+        {
+            //cm.log.Info("mss: rozpoczęcie popmpowania danych");
+            var conn = new SqlConnection(con_str);
+            string cs = PobierzConnectionStringMSS(id_dzialu);
+
+            string kwerenda = string.Empty;
+
+            DataTable parameters = cm.makeParameterTable();
+            parameters.Rows.Add("@id_dzialu", id_dzialu);
+            DataTable dT1 = cm.getDataTable("SELECT [id_wydzial] ,[id_tabeli] ,[id_kolumny],[id_wiersza] ,[kwerenda]  FROM kwerendy where  id_wydzial=@id_dzialu order by id_kolumny", con_str, parameters, "");
+            //cm.log.Info("mss: pobrano "+ dT1.Rows.Count + " kwerend odczytujących dane");
+
+            if (dT1.Rows.Count == 0)
+            {
+                return null;
+            }
+            // zaladowanie do tabeli
+            DataTable dTResult = new DataTable();
+            dTResult.Columns.Add("idWydzial", typeof(string));
+            dTResult.Columns.Add("idTabeli", typeof(string));
+            dTResult.Columns.Add("idWiersza", typeof(string));
+            dTResult.Columns.Add("idKolumny", typeof(string));
+            dTResult.Columns.Add("wartosc", typeof(string));
+
+            foreach (DataRow dRow in dT1.Rows)
+            {
+                DataRow resultRow = dTResult.NewRow();
+                //wyciagnij zmienne daną
+                string idWydzial = dRow[0].ToString().Trim();
+                string idTabeli = dRow[1].ToString().Trim();
+                string idKolumny = dRow[2].ToString().Trim();
+                string idWiersza = dRow[3].ToString().Trim();
+                string kwerendaN = dRow[4].ToString().Trim();
+                parameters = cm.makeParameterTable();
+                parameters.Rows.Add("@id_dzialu", id_dzialu);
+                parameters.Rows.Add("@data_1", poczatek);
+                parameters.Rows.Add("@data_2", koniec);
+                string wartosc = cm.getQuerryValue(kwerendaN, cs, parameters);
+
+                resultRow[0] = idWydzial.Trim();
+                resultRow[1] = idTabeli.Trim();
+                resultRow[2] = idWiersza.Trim();
+                resultRow[3] = idKolumny.Trim();
+                resultRow[4] = wartosc;
+                dTResult.Rows.Add(resultRow);
+            }
+
+            return dTResult;
+        }// end of generuj_dane_do_tabeli_mss
 
         public string PobierzConnectionStringMSS(int id_dzialu)
         {
@@ -401,6 +451,334 @@ namespace stat2018
 
         //----------------------------------------------------------------
         //-------------- nowy schemat ------------------------------------
+        public string tworztabeleMSS(string idTabeli, DataTable naglowek, DataTable tabelaPrzedIteracja, DataTable dane, int iloscWierszyNaglowka, int iloscWierszyTabeli, int iloscKolumnPrzedIteracja, int iloscKolumnPoIteracji, int idWydzialu, bool lp, string tekstNadTabela,int idTabeliNum, string tenPlik)
+        {
+            StringBuilder kodStony = new StringBuilder();
+            string ciagWyjsciowy = string.Empty;
+            kodStony.AppendLine("<div class='page-break'>");
+            kodStony.AppendLine("<P><b>" + idTabeli + "</b> " + tekstNadTabela + " </P>");
+            kodStony.AppendLine("<table style='width:100%'>");
+            //naglowek
+            //   DataTable header = naglowek;
+
+            for (int i = 1; i < iloscWierszyNaglowka + 1; i++)
+            {
+                kodStony.AppendLine("<tr>");
+                //pierwsza kolumna nagłówka
+                try
+                {
+                    DataRow wiersz = wyciagnijWartosc(naglowek, " nrWiersza ='" + i.ToString() + "' and nrKolumny='1'", tenPlik);
+                    cm.log.Info("tabela : " + idTabeliNum.ToString () + " nrWiersza ='" + i.ToString() + "' and nrKolumny='1'");
+                    if (wiersz != null)
+                    {
+                        int colspan = int.Parse(wiersz["colspan"].ToString().Trim());
+                        string style = wiersz["style"].ToString().Trim();
+                        string tekst = wiersz["text"].ToString().Trim();
+
+                        string sekcjaColspan = string.Empty;
+                        string sekcjaStyle = string.Empty;
+                        if (colspan > 0)
+                        {
+                            sekcjaColspan = "colspan ='" + colspan.ToString() + "' ";
+                        }
+
+                        if (!string.IsNullOrEmpty(style))
+                        {
+                            sekcjaStyle = " " + style + " ";
+                        }
+                        if (lp)
+                        {
+                            kodStony.AppendLine("<td  class ='borderAll  " + sekcjaStyle + "'" + sekcjaColspan + rowSpanPart(int.Parse(wiersz["rowspan"].ToString().Trim())) + ">" + tekst + "</td>");
+                            kodStony.AppendLine("<td  class ='borderAll center col_26' " + "rowspan ='" + ((int.Parse(wiersz["rowspan"].ToString().Trim())) + 1).ToString() + "' " + ">L.p.</td>");
+                        }
+                        else
+                        {
+                            sekcjaColspan = "colspan ='" + (colspan + 1).ToString() + "' ";
+                            kodStony.AppendLine("<td  class ='borderAll  " + sekcjaStyle + "'" + sekcjaColspan + rowSpanPart(int.Parse(wiersz["rowspan"].ToString().Trim())) + ">" + tekst + "</td>");
+                        }
+                    }
+                }
+                catch
+                { }
+
+                for (int j = 2; j <= iloscKolumnPrzedIteracja + iloscKolumnPoIteracji + 1; j++)
+                {
+                    try
+                    {
+                        cm.log.Info(" nrWiersza ='" + i.ToString() + "' and nrKolumny='" + j.ToString() + "'");
+                        DataRow wiersz = wyciagnijWartosc(naglowek, " nrWiersza ='" + i.ToString() + "' and nrKolumny='" + j.ToString() + "'", tenPlik);
+                        if (wiersz != null)
+                        {
+                            int colspan = int.Parse(wiersz["colspan"].ToString().Trim());
+                            int rowspan = int.Parse(wiersz["rowspan"].ToString().Trim());
+
+                            string style = wiersz["style"].ToString().Trim();
+                            string tekst = wiersz["text"].ToString().Trim();
+                            string sekcjaRowspan = string.Empty;
+                            string sekcjaColspan = string.Empty;
+                            string sekcjaStyle = string.Empty;
+
+                            if (colspan > 0)
+                            {
+                                sekcjaColspan = "colspan ='" + colspan.ToString() + "' ";
+                            }
+                            if (rowspan > 0)
+                            {
+                                sekcjaRowspan = "rowspan ='" + rowspan.ToString() + "' ";
+                            }
+                            if (!string.IsNullOrEmpty(style))
+                            {
+                                sekcjaStyle = " " + style + " ";
+                            }
+
+                            kodStony.AppendLine("<td  class ='borderAll  " + sekcjaStyle + "'" + sekcjaColspan + sekcjaRowspan + ">" + tekst + "</td>");
+                        }
+                        else
+                        {
+                            cm.log.Error("MSS 11o LinqError: wiersz=null");
+                        }
+                    }
+                    catch (Exception ex)
+                    {
+                        cm.log.Error("MSS 11o LinqError: " + ex.Message);
+                    }
+                }
+                kodStony.AppendLine("</tr>");
+            }
+            kodStony.AppendLine("<tr>");
+
+            //rozdzielenie
+            string txt_1 = "<td  class='borderAll center' colspan='" + (iloscKolumnPrzedIteracja) + "'>0</td>";
+            string txt_2 = "<td  class='borderAll center' colspan='" + (iloscKolumnPrzedIteracja + 1) + "'>0</td>";
+            string classify = (lp) ? txt_1 : txt_2;
+            kodStony.AppendLine(classify);
+
+            for (int j = 1; j < iloscKolumnPoIteracji + 1; j++)
+            {
+                kodStony.AppendLine("<td  class='borderAll center'>" + j.ToString() + "</td>");
+            }
+
+            //tabela główna
+            for (int i = 1; i < iloscWierszyTabeli + 1; i++)
+            {
+                kodStony.AppendLine("<tr>");
+
+                for (int j = 1; j < iloscKolumnPrzedIteracja + 1; j++)
+                {
+                    try
+                    {
+                        DataRow wiersz = wyciagnijWartosc(tabelaPrzedIteracja, " nrWiersza ='" + i.ToString() + "' and nrKolumny='" + j.ToString() + "'", tenPlik);
+                        if (wiersz != null)
+                        {
+                            int colspan = int.Parse(wiersz["colspan"].ToString().Trim());
+                            int rowspan = int.Parse(wiersz["rowspan"].ToString().Trim());
+
+                            string style = wiersz["style"].ToString().Trim();
+                            string tekst = wiersz["text"].ToString().Trim();
+                            string sekcjaRowspan = string.Empty;
+                            string sekcjaColspan = string.Empty;
+                            string sekcjaStyle = string.Empty;
+
+                            if (colspan > 0)
+                            {
+                                sekcjaColspan = "colspan ='" + colspan.ToString() + "' ";
+                            }
+                            if (rowspan > 0)
+                            {
+                                sekcjaRowspan = "rowspan ='" + rowspan.ToString() + "' ";
+                            }
+                            if (!string.IsNullOrEmpty(style))
+                            {
+                                sekcjaStyle = " " + style + " ";
+                            }
+                            kodStony.AppendLine("<td  class ='borderAll  " + sekcjaStyle + "'" + sekcjaColspan + sekcjaRowspan + ">" + tekst + "</td>");
+                        }
+                    }
+                    catch (Exception ex)
+                    {
+                        cm.log.Error("MSS 11o LinqError: " + ex.Message);
+                    }
+                }
+                kodStony.AppendLine("<td class='center borderAll col_26'>" + i.ToString() + "</td>");
+                for (int j = 1; j < iloscKolumnPoIteracji + 1; j++)
+                {
+                    string txt = dr.wyciagnijWartosc(dane, "idWydzial=" + idWydzialu + " and idTabeli='" + idTabeliNum.ToString() + "' and idWiersza ='" + i.ToString() + "' and idkolumny='" + j.ToString() + "'", tenPlik);
+                    string txt2 = "<a Class=\"normal\" href=\"javascript: openPopup('popup.aspx?sesja=" + i.ToString().ToString() + "!" + idTabeli + "!" + j.ToString() + "!4')\">" + txt + " </a>";
+                    kodStony.AppendLine("<td class='center borderAll'>" + txt2 + "</td>");
+                }
+                kodStony.AppendLine("</tr>");
+            }
+            kodStony.AppendLine("</tr>");
+
+            kodStony.AppendLine("</table>");
+            kodStony.AppendLine("</div>");
+            kodStony.AppendLine("<br/>");
+            return kodStony.ToString();
+        }
+        public string tworztabeleMSS10e(string idTabeli, DataTable naglowek, DataTable tabelaPrzedIteracja, DataTable dane, int iloscWierszyNaglowka, int iloscWierszyTabeli, int iloscKolumnPrzedIteracja, int iloscKolumnPoIteracji, int idWydzialu, bool lp, string tekstNadTabela, int idTabeliNum, string tenPlik)
+        {
+            StringBuilder kodStony = new StringBuilder();
+            string ciagWyjsciowy = string.Empty;
+            kodStony.AppendLine("<div class='page-break'>");
+            kodStony.AppendLine("<P><b>" + idTabeli + "</b> " + tekstNadTabela + " </P>");
+            kodStony.AppendLine("<table style='width:100%'>");
+            //naglowek
+            //   DataTable header = naglowek;
+
+            for (int i = 1; i < iloscWierszyNaglowka + 1; i++)
+            {
+                kodStony.AppendLine("<tr>");
+                //pierwsza kolumna nagłówka
+                try
+                {
+                    DataRow wiersz = wyciagnijWartosc(naglowek, " nrWiersza ='" + i.ToString() + "' and nrKolumny='1'", tenPlik);
+                    cm.log.Info("tabela : " + idTabeliNum.ToString() + " nrWiersza ='" + i.ToString() + "' and nrKolumny='1'");
+                    if (wiersz != null)
+                    {
+                        int colspan = int.Parse(wiersz["colspan"].ToString().Trim());
+                        string style = wiersz["style"].ToString().Trim();
+                        string tekst = wiersz["text"].ToString().Trim();
+
+                        string sekcjaColspan = string.Empty;
+                        string sekcjaStyle = string.Empty;
+                        if (colspan > 0)
+                        {
+                            sekcjaColspan = "colspan ='" + colspan.ToString() + "' ";
+                        }
+
+                        if (!string.IsNullOrEmpty(style))
+                        {
+                            sekcjaStyle = " " + style + " ";
+                        }
+                        if (lp)
+                        {
+                            kodStony.AppendLine("<td  class ='borderAll  " + sekcjaStyle + "'" + sekcjaColspan + rowSpanPart(int.Parse(wiersz["rowspan"].ToString().Trim())) + ">" + tekst + "</td>");
+                            kodStony.AppendLine("<td  class ='borderAll center col_26' " + "rowspan ='" + ((int.Parse(wiersz["rowspan"].ToString().Trim())) + 1).ToString() + "' " + ">L.p.</td>");
+                        }
+                        else
+                        {
+                            sekcjaColspan = "colspan ='" + (colspan + 1).ToString() + "' ";
+                            kodStony.AppendLine("<td  class ='borderAll  " + sekcjaStyle + "'" + sekcjaColspan + rowSpanPart(int.Parse(wiersz["rowspan"].ToString().Trim())) + ">" + tekst + "</td>");
+                        }
+                    }
+                }
+                catch
+                { }
+
+                for (int j = 2; j <= iloscKolumnPrzedIteracja + iloscKolumnPoIteracji + 1; j++)
+                {
+                    try
+                    {
+                        cm.log.Info(" nrWiersza ='" + i.ToString() + "' and nrKolumny='" + j.ToString() + "'");
+                        DataRow wiersz = wyciagnijWartosc(naglowek, " nrWiersza ='" + i.ToString() + "' and nrKolumny='" + j.ToString() + "'", tenPlik);
+                        if (wiersz != null)
+                        {
+                            int colspan = int.Parse(wiersz["colspan"].ToString().Trim());
+                            int rowspan = int.Parse(wiersz["rowspan"].ToString().Trim());
+
+                            string style = wiersz["style"].ToString().Trim();
+                            string tekst = wiersz["text"].ToString().Trim();
+                            string sekcjaRowspan = string.Empty;
+                            string sekcjaColspan = string.Empty;
+                            string sekcjaStyle = string.Empty;
+
+                            if (colspan > 0)
+                            {
+                                sekcjaColspan = "colspan ='" + colspan.ToString() + "' ";
+                            }
+                            if (rowspan > 0)
+                            {
+                                sekcjaRowspan = "rowspan ='" + rowspan.ToString() + "' ";
+                            }
+                            if (!string.IsNullOrEmpty(style))
+                            {
+                                sekcjaStyle = " " + style + " ";
+                            }
+
+                            kodStony.AppendLine("<td  class ='borderAll  " + sekcjaStyle + "'" + sekcjaColspan + sekcjaRowspan + ">" + tekst + "</td>");
+                        }
+                        else
+                        {
+                            cm.log.Error("MSS 11o LinqError: wiersz=null");
+                        }
+                    }
+                    catch (Exception ex)
+                    {
+                        cm.log.Error("MSS 11o LinqError: " + ex.Message);
+                    }
+                }
+                kodStony.AppendLine("</tr>");
+            }
+            kodStony.AppendLine("<tr>");
+
+            //rozdzielenie
+            string txt_1 = "<td  class='borderAll center' colspan='" + (iloscKolumnPrzedIteracja) + "'>0</td>";
+            string txt_2 = "<td  class='borderAll center' colspan='" + (iloscKolumnPrzedIteracja + 1) + "'>0</td>";
+            string classify = (lp) ? txt_1 : txt_2;
+            kodStony.AppendLine(classify);
+
+            for (int j = 1; j < iloscKolumnPoIteracji + 1; j++)
+            {
+                kodStony.AppendLine("<td  class='borderAll center'>" + j.ToString() + "</td>");
+            }
+
+            //tabela główna
+            for (int i = 1; i < iloscWierszyTabeli + 1; i++)
+            {
+                kodStony.AppendLine("<tr>");
+
+                for (int j = 1; j < iloscKolumnPrzedIteracja + 1; j++)
+                {
+                    try
+                    {
+                        DataRow wiersz = wyciagnijWartosc(tabelaPrzedIteracja, " nrWiersza ='" + i.ToString() + "' and nrKolumny='" + j.ToString() + "'", tenPlik);
+                        if (wiersz != null)
+                        {
+                            int colspan = int.Parse(wiersz["colspan"].ToString().Trim());
+                            int rowspan = int.Parse(wiersz["rowspan"].ToString().Trim());
+
+                            string style = wiersz["style"].ToString().Trim();
+                            string tekst = wiersz["text"].ToString().Trim();
+                            string sekcjaRowspan = string.Empty;
+                            string sekcjaColspan = string.Empty;
+                            string sekcjaStyle = string.Empty;
+
+                            if (colspan > 0)
+                            {
+                                sekcjaColspan = "colspan ='" + colspan.ToString() + "' ";
+                            }
+                            if (rowspan > 0)
+                            {
+                                sekcjaRowspan = "rowspan ='" + rowspan.ToString() + "' ";
+                            }
+                            if (!string.IsNullOrEmpty(style))
+                            {
+                                sekcjaStyle = " " + style + " ";
+                            }
+                            kodStony.AppendLine("<td  class ='borderAll  " + sekcjaStyle + "'" + sekcjaColspan + sekcjaRowspan + ">" + tekst + "</td>");
+                        }
+                    }
+                    catch (Exception ex)
+                    {
+                        cm.log.Error("MSS 11o LinqError: " + ex.Message);
+                    }
+                }
+                kodStony.AppendLine("<td class='center borderAll col_26'>" + i.ToString() + "</td>");
+                for (int j = 1; j < iloscKolumnPoIteracji + 1; j++)
+                {
+                    string txt = dr.wyciagnijWartosc(dane, "idWydzial=" + idWydzialu + " and idTabeli='" + idTabeliNum.ToString() + "' and idWiersza ='" + i.ToString() + "' and idkolumny='" + j.ToString() + "'", tenPlik);
+                    string txt2 = "<a Class=\"normal\" href=\"javascript: openPopup('popup.aspx?sesja=" + i.ToString().ToString() + "!" + idTabeliNum.ToString() + "!" + j.ToString() + "!1')\">" + txt + " </a>";
+                    kodStony.AppendLine("<td class='center borderAll'>" + txt2 + "</td>");
+                }
+                kodStony.AppendLine("</tr>");
+            }
+            kodStony.AppendLine("</tr>");
+
+            kodStony.AppendLine("</table>");
+            kodStony.AppendLine("</div>");
+            kodStony.AppendLine("<br/>");
+            return kodStony.ToString();
+        }
 
         public string tworztabeleMSS(string idTabeli, DataTable naglowek, DataTable tabelaPrzedIteracja, DataTable dane, int iloscWierszyNaglowka, int iloscWierszyTabeli, int iloscKolumnPrzedIteracja, int iloscKolumnPoIteracji, int idWydzialu, bool lp, string tekstNadTabela, string tenPlik)
         {

@@ -52,8 +52,7 @@
                 <asp:LinkButton ID="LinkButton54" runat="server" class="ax_box" OnClick="Odswiez">  Odśwież</asp:LinkButton>
             </td>
             <td style="width:auto;padding-left:5px;">
-                  <td style="width:auto;padding-left:5px;">
-                      &nbsp;</td>
+                 
             </td>
 
             <td style="width:auto;padding-left:5px;">
@@ -64,7 +63,7 @@
       </div>
        <div  margin: 0 auto 0 auto; position:relative;top:30px;">
              <div style="margin-left:auto;margin-right:auto;text-align: center; width:auto; ">
-            <asp:Label ID="LabelNazwaSadu" runat="server" Text="Sąd " style="font-weight: 700"></asp:Label>
+            <asp:Label ID="LabelNazwaSadu" runat="server" Text=" " style="font-weight: 700"></asp:Label>
      <br />
          </div>
 
@@ -79,10 +78,12 @@
                     <asp:Timer ID="Timer1" runat="server" OnTick="TimerTick" Interval="2000">
                     </asp:Timer>
                    <br />
-    <dx:ASPxGridView ID="ASPxGridView1" runat="server" AutoGenerateColumns="False" OnCustomSummaryCalculate="Suma" Theme="MetropolisBlue" EnableCallbackAnimation="True">
+    <dx:ASPxGridView ID="ASPxGridView1" runat="server" AutoGenerateColumns="False" OnCustomSummaryCalculate="Suma" Theme="MetropolisBlue" EnableCallbackAnimation="True" OnSummaryDisplayText="ASPxGridView1_SummaryDisplayText">
                         <SettingsPager PageSize="10100">
                         </SettingsPager>
                         <Settings HorizontalScrollBarMode="Visible" UseFixedTableLayout="True" ShowFooter="True" />
+
+                        <SettingsBehavior AllowSort="False" />
 
                         <SettingsResizing ColumnResizeMode="NextColumn" />
 
@@ -120,6 +121,8 @@
                         <SettingsPager PageSize="10100">
                         </SettingsPager>
                         <Settings HorizontalScrollBarMode="Visible" UseFixedTableLayout="True" ShowFooter="True" />
+
+                        <SettingsBehavior AllowSort="False" />
 
                         <SettingsResizing ColumnResizeMode="NextColumn" />
 

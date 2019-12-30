@@ -1,365 +1,342 @@
-2019-12-12 22:33:39,311  INFO stat2018.log_4_net - oopg.aspx: rozpoczecie tworzenia tabeli 1
-2019-12-12 22:33:39,401  INFO stat2018.log_4_net - oopg.aspx :Generowanie tabeli danych: Rozpoczecie
-2019-12-12 22:33:39,424  INFO stat2018.log_4_net - oopg.aspx :Generowanie tabeli danych: Wyciadniecie kwerend dla tabeli :1
-2019-12-12 22:33:39,429  INFO stat2018.log_4_net - oopg.aspx getDataTable - parametetr name= @id_tabeli wartosc: 1
-2019-12-12 22:33:39,429  INFO stat2018.log_4_net - oopg.aspx getDataTable - parametetr name= @id_dzialu wartosc: 12
-2019-12-12 22:33:39,449  INFO stat2018.log_4_net - oopg.aspx :Generowanie tabeli danych: Ilosc kwerend wyciagajacych dla sedziów dla tabeli : 1 wynosi:1
-2019-12-12 22:33:39,450  INFO stat2018.log_4_net - oopg.aspx :Generowanie tabeli danych: Ilosc kwerend wyciagajacych dla danych dla tabeli : 1 wynosi:1
-2019-12-12 22:33:39,450  INFO stat2018.log_4_net - oopg.aspx :Generowanie tabeli danych: Wpisywanie danych sedziów dla tabeli : 1
-2019-12-12 22:33:39,450  INFO stat2018.log_4_net - oopg.aspx getDataTable - parametetr name= @data_1 wartosc: 2019-11-01
-2019-12-12 22:33:39,451  INFO stat2018.log_4_net - oopg.aspx getDataTable - parametetr name= @data_2 wartosc: 2019-11-30
-2019-12-12 22:33:39,582  INFO stat2018.log_4_net - oopg.aspx wpisywanie danych dla sedziów
-2019-12-12 22:33:39,582  INFO stat2018.log_4_net - oopg.aspx getDataTable - parametetr name= @data_1 wartosc: 2019-11-01
-2019-12-12 22:33:39,582  INFO stat2018.log_4_net - oopg.aspx getDataTable - parametetr name= @data_2 wartosc: 2019-11-30
-2019-12-12 22:33:39,627  INFO stat2018.log_4_net - oopg.aspx getDataTable - parametetr name= @data_1 wartosc: 2019-11-01
-2019-12-12 22:33:39,627  INFO stat2018.log_4_net - oopg.aspx getDataTable - parametetr name= @data_2 wartosc: 2019-11-30
-2019-12-12 22:33:39,632  INFO stat2018.log_4_net - oopg.aspx :wpisywanie do tabeli danych dla tabeli : 1 Nie mozna odnalezc kolumny 1.
-2019-12-12 22:33:39,632  INFO stat2018.log_4_net - oopg.aspx getDataTable - parametetr name= @data_1 wartosc: 2019-11-01
-2019-12-12 22:33:39,632  INFO stat2018.log_4_net - oopg.aspx getDataTable - parametetr name= @data_2 wartosc: 2019-11-30
-2019-12-12 22:33:39,634  INFO stat2018.log_4_net - oopg.aspx :wpisywanie do tabeli danych dla tabeli : 1 Nie mozna odnalezc kolumny 1.
-2019-12-12 22:33:40,508  INFO stat2018.log_4_net - start tworzenia Ste1   22:33:40
-2019-12-12 22:33:40,508  INFO stat2018.log_4_net - Site1.Master:Brak przeniesienia z logowania identyfikatora numerycznego Uzytkownika! 
-2019-12-12 22:33:40,508  INFO stat2018.log_4_net - Odwolanie do obiektu nie zostalo ustawione na wystapienie obiektu.
-2019-12-12 22:33:45,190  INFO stat2018.log_4_net - oopg.aspx: rozpoczecie tworzenia tabeli 1
-2019-12-12 22:33:45,190  INFO stat2018.log_4_net - oopg.aspx :Generowanie tabeli danych: Rozpoczecie
-2019-12-12 22:33:45,191  INFO stat2018.log_4_net - oopg.aspx :Generowanie tabeli danych: Wyciadniecie kwerend dla tabeli :1
-2019-12-12 22:33:45,191  INFO stat2018.log_4_net - oopg.aspx getDataTable - parametetr name= @id_tabeli wartosc: 1
-2019-12-12 22:33:45,191  INFO stat2018.log_4_net - oopg.aspx getDataTable - parametetr name= @id_dzialu wartosc: 12
-2019-12-12 22:33:45,196  INFO stat2018.log_4_net - oopg.aspx :Generowanie tabeli danych: Ilosc kwerend wyciagajacych dla sedziów dla tabeli : 1 wynosi:1
-2019-12-12 22:33:45,196  INFO stat2018.log_4_net - oopg.aspx :Generowanie tabeli danych: Ilosc kwerend wyciagajacych dla danych dla tabeli : 1 wynosi:1
-2019-12-12 22:33:45,196  INFO stat2018.log_4_net - oopg.aspx :Generowanie tabeli danych: Wpisywanie danych sedziów dla tabeli : 1
-2019-12-12 22:33:45,196  INFO stat2018.log_4_net - oopg.aspx getDataTable - parametetr name= @data_1 wartosc: 2019-11-01
-2019-12-12 22:33:45,196  INFO stat2018.log_4_net - oopg.aspx getDataTable - parametetr name= @data_2 wartosc: 2019-11-30
-2019-12-12 22:33:45,219  INFO stat2018.log_4_net - oopg.aspx wpisywanie danych dla sedziów
-2019-12-12 22:33:45,219  INFO stat2018.log_4_net - oopg.aspx getDataTable - parametetr name= @data_1 wartosc: 2019-11-01
-2019-12-12 22:33:45,219  INFO stat2018.log_4_net - oopg.aspx getDataTable - parametetr name= @data_2 wartosc: 2019-11-30
-2019-12-12 22:33:45,221  INFO stat2018.log_4_net - oopg.aspx getDataTable - parametetr name= @data_1 wartosc: 2019-11-01
-2019-12-12 22:33:45,221  INFO stat2018.log_4_net - oopg.aspx getDataTable - parametetr name= @data_2 wartosc: 2019-11-30
-2019-12-12 22:33:45,222  INFO stat2018.log_4_net - oopg.aspx :wpisywanie do tabeli danych dla tabeli : 1 Nie mozna odnalezc kolumny 1.
-2019-12-12 22:33:45,222  INFO stat2018.log_4_net - oopg.aspx getDataTable - parametetr name= @data_1 wartosc: 2019-11-01
-2019-12-12 22:33:45,222  INFO stat2018.log_4_net - oopg.aspx getDataTable - parametetr name= @data_2 wartosc: 2019-11-30
-2019-12-12 22:33:45,223  INFO stat2018.log_4_net - oopg.aspx :wpisywanie do tabeli danych dla tabeli : 1 Nie mozna odnalezc kolumny 1.
-2019-12-12 22:33:45,423  INFO stat2018.log_4_net - start tworzenia Ste1   22:33:45
-2019-12-12 22:42:04,691  INFO stat2018.log_4_net - rozpoczecie logowania 22:42:04
-2019-12-12 22:42:09,231  INFO stat2018.log_4_net - blad logowania domenowego  22:42:09
-2019-12-12 22:42:09,231  INFO stat2018.log_4_net - próba logowania z bazy  22:42:09
-2019-12-12 22:42:09,240  INFO stat2018.log_4_net - Logowanie: identyfikator uzytkownika: test to 6
-2019-12-12 22:42:09,240  INFO stat2018.log_4_net - logowania z bazy poprawne  22:42:09
-2019-12-12 22:42:09,247  INFO stat2018.log_4_net - uruchomienie  redirector.aspx 22:42:09
-2019-12-12 22:42:09,322  INFO stat2018.log_4_net - start redirektora  22:42:09
-2019-12-12 22:42:09,322  INFO stat2018.log_4_net - start tworzenia Ste1   22:42:09
-2019-12-12 22:42:09,322  INFO stat2018.log_4_net - start tworzenia menu  daneDoManuMiesieczne  22:42:09
-2019-12-12 22:42:09,331  INFO stat2018.log_4_net -  getDataTable - parametetr name= @identyfikatorUzytkownika wartosc: 6
-2019-12-12 22:42:09,344  INFO stat2018.log_4_net - start tworzenia menu  daneDoManuKontrolek 22:42:09
-2019-12-12 22:42:09,348  INFO stat2018.log_4_net - naglowek getDataTable - parametetr name= @identyfikatorUzytkownika wartosc: 6
-2019-12-12 22:42:09,352  INFO stat2018.log_4_net - start tworzenia menu  daneDoManuMSS 22:42:09
-2019-12-12 22:42:09,357  INFO stat2018.log_4_net - Naglowki getDataTable - parametetr name= @identyfikatorUzytkownika wartosc: 6
-2019-12-12 22:42:09,365  INFO stat2018.log_4_net - start tworzenia menu daneDoManuInne  22:42:09
-2019-12-12 22:42:09,378  INFO stat2018.log_4_net - start tworzenia menu wyloguj  22:42:09
-2019-12-12 22:42:09,381  INFO stat2018.log_4_net - Header: Rozpoczecie procedury tworzenia elementów menu wyloguj
-2019-12-12 22:42:09,390  INFO stat2018.log_4_net - koniec tworzenia manu   22:42:09
-2019-12-12 22:52:18,571  INFO stat2018.log_4_net - wizk.aspx: rozpoczecie tworzenia tabeli 1
-2019-12-12 22:52:18,582  INFO stat2018.log_4_net - wizk.aspx getDataTable - parametetr name= @id_wydzial wartosc: 12
-2019-12-12 22:52:18,583  INFO stat2018.log_4_net - wizk.aspx getDataTable - parametetr name= @id_tabeli wartosc: 1
-2019-12-12 22:52:18,588  INFO stat2018.log_4_net - wizk.aspx DR0003-> : odczyt kwerend: brak kwerend do doczytu danych
-2019-12-12 22:52:18,588  INFO stat2018.log_4_net - wizc : Odwolanie do obiektu nie zostalo ustawione na wystapienie obiektu.
-2019-12-12 22:52:18,598  INFO stat2018.log_4_net - wizk.aspx: rozpoczecie tworzenia tabeli 2
-2019-12-12 22:52:18,598  INFO stat2018.log_4_net - wizk.aspx getDataTable - parametetr name= @id_wydzial wartosc: 12
-2019-12-12 22:52:18,598  INFO stat2018.log_4_net - wizk.aspx getDataTable - parametetr name= @id_tabeli wartosc: 2
-2019-12-12 22:52:18,619  INFO stat2018.log_4_net - wizk.aspx Error getQuerryValue : Could not find stored procedure 'Styczen'.
-2019-12-12 22:52:18,622  INFO stat2018.log_4_net - wizk.aspx: rozpoczecie tworzenia tabeli 3
-2019-12-12 22:52:18,623  INFO stat2018.log_4_net - wizk.aspx :Generowanie tabeli danych: Rozpoczecie
-2019-12-12 22:52:18,623  INFO stat2018.log_4_net - wizk.aspx :Generowanie tabeli danych: Wyciadniecie kwerend dla tabeli :3
-2019-12-12 22:52:18,624  INFO stat2018.log_4_net - wizk.aspx getDataTable - parametetr name= @id_tabeli wartosc: 3
-2019-12-12 22:52:18,624  INFO stat2018.log_4_net - wizk.aspx getDataTable - parametetr name= @id_dzialu wartosc: 12
-2019-12-12 22:52:18,629  INFO stat2018.log_4_net - wizk.aspx :Generowanie tabeli danych: Ilosc kwerend wyciagajacych dla sedziów dla tabeli : 3 wynosi:2
-2019-12-12 22:52:18,629  INFO stat2018.log_4_net - wizk.aspx :Generowanie tabeli danych: Ilosc kwerend wyciagajacych dla danych dla tabeli : 3 wynosi:2
-2019-12-12 22:52:18,629  INFO stat2018.log_4_net - wizk.aspx :Generowanie tabeli danych: Wpisywanie danych sedziów dla tabeli : 3
-2019-12-12 22:52:18,630  INFO stat2018.log_4_net - wizk.aspx getDataTable - parametetr name= @data_1 wartosc: 2019-11-01
-2019-12-12 22:52:18,630  INFO stat2018.log_4_net - wizk.aspx getDataTable - parametetr name= @data_2 wartosc: 2019-11-30
-2019-12-12 22:52:18,638  INFO stat2018.log_4_net - wizk.aspx getDataTable - parametetr name= @data_1 wartosc: 2019-11-01
-2019-12-12 22:52:18,638  INFO stat2018.log_4_net - wizk.aspx getDataTable - parametetr name= @data_2 wartosc: 2019-11-30
-2019-12-12 22:52:18,647  INFO stat2018.log_4_net - wizk.aspx wpisywanie danych dla sedziów
-2019-12-12 22:52:18,648  INFO stat2018.log_4_net - wizk.aspx getDataTable - parametetr name= @data_1 wartosc: 2019-11-01
-2019-12-12 22:52:18,648  INFO stat2018.log_4_net - wizk.aspx getDataTable - parametetr name= @data_2 wartosc: 2019-11-30
-2019-12-12 22:52:18,650  INFO stat2018.log_4_net - wizk.aspx getDataTable - parametetr name= @data_1 wartosc: 2019-11-01
-2019-12-12 22:52:18,650  INFO stat2018.log_4_net - wizk.aspx getDataTable - parametetr name= @data_2 wartosc: 2019-11-30
-2019-12-12 22:52:18,652  INFO stat2018.log_4_net - wizk.aspx getDataTable - parametetr name= @data_1 wartosc: 2019-11-01
-2019-12-12 22:52:18,652  INFO stat2018.log_4_net - wizk.aspx getDataTable - parametetr name= @data_2 wartosc: 2019-11-30
-2019-12-12 22:52:18,662  INFO stat2018.log_4_net - wizk.aspx getDataTable - parametetr name= @data_1 wartosc: 2019-11-01
-2019-12-12 22:52:18,662  INFO stat2018.log_4_net - wizk.aspx getDataTable - parametetr name= @data_2 wartosc: 2019-11-30
-2019-12-12 22:52:18,663  INFO stat2018.log_4_net - wizk.aspx getDataTable - parametetr name= @data_1 wartosc: 2019-11-01
-2019-12-12 22:52:18,663  INFO stat2018.log_4_net - wizk.aspx getDataTable - parametetr name= @data_2 wartosc: 2019-11-30
-2019-12-12 22:52:18,668  INFO stat2018.log_4_net - wizk.aspx getDataTable - parametetr name= @data_1 wartosc: 2019-11-01
-2019-12-12 22:52:18,668  INFO stat2018.log_4_net - wizk.aspx getDataTable - parametetr name= @data_2 wartosc: 2019-11-30
-2019-12-12 22:52:18,669  INFO stat2018.log_4_net - wizk.aspx getDataTable - parametetr name= @data_1 wartosc: 2019-11-01
-2019-12-12 22:52:18,669  INFO stat2018.log_4_net - wizk.aspx getDataTable - parametetr name= @data_2 wartosc: 2019-11-30
-2019-12-12 22:52:18,682  INFO stat2018.log_4_net - wizk.aspx getDataTable - parametetr name= @data_1 wartosc: 2019-11-01
-2019-12-12 22:52:18,682  INFO stat2018.log_4_net - wizk.aspx getDataTable - parametetr name= @data_2 wartosc: 2019-11-30
-2019-12-12 22:52:18,725  INFO stat2018.log_4_net - Blad wizk sumowanie : Indeks wykraczal poza granice tablicy.
-2019-12-12 22:52:18,725  INFO stat2018.log_4_net - Blad wizk sumowanie : Indeks wykraczal poza granice tablicy.
-2019-12-12 22:52:18,725  INFO stat2018.log_4_net - Blad wizk sumowanie : Indeks wykraczal poza granice tablicy.
-2019-12-12 22:52:18,727  INFO stat2018.log_4_net - Blad wizk sumowanie : Nieprawidlowy format ciagu wejsciowego.
-2019-12-12 22:52:18,728  INFO stat2018.log_4_net - Blad wizk sumowanie : Nieprawidlowy format ciagu wejsciowego.
-2019-12-12 22:52:18,728  INFO stat2018.log_4_net - Blad wizk sumowanie : Nieprawidlowy format ciagu wejsciowego.
-2019-12-12 22:52:18,728  INFO stat2018.log_4_net - Blad wizk sumowanie : Nieprawidlowy format ciagu wejsciowego.
-2019-12-12 22:52:18,729  INFO stat2018.log_4_net - Blad wizk sumowanie : Nieprawidlowy format ciagu wejsciowego.
-2019-12-12 22:52:18,729  INFO stat2018.log_4_net - Blad wizk sumowanie : Nieprawidlowy format ciagu wejsciowego.
-2019-12-12 22:52:18,729  INFO stat2018.log_4_net - Blad wizk sumowanie : Nieprawidlowy format ciagu wejsciowego.
-2019-12-12 22:52:18,729  INFO stat2018.log_4_net - Blad wizk sumowanie : Nieprawidlowy format ciagu wejsciowego.
-2019-12-12 22:52:18,730  INFO stat2018.log_4_net - Blad wizk sumowanie : Nieprawidlowy format ciagu wejsciowego.
-2019-12-12 22:52:18,730  INFO stat2018.log_4_net - Blad wizk sumowanie : Nieprawidlowy format ciagu wejsciowego.
-2019-12-12 22:52:18,730  INFO stat2018.log_4_net - Blad wizk sumowanie : Nieprawidlowy format ciagu wejsciowego.
-2019-12-12 22:52:18,730  INFO stat2018.log_4_net - Blad wizk sumowanie : Indeks wykraczal poza granice tablicy.
-2019-12-12 22:52:18,731  INFO stat2018.log_4_net - Blad wizk sumowanie : Nieprawidlowy format ciagu wejsciowego.
-2019-12-12 22:52:18,731  INFO stat2018.log_4_net - Blad wizk sumowanie : Nieprawidlowy format ciagu wejsciowego.
-2019-12-12 22:52:18,731  INFO stat2018.log_4_net - Blad wizk sumowanie : Nieprawidlowy format ciagu wejsciowego.
-2019-12-12 22:52:18,731  INFO stat2018.log_4_net - Blad wizk sumowanie : Nieprawidlowy format ciagu wejsciowego.
-2019-12-12 22:52:18,732  INFO stat2018.log_4_net - Blad wizk sumowanie : Nieprawidlowy format ciagu wejsciowego.
-2019-12-12 22:52:18,732  INFO stat2018.log_4_net - Blad wizk sumowanie : Nieprawidlowy format ciagu wejsciowego.
-2019-12-12 22:52:18,732  INFO stat2018.log_4_net - Blad wizk sumowanie : Nieprawidlowy format ciagu wejsciowego.
-2019-12-12 22:52:18,732  INFO stat2018.log_4_net - Blad wizk sumowanie : Nieprawidlowy format ciagu wejsciowego.
-2019-12-12 22:52:18,732  INFO stat2018.log_4_net - Blad wizk sumowanie : Nieprawidlowy format ciagu wejsciowego.
-2019-12-12 22:52:18,733  INFO stat2018.log_4_net - Blad wizk sumowanie : Nieprawidlowy format ciagu wejsciowego.
-2019-12-12 22:52:18,734  INFO stat2018.log_4_net - Blad wizk sumowanie : Nieprawidlowy format ciagu wejsciowego.
-2019-12-12 22:52:18,734  INFO stat2018.log_4_net - Blad wizk sumowanie : Indeks wykraczal poza granice tablicy.
-2019-12-12 22:52:18,734  INFO stat2018.log_4_net - Blad wizk sumowanie : Nieprawidlowy format ciagu wejsciowego.
-2019-12-12 22:52:18,734  INFO stat2018.log_4_net - Blad wizk sumowanie : Nieprawidlowy format ciagu wejsciowego.
-2019-12-12 22:52:18,735  INFO stat2018.log_4_net - Blad wizk sumowanie : Nieprawidlowy format ciagu wejsciowego.
-2019-12-12 22:52:18,735  INFO stat2018.log_4_net - Blad wizk sumowanie : Nieprawidlowy format ciagu wejsciowego.
-2019-12-12 22:52:18,735  INFO stat2018.log_4_net - Blad wizk sumowanie : Nieprawidlowy format ciagu wejsciowego.
-2019-12-12 22:52:18,735  INFO stat2018.log_4_net - Blad wizk sumowanie : Nieprawidlowy format ciagu wejsciowego.
-2019-12-12 22:52:18,736  INFO stat2018.log_4_net - Blad wizk sumowanie : Nieprawidlowy format ciagu wejsciowego.
-2019-12-12 22:52:18,736  INFO stat2018.log_4_net - Blad wizk sumowanie : Nieprawidlowy format ciagu wejsciowego.
-2019-12-12 22:52:18,736  INFO stat2018.log_4_net - Blad wizk sumowanie : Nieprawidlowy format ciagu wejsciowego.
-2019-12-12 22:52:18,736  INFO stat2018.log_4_net - Blad wizk sumowanie : Nieprawidlowy format ciagu wejsciowego.
-2019-12-12 22:52:18,737  INFO stat2018.log_4_net - Blad wizk sumowanie : Nieprawidlowy format ciagu wejsciowego.
-2019-12-12 22:52:18,737  INFO stat2018.log_4_net - Blad wizk sumowanie : Indeks wykraczal poza granice tablicy.
-2019-12-12 22:52:18,741  INFO stat2018.log_4_net - wizk.aspx: rozpoczecie tworzenia tabeli 4
-2019-12-12 22:52:18,759  INFO stat2018.log_4_net - wizk.aspx :Generowanie tabeli danych: Wyciadniecie kwerend dla tabeli :4
-2019-12-12 22:52:18,759  INFO stat2018.log_4_net - wizk.aspx getDataTable - parametetr name= @id_tabeli wartosc: 4
-2019-12-12 22:52:18,759  INFO stat2018.log_4_net - wizk.aspx getDataTable - parametetr name= @id_dzialu wartosc: 12
-2019-12-12 22:52:18,766  INFO stat2018.log_4_net - wizk.aspx :Generowanie tabeli danych: ilosc kwerend wyciagajacych dane  dla tabeli : 4=0
-2019-12-12 22:52:18,766  INFO stat2018.log_4_net - wizk.aspx :Generowanie tabeli danych: Wpisywanie danych sedziów dla tabeli : 4
-2019-12-12 22:52:18,766  INFO stat2018.log_4_net - wizk.aspx getDataTable - parametetr name= @data_1 wartosc: 2019-11-01
-2019-12-12 22:52:18,766  INFO stat2018.log_4_net - wizk.aspx getDataTable - parametetr name= @data_2 wartosc: 2019-11-30
-2019-12-12 22:52:18,793  INFO stat2018.log_4_net - Blad wizk sumowanie : Indeks wykraczal poza granice tablicy.
-2019-12-12 22:52:18,793  INFO stat2018.log_4_net - Blad wizk sumowanie : Indeks wykraczal poza granice tablicy.
-2019-12-12 22:52:18,793  INFO stat2018.log_4_net - Blad wizk sumowanie : Indeks wykraczal poza granice tablicy.
-2019-12-12 22:52:18,793  INFO stat2018.log_4_net - Blad wizk sumowanie : Indeks wykraczal poza granice tablicy.
-2019-12-12 22:52:18,794  INFO stat2018.log_4_net - Blad wizk sumowanie : Indeks wykraczal poza granice tablicy.
-2019-12-12 22:52:18,796  INFO stat2018.log_4_net - wizk.aspx: rozpoczecie tworzenia tabeli 5
-2019-12-12 22:52:18,796  INFO stat2018.log_4_net - wizk.aspx :Generowanie tabeli danych: Wyciadniecie kwerend dla tabeli :5
-2019-12-12 22:52:18,797  INFO stat2018.log_4_net - wizk.aspx getDataTable - parametetr name= @id_tabeli wartosc: 5
-2019-12-12 22:52:18,797  INFO stat2018.log_4_net - wizk.aspx getDataTable - parametetr name= @id_dzialu wartosc: 12
-2019-12-12 22:52:18,799  INFO stat2018.log_4_net - wizk.aspx :Generowanie tabeli danych: ilosc kwerend wyciagajacych dane  dla tabeli : 5=0
-2019-12-12 22:52:18,800  INFO stat2018.log_4_net - wizk.aspx :Generowanie tabeli danych: Wpisywanie danych sedziów dla tabeli : 5
-2019-12-12 22:52:18,800  INFO stat2018.log_4_net - wizk.aspx getDataTable - parametetr name= @data_1 wartosc: 2019-11-01
-2019-12-12 22:52:18,800  INFO stat2018.log_4_net - wizk.aspx getDataTable - parametetr name= @data_2 wartosc: 2019-11-30
-2019-12-12 22:52:18,828  INFO stat2018.log_4_net - wizk.aspx: rozpoczecie tworzenia tabeli 6
-2019-12-12 22:52:18,829  INFO stat2018.log_4_net - wizk.aspx :Generowanie tabeli danych: Wyciadniecie kwerend dla tabeli :6
-2019-12-12 22:52:18,829  INFO stat2018.log_4_net - wizk.aspx getDataTable - parametetr name= @id_tabeli wartosc: 6
-2019-12-12 22:52:18,829  INFO stat2018.log_4_net - wizk.aspx getDataTable - parametetr name= @id_dzialu wartosc: 12
-2019-12-12 22:52:18,833  INFO stat2018.log_4_net - wizk.aspx :Generowanie tabeli danych: ilosc kwerend wyciagajacych dane  dla tabeli : 6=0
-2019-12-12 22:52:18,834  INFO stat2018.log_4_net - wizk.aspx :Generowanie tabeli danych: Wpisywanie danych sedziów dla tabeli : 6
-2019-12-12 22:52:18,834  INFO stat2018.log_4_net - wizk.aspx getDataTable - parametetr name= @data_1 wartosc: 2019-11-01
-2019-12-12 22:52:18,834  INFO stat2018.log_4_net - wizk.aspx getDataTable - parametetr name= @data_2 wartosc: 2019-11-30
-2019-12-12 22:52:18,858  INFO stat2018.log_4_net - wizk.aspx: rozpoczecie tworzenia tabeli 7
-2019-12-12 22:52:18,859  INFO stat2018.log_4_net - wizk.aspx getDataTable - parametetr name= @id_wydzial wartosc: 12
-2019-12-12 22:52:18,859  INFO stat2018.log_4_net - wizk.aspx getDataTable - parametetr name= @id_tabeli wartosc: 7
-2019-12-12 22:52:18,862  INFO stat2018.log_4_net - wizk.aspx DR0003-> : odczyt kwerend: brak kwerend do doczytu danych
-2019-12-12 22:52:18,863  INFO stat2018.log_4_net - wizk.aspx Brak danych dla tabeli 7!
-2019-12-12 22:52:18,866  INFO stat2018.log_4_net - wizk.aspx: rozpoczecie tworzenia tabeli 7
-2019-12-12 22:52:18,867  INFO stat2018.log_4_net - wizk.aspx :Generowanie tabeli danych: Wyciadniecie kwerend dla tabeli :8
-2019-12-12 22:52:18,867  INFO stat2018.log_4_net - wizk.aspx getDataTable - parametetr name= @id_tabeli wartosc: 8
-2019-12-12 22:52:18,867  INFO stat2018.log_4_net - wizk.aspx getDataTable - parametetr name= @id_dzialu wartosc: 12
-2019-12-12 22:52:18,872  INFO stat2018.log_4_net - wizk.aspx :Generowanie tabeli danych: ilosc kwerend wyciagajacych dane  dla tabeli : 8=0
-2019-12-12 22:52:18,872  INFO stat2018.log_4_net - wizk.aspx :Generowanie tabeli danych: Wpisywanie danych sedziów dla tabeli : 8
-2019-12-12 22:52:18,873  INFO stat2018.log_4_net - wizk.aspx getDataTable - parametetr name= @data_1 wartosc: 2019-11-01
-2019-12-12 22:52:18,873  INFO stat2018.log_4_net - wizk.aspx getDataTable - parametetr name= @data_2 wartosc: 2019-11-30
-2019-12-12 22:52:18,909  INFO stat2018.log_4_net - wizk.aspx: rozpoczecie tworzenia tabeli 10
-2019-12-12 22:52:18,909  INFO stat2018.log_4_net - wizk.aspx getDataTable - parametetr name= @id_wydzial wartosc: 12
-2019-12-12 22:52:18,909  INFO stat2018.log_4_net - wizk.aspx getDataTable - parametetr name= @id_tabeli wartosc: 10
-2019-12-12 22:52:18,920  INFO stat2018.log_4_net - wizk.aspx DR0003-> : odczyt kwerend: brak kwerend do doczytu danych
-2019-12-12 22:52:18,920  INFO stat2018.log_4_net - wizk.aspx Brak danych dla tabeli 10!
-2019-12-12 22:52:19,110  INFO stat2018.log_4_net - wizk.aspx: rozpoczecie tworzenia tabeli 11
-2019-12-12 22:52:19,110  INFO stat2018.log_4_net - wizk.aspx getDataTable - parametetr name= @id_wydzial wartosc: 12
-2019-12-12 22:52:19,111  INFO stat2018.log_4_net - wizk.aspx getDataTable - parametetr name= @id_tabeli wartosc: 11
-2019-12-12 22:52:19,140  INFO stat2018.log_4_net - wizk.aspx: rozpoczecie tworzenia tabeli 12
-2019-12-12 22:52:19,141  INFO stat2018.log_4_net - wizk.aspx :Generowanie tabeli danych: Wyciadniecie kwerend dla tabeli :12
-2019-12-12 22:52:19,141  INFO stat2018.log_4_net - wizk.aspx getDataTable - parametetr name= @id_tabeli wartosc: 12
-2019-12-12 22:52:19,142  INFO stat2018.log_4_net - wizk.aspx getDataTable - parametetr name= @id_dzialu wartosc: 12
-2019-12-12 22:52:19,146  INFO stat2018.log_4_net - wizk.aspx :Generowanie tabeli danych: Wpisywanie danych sedziów dla tabeli : 12
-2019-12-12 22:52:19,146  INFO stat2018.log_4_net - wizk.aspx getDataTable - parametetr name= @data_1 wartosc: 2019-11-01
-2019-12-12 22:52:19,146  INFO stat2018.log_4_net - wizk.aspx getDataTable - parametetr name= @data_2 wartosc: 2019-11-30
-2019-12-12 22:52:19,152  INFO stat2018.log_4_net - wizk.aspx getDataTable - parametetr name= @data_1 wartosc: 2019-11-01
-2019-12-12 22:52:19,152  INFO stat2018.log_4_net - wizk.aspx getDataTable - parametetr name= @data_2 wartosc: 2019-11-30
-2019-12-12 22:52:19,153  INFO stat2018.log_4_net - wizk.aspx getDataTable - parametetr name= @data_1 wartosc: 2019-11-01
-2019-12-12 22:52:19,153  INFO stat2018.log_4_net - wizk.aspx getDataTable - parametetr name= @data_2 wartosc: 2019-11-30
-2019-12-12 22:52:19,166  INFO stat2018.log_4_net - wizk.aspx: rozpoczecie tworzenia tabeli 13
-2019-12-12 22:52:19,166  INFO stat2018.log_4_net - wizk.aspx :Generowanie tabeli danych: Wyciadniecie kwerend dla tabeli :13
-2019-12-12 22:52:19,167  INFO stat2018.log_4_net - wizk.aspx getDataTable - parametetr name= @id_tabeli wartosc: 13
-2019-12-12 22:52:19,167  INFO stat2018.log_4_net - wizk.aspx getDataTable - parametetr name= @id_dzialu wartosc: 12
-2019-12-12 22:52:19,171  INFO stat2018.log_4_net - wizk.aspx :Generowanie tabeli danych: Wpisywanie danych sedziów dla tabeli : 13
-2019-12-12 22:52:19,171  INFO stat2018.log_4_net - wizk.aspx getDataTable - parametetr name= @data_1 wartosc: 2019-11-01
-2019-12-12 22:52:19,171  INFO stat2018.log_4_net - wizk.aspx getDataTable - parametetr name= @data_2 wartosc: 2019-11-30
-2019-12-12 22:52:19,180  INFO stat2018.log_4_net - wizk.aspx getDataTable - parametetr name= @data_1 wartosc: 2019-11-01
-2019-12-12 22:52:19,180  INFO stat2018.log_4_net - wizk.aspx getDataTable - parametetr name= @data_2 wartosc: 2019-11-30
-2019-12-12 22:52:19,194  INFO stat2018.log_4_net - wizk.aspx getDataTable - parametetr name= @data_1 wartosc: 2019-11-01
-2019-12-12 22:52:19,194  INFO stat2018.log_4_net - wizk.aspx getDataTable - parametetr name= @data_2 wartosc: 2019-11-30
-2019-12-12 22:52:19,198  INFO stat2018.log_4_net - wizk.aspx getDataTable - parametetr name= @data_1 wartosc: 2019-11-01
-2019-12-12 22:52:19,198  INFO stat2018.log_4_net - wizk.aspx getDataTable - parametetr name= @data_2 wartosc: 2019-11-30
-2019-12-12 22:52:19,201  INFO stat2018.log_4_net - wizk.aspx getDataTable - parametetr name= @data_1 wartosc: 2019-11-01
-2019-12-12 22:52:19,201  INFO stat2018.log_4_net - wizk.aspx getDataTable - parametetr name= @data_2 wartosc: 2019-11-30
-2019-12-12 22:52:19,205  INFO stat2018.log_4_net - wizk.aspx getDataTable - parametetr name= @data_1 wartosc: 2019-11-01
-2019-12-12 22:52:19,205  INFO stat2018.log_4_net - wizk.aspx getDataTable - parametetr name= @data_2 wartosc: 2019-11-30
-2019-12-12 22:52:19,487  INFO stat2018.log_4_net - wizk.aspx: rozpoczecie tworzenia tabeli 15
-2019-12-12 22:52:19,487  INFO stat2018.log_4_net - wizk.aspx getDataTable - parametetr name= @id_wydzial wartosc: 12
-2019-12-12 22:52:19,487  INFO stat2018.log_4_net - wizk.aspx getDataTable - parametetr name= @id_tabeli wartosc: 15
-2019-12-12 22:52:19,491  INFO stat2018.log_4_net - wizk.aspx DR0003-> : odczyt kwerend: brak kwerend do doczytu danych
-2019-12-12 22:52:19,491  INFO stat2018.log_4_net - wizk.aspx Brak danych dla tabeli 15!
-2019-12-12 22:52:19,494  INFO stat2018.log_4_net - wizk.aspx: rozpoczecie tworzenia tabeli 16
-2019-12-12 22:52:19,495  INFO stat2018.log_4_net - wizk.aspx :Generowanie tabeli danych: Wyciadniecie kwerend dla tabeli :16
-2019-12-12 22:52:19,495  INFO stat2018.log_4_net - wizk.aspx getDataTable - parametetr name= @id_tabeli wartosc: 16
-2019-12-12 22:52:19,495  INFO stat2018.log_4_net - wizk.aspx getDataTable - parametetr name= @id_dzialu wartosc: 12
-2019-12-12 22:52:19,498  INFO stat2018.log_4_net - wizk.aspx :Generowanie tabeli danych: Brak kwerend dla tabeli : 16
-2019-12-12 22:52:19,498  INFO stat2018.log_4_net - wizk.aspx Brak danych dla tabeli 16!
-2019-12-12 22:52:19,502  INFO stat2018.log_4_net - wizk.aspx: rozpoczecie tworzenia tabeli 17
-2019-12-12 22:52:19,503  INFO stat2018.log_4_net - wizk.aspx getDataTable - parametetr name= @id_wydzial wartosc: 12
-2019-12-12 22:52:19,503  INFO stat2018.log_4_net - wizk.aspx getDataTable - parametetr name= @id_tabeli wartosc: 17
-2019-12-12 22:52:19,505  INFO stat2018.log_4_net - wizk.aspx DR0003-> : odczyt kwerend: brak kwerend do doczytu danych
-2019-12-12 22:52:19,506  INFO stat2018.log_4_net - wizk.aspx Brak danych dla tabeli 17!
-2019-12-12 22:52:19,648  INFO stat2018.log_4_net - wizk.aspx: rozpoczecie tworzenia tabeli 18
-2019-12-12 22:52:19,648  INFO stat2018.log_4_net - wizk.aspx getDataTable - parametetr name= @id_wydzial wartosc: 12
-2019-12-12 22:52:19,648  INFO stat2018.log_4_net - wizk.aspx getDataTable - parametetr name= @id_tabeli wartosc: 18
-2019-12-12 22:52:19,650  INFO stat2018.log_4_net - wizk.aspx DR0003-> : odczyt kwerend: brak kwerend do doczytu danych
-2019-12-12 22:52:19,650  INFO stat2018.log_4_net - wizk.aspx Brak danych dla tabeli 18!
-2019-12-12 22:52:19,776  INFO stat2018.log_4_net - wizk.aspx: rozpoczecie tworzenia tabeli 19
-2019-12-12 22:52:19,776  INFO stat2018.log_4_net - wizk.aspx getDataTable - parametetr name= @id_wydzial wartosc: 12
-2019-12-12 22:52:19,776  INFO stat2018.log_4_net - wizk.aspx getDataTable - parametetr name= @id_tabeli wartosc: 19
-2019-12-12 22:52:19,779  INFO stat2018.log_4_net - wizk.aspx DR0003-> : odczyt kwerend: brak kwerend do doczytu danych
-2019-12-12 22:52:19,779  INFO stat2018.log_4_net - wizk.aspx Brak danych dla tabeli 19!
-2019-12-12 22:52:19,782  INFO stat2018.log_4_net - wizk.aspx: rozpoczecie tworzenia tabeli 20
-2019-12-12 22:52:19,783  INFO stat2018.log_4_net - wizk.aspx :Generowanie tabeli danych: Wyciadniecie kwerend dla tabeli :20
-2019-12-12 22:52:19,783  INFO stat2018.log_4_net - wizk.aspx getDataTable - parametetr name= @id_tabeli wartosc: 20
-2019-12-12 22:52:19,783  INFO stat2018.log_4_net - wizk.aspx getDataTable - parametetr name= @id_dzialu wartosc: 12
-2019-12-12 22:52:19,785  INFO stat2018.log_4_net - wizk.aspx :Generowanie tabeli danych: Brak kwerend dla tabeli : 20
-2019-12-12 22:52:19,786  INFO stat2018.log_4_net - wizk.aspx Brak danych dla tabeli 20!
-2019-12-12 22:52:19,789  INFO stat2018.log_4_net - wizk.aspx: rozpoczecie tworzenia tabeli 20
-2019-12-12 22:52:19,790  INFO stat2018.log_4_net - wizk.aspx :Generowanie tabeli danych: Wyciadniecie kwerend dla tabeli :21
-2019-12-12 22:52:19,790  INFO stat2018.log_4_net - wizk.aspx getDataTable - parametetr name= @id_tabeli wartosc: 21
-2019-12-12 22:52:19,790  INFO stat2018.log_4_net - wizk.aspx getDataTable - parametetr name= @id_dzialu wartosc: 12
-2019-12-12 22:52:19,794  INFO stat2018.log_4_net - wizk.aspx :Generowanie tabeli danych: Brak kwerend dla tabeli : 21
-2019-12-12 22:52:19,794  INFO stat2018.log_4_net - wizk.aspx Brak danych dla tabeli 20!
-2019-12-12 22:52:19,796  INFO stat2018.log_4_net - wizk.aspx: rozpoczecie tworzenia tabeli 22
-2019-12-12 22:52:19,797  INFO stat2018.log_4_net - wizk.aspx :Generowanie tabeli danych: Wyciadniecie kwerend dla tabeli :22
-2019-12-12 22:52:19,797  INFO stat2018.log_4_net - wizk.aspx getDataTable - parametetr name= @id_tabeli wartosc: 22
-2019-12-12 22:52:19,797  INFO stat2018.log_4_net - wizk.aspx getDataTable - parametetr name= @id_dzialu wartosc: 12
-2019-12-12 22:52:19,799  INFO stat2018.log_4_net - wizk.aspx :Generowanie tabeli danych: Brak kwerend dla tabeli : 22
-2019-12-12 22:52:19,799  INFO stat2018.log_4_net - wizk.aspx Brak danych dla tabeli 22!
-2019-12-12 22:52:19,801  INFO stat2018.log_4_net - wizk.aspx: rozpoczecie tworzenia tabeli 23
-2019-12-12 22:52:19,802  INFO stat2018.log_4_net - wizk.aspx :Generowanie tabeli danych: Wyciadniecie kwerend dla tabeli :23
-2019-12-12 22:52:19,802  INFO stat2018.log_4_net - wizk.aspx getDataTable - parametetr name= @id_tabeli wartosc: 23
-2019-12-12 22:52:19,802  INFO stat2018.log_4_net - wizk.aspx getDataTable - parametetr name= @id_dzialu wartosc: 12
-2019-12-12 22:52:19,804  INFO stat2018.log_4_net - wizk.aspx :Generowanie tabeli danych: Brak kwerend dla tabeli : 23
-2019-12-12 22:52:19,804  INFO stat2018.log_4_net - wizk.aspx Brak danych dla tabeli 23!
-2019-12-12 22:52:19,811  INFO stat2018.log_4_net - wizk.aspx: rozpoczecie tworzenia tabeli 24
-2019-12-12 22:52:19,812  INFO stat2018.log_4_net - wizk.aspx getDataTable - parametetr name= @id_wydzial wartosc: 12
-2019-12-12 22:52:19,812  INFO stat2018.log_4_net - wizk.aspx getDataTable - parametetr name= @id_tabeli wartosc: 24
-2019-12-12 22:52:19,814  INFO stat2018.log_4_net - wizk.aspx DR0003-> : odczyt kwerend: brak kwerend do doczytu danych
-2019-12-12 22:52:19,814  INFO stat2018.log_4_net - wizk.aspx Brak danych dla tabeli 24!
-2019-12-12 22:52:19,933  INFO stat2018.log_4_net - wizk.aspx: rozpoczecie tworzenia tabeli 25
-2019-12-12 22:52:19,933  INFO stat2018.log_4_net - wizk.aspx getDataTable - parametetr name= @id_wydzial wartosc: 12
-2019-12-12 22:52:19,933  INFO stat2018.log_4_net - wizk.aspx getDataTable - parametetr name= @id_tabeli wartosc: 25
-2019-12-12 22:52:19,935  INFO stat2018.log_4_net - wizk.aspx DR0003-> : odczyt kwerend: brak kwerend do doczytu danych
-2019-12-12 22:52:19,935  INFO stat2018.log_4_net - wizk.aspx Brak danych dla tabeli 25!
-2019-12-12 22:52:19,937  INFO stat2018.log_4_net - wizk.aspx: rozpoczecie tworzenia tabeli 26
-2019-12-12 22:52:19,938  INFO stat2018.log_4_net - wizk.aspx :Generowanie tabeli danych: Wyciadniecie kwerend dla tabeli :26
-2019-12-12 22:52:19,938  INFO stat2018.log_4_net - wizk.aspx getDataTable - parametetr name= @id_tabeli wartosc: 26
-2019-12-12 22:52:19,938  INFO stat2018.log_4_net - wizk.aspx getDataTable - parametetr name= @id_dzialu wartosc: 12
-2019-12-12 22:52:19,941  INFO stat2018.log_4_net - wizk.aspx :Generowanie tabeli danych: Brak kwerend dla tabeli : 26
-2019-12-12 22:52:19,942  INFO stat2018.log_4_net - wizk.aspx Brak danych dla tabeli 26!
-2019-12-12 22:52:20,034  INFO stat2018.log_4_net - wizk.aspx: rozpoczecie tworzenia tabeli 27
-2019-12-12 22:52:20,035  INFO stat2018.log_4_net - wizk.aspx getDataTable - parametetr name= @id_wydzial wartosc: 12
-2019-12-12 22:52:20,035  INFO stat2018.log_4_net - wizk.aspx getDataTable - parametetr name= @id_tabeli wartosc: 27
-2019-12-12 22:52:20,038  INFO stat2018.log_4_net - wizk.aspx DR0003-> : odczyt kwerend: brak kwerend do doczytu danych
-2019-12-12 22:52:20,038  INFO stat2018.log_4_net - wizk.aspx Brak danych dla tabeli 27
-2019-12-12 22:52:20,124  INFO stat2018.log_4_net - wizk.aspx: rozpoczecie tworzenia tabeli 28
-2019-12-12 22:52:20,124  INFO stat2018.log_4_net - wizk.aspx getDataTable - parametetr name= @id_wydzial wartosc: 12
-2019-12-12 22:52:20,124  INFO stat2018.log_4_net - wizk.aspx getDataTable - parametetr name= @id_tabeli wartosc: 28
-2019-12-12 22:52:20,127  INFO stat2018.log_4_net - wizk.aspx DR0003-> : odczyt kwerend: brak kwerend do doczytu danych
-2019-12-12 22:52:20,127  INFO stat2018.log_4_net - wizk.aspx Brak danych dla tabeli 28!
-2019-12-12 22:52:20,221  INFO stat2018.log_4_net - wizk.aspx: rozpoczecie tworzenia tabeli 29
-2019-12-12 22:52:20,221  INFO stat2018.log_4_net - wizk.aspx getDataTable - parametetr name= @id_wydzial wartosc: 12
-2019-12-12 22:52:20,221  INFO stat2018.log_4_net - wizk.aspx getDataTable - parametetr name= @id_tabeli wartosc: 29
-2019-12-12 22:52:20,224  INFO stat2018.log_4_net - wizk.aspx DR0003-> : odczyt kwerend: brak kwerend do doczytu danych
-2019-12-12 22:52:20,224  INFO stat2018.log_4_net - wizk.aspx Brak danych dla tabeli 29!
-2019-12-12 22:52:20,227  INFO stat2018.log_4_net - wizk.aspx: rozpoczecie tworzenia tabeli 30
-2019-12-12 22:52:20,228  INFO stat2018.log_4_net - wizk.aspx :Generowanie tabeli danych: Wyciadniecie kwerend dla tabeli :30
-2019-12-12 22:52:20,228  INFO stat2018.log_4_net - wizk.aspx getDataTable - parametetr name= @id_tabeli wartosc: 30
-2019-12-12 22:52:20,228  INFO stat2018.log_4_net - wizk.aspx getDataTable - parametetr name= @id_dzialu wartosc: 12
-2019-12-12 22:52:20,232  INFO stat2018.log_4_net - wizk.aspx :Generowanie tabeli danych: Brak kwerend dla tabeli : 30
-2019-12-12 22:52:20,232  INFO stat2018.log_4_net - wizk.aspx Brak danych dla tabeli 30!
-2019-12-12 22:52:20,235  INFO stat2018.log_4_net - wizk.aspx: rozpoczecie tworzenia tabeli 31
-2019-12-12 22:52:20,236  INFO stat2018.log_4_net - wizk.aspx :Generowanie tabeli danych: Wyciadniecie kwerend dla tabeli :31
-2019-12-12 22:52:20,236  INFO stat2018.log_4_net - wizk.aspx getDataTable - parametetr name= @id_tabeli wartosc: 31
-2019-12-12 22:52:20,236  INFO stat2018.log_4_net - wizk.aspx getDataTable - parametetr name= @id_dzialu wartosc: 12
-2019-12-12 22:52:20,238  INFO stat2018.log_4_net - wizk.aspx :Generowanie tabeli danych: Brak kwerend dla tabeli : 31
-2019-12-12 22:52:20,238  INFO stat2018.log_4_net - wizk.aspx Brak danych dla tabeli 31!
-2019-12-12 22:52:20,242  INFO stat2018.log_4_net - wizk.aspx: rozpoczecie tworzenia tabeli 32
-2019-12-12 22:52:20,243  INFO stat2018.log_4_net - wizk.aspx :Generowanie tabeli danych: Wyciadniecie kwerend dla tabeli :32
-2019-12-12 22:52:20,243  INFO stat2018.log_4_net - wizk.aspx getDataTable - parametetr name= @id_tabeli wartosc: 32
-2019-12-12 22:52:20,243  INFO stat2018.log_4_net - wizk.aspx getDataTable - parametetr name= @id_dzialu wartosc: 12
-2019-12-12 22:52:20,247  INFO stat2018.log_4_net - wizk.aspx :Generowanie tabeli danych: Brak kwerend dla tabeli : 32
-2019-12-12 22:52:20,247  INFO stat2018.log_4_net - wizk.aspx Brak danych dla tabeli 32!
-2019-12-12 22:52:20,249  INFO stat2018.log_4_net - wizk.aspx: rozpoczecie tworzenia tabeli 33
-2019-12-12 22:52:20,250  INFO stat2018.log_4_net - wizk.aspx :Generowanie tabeli danych: Wyciadniecie kwerend dla tabeli :33
-2019-12-12 22:52:20,250  INFO stat2018.log_4_net - wizk.aspx getDataTable - parametetr name= @id_tabeli wartosc: 33
-2019-12-12 22:52:20,250  INFO stat2018.log_4_net - wizk.aspx getDataTable - parametetr name= @id_dzialu wartosc: 12
-2019-12-12 22:52:20,253  INFO stat2018.log_4_net - wizk.aspx :Generowanie tabeli danych: Brak kwerend dla tabeli : 33
-2019-12-12 22:52:20,253  INFO stat2018.log_4_net - wizk.aspx Brak danych dla tabeli 33!
-2019-12-12 22:52:20,255  INFO stat2018.log_4_net - wizk.aspx: rozpoczecie tworzenia tabeli 33
-2019-12-12 22:52:20,256  INFO stat2018.log_4_net - wizk.aspx :Generowanie tabeli danych: Wyciadniecie kwerend dla tabeli :34
-2019-12-12 22:52:20,256  INFO stat2018.log_4_net - wizk.aspx getDataTable - parametetr name= @id_tabeli wartosc: 34
-2019-12-12 22:52:20,256  INFO stat2018.log_4_net - wizk.aspx getDataTable - parametetr name= @id_dzialu wartosc: 12
-2019-12-12 22:52:20,259  INFO stat2018.log_4_net - wizk.aspx :Generowanie tabeli danych: Brak kwerend dla tabeli : 34
-2019-12-12 22:52:20,259  INFO stat2018.log_4_net - wizk.aspx Brak danych dla tabeli 33!
-2019-12-12 22:52:20,265  INFO stat2018.log_4_net - start tworzenia Ste1   22:52:20
-2019-12-12 22:52:20,265  INFO stat2018.log_4_net - start tworzenia menu   22:52:20
-2019-12-12 22:52:20,268  INFO stat2018.log_4_net - koniec tworzenia manu   22:52:20
-2019-12-12 22:52:20,461  INFO stat2018.log_4_net - rozpoczecie logowania 22:52:20
-2019-12-12 22:52:20,519  INFO stat2018.log_4_net - blad logowania domenowego  22:52:20
-2019-12-12 22:52:20,519  INFO stat2018.log_4_net - próba logowania z bazy  22:52:20
-2019-12-12 22:52:20,527  INFO stat2018.log_4_net - Logowanie: identyfikator uzytkownika: test to 6
-2019-12-12 22:52:20,527  INFO stat2018.log_4_net - logowania z bazy poprawne  22:52:20
-2019-12-12 22:52:20,528  INFO stat2018.log_4_net - uruchomienie  redirector.aspx 22:52:20
-2019-12-12 22:52:20,531  INFO stat2018.log_4_net - start redirektora  22:52:20
-2019-12-12 22:52:20,532  INFO stat2018.log_4_net - start tworzenia Ste1   22:52:20
-2019-12-12 22:52:20,532  INFO stat2018.log_4_net - start tworzenia menu  daneDoManuMiesieczne  22:52:20
-2019-12-12 22:52:20,535  INFO stat2018.log_4_net -  getDataTable - parametetr name= @identyfikatorUzytkownika wartosc: 6
-2019-12-12 22:52:20,547  INFO stat2018.log_4_net - start tworzenia menu  daneDoManuKontrolek 22:52:20
-2019-12-12 22:52:20,550  INFO stat2018.log_4_net - naglowek getDataTable - parametetr name= @identyfikatorUzytkownika wartosc: 6
-2019-12-12 22:52:20,552  INFO stat2018.log_4_net - start tworzenia menu  daneDoManuMSS 22:52:20
-2019-12-12 22:52:20,554  INFO stat2018.log_4_net - Naglowki getDataTable - parametetr name= @identyfikatorUzytkownika wartosc: 6
-2019-12-12 22:52:20,558  INFO stat2018.log_4_net - start tworzenia menu daneDoManuInne  22:52:20
-2019-12-12 22:52:20,560  INFO stat2018.log_4_net - start tworzenia menu wyloguj  22:52:20
-2019-12-12 22:52:20,560  INFO stat2018.log_4_net - Header: Rozpoczecie procedury tworzenia elementów menu wyloguj
-2019-12-12 22:52:20,563  INFO stat2018.log_4_net - koniec tworzenia manu   22:52:20
-2019-12-12 22:52:21,007  INFO stat2018.log_4_net - rozpoczecie logowania 22:52:21
-2019-12-12 22:52:21,088  INFO stat2018.log_4_net - blad logowania domenowego  22:52:21
-2019-12-12 22:52:21,088  INFO stat2018.log_4_net - próba logowania z bazy  22:52:21
-2019-12-12 22:52:21,109  INFO stat2018.log_4_net - Logowanie: identyfikator uzytkownika: test to 6
-2019-12-12 22:52:21,109  INFO stat2018.log_4_net - logowania z bazy poprawne  22:52:21
-2019-12-12 22:52:21,111  INFO stat2018.log_4_net - uruchomienie  redirector.aspx 22:52:21
-2019-12-12 22:52:21,113  INFO stat2018.log_4_net - start redirektora  22:52:21
-2019-12-12 22:52:21,113  INFO stat2018.log_4_net - start tworzenia Ste1   22:52:21
-2019-12-12 22:52:21,114  INFO stat2018.log_4_net - start tworzenia menu  daneDoManuMiesieczne  22:52:21
-2019-12-12 22:52:21,115  INFO stat2018.log_4_net -  getDataTable - parametetr name= @identyfikatorUzytkownika wartosc: 6
-2019-12-12 22:52:21,117  INFO stat2018.log_4_net - start tworzenia menu  daneDoManuKontrolek 22:52:21
-2019-12-12 22:52:21,118  INFO stat2018.log_4_net - naglowek getDataTable - parametetr name= @identyfikatorUzytkownika wartosc: 6
-2019-12-12 22:52:21,121  INFO stat2018.log_4_net - start tworzenia menu  daneDoManuMSS 22:52:21
-2019-12-12 22:52:21,123  INFO stat2018.log_4_net - Naglowki getDataTable - parametetr name= @identyfikatorUzytkownika wartosc: 6
-2019-12-12 22:52:21,126  INFO stat2018.log_4_net - start tworzenia menu daneDoManuInne  22:52:21
-2019-12-12 22:52:21,127  INFO stat2018.log_4_net - start tworzenia menu wyloguj  22:52:21
-2019-12-12 22:52:21,127  INFO stat2018.log_4_net - Header: Rozpoczecie procedury tworzenia elementów menu wyloguj
-2019-12-12 22:52:21,129  INFO stat2018.log_4_net - koniec tworzenia manu   22:52:21
+2019-12-30 21:43:08,289  INFO stat2018.log_4_net - rozpoczecie logowania 21:43:08
+2019-12-30 21:43:12,995  INFO stat2018.log_4_net - blad logowania domenowego  21:43:12
+2019-12-30 21:43:12,995  INFO stat2018.log_4_net - próba logowania z bazy  21:43:12
+2019-12-30 21:43:13,009  INFO stat2018.log_4_net - Logowanie: identyfikator uzytkownika: test to 6
+2019-12-30 21:43:13,009  INFO stat2018.log_4_net - logowania z bazy poprawne  21:43:13
+2019-12-30 21:43:13,017  INFO stat2018.log_4_net - uruchomienie  redirector.aspx 21:43:13
+2019-12-30 21:43:13,100  INFO stat2018.log_4_net - start redirektora  21:43:13
+2019-12-30 21:43:13,107  INFO stat2018.log_4_net - start tworzenia Ste1   21:43:13
+2019-12-30 21:43:13,107  INFO stat2018.log_4_net - start tworzenia menu  daneDoManuMiesieczne  21:43:13
+2019-12-30 21:43:13,121  INFO stat2018.log_4_net -  getDataTable - parametetr name= @identyfikatorUzytkownika wartosc: 6
+2019-12-30 21:43:13,182  INFO stat2018.log_4_net - start tworzenia menu  daneDoManuKontrolek 21:43:13
+2019-12-30 21:43:13,192  INFO stat2018.log_4_net - naglowek getDataTable - parametetr name= @identyfikatorUzytkownika wartosc: 6
+2019-12-30 21:43:13,208  INFO stat2018.log_4_net - start tworzenia menu  daneDoManuMSS 21:43:13
+2019-12-30 21:43:13,215  INFO stat2018.log_4_net - Naglowki getDataTable - parametetr name= @identyfikatorUzytkownika wartosc: 6
+2019-12-30 21:43:13,236  INFO stat2018.log_4_net - start tworzenia menu daneDoManuInne  21:43:13
+2019-12-30 21:43:13,254  INFO stat2018.log_4_net - start tworzenia menu wyloguj  21:43:13
+2019-12-30 21:43:13,257  INFO stat2018.log_4_net - Header: Rozpoczecie procedury tworzenia elementów menu wyloguj
+2019-12-30 21:43:13,266  INFO stat2018.log_4_net - koniec tworzenia manu   21:43:13
+2019-12-30 21:43:25,727  INFO stat2018.log_4_net - oktkr.aspx :Generowanie tabeli danych: Rozpoczecie
+2019-12-30 21:43:25,735  INFO stat2018.log_4_net - oktkr.aspx :Generowanie tabeli danych: Wyciadniecie kwerend dla tabeli :1
+2019-12-30 21:43:25,735  INFO stat2018.log_4_net - oktkr.aspx getDataTable - parametetr name= @id_tabeli wartosc: 1
+2019-12-30 21:43:25,735  INFO stat2018.log_4_net - oktkr.aspx getDataTable - parametetr name= @id_dzialu wartosc: 2
+2019-12-30 21:43:25,782  INFO stat2018.log_4_net - oktkr.aspx :Generowanie tabeli danych: Brak kwerend dla tabeli : 1
+2019-12-30 21:43:25,784  INFO stat2018.log_4_net - oktkr.aspx Odwolanie do obiektu nie zostalo ustawione na wystapienie obiektu.
+2019-12-30 21:43:25,784  INFO stat2018.log_4_net - oktkr.aspx :Generowanie tabeli danych: Rozpoczecie
+2019-12-30 21:43:25,785  INFO stat2018.log_4_net - oktkr.aspx :Generowanie tabeli danych: Wyciadniecie kwerend dla tabeli :2
+2019-12-30 21:43:25,785  INFO stat2018.log_4_net - oktkr.aspx getDataTable - parametetr name= @id_tabeli wartosc: 2
+2019-12-30 21:43:25,785  INFO stat2018.log_4_net - oktkr.aspx getDataTable - parametetr name= @id_dzialu wartosc: 2
+2019-12-30 21:43:25,796  INFO stat2018.log_4_net - oktkr.aspx :Generowanie tabeli danych: Ilosc kwerend wyciagajacych dla sedziów dla tabeli : 2 wynosi:1
+2019-12-30 21:43:25,797  INFO stat2018.log_4_net - oktkr.aspx :Generowanie tabeli danych: Ilosc kwerend wyciagajacych dla danych dla tabeli : 2 wynosi:1
+2019-12-30 21:43:25,797  INFO stat2018.log_4_net - oktkr.aspx :Generowanie tabeli danych: Wpisywanie danych sedziów dla tabeli : 2
+2019-12-30 21:43:25,797  INFO stat2018.log_4_net - oktkr.aspx getDataTable - parametetr name= @data_1 wartosc: 2019-11-01
+2019-12-30 21:43:25,797  INFO stat2018.log_4_net - oktkr.aspx getDataTable - parametetr name= @data_2 wartosc: 2019-11-30
+2019-12-30 21:43:25,836  INFO stat2018.log_4_net - oktkr.aspx wpisywanie danych dla sedziów
+2019-12-30 21:43:25,837  INFO stat2018.log_4_net - oktkr.aspx getDataTable - parametetr name= @data_1 wartosc: 2019-11-01
+2019-12-30 21:43:25,837  INFO stat2018.log_4_net - oktkr.aspx getDataTable - parametetr name= @data_2 wartosc: 2019-11-30
+2019-12-30 21:43:25,869  INFO stat2018.log_4_net - oktkr.aspx getDataTable - parametetr name= @data_1 wartosc: 2019-11-01
+2019-12-30 21:43:25,870  INFO stat2018.log_4_net - oktkr.aspx getDataTable - parametetr name= @data_2 wartosc: 2019-11-30
+2019-12-30 21:43:25,918  INFO stat2018.log_4_net - oktkr.aspx getDataTable - parametetr name= @data_1 wartosc: 2019-11-01
+2019-12-30 21:43:25,918  INFO stat2018.log_4_net - oktkr.aspx getDataTable - parametetr name= @data_2 wartosc: 2019-11-30
+2019-12-30 21:43:25,932  INFO stat2018.log_4_net - oktkr.aspx getDataTable - parametetr name= @data_1 wartosc: 2019-11-01
+2019-12-30 21:43:25,932  INFO stat2018.log_4_net - oktkr.aspx getDataTable - parametetr name= @data_2 wartosc: 2019-11-30
+2019-12-30 21:43:25,939  INFO stat2018.log_4_net - oktkr.aspx getDataTable - parametetr name= @data_1 wartosc: 2019-11-01
+2019-12-30 21:43:25,939  INFO stat2018.log_4_net - oktkr.aspx getDataTable - parametetr name= @data_2 wartosc: 2019-11-30
+2019-12-30 21:43:25,946  INFO stat2018.log_4_net - oktkr.aspx getDataTable - parametetr name= @data_1 wartosc: 2019-11-01
+2019-12-30 21:43:25,946  INFO stat2018.log_4_net - oktkr.aspx getDataTable - parametetr name= @data_2 wartosc: 2019-11-30
+2019-12-30 21:43:25,953  INFO stat2018.log_4_net - oktkr.aspx getDataTable - parametetr name= @data_1 wartosc: 2019-11-01
+2019-12-30 21:43:25,953  INFO stat2018.log_4_net - oktkr.aspx getDataTable - parametetr name= @data_2 wartosc: 2019-11-30
+2019-12-30 21:43:25,961  INFO stat2018.log_4_net - oktkr.aspx getDataTable - parametetr name= @data_1 wartosc: 2019-11-01
+2019-12-30 21:43:25,961  INFO stat2018.log_4_net - oktkr.aspx getDataTable - parametetr name= @data_2 wartosc: 2019-11-30
+2019-12-30 21:43:25,968  INFO stat2018.log_4_net - oktkr.aspx getDataTable - parametetr name= @data_1 wartosc: 2019-11-01
+2019-12-30 21:43:25,968  INFO stat2018.log_4_net - oktkr.aspx getDataTable - parametetr name= @data_2 wartosc: 2019-11-30
+2019-12-30 21:43:25,975  INFO stat2018.log_4_net - oktkr.aspx getDataTable - parametetr name= @data_1 wartosc: 2019-11-01
+2019-12-30 21:43:25,976  INFO stat2018.log_4_net - oktkr.aspx getDataTable - parametetr name= @data_2 wartosc: 2019-11-30
+2019-12-30 21:43:25,982  INFO stat2018.log_4_net - oktkr.aspx getDataTable - parametetr name= @data_1 wartosc: 2019-11-01
+2019-12-30 21:43:25,982  INFO stat2018.log_4_net - oktkr.aspx getDataTable - parametetr name= @data_2 wartosc: 2019-11-30
+2019-12-30 21:43:26,144  INFO stat2018.log_4_net - sumowanie w stopce : Okreslony argument jest spoza zakresu prawidlowych wartosci.
+Nazwa parametru: index
+2019-12-30 21:43:26,144  INFO stat2018.log_4_net - oktkr.aspx :Generowanie tabeli danych: Rozpoczecie
+2019-12-30 21:43:26,145  INFO stat2018.log_4_net - oktkr.aspx :Generowanie tabeli danych: Wyciadniecie kwerend dla tabeli :3
+2019-12-30 21:43:26,145  INFO stat2018.log_4_net - oktkr.aspx getDataTable - parametetr name= @id_tabeli wartosc: 3
+2019-12-30 21:43:26,145  INFO stat2018.log_4_net - oktkr.aspx getDataTable - parametetr name= @id_dzialu wartosc: 2
+2019-12-30 21:43:26,148  INFO stat2018.log_4_net - oktkr.aspx :Generowanie tabeli danych: Ilosc kwerend wyciagajacych dla sedziów dla tabeli : 3 wynosi:1
+2019-12-30 21:43:26,149  INFO stat2018.log_4_net - oktkr.aspx :Generowanie tabeli danych: Ilosc kwerend wyciagajacych dla danych dla tabeli : 3 wynosi:1
+2019-12-30 21:43:26,149  INFO stat2018.log_4_net - oktkr.aspx :Generowanie tabeli danych: Wpisywanie danych sedziów dla tabeli : 3
+2019-12-30 21:43:26,149  INFO stat2018.log_4_net - oktkr.aspx getDataTable - parametetr name= @data_1 wartosc: 2019-11-01
+2019-12-30 21:43:26,149  INFO stat2018.log_4_net - oktkr.aspx getDataTable - parametetr name= @data_2 wartosc: 2019-11-30
+2019-12-30 21:43:26,156  INFO stat2018.log_4_net - oktkr.aspx wpisywanie danych dla sedziów
+2019-12-30 21:43:26,156  INFO stat2018.log_4_net - oktkr.aspx getDataTable - parametetr name= @data_1 wartosc: 2019-11-01
+2019-12-30 21:43:26,156  INFO stat2018.log_4_net - oktkr.aspx getDataTable - parametetr name= @data_2 wartosc: 2019-11-30
+2019-12-30 21:43:26,174  INFO stat2018.log_4_net - oktkr.aspx getDataTable - parametetr name= @data_1 wartosc: 2019-11-01
+2019-12-30 21:43:26,174  INFO stat2018.log_4_net - oktkr.aspx getDataTable - parametetr name= @data_2 wartosc: 2019-11-30
+2019-12-30 21:43:26,183  INFO stat2018.log_4_net - oktkr.aspx getDataTable - parametetr name= @data_1 wartosc: 2019-11-01
+2019-12-30 21:43:26,183  INFO stat2018.log_4_net - oktkr.aspx getDataTable - parametetr name= @data_2 wartosc: 2019-11-30
+2019-12-30 21:43:26,193  INFO stat2018.log_4_net - oktkr.aspx getDataTable - parametetr name= @data_1 wartosc: 2019-11-01
+2019-12-30 21:43:26,193  INFO stat2018.log_4_net - oktkr.aspx getDataTable - parametetr name= @data_2 wartosc: 2019-11-30
+2019-12-30 21:43:26,204  INFO stat2018.log_4_net - oktkr.aspx getDataTable - parametetr name= @data_1 wartosc: 2019-11-01
+2019-12-30 21:43:26,204  INFO stat2018.log_4_net - oktkr.aspx getDataTable - parametetr name= @data_2 wartosc: 2019-11-30
+2019-12-30 21:43:26,213  INFO stat2018.log_4_net - oktkr.aspx getDataTable - parametetr name= @data_1 wartosc: 2019-11-01
+2019-12-30 21:43:26,213  INFO stat2018.log_4_net - oktkr.aspx getDataTable - parametetr name= @data_2 wartosc: 2019-11-30
+2019-12-30 21:43:26,223  INFO stat2018.log_4_net - oktkr.aspx getDataTable - parametetr name= @data_1 wartosc: 2019-11-01
+2019-12-30 21:43:26,223  INFO stat2018.log_4_net - oktkr.aspx getDataTable - parametetr name= @data_2 wartosc: 2019-11-30
+2019-12-30 21:43:26,232  INFO stat2018.log_4_net - oktkr.aspx getDataTable - parametetr name= @data_1 wartosc: 2019-11-01
+2019-12-30 21:43:26,232  INFO stat2018.log_4_net - oktkr.aspx getDataTable - parametetr name= @data_2 wartosc: 2019-11-30
+2019-12-30 21:43:26,244  INFO stat2018.log_4_net - oktkr.aspx getDataTable - parametetr name= @data_1 wartosc: 2019-11-01
+2019-12-30 21:43:26,244  INFO stat2018.log_4_net - oktkr.aspx getDataTable - parametetr name= @data_2 wartosc: 2019-11-30
+2019-12-30 21:43:26,406  INFO stat2018.log_4_net - sumowanie w stopce : Okreslony argument jest spoza zakresu prawidlowych wartosci.
+Nazwa parametru: index
+2019-12-30 21:43:26,428  INFO stat2018.log_4_net - start tworzenia Ste1   21:43:26
+2019-12-30 21:43:26,428  INFO stat2018.log_4_net - start tworzenia menu   21:43:26
+2019-12-30 21:43:26,429  INFO stat2018.log_4_net - koniec tworzenia manu   21:43:26
+2019-12-30 21:43:32,185  INFO stat2018.log_4_net - start tworzenia Ste1   21:43:32
+2019-12-30 21:43:32,194  INFO stat2018.log_4_net - oktkr.aspx :Generowanie tabeli danych: Rozpoczecie
+2019-12-30 21:43:32,195  INFO stat2018.log_4_net - oktkr.aspx :Generowanie tabeli danych: Wyciadniecie kwerend dla tabeli :1
+2019-12-30 21:43:32,195  INFO stat2018.log_4_net - oktkr.aspx getDataTable - parametetr name= @id_tabeli wartosc: 1
+2019-12-30 21:43:32,195  INFO stat2018.log_4_net - oktkr.aspx getDataTable - parametetr name= @id_dzialu wartosc: 2
+2019-12-30 21:43:32,197  INFO stat2018.log_4_net - oktkr.aspx :Generowanie tabeli danych: Brak kwerend dla tabeli : 1
+2019-12-30 21:43:32,197  INFO stat2018.log_4_net - oktkr.aspx Odwolanie do obiektu nie zostalo ustawione na wystapienie obiektu.
+2019-12-30 21:43:32,198  INFO stat2018.log_4_net - oktkr.aspx :Generowanie tabeli danych: Rozpoczecie
+2019-12-30 21:43:32,198  INFO stat2018.log_4_net - oktkr.aspx :Generowanie tabeli danych: Wyciadniecie kwerend dla tabeli :2
+2019-12-30 21:43:32,198  INFO stat2018.log_4_net - oktkr.aspx getDataTable - parametetr name= @id_tabeli wartosc: 2
+2019-12-30 21:43:32,198  INFO stat2018.log_4_net - oktkr.aspx getDataTable - parametetr name= @id_dzialu wartosc: 2
+2019-12-30 21:43:32,202  INFO stat2018.log_4_net - oktkr.aspx :Generowanie tabeli danych: Ilosc kwerend wyciagajacych dla sedziów dla tabeli : 2 wynosi:1
+2019-12-30 21:43:32,202  INFO stat2018.log_4_net - oktkr.aspx :Generowanie tabeli danych: Ilosc kwerend wyciagajacych dla danych dla tabeli : 2 wynosi:1
+2019-12-30 21:43:32,202  INFO stat2018.log_4_net - oktkr.aspx :Generowanie tabeli danych: Wpisywanie danych sedziów dla tabeli : 2
+2019-12-30 21:43:32,202  INFO stat2018.log_4_net - oktkr.aspx getDataTable - parametetr name= @data_1 wartosc: 2019-11-01
+2019-12-30 21:43:32,202  INFO stat2018.log_4_net - oktkr.aspx getDataTable - parametetr name= @data_2 wartosc: 2019-11-30
+2019-12-30 21:43:32,208  INFO stat2018.log_4_net - oktkr.aspx wpisywanie danych dla sedziów
+2019-12-30 21:43:32,208  INFO stat2018.log_4_net - oktkr.aspx getDataTable - parametetr name= @data_1 wartosc: 2019-11-01
+2019-12-30 21:43:32,208  INFO stat2018.log_4_net - oktkr.aspx getDataTable - parametetr name= @data_2 wartosc: 2019-11-30
+2019-12-30 21:43:32,209  INFO stat2018.log_4_net - oktkr.aspx getDataTable - parametetr name= @data_1 wartosc: 2019-11-01
+2019-12-30 21:43:32,209  INFO stat2018.log_4_net - oktkr.aspx getDataTable - parametetr name= @data_2 wartosc: 2019-11-30
+2019-12-30 21:43:32,210  INFO stat2018.log_4_net - oktkr.aspx getDataTable - parametetr name= @data_1 wartosc: 2019-11-01
+2019-12-30 21:43:32,210  INFO stat2018.log_4_net - oktkr.aspx getDataTable - parametetr name= @data_2 wartosc: 2019-11-30
+2019-12-30 21:43:32,210  INFO stat2018.log_4_net - oktkr.aspx getDataTable - parametetr name= @data_1 wartosc: 2019-11-01
+2019-12-30 21:43:32,210  INFO stat2018.log_4_net - oktkr.aspx getDataTable - parametetr name= @data_2 wartosc: 2019-11-30
+2019-12-30 21:43:32,211  INFO stat2018.log_4_net - oktkr.aspx getDataTable - parametetr name= @data_1 wartosc: 2019-11-01
+2019-12-30 21:43:32,211  INFO stat2018.log_4_net - oktkr.aspx getDataTable - parametetr name= @data_2 wartosc: 2019-11-30
+2019-12-30 21:43:32,211  INFO stat2018.log_4_net - oktkr.aspx getDataTable - parametetr name= @data_1 wartosc: 2019-11-01
+2019-12-30 21:43:32,211  INFO stat2018.log_4_net - oktkr.aspx getDataTable - parametetr name= @data_2 wartosc: 2019-11-30
+2019-12-30 21:43:32,212  INFO stat2018.log_4_net - oktkr.aspx getDataTable - parametetr name= @data_1 wartosc: 2019-11-01
+2019-12-30 21:43:32,212  INFO stat2018.log_4_net - oktkr.aspx getDataTable - parametetr name= @data_2 wartosc: 2019-11-30
+2019-12-30 21:43:32,213  INFO stat2018.log_4_net - oktkr.aspx getDataTable - parametetr name= @data_1 wartosc: 2019-11-01
+2019-12-30 21:43:32,213  INFO stat2018.log_4_net - oktkr.aspx getDataTable - parametetr name= @data_2 wartosc: 2019-11-30
+2019-12-30 21:43:32,213  INFO stat2018.log_4_net - oktkr.aspx getDataTable - parametetr name= @data_1 wartosc: 2019-11-01
+2019-12-30 21:43:32,213  INFO stat2018.log_4_net - oktkr.aspx getDataTable - parametetr name= @data_2 wartosc: 2019-11-30
+2019-12-30 21:43:32,214  INFO stat2018.log_4_net - oktkr.aspx getDataTable - parametetr name= @data_1 wartosc: 2019-11-01
+2019-12-30 21:43:32,214  INFO stat2018.log_4_net - oktkr.aspx getDataTable - parametetr name= @data_2 wartosc: 2019-11-30
+2019-12-30 21:43:32,215  INFO stat2018.log_4_net - oktkr.aspx getDataTable - parametetr name= @data_1 wartosc: 2019-11-01
+2019-12-30 21:43:32,215  INFO stat2018.log_4_net - oktkr.aspx getDataTable - parametetr name= @data_2 wartosc: 2019-11-30
+2019-12-30 21:43:32,220  INFO stat2018.log_4_net - sumowanie w stopce : Okreslony argument jest spoza zakresu prawidlowych wartosci.
+Nazwa parametru: index
+2019-12-30 21:43:32,220  INFO stat2018.log_4_net - oktkr.aspx :Generowanie tabeli danych: Rozpoczecie
+2019-12-30 21:43:32,221  INFO stat2018.log_4_net - oktkr.aspx :Generowanie tabeli danych: Wyciadniecie kwerend dla tabeli :3
+2019-12-30 21:43:32,221  INFO stat2018.log_4_net - oktkr.aspx getDataTable - parametetr name= @id_tabeli wartosc: 3
+2019-12-30 21:43:32,221  INFO stat2018.log_4_net - oktkr.aspx getDataTable - parametetr name= @id_dzialu wartosc: 2
+2019-12-30 21:43:32,224  INFO stat2018.log_4_net - oktkr.aspx :Generowanie tabeli danych: Ilosc kwerend wyciagajacych dla sedziów dla tabeli : 3 wynosi:1
+2019-12-30 21:43:32,224  INFO stat2018.log_4_net - oktkr.aspx :Generowanie tabeli danych: Ilosc kwerend wyciagajacych dla danych dla tabeli : 3 wynosi:1
+2019-12-30 21:43:32,224  INFO stat2018.log_4_net - oktkr.aspx :Generowanie tabeli danych: Wpisywanie danych sedziów dla tabeli : 3
+2019-12-30 21:43:32,224  INFO stat2018.log_4_net - oktkr.aspx getDataTable - parametetr name= @data_1 wartosc: 2019-11-01
+2019-12-30 21:43:32,224  INFO stat2018.log_4_net - oktkr.aspx getDataTable - parametetr name= @data_2 wartosc: 2019-11-30
+2019-12-30 21:43:32,231  INFO stat2018.log_4_net - oktkr.aspx wpisywanie danych dla sedziów
+2019-12-30 21:43:32,231  INFO stat2018.log_4_net - oktkr.aspx getDataTable - parametetr name= @data_1 wartosc: 2019-11-01
+2019-12-30 21:43:32,231  INFO stat2018.log_4_net - oktkr.aspx getDataTable - parametetr name= @data_2 wartosc: 2019-11-30
+2019-12-30 21:43:32,232  INFO stat2018.log_4_net - oktkr.aspx getDataTable - parametetr name= @data_1 wartosc: 2019-11-01
+2019-12-30 21:43:32,232  INFO stat2018.log_4_net - oktkr.aspx getDataTable - parametetr name= @data_2 wartosc: 2019-11-30
+2019-12-30 21:43:32,234  INFO stat2018.log_4_net - oktkr.aspx getDataTable - parametetr name= @data_1 wartosc: 2019-11-01
+2019-12-30 21:43:32,234  INFO stat2018.log_4_net - oktkr.aspx getDataTable - parametetr name= @data_2 wartosc: 2019-11-30
+2019-12-30 21:43:32,237  INFO stat2018.log_4_net - oktkr.aspx getDataTable - parametetr name= @data_1 wartosc: 2019-11-01
+2019-12-30 21:43:32,237  INFO stat2018.log_4_net - oktkr.aspx getDataTable - parametetr name= @data_2 wartosc: 2019-11-30
+2019-12-30 21:43:32,238  INFO stat2018.log_4_net - oktkr.aspx getDataTable - parametetr name= @data_1 wartosc: 2019-11-01
+2019-12-30 21:43:32,238  INFO stat2018.log_4_net - oktkr.aspx getDataTable - parametetr name= @data_2 wartosc: 2019-11-30
+2019-12-30 21:43:32,239  INFO stat2018.log_4_net - oktkr.aspx getDataTable - parametetr name= @data_1 wartosc: 2019-11-01
+2019-12-30 21:43:32,239  INFO stat2018.log_4_net - oktkr.aspx getDataTable - parametetr name= @data_2 wartosc: 2019-11-30
+2019-12-30 21:43:32,240  INFO stat2018.log_4_net - oktkr.aspx getDataTable - parametetr name= @data_1 wartosc: 2019-11-01
+2019-12-30 21:43:32,240  INFO stat2018.log_4_net - oktkr.aspx getDataTable - parametetr name= @data_2 wartosc: 2019-11-30
+2019-12-30 21:43:32,241  INFO stat2018.log_4_net - oktkr.aspx getDataTable - parametetr name= @data_1 wartosc: 2019-11-01
+2019-12-30 21:43:32,241  INFO stat2018.log_4_net - oktkr.aspx getDataTable - parametetr name= @data_2 wartosc: 2019-11-30
+2019-12-30 21:43:32,242  INFO stat2018.log_4_net - oktkr.aspx getDataTable - parametetr name= @data_1 wartosc: 2019-11-01
+2019-12-30 21:43:32,242  INFO stat2018.log_4_net - oktkr.aspx getDataTable - parametetr name= @data_2 wartosc: 2019-11-30
+2019-12-30 21:43:32,251  INFO stat2018.log_4_net - sumowanie w stopce : Okreslony argument jest spoza zakresu prawidlowych wartosci.
+Nazwa parametru: index
+2019-12-30 21:45:19,021  INFO stat2018.log_4_net - rozpoczecie logowania 21:45:19
+2019-12-30 21:45:19,038  INFO stat2018.log_4_net - rozpoczecie logowania 21:45:19
+2019-12-30 21:45:23,726  INFO stat2018.log_4_net - blad logowania domenowego  21:45:23
+2019-12-30 21:45:23,726  INFO stat2018.log_4_net - próba logowania z bazy  21:45:23
+2019-12-30 21:45:23,731  INFO stat2018.log_4_net - Logowanie: identyfikator uzytkownika: test to 6
+2019-12-30 21:45:23,731  INFO stat2018.log_4_net - logowania z bazy poprawne  21:45:23
+2019-12-30 21:45:23,733  INFO stat2018.log_4_net - blad logowania domenowego  21:45:23
+2019-12-30 21:45:23,733  INFO stat2018.log_4_net - próba logowania z bazy  21:45:23
+2019-12-30 21:45:23,738  INFO stat2018.log_4_net - uruchomienie  redirector.aspx 21:45:23
+2019-12-30 21:45:23,744  INFO stat2018.log_4_net - start redirektora  21:45:23
+2019-12-30 21:45:23,744  INFO stat2018.log_4_net - start tworzenia Ste1   21:45:23
+2019-12-30 21:45:23,744  INFO stat2018.log_4_net - start tworzenia menu  daneDoManuMiesieczne  21:45:23
+2019-12-30 21:45:23,747  INFO stat2018.log_4_net -  getDataTable - parametetr name= @identyfikatorUzytkownika wartosc: 6
+2019-12-30 21:45:23,758  INFO stat2018.log_4_net - Logowanie: identyfikator uzytkownika: test to 6
+2019-12-30 21:45:23,758  INFO stat2018.log_4_net - logowania z bazy poprawne  21:45:23
+2019-12-30 21:45:23,759  INFO stat2018.log_4_net - uruchomienie  redirector.aspx 21:45:23
+2019-12-30 21:45:23,761  INFO stat2018.log_4_net - start redirektora  21:45:23
+2019-12-30 21:45:23,761  INFO stat2018.log_4_net - start tworzenia Ste1   21:45:23
+2019-12-30 21:45:23,761  INFO stat2018.log_4_net - start tworzenia menu  daneDoManuMiesieczne  21:45:23
+2019-12-30 21:45:23,762  INFO stat2018.log_4_net -  getDataTable - parametetr name= @identyfikatorUzytkownika wartosc: 6
+2019-12-30 21:45:23,769  INFO stat2018.log_4_net - start tworzenia menu  daneDoManuKontrolek 21:45:23
+2019-12-30 21:45:23,770  INFO stat2018.log_4_net - naglowek getDataTable - parametetr name= @identyfikatorUzytkownika wartosc: 6
+2019-12-30 21:45:23,774  INFO stat2018.log_4_net - start tworzenia menu  daneDoManuMSS 21:45:23
+2019-12-30 21:45:23,775  INFO stat2018.log_4_net - Naglowki getDataTable - parametetr name= @identyfikatorUzytkownika wartosc: 6
+2019-12-30 21:45:23,782  INFO stat2018.log_4_net - start tworzenia menu  daneDoManuKontrolek 21:45:23
+2019-12-30 21:45:23,782  INFO stat2018.log_4_net - naglowek getDataTable - parametetr name= @identyfikatorUzytkownika wartosc: 6
+2019-12-30 21:45:23,788  INFO stat2018.log_4_net - start tworzenia menu daneDoManuInne  21:45:23
+2019-12-30 21:45:23,790  INFO stat2018.log_4_net - start tworzenia menu  daneDoManuMSS 21:45:23
+2019-12-30 21:45:23,792  INFO stat2018.log_4_net - Naglowki getDataTable - parametetr name= @identyfikatorUzytkownika wartosc: 6
+2019-12-30 21:45:23,793  INFO stat2018.log_4_net - start tworzenia menu daneDoManuInne  21:45:23
+2019-12-30 21:45:23,800  INFO stat2018.log_4_net - start tworzenia menu wyloguj  21:45:23
+2019-12-30 21:45:23,800  INFO stat2018.log_4_net - Header: Rozpoczecie procedury tworzenia elementów menu wyloguj
+2019-12-30 21:45:23,804  INFO stat2018.log_4_net - koniec tworzenia manu   21:45:23
+2019-12-30 21:45:23,830  INFO stat2018.log_4_net - start tworzenia menu wyloguj  21:45:23
+2019-12-30 21:45:23,830  INFO stat2018.log_4_net - Header: Rozpoczecie procedury tworzenia elementów menu wyloguj
+2019-12-30 21:45:23,832  INFO stat2018.log_4_net - koniec tworzenia manu   21:45:23
+2019-12-30 21:45:35,005  INFO stat2018.log_4_net - oktkr.aspx :Generowanie tabeli danych: Rozpoczecie
+2019-12-30 21:45:35,015  INFO stat2018.log_4_net - oktkr.aspx :Generowanie tabeli danych: Wyciadniecie kwerend dla tabeli :1
+2019-12-30 21:45:35,017  INFO stat2018.log_4_net - oktkr.aspx getDataTable - parametetr name= @id_tabeli wartosc: 1
+2019-12-30 21:45:35,017  INFO stat2018.log_4_net - oktkr.aspx getDataTable - parametetr name= @id_dzialu wartosc: 2
+2019-12-30 21:45:35,027  INFO stat2018.log_4_net - oktkr.aspx :Generowanie tabeli danych: Brak kwerend dla tabeli : 1
+2019-12-30 21:45:35,027  INFO stat2018.log_4_net - oktkr.aspx Odwolanie do obiektu nie zostalo ustawione na wystapienie obiektu.
+2019-12-30 21:45:35,027  INFO stat2018.log_4_net - oktkr.aspx :Generowanie tabeli danych: Rozpoczecie
+2019-12-30 21:45:35,028  INFO stat2018.log_4_net - oktkr.aspx :Generowanie tabeli danych: Wyciadniecie kwerend dla tabeli :2
+2019-12-30 21:45:35,028  INFO stat2018.log_4_net - oktkr.aspx getDataTable - parametetr name= @id_tabeli wartosc: 2
+2019-12-30 21:45:35,029  INFO stat2018.log_4_net - oktkr.aspx getDataTable - parametetr name= @id_dzialu wartosc: 2
+2019-12-30 21:45:35,035  INFO stat2018.log_4_net - oktkr.aspx :Generowanie tabeli danych: Ilosc kwerend wyciagajacych dla sedziów dla tabeli : 2 wynosi:1
+2019-12-30 21:45:35,036  INFO stat2018.log_4_net - oktkr.aspx :Generowanie tabeli danych: Ilosc kwerend wyciagajacych dla danych dla tabeli : 2 wynosi:1
+2019-12-30 21:45:35,036  INFO stat2018.log_4_net - oktkr.aspx :Generowanie tabeli danych: Wpisywanie danych sedziów dla tabeli : 2
+2019-12-30 21:45:35,036  INFO stat2018.log_4_net - oktkr.aspx getDataTable - parametetr name= @data_1 wartosc: 2019-11-01
+2019-12-30 21:45:35,036  INFO stat2018.log_4_net - oktkr.aspx getDataTable - parametetr name= @data_2 wartosc: 2019-11-30
+2019-12-30 21:45:35,059  INFO stat2018.log_4_net - oktkr.aspx wpisywanie danych dla sedziów
+2019-12-30 21:45:35,059  INFO stat2018.log_4_net - oktkr.aspx getDataTable - parametetr name= @data_1 wartosc: 2019-11-01
+2019-12-30 21:45:35,059  INFO stat2018.log_4_net - oktkr.aspx getDataTable - parametetr name= @data_2 wartosc: 2019-11-30
+2019-12-30 21:45:35,078  INFO stat2018.log_4_net - oktkr.aspx getDataTable - parametetr name= @data_1 wartosc: 2019-11-01
+2019-12-30 21:45:35,078  INFO stat2018.log_4_net - oktkr.aspx getDataTable - parametetr name= @data_2 wartosc: 2019-11-30
+2019-12-30 21:45:35,122  INFO stat2018.log_4_net - oktkr.aspx getDataTable - parametetr name= @data_1 wartosc: 2019-11-01
+2019-12-30 21:45:35,123  INFO stat2018.log_4_net - oktkr.aspx getDataTable - parametetr name= @data_2 wartosc: 2019-11-30
+2019-12-30 21:45:35,132  INFO stat2018.log_4_net - oktkr.aspx getDataTable - parametetr name= @data_1 wartosc: 2019-11-01
+2019-12-30 21:45:35,132  INFO stat2018.log_4_net - oktkr.aspx getDataTable - parametetr name= @data_2 wartosc: 2019-11-30
+2019-12-30 21:45:35,142  INFO stat2018.log_4_net - oktkr.aspx getDataTable - parametetr name= @data_1 wartosc: 2019-11-01
+2019-12-30 21:45:35,142  INFO stat2018.log_4_net - oktkr.aspx getDataTable - parametetr name= @data_2 wartosc: 2019-11-30
+2019-12-30 21:45:35,151  INFO stat2018.log_4_net - oktkr.aspx getDataTable - parametetr name= @data_1 wartosc: 2019-11-01
+2019-12-30 21:45:35,151  INFO stat2018.log_4_net - oktkr.aspx getDataTable - parametetr name= @data_2 wartosc: 2019-11-30
+2019-12-30 21:45:35,159  INFO stat2018.log_4_net - oktkr.aspx getDataTable - parametetr name= @data_1 wartosc: 2019-11-01
+2019-12-30 21:45:35,159  INFO stat2018.log_4_net - oktkr.aspx getDataTable - parametetr name= @data_2 wartosc: 2019-11-30
+2019-12-30 21:45:35,168  INFO stat2018.log_4_net - oktkr.aspx getDataTable - parametetr name= @data_1 wartosc: 2019-11-01
+2019-12-30 21:45:35,168  INFO stat2018.log_4_net - oktkr.aspx getDataTable - parametetr name= @data_2 wartosc: 2019-11-30
+2019-12-30 21:45:35,175  INFO stat2018.log_4_net - oktkr.aspx getDataTable - parametetr name= @data_1 wartosc: 2019-11-01
+2019-12-30 21:45:35,175  INFO stat2018.log_4_net - oktkr.aspx getDataTable - parametetr name= @data_2 wartosc: 2019-11-30
+2019-12-30 21:45:35,182  INFO stat2018.log_4_net - oktkr.aspx getDataTable - parametetr name= @data_1 wartosc: 2019-11-01
+2019-12-30 21:45:35,182  INFO stat2018.log_4_net - oktkr.aspx getDataTable - parametetr name= @data_2 wartosc: 2019-11-30
+2019-12-30 21:45:35,191  INFO stat2018.log_4_net - oktkr.aspx getDataTable - parametetr name= @data_1 wartosc: 2019-11-01
+2019-12-30 21:45:35,192  INFO stat2018.log_4_net - oktkr.aspx getDataTable - parametetr name= @data_2 wartosc: 2019-11-30
+2019-12-30 21:45:35,208  INFO stat2018.log_4_net - sumowanie w stopce : Okreslony argument jest spoza zakresu prawidlowych wartosci.
+Nazwa parametru: index
+2019-12-30 21:45:35,209  INFO stat2018.log_4_net - oktkr.aspx :Generowanie tabeli danych: Rozpoczecie
+2019-12-30 21:45:35,210  INFO stat2018.log_4_net - oktkr.aspx :Generowanie tabeli danych: Wyciadniecie kwerend dla tabeli :3
+2019-12-30 21:45:35,210  INFO stat2018.log_4_net - oktkr.aspx getDataTable - parametetr name= @id_tabeli wartosc: 3
+2019-12-30 21:45:35,210  INFO stat2018.log_4_net - oktkr.aspx getDataTable - parametetr name= @id_dzialu wartosc: 2
+2019-12-30 21:45:35,216  INFO stat2018.log_4_net - oktkr.aspx :Generowanie tabeli danych: Ilosc kwerend wyciagajacych dla sedziów dla tabeli : 3 wynosi:1
+2019-12-30 21:45:35,216  INFO stat2018.log_4_net - oktkr.aspx :Generowanie tabeli danych: Ilosc kwerend wyciagajacych dla danych dla tabeli : 3 wynosi:1
+2019-12-30 21:45:35,216  INFO stat2018.log_4_net - oktkr.aspx :Generowanie tabeli danych: Wpisywanie danych sedziów dla tabeli : 3
+2019-12-30 21:45:35,216  INFO stat2018.log_4_net - oktkr.aspx getDataTable - parametetr name= @data_1 wartosc: 2019-11-01
+2019-12-30 21:45:35,216  INFO stat2018.log_4_net - oktkr.aspx getDataTable - parametetr name= @data_2 wartosc: 2019-11-30
+2019-12-30 21:45:35,226  INFO stat2018.log_4_net - oktkr.aspx wpisywanie danych dla sedziów
+2019-12-30 21:45:35,226  INFO stat2018.log_4_net - oktkr.aspx getDataTable - parametetr name= @data_1 wartosc: 2019-11-01
+2019-12-30 21:45:35,226  INFO stat2018.log_4_net - oktkr.aspx getDataTable - parametetr name= @data_2 wartosc: 2019-11-30
+2019-12-30 21:45:35,244  INFO stat2018.log_4_net - oktkr.aspx getDataTable - parametetr name= @data_1 wartosc: 2019-11-01
+2019-12-30 21:45:35,245  INFO stat2018.log_4_net - oktkr.aspx getDataTable - parametetr name= @data_2 wartosc: 2019-11-30
+2019-12-30 21:45:35,263  INFO stat2018.log_4_net - oktkr.aspx getDataTable - parametetr name= @data_1 wartosc: 2019-11-01
+2019-12-30 21:45:35,263  INFO stat2018.log_4_net - oktkr.aspx getDataTable - parametetr name= @data_2 wartosc: 2019-11-30
+2019-12-30 21:45:35,282  INFO stat2018.log_4_net - oktkr.aspx getDataTable - parametetr name= @data_1 wartosc: 2019-11-01
+2019-12-30 21:45:35,282  INFO stat2018.log_4_net - oktkr.aspx getDataTable - parametetr name= @data_2 wartosc: 2019-11-30
+2019-12-30 21:45:35,305  INFO stat2018.log_4_net - oktkr.aspx getDataTable - parametetr name= @data_1 wartosc: 2019-11-01
+2019-12-30 21:45:35,305  INFO stat2018.log_4_net - oktkr.aspx getDataTable - parametetr name= @data_2 wartosc: 2019-11-30
+2019-12-30 21:45:35,326  INFO stat2018.log_4_net - oktkr.aspx getDataTable - parametetr name= @data_1 wartosc: 2019-11-01
+2019-12-30 21:45:35,326  INFO stat2018.log_4_net - oktkr.aspx getDataTable - parametetr name= @data_2 wartosc: 2019-11-30
+2019-12-30 21:45:35,340  INFO stat2018.log_4_net - oktkr.aspx getDataTable - parametetr name= @data_1 wartosc: 2019-11-01
+2019-12-30 21:45:35,340  INFO stat2018.log_4_net - oktkr.aspx getDataTable - parametetr name= @data_2 wartosc: 2019-11-30
+2019-12-30 21:45:35,357  INFO stat2018.log_4_net - oktkr.aspx getDataTable - parametetr name= @data_1 wartosc: 2019-11-01
+2019-12-30 21:45:35,357  INFO stat2018.log_4_net - oktkr.aspx getDataTable - parametetr name= @data_2 wartosc: 2019-11-30
+2019-12-30 21:45:35,380  INFO stat2018.log_4_net - oktkr.aspx getDataTable - parametetr name= @data_1 wartosc: 2019-11-01
+2019-12-30 21:45:35,381  INFO stat2018.log_4_net - oktkr.aspx getDataTable - parametetr name= @data_2 wartosc: 2019-11-30
+2019-12-30 21:45:35,510  INFO stat2018.log_4_net - sumowanie w stopce : Okreslony argument jest spoza zakresu prawidlowych wartosci.
+Nazwa parametru: index
+2019-12-30 21:45:35,540  INFO stat2018.log_4_net - start tworzenia Ste1   21:45:35
+2019-12-30 21:45:35,540  INFO stat2018.log_4_net - start tworzenia menu   21:45:35
+2019-12-30 21:45:35,573  INFO stat2018.log_4_net - koniec tworzenia manu   21:45:35
+2019-12-30 21:45:43,009  INFO stat2018.log_4_net - start tworzenia Ste1   21:45:43
+2019-12-30 21:45:43,026  INFO stat2018.log_4_net - oktkr.aspx :Generowanie tabeli danych: Rozpoczecie
+2019-12-30 21:45:43,036  INFO stat2018.log_4_net - oktkr.aspx :Generowanie tabeli danych: Wyciadniecie kwerend dla tabeli :1
+2019-12-30 21:45:43,037  INFO stat2018.log_4_net - oktkr.aspx getDataTable - parametetr name= @id_tabeli wartosc: 1
+2019-12-30 21:45:43,037  INFO stat2018.log_4_net - oktkr.aspx getDataTable - parametetr name= @id_dzialu wartosc: 2
+2019-12-30 21:45:43,061  INFO stat2018.log_4_net - oktkr.aspx :Generowanie tabeli danych: Brak kwerend dla tabeli : 1
+2019-12-30 21:45:43,062  INFO stat2018.log_4_net - oktkr.aspx Odwolanie do obiektu nie zostalo ustawione na wystapienie obiektu.
+2019-12-30 21:45:43,062  INFO stat2018.log_4_net - oktkr.aspx :Generowanie tabeli danych: Rozpoczecie
+2019-12-30 21:45:43,067  INFO stat2018.log_4_net - oktkr.aspx :Generowanie tabeli danych: Wyciadniecie kwerend dla tabeli :2
+2019-12-30 21:45:43,067  INFO stat2018.log_4_net - oktkr.aspx getDataTable - parametetr name= @id_tabeli wartosc: 2
+2019-12-30 21:45:43,067  INFO stat2018.log_4_net - oktkr.aspx getDataTable - parametetr name= @id_dzialu wartosc: 2
+2019-12-30 21:45:43,072  INFO stat2018.log_4_net - oktkr.aspx :Generowanie tabeli danych: Ilosc kwerend wyciagajacych dla sedziów dla tabeli : 2 wynosi:1
+2019-12-30 21:45:43,073  INFO stat2018.log_4_net - oktkr.aspx :Generowanie tabeli danych: Ilosc kwerend wyciagajacych dla danych dla tabeli : 2 wynosi:1
+2019-12-30 21:45:43,073  INFO stat2018.log_4_net - oktkr.aspx :Generowanie tabeli danych: Wpisywanie danych sedziów dla tabeli : 2
+2019-12-30 21:45:43,073  INFO stat2018.log_4_net - oktkr.aspx getDataTable - parametetr name= @data_1 wartosc: 2019-11-01
+2019-12-30 21:45:43,073  INFO stat2018.log_4_net - oktkr.aspx getDataTable - parametetr name= @data_2 wartosc: 2019-11-30
+2019-12-30 21:45:43,223  INFO stat2018.log_4_net - oktkr.aspx wpisywanie danych dla sedziów
+2019-12-30 21:45:43,224  INFO stat2018.log_4_net - oktkr.aspx getDataTable - parametetr name= @data_1 wartosc: 2019-11-01
+2019-12-30 21:45:43,224  INFO stat2018.log_4_net - oktkr.aspx getDataTable - parametetr name= @data_2 wartosc: 2019-11-30
+2019-12-30 21:45:43,251  INFO stat2018.log_4_net - oktkr.aspx getDataTable - parametetr name= @data_1 wartosc: 2019-11-01
+2019-12-30 21:45:43,251  INFO stat2018.log_4_net - oktkr.aspx getDataTable - parametetr name= @data_2 wartosc: 2019-11-30
+2019-12-30 21:45:43,316  INFO stat2018.log_4_net - oktkr.aspx getDataTable - parametetr name= @data_1 wartosc: 2019-11-01
+2019-12-30 21:45:43,316  INFO stat2018.log_4_net - oktkr.aspx getDataTable - parametetr name= @data_2 wartosc: 2019-11-30
+2019-12-30 21:45:43,336  INFO stat2018.log_4_net - oktkr.aspx getDataTable - parametetr name= @data_1 wartosc: 2019-11-01
+2019-12-30 21:45:43,336  INFO stat2018.log_4_net - oktkr.aspx getDataTable - parametetr name= @data_2 wartosc: 2019-11-30
+2019-12-30 21:45:43,347  INFO stat2018.log_4_net - oktkr.aspx getDataTable - parametetr name= @data_1 wartosc: 2019-11-01
+2019-12-30 21:45:43,347  INFO stat2018.log_4_net - oktkr.aspx getDataTable - parametetr name= @data_2 wartosc: 2019-11-30
+2019-12-30 21:45:43,355  INFO stat2018.log_4_net - oktkr.aspx getDataTable - parametetr name= @data_1 wartosc: 2019-11-01
+2019-12-30 21:45:43,355  INFO stat2018.log_4_net - oktkr.aspx getDataTable - parametetr name= @data_2 wartosc: 2019-11-30
+2019-12-30 21:45:43,376  INFO stat2018.log_4_net - oktkr.aspx getDataTable - parametetr name= @data_1 wartosc: 2019-11-01
+2019-12-30 21:45:43,376  INFO stat2018.log_4_net - oktkr.aspx getDataTable - parametetr name= @data_2 wartosc: 2019-11-30
+2019-12-30 21:45:43,384  INFO stat2018.log_4_net - oktkr.aspx getDataTable - parametetr name= @data_1 wartosc: 2019-11-01
+2019-12-30 21:45:43,384  INFO stat2018.log_4_net - oktkr.aspx getDataTable - parametetr name= @data_2 wartosc: 2019-11-30
+2019-12-30 21:45:43,394  INFO stat2018.log_4_net - oktkr.aspx getDataTable - parametetr name= @data_1 wartosc: 2019-11-01
+2019-12-30 21:45:43,394  INFO stat2018.log_4_net - oktkr.aspx getDataTable - parametetr name= @data_2 wartosc: 2019-11-30
+2019-12-30 21:45:43,409  INFO stat2018.log_4_net - oktkr.aspx getDataTable - parametetr name= @data_1 wartosc: 2019-11-01
+2019-12-30 21:45:43,409  INFO stat2018.log_4_net - oktkr.aspx getDataTable - parametetr name= @data_2 wartosc: 2019-11-30
+2019-12-30 21:45:43,419  INFO stat2018.log_4_net - oktkr.aspx getDataTable - parametetr name= @data_1 wartosc: 2019-11-01
+2019-12-30 21:45:43,419  INFO stat2018.log_4_net - oktkr.aspx getDataTable - parametetr name= @data_2 wartosc: 2019-11-30
+2019-12-30 21:45:43,439  INFO stat2018.log_4_net - sumowanie w stopce : Okreslony argument jest spoza zakresu prawidlowych wartosci.
+Nazwa parametru: index
+2019-12-30 21:45:43,440  INFO stat2018.log_4_net - oktkr.aspx :Generowanie tabeli danych: Rozpoczecie
+2019-12-30 21:45:43,441  INFO stat2018.log_4_net - oktkr.aspx :Generowanie tabeli danych: Wyciadniecie kwerend dla tabeli :3
+2019-12-30 21:45:43,441  INFO stat2018.log_4_net - oktkr.aspx getDataTable - parametetr name= @id_tabeli wartosc: 3
+2019-12-30 21:45:43,441  INFO stat2018.log_4_net - oktkr.aspx getDataTable - parametetr name= @id_dzialu wartosc: 2
+2019-12-30 21:45:43,445  INFO stat2018.log_4_net - oktkr.aspx :Generowanie tabeli danych: Ilosc kwerend wyciagajacych dla sedziów dla tabeli : 3 wynosi:1
+2019-12-30 21:45:43,445  INFO stat2018.log_4_net - oktkr.aspx :Generowanie tabeli danych: Ilosc kwerend wyciagajacych dla danych dla tabeli : 3 wynosi:1
+2019-12-30 21:45:43,445  INFO stat2018.log_4_net - oktkr.aspx :Generowanie tabeli danych: Wpisywanie danych sedziów dla tabeli : 3
+2019-12-30 21:45:43,445  INFO stat2018.log_4_net - oktkr.aspx getDataTable - parametetr name= @data_1 wartosc: 2019-11-01
+2019-12-30 21:45:43,446  INFO stat2018.log_4_net - oktkr.aspx getDataTable - parametetr name= @data_2 wartosc: 2019-11-30
+2019-12-30 21:45:43,460  INFO stat2018.log_4_net - oktkr.aspx wpisywanie danych dla sedziów
+2019-12-30 21:45:43,460  INFO stat2018.log_4_net - oktkr.aspx getDataTable - parametetr name= @data_1 wartosc: 2019-11-01
+2019-12-30 21:45:43,460  INFO stat2018.log_4_net - oktkr.aspx getDataTable - parametetr name= @data_2 wartosc: 2019-11-30
+2019-12-30 21:45:43,489  INFO stat2018.log_4_net - oktkr.aspx getDataTable - parametetr name= @data_1 wartosc: 2019-11-01
+2019-12-30 21:45:43,489  INFO stat2018.log_4_net - oktkr.aspx getDataTable - parametetr name= @data_2 wartosc: 2019-11-30
+2019-12-30 21:45:43,511  INFO stat2018.log_4_net - oktkr.aspx getDataTable - parametetr name= @data_1 wartosc: 2019-11-01
+2019-12-30 21:45:43,511  INFO stat2018.log_4_net - oktkr.aspx getDataTable - parametetr name= @data_2 wartosc: 2019-11-30
+2019-12-30 21:45:43,549  INFO stat2018.log_4_net - oktkr.aspx getDataTable - parametetr name= @data_1 wartosc: 2019-11-01
+2019-12-30 21:45:43,549  INFO stat2018.log_4_net - oktkr.aspx getDataTable - parametetr name= @data_2 wartosc: 2019-11-30
+2019-12-30 21:45:43,568  INFO stat2018.log_4_net - oktkr.aspx getDataTable - parametetr name= @data_1 wartosc: 2019-11-01
+2019-12-30 21:45:43,568  INFO stat2018.log_4_net - oktkr.aspx getDataTable - parametetr name= @data_2 wartosc: 2019-11-30
+2019-12-30 21:45:43,585  INFO stat2018.log_4_net - oktkr.aspx getDataTable - parametetr name= @data_1 wartosc: 2019-11-01
+2019-12-30 21:45:43,585  INFO stat2018.log_4_net - oktkr.aspx getDataTable - parametetr name= @data_2 wartosc: 2019-11-30
+2019-12-30 21:45:43,608  INFO stat2018.log_4_net - oktkr.aspx getDataTable - parametetr name= @data_1 wartosc: 2019-11-01
+2019-12-30 21:45:43,608  INFO stat2018.log_4_net - oktkr.aspx getDataTable - parametetr name= @data_2 wartosc: 2019-11-30
+2019-12-30 21:45:43,627  INFO stat2018.log_4_net - oktkr.aspx getDataTable - parametetr name= @data_1 wartosc: 2019-11-01
+2019-12-30 21:45:43,627  INFO stat2018.log_4_net - oktkr.aspx getDataTable - parametetr name= @data_2 wartosc: 2019-11-30
+2019-12-30 21:45:43,652  INFO stat2018.log_4_net - oktkr.aspx getDataTable - parametetr name= @data_1 wartosc: 2019-11-01
+2019-12-30 21:45:43,652  INFO stat2018.log_4_net - oktkr.aspx getDataTable - parametetr name= @data_2 wartosc: 2019-11-30
+2019-12-30 21:45:43,742  INFO stat2018.log_4_net - sumowanie w stopce : Okreslony argument jest spoza zakresu prawidlowych wartosci.
+Nazwa parametru: index

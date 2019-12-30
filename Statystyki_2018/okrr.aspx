@@ -30,6 +30,7 @@
                  transform: translate(-25mm, 0) scale(0.8);
             -webkit-transform: translate(-25mm, 0) scale(0.8);
             -moz-transform: translate(-25mm, 0) scale(0.8);
+
             }
         }
     </style>

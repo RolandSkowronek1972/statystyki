@@ -83,10 +83,12 @@
            <br />
         
                    <br />
-    <dx:ASPxGridView ID="ASPxGridView1" runat="server" AutoGenerateColumns="False" OnCustomSummaryCalculate="Suma" Theme="MetropolisBlue" EnableCallbackAnimation="True">
+    <dx:ASPxGridView ID="ASPxGridView1" runat="server" AutoGenerateColumns="False" OnCustomSummaryCalculate="Suma" Theme="MetropolisBlue" EnableCallbackAnimation="True" OnSummaryDisplayText="ASPxGridView1_SummaryDisplayText">
                         <SettingsPager PageSize="10100">
                         </SettingsPager>
                         <Settings HorizontalScrollBarMode="Visible" UseFixedTableLayout="True" ShowFooter="True" />
+      
+                        <SettingsBehavior AllowSort="False" />
       
                         <SettingsResizing ColumnResizeMode="NextColumn" />
       
@@ -121,6 +123,8 @@
                         <SettingsPager PageSize="10100">
                         </SettingsPager>
                         <Settings HorizontalScrollBarMode="Visible" UseFixedTableLayout="True" ShowFooter="True" />
+      
+                        <SettingsBehavior AllowSort="False" />
       
                         <SettingsResizing ColumnResizeMode="NextColumn" />
       
