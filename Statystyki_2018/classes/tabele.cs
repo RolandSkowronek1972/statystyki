@@ -1407,9 +1407,7 @@ namespace stat2018
         {
             StringBuilder builder = new StringBuilder();
             builder.Append("<td ");
-#pragma warning disable CS0472 // The result of the expression is always 'true' since a value of type 'bool' is never equal to 'null' of type 'bool?'
             if (string.IsNullOrEmpty(style.Trim()) != null)
-#pragma warning restore CS0472 // The result of the expression is always 'true' since a value of type 'bool' is never equal to 'null' of type 'bool?'
             {
                 builder.Append(" class='" + style + "' ");
             }

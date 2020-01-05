@@ -253,7 +253,7 @@ namespace stat2018
         {
             //cm.log.Info("mss: rozpoczęcie popmpowania danych");
             var conn = new SqlConnection(con_str);
-            string cs = PobierzConnectionStringMSS(id_dzialu);
+            string cs = PobierzConnectionStringMSS10e(id_dzialu);
 
             string kwerenda = string.Empty;
 
@@ -306,7 +306,12 @@ namespace stat2018
             parameters.Rows.Add("@ident", id_dzialu);
             return cm.getQuerryValue("SELECT cs  FROM wydzialy_mss where ident=@ident ", con_str, parameters);
         }
-
+        public string PobierzConnectionStringMSS10e(int id_dzialu)
+        {
+            DataTable parameters = cm.makeParameterTable();
+            parameters.Rows.Add("@ident", id_dzialu);
+            return cm.getQuerryValue("SELECT cs  FROM wydzialy where ident=@ident ", con_str, parameters);
+        }
         public bool debug(int wydzial)
         {
             bool result = false;

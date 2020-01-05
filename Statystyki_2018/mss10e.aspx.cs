@@ -61,6 +61,7 @@ namespace stat2018
 
         protected void odswierz()
         {
+            tablePlaceHolder.Controls.Clear();
             string idWydzialu = "'" + (string)Session["id_dzialu"] + "'";
             id_dzialu.Text = (string)Session["txt_dzialu"];
 

@@ -84,9 +84,9 @@ namespace stat2018
             tabela_5();
             tabela_6();
             tabela_7();
-            //tabela_71();
+           
             tabela_8();
-           // tabela_9();
+            tabela_9();
             tabela_10();
             tabela_11();
             tabela_12();
@@ -375,7 +375,7 @@ namespace stat2018
             //  wiersz 1
             try
             {
-                pisz("tab_11_", 8, 12, tabelka01);
+                pisz("tab_11_", 8, 38, tabelka01);
             }
             catch (Exception)
             {
@@ -669,7 +669,7 @@ namespace stat2018
                 cm.log.Error(tenPlik + " Brak danych dla tabeli 12!");
                 return;
             }
-            Session["tabelka011"] = tabelka01;
+            Session["tabelka012"] = tabelka01;
             tworztabelkeHTMLTabela12("tb11", idDzialu, 12, tabelka01);
         }
 
@@ -2679,7 +2679,7 @@ namespace stat2018
             builder.AppendLine("<td class='borderAll center col_36' rowspan='3'>L.p.</td>");
             builder.AppendLine("<td class='borderAll center col_100' rowspan='3'>imię i nazwisko</td>");
             builder.AppendLine("<td class='borderAll center col_100' rowspan='3' >funkcja</td>");
-            builder.AppendLine("<td class='borderAll center col_100' rowspan='3' >pomoc asystenta</td>");
+          
             builder.AppendLine("<td class='borderAll center col_100' rowspan='3' ></td>");
             builder.AppendLine("<td class='borderAll center col_100' colspan='15' >kategoria spraw</td>");
             builder.AppendLine("</tr>");
@@ -2707,12 +2707,13 @@ namespace stat2018
             foreach (DataRow wierszZtabeli in dane.Rows)
             {
                 builder.AppendLine("<tr>");
-                builder.Append(tb.komorkaHTML(licznik.ToString(), 0, 0, "borderAll center col_36"));
-                builder.Append(tb.komorkaHTML(wierszZtabeli["imie"].ToString() + " " + wierszZtabeli["nazwisko"].ToString(), 0, 0, "borderAll center col_100"));
-                builder.Append(tb.komorkaHTML(wierszZtabeli["d_01"].ToString(), 0, 0, "borderAll center col_100"));
-                builder.Append(tb.komorkaHTML(wierszZtabeli["d_02"].ToString(), 0, 0, "borderAll center col_100"));
+                builder.Append(tb.komorkaHTML(licznik.ToString(), 0, 2, "borderAll center col_36"));
+                builder.Append(tb.komorkaHTML(wierszZtabeli["imie"].ToString() + " " + wierszZtabeli["nazwisko"].ToString(), 0, 2, "borderAll center col_100"));
+                builder.Append(tb.komorkaHTML(wierszZtabeli["d_01"].ToString() , 0, 2, "borderAll center col_100"));
+                
 
-                builder.Append(tworzPodSekcje(3, 19, wierszZtabeli, idtabeli.ToString()));
+
+                builder.Append(tworzSekcjeTRtabela12(2, 19, 40, wierszZtabeli, idtabeli.ToString ()));
                 licznik++;
                 builder.AppendLine("</tr>");
             }
@@ -3581,6 +3582,19 @@ namespace stat2018
             //result.AppendLine("</tr>");
             return result.ToString();
         }
+        private string tworzPodSekcjeTR(int poczatek, int koniec, DataRow wierszZtabeli, string idtabeli)
+        {
+            StringBuilder result = new StringBuilder();
+              result.AppendLine("<tr>");
+            for (int i = poczatek; i < koniec; i++)
+            {
+                string wartosc = wierszZtabeli["d_" + i.ToString("D2")].ToString();
+                string txt = "<a Class=\"normal\" href=\"javascript: openPopup('popup.aspx?sesja=" + wierszZtabeli["id_sedziego"].ToString() + "!" + idtabeli + "!" + i.ToString() + "!2')\">" + wierszZtabeli["d_" + i.ToString("D2")].ToString() + " </a>";
+                result.AppendLine(tb.komorkaHTML(txt, 0, 0, "borderAll center col_50"));
+            }
+            result.AppendLine("</tr>");
+            return result.ToString();
+        }
 
         private string tworzSekcje(int poczatek, int dlugoscLinii, int koniec, DataRow wierszZtabeli, string idtabeli)
         {
@@ -3595,6 +3609,42 @@ namespace stat2018
                 }
             }
 
+            return result.ToString();
+        }
+        private string tworzSekcjeTRtabela12(int poczatek, int dlugoscLinii, int koniec, DataRow wierszZtabeli, string idtabeli)
+        {
+            StringBuilder result = new StringBuilder();
+            int ilosc = dlugoscLinii;
+
+         //   result.AppendLine("<tr>");
+
+            result.Append(tb.komorkaHTML("Liczba / % spraw na dzień rozpoczęcia poprzedniej wizytacji albo na dzień utworzenia referatu –dla sędziów przydzielonych do wydziału po tym dniu", 0, 0, "borderAll center col_100"));
+
+            for (int i = 2; i < 18; i++)
+            {
+ 
+
+                string wartosc = wierszZtabeli["d_" + i.ToString("D2")].ToString();
+                    string txt = "<a Class=\"normal\" href=\"javascript: openPopup('popup.aspx?sesja=" + wierszZtabeli["id_sedziego"].ToString() + "!" + idtabeli + "!" + i.ToString() + "!2')\">" + wierszZtabeli["d_" + i.ToString("D2")].ToString() + " </a>";
+                    result.AppendLine(tb.komorkaHTML(txt, 0, 0, "borderAll center col_50"));
+               
+               
+               
+            }
+      //      result.AppendLine("</tr>");
+       //     result.AppendLine("<tr>");
+            result.Append(tb.komorkaHTML("Liczba / % spraw na dzień rozpoczęcia wizytacji albo na dzień zamknięcia referatu – dla sędziów przydzielonych do innych wydziałów przed tym dniem", 0, 0, "borderAll center col_100"));
+
+            for (int i = 18; i < 37; i++)
+            {
+               
+                string wartosc = wierszZtabeli["d_" + i.ToString("D2")].ToString();
+                string txt = "<a Class=\"normal\" href=\"javascript: openPopup('popup.aspx?sesja=" + wierszZtabeli["id_sedziego"].ToString() + "!" + idtabeli + "!" + i.ToString() + "!2')\">" + wierszZtabeli["d_" + i.ToString("D2")].ToString() + " </a>";
+                result.AppendLine(tb.komorkaHTML(txt, 0, 0, "borderAll center col_50"));
+
+               
+            }
+        //    result.AppendLine("</tr>");
             return result.ToString();
         }
 

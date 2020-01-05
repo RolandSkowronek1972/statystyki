@@ -20,14 +20,18 @@
                 size: 29cm 21.7cm;
                 margin: 5mm 5mm 5mm 5mm; /* change the margins as you want them to be. */
             }
+
             .wide {
-            width:100%;
+                width: 100%;
             }
+
             .horizont {
-      
-                    transform: translate(0mm, 80mm) scale(0.65) rotate(90deg);
-            -webkit-transform: translate(0mm, 80mm) scale(0.65) rotate(90deg);
-            -moz-transform: translate(0mm, 80mm) scale(0.65) rotate(90deg);
+                display: block;
+                transform: translate(0mm, 80mm) scale(0.65) rotate(90deg);
+                -webkit-transform: translate(-70mm, 0mm) scale(0.7) ;
+                -moz-transform: translate(0mm, 80mm) scale(0.65) rotate(90deg);
+                -o-transform: translate(0mm, 80mm) scale(0.65) rotate(90deg);
+                -ms-transform: translate(0mm, 80mm) scale(0.65) rotate(90deg);
             }
         }
     </style>
@@ -255,7 +259,7 @@
             <br />
         </div>
 
-        <div id="tab2" class="page-break ">
+        <div id="tab2" class="page-break wide ">
             <br />
 
             <asp:Label ID="tabela2Label" runat="server"></asp:Label>
@@ -700,7 +704,7 @@
         </asp:SqlDataSource>
     </div>
     <br />
-    <div style="width: 1150px; margin: 0 auto 0 auto; position: relative; top: 60px;" class="page-break">
+    <div style="width: 1150px; margin: 0 auto 0 auto; position: relative; top: 60px;" >
         <div id="debag">
             <br />
             <br />
