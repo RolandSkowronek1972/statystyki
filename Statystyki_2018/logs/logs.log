@@ -1,3 +1,89 @@
-2020-01-05 13:37:05,170  INFO stat2018.log_4_net - start tworzenia Ste1   13:37:05
-2020-01-05 13:37:05,223  INFO stat2018.log_4_net - Site1.Master:Brak przeniesienia z logowania identyfikatora numerycznego Uzytkownika! 
-2020-01-05 13:37:05,225  INFO stat2018.log_4_net - Odwolanie do obiektu nie zostalo ustawione na wystapienie obiektu.
+2020-01-15 15:06:36,386  INFO stat2018.log_4_net - start tworzenia Ste1   15:06:36
+2020-01-15 15:06:36,505  INFO stat2018.log_4_net - Site1.Master:Brak przeniesienia z logowania identyfikatora numerycznego Uzytkownika! 
+2020-01-15 15:06:36,506  INFO stat2018.log_4_net - Odwolanie do obiektu nie zostalo ustawione na wystapienie obiektu.
+2020-01-15 15:07:10,347  INFO stat2018.log_4_net - rozpoczecie logowania 15:07:10
+2020-01-15 15:07:10,466  INFO stat2018.log_4_net - rozpoczecie logowania domenowego 15:07:10
+2020-01-15 15:07:11,004  INFO stat2018.log_4_net - rozpoczecie logowania z bazy danych 15:07:11
+2020-01-15 15:07:11,086  INFO stat2018.log_4_net - Logowanie: identyfikator uzytkownika: test to 6
+2020-01-15 15:07:11,086  INFO stat2018.log_4_net - wynik logowania z bazy danych 15:07:11
+2020-01-15 15:07:11,087  INFO stat2018.log_4_net - uzytkownik zgodny 15:07:11
+2020-01-15 15:07:11,090  INFO stat2018.log_4_net - uruchomienie  redirector.aspx 15:07:11
+2020-01-15 15:07:11,273  INFO stat2018.log_4_net - start redirektora  15:07:11
+2020-01-15 15:07:11,275  INFO stat2018.log_4_net - start tworzenia Ste1   15:07:11
+2020-01-15 15:07:11,275  INFO stat2018.log_4_net - start tworzenia menu  daneDoManuMiesieczne  15:07:11
+2020-01-15 15:07:11,298  INFO stat2018.log_4_net -  getDataTable - parametetr name= @identyfikatorUzytkownika wartosc: 6
+2020-01-15 15:07:11,305  INFO stat2018.log_4_net - start tworzenia menu  daneDoManuKontrolek 15:07:11
+2020-01-15 15:07:11,317  INFO stat2018.log_4_net - naglowek getDataTable - parametetr name= @identyfikatorUzytkownika wartosc: 6
+2020-01-15 15:07:11,320  INFO stat2018.log_4_net - start tworzenia menu  daneDoManuMSS 15:07:11
+2020-01-15 15:07:11,344  INFO stat2018.log_4_net - Naglowki getDataTable - parametetr name= @identyfikatorUzytkownika wartosc: 6
+2020-01-15 15:07:11,347  INFO stat2018.log_4_net - start tworzenia menu daneDoManuInne  15:07:11
+2020-01-15 15:07:11,366  INFO stat2018.log_4_net - start tworzenia menu wyloguj  15:07:11
+2020-01-15 15:07:11,371  INFO stat2018.log_4_net - Header: Rozpoczecie procedury tworzenia elementów menu wyloguj
+2020-01-15 15:07:11,390  INFO stat2018.log_4_net - koniec tworzenia manu   15:07:11
+2020-01-15 15:07:11,465  INFO stat2018.log_4_net - rozpoczecie logowania 15:07:11
+2020-01-15 15:07:11,557  INFO stat2018.log_4_net - rozpoczecie logowania domenowego 15:07:11
+2020-01-15 15:07:12,011  INFO stat2018.log_4_net - rozpoczecie logowania z bazy danych 15:07:12
+2020-01-15 15:07:12,011  INFO stat2018.log_4_net - Logowanie: identyfikator uzytkownika: test to 6
+2020-01-15 15:07:12,011  INFO stat2018.log_4_net - wynik logowania z bazy danych 15:07:12
+2020-01-15 15:07:12,012  INFO stat2018.log_4_net - uzytkownik zgodny 15:07:12
+2020-01-15 15:07:12,012  INFO stat2018.log_4_net - uruchomienie  redirector.aspx 15:07:12
+2020-01-15 15:07:12,014  INFO stat2018.log_4_net - start redirektora  15:07:12
+2020-01-15 15:07:12,014  INFO stat2018.log_4_net - start tworzenia Ste1   15:07:12
+2020-01-15 15:07:12,014  INFO stat2018.log_4_net - start tworzenia menu  daneDoManuMiesieczne  15:07:12
+2020-01-15 15:07:12,015  INFO stat2018.log_4_net -  getDataTable - parametetr name= @identyfikatorUzytkownika wartosc: 6
+2020-01-15 15:07:12,017  INFO stat2018.log_4_net - start tworzenia menu  daneDoManuKontrolek 15:07:12
+2020-01-15 15:07:12,021  INFO stat2018.log_4_net - naglowek getDataTable - parametetr name= @identyfikatorUzytkownika wartosc: 6
+2020-01-15 15:07:12,023  INFO stat2018.log_4_net - start tworzenia menu  daneDoManuMSS 15:07:12
+2020-01-15 15:07:12,025  INFO stat2018.log_4_net - Naglowki getDataTable - parametetr name= @identyfikatorUzytkownika wartosc: 6
+2020-01-15 15:07:12,026  INFO stat2018.log_4_net - start tworzenia menu daneDoManuInne  15:07:12
+2020-01-15 15:07:12,027  INFO stat2018.log_4_net - start tworzenia menu wyloguj  15:07:12
+2020-01-15 15:07:12,027  INFO stat2018.log_4_net - Header: Rozpoczecie procedury tworzenia elementów menu wyloguj
+2020-01-15 15:07:12,028  INFO stat2018.log_4_net - koniec tworzenia manu   15:07:12
+2020-01-15 15:07:34,657  INFO stat2018.log_4_net - okrc.aspx: rozpoczecie tworzenia tabeli 2
+2020-01-15 15:07:34,682  INFO stat2018.log_4_net - okrc.aspx getDataTable - parametetr name= @id_wydzial wartosc: 12
+2020-01-15 15:07:34,683  INFO stat2018.log_4_net - okrc.aspx getDataTable - parametetr name= @id_tabeli wartosc: 2
+2020-01-15 15:07:34,739  INFO stat2018.log_4_net - okrc.aspx: rozpoczecie tworzenia tabeli 1
+2020-01-15 15:07:34,771  INFO stat2018.log_4_net - okrc.aspx :Generowanie tabeli danych: Rozpoczecie
+2020-01-15 15:07:34,773  INFO stat2018.log_4_net - okrc.aspx :Generowanie tabeli danych: Wyciadniecie kwerend dla tabeli :1
+2020-01-15 15:07:34,773  INFO stat2018.log_4_net - okrc.aspx getDataTable - parametetr name= @id_tabeli wartosc: 1
+2020-01-15 15:07:34,774  INFO stat2018.log_4_net - okrc.aspx getDataTable - parametetr name= @id_dzialu wartosc: 12
+2020-01-15 15:07:34,785  INFO stat2018.log_4_net - okrc.aspx :Generowanie tabeli danych: Ilosc kwerend wyciagajacych dla sedziów dla tabeli : 1 wynosi:1
+2020-01-15 15:07:34,786  INFO stat2018.log_4_net - okrc.aspx :Generowanie tabeli danych: Ilosc kwerend wyciagajacych dla danych dla tabeli : 1 wynosi:1
+2020-01-15 15:07:34,786  INFO stat2018.log_4_net - okrc.aspx :Generowanie tabeli danych: Wpisywanie danych sedziów dla tabeli : 1
+2020-01-15 15:07:34,787  INFO stat2018.log_4_net - okrc.aspx getDataTable - parametetr name= @data_1 wartosc: 2019-12-01
+2020-01-15 15:07:34,787  INFO stat2018.log_4_net - okrc.aspx getDataTable - parametetr name= @data_2 wartosc: 2019-12-31
+2020-01-15 15:07:34,846  INFO stat2018.log_4_net - okrc.aspx wpisywanie danych dla sedziów
+2020-01-15 15:07:34,846  INFO stat2018.log_4_net - okrc.aspx getDataTable - parametetr name= @data_1 wartosc: 2019-12-01
+2020-01-15 15:07:34,846  INFO stat2018.log_4_net - okrc.aspx getDataTable - parametetr name= @data_2 wartosc: 2019-12-31
+2020-01-15 15:07:34,864  INFO stat2018.log_4_net - okrc.aspx :wpisywanie do tabeli danych dla tabeli : 1 Nie mozna odnalezc kolumny 1.
+2020-01-15 15:07:35,364  INFO stat2018.log_4_net - okrc.aspx :Generowanie tabeli danych: Rozpoczecie
+2020-01-15 15:07:35,365  INFO stat2018.log_4_net - okrc.aspx :Generowanie tabeli danych: Wyciadniecie kwerend dla tabeli :3
+2020-01-15 15:07:35,366  INFO stat2018.log_4_net - okrc.aspx getDataTable - parametetr name= @id_tabeli wartosc: 3
+2020-01-15 15:07:35,366  INFO stat2018.log_4_net - okrc.aspx getDataTable - parametetr name= @id_dzialu wartosc: 12
+2020-01-15 15:07:35,383  INFO stat2018.log_4_net - okrc.aspx :Generowanie tabeli danych: Ilosc kwerend wyciagajacych dla sedziów dla tabeli : 3 wynosi:2
+2020-01-15 15:07:35,383  INFO stat2018.log_4_net - okrc.aspx :Generowanie tabeli danych: Ilosc kwerend wyciagajacych dla danych dla tabeli : 3 wynosi:2
+2020-01-15 15:07:35,383  INFO stat2018.log_4_net - okrc.aspx :Generowanie tabeli danych: Wpisywanie danych sedziów dla tabeli : 3
+2020-01-15 15:07:35,383  INFO stat2018.log_4_net - okrc.aspx getDataTable - parametetr name= @data_1 wartosc: 2019-12-01
+2020-01-15 15:07:35,383  INFO stat2018.log_4_net - okrc.aspx getDataTable - parametetr name= @data_2 wartosc: 2019-12-31
+2020-01-15 15:07:35,406  INFO stat2018.log_4_net - okrc.aspx getDataTable - parametetr name= @data_1 wartosc: 2019-12-01
+2020-01-15 15:07:35,406  INFO stat2018.log_4_net - okrc.aspx getDataTable - parametetr name= @data_2 wartosc: 2019-12-31
+2020-01-15 15:07:35,436  INFO stat2018.log_4_net - okrc.aspx wpisywanie danych dla sedziów
+2020-01-15 15:07:35,436  INFO stat2018.log_4_net - okrc.aspx getDataTable - parametetr name= @data_1 wartosc: 2019-12-01
+2020-01-15 15:07:35,437  INFO stat2018.log_4_net - okrc.aspx getDataTable - parametetr name= @data_2 wartosc: 2019-12-31
+2020-01-15 15:07:35,440  INFO stat2018.log_4_net - okrc.aspx getDataTable - parametetr name= @data_1 wartosc: 2019-12-01
+2020-01-15 15:07:35,440  INFO stat2018.log_4_net - okrc.aspx getDataTable - parametetr name= @data_2 wartosc: 2019-12-31
+2020-01-15 15:07:35,445  INFO stat2018.log_4_net - okrc.aspx getDataTable - parametetr name= @data_1 wartosc: 2019-12-01
+2020-01-15 15:07:35,445  INFO stat2018.log_4_net - okrc.aspx getDataTable - parametetr name= @data_2 wartosc: 2019-12-31
+2020-01-15 15:07:35,447  INFO stat2018.log_4_net - okrc.aspx getDataTable - parametetr name= @data_1 wartosc: 2019-12-01
+2020-01-15 15:07:35,447  INFO stat2018.log_4_net - okrc.aspx getDataTable - parametetr name= @data_2 wartosc: 2019-12-31
+2020-01-15 15:07:35,451  INFO stat2018.log_4_net - okrc.aspx getDataTable - parametetr name= @data_1 wartosc: 2019-12-01
+2020-01-15 15:07:35,452  INFO stat2018.log_4_net - okrc.aspx getDataTable - parametetr name= @data_2 wartosc: 2019-12-31
+2020-01-15 15:07:35,454  INFO stat2018.log_4_net - okrc.aspx getDataTable - parametetr name= @data_1 wartosc: 2019-12-01
+2020-01-15 15:07:35,455  INFO stat2018.log_4_net - okrc.aspx getDataTable - parametetr name= @data_2 wartosc: 2019-12-31
+2020-01-15 15:07:35,456  INFO stat2018.log_4_net - okrc.aspx getDataTable - parametetr name= @data_1 wartosc: 2019-12-01
+2020-01-15 15:07:35,456  INFO stat2018.log_4_net - okrc.aspx getDataTable - parametetr name= @data_2 wartosc: 2019-12-31
+2020-01-15 15:07:35,461  INFO stat2018.log_4_net - okrc.aspx getDataTable - parametetr name= @data_1 wartosc: 2019-12-01
+2020-01-15 15:07:35,461  INFO stat2018.log_4_net - okrc.aspx getDataTable - parametetr name= @data_2 wartosc: 2019-12-31
+2020-01-15 15:07:35,578  INFO stat2018.log_4_net - start tworzenia Ste1   15:07:35
+2020-01-15 15:07:35,578  INFO stat2018.log_4_net - start tworzenia menu   15:07:35
+2020-01-15 15:07:35,583  INFO stat2018.log_4_net - koniec tworzenia manu   15:07:35

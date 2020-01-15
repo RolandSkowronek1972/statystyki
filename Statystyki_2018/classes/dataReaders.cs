@@ -872,6 +872,43 @@ namespace stat2018
             return tabelka;
         }
 
+        public int iloscKolumn(int idTabeli, int idWydzialu,string tenPlik)
+        {
+            //SELECT MAX(id_kolumny) AS iloscKolumn FROM  kwerendy WHERE (id_wydzial = 10) AND (id_tabeli = 11)
+            try
+            {
+                DataTable parameters = Common.makeParameterTable();
+                parameters.Rows.Add("@idTabeli", idTabeli);
+                parameters.Rows.Add("@idWydzialu", idWydzialu);
+                return int.Parse ( Common.getQuerryValue("SELECT MAX(id_kolumny) AS iloscKolumn FROM  kwerendy WHERE (id_wydzial = @idWydzialu) AND (id_tabeli = @idTabeli)", con_str, parameters));
+
+            }
+            catch (Exception ex)
+
+            {
+                 log.Error(tenPlik + " - iloscKolumn  " + ex.Message);
+            }
+            return 0;
+        }
+
+        public int iloscWierszy(int idTabeli, int idWydzialu, string tenPlik)
+        {
+            //SELECT MAX(id_kolumny) AS iloscKolumn FROM  kwerendy WHERE (id_wydzial = 10) AND (id_tabeli = 11)
+            try
+            {
+                DataTable parameters = Common.makeParameterTable();
+                parameters.Rows.Add("@idTabeli", idTabeli);
+                parameters.Rows.Add("@idWydzialu", idWydzialu);
+                return int.Parse(Common.getQuerryValue("SELECT MAX(id_wiersza) AS iloscKolumn FROM  kwerendy WHERE (id_wydzial = @idWydzialu) AND (id_tabeli = @idTabeli) and (id_kolumny>0)", con_str, parameters));
+
+            }
+            catch (Exception ex)
+
+            {
+                log.Error(tenPlik + " - iloscKolumn  " + ex.Message);
+            }
+            return 0;
+        }
 
 
         private DataTable tabelaSedziowska(int il_kolumn)

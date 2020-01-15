@@ -15,28 +15,11 @@
                 right: 0;
             }
 
-        @media print {
-            @page {
-                size: 29cm 21.7cm;
-                margin: 5mm 5mm 5mm 5mm; /* change the margins as you want them to be. */
-            }
-
-            .wide {
-                width: 100%;
-            }
-
-            .horizont {
-                display: block;
-                transform: translate(0mm, 80mm) scale(0.65) rotate(90deg);
-                -webkit-transform: translate(-70mm, 0mm) scale(0.7) ;
-                -moz-transform: translate(0mm, 80mm) scale(0.65) rotate(90deg);
-                -o-transform: translate(0mm, 80mm) scale(0.65) rotate(90deg);
-                -ms-transform: translate(0mm, 80mm) scale(0.65) rotate(90deg);
-            }
-        }
+       
     </style>
+    <link href="style/oktkr.css" rel="stylesheet" />
     <script src="Scripts/jquery-1.8.3.js"></script>
-
+    
     <script src="Scripts/rls.js"></script>
 
     <div class="noprint">
@@ -84,7 +67,7 @@
                 <br />
             </div>
         </div>
-        <div id="zalatwienia" class="wide">
+        <div id="zalatwienia" class="tabela1">
             <br />
 
             <asp:Label ID="tabela1Label" runat="server"></asp:Label>
@@ -259,7 +242,7 @@
             <br />
         </div>
 
-        <div id="tab2" class="page-break wide ">
+        <div id="tab2" class="tabela2 page-break ">
             <br />
 
             <asp:Label ID="tabela2Label" runat="server"></asp:Label>

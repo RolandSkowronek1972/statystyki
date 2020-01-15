@@ -105,7 +105,7 @@ namespace stat2018
             DataTable parameters = cm.makeParameterTable();
 
             DataTable KwerendyDoKOF = cm.getDataTable(kwerenda, con_str, parameters,"KOF");
-            //cm.log.Info("KOF: odczytano " + KwerendyDoKOF.Rows.Count.ToString() + " kwerend z tabeli konfig z kluczem kof.");
+            cm.log.Info("KOF: odczytano " + KwerendyDoKOF.Rows.Count.ToString() + " kwerend z tabeli konfig z kluczem kof.");
 
             foreach (DataRow dRow in KwerendyDoKOF.Rows)
             {
@@ -116,7 +116,7 @@ namespace stat2018
                     cm.log.Info("KOF: Brak danych w imporcie danych : " + DateTime.Now.ToString());
                     continue;
                 }
-                //cm.log.Info("KOF: Usunięcie duplikatów między bazą kof a nowo zaimpoertowanymi danymi : " + DateTime.Now.ToString());
+                cm.log.Info("KOF: Usunięcie duplikatów między bazą kof a nowo zaimpoertowanymi danymi : " + DateTime.Now.ToString());
                 int licznik = 0;
                 foreach (DataRow drow2 in from DataRow dRow1 in kofGlowny.Rows from DataRow drow2 in dane.Rows where dRow1[0] == drow2[0] select drow2)
                 {
@@ -124,7 +124,7 @@ namespace stat2018
                     licznik++;
                 }
 
-                //cm.log.Info("KOF: Zakończono usuwanie duplikatów "+licznik.ToString() +" między bazą kof a nowo zaimportowanymi danymi : " + DateTime.Now.ToString());
+                cm.log.Info("KOF: Zakończono usuwanie duplikatów "+licznik.ToString() +" między bazą kof a nowo zaimportowanymi danymi : " + DateTime.Now.ToString());
 
                 // mapowanie tabeli id_sprawy, wydzial, sygnatura, d_wplywu, strona, pelnomocnik, przeciwko, numer_of
 
@@ -145,7 +145,7 @@ namespace stat2018
                 danenaSerwer.Columns.Add(pelnomocnik);
                 danenaSerwer.Columns.Add(przeciwko);
                 danenaSerwer.Columns.Add(numer_of);
-                //cm.log.Info("KOF: Do zaimportowania jest :" + dane.Rows.Count.ToString ()+ " wierszy.");
+                cm.log.Info("KOF: Do zaimportowania jest :" + dane.Rows.Count.ToString ()+ " wierszy.");
 
                 foreach (DataRow dRowN in dane.Rows)
                 {
@@ -181,7 +181,7 @@ namespace stat2018
 
                         try
                         {
-                            //cm.log.Info("KOF: Start zapisu z użyciem metody SQLBulkCopy:  " + DateTime.Now.ToString());
+                            cm.log.Info("KOF: Start zapisu z użyciem metody SQLBulkCopy:  " + DateTime.Now.ToString());
 
                             // Write from the source to the destination.
                             bulkCopy.WriteToServer(danenaSerwer);
@@ -784,6 +784,76 @@ namespace stat2018
             kodStony.AppendLine("<br/>");
             return kodStony.ToString();
         }
+
+        public string tworztabeleMK(string idTabeli, DataTable naglowek, DataTable tabelaPrzedIteracja, DataTable dane, int iloscWierszyNaglowka, int iloscWierszyTabeli, int iloscKolumnPrzedIteracja, int iloscKolumnPoIteracji, int idWydzialu, bool lp, string tekstNadTabela, int idTabeliNum, string tenPlik)
+        {
+            StringBuilder kodStony = new StringBuilder();
+            string ciagWyjsciowy = string.Empty;
+            kodStony.AppendLine("<div class='page-break'>");
+            kodStony.AppendLine("<P><b>" + idTabeli + "</b> " + tekstNadTabela + " </P>");
+            kodStony.AppendLine("<table style='width:100%'>");
+            //naglowek
+            //   DataTable header = naglowek;
+
+            
+            //tabela główna
+            for (int i = 1; i < iloscWierszyTabeli + 1; i++)
+            {
+                kodStony.AppendLine("<tr>");
+                /*
+                for (int j = 1; j < iloscKolumnPrzedIteracja + 1; j++)
+                {
+                    try
+                    {
+                        DataRow wiersz = wyciagnijWartosc(tabelaPrzedIteracja, " nrWiersza ='" + i.ToString() + "' and nrKolumny='" + j.ToString() + "'", tenPlik);
+                        if (wiersz != null)
+                        {
+                            int colspan = int.Parse(wiersz["colspan"].ToString().Trim());
+                            int rowspan = int.Parse(wiersz["rowspan"].ToString().Trim());
+
+                            string style = wiersz["style"].ToString().Trim();
+                            string tekst = wiersz["text"].ToString().Trim();
+                            string sekcjaRowspan = string.Empty;
+                            string sekcjaColspan = string.Empty;
+                            string sekcjaStyle = string.Empty;
+
+                            if (colspan > 0)
+                            {
+                                sekcjaColspan = "colspan ='" + colspan.ToString() + "' ";
+                            }
+                            if (rowspan > 0)
+                            {
+                                sekcjaRowspan = "rowspan ='" + rowspan.ToString() + "' ";
+                            }
+                            if (!string.IsNullOrEmpty(style))
+                            {
+                                sekcjaStyle = " " + style + " ";
+                            }
+                            kodStony.AppendLine("<td  class ='borderAll  " + sekcjaStyle + "'" + sekcjaColspan + sekcjaRowspan + ">" + tekst + "</td>");
+                        }
+                    }
+                    catch (Exception ex)
+                    {
+                        cm.log.Error("MK LinqError: " + ex.Message);
+                    }
+                }
+                kodStony.AppendLine("<td class='center borderAll col_26'>" + i.ToString() + "</td>");*/
+                for (int j = 1; j < iloscKolumnPoIteracji + 1; j++)
+                {
+                    string txt = dr.wyciagnijWartosc(dane, "idWydzial=" + idWydzialu + " and idTabeli='" + idTabeliNum.ToString() + "' and idWiersza ='" + i.ToString() + "' and idkolumny='" + j.ToString() + "'", tenPlik);
+                    string txt2 = "<a Class=\"normal\" href=\"javascript: openPopup('popup.aspx?sesja=" + i.ToString().ToString() + "!" + idTabeliNum.ToString() + "!" + j.ToString() + "!1')\">" + txt + " </a>";
+                    kodStony.AppendLine("<td class='center borderAll'>" + txt2 + "</td>");
+                }
+                kodStony.AppendLine("</tr>");
+            }
+            kodStony.AppendLine("</tr>");
+
+            kodStony.AppendLine("</table>");
+            kodStony.AppendLine("</div>");
+            kodStony.AppendLine("<br/>");
+            return kodStony.ToString();
+        }
+
 
         public string tworztabeleMSS(string idTabeli, DataTable naglowek, DataTable tabelaPrzedIteracja, DataTable dane, int iloscWierszyNaglowka, int iloscWierszyTabeli, int iloscKolumnPrzedIteracja, int iloscKolumnPoIteracji, int idWydzialu, bool lp, string tekstNadTabela, string tenPlik)
         {

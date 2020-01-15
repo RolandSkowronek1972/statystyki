@@ -130,20 +130,11 @@
     <Content Include="akrg.aspx" />
     <Content Include="akrp.aspx" />
     <Content Include="akrk.aspx" />
-    <Content Include="aopc2N.aspx" />
-    <Content Include="aopk2N.aspx" />
-    <Content Include="aoppeN.aspx" />
-    <Content Include="aopkN.aspx" />
     <Content Include="aopg.aspx" />
+    <Content Include="mk.aspx" />
     <Content Include="mss10e.aspx" />
-    <Content Include="oopuN.aspx" />
-    <Content Include="ooprN.aspx" />
-    <Content Include="oopkN.aspx" />
-    <Content Include="oopcN.aspx" />
-    <Content Include="aoppN.aspx" />
     <Content Include="oopp.aspx" />
     <Content Include="oopg.aspx" />
-    <Content Include="aopcN.aspx" />
     <Content Include="aopc.aspx" />
     <Content Include="aopk.aspx" />
     <Content Include="aopk2.aspx" />
@@ -174,6 +165,7 @@
     <Content Include="oktr.aspx" />
     <Content Include="mss19o.aspx" />
     <Content Include="passwordPopup.aspx" />
+    <Content Include="style\oktkr.css" />
     <Content Include="style\MUstyles.css" />
     <Content Include="template.aspx" />
     <Content Include="oktg.aspx" />
@@ -368,6 +360,7 @@
     <Content Include="Template\aktk2.xlsx" />
     <Content Include="Template\aktpe.xlsx" />
     <Content Include="Template\oopg.xlsx" />
+    <Content Include="Template\okrc.xlsx" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -447,34 +440,6 @@
     <Compile Include="akrk.aspx.designer.cs">
       <DependentUpon>akrk.aspx</DependentUpon>
     </Compile>
-    <Compile Include="aopc2N.aspx.cs">
-      <DependentUpon>aopc2N.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="aopc2N.aspx.designer.cs">
-      <DependentUpon>aopc2N.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="aopk2N.aspx.cs">
-      <DependentUpon>aopk2N.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="aopk2N.aspx.designer.cs">
-      <DependentUpon>aopk2N.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="aoppeN.aspx.cs">
-      <DependentUpon>aoppeN.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="aoppeN.aspx.designer.cs">
-      <DependentUpon>aoppeN.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="aopkN.aspx.cs">
-      <DependentUpon>aopkN.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="aopkN.aspx.designer.cs">
-      <DependentUpon>aopkN.aspx</DependentUpon>
-    </Compile>
     <Compile Include="aopg.aspx.cs">
       <DependentUpon>aopg.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -482,47 +447,19 @@
     <Compile Include="aopg.aspx.designer.cs">
       <DependentUpon>aopg.aspx</DependentUpon>
     </Compile>
+    <Compile Include="mk.aspx.cs">
+      <DependentUpon>mk.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="mk.aspx.designer.cs">
+      <DependentUpon>mk.aspx</DependentUpon>
+    </Compile>
     <Compile Include="mss10e.aspx.cs">
       <DependentUpon>mss10e.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="mss10e.aspx.designer.cs">
       <DependentUpon>mss10e.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="oopuN.aspx.cs">
-      <DependentUpon>oopuN.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="oopuN.aspx.designer.cs">
-      <DependentUpon>oopuN.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="ooprN.aspx.cs">
-      <DependentUpon>ooprN.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="ooprN.aspx.designer.cs">
-      <DependentUpon>ooprN.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="oopkN.aspx.cs">
-      <DependentUpon>oopkN.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="oopkN.aspx.designer.cs">
-      <DependentUpon>oopkN.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="oopcN.aspx.cs">
-      <DependentUpon>oopcN.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="oopcN.aspx.designer.cs">
-      <DependentUpon>oopcN.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="aoppN.aspx.cs">
-      <DependentUpon>aoppN.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="aoppN.aspx.designer.cs">
-      <DependentUpon>aoppN.aspx</DependentUpon>
     </Compile>
     <Compile Include="oopp.aspx.cs">
       <DependentUpon>oopp.aspx</DependentUpon>
@@ -540,13 +477,6 @@
     </Compile>
     <Compile Include="classes\CustomTemplate.cs" />
     <Compile Include="classes\devExpressXXL.cs" />
-    <Compile Include="aopcN.aspx.cs">
-      <DependentUpon>aopcN.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="aopcN.aspx.designer.cs">
-      <DependentUpon>aopcN.aspx</DependentUpon>
-    </Compile>
     <Compile Include="aopc.aspx.cs">
       <DependentUpon>aopc.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>

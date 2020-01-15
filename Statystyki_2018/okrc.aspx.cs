@@ -376,14 +376,28 @@ namespace stat2018
 
                 DataTable tabelka001 = (DataTable)Session["tabelka002"];
 
-                for (int i = 0; i < 10; i++)
+                for (int i = 0; i < 4; i++)
+
+                {
+                    // druga mesge 3
+                    MyWorksheet1.Cells[rowik + 7 + i, 20, rowik + 7 + i, 21].Merge = true;
+                    MyWorksheet1.Cells[rowik + 7 + i, 20].Value = tabelka001.Rows[i][1].ToString();
+                    // druga kolumna pojedynacza
+                    MyWorksheet1.Cells[rowik + 7 + i, 23].Value = tabelka001.Rows[i][2].ToString();
+                    MyWorksheet1.Cells[rowik + 7 + i, 24, rowik + 7 + i, 26].Merge = true;
+                    MyWorksheet1.Cells[rowik + 7 + i, 24].Value = tabelka001.Rows[i + 1][3].ToString();
+                }
+
+
+
+                for (int i = 4; i < 10; i++)
 
                 {
                     // druga mesge 3
                     MyWorksheet1.Cells[rowik + 7 + i, 20, rowik + 7 + i, 22].Merge = true;
                     MyWorksheet1.Cells[rowik + 7 + i, 20].Value = tabelka001.Rows[i][1].ToString();
                     // druga kolumna pojedynacza
-                    MyWorksheet1.Cells[rowik + 7 + i, 23].Value = tabelka001.Rows[i][2].ToString();
+                    MyWorksheet1.Cells[rowik + 7 + i, 22].Value = tabelka001.Rows[i][2].ToString();
                     MyWorksheet1.Cells[rowik + 7 + i, 24, rowik + 7 + i, 26].Merge = true;
                     MyWorksheet1.Cells[rowik + 7 + i, 24].Value = tabelka001.Rows[i + 1][3].ToString();
                 }

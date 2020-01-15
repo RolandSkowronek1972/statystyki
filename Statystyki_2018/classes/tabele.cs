@@ -1424,5 +1424,28 @@ namespace stat2018
             builder.AppendLine("</td>");
             return builder.ToString();
         }
+        public string komorkaHTMLbezP(string text, int colspan, int rowspan, string style)
+        {
+            StringBuilder builder = new StringBuilder();
+            builder.Append("<td ");
+            if (string.IsNullOrEmpty(style.Trim()) != null)
+            {
+                builder.Append(" class='" + style + "' ");
+            }
+            if (rowspan > 0)
+            {
+                builder.Append(" rowspan='" + rowspan + "' ");
+            }
+            if (colspan > 0)
+            {
+                builder.Append(" colspan='" + colspan + "' ");
+            }
+            builder.AppendLine(">");
+            //            builder.AppendLine("<p>" + text + "</p>");
+            builder.AppendLine(text);
+
+            builder.AppendLine("</td>");
+            return builder.ToString();
+        }
     }
 }
