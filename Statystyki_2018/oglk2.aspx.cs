@@ -165,7 +165,7 @@ namespace stat2018
             {
                 DataTable Tabela4 = dr.generuj_dane_do_tabeli_wierszy2018(Date1.Date, Date2.Date, id_dzialu, 7, 4, 1, tenPlik);
                 Session["tabelka007"] = Tabela4;
-                pisz("tab_07_", 2, 4, Tabela4);
+                pisz("tab_07_", 5, 3, Tabela4);
             }
             catch (Exception ex)
             {

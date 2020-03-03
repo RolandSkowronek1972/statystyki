@@ -170,7 +170,7 @@ namespace stat2018
                 }
             DataTable tabelka01 = dr. generuj_dane_do_tabeli_wierszy2018(Date1.Date, Date2.Date, idDzialu,1 ,12, 15, tenPlik);
             Session["tabelka001"] = tabelka01;
-            pisz("tab_1_", 12, 15, tabelka01);
+            pisz("tab_1_", 12, 17, tabelka01);
 
         }
         protected void tabela_2()
@@ -325,11 +325,18 @@ namespace stat2018
             dT_02.Rows.Add(new Object[] { "2", "Ua", "1", "2", "h" });
             dT_02.Rows.Add(new Object[] { "2", "Uo", "1", "2", "h" });
             dT_02.Rows.Add(new Object[] { "2", "Uz", "1", "2", "h" });
+            dT_02.Rows.Add(new Object[] { "2", "Uz p-I", "1", "2", "h" });
+            dT_02.Rows.Add(new Object[] { "2", "Uz p-II", "1", "2", "h" });
+
             dT_02.Rows.Add(new Object[] { "2", "P", "1", "2", "h" });
             dT_02.Rows.Add(new Object[] { "2", "Np", "1", "2", "h" });
             dT_02.Rows.Add(new Object[] { "2", "Po", "1", "2", "h" });
             dT_02.Rows.Add(new Object[] { "2", "Pa", "1", "2", "h" });
             dT_02.Rows.Add(new Object[] { "2", "Pz", "1", "2", "h" });
+            dT_02.Rows.Add(new Object[] { "2", "Pz p-I", "1", "2", "h" });
+            dT_02.Rows.Add(new Object[] { "2", "Pz p-II", "1", "2", "h" });
+
+
             dT_02.Rows.Add(new Object[] { "2", "WSC", "2", "1", "h" });
             dT_02.Rows.Add(new Object[] { "2", "S", "1", "2", "h" });
             dT_02.Rows.Add(new Object[] { "2", "Razem", "1", "2", "h" });
@@ -346,7 +353,7 @@ namespace stat2018
             dT_02.Rows.Add(new Object[] { "3", "Imie", "1", "3", "h" });
             dT_02.Rows.Add(new Object[] { "3", "Nazwisko Sędziego", "1", "3", "h" });
             dT_02.Rows.Add(new Object[] { "3", "Liczba sesji", "2", "1", "h" });
-            dT_02.Rows.Add(new Object[] { "3", "Załatwienia", "13", "1", "h" });
+            dT_02.Rows.Add(new Object[] { "3", "Załatwienia", "17", "1", "h" });
             dT_02.Rows.Add(new Object[] { "3", "Ilość sporządzonych uzasadnień wyroków (bez wygłoszonych)", "1", "3", "h" });
             dT_02.Rows.Add(new Object[] { "3", "w tym ilość uzasadnień zwróconych po terminie ustawowym bądź przedłużonym", "2", "1", "h" });
             dT_02.Rows.Add(new Object[] { "3", "Uzasadnienia wygłoszone", "1", "3", "h" });

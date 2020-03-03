@@ -862,7 +862,7 @@ namespace stat2018
         {
             if (cl.debug(idDzialu))
             {
-                Common.log.Info(tenPlik + ": rozpoczęcie tworzenia tabeli 2");
+                Common.log.Info(tenPlik + ": rozpoczęcie tworzenia tabeli: "+ idTabeli);
             }
             DataTable tabelka = generuj_dane_do_tabeli_sedziowskiej_2019(idDzialu, idTabeli, dataPoczatku, dataKonca, iloscKolumn, tenPlik);
             kontrolka.DataSource = null;

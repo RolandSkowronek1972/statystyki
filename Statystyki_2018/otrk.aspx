@@ -335,13 +335,93 @@ ORDER BY id_">
                 </Columns>
             </asp:GridView>
         </div>
+           <div id="cos" class="page-break">
+            &nbsp;<asp:Label ID="Label15" runat="server"></asp:Label>
+            <asp:GridView ID="GridView4" runat="server" AutoGenerateColumns="False" OnRowCreated="GridView4_RowCreated" Width="100%" ShowHeader="False">
+                <Columns>
+                    <asp:BoundField DataField="id" HeaderText="id" SortExpression="id" />
+                    <asp:BoundField DataField="funkcja" HeaderText="funkcja"
+                        SortExpression="funkcja">
+                        <ItemStyle CssClass="t3_funkcja" />
+                    </asp:BoundField>
+                    <asp:BoundField DataField="stanowisko" HeaderText="stanowisko"
+                        SortExpression="stanowisko">
+                        <ItemStyle CssClass="t3_stanowisko" />
+                    </asp:BoundField>
+                    <asp:TemplateField HeaderText="nazwisko" SortExpression="nazwisko">
+
+                        <ItemTemplate>
+                            <asp:Label ID="Label12" runat="server" Text='<%# Eval("nazwisko") %>'></asp:Label>
+                            &nbsp;<asp:Label ID="Label1" runat="server" Text='<%# Bind("imie") %>'></asp:Label>
+                        </ItemTemplate>
+                        <ItemStyle CssClass="t3_nazwisko" />
+                    </asp:TemplateField>
+                    <asp:TemplateField HeaderText="d_01" SortExpression="d_01">
+                        <ItemTemplate>
+                            <a href="javascript:openPopup('popup.aspx?sesja=<%# Eval("id_sedziego")+ "!"+Eval("id_tabeli") +"!1!!7"%>')">
+                                <asp:Label ID="Label301" runat="server" Text='<%# Eval("d_01")%>' CssClass="normal"></asp:Label>
+                            </a>
+                        </ItemTemplate>
+                        <ItemStyle CssClass="t3_d3" />
+                    </asp:TemplateField>
+                    <asp:TemplateField HeaderText="d_02" SortExpression="d_02">
+                        <ItemTemplate>
+                            <a href="javascript:openPopup('popup.aspx?sesja=<%# Eval("id_sedziego")+ "!"+Eval("id_tabeli") +"!2!!7"%>')">
+                                <asp:Label ID="Label302" runat="server" Text='<%# Eval("d_02")%>' CssClass="normal"></asp:Label>
+                            </a>
+                        </ItemTemplate>
+                        <ItemStyle CssClass="t3_d3" />
+                    </asp:TemplateField>
+                    <asp:TemplateField HeaderText="d_03" SortExpression="d_03">
+                        <ItemTemplate>
+                            <a href="javascript:openPopup('popup.aspx?sesja=<%# Eval("id_sedziego")+ "!"+Eval("id_tabeli") +"!3!!7"%>')">
+                                <asp:Label ID="Label303" runat="server" Text='<%# Eval("d_03")%>' CssClass="normal"></asp:Label>
+                            </a>
+                        </ItemTemplate>
+                        <ItemStyle CssClass="t3_d3" />
+                    </asp:TemplateField>
+                    <asp:TemplateField HeaderText="d_04" SortExpression="d_04">
+                        <ItemTemplate>
+                            <a href="javascript:openPopup('popup.aspx?sesja=<%# Eval("id_sedziego")+ "!"+Eval("id_tabeli") +"!4!!7"%>')">
+                                <asp:Label ID="Label304" runat="server" Text='<%# Eval("d_04")%>' CssClass="normal"></asp:Label>
+                            </a>
+                        </ItemTemplate>
+                        <ItemStyle CssClass="t3_d3" />
+                    </asp:TemplateField>
+                    <asp:TemplateField HeaderText="d_05" SortExpression="d_05">
+                        <ItemTemplate>
+                            <a href="javascript:openPopup('popup.aspx?sesja=<%# Eval("id_sedziego")+ "!"+Eval("id_tabeli") +"!5!!7"%>')">
+                                <asp:Label ID="Label305" runat="server" Text='<%# Eval("d_05")%>' CssClass="normal"></asp:Label>
+                            </a>
+                        </ItemTemplate>
+                        <ItemStyle CssClass="t3_d3" />
+                    </asp:TemplateField>
+                    <asp:TemplateField HeaderText="d_06" SortExpression="d_06">
+                        <ItemTemplate>
+                            <a href="javascript:openPopup('popup.aspx?sesja=<%# Eval("id_sedziego")+ "!"+Eval("id_tabeli") +"!6!!7"%>')">
+                                <asp:Label ID="Label306" runat="server" Text='<%# Eval("d_06")%>' CssClass="normal"></asp:Label>
+                            </a>
+                        </ItemTemplate>
+                        <ItemStyle CssClass="t3_d3" BackColor="#CCCCCC" />
+                    </asp:TemplateField>
+                    <asp:TemplateField HeaderText="d_07" SortExpression="d_07">
+
+                        <ItemTemplate>
+                            <a href="javascript:openPopup('popup.aspx?sesja=<%# Eval("id_sedziego")+ "!"+Eval("id_tabeli") +"!7!!7"%>')">
+                                <asp:Label ID="Label307" runat="server" Text='<%# Eval("d_07")%>' CssClass="normal"></asp:Label>
+                            </a>
+                        </ItemTemplate>
+                        <ItemStyle CssClass="t3_d3" />
+                    </asp:TemplateField>
+                </Columns>
+            </asp:GridView>
+        </div>
 
         <br />
         <div id="Div1" class="page-break">
-            &nbsp;<asp:Label ID="Label15" runat="server"></asp:Label>
-            &nbsp;
-    &nbsp;<asp:GridView ID="GridView4" runat="server" AutoGenerateColumns="False" OnRowCreated="GridView4_RowCreated" Width="100%" ShowHeader="False">
-    </asp:GridView>
+            &nbsp;&nbsp;
+    &nbsp;
+           
             <br />
             Raport statystyczny
                     <asp:Label ID="Label27" runat="server"></asp:Label>

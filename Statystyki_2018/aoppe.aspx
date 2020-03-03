@@ -60,10 +60,7 @@
             <td style="width:auto;padding-left:5px;" >
                 <asp:LinkButton ID="LinkButton54" runat="server" class="ax_box" OnClick="Odswiez">  Odśwież</asp:LinkButton>
             </td>
-            <td style="width:auto;padding-left:5px;">
-                  <td style="width:auto;padding-left:5px;">
-                  <input id="Button1" class="ax_box" style="border-style: none; padding: 0px" type="button" onclick="JavaScript: window.print();" value="Drukuj" /></td>
-            </td>
+           
            
             <td style="width:auto;padding-left:5px;">
                  <asp:LinkButton ID="LinkButton57" runat="server" CssClass="ax_box" OnClick="tworzPlikExcell">Zapisz do Excel</asp:LinkButton>

@@ -381,11 +381,23 @@ namespace stat2018
                 {
                     // druga mesge 3
                     MyWorksheet1.Cells[rowik + 7 + i, 20, rowik + 7 + i, 21].Merge = true;
-                    MyWorksheet1.Cells[rowik + 7 + i, 20].Value = tabelka001.Rows[i][1].ToString();
+                    MyWorksheet1.Cells[rowik + 7 + i, 20].Value = tabelka001.Rows[i][1].ToString(); //razem
+                    MyWorksheet1.Cells[rowik + 7 + i, 20].Style.ShrinkToFit = true;
+                    MyWorksheet1.Cells[rowik + 7 + i, 20].Style.HorizontalAlignment = OfficeOpenXml.Style.ExcelHorizontalAlignment.Center;
                     // druga kolumna pojedynacza
-                    MyWorksheet1.Cells[rowik + 7 + i, 23].Value = tabelka001.Rows[i][2].ToString();
-                    MyWorksheet1.Cells[rowik + 7 + i, 24, rowik + 7 + i, 26].Merge = true;
-                    MyWorksheet1.Cells[rowik + 7 + i, 24].Value = tabelka001.Rows[i + 1][3].ToString();
+                    MyWorksheet1.Cells[rowik + 7 + i, 22].Value = tabelka001.Rows[i][2].ToString(); //stare
+                    MyWorksheet1.Cells[rowik + 7 + i, 22].Style.ShrinkToFit = true;
+                    MyWorksheet1.Cells[rowik + 7 + i, 22].Style.HorizontalAlignment = OfficeOpenXml.Style.ExcelHorizontalAlignment.Center;
+                    MyWorksheet1.Cells[rowik + 7 + i, 23].Value = tabelka001.Rows[i][3].ToString(); //GCC
+                    MyWorksheet1.Cells[rowik + 7 + i, 23].Style.ShrinkToFit = true;
+                    MyWorksheet1.Cells[rowik + 7 + i, 23].Style.HorizontalAlignment = OfficeOpenXml.Style.ExcelHorizontalAlignment.Center;
+                    MyWorksheet1.Cells[rowik + 7 + i, 24, rowik + 7 + i, 25].Merge = true;
+                    MyWorksheet1.Cells[rowik + 7 + i, 24].Value = tabelka001.Rows[i][4].ToString();
+                    MyWorksheet1.Cells[rowik + 7 + i, 24].Style.ShrinkToFit = true;
+                    MyWorksheet1.Cells[rowik + 7 + i, 24].Style.HorizontalAlignment = OfficeOpenXml.Style.ExcelHorizontalAlignment.Center;
+                    MyWorksheet1.Cells[rowik + 7 + i, 26].Value = tabelka001.Rows[i][5].ToString();
+                    MyWorksheet1.Cells[rowik + 7 + i, 26].Style.ShrinkToFit = true;
+                    MyWorksheet1.Cells[rowik + 7 + i, 26].Style.HorizontalAlignment = OfficeOpenXml.Style.ExcelHorizontalAlignment.Center;
                 }
 
 
@@ -396,21 +408,31 @@ namespace stat2018
                     // druga mesge 3
                     MyWorksheet1.Cells[rowik + 7 + i, 20, rowik + 7 + i, 22].Merge = true;
                     MyWorksheet1.Cells[rowik + 7 + i, 20].Value = tabelka001.Rows[i][1].ToString();
+                    MyWorksheet1.Cells[rowik + 7 + i, 20].Style.ShrinkToFit = true;
+                    MyWorksheet1.Cells[rowik + 7 + i, 20].Style.HorizontalAlignment = OfficeOpenXml.Style.ExcelHorizontalAlignment.Center;
                     // druga kolumna pojedynacza
-                    MyWorksheet1.Cells[rowik + 7 + i, 22].Value = tabelka001.Rows[i][2].ToString();
+
+                    MyWorksheet1.Cells[rowik + 7 + i, 23].Value = tabelka001.Rows[i][2].ToString();
+                    MyWorksheet1.Cells[rowik + 7 + i, 23].Style.ShrinkToFit = true;
+                    MyWorksheet1.Cells[rowik + 7 + i, 23].Style.HorizontalAlignment  = OfficeOpenXml.Style.ExcelHorizontalAlignment.Center;
                     MyWorksheet1.Cells[rowik + 7 + i, 24, rowik + 7 + i, 26].Merge = true;
-                    MyWorksheet1.Cells[rowik + 7 + i, 24].Value = tabelka001.Rows[i + 1][3].ToString();
+                    MyWorksheet1.Cells[rowik + 7 + i, 24].Value = tabelka001.Rows[i ][4].ToString();
+                    MyWorksheet1.Cells[rowik + 7 + i, 24].Style.ShrinkToFit = true;
+                    MyWorksheet1.Cells[rowik + 7 + i, 24].Style.HorizontalAlignment  = OfficeOpenXml.Style.ExcelHorizontalAlignment.Center;
+
                 }
 
-                for (int i = 0; i < 9; i++)
+                for (int i = 0; i < 10; i++)
                 {
                     for (int j = 0; j < 6; j++)
                     {
                         try
                         {
-                            MyWorksheet1.Cells[rowik + 7 + i, j + 27].Value = tabelka001.Rows[i][j + 4].ToString();
+                            MyWorksheet1.Cells[rowik + 7 + i, j + 27].Value = tabelka001.Rows[i][j + 6].ToString();
+                            MyWorksheet1.Cells[rowik + 7 + i, j+27].Style.ShrinkToFit = true;
+                            MyWorksheet1.Cells[rowik + 7 + i, j + 27].Style.HorizontalAlignment = OfficeOpenXml.Style.ExcelHorizontalAlignment.Center;
                             MyWorksheet1.Cells[rowik + 7 + i, j + 27].Style.Border.BorderAround(OfficeOpenXml.Style.ExcelBorderStyle.Thin, System.Drawing.Color.Black);
-                            MyWorksheet1.Cells[rowik + 7 + i, j + 28].Style.Border.BorderAround(OfficeOpenXml.Style.ExcelBorderStyle.Thin, System.Drawing.Color.Black);
+                            //MyWorksheet1.Cells[rowik + 7 + i, j + 28].Style.Border.BorderAround(OfficeOpenXml.Style.ExcelBorderStyle.Thin, System.Drawing.Color.Black);
 
                         }
                         catch

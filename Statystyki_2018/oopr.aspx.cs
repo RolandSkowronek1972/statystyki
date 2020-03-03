@@ -18,7 +18,7 @@ namespace stat2018
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            string idWydzial =  Request.QueryString["w"];
+            string idWydzial = Request.QueryString["w"];
             if (idWydzial != null)
             {
                 Session["id_dzialu"] = idWydzial;
@@ -52,7 +52,7 @@ namespace stat2018
             {
                 string user = (string)Session["userIdNum"];
                 string dzial = (string)Session["id_dzialu"];
-                bool dost =  cm.dostep(dzial, user);
+                bool dost = cm.dostep(dzial, user);
                 if (!dost)
                 {
                     Server.Transfer("default.aspx?info='Użytkownik " + user + " nie praw do działu nr " + dzial + "'");
@@ -71,13 +71,12 @@ namespace stat2018
             catch (Exception ex)
             {
                 cm.log.Error(tenPlik + " " + ex.Message);
-              //  Server.Transfer("default.aspx");
+                //  Server.Transfer("default.aspx");
             }
         }// end of Page_Load
 
         protected void odswiez()
         {
-            string dzial = (string)Session["id_dzialu"];
             id_dzialu.Text = (string)Session["txt_dzialu"];
             tabela_1();
             // dopasowanie opisów
@@ -90,7 +89,7 @@ namespace stat2018
             string idDzialu = (string)Session["id_dzialu"];
             if (cl.debug(int.Parse(idDzialu)))
             {
-                cm.log.Info(tenPlik + ": rozpoczęcie tworzenia tabeli 1");
+                cm.log.Info(tenPlik + ": rozpoczęcie tworzenia tabeli 5");
             }
             DataTable tabelka01 = dr.generuj_dane_do_tabeli_sedziowskiej_2018(int.Parse(idDzialu), 5, Date1.Date, Date2.Date, 260, tenPlik);
             Session["tabelka001"] = tabelka01;
@@ -348,8 +347,7 @@ namespace stat2018
             using (ExcelPackage MyExcel = new ExcelPackage(existingFile))
             {
                 ExcelWorksheet MyWorksheet = MyExcel.Workbook.Worksheets[1];
-                DataView view = (DataView)statystyki.Select(DataSourceSelectArguments.Empty);
-                tb.tworzArkuszwExcle(MyWorksheet, view.ToTable(), 112, 0, 7, true, true, false, false, true);
+                tb.tworzArkuszwExcle(MyWorksheet, (DataTable)Session["tabelka001"], 112, 0, 7, true, true, false, false, true);
 
                 try
                 {
@@ -386,7 +384,6 @@ namespace stat2018
             {
                 try
                 {
-                   
                     tb.makeSumRow((DataTable)Session["tabelka001"], e, 1, "Razem");
                 }
                 catch (Exception ex)

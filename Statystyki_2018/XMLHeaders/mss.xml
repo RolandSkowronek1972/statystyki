@@ -1,0 +1,134 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<komorki>
+
+  <tabela id="5.1">
+    <iloscWierszy>2</iloscWierszy>
+    <tekstNadTabela>Jakiś tam wydział</tekstNadTabela>
+    <naglowek>
+      <iloscWierszy>2</iloscWierszy>
+      <iloscKolumnPrzedIteracja>1</iloscKolumnPrzedIteracja>
+      <iloscKolumnPoIteracji>13</iloscKolumnPoIteracji>
+      <lp>1</lp>
+      <komorkiNaglowka>
+        <komorka>
+          <wiersz>1</wiersz>
+          <kolumna>1</kolumna>
+          <colSpan>0</colSpan>
+          <rowspan>2</rowspan>
+          <style>center</style>
+          <text>naglowkowa Komorka1</text>
+        </komorka>
+        <komorka>
+          <wiersz>1</wiersz>
+          <kolumna>2</kolumna>
+          <colSpan>0</colSpan>
+          <rowspan>0</rowspan>
+          <style>center</style>
+          <text>naglowkowa Komorka2</text>
+        </komorka>
+        <komorka>
+          <wiersz>1</wiersz>
+          <kolumna>3</kolumna>
+          <colSpan>4</colSpan>
+          <rowspan>0</rowspan>
+          <style>center</style>
+          <text>naglowkowa Komorka3</text>
+        </komorka>
+        <komorka>
+          <wiersz>2</wiersz>
+          <kolumna>1</kolumna>
+          <colSpan>1</colSpan>
+          <rowspan>0</rowspan>
+          <style>center</style>
+          <text>naglowkowa Komorka21</text>
+        </komorka>
+        <komorka>
+          <wiersz>2</wiersz>
+          <kolumna>2</kolumna>
+          <colSpan>1</colSpan>
+          <rowspan>0</rowspan>
+          <style>center</style>
+          <text>naglowkowa Komorka222</text>
+        </komorka>
+        <komorka>
+          <wiersz>2</wiersz>
+          <kolumna>3</kolumna>
+          <colSpan>9</colSpan>
+          <rowspan>0</rowspan>
+          <style>center</style>
+          <text>naglowkowa Komorka222</text>
+        </komorka>
+      </komorkiNaglowka>
+    </naglowek>
+    <tabelaBoczna>
+      <iloscWierszy>2</iloscWierszy>
+      <iloscKolumnPrzedIteracja>2</iloscKolumnPrzedIteracja>
+      <iloscKolumnPoIteracji>2</iloscKolumnPoIteracji>
+      <lp>0</lp>
+      <komorkiTabeliBocznej>
+        <komorka>
+          <wiersz>1</wiersz>
+          <kolumna>1</kolumna>
+          <colSpan>0</colSpan>
+          <rowspan>0</rowspan>
+          <style>center</style>
+          <text>Komorka boczna 1</text>
+        </komorka>
+        <komorka>
+          <wiersz>1</wiersz>
+          <kolumna>2</kolumna>
+          <colSpan>0</colSpan>
+          <rowspan>0</rowspan>
+          <style>center</style>
+          <text>Komorka boczna2</text>
+        </komorka>
+        <komorka>
+          <wiersz>2</wiersz>
+          <kolumna>1</kolumna>
+          <colSpan>0</colSpan>
+          <rowspan>0</rowspan>
+          <style>center</style>
+          <text>Komorka boczna 21</text>
+        </komorka>
+      </komorkiTabeliBocznej>
+    </tabelaBoczna>
+  </tabela>
+
+  <tabela id="5.2">
+    <iloscWierszy>36</iloscWierszy>
+    <tekstNadTabela>Jakiś tam wydział</tekstNadTabela>
+
+    <naglowek>
+      <iloscWierszy>1</iloscWierszy>
+      <iloscKolumnPrzedIteracja>2</iloscKolumnPrzedIteracja>
+      <iloscKolumnPoIteracji>22</iloscKolumnPoIteracji>
+      <lp>0</lp>
+      <komorkiNaglowka>
+        <komorka>
+          <wiersz>1</wiersz>
+          <kolumna>1</kolumna>
+          <colSpan>0</colSpan>
+          <rowspan>0</rowspan>
+          <style>center</style>
+          <text>Komorka naglowka1</text>
+        </komorka>
+        <komorka>
+          <wiersz>1</wiersz>
+          <kolumna>2</kolumna>
+          <colSpan>0</colSpan>
+          <rowspan>0</rowspan>
+          <style>center</style>
+          <text>Komorka naglowka2</text>
+        </komorka>
+        <komorka>
+          <wiersz>2</wiersz>
+          <kolumna>1</kolumna>
+          <colSpan>2</colSpan>
+          <rowspan>0</rowspan>
+          <style>center</style>
+          <text>Komorka naglowka21</text>
+        </komorka>
+      </komorkiNaglowka>
+    </naglowek>
+  </tabela>
+</komorki>

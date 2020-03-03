@@ -104,15 +104,20 @@ namespace stat2018
             tabela_23();
             tabela_24();
             tabela_25();
-           
             tabela_26();
+            tabela_27();
             tabela_28();
             tabela_29();
+            tabela_30();
             tabela_31();
             tabela_32();
             tabela_33();
             tabela_34();
             tabela_35();
+            tabela_36();
+            tabela_37();
+            tabela_38();
+            tabela_39();
 
             makeLabels();
         }
@@ -1522,7 +1527,7 @@ namespace stat2018
             {
                 cm.log.Info(tenPlik + ": rozpoczęcie tworzenia tabeli 25");
             }
-            DataTable tabela024 = dr.generuj_dane_do_tabeli_wierszy2018(Date1.Date, Date2.Date, idDzialu.ToString(), 25, 4, 2, tenPlik);
+            DataTable tabela024 = dr.generuj_dane_do_tabeli_wierszy2018(Date1.Date, Date2.Date, idDzialu.ToString(), 25,9,15, tenPlik);
             if (tabela024 == null)
             {
                 cm.log.Error(tenPlik + " Brak danych dla tabeli 25!");
@@ -1530,134 +1535,8 @@ namespace stat2018
             }
             try
             {
+                pisz("tab_25_", 8, 15, tabela024);
                 //  wiersz 1
-                tab_25_w01_c01.Text = tabela024.Rows[0][1].ToString().Trim();
-                tab_25_w01_c02.Text = tabela024.Rows[0][2].ToString().Trim();
-                tab_25_w01_c03.Text = tabela024.Rows[0][3].ToString().Trim();
-                tab_25_w01_c04.Text = tabela024.Rows[0][4].ToString().Trim();
-                tab_25_w01_c05.Text = tabela024.Rows[0][5].ToString().Trim();
-                tab_25_w01_c06.Text = tabela024.Rows[0][6].ToString().Trim();
-                tab_25_w01_c07.Text = tabela024.Rows[0][7].ToString().Trim();
-                tab_25_w01_c08.Text = tabela024.Rows[0][8].ToString().Trim();
-                tab_25_w01_c09.Text = tabela024.Rows[0][9].ToString().Trim();
-                tab_25_w01_c10.Text = tabela024.Rows[0][10].ToString().Trim();
-                tab_25_w01_c11.Text = tabela024.Rows[0][11].ToString().Trim();
-                tab_25_w01_c12.Text = tabela024.Rows[0][12].ToString().Trim();
-                tab_25_w01_c13.Text = tabela024.Rows[0][13].ToString().Trim();
-                tab_25_w01_c14.Text = tabela024.Rows[0][14].ToString().Trim();
-                tab_25_w01_c15.Text = tabela024.Rows[0][15].ToString().Trim();
-                //  wiersz 2
-                tab_25_w02_c01.Text = tabela024.Rows[1][1].ToString().Trim();
-                tab_25_w02_c02.Text = tabela024.Rows[1][2].ToString().Trim();
-                tab_25_w02_c03.Text = tabela024.Rows[1][3].ToString().Trim();
-                tab_25_w02_c04.Text = tabela024.Rows[1][4].ToString().Trim();
-                tab_25_w02_c05.Text = tabela024.Rows[1][5].ToString().Trim();
-                tab_25_w02_c06.Text = tabela024.Rows[1][6].ToString().Trim();
-                tab_25_w02_c07.Text = tabela024.Rows[1][7].ToString().Trim();
-                tab_25_w02_c08.Text = tabela024.Rows[1][8].ToString().Trim();
-                tab_25_w02_c09.Text = tabela024.Rows[1][9].ToString().Trim();
-                tab_25_w02_c10.Text = tabela024.Rows[1][10].ToString().Trim();
-                tab_25_w02_c11.Text = tabela024.Rows[1][11].ToString().Trim();
-                tab_25_w02_c12.Text = tabela024.Rows[1][12].ToString().Trim();
-                tab_25_w02_c13.Text = tabela024.Rows[1][13].ToString().Trim();
-                tab_25_w02_c14.Text = tabela024.Rows[1][14].ToString().Trim();
-                tab_25_w02_c15.Text = tabela024.Rows[1][15].ToString().Trim();
-                //  wiersz 3
-                tab_25_w03_c01.Text = tabela024.Rows[2][1].ToString().Trim();
-                tab_25_w03_c02.Text = tabela024.Rows[2][2].ToString().Trim();
-                tab_25_w03_c03.Text = tabela024.Rows[2][3].ToString().Trim();
-                tab_25_w03_c04.Text = tabela024.Rows[2][4].ToString().Trim();
-                tab_25_w03_c05.Text = tabela024.Rows[2][5].ToString().Trim();
-                tab_25_w03_c06.Text = tabela024.Rows[2][6].ToString().Trim();
-                tab_25_w03_c07.Text = tabela024.Rows[2][7].ToString().Trim();
-                tab_25_w03_c08.Text = tabela024.Rows[2][8].ToString().Trim();
-                tab_25_w03_c09.Text = tabela024.Rows[2][9].ToString().Trim();
-                tab_25_w03_c10.Text = tabela024.Rows[2][10].ToString().Trim();
-                tab_25_w03_c11.Text = tabela024.Rows[2][11].ToString().Trim();
-                tab_25_w03_c12.Text = tabela024.Rows[2][12].ToString().Trim();
-                tab_25_w03_c13.Text = tabela024.Rows[2][13].ToString().Trim();
-                tab_25_w03_c14.Text = tabela024.Rows[2][14].ToString().Trim();
-                tab_25_w03_c15.Text = tabela024.Rows[2][15].ToString().Trim();
-                //  wiersz 4
-                tab_25_w04_c01.Text = tabela024.Rows[3][1].ToString().Trim();
-                tab_25_w04_c02.Text = tabela024.Rows[3][2].ToString().Trim();
-                tab_25_w04_c03.Text = tabela024.Rows[3][3].ToString().Trim();
-                tab_25_w04_c04.Text = tabela024.Rows[3][4].ToString().Trim();
-                tab_25_w04_c05.Text = tabela024.Rows[3][5].ToString().Trim();
-                tab_25_w04_c06.Text = tabela024.Rows[3][6].ToString().Trim();
-                tab_25_w04_c07.Text = tabela024.Rows[3][7].ToString().Trim();
-                tab_25_w04_c08.Text = tabela024.Rows[3][8].ToString().Trim();
-                tab_25_w04_c09.Text = tabela024.Rows[3][9].ToString().Trim();
-                tab_25_w04_c10.Text = tabela024.Rows[3][10].ToString().Trim();
-                tab_25_w04_c11.Text = tabela024.Rows[3][11].ToString().Trim();
-                tab_25_w04_c12.Text = tabela024.Rows[3][12].ToString().Trim();
-                tab_25_w04_c13.Text = tabela024.Rows[3][13].ToString().Trim();
-                tab_25_w04_c14.Text = tabela024.Rows[3][14].ToString().Trim();
-                tab_25_w04_c15.Text = tabela024.Rows[3][15].ToString().Trim();
-                //  wiersz 5
-                tab_25_w05_c01.Text = tabela024.Rows[4][1].ToString().Trim();
-                tab_25_w05_c02.Text = tabela024.Rows[4][2].ToString().Trim();
-                tab_25_w05_c03.Text = tabela024.Rows[4][3].ToString().Trim();
-                tab_25_w05_c04.Text = tabela024.Rows[4][4].ToString().Trim();
-                tab_25_w05_c05.Text = tabela024.Rows[4][5].ToString().Trim();
-                tab_25_w05_c06.Text = tabela024.Rows[4][6].ToString().Trim();
-                tab_25_w05_c07.Text = tabela024.Rows[4][7].ToString().Trim();
-                tab_25_w05_c08.Text = tabela024.Rows[4][8].ToString().Trim();
-                tab_25_w05_c09.Text = tabela024.Rows[4][9].ToString().Trim();
-                tab_25_w05_c10.Text = tabela024.Rows[4][10].ToString().Trim();
-                tab_25_w05_c11.Text = tabela024.Rows[4][11].ToString().Trim();
-                tab_25_w05_c12.Text = tabela024.Rows[4][12].ToString().Trim();
-                tab_25_w05_c13.Text = tabela024.Rows[4][13].ToString().Trim();
-                tab_25_w05_c14.Text = tabela024.Rows[4][14].ToString().Trim();
-                tab_25_w05_c15.Text = tabela024.Rows[4][15].ToString().Trim();
-                //  wiersz 6
-                tab_25_w06_c01.Text = tabela024.Rows[5][1].ToString().Trim();
-                tab_25_w06_c02.Text = tabela024.Rows[5][2].ToString().Trim();
-                tab_25_w06_c03.Text = tabela024.Rows[5][3].ToString().Trim();
-                tab_25_w06_c04.Text = tabela024.Rows[5][4].ToString().Trim();
-                tab_25_w06_c05.Text = tabela024.Rows[5][5].ToString().Trim();
-                tab_25_w06_c06.Text = tabela024.Rows[5][6].ToString().Trim();
-                tab_25_w06_c07.Text = tabela024.Rows[5][7].ToString().Trim();
-                tab_25_w06_c08.Text = tabela024.Rows[5][8].ToString().Trim();
-                tab_25_w06_c09.Text = tabela024.Rows[5][9].ToString().Trim();
-                tab_25_w06_c10.Text = tabela024.Rows[5][10].ToString().Trim();
-                tab_25_w06_c11.Text = tabela024.Rows[5][11].ToString().Trim();
-                tab_25_w06_c12.Text = tabela024.Rows[5][12].ToString().Trim();
-                tab_25_w06_c13.Text = tabela024.Rows[5][13].ToString().Trim();
-                tab_25_w06_c14.Text = tabela024.Rows[5][14].ToString().Trim();
-                tab_25_w06_c15.Text = tabela024.Rows[5][15].ToString().Trim();
-                //  wiersz 7
-                tab_25_w07_c01.Text = tabela024.Rows[6][1].ToString().Trim();
-                tab_25_w07_c02.Text = tabela024.Rows[6][2].ToString().Trim();
-                tab_25_w07_c03.Text = tabela024.Rows[6][3].ToString().Trim();
-                tab_25_w07_c04.Text = tabela024.Rows[6][4].ToString().Trim();
-                tab_25_w07_c05.Text = tabela024.Rows[6][5].ToString().Trim();
-                tab_25_w07_c06.Text = tabela024.Rows[6][6].ToString().Trim();
-                tab_25_w07_c07.Text = tabela024.Rows[6][7].ToString().Trim();
-                tab_25_w07_c08.Text = tabela024.Rows[6][8].ToString().Trim();
-                tab_25_w07_c09.Text = tabela024.Rows[6][9].ToString().Trim();
-                tab_25_w07_c10.Text = tabela024.Rows[6][10].ToString().Trim();
-                tab_25_w07_c11.Text = tabela024.Rows[6][11].ToString().Trim();
-                tab_25_w07_c12.Text = tabela024.Rows[6][12].ToString().Trim();
-                tab_25_w07_c13.Text = tabela024.Rows[6][13].ToString().Trim();
-                tab_25_w07_c14.Text = tabela024.Rows[6][14].ToString().Trim();
-                tab_25_w07_c15.Text = tabela024.Rows[6][15].ToString().Trim();
-                //  wiersz 8
-                tab_25_w08_c01.Text = tabela024.Rows[7][1].ToString().Trim();
-                tab_25_w08_c02.Text = tabela024.Rows[7][2].ToString().Trim();
-                tab_25_w08_c03.Text = tabela024.Rows[7][3].ToString().Trim();
-                tab_25_w08_c04.Text = tabela024.Rows[7][4].ToString().Trim();
-                tab_25_w08_c05.Text = tabela024.Rows[7][5].ToString().Trim();
-                tab_25_w08_c06.Text = tabela024.Rows[7][6].ToString().Trim();
-                tab_25_w08_c07.Text = tabela024.Rows[7][7].ToString().Trim();
-                tab_25_w08_c08.Text = tabela024.Rows[7][8].ToString().Trim();
-                tab_25_w08_c09.Text = tabela024.Rows[7][9].ToString().Trim();
-                tab_25_w08_c10.Text = tabela024.Rows[7][10].ToString().Trim();
-                tab_25_w08_c11.Text = tabela024.Rows[7][11].ToString().Trim();
-                tab_25_w08_c12.Text = tabela024.Rows[7][12].ToString().Trim();
-                tab_25_w08_c13.Text = tabela024.Rows[7][13].ToString().Trim();
-                tab_25_w08_c14.Text = tabela024.Rows[7][14].ToString().Trim();
-                tab_25_w08_c15.Text = tabela024.Rows[7][15].ToString().Trim();
             }
             catch
             {
@@ -1681,7 +1560,29 @@ namespace stat2018
             tworztabelkeHTMLTabela26("tb25", idDzialu, 26, tabelka01);
         }
 
-       
+        protected void tabela_27()
+        {
+            int idDzialu = int.Parse((string)Session["id_dzialu"]);
+            if (cl.debug(idDzialu))
+            {
+                cm.log.Info(tenPlik + ": rozpoczęcie tworzenia tabeli 27");
+            }
+            DataTable tabela027 = dr.generuj_dane_do_tabeli_wierszy2018(Date1.Date, Date2.Date, idDzialu.ToString(), 27, 8, 11, tenPlik);
+            if (tabela027 == null)
+            {
+                cm.log.Error(tenPlik + " Brak danych dla tabeli 27!");
+                return;
+            }
+            try
+            {
+                pisz("tab_27_", 8, 11, tabela027);
+            }
+            catch (Exception ex)
+            {
+                cm.log.Error(tenPlik + ": bład podczas  tworzenia tabeli 27 " + ex.Message);
+            }
+        }
+
 
         protected void tabela_28()
         {
@@ -1698,90 +1599,7 @@ namespace stat2018
             }
             try
             {
-                //  wiersz 1
-                tab_28_w01_c01.Text = tabela027.Rows[0][1].ToString().Trim();
-                tab_28_w01_c02.Text = tabela027.Rows[0][2].ToString().Trim();
-                tab_28_w01_c03.Text = tabela027.Rows[0][3].ToString().Trim();
-                tab_28_w01_c04.Text = tabela027.Rows[0][4].ToString().Trim();
-                tab_28_w01_c05.Text = tabela027.Rows[0][5].ToString().Trim();
-                tab_28_w01_c06.Text = tabela027.Rows[0][6].ToString().Trim();
-                tab_28_w01_c07.Text = tabela027.Rows[0][7].ToString().Trim();
-                tab_28_w01_c08.Text = tabela027.Rows[0][8].ToString().Trim();
-                tab_28_w01_c09.Text = tabela027.Rows[0][9].ToString().Trim();
-                tab_28_w01_c10.Text = tabela027.Rows[0][10].ToString().Trim();
-                tab_28_w01_c11.Text = tabela027.Rows[0][11].ToString().Trim();
-                //  wiersz 2
-                tab_28_w02_c01.Text = tabela027.Rows[1][1].ToString().Trim();
-                tab_28_w02_c02.Text = tabela027.Rows[1][2].ToString().Trim();
-                tab_28_w02_c03.Text = tabela027.Rows[1][3].ToString().Trim();
-                tab_28_w02_c04.Text = tabela027.Rows[1][4].ToString().Trim();
-                tab_28_w02_c05.Text = tabela027.Rows[1][5].ToString().Trim();
-                tab_28_w02_c06.Text = tabela027.Rows[1][6].ToString().Trim();
-                tab_28_w02_c07.Text = tabela027.Rows[1][7].ToString().Trim();
-                tab_28_w02_c08.Text = tabela027.Rows[1][8].ToString().Trim();
-                tab_28_w02_c09.Text = tabela027.Rows[1][9].ToString().Trim();
-                tab_28_w02_c10.Text = tabela027.Rows[1][10].ToString().Trim();
-                tab_28_w02_c11.Text = tabela027.Rows[1][11].ToString().Trim();
-                //  wiersz 3
-                tab_28_w03_c01.Text = tabela027.Rows[2][1].ToString().Trim();
-                tab_28_w03_c02.Text = tabela027.Rows[2][2].ToString().Trim();
-                tab_28_w03_c03.Text = tabela027.Rows[2][3].ToString().Trim();
-                tab_28_w03_c04.Text = tabela027.Rows[2][4].ToString().Trim();
-                tab_28_w03_c05.Text = tabela027.Rows[2][5].ToString().Trim();
-                tab_28_w03_c06.Text = tabela027.Rows[2][6].ToString().Trim();
-                tab_28_w03_c07.Text = tabela027.Rows[2][7].ToString().Trim();
-                tab_28_w03_c08.Text = tabela027.Rows[2][8].ToString().Trim();
-                tab_28_w03_c09.Text = tabela027.Rows[2][9].ToString().Trim();
-                tab_28_w03_c10.Text = tabela027.Rows[2][10].ToString().Trim();
-                tab_28_w03_c11.Text = tabela027.Rows[2][11].ToString().Trim();
-                //  wiersz 4
-                tab_28_w04_c01.Text = tabela027.Rows[3][1].ToString().Trim();
-                tab_28_w04_c02.Text = tabela027.Rows[3][2].ToString().Trim();
-                tab_28_w04_c03.Text = tabela027.Rows[3][3].ToString().Trim();
-                tab_28_w04_c04.Text = tabela027.Rows[3][4].ToString().Trim();
-                tab_28_w04_c05.Text = tabela027.Rows[3][5].ToString().Trim();
-                tab_28_w04_c06.Text = tabela027.Rows[3][6].ToString().Trim();
-                tab_28_w04_c07.Text = tabela027.Rows[3][7].ToString().Trim();
-                tab_28_w04_c08.Text = tabela027.Rows[3][8].ToString().Trim();
-                tab_28_w04_c09.Text = tabela027.Rows[3][9].ToString().Trim();
-                tab_28_w04_c10.Text = tabela027.Rows[3][10].ToString().Trim();
-                tab_28_w04_c11.Text = tabela027.Rows[3][11].ToString().Trim();
-                //  wiersz 5
-                tab_28_w05_c01.Text = tabela027.Rows[4][1].ToString().Trim();
-                tab_28_w05_c02.Text = tabela027.Rows[4][2].ToString().Trim();
-                tab_28_w05_c03.Text = tabela027.Rows[4][3].ToString().Trim();
-                tab_28_w05_c04.Text = tabela027.Rows[4][4].ToString().Trim();
-                tab_28_w05_c05.Text = tabela027.Rows[4][5].ToString().Trim();
-                tab_28_w05_c06.Text = tabela027.Rows[4][6].ToString().Trim();
-                tab_28_w05_c07.Text = tabela027.Rows[4][7].ToString().Trim();
-                tab_28_w05_c08.Text = tabela027.Rows[4][8].ToString().Trim();
-                tab_28_w05_c09.Text = tabela027.Rows[4][9].ToString().Trim();
-                tab_28_w05_c10.Text = tabela027.Rows[4][10].ToString().Trim();
-                tab_28_w05_c11.Text = tabela027.Rows[4][11].ToString().Trim();
-                //  wiersz 6
-                tab_28_w06_c01.Text = tabela027.Rows[5][1].ToString().Trim();
-                tab_28_w06_c02.Text = tabela027.Rows[5][2].ToString().Trim();
-                tab_28_w06_c03.Text = tabela027.Rows[5][3].ToString().Trim();
-                tab_28_w06_c04.Text = tabela027.Rows[5][4].ToString().Trim();
-                tab_28_w06_c05.Text = tabela027.Rows[5][5].ToString().Trim();
-                tab_28_w06_c06.Text = tabela027.Rows[5][6].ToString().Trim();
-                tab_28_w06_c07.Text = tabela027.Rows[5][7].ToString().Trim();
-                tab_28_w06_c08.Text = tabela027.Rows[5][8].ToString().Trim();
-                tab_28_w06_c09.Text = tabela027.Rows[5][9].ToString().Trim();
-                tab_28_w06_c10.Text = tabela027.Rows[5][10].ToString().Trim();
-                tab_28_w06_c11.Text = tabela027.Rows[5][11].ToString().Trim();
-                //  wiersz 7
-                tab_28_w07_c01.Text = tabela027.Rows[6][1].ToString().Trim();
-                tab_28_w07_c02.Text = tabela027.Rows[6][2].ToString().Trim();
-                tab_28_w07_c03.Text = tabela027.Rows[6][3].ToString().Trim();
-                tab_28_w07_c04.Text = tabela027.Rows[6][4].ToString().Trim();
-                tab_28_w07_c05.Text = tabela027.Rows[6][5].ToString().Trim();
-                tab_28_w07_c06.Text = tabela027.Rows[6][6].ToString().Trim();
-                tab_28_w07_c07.Text = tabela027.Rows[6][7].ToString().Trim();
-                tab_28_w07_c08.Text = tabela027.Rows[6][8].ToString().Trim();
-                tab_28_w07_c09.Text = tabela027.Rows[6][9].ToString().Trim();
-                tab_28_w07_c10.Text = tabela027.Rows[6][10].ToString().Trim();
-                tab_28_w07_c11.Text = tabela027.Rows[6][11].ToString().Trim();
+                pisz("tab_28_", 8, 11, tabela027);
             }
             catch (Exception ex)
             {
@@ -1896,6 +1714,23 @@ namespace stat2018
             }
         }
 
+        protected void tabela_30()
+        {
+            int idDzialu = int.Parse((string)Session["id_dzialu"]);
+            if (cl.debug(idDzialu))
+            {
+                cm.log.Info(tenPlik + ": rozpoczęcie tworzenia tabeli 30");
+            }
+            DataTable tabelka01 = dr.generuj_dane_do_tabeli_sedziowskiej_2019(idDzialu, 30, Date1.Date, Date2.Date, 460, tenPlik);
+            if (tabelka01 == null)
+            {
+                cm.log.Error(tenPlik + " Brak danych dla tabeli 30!");
+                return;
+            }
+            Session["tabelka030"] = tabelka01;
+            tworztabelkeHTMLTabela30("tb29", idDzialu, 30, tabelka01);
+        }
+
         protected void tabela_31()
         {
             int idDzialu = int.Parse((string)Session["id_dzialu"]);
@@ -1979,6 +1814,94 @@ namespace stat2018
             }
             Session["tabelka035"] = tabelka01;
             tworztabelkeHTMLTabela35(idDzialu, 35, tabelka01);
+        }
+        protected void tabela_36()
+        {
+            int idDzialu = int.Parse((string)Session["id_dzialu"]);
+            if (cl.debug(idDzialu))
+            {
+                cm.log.Info(tenPlik + ": rozpoczęcie tworzenia tabeli 36");
+            }
+            DataTable tabela036 = dr.generuj_dane_do_tabeli_wierszy2018(Date1.Date, Date2.Date, idDzialu.ToString(), 36, 10, 10, tenPlik);
+            if (tabela036 == null)
+            {
+                cm.log.Error(tenPlik + " Brak danych dla tabeli 36!");
+                return;
+            }
+            try
+            {
+                piszTextBox("tab_36_", 10, 10, tabela036);
+            }
+            catch (Exception ex)
+            {
+                cm.log.Error(tenPlik + ": bład podczas  tworzenia tabeli 36 " + ex.Message);
+            }
+        }
+        protected void tabela_37()
+        {
+            int idDzialu = int.Parse((string)Session["id_dzialu"]);
+            if (cl.debug(idDzialu))
+            {
+                cm.log.Info(tenPlik + ": rozpoczęcie tworzenia tabeli 37");
+            }
+            DataTable tabela036 = dr.generuj_dane_do_tabeli_wierszy2018(Date1.Date, Date2.Date, idDzialu.ToString(), 37, 10, 10, tenPlik);
+            if (tabela036 == null)
+            {
+                cm.log.Error(tenPlik + " Brak danych dla tabeli 37!");
+                return;
+            }
+            try
+            {
+                pisz("tab_37_", 10, 10, tabela036);
+            }
+            catch (Exception ex)
+            {
+                cm.log.Error(tenPlik + ": bład podczas  tworzenia tabeli 37 " + ex.Message);
+            }
+        }
+        protected void tabela_38()
+        {
+            int idDzialu = int.Parse((string)Session["id_dzialu"]);
+            if (cl.debug(idDzialu))
+            {
+                cm.log.Info(tenPlik + ": rozpoczęcie tworzenia tabeli 38");
+            }
+            DataTable tabela038 = dr.generuj_dane_do_tabeli_wierszy2018(Date1.Date, Date2.Date, idDzialu.ToString(), 38, 10, 3, tenPlik);
+            if (tabela038 == null)
+            {
+                cm.log.Error(tenPlik + " Brak danych dla tabeli 38!");
+                return;
+            }
+            try
+            {
+                piszTextBox("tab_38_", 10, 2, tabela038);
+            }
+            catch (Exception ex)
+            {
+                cm.log.Error(tenPlik + ": bład podczas  tworzenia tabeli 38 " + ex.Message);
+            }
+        }
+        protected void tabela_39()
+        {
+            int idDzialu = int.Parse((string)Session["id_dzialu"]);
+            if (cl.debug(idDzialu))
+            {
+                cm.log.Info(tenPlik + ": rozpoczęcie tworzenia tabeli 38");
+            }
+            DataTable tabela038 = dr.generuj_dane_do_tabeli_wierszy2018(Date1.Date, Date2.Date, idDzialu.ToString(), 39, 2, 2, tenPlik);
+            if (tabela038 == null)
+            {
+                cm.log.Error(tenPlik + " Brak danych dla tabeli 38!");
+                return;
+            }
+            try
+            {
+                piszTextBox("tab_39_", 2, 2, tabela038);
+            }
+            catch (Exception ex)
+            {
+                cm.log.Error(tenPlik + ": bład podczas  tworzenia tabeli 38 " + ex.Message);
+            }
         }
 
         protected void tworzPlikExcell(object sender, EventArgs e)
@@ -2100,7 +2023,7 @@ namespace stat2018
                 builder.AppendLine("</tr>");
                 licznik++;
             }
-            builder.Append(sumaTabeli(dane, 5, 6, 6, "Razem", 2));
+            builder.Append(sumaTabeli(dane, 2, 6, idtabeli, "Razem", 2));
             builder.Append("</table>");
 
             Label tblControl = new Label();
@@ -2150,7 +2073,7 @@ namespace stat2018
                 licznik++;
                 builder.AppendLine("</tr>");
             }
-            builder.Append(sumaTabeli(dane, 1, 12, 5, "Razem", 2));
+            builder.Append(sumaTabeli(dane, 2, 11, idtabeli, "Razem", 2));
             builder.Append("</table>");
 
             Label tblControl = new Label { Text = builder.ToString() };
@@ -2428,31 +2351,12 @@ namespace stat2018
             {
                 int step = 12;
                 builder.Append(TabelaWewnetrzna(step, licznik, idtabeli, wierszZtabeli));
-                /*
-                builder.AppendLine("<tr>");
-                builder.Append(tb.komorkaHTML(licznik.ToString(), 0, 6, "borderAll center col_36"));
-                builder.Append(tb.komorkaHTML(wierszZtabeli["imie"].ToString() + " " + wierszZtabeli["nazwisko"].ToString(), 0, 6, "borderAll center col_100"));
-                builder.Append(tb.komorkaHTML(wierszZtabeli["id_sedziego"].ToString(), 0, 6, "borderAll center col_100"));
-                builder.Append(tb.komorkaHTML(wierszZtabeli["d_02"].ToString(), 0, 6, "borderAll center col_100"));
                 
-                builder.Append(tb.komorkaHTMLbezP("K", 0, 1, "borderAll center col_100"));
-                builder.Append(tworzPodSekcjeBezTRiP(1, step + 1, wierszZtabeli, idtabeli.ToString(), 0));
-                builder.Append(tb.komorkaHTMLbezP("Kp", 0, 1, "borderAll center col_100"));
-                builder.Append(tworzPodSekcjeBezTRiP(step + 1, (step * 2) + 1, wierszZtabeli, idtabeli.ToString(), 0));
-                builder.Append(tb.komorkaHTMLbezP("Ko", 0, 1, "borderAll center col_100"));
-                builder.Append(tworzPodSekcjeBezTRiP((step * 2) + 1, (step * 3) + 1, wierszZtabeli, idtabeli.ToString(), 0));
-                builder.Append(tb.komorkaHTMLbezP("W", 0, 0, "borderAll center col_100"));
-                builder.Append(tworzPodSekcjeBezTRiP((step * 3) + 1, (step * 4) + 1, wierszZtabeli, idtabeli.ToString(), 0));
-                builder.Append(tb.komorkaHTMLbezP("Kop", 0, 0, "borderAll center col_100"));
-                builder.Append(tworzPodSekcjeBezTRiP((step * 4) + 1, (step * 5) + 1, wierszZtabeli, idtabeli.ToString(), 0));
-                builder.Append(tb.komorkaHTMLbezP("", 0, 0, "borderAll center col_100"));
-                builder.Append(tworzPodSekcjeBezTRiP((step * 5) + 1, (step * 6) + 1, wierszZtabeli, idtabeli.ToString(), 0));
-                */
                 licznik++;
                 // builder.AppendLine("</tr>");
             }
 
-            builder.Append(sumaTabeli(dane, 6, 12, 13));
+            builder.Append(sumaTabeli(dane, 6, 14, idtabeli));
 
             builder.Append("</table>");
 
@@ -2483,7 +2387,7 @@ namespace stat2018
                 builder.Append(tb.komorkaHTMLbezP(licznik.ToString(), 0, 6, "borderAll center col_36"));
                 builder.Append(tb.komorkaHTMLbezP(wierszZtabeli["imie"].ToString() + " " + wierszZtabeli["nazwisko"].ToString(), 0, 6, "borderAll center col_100"));
                 builder.Append(tb.komorkaHTMLbezP(wierszZtabeli["id_sedziego"].ToString(), 0, 6, "borderAll center col_100"));
-                builder.Append(tb.komorkaHTMLbezP(wierszZtabeli["d_02"].ToString(), 0, 6, "borderAll center col_100"));
+                builder.Append(tb.komorkaHTMLbezP(wierszZtabeli["d_01"].ToString(), 0, 6, "borderAll center col_100"));
                 int step = 12;
                 builder.Append(tb.komorkaHTMLbezP("K", 0, 1, "borderAll center col_100"));
                 builder.Append(tworzPodSekcjeBezTRiP(1, step + 1, wierszZtabeli, idtabeli.ToString(), 0));
@@ -2499,7 +2403,7 @@ namespace stat2018
                 builder.Append(tworzPodSekcjeBezTRiP((step * 5) + 1, (step * 6) + 1, wierszZtabeli, idtabeli.ToString(), 0));
                 licznik++;
             }
-            builder.Append(sumaTabeli(dane, 6, 12, 13));
+            builder.Append(sumaTabeli(dane, 6, 14, idtabeli));
 
             builder.Append("</table>");
             Label tblControl = new Label { Text = builder.ToString() };
@@ -2546,8 +2450,8 @@ namespace stat2018
                 licznik++;
             }
 
-            builder.Append(sumaTabeli(dane, 6, 12, 13));
-
+            
+            builder.Append(sumaTabeli(dane, 6, 14, idtabeli, "Razem", 4));
             builder.Append("</table>");
 
             Label tblControl = new Label { Text = builder.ToString() };
@@ -2599,7 +2503,7 @@ namespace stat2018
                 licznik++;
                 // builder.AppendLine("</tr>");
             }
-
+            builder.Append(sumaTabeli(dane, 6, 14,idtabeli , "Razem", 4));
             builder.Append("</table>");
 
             Label tblControl = new Label { Text = builder.ToString() };
@@ -2633,30 +2537,11 @@ namespace stat2018
             foreach (DataRow wierszZtabeli in dane.Rows)
             {
                 builder.Append(TabelaWewnetrzna(12, licznik, idtabeli, wierszZtabeli));
-                /*
-                builder.AppendLine("<tr>");
-                builder.Append(tb.komorkaHTMLbezP(licznik.ToString(), 0, 24, "borderAll center col_36"));
-                builder.Append(tb.komorkaHTMLbezP(wierszZtabeli["imie"].ToString() + " " + wierszZtabeli["nazwisko"].ToString(), 0, 24, "borderAll center col_100"));
-                builder.Append(tb.komorkaHTMLbezP(wierszZtabeli["funkcja"].ToString(), 0, 24, "borderAll center col_100"));
-                builder.Append(tb.komorkaHTMLbezP(wierszZtabeli["d_01"].ToString(), 0, 24, "borderAll center col_100"));
-                builder.Append(tb.komorkaHTMLbezP("K", 0, 4, "borderAll center col_100"));
-                
-                builder.Append(tworzSekcjebezP(1, 13, 41, wierszZtabeli, idtabeli.ToString(), 1));
-                builder.Append(tb.komorkaHTMLbezP("Kp", 0, 4, "borderAll center col_100"));
-                builder.Append(tworzSekcjebezP(1, 13, 41, wierszZtabeli, idtabeli.ToString(), 40));
-                builder.Append(tb.komorkaHTMLbezP("Ko", 0, 4, "borderAll center col_100"));
-                builder.Append(tworzSekcjebezP(1, 13, 41, wierszZtabeli, idtabeli.ToString(), 79));
-                builder.Append(tb.komorkaHTMLbezP("W", 0, 4, "borderAll center col_100"));
-                builder.Append(tworzSekcjebezP(1, 13, 41, wierszZtabeli, idtabeli.ToString(), 1));
-                builder.Append(tb.komorkaHTMLbezP("Kop", 0, 4, "borderAll center col_100"));
-                builder.Append(tworzSekcjebezP(1, 13, 41, wierszZtabeli, idtabeli.ToString(), 1));
-                builder.Append(tb.komorkaHTMLbezP("", 0, 4, "borderAll center col_100"));
-                builder.Append(tworzSekcjebezP(1, 13, 41, wierszZtabeli, idtabeli.ToString(), 1));+
-                    */
+              
                 licznik++;
                 builder.AppendLine("</tr>");
             }
-
+            builder.Append(sumaTabeli(dane, 6, 14, idtabeli, "Razem", 4));
             builder.Append("</table>");
 
             Label tblControl = new Label { Text = builder.ToString() };
@@ -2694,7 +2579,7 @@ namespace stat2018
                 licznik++;
                 builder.AppendLine("</tr>");
             }
-
+            builder.Append(sumaTabeli(dane, 7, 13, idtabeli, "Razem", 5));
             builder.Append("</table>");
 
             Label tblControl = new Label { Text = builder.ToString() };
@@ -2710,6 +2595,7 @@ namespace stat2018
             }
 
             StringBuilder builder = new StringBuilder();
+            builder.AppendLine("<div class='page-break'>");
             builder.AppendLine("</br>");
 
             builder.AppendLine("<p>IV.6.2. Terminowość sporządzania uzasadnień i stabilność orzecznictwa poszczególnych sędziów</p>");
@@ -2729,36 +2615,18 @@ namespace stat2018
             foreach (DataRow wierszZtabeli in dane.Rows)
             {
                 builder.Append(TabelaWewnetrzna(14, licznik, idtabeli, wierszZtabeli));
-                /*
-                builder.AppendLine("<tr>");
-                builder.Append(tb.komorkaHTMLbezP(licznik.ToString(), 0, 24, "borderAll center col_36"));
-                builder.Append(tb.komorkaHTMLbezP(wierszZtabeli["imie"].ToString() + " " + wierszZtabeli["nazwisko"].ToString(), 0, 24, "borderAll center col_100"));
-                builder.Append(tb.komorkaHTMLbezP(wierszZtabeli["funkcja"].ToString(), 0, 24, "borderAll center col_100"));
-                builder.Append(tb.komorkaHTMLbezP(wierszZtabeli["d_01"].ToString(), 0, 24, "borderAll center col_100"));
-                builder.Append(tb.komorkaHTMLbezP("K", 0, 4, "borderAll center col_100"));
-                builder.Append(tworzSekcjebezP(1, 15, 47, wierszZtabeli, idtabeli.ToString(), 1));
-                builder.Append(tb.komorkaHTMLbezP("Kp", 0, 4, "borderAll center col_100"));
-                builder.Append(tworzSekcjebezP(1, 15, 47, wierszZtabeli, idtabeli.ToString(), 40));
-                builder.Append(tb.komorkaHTMLbezP("Ko", 0, 4, "borderAll center col_100"));
-                builder.Append(tworzSekcjebezP(1, 15, 47, wierszZtabeli, idtabeli.ToString(), 79));
-                builder.Append(tb.komorkaHTMLbezP("W", 0, 4, "borderAll center col_100"));
-                builder.Append(tworzSekcjebezP(1, 15, 47, wierszZtabeli, idtabeli.ToString(), 1));
-                builder.Append(tb.komorkaHTMLbezP("Kop", 0, 4, "borderAll center col_100"));
-                builder.Append(tworzSekcjebezP(1, 15, 47, wierszZtabeli, idtabeli.ToString(), 1));
-                builder.Append(tb.komorkaHTMLbezP("", 0, 4, "borderAll center col_100"));
-                builder.Append(tworzSekcjebezP(1, 15, 47, wierszZtabeli, idtabeli.ToString(), 1));*/
+           
                 licznik++;
                 builder.AppendLine("</tr>");
             }
-
+            builder.Append(sumaTabeli(dane, 7, 15, idtabeli, "Razem", 5));
             builder.Append("</table>");
-
+            builder.AppendLine("</div>");
             Label tblControl = new Label { Text = builder.ToString() };
             PlaceHolderTB25.Controls.Add(tblControl);
             PlaceHolderTB25.Dispose();
         }
-
-        protected void tworztabelkeHTMLTabela31(string idKontrolki, int idWydzialu, int idtabeli, DataTable dane)
+        protected void tworztabelkeHTMLTabela30(string idKontrolki, int idWydzialu, int idtabeli, DataTable dane)
         {
             if (dane == null)
             {
@@ -2766,6 +2634,9 @@ namespace stat2018
             }
 
             StringBuilder builder = new StringBuilder();
+            builder.AppendLine("<br/>");
+            builder.AppendLine("<p>IV. 7.3.Struktura pozostałości (referaty poszczególnych sędziów – liczba spraw)</p>");
+
             builder.AppendLine("<table style='width: 1150px;'>");
             //header
             if (cl.debug(idWydzialu))
@@ -2779,29 +2650,49 @@ namespace stat2018
             int licznik = 1;
             foreach (DataRow wierszZtabeli in dane.Rows)
             {
-                builder.Append(TabelaWewnetrzna(14, licznik, idtabeli, wierszZtabeli));
-             /*   builder.AppendLine("<tr>");
-                builder.Append(tb.komorkaHTML(licznik.ToString(), 0, 6, "borderAll center col_36"));
-                builder.Append(tb.komorkaHTML(wierszZtabeli["imie"].ToString() + " " + wierszZtabeli["nazwisko"].ToString(), 0, 6, "borderAll center col_100"));
-                builder.Append(tb.komorkaHTML(wierszZtabeli["id_sedziego"].ToString(), 0, 6, "borderAll center col_100"));
-                builder.Append(tb.komorkaHTML(wierszZtabeli["d_02"].ToString(), 0, 6, "borderAll center col_100"));
-                int step = 12;
-                builder.Append(tb.komorkaHTML("K", 0, 1, "borderAll center col_100"));
-                builder.Append(tworzPodSekcjeBezTR(1, step + 1, wierszZtabeli, idtabeli.ToString(), 0));
-                builder.Append(tb.komorkaHTML("Kp", 0, 1, "borderAll center col_100"));
-                builder.Append(tworzPodSekcjeBezTR(step + 1, (step * 2) + 1, wierszZtabeli, idtabeli.ToString(), 0));
-                builder.Append(tb.komorkaHTML("Ko", 0, 1, "borderAll center col_100"));
-                builder.Append(tworzPodSekcjeBezTR((step * 2) + 1, (step * 3) + 1, wierszZtabeli, idtabeli.ToString(), 0));
-                builder.Append(tb.komorkaHTML("W", 0, 0, "borderAll center col_100"));
-                builder.Append(tworzPodSekcjeBezTR((step * 3) + 1, (step * 4) + 1, wierszZtabeli, idtabeli.ToString(), 0));
-                builder.Append(tb.komorkaHTML("Kop", 0, 0, "borderAll center col_100"));
-                builder.Append(tworzPodSekcjeBezTR((step * 4) + 1, (step * 5) + 1, wierszZtabeli, idtabeli.ToString(), 0));
-                builder.Append(tb.komorkaHTML("", 0, 0, "borderAll center col_100"));
-                builder.Append(tworzPodSekcjeBezTR((step * 5) + 1, (step * 6) + 1, wierszZtabeli, idtabeli.ToString(), 0));*/
+                builder.Append(TabelaWewnetrzna(12, licznik, idtabeli, wierszZtabeli));
+
                 licznik++;
             }
 
-            builder.Append(sumaTabeli(dane, 6, 12, 13));
+            builder.Append(sumaTabeli(dane, 7, 14, idtabeli, "Razem", 4));
+
+            builder.Append("</table>");
+
+            Label tblControl = new Label { Text = builder.ToString() };
+            PlaceHolderTB29.Controls.Add(tblControl);
+            PlaceHolderTB29.Dispose();
+        }
+
+        protected void tworztabelkeHTMLTabela31(string idKontrolki, int idWydzialu, int idtabeli, DataTable dane)
+        {
+            if (dane == null)
+            {
+                return;
+            }
+
+            StringBuilder builder = new StringBuilder();
+            builder.AppendLine("<br/>");
+            builder.AppendLine("<p>IV. 7.3.Struktura pozostałości (referaty poszczególnych sędziów – liczba spraw (obok liczby ogółem należy podać liczbę spraw zawieszonych))</p>");
+
+            builder.AppendLine("<table style='width: 1150px;'>");
+            //header
+            if (cl.debug(idWydzialu))
+            {
+                builder.AppendLine("<p>Tabela " + idtabeli.ToString() + "</p>");
+            }
+            string path = Server.MapPath("XMLHeaders") + "\\wizk_1_19.xml";
+            builder.AppendLine(XMLHeaders.getHeaderFromXML(path, tenPlik));
+            builder.AppendLine("</tr>");
+            //ilosc sedziów
+            int licznik = 1;
+            foreach (DataRow wierszZtabeli in dane.Rows)
+            {
+                builder.Append(TabelaWewnetrzna(12, licznik, idtabeli, wierszZtabeli));
+                licznik++;
+            }
+
+            builder.Append(sumaTabeli(dane, 7, 13, idtabeli, "Razem", 5));
 
             builder.Append("</table>");
 
@@ -2820,7 +2711,7 @@ namespace stat2018
             StringBuilder builder = new StringBuilder();
 
             builder.AppendLine("<br/>");
-            builder.AppendLine("<p>IV. 7.4.Struktura pozostałości (referaty poszczególnych sędziów – %)</p>");
+            builder.AppendLine("<p>IV. 7.5.Struktura pozostałości (referaty poszczególnych referendarzy sądowych – liczba spraw)</p>");
             if (cl.debug(idWydzialu))
             {
                 builder.AppendLine("<p>Tabela " + idtabeli.ToString() + "</p>");
@@ -2839,7 +2730,7 @@ namespace stat2018
 
                 licznik++;
             }
-
+            builder.Append(sumaTabeli(dane, 7, 14, idtabeli, "Razem", 5));
             builder.Append("</table>");
 
             Label tblControl = new Label { Text = builder.ToString() };
@@ -2858,7 +2749,7 @@ namespace stat2018
             StringBuilder builder = new StringBuilder();
 
             builder.AppendLine("<br/>");
-            builder.AppendLine("<p>IV. 7.4.Struktura pozostałości (referaty poszczególnych sędziów – %)</p>");
+            builder.AppendLine("<p>IV. 7.5.Struktura pozostałości (referaty poszczególnych referendarzy sądowych – liczba spraw)</p>");
             if (cl.debug(idWydzialu))
             {
                 builder.AppendLine("<p>Tabela " + idtabeli.ToString() + "</p>");
@@ -2872,10 +2763,10 @@ namespace stat2018
             int licznik = 1;
             foreach (DataRow wierszZtabeli in dane.Rows)
             {
-                builder.Append(TabelaWewnetrzna(14, licznik, idtabeli, wierszZtabeli));
+                builder.Append(TabelaWewnetrzna(12, licznik, idtabeli, wierszZtabeli));
                 licznik++;
             }
-
+            builder.Append(sumaTabeli(dane, 7, 13, idtabeli, "Razem", 5));
             builder.Append("</table>");
 
             Label tblControl = new Label { Text = builder.ToString() };
@@ -2894,7 +2785,7 @@ namespace stat2018
             StringBuilder builder = new StringBuilder();
 
             builder.AppendLine("<br/>");
-            builder.AppendLine("<p>IV. 7.5.Struktura pozostałości (referaty poszczególnych referendarzy sądowych – liczba spraw)</p>");
+            builder.AppendLine("<p>IV. 7.5.Struktura pozostałości (referaty poszczególnych referendarzy sądowych – liczba spraw (obok liczby ogółem należy podać liczbę spraw zawieszonych))</p>");
             if (cl.debug(idWydzialu))
             {
                 builder.AppendLine("<p>Tabela " + idtabeli.ToString() + "</p>");
@@ -2910,7 +2801,7 @@ namespace stat2018
             {
                 builder.Append(TabelaWewnetrzna(12, licznik, idtabeli, wierszZtabeli)); licznik++;
             }
-
+            builder.Append(sumaTabeli(dane, 7, 13, idtabeli, "Razem", 5));
             builder.Append("</table>");
 
             Label tblControl = new Label { Text = builder.ToString() };
@@ -2928,7 +2819,7 @@ namespace stat2018
             StringBuilder builder = new StringBuilder();
 
             builder.AppendLine("<br/>");
-            builder.AppendLine("<p>IV. 7.5.Struktura pozostałości (referaty poszczególnych referendarzy sądowych – liczba spraw)</p>");
+            builder.AppendLine("<p>IV. 7.6.Struktura pozostałości (referaty poszczególnych referendarzy sądowych – %)</p>");
             if (cl.debug(idWydzialu))
             {
                 builder.AppendLine("<p>Tabela " + idtabeli.ToString() + "</p>");
@@ -2945,13 +2836,14 @@ namespace stat2018
             {
                 builder.Append(TabelaWewnetrzna(12, licznik, idtabeli, wierszZtabeli)); licznik++;
             }
+            builder.Append(sumaTabeli(dane, 7, 13, idtabeli, "Razem", 5));
             builder.Append("</table>");
 
             Label tblControl = new Label { Text = builder.ToString() };
             PlaceHolderTB29.Controls.Add(tblControl);
             PlaceHolderTB29.Dispose();
         }
-
+      
         private string sumaTabeli(DataTable dane, int iloscWierszy, int dlugoscLinii, int idtabeli)
         {
           
@@ -2972,9 +2864,13 @@ namespace stat2018
 
             int dlugosc = 0;
 
-            for (int i = 0; i < (iloscWierszy * dlugoscLinii); i++)
+           
+
+
+
+                for (int i = 0; i < (iloscWierszy * dlugoscLinii); i++)
             {
-                dlugosc++;
+                
                 try
                 {
                     wierszSumujacy[dlugosc] = wierszSumujacy[dlugosc] + double.Parse(suma.Rows[0][i + 1].ToString());
@@ -2987,6 +2883,7 @@ namespace stat2018
                 {
                     dlugosc = 0;
                 }
+                dlugosc++;
             }
             builder.AppendLine("<tr>");
             builder.AppendLine(tb.komorkaHTML("Razem", 4, 0, "borderAll center col_100 gray"));
@@ -3014,7 +2911,7 @@ namespace stat2018
             StringBuilder builder = new StringBuilder();
             string sumaKoncowa = string.Empty;
             double[] wierszSumujacy = new double[dlugoscLinii];
-            for (int i = 0; i < dlugoscLinii - 1; i++)
+            for (int i = 0; i < dlugoscLinii ; i++)
             {
                 wierszSumujacy[i] = 0;
             }
@@ -3030,7 +2927,7 @@ namespace stat2018
 
             for (int i = 0; i < (iloscWierszy * dlugoscLinii); i++)
             {
-                dlugosc++;
+              
                 try
                 {
                     wierszSumujacy[dlugosc] = wierszSumujacy[dlugosc] + double.Parse(suma.Rows[0][i + 1].ToString());
@@ -3041,8 +2938,9 @@ namespace stat2018
                 }
                 if (dlugosc == dlugoscLinii)
                 {
-                    dlugosc = 0;
+                    dlugosc =0 ;
                 }
+                dlugosc++;
             }
             builder.AppendLine("<tr>");
             builder.AppendLine(tb.komorkaHTML(tekst, złaczenieRazem, 0, "borderAll center col_100 gray"));
@@ -3275,6 +3173,29 @@ namespace stat2018
                 }
             }
         }// end of pisz
+        private void piszTextBox(string Template, int iloscWierszy, int iloscKolumn, DataTable dane)
+        {
+            for (int wiersz = 1; wiersz <= iloscWierszy; wiersz++)
+            {
+                for (int kolumna = 1; kolumna <= iloscKolumn; kolumna++)
+                {
+                    string controlName = Template + "w" + wiersz.ToString("D2") + "_c" + kolumna.ToString("D2");
+                    TextBox tb = (TextBox)this.Master.FindControl("ContentPlaceHolder1").FindControl(controlName);
+                    if (tb != null)
+                    {
+                        try
+                        {
+                            tb.Text = dane.Rows[wiersz - 1][kolumna].ToString().Trim();
+                        }
+                        catch (Exception ex)
+                        {
+                            cm.log.Error(tenPlik + " pisz " + controlName + " : " + ex.Message);
+                        }
+                    }
+                }
+            }
+        }// end of pisz
+
         private string TabelaWewnetrzna(int step, int licznik,int idtabeli ,DataRow wierszZtabeli)
         {
             StringBuilder builder = new StringBuilder(); 
@@ -3298,6 +3219,11 @@ namespace stat2018
             builder.Append(tworzPodSekcjeBezTRiP((step * 5) + 1, (step * 6) + 1, wierszZtabeli, idtabeli.ToString(), 0));
             
             return builder.ToString();
+
+        }
+
+        protected void Textbox1_TextChanged(object sender, EventArgs e)
+        {
 
         }
     }

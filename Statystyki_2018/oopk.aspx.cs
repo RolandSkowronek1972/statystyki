@@ -85,6 +85,8 @@ namespace stat2018
             { }
             // dopasowanie opisów
             makeLabels();
+            GridView1.DataBind();
+
         }
 
         #region "nagłowki tabel"
@@ -391,7 +393,7 @@ namespace stat2018
             if (e.Row.RowType == DataControlRowType.Footer)
 
             {
-                tb.makeSumRow((DataTable)Session["tabelka001"], e, 110, 5);
+                tb.makeSumRow((DataTable)Session["tabelka001"], e, 110, 4);
             }
         }
     }

@@ -1,4 +1,5 @@
 ﻿<%@ Page Title="" Language="C#" UICulture="pl" Culture="pl-PL" MasterPageFile="~/Site1.Master" AutoEventWireup="true" CodeBehind="oglk2.aspx.cs" Inherits="stat2018.oglk2" %>
+
 <%@ Register Assembly="DevExpress.Web.v17.1, Version=17.1.15.0,  Culture=neutral,  PublicKeyToken=b88d1754d700e49a" Namespace="DevExpress.Web" TagPrefix="dx" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
@@ -53,7 +54,7 @@
         </div>
     </div>
 
-    <div style="width: 1150px; margin: 0 auto 0 auto; position: relative; top: 60px; z-index: 11;" >
+    <div style="width: 1150px; margin: 0 auto 0 auto; position: relative; top: 60px; z-index: 11;">
 
         <div id="tabela1" style="z-index: 10;">
             <div style="margin-left: auto; margin-right: auto; text-align: center; width: auto;">
@@ -62,7 +63,7 @@
             &nbsp;
         </div>
 
-        <div id="zalatwienia" class="page-break">
+        <div id="zalatwienia" >
             <br />
 
             <asp:Label ID="lbTabela1" runat="server"></asp:Label>
@@ -200,7 +201,7 @@
             </asp:SqlDataSource>
             <br />
         </div>
-        <div id="Div11" class="page-break">
+        <div id="Tabela 3" class="page-break">
             &nbsp;<asp:Label ID="lbTabela3" runat="server"></asp:Label>
             &nbsp;
     &nbsp;<asp:Label ID="infoLabel3" runat="server" Text="Tabela 3 \/" Visible="False"></asp:Label>
@@ -258,7 +259,7 @@
             </asp:SqlDataSource>
             <br />
         </div>
-        <div id="TABELA5" class="page-break">
+        <div id="TABELA4" class="page-break">
             &nbsp;<asp:Label ID="lbTabela4" runat="server"></asp:Label>
             &nbsp;
     &nbsp;<asp:Label ID="infoLabel4" runat="server" Text="Tabela 4 \/" Visible="False"></asp:Label>
@@ -301,7 +302,7 @@
 
             <br />
         </div>
-        <div id="Div11" class="page-break">
+        <div id="Tabela 5" class="page-break">
             &nbsp;<asp:Label ID="lbTabela5" runat="server"></asp:Label>
             &nbsp;
     &nbsp;<asp:Label ID="infoLabel5" runat="server" Text="Tabela 5 \/" Visible="False"></asp:Label>
@@ -359,7 +360,7 @@
 
             <br />
         </div>
-        <div id="Div11" class="page-break">
+        <div id="Tabela 6" class="page-break">
             &nbsp;<asp:Label ID="lbTabela6" runat="server"></asp:Label>
             &nbsp;
     &nbsp;<asp:Label ID="infoLabel6" runat="server" Text="Tabela 6 \/" Visible="False"></asp:Label>
@@ -1041,7 +1042,7 @@
             <table style="width: 100%;">
                 <tr>
                     <td class="borderAll center" rowspan="3" colspan="2">&nbsp;</td>
-                    <td class="borderAll center" rowspan="3">Zaległość na poczatek 
+                    <td class="borderAll center" rowspan="3">Zaległość na poczatek
                         <br />
                         okresu sprawoz-dawczego BO </td>
                     <td class="borderAll center" rowspan="3">Przypis należności </td>
@@ -1057,18 +1058,20 @@
                     <td class="borderAll center" rowspan="2">ogółem </td>
                     <td class="borderAll center" colspan="3">należności krótkotermionowe: </td>
                     <td class="borderAll center" rowspan="2">należność niewymagalna - termin<br />
-&nbsp;płatności przypada
+                        &nbsp;płatności przypada
                         <br />
                         na kolejny rok budżetowy </td>
                 </tr>
                 <tr>
-                    <td class="borderAll center">ogółem: należności <br />
+                    <td class="borderAll center">ogółem: należności
+                        <br />
                         krótko-<br />
                         termionowe (płatność<br />
-&nbsp;przypada na dany rok budżetowy), w tym </td>
+                        &nbsp;przypada na dany rok budżetowy), w tym </td>
                     <td class="borderAll center">należności wymagalne<br />
-&nbsp;na dany okres sprawoz-dawczy </td>
-                    <td class="borderAll center">należności przypadające <br />
+                        &nbsp;na dany okres sprawoz-dawczy </td>
+                    <td class="borderAll center">należności przypadające
+                        <br />
                         do końca roku budżetowego </td>
                 </tr>
                 <tr>
@@ -1441,7 +1444,7 @@
                     <td class="borderAll center col_100 gray"><a href="javascript:openPopup('popup.aspx?sesja=16!13!9!3')">
                         <asp:Label CssClass="normal" ID="tab_13_w16_c09" runat="server" Text="0"></asp:Label></a></td>
                 </tr>
-              <tr>
+                <tr>
                     <td class="borderAll center col_100">&nbsp;</td>
                     <td class="borderAll center col_150">&nbsp;</td>
                     <td class="borderAll center col_100">&nbsp;</td>
@@ -1456,7 +1459,7 @@
                     <td class="borderAll center col_100">&nbsp;</td>
                     <td class="borderAll center col_100">&nbsp;</td>
                 </tr>
-                  <tr>
+                <tr>
                     <td class="borderAll center col_100" colspan="4">&nbsp;</td>
                     <td class="borderAll center col_100">Ogółem</td>
                     <td class="borderAll center col_100"><a href="javascript:openPopup('popup.aspx?sesja=18!13!4!3')">
@@ -1475,7 +1478,7 @@
 
             <br />
         </div>
-         <div id="TABELA14" class="page-break">
+        <div id="TABELA14" class="page-break">
             &nbsp;<asp:Label ID="lbTabela14" runat="server">INFORMACJA O REALIZACJI NALEŻNOŚCI </asp:Label>
             &nbsp;
     &nbsp;<asp:Label ID="infoLabel14" runat="server" Text="Tabela 14 \/" Visible="False"></asp:Label>
@@ -1486,7 +1489,7 @@
             <table style="width: 100%;">
                 <tr>
                     <td class="borderAll center" rowspan="2" colspan="2">&nbsp;</td>
-                    <td class="borderAll center" rowspan="2">Zaległość na poczatek 
+                    <td class="borderAll center" rowspan="2">Zaległość na poczatek
                         <br />
                         okresu sprawoz-dawczego BO </td>
                     <td class="borderAll center" rowspan="2">Przypis należności </td>
@@ -1519,7 +1522,6 @@
                         <asp:Label CssClass="normal" ID="tab_14_w01_c05" runat="server" Text="0"></asp:Label></a></td>
                     <td class="borderAll col_120 center"><a href="javascript:openPopup('popup.aspx?sesja=1!14!6!3')">
                         <asp:Label CssClass="normal" ID="tab_14_w01_c06" runat="server" Text="0"></asp:Label></a></td>
-
                 </tr>
                 <tr>
                     <td class="borderAll center col_100">0570-03</td>
@@ -1536,7 +1538,6 @@
                         <asp:Label CssClass="normal" ID="tab_14_w02_c05" runat="server" Text="0"></asp:Label></a></td>
                     <td class="borderAll col_120 center"><a href="javascript:openPopup('popup.aspx?sesja=2!14!6!3')">
                         <asp:Label CssClass="normal" ID="tab_14_w02_c06" runat="server" Text="0"></asp:Label></a></td>
-
                 </tr>
                 <tr>
                     <td class="borderAll center col_100">0570-01</td>
@@ -1553,7 +1554,6 @@
                         <asp:Label CssClass="normal" ID="tab_14_w03_c05" runat="server" Text="0"></asp:Label></a></td>
                     <td class="borderAll col_120 center"><a href="javascript:openPopup('popup.aspx?sesja=3!14!6!3')">
                         <asp:Label CssClass="normal" ID="tab_14_w03_c06" runat="server" Text="0"></asp:Label></a></td>
-
                 </tr>
                 <tr>
                     <td class="borderAll center col_100">0570-01</td>
@@ -1570,7 +1570,6 @@
                         <asp:Label CssClass="normal" ID="tab_14_w04_c05" runat="server" Text="0"></asp:Label></a></td>
                     <td class="borderAll col_120 center"><a href="javascript:openPopup('popup.aspx?sesja=4!14!6!3')">
                         <asp:Label CssClass="normal" ID="tab_14_w04_c06" runat="server" Text="0"></asp:Label></a></td>
-
                 </tr>
                 <tr>
                     <td class="borderAll center col_100">0570-01</td>
@@ -1587,7 +1586,6 @@
                         <asp:Label CssClass="normal" ID="tab_14_w05_c05" runat="server" Text="0"></asp:Label></a></td>
                     <td class="borderAll col_120 center"><a href="javascript:openPopup('popup.aspx?sesja=5!14!6!3')">
                         <asp:Label CssClass="normal" ID="tab_14_w05_c06" runat="server" Text="0"></asp:Label></a></td>
-
                 </tr>
                 <tr>
                     <td class="borderAll center col_100">&nbsp;</td>
@@ -1604,7 +1602,6 @@
                         <asp:Label CssClass="normal" ID="tab_14_w06_c05" runat="server" Text="0"></asp:Label></a></td>
                     <td class="borderAll col_120 center"><a href="javascript:openPopup('popup.aspx?sesja=6!14!6!3')">
                         <asp:Label CssClass="normal" ID="tab_14_w06_c06" runat="server" Text="0"></asp:Label></a></td>
-
                 </tr>
                 <tr>
                     <td class="borderAll center col_100">0580-01</td>
@@ -1621,7 +1618,6 @@
                         <asp:Label CssClass="normal" ID="tab_14_w07_c05" runat="server" Text="0"></asp:Label></a></td>
                     <td class="borderAll col_120 center"><a href="javascript:openPopup('popup.aspx?sesja=7!14!6!3')">
                         <asp:Label CssClass="normal" ID="tab_14_w07_c06" runat="server" Text="0"></asp:Label></a></td>
-
                 </tr>
                 <tr>
                     <td class="borderAll center col_100">0580-02</td>
@@ -1638,7 +1634,6 @@
                         <asp:Label CssClass="normal" ID="tab_14_w08_c05" runat="server" Text="0"></asp:Label></a></td>
                     <td class="borderAll col_120 center"><a href="javascript:openPopup('popup.aspx?sesja=8!14!6!3')">
                         <asp:Label CssClass="normal" ID="tab_14_w08_c06" runat="server" Text="0"></asp:Label></a></td>
-
                 </tr>
                 <tr>
                     <td class="borderAll center col_100">&nbsp;</td>
@@ -1655,7 +1650,6 @@
                         <asp:Label CssClass="normal" ID="tab_14_w09_c05" runat="server" Text="0"></asp:Label></a></td>
                     <td class="borderAll col_120 center"><a href="javascript:openPopup('popup.aspx?sesja=9!14!6!3')">
                         <asp:Label CssClass="normal" ID="tab_14_w09_c06" runat="server" Text="0"></asp:Label></a></td>
-
                 </tr>
                 <tr>
                     <td class="borderAll center col_100">0630-02</td>
@@ -1672,7 +1666,6 @@
                         <asp:Label CssClass="normal" ID="tab_14_w10_c05" runat="server" Text="0"></asp:Label></a></td>
                     <td class="borderAll col_120 center"><a href="javascript:openPopup('popup.aspx?sesja=10!14!6!3')">
                         <asp:Label CssClass="normal" ID="tab_14_w10_c06" runat="server" Text="0"></asp:Label></a></td>
-
                 </tr>
                 <tr>
                     <td class="borderAll center col_100">0630-01</td>
@@ -1689,7 +1682,6 @@
                         <asp:Label CssClass="normal" ID="tab_14_w11_c05" runat="server" Text="0"></asp:Label></a></td>
                     <td class="borderAll col_120 center"><a href="javascript:openPopup('popup.aspx?sesja=11!14!6!3')">
                         <asp:Label CssClass="normal" ID="tab_14_w11_c06" runat="server" Text="0"></asp:Label></a></td>
-
                 </tr>
                 <tr>
                     <td class="borderAll center col_100">0630-01</td>
@@ -1706,7 +1698,6 @@
                         <asp:Label CssClass="normal" ID="Label7" runat="server" Text="0"></asp:Label></a></td>
                     <td class="borderAll col_120 center"><a href="javascript:openPopup('popup.aspx?sesja=12!14!6!3')">
                         <asp:Label CssClass="normal" ID="Label8" runat="server" Text="0"></asp:Label></a></td>
-
                 </tr>
                 <tr>
                     <td class="borderAll center col_100">0630-01</td>
@@ -1724,7 +1715,6 @@
                         <asp:Label CssClass="normal" ID="tab_14_w13_c05" runat="server" Text="0"></asp:Label></a></td>
                     <td class="borderAll col_120 center"><a href="javascript:openPopup('popup.aspx?sesja=13!14!6!3')">
                         <asp:Label CssClass="normal" ID="tab_14_w13_c06" runat="server" Text="0"></asp:Label></a></td>
-
                 </tr>
                 <tr>
                     <td class="borderAll center col_100">&nbsp;</td>
@@ -1741,7 +1731,6 @@
                         <asp:Label CssClass="normal" ID="tab_14_w14_c05" runat="server" Text="0"></asp:Label></a></td>
                     <td class="borderAll col_120 center"><a href="javascript:openPopup('popup.aspx?sesja=14!14!6!3')">
                         <asp:Label CssClass="normal" ID="tab_14_w14_c06" runat="server" Text="0"></asp:Label></a></td>
-
                 </tr>
 
                 <tr>
@@ -1759,9 +1748,8 @@
                         <asp:Label CssClass="normal" ID="tab_15_w01_c05" runat="server" Text="0"></asp:Label></a></td>
                     <td class="borderAll col_120 center"><a href="javascript:openPopup('popup.aspx?sesja=15!14!6!3')">
                         <asp:Label CssClass="normal" ID="tab_15_w01_c06" runat="server" Text="0"></asp:Label></a></td>
-
                 </tr>
-                </table>
+            </table>
 
             par. 0570 - grzywny, mandaty i inne kary pieniężne od osób fizycznych<br />
             par. 0580 - grzywny i inne kary pieniężne od osób prawnych i inych jednostek organizacyjnych<br />

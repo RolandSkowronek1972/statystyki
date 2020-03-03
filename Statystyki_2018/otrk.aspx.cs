@@ -15,7 +15,7 @@ namespace stat2018
         public common cm = new common();
         public tabele tb = new tabele();
         public dataReaders dr = new dataReaders();
-     
+
         protected void Page_Load(object sender, EventArgs e)
         {
             string idWydzial = Request.QueryString["w"];
@@ -74,7 +74,6 @@ namespace stat2018
             Session["header_02"] = null;
             Session["header_03"] = null;
             Session["header_04"] = null;
-           
         }
 
         protected void odswiez()
@@ -83,34 +82,39 @@ namespace stat2018
             id_dzialu.Text = (string)Session["txt_dzialu"];
             string txt = string.Empty;
             txt = txt + cl.clear_maim_db();
-            txt = txt + cl.generuj_dane_do_tabeli_wierszy(Date1.Date, Date2.Date, idDzialu, 1,tenPlik);
+            txt = txt + cl.generuj_dane_do_tabeli_wierszy(Date1.Date, Date2.Date, idDzialu, 1, tenPlik);
             GridView2.DataBind();
-
             try
             {
                 Session["tabelka002"] = dr.tworzTabele(int.Parse(idDzialu), 2, Date1.Date, Date2.Date, 19, GridView1, tenPlik);
-                Session["tabelka003"] = dr.tworzTabele(int.Parse(idDzialu), 3, Date1.Date, Date2.Date, 10, GridView3, tenPlik);
-                Session["tabelka004"] = dr.tworzTabele(int.Parse(idDzialu), 4, Date1.Date, Date2.Date, 9, GridView4, tenPlik);
                 GridView1.DataBind();
-                GridView3.DataBind();
-                GridView4.DataBind();
-                /*
-                txt = txt + cl.generuj_dane_do_tabeli_(int.Parse((string)Session["id_dzialu"]), 2, Date1.Date, Date2.Date);
-
-                txt = txt + cl.generuj_dane_do_tabeli_(int.Parse((string)Session["id_dzialu"]), 3, Date1.Date, Date2.Date);
-
-                txt = txt + cl.generuj_dane_do_tabeli_(int.Parse((string)Session["id_dzialu"]), 4, Date1.Date, Date2.Date);
-
-                txt = txt + cl.uzupelnij_statusy();*/
             }
-            catch
+            catch (Exception ex)
             {
+                cm.log.Error(tenPlik + ": id wydzialu=" + idDzialu + " tabela 2 błąd: " + ex.Message);
             }
-            // dopasowanie opisów
+            try
+            {
+                Session["tabelka003"] = dr.tworzTabele(int.Parse(idDzialu), 3, Date1.Date, Date2.Date, 10, GridView3, tenPlik);
+                GridView3.DataBind();
+            }
+            catch (Exception ex)
+            {
+                cm.log.Error(tenPlik + ": id wydzialu=" + idDzialu + " tabela 3 błąd: " + ex.Message);
+            }
+            try
+            {
+                Session["tabelka004"] = dr.tworzTabele(int.Parse(idDzialu), 4, Date1.Date, Date2.Date, 9, GridView4, tenPlik);
+                GridView4.DataBind();
+            }
+            catch (Exception ex)
+
+            {
+                cm.log.Error(tenPlik + ": id wydzialu=" + idDzialu + " tabela 4 błąd: " + ex.Message);
+            }
 
             makeLabels();
 
-           
             Label11.Visible = cl.debug(int.Parse(idDzialu));
             Label11.Text = txt;
             Label3.Text = cl.nazwaSadu((string)Session["id_dzialu"]);
@@ -576,8 +580,14 @@ namespace stat2018
 
                 HeaderCell = new TableCell();
                 HeaderCell.Text = "Pozostało w referatach spraw kategorii";
-                HeaderCell.ColumnSpan = 13;
+                HeaderCell.ColumnSpan = 6;
                 HeaderCell.RowSpan = 1;
+                HeaderGridRow.Cells.Add(HeaderCell);
+                GridView4.Controls[0].Controls.AddAt(0, HeaderGridRow);
+                HeaderCell = new TableCell();
+                HeaderCell.Text = "Odroczenia liczba spraw odroczonych";
+                HeaderCell.ColumnSpan = 1;
+                HeaderCell.RowSpan = 2;
                 HeaderGridRow.Cells.Add(HeaderCell);
                 GridView4.Controls[0].Controls.AddAt(0, HeaderGridRow);
             }

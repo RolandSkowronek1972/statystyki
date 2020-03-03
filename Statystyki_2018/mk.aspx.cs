@@ -73,14 +73,44 @@ namespace stat2018
                 DataTable tabelaDanych = ms.generuj_dane_do_tabeli_mss10e(idWydzialuNumerycznie, Date1.Date, Date2.Date, 60);
                 //wypełnianie lebeli
                 int iloscWierszy = dr.iloscWierszy(1, idWydzialuNumerycznie, tenPlik);
-                cm.log.Info(tenPlik + ": Ilosc wierszy do tabelki=" + iloscWierszy.ToString());
+                cm.log.Info(tenPlik + ": Ilosc wierszy do tabelki 1=" + iloscWierszy.ToString());
                 int iloscKolumn = dr.iloscKolumn(1, idWydzialuNumerycznie, tenPlik);
-                cm.log.Info(tenPlik + ":  Ilosc kolumn do tabelk=" + iloscKolumn.ToString());
+                cm.log.Info(tenPlik + ":  Ilosc kolumn do tabelki 1=" + iloscKolumn.ToString());
                 Label tblControl = new Label { ID = "kod01" };
                 tblControl.Width = 1150;
                 StringBuilder tabelaGlowna = new StringBuilder();
                 tabelaGlowna.AppendLine(ms.tworztabeleMK("", null, null, tabelaDanych,0,iloscWierszy,0,iloscKolumn,  idWydzialuNumerycznie, false, "", 1, tenPlik));
+
+                 iloscWierszy = dr.iloscWierszy(2, idWydzialuNumerycznie, tenPlik);
+                cm.log.Info(tenPlik + ": Ilosc wierszy do tabelki 2=" + iloscWierszy.ToString());
+                 iloscKolumn = dr.iloscKolumn(2, idWydzialuNumerycznie, tenPlik);
+                cm.log.Info(tenPlik + ":  Ilosc kolumn do tabelki 2=" + iloscKolumn.ToString());
                 
+                tabelaGlowna.AppendLine(ms.tworztabeleMK("", null, null, tabelaDanych, 0, iloscWierszy, 0, iloscKolumn, idWydzialuNumerycznie, false, "", 2, tenPlik));
+
+                iloscWierszy = dr.iloscWierszy(3, idWydzialuNumerycznie, tenPlik);
+                cm.log.Info(tenPlik + ": Ilosc wierszy do tabelki 3=" + iloscWierszy.ToString());
+                iloscKolumn = dr.iloscKolumn(3, idWydzialuNumerycznie, tenPlik);
+                cm.log.Info(tenPlik + ":  Ilosc kolumn do tabelki 3=" + iloscKolumn.ToString());
+                tabelaGlowna.AppendLine(ms.tworztabeleMK("", null, null, tabelaDanych, 0, iloscWierszy, 0, iloscKolumn, idWydzialuNumerycznie, false, "", 3, tenPlik));
+
+                iloscWierszy = dr.iloscWierszy(4, idWydzialuNumerycznie, tenPlik);
+                cm.log.Info(tenPlik + ": Ilosc wierszy do tabelki 4=" + iloscWierszy.ToString());
+                iloscKolumn = dr.iloscKolumn(4, idWydzialuNumerycznie, tenPlik);
+                cm.log.Info(tenPlik + ":  Ilosc kolumn do tabelki 4=" + iloscKolumn.ToString());
+
+                tabelaGlowna.AppendLine(ms.tworztabeleMK("", null, null, tabelaDanych, 0, iloscWierszy, 0, iloscKolumn, idWydzialuNumerycznie, false, "", 4, tenPlik));
+
+
+                iloscWierszy = dr.iloscWierszy(5, idWydzialuNumerycznie, tenPlik);
+                cm.log.Info(tenPlik + ": Ilosc wierszy do tabelki 5=" + iloscWierszy.ToString());
+                iloscKolumn = dr.iloscKolumn(5, idWydzialuNumerycznie, tenPlik);
+                cm.log.Info(tenPlik + ":  Ilosc kolumn do tabelki 5=" + iloscKolumn.ToString());
+
+                tabelaGlowna.AppendLine(ms.tworztabeleMK("", null, null, tabelaDanych, 0, iloscWierszy, 0, iloscKolumn, idWydzialuNumerycznie, false, "", 5, tenPlik));
+
+
+
                 tblControl.Text = tabelaGlowna.ToString();
                 tablePlaceHolder.Controls.Add(tblControl);
             }
