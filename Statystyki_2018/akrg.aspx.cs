@@ -1,6 +1,6 @@
 ﻿/*
 Last Update:
-    - version 1.190105
+    - version 1.200316
 Creation date: 2019-01-05
 
 */
@@ -128,9 +128,9 @@ namespace stat2018
 
                 // pierwsza
 
-                MyWorksheet1 = tb.tworzArkuszwExcleBezSedziow(MyExcel.Workbook.Worksheets[1], (DataTable)Session["tabelka001"], 12, 11, 1, 5, false);
-                MyWorksheet1 = tb.tworzArkuszwExcle(MyExcel.Workbook.Worksheets[2], (DataTable)Session["tabelka002"], 33, 0, 5, false, true, true, true, true);
-                MyWorksheet1 = tb.tworzArkuszwExcle(MyExcel.Workbook.Worksheets[3], (DataTable)Session["tabelka003"], 12, 0, 5, false, true, true, true, true);
+                MyWorksheet1 = tb.tworzArkuszwExcleBezSedziow(MyExcel.Workbook.Worksheets[1], (DataTable)Session["tabelka001"], 12, 13, 1, 5, false);
+                MyWorksheet1 = tb.tworzArkuszwExcle(MyExcel.Workbook.Worksheets[2], (DataTable)Session["tabelka002"], 25, 0, 5, false, true, true, true, true);
+                MyWorksheet1 = tb.tworzArkuszwExcle(MyExcel.Workbook.Worksheets[3], (DataTable)Session["tabelka003"], 14, 0, 5, false, true, true, true, true);
 
                 try
                 {
@@ -157,7 +157,7 @@ namespace stat2018
             }
             DataTable tabelka01 = dr.generuj_dane_do_tabeli_wierszy2018(Date1.Date, Date2.Date, idDzialu, 1, 12, 13, tenPlik);
             Session["tabelka001"] = tabelka01;
-            pisz("tab_1_", 12, 10, tabelka01);
+            pisz("tab_1_", 12, 12, tabelka01);
         }
 
         protected void tabela_2()
@@ -167,7 +167,7 @@ namespace stat2018
             {
                 //cm.log.Info(tenPlik + ": rozpoczęcie tworzenia tabeli 2");
             }
-            DataTable tabelka01 = dr.generuj_dane_do_tabeli_sedziowskiej_2018(int.Parse(idDzialu), 2, Date1.Date, Date2.Date, 35, tenPlik);
+            DataTable tabelka01 = dr.generuj_dane_do_tabeli_sedziowskiej_2018(int.Parse(idDzialu), 2, Date1.Date, Date2.Date, 37, tenPlik);
             Session["tabelka002"] = tabelka01;
             gwTabela2.DataSource = null;
             gwTabela2.DataSourceID = null;
@@ -182,7 +182,7 @@ namespace stat2018
             {
                 //cm.log.Info(tenPlik + ": rozpoczęcie tworzenia tabeli 2");
             }
-            DataTable tabelka01 = dr.generuj_dane_do_tabeli_sedziowskiej_2018(int.Parse(idDzialu), 3, Date1.Date, Date2.Date, 18, tenPlik);
+            DataTable tabelka01 = dr.generuj_dane_do_tabeli_sedziowskiej_2018(int.Parse(idDzialu), 3, Date1.Date, Date2.Date, 20, tenPlik);
             Session["tabelka003"] = tabelka01;
             gwTabela3.DataSource = null;
             gwTabela3.DataSourceID = null;
@@ -299,6 +299,8 @@ namespace stat2018
             dT_02.Rows.Add(new Object[] { "2", "GNc", "1", "2", "h" });
             dT_02.Rows.Add(new Object[] { "2", "Ga", "1", "2", "h" });
             dT_02.Rows.Add(new Object[] { "2", "Gz", "1", "2", "h" });
+            dT_02.Rows.Add(new Object[] { "2", "Gz p-I", "1", "2", "h" });
+            dT_02.Rows.Add(new Object[] { "2", "Gz p-II", "1", "2", "h" });
             dT_02.Rows.Add(new Object[] { "2", "WSC", "2", "1", "h" });
             dT_02.Rows.Add(new Object[] { "2", "S", "1", "2", "h" });
             dT_02.Rows.Add(new Object[] { "2", "Razem", "1", "2", "h" });
@@ -313,7 +315,7 @@ namespace stat2018
             dT_02.Rows.Add(new Object[] { "3", "Imie", "1", "3", "h" });
             dT_02.Rows.Add(new Object[] { "3", "Nazwisko Sędziego", "1", "3", "h" });
             dT_02.Rows.Add(new Object[] { "3", "Liczba sesji", "2", "1", "h" });
-            dT_02.Rows.Add(new Object[] { "3", "Załatwienia", "10", "1", "h" });
+            dT_02.Rows.Add(new Object[] { "3", "Załatwienia", "12", "1", "h" });
             dT_02.Rows.Add(new Object[] { "3", "Ilość sporządzonych uzasadnień wyroków (bez wygłoszonych)", "1", "3", "h" });
             dT_02.Rows.Add(new Object[] { "3", "w tym ilość uzasadnień zwróconych po terminie ustawowym bądź przedłużonym", "2", "1", "h" });
             dT_02.Rows.Add(new Object[] { "3", "Uzasadnienia wygłoszone", "1", "3", "h" });
@@ -343,6 +345,8 @@ namespace stat2018
             dT_03.Rows.Add(new Object[] { "2", "GNc", "1", "2", "h" });
             dT_03.Rows.Add(new Object[] { "2", "Ga", "1", "2", "h" });
             dT_03.Rows.Add(new Object[] { "2", "Gz", "1", "2", "h" });
+            dT_03.Rows.Add(new Object[] { "2", "Gz p-I", "1", "2", "h" });
+            dT_03.Rows.Add(new Object[] { "2", "Gz p-II", "1", "2", "h" });
             dT_03.Rows.Add(new Object[] { "2", "WSC", "2", "1", "h" });
             dT_03.Rows.Add(new Object[] { "2", "S", "1", "2", "h" });
             dT_03.Rows.Add(new Object[] { "2", "Razem", "1", "2", "h" });
@@ -352,7 +356,7 @@ namespace stat2018
             dT_03.Rows.Add(new Object[] { "3", "Funkcja", "1", "3", "h" });
             dT_03.Rows.Add(new Object[] { "3", "Imie", "1", "3", "h" });
             dT_03.Rows.Add(new Object[] { "3", "Nazwisko Sędziego", "1", "3", "h" });
-            dT_03.Rows.Add(new Object[] { "3", "Wyznaczenia", "10", "1", "h" });
+            dT_03.Rows.Add(new Object[] { "3", "Wyznaczenia", "12", "1", "h" });
             dT_03.Rows.Add(new Object[] { "3", "Odroczenia  -  liczba spraw odroczonych", "1", "3", "h" });
             dT_03.Rows.Add(new Object[] { "3", "Sąd", "1", "3", "h" });
             dT_03.Rows.Add(new Object[] { "3", "Wydział", "1", "3", "h" });

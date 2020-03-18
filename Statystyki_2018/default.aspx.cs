@@ -54,7 +54,7 @@ namespace stat2018
 
         protected void zaloguj()
         {
-            //log.Debug("uruchomienie logowania");
+            log.Info("uruchomienie logowania");
 
             bool result = true;
             log.Info("rozpoczecie logowania "+ DateTime.Now.ToLongTimeString());

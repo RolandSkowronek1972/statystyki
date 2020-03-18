@@ -276,7 +276,7 @@ namespace stat2018
         {
             if (e.Row.RowType == DataControlRowType.Header)
             {
-                System.Web.UI.WebControls.GridView sn = new System.Web.UI.WebControls.GridView();
+                GridView sn = new GridView();
                 DataTable dT = naglowek("\\Template\\otrc.xlsx", 1);
                 //  tb.makeHeader(sn, dT, gwTabela1);
             }

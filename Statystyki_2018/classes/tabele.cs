@@ -948,48 +948,60 @@ namespace stat2018
                             {
                                 if (i == 16)
                                 {
-                                    Arkusz.Cells[wiersz, przesunięcieX + dodatek + i].Style.Fill.PatternType = OfficeOpenXml.Style.ExcelFillStyle.Solid;
-                                    Arkusz.Cells[wiersz, przesunięcieX + dodatek + i].Style.Fill.BackgroundColor.SetColor(System.Drawing.Color.Gray);
+                                    Arkusz.Cells[wiersz, przesunięcieX + dodatek + i].Style.HorizontalAlignment = OfficeOpenXml.Style.ExcelHorizontalAlignment.Center;
+                                    Arkusz.Cells[wiersz, przesunięcieX + dodatek + i].Style.Border.BorderAround(OfficeOpenXml.Style.ExcelBorderStyle.Thin, System.Drawing.Color.Black);
                                     Arkusz.Cells[wiersz, i + przesunięcieX + dodatek].Value = "";
                                 }
-                                if (i == 35)
+                                if (i == 32)
                                 {
-                                    Arkusz.Cells[wiersz, 35, wiersz, 35 + 3].Merge = true;
+                                    Arkusz.Cells[wiersz, 32, wiersz, 35].Merge = true;
                                     double value = double.Parse(dR[colunmName].ToString().Trim());
-                                    Arkusz.Cells[wiersz, i + przesunięcieX + dodatek].Value = value;
-                                    Arkusz.Cells[wiersz, przesunięcieX + dodatek].Style.HorizontalAlignment = OfficeOpenXml.Style.ExcelHorizontalAlignment.Center;
+                                    Arkusz.Cells[wiersz, przesunięcieX + dodatek + i].Value = value;
+                                    Arkusz.Cells[wiersz, 32, wiersz, 35].Style.HorizontalAlignment = OfficeOpenXml.Style.ExcelHorizontalAlignment.Center;
+                                    Arkusz.Cells[wiersz, 32, wiersz, 35].Style.Border.BorderAround(OfficeOpenXml.Style.ExcelBorderStyle.Thin, System.Drawing.Color.Black);
+                                    //                                    Arkusz.Cells[wiersz, przesunięcieX + dodatek + i].Style.HorizontalAlignment = OfficeOpenXml.Style.ExcelHorizontalAlignment.Center;
+                                    //                                  Arkusz.Cells[wiersz, przesunięcieX + dodatek + i].Style.Border.BorderAround(OfficeOpenXml.Style.ExcelBorderStyle.Thin, System.Drawing.Color.Black);
                                 }
-                                if (i < 35)
+                                if (i < 32)
                                 {
                                     double value = double.Parse(dR[colunmName].ToString().Trim());
                                     Arkusz.Cells[wiersz, i + przesunięcieX + dodatek].Value = value;
                                     Arkusz.Cells[wiersz, przesunięcieX + dodatek].Style.HorizontalAlignment = OfficeOpenXml.Style.ExcelHorizontalAlignment.Center;
+                                    Arkusz.Cells[wiersz, przesunięcieX + dodatek + i].Style.Border.BorderAround(OfficeOpenXml.Style.ExcelBorderStyle.Thin, System.Drawing.Color.Black);
                                 }
-                                if (i > 38)
+                                if (i == 36)
                                 {
                                     double value = double.Parse(dR[colunmName].ToString().Trim());
-                                    Arkusz.Cells[wiersz, i + przesunięcieX + dodatek].Value = value;
-                                    Arkusz.Cells[wiersz, przesunięcieX + dodatek].Style.HorizontalAlignment = OfficeOpenXml.Style.ExcelHorizontalAlignment.Center;
+                                    Arkusz.Cells[wiersz, przesunięcieX + dodatek + i].Value = value;
+                                    Arkusz.Cells[wiersz, przesunięcieX + dodatek + i].Style.HorizontalAlignment = OfficeOpenXml.Style.ExcelHorizontalAlignment.Center;
+                                    Arkusz.Cells[wiersz, przesunięcieX + dodatek + i].Style.Border.BorderAround(OfficeOpenXml.Style.ExcelBorderStyle.Thin, System.Drawing.Color.Black);
+                                }
+                                if (i > 37)
+                                {
+                                    continue;
                                 }
                             }
                             catch
                             {
-                                Arkusz.Cells[wiersz, i + przesunięcieX + dodatek].Value = (dR[colunmName].ToString().Trim());
-                            }
-                            if (i == 16)
-                            {
-                                Arkusz.Cells[wiersz, przesunięcieX + dodatek + i].Style.Fill.PatternType = OfficeOpenXml.Style.ExcelFillStyle.Solid;
-                                Arkusz.Cells[wiersz, przesunięcieX + dodatek + i].Style.Fill.BackgroundColor.SetColor(System.Drawing.Color.Gray);
+                                Arkusz.Cells[wiersz, przesunięcieX + dodatek + i].Value = (dR[colunmName].ToString().Trim());
 
-                                Arkusz.Cells[wiersz, i + przesunięcieX + dodatek].Value = "";
-                            }
-                            else
-                            {
-                                Arkusz.Cells[wiersz, przesunięcieX + dodatek + i].Style.Border.BorderAround(OfficeOpenXml.Style.ExcelBorderStyle.Thin, System.Drawing.Color.Black);
                                 Arkusz.Cells[wiersz, przesunięcieX + dodatek + i].Style.HorizontalAlignment = OfficeOpenXml.Style.ExcelHorizontalAlignment.Center;
-                                double value = double.Parse(dR[colunmName].ToString().Trim());
-                                Arkusz.Cells[wiersz, i + przesunięcieX + dodatek].Value = value;
+                                Arkusz.Cells[wiersz, przesunięcieX + dodatek + i].Style.Border.BorderAround(OfficeOpenXml.Style.ExcelBorderStyle.Thin, System.Drawing.Color.Black);
                             }
+                            /* if (i == 16)
+                             {
+                                 Arkusz.Cells[wiersz, przesunięcieX + dodatek + i].Style.Fill.PatternType = OfficeOpenXml.Style.ExcelFillStyle.Solid;
+                                 Arkusz.Cells[wiersz, przesunięcieX + dodatek + i].Style.Fill.BackgroundColor.SetColor(System.Drawing.Color.Gray);
+
+                                 Arkusz.Cells[wiersz, i + przesunięcieX + dodatek].Value = "";
+                             }
+                             else
+                             {
+                                 Arkusz.Cells[wiersz, przesunięcieX + dodatek + i].Style.Border.BorderAround(OfficeOpenXml.Style.ExcelBorderStyle.Thin, System.Drawing.Color.Black);
+                                 Arkusz.Cells[wiersz, przesunięcieX + dodatek + i].Style.HorizontalAlignment = OfficeOpenXml.Style.ExcelHorizontalAlignment.Center;
+                                 double value = double.Parse(dR[colunmName].ToString().Trim());
+                                 Arkusz.Cells[wiersz, i + przesunięcieX + dodatek].Value = value;
+                             }*/
                         }
                         catch (Exception ex)
                         {
@@ -1166,9 +1178,10 @@ namespace stat2018
                         string value = daneDoArkusza.Rows[i][j].ToString().Trim();
                         Arkusz.Cells[i + przesuniecieY, przesunięcieX + j].Value = value;
                     }
-                    catch (Exception)
+                    catch (Exception ex)
                     {
                         Arkusz.Cells[i + przesuniecieY, przesunięcieX + j].Value = "";
+                        cm.log.Error("Excell " + ex.Message);
                     }
                 }
             }
@@ -1188,6 +1201,7 @@ namespace stat2018
                 catch (Exception ex)
                 {
                     cm.log.Error("komorkaExcela maerge " + ex.Message);
+                    cm.log.Error("Excell " + ex.Message);
                 }
             }
             Arkusz.Cells[wiersz, kolumna].Style.ShrinkToFit = true;
@@ -1424,6 +1438,7 @@ namespace stat2018
             builder.AppendLine("</td>");
             return builder.ToString();
         }
+
         public string komorkaHTMLbezP(string text, int colspan, int rowspan, string style)
         {
             StringBuilder builder = new StringBuilder();

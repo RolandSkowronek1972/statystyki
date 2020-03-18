@@ -163,7 +163,7 @@ namespace stat2018
             // siódma
             try
             {
-                DataTable Tabela4 = dr.generuj_dane_do_tabeli_wierszy2018(Date1.Date, Date2.Date, id_dzialu, 7, 4, 1, tenPlik);
+                DataTable Tabela4 = dr.generuj_dane_do_tabeli_wierszy2018(Date1.Date, Date2.Date, id_dzialu, 7, 2, 5, tenPlik);
                 Session["tabelka007"] = Tabela4;
                 pisz("tab_07_", 5, 3, Tabela4);
             }
@@ -800,16 +800,27 @@ namespace stat2018
                 for (int kolumna = 1; kolumna <= iloscKolumn; kolumna++)
                 {
                     string controlName = Template + "w" + wiersz.ToString("D2") + "_c" + kolumna.ToString("D2");
-                    Label tb = (Label)this.Master.FindControl("ContentPlaceHolder1").FindControl(controlName);
-                    if (tb != null)
+                    try
                     {
-                        try
+                        Label tb = (Label)this.Master.FindControl("ContentPlaceHolder1").FindControl(controlName);
+                        if (tb != null)
                         {
                             tb.Text = dane.Rows[wiersz - 1][kolumna].ToString().Trim();
                         }
-                        catch
+                    }
+                    catch (Exception ex)
+                    {
+                    }
+                    try
+                    {
+                        TextBox tbx = (TextBox)this.Master.FindControl("ContentPlaceHolder1").FindControl(controlName);
+                        if (tbx != null)
                         {
+                            tbx.Text = dane.Rows[wiersz - 1][kolumna].ToString().Trim();
                         }
+                    }
+                    catch (Exception ex)
+                    {
                     }
                 }
             }

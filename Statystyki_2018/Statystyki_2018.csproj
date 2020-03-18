@@ -45,10 +45,11 @@
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
     <OutputPath>bin\</OutputPath>
-    <DefineConstants>TRACE</DefineConstants>
+    <DefineConstants>
+    </DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
-    <PlatformTarget>x64</PlatformTarget>
+    <PlatformTarget>AnyCPU</PlatformTarget>
     <FilesToIncludeForPublish>AllFilesInTheProject</FilesToIncludeForPublish>
   </PropertyGroup>
   <ItemGroup>
@@ -265,6 +266,7 @@
     <Content Include="wyszukiwarkaspraw.aspx" />
     <Content Include="msstabele\mss5r.xlsx" />
     <Content Include="Template\aopc2.xlsx" />
+    <Content Include="XMLHeaders\akrp2.xml" />
     <Content Include="XMLHeaders\mss.xml" />
     <Content Include="XMLHeaders\test.xml" />
     <Content Include="XMLHeaders\ansa.xml" />
