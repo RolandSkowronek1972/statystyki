@@ -112,15 +112,6 @@ namespace stat2018 {
         protected global::System.Web.UI.WebControls.GridView GridView1;
         
         /// <summary>
-        /// tabela_1 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.SqlDataSource tabela_1;
-        
-        /// <summary>
         /// tabela2Label control.
         /// </summary>
         /// <remarks>
@@ -148,15 +139,6 @@ namespace stat2018 {
         protected global::System.Web.UI.WebControls.GridView tabela_2;
         
         /// <summary>
-        /// tab_2 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.SqlDataSource tab_2;
-        
-        /// <summary>
         /// tabela3Label control.
         /// </summary>
         /// <remarks>
@@ -182,15 +164,6 @@ namespace stat2018 {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.GridView tabela_3;
-        
-        /// <summary>
-        /// DaneDoTabeli3 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.SqlDataSource DaneDoTabeli3;
         
         /// <summary>
         /// Label27 control.

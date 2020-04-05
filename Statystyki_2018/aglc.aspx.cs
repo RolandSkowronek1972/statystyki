@@ -86,108 +86,7 @@ namespace stat2018
 
                 Session["tabelka002"] = tabela02;
                 pisz("tab_tabela2_", 10, 9, tabela02);
-                /*
-                //  wiersz 1
-                tab_tabela2_w01_c01.Text = tabela02.Rows[0][1].ToString().Trim();
-                tab_tabela2_w01_c02.Text = tabela02.Rows[0][2].ToString().Trim();
-                tab_tabela2_w01_c03.Text = tabela02.Rows[0][3].ToString().Trim();
-                tab_tabela2_w01_c04.Text = tabela02.Rows[0][4].ToString().Trim();
-                tab_tabela2_w01_c05.Text = tabela02.Rows[0][5].ToString().Trim();
-                tab_tabela2_w01_c06.Text = tabela02.Rows[0][6].ToString().Trim();
-                tab_tabela2_w01_c07.Text = tabela02.Rows[0][7].ToString().Trim();
-                tab_tabela2_w01_c08.Text = tabela02.Rows[0][8].ToString().Trim();
-                tab_tabela2_w01_c09.Text = tabela02.Rows[0][9].ToString().Trim();
-                //  wiersz 2
-                tab_tabela2_w02_c01.Text = tabela02.Rows[1][1].ToString().Trim();
-                tab_tabela2_w02_c02.Text = tabela02.Rows[1][2].ToString().Trim();
-                tab_tabela2_w02_c03.Text = tabela02.Rows[1][3].ToString().Trim();
-                tab_tabela2_w02_c04.Text = tabela02.Rows[1][4].ToString().Trim();
-                tab_tabela2_w02_c05.Text = tabela02.Rows[1][5].ToString().Trim();
-                tab_tabela2_w02_c06.Text = tabela02.Rows[1][6].ToString().Trim();
-                tab_tabela2_w02_c07.Text = tabela02.Rows[1][7].ToString().Trim();
-                tab_tabela2_w02_c08.Text = tabela02.Rows[1][8].ToString().Trim();
-                tab_tabela2_w02_c09.Text = tabela02.Rows[1][9].ToString().Trim();
-                //  wiersz 3
-                tab_tabela2_w03_c01.Text = tabela02.Rows[2][1].ToString().Trim();
-                tab_tabela2_w03_c02.Text = tabela02.Rows[2][2].ToString().Trim();
-                tab_tabela2_w03_c03.Text = tabela02.Rows[2][3].ToString().Trim();
-                tab_tabela2_w03_c04.Text = tabela02.Rows[2][4].ToString().Trim();
-                tab_tabela2_w03_c05.Text = tabela02.Rows[2][5].ToString().Trim();
-                tab_tabela2_w03_c06.Text = tabela02.Rows[2][6].ToString().Trim();
-                tab_tabela2_w03_c07.Text = tabela02.Rows[2][7].ToString().Trim();
-                tab_tabela2_w03_c08.Text = tabela02.Rows[2][8].ToString().Trim();
-                tab_tabela2_w03_c09.Text = tabela02.Rows[2][9].ToString().Trim();
-                //  wiersz 4
-                tab_tabela2_w04_c01.Text = tabela02.Rows[3][1].ToString().Trim();
-                tab_tabela2_w04_c02.Text = tabela02.Rows[3][2].ToString().Trim();
-                tab_tabela2_w04_c03.Text = tabela02.Rows[3][3].ToString().Trim();
-                tab_tabela2_w04_c04.Text = tabela02.Rows[3][4].ToString().Trim();
-                tab_tabela2_w04_c05.Text = tabela02.Rows[3][5].ToString().Trim();
-                tab_tabela2_w04_c06.Text = tabela02.Rows[3][6].ToString().Trim();
-                tab_tabela2_w04_c07.Text = tabela02.Rows[3][7].ToString().Trim();
-                tab_tabela2_w04_c08.Text = tabela02.Rows[3][8].ToString().Trim();
-                tab_tabela2_w04_c09.Text = tabela02.Rows[3][9].ToString().Trim();
-                //  wiersz 5
-                tab_tabela2_w05_c01.Text = tabela02.Rows[4][1].ToString().Trim();
-                tab_tabela2_w05_c02.Text = tabela02.Rows[4][2].ToString().Trim();
-                tab_tabela2_w05_c03.Text = tabela02.Rows[4][3].ToString().Trim();
-                tab_tabela2_w05_c04.Text = tabela02.Rows[4][4].ToString().Trim();
-                tab_tabela2_w05_c05.Text = tabela02.Rows[4][5].ToString().Trim();
-                tab_tabela2_w05_c06.Text = tabela02.Rows[4][6].ToString().Trim();
-                tab_tabela2_w05_c07.Text = tabela02.Rows[4][7].ToString().Trim();
-                tab_tabela2_w05_c08.Text = tabela02.Rows[4][8].ToString().Trim();
-                tab_tabela2_w05_c09.Text = tabela02.Rows[4][9].ToString().Trim();
-                //  wiersz 6
-                tab_tabela2_w06_c01.Text = tabela02.Rows[5][1].ToString().Trim();
-                tab_tabela2_w06_c02.Text = tabela02.Rows[5][2].ToString().Trim();
-                tab_tabela2_w06_c03.Text = tabela02.Rows[5][3].ToString().Trim();
-                tab_tabela2_w06_c04.Text = tabela02.Rows[5][4].ToString().Trim();
-                tab_tabela2_w06_c05.Text = tabela02.Rows[5][5].ToString().Trim();
-                tab_tabela2_w06_c06.Text = tabela02.Rows[5][6].ToString().Trim();
-                tab_tabela2_w06_c07.Text = tabela02.Rows[5][7].ToString().Trim();
-                tab_tabela2_w06_c08.Text = tabela02.Rows[5][8].ToString().Trim();
-                tab_tabela2_w06_c09.Text = tabela02.Rows[5][9].ToString().Trim();
-                //  wiersz 7
-                tab_tabela2_w07_c01.Text = tabela02.Rows[6][1].ToString().Trim();
-                tab_tabela2_w07_c02.Text = tabela02.Rows[6][2].ToString().Trim();
-                tab_tabela2_w07_c03.Text = tabela02.Rows[6][3].ToString().Trim();
-                tab_tabela2_w07_c04.Text = tabela02.Rows[6][4].ToString().Trim();
-                tab_tabela2_w07_c05.Text = tabela02.Rows[6][5].ToString().Trim();
-                tab_tabela2_w07_c06.Text = tabela02.Rows[6][6].ToString().Trim();
-                tab_tabela2_w07_c07.Text = tabela02.Rows[6][7].ToString().Trim();
-                tab_tabela2_w07_c08.Text = tabela02.Rows[6][8].ToString().Trim();
-                tab_tabela2_w07_c09.Text = tabela02.Rows[6][9].ToString().Trim();
-                //  wiersz 8
-                tab_tabela2_w08_c01.Text = tabela02.Rows[7][1].ToString().Trim();
-                tab_tabela2_w08_c02.Text = tabela02.Rows[7][2].ToString().Trim();
-                tab_tabela2_w08_c03.Text = tabela02.Rows[7][3].ToString().Trim();
-                tab_tabela2_w08_c04.Text = tabela02.Rows[7][4].ToString().Trim();
-                tab_tabela2_w08_c05.Text = tabela02.Rows[7][5].ToString().Trim();
-                tab_tabela2_w08_c06.Text = tabela02.Rows[7][6].ToString().Trim();
-                tab_tabela2_w08_c07.Text = tabela02.Rows[7][7].ToString().Trim();
-                tab_tabela2_w08_c08.Text = tabela02.Rows[7][8].ToString().Trim();
-                tab_tabela2_w08_c09.Text = tabela02.Rows[7][9].ToString().Trim();
-                //  wiersz 9
-                tab_tabela2_w09_c01.Text = tabela02.Rows[8][1].ToString().Trim();
-                tab_tabela2_w09_c02.Text = tabela02.Rows[8][2].ToString().Trim();
-                tab_tabela2_w09_c03.Text = tabela02.Rows[8][3].ToString().Trim();
-                tab_tabela2_w09_c04.Text = tabela02.Rows[8][4].ToString().Trim();
-                tab_tabela2_w09_c05.Text = tabela02.Rows[8][5].ToString().Trim();
-                tab_tabela2_w09_c06.Text = tabela02.Rows[8][6].ToString().Trim();
-                tab_tabela2_w09_c07.Text = tabela02.Rows[8][7].ToString().Trim();
-                tab_tabela2_w09_c08.Text = tabela02.Rows[8][8].ToString().Trim();
-                tab_tabela2_w09_c09.Text = tabela02.Rows[8][9].ToString().Trim();
-                //  wiersz 10
-                tab_tabela2_w10_c01.Text = tabela02.Rows[9][1].ToString().Trim();
-                tab_tabela2_w10_c02.Text = tabela02.Rows[9][2].ToString().Trim();
-                tab_tabela2_w10_c03.Text = tabela02.Rows[9][3].ToString().Trim();
-                tab_tabela2_w10_c04.Text = tabela02.Rows[9][4].ToString().Trim();
-                tab_tabela2_w10_c05.Text = tabela02.Rows[9][5].ToString().Trim();
-                tab_tabela2_w10_c06.Text = tabela02.Rows[9][6].ToString().Trim();
-                tab_tabela2_w10_c07.Text = tabela02.Rows[9][7].ToString().Trim();
-                tab_tabela2_w10_c08.Text = tabela02.Rows[9][8].ToString().Trim();
-                tab_tabela2_w10_c09.Text = tabela02.Rows[9][9].ToString().Trim();
-                */
+      
             }
             catch (Exception ex)
             {
@@ -196,7 +95,7 @@ namespace stat2018
             //tabela 3
             try
             {
-                DataTable Tabela2 = dr.generuj_dane_do_tabeli_sedziowskiej_2018(int.Parse(id_dzialu), 3, Date1.Date, Date2.Date, 26, tenPlik);
+                DataTable Tabela2 = dr.generuj_dane_do_tabeli_sedziowskiej_2019(int.Parse(id_dzialu), 3, Date1.Date, Date2.Date, 26, tenPlik);
                 Session["tabelka003"] = Tabela2;
                 gwTabela3.DataSource = null;
                 gwTabela3.DataSourceID = null;
@@ -312,7 +211,7 @@ namespace stat2018
                 // pierwsza
 
                 DataTable table = (DataTable)Session["tabelka001"];
-                tabela.tworzArkuszwExcle(MyExcel.Workbook.Worksheets[1], table, 26, 0, 5, false, false, false, false, false);
+                tabela.tworzArkuszwExcle(MyExcel.Workbook.Worksheets[1], table, 26, 0, 5, false, false, false, false, false,false);
 
                 // druga
                 DataTable table2 = (DataTable)Session["tabelka002"];
@@ -320,7 +219,7 @@ namespace stat2018
 
                 // trzecia
                 DataTable table3 = (DataTable)Session["tabelka003"];
-                tabela.tworzArkuszwExcle(MyExcel.Workbook.Worksheets[3], table3, 26, 0, 3, false, false, false, false, false);
+                tabela.tworzArkuszwExcle(MyExcel.Workbook.Worksheets[3], table3, 26, 0, 3, false, false, false, false, false,false);
 
                 DataTable table4 = (DataTable)Session["tabelka004"];
                 tabela.tworzArkuszwExcleBezSedziow(MyExcel.Workbook.Worksheets[4], table4, 8, 2, 1, 2, false);
@@ -373,7 +272,7 @@ namespace stat2018
             if (e.Row.RowType == DataControlRowType.Footer)
             {
                 DataTable table = (DataTable)Session["tabelka001"];
-                tabela.makeSumRow(table, e);
+                tabela.makeSumRow(table, e,1);
             }
         }
 
@@ -391,7 +290,7 @@ namespace stat2018
             if (e.Row.RowType == DataControlRowType.Footer)
             {
                 DataTable table = (DataTable)Session["tabelka003"];
-                tabela.makeSumRow(table, e);
+                tabela.makeSumRow(table, e,1);
             }
         }
 
@@ -416,7 +315,7 @@ namespace stat2018
                 }
             }
         }// end of pisz
-
+        /*
         protected void pisztb(string Template, int iloscWierszy, int iloscKolumn, DataTable dane)
         {
             for (int wiersz = 1; wiersz <= iloscWierszy; wiersz++)
@@ -436,5 +335,6 @@ namespace stat2018
                 }
             }
         }// end of pisz
+        */
     }
 }

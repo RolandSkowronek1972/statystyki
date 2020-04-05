@@ -20,6 +20,8 @@ namespace stat2018
                     Session["data_1"] = null;
                     Session["data_2"] = null;
                     Session["userIdNum"] = null;
+                    Session["ustawDate15o"] = null;
+                    Session.Abandon();
                 }
             }
             string errorMessage = Request.QueryString["info"];

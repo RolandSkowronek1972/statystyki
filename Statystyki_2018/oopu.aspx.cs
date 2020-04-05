@@ -12,11 +12,13 @@ namespace stat2018
     {
         public Class1 cl = new Class1();
         public common cm = new common();
+        public dataReaders dr = new dataReaders();
+        public tabele tb = new tabele();
         public const string tenPlik = "oopu.aspx";
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            string idWydzial =   Request.QueryString["w"];
+            string idWydzial = Request.QueryString["w"];
             if (idWydzial != null)
             {
                 Session["id_dzialu"] = idWydzial;
@@ -61,6 +63,8 @@ namespace stat2018
                 {
                     if (!IsPostBack)
                     {
+                        Session["tabelka001"] = null;
+
                         var fileContents = System.IO.File.ReadAllText(Server.MapPath(@"~//version.txt"));    // file read with version
                         this.Title = "Statystyki " + fileContents.ToString().Trim();
                         odswiez();
@@ -78,44 +82,37 @@ namespace stat2018
         {
             Session["header_01"] = null;
             Session["header_02"] = null;
-            Session["header_03"] = null;
-            Session["header_04"] = null;
-            Session["header_05"] = null;
-            Session["header_06"] = null;
-            Session["header_07"] = null;
-            Session["header_08"] = null;
         }
 
         protected void odswiez()
         {
             string dzial = (string)Session["id_dzialu"];
             id_dzialu.Text = (string)Session["txt_dzialu"];
-            string txt = string.Empty; 
+            string txt = string.Empty;
 
-            txt = txt + cl.clear_maim_db_xl();
             try
             {
-                if (string.IsNullOrEmpty(dzial) != true)
-                {
-                    txt = txt + cl.generuj_dane_do_tabeli_XXL(int.Parse(dzial), 5, Date1.Date, Date2.Date,tenPlik);
-                    txt = txt + cl.uzupelnij_statusy_Xl();
-                }
+                //cm.log.Info(tenPlik + ": rozpoczęcie tworzenia tabeli 1");
+
+                Session["tabelka001"] = dr.tworzTabele(int.Parse(dzial), 5, Date1.Date, Date2.Date, 120, GridView1, tenPlik);
             }
-            catch
-            { }
+            catch (Exception ex)
+            {
+                cm.log.Error(tenPlik + " " + ex.Message);
+            }
+
             // dopasowanie opisów
             makeLabels();
             GridView1.DataBind();
+            Label11.Visible = false;
             try
             {
                 Label11.Visible = cl.debug(int.Parse((string)Session["id_dzialu"]));
             }
             catch
             {
-                Label11.Visible = false;
             }
 
-            Label11.Text = txt;
             Label3.Text = cl.nazwaSadu((string)Session["id_dzialu"]);
         }
 
@@ -1427,62 +1424,31 @@ namespace stat2018
                 try
                 {
                     ExcelWorksheet MyWorksheet = MyExcel.Workbook.Worksheets[1];
-                    DataView view = (DataView)statystyki.Select(DataSourceSelectArguments.Empty);
+                    ExcelWorksheet MyWorksheet1 = MyExcel.Workbook.Worksheets[1];
 
-                    DataTable table = view.ToTable();
-                    table.Columns.Remove("ident");
-                    table.Columns.Remove("id_sedziego");
-                    table.Columns.Remove("stanowisko");
-                    table.Columns.Remove("funkcja");
+                    DataTable table = (DataTable)Session["tabelka001"];
 
-                    table.Columns.Remove("d_109");
-                    table.Columns.Remove("d_108");
-                    table.Columns.Remove("d_107");
-                    table.Columns.Remove("d_106");
-
-                    MyWorksheet.Cells[1, 4].Value = "Ruch spraw w referatach sędziów za okres od " + Date1.Text + " do " + Date2.Text;
-
-                    int rowik = 1;
-                    foreach (DataRow dR in table.Rows)
-                    {
-                        for (int i = 1; i < 104; i++)
-                        {
-                            MyWorksheet.Cells[rowik + 6, i].Value = dR[i - 1].ToString().Trim();
-                            MyWorksheet.Cells[rowik + 6, i].Style.ShrinkToFit = true;
-                        }
-                        rowik++;
-                    }
-                    MyWorksheet.Cells[rowik + 6, 2].Value = "Razem";
-                    for (int i = 1; i < 101; i++)
-                    {
-                        object sumObject;
-                        string txt = "d_";
-                        string digit = i.ToString("D2");
-                        txt = txt + digit;
-                        sumObject = table.Compute("Sum(" + txt + ")", "");
-
-                        MyWorksheet.Cells[rowik + 6, i + 3].Value = sumObject.ToString();
-                    }
-
-                    try
-                    {
-                        //==========================
-
-                        MyExcel.SaveAs(fNewFile);
-
-                        this.Response.Clear();
-                        this.Response.ContentType = "application/vnd.ms-excel";
-                        this.Response.AddHeader("Content-Disposition", "attachment;filename=" + fNewFile.Name);
-                        this.Response.WriteFile(fNewFile.FullName);
-                        this.Response.End();
-                    }
-                    catch (Exception ex)
-                    {
-                        Label31.Text = Label31.Text + "Save Error massage " + ex.Message + "<br/>";
-                    }
+                    MyWorksheet1 = tb.tworzArkuszwExcle(MyExcel.Workbook.Worksheets[1], table, 116, 0, 5, true, true, false, false, false);
                 }
-                catch
-                { }
+                catch (Exception ex)
+                {
+                }
+                try
+                {
+                    //==========================
+
+                    MyExcel.SaveAs(fNewFile);
+
+                    this.Response.Clear();
+                    this.Response.ContentType = "application/vnd.ms-excel";
+                    this.Response.AddHeader("Content-Disposition", "attachment;filename=" + fNewFile.Name);
+                    this.Response.WriteFile(fNewFile.FullName);
+                    this.Response.End();
+                }
+                catch (Exception ex)
+                {
+                    Label31.Text = Label31.Text + "Save Error massage " + ex.Message + "<br/>";
+                }
             }
         }
 
@@ -1503,9 +1469,7 @@ namespace stat2018
             if (e.Row.RowType == DataControlRowType.Footer)
 
             {
-                DataView view = (DataView)statystyki.Select(DataSourceSelectArguments.Empty);
-
-                DataTable table = view.ToTable();
+                DataTable table = (DataTable)Session["tabelka001"];
                 object sumObject;
                 e.Row.Cells[3].Text = "Razem";
                 for (int i = 1; i < 105; i++)

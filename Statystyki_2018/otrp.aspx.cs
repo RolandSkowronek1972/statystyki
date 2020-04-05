@@ -31,9 +31,11 @@ namespace stat2018
             {
                 Session["id_dzialu"] = idWydzial;
                 //   //cm.log.Info(tenPlik + ": id wydzialu=" + idWydzial);
+
             }
             else
             {
+                Server.Transfer("default.aspx");
                 return;
             }
             CultureInfo newCulture = (CultureInfo)CultureInfo.CurrentCulture.Clone();

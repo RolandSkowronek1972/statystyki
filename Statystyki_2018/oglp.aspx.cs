@@ -749,7 +749,7 @@ namespace stat2018
                 tb.komorkaExcela(MyWorksheet1, ((DataTable)Session["tabelka001"]).Rows.Count + 14, 1, "WpPowyżej 3 lat do 5 latływ", true, 0, 3);
                 tb.komorkaExcela(MyWorksheet1, ((DataTable)Session["tabelka001"]).Rows.Count + 15, 1, "Powyżej 5 lat do 8 lat", true, 0, 3);
                 tb.komorkaExcela(MyWorksheet1, ((DataTable)Session["tabelka001"]).Rows.Count + 16, 1, "Powyżej 8 lat", true, 0, 3);
-                //  DataTable tabelka02 = dr.generuj_dane_do_tabeli_sedziowskiej_2018(int.Parse((string)Session["id_wydzial"]), 100, Date1.Date, Date2.Date, 4, tenPlik);
+                //  DataTable tabelka02 = dr.generuj_dane_do_tabeli_sedziowskiej_2019(int.Parse((string)Session["id_wydzial"]), 100, Date1.Date, Date2.Date, 4, tenPlik);
                 int iloscWierszy = (((DataTable)Session["tabelka001"]).Rows.Count + 4);
                 MyWorksheet1 = tb.tworzArkuszwExcleBezSedziow(MyExcel.Workbook.Worksheets[1], (DataTable)Session["tabelka100"], 5, 4, 4, iloscWierszy, false);
 
@@ -793,7 +793,7 @@ namespace stat2018
             }
             try
             {
-                DataTable tabelka01 = dr.generuj_dane_do_tabeli_sedziowskiej_2018(int.Parse(idDzialu), 1, Date1.Date, Date2.Date, 15, tenPlik);
+                DataTable tabelka01 = dr.generuj_dane_do_tabeli_sedziowskiej_2019(int.Parse(idDzialu), 1, Date1.Date, Date2.Date, 15, tenPlik);
                 Session["tabelka001"] = tabelka01;
                 gwTabela1.DataSource = null;
                 gwTabela1.DataSourceID = null;
@@ -815,7 +815,7 @@ namespace stat2018
             }
             try
             {
-                DataTable tabelka01 = dr.generuj_dane_do_tabeli_sedziowskiej_2018(int.Parse(idDzialu), 2, Date1.Date, Date2.Date, 13, tenPlik);
+                DataTable tabelka01 = dr.generuj_dane_do_tabeli_sedziowskiej_2019(int.Parse(idDzialu), 2, Date1.Date, Date2.Date, 13, tenPlik);
                 Session["tabelka002"] = tabelka01;
                 gwTabela2.DataSource = null;
                 gwTabela2.DataSourceID = null;
@@ -837,7 +837,7 @@ namespace stat2018
             }
             try
             {
-                DataTable tabelka01 = dr.generuj_dane_do_tabeli_sedziowskiej_2018(int.Parse(idDzialu), 3, Date1.Date, Date2.Date, 13, tenPlik);
+                DataTable tabelka01 = dr.generuj_dane_do_tabeli_sedziowskiej_2019(int.Parse(idDzialu), 3, Date1.Date, Date2.Date, 13, tenPlik);
                 Session["tabelka003"] = tabelka01;
                 gwTabela3.DataSource = null;
                 gwTabela3.DataSourceID = null;
@@ -877,7 +877,7 @@ namespace stat2018
             {
                 cm.log.Info(tenPlik + ": rozpoczęcie tworzenia tabeli 5");
             }
-            DataTable tabelka01 = dr.generuj_dane_do_tabeli_sedziowskiej_2018(int.Parse(idDzialu), 5, Date1.Date, Date2.Date, 12, tenPlik);
+            DataTable tabelka01 = dr.generuj_dane_do_tabeli_sedziowskiej_2019(int.Parse(idDzialu), 5, Date1.Date, Date2.Date, 12, tenPlik);
             Session["tabelka005"] = tabelka01;
             try
             {
@@ -901,7 +901,7 @@ namespace stat2018
             }
             try
             {
-                DataTable tabelka01 = dr.generuj_dane_do_tabeli_sedziowskiej_2018(int.Parse(idDzialu), 6, Date1.Date, Date2.Date, 12, tenPlik);
+                DataTable tabelka01 = dr.generuj_dane_do_tabeli_sedziowskiej_2019(int.Parse(idDzialu), 6, Date1.Date, Date2.Date, 13, tenPlik);
                 Session["tabelka006"] = tabelka01;
                 gwTabela6.DataSource = null;
                 gwTabela6.DataSourceID = null;
@@ -923,7 +923,7 @@ namespace stat2018
             }
             try
             {
-                DataTable tabelka01 = dr.generuj_dane_do_tabeli_sedziowskiej_2018(int.Parse(idDzialu), 7, Date1.Date, Date2.Date, 22, tenPlik);
+                DataTable tabelka01 = dr.generuj_dane_do_tabeli_sedziowskiej_2019(int.Parse(idDzialu), 7, Date1.Date, Date2.Date, 22, tenPlik);
                 Session["tabelka007"] = tabelka01;
                 GwTabela7.DataSource = null;
                 GwTabela7.DataSourceID = null;
@@ -983,7 +983,7 @@ namespace stat2018
             }
             try
             {
-                DataTable tabelka01 = dr.generuj_dane_do_tabeli_sedziowskiej_2018(int.Parse(idDzialu), 10, Date1.Date, Date2.Date,12, tenPlik);
+                DataTable tabelka01 = dr.generuj_dane_do_tabeli_sedziowskiej_2019(int.Parse(idDzialu), 10, Date1.Date, Date2.Date,12, tenPlik);
                 Session["tabelka010"] = tabelka01;
                 GwTable10.DataSource = null;
                 GwTable10.DataSourceID = null;

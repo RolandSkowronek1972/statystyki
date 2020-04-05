@@ -215,7 +215,7 @@ a:active{color:#292929}
   
 .dataBar {
    position:fixed;
-    z-index:99998;
+   
     width: 100%;
    }
 .main {

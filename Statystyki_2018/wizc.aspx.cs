@@ -66,21 +66,21 @@ namespace stat2018
             tabela_8();
             //wizc_aspx
 
-            DataTable tabelka01 = dr.generuj_dane_do_tabeli_sedziowskiej_2018(idWydzial, 9, Date1.Date, Date2.Date, 36, tenPlik);
+            DataTable tabelka01 = dr.generuj_dane_do_tabeli_sedziowskiej_2019(idWydzial, 9, Date1.Date, Date2.Date, 36, tenPlik);
             Session["tabelka009"] = tabelka01;
             tworztabelkeHTML("KX1", idWydzial, 9, tabelka01);
 
-            DataTable tabelka02 = dr.generuj_dane_do_tabeli_sedziowskiej_2018(idWydzial, 10, Date1.Date, Date2.Date, 36, tenPlik);
+            DataTable tabelka02 = dr.generuj_dane_do_tabeli_sedziowskiej_2019(idWydzial, 10, Date1.Date, Date2.Date, 36, tenPlik);
             Session["tabelka010"] = tabelka02;
             tworztabelkeHTML2("K2", idWydzial, 10, tabelka02);
 
-            DataTable tabelka03 = dr.generuj_dane_do_tabeli_sedziowskiej_2018(idWydzial, 11, Date1.Date, Date2.Date, 100, tenPlik);
+            DataTable tabelka03 = dr.generuj_dane_do_tabeli_sedziowskiej_2019(idWydzial, 11, Date1.Date, Date2.Date, 100, tenPlik);
             Session["tabelka011"] = tabelka03;
             tworztabelkeHTML3("K3", idWydzial, 11, tabelka03);
 
             tabela_12();
 
-            DataTable tabelka13 = dr.generuj_dane_do_tabeli_sedziowskiej_2018(idWydzial, 13, Date1.Date, Date2.Date, 100, tenPlik);
+            DataTable tabelka13 = dr.generuj_dane_do_tabeli_sedziowskiej_2019(idWydzial, 13, Date1.Date, Date2.Date, 100, tenPlik);
             Session["tabelka013"] = tabelka13;
             tworztabelkeHTML13("K13", idWydzial, 13, tabelka13);
 
@@ -88,44 +88,44 @@ namespace stat2018
             tabela_15();
             tabela_16();
 
-            DataTable tabelka17 = dr.generuj_dane_do_tabeli_sedziowskiej_2018(idWydzial, 17, Date1.Date, Date2.Date, 120, tenPlik);
+            DataTable tabelka17 = dr.generuj_dane_do_tabeli_sedziowskiej_2019(idWydzial, 17, Date1.Date, Date2.Date, 120, tenPlik);
             Session["tabelka017"] = tabelka17;
             tworztabelkeHTML17("K17", idWydzial, 17, tabelka17, "liczba spraw", "SSR", "IV.5.1. Czas trwania postępowania sądowego od dnia pierwszej rejestracji do dnia zakończenia sprawy w danej instancji w referatach poszczególnych sędziów (liczba spraw)", "Tabela 17");
 
-            DataTable tabelka18 = dr.generuj_dane_do_tabeli_sedziowskiej_2018(idWydzial, 18, Date1.Date, Date2.Date, 120, tenPlik);
+            DataTable tabelka18 = dr.generuj_dane_do_tabeli_sedziowskiej_2019(idWydzial, 18, Date1.Date, Date2.Date, 120, tenPlik);
             Session["tabelka018"] = tabelka18;
             tworztabelkeHTML17("K18", idWydzial, 18, tabelka18, "%", "SSR", " IV.5.2.Czas trwania postępowania sądowego od dnia pierwszej rejestracji do dnia zakończenia sprawy w danej instancji w referatach poszczególnych sędziów(liczba spraw)", "Tabela 18");
 
-            DataTable tabelka19 = dr.generuj_dane_do_tabeli_sedziowskiej_2018(idWydzial, 19, Date1.Date, Date2.Date, 120, tenPlik);
+            DataTable tabelka19 = dr.generuj_dane_do_tabeli_sedziowskiej_2019(idWydzial, 19, Date1.Date, Date2.Date, 120, tenPlik);
             Session["tabelka019"] = tabelka19;
             tworztabelkeHTML19("K19", idWydzial, 19, tabelka19, "liczba spraw", "", " IV.5.3.Czas trwania postępowania sądowego od dnia pierwszej rejestracji do dnia zakończenia sprawy w danej instancji w referatach poszczególnych sędziów(liczba spraw)", "Tabela 19");
             //
-            DataTable tabelka20 = dr.generuj_dane_do_tabeli_sedziowskiej_2018(idWydzial, 20, Date1.Date, Date2.Date, 120, tenPlik);
+            DataTable tabelka20 = dr.generuj_dane_do_tabeli_sedziowskiej_2019(idWydzial, 20, Date1.Date, Date2.Date, 120, tenPlik);
             Session["tabelka020"] = tabelka20;
             tworztabelkeHTML17("K20", idWydzial, 20, tabelka20, "%", "", " IV.5.4.Czas trwania postępowania sądowego od dnia pierwszej rejestracji do dnia zakończenia sprawy w danej instancji w referatach poszczególnych sędziów(liczba spraw)", "Tabela 20");
 
             tabela_21();
             tabela_22();
-            DataTable tabelka23 = dr.generuj_dane_do_tabeli_sedziowskiej_2018(idWydzial, 23, Date1.Date, Date2.Date, 130, tenPlik);
+            DataTable tabelka23 = dr.generuj_dane_do_tabeli_sedziowskiej_2019(idWydzial, 23, Date1.Date, Date2.Date, 130, tenPlik);
             Session["tabelka023"] = tabelka23;
             tworztabelkeHTML23("K23", idWydzial, 23, tabelka23, "Liczba sporządzonych uzasadnień", "", "", "Tabela 23");
 
             tabela_24();
             tabela_25();
 
-            DataTable tabelka26 = dr.generuj_dane_do_tabeli_sedziowskiej_2018(idWydzial, 26, Date1.Date, Date2.Date, 130, tenPlik);
+            DataTable tabelka26 = dr.generuj_dane_do_tabeli_sedziowskiej_2019(idWydzial, 26, Date1.Date, Date2.Date, 130, tenPlik);
             Session["tabelka026"] = tabelka26;
             tworztabelkeHTML26("K26", idWydzial, 26, tabelka26, "liczba spraw", "", "IV. 7.3.Struktura pozostałości (referaty poszczególnych sędziów – liczba spraw)", "Tabela 26");
 
-            DataTable tabelka27 = dr.generuj_dane_do_tabeli_sedziowskiej_2018(idWydzial, 27, Date1.Date, Date2.Date, 130, tenPlik);
+            DataTable tabelka27 = dr.generuj_dane_do_tabeli_sedziowskiej_2019(idWydzial, 27, Date1.Date, Date2.Date, 130, tenPlik);
             Session["tabelka027"] = tabelka27;
             tworztabelkeHTML26("K27", idWydzial, 27, tabelka27, "% spraw", "", "IV. 7.4.Struktura pozostałości (referaty poszczególnych sędziów – %)", "Tabela 27");
 
-            DataTable tabelka28 = dr.generuj_dane_do_tabeli_sedziowskiej_2018(idWydzial, 28, Date1.Date, Date2.Date, 130, tenPlik);
+            DataTable tabelka28 = dr.generuj_dane_do_tabeli_sedziowskiej_2019(idWydzial, 28, Date1.Date, Date2.Date, 130, tenPlik);
             Session["tabelka028"] = tabelka28;
             tworztabelkeHTML26("K28", idWydzial, 28, tabelka28, "liczba spraw", "", "IV. 7.5.Struktura pozostałości (referaty poszczególnych referendarzy sądowych – liczba spraw)", "Tabela 28");
 
-            DataTable tabelka29 = dr.generuj_dane_do_tabeli_sedziowskiej_2018(idWydzial, 29, Date1.Date, Date2.Date, 130, tenPlik);
+            DataTable tabelka29 = dr.generuj_dane_do_tabeli_sedziowskiej_2019(idWydzial, 29, Date1.Date, Date2.Date, 130, tenPlik);
             Session["tabelka029"] = tabelka29;
             tworztabelkeHTML26("K29", idWydzial, 29, tabelka29, "% spraw", "", "IV. 7.5.Struktura pozostałości (referaty poszczególnych referendarzy sądowych – liczba spraw)", "Tabela 28");
 
@@ -192,7 +192,7 @@ namespace stat2018
             {
                 cm.log.Info(tenPlik + ": rozpoczęcie tworzenia tabeli 3");
             }
-            DataTable tabelka01 = dr.generuj_dane_do_tabeli_sedziowskiej_2018(int.Parse(idDzialu), 3, Date1.Date, Date2.Date, 15, tenPlik);
+            DataTable tabelka01 = dr.generuj_dane_do_tabeli_sedziowskiej_2019(int.Parse(idDzialu), 3, Date1.Date, Date2.Date, 15, tenPlik);
             Session["tabelka003"] = tabelka01;
             gwTabela3.DataSource = null;
             gwTabela3.DataSourceID = null;
@@ -207,7 +207,7 @@ namespace stat2018
             {
                 cm.log.Info(tenPlik + ": rozpoczęcie tworzenia tabeli 4");
             }
-            DataTable tabelka01 = dr.generuj_dane_do_tabeli_sedziowskiej_2018(int.Parse(idDzialu), 4, Date1.Date, Date2.Date, 23, tenPlik);
+            DataTable tabelka01 = dr.generuj_dane_do_tabeli_sedziowskiej_2019(int.Parse(idDzialu), 4, Date1.Date, Date2.Date, 23, tenPlik);
 
             Session["tabelka004"] = tabelka01;
             gwTabela3_2.DataSource = null;
@@ -223,7 +223,7 @@ namespace stat2018
             {
                 cm.log.Info(tenPlik + ": rozpoczęcie tworzenia tabeli 5");
             }
-            DataTable tabelka01 = dr.generuj_dane_do_tabeli_sedziowskiej_2018(int.Parse(idDzialu), 5, Date1.Date, Date2.Date, 23, tenPlik);
+            DataTable tabelka01 = dr.generuj_dane_do_tabeli_sedziowskiej_2019(int.Parse(idDzialu), 5, Date1.Date, Date2.Date, 23, tenPlik);
 
             Session["tabelka005"] = tabelka01;
             gwTabela3_3.DataSource = null;

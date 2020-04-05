@@ -100,7 +100,7 @@ namespace stat2018
                 Session["tabelka003"] = dr.tworzTabele(int.Parse(dzial), 3, Date1.Date, Date2.Date, 17, GridView2, tenPlik);
                 GridView2.DataBind();
                 //cm.log.Info(tenPlik + ": rozpoczęcie tworzenia tabeli 4");
-                //txt = txt + cl.generuj_dane_do_tabeli_(int.Parse((string)Session["id_dzialu"]), 4, Date1.Date, Date2.Date);
+              
                 Session["tabelka004"] = dr.tworzTabele(int.Parse(dzial), 4, Date1.Date, Date2.Date, 30, GridView3, tenPlik);
                 GridView3.DataBind();
                 Session["tabelka006"] = dr.tworzTabele(int.Parse(dzial), 6, Date1.Date, Date2.Date, 30, GridView4, tenPlik);
@@ -490,13 +490,7 @@ namespace stat2018
             odswiez();
         }
 
-        protected void LinkButton55_Click(object sender, EventArgs e)
-        {
-            makeLabels();
-            odswiez();
-            ScriptManager.RegisterStartupScript(this.Page, Page.GetType(), "print2", "JavaScript: window.print();", true);
-            makeLabels();
-        }
+       
 
         protected void GridView1_RowCreated(object sender, GridViewRowEventArgs e)
         {
@@ -545,7 +539,7 @@ namespace stat2018
             if (e.Row.RowType == DataControlRowType.Footer)
             {
                 DataTable table = (DataTable)Session["tabelka004"];
-                tabela.makeSumRow(table, e, 1);
+             //   tabela.makeSumRow(table, e,2);
             }
         }
 
@@ -562,7 +556,7 @@ namespace stat2018
         {
             if (e.Row.RowType == DataControlRowType.Footer)
             {
-                tabela.makeSumRow((DataTable)Session["tabelka006"], e);
+                tabela.makeSumRow((DataTable)Session["tabelka006"], e,1);
             }
         }
 

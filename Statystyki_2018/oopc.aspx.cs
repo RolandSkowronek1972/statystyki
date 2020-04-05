@@ -23,6 +23,7 @@ namespace stat2018
             {
                 if (idWydzial == null)
                 {
+                    Server.Transfer("default.aspx");
                     return;
                 }
                 bool dost = cm.dostep(idWydzial, (string)Session["identyfikatorUzytkownika"]);
@@ -87,7 +88,7 @@ namespace stat2018
             {
                 if (string.IsNullOrEmpty(dzial) != true)
                 {
-                    Session["tabelka001"] = dr.tworzTabele(int.Parse(dzial), 5, Date1.Date, Date2.Date, 120, GridView1, tenPlik);
+                    Session["tabelka001"] = dr.tworzTabele(int.Parse(dzial), 5, Date1.Date, Date2.Date, 130, GridView1, tenPlik);
                 }
             }
             catch (Exception ex)
@@ -172,7 +173,7 @@ namespace stat2018
             {
                 try
                 {
-                    ExcelWorksheet MyWorksheet1 = tb.tworzArkuszwExcle(MyExcel.Workbook.Worksheets[1], (DataTable)Session["tabelka001"], 110, 0, 6, true, true, false, false, false);
+                    ExcelWorksheet MyWorksheet1 = tb.tworzArkuszwExcle(MyExcel.Workbook.Worksheets[1], (DataTable)Session["tabelka001"], 115, 0, 7, true, true, false, false, false);
 
                     try
                     {

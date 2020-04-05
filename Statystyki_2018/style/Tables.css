@@ -1,12 +1,13 @@
 ﻿.noWrap {
     white-space: nowrap;
 }
-.dopasowanie {
-width:auto;
-margin-left:5px;
-margin-right:5px;
 
+.dopasowanie {
+    width: auto;
+    margin-left: 5px;
+    margin-right: 5px;
 }
+
 .rotate {
     -moz-transform: rotate(-90.0deg); /* FF3.5+ */
     -o-transform: rotate(-90.0deg); /* Opera 10.5 */
@@ -378,6 +379,11 @@ margin-right:5px;
     text-align: center;
 }
 
+.col_15 {
+    width: 12px;
+    text-align: center;
+}
+
 .col_29 {
     width: 29px;
     text-align: center;
@@ -465,7 +471,7 @@ margin-right:5px;
 
 .col_50 {
     text-align: center;
-    }
+}
 
 .col_50H {
     width: 50px;
@@ -740,10 +746,10 @@ margin-right:5px;
 .col_200F {
     width: 200px;
     min-width: 250px;
-
 }
 
 .col_250 {
+    width: 250px;
     text-align: center;
     min-width: 250px;
 }
@@ -770,8 +776,8 @@ margin-right:5px;
 
 .col_400 {
     width: 400px;
-    
 }
+
 .col_492 {
     width: 492px;
     text-align: center;
@@ -780,10 +786,11 @@ margin-right:5px;
 .col_500 {
     width: 500px;
 }
+
 .col_500F {
     width: 500px;
-    min-width:500px;
-    max-width:500px;
+    min-width: 500px;
+    max-width: 500px;
 }
 
 h1 {
@@ -1789,7 +1796,6 @@ height: 42px;*/
     height: 380px;
 }
 
-
 .ax_box {
     color: Black;
     text-decoration: none;
@@ -1810,7 +1816,7 @@ height: 42px;*/
     transition: opacity .2s cubic-bezier(0.645,0.045,0.355,1);
     transition: opacity .2s cubic-bezier(0.645,0.045,0.355,1);
     font: 16px/18px "Lucida Grande", "Lucida Sans Unicode", Helvetica, Arial, Verdana, sans-serif;
-    top: 0px;
+    top: -3px;
     height: 24px;
     cursor: pointer;
     left: 0px;
@@ -1834,7 +1840,6 @@ height: 42px;*/
     border-left-style: none;
     text-decoration: none;
 }
-
 
 .ajax__tab_tab {
     height: 13px;

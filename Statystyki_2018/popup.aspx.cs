@@ -8,6 +8,7 @@ namespace stat2018
         public Class1 cl = new Class1();
         public mss ms = new mss();
         public common cm = new common();
+        public dataReaders dr = new dataReaders();
 
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -21,14 +22,13 @@ namespace stat2018
                     string[] stringSeparators = new string[] { "!" };
                     string[] stTab = null;
 
-
                     stTab = sesja.Split(stringSeparators, StringSplitOptions.None);
                     try
                     {
                         //1 - id wiersza// id sedziego
                         //2 - id tabeli
                         //3 - id kolumny
-                        //4 - id typu 
+                        //4 - id typu
                         string id_ = stTab[0].ToString().Trim();
                         string id_tabeli = stTab[1].ToString().Trim();
                         string kolumna = stTab[2].ToString().Trim();
@@ -36,57 +36,58 @@ namespace stat2018
                         //cm.log.Info("POPUP: Wczytano dane : id tabeli "+id_tabeli +" id kolumny "+ kolumna +" typ: "+typ);
                         switch (typ)
                         {
-
                             case "1":
                                 {
                                     tabelaWierszowa(int.Parse(id_), int.Parse(id_tabeli), int.Parse(kolumna));
                                 }
                                 break;
+
                             case "2":
                                 {
                                     tabelaSedziowska(int.Parse(id_), int.Parse(id_tabeli), int.Parse(kolumna));
                                 }
                                 break;
+
                             case "3":
                                 {
                                     //wierszowa akac
                                     tabelaWierszowaAKAC(int.Parse(id_), int.Parse(id_tabeli), int.Parse(kolumna));
                                 }
                                 break;
+
                             case "4":
                                 {
                                     //wierszowa mms
                                     tabelaMSS(int.Parse(id_), id_tabeli, int.Parse(kolumna));
                                 }
                                 break;
+
                             case "5":
                                 {
                                     //wierszowa XXL
-                                   tabelaXXL(int.Parse(id_), int.Parse(id_tabeli), int.Parse(kolumna));
+                                    tabelaXXL(int.Parse(id_), int.Parse(id_tabeli), int.Parse(kolumna));
                                 }
                                 break;
+
                             case "6":
                                 {
                                     tabelaSedziowskaNowa(int.Parse(id_), int.Parse(id_tabeli), int.Parse(kolumna));
                                 }
                                 break;
+
                             case "7":
                                 {
                                     tabelaSedziowskaNowaSesyjna(int.Parse(id_), int.Parse(id_tabeli), int.Parse(kolumna));
                                 }
                                 break;
-                               
+
                             default:
                                 break;
                         }
-
-
                     }
                     catch (Exception ex)
                     {
-
-                        cm.log.Error("POPUP: Wczytywanie danych : " + ex.Message );
-
+                        cm.log.Error("POPUP: Wczytywanie danych : " + ex.Message);
                     }
                 }
             }
@@ -94,30 +95,27 @@ namespace stat2018
 
         private void tabelaSedziowskaNowaSesyjna(int id_sedziego, int id_tabeli, int id_kolumny)
         {
-            string kw = string.Empty;
-            string cs = string.Empty;
+            if (string.IsNullOrEmpty(id_tabeli.ToString().Trim()))
+            {
+                return;
+            }
 
-            //  Session["bb"] = e.CommandName.ToString();
             string id_dzialu = (string)Session["id_dzialu"];
 
-            string date1 = (string)Session["data_1"];
-            string date2 = (string)Session["data_2"];
+            string date1 = dataPoKonwersji((string)Session["data_1"]);
+            string date2 = dataPoKonwersji((string)Session["data_2"]);
 
-            if (!string.IsNullOrEmpty(id_tabeli.ToString().Trim()))
+            string cs = cl.podajConnectionString(int.Parse((string)Session["id_dzialu"]));
+            string kw = cl.podajKwerendePodgladu(int.Parse(id_dzialu), 0, id_kolumny, id_tabeli);
+            if (string.IsNullOrEmpty(kw.Trim()))
             {
-
-                cs = cl.podajConnectionString(int.Parse((string)Session["id_dzialu"]));
-                kw = cl.podajKwerendePodgladu(int.Parse(id_dzialu), 0, id_kolumny, id_tabeli);
-
-
+                return;
             }
             GridView1.DataSource = null;
             GridView1.DataSourceID = null;
 
-
             try
             {
-
                 DataSet dane = new DataSet();
                 dane.Tables.Clear();
                 dane = cl.pod_tabela(cs, kw, date1, date2, id_sedziego.ToString());
@@ -129,7 +127,7 @@ namespace stat2018
             }
             catch (Exception ex)
             {
-                cm.log.Error("popup " + ex.Message);
+                cm.log.Error("popup tabelaSedziowskaNowaSesyjna " + ex.Message);
                 GridView1.DataSource = null;
                 GridView1.DataSourceID = null;
                 GridView1.Visible = false;
@@ -142,115 +140,137 @@ namespace stat2018
             }
             Label2.Text = tytul;
             DataTable tabelaDanych = new DataTable();
-            switch (id_tabeli )
+            switch (id_tabeli)
             {
-                case 1 :
-                    { 
-                         tabelaDanych = (DataTable)Session["tabelka001"];
+                case 1:
+                    {
+                        tabelaDanych = (DataTable)Session["tabelka001"];
                     }
                     break;
+
                 case 2:
                     {
                         tabelaDanych = (DataTable)Session["tabelka002"];
                     }
                     break;
+
                 case 3:
                     {
                         tabelaDanych = (DataTable)Session["tabelka003"];
                     }
                     break;
+
                 case 4:
                     {
                         tabelaDanych = (DataTable)Session["tabelka004"];
                     }
                     break;
+
                 case 5:
                     {
                         tabelaDanych = (DataTable)Session["tabelka005"];
                     }
                     break;
+
                 case 6:
                     {
                         tabelaDanych = (DataTable)Session["tabelka006"];
                     }
                     break;
+
                 case 7:
                     {
                         tabelaDanych = (DataTable)Session["tabelka007"];
                     }
                     break;
+
                 case 8:
                     {
                         tabelaDanych = (DataTable)Session["tabelka008"];
                     }
                     break;
+
                 case 9:
                     {
                         tabelaDanych = (DataTable)Session["tabelka009"];
                     }
                     break;
+
                 case 10:
                     {
                         tabelaDanych = (DataTable)Session["tabelka010"];
                     }
                     break;
+
                 case 11:
                     {
                         tabelaDanych = (DataTable)Session["tabelka011"];
                     }
                     break;
+
                 case 12:
                     {
                         tabelaDanych = (DataTable)Session["tabelka012"];
                     }
                     break;
+
                 case 13:
                     {
                         tabelaDanych = (DataTable)Session["tabelka013"];
                     }
                     break;
+
                 case 14:
                     {
                         tabelaDanych = (DataTable)Session["tabelka014"];
                     }
                     break;
+
                 case 15:
                     {
                         tabelaDanych = (DataTable)Session["tabelka015"];
                     }
                     break;
+
                 case 16:
                     {
                         tabelaDanych = (DataTable)Session["tabelka016"];
                     }
                     break;
+
                 case 17:
                     {
                         tabelaDanych = (DataTable)Session["tabelka017"];
                     }
                     break;
+
                 case 18:
                     {
                         tabelaDanych = (DataTable)Session["tabelka018"];
                     }
                     break;
+
                 case 19:
                     {
                         tabelaDanych = (DataTable)Session["tabelka019"];
                     }
                     break;
-                case 20: {       tabelaDanych = (DataTable)Session["tabelka020"];
+
+                case 20:
+                    {
+                        tabelaDanych = (DataTable)Session["tabelka020"];
                     }
                     break;
+
                 default:
                     break;
             }
-            
-            if (tabelaDanych  == null)
+
+            if (tabelaDanych == null)
             {
                 return;
             }
-           
+
             string selectText = "id_sedziego=" + id_sedziego.ToString();
 
             DataRow[] jedenWiersz = tabelaDanych.Select(selectText);
@@ -269,31 +289,31 @@ namespace stat2018
 
         private void tabelaSedziowskaNowa(int id_sedziego, int id_tabeli, int id_kolumny)
         {
+            if (string.IsNullOrEmpty(id_tabeli.ToString().Trim()))
+            {
+                return;
+            }
 
-            string kw = string.Empty;
-            string cs = string.Empty;
-
-            //  Session["bb"] = e.CommandName.ToString();
             string id_dzialu = (string)Session["id_dzialu"];
 
-            string date1 = (string)Session["data_1"];
-            string date2 = (string)Session["data_2"];
+            string date1 = dataPoKonwersji((string)Session["data_1"]);
+            string date2 = dataPoKonwersji((string)Session["data_2"]);
 
-            if (!string.IsNullOrEmpty(id_tabeli.ToString().Trim()))
+            cm.log.Info("popup date1 " + date1);
+            cm.log.Info("popup date2 " + date2);
+
+            string cs = cl.podajConnectionString(int.Parse((string)Session["id_dzialu"]));
+            string kw = cl.podajKwerendePodgladu(int.Parse(id_dzialu), 0, id_kolumny, id_tabeli);
+
+            if (string.IsNullOrEmpty(kw.Trim()))
             {
-
-                cs = cl.podajConnectionString(int.Parse((string)Session["id_dzialu"]));
-                kw = cl.podajKwerendePodgladu(int.Parse(id_dzialu), 0, id_kolumny, id_tabeli);
-
-
+                return;
             }
             GridView1.DataSource = null;
             GridView1.DataSourceID = null;
 
-
             try
             {
-
                 DataSet dane = new DataSet();
                 dane.Tables.Clear();
                 dane = cl.pod_tabela(cs, kw, date1, date2, id_sedziego.ToString());
@@ -305,7 +325,7 @@ namespace stat2018
             }
             catch (Exception ex)
             {
-                cm.log.Error("popup " + ex.Message);
+                cm.log.Error("popup tabelaSedziowskaNowa " + ex.Message);
                 GridView1.DataSource = null;
                 GridView1.DataSourceID = null;
                 GridView1.Visible = false;
@@ -318,21 +338,18 @@ namespace stat2018
             }
             Label2.Text = tytul;
 
-           
-            if ((DataTable)Session["tabelka001"]==null)
+            if ((DataTable)Session["tabelka001"] == null)
             {
                 return;
             }
             DataTable tabelaDanych = (DataTable)Session["tabelka001"];
             string selectText = "id_sedziego=" + id_sedziego.ToString();
-                
-                
-                DataRow[] jedenWiersz = tabelaDanych.Select(selectText);
+
+            DataRow[] jedenWiersz = tabelaDanych.Select(selectText);
             string sedzia = string.Empty;
-            if (jedenWiersz.Length>0)
+            if (jedenWiersz.Length > 0)
             {
-               
-                sedzia = jedenWiersz[0][5].ToString()+" "+ jedenWiersz[0][4].ToString();
+                sedzia = jedenWiersz[0][5].ToString() + " " + jedenWiersz[0][4].ToString();
             }
             if (sedzia == "Odwołanie do obiektu nie zostało ustawione na wystąpienie obiektu.")
             {
@@ -345,29 +362,28 @@ namespace stat2018
 
         protected void tabelaWierszowaAKAC(int id_wiersza, int id_tabeli, int id_kolumny)
         {
-            string kw = string.Empty;
-            string cs = string.Empty;
+            if (string.IsNullOrEmpty(id_tabeli.ToString().Trim()))
+            {
+                return;
+            }
 
-            //  Session["bb"] = e.CommandName.ToString();
             string id_dzialu = (string)Session["id_dzialu"];
 
-            string date1 = (string)Session["data_1"];
-            string date2 = (string)Session["data_2"];
+            string date1 = dataPoKonwersji((string)Session["data_1"]);
+            string date2 = dataPoKonwersji((string)Session["data_2"]);
 
-            if (!string.IsNullOrEmpty(id_tabeli.ToString().Trim()))
+            string cs = cl.podajConnectionString(int.Parse((string)Session["id_dzialu"]));
+            string kw = cl.podajKwerendePodgladu(int.Parse(id_dzialu), id_wiersza, id_kolumny, id_tabeli);
+
+            if (string.IsNullOrEmpty(kw.Trim()))
             {
-
-                cs = cl.podajConnectionString(int.Parse((string)Session["id_dzialu"]));
-                kw = cl.podajKwerendePodgladu(int.Parse(id_dzialu), id_wiersza, id_kolumny, id_tabeli);
-
+                return;
             }
             GridView1.DataSource = null;
             GridView1.DataSourceID = null;
 
-
             try
             {
-
                 DataSet dane = new DataSet();
                 dane.Tables.Clear();
                 dane = cl.pod_tabela(cs, kw, date1, date2, id_wiersza.ToString());
@@ -390,33 +406,24 @@ namespace stat2018
 
         protected void tabelaMSS(int id_wiersza, string id_tabeli, int id_kolumny)
         {
-            //cm.log.Info("POPUP: Tworzenie tabeli do popupu MSS, tabela: " + id_tabeli + " ,kolumna " + id_kolumny.ToString() + " ,wiersz : " + id_wiersza.ToString());
+            if (string.IsNullOrEmpty(id_tabeli.ToString().Trim()))
+            {
+                return;
+            }
 
-            string kw = string.Empty;
-            string cs = string.Empty;
-
-            //  Session["bb"] = e.CommandName.ToString();
             string id_dzialu = (string)Session["id_dzialu"];
 
-            string date1 = (string)Session["data_1"];
-            string date2 = (string)Session["data_2"];
+            string date1 = dataPoKonwersji((string)Session["data_1"]);
+            string date2 = dataPoKonwersji((string)Session["data_2"]);
 
-            if (!string.IsNullOrEmpty(id_tabeli.ToString().Trim()))
-            {
-
-                cs = ms.PobierzConnectionStringMSS(int.Parse(id_dzialu));
-                kw = ms.podajKwerendePodgladu(int.Parse(id_dzialu), id_wiersza, id_kolumny, id_tabeli);
-
-            }
-            //cm.log.Info("POPUP: Tworzenie tabeli do popupu MSS, kwerenda: " + kw );
+            string cs = ms.PobierzConnectionStringMSS(int.Parse(id_dzialu));
+            string kw = ms.podajKwerendePodgladu(int.Parse(id_dzialu), id_wiersza, id_kolumny, id_tabeli);
 
             GridView1.DataSource = null;
             GridView1.DataSourceID = null;
 
-
             try
             {
-
                 DataTable dane = new DataTable();
 
                 dane = ms.pod_tabela(cs, kw, date1, date2, id_wiersza.ToString());
@@ -440,32 +447,26 @@ namespace stat2018
             Page.Header.Title = Label1.Text;
         }
 
-
         protected void tabelaWierszowa(int id_wiersza, int id_tabeli, int id_kolumny)
         {
-            string kw = string.Empty;
-            string cs = string.Empty;
+            if (string.IsNullOrEmpty(id_tabeli.ToString().Trim()))
+            {
+                return;
+            }
 
-            //  Session["bb"] = e.CommandName.ToString();
             string id_dzialu = (string)Session["id_dzialu"];
 
-            string date1 = (string)Session["data_1"];
-            string date2 = (string)Session["data_2"];
+            string date1 = dataPoKonwersji((string)Session["data_1"]);
+            string date2 = dataPoKonwersji((string)Session["data_2"]);
 
-            if (!string.IsNullOrEmpty(id_tabeli.ToString().Trim()))
-            {
+            string cs = cl.podajConnectionString(int.Parse((string)Session["id_dzialu"]));
+            string kw = cl.podajKwerendePodgladu(int.Parse(id_dzialu), id_wiersza, id_kolumny, id_tabeli);
 
-                cs = cl.podajConnectionString(int.Parse((string)Session["id_dzialu"]));
-                kw = cl.podajKwerendePodgladu(int.Parse(id_dzialu), id_wiersza, id_kolumny, id_tabeli);
-
-            }
             GridView1.DataSource = null;
             GridView1.DataSourceID = null;
 
-
             try
             {
-
                 DataSet dane = new DataSet();
                 dane.Tables.Clear();
                 dane = cl.pod_tabela(cs, kw, date1, date2, id_wiersza.ToString());
@@ -477,7 +478,7 @@ namespace stat2018
             }
             catch (Exception ex)
             {
-                cm.log.Error("popup " + ex.Message);
+                cm.log.Error("popup tabelaWierszowa " + ex.Message);
                 GridView1.DataSource = null;
                 GridView1.DataSourceID = null;
                 GridView1.Visible = false;
@@ -491,27 +492,25 @@ namespace stat2018
             string kw = string.Empty;
             string cs = string.Empty;
 
-            //  Session["bb"] = e.CommandName.ToString();
             string id_dzialu = (string)Session["id_dzialu"];
 
-            string date1 = (string)Session["data_1"];
-            string date2 = (string)Session["data_2"];
+            string date1 = dataPoKonwersji((string)Session["data_1"]);
+            string date2 = dataPoKonwersji((string)Session["data_2"]);
 
             if (!string.IsNullOrEmpty(id_tabeli.ToString().Trim()))
             {
-
                 cs = cl.podajConnectionString(int.Parse((string)Session["id_dzialu"]));
                 kw = cl.podajKwerendePodgladu(int.Parse(id_dzialu), 0, id_kolumny, id_tabeli);
-
-
+            }
+            if (string.IsNullOrEmpty(kw.Trim()))
+            {
+                return;
             }
             GridView1.DataSource = null;
             GridView1.DataSourceID = null;
 
-
             try
             {
-
                 DataSet dane = new DataSet();
                 dane.Tables.Clear();
                 dane = cl.pod_tabela(cs, kw, date1, date2, id_sedziego.ToString());
@@ -523,7 +522,7 @@ namespace stat2018
             }
             catch (Exception ex)
             {
-                cm.log.Error( "popup " + ex.Message);
+                cm.log.Error("popup " + ex.Message);
                 GridView1.DataSource = null;
                 GridView1.DataSourceID = null;
                 GridView1.Visible = false;
@@ -550,27 +549,25 @@ namespace stat2018
             string kw = string.Empty;
             string cs = string.Empty;
 
-            //  Session["bb"] = e.CommandName.ToString();
             string id_dzialu = (string)Session["id_dzialu"];
 
-            string date1 = (string)Session["data_1"];
-            string date2 = (string)Session["data_2"];
+            string date1 = dataPoKonwersji((string)Session["data_1"]);
+            string date2 = dataPoKonwersji((string)Session["data_2"]);
 
             if (!string.IsNullOrEmpty(id_tabeli.ToString().Trim()))
             {
-
                 cs = cl.podajConnectionString(int.Parse((string)Session["id_dzialu"]));
                 kw = cl.podajKwerendePodgladu(int.Parse(id_dzialu), 0, id_kolumny, id_tabeli);
-
-
+            }
+            if (string.IsNullOrEmpty(kw.Trim()))
+            {
+                return;
             }
             GridView1.DataSource = null;
             GridView1.DataSourceID = null;
 
-
             try
             {
-
                 DataSet dane = new DataSet();
                 dane.Tables.Clear();
                 dane = cl.pod_tabela(cs, kw, date1, date2, id_sedziego.ToString());
@@ -602,6 +599,20 @@ namespace stat2018
             }
             Label1.Text = sedzia;
             Page.Header.Title = Label1.Text.Trim() + " " + Label2.Text.Trim();
+        }
+
+        private string dataPoKonwersji(string date1)
+        {
+            try
+            {
+                DateTime d1 = DateTime.Parse(date1);
+                date1 = dr.KonwertujDate(d1);
+            }
+            catch (Exception ex)
+            {
+                cm.log.Info("popup date1 error " + ex.Message);
+            }
+            return date1;
         }
     }
 }

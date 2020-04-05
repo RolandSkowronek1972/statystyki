@@ -43,7 +43,7 @@ namespace stat2018
                     Session["id_dzialu"] = idWydzial;
                     Session["data_1"] = Date1.Date.ToShortDateString();
                     Session["data_2"] = Date2.Date.ToShortDateString();
-
+                   
                     if (!IsPostBack)
                     {
                         var fileContents = System.IO.File.ReadAllText(Server.MapPath(@"~//version.txt"));    // file read with version
@@ -62,7 +62,14 @@ namespace stat2018
 
         protected void odswiez()
         {
-           
+            Session["tabelka001"] = null;
+            Session["tabelka002"] = null;
+            Session["tabelka003"] = null;
+            Session["tabelka004"] = null;
+            Session["tabelka005"] = null;
+            Session["tabelka006"] = null;
+            Session["tabelka007"] = null;
+            Session["tabelka008"] = null;
             string id_dzialu = (string)Session["id_dzialu"];
             string txt = string.Empty; 
          

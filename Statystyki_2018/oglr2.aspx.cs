@@ -92,7 +92,7 @@ namespace stat2018
             try
             {
                 //cm.log.Info("OGLR2: wczytywanie danych do tabeli 1");
-                tabelkaGW1 = dr.generuj_dane_do_tabeli_sedziowskiej_2018(int.Parse((string)Session["id_dzialu"]), 1, Date1.Date, Date2.Date, 30, tenPlik);
+                tabelkaGW1 = dr.generuj_dane_do_tabeli_sedziowskiej_2019(int.Parse((string)Session["id_dzialu"]), 1, Date1.Date, Date2.Date, 30, tenPlik);
                 Session["tabelka001"] = tabelkaGW1;
                 Tabela1.DataSource = null;
                 Tabela1.DataSourceID = null;
@@ -100,7 +100,7 @@ namespace stat2018
                 Tabela1.DataBind();
 
                 //cm.log.Info("OGLR2: wczytywanie danych do tabeli 2");
-                tabelkaGW2 = dr.generuj_dane_do_tabeli_sedziowskiej_2018(int.Parse((string)Session["id_dzialu"]), 2, Date1.Date, Date2.Date, 30, tenPlik);
+                tabelkaGW2 = dr.generuj_dane_do_tabeli_sedziowskiej_2019(int.Parse((string)Session["id_dzialu"]), 2, Date1.Date, Date2.Date, 30, tenPlik);
                 Session["tabelka002"] = tabelkaGW2;
                 Gridview2.DataSource = null;
                 Gridview2.DataSourceID = null;
@@ -108,7 +108,7 @@ namespace stat2018
                 Gridview2.DataBind();
 
                 //cm.log.Info("OGLR2: wczytywanie danych do tabeli 3");
-                tabelkaGW3 = dr.generuj_dane_do_tabeli_sedziowskiej_2018(int.Parse((string)Session["id_dzialu"]), 3, Date1.Date, Date2.Date, 30, tenPlik);
+                tabelkaGW3 = dr.generuj_dane_do_tabeli_sedziowskiej_2019(int.Parse((string)Session["id_dzialu"]), 3, Date1.Date, Date2.Date, 30, tenPlik);
                 Session["tabelka003"] = tabelkaGW3;
                 Gridview3.DataSource = null;
                 Gridview3.DataSourceID = null;
@@ -130,7 +130,7 @@ namespace stat2018
                 }
                 catch (Exception ex)
                 {
-                    cm.log.Error(tenPlik +" tabela 4 "+ex.Message);
+                    cm.log.Error(tenPlik + " tabela 4 " + ex.Message);
                 }
                 try
                 {
@@ -153,12 +153,7 @@ namespace stat2018
 
                 try
                 {
-                    //cm.log.Info("OGLR2: wczytywanie danych do tabeli 6");
-                    tabelkaGW6 = dr.generuj_dane_do_tabeli_sedziowskiej_2018(int.Parse((string)Session["id_dzialu"]), 6, Date1.Date, Date2.Date, 30, tenPlik);
-                    Session["tabelka006"] = tabelkaGW6;
-                    Gridview6.DataSource = null;
-                    Gridview6.DataSourceID = null;
-                    Gridview6.DataSource = tabelkaGW6;
+                    Session["tabelka006"] = dr.tworzTabele(int.Parse((string)Session["id_dzialu"]), 6, Date1.Date, Date2.Date, 30, Gridview6, tenPlik);
                     Gridview6.DataBind();
                 }
                 catch (Exception ex)
@@ -167,14 +162,9 @@ namespace stat2018
                 }
 
                 //cm.log.Info("OGLR2: wczytywanie danych do tabeli 7");
-                Session["tabelka007"] = dr.tworzTabele(int.Parse((string)Session["id_dzialu"]), 4, Date1.Date, Date2.Date, 9, Gridview7, tenPlik);
+                Session["tabelka007"] = dr.tworzTabele(int.Parse((string)Session["id_dzialu"]), 7, Date1.Date, Date2.Date, 9, Gridview7, tenPlik);
 
-        //        tabelkaGW7 = dr.generuj_dane_do_tabeli_typ2_new(int.Parse((string)Session["id_dzialu"]), 7, Date1.Date, Date2.Date, 33);
-        //        Session["tabelka007"] = tabelkaGW7;
-        //        Gridview7.DataSource = null;
-        //        Gridview7.DataSourceID = null;
-        //        Gridview7.DataSource = tabelkaGW7;
-        //        Gridview7.DataBind();
+                Gridview7.DataBind();
             }
             catch (Exception ex)
             {
@@ -703,9 +693,8 @@ namespace stat2018
         {
             if (e.Row.RowType == DataControlRowType.Header)
             {
-             
                 DataTable dT = (DataTable)Session["header_02"];
-                tabela.makeHeader( dT, Gridview2);
+                tabela.makeHeader(dT, Gridview2);
             }
         }
 
@@ -717,7 +706,6 @@ namespace stat2018
         {
             if (e.Row.RowType == DataControlRowType.Header)
             {
-               
                 DataTable dT = (DataTable)Session["header_01"];
                 tabela.makeHeader(dT, Tabela1);
             }
@@ -735,9 +723,8 @@ namespace stat2018
         {
             if (e.Row.RowType == DataControlRowType.Header)
             {
-             
                 DataTable dT = (DataTable)Session["header_01"];
-                tabela.makeHeader( dT, Tabela1);
+                tabela.makeHeader(dT, Tabela1);
             }
         }
 
@@ -746,7 +733,7 @@ namespace stat2018
             if (e.Row.RowType == DataControlRowType.Footer)
             {
                 DataTable table = (DataTable)Session["tabelka001"];
-                tabela.makeSumRow(table, e);
+                tabela.makeSumRow(table, e, 1);
             }
         }
 
@@ -754,9 +741,8 @@ namespace stat2018
         {
             if (e.Row.RowType == DataControlRowType.Header)
             {
-              
                 DataTable dT = (DataTable)Session["header_02"];
-                tabela.makeHeader( dT, Gridview2);
+                tabela.makeHeader(dT, Gridview2);
             }
         }
 
@@ -764,9 +750,8 @@ namespace stat2018
         {
             if (e.Row.RowType == DataControlRowType.Header)
             {
-              
                 DataTable dT = (DataTable)Session["header_03"];
-                tabela.makeHeader( dT, Gridview3);
+                tabela.makeHeader(dT, Gridview3);
             }
         }
 
@@ -774,9 +759,8 @@ namespace stat2018
         {
             if (e.Row.RowType == DataControlRowType.Header)
             {
-                
                 DataTable dT = (DataTable)Session["header_07"];
-                tabela.makeHeader( dT, Gridview6);
+                tabela.makeHeader(dT, Gridview6);
             }
         }
 
@@ -785,7 +769,7 @@ namespace stat2018
             if (e.Row.RowType == DataControlRowType.Footer)
             {
                 DataTable table = (DataTable)Session["tabelka002"];
-                tabela.makeSumRow(table, e);
+                tabela.makeSumRow(table, e, 1);
             }
         }
 
@@ -794,7 +778,7 @@ namespace stat2018
             if (e.Row.RowType == DataControlRowType.Footer)
             {
                 DataTable table = (DataTable)Session["tabelka003"];
-                tabela.makeSumRow(table, e);
+                tabela.makeSumRow(table, e, 1);
             }
         }
 
@@ -802,9 +786,8 @@ namespace stat2018
         {
             if (e.Row.RowType == DataControlRowType.Header)
             {
-               
                 DataTable dT = (DataTable)Session["header_08"];
-                tabela.makeHeader( dT, Gridview7);
+                tabela.makeHeader(dT, Gridview7);
             }
         }
 
@@ -813,7 +796,7 @@ namespace stat2018
             if (e.Row.RowType == DataControlRowType.Footer)
             {
                 DataTable table = (DataTable)Session["tabelka007"];
-                tabela.makeSumRow(table, e);
+                tabela.makeSumRow(table, e, 1);
             }
         }
 
@@ -822,7 +805,7 @@ namespace stat2018
             if (e.Row.RowType == DataControlRowType.Footer)
             {
                 DataTable table = (DataTable)Session["tabelka006"];
-                tabela.makeSumRow(table, e);
+                tabela.makeSumRow(table, e, 1);
             }
         }
 
@@ -847,6 +830,5 @@ namespace stat2018
                 }
             }
         }// end of pisz
-
     }
 }

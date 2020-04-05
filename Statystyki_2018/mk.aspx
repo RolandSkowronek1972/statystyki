@@ -14,13 +14,16 @@
                 left: 0;
                 right: 0;
             }
-
     </style>
 
     <script src="Scripts/rls.js"></script>
-
-    <div class="noprint">
-        <div id="menu" style="background-color: #f7f7f7; z-index: 9999">
+    <script>
+        function printIt() {
+            window.print();
+        }
+    </script>
+   
+        <div id="menu" class="noprint" style="background-color: #f7f7f7; z-index: 9999">
             <div class="manu_back" style="height: 43px; margin: 0 auto 0 auto; position: relative; width: 1150px; left: 0px;">
 
                 <table class="tbl_manu">
@@ -43,15 +46,20 @@
                         <td style="width: 100px">
                             <asp:LinkButton ID="LinkButton54" runat="server" class="ax_box" OnClick="LinkButton54_Click">  Odśwież</asp:LinkButton>
                         </td>
-
-                        
+                        <td style="width: auto; padding-left: 5px;" class="az">
+                            <button id="Button1" class="ax_box " onclick="printIt()">Drukuj</button>
+                        </td>
+                        <td style="width: auto; padding-left: 5px;">&nbsp;</td>
+                        <td style="width: auto; padding-left: 5px;">
+                            <asp:LinkButton ID="LinkButton57" runat="server" CssClass="ax_box" OnClick="excelZapisz">Zapisz do Excel</asp:LinkButton>
+                        </td>
                     </tr>
                 </table>
             </div>
         </div>
-    </div>
+   
 
-    <div style="width: 1150px; margin: 0 auto 0 auto; position: relative;" >
+    <div style="width: 1150px; margin: 0 auto 0 auto; position: relative;">
 
         <div id="tabela1" style="z-index: 10; visibility: hidden;">
             <div style="margin-left: auto; margin-right: auto; text-align: center; width: auto;">
@@ -61,7 +69,6 @@
             <div style="margin-left: auto; margin-right: auto; text-align: center; width: auto;">
                 <asp:Label runat="server" ID="Label9" Visible="False"></asp:Label>
             </div>
-          
         </div>
 
         <div id="Div2" style="z-index: 10;">
@@ -69,39 +76,31 @@
                 <asp:Label runat="server" ID="id_dzialu" Visible="False"></asp:Label>
             </div>
 
-            
-
             <br />
 
             <asp:Label ID="kod011" runat="server"></asp:Label>
             <br />
 
-              <div id='Terminowość sporządzania tłumaczeń pisemnych' class="page-break" >
-               <asp:PlaceHolder runat="server" ID="tablePlaceHolder"></asp:PlaceHolder>
+            <div id='Terminowość sporządzania tłumaczeń pisemnych'>
+                <asp:PlaceHolder runat="server" ID="tablePlaceHolder"></asp:PlaceHolder>
 
- <br/>
- </div>
-
-            <br />
-
-            
+                <br />
+            </div>
 
             <br />
         </div>
 
-   <div id="debag">
+        <div id="debag">
 
-           
-                <br />
-                Raport statystyczny
+            <br />
+            Raport statystyczny
                     <asp:Label ID="Label27" runat="server"></asp:Label>
-                &nbsp;Sporzadzone dn.
+            &nbsp;Sporzadzone dn.
             <asp:Label ID="Label29" runat="server"></asp:Label>&nbsp;przez&nbsp;
 &nbsp;&nbsp;
             <asp:Label ID="Label28" runat="server"></asp:Label>
-                &nbsp;<asp:Label ID="Label30" runat="server"></asp:Label>
-                <br />
-
-            </div>
+            &nbsp;<asp:Label ID="Label30" runat="server"></asp:Label>
+            <br />
+        </div>
     </div>
 </asp:Content>

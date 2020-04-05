@@ -118,95 +118,13 @@ namespace stat2018
             catch (Exception)
             { }
             DataTable parameters = cm.makeParameterTable();
-            parameters.Rows.Add("@data_1", data1.Date.ToShortDateString());
-            parameters.Rows.Add("@data_2", data2.Date.ToShortDateString());
-            DataTable dT = cm.getDataTable(kwerenda, connectionString, parameters,"kontrolka");
+            parameters.Rows.Add("@data_1", cl.KonwertujDate(data1.Date));
+            parameters.Rows.Add("@data_2", cl.KonwertujDate(data2.Date));
+            DataTable dT = cm.getDataTable(kwerenda, connectionString, parameters, "kontrolka");
 
-            Session["data1"] = data1.Date.ToShortDateString();
-            Session["data2"] = data2.Date.ToShortDateString();
+            Session["data1"] = cl.KonwertujDate(data1.Date);
+            Session["data2"] = cl.KonwertujDate(data2.Date);
             ASPxGridView1.DataBind();
-            /*
-                        try
-                        {
-                            SqlDataSource1.DataBind();
-                            SqlDataSource1.CancelSelectOnNullParameter = false;
-                                        ASPxGridView1.Columns.Clear();
-                            ASPxGridView1.DataSource = null;
-                            ASPxGridView1.DataSourceID = null;
-
-                            //wstawienie kolumna
-                            ASPxGridView1.DataSource = dT;
-
-                            foreach (DataColumn dCol in dT.Columns)
-                            {
-                                string name = dCol.ColumnName;
-                                Type typ = dCol.DataType;
-                                Type typRef = typeof(DateTime);
-                                GridViewDataColumn id = new GridViewDataColumn();
-                                id.FieldName = name;
-                                ASPxGridView1.Columns.Add(id);
-                                if (typ == typRef)
-                                {
-                                    ASPxGridView1.DataColumns[name].SettingsHeaderFilter.Mode = GridHeaderFilterMode.DateRangePicker;
-                                }
-                            }
-
-                            if (ASPxGridView1.Columns.Count > 0)
-                            {
-                                ASPxGridView1.KeyFieldName = ASPxGridView1.Columns[0].Name;
-                            }
-                            int szerokoscKolumny = 0;
-                            ASPxGridView1.DataBind();
-                            try
-                            {
-                                szerokoscKolumny = (int)Session["szerokoscKolumny"];
-                            }
-                            catch
-                            { }
-
-                            int rozmiarczcionki = 0;
-                            try
-                            {
-                                rozmiarczcionki = (int)Session["rozmiarczcionki"];
-                            }
-                            catch
-                            {
-                            }
-                            if (rozmiarczcionki > 0)
-                            {
-                                for (int i = 0; i < ASPxGridView1.Columns.Count; i++)
-                                {
-                                    ASPxGridView1.Columns[i].CellStyle.Font.Size = rozmiarczcionki;
-                                }
-                            }
-                            if (szerokoscKolumny > 0)
-                            {
-                                for (int i = 0; i < ASPxGridView1.Columns.Count; i++)
-                                {
-                                    ASPxGridView1.Columns[i].Width = szerokoscKolumny;
-                                    ASPxGridView1.Columns[i].MinWidth = szerokoscKolumny;
-                                    ASPxGridView1.Style.Add("width", szerokoscKolumny.ToString());
-                                    ASPxGridView1.Style.Add("min-width", szerokoscKolumny.ToString());
-                                }
-                            }
-                            try
-                            {
-                                int szerokoscTabeli = (int)Session["szerokosctabeli"];
-                                if (szerokoscTabeli > 0)
-                                {
-                                    ASPxGridView1.Width = szerokoscTabeli;
-                                }
-                            }
-                            catch
-                            {
-                                ASPxGridView1.Width = 1150;
-                            }
-                        }
-                        catch (Exception ex)
-                        {
-                            cm.log.Error(ex.Message);
-                        }
-                        */
         }
 
         protected void szukaj(object sender, EventArgs e)
@@ -227,7 +145,7 @@ namespace stat2018
             Session["exporter"] = ASPxGridViewExporter1;
             ScriptManager.RegisterStartupScript(Page, Page.GetType(), "print2", "JavaScript:window.open('kontrolkaDruk.aspx')", true);
         }
-     
+
         protected void GridDataBinding(object sender, EventArgs e)
         {
             string kwerenda = (string)Session["kw"];
@@ -278,8 +196,5 @@ namespace stat2018
             Session["exporter"] = ASPxGridViewExporter1;
             ScriptManager.RegisterStartupScript(Page, Page.GetType(), "print2", "JavaScript:window.open('kontrolkaExcell.aspx')", true);
         }
-
-
-     
     }
 }

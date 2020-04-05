@@ -177,7 +177,7 @@ namespace stat2018
             {
                 cm.log.Info(tenPlik + ": rozpoczęcie tworzenia tabeli 3");
             }
-            DataTable tabelka01 = dr.generuj_dane_do_tabeli_sedziowskiej_2018(idDzialu, 3, Date1.Date, Date2.Date, 36, tenPlik);
+            DataTable tabelka01 = dr.generuj_dane_do_tabeli_sedziowskiej_2019(idDzialu, 3, Date1.Date, Date2.Date, 36, tenPlik);
             Session["tabelka003"] = tabelka01;
             tworztabelkeHTMLTabela3("tb3", idDzialu, 3, tabelka01);
         }
@@ -1830,7 +1830,7 @@ namespace stat2018
             }
             try
             {
-                piszTextBox("tab_36_", 10, 10, tabela036);
+                pisz("tab_36_", 10, 10, tabela036);
             }
             catch (Exception ex)
             {
@@ -1874,7 +1874,7 @@ namespace stat2018
             }
             try
             {
-                piszTextBox("tab_38_", 10, 2, tabela038);
+                pisz("tab_38_", 10, 2, tabela038);
             }
             catch (Exception ex)
             {
@@ -1896,7 +1896,7 @@ namespace stat2018
             }
             try
             {
-                piszTextBox("tab_39_", 2, 2, tabela038);
+                pisz("tab_39_", 2, 2, tabela038);
             }
             catch (Exception ex)
             {
@@ -3010,6 +3010,7 @@ namespace stat2018
             result.AppendLine("</tr>");
             return result.ToString();
         }
+        /*
         private string tworzPodSekcjeBezTR(int poczatek, int koniec, DataRow wierszZtabeli, string idtabeli, int indexPoczatkowy)
         {
             StringBuilder result = new StringBuilder();
@@ -3022,6 +3023,7 @@ namespace stat2018
             result.AppendLine("</tr>");
             return result.ToString();
         }
+        */
         private string tworzPodSekcjeBezTRiP(int poczatek, int koniec, DataRow wierszZtabeli, string idtabeli, int indexPoczatkowy)
         {
             StringBuilder result = new StringBuilder();
@@ -3034,7 +3036,7 @@ namespace stat2018
             result.AppendLine("</tr>");
             return result.ToString();
         }
-
+        /*
         private string tworzSekcje(int poczatek, int koniec, DataRow wierszZtabeli, string idtabeli)
         {
             StringBuilder result = new StringBuilder();
@@ -3047,7 +3049,7 @@ namespace stat2018
             result.AppendLine("</tr>");
             return result.ToString();
         }
-
+        */
         private string tworzPodSekcje(int poczatek, int koniec, DataRow wierszZtabeli, string idtabeli)
         {
             StringBuilder result = new StringBuilder();
@@ -3061,7 +3063,7 @@ namespace stat2018
             //result.AppendLine("</tr>");
             return result.ToString();
         }
-
+        /*
         private string tworzPodSekcjeTR(int poczatek, int koniec, DataRow wierszZtabeli, string idtabeli)
         {
             StringBuilder result = new StringBuilder();
@@ -3075,7 +3077,7 @@ namespace stat2018
             result.AppendLine("</tr>");
             return result.ToString();
         }
-
+        */
         private string tworzPodSekcjeTR(int poczatek, int koniec, DataRow wierszZtabeli, string idtabeli, string komorka)
         {
             StringBuilder result = new StringBuilder();
@@ -3110,8 +3112,7 @@ namespace stat2018
         private string tworzSekcjeTR(int poczatek, int dlugoscLinii, int koniec, DataRow wierszZtabeli, string idtabeli)
         {
             StringBuilder result = new StringBuilder();
-            int ilosc = dlugoscLinii;
-
+  
             result.AppendLine(tworzPodSekcjeTR(1, 16, wierszZtabeli, idtabeli, tb.komorkaHTMLbezP("Liczba / % spraw na dzień rozpoczęcia poprzedniej wizytacji albo na dzień utworzenia referatu –dla sędziów przydzielonych do wydziału po tym dniu", 0, 0, "borderAll center col_250 smallFt")));
 
             result.AppendLine(tworzPodSekcjeTR(16, 31, wierszZtabeli, idtabeli, tb.komorkaHTMLbezP("Liczba / % spraw na dzień rozpoczęcia wizytacji albo na dzień zamknięcia referatu – dla sędziów przydzielonych do innych wydziałów przed tym dniem", 0, 0, "borderAll center col_250 smallFt")));
@@ -3143,7 +3144,6 @@ namespace stat2018
                 if (i == dlugoscLinii)
                 { 
                     result.AppendLine(tworzPodSekcjebezP(i - ilosc + 1, dlugoscLinii, wierszZtabeli, idtabeli, indexPoczatkowy));
-//                    result.AppendLine(tworzPodSekcje(i - ilosc + 1, dlugoscLinii, wierszZtabeli, idtabeli, indexPoczatkowy));
 
                     dlugoscLinii = dlugoscLinii + ilosc - 1;
                 }
@@ -3158,44 +3158,60 @@ namespace stat2018
                 for (int kolumna = 1; kolumna <= iloscKolumn; kolumna++)
                 {
                     string controlName = Template + "w" + wiersz.ToString("D2") + "_c" + kolumna.ToString("D2");
-                    Label tb = (Label)this.Master.FindControl("ContentPlaceHolder1").FindControl(controlName);
-                    if (tb != null)
+                    try
                     {
-                        try
+                        var kontrolka = this.Master.FindControl("ContentPlaceHolder1").FindControl(controlName);
+                        if (kontrolka != null)
                         {
-                            tb.Text = dane.Rows[wiersz - 1][kolumna].ToString().Trim();
-                        }
-                        catch (Exception ex)
-                        {
-                            cm.log.Error(tenPlik + " pisz " + controlName + " : " + ex.Message);
-                        }
-                    }
-                }
-            }
-        }// end of pisz
-        private void piszTextBox(string Template, int iloscWierszy, int iloscKolumn, DataTable dane)
-        {
-            for (int wiersz = 1; wiersz <= iloscWierszy; wiersz++)
-            {
-                for (int kolumna = 1; kolumna <= iloscKolumn; kolumna++)
-                {
-                    string controlName = Template + "w" + wiersz.ToString("D2") + "_c" + kolumna.ToString("D2");
-                    TextBox tb = (TextBox)this.Master.FindControl("ContentPlaceHolder1").FindControl(controlName);
-                    if (tb != null)
-                    {
-                        try
-                        {
-                            tb.Text = dane.Rows[wiersz - 1][kolumna].ToString().Trim();
-                        }
-                        catch (Exception ex)
-                        {
-                            cm.log.Error(tenPlik + " pisz " + controlName + " : " + ex.Message);
-                        }
-                    }
-                }
-            }
-        }// end of pisz
+                            var typKontrolki = kontrolka.GetType();
+                            var nazwaTypu = typKontrolki.Name;
+                            if (string.Equals(nazwaTypu.ToString(), "label"))
+                            {
+                                Label tb = (Label)this.Master.FindControl("ContentPlaceHolder1").FindControl(controlName);
 
+                                tb.Text = dane.Rows[wiersz - 1][kolumna].ToString().Trim();
+                            }
+                            else
+                            {
+                                TextBox tbx = (TextBox)this.Master.FindControl("ContentPlaceHolder1").FindControl(controlName);
+
+                                tbx.Text = dane.Rows[wiersz - 1][kolumna].ToString().Trim();
+                            }
+
+                            cm.log.Info(" pisz " + nazwaTypu.ToString());
+                        }
+                    }
+                    catch (Exception ex)
+                    {
+                        cm.log.Error(tenPlik + " pisz " + ex.Message);
+                    }
+                    /*
+                    try
+                    {
+                        Label tb = (Label)this.Master.FindControl("ContentPlaceHolder1").FindControl(controlName);
+                        if (tb != null)
+                        {
+                            tb.Text = dane.Rows[wiersz - 1][kolumna].ToString().Trim();
+                        }
+                    }
+                    catch (Exception ex)
+                    {
+                    }
+                    try
+                    {
+                        TextBox tbx = (TextBox)this.Master.FindControl("ContentPlaceHolder1").FindControl(controlName);
+                        if (tbx != null)
+                        {
+                            tbx.Text = dane.Rows[wiersz - 1][kolumna].ToString().Trim();
+                        }
+                    }
+                    catch (Exception ex)
+                    {
+                    }
+                    */
+                }
+            }
+        }// end of pisz
         private string TabelaWewnetrzna(int step, int licznik,int idtabeli ,DataRow wierszZtabeli)
         {
             StringBuilder builder = new StringBuilder(); 

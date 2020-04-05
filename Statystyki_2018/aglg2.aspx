@@ -1314,7 +1314,7 @@
                             <asp:Label CssClass="normal" ID="tab_15_w01_c05" runat="server" Text="0"></asp:Label></a></td>
                       <td class="borderAll center col_130"> <a href="javascript:openPopup('popup.aspx?sesja=1!15!6!3')">
                             <asp:Label CssClass="normal" ID="tab_15_w01_c06" runat="server" Text="0"></asp:Label></a></td>
-                        <td class="borderAll center col_130"> <a href="javascript:openPopup('popup.aspx?sesja=1!15!6!3')">
+                        <td class="borderAll center col_130"> <a href="javascript:openPopup('popup.aspx?sesja=1!15!7!3')">
                             <asp:Label CssClass="normal" ID="tab_15_w01_c07" runat="server" Text="0"></asp:Label></a></td>
                    </tr>
                </table>

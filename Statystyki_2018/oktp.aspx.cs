@@ -27,6 +27,7 @@ namespace stat2018
             {
                 if (idWydzial == null)
                 {
+                    Server.Transfer("default.aspx");
                     return;
                 }
                 bool dost = cm.dostep(idWydzial, (string)Session["identyfikatorUzytkownika"]);
@@ -58,6 +59,14 @@ namespace stat2018
 
                     if (!IsPostBack)
                     {
+                        Session["tabelka001"] = null;
+                        Session["tabelka002"] = null;
+                        Session["tabelka003"] = null;
+                        Session["tabelka004"] = null;
+                        Session["tabelka005"] = null;
+                        Session["tabelka006"] = null;
+                        Session["tabelka007"] = null;
+                        Session["tabelka008"] = null;
                         var fileContents = System.IO.File.ReadAllText(Server.MapPath(@"~//version.txt"));    // file read with version
                         this.Title = "Statystyki " + fileContents.ToString().Trim();
                         clearHedersSession();
@@ -98,15 +107,8 @@ namespace stat2018
 
                 //cm.log.Info(tenPlik + ": rozpoczęcie tworzenia tabeli 1");
 
-                DataTable tabelka01 = dr.generuj_dane_do_tabeli_sedziowskiej_2018(int.Parse(idDzialu), 1, Date1.Date, Date2.Date, 23, tenPlik);
-                tabelka01.Columns.Remove("funkcja");
-                tabelka01.Columns.Remove("stanowisko");
-
-                Session["tabelka001"] = tabelka01;
-                GridView1.DataSourceID = null;
-                GridView1.DataSource = null;
-                GridView1.DataSource = tabelka01;
-                GridView1.DataBind();
+                 Session["tabelka001"]=dr.tworzTabele(int.Parse(idDzialu), 1, Date1.Date, Date2.Date, 23,GridView1 , tenPlik);
+               
             }
             catch (Exception ex)
             {
@@ -425,7 +427,7 @@ namespace stat2018
 
             for (int i = 1; i < 7; i++)
             {
-                NewTotalRow.Cells.Add(tb.cela("<a class='smallFt' href=\"javascript: openPopup('popup.aspx?sesja=" + idWiersza.ToString().Trim() + "!2!" + i.ToString().Trim() + "!3')\">" + tabelka01.Rows[idWiersza - 1][i].ToString().Trim() + "</a>", 1, 1, "borderTopLeft"));
+                NewTotalRow.Cells.Add(tb.cela("<a  href=\"javascript: openPopup('popup.aspx?sesja=" + idWiersza.ToString().Trim() + "!2!" + i.ToString().Trim() + "!3')\">" + tabelka01.Rows[idWiersza - 1][i].ToString().Trim() + "</a>", 1, 1, "borderTopLeft"));
             }
 
             return NewTotalRow;
@@ -441,7 +443,7 @@ namespace stat2018
 
             for (int i = 1; i < 7; i++)
             {
-                NewTotalRow.Cells.Add(tb.cela("<a class='smallFt' href=\"javascript: openPopup('popup.aspx?sesja=" + idWiersza.ToString().Trim() + "!2!" + i.ToString().Trim() + "!3')\">" + tabelka01.Rows[idWiersza - 1][i].ToString().Trim() + "</a>", 1, 1, "borderTopLeft"));
+                NewTotalRow.Cells.Add(tb.cela("<a  href=\"javascript: openPopup('popup.aspx?sesja=" + idWiersza.ToString().Trim() + "!2!" + i.ToString().Trim() + "!3')\">" + tabelka01.Rows[idWiersza - 1][i].ToString().Trim() + "</a>", 1, 1, "borderTopLeft"));
             }
 
             return NewTotalRow;
@@ -455,25 +457,25 @@ namespace stat2018
             GridView GridView1 = (GridView)sender;
             GridViewRow NewTotalRow = new GridViewRow(0, 0, DataControlRowType.DataRow, DataControlRowState.Insert);
 
-            GridView1.Controls[0].Controls.AddAt(e.Row.RowIndex + rowIndex, tb.PodsumowanieTabeli(tabelka02, 15, "smallFt borderAll center"));
+            GridView1.Controls[0].Controls.AddAt(e.Row.RowIndex + rowIndex, tb.PodsumowanieTabeli(tabelka02, 15, "borderAll center"));
 
             string idtabeli = "2";
 
             // nowy wiersz
             int idWiersza = 1;
-            GridView1.Controls[0].Controls.AddAt(e.Row.RowIndex + rowIndex, tb.wierszTabeli(tabelka01, 7, idWiersza, idtabeli, "Pozostało z poprzedniego okresu", 4, 1, "smallFt ", "borderAll center"));
+            GridView1.Controls[0].Controls.AddAt(e.Row.RowIndex + rowIndex, tb.wierszTabeli(tabelka01, 7, idWiersza, idtabeli, "Pozostało z poprzedniego okresu", 4, 1, "", "borderAll center"));
 
             idWiersza = 2;
 
-            GridView1.Controls[0].Controls.AddAt(e.Row.RowIndex + rowIndex, tb.wierszTabeli(tabelka01, 7, idWiersza, idtabeli, "Wpłynęło", 4, 1, "smallFt ", "borderAll center"));
+            GridView1.Controls[0].Controls.AddAt(e.Row.RowIndex + rowIndex, tb.wierszTabeli(tabelka01, 7, idWiersza, idtabeli, "Wpłynęło", 4, 1, "", "borderAll center"));
 
             // nowy wiersz
             idWiersza = 3;
-            GridView1.Controls[0].Controls.AddAt(e.Row.RowIndex + rowIndex, tb.wierszTabeli(tabelka01, 7, idWiersza, idtabeli, "Załatwiono", 4, 1, "smallFt ", "borderAll center"));
+            GridView1.Controls[0].Controls.AddAt(e.Row.RowIndex + rowIndex, tb.wierszTabeli(tabelka01, 7, idWiersza, idtabeli, "Załatwiono", 4, 1, "", "borderAll center"));
 
             // nowy wiersz
             idWiersza = 4;
-            GridView1.Controls[0].Controls.AddAt(e.Row.RowIndex + rowIndex, tb.wierszTabeli(tabelka01, 7, idWiersza, idtabeli, "Pozostało na następny okres", 4, 1, "smallFt ", "borderAll center"));
+            GridView1.Controls[0].Controls.AddAt(e.Row.RowIndex + rowIndex, tb.wierszTabeli(tabelka01, 7, idWiersza, idtabeli, "Pozostało na następny okres", 4, 1, "", "borderAll center"));
 
             // nowy wiersz
             idWiersza = 5;

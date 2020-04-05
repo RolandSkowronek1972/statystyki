@@ -83,7 +83,7 @@ namespace stat2018
             }
             try
             {
-                DataTable tabela1 = dr.generuj_dane_do_tabeli_sedziowskiej_2018(int.Parse((string)Session["id_dzialu"]), 1, Date1.Date, Date2.Date, 22, tenPlik);
+                DataTable tabela1 = dr.generuj_dane_do_tabeli_sedziowskiej_2019(int.Parse((string)Session["id_dzialu"]), 1, Date1.Date, Date2.Date, 22, tenPlik);
                 Session["tabela01"] = tabela1;
                 GridView1.DataSource = null;
                 GridView1.DataSourceID = null;

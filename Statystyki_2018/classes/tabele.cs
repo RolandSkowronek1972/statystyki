@@ -13,6 +13,7 @@ namespace stat2018
     public class tabele
     {
         private common cm = new common();
+        private dataReaders dr = new dataReaders();
 
         public TableCell HeaderCell_(string text, int columns, int rows)
         {
@@ -312,56 +313,18 @@ namespace stat2018
 
         public void makeSumRow(DataTable table, GridViewRowEventArgs e, string tenplik)
         {
-            cm.log.Error("sumowanie w stopce : " + tenplik);
+          //  cm.log.Error("sumowanie w stopce : " + tenplik);
             makeSumRow(table, e);
         }
 
         public void makeSumRow(DataTable table, GridViewRowEventArgs e)
         {
-            DataTable tabelka = tabellaLiczbowa(table);
-            object sumObject;
-            int ilKolumn = e.Row.Cells.Count;
-            e.Row.Cells[1].Text = "Ogółem";
-            for (int i = 1; i < e.Row.Cells.Count - 1; i++)
-            {
-                try
-                {
-                    string idkolumny = "d_" + (i).ToString("D2");
-                    sumObject = tabelka.Compute("Sum(" + idkolumny + ")", "");
-                    e.Row.Cells[i + 1].Text = sumObject.ToString();
-                    e.Row.Cells[i + 1].CssClass = "center normal";
-                }
-                catch (Exception ex)
-                {
-                    cm.log.Error("sumowanie w stopce : " + ex.Message);
-                }
-            }
+            makeSumRow(table, e, 1, "Ogółem");
         }
 
         public void makeSumRow(DataTable table, GridViewRowEventArgs e, int przesuniecie)
         {
-            DataTable tabelka = tabellaLiczbowa(table);
-            if (tabelka == null)
-            {
-                return;
-            }
-            object sumObject;
-            int ilKolumn = e.Row.Cells.Count;
-            e.Row.Cells[0 + przesuniecie].Text = "Ogółem";
-            for (int i = 1; i < e.Row.Cells.Count; i++)
-            {
-                try
-                {
-                    string idkolumny = "d_" + (i).ToString("D2");
-                    sumObject = tabelka.Compute("Sum(" + idkolumny + ")", "");
-                    e.Row.Cells[i + przesuniecie].Text = sumObject.ToString();
-                    e.Row.Cells[i + przesuniecie].CssClass = "center normal";
-                }
-                catch (Exception ex)
-                {
-                    cm.log.Error("sumowanie w stopce : " + ex.Message);
-                }
-            }
+            makeSumRow(table, e, przesuniecie, "Ogółem");
         }
 
         public void makeSumRow(DataTable table, GridViewRowEventArgs e, int przesuniecie, string razem)
@@ -375,7 +338,7 @@ namespace stat2018
             object sumObject;
             int ilKolumn = e.Row.Cells.Count;
             e.Row.Cells[0 + przesuniecie].Text = razem;
-            for (int i = 1; i < e.Row.Cells.Count - 1; i++)
+            for (int i = 1; i < e.Row.Cells.Count ; i++)
             {
                 try
                 {
@@ -537,8 +500,15 @@ namespace stat2018
             return HeaderCell;
         }
 
-        public ExcelWorksheet tworzArkuszwExcle(ExcelWorksheet Arkusz, DataTable daneDoArkusza, int iloscKolumn, int przesunięcieX, int przesuniecieY, bool lp, bool suma, bool stanowisko, bool funkcja, bool nazwiskoiImeieOsobno, bool obramowanieOststniej)
+        public ExcelWorksheet tworzArkuszwExcle(ExcelWorksheet Arkusz, DataTable daneDoArkusza, int iloscKolumn, int przesunięcieX, int przesuniecieY, bool lp, bool suma, bool stanowisko, bool funkcja, bool nazwiskoiImeieOsobno)
         {
+            return tworzArkuszwExcle( Arkusz,  daneDoArkusza,  iloscKolumn, przesunięcieX, przesuniecieY, lp, suma, stanowisko, funkcja, nazwiskoiImeieOsobno, false);
+
+        }
+
+        public ExcelWorksheet tworzArkuszwExcle(ExcelWorksheet Arkusz, DataTable daneDoArkusza, int iloscKolumn, int przesunięcieX, int przesuniecieY, bool lp, bool suma, bool stanowisko, bool funkcja, bool nazwiskoiImeieOsobno,bool obramowanieOststniej)
+        {
+
             try
             {
                 int wiersz = przesuniecieY;
@@ -551,6 +521,7 @@ namespace stat2018
                         try
                         {
                             dodatek++;
+                          
                             Arkusz.Cells[wiersz, przesunięcieX + dodatek].Style.ShrinkToFit = true;
                             Arkusz.Cells[wiersz, przesunięcieX + dodatek].Style.Border.BorderAround(OfficeOpenXml.Style.ExcelBorderStyle.Thin, System.Drawing.Color.Black);
                             Arkusz.Cells[wiersz, przesunięcieX + dodatek].Value = wiersz - przesuniecieY + 1;
@@ -650,7 +621,7 @@ namespace stat2018
                         }
                         catch (Exception ex)
                         {
-                            cm.log.Error("Excell " + ex.Message);
+                            cm.log.Error("Excell wpisywanie danych" + ex.Message);
                         }
                     }
                     if (obramowanieOststniej)
@@ -687,172 +658,13 @@ namespace stat2018
                             Arkusz.Cells[wiersz, i + przesunięcieX + dod].Value = mes;
                         }
                     }
-                    if (obramowanieOststniej)
-                    {
-                        Arkusz.Cells[wiersz, przesunięcieX + dod + iloscKolumn].Style.Border.BorderAround(OfficeOpenXml.Style.ExcelBorderStyle.Thin, System.Drawing.Color.Black);
-                        Arkusz.Cells[wiersz, iloscKolumn + przesunięcieX + dod].Style.HorizontalAlignment = OfficeOpenXml.Style.ExcelHorizontalAlignment.Center;
-                    }
                 }
+
+
             }
             catch (Exception ex)
             {
-                cm.log.Error("Excell " + ex.Message);
-            }
-
-            return Arkusz;
-        }
-
-        public ExcelWorksheet tworzArkuszwExcle(ExcelWorksheet Arkusz, DataTable daneDoArkusza, int iloscKolumn, int przesunięcieX, int przesuniecieY, bool lp, bool suma, bool stanowisko, bool funkcja, bool nazwiskoiImeieOsobno)
-        {
-            try
-            {
-                int wiersz = przesuniecieY;
-                int dod = 0;
-                foreach (DataRow dR in daneDoArkusza.Rows)
-                {
-                    int dodatek = 0;
-                    if (lp)
-                    {
-                        try
-                        {
-                            dodatek++;
-                            Arkusz.Cells[wiersz, przesunięcieX + dodatek].Style.ShrinkToFit = true;
-                            Arkusz.Cells[wiersz, przesunięcieX + dodatek].Style.Border.BorderAround(OfficeOpenXml.Style.ExcelBorderStyle.Thin, System.Drawing.Color.Black);
-                            Arkusz.Cells[wiersz, przesunięcieX + dodatek].Value = wiersz - przesuniecieY + 1;
-                        }
-                        catch (Exception ex)
-                        {
-                            cm.log.Error("tworzArkuszwExcle- lp " + ex.Message);
-                        }
-                    }
-                    if (stanowisko)
-                    {
-                        try
-                        {
-                            dodatek++;
-                            Arkusz.Cells[wiersz, przesunięcieX + dodatek].Style.ShrinkToFit = true;
-                            Arkusz.Cells[wiersz, przesunięcieX + dodatek].Style.Border.BorderAround(OfficeOpenXml.Style.ExcelBorderStyle.Thin, System.Drawing.Color.Black);
-
-                            string value = (dR["stanowisko"].ToString().Trim());
-                            Arkusz.Cells[wiersz, przesunięcieX + dodatek].Value = value;
-                        }
-                        catch (Exception ex)
-                        {
-                            Arkusz.Cells[wiersz, przesunięcieX + dodatek].Value = "";
-                            cm.log.Error("tworzArkuszwExcle- stanowisko " + ex.Message);
-                        }
-                    }
-                    if (funkcja)
-                    {
-                        try
-                        {
-                            dodatek++;
-                            Arkusz.Cells[wiersz, przesunięcieX + dodatek].Style.ShrinkToFit = true;
-                            Arkusz.Cells[wiersz, przesunięcieX + dodatek].Style.Border.BorderAround(OfficeOpenXml.Style.ExcelBorderStyle.Thin, System.Drawing.Color.Green);
-
-                            string value = (dR["funkcja"].ToString().Trim());
-                            Arkusz.Cells[wiersz, przesunięcieX + dodatek].Value = value;
-                        }
-                        catch (Exception ex)
-                        {
-                            Arkusz.Cells[wiersz, przesunięcieX + dodatek].Value = "";
-                            cm.log.Error("tworzArkuszwExcle- lp " + ex.Message);
-                        }
-                    }
-                    if (nazwiskoiImeieOsobno)
-                    {
-                        dodatek++;
-                        try
-                        {
-                            Arkusz.Cells[wiersz, przesunięcieX + dodatek].Style.ShrinkToFit = true;
-                            Arkusz.Cells[wiersz, przesunięcieX + dodatek].Style.Border.BorderAround(OfficeOpenXml.Style.ExcelBorderStyle.Thin, System.Drawing.Color.Green);
-                            string value = (dR["nazwisko"].ToString().Trim());
-                            Arkusz.Cells[wiersz, przesunięcieX + dodatek].Value = value;
-                            dodatek++;
-                            Arkusz.Cells[wiersz, przesunięcieX + dodatek].Style.ShrinkToFit = true;
-                            Arkusz.Cells[wiersz, przesunięcieX + dodatek].Style.Border.BorderAround(OfficeOpenXml.Style.ExcelBorderStyle.Thin, System.Drawing.Color.Green);
-                            value = (dR["imie"].ToString().Trim());
-                            Arkusz.Cells[wiersz, przesunięcieX + dodatek].Value = value;
-                        }
-                        catch (Exception ex)
-                        {
-                            Arkusz.Cells[wiersz, przesunięcieX + dodatek].Value = "";
-                            cm.log.Error("tworzArkuszwExcle- lp " + ex.Message);
-                        }
-                    }
-                    else
-                    {
-                        try
-                        {
-                            dodatek++;
-                            string value = dR["imie"].ToString().Trim() + " " + dR["nazwisko"].ToString().Trim();
-                            Arkusz.Cells[wiersz, przesunięcieX + dodatek].Value = value;
-                            Arkusz.Cells[wiersz, przesunięcieX + dodatek].Style.ShrinkToFit = true;
-                            Arkusz.Cells[wiersz, przesunięcieX + dodatek].Style.Border.BorderAround(OfficeOpenXml.Style.ExcelBorderStyle.Thin, System.Drawing.Color.Black);
-                        }
-                        catch (Exception ex)
-                        {
-                            cm.log.Error("tworzArkuszwExcle- lp " + ex.Message);
-                        }
-                    }
-
-                    for (int i = 1; i < iloscKolumn; i++)
-                    {
-                        try
-                        {
-                            string colunmName = "d_" + (i).ToString("D2");
-                            try
-                            {
-                                double value = double.Parse(dR[colunmName].ToString().Trim());
-                                Arkusz.Cells[wiersz, i + przesunięcieX + dodatek].Value = value;
-                            }
-                            catch
-                            {
-                                Arkusz.Cells[wiersz, i + przesunięcieX + dodatek].Value = (dR[colunmName].ToString().Trim());
-                            }
-                            Arkusz.Cells[wiersz, przesunięcieX + dodatek + i].Style.Border.BorderAround(OfficeOpenXml.Style.ExcelBorderStyle.Thin, System.Drawing.Color.Black);
-                            Arkusz.Cells[wiersz, i + przesunięcieX + dodatek].Style.HorizontalAlignment = OfficeOpenXml.Style.ExcelHorizontalAlignment.Center;
-                        }
-                        catch (Exception ex)
-                        {
-                            cm.log.Error("Excell " + ex.Message);
-                        }
-                    }
-
-                    wiersz++;
-                    dod = dodatek;
-                }
-
-                // tu dodać sumę
-                if (suma)
-                {
-                    DataTable tabelka = tabellaLiczbowa(daneDoArkusza);
-                    object sumObject;
-
-                    Arkusz.Cells[wiersz, przesunięcieX + dod].Value = "Razem";
-                    Arkusz.Cells[wiersz, przesunięcieX + dod].Style.Border.BorderAround(OfficeOpenXml.Style.ExcelBorderStyle.Thin, System.Drawing.Color.Black);
-                    Arkusz.Cells[wiersz, przesunięcieX + dod].Style.HorizontalAlignment = ExcelHorizontalAlignment.Center;
-                    for (int i = 1; i < iloscKolumn; i++)
-                    {
-                        try
-                        {
-                            string idkolumny = "d_" + (i).ToString("D2");
-                            sumObject = tabelka.Compute("Sum(" + idkolumny + ")", "");
-                            Arkusz.Cells[wiersz, i + przesunięcieX + dod].Style.Border.BorderAround(OfficeOpenXml.Style.ExcelBorderStyle.Thin, System.Drawing.Color.Black);
-                            Arkusz.Cells[wiersz, i + przesunięcieX + dod].Style.HorizontalAlignment = ExcelHorizontalAlignment.Center;
-                            Arkusz.Cells[wiersz, i + przesunięcieX + dod].Value = (sumObject.ToString());
-                        }
-                        catch (Exception ecx)
-                        {
-                            string mes = ecx.Message;
-                            Arkusz.Cells[wiersz, i + przesunięcieX + dod].Value = mes;
-                        }
-                    }
-                }
-            }
-            catch (Exception ex)
-            {
-                cm.log.Error("Excell " + ex.Message);
+                cm.log.Error("Excell all" + ex.Message);
             }
 
             return Arkusz;
@@ -1161,6 +973,9 @@ namespace stat2018
 
         public ExcelWorksheet tworzArkuszwExcleBezSedziow(ExcelWorksheet Arkusz, DataTable daneDoArkusza, int iloscwierszy, int iloscKolumn, int przesunięcieX, int przesuniecieY, bool zerowaKolumna)
         {
+            cm.log.Info("Excell ilosc wierszy " + iloscwierszy.ToString());
+            cm.log.Info("Excell ilosc Kolumn " + iloscKolumn.ToString());
+
             int startowaKolumna = 0;
             if (!zerowaKolumna)
             {
@@ -1176,12 +991,46 @@ namespace stat2018
                     try
                     {
                         string value = daneDoArkusza.Rows[i][j].ToString().Trim();
+                        cm.log.Info("wiersz: " + i.ToString() + " kolumna" + j.ToString() + " wartosc  " + value);
                         Arkusz.Cells[i + przesuniecieY, przesunięcieX + j].Value = value;
                     }
                     catch (Exception ex)
                     {
                         Arkusz.Cells[i + przesuniecieY, przesunięcieX + j].Value = "";
-                        cm.log.Error("Excell " + ex.Message);
+                        cm.log.Error("tworzArkuszwExcleBezSedziow " + ex.Message);
+                    }
+                }
+            }
+            return Arkusz;
+        }
+
+        public ExcelWorksheet tworzArkuszwExcleBezSedziowMK(ExcelWorksheet Arkusz, DataTable daneDoArkusza, int iloscwierszy, int iloscKolumn, int przesunięcieX, int przesuniecieY, bool zerowaKolumna, int idWydzialu, int idTabeliNum, string tenPlik)
+        {
+           
+
+            int startowaKolumna = 0;
+            if (!zerowaKolumna)
+            {
+                startowaKolumna = 1;
+            }
+            int wiersz = przesuniecieY;
+            for (int i = 1; i < iloscwierszy; i++)
+            {
+                for (int j = startowaKolumna; j < iloscKolumn; j++)
+                {
+                    Arkusz.Cells[i + przesuniecieY, przesunięcieX + j].Style.ShrinkToFit = true;
+                    Arkusz.Cells[i + przesuniecieY, przesunięcieX + j].Style.Border.BorderAround(OfficeOpenXml.Style.ExcelBorderStyle.Thin, System.Drawing.Color.Black);
+                    try
+                    {
+                        string txt = dr.wyciagnijWartosc(daneDoArkusza, "idWydzial=" + idWydzialu + " and idTabeli='" + idTabeliNum.ToString() + "' and idWiersza ='" + i.ToString() + "' and idkolumny='" + j.ToString() + "'", tenPlik);
+
+                    //    cm.log.Info("wiersz: " + i.ToString() + " kolumna" + j.ToString() + " wartosc  " + txt);
+                        Arkusz.Cells[i + przesuniecieY, przesunięcieX + j].Value = txt;
+                    }
+                    catch (Exception ex)
+                    {
+                        Arkusz.Cells[i + przesuniecieY, przesunięcieX + j].Value = "";
+                        cm.log.Error("tworzArkuszwExcleBezSedziowMK " + ex.Message);
                     }
                 }
             }
@@ -1200,8 +1049,7 @@ namespace stat2018
                 }
                 catch (Exception ex)
                 {
-                    cm.log.Error("komorkaExcela maerge " + ex.Message);
-                    cm.log.Error("Excell " + ex.Message);
+                    cm.log.Error("komorkaExcela  " + ex.Message);
                 }
             }
             Arkusz.Cells[wiersz, kolumna].Style.ShrinkToFit = true;

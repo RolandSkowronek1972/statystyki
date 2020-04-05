@@ -93,7 +93,7 @@ namespace stat2018
                 {
                     cm.log.Info(tenPlik + ": rozpoczęcie tworzenia tabeli 1");
 
-                    DataTable Tabela1 = dr.generuj_dane_do_tabeli_sedziowskiej_2018(int.Parse(idDzialu), 1, Date1.Date, Date2.Date, 25, tenPlik);
+                    DataTable Tabela1 = dr.generuj_dane_do_tabeli_sedziowskiej_2019(int.Parse(idDzialu), 1, Date1.Date, Date2.Date, 25, tenPlik);
                     Session["tabelka001"] = Tabela1;
                     Gridview1.DataSource = null;
                     Gridview1.DataSourceID = null;
@@ -109,7 +109,7 @@ namespace stat2018
                 {
                     cm.log.Info(tenPlik + ": rozpoczęcie tworzenia tabeli 3");
 
-                    DataTable Tabela1 = dr.generuj_dane_do_tabeli_sedziowskiej_2018(int.Parse(idDzialu), 3, Date1.Date, Date2.Date, 18, tenPlik);
+                    DataTable Tabela1 = dr.generuj_dane_do_tabeli_sedziowskiej_2019(int.Parse(idDzialu), 3, Date1.Date, Date2.Date, 18, tenPlik);
                     Session["tabelka003"] = Tabela1;
                     Gridview2.DataSource = null;
                     Gridview2.DataSourceID = null;

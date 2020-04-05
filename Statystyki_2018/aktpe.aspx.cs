@@ -67,7 +67,7 @@ namespace stat2018
             //tabela 1
             try
             {
-                DataTable Tabela = dr.generuj_dane_do_tabeli_sedziowskiej_2018(int.Parse(id_dzialu), 1, Date1.Date, Date2.Date, 39, tenPlik);
+                DataTable Tabela = dr.generuj_dane_do_tabeli_sedziowskiej_2019(int.Parse(id_dzialu), 1, Date1.Date, Date2.Date, 39, tenPlik);
                 Session["tabelka001"] = Tabela;
                 gwTabela1.DataSource = null;
                 gwTabela1.DataSourceID = null;
@@ -81,7 +81,7 @@ namespace stat2018
             //tabela 2
             try
             {
-                DataTable Tabela2 = dr.generuj_dane_do_tabeli_sedziowskiej_2018(int.Parse(id_dzialu), 2, Date1.Date, Date2.Date, 26, tenPlik);
+                DataTable Tabela2 = dr.generuj_dane_do_tabeli_sedziowskiej_2019(int.Parse(id_dzialu), 2, Date1.Date, Date2.Date, 26, tenPlik);
                 Session["tabelka002"] = Tabela2;
                 gwTabela2.DataSource = null;
                 gwTabela2.DataSourceID = null;
@@ -225,7 +225,7 @@ namespace stat2018
             if (e.Row.RowType == DataControlRowType.Footer)
             {
                 DataTable table = (DataTable)Session["tabelka001"];
-                tabela.makeSumRow(table, e);
+                tabela.makeSumRow(table, e,1);
             }
         }
 
@@ -285,7 +285,7 @@ namespace stat2018
             if (e.Row.RowType == DataControlRowType.Footer)
             {
                 DataTable table = (DataTable)Session["tabelka002"];
-                tabela.makeSumRow(table, e);
+                tabela.makeSumRow(table, e,1);
             }
         }
     }

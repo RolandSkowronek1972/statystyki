@@ -19,14 +19,14 @@ namespace stat2018
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            string idWydzial =  Request.QueryString["w"];
+            string idWydzial = Request.QueryString["w"];
             try
             {
                 if (idWydzial == null)
                 {
                     Server.Transfer("default.aspx?info='Użytkownik " + (string)Session["identyfikatorUzytkownika"] + " nie praw do działu nr " + idWydzial + "'");
                 }
-                bool dost =  cm.dostep(idWydzial, (string)Session["identyfikatorUzytkownika"]);
+                bool dost = cm.dostep(idWydzial, (string)Session["identyfikatorUzytkownika"]);
                 if (!dost)
                 {
                     Server.Transfer("default.aspx?info='Użytkownik " + (string)Session["identyfikatorUzytkownika"] + " nie praw do działu nr " + idWydzial + "'");
@@ -89,15 +89,7 @@ namespace stat2018
             try
             {
                 //cm.log.Info(tenPlik + ": rozpoczęcie tworzenia tabeli 1");
-
-                DataTable tabelka01 = dr.generuj_dane_do_tabeli_sedziowskiej_2018(int.Parse(idDzialu), 1, Date1.Date, Date2.Date, 23, tenPlik);
-                tabelka01.Columns.Remove("funkcja");
-                tabelka01.Columns.Remove("stanowisko");
-
-                Session["tabelka001"] = tabelka01;
-                GridView1.DataSourceID = null;
-                GridView1.DataSource = null;
-                GridView1.DataSource = tabelka01;
+                Session["tabelka001"] = dr.tworzTabele(int.Parse(idDzialu), 1, Date1.Date, Date2.Date, 32, GridView1, tenPlik);
                 GridView1.DataBind();
             }
             catch (Exception ex)
@@ -108,15 +100,7 @@ namespace stat2018
             try
             {
                 //cm.log.Info(tenPlik + ": rozpoczęcie tworzenia tabeli 2");
-
-                DataTable tabelka02 = dr.generuj_dane_do_tabeli_sedziowskiej_2018(int.Parse(idDzialu), 2, Date1.Date, Date2.Date, 23, tenPlik);
-                tabelka02.Columns.Remove("funkcja");
-                tabelka02.Columns.Remove("stanowisko");
-
-                Session["tabelka002"] = tabelka02;
-                tabela_2.DataSourceID = null;
-                tabela_2.DataSource = null;
-                tabela_2.DataSource = tabelka02;
+                Session["tabelka002"] = dr.tworzTabele(int.Parse(idDzialu), 2, Date1.Date, Date2.Date, 32, tabela_2, tenPlik);
                 tabela_2.DataBind();
             }
             catch (Exception ex)
@@ -127,21 +111,14 @@ namespace stat2018
             try
             {
                 //cm.log.Info(tenPlik + ": rozpoczęcie tworzenia tabeli 2");
-
-                DataTable tabelka03 = dr.generuj_dane_do_tabeli_sedziowskiej_2018(int.Parse(idDzialu), 3, Date1.Date, Date2.Date, 43, tenPlik);
-                tabelka03.Columns.Remove("funkcja");
-                tabelka03.Columns.Remove("stanowisko");
-
-                Session["tabelka003"] = tabelka03;
-                tabela_3.DataSourceID = null;
-                tabela_3.DataSource = null;
-                tabela_3.DataSource = tabelka03;
+                Session["tabelka003"] = dr.tworzTabele(int.Parse(idDzialu), 3, Date1.Date, Date2.Date, 43, tabela_3, tenPlik);
                 tabela_3.DataBind();
             }
             catch (Exception ex)
             {
                 cm.log.Error(tenPlik + " " + ex.Message);
             }
+
             // dopasowanie opisów
             makeLabels();
 
@@ -168,8 +145,6 @@ namespace stat2018
 
         protected void makeHeader()
         {
-            System.Web.UI.WebControls.GridView sn = new System.Web.UI.WebControls.GridView();
-
             #region tabela  1 (wierszowa)
 
             DataTable dT_01 = new DataTable();
@@ -213,17 +188,13 @@ namespace stat2018
             {
                 dT_01.Rows.Add(new Object[] { "1", i.ToString(), "1", "1" });
             }
+            for (int i = 0; i < 4; i++)
+            {
 
-            dT_01.Rows.Add(new Object[] { "2", "KZ", "1", "1" });
-            dT_01.Rows.Add(new Object[] { "2", "KS", "1", "1" });
-            dT_01.Rows.Add(new Object[] { "2", "KZ", "1", "1" });
-            dT_01.Rows.Add(new Object[] { "2", "KS", "1", "1" });
-
-            dT_01.Rows.Add(new Object[] { "2", "KZ", "1", "1" });
-            dT_01.Rows.Add(new Object[] { "2", "KS", "1", "1" });
-
-            dT_01.Rows.Add(new Object[] { "2", "KZ", "1", "1" });
-            dT_01.Rows.Add(new Object[] { "2", "KS", "1", "1" });
+                dT_01.Rows.Add(new Object[] { "2", "KZ", "1", "1" });
+                dT_01.Rows.Add(new Object[] { "2", "KS", "1", "1" });
+            }
+           
             dT_01.Rows.Add(new Object[] { "2", "Ogółem", "1", "1" });
             dT_01.Rows.Add(new Object[] { "2", "KZ", "1", "1" });
             dT_01.Rows.Add(new Object[] { "2", "KS", "1", "1" });

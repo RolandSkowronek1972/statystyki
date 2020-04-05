@@ -67,7 +67,11 @@
     
     </table>
       </div>
-       <div style="width:1150px; margin: 0 auto 0 auto; position:relative;top:30px;" >
+       <div style="width:1150px; margin: 0 auto 0 auto; position:relative;top:30px; " >
+            <div class="center">
+           <asp:Label ID="Label3" runat="server"></asp:Label>
+           <br />
+                </div>
            <br />
                <div class="horizont">
 &nbsp;<asp:Label ID="Label1" runat="server" Text="Informacja statystyczna o ruchu spraw "></asp:Label>
@@ -315,8 +319,7 @@
 
                </div>
               <div class="page-break">
-&nbsp;<asp:Label ID="Label3" runat="server"></asp:Label>
-           &nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;
            <asp:Label ID="infoLabel4" runat="server" Text="tabela 5  \/\/\/" Visible="False"></asp:Label>
            <br />
         

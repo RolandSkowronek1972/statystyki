@@ -243,7 +243,71 @@
     <hv>h</hv>
     <text>na posiedzenie</text>
   </komorka>
-
+  <komorka>
+    <wiersz>3</wiersz>
+    <kolumna>38</kolumna>
+    <colSpan>1</colSpan>
+    <rowSpan>1</rowSpan>
+    <hv>h</hv>
+    <text>na rozprawę</text>
+  </komorka>
+  <komorka>
+    <wiersz>3</wiersz>
+    <kolumna>39</kolumna>
+    <colSpan>1</colSpan>
+    <rowSpan>1</rowSpan>
+    <hv>h</hv>
+    <text>na posiedzenie</text>
+  </komorka>
+  <komorka>
+    <wiersz>3</wiersz>
+    <kolumna>38</kolumna>
+    <colSpan>1</colSpan>
+    <rowSpan>1</rowSpan>
+    <hv>h</hv>
+    <text>na rozprawę</text>
+  </komorka>
+  <komorka>
+    <wiersz>3</wiersz>
+    <kolumna>39</kolumna>
+    <colSpan>1</colSpan>
+    <rowSpan>1</rowSpan>
+    <hv>h</hv>
+    <text>na posiedzenie</text>
+  </komorka>
+  <komorka>
+    <wiersz>3</wiersz>
+    <kolumna>38</kolumna>
+    <colSpan>1</colSpan>
+    <rowSpan>1</rowSpan>
+    <hv>h</hv>
+    <text>na rozprawę</text>
+  </komorka>
+  <komorka>
+    <wiersz>3</wiersz>
+    <kolumna>39</kolumna>
+    <colSpan>1</colSpan>
+    <rowSpan>1</rowSpan>
+    <hv>h</hv>
+    <text>na posiedzenie</text>
+  </komorka>
+  <komorka>
+    <wiersz>3</wiersz>
+    <kolumna>38</kolumna>
+    <colSpan>1</colSpan>
+    <rowSpan>1</rowSpan>
+    <hv>h</hv>
+    <text>na rozprawę</text>
+  </komorka>
+  <komorka>
+    <wiersz>3</wiersz>
+    <kolumna>39</kolumna>
+    <colSpan>1</colSpan>
+    <rowSpan>1</rowSpan>
+    <hv>h</hv>
+    <text>na posiedzenie</text>
+  </komorka>
+  
   <komorka>
     <wiersz>3</wiersz>
     <kolumna>46</kolumna>
@@ -529,7 +593,24 @@
     <text>WSC</text>
   </komorka>
 
-  
+  <komorka>
+    <wiersz>2</wiersz>
+    <kolumna>11</kolumna>
+    <colSpan>1</colSpan>
+    <rowSpan>2</rowSpan>
+    <hv>h</hv>
+
+    <text>WSNc</text>
+  </komorka>
+  <komorka>
+    <wiersz>2</wiersz>
+    <kolumna>11</kolumna>
+    <colSpan>1</colSpan>
+    <rowSpan>2</rowSpan>
+    <hv>h</hv>
+
+    <text>Cz</text>
+  </komorka>
   <komorka>
     <wiersz>2</wiersz>
     <kolumna>12</kolumna>
@@ -593,7 +674,24 @@
     <hv>h</hv>
     <text>WSC</text>
   </komorka>
+  <komorka>
+    <wiersz>2</wiersz>
+    <kolumna>11</kolumna>
+    <colSpan>2</colSpan>
+    <rowSpan>1</rowSpan>
+    <hv>h</hv>
 
+    <text>WSNc</text>
+  </komorka>
+  <komorka>
+    <wiersz>2</wiersz>
+    <kolumna>11</kolumna>
+    <colSpan>2</colSpan>
+    <rowSpan>1</rowSpan>
+    <hv>h</hv>
+
+    <text>Cz</text>
+  </komorka>
 
 
   <komorka>
@@ -656,7 +754,24 @@
     <hv>h</hv>
     <text>WSC</text>
   </komorka>
+  <komorka>
+    <wiersz>2</wiersz>
+    <kolumna>11</kolumna>
+    <colSpan>2</colSpan>
+    <rowSpan>1</rowSpan>
+    <hv>h</hv>
 
+    <text>WSNc</text>
+  </komorka>
+  <komorka>
+    <wiersz>2</wiersz>
+    <kolumna>11</kolumna>
+    <colSpan>2</colSpan>
+    <rowSpan>1</rowSpan>
+    <hv>h</hv>
+
+    <text>Cz</text>
+  </komorka>
 
 
   <komorka>
@@ -735,7 +850,24 @@
     <hv>h</hv>
     <text>WSC</text>
   </komorka>
-  
+  <komorka>
+    <wiersz>2</wiersz>
+    <kolumna>11</kolumna>
+    <colSpan>1</colSpan>
+    <rowSpan>2</rowSpan>
+    <hv>h</hv>
+
+    <text>WSNc</text>
+  </komorka>
+  <komorka>
+    <wiersz>2</wiersz>
+    <kolumna>11</kolumna>
+    <colSpan>1</colSpan>
+    <rowSpan>2</rowSpan>
+    <hv>h</hv>
+
+    <text>Cz</text>
+  </komorka>
   <komorka>
     <wiersz>2</wiersz>
     <kolumna>50</kolumna>
@@ -903,7 +1035,24 @@
     <hv>h</hv>
     <text>WSC</text>
   </komorka>
+  <komorka>
+    <wiersz>2</wiersz>
+    <kolumna>11</kolumna>
+    <colSpan>1</colSpan>
+    <rowSpan>2</rowSpan>
+    <hv>h</hv>
 
+    <text>WSNc</text>
+  </komorka>
+  <komorka>
+    <wiersz>2</wiersz>
+    <kolumna>11</kolumna>
+    <colSpan>1</colSpan>
+    <rowSpan>2</rowSpan>
+    <hv>h</hv>
+
+    <text>Cz</text>
+  </komorka>
   <komorka>
     <wiersz>2</wiersz>
     <kolumna>72</kolumna>
@@ -1178,14 +1327,14 @@
     <colSpan>1</colSpan>
     <rowSpan>3</rowSpan>
     <hv>h</hv>
-    <text>zaległość z roku 2018</text>
+    <text>zaległość z poprzedniego roku</text>
   </komorka>
   
   
   <komorka>
     <wiersz>1</wiersz>
     <kolumna>3</kolumna>
-    <colSpan>10</colSpan>
+    <colSpan>12</colSpan>
     <rowSpan>1</rowSpan>
     <hv>h</hv>
     <text>WPŁYW</text>
@@ -1194,7 +1343,7 @@
   <komorka>
     <wiersz>1</wiersz>
     <kolumna>12</kolumna>
-    <colSpan>14</colSpan>
+    <colSpan>18</colSpan>
     <rowSpan>1</rowSpan>
     <hv>h</hv>
     <text>WYZNACZONO</text>
@@ -1202,7 +1351,7 @@
   <komorka>
     <wiersz>1</wiersz>
     <kolumna>26</kolumna>
-    <colSpan>14</colSpan>
+    <colSpan>18</colSpan>
     <rowSpan>1</rowSpan>
     <hv>h</hv>
     <text>Załatwiono</text>
@@ -1213,7 +1362,7 @@
   <komorka>
     <wiersz>1</wiersz>
     <kolumna>40</kolumna>
-    <colSpan>10</colSpan>
+    <colSpan>12</colSpan>
     <rowSpan>1</rowSpan>
     <hv>h</hv>
     <text>ZAŁATWIENIA</text>
@@ -1249,7 +1398,7 @@
   <komorka>
     <wiersz>1</wiersz>
     <kolumna>62</kolumna>
-    <colSpan>10</colSpan>
+    <colSpan>12</colSpan>
     <rowSpan>1</rowSpan>
     <hv>h</hv>
     <text>POZOSTAŁOŚĆ na następny m-c</text>

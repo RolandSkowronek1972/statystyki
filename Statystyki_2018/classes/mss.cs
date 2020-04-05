@@ -47,14 +47,14 @@ namespace stat2018
             string result = string.Empty;
 
             string kwerendaKOF = PobierzDana("kof");
-            string ConnectionString = PobierzCS("kof");
+           // string ConnectionString = PobierzCS("kof");
 
             DataTable parameters = cm.makeParameterTable();
             parameters.Rows.Add("@nr", nr.Trim());
             parameters.Rows.Add("@id", id);
-            SqlConnection conn = new SqlConnection(ConnectionString+ " Connection Timeout=30");
+           // SqlConnection conn = new SqlConnection(ConnectionString+ " Connection Timeout=30");
             
-            cm.runQuerry("update kof set numer_of = @nr where ident = @id", conn, parameters);
+            cm.runQuerry("update kof set numer_of = @nr where ident = @id", PobierzCS("kof"), parameters);
             return result;
         }
 
@@ -235,8 +235,8 @@ namespace stat2018
                 string kwerendaN = dRow[4].ToString().Trim();
                 parameters = cm.makeParameterTable();
                 parameters.Rows.Add("@id_dzialu", id_dzialu);
-                parameters.Rows.Add("@data_1", poczatek);
-                parameters.Rows.Add("@data_2", koniec);
+                parameters.Rows.Add("@data_1",dr. KonwertujDate(poczatek));
+                parameters.Rows.Add("@data_2", dr.KonwertujDate(koniec));
                 string wartosc = cm.getQuerryValue(kwerendaN, cs, parameters);
 
                 resultRow[0] = idWydzial.Trim();
@@ -285,8 +285,8 @@ namespace stat2018
                 string kwerendaN = dRow[4].ToString().Trim();
                 parameters = cm.makeParameterTable();
                 parameters.Rows.Add("@id_dzialu", id_dzialu);
-                parameters.Rows.Add("@data_1", poczatek);
-                parameters.Rows.Add("@data_2", koniec);
+                parameters.Rows.Add("@data_1", dr.KonwertujDate(poczatek));
+                parameters.Rows.Add("@data_2", dr.KonwertujDate(koniec));
                 string wartosc = cm.getQuerryValue(kwerendaN, cs, parameters);
 
                 resultRow[0] = idWydzial.Trim();
@@ -785,10 +785,17 @@ namespace stat2018
             return kodStony.ToString();
         }
 
-        public string tworztabeleMK(string idTabeli, DataTable naglowek, DataTable tabelaPrzedIteracja, DataTable dane, int iloscWierszyNaglowka, int iloscWierszyTabeli, int iloscKolumnPrzedIteracja, int iloscKolumnPoIteracji, int idWydzialu, bool lp, string tekstNadTabela, int idTabeliNum, string tenPlik)
+        public string tworztabeleMK(string idTabeli, DataTable naglowek, DataTable tabelaPrzedIteracja, DataTable dane, int iloscWierszyNaglowka, int iloscWierszyTabeli, int iloscKolumnPrzedIteracja, int iloscKolumnPoIteracji, int idWydzialu, bool lp, string tekstNadTabela, int idTabeliNum,bool pageBreak, string tenPlik)
         {
             StringBuilder kodStony = new StringBuilder();
             string ciagWyjsciowy = string.Empty;
+            if (pageBreak)
+            {
+                kodStony.AppendLine("<div class='page-break'>");
+            }
+            else {
+                kodStony.AppendLine("<div>");
+            }
             kodStony.AppendLine("<div class='page-break'>");
             kodStony.AppendLine("<P><b>" + idTabeli + "</b> " + tekstNadTabela + " </P>");
             kodStony.AppendLine("<table style='width:100%'>");
@@ -800,44 +807,7 @@ namespace stat2018
             for (int i = 1; i < iloscWierszyTabeli + 1; i++)
             {
                 kodStony.AppendLine("<tr>");
-                /*
-                for (int j = 1; j < iloscKolumnPrzedIteracja + 1; j++)
-                {
-                    try
-                    {
-                        DataRow wiersz = wyciagnijWartosc(tabelaPrzedIteracja, " nrWiersza ='" + i.ToString() + "' and nrKolumny='" + j.ToString() + "'", tenPlik);
-                        if (wiersz != null)
-                        {
-                            int colspan = int.Parse(wiersz["colspan"].ToString().Trim());
-                            int rowspan = int.Parse(wiersz["rowspan"].ToString().Trim());
-
-                            string style = wiersz["style"].ToString().Trim();
-                            string tekst = wiersz["text"].ToString().Trim();
-                            string sekcjaRowspan = string.Empty;
-                            string sekcjaColspan = string.Empty;
-                            string sekcjaStyle = string.Empty;
-
-                            if (colspan > 0)
-                            {
-                                sekcjaColspan = "colspan ='" + colspan.ToString() + "' ";
-                            }
-                            if (rowspan > 0)
-                            {
-                                sekcjaRowspan = "rowspan ='" + rowspan.ToString() + "' ";
-                            }
-                            if (!string.IsNullOrEmpty(style))
-                            {
-                                sekcjaStyle = " " + style + " ";
-                            }
-                            kodStony.AppendLine("<td  class ='borderAll  " + sekcjaStyle + "'" + sekcjaColspan + sekcjaRowspan + ">" + tekst + "</td>");
-                        }
-                    }
-                    catch (Exception ex)
-                    {
-                        cm.log.Error("MK LinqError: " + ex.Message);
-                    }
-                }
-                kodStony.AppendLine("<td class='center borderAll col_26'>" + i.ToString() + "</td>");*/
+         
                 for (int j = 1; j < iloscKolumnPoIteracji + 1; j++)
                 {
                     string txt = dr.wyciagnijWartosc(dane, "idWydzial=" + idWydzialu + " and idTabeli='" + idTabeliNum.ToString() + "' and idWiersza ='" + i.ToString() + "' and idkolumny='" + j.ToString() + "'", tenPlik);

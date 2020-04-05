@@ -17,13 +17,12 @@ namespace stat2018
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            string idWydzial =  Request.QueryString["w"];
+            string idWydzial = Request.QueryString["w"];
             if (idWydzial == null)
             {
-
+                Server.Transfer("default.aspx");
                 return;
             }
-            
 
             Session["id_dzialu"] = idWydzial;
             CultureInfo newCulture = (CultureInfo)CultureInfo.CurrentCulture.Clone();
@@ -68,7 +67,7 @@ namespace stat2018
             }
             catch
             {
-                //     Server.Transfer("default.aspx");
+                //  Server.Transfer("default.aspx");
             }
         }// end of Page_Load
 
@@ -79,14 +78,13 @@ namespace stat2018
 
             try
             {
-                Session["tabelka001"] = dr.tworzTabele(int.Parse(dzial),5, Date1.Date, Date2.Date, 120, GridView1, tenPlik);
+                Session["tabelka001"] = dr.tworzTabele(int.Parse(dzial), 5, Date1.Date, Date2.Date, 130, GridView1, tenPlik);
             }
             catch
             { }
             // dopasowanie opisów
             makeLabels();
             GridView1.DataBind();
-
         }
 
         #region "nagłowki tabel"
@@ -110,113 +108,78 @@ namespace stat2018
             dT.Columns.Add("Column5", typeof(string));
             // wypełnienie danymi
             dT.Clear();
-            dT.Rows.Add(new Object[] { "1", "rozprawy", "1", "1", "v" });//
-            dT.Rows.Add(new Object[] { "1", "posiedzenia", "1", "1", "v" });//
+            dT.Rows.Add(new Object[] { "1", "rozprawy", "1", "1", "v" });
+            dT.Rows.Add(new Object[] { "1", "posiedzenia", "1", "1", "v" });
 
-            dT.Rows.Add(new Object[] { "1", "rozprawy", "1", "1", "v" });//
-            dT.Rows.Add(new Object[] { "1", "posiedzenia", "1", "1", "v" });//
+            dT.Rows.Add(new Object[] { "1", "rozprawy", "1", "1", "v" });
+            dT.Rows.Add(new Object[] { "1", "posiedzenia", "1", "1", "v" });
 
             //wpływ
-            dT.Rows.Add(new Object[] { "2", "śledztwa", "1", "2", "v" });//
-            dT.Rows.Add(new Object[] { "2", "dochodzenia", "1", "2", "v" });//
-                                                                            //wyznaczono
-            dT.Rows.Add(new Object[] { "2", "na rozprawę <br/>", "1", "2", "v" });//
-            dT.Rows.Add(new Object[] { "2", "na posiedzenie <br/>", "1", "2", "v" });//
+            dT.Rows.Add(new Object[] { "2", "śledztwa", "1", "2", "v" });
+            dT.Rows.Add(new Object[] { "2", "dochodzenia", "1", "2", "v" });
+            for (int i = 0; i < 16; i++)
+            {
+                dT.Rows.Add(new Object[] { "2", "na rozprawę <br/>", "1", "2", "v" });
+                dT.Rows.Add(new Object[] { "2", "na posiedzenie <br/>", "1", "2", "v" });
+            }
 
-            dT.Rows.Add(new Object[] { "2", "na rozprawę <br/>", "1", "2", "v" });//
-            dT.Rows.Add(new Object[] { "2", "na posiedzenie <br/>", "1", "2", "v" });//
+            //Załatwienia
+            dT.Rows.Add(new Object[] { "2", "śledztwa", "1", "2", "v" });
+            dT.Rows.Add(new Object[] { "2", "dochodzenia", "1", "2", "v" });
+            //Sesje odbyte przez sędziego
+            dT.Rows.Add(new Object[] { "2", "ogółem", "1", "2", "h" });
+            dT.Rows.Add(new Object[] { "2", "z tego", "2", "1", "h" });
 
-            dT.Rows.Add(new Object[] { "2", "na rozprawę <br/>", "1", "2", "v" });//
-            dT.Rows.Add(new Object[] { "2", "na posiedzenie <br/>", "1", "2", "v" });//
+            dT.Rows.Add(new Object[] { "2", "ogółem ", "1", "2", "h" });
+            dT.Rows.Add(new Object[] { "2", "z tego", "2", "1", "h" });
+            //Liczba odroczonych publikacji orzeczeń
+            dT.Rows.Add(new Object[] { "2", "Ogółem (wszystkie kategorie spraw)", "1", "2", "h" });
 
-            dT.Rows.Add(new Object[] { "2", "na rozprawę <br/>", "1", "2", "v" });//
-            dT.Rows.Add(new Object[] { "2", "na posiedzenie <br/>", "1", "2", "v" });//
+            dT.Rows.Add(new Object[] { "2", "K", "1", "2", "h" });
+            dT.Rows.Add(new Object[] { "2", "W", "1", "2", "h" });
+            //Liczba odroczonych spraw
+            dT.Rows.Add(new Object[] { "2", "z terminem", "1", "2", "h" });
 
-            dT.Rows.Add(new Object[] { "2", "na rozprawę <br/>", "1", "2", "v" });//
-            dT.Rows.Add(new Object[] { "2", "na posiedzenie <br/>", "1", "2", "v" });//
-
-            dT.Rows.Add(new Object[] { "2", "na rozprawę ", "1", "2", "v" });//
-            dT.Rows.Add(new Object[] { "2", "na posiedzenie ", "1", "2", "v" });//
-
-            dT.Rows.Add(new Object[] { "2", "na rozprawę ", "1", "2", "v" });//
-            dT.Rows.Add(new Object[] { "2", "na posiedzenie ", "1", "2", "v" });//
-                                                                                //załatwiono
-
-            dT.Rows.Add(new Object[] { "2", "na rozprawę <br/>", "1", "2", "v" });//
-            dT.Rows.Add(new Object[] { "2", "na posiedzenie <br/>", "1", "2", "v" });//
-
-            dT.Rows.Add(new Object[] { "2", "na rozprawę <br/>", "1", "2", "v" });//
-            dT.Rows.Add(new Object[] { "2", "na posiedzenie <br/>", "1", "2", "v" });//
-
-            dT.Rows.Add(new Object[] { "2", "na rozprawę <br/>", "1", "2", "v" });//
-            dT.Rows.Add(new Object[] { "2", "na posiedzenie <br/>", "1", "2", "v" });//
-
-            dT.Rows.Add(new Object[] { "2", "na rozprawę <br/>", "1", "2", "v" });//
-            dT.Rows.Add(new Object[] { "2", "na posiedzenie <br/>", "1", "2", "v" });//
-
-            dT.Rows.Add(new Object[] { "2", "na rozprawę <br/>", "1", "2", "v" });//
-            dT.Rows.Add(new Object[] { "2", "na posiedzenie <br/>", "1", "2", "v" });//
-
-            dT.Rows.Add(new Object[] { "2", "na rozprawę <br/>", "1", "2", "v" });//
-            dT.Rows.Add(new Object[] { "2", "na posiedzenie <br/>", "1", "2", "v" });//
-
-            dT.Rows.Add(new Object[] { "2", "na rozprawę <br/>", "1", "2", "v" });//
-            dT.Rows.Add(new Object[] { "2", "na posiedzenie <br/>", "1", "2", "v" });//
-                                                                                     //Załatwienia
-            dT.Rows.Add(new Object[] { "2", "śledztwa", "1", "2", "v" });//
-            dT.Rows.Add(new Object[] { "2", "dochodzenia", "1", "2", "v" });//
-                                                                            //Sesje odbyte przez sędziego
-            dT.Rows.Add(new Object[] { "2", "ogółem", "1", "2", "h" });//
-            dT.Rows.Add(new Object[] { "2", "z tego", "2", "1", "h" });//
-
-            dT.Rows.Add(new Object[] { "2", "ogółem ", "1", "2", "h" });//
-            dT.Rows.Add(new Object[] { "2", "z tego", "2", "1", "h" });//
-                                                                       //Liczba odroczonych publikacji orzeczeń
-            dT.Rows.Add(new Object[] { "2", "Ogółem (wszystkie kategorie spraw)", "1", "2", "h" });//
-
-            dT.Rows.Add(new Object[] { "2", "K", "1", "2", "h" });//
-            dT.Rows.Add(new Object[] { "2", "W", "1", "2", "h" });//
-                                                                  //Liczba odroczonych spraw
-            dT.Rows.Add(new Object[] { "2", "z terminem", "1", "2", "h" });//
-
-            dT.Rows.Add(new Object[] { "2", "bez wyznaczonego terminu", "1", "2", "h" });//
-            dT.Rows.Add(new Object[] { "2", "OGÓŁEM (wraz <br/>z publikacją orzeczeń)", "1", "2", "h" });//
-                                                                                                         //
-            dT.Rows.Add(new Object[] { "2", "1 do 14 dni", "1", "2", "h" });//
-            dT.Rows.Add(new Object[] { "2", "w tym nieusprawiedliwione", "1", "2", "h" });//
-            dT.Rows.Add(new Object[] { "2", "15 do 30 dni  ", "1", "2", "h" });//
-            dT.Rows.Add(new Object[] { "2", "w tym nieusprawiedliwione ", "1", "2", "h" });//
-            dT.Rows.Add(new Object[] { "2", "pow. 1 do 3 m-cy", "1", "2", "h" });//
-            dT.Rows.Add(new Object[] { "2", "w tym nieusprawiedliwione", "1", "2", "h" });//
-            dT.Rows.Add(new Object[] { "2", "ponad 3 miesiące", "1", "2", "h" });//
-            dT.Rows.Add(new Object[] { "2", "w tym nieusprawiedliwione", "1", "2", "h" });//
-                                                                                          //Liczba spraw, w których projekt uzasadnienia sporządził asystent** (Dz. 1.3)
-            dT.Rows.Add(new Object[] { "2", "razem k.13 w.01", "1", "2", "h" });//
-            dT.Rows.Add(new Object[] { "2", "w tym, w których projekt został zaakceptowany przez sędziego", "1", "2", "h" });//
+            dT.Rows.Add(new Object[] { "2", "bez wyznaczonego terminu", "1", "2", "h" });
+            dT.Rows.Add(new Object[] { "2", "OGÓŁEM (wraz <br/>z publikacją orzeczeń)", "1", "2", "h" });
+            //
+            dT.Rows.Add(new Object[] { "2", "1 do 14 dni", "1", "2", "h" });
+            dT.Rows.Add(new Object[] { "2", "w tym nieusprawiedliwione", "1", "2", "h" });
+            dT.Rows.Add(new Object[] { "2", "15 do 30 dni  ", "1", "2", "h" });
+            dT.Rows.Add(new Object[] { "2", "w tym nieusprawiedliwione ", "1", "2", "h" });
+            dT.Rows.Add(new Object[] { "2", "pow. 1 do 3 m-cy", "1", "2", "h" });
+            dT.Rows.Add(new Object[] { "2", "w tym nieusprawiedliwione", "1", "2", "h" });
+            dT.Rows.Add(new Object[] { "2", "ponad 3 miesiące", "1", "2", "h" });
+            dT.Rows.Add(new Object[] { "2", "w tym nieusprawiedliwione", "1", "2", "h" });
+            //Liczba spraw, w których projekt uzasadnienia sporządził asystent** (Dz. 1.3)
+            dT.Rows.Add(new Object[] { "2", "razem k.13 w.01", "1", "2", "h" });
+            dT.Rows.Add(new Object[] { "2", "w tym, w których projekt został zaakceptowany przez sędziego", "1", "2", "h" });
             dT.Rows.Add(new Object[] { "2", "ogółem", "1", "2", "h" });
             dT.Rows.Add(new Object[] { "2", "uwzględniono", "1", "2", "h" });
-            dT.Rows.Add(new Object[] { "2", "na rozprawie", "1", "2", "h" });//
-            dT.Rows.Add(new Object[] { "2", "na posiedzeniu", "1", "2", "h" });//
+            dT.Rows.Add(new Object[] { "2", "na rozprawie", "1", "2", "h" });
+            dT.Rows.Add(new Object[] { "2", "na posiedzeniu", "1", "2", "h" });
 
             // ================================    2     ============================
             //wpływ
-            dT.Rows.Add(new Object[] { "3", "Ogółem ", "1", "3", "h" });//
-            dT.Rows.Add(new Object[] { "3", "K <br/>", "1", "3", "h" });//
-            dT.Rows.Add(new Object[] { "3", "w tym postępowanie przygotowawcze zakończone w formie*", "2", "1", "h" });//
-            dT.Rows.Add(new Object[] { "3", "W<br/> ", "1", "3", "h" });//
-            dT.Rows.Add(new Object[] { "3", "Kop<br/>", "1", "3", "h" });//
-            dT.Rows.Add(new Object[] { "3", "Kp <br/>", "1", "3", "h" });//
-            dT.Rows.Add(new Object[] { "3", "Ko karne", "1", "3", "h" });//
-            dT.Rows.Add(new Object[] { "3", "Ko wykrocz", "1", "3", "h" });//
-                                                                           //wyznaczono
-            dT.Rows.Add(new Object[] { "3", "Ogółem", "2", "1", "h" });//
-            dT.Rows.Add(new Object[] { "3", "K ", "2", "1", "h" });//
-            dT.Rows.Add(new Object[] { "3", "W ", "2", "1", "h" });//
-            dT.Rows.Add(new Object[] { "3", "Kop ", "2", "1", "h" });//
-            dT.Rows.Add(new Object[] { "3", "Kp ", "2", "1", "h" });//
-            dT.Rows.Add(new Object[] { "3", "Ko<br/> karne", "2", "1", "h" });//
-            dT.Rows.Add(new Object[] { "3", "Ko <br/>wykrocz", "2", "1", "h" });//
-                                                                                //Załatwiono
+            dT.Rows.Add(new Object[] { "3", "Ogółem ", "1", "3", "h" });
+            dT.Rows.Add(new Object[] { "3", "K <br/>", "1", "3", "h" });
+            dT.Rows.Add(new Object[] { "3", "w tym postępowanie przygotowawcze zakończone w formie*", "2", "1", "h" });
+            dT.Rows.Add(new Object[] { "3", "W<br/> ", "1", "3", "h" });
+            dT.Rows.Add(new Object[] { "3", "Kop<br/>", "1", "3", "h" });
+            dT.Rows.Add(new Object[] { "3", "Kp <br/>", "1", "3", "h" });
+            dT.Rows.Add(new Object[] { "3", "Ko karne", "1", "3", "h" });
+            dT.Rows.Add(new Object[] { "3", "Ko wykrocz", "1", "3", "h" });
+            dT.Rows.Add(new Object[] { "3", "WSNK", "1", "3", "h" });
+            //wyznaczono
+            dT.Rows.Add(new Object[] { "3", "Ogółem", "2", "1", "h" });
+            dT.Rows.Add(new Object[] { "3", "K ", "2", "1", "h" });
+            dT.Rows.Add(new Object[] { "3", "W ", "2", "1", "h" });
+            dT.Rows.Add(new Object[] { "3", "Kop ", "2", "1", "h" });
+            dT.Rows.Add(new Object[] { "3", "Kp ", "2", "1", "h" });
+            dT.Rows.Add(new Object[] { "3", "Ko<br/> karne", "2", "1", "h" });
+            dT.Rows.Add(new Object[] { "3", "Ko <br/>wykrocz", "2", "1", "h" });
+            dT.Rows.Add(new Object[] { "3", "WSNK", "2", "1", "h" });
+            //Załatwiono
             dT.Rows.Add(new Object[] { "3", "Ogółem <br/> ", "2", "1", "h" });
             dT.Rows.Add(new Object[] { "3", "K ", "2", "1", "h" });
             dT.Rows.Add(new Object[] { "3", "W", "2", "1", "h" });
@@ -224,27 +187,30 @@ namespace stat2018
             dT.Rows.Add(new Object[] { "3", "Kp", "2", "1", "h" });
             dT.Rows.Add(new Object[] { "3", "Ko karne", "2", "1", "h" });
             dT.Rows.Add(new Object[] { "3", "Ko wykrocz", "2", "1", "h" });
+            dT.Rows.Add(new Object[] { "3", "WSNK", "2", "1", "h" });
             //Załatwienia
             dT.Rows.Add(new Object[] { "3", "Ogółem <br/> ", "1", "3", "h" });
-            dT.Rows.Add(new Object[] { "3", "K", "1", "3", "h" });//
-            dT.Rows.Add(new Object[] { "3", "w tym postępowanie przygotowawcze zakończone w formie*", "2", "1", "h" });//
-            dT.Rows.Add(new Object[] { "3", "W", "1", "3", "h" });//
-            dT.Rows.Add(new Object[] { "3", "Kop", "1", "3", "h" });//
-            dT.Rows.Add(new Object[] { "3", "Kp", "1", "3", "h" });//
-            dT.Rows.Add(new Object[] { "3", "Ko karne", "1", "3", "h" });//
-            dT.Rows.Add(new Object[] { "3", "Ko wykrocz", "1", "3", "h" });//
-                                                                           //Sesje odbyte przez sędziego
-            dT.Rows.Add(new Object[] { "3", "Wszystkie sesje sędziego w wydziale", "3", "1", "h" });//
-            dT.Rows.Add(new Object[] { "3", "Na potrzeby MS-s (Dz.1.2.2.k.01)", "3", "1", "h" });//
-                                                                                                 //POZOSTAŁOŚC na następny miesiąc (Dz.1.1.k.04)"
-            dT.Rows.Add(new Object[] { "3", "Ogółem ", "1", "3", "h" });//
-            dT.Rows.Add(new Object[] { "3", "K ", "1", "3", "h" });//
-            dT.Rows.Add(new Object[] { "3", "W ", "1", "3", "h" });//
-            dT.Rows.Add(new Object[] { "3", "Kop", "1", "3", "h" });//
-            dT.Rows.Add(new Object[] { "3", "Kp", "1", "3", "h" });//
-            dT.Rows.Add(new Object[] { "3", "Ko karne", "1", "3", "h" });//
-            dT.Rows.Add(new Object[] { "3", "Ko wykrocz", "1", "3", "h" });//
-                                                                           //Pozostało spraw starych (Dz.2.1.1. w.01+08+09+10)"
+            dT.Rows.Add(new Object[] { "3", "K", "1", "3", "h" });
+            dT.Rows.Add(new Object[] { "3", "w tym postępowanie przygotowawcze zakończone w formie*", "2", "1", "h" });
+            dT.Rows.Add(new Object[] { "3", "W", "1", "3", "h" });
+            dT.Rows.Add(new Object[] { "3", "Kop", "1", "3", "h" });
+            dT.Rows.Add(new Object[] { "3", "Kp", "1", "3", "h" });
+            dT.Rows.Add(new Object[] { "3", "Ko karne", "1", "3", "h" });
+            dT.Rows.Add(new Object[] { "3", "Ko wykrocz", "1", "3", "h" });
+            dT.Rows.Add(new Object[] { "3", "WSNK", "1", "3", "h" });
+            //Sesje odbyte przez sędziego
+            dT.Rows.Add(new Object[] { "3", "Wszystkie sesje sędziego w wydziale", "3", "1", "h" });
+            dT.Rows.Add(new Object[] { "3", "Na potrzeby MS-s (Dz.1.2.2.k.01)", "3", "1", "h" });
+            //POZOSTAŁOŚC na następny miesiąc (Dz.1.1.k.04)"
+            dT.Rows.Add(new Object[] { "3", "Ogółem ", "1", "3", "h" });
+            dT.Rows.Add(new Object[] { "3", "K ", "1", "3", "h" });
+            dT.Rows.Add(new Object[] { "3", "W ", "1", "3", "h" });
+            dT.Rows.Add(new Object[] { "3", "Kop", "1", "3", "h" });
+            dT.Rows.Add(new Object[] { "3", "Kp", "1", "3", "h" });
+            dT.Rows.Add(new Object[] { "3", "Ko karne", "1", "3", "h" });
+            dT.Rows.Add(new Object[] { "3", "Ko wykrocz", "1", "3", "h" });
+            dT.Rows.Add(new Object[] { "3", "WSNK", "1", "3", "h" });
+            //Pozostało spraw starych (Dz.2.1.1. w.01+08+09+10)"
             dT.Rows.Add(new Object[] { "3", "Ogółem", "1", "3", "h" });
             dT.Rows.Add(new Object[] { "3", "do 3 m-cy", "1", "3", "h" });
             dT.Rows.Add(new Object[] { "3", "pow.3 do 6 m-cy ", "1", "3", "h" });
@@ -270,35 +236,35 @@ namespace stat2018
             dT.Rows.Add(new Object[] { "3", "załatwiono", "2", "1", "h" });
             dT.Rows.Add(new Object[] { "3", "pozostało", "1", "3", "h" });
             //"Stan spraw zawiszonych"
-            dT.Rows.Add(new Object[] { "3", " liczba mediacji wpisanych w danym miesiącu do Wykazu Med. ", "1", "3", "h" });//
-            dT.Rows.Add(new Object[] { "3", "liczba spraw z rep. K załatwionych w związku z postępowaniem mediacyjnym", "1", "3", "h" });//
-            dT.Rows.Add(new Object[] { "3", "w tym <br/> liczba spraw, w których postępowanie zakończyło się ugodą", "1", "3", "h" });//
+            dT.Rows.Add(new Object[] { "3", " liczba mediacji wpisanych w danym miesiącu do Wykazu Med. ", "1", "3", "h" });
+            dT.Rows.Add(new Object[] { "3", "liczba spraw z rep. K załatwionych w związku z postępowaniem mediacyjnym", "1", "3", "h" });
+            dT.Rows.Add(new Object[] { "3", "w tym <br/> liczba spraw, w których postępowanie zakończyło się ugodą", "1", "3", "h" });
 
             // ================================   3     ============================
-            dT.Rows.Add(new Object[] { "4", "L.p.", "1", "4", "h" });//
-            dT.Rows.Add(new Object[] { "4", "Funkcja", "1", "4", "h" });//
+            dT.Rows.Add(new Object[] { "4", "L.p.", "1", "4", "h" });
+            dT.Rows.Add(new Object[] { "4", "Funkcja", "1", "4", "h" });
             dT.Rows.Add(new Object[] { "4", "Stanowisko", "1", "4", "h" });
-            dT.Rows.Add(new Object[] { "4", "Imię i Nazwisko sędziego", "1", "4", "h" });//
-            dT.Rows.Add(new Object[] { "4", "Zaległości z 2018", "1", "4", "h" });//
-            dT.Rows.Add(new Object[] { "4", "WPŁYW", "9", "1", "h" });//
-            dT.Rows.Add(new Object[] { "4", "Wyznaczono", "14", "1", "h" });//
-            dT.Rows.Add(new Object[] { "4", "Załatwiono", "14", "1", "h" });//
-            dT.Rows.Add(new Object[] { "4", "Załatwienia", "9", "1", "h" });//
-            dT.Rows.Add(new Object[] { "4", "Sesje odbyte przez sędziego", "6", "1", "h" });//
-            dT.Rows.Add(new Object[] { "4", "Liczba odroczonych <br/> publikacji orzeczeń", "3", "2", "h" });//
-            dT.Rows.Add(new Object[] { "4", "Liczba odroczonych <br/> spraw", "3", "2", "h" });//
-            dT.Rows.Add(new Object[] { "4", "POZOSTAŁOŚĆ na następny miesiąc", "7", "1", "h" });//
-            dT.Rows.Add(new Object[] { "4", "Pozostało spraw starych", "10", "1", "h" });//
-            dT.Rows.Add(new Object[] { "4", "stan spraw zawieszonych (wszystkie kategorie spraw)", "3", "1", "h" });//
+            dT.Rows.Add(new Object[] { "4", "Imię i Nazwisko sędziego", "1", "4", "h" });
+            dT.Rows.Add(new Object[] { "4", "Zaległości z poprzedniego roku", "1", "4", "h" });
+            dT.Rows.Add(new Object[] { "4", "WPŁYW", "10", "1", "h" });
+            dT.Rows.Add(new Object[] { "4", "Wyznaczono", "16", "1", "h" });
+            dT.Rows.Add(new Object[] { "4", "Załatwiono", "16", "1", "h" });
+            dT.Rows.Add(new Object[] { "4", "Załatwienia", "10", "1", "h" });
+            dT.Rows.Add(new Object[] { "4", "Sesje odbyte przez sędziego", "6", "1", "h" });
+            dT.Rows.Add(new Object[] { "4", "Liczba odroczonych <br/> publikacji orzeczeń", "3", "2", "h" });
+            dT.Rows.Add(new Object[] { "4", "Liczba odroczonych <br/> spraw", "3", "2", "h" });
+            dT.Rows.Add(new Object[] { "4", "POZOSTAŁOŚĆ na następny miesiąc", "8", "1", "h" });
+            dT.Rows.Add(new Object[] { "4", "Pozostało spraw starych", "10", "1", "h" });
+            dT.Rows.Add(new Object[] { "4", "stan spraw zawieszonych (wszystkie kategorie spraw)", "3", "1", "h" });
 
-            dT.Rows.Add(new Object[] { "4", "Liczba sporządzonych uzasadnień ", "12", "1", "h" });//
-            dT.Rows.Add(new Object[] { "4", "Uzasadnienia wygłoszone", "1", "4", "h" });//
+            dT.Rows.Add(new Object[] { "4", "Liczba sporządzonych uzasadnień ", "12", "1", "h" });
+            dT.Rows.Add(new Object[] { "4", "Uzasadnienia wygłoszone", "1", "4", "h" });
             dT.Rows.Add(new Object[] { "4", "Liczba spraw do których wpłynął wniosek o transkrypcję uzasadnien wygłoszone", "1", "4", "h" });
-            dT.Rows.Add(new Object[] { "4", "Liczba spraw, w których projekt uzasadnienia sporządził asystent**  ", "2", "2", "h" });//
-            dT.Rows.Add(new Object[] { "4", "Skargi na przewlekłość", "4", "1", "h" });//
-            dT.Rows.Add(new Object[] { "4", "Mediacje", "3", "1", "h" });//
-            dT.Rows.Add(new Object[] { "4", "Uwagi", "1", "4", "h" });//
-            dT.Rows.Add(new Object[] { "4", "Kolumna kontrolna (wyznaczenia>=załatwienia)", "2", "2", "h" });//
+            dT.Rows.Add(new Object[] { "4", "Liczba spraw, w których projekt uzasadnienia sporządził asystent**  ", "2", "2", "h" });
+            dT.Rows.Add(new Object[] { "4", "Skargi na przewlekłość", "4", "1", "h" });
+            dT.Rows.Add(new Object[] { "4", "Mediacje", "3", "1", "h" });
+            dT.Rows.Add(new Object[] { "4", "Uwagi", "1", "4", "h" });
+            dT.Rows.Add(new Object[] { "4", "Kolumna kontrolna (wyznaczenia>=załatwienia)", "2", "2", "h" });
 
             return dT;
         }
@@ -361,7 +327,7 @@ namespace stat2018
             {
                 ExcelWorksheet MyWorksheet = MyExcel.Workbook.Worksheets[1];
 
-                tb.tworzArkuszwExcle(MyWorksheet, (DataTable)Session["tabelka001"], 105, 0, 7, true, true, false, false, true);
+                tb.tworzArkuszwExcle(MyWorksheet, (DataTable)Session["tabelka001"], 112, 0, 7, true, true, false, false, true);
 
                 try
                 {
@@ -393,7 +359,7 @@ namespace stat2018
             if (e.Row.RowType == DataControlRowType.Footer)
 
             {
-                tb.makeSumRow((DataTable)Session["tabelka001"], e, 110, 4);
+                tb.makeSumRow((DataTable)Session["tabelka001"], e, 115, 4);
             }
         }
     }

@@ -87,8 +87,8 @@ namespace stat2018
         protected void odswiez()
         {
             string yyx = (string)Session["id_dzialu"];
-            //id_dzialu.Text = (string)Session["txt_dzialu"];
-            string txt = string.Empty; //
+
+            string txt = string.Empty; 
             cl.deleteRowTable();
 
             txt = txt + cl.clear_maim_db();
@@ -121,15 +121,6 @@ namespace stat2018
             {
                 //cm.log.Info(tenPlik + "ładowanie danych do tabeli 5");
                 txt = txt + dr.generuj_dane_do_tabeli_(int.Parse((string)Session["id_dzialu"]), 5, Date1.Date, Date2.Date, tenPlik);
-            }
-            catch (Exception ex)
-            {
-                cm.log.Error(tenPlik + " " + ex.Message);
-            }
-
-            try
-            {
-                //cm.log.Info(tenPlik + "ładowanie danych do tabeli ");
             }
             catch (Exception ex)
             {
@@ -765,23 +756,6 @@ namespace stat2018
                 tb.makeHeader(dT, GridView6);
             }
         }
-/*
-        protected void makeSumRow(DataTable table, GridViewRowEventArgs e, int przesunięcie)
-        {
-            object sumObject;
-            int ilKolumn = e.Row.Cells.Count;
-            e.Row.Cells[1].Text = "Ogółem";
-            for (int i = 1; i < e.Row.Cells.Count - przesunięcie; i++)
-            {
-                try
-                {
-                    sumObject = table.Compute("Sum(" + "d_" + (i - 1).ToString("D2") + ")", "");
-                    e.Row.Cells[i + przesunięcie].Text = sumObject.ToString();
-                }
-                catch (Exception)
-                { }
-            }
-        }*/
 
         protected void GridView1_RowDataBound(object sender, GridViewRowEventArgs e)
         {
@@ -801,7 +775,7 @@ namespace stat2018
             if (e.Row.RowType == DataControlRowType.Footer)
             {
                 DataTable table = ((DataView)tabela_3.Select(DataSourceSelectArguments.Empty)).ToTable();
-                tb.makeSumRow(table, e);
+                tb.makeSumRow(table, e, 1);
             }
         }
 

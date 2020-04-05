@@ -235,12 +235,12 @@ namespace stat2018
             wszystkieSesjeSedziego.Columns.Add(kolumnaDoTabeli("ogółem", "d_" + przesuniecie.ToString("D2"), idTabeli, "", false, szerokoscKolumny));
             wszystkieSesjeSedziego.Columns.Add(podKolumna(new string[] { "rozprawy", "posiedzenia" }, przesuniecie + 1, idTabeli, false, szerokoscKolumny, "z tego "));
             _sesjeSedziego.Columns.Add(wszystkieSesjeSedziego);
-
+            /*
             GridViewBandColumn naPotrzebyMSS = GetBoundColumn("na potrzeby MS-S");
             naPotrzebyMSS.Columns.Add(kolumnaDoTabeli("ogółem", "d_" + (przesuniecie + 3).ToString("D2"), idTabeli, "", false, szerokoscKolumny));
             naPotrzebyMSS.Columns.Add(podKolumna(new string[2] { "rozprawy", "posiedzenia" }, przesuniecie + 4, idTabeli, false, szerokoscKolumny, "z tego "));
             _sesjeSedziego.Columns.Add(naPotrzebyMSS);
-
+            */
             return _sesjeSedziego;
         }
         public DataTable zLicznikiemKolumn(DataTable tabelaWejsciowa)
@@ -367,7 +367,7 @@ namespace stat2018
                         else
                         {
                             
-                            string funkcjaJavascript = "javascript:openPopup('popup.aspx?sesja=" + (gcontainer.VisibleIndex+1).ToString () + "!" + IdTabeli + "!" + kolumnaNum.ToString() + "!1')";
+                            string funkcjaJavascript = "javascript:openPopup('popup.aspx?sesja=" + (gcontainer.KeyValue ).ToString () + "!" + IdTabeli + "!" + kolumnaNum.ToString() + "!1')";
                             lB1.Text = " <a href = " + funkcjaJavascript + ">" + DataBinder.Eval(gcontainer.DataItem, IdKolumny) + "</a>";
                             gcontainer.Controls.Add(lB1);
                         }

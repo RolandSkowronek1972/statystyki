@@ -78,7 +78,7 @@ namespace stat2018
             //tabela 1
             try
             {
-                DataTable Tabela2 = dr.generuj_dane_do_tabeli_sedziowskiej_2018(int.Parse(id_dzialu), 1, Date1.Date, Date2.Date, 28, tenPlik);
+                DataTable Tabela2 = dr.generuj_dane_do_tabeli_sedziowskiej_2019(int.Parse(id_dzialu), 1, Date1.Date, Date2.Date, 28, tenPlik);
                 Session["tabelka001"] = Tabela2;
                 gwTabela1.DataSource = null;
                 gwTabela1.DataSourceID = null;
@@ -92,7 +92,7 @@ namespace stat2018
             //tabela 2
             try
             {
-                DataTable tabela02 = dr. generuj_dane_do_tabeli_wierszy2018(Date1.Date, Date2.Date, ((string)Session["id_dzialu"]), 2, 24, 43, tenPlik);
+                DataTable tabela02 = dr.generuj_dane_do_tabeli_wierszy2018(Date1.Date, Date2.Date, ((string)Session["id_dzialu"]), 2, 24, 43, tenPlik);
 
                 Session["tabelka002"] = tabela02;
 
@@ -204,7 +204,7 @@ namespace stat2018
             //tabela 3
             try
             {
-                DataTable Tabela2 = dr.generuj_dane_do_tabeli_sedziowskiej_2018(int.Parse(id_dzialu), 3, Date1.Date, Date2.Date, 26, tenPlik);
+                DataTable Tabela2 = dr.generuj_dane_do_tabeli_sedziowskiej_2019(int.Parse(id_dzialu), 3, Date1.Date, Date2.Date, 26, tenPlik);
                 Session["tabelka003"] = Tabela2;
                 gwTabela3.DataSource = null;
                 gwTabela3.DataSourceID = null;
@@ -219,7 +219,7 @@ namespace stat2018
             //tabela 4
             try
             {
-                DataTable tabela04 = dr. generuj_dane_do_tabeli_wierszy2018(Date1.Date, Date2.Date, ((string)Session["id_dzialu"]), 4, 8, 2, tenPlik);
+                DataTable tabela04 = dr.generuj_dane_do_tabeli_wierszy2018(Date1.Date, Date2.Date, ((string)Session["id_dzialu"]), 4, 8, 2, tenPlik);
 
                 Session["tabelka004"] = tabela04;
 
@@ -356,13 +356,6 @@ namespace stat2018
             { }
         }
 
-        protected void Button1_Click(object sender, EventArgs e)
-        {
-            odswiez();
-            ScriptManager.RegisterStartupScript(this.Page, Page.GetType(), "print2", "JavaScript: window.print();", true);
-            // ScriptManager.RegisterStartupScript(this.Page, Page.GetType(), "print", "window.open('raport_01_print.aspx', '')", true);
-        }
-
         protected void Button3_Click(object sender, EventArgs e)
         {
             string path = Server.MapPath("Template") + "\\aglg.xlsx";
@@ -438,8 +431,7 @@ namespace stat2018
         {
             if (e.Row.RowType == DataControlRowType.Footer)
             {
-               
-                tabela.makeSumRow((DataTable)Session["tabelka001"], e);
+                tabela.makeSumRow((DataTable)Session["tabelka001"], e, 1);
             }
         }
 
@@ -456,7 +448,7 @@ namespace stat2018
             if (e.Row.RowType == DataControlRowType.Footer)
             {
                 DataTable table = (DataTable)Session["tabelka003"];
-                tabela.makeSumRow(table, e);
+                tabela.makeSumRow(table, e, 1);
             }
         }
     }

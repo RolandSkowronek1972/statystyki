@@ -156,7 +156,6 @@
     <Content Include="okrr.aspx" />
     <Content Include="okt2.aspx" />
     <Content Include="oglc3.aspx" />
-    <Content Include="aopgStary.aspx" />
     <Content Include="oglk3.aspx" />
     <Content Include="mss1o.aspx" />
     <Content Include="obbp.aspx" />
@@ -184,7 +183,6 @@
     <Content Include="UserControlls\ZarzadzanieFormularzami.ascx" />
     <Content Include="wab.aspx" />
     <Content Include="okrk.aspx" />
-    <Content Include="okrrold.aspx" />
     <Content Include="oglk2.aspx" />
     <Content Include="akac.aspx" />
     <Content Include="Akac2.aspx" />
@@ -367,6 +365,7 @@
     <Content Include="Template\aktpe.xlsx" />
     <Content Include="Template\oopg.xlsx" />
     <Content Include="Template\okrc.xlsx" />
+    <Content Include="Template\mk.xlsx" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -607,13 +606,6 @@
     <Compile Include="oglc3.aspx.designer.cs">
       <DependentUpon>oglc3.aspx</DependentUpon>
     </Compile>
-    <Compile Include="aopgStary.aspx.cs">
-      <DependentUpon>aopgStary.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="aopgStary.aspx.designer.cs">
-      <DependentUpon>aopgStary.aspx</DependentUpon>
-    </Compile>
     <Compile Include="oglk3.aspx.cs">
       <DependentUpon>oglk3.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -794,13 +786,6 @@
     </Compile>
     <Compile Include="okrk.aspx.designer.cs">
       <DependentUpon>okrk.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="okrrold.aspx.cs">
-      <DependentUpon>okrrold.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="okrrold.aspx.designer.cs">
-      <DependentUpon>okrrold.aspx</DependentUpon>
     </Compile>
     <Compile Include="oglk2.aspx.cs">
       <DependentUpon>oglk2.aspx</DependentUpon>

@@ -8,9 +8,9 @@ Creation date: 2019-01-27
 using OfficeOpenXml;
 using System;
 using System.Data;
+using System.Globalization;
 using System.IO;
 using System.Web.UI.WebControls;
-using System.Globalization;
 
 namespace stat2018
 {
@@ -27,11 +27,12 @@ namespace stat2018
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            string idWydzial =   Request.QueryString["w"];
+            string idWydzial = Request.QueryString["w"];
             try
             {
                 if (idWydzial == null)
                 {
+                    Server.Transfer("default.aspx");
                     return;
                 }
 
@@ -54,8 +55,6 @@ namespace stat2018
                 Session["id_dzialu"] = idWydzial;
                 Session["data_1"] = Date1.Date.ToShortDateString();
                 Session["data_2"] = Date2.Date.ToShortDateString();
-
-
             }
             catch
             { }
@@ -157,7 +156,7 @@ namespace stat2018
             {
                 cm.log.Info(tenPlik + ": rozpoczęcie tworzenia tabeli 1");
             }
-            DataTable tabelka01 = dr.generuj_dane_do_tabeli_sedziowskiej_2018(int.Parse(idDzialu), 1, Date1.Date, Date2.Date, 40, tenPlik);
+            DataTable tabelka01 = dr.generuj_dane_do_tabeli_sedziowskiej_2019(int.Parse(idDzialu), 1, Date1.Date, Date2.Date, 40, tenPlik);
             Session["tabelka001"] = tabelka01;
             gwTabela1.DataSource = null;
             gwTabela1.DataSourceID = null;
@@ -169,7 +168,6 @@ namespace stat2018
         {
             if (e.Row.RowType == DataControlRowType.Header)
             {
-           
                 tb.makeHeader(header_01(), gwTabela1);
             }
         }
@@ -188,22 +186,15 @@ namespace stat2018
 
             tabelaNaglowkowa.Rows.Add(new Object[] { "1", "ogółem", "1", "1" });
             tabelaNaglowkowa.Rows.Add(new Object[] { "1", "uwzględniono", "1", "1" });
-            tabelaNaglowkowa.Rows.Add(new Object[] { "2", "Ogółem", "1", "2" });
-            tabelaNaglowkowa.Rows.Add(new Object[] { "2", "Kzw", "1", "2" });
-            tabelaNaglowkowa.Rows.Add(new Object[] { "2", "Kow", "1", "2" });
-            tabelaNaglowkowa.Rows.Add(new Object[] { "2", "Pen", "1", "2" });
-            tabelaNaglowkowa.Rows.Add(new Object[] { "2", "Ogółem", "1", "2" });
-            tabelaNaglowkowa.Rows.Add(new Object[] { "2", "Kzw", "1", "2" });
-            tabelaNaglowkowa.Rows.Add(new Object[] { "2", "Kow", "1", "2" });
-            tabelaNaglowkowa.Rows.Add(new Object[] { "2", "Pen", "1", "2" });
-            tabelaNaglowkowa.Rows.Add(new Object[] { "2", "Ogółem", "1", "2" });
-            tabelaNaglowkowa.Rows.Add(new Object[] { "2", "Kzw", "1", "2" });
-            tabelaNaglowkowa.Rows.Add(new Object[] { "2", "Kow", "1", "2" });
-            tabelaNaglowkowa.Rows.Add(new Object[] { "2", "Pen", "1", "2" });
-            tabelaNaglowkowa.Rows.Add(new Object[] { "2", "Ogółem", "1", "2" });
-            tabelaNaglowkowa.Rows.Add(new Object[] { "2", "Kzw", "1", "2" });
-            tabelaNaglowkowa.Rows.Add(new Object[] { "2", "Kow", "1", "2" });
-            tabelaNaglowkowa.Rows.Add(new Object[] { "2", "Pen", "1", "2" });
+            for (int i = 0; i < 4; i++)
+            {
+                tabelaNaglowkowa.Rows.Add(new Object[] { "2", "Ogółem", "1", "2" });
+                tabelaNaglowkowa.Rows.Add(new Object[] { "2", "Kzw", "1", "2" });
+                tabelaNaglowkowa.Rows.Add(new Object[] { "2", "Kow", "1", "2" });
+                tabelaNaglowkowa.Rows.Add(new Object[] { "2", "Pen", "1", "2" });
+            }
+           
+           
             tabelaNaglowkowa.Rows.Add(new Object[] { "2", "ogółem", "1", "2" });
             tabelaNaglowkowa.Rows.Add(new Object[] { "2", "zakreślonych", "1", "2" });
             tabelaNaglowkowa.Rows.Add(new Object[] { "2", "niezakreślonych", "1", "2" });
@@ -224,13 +215,13 @@ namespace stat2018
 
             tabelaNaglowkowa.Rows.Add(new Object[] { "3", "lp", "1", "3" });
             tabelaNaglowkowa.Rows.Add(new Object[] { "3", "nazwisko i imię sędziego", "1", "3" });
-            tabelaNaglowkowa.Rows.Add(new Object[] { "3", "zaległość z roku 2018", "1", "3" });
+            tabelaNaglowkowa.Rows.Add(new Object[] { "3", "zaległość z poprzedniego roku", "1", "3" });
             tabelaNaglowkowa.Rows.Add(new Object[] { "3", "WPŁYW", "4", "1" });
             tabelaNaglowkowa.Rows.Add(new Object[] { "3", "Wyznaczono", "4", "1" });
             tabelaNaglowkowa.Rows.Add(new Object[] { "3", "ZAŁATWIENIA", "4", "1" });
             tabelaNaglowkowa.Rows.Add(new Object[] { "3", "sesje odbyte", "1", "3" });
             tabelaNaglowkowa.Rows.Add(new Object[] { "3", "POZOSTAŁOŚĆ na następny m-c", "4", "1" });
-            tabelaNaglowkowa.Rows.Add(new Object[] { "3", "stan spraw zawieszonych (wszystkie kategorie spraw)", "3", "1" });
+            tabelaNaglowkowa.Rows.Add(new Object[] { "3", "stan spraw zawieszonych <br/> (wszystkie kategorie spraw, zgodnie z MS-S5o)", "3", "1" });
             tabelaNaglowkowa.Rows.Add(new Object[] { "3", "pozostało spraw starych", "9", "1" });
             tabelaNaglowkowa.Rows.Add(new Object[] { "3", "skargi na przewlekłość", "4", "1" });
             tabelaNaglowkowa.Rows.Add(new Object[] { "3", "Uwagi", "1", "3" });
@@ -238,7 +229,5 @@ namespace stat2018
 
             return tabelaNaglowkowa;
         }
-
-      
     }
 }

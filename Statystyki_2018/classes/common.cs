@@ -150,11 +150,11 @@ namespace stat2018
             } // end of using
         }
 
+        /*
         public void runQuerry(string kwerenda, SqlConnection conn, DataTable parameters)
         {
             //log.Info("runQuerry is started");
 
-           
             using (SqlCommand sqlCmd = new SqlCommand(kwerenda, conn))
             {
                 try
@@ -182,6 +182,7 @@ namespace stat2018
                 }
             } // end of using
         }
+        */
 
         public void runQuerry(string kwerenda, string connStr)
         {
@@ -299,20 +300,6 @@ namespace stat2018
             }
             return false;
         }
-
-        /*
-        public DataTable schematTabeli()
-        {
-            DataTable dT = new DataTable();
-            dT.Columns.Clear();
-            dT.Columns.Add("nrWiersza", typeof(int));
-            dT.Columns.Add("nrKolumny", typeof(int));
-            dT.Columns.Add("colspan", typeof(int));
-            dT.Columns.Add("rowspan", typeof(int));
-            dT.Columns.Add("style", typeof(string));
-            dT.Columns.Add("text", typeof(string));
-
-            return dT;
-        }*/
+      
     } // end of common
 }

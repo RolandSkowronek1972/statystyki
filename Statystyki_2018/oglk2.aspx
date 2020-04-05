@@ -18,66 +18,53 @@
 
     <script src="Scripts/rls.js"></script>
 
-    <div class="noprint">
-        <div id="menu" class="manu_back" style="height: 40px;">
+    <div id="menu" class="manu_back noprint" style="height: 40px;">
 
-            <table>
-                <tr>
-                    <td style="width: auto; padding-left: 5px;">
-                        <asp:Label ID="Label4" runat="server" Text="Proszę wybrać zakres:"></asp:Label>
-                    </td>
-                    <td style="width: auto; padding-left: 5px;">
+        <table>
+            <tr>
+                <td style="width: auto; padding-left: 5px;">
+                    <asp:Label ID="Label4" runat="server" Text="Proszę wybrać zakres:"></asp:Label>
+                </td>
+                <td style="width: auto; padding-left: 5px;">
 
-                        <dx:ASPxDateEdit ID="Date1" runat="server" Theme="Moderno">
-                        </dx:ASPxDateEdit>
-                    </td>
-                    <td style="width: auto; padding-left: 5px;">
+                    <dx:ASPxDateEdit ID="Date1" runat="server" Theme="Moderno">
+                    </dx:ASPxDateEdit>
+                </td>
+                <td style="width: auto; padding-left: 5px;">
 
-                        <dx:ASPxDateEdit ID="Date2" runat="server" Theme="Moderno">
-                        </dx:ASPxDateEdit>
-                    </td>
-                    <td style="width: auto; padding-left: 5px;">
-                        <asp:LinkButton ID="LinkButton54" runat="server" class="ax_box" OnClick="LinkButton54_Click">  Odśwież</asp:LinkButton>
-                    </td>
-                    <td style="width: auto; padding-left: 5px;">
-                        <asp:LinkButton ID="LinkButton55" runat="server" class="ax_box" OnClick="LinkButton55_Click" CssClass="ax_box"> Drukuj </asp:LinkButton>
-                    </td>
-                    <td style="width: auto; padding-left: 5px;">
+                    <dx:ASPxDateEdit ID="Date2" runat="server" Theme="Moderno">
+                    </dx:ASPxDateEdit>
+                </td>
+                <td style="width: auto; padding-left: 5px;">
+                    <asp:LinkButton ID="LinkButton54" runat="server" class="ax_box" OnClick="LinkButton54_Click">  Odśwież</asp:LinkButton>
+                </td>
+                <td style="width: auto; padding-left: 5px;">
+                    <asp:LinkButton ID="LinkButton55" runat="server" class="ax_box" OnClick="LinkButton55_Click" CssClass="ax_box"> Drukuj </asp:LinkButton>
+                </td>
+                <td style="width: auto; padding-left: 5px;">
 
-                        <asp:LinkButton ID="LinkButton56" runat="server" OnClick="Button1_Click" CssClass="ax_box" Visible="False">DRUKUJ</asp:LinkButton>
-                    </td>
-                    <td style="width: auto; padding-left: 5px;">
-                        <asp:LinkButton ID="LinkButton57" runat="server" CssClass="ax_box" OnClick="Button3_Click">Zapisz do Excel</asp:LinkButton>
-                    </td>
-                </tr>
-            </table>
-        </div>
+                    <asp:LinkButton ID="LinkButton56" runat="server" OnClick="Button1_Click" CssClass="ax_box" Visible="False">DRUKUJ</asp:LinkButton>
+                </td>
+                <td style="width: auto; padding-left: 5px;">
+                    <asp:LinkButton ID="LinkButton57" runat="server" CssClass="ax_box" OnClick="Button3_Click">Zapisz do Excel</asp:LinkButton>
+                </td>
+            </tr>
+        </table>
     </div>
 
     <div style="width: 1150px; margin: 0 auto 0 auto; position: relative; top: 60px; z-index: 11;">
 
-        <div id="tabela1" style="z-index: 10;">
-            <div style="margin-left: auto; margin-right: auto; text-align: center; width: auto;">
-                <asp:Label runat="server" ID="Label9" Visible="False"></asp:Label>
-            </div>
-            &nbsp;
+        <div style="margin-left: auto; margin-right: auto; text-align: center; width: auto; z-index: 10;">
+            <asp:Label runat="server" ID="Label9" Visible="False"></asp:Label>
         </div>
 
-        <div id="zalatwienia" >
+        <div id="zalatwienia">
             <br />
 
             <asp:Label ID="lbTabela1" runat="server"></asp:Label>
             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
        <asp:Label ID="infoLabel1" runat="server" Text="Tabela 1 \/" Visible="False"></asp:Label>
-            <asp:SqlDataSource ID="tabela_1" runat="server"
-                ConnectionString="<%$ ConnectionStrings:wap %>"
-                SelectCommand="SELECT ROW_NUMBER() OVER( ORDER BY ident ) AS id, ident, imie, nazwisko, funkcja, stanowisko, d_01, d_02, d_03, d_04, d_05, d_06, d_07, d_08, d_09, d_10, d_11, d_12, d_13, d_14, d_15, d_16, d_17, d_18, d_19, d_20, d_21, d_22, d_23, d_24, d_25, d_26, d_27, d_28,d_29, d_30, d_31, sesja, id_sedziego, id_dzialu, id_tabeli FROM tbl_statystyki_tbl_02 WHERE (id_tabeli = 1) AND (id_dzialu = @id_dzialu) ORDER BY id">
-                <SelectParameters>
-                    <asp:SessionParameter Name="id_dzialu" SessionField="id_dzialu" />
-                </SelectParameters>
-            </asp:SqlDataSource>
-            <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False"
-                DataSourceID="tabela_1" OnRowCreated="naglowekTabeli1a"
+            <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" OnRowCreated="naglowekTabeli1a"
                 Width="100%" ShowHeader="False" OnRowDataBound="GridView1_RowDataBound" ShowFooter="True" HorizontalAlign="Center">
                 <Columns>
                     <asp:BoundField DataField="id" HeaderText="L.p." SortExpression="id">
@@ -165,8 +152,7 @@
             <asp:Label ID="lbTabela2" runat="server"></asp:Label>
             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
         <asp:Label ID="infoLabel2" runat="server" Text="Tabela 2 \/" Visible="False"></asp:Label>
-            <asp:GridView ID="GridView2" runat="server" AutoGenerateColumns="False"
-                DataSourceID="tabela_2" OnRowCreated="GridView3_RowCreated" Width="100%" ShowHeader="False" OnRowDataBound="GridView3_RowDataBound" ShowFooter="True">
+            <asp:GridView ID="GridView2" runat="server" AutoGenerateColumns="False" OnRowCreated="GridView3_RowCreated" Width="100%" ShowHeader="False" OnRowDataBound="GridView3_RowDataBound" ShowFooter="True">
                 <Columns>
                     <asp:BoundField DataField="id" HeaderText="L.p." SortExpression="id">
                         <ItemStyle Width="25px" />
@@ -192,21 +178,13 @@
                 <FooterStyle Font-Bold="True" HorizontalAlign="Center" />
                 <RowStyle Height="25px" HorizontalAlign="Center" />
             </asp:GridView>
-            <asp:SqlDataSource ID="tabela_2" runat="server"
-                ConnectionString="<%$ ConnectionStrings:wap %>"
-                SelectCommand="SELECT ROW_NUMBER() OVER( ORDER BY ident ) AS id,  ident, imie, nazwisko, funkcja, stanowisko, d_01, d_02, d_03, d_04, d_05, d_06, d_07, d_08, d_09, d_10, d_11, d_12, d_13, d_14, d_15, d_16, d_17, d_18, d_19, d_20, d_21, d_22,d_23, d_24,d_24,d_25,d_26,d_27,d_28, sesja, id_sedziego, id_dzialu, id_tabeli FROM tbl_statystyki_tbl_02 WHERE (id_tabeli = 2) AND (id_dzialu = @id_dzialu) ORDER BY id">
-                <SelectParameters>
-                    <asp:SessionParameter Name="id_dzialu" SessionField="id_dzialu" />
-                </SelectParameters>
-            </asp:SqlDataSource>
             <br />
         </div>
         <div id="Tabela 3" class="page-break">
             &nbsp;<asp:Label ID="lbTabela3" runat="server"></asp:Label>
             &nbsp;
     &nbsp;<asp:Label ID="infoLabel3" runat="server" Text="Tabela 3 \/" Visible="False"></asp:Label>
-            <asp:GridView ID="GridView3" runat="server" AutoGenerateColumns="False"
-                DataSourceID="tabela_3" OnRowCreated="GridView4_RowCreated" Width="100%" ShowHeader="False" OnRowDataBound="GridView4_RowDataBound" ShowFooter="True">
+            <asp:GridView ID="GridView3" runat="server" AutoGenerateColumns="False" OnRowCreated="GridView4_RowCreated" Width="100%" ShowHeader="False" OnRowDataBound="GridView4_RowDataBound" ShowFooter="True">
                 <Columns>
                     <asp:BoundField DataField="id" HeaderText="L.p." SortExpression="id">
                         <ItemStyle Width="25px" />
@@ -250,13 +228,6 @@
                 <FooterStyle Font-Bold="True" HorizontalAlign="Center" />
                 <RowStyle HorizontalAlign="Center" />
             </asp:GridView>
-            <asp:SqlDataSource ID="tabela_3" runat="server"
-                ConnectionString="<%$ ConnectionStrings:wap %>"
-                SelectCommand="SELECT ROW_NUMBER() OVER (ORDER BY ident) AS id, ident, imie, nazwisko, funkcja, stanowisko, d_01, d_02, d_03, d_04, d_05, d_06, d_07, d_08, d_09, d_10, d_11, d_12, d_13, d_14, d_15, d_16, d_17, d_18, d_19, d_20, d_21, d_22, d_23, d_24,d_25,d_26,d_27,d_28, sesja, id_sedziego, id_tabeli FROM tbl_statystyki_tbl_02 WHERE (id_tabeli = 3) AND (id_dzialu = @id_dzialu) ORDER BY id">
-                <SelectParameters>
-                    <asp:SessionParameter Name="id_dzialu" SessionField="id_dzialu" />
-                </SelectParameters>
-            </asp:SqlDataSource>
             <br />
         </div>
         <div id="TABELA4" class="page-break">
@@ -451,7 +422,7 @@
             <br />
         </div>
         <br />
-        <div id="TABELA8" class="page-break">
+        <div id="TABELA7" class="page-break">
             &nbsp;<asp:Label ID="lbTabela7" runat="server"></asp:Label>
             &nbsp;
     &nbsp;<asp:Label ID="infoLabel7" runat="server" Text="Tabela 7 \/" Visible="False"></asp:Label>
@@ -500,7 +471,7 @@
 
             <br />
         </div>
-        <div id="TABELA9" class="page-break">
+        <div id="TABELA8" class="page-break">
             &nbsp;<asp:Label ID="lbTabela8" runat="server"></asp:Label>
             &nbsp;
     &nbsp;<asp:Label ID="infoLabel8" runat="server" Text="Tabela 8 \/" Visible="False"></asp:Label>
@@ -564,7 +535,7 @@
 
             <br />
         </div>
-        <div id="TABELA7" class="page-break">
+        <div id="TABELA9" class="page-break">
             &nbsp;<asp:Label ID="lbTabela9" runat="server"></asp:Label>
             &nbsp;
     &nbsp;<asp:Label ID="infoLabel9" runat="server" Text="Tabela 9 \/" Visible="False"></asp:Label>
@@ -871,24 +842,24 @@
                 </tr>
                 <tr>
                     <td class="borderAll">zaległość na koniec IV kwartału</td>
-                    <td class="borderAll center col_200"><a href="javascript:openPopup('popup.aspx?sesja=16!11!1!3')">
+                    <td class="borderAll center col_200"><a href="javascript:openPopup('popup.aspx?sesja=17!10!1!3')">
                         <asp:Label CssClass="normal" ID="tab_10_w17_c01" runat="server" Text="0"></asp:Label></a></td>
-                    <td class="borderAll center col_200"><a href="javascript:openPopup('popup.aspx?sesja=16!11!2!3')">
+                    <td class="borderAll center col_200"><a href="javascript:openPopup('popup.aspx?sesja=17!10!2!3')">
                         <asp:Label CssClass="normal" ID="tab_10_w17_c02" runat="server" Text="0"></asp:Label></a></td>
-                    <td class="borderAll center col_200"><a href="javascript:openPopup('popup.aspx?sesja=16!11!3!3')">
+                    <td class="borderAll center col_200"><a href="javascript:openPopup('popup.aspx?sesja=17!10!3!3')">
                         <asp:Label CssClass="normal" ID="tab_10_w17_c03" runat="server" Text="0"></asp:Label></a></td>
-                    <td class="borderAll center col_200"><a href="javascript:openPopup('popup.aspx?sesja=16!11!4!3')">
+                    <td class="borderAll center col_200"><a href="javascript:openPopup('popup.aspx?sesja=17!10!4!3')">
                         <asp:Label CssClass="normal" ID="tab_10_w17_c04" runat="server" Text="0"></asp:Label></a></td>
-                    <td class="borderAll center col_200"><a href="javascript:openPopup('popup.aspx?sesja=16!11!5!3')">
+                    <td class="borderAll center col_200"><a href="javascript:openPopup('popup.aspx?sesja=17!10!5!3')">
                         <asp:Label CssClass="normal" ID="tab_10_w17_c05" runat="server" Text="0"></asp:Label></a></td>
-                    <td class="borderAll center col_200"><a href="javascript:openPopup('popup.aspx?sesja=16!11!6!3')">
+                    <td class="borderAll center col_200"><a href="javascript:openPopup('popup.aspx?sesja=17!10!6!3')">
                         <asp:Label CssClass="normal" ID="tab_10_w17_c06" runat="server" Text="0"></asp:Label></a></td>
                 </tr>
             </table>
 
             <br />
         </div>
-        <div id="TABELA10" class="page-break">
+        <div id="TABELA11" class="page-break">
             &nbsp;<asp:Label ID="lbTabela11" runat="server"></asp:Label>
             &nbsp;
     &nbsp;<asp:Label ID="infoLabel11" runat="server" Text="Tabela 11 \/" Visible="False"></asp:Label>
@@ -1331,24 +1302,24 @@
                     <td class="borderAll center col_100">0630-05</td>
                     <td class="borderAll center col_150">koszty i opłaty nieletnich</td>
                     <td class="borderAll center col_100"><a href="javascript:openPopup('popup.aspx?sesja=12!13!1!3')">
-                        <asp:Label CssClass="normal" ID="tab_12_w12_c01" runat="server" Text="0"></asp:Label></a></td>
+                        <asp:Label CssClass="normal" ID="tab_13_w12_c01" runat="server" Text="0"></asp:Label></a></td>
                     <td class="borderAll center col_100"><a href="javascript:openPopup('popup.aspx?sesja=12!13!2!3')">
-                        <asp:Label CssClass="normal" ID="tab_12_w12_c02" runat="server" Text="0"></asp:Label></a></td>
+                        <asp:Label CssClass="normal" ID="tab_13_w12_c02" runat="server" Text="0"></asp:Label></a></td>
                     <td class="borderAll center col_100"><a href="javascript:openPopup('popup.aspx?sesja=12!13!3!3')">
-                        <asp:Label CssClass="normal" ID="tab_12_w12_c03" runat="server" Text="0"></asp:Label></a></td>
+                        <asp:Label CssClass="normal" ID="tab_13_w12_c03" runat="server" Text="0"></asp:Label></a></td>
                     <td class="borderAll center col_100"><a href="javascript:openPopup('popup.aspx?sesja=12!13!4!3')">
-                        <asp:Label CssClass="normal" ID="tab_12_w12_c04" runat="server" Text="0"></asp:Label></a></td>
+                        <asp:Label CssClass="normal" ID="tab_13_w12_c04" runat="server" Text="0"></asp:Label></a></td>
                     <td class="borderAll center col_100"><a href="javascript:openPopup('popup.aspx?sesja=12!13!5!3')">
-                        <asp:Label CssClass="normal" ID="tab_12_w12_c05" runat="server" Text="0"></asp:Label></a></td>
+                        <asp:Label CssClass="normal" ID="tab_13_w12_c05" runat="server" Text="0"></asp:Label></a></td>
                     <td class="borderAll center col_100"><a href="javascript:openPopup('popup.aspx?sesja=12!13!6!3')">
-                        <asp:Label CssClass="normal" ID="tab_12_w12_c06" runat="server" Text="0"></asp:Label></a></td>
+                        <asp:Label CssClass="normal" ID="tab_13_w12_c06" runat="server" Text="0"></asp:Label></a></td>
 
                     <td class="borderAll center col_100"><a href="javascript:openPopup('popup.aspx?sesja=12!13!7!3')">
-                        <asp:Label CssClass="normal" ID="tab_12_w12_c07" runat="server" Text="0"></asp:Label></a></td>
+                        <asp:Label CssClass="normal" ID="tab_13_w12_c07" runat="server" Text="0"></asp:Label></a></td>
                     <td class="borderAll center col_100"><a href="javascript:openPopup('popup.aspx?sesja=12!13!8!3')">
-                        <asp:Label CssClass="normal" ID="tab_12_w12_c08" runat="server" Text="0"></asp:Label></a></td>
+                        <asp:Label CssClass="normal" ID="tab_13_w12_c08" runat="server" Text="0"></asp:Label></a></td>
                     <td class="borderAll center col_100"><a href="javascript:openPopup('popup.aspx?sesja=12!13!9!3')">
-                        <asp:Label CssClass="normal" ID="tab_12_w12_c09" runat="server" Text="0"></asp:Label></a></td>
+                        <asp:Label CssClass="normal" ID="tab_13_w12_c09" runat="server" Text="0"></asp:Label></a></td>
                 </tr>
                 <tr>
                     <td class="borderAll center col_100">060-07</td>
@@ -1391,35 +1362,35 @@
                         <asp:Label CssClass="normal" ID="tab_13_w14_c06" runat="server" Text="0"></asp:Label></a></td>
 
                     <td class="borderAll center col_100"><a href="javascript:openPopup('popup.aspx?sesja=14!13!7!3')">
-                        <asp:Label CssClass="normal" ID="tab_14_w14_c07" runat="server" Text="0"></asp:Label></a></td>
+                        <asp:Label CssClass="normal" ID="tab_13_w14_c07" runat="server" Text="0"></asp:Label></a></td>
                     <td class="borderAll center col_100"><a href="javascript:openPopup('popup.aspx?sesja=14!13!8!3')">
-                        <asp:Label CssClass="normal" ID="tab_14_w14_c08" runat="server" Text="0"></asp:Label></a></td>
+                        <asp:Label CssClass="normal" ID="tab_13_w14_c08" runat="server" Text="0"></asp:Label></a></td>
                     <td class="borderAll center col_100"><a href="javascript:openPopup('popup.aspx?sesja=14!13!9!3')">
-                        <asp:Label CssClass="normal" ID="tab_14_w14_c09" runat="server" Text="0"></asp:Label></a></td>
+                        <asp:Label CssClass="normal" ID="tab_13_w14_c09" runat="server" Text="0"></asp:Label></a></td>
                 </tr>
 
                 <tr>
                     <td class="borderAll center col_100">&nbsp;</td>
                     <td class="borderAll center col_150">RAZEM KOSZTY i OPŁATY</td>
                     <td class="borderAll center col_100 gray"><a href="javascript:openPopup('popup.aspx?sesja=15!13!1!3')">
-                        <asp:Label CssClass="normal" ID="tab_15_w14_c01" runat="server" Text="0"></asp:Label></a></td>
+                        <asp:Label CssClass="normal" ID="tab_13_w15_c01" runat="server" Text="0"></asp:Label></a></td>
                     <td class="borderAll center col_100 gray"><a href="javascript:openPopup('popup.aspx?sesja=15!13!2!3')">
-                        <asp:Label CssClass="normal" ID="tab_15_w14_c02" runat="server" Text="0"></asp:Label></a></td>
+                        <asp:Label CssClass="normal" ID="tab_13_w15_c02" runat="server" Text="0"></asp:Label></a></td>
                     <td class="borderAll center col_100 gray"><a href="javascript:openPopup('popup.aspx?sesja=15!13!3!3')">
-                        <asp:Label CssClass="normal" ID="tab_15_w14_c03" runat="server" Text="0"></asp:Label></a></td>
+                        <asp:Label CssClass="normal" ID="tab_13_w15_c03" runat="server" Text="0"></asp:Label></a></td>
                     <td class="borderAll center col_100 gray"><a href="javascript:openPopup('popup.aspx?sesja=15!13!4!3')">
-                        <asp:Label CssClass="normal" ID="tab_15_w14_c04" runat="server" Text="0"></asp:Label></a></td>
+                        <asp:Label CssClass="normal" ID="tab_13_w15_c04" runat="server" Text="0"></asp:Label></a></td>
                     <td class="borderAll center col_100 gray"><a href="javascript:openPopup('popup.aspx?sesja=15!13!5!3')">
-                        <asp:Label CssClass="normal" ID="tab_15_w14_c05" runat="server" Text="0"></asp:Label></a></td>
+                        <asp:Label CssClass="normal" ID="tab_13_w15_c05" runat="server" Text="0"></asp:Label></a></td>
                     <td class="borderAll center col_100 gray"><a href="javascript:openPopup('popup.aspx?sesja=15!13!6!3')">
-                        <asp:Label CssClass="normal" ID="tab_15_w14_c06" runat="server" Text="0"></asp:Label></a></td>
+                        <asp:Label CssClass="normal" ID="tab_13_w15_c06" runat="server" Text="0"></asp:Label></a></td>
 
                     <td class="borderAll center col_100 gray"><a href="javascript:openPopup('popup.aspx?sesja=15!13!7!3')">
-                        <asp:Label CssClass="normal" ID="tab_15_w14_c07" runat="server" Text="0"></asp:Label></a></td>
+                        <asp:Label CssClass="normal" ID="tab_13_w15_c07" runat="server" Text="0"></asp:Label></a></td>
                     <td class="borderAll center col_100 gray"><a href="javascript:openPopup('popup.aspx?sesja=15!13!8!3')">
-                        <asp:Label CssClass="normal" ID="tab_15_w14_c08" runat="server" Text="0"></asp:Label></a></td>
+                        <asp:Label CssClass="normal" ID="tab_13_w15_c08" runat="server" Text="0"></asp:Label></a></td>
                     <td class="borderAll center col_100 gray"><a href="javascript:openPopup('popup.aspx?sesja=15!13!9!3')">
-                        <asp:Label CssClass="normal" ID="tab_15_w14_c09" runat="server" Text="0"></asp:Label></a></td>
+                        <asp:Label CssClass="normal" ID="tab_13_w15_c09" runat="server" Text="0"></asp:Label></a></td>
                 </tr>
                 <tr>
                     <td class="borderAll center col_100">&nbsp;</td>
@@ -1687,17 +1658,17 @@
                     <td class="borderAll center col_100">0630-01</td>
                     <td class="borderAll center col_200">koszty i opłaty nieletnich</td>
                     <td class="borderAll col_120 center"><a href="javascript:openPopup('popup.aspx?sesja=12!14!1!3')">
-                        <asp:Label CssClass="normal" ID="Label2" runat="server" Text="0"></asp:Label></a></td>
+                        <asp:Label CssClass="normal" ID="tab_14_w12_c01" runat="server" Text="0"></asp:Label></a></td>
                     <td class="borderAll col_120 center"><a href="javascript:openPopup('popup.aspx?sesja=12!14!2!3')">
-                        <asp:Label CssClass="normal" ID="Label3" runat="server" Text="0"></asp:Label></a></td>
+                        <asp:Label CssClass="normal" ID="tab_14_w12_c02" runat="server" Text="0"></asp:Label></a></td>
                     <td class="borderAll col_120 center"><a href="javascript:openPopup('popup.aspx?sesja=12!14!3!3')">
-                        <asp:Label CssClass="normal" ID="Label5" runat="server" Text="0"></asp:Label></a></td>
+                        <asp:Label CssClass="normal" ID="tab_14_w12_c03" runat="server" Text="0"></asp:Label></a></td>
                     <td class="borderAll col_120 center"><a href="javascript:openPopup('popup.aspx?sesja=12!14!4!3')">
-                        <asp:Label CssClass="normal" ID="Label6" runat="server" Text="0"></asp:Label></a></td>
+                        <asp:Label CssClass="normal" ID="tab_14_w12_c04" runat="server" Text="0"></asp:Label></a></td>
                     <td class="borderAll col_120 center"><a href="javascript:openPopup('popup.aspx?sesja=12!14!5!3')">
-                        <asp:Label CssClass="normal" ID="Label7" runat="server" Text="0"></asp:Label></a></td>
+                        <asp:Label CssClass="normal" ID="tab_14_w12_c05" runat="server" Text="0"></asp:Label></a></td>
                     <td class="borderAll col_120 center"><a href="javascript:openPopup('popup.aspx?sesja=12!14!6!3')">
-                        <asp:Label CssClass="normal" ID="Label8" runat="server" Text="0"></asp:Label></a></td>
+                        <asp:Label CssClass="normal" ID="tab_14_w12_c06" runat="server" Text="0"></asp:Label></a></td>
                 </tr>
                 <tr>
                     <td class="borderAll center col_100">0630-01</td>
@@ -1737,17 +1708,17 @@
                     <td class="borderAll center col_100">&nbsp;</td>
                     <td class="borderAll center col_200">OGÓŁEM </td>
                     <td class="borderAll col_120 center"><a href="javascript:openPopup('popup.aspx?sesja=15!14!1!3')">
-                        <asp:Label CssClass="normal" ID="tab_15_w01_c01" runat="server" Text="0"></asp:Label></a></td>
+                        <asp:Label CssClass="normal" ID="tab_14_w15_c01" runat="server" Text="0"></asp:Label></a></td>
                     <td class="borderAll col_120 center"><a href="javascript:openPopup('popup.aspx?sesja=15!14!2!3')">
-                        <asp:Label CssClass="normal" ID="tab_15_w01_c02" runat="server" Text="0"></asp:Label></a></td>
+                        <asp:Label CssClass="normal" ID="tab_14_w15_c02" runat="server" Text="0"></asp:Label></a></td>
                     <td class="borderAll col_120 center"><a href="javascript:openPopup('popup.aspx?sesja=15!14!3!3')">
-                        <asp:Label CssClass="normal" ID="tab_15_w01_c03" runat="server" Text="0"></asp:Label></a></td>
+                        <asp:Label CssClass="normal" ID="tab_14_w15_c03" runat="server" Text="0"></asp:Label></a></td>
                     <td class="borderAll col_120 center"><a href="javascript:openPopup('popup.aspx?sesja=15!14!4!3')">
-                        <asp:Label CssClass="normal" ID="tab_15_w01_c04" runat="server" Text="0"></asp:Label></a></td>
+                        <asp:Label CssClass="normal" ID="tab_14_w15_c04" runat="server" Text="0"></asp:Label></a></td>
                     <td class="borderAll col_120 center"><a href="javascript:openPopup('popup.aspx?sesja=15!14!5!3')">
-                        <asp:Label CssClass="normal" ID="tab_15_w01_c05" runat="server" Text="0"></asp:Label></a></td>
+                        <asp:Label CssClass="normal" ID="tab_14_w15_c05" runat="server" Text="0"></asp:Label></a></td>
                     <td class="borderAll col_120 center"><a href="javascript:openPopup('popup.aspx?sesja=15!14!6!3')">
-                        <asp:Label CssClass="normal" ID="tab_15_w01_c06" runat="server" Text="0"></asp:Label></a></td>
+                        <asp:Label CssClass="normal" ID="tab_14_w15_c06" runat="server" Text="0"></asp:Label></a></td>
                 </tr>
             </table>
 

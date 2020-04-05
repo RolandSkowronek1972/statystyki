@@ -259,8 +259,8 @@ namespace stat2018
             if ((!string.IsNullOrEmpty(cs)) && (!string.IsNullOrEmpty(kw)))
             {
                 DataTable parametry = Common.makeParameterTable();
-                parametry.Rows.Add("@data_1", poczatek);
-                parametry.Rows.Add("@data_2", koniec);
+                parametry.Rows.Add("@data_1", KonwertujDate ( poczatek));
+                parametry.Rows.Add("@data_2", KonwertujDate(koniec));
                 result = Common.getQuerryValue(kw, cs, parametry, tenplik);
             }
             return result;
@@ -459,8 +459,8 @@ namespace stat2018
 
                         parameters.Rows.Add("@id_dzialu", id_dzialu);
                         parameters.Rows.Add("@id_tabeli", id_tabeli);
-                        parameters.Rows.Add("@data_1", poczatek);
-                        parameters.Rows.Add("@data_2", koniec);
+                        parameters.Rows.Add("@data_1",KonwertujDate ( poczatek));
+                        parameters.Rows.Add("@data_2", KonwertujDate(koniec));
 
                         ddT = Common.getDataTable(kwe, cs, parameters, tenPlik);
                         //pętla ładująca dane dane sedzw
@@ -530,7 +530,7 @@ namespace stat2018
 
             return tab_1000;
         }// end of generuj_dane_do_tabeli_3
-
+        /*
         public string uzupelnij_statusy_Xl()
         {
             Common.runQuerry("update tbl_statystyki_tbl_x5 set funkcja=(SELECT     rtrim([nazwa]) FROM [funkcje]  where [rodzaj]=1 and ident=tbl_statystyki_tbl_x5.funkcja)", con_str, null);
@@ -538,7 +538,7 @@ namespace stat2018
 
             return "1";
         }
-
+        */
         public string uzupelnij_statusy()
         {
             Common.runQuerry("update tbl_statystyki_tbl_02 set funkcja = (SELECT   rtrim([nazwa]) FROM[funkcje]  where[rodzaj] = 1 and ident = tbl_statystyki_tbl_02.funkcja)", con_str, null);
@@ -581,6 +581,8 @@ namespace stat2018
             return Common.getQuerryValue("SELECT  sad FROM     wydzialy where ident=@id_sadu", con_str, parameters);
         }// end of nazwaSadu
 
+        public string KonwertujDate(DateTime data) => data.Year.ToString().Trim() + "-" + data.Month.ToString("D2") + "-" + data.Day.ToString("D2");
+
         public string generuj_dane_do_tabeli_(int id_dzialu, int id_tabeli, DateTime poczatek, DateTime koniec)
         {
             string status = string.Empty;
@@ -615,8 +617,8 @@ namespace stat2018
 
                     parameters.Rows.Add("@id_dzialu", id_dzialu);
                     parameters.Rows.Add("@id_tabeli", id_tabeli);
-                    parameters.Rows.Add("@data_1", poczatek);
-                    parameters.Rows.Add("@data_2", koniec);
+                    parameters.Rows.Add("@data_1", KonwertujDate(poczatek));
+                    parameters.Rows.Add("@data_2", KonwertujDate(koniec));
 
                     ddT = Common.getDataTable(kwe, cs, parameters, "");
                     //pętla ładująca dane dane sedzw
@@ -724,7 +726,7 @@ namespace stat2018
 
                 try
                 {
-                    // DataTable dT = dsKwerendy.Tables[0];
+
 
                     foreach (DataRow dRow in dT1.Rows)
                     {
@@ -738,8 +740,8 @@ namespace stat2018
 
                         parameters.Rows.Add("@id_dzialu", id_dzialu);
                         parameters.Rows.Add("@id_tabeli", id_tabeli);
-                        parameters.Rows.Add("@data_1", poczatek);
-                        parameters.Rows.Add("@data_2", koniec);
+                        parameters.Rows.Add("@data_1", KonwertujDate(poczatek));
+                        parameters.Rows.Add("@data_2", KonwertujDate(koniec));
 
                         DataTable ddT = Common.getDataTable(kwe, cs, parameters, tenPlik);
 
@@ -769,7 +771,7 @@ namespace stat2018
 
                                 default:
                                     {
-                                        string txt = "d_" + getColumnName(int.Parse(id_kol));
+                                        string txt = getColumnName(int.Parse(id_kol));
                                         // załadowanie danych do pierwszych kolumn
                                         using (sqlCmd = new SqlCommand())
                                         {
@@ -807,7 +809,7 @@ namespace stat2018
         }// end of generuj_dane_do_tabeli_5
 
         //================================================================================================
-     
+
         public DataTable generuj_dane_do_tabeli_mss2(int id_dzialu, DateTime poczatek, DateTime koniec, int il_kolumn, string tenPlik)
         {
             string status = string.Empty;
@@ -860,8 +862,8 @@ namespace stat2018
                 parameters.Columns.Add("value", typeof(String));
 
                 parameters.Rows.Add("@id_dzialu", id_dzialu);
-                parameters.Rows.Add("@data_1", poczatek);
-                parameters.Rows.Add("@data_2", koniec);
+                parameters.Rows.Add("@data_1", KonwertujDate(poczatek));
+                parameters.Rows.Add("@data_2", KonwertujDate(koniec));
                 string wartosc = Common.getQuerryValue(kwerendaN, cs, parameters);
                 try
                 {
@@ -882,4 +884,5 @@ namespace stat2018
             return dTResult;
         }// end of generuj_dane_do_tabeli_mss2
     } // end of class
+
 }

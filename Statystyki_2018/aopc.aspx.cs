@@ -147,7 +147,7 @@ namespace stat2018
             {
                 //cm.log.Info(tenPlik + ": rozpoczęcie tworzenia tabeli 1");
             }
-            DataTable tabelka01 = dr.generuj_dane_do_tabeli_sedziowskiej_2018(int.Parse(idDzialu), 5, Date1.Date, Date2.Date, 230, tenPlik);
+            DataTable tabelka01 = dr.generuj_dane_do_tabeli_sedziowskiej_2019(int.Parse(idDzialu), 5, Date1.Date, Date2.Date, 230, tenPlik);
             Session["tabelka001"] = tabelka01;
             gwTabela1.DataSource = null;
             gwTabela1.DataSourceID = null;
@@ -582,7 +582,7 @@ namespace stat2018
 
             tabelaNaglowkowa.Rows.Add(new Object[] { "7", "lp", "1", "7" });
             tabelaNaglowkowa.Rows.Add(new Object[] { "7", "imię i nazwisko sędziego", "1", "7" });
-            tabelaNaglowkowa.Rows.Add(new Object[] { "7", "zaległość z roku 2018", "1", "6" });
+            tabelaNaglowkowa.Rows.Add(new Object[] { "7", "zaległość z poprzedniego roku", "1", "6" });
             tabelaNaglowkowa.Rows.Add(new Object[] { "7", "WPŁYW", "13", "2" });
             tabelaNaglowkowa.Rows.Add(new Object[] { "7", "Wyznaczono", "28", "2" });
             tabelaNaglowkowa.Rows.Add(new Object[] { "7", "Załatwiono", "28", "2" });

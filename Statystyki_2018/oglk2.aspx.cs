@@ -76,13 +76,11 @@ namespace stat2018
         protected void odswiez()
         {
             string id_dzialu = (string)Session["id_dzialu"];
-            string txt = string.Empty;
-
-            txt = txt + cl.clear_maim_db();
+      
             //tabela 1
             try
             {
-                DataTable Tabela1 = dr.generuj_dane_do_tabeli_sedziowskiej_2018(int.Parse(id_dzialu), 1, DateTime.Parse(Date1.Date.ToShortDateString()), Date2.Date, 10, tenPlik);
+                DataTable Tabela1 = dr.generuj_dane_do_tabeli_sedziowskiej_2019(int.Parse(id_dzialu), 1, DateTime.Parse(Date1.Date.ToShortDateString()), Date2.Date, 10, tenPlik);
                 Session["tabelka001"] = Tabela1;
                 GridView1.DataSource = null;
                 GridView1.DataSourceID = null;
@@ -96,7 +94,7 @@ namespace stat2018
             //tabela 2
             try
             {
-                DataTable Tabela2 = dr.generuj_dane_do_tabeli_sedziowskiej_2018(int.Parse(id_dzialu), 2, Date1.Date, Date2.Date, 4, tenPlik);
+                DataTable Tabela2 = dr.generuj_dane_do_tabeli_sedziowskiej_2019(int.Parse(id_dzialu), 2, Date1.Date, Date2.Date, 4, tenPlik);
                 Session["tabelka002"] = Tabela2;
                 GridView2.DataSource = null;
                 GridView2.DataSourceID = null;
@@ -110,7 +108,7 @@ namespace stat2018
 
             try
             {
-                DataTable Tabela3 = dr.generuj_dane_do_tabeli_sedziowskiej_2018(int.Parse(id_dzialu), 3, Date1.Date, Date2.Date, 8, tenPlik);
+                DataTable Tabela3 = dr.generuj_dane_do_tabeli_sedziowskiej_2019(int.Parse(id_dzialu), 3, Date1.Date, Date2.Date, 8, tenPlik);
                 Session["tabelka003"] = Tabela3;
                 GridView3.DataSource = null;
                 GridView3.DataSourceID = null;
@@ -148,7 +146,7 @@ namespace stat2018
             // szósta
             try
             {
-                DataTable Tabela6 = dr.generuj_dane_do_tabeli_sedziowskiej_2018(int.Parse(id_dzialu), 6, Date1.Date, Date2.Date, 8, tenPlik);
+                DataTable Tabela6 = dr.generuj_dane_do_tabeli_sedziowskiej_2019(int.Parse(id_dzialu), 6, Date1.Date, Date2.Date, 8, tenPlik);
                 Session["tabelka006"] = Tabela6;
                 GridView6.DataSource = null;
                 GridView6.DataSourceID = null;
@@ -163,9 +161,9 @@ namespace stat2018
             // siódma
             try
             {
-                DataTable Tabela4 = dr.generuj_dane_do_tabeli_wierszy2018(Date1.Date, Date2.Date, id_dzialu, 7, 2, 5, tenPlik);
-                Session["tabelka007"] = Tabela4;
-                pisz("tab_07_", 5, 3, Tabela4);
+                DataTable Tabela = dr.generuj_dane_do_tabeli_wierszy2018(Date1.Date, Date2.Date, id_dzialu, 7, 5, 3, tenPlik);
+                Session["tabelka007"] = Tabela;
+                pisz("tab_07_", 5, 3, Tabela);
             }
             catch (Exception ex)
             {
@@ -188,8 +186,10 @@ namespace stat2018
             try
             {
                 DataTable Tabela4 = new DataTable();
-                Tabela4 = dr.generuj_dane_do_tabeli_wierszy2018(Date1.Date, Date2.Date, id_dzialu, 9, 3, 4, tenPlik);
+                Tabela4 = dr.generuj_dane_do_tabeli_wierszy2018(Date1.Date, Date2.Date, id_dzialu, 9, 4, 3, tenPlik);
                 Session["tabelka009"] = Tabela4;
+                pisz("tab_09_", 4, 3, Tabela4);
+
             }
             catch (Exception ex)
             {
@@ -199,7 +199,7 @@ namespace stat2018
             // dziesiata
             try
             {
-                DataTable Tabela4 = dr.generuj_dane_do_tabeli_wierszy2018(Date1.Date, Date2.Date, id_dzialu, 10, 12, 8, tenPlik);
+                DataTable Tabela4 = dr.generuj_dane_do_tabeli_wierszy2018(Date1.Date, Date2.Date, id_dzialu, 10, 18, 8, tenPlik);
                 Session["tabelka010"] = Tabela4;
                 pisz("tab_10_", 17, 6, Tabela4);
             }
@@ -235,8 +235,8 @@ namespace stat2018
             // trzynasta
             try
             {
-                DataTable Tabela4 = dr.generuj_dane_do_tabeli_wierszy2018(Date1.Date, Date2.Date, id_dzialu, 13, 12, 10, tenPlik);
-                Session["tabelka011"] = Tabela4;
+                DataTable Tabela4 = dr.generuj_dane_do_tabeli_wierszy2018(Date1.Date, Date2.Date, id_dzialu, 13, 19, 10, tenPlik);
+                Session["tabelka013"] = Tabela4;
                 pisz("tab_13_", 18, 9, Tabela4);
             }
             catch (Exception ex)
@@ -247,7 +247,7 @@ namespace stat2018
             // czternasta
             try
             {
-                DataTable Tabela4 = dr.generuj_dane_do_tabeli_wierszy2018(Date1.Date, Date2.Date, id_dzialu, 13, 12, 10, tenPlik);
+                DataTable Tabela4 = dr.generuj_dane_do_tabeli_wierszy2018(Date1.Date, Date2.Date, id_dzialu, 14, 16, 8, tenPlik);
                 Session["tabelka014"] = Tabela4;
                 pisz("tab_14_", 15, 6, Tabela4);
             }
@@ -297,7 +297,7 @@ namespace stat2018
                 infoLabel14.Visible = false;
             }
 
-            Label11.Text = txt;
+           
         }
 
         #region "nagłowki tabel"
@@ -744,7 +744,7 @@ namespace stat2018
             if (e.Row.RowType == DataControlRowType.Footer)
             {
                 DataTable table = (DataTable)Session["tabelka001"];
-                tabela.makeSumRow(table, e);
+                tabela.makeSumRow(table, e,1);
             }
         }
 
@@ -753,7 +753,7 @@ namespace stat2018
             if (e.Row.RowType == DataControlRowType.Footer)
             {
                 DataTable table = (DataTable)Session["tabelka002"];
-                tabela.makeSumRow(table, e);
+                tabela.makeSumRow(table, e,1);
             }
         }
 
@@ -762,7 +762,7 @@ namespace stat2018
             if (e.Row.RowType == DataControlRowType.Footer)
             {
                 DataTable table = (DataTable)Session["tabelka003"];
-                tabela.makeSumRow(table, e);
+                tabela.makeSumRow(table, e,1);
             }
         }
 
@@ -802,6 +802,37 @@ namespace stat2018
                     string controlName = Template + "w" + wiersz.ToString("D2") + "_c" + kolumna.ToString("D2");
                     try
                     {
+                        var kontrolka = this.Master.FindControl("ContentPlaceHolder1").FindControl(controlName);
+                        if (kontrolka != null)
+                        {
+                            
+                            var typKontrolki = kontrolka.GetType();
+                            var nazwaTypu = typKontrolki.Name;
+                            cm.log.Info(tenPlik + " nazwaTypu " + nazwaTypu);
+                            if (string.Equals(nazwaTypu.ToString(), "Label"))
+                            {
+                                cm.log.Info(tenPlik + " Typ Label " );
+                                Label tb = (Label)this.Master.FindControl("ContentPlaceHolder1").FindControl(controlName);
+                                tb.Text = dane.Rows[wiersz - 1][kolumna].ToString().Trim();
+                            }
+                            else
+                            {
+                                cm.log.Info(tenPlik + " Typ textbox ");
+
+                                TextBox tbx = (TextBox)this.Master.FindControl("ContentPlaceHolder1").FindControl(controlName);
+                                tbx.Text = dane.Rows[wiersz - 1][kolumna].ToString().Trim();
+                            }
+
+                         
+                        }
+                    }
+                    catch (Exception ex)
+                    {
+                       // cm.log.Error(tenPlik + " pisz " + ex.Message);
+                    }
+                    /*
+                    try
+                    {
                         Label tb = (Label)this.Master.FindControl("ContentPlaceHolder1").FindControl(controlName);
                         if (tb != null)
                         {
@@ -822,6 +853,7 @@ namespace stat2018
                     catch (Exception ex)
                     {
                     }
+                    */
                 }
             }
         }// end of pisz

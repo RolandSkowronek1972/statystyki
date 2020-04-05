@@ -91,7 +91,7 @@ namespace stat2018
             {
                 cm.log.Info(tenPlik + ": rozpoczęcie tworzenia tabeli 5");
             }
-            DataTable tabelka01 = dr.generuj_dane_do_tabeli_sedziowskiej_2018(int.Parse(idDzialu), 5, Date1.Date, Date2.Date, 260, tenPlik);
+            DataTable tabelka01 = dr.generuj_dane_do_tabeli_sedziowskiej_2019(int.Parse(idDzialu), 5, Date1.Date, Date2.Date, 130, tenPlik);
             Session["tabelka001"] = tabelka01;
             GridView1.DataSource = null;
             GridView1.DataSourceID = null;
@@ -115,12 +115,12 @@ namespace stat2018
 
             dT_01.Clear();
 
-            for (int i = 1; i < 112; i++)
+            for (int i = 1; i < 126; i++)
             {
                 dT_01.Rows.Add(new Object[] { "1", i.ToString(), "1", "1", "h" });
             }
 
-            for (int i = 0; i < 16; i++)
+            for (int i = 0; i < 20; i++)
             {
                 dT_01.Rows.Add(new Object[] { "2", "na rozp-<br/>rawie", "1", "1", "h" });
                 dT_01.Rows.Add(new Object[] { "2", "na posie-<br/>dzenie", "1", "1", "h" });
@@ -158,6 +158,8 @@ namespace stat2018
             dT_01.Rows.Add(new Object[] { "3", "Nmo", "1", "2", "h" });
             dT_01.Rows.Add(new Object[] { "3", "RCps", "1", "2", "h" });
             dT_01.Rows.Add(new Object[] { "3", "Nkd", "1", "2", "h" });
+            dT_01.Rows.Add(new Object[] { "3", "WSNc", "1", "2", "h" });
+            dT_01.Rows.Add(new Object[] { "3", "RCz", "1", "2", "h" });
 
             dT_01.Rows.Add(new Object[] { "4", "Ogółem MS-S16+MS-S18", "2", "1", "h" });
             dT_01.Rows.Add(new Object[] { "4", "RC", "2", "1", "h" });
@@ -167,6 +169,8 @@ namespace stat2018
             dT_01.Rows.Add(new Object[] { "4", "Nmo", "2", "1", "h" });
             dT_01.Rows.Add(new Object[] { "4", "RCps", "2", "1", "h" });
             dT_01.Rows.Add(new Object[] { "4", "Nkd", "2", "1", "h" });
+            dT_01.Rows.Add(new Object[] { "4", "WSNc", "2", "1", "h" });
+            dT_01.Rows.Add(new Object[] { "4", "RCz", "2", "1", "h" });
 
             dT_01.Rows.Add(new Object[] { "4", "Ogółem", "2", "1", "h" });
             dT_01.Rows.Add(new Object[] { "4", "RC", "2", "1", "h" });
@@ -176,6 +180,8 @@ namespace stat2018
             dT_01.Rows.Add(new Object[] { "4", "Nmo", "2", "1", "h" });
             dT_01.Rows.Add(new Object[] { "4", "RCps", "2", "1", "h" });
             dT_01.Rows.Add(new Object[] { "4", "Nkd", "2", "1", "h" });
+            dT_01.Rows.Add(new Object[] { "4", "WSNc", "2", "1", "h" });
+            dT_01.Rows.Add(new Object[] { "4", "RCz", "2", "1", "h" });
             //zalatwienia
             //   dT_01.Rows.Add(new Object[] { "3", "Ogółem (Dz. 1.1.1. k.03,w.01 + Dz. 1.1.2 k.04, w.01),", "1", "3", "h" });
             dT_01.Rows.Add(new Object[] { "3", "Ogółem ", "1", "3", "h" });
@@ -186,6 +192,8 @@ namespace stat2018
             dT_01.Rows.Add(new Object[] { "3", "Nmo", "1", "3", "h" });
             dT_01.Rows.Add(new Object[] { "3", "RCps", "1", "3", "h" });
             dT_01.Rows.Add(new Object[] { "3", "Nkd", "1", "3", "h" });
+            dT_01.Rows.Add(new Object[] { "3", "WSNc", "1", "3", "h" });
+            dT_01.Rows.Add(new Object[] { "3", "RCz", "1", "3", "h" });
 
             dT_01.Rows.Add(new Object[] { "4", "ogółem", "1", "3", "h" });
             dT_01.Rows.Add(new Object[] { "4", "z tego", "2", "1", "h" });
@@ -213,6 +221,8 @@ namespace stat2018
             dT_01.Rows.Add(new Object[] { "3", "Nmo", "1", "3", "h" });
             dT_01.Rows.Add(new Object[] { "3", "RCps", "1", "3", "h" });
             dT_01.Rows.Add(new Object[] { "3", "Nkd", "1", "3", "h" });
+            dT_01.Rows.Add(new Object[] { "3", "WSNc", "1", "3", "h" });
+            dT_01.Rows.Add(new Object[] { "3", "RCz", "1", "3", "h" });
             //89
             dT_01.Rows.Add(new Object[] { "3", "Ogółem ", "1", "3", "h" });
 
@@ -224,6 +234,9 @@ namespace stat2018
             dT_01.Rows.Add(new Object[] { "3", "pow. 3 do 5 lat ", "1", "3", "h" });
             dT_01.Rows.Add(new Object[] { "3", "pow. 5 do 8 lat ", "1", "3", "h" });
             dT_01.Rows.Add(new Object[] { "3", "pow. 8 lat ", "1", "3", "h" });
+            dT_01.Rows.Add(new Object[] { "3", "ogółem ", "1", "3", "h" });
+            dT_01.Rows.Add(new Object[] { "3", "zakreś-lonych ", "1", "3", "h" });
+            dT_01.Rows.Add(new Object[] { "3", "niezak-reślonych ", "1", "3", "h" });
             dT_01.Rows.Add(new Object[] { "3", "Łącznie ", "1", "3", "h" });
             dT_01.Rows.Add(new Object[] { "3", "w terminie ustawowym 14 dni ", "1", "3", "h" });
             dT_01.Rows.Add(new Object[] { "3", "razem po terminie ustawowym ", "1", "3", "h" });
@@ -237,13 +250,9 @@ namespace stat2018
             dT_01.Rows.Add(new Object[] { "3", "wpływ ", "1", "3", "h" });
             dT_01.Rows.Add(new Object[] { "3", "rozpoznane skargi  ", "2", "1", "h" });
             dT_01.Rows.Add(new Object[] { "3", "pozostałość ", "1", "3", "h" });
-            //   dT_01.Rows.Add(new Object[] { "3", "liczba spraw w których strony skierowano do mediacji ", "1", "3", "h" });
-            dT_01.Rows.Add(new Object[] { "3", "WPŁYW", "1", "1", "h" });
+             dT_01.Rows.Add(new Object[] { "3", "WPŁYW", "1", "1", "h" });
             dT_01.Rows.Add(new Object[] { "3", "ROZSTRZYGNIĘCIE", "2", "1", "h" });
 
-            dT_01.Rows.Add(new Object[] { "3", "ogółem ", "1", "3", "h" });
-            dT_01.Rows.Add(new Object[] { "3", "zakreślonych ", "1", "3", "h" });
-            dT_01.Rows.Add(new Object[] { "3", "niezakreślonych ", "1", "3", "h" });
             dT_01.Rows.Add(new Object[] { "3", "na rozprawie ", "1", "3", "h" });
             dT_01.Rows.Add(new Object[] { "3", "na posiedzieniu ", "1", "3", "h" });
 
@@ -252,22 +261,23 @@ namespace stat2018
 
             dT_01.Rows.Add(new Object[] { "6", "L.p", "1", "6", "h" });
             dT_01.Rows.Add(new Object[] { "6", " Imię i nazwisko sędziego", "1", "6", "h" });
-            dT_01.Rows.Add(new Object[] { "6", "zaległość z roku 2018", "1", "5", "h" });
-            dT_01.Rows.Add(new Object[] { "6", "WPŁYW", "8", "3", "h" });
-            dT_01.Rows.Add(new Object[] { "6", "Wyznaczono ", "16", "2", "h" });
-            dT_01.Rows.Add(new Object[] { "6", "Załatwiono ", "16", "2", "h" });
-            dT_01.Rows.Add(new Object[] { "6", "ZAŁATWIENIA ", "8", "2", "h" });
+            dT_01.Rows.Add(new Object[] { "6", "zaległość z poprzedniego roku ", "1", "5", "h" });
+            dT_01.Rows.Add(new Object[] { "6", "WPŁYW", "10", "3", "h" });
+            dT_01.Rows.Add(new Object[] { "6", "Wyznaczono ", "20", "2", "h" });
+            dT_01.Rows.Add(new Object[] { "6", "Załatwiono ", "20", "2", "h" });
+            dT_01.Rows.Add(new Object[] { "6", "ZAŁATWIENIA ", "10", "2", "h" });
             dT_01.Rows.Add(new Object[] { "6", "sesje odbyte przez sędziego  ", "6", "1", "h" });
             dT_01.Rows.Add(new Object[] { "6", "Liczba dni, w których odbyły się sesje wyjazdowe (podajemy niezależnie - dla potrzeb informacyjnych)", "1", "5", "h" });
             dT_01.Rows.Add(new Object[] { "6", "Liczba wokand wykonawczych (wykazywana  Dz. 1.1.9)", "1", "5", "h" });
             dT_01.Rows.Add(new Object[] { "6", "Liczba odroczonych publikacji wyroków/postanowień (Dz. 1.1.1. k.17)", "5", "2", "h" });
             dT_01.Rows.Add(new Object[] { "6", "Liczba odroczonych spraw", "3", "2", "h" });
-            dT_01.Rows.Add(new Object[] { "6", "POZOSTAŁOŚĆ na następny m-c", "8", "2", "h" });
+            dT_01.Rows.Add(new Object[] { "6", "POZOSTAŁOŚĆ na następny m-c", "10", "2", "h" });
             dT_01.Rows.Add(new Object[] { "6", "pozostało spraw starych", "9", "2", "h" });
+            dT_01.Rows.Add(new Object[] { "6", "stan spraw zawieszonych", "3", "2", "h" });
+
             dT_01.Rows.Add(new Object[] { "6", "terminowość sporządzonych uzasadnień (wszystkie kategorie spraw)", "16", "2", "h" });
             dT_01.Rows.Add(new Object[] { "6", "skargi na przewlekłość", "4", "2", "h" });
             dT_01.Rows.Add(new Object[] { "6", "mediacje", "3", "2", "h" });
-            dT_01.Rows.Add(new Object[] { "6", "stan spraw zawieszonych", "3", "2", "h" });
             dT_01.Rows.Add(new Object[] { "6", "UWAGI", "1", "5", "h" });
             dT_01.Rows.Add(new Object[] { "6", "Kolumna kontrolna (wyznaczenia>=załatwienia)", "2", "2", "h" });
 
@@ -347,7 +357,7 @@ namespace stat2018
             using (ExcelPackage MyExcel = new ExcelPackage(existingFile))
             {
                 ExcelWorksheet MyWorksheet = MyExcel.Workbook.Worksheets[1];
-                tb.tworzArkuszwExcle(MyWorksheet, (DataTable)Session["tabelka001"], 112, 0, 7, true, true, false, false, true);
+                tb.tworzArkuszwExcle(MyWorksheet, (DataTable)Session["tabelka001"], 113, 0, 8, true, true, false, false, true);
 
                 try
                 {

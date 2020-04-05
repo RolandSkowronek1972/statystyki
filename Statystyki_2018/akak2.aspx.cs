@@ -1040,7 +1040,7 @@ namespace stat2018
             {
                 DataTable table = ((DataView)tabela_2.Select(DataSourceSelectArguments.Empty)).ToTable();
 
-                tabela.makeSumRow(table, e);
+                tabela.makeSumRow(table, e,1);
 
             }
         }
@@ -1062,7 +1062,7 @@ namespace stat2018
             if (e.Row.RowType == DataControlRowType.Footer)
             {
                 DataTable table = ((DataView)tabela_3.Select(DataSourceSelectArguments.Empty)).ToTable();
-                tabela.makeSumRow(table, e);
+                tabela.makeSumRow(table, e,1);
 
             }
         }
@@ -1073,7 +1073,7 @@ namespace stat2018
             {
                 DataTable table = ((DataView)tabela_4.Select(DataSourceSelectArguments.Empty)).ToTable();
 
-                tabela.makeSumRow(table, e);
+                tabela.makeSumRow(table, e,1);
 
             }
         }
@@ -1084,7 +1084,7 @@ namespace stat2018
             {
                 DataTable table = ((DataView)tabela_5.Select(DataSourceSelectArguments.Empty)).ToTable();
 
-                tabela.makeSumRow(table, e);
+                tabela.makeSumRow(table, e,1);
 
             }
         }

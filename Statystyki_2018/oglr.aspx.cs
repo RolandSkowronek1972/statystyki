@@ -48,7 +48,6 @@ namespace stat2018
                     Session["data_1"] = Date1.Date.ToShortDateString();
                     Session["data_2"] = Date2.Date.ToShortDateString();
 
-
                     if (!IsPostBack)
                     {
                         var fileContents = System.IO.File.ReadAllText(Server.MapPath(@"~//version.txt"));    // file read with version
@@ -87,7 +86,7 @@ namespace stat2018
             }
             try
             {
-                DataTable tabelka01 = dr.generuj_dane_do_tabeli_sedziowskiej_2018(int.Parse(idDzialu), 1, Date1.Date, Date2.Date, 35, tenPlik);
+                DataTable tabelka01 = dr.generuj_dane_do_tabeli_sedziowskiej_2019(int.Parse(idDzialu), 1, Date1.Date, Date2.Date, 35, tenPlik);
                 Session["tabelka001"] = tabelka01;
                 GridView1.DataSource = null;
                 GridView1.DataSourceID = null;
@@ -107,7 +106,7 @@ namespace stat2018
             }
             try
             {
-                DataTable tabelka01 = dr.generuj_dane_do_tabeli_sedziowskiej_2018(int.Parse(idDzialu), 3, Date1.Date, Date2.Date, 35, tenPlik);
+                DataTable tabelka01 = dr.generuj_dane_do_tabeli_sedziowskiej_2019(int.Parse(idDzialu), 3, Date1.Date, Date2.Date, 35, tenPlik);
                 Session["tabelka003"] = tabelka01;
                 GridView3.DataSource = null;
                 GridView3.DataSourceID = null;
@@ -127,7 +126,7 @@ namespace stat2018
             }
             try
             {
-                DataTable tabelka01 = dr.generuj_dane_do_tabeli_sedziowskiej_2018(int.Parse(idDzialu), 4, Date1.Date, Date2.Date, 35, tenPlik);
+                DataTable tabelka01 = dr.generuj_dane_do_tabeli_sedziowskiej_2019(int.Parse(idDzialu), 4, Date1.Date, Date2.Date, 35, tenPlik);
                 Session["tabelka004"] = tabelka01;
                 GridView4.DataSource = null;
                 GridView4.DataSourceID = null;
@@ -145,7 +144,7 @@ namespace stat2018
             cl.clear_maim_db();
             try
             {
-                DataTable tabelka01 = dr. generuj_dane_do_tabeli_wierszy2018(Date1.Date, Date2.Date, (string)Session["id_dzialu"], 2, 20, 23, tenPlik);
+                DataTable tabelka01 = dr.generuj_dane_do_tabeli_wierszy2018(Date1.Date, Date2.Date, (string)Session["id_dzialu"], 2, 20, 23, tenPlik);
                 Session["tabelka002"] = tabelka01;
                 //cm.log.Info(tenPlik + " : Wygenerowano dal tabeli 2" + tabelka01.Rows.Count.ToString() + " wierszy");
             }
@@ -186,8 +185,6 @@ namespace stat2018
 
         protected void makeHeader()
         {
-            System.Web.UI.WebControls.GridView sn = new System.Web.UI.WebControls.GridView();
-
             #region tabela  1 (wierszowa)
 
             DataTable dT_01 = new DataTable();
@@ -302,30 +299,11 @@ namespace stat2018
             #region tabela  3 ()
 
             dT_03.Clear();
-
-            dT_03.Rows.Add(new Object[] { "1", "Na rozprawach", "1", "1", "v" });
-            dT_03.Rows.Add(new Object[] { "1", "Na posiedzeniach", "1", "1", "v" });
-
-            dT_03.Rows.Add(new Object[] { "1", "Na rozprawach", "1", "1", "v" });
-            dT_03.Rows.Add(new Object[] { "1", "Na posiedzeniach", "1", "1", "v" });
-
-            dT_03.Rows.Add(new Object[] { "1", "Na rozprawach", "1", "1", "v" });
-            dT_03.Rows.Add(new Object[] { "1", "Na posiedzeniach", "1", "1", "v" });
-
-            dT_03.Rows.Add(new Object[] { "1", "Na rozprawach", "1", "1", "v" });
-            dT_03.Rows.Add(new Object[] { "1", "Na posiedzeniach", "1", "1", "v" });
-
-            dT_03.Rows.Add(new Object[] { "1", "Na rozprawach", "1", "1", "v" });
-            dT_03.Rows.Add(new Object[] { "1", "Na posiedzeniach", "1", "1", "v" });
-
-            dT_03.Rows.Add(new Object[] { "1", "Na rozprawach", "1", "1", "v" });
-            dT_03.Rows.Add(new Object[] { "1", "Na posiedzeniach", "1", "1", "v" });
-
-            dT_03.Rows.Add(new Object[] { "1", "Na rozprawach", "1", "1", "v" });
-            dT_03.Rows.Add(new Object[] { "1", "Na posiedzeniach", "1", "1", "v" });
-
-            dT_03.Rows.Add(new Object[] { "1", "Na rozprawach", "1", "1", "v" });
-            dT_03.Rows.Add(new Object[] { "1", "Na posiedzeniach", "1", "1", "v" });
+            for (int i = 0; i < 8; i++)
+            {
+                dT_03.Rows.Add(new Object[] { "1", "Na rozprawach", "1", "1", "v" });
+                dT_03.Rows.Add(new Object[] { "1", "Na posiedzeniach", "1", "1", "v" });
+            }
 
             dT_03.Rows.Add(new Object[] { "2", "Rozpraw", "1", "2", "v" });
             dT_03.Rows.Add(new Object[] { "2", "Posiedzeń", "1", "2", "v" });
@@ -347,18 +325,15 @@ namespace stat2018
             dT_03.Rows.Add(new Object[] { "3", "Pozos-tałość na początek okresu kontro-lnego", "1", "3", "h" });
             dT_03.Rows.Add(new Object[] { "3", "Wpływ", "1", "3", "h" });
             dT_03.Rows.Add(new Object[] { "3", "Średni miesie-czny wpływ ( w fakty-cznym czasie pracy)", "1", "3", "h" });
-            dT_03.Rows.Add(new Object[] { "3", "Efek-tywny czas pracy", "1", "3", "h" });
+            dT_03.Rows.Add(new Object[] { "3", "Efektywny czas pracy", "1", "3", "h" });
 
             dT_03.Rows.Add(new Object[] { "3", "Ilość sesji", "3", "1", "h" });
             dT_03.Rows.Add(new Object[] { "3", "Ilość wyznaczonych spraw", "2", "1", "h" });
             dT_03.Rows.Add(new Object[] { "3", "Ilość spraw odrocznych z rozpraw (bez publikacji!!!)", "1", "3", "h" });
             dT_03.Rows.Add(new Object[] { "3", "Wskaźnik odroczeń", "1", "3", "h" });
-            dT_03.Rows.Add(new Object[] { "3", "Załat-wienia", "14", "1", "h" });
-
+            dT_03.Rows.Add(new Object[] { "3", "Załatwienia", "14", "1", "h" });
             dT_03.Rows.Add(new Object[] { "3", "Razem", "2", "2", "h" });
-
             dT_03.Rows.Add(new Object[] { "3", "Średnio miesię-cznie załat-wienia w efek-tywnym czasie pracy", "1", "3", "h" });
-
             dT_03.Rows.Add(new Object[] { "3", "Pozos-tałość na koniec okresu kont-rolnego", "1", "3", "h" });
             dT_03.Rows.Add(new Object[] { "3", "Wielo-krotna", "1", "3", "h" });
 
@@ -485,14 +460,12 @@ namespace stat2018
                     // cały miesiąc
                     tabela2Label.Text = "Sprawozdanie z ruchu spraw w za miesiąc " + strMonthName + " " + Date2.Date.Year.ToString() + " roku.";
                     Label17.Text = "Wydajność sędziów orzekających w Wydziale za miesiąc " + strMonthName + " " + Date2.Date.Year.ToString() + " roku.";
-                    //Label2.Text= "Ewidencja spraw odroczonych  za miesiąc " + strMonthName + " " + Date2.Date.Year.ToString() + " roku.";
                     Label15.Text = "Postępowanie wykonawcze w miesiącu " + strMonthName + " " + Date2.Date.Year.ToString() + " roku.";
                 }
                 else
                 {
                     tabela2Label.Text = "Sprawozdanie z ruchu spraw w za okres od " + Date1.Text + " do  " + Date2.Text;
                     Label17.Text = "Wydajność sędziów orzekających w Wydziale za okres od " + Date1.Text + " do  " + Date2.Text;
-                    //    Label2.Text = "Ewidencja spraw odroczonych za okres od " + Date1.Text + " do  " + Date2.Text;
                     Label15.Text = "Postępowanie wykonawcze w okresie od " + Date1.Text + " do  " + Date2.Text;
                 }
             }
@@ -519,7 +492,6 @@ namespace stat2018
 
                 ExcelWorksheet MyWorksheet1 = MyExcel.Workbook.Worksheets[1];
 
-                //   MyWorksheet2.Cells[1, 3].Value = "Ruch spraw w referatach sędziów za okres od " + Date1.Text + " do " + Date2.Text;
                 MyWorksheet1 = tabela.tworzArkuszwExcle(MyExcel.Workbook.Worksheets[1], (DataTable)Session["tabelka001"], 24, 2, 7, false, false, false, false, false);
 
                 rowik = ((DataTable)Session["tabelka001"]).Rows.Count + 1;
@@ -596,9 +568,7 @@ namespace stat2018
 
                 ExcelWorksheet MyWorksheet2 = MyExcel.Workbook.Worksheets[2];
 
-                DataTable table2 = (DataTable)Session["tabelka003"];
-
-                MyWorksheet2 = tabela.tworzArkuszwExcle(MyExcel.Workbook.Worksheets[2], table2, 31, 2, 7, false, true, false, false, false);
+                MyWorksheet2 = tabela.tworzArkuszwExcle(MyExcel.Workbook.Worksheets[2], (DataTable)Session["tabelka003"], 31, 2, 7, false, true, false, false, false);
 
                 // czwarta
 
@@ -673,7 +643,7 @@ namespace stat2018
             if (e.Row.RowType == DataControlRowType.Footer)
             {
                 DataTable table = (DataTable)Session["tabelka003"];
-                tabela.makeSumRow(table, e);
+                tabela.makeSumRow(table, e, 1);
             }
         }
 
@@ -682,7 +652,7 @@ namespace stat2018
             if (e.Row.RowType == DataControlRowType.Footer)
             {
                 DataTable table = (DataTable)Session["tabelka004"];
-                tabela.makeSumRow(table, e);
+                tabela.makeSumRow(table, e, 1);
             }
         }
 

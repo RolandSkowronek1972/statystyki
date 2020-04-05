@@ -232,7 +232,7 @@ namespace stat2018
             {
                 cm.log.Info(tenPlik + ": rozpoczęcie tworzenia tabeli 2");
             }
-            DataTable tabelka01 = dr.generuj_dane_do_tabeli_sedziowskiej_2018(int.Parse(idDzialu), 2, Date1.Date, Date2.Date, 35, tenPlik);
+            DataTable tabelka01 = dr.generuj_dane_do_tabeli_sedziowskiej_2019(int.Parse(idDzialu), 2, Date1.Date, Date2.Date, 35, tenPlik);
             Session["tabelka002"] = tabelka01;
             gwTabela2.DataSource = null;
             gwTabela2.DataSourceID = null;
@@ -295,7 +295,7 @@ namespace stat2018
             {
                 cm.log.Info(tenPlik + ": rozpoczęcie tworzenia tabeli 7");
             }
-            DataTable tabelka01 = dr.generuj_dane_do_tabeli_sedziowskiej_2018(int.Parse(idDzialu), 7, Date1.Date, Date2.Date, 23, tenPlik);
+            DataTable tabelka01 = dr.generuj_dane_do_tabeli_sedziowskiej_2019(int.Parse(idDzialu), 7, Date1.Date, Date2.Date, 23, tenPlik);
             Session["tabelka007"] = tabelka01;
             gwTabela7.DataSource = null;
             gwTabela7.DataSourceID = null;
@@ -310,7 +310,7 @@ namespace stat2018
             {
                 cm.log.Info(tenPlik + ": rozpoczęcie tworzenia tabeli 8");
             }
-            DataTable tabelka01 = dr.generuj_dane_do_tabeli_sedziowskiej_2018(int.Parse(idDzialu), 8, Date1.Date, Date2.Date, 23, tenPlik);
+            DataTable tabelka01 = dr.generuj_dane_do_tabeli_sedziowskiej_2019(int.Parse(idDzialu), 8, Date1.Date, Date2.Date, 23, tenPlik);
             Session["tabelka008"] = tabelka01;
             gwTabela8.DataSource = null;
             gwTabela8.DataSourceID = null;
@@ -339,9 +339,9 @@ namespace stat2018
                 cm.log.Info(tenPlik + ": rozpoczęcie tworzenia tabeli 10");
             }
 
-            DataTable tabelka01 = dr.generuj_dane_do_tabeli_wierszy2018(Date1.Date, Date2.Date, (string)Session["id_dzialu"], 10, 4, 4, tenPlik);
+            DataTable tabelka01 = dr.generuj_dane_do_tabeli_wierszy2018(Date1.Date, Date2.Date, (string)Session["id_dzialu"], 10, 2,12, tenPlik);
             Session["tabelka010"] = tabelka01;
-            pisz("tab_10_", 1, 11, tabelka01);
+            pisz("tab_10_", 1, 12, tabelka01);
         }
 
         protected void tabela_11()
@@ -351,7 +351,7 @@ namespace stat2018
             {
                 cm.log.Info(tenPlik + ": rozpoczęcie tworzenia tabeli 11");
             }
-            DataTable tabelka01 = dr.generuj_dane_do_tabeli_sedziowskiej_2018(int.Parse(idDzialu), 11, Date1.Date, Date2.Date, 6, tenPlik);
+            DataTable tabelka01 = dr.generuj_dane_do_tabeli_sedziowskiej_2019(int.Parse(idDzialu), 11, Date1.Date, Date2.Date, 6, tenPlik);
             Session["tabelka011"] = tabelka01;
             gwTabela11.DataSource = null;
             gwTabela11.DataSourceID = null;
@@ -366,7 +366,7 @@ namespace stat2018
             {
                 cm.log.Info(tenPlik + ": rozpoczęcie tworzenia tabeli 12");
             }
-            DataTable tabelka01 = dr.generuj_dane_do_tabeli_sedziowskiej_2018(int.Parse(idDzialu), 12, Date1.Date, Date2.Date, 6, tenPlik);
+            DataTable tabelka01 = dr.generuj_dane_do_tabeli_sedziowskiej_2019(int.Parse(idDzialu), 12, Date1.Date, Date2.Date, 6, tenPlik);
             Session["tabelka012"] = tabelka01;
             gwTabela12.DataSource = null;
             gwTabela12.DataSourceID = null;
@@ -405,7 +405,7 @@ namespace stat2018
             {
                 cm.log.Info(tenPlik + ": rozpoczęcie tworzenia tabeli 15");
             }
-            DataTable tabelka01 = dr.generuj_dane_do_tabeli_sedziowskiej_2018(int.Parse(idDzialu), 15, Date1.Date, Date2.Date, 10, tenPlik);
+            DataTable tabelka01 = dr.generuj_dane_do_tabeli_sedziowskiej_2019(int.Parse(idDzialu), 15, Date1.Date, Date2.Date, 10, tenPlik);
             Session["tabelka015"] = tabelka01;
             gwTabela15.DataSource = null;
             gwTabela15.DataSourceID = null;
@@ -420,7 +420,7 @@ namespace stat2018
             {
                 cm.log.Info(tenPlik + ": rozpoczęcie tworzenia tabeli 16");
             }
-            DataTable tabelka01 = dr.generuj_dane_do_tabeli_sedziowskiej_2018(int.Parse(idDzialu), 16, Date1.Date, Date2.Date, 500, tenPlik);
+            DataTable tabelka01 = dr.generuj_dane_do_tabeli_sedziowskiej_2019(int.Parse(idDzialu), 16, Date1.Date, Date2.Date, 500, tenPlik);
             Session["tabelka016"] = tabelka01;
             cm.log.Info(tenPlik + ": rozpoczęcie tworzenia HTML 16");
             tworztabelkeHTML3("K2", 10, 16, tabelka01);
@@ -432,7 +432,7 @@ namespace stat2018
             {
                 cm.log.Info(tenPlik + ": rozpoczęcie tworzenia tabeli 17");
             }
-            DataTable tabelka01 = dr.generuj_dane_do_tabeli_sedziowskiej_2018(int.Parse(idDzialu), 17, Date1.Date, Date2.Date, 23, tenPlik);
+            DataTable tabelka01 = dr.generuj_dane_do_tabeli_sedziowskiej_2019(int.Parse(idDzialu), 17, Date1.Date, Date2.Date, 23, tenPlik);
             Session["tabelka017"] = tabelka01;
             gwTabela16.DataSource = null;
             gwTabela16.DataSourceID = null;
@@ -446,7 +446,7 @@ namespace stat2018
             {
                 cm.log.Info(tenPlik + ": rozpoczęcie tworzenia tabeli 18");
             }
-            DataTable tabelka01 = dr.generuj_dane_do_tabeli_sedziowskiej_2018(int.Parse(idDzialu), 18, Date1.Date, Date2.Date, 23, tenPlik);
+            DataTable tabelka01 = dr.generuj_dane_do_tabeli_sedziowskiej_2019(int.Parse(idDzialu), 18, Date1.Date, Date2.Date, 23, tenPlik);
             Session["tabelka018"] = tabelka01;
             gwTabela17.DataSource = null;
             gwTabela17.DataSourceID = null;

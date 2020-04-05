@@ -57,6 +57,14 @@ namespace stat2018
                     {
                         var fileContents = System.IO.File.ReadAllText(Server.MapPath(@"~//version.txt"));    // file read with version
                         this.Title = "Statystyki " + fileContents.ToString().Trim();
+                        Session["tabelka001"] = null;
+                        Session["tabelka002"] = null;
+                        Session["tabelka003"] = null;
+                        Session["tabelka004"] = null;
+                        Session["tabelka005"] = null;
+                        Session["tabelka006"] = null;
+                        Session["tabelka007"] = null;
+                        Session["tabelka008"] = null;
                         odswiez();
                         makeLabels();
                     }

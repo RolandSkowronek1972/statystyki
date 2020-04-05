@@ -18,8 +18,8 @@
 
     <script src="Scripts/rls.js"></script>
 
-    <div class="noprint">
-        <div id="menu" style="background-color: #f7f7f7; z-index: 9999">
+   
+        <div id="menu" style="background-color: #f7f7f7; z-index: 9999" class="noprint">
             <div class="manu_back" style="height: 40px; margin: 0 auto 0 auto; position: relative; width: 1050px; left: 0px;">
                 <table>
                     <tr>
@@ -53,21 +53,21 @@
                 </table>
             </div>
         </div>
-    </div>
+   
 
     <div style="width: 1150px; margin: 0 auto 0 auto; position: relative; top: 60px;">
 
        
 
-        <div id="Div2" style="z-index: 10;">
-            <div style="margin-left: auto; margin-right: auto; text-align: center; width: auto;">
+       
+            <div style="margin-left: auto; margin-right: auto; text-align: center; width: auto;z-index: 10;">
                 <asp:Label ID="Label3" runat="server" Text="Sąd " Style="font-weight: 700"></asp:Label>
                 <br />
             </div>
 
             <br />
-        </div>
-        <div id="zalatwienia" class="page-break">
+       
+        <div id="zalatwienia" >
             <br />
 
             <asp:Label ID="tabela2Label" runat="server"></asp:Label>

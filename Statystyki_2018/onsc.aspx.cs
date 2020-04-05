@@ -313,7 +313,7 @@ public partial class onsc : System.Web.UI.Page
            
             string yyx = (string)Session["id_dzialu"];
             id_dzialu.Text = (string)Session["txt_dzialu"];
-            string txt = string.Empty; //
+            string txt = string.Empty; 
             txt = "File name: <b>onsc.aspx</b></br>";
             txt = txt + cl.clear_maim_db();
 
@@ -410,43 +410,8 @@ public partial class onsc : System.Web.UI.Page
             try
             {
                 DataTable tabela1 = dr. generuj_dane_do_tabeli_wierszy2018(Date1.Date, Date2.Date, yyx, 7,5, 13, tenPlik);
-                tab_07_w01_c01.Text = tabela1.Rows[0][1].ToString().Trim();
-                tab_07_w01_c02.Text = tabela1.Rows[0][2].ToString().Trim();
-                tab_07_w01_c03.Text = tabela1.Rows[0][3].ToString().Trim();
-                tab_07_w01_c04.Text = tabela1.Rows[0][4].ToString().Trim();
-                tab_07_w01_c05.Text = tabela1.Rows[0][5].ToString().Trim();
-                tab_07_w01_c06.Text = tabela1.Rows[0][6].ToString().Trim();
-                //wiersz 2
-                tab_07_w02_c01.Text = tabela1.Rows[1][1].ToString().Trim();
-                tab_07_w02_c02.Text = tabela1.Rows[1][2].ToString().Trim();
-                tab_07_w02_c03.Text = tabela1.Rows[1][3].ToString().Trim();
-                tab_07_w02_c04.Text = tabela1.Rows[1][4].ToString().Trim();
-                tab_07_w02_c05.Text = tabela1.Rows[1][5].ToString().Trim();
-                tab_07_w02_c06.Text = tabela1.Rows[1][6].ToString().Trim();
-                //wiersz 3
-                tab_07_w03_c01.Text = tabela1.Rows[2][1].ToString().Trim();
-                tab_07_w03_c02.Text = tabela1.Rows[2][2].ToString().Trim();
-                tab_07_w03_c03.Text = tabela1.Rows[2][3].ToString().Trim();
-                tab_07_w03_c04.Text = tabela1.Rows[2][4].ToString().Trim();
-                tab_07_w03_c05.Text = tabela1.Rows[2][5].ToString().Trim();
-                tab_07_w03_c06.Text = tabela1.Rows[2][6].ToString().Trim();
-                //wiersz 4
-                tab_07_w04_c01.Text = tabela1.Rows[3][1].ToString().Trim();
-                tab_07_w04_c02.Text = tabela1.Rows[3][2].ToString().Trim();
-                tab_07_w04_c03.Text = tabela1.Rows[3][3].ToString().Trim();
-                tab_07_w04_c04.Text = tabela1.Rows[3][4].ToString().Trim();
-                tab_07_w04_c05.Text = tabela1.Rows[3][5].ToString().Trim();
-                tab_07_w04_c06.Text = tabela1.Rows[3][6].ToString().Trim();
-                //wiersz 5 
-                tab_07_w05_c01.Text = tabela1.Rows[4][1].ToString().Trim();
-                tab_07_w05_c02.Text = tabela1.Rows[4][2].ToString().Trim();
-                tab_07_w05_c03.Text = tabela1.Rows[4][3].ToString().Trim();
-                tab_07_w05_c04.Text = tabela1.Rows[4][4].ToString().Trim();
-                tab_07_w05_c05.Text = tabela1.Rows[4][5].ToString().Trim();
-                tab_07_w05_c06.Text = tabela1.Rows[4][6].ToString().Trim();
-                //wiersz 6
-
-
+                pisz("tab_07_", 6, 13, tabela1);
+             
             }
             catch (Exception ex)
             {
@@ -493,150 +458,10 @@ public partial class onsc : System.Web.UI.Page
 
         }
 
-        #region "nagłowki tabel"
-
-        TableCell HeaderCell_(string text, int columns, int rows)
-        {
-            TableCell HeaderCell = new TableCell();
-            HeaderCell.Text = text;
-            HeaderCell.ColumnSpan = columns;
-            HeaderCell.RowSpan = rows;
-            return HeaderCell;
-
-
-        }
-        protected void makeHeader1(System.Web.UI.WebControls.GridView sender, DataTable dT)
-        {
-            try
-            {
-                int row = 0;
-                TableCell HeaderCell = new TableCell();
-                GridViewRow HeaderGridRow = null;
-                foreach (DataRow dR in dT.Rows)
-                {
-                    if (int.Parse(dR[0].ToString().Trim()) > row)
-                    {
-                        GridView HeaderGrid = (GridView)sender;
-                        HeaderGridRow = tb.Grw(sender);
-                        row = int.Parse(dR[0].ToString().Trim());
-                    }
-                    HeaderGridRow.Cells.Add(HeaderCell_(dR[1].ToString().Trim(), int.Parse(dR[2].ToString().Trim()), int.Parse(dR[3].ToString().Trim())));
-                    GridView1.Controls[0].Controls.AddAt(0, HeaderGridRow);
-                }
-            }
-            catch
-            { } // end of try
-        }
+        
 
       
-
-        protected void makeHeader3(System.Web.UI.WebControls.GridView sender, DataTable dT)
-        {
-            try
-            {
-                int row = 0;
-                TableCell HeaderCell = new TableCell();
-                GridViewRow HeaderGridRow = null;
-                foreach (DataRow dR in dT.Rows)
-                {
-                    if (int.Parse(dR[0].ToString().Trim()) > row)
-                    {
-                        GridView HeaderGrid = (GridView)sender;
-                        HeaderGridRow = tb.Grw(sender);
-                        row = int.Parse(dR[0].ToString().Trim());
-                    }
-                    HeaderGridRow.Cells.Add(HeaderCell_(dR[1].ToString().Trim(), int.Parse(dR[2].ToString().Trim()), int.Parse(dR[3].ToString().Trim())));
-                    GridView3.Controls[0].Controls.AddAt(0, HeaderGridRow);
-                }
-            }
-            catch
-            { } // end of try
-        }
-
-        protected void makeHeader4(System.Web.UI.WebControls.GridView sender, DataTable dT)
-        {
-            try
-            {
-                int row = 0;
-                TableCell HeaderCell = new TableCell();
-                GridViewRow HeaderGridRow = null;
-                foreach (DataRow dR in dT.Rows)
-                {
-                    if (int.Parse(dR[0].ToString().Trim()) > row)
-                    {
-                        GridView HeaderGrid = (GridView)sender;
-                        HeaderGridRow = tb. Grw(sender);
-                        row = int.Parse(dR[0].ToString().Trim());
-                    }
-                    HeaderGridRow.Cells.Add(HeaderCell_(dR[1].ToString().Trim(), int.Parse(dR[2].ToString().Trim()), int.Parse(dR[3].ToString().Trim())));
-                    GridView5.Controls[0].Controls.AddAt(0, HeaderGridRow);
-                }
-            }
-            catch
-            { } // end of try
-        }
-
-        protected void makeHeader6(System.Web.UI.WebControls.GridView sender, DataTable dT)
-        {
-            try
-            {
-                int row = 0;
-                TableCell HeaderCell = new TableCell();
-                GridViewRow HeaderGridRow = null;
-                foreach (DataRow dR in dT.Rows)
-                {
-                    if (int.Parse(dR[0].ToString().Trim()) > row)
-                    {
-                        GridView HeaderGrid = (GridView)sender;
-                        HeaderGridRow = tb.Grw(sender);
-                        row = int.Parse(dR[0].ToString().Trim());
-                    }
-                    HeaderGridRow.Cells.Add(HeaderCell_(dR[1].ToString().Trim(), int.Parse(dR[2].ToString().Trim()), int.Parse(dR[3].ToString().Trim())));
-                    GridView6.Controls[0].Controls.AddAt(0, HeaderGridRow);
-                }
-            }
-            catch
-            { } // end of try
-        }
-
-        protected void makeHeader7(System.Web.UI.WebControls.GridView sender, DataTable dT)
-        {
-            try
-            {
-                int row = 0;
-                TableCell HeaderCell = new TableCell();
-                GridViewRow HeaderGridRow = null;
-                foreach (DataRow dR in dT.Rows)
-                {
-                    if (int.Parse(dR[0].ToString().Trim()) > row)
-                    {
-                        GridView HeaderGrid = (GridView)sender;
-                        HeaderGridRow = tb.Grw(sender);
-                        row = int.Parse(dR[0].ToString().Trim());
-                    }
-                    HeaderGridRow.Cells.Add(HeaderCell_(dR[1].ToString().Trim(), int.Parse(dR[2].ToString().Trim()), int.Parse(dR[3].ToString().Trim())));
-                    GridView7.Controls[0].Controls.AddAt(0, HeaderGridRow);
-                }
-            }
-            catch
-            { } // end of try
-        }
-      
-
-
-        #endregion "nagłowki tabel"
-
-      
-        protected string[] splitData(string arg)
-        {
-
-            string[] stringSeparators = new string[] { "#" };
-            string[] stTab = null;
-            stTab = arg.Split(stringSeparators, StringSplitOptions.None);
-
-            return stTab;
-        }
-
+       
 
         protected void makeLabels()
         {
@@ -827,9 +652,10 @@ public partial class onsc : System.Web.UI.Page
         {
             if (e.Row.RowType == DataControlRowType.Header)
             {
-                System.Web.UI.WebControls.GridView sn = new System.Web.UI.WebControls.GridView();
+                
                 DataTable dT = (DataTable)Session["header_02"];
-                makeHeader1(sn, dT);
+                tb.makeHeader(dT, GridView1);
+               
             }
         }
 
@@ -837,9 +663,9 @@ public partial class onsc : System.Web.UI.Page
         {
             if (e.Row.RowType == DataControlRowType.Header)
             {
-                System.Web.UI.WebControls.GridView sn = new System.Web.UI.WebControls.GridView();
+               
                 DataTable dT = (DataTable)Session["header_03"];
-                makeHeader3(sn, dT);
+                tb.makeHeader(dT, GridView3);
             }
         }
 
@@ -847,9 +673,9 @@ public partial class onsc : System.Web.UI.Page
         {
             if (e.Row.RowType == DataControlRowType.Header)
             {
-                System.Web.UI.WebControls.GridView sn = new System.Web.UI.WebControls.GridView();
+               
                 DataTable dT = (DataTable)Session["header_04"];
-                makeHeader4(sn, dT);
+                tb.makeHeader(dT, GridView5);
             }
         }
 
@@ -857,9 +683,9 @@ public partial class onsc : System.Web.UI.Page
         {
             if (e.Row.RowType == DataControlRowType.Header)
             {
-                System.Web.UI.WebControls.GridView sn = new System.Web.UI.WebControls.GridView();
+              
                 DataTable dT = (DataTable)Session["header_05"];
-                makeHeader6(sn, dT);
+                tb.makeHeader(dT, GridView6);
             }
         }
 
@@ -867,9 +693,9 @@ public partial class onsc : System.Web.UI.Page
         {
             if (e.Row.RowType == DataControlRowType.Header)
             {
-                System.Web.UI.WebControls.GridView sn = new System.Web.UI.WebControls.GridView();
+               
                 DataTable dT = (DataTable)Session["header_06"];
-                makeHeader7(sn, dT);
+                tb.makeHeader(dT, GridView7);
             }
         }
 
@@ -890,5 +716,26 @@ public partial class onsc : System.Web.UI.Page
         {
       
         }
+        protected void pisz(string Template, int iloscWierszy, int iloscKolumn, DataTable dane)
+        {
+            for (int wiersz = 1; wiersz <= iloscWierszy; wiersz++)
+            {
+                for (int kolumna = 1; kolumna <= iloscKolumn; kolumna++)
+                {
+                    string controlName = Template + "w" + wiersz.ToString("D2") + "_c" + kolumna.ToString("D2");
+                    Label tb = (Label)this.Master.FindControl("ContentPlaceHolder1").FindControl(controlName);
+                    if (tb != null)
+                    {
+                        try
+                        {
+                            tb.Text = dane.Rows[wiersz - 1][kolumna].ToString().Trim();
+                        }
+                        catch
+                        {
+                        }
+                    }
+                }
+            }
+        }// end of pisz
     }
 }

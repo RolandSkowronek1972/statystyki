@@ -108,7 +108,7 @@ namespace stat2018
             try
             {
                 //cm.log.Info(tenPlik + ": wczytywanie danych do tabeli 1");
-                tabelkaGW1 = dr.generuj_dane_do_tabeli_sedziowskiej_2018(int.Parse((string)Session["id_dzialu"]), 1, Date1.Date, Date2.Date, 30, tenPlik);
+                tabelkaGW1 = dr.generuj_dane_do_tabeli_sedziowskiej_2019(int.Parse((string)Session["id_dzialu"]), 1, Date1.Date, Date2.Date, 30, tenPlik);
                 Session["tabelkaGW001"] = tabelkaGW1;
                 Tabela1.DataSource = null;
                 Tabela1.DataSourceID = null;
@@ -123,7 +123,7 @@ namespace stat2018
             try
             {
                 //cm.log.Info(tenPlik+": wczytywanie danych do tabeli 3");
-                tabelkaGW3 = dr.generuj_dane_do_tabeli_sedziowskiej_2018(int.Parse((string)Session["id_dzialu"]), 3, Date1.Date, Date2.Date, 30, tenPlik);
+                tabelkaGW3 = dr.generuj_dane_do_tabeli_sedziowskiej_2019(int.Parse((string)Session["id_dzialu"]), 3, Date1.Date, Date2.Date, 30, tenPlik);
                 Session["tabelkaGW003"] = tabelkaGW3;
                 Gridview3.DataSource = null;
                 Gridview3.DataSourceID = null;
@@ -478,7 +478,7 @@ namespace stat2018
             if (e.Row.RowType == DataControlRowType.Footer)
             {
                 DataTable table = (DataTable)Session["tabelkaGW002"];
-                tabela.makeSumRow(table, e);
+                tabela.makeSumRow(table, e,1);
             }
         }
 
@@ -487,7 +487,7 @@ namespace stat2018
             if (e.Row.RowType == DataControlRowType.Footer)
             {
                 DataTable table = (DataTable)Session["tabelkaGW003"];
-                tabela.makeSumRow(table, e);
+                tabela.makeSumRow(table, e,1);
             }
         }
 

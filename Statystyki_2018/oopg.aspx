@@ -61,7 +61,7 @@
         </tr>
     </table>
       </div>
-       <div  margin: 0 auto 0 auto; position:relative;top:30px;">
+       <div style=" margin: 0 auto 0 auto; position:relative;top:30px;">
              <div style="margin-left:auto;margin-right:auto;text-align: center; width:auto; ">
             <asp:Label ID="LabelNazwaSadu" runat="server" Text=" " style="font-weight: 700"></asp:Label>
      <br />

@@ -2,11 +2,6 @@
 using System.Data;
 using System.IO;
 using System.Web.UI;
-using System.Web.UI.WebControls;
-using iTextSharp;
-using iTextSharp.text;
-using System.Diagnostics;
-
 
 namespace stat2018.UserControlls
 {
@@ -15,17 +10,15 @@ namespace stat2018.UserControlls
         public Class1 cl = new Class1();
         public pdfTables pdfT = new pdfTables();
         public SsrSso ccr = new SsrSso();
-      
+
         public string info
         {
-
             set
             {
                 HidField.Value = value;
 
                 string[] stringSeparators = new string[] { "#" };
                 string[] stTab = null;
-
 
                 stTab = HidField.Value.Split(stringSeparators, StringSplitOptions.None);
                 try
@@ -46,23 +39,18 @@ namespace stat2018.UserControlls
                     }
                     catch
                     {
-
                     }
-
                 }
                 catch
                 {
                     LinkButton1.Text = "0";
                 }
-
             }
         }
+
         protected void Page_Load(object sender, EventArgs e)
         {
-
         }
-
-
 
         protected void LinkButton1_Click(object sender, EventArgs e)
         {
@@ -79,7 +67,6 @@ namespace stat2018.UserControlls
             string date2 = (string)Session["data_2"];
             if (!string.IsNullOrEmpty(id_tabeli))
             {
-
                 cs = cl.podajConnectionString(int.Parse((string)Session["id_dzialu"]));
 
                 if (HiddenField4.Value.ToString().Trim() == "1")
@@ -96,7 +83,6 @@ namespace stat2018.UserControlls
             Panel1.Visible = true;
             string id_ = HiddenField1.Value.ToString();
 
-
             GridView55.DataSource = null;
             GridView55.DataSourceID = null;
 
@@ -110,7 +96,6 @@ namespace stat2018.UserControlls
 
             try
             {
-
                 DataSet dane = new DataSet();
                 dane.Tables.Clear();
                 dane = cl.pod_tabela(cs, kw, date1, date2, (string)Session["id_sedziego"]);
@@ -121,7 +106,7 @@ namespace stat2018.UserControlls
                 px.Visible = true;
                 GridView55.Visible = true;
             }
-            catch 
+            catch
             {
                 GridView55.DataSource = null;
                 GridView55.DataSourceID = null;
@@ -149,8 +134,6 @@ namespace stat2018.UserControlls
             Panel1.Visible = false;
         }
 
-
-
         protected void LinkButton58_Click(object sender, EventArgs e)
         {
             DataTable dT = new DataTable();
@@ -171,11 +154,7 @@ namespace stat2018.UserControlls
             }
             catch (Exception)
             {
-
-
             }
-
-
         }
 
         protected void LinkButton59_Click(object sender, EventArgs e)

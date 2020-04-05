@@ -16,6 +16,7 @@ namespace stat2018
         public pdfTables pdfT = new pdfTables();
         public common cm = new common();
         public tabele tabela = new tabele();
+        public dataReaders dr = new dataReaders();
         private HSSFWorkbook hssfworkbook;
         public static string tenPlik = "ansk.aspx";
 
@@ -727,15 +728,7 @@ namespace stat2018
             return file;
         }
 
-        private DataRow[] getData(DataTable dTab, string expression)
-        {
-            DataRow[] foundRows = null;
-            if (dTab != null)
-            {
-                foundRows = dTab.Select(expression);
-            }
-            return foundRows;
-        }
+     
 
         private void generate_my_data()
         {
@@ -758,7 +751,7 @@ namespace stat2018
 
             #region tabela1
 
-            foreach (DataRow dR in getData(dT, "Column1=3"))
+            foreach (DataRow dR in dr.getData(dT, "Column1=3"))
             {
                 string text = dR[1].ToString().Trim();
                 int exc1 = int.Parse(dR[4].ToString().Trim());
@@ -774,7 +767,7 @@ namespace stat2018
             }
 
             row0 = sheet0.CreateRow(1);
-            foreach (DataRow dR in getData(dT, "Column1=2"))
+            foreach (DataRow dR in dr.getData(dT, "Column1=2"))
             {
                 string text = dR[1].ToString().Trim();
                 int exc1 = int.Parse(dR[4].ToString().Trim());
@@ -790,7 +783,7 @@ namespace stat2018
             }
 
             row0 = sheet0.CreateRow(2);
-            foreach (DataRow dR in getData(dT, "Column1=1"))
+            foreach (DataRow dR in dr. getData(dT, "Column1=1"))
             {
                 string text = dR[1].ToString().Trim();
                 int exc1 = int.Parse(dR[4].ToString().Trim());
@@ -868,7 +861,7 @@ namespace stat2018
             dT = (DataTable)Session["header_02"];
             //===========
 
-            foreach (DataRow dR in getData(dT, "Column1=3"))
+            foreach (DataRow dR in dr.getData(dT, "Column1=3"))
             {
                 string text = dR[1].ToString().Trim();
                 int exc1 = int.Parse(dR[4].ToString().Trim());
@@ -884,7 +877,7 @@ namespace stat2018
             }
 
             row2 = sheet0.CreateRow(1);
-            foreach (DataRow dR in getData(dT, "Column1=2"))
+            foreach (DataRow dR in dr. getData(dT, "Column1=2"))
             {
                 string text = dR[1].ToString().Trim();
                 int exc1 = int.Parse(dR[4].ToString().Trim());
@@ -900,7 +893,7 @@ namespace stat2018
             }
 
             row2 = sheet0.CreateRow(2);
-            foreach (DataRow dR in getData(dT, "Column1=1"))
+            foreach (DataRow dR in dr.getData(dT, "Column1=1"))
             {
                 string text = dR[1].ToString().Trim();
                 int exc1 = int.Parse(dR[4].ToString().Trim());

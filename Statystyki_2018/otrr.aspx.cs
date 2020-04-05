@@ -28,6 +28,7 @@ namespace stat2018
             }
             else
             {
+                Server.Transfer("default.aspx");
                 return;
             }
             CultureInfo newCulture = (CultureInfo)CultureInfo.CurrentCulture.Clone();
@@ -50,7 +51,14 @@ namespace stat2018
             cm.log.Info(tenPlik + ": data początku okresy statystycznego w sesji dla popupów " + (string)Session["data_1"]);
             Session["data_2"] = Date2.Date.Year.ToString() + "-" + Date2.Date.Month.ToString("D2") + "-" + Date2.Date.Day.ToString("D2");
             cm.log.Info(tenPlik + ": data początku okresy statystycznego w sesji dla popupów " + (string)Session["data_"]);
-
+            Session["tabelka001"] = null;
+            Session["tabelka002"] = null;
+            Session["tabelka003"] = null;
+            Session["tabelka004"] = null;
+            Session["tabelka005"] = null;
+            Session["tabelka006"] = null;
+            Session["tabelka007"] = null;
+            Session["tabelka008"] = null;
             clearHedersSession();
             try
             {

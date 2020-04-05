@@ -8,30 +8,28 @@
 </head>
 <body>
     <form id="form1" runat="server">
-    <div>
-    
-        <table style="width:100%;">
-            <tr>
-                <td>
-                    <asp:Label ID="Label2" runat="server"></asp:Label>
-                </td>
-                <td>&nbsp;&nbsp;&nbsp;&nbsp;
+        <div>
+
+            <table style="width: 100%;">
+                <tr>
+                    <td>
+                        <asp:Label ID="Label2" runat="server"></asp:Label>
+                    </td>
+                    <td>&nbsp;&nbsp;&nbsp;&nbsp;
                     <asp:Label ID="Label1" runat="server"></asp:Label>
-                </td>
-                <td>
-                    &nbsp;
-                </td>
-                <td style="margin-right: 0px;float:right;">
-                    <FORM>
-<INPUT TYPE="button" value="Drukuj" onClick="window.print();">
-</FORM>
-                </td>
-            </tr>
-        </table>
-        <br />
-        <hr>
-    
-    </div>
+                    </td>
+                    <td>&nbsp;
+                    </td>
+                    <td style="margin-right: 0px; float: right;">
+                        <form>
+                            <input type="button" value="Drukuj" onclick="window.print();"/>
+                        </form>
+                    </td>
+                </tr>
+            </table>
+            <br />
+            <hr>
+        </div>
         <asp:GridView ID="GridView1" runat="server" CellPadding="2" ForeColor="#333333" GridLines="None" Width="100%" CellSpacing="2">
             <AlternatingRowStyle BackColor="White" />
             <EditRowStyle BackColor="#2461BF" />
@@ -46,6 +44,5 @@
             <SortedDescendingHeaderStyle BackColor="#4870BE" />
         </asp:GridView>
     </form>
-       
 </body>
 </html>
