@@ -85,7 +85,7 @@ namespace stat2018
         protected void makeHeader()
         {
 
-            System.Web.UI.WebControls.GridView sn = new System.Web.UI.WebControls.GridView();
+         //   System.Web.UI.WebControls.GridView sn = new System.Web.UI.WebControls.GridView();
 
 
             #region tabela  1 (wierszowa)
@@ -358,6 +358,7 @@ namespace stat2018
                 txt = txt + cl.generuj_dane_do_tabeli_(int.Parse((string)Session["id_dzialu"]), 4, Date1.Date, Date2.Date);
                 txt = txt + cl.generuj_dane_do_tabeli_(int.Parse((string)Session["id_dzialu"]), 5, Date1.Date, Date2.Date);
                 txt = txt + cl.generuj_dane_do_tabeli_(int.Parse((string)Session["id_dzialu"]), 6, Date1.Date, Date2.Date);
+
                 txt = txt + cl.generuj_dane_do_tabeli_(int.Parse((string)Session["id_dzialu"]), 8, Date1.Date, Date2.Date);
                 //txt = txt + cl.uzupelnij_statusy();
             }

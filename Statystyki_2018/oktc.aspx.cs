@@ -401,7 +401,11 @@ namespace stat2018
 
                 //cm.log.Info("OKTC: wczytywanie danych do tabeli 5");
                 txt = txt + cl.generuj_dane_do_tabeli_(int.Parse((string)Session["id_dzialu"]), 5, Date1.Date, Date2.Date);
+                GridView1.DataBind();
+                GridView2.DataBind();
+                GridView3.DataBind();
             }
+            
             catch (Exception ex)
             {
                 cm.log.Error("OKTC: " + ex.Message);
@@ -424,6 +428,8 @@ namespace stat2018
             Label11.Text = txt;
             Label6.Text = cl.nazwaSadu((string)Session["id_dzialu"]);
         }
+
+      
 
         #region "nagłowki tabel"
 

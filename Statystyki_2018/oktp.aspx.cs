@@ -61,16 +61,10 @@ namespace stat2018
                     {
                         Session["tabelka001"] = null;
                         Session["tabelka002"] = null;
-                        Session["tabelka003"] = null;
-                        Session["tabelka004"] = null;
-                        Session["tabelka005"] = null;
-                        Session["tabelka006"] = null;
-                        Session["tabelka007"] = null;
-                        Session["tabelka008"] = null;
+
                         var fileContents = System.IO.File.ReadAllText(Server.MapPath(@"~//version.txt"));    // file read with version
                         this.Title = "Statystyki " + fileContents.ToString().Trim();
-                        clearHedersSession();
-                        makeHeader();
+
                         odswiez();
                         makeLabels();
                     }
@@ -78,21 +72,9 @@ namespace stat2018
             }
             catch
             {
-                Server.Transfer("default.aspx");
+                // Server.Transfer("default.aspx");
             }
         }// end of Page_Load
-
-        protected void clearHedersSession()
-        {
-            Session["header_01"] = null;
-            Session["header_02"] = null;
-            Session["header_03"] = null;
-            Session["header_04"] = null;
-            Session["header_05"] = null;
-            Session["header_06"] = null;
-            Session["header_07"] = null;
-            Session["header_08"] = null;
-        }
 
         protected void odswiez()
         {
@@ -100,15 +82,15 @@ namespace stat2018
             string txt = string.Empty; //
             try
             {
-                //cm.log.Info(tenPlik + ": rozpoczęcie tworzenia tabeli 2");
+                bool debug = cl.debug(int.Parse(idDzialu));
+                cm.log.Info(tenPlik + ": rozpoczęcie tworzenia tabeli 2", debug);
 
-                DataTable tabelka02 = dr. generuj_dane_do_tabeli_wierszy2018(Date1.Date, Date2.Date, (string)Session["id_dzialu"], 2, 11, 22, tenPlik);
+                DataTable tabelka02 = dr.generuj_dane_do_tabeli_wierszy2018(Date1.Date, Date2.Date, (string)Session["id_dzialu"], 2, 11, 22, tenPlik);
                 Session["tabelka002"] = tabelka02;
 
-                //cm.log.Info(tenPlik + ": rozpoczęcie tworzenia tabeli 1");
-
-                 Session["tabelka001"]=dr.tworzTabele(int.Parse(idDzialu), 1, Date1.Date, Date2.Date, 23,GridView1 , tenPlik);
-               
+                cm.log.Info(tenPlik + ": rozpoczęcie tworzenia tabeli 1", debug);
+                Session["tabelka001"] = dr.tworzTabele(int.Parse(idDzialu), 1, Date1.Date, Date2.Date, 23, GridView1, tenPlik);
+                GridView1.DataBind();
             }
             catch (Exception ex)
             {
@@ -135,12 +117,8 @@ namespace stat2018
 
         #region "nagłowki tabel"
 
-        protected void makeHeader()
+        private DataTable Naglowek_1()
         {
-            System.Web.UI.WebControls.GridView sn = new System.Web.UI.WebControls.GridView();
-
-            #region tabela  1 (wierszowa)
-
             DataTable dT_01 = new DataTable();
             dT_01.Columns.Clear();
             dT_01.Columns.Add("Column1", typeof(string));
@@ -149,31 +127,6 @@ namespace stat2018
             dT_01.Columns.Add("Column4", typeof(string));
             dT_01.Columns.Add("Column5", typeof(string));
             dT_01.Columns.Add("Column6", typeof(string));
-
-            DataTable dT_02 = new DataTable();
-            dT_02.Columns.Clear();
-            dT_02.Columns.Add("Column1", typeof(string));
-            dT_02.Columns.Add("Column2", typeof(string));
-            dT_02.Columns.Add("Column3", typeof(string));
-            dT_02.Columns.Add("Column4", typeof(string));
-            dT_02.Columns.Add("Column5", typeof(string));
-            dT_02.Columns.Add("Column6", typeof(string));
-            DataTable dT_03 = new DataTable();
-            dT_03.Columns.Clear();
-            dT_03.Columns.Add("Column1", typeof(string));
-            dT_03.Columns.Add("Column2", typeof(string));
-            dT_03.Columns.Add("Column3", typeof(string));
-            dT_03.Columns.Add("Column4", typeof(string));
-            dT_03.Columns.Add("Column5", typeof(string));
-            dT_03.Columns.Add("Column6", typeof(string));
-            DataTable dT_04 = new DataTable();
-            dT_04.Columns.Clear();
-            dT_04.Columns.Add("Column1", typeof(string));
-            dT_04.Columns.Add("Column2", typeof(string));
-            dT_04.Columns.Add("Column3", typeof(string));
-            dT_04.Columns.Add("Column4", typeof(string));
-            dT_04.Columns.Add("Column5", typeof(string));
-            dT_04.Columns.Add("Column6", typeof(string));
 
             dT_01.Clear();
             dT_01.Rows.Add(new Object[] { "1", "P", "1", "1" });
@@ -201,50 +154,7 @@ namespace stat2018
             dT_01.Rows.Add(new Object[] { "2", "Załatwienia", "6", "1" });
             dT_01.Rows.Add(new Object[] { "2", "Absencja w diach roboczych", "1", "2" });
 
-            Session["header_01"] = dT_01;
-
-            #endregion tabela  1 (wierszowa)
-
-            #region tabela  2 ()
-
-            dT_02.Clear();
-
-            dT_02.Rows.Add(new Object[] { "1", "", "1", "1", "h", "60" });//
-            dT_02.Rows.Add(new Object[] { "1", "zaw", "1", "1", "h", "60" });//
-            dT_02.Rows.Add(new Object[] { "1", "", "1", "1", "h", "60" });//
-            dT_02.Rows.Add(new Object[] { "1", "zaw", "1", "1", "h", "60" });//
-
-            dT_02.Rows.Add(new Object[] { "1", "", "1", "1", "h", "60" });//
-            dT_02.Rows.Add(new Object[] { "1", "zaw", "1", "1", "h", "60" });//
-            dT_02.Rows.Add(new Object[] { "1", "", "1", "1", "h", "60" });//
-            dT_02.Rows.Add(new Object[] { "1", "zaw", "1", "1", "h", "60" });//
-            dT_02.Rows.Add(new Object[] { "1", "", "1", "1", "h", "60" });//
-            dT_02.Rows.Add(new Object[] { "1", "zaw", "1", "1", "h", "60" });//
-            dT_02.Rows.Add(new Object[] { "1", "", "1", "1", "h", "60" });//
-            dT_02.Rows.Add(new Object[] { "1", "zaw", "1", "1", "h", "60" });//
-
-            dT_02.Rows.Add(new Object[] { "1", "", "1", "1", "h", "60" });//
-            dT_02.Rows.Add(new Object[] { "1", "zaw", "1", "1", "h", "60" });//
-            dT_02.Rows.Add(new Object[] { "1", "", "1", "1", "h", "60" });//
-            dT_02.Rows.Add(new Object[] { "1", "zaw", "1", "1", "h", "60" });//
-
-            dT_02.Rows.Add(new Object[] { "2", "C", "2", "1", "h" });//
-            dT_02.Rows.Add(new Object[] { "2", "Ns", "2", "1", "h" });//
-            dT_02.Rows.Add(new Object[] { "2", "Nc", "2", "1", "h", "120" });//
-            dT_02.Rows.Add(new Object[] { "2", "Co", "2", "1", "h", "120" });//
-            dT_02.Rows.Add(new Object[] { "2", "Cps", "2", "1", "h", "120" });//
-            dT_02.Rows.Add(new Object[] { "2", "Cgg", "2", "1", "h", "120" });//
-            dT_02.Rows.Add(new Object[] { "2", "N", "2", "1", "h", "120" });//;
-            dT_02.Rows.Add(new Object[] { "2", "Razem", "2", "1", "h", "120" });//;
-
-            dT_02.Rows.Add(new Object[] { "3", "L.p.", "1", "3", "h", "10" });//
-            dT_02.Rows.Add(new Object[] { "3", "Nazwisko i imię Sędziego", "1", "3", "h", "130" });//
-            dT_02.Rows.Add(new Object[] { "3", "Dni rozpraw", "1", "3", "h", "60" });//
-            dT_02.Rows.Add(new Object[] { "3", "ZAŁATWIENIA Sprawy rodzinne i nieletnich", "16", "1", "h", "45" });//
-
-            Session["header_02"] = dT_02;
-
-            #endregion tabela  2 ()
+            return dT_01;
         }
 
         #endregion "nagłowki tabel"
@@ -389,8 +299,7 @@ namespace stat2018
         {
             if (e.Row.RowType == DataControlRowType.Header)
             {
-                DataTable dT = (DataTable)Session["header_01"];
-                tb.makeHeader(dT, GridView1);
+                tb.makeHeader(Naglowek_1(), GridView1);
             }
             else
             {
@@ -406,8 +315,7 @@ namespace stat2018
         {
             if (e.Row.RowType == DataControlRowType.Footer)
             {
-                DataTable table = ((DataView)tabela_1.Select(DataSourceSelectArguments.Empty)).ToTable();
-                tb.makeSumRow(table, e);
+                tb.makeSumRow((DataTable)Session["tabelka001"], e);
             }
             if (e.Row.RowType == DataControlRowType.DataRow)
             {
@@ -436,7 +344,6 @@ namespace stat2018
         private GridViewRow wierszTabela2(DataTable tabelka01, int idWiersza, string idtabeli, string tekst)
         {
             // nowy wiersz
-
             GridViewRow NewTotalRow = new GridViewRow(0, 0, DataControlRowType.DataRow, DataControlRowState.Insert);
             NewTotalRow.Cells.Add(tb.cela("Zaległości", 5, 2, "borderTopLeft col_240"));
             NewTotalRow.Cells.Add(tb.cela(tekst, 1, 2, "borderTopLeft  "));
@@ -456,8 +363,13 @@ namespace stat2018
 
             GridView GridView1 = (GridView)sender;
             GridViewRow NewTotalRow = new GridViewRow(0, 0, DataControlRowType.DataRow, DataControlRowState.Insert);
-
-            GridView1.Controls[0].Controls.AddAt(e.Row.RowIndex + rowIndex, tb.PodsumowanieTabeli(tabelka02, 15, "borderAll center"));
+            try
+            {
+                GridView1.Controls[0].Controls.AddAt(e.Row.RowIndex + rowIndex, tb.PodsumowanieTabeli(tabelka02, 15, "borderAll center"));
+            }
+            catch 
+            {
+            }
 
             string idtabeli = "2";
 
@@ -466,7 +378,6 @@ namespace stat2018
             GridView1.Controls[0].Controls.AddAt(e.Row.RowIndex + rowIndex, tb.wierszTabeli(tabelka01, 7, idWiersza, idtabeli, "Pozostało z poprzedniego okresu", 4, 1, "", "borderAll center"));
 
             idWiersza = 2;
-
             GridView1.Controls[0].Controls.AddAt(e.Row.RowIndex + rowIndex, tb.wierszTabeli(tabelka01, 7, idWiersza, idtabeli, "Wpłynęło", 4, 1, "", "borderAll center"));
 
             // nowy wiersz
@@ -479,7 +390,6 @@ namespace stat2018
 
             // nowy wiersz
             idWiersza = 5;
-
             GridView1.Controls[0].Controls.AddAt(e.Row.RowIndex + rowIndex, wierszTabela2(tabelka01, idWiersza, idtabeli, "3-6 m-cy"));
             // nowy wiersz
             idWiersza = 6;

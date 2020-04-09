@@ -115,30 +115,7 @@ namespace stat2018
                 Session["tabelka004"] = tabela04;
                 //  wiersz 1
                 pisz("tab_tabela4_", 8, 1, tabela04);
-                /*
-                tab_tabela4_w01_c01.Text = tabela04.Rows[0][1].ToString().Trim();
-
-                //  wiersz 2
-                tab_tabela4_w02_c01.Text = tabela04.Rows[1][1].ToString().Trim();
-
-                //  wiersz 3
-                tab_tabela4_w03_c01.Text = tabela04.Rows[2][1].ToString().Trim();
-
-                //  wiersz 4
-                tab_tabela4_w04_c01.Text = tabela04.Rows[3][1].ToString().Trim();
-
-                //  wiersz 5
-                tab_tabela4_w05_c01.Text = tabela04.Rows[4][1].ToString().Trim();
-
-                //  wiersz 6
-                tab_tabela4_w06_c01.Text = tabela04.Rows[5][1].ToString().Trim();
-
-                //  wiersz 7
-                tab_tabela4_w07_c01.Text = tabela04.Rows[6][1].ToString().Trim();
-
-                //  wiersz 8
-                tab_tabela4_w08_c01.Text = tabela04.Rows[7][1].ToString().Trim();
-                */
+               
             }
             catch (Exception ex)
             {
@@ -315,26 +292,6 @@ namespace stat2018
                 }
             }
         }// end of pisz
-        /*
-        protected void pisztb(string Template, int iloscWierszy, int iloscKolumn, DataTable dane)
-        {
-            for (int wiersz = 1; wiersz <= iloscWierszy; wiersz++)
-            {
-                for (int kolumna = 1; kolumna <= iloscKolumn; kolumna++)
-                {
-                    string controlName = Template + "w" + wiersz.ToString("D2") + "_c" + kolumna.ToString("D2");
-                    TextBox tb = (TextBox)this.Master.FindControl("ContentPlaceHolder1").FindControl(controlName);
-                    if (tb != null)
-                    {
-                        try
-                        {
-                            tb.Text = dane.Rows[wiersz - 1][kolumna].ToString().Trim();
-                        }
-                        catch { }
-                    }
-                }
-            }
-        }// end of pisz
-        */
+       
     }
 }

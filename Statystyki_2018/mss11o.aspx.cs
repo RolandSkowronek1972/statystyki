@@ -57,6 +57,9 @@ namespace stat2018
                 dataKoncaOkresu = DateTime.Parse(datyMSS.DataKoncowa());
                 Session["ustawDate11o"] = "X";
             }
+            if (Date1.Text.Length == 0) Date1.Date = DateTime.Parse(datyMSS.DataPoczatkowa());
+            if (Date2.Text.Length == 0) Date2.Date = DateTime.Parse(datyMSS.DataKoncowa());
+
             Session["data_1"] = datyMSS.DataPoczatkowa();
             Session["data_2"] = datyMSS.DataKoncowa();
             odswierz();

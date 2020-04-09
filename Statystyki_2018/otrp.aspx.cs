@@ -42,8 +42,15 @@ namespace stat2018
             newCulture.DateTimeFormat = CultureInfo.GetCultureInfo("PL").DateTimeFormat;
             System.Threading.Thread.CurrentThread.CurrentCulture = newCulture;
             System.Threading.Thread.CurrentThread.CurrentUICulture = newCulture;
-            Session["data_1"] = Date1.Text;
-            Session["data_2"] = Date2.Text;
+            System.Threading.Thread.CurrentThread.CurrentUICulture = newCulture;
+            DateTime dTime = DateTime.Now.AddMonths(-1); ;
+
+            if (Date1.Text.Length == 0) Date1.Date = DateTime.Parse(dTime.Year.ToString() + "-" + dTime.Month.ToString("D2") + "-01");
+            if (Date2.Text.Length == 0) Date2.Date = DateTime.Parse(dTime.Year.ToString() + "-" + dTime.Month.ToString("D2") + "-" + DateTime.DaysInMonth(dTime.Year, dTime.Month).ToString("D2"));
+            Session["id_dzialu"] = idWydzial;
+            Session["data_1"] = Date1.Date.ToShortDateString();
+            Session["data_2"] = Date2.Date.ToShortDateString();
+
             clearHedersSession();
 
             try

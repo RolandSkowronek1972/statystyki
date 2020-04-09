@@ -32,6 +32,7 @@ namespace stat2018
             {
                 if (idWydzial == null)
                 {
+                    Server.Transfer("default.aspx");
                     return;
                 }
 
@@ -263,7 +264,7 @@ namespace stat2018
             ASPxGridView2.DataSource = tabelka01;
             ASPxGridView2.DataBind();
 
-            ASPxGridView2.KeyFieldName = "miesiac";
+            ASPxGridView2.KeyFieldName = "id";
             ASPxGridView2.Columns.Clear();
             int szerokoscKolumny = 80;
             ASPxGridView2.Width = Panel1.Width;

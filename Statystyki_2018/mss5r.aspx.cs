@@ -27,9 +27,16 @@ namespace stat2018
             {
                 return;
             }
+            if (Session["ustawDate5r"] == null)
+            {
+                Session["ustawDate15o"] = null;
+                Date1.Date = DateTime.Parse(datyMSS.DataPoczatkowa());
+                Date2.Date = DateTime.Parse(datyMSS.DataKoncowa());
+                Session["ustawDate5r"] = "X";
+            }
             if (!IsPostBack)
             {
-                //cm.log.Debug("otwarcie formularza: " + tenPlik);
+                
                 try
                 {
                     // file read with version
@@ -45,12 +52,9 @@ namespace stat2018
             newCulture.DateTimeFormat = CultureInfo.GetCultureInfo("PL").DateTimeFormat;
             System.Threading.Thread.CurrentThread.CurrentCulture = newCulture;
             System.Threading.Thread.CurrentThread.CurrentUICulture = newCulture;
-            if (Session["ustawDate5r"] == null)
-            {
-                Date1.Date = DateTime.Parse(datyMSS.DataPoczatkowa());
-                Date2.Date = DateTime.Parse(datyMSS.DataKoncowa());
-                Session["ustawDate5r"] = "X";
-            }
+            if (Date1.Text.Length == 0) Date1.Date = DateTime.Parse(datyMSS.DataPoczatkowa());
+            if (Date2.Text.Length == 0) Date2.Date = DateTime.Parse(datyMSS.DataKoncowa());
+
             Session["data_1"] = Date1.Date.ToShortDateString();
             Session["data_2"] = Date2.Date.ToShortDateString();
             odswiez();

@@ -78,7 +78,8 @@ namespace stat2018
 
             try
             {
-                Session["tabelka001"] = dr.tworzTabele(int.Parse(dzial), 5, Date1.Date, Date2.Date, 130, GridView1, tenPlik);
+                Session["tabelka001"] = dr.tworzTabele(int.Parse(dzial), 5, Date1.Date, Date2.Date, 140, GridView1, tenPlik);
+                GridView1.DataBind();
             }
             catch
             { }
@@ -359,7 +360,7 @@ namespace stat2018
             if (e.Row.RowType == DataControlRowType.Footer)
 
             {
-                tb.makeSumRow((DataTable)Session["tabelka001"], e, 115, 4);
+                tb.makeSumRow((DataTable)Session["tabelka001"], e, 4, 4);
             }
         }
     }

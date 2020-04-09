@@ -29,12 +29,18 @@ namespace stat2018
             }
             else
             {
+                Server.Transfer("default.aspx");
                 return;
             }
             CultureInfo newCulture = (CultureInfo)CultureInfo.CurrentCulture.Clone();
             newCulture.DateTimeFormat = CultureInfo.GetCultureInfo("PL").DateTimeFormat;
             System.Threading.Thread.CurrentThread.CurrentCulture = newCulture;
             System.Threading.Thread.CurrentThread.CurrentUICulture = newCulture;
+            DateTime dTime = DateTime.Now.AddMonths(-1); ;
+
+            if (Date1.Text.Length == 0) Date1.Date = DateTime.Parse(dTime.Year.ToString() + "-" + dTime.Month.ToString("D2") + "-01");
+            if (Date2.Text.Length == 0) Date2.Date = DateTime.Parse(dTime.Year.ToString() + "-" + dTime.Month.ToString("D2") + "-" + DateTime.DaysInMonth(dTime.Year, dTime.Month).ToString("D2"));
+
             Session["data_1"] = Date1.Text;
             Session["data_2"] = Date2.Text;
             clearHedersSession();
@@ -61,7 +67,7 @@ namespace stat2018
             }
             catch
             {
-                Server.Transfer("default.aspx");
+               
             }
         }// end of Page_Load
 
@@ -80,29 +86,12 @@ namespace stat2018
         protected void odswiez()
         {
             Session["sesja"] = "s3030";
-            try
-            {
-                DateTime dTime = DateTime.Now;
-                dTime = dTime.AddMonths(-1);
-                if (Date1.Text.Length == 0)
-                {
-                    Date1.Text = dTime.Year.ToString() + "-" + dTime.Month.ToString("D2") + "-01";
-                }
-                if (Date2.Text.Length == 0)
-                {
-                    Date2.Text = dTime.Year.ToString() + "-" + dTime.Month.ToString("D2") + "-" + DateTime.DaysInMonth(dTime.Year, dTime.Month).ToString("D2");
-                }
-
-                Session["data_1"] = Date1.Text.Trim();
-                Session["data_2"] = Date2.Text.Trim();
-            }
-            catch
-            { }
+           
             Session["data_1"] = Date1.Text;
             Session["data_2"] = Date2.Text;
             string yyx = (string)Session["id_dzialu"];
             id_dzialu.Text = (string)Session["txt_dzialu"];
-            string txt = string.Empty; 
+            string txt = string.Empty;
             txt = txt + cl.clear_maim_db();
             txt = txt + cl.generuj_dane_do_tabeli_wierszy(DateTime.Parse(Date1.Text), DateTime.Parse(Date2.Text), yyx, 1, tenPlik);
             GridView1.DataBind();
@@ -126,6 +115,13 @@ namespace stat2018
             Label11.Visible = cl.debug(int.Parse(yyx));
             Label11.Text = txt;
             Label3.Text = cl.nazwaSadu((string)Session["id_dzialu"]);
+        }
+        private void tabela_2()
+        {
+
+            Session["tabelka002"] = dr.tworzTabele(int.Parse ((string)Session["id_dzialu"]), 2, Date1.Date, Date2.Date, 19, GridView1, tenPlik);
+
+
         }
 
         #region "nagłowki tabel"
@@ -1235,6 +1231,22 @@ namespace stat2018
             makeLabels();
             ScriptManager.RegisterStartupScript(this.Page, Page.GetType(), "print2", "JavaScript: window.print();", true);
             makeLabels();
+        }
+
+        protected void tworzPlikExcel(object sender, EventArgs e)
+        {
+            // execel begin
+            string filename = "statystykiWydzialGospodarczy.xls";
+            Response.ContentType = "application/vnd.ms-excel";
+            Response.AddHeader("Content-Disposition", string.Format("attachment;filename={0}", filename));
+
+            Response.Clear();
+
+            InitializeWorkbook();
+            generate_my_data();
+            Response.BinaryWrite(WriteToStream().GetBuffer());
+
+            Response.End();
         }
     }
 }

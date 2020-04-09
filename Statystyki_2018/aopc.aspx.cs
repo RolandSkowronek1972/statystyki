@@ -28,9 +28,14 @@ namespace stat2018
         protected void Page_Load(object sender, EventArgs e)
         {
             string idWydzial = Request.QueryString["w"];
+            if (idWydzial == null)
+            {
+                Server.Transfer("default.aspx");
+                return;
+            }
             try
             {
-                if (idWydzial == null) return;
+               
                 Session["id_dzialu"] = idWydzial;
                 bool dost = cm.dostep(idWydzial, (string)Session["identyfikatorUzytkownika"]);
                if (!dost) Server.Transfer("default.aspx?info='Użytkownik " + (string)Session["identyfikatorUzytkownika"] + " nie praw do działu nr " + idWydzial + "'");
@@ -173,204 +178,20 @@ namespace stat2018
             }
         }
 
-        protected void pisz(string Template, int iloscWierszy, int iloscKolumn, DataTable dane)
-        {
-            for (int wiersz = 1; wiersz <= iloscWierszy; wiersz++)
-            {
-                for (int kolumna = 1; kolumna <= iloscKolumn; kolumna++)
-                {
-                    string controlName = Template + "w" + wiersz.ToString("D2") + "_c" + kolumna.ToString("D2");
-                    Label tb = (Label)this.Master.FindControl("ContentPlaceHolder1").FindControl(controlName);
-                    if (tb != null)
-                    {
-                        try
-                        {
-                            tb.Text = dane.Rows[wiersz - 1][kolumna].ToString().Trim();
-                        }
-                        catch
-                        {
-                        }
-                        //tb.Text = dr.wyciagnijWartosc(dane, "idWydzial=" + idWydzialu + " and idTabeli=" + idTabeli + " and idWiersza ='" + wiersz + "' and idkolumny='" + kolumna + "'", tenPlik);
-                    }
-                }
-            }
-        }// end of pisz
-
-        protected void pisztb(string Template, int iloscWierszy, int iloscKolumn, DataTable dane)
-        {
-            for (int wiersz = 1; wiersz <= iloscWierszy; wiersz++)
-            {
-                for (int kolumna = 1; kolumna <= iloscKolumn; kolumna++)
-                {
-                    string controlName = Template + "w" + wiersz.ToString("D2") + "_c" + kolumna.ToString("D2");
-                    TextBox tb = (TextBox)this.Master.FindControl("ContentPlaceHolder1").FindControl(controlName);
-                    if (tb != null)
-                    {
-                        try
-                        {
-                            tb.Text = dane.Rows[wiersz - 1][kolumna].ToString().Trim();
-                        }
-                        catch { }
-                    }
-                }
-            }
-        }// end of pisz
-
+     
         private DataTable header_01()
         {
             DataTable tabelaNaglowkowa = tb.SchematTabelinaglowkowej();
 
-            tabelaNaglowkowa.Rows.Add(new Object[] { "1", "1", "1", "1" });
-            tabelaNaglowkowa.Rows.Add(new Object[] { "1", "2", "1", "1" });
-            tabelaNaglowkowa.Rows.Add(new Object[] { "1", "3", "1", "1" });
-            tabelaNaglowkowa.Rows.Add(new Object[] { "1", "4", "1", "1" });
-            tabelaNaglowkowa.Rows.Add(new Object[] { "1", "5", "1", "1" });
-            tabelaNaglowkowa.Rows.Add(new Object[] { "1", "6", "1", "1" });
-            tabelaNaglowkowa.Rows.Add(new Object[] { "1", "7", "1", "1" });
-            tabelaNaglowkowa.Rows.Add(new Object[] { "1", "8", "1", "1" });
-            tabelaNaglowkowa.Rows.Add(new Object[] { "1", "9", "1", "1" });
-            tabelaNaglowkowa.Rows.Add(new Object[] { "1", "10", "1", "1" });
-            tabelaNaglowkowa.Rows.Add(new Object[] { "1", "11", "1", "1" });
-            tabelaNaglowkowa.Rows.Add(new Object[] { "1", "12", "1", "1" });
-            tabelaNaglowkowa.Rows.Add(new Object[] { "1", "13", "1", "1" });
-            tabelaNaglowkowa.Rows.Add(new Object[] { "1", "14", "1", "1" });
-            tabelaNaglowkowa.Rows.Add(new Object[] { "1", "15", "1", "1" });
-            tabelaNaglowkowa.Rows.Add(new Object[] { "1", "16", "1", "1" });
-            tabelaNaglowkowa.Rows.Add(new Object[] { "1", "17", "1", "1" });
-            tabelaNaglowkowa.Rows.Add(new Object[] { "1", "18", "1", "1" });
-            tabelaNaglowkowa.Rows.Add(new Object[] { "1", "19", "1", "1" });
-            tabelaNaglowkowa.Rows.Add(new Object[] { "1", "20", "1", "1" });
-            tabelaNaglowkowa.Rows.Add(new Object[] { "1", "21", "1", "1" });
-            tabelaNaglowkowa.Rows.Add(new Object[] { "1", "22", "1", "1" });
-            tabelaNaglowkowa.Rows.Add(new Object[] { "1", "23", "1", "1" });
-            tabelaNaglowkowa.Rows.Add(new Object[] { "1", "24", "1", "1" });
-            tabelaNaglowkowa.Rows.Add(new Object[] { "1", "25", "1", "1" });
-            tabelaNaglowkowa.Rows.Add(new Object[] { "1", "26", "1", "1" });
-            tabelaNaglowkowa.Rows.Add(new Object[] { "1", "27", "1", "1" });
-            tabelaNaglowkowa.Rows.Add(new Object[] { "1", "28", "1", "1" });
-            tabelaNaglowkowa.Rows.Add(new Object[] { "1", "29", "1", "1" });
-            tabelaNaglowkowa.Rows.Add(new Object[] { "1", "30", "1", "1" });
-            tabelaNaglowkowa.Rows.Add(new Object[] { "1", "31", "1", "1" });
-            tabelaNaglowkowa.Rows.Add(new Object[] { "1", "32", "1", "1" });
-            tabelaNaglowkowa.Rows.Add(new Object[] { "1", "33", "1", "1" });
-            tabelaNaglowkowa.Rows.Add(new Object[] { "1", "34", "1", "1" });
-            tabelaNaglowkowa.Rows.Add(new Object[] { "1", "35", "1", "1" });
-            tabelaNaglowkowa.Rows.Add(new Object[] { "1", "36", "1", "1" });
-            tabelaNaglowkowa.Rows.Add(new Object[] { "1", "37", "1", "1" });
-            tabelaNaglowkowa.Rows.Add(new Object[] { "1", "38", "1", "1" });
-            tabelaNaglowkowa.Rows.Add(new Object[] { "1", "39", "1", "1" });
-            tabelaNaglowkowa.Rows.Add(new Object[] { "1", "40", "1", "1" });
-            tabelaNaglowkowa.Rows.Add(new Object[] { "1", "41", "1", "1" });
-            tabelaNaglowkowa.Rows.Add(new Object[] { "1", "42", "1", "1" });
-            tabelaNaglowkowa.Rows.Add(new Object[] { "1", "43", "1", "1" });
-            tabelaNaglowkowa.Rows.Add(new Object[] { "1", "44", "1", "1" });
-            tabelaNaglowkowa.Rows.Add(new Object[] { "1", "45", "1", "1" });
-            tabelaNaglowkowa.Rows.Add(new Object[] { "1", "46", "1", "1" });
-            tabelaNaglowkowa.Rows.Add(new Object[] { "1", "47", "1", "1" });
-            tabelaNaglowkowa.Rows.Add(new Object[] { "1", "48", "1", "1" });
-            tabelaNaglowkowa.Rows.Add(new Object[] { "1", "49", "1", "1" });
-            tabelaNaglowkowa.Rows.Add(new Object[] { "1", "50", "1", "1" });
-            tabelaNaglowkowa.Rows.Add(new Object[] { "1", "51", "1", "1" });
-            tabelaNaglowkowa.Rows.Add(new Object[] { "1", "52", "1", "1" });
-            tabelaNaglowkowa.Rows.Add(new Object[] { "1", "53", "1", "1" });
-            tabelaNaglowkowa.Rows.Add(new Object[] { "1", "54", "1", "1" });
-            tabelaNaglowkowa.Rows.Add(new Object[] { "1", "55", "1", "1" });
-            tabelaNaglowkowa.Rows.Add(new Object[] { "1", "56", "1", "1" });
-            tabelaNaglowkowa.Rows.Add(new Object[] { "1", "57", "1", "1" });
-            tabelaNaglowkowa.Rows.Add(new Object[] { "1", "58", "1", "1" });
-            tabelaNaglowkowa.Rows.Add(new Object[] { "1", "59", "1", "1" });
-            tabelaNaglowkowa.Rows.Add(new Object[] { "1", "60", "1", "1" });
-            tabelaNaglowkowa.Rows.Add(new Object[] { "1", "61", "1", "1" });
-            tabelaNaglowkowa.Rows.Add(new Object[] { "1", "62", "1", "1" });
-            tabelaNaglowkowa.Rows.Add(new Object[] { "1", "63", "1", "1" });
-            tabelaNaglowkowa.Rows.Add(new Object[] { "1", "64", "1", "1" });
-            tabelaNaglowkowa.Rows.Add(new Object[] { "1", "65", "1", "1" });
-            tabelaNaglowkowa.Rows.Add(new Object[] { "1", "66", "1", "1" });
-            tabelaNaglowkowa.Rows.Add(new Object[] { "1", "67", "1", "1" });
-            tabelaNaglowkowa.Rows.Add(new Object[] { "1", "68", "1", "1" });
-            tabelaNaglowkowa.Rows.Add(new Object[] { "1", "69", "1", "1" });
-            tabelaNaglowkowa.Rows.Add(new Object[] { "1", "70", "1", "1" });
-            tabelaNaglowkowa.Rows.Add(new Object[] { "1", "71", "1", "1" });
-            tabelaNaglowkowa.Rows.Add(new Object[] { "1", "72", "1", "1" });
-            tabelaNaglowkowa.Rows.Add(new Object[] { "1", "73", "1", "1" });
-            tabelaNaglowkowa.Rows.Add(new Object[] { "1", "74", "1", "1" });
-            tabelaNaglowkowa.Rows.Add(new Object[] { "1", "75", "1", "1" });
-            tabelaNaglowkowa.Rows.Add(new Object[] { "1", "76", "1", "1" });
-            tabelaNaglowkowa.Rows.Add(new Object[] { "1", "77", "1", "1" });
-            tabelaNaglowkowa.Rows.Add(new Object[] { "1", "78", "1", "1" });
-            tabelaNaglowkowa.Rows.Add(new Object[] { "1", "79", "1", "1" });
-            tabelaNaglowkowa.Rows.Add(new Object[] { "1", "80", "1", "1" });
-            tabelaNaglowkowa.Rows.Add(new Object[] { "1", "81", "1", "1" });
-            tabelaNaglowkowa.Rows.Add(new Object[] { "1", "82", "1", "1" });
-            tabelaNaglowkowa.Rows.Add(new Object[] { "1", "83", "1", "1" });
-            tabelaNaglowkowa.Rows.Add(new Object[] { "1", "84", "1", "1" });
-            tabelaNaglowkowa.Rows.Add(new Object[] { "1", "85", "1", "1" });
-            tabelaNaglowkowa.Rows.Add(new Object[] { "1", "86", "1", "1" });
-            tabelaNaglowkowa.Rows.Add(new Object[] { "1", "87", "1", "1" });
-            tabelaNaglowkowa.Rows.Add(new Object[] { "1", "88", "1", "1" });
-            tabelaNaglowkowa.Rows.Add(new Object[] { "1", "89", "1", "1" });
-            tabelaNaglowkowa.Rows.Add(new Object[] { "1", "90", "1", "1" });
-            tabelaNaglowkowa.Rows.Add(new Object[] { "1", "91", "1", "1" });
-            tabelaNaglowkowa.Rows.Add(new Object[] { "1", "92", "1", "1" });
-            tabelaNaglowkowa.Rows.Add(new Object[] { "1", "93", "1", "1" });
-            tabelaNaglowkowa.Rows.Add(new Object[] { "1", "94", "1", "1" });
-            tabelaNaglowkowa.Rows.Add(new Object[] { "1", "95", "1", "1" });
-            tabelaNaglowkowa.Rows.Add(new Object[] { "1", "96", "1", "1" });
-            tabelaNaglowkowa.Rows.Add(new Object[] { "1", "97", "1", "1" });
-            tabelaNaglowkowa.Rows.Add(new Object[] { "1", "98", "1", "1" });
-            tabelaNaglowkowa.Rows.Add(new Object[] { "1", "99", "1", "1" });
-            tabelaNaglowkowa.Rows.Add(new Object[] { "1", "100", "1", "1" });
-            tabelaNaglowkowa.Rows.Add(new Object[] { "1", "101", "1", "1" });
-            tabelaNaglowkowa.Rows.Add(new Object[] { "1", "102", "1", "1" });
-            tabelaNaglowkowa.Rows.Add(new Object[] { "1", "103", "1", "1" });
-            tabelaNaglowkowa.Rows.Add(new Object[] { "1", "104", "1", "1" });
-            tabelaNaglowkowa.Rows.Add(new Object[] { "1", "105", "1", "1" });
-            tabelaNaglowkowa.Rows.Add(new Object[] { "1", "106", "1", "1" });
-            tabelaNaglowkowa.Rows.Add(new Object[] { "1", "107", "1", "1" });
-            tabelaNaglowkowa.Rows.Add(new Object[] { "1", "108", "1", "1" });
-            tabelaNaglowkowa.Rows.Add(new Object[] { "1", "109", "1", "1" });
-            tabelaNaglowkowa.Rows.Add(new Object[] { "1", "110", "1", "1" });
-            tabelaNaglowkowa.Rows.Add(new Object[] { "1", "111", "1", "1" });
-            tabelaNaglowkowa.Rows.Add(new Object[] { "1", "112", "1", "1" });
-            tabelaNaglowkowa.Rows.Add(new Object[] { "1", "113", "1", "1" });
-            tabelaNaglowkowa.Rows.Add(new Object[] { "1", "114", "1", "1" });
-            tabelaNaglowkowa.Rows.Add(new Object[] { "1", "115", "1", "1" });
-            tabelaNaglowkowa.Rows.Add(new Object[] { "1", "116", "1", "1" });
-            tabelaNaglowkowa.Rows.Add(new Object[] { "1", "117", "1", "1" });
-            tabelaNaglowkowa.Rows.Add(new Object[] { "1", "118", "1", "1" });
-            tabelaNaglowkowa.Rows.Add(new Object[] { "1", "119", "1", "1" });
-            tabelaNaglowkowa.Rows.Add(new Object[] { "1", "120", "1", "1" });
-            tabelaNaglowkowa.Rows.Add(new Object[] { "1", "121", "1", "1" });
-            tabelaNaglowkowa.Rows.Add(new Object[] { "1", "122", "1", "1" });
-            tabelaNaglowkowa.Rows.Add(new Object[] { "1", "123", "1", "1" });
-            tabelaNaglowkowa.Rows.Add(new Object[] { "1", "124", "1", "1" });
-            tabelaNaglowkowa.Rows.Add(new Object[] { "1", "125", "1", "1" });
-            tabelaNaglowkowa.Rows.Add(new Object[] { "1", "126", "1", "1" });
-            tabelaNaglowkowa.Rows.Add(new Object[] { "1", "127", "1", "1" });
-            tabelaNaglowkowa.Rows.Add(new Object[] { "1", "128", "1", "1" });
-            tabelaNaglowkowa.Rows.Add(new Object[] { "1", "129", "1", "1" });
-            tabelaNaglowkowa.Rows.Add(new Object[] { "1", "130", "1", "1" });
-            tabelaNaglowkowa.Rows.Add(new Object[] { "1", "131", "1", "1" });
-            tabelaNaglowkowa.Rows.Add(new Object[] { "1", "132", "1", "1" });
-            tabelaNaglowkowa.Rows.Add(new Object[] { "1", "133", "1", "1" });
-            tabelaNaglowkowa.Rows.Add(new Object[] { "1", "134", "1", "1" });
-            tabelaNaglowkowa.Rows.Add(new Object[] { "1", "135", "1", "1" });
-            tabelaNaglowkowa.Rows.Add(new Object[] { "1", "136", "1", "1" });
-            tabelaNaglowkowa.Rows.Add(new Object[] { "1", "137", "1", "1" });
-            tabelaNaglowkowa.Rows.Add(new Object[] { "1", "138", "1", "1" });
-            tabelaNaglowkowa.Rows.Add(new Object[] { "1", "139", "1", "1" });
-            tabelaNaglowkowa.Rows.Add(new Object[] { "1", "140", "1", "1" });
-            tabelaNaglowkowa.Rows.Add(new Object[] { "1", "141", "1", "1" });
-            tabelaNaglowkowa.Rows.Add(new Object[] { "1", "142", "1", "1" });
-            tabelaNaglowkowa.Rows.Add(new Object[] { "1", "143", "1", "1" });
-            tabelaNaglowkowa.Rows.Add(new Object[] { "1", "144", "1", "1" });
-            tabelaNaglowkowa.Rows.Add(new Object[] { "1", "145", "1", "1" });
-            tabelaNaglowkowa.Rows.Add(new Object[] { "1", "146", "1", "1" });
-            tabelaNaglowkowa.Rows.Add(new Object[] { "1", "147", "1", "1" });
-            tabelaNaglowkowa.Rows.Add(new Object[] { "1", "148", "1", "1" });
+        
+            for (int i = 1; i < 154; i++)
+            {
+                tabelaNaglowkowa.Rows.Add(new Object[] { "1", i.ToString(), "1", "1" });
+            }
             tabelaNaglowkowa.Rows.Add(new Object[] { "2", "o rozwód", "1", "1" });
             tabelaNaglowkowa.Rows.Add(new Object[] { "2", "o separację", "1", "1" });
             tabelaNaglowkowa.Rows.Add(new Object[] { "2", "ogółem", "1", "1" });
+
             tabelaNaglowkowa.Rows.Add(new Object[] { "2", "o rozwód", "1", "1" });
             tabelaNaglowkowa.Rows.Add(new Object[] { "2", "o separację", "1", "1" });
             tabelaNaglowkowa.Rows.Add(new Object[] { "2", "o rozwód", "1", "1" });
@@ -398,63 +219,12 @@ namespace stat2018
             tabelaNaglowkowa.Rows.Add(new Object[] { "3", "Co (wnioski o zwoln. od kosztów sąd. i ustanow. pełnom. przed złożeniem pozwu)", "1", "2" });
             tabelaNaglowkowa.Rows.Add(new Object[] { "3", "Co- nadawanie klauzuli wykonalności orzeczeniu sądu zagranicznego+ (skład 3-os)", "1", "2" });
             tabelaNaglowkowa.Rows.Add(new Object[] { "3", "Co (do spraw pr. zakończonych)", "1", "2" });
-            tabelaNaglowkowa.Rows.Add(new Object[] { "3", "na rozprawę", "1", "2" });
-            tabelaNaglowkowa.Rows.Add(new Object[] { "3", "na posiedzenie", "1", "2" });
-            tabelaNaglowkowa.Rows.Add(new Object[] { "3", "na rozprawę", "1", "2" });
-            tabelaNaglowkowa.Rows.Add(new Object[] { "3", "na posiedzenie", "1", "2" });
-            tabelaNaglowkowa.Rows.Add(new Object[] { "3", "na rozprawę", "1", "2" });
-            tabelaNaglowkowa.Rows.Add(new Object[] { "3", "na posiedzenie", "1", "2" });
-            tabelaNaglowkowa.Rows.Add(new Object[] { "3", "na rozprawę", "1", "2" });
-            tabelaNaglowkowa.Rows.Add(new Object[] { "3", "na posiedzenie", "1", "2" });
-            tabelaNaglowkowa.Rows.Add(new Object[] { "3", "na rozprawę", "1", "2" });
-            tabelaNaglowkowa.Rows.Add(new Object[] { "3", "na posiedzenie", "1", "2" });
-            tabelaNaglowkowa.Rows.Add(new Object[] { "3", "na rozprawę", "1", "2" });
-            tabelaNaglowkowa.Rows.Add(new Object[] { "3", "na posiedzenie", "1", "2" });
-            tabelaNaglowkowa.Rows.Add(new Object[] { "3", "na rozprawę", "1", "2" });
-            tabelaNaglowkowa.Rows.Add(new Object[] { "3", "na posiedzenie", "1", "2" });
-            tabelaNaglowkowa.Rows.Add(new Object[] { "3", "na rozprawę", "1", "2" });
-            tabelaNaglowkowa.Rows.Add(new Object[] { "3", "na posiedzenie", "1", "2" });
-            tabelaNaglowkowa.Rows.Add(new Object[] { "3", "na rozprawę", "1", "2" });
-            tabelaNaglowkowa.Rows.Add(new Object[] { "3", "na posiedzenie", "1", "2" });
-            tabelaNaglowkowa.Rows.Add(new Object[] { "3", "na rozprawę", "1", "2" });
-            tabelaNaglowkowa.Rows.Add(new Object[] { "3", "na posiedzenie", "1", "2" });
-            tabelaNaglowkowa.Rows.Add(new Object[] { "3", "na rozprawę", "1", "2" });
-            tabelaNaglowkowa.Rows.Add(new Object[] { "3", "na posiedzenie", "1", "2" });
-            tabelaNaglowkowa.Rows.Add(new Object[] { "3", "na rozprawę", "1", "2" });
-            tabelaNaglowkowa.Rows.Add(new Object[] { "3", "na posiedzenie", "1", "2" });
-            tabelaNaglowkowa.Rows.Add(new Object[] { "3", "na rozprawę", "1", "2" });
-            tabelaNaglowkowa.Rows.Add(new Object[] { "3", "na posiedzenie", "1", "2" });
-            tabelaNaglowkowa.Rows.Add(new Object[] { "3", "na rozprawę", "1", "2" });
-            tabelaNaglowkowa.Rows.Add(new Object[] { "3", "na posiedzenie", "1", "2" });
-            tabelaNaglowkowa.Rows.Add(new Object[] { "3", "na rozprawę", "1", "2" });
-            tabelaNaglowkowa.Rows.Add(new Object[] { "3", "na posiedzenie", "1", "2" });
-            tabelaNaglowkowa.Rows.Add(new Object[] { "3", "na rozprawę", "1", "2" });
-            tabelaNaglowkowa.Rows.Add(new Object[] { "3", "na posiedzenie", "1", "2" });
-            tabelaNaglowkowa.Rows.Add(new Object[] { "3", "na rozprawę", "1", "2" });
-            tabelaNaglowkowa.Rows.Add(new Object[] { "3", "na posiedzenie", "1", "2" });
-            tabelaNaglowkowa.Rows.Add(new Object[] { "3", "na rozprawę", "1", "2" });
-            tabelaNaglowkowa.Rows.Add(new Object[] { "3", "na posiedzenie", "1", "2" });
-            tabelaNaglowkowa.Rows.Add(new Object[] { "3", "na rozprawę", "1", "2" });
-            tabelaNaglowkowa.Rows.Add(new Object[] { "3", "na posiedzenie", "1", "2" });
-            tabelaNaglowkowa.Rows.Add(new Object[] { "3", "na rozprawę", "1", "2" });
-            tabelaNaglowkowa.Rows.Add(new Object[] { "3", "na posiedzenie", "1", "2" });
-            tabelaNaglowkowa.Rows.Add(new Object[] { "3", "na rozprawę", "1", "2" });
-            tabelaNaglowkowa.Rows.Add(new Object[] { "3", "na posiedzenie", "1", "2" });
-            tabelaNaglowkowa.Rows.Add(new Object[] { "3", "na rozprawę", "1", "2" });
-            tabelaNaglowkowa.Rows.Add(new Object[] { "3", "na posiedzenie", "1", "2" });
-            tabelaNaglowkowa.Rows.Add(new Object[] { "3", "na rozprawę", "1", "2" });
-            tabelaNaglowkowa.Rows.Add(new Object[] { "3", "na posiedzenie", "1", "2" });
-            tabelaNaglowkowa.Rows.Add(new Object[] { "3", "na rozprawę", "1", "2" });
-            tabelaNaglowkowa.Rows.Add(new Object[] { "3", "na posiedzenie", "1", "2" });
-            tabelaNaglowkowa.Rows.Add(new Object[] { "3", "na rozprawę", "1", "2" });
-            tabelaNaglowkowa.Rows.Add(new Object[] { "3", "na posiedzenie", "1", "2" });
-            tabelaNaglowkowa.Rows.Add(new Object[] { "3", "na rozprawę", "1", "2" });
-            tabelaNaglowkowa.Rows.Add(new Object[] { "3", "na posiedzenie", "1", "2" });
-            tabelaNaglowkowa.Rows.Add(new Object[] { "3", "na rozprawę", "1", "2" });
-            tabelaNaglowkowa.Rows.Add(new Object[] { "3", "na posiedzenie", "1", "2" });
-            tabelaNaglowkowa.Rows.Add(new Object[] { "3", "na rozprawę", "1", "2" });
-            tabelaNaglowkowa.Rows.Add(new Object[] { "3", "na posiedzenie", "1", "2" });
-            tabelaNaglowkowa.Rows.Add(new Object[] { "3", "ogółem", "1", "2" });
+            for (int i = 0; i < 32; i++)
+            {
+                tabelaNaglowkowa.Rows.Add(new Object[] { "3", "na rozprawę", "1", "2" });
+                tabelaNaglowkowa.Rows.Add(new Object[] { "3", "na posiedzenie", "1", "2" });
+            }
+             tabelaNaglowkowa.Rows.Add(new Object[] { "3", "ogółem", "1", "2" });
             tabelaNaglowkowa.Rows.Add(new Object[] { "3", "o rozwód", "1", "2" });
             tabelaNaglowkowa.Rows.Add(new Object[] { "3", "o separację", "1", "2" });
             tabelaNaglowkowa.Rows.Add(new Object[] { "3", "RC (do 31.01.2018)", "3", "1" });
@@ -463,30 +233,24 @@ namespace stat2018
             tabelaNaglowkowa.Rows.Add(new Object[] { "3", "o rozwód", "1", "2" });
             tabelaNaglowkowa.Rows.Add(new Object[] { "3", "o separację", "1", "2" });
             tabelaNaglowkowa.Rows.Add(new Object[] { "3", "RC (do 31.01.2018)", "3", "1" });
-            tabelaNaglowkowa.Rows.Add(new Object[] { "3", "od 1.02.2018AAAA", "2", "1" });
+            tabelaNaglowkowa.Rows.Add(new Object[] { "3", "od 1.02.2018", "2", "1" });
             tabelaNaglowkowa.Rows.Add(new Object[] { "3", "w których wpłynął wniosek o transkrypcję", "1", "2" });
             tabelaNaglowkowa.Rows.Add(new Object[] { "3", "ogółem", "1", "2" });
             tabelaNaglowkowa.Rows.Add(new Object[] { "3", "uwzględniono", "1", "2" });
             tabelaNaglowkowa.Rows.Add(new Object[] { "3", "liczba  spraw, w których strony skierowano do mediacji", "1", "2" });
             tabelaNaglowkowa.Rows.Add(new Object[] { "3", "liczba ugód zawartych przed mediatorem", "1", "2" });
             tabelaNaglowkowa.Rows.Add(new Object[] { "3", "w tym zatwierdzono ugodę", "1", "2" });
+            for (int i = 0; i < 6; i++)
+            {
+                tabelaNaglowkowa.Rows.Add(new Object[] { "4", "o rozwód", "2", "1" });
+                tabelaNaglowkowa.Rows.Add(new Object[] { "4", "o separację", "2", "1" });
+            }
+           
 
-            tabelaNaglowkowa.Rows.Add(new Object[] { "4", "o rozwód", "2", "1" });
-            tabelaNaglowkowa.Rows.Add(new Object[] { "4", "o separację", "2", "1" });
-            tabelaNaglowkowa.Rows.Add(new Object[] { "4", "o rozwód", "2", "1" });
-            tabelaNaglowkowa.Rows.Add(new Object[] { "4", "o separację", "2", "1" });
-            tabelaNaglowkowa.Rows.Add(new Object[] { "4", "o rozwód", "2", "1" });
-            tabelaNaglowkowa.Rows.Add(new Object[] { "4", "o separację", "2", "1" });
-            tabelaNaglowkowa.Rows.Add(new Object[] { "4", "o rozwód", "2", "1" });
-            tabelaNaglowkowa.Rows.Add(new Object[] { "4", "o separację", "2", "1" });
-            tabelaNaglowkowa.Rows.Add(new Object[] { "4", "o rozwód", "2", "1" });
-            tabelaNaglowkowa.Rows.Add(new Object[] { "4", "o separację", "2", "1" });
-            tabelaNaglowkowa.Rows.Add(new Object[] { "4", "o rozwód", "2", "1" });
-            tabelaNaglowkowa.Rows.Add(new Object[] { "4", "o separację", "2", "1" });
             tabelaNaglowkowa.Rows.Add(new Object[] { "4", "Rozprawy", "1", "3" });
             tabelaNaglowkowa.Rows.Add(new Object[] { "4", "Posiedzenia", "1", "3" });
-            tabelaNaglowkowa.Rows.Add(new Object[] { "4", "Rozprawy", "1", "3" });
-            tabelaNaglowkowa.Rows.Add(new Object[] { "4", "Posiedzenia", "1", "3" });
+     //       tabelaNaglowkowa.Rows.Add(new Object[] { "4", "Rozprawy", "1", "3" });
+     //       tabelaNaglowkowa.Rows.Add(new Object[] { "4", "Posiedzenia", "1", "3" });
             tabelaNaglowkowa.Rows.Add(new Object[] { "4", "ogółem", "1", "3" });
             tabelaNaglowkowa.Rows.Add(new Object[] { "4", "w tym", "1", "1" });
 
@@ -508,6 +272,26 @@ namespace stat2018
             tabelaNaglowkowa.Rows.Add(new Object[] { "5", "w tym", "3", "2" });
 
             tabelaNaglowkowa.Rows.Add(new Object[] { "5", "WSC", "1", "4" });
+            tabelaNaglowkowa.Rows.Add(new Object[] { "5", "WSNc", "1", "4" });
+            tabelaNaglowkowa.Rows.Add(new Object[] { "5", "Cz", "1", "4" });
+            for (int i = 0; i < 2; i++)
+            {
+                tabelaNaglowkowa.Rows.Add(new Object[] { "5", "Ogółem", "2", "2" });
+                tabelaNaglowkowa.Rows.Add(new Object[] { "5", "C", "2", "2" });
+                tabelaNaglowkowa.Rows.Add(new Object[] { "5", "w tym", "4", "1" });
+                tabelaNaglowkowa.Rows.Add(new Object[] { "5", "RC", "2", "2" });
+                tabelaNaglowkowa.Rows.Add(new Object[] { "5", "z tego", "4", "1" });
+                tabelaNaglowkowa.Rows.Add(new Object[] { "5", "C od 1.02.2018 r.", "4", "1" });
+                tabelaNaglowkowa.Rows.Add(new Object[] { "5", "Ns", "2", "2" });
+                tabelaNaglowkowa.Rows.Add(new Object[] { "5", "Ns-Rej", "2", "2" });
+                tabelaNaglowkowa.Rows.Add(new Object[] { "5", "Nc", "2", "2" });
+                tabelaNaglowkowa.Rows.Add(new Object[] { "5", "Co", "2", "2" });
+                tabelaNaglowkowa.Rows.Add(new Object[] { "5", "WSC", "2", "2" });
+                tabelaNaglowkowa.Rows.Add(new Object[] { "5", "WSNc", "2", "2" });
+                tabelaNaglowkowa.Rows.Add(new Object[] { "5", "Cz", "2", "2" });
+            }
+          
+            /*
             tabelaNaglowkowa.Rows.Add(new Object[] { "5", "Ogółem", "2", "2" });
             tabelaNaglowkowa.Rows.Add(new Object[] { "5", "C", "2", "2" });
             tabelaNaglowkowa.Rows.Add(new Object[] { "5", "w tym", "4", "1" });
@@ -519,17 +303,7 @@ namespace stat2018
             tabelaNaglowkowa.Rows.Add(new Object[] { "5", "Nc", "2", "2" });
             tabelaNaglowkowa.Rows.Add(new Object[] { "5", "Co", "2", "2" });
             tabelaNaglowkowa.Rows.Add(new Object[] { "5", "WSC", "2", "2" });
-            tabelaNaglowkowa.Rows.Add(new Object[] { "5", "Ogółem", "2", "2" });
-            tabelaNaglowkowa.Rows.Add(new Object[] { "5", "C", "2", "2" });
-            tabelaNaglowkowa.Rows.Add(new Object[] { "5", "w tym", "4", "1" });
-            tabelaNaglowkowa.Rows.Add(new Object[] { "5", "RC", "2", "2" });
-            tabelaNaglowkowa.Rows.Add(new Object[] { "5", "z tego", "4", "1" });
-            tabelaNaglowkowa.Rows.Add(new Object[] { "5", "C od 1.02.2018 r.", "4", "1" });
-            tabelaNaglowkowa.Rows.Add(new Object[] { "5", "Ns", "2", "2" });
-            tabelaNaglowkowa.Rows.Add(new Object[] { "5", "Ns-Rej", "2", "2" });
-            tabelaNaglowkowa.Rows.Add(new Object[] { "5", "Nc", "2", "2" });
-            tabelaNaglowkowa.Rows.Add(new Object[] { "5", "Co", "2", "2" });
-            tabelaNaglowkowa.Rows.Add(new Object[] { "5", "WSC", "2", "2" });
+            */
             tabelaNaglowkowa.Rows.Add(new Object[] { "5", "Ogółem", "1", "4" });
             tabelaNaglowkowa.Rows.Add(new Object[] { "5", "C", "8", "2" });
             tabelaNaglowkowa.Rows.Add(new Object[] { "5", "Ns", "1", "4" });
@@ -537,11 +311,14 @@ namespace stat2018
             tabelaNaglowkowa.Rows.Add(new Object[] { "5", "Nc", "1", "4" });
             tabelaNaglowkowa.Rows.Add(new Object[] { "5", "Co", "1", "4" });
             tabelaNaglowkowa.Rows.Add(new Object[] { "5", "WSC", "1", "4" });
-            tabelaNaglowkowa.Rows.Add(new Object[] { "5", "ogółem", "1", "4" });
-            tabelaNaglowkowa.Rows.Add(new Object[] { "5", "z tego", "2", "1" });
-            tabelaNaglowkowa.Rows.Add(new Object[] { "5", "ogółem", "1", "4" });
-            tabelaNaglowkowa.Rows.Add(new Object[] { "5", "z tego", "2", "1" });
+            tabelaNaglowkowa.Rows.Add(new Object[] { "5", "WSNc", "1", "4" });
+            tabelaNaglowkowa.Rows.Add(new Object[] { "5", "Cz", "1", "4" });
 
+           // tabelaNaglowkowa.Rows.Add(new Object[] { "5", "ogółem", "1", "4" });
+           // tabelaNaglowkowa.Rows.Add(new Object[] { "5", "z tego", "2", "1" });
+            tabelaNaglowkowa.Rows.Add(new Object[] { "5", "ogółem", "1", "4" });
+            tabelaNaglowkowa.Rows.Add(new Object[] { "5", "z tego", "2", "1" });
+/*
             tabelaNaglowkowa.Rows.Add(new Object[] { "5", "ogółem (wszystkie kategorie spraw)  ", "1", "4" });
             tabelaNaglowkowa.Rows.Add(new Object[] { "5", "C", "1", "4" });
             tabelaNaglowkowa.Rows.Add(new Object[] { "5", "Ns", "1", "4" });
@@ -549,7 +326,7 @@ namespace stat2018
             tabelaNaglowkowa.Rows.Add(new Object[] { "5", "z teminem", "1", "4" });
             tabelaNaglowkowa.Rows.Add(new Object[] { "5", "bez wyznaczonego terminu", "1", "4" });
             tabelaNaglowkowa.Rows.Add(new Object[] { "5", "OGÓŁEM (wraz z publikacją orzeczeń)  ", "1", "4" });
-
+            */
             tabelaNaglowkowa.Rows.Add(new Object[] { "5", "ogółem", "1", "4" });
 
             tabelaNaglowkowa.Rows.Add(new Object[] { "5", "C", "8", "2" });//98
@@ -558,9 +335,12 @@ namespace stat2018
             tabelaNaglowkowa.Rows.Add(new Object[] { "5", "Nc", "1", "4" });
             tabelaNaglowkowa.Rows.Add(new Object[] { "5", "Co", "1", "4" });
             tabelaNaglowkowa.Rows.Add(new Object[] { "5", "WSC", "1", "4" });
-            tabelaNaglowkowa.Rows.Add(new Object[] { "5", "Ogółem", "1", "4" });
+            tabelaNaglowkowa.Rows.Add(new Object[] { "5", "WSNc", "1", "4" });
+            tabelaNaglowkowa.Rows.Add(new Object[] { "5", "Cz", "1", "4" });
+
+        /*    tabelaNaglowkowa.Rows.Add(new Object[] { "5", "Ogółem", "1", "4" });
             tabelaNaglowkowa.Rows.Add(new Object[] { "5", "zakreślonych", "1", "4" });
-            tabelaNaglowkowa.Rows.Add(new Object[] { "5", "niezakreślonych", "1", "4" });
+            tabelaNaglowkowa.Rows.Add(new Object[] { "5", "niezakreślonych", "1", "4" });*/
             tabelaNaglowkowa.Rows.Add(new Object[] { "5", "Ogółem", "1", "4" });
             tabelaNaglowkowa.Rows.Add(new Object[] { "5", "do 3 mies.", "1", "4" });
             tabelaNaglowkowa.Rows.Add(new Object[] { "5", "pow. 3 do 6 m - cy", "1", "4" });
@@ -570,6 +350,9 @@ namespace stat2018
             tabelaNaglowkowa.Rows.Add(new Object[] { "5", "pow. 3 do 5 lat", "1", "4" });
             tabelaNaglowkowa.Rows.Add(new Object[] { "5", "pow. 5 do 8 lat", "1", "4" });
             tabelaNaglowkowa.Rows.Add(new Object[] { "5", "pow.  8 lat", "1", "4" });
+                tabelaNaglowkowa.Rows.Add(new Object[] { "5", "Ogółem", "1", "4" });
+          tabelaNaglowkowa.Rows.Add(new Object[] { "5", "zakreślonych", "1", "4" });
+          tabelaNaglowkowa.Rows.Add(new Object[] { "5", "niezakreślonych", "1", "4" });
             tabelaNaglowkowa.Rows.Add(new Object[] { "5", "łącznie", "1", "4" });
             tabelaNaglowkowa.Rows.Add(new Object[] { "5", "w terminie ustawowym 14 dni", "1", "4" });
             tabelaNaglowkowa.Rows.Add(new Object[] { "5", "razem po terminie ustawowym", "1", "4" });
@@ -577,22 +360,23 @@ namespace stat2018
             tabelaNaglowkowa.Rows.Add(new Object[] { "5", "po upływie terminiu ustawowego", "8", "3" });
             //tabelaNaglowkowa.Rows.Add(new Object[] { "5", "ogółem", "8", "3" });
 
-            tabelaNaglowkowa.Rows.Add(new Object[] { "6", "wszystkie sesje sędziego w wydziale", "3", "1" });
+           
             tabelaNaglowkowa.Rows.Add(new Object[] { "6", "na potrzeby MS-S", "3", "1" });
 
             tabelaNaglowkowa.Rows.Add(new Object[] { "7", "lp", "1", "7" });
             tabelaNaglowkowa.Rows.Add(new Object[] { "7", "imię i nazwisko sędziego", "1", "7" });
             tabelaNaglowkowa.Rows.Add(new Object[] { "7", "zaległość z poprzedniego roku", "1", "6" });
-            tabelaNaglowkowa.Rows.Add(new Object[] { "7", "WPŁYW", "13", "2" });
-            tabelaNaglowkowa.Rows.Add(new Object[] { "7", "Wyznaczono", "28", "2" });
-            tabelaNaglowkowa.Rows.Add(new Object[] { "7", "Załatwiono", "28", "2" });
-            tabelaNaglowkowa.Rows.Add(new Object[] { "7", "ZAŁATWIENIA", "14", "2" });
-            tabelaNaglowkowa.Rows.Add(new Object[] { "7", "sesje odbyte przez sędziego", "6", "1" });
-            tabelaNaglowkowa.Rows.Add(new Object[] { "7", "Liczba odroczonych publikacji orzeczeń", "3", "2" });
-            tabelaNaglowkowa.Rows.Add(new Object[] { "7", "Liczba odroczonych spraw", "3", "2" });
-            tabelaNaglowkowa.Rows.Add(new Object[] { "7", "POZOSTAŁOŚĆ na następny m-c", "14", "2" });
-            tabelaNaglowkowa.Rows.Add(new Object[] { "7", "stan spraw zawieszonych (wszystkie kategorie spraw)", "3", "2" });
+            tabelaNaglowkowa.Rows.Add(new Object[] { "7", "WPŁYW", "15", "2" });
+            tabelaNaglowkowa.Rows.Add(new Object[] { "7", "Wyznaczono", "32", "2" });
+            tabelaNaglowkowa.Rows.Add(new Object[] { "7", "Załatwiono", "32", "2" });
+            tabelaNaglowkowa.Rows.Add(new Object[] { "7", "ZAŁATWIENIA", "16", "2" });
+            tabelaNaglowkowa.Rows.Add(new Object[] { "7", "sesje odbyte przez sędziego", "3", "1" });
+          //  tabelaNaglowkowa.Rows.Add(new Object[] { "7", "Liczba odroczonych publikacji orzeczeń", "3", "2" });
+         //   tabelaNaglowkowa.Rows.Add(new Object[] { "7", "Liczba odroczonych spraw", "3", "2" });
+            tabelaNaglowkowa.Rows.Add(new Object[] { "7", "POZOSTAŁOŚĆ na następny m-c", "16", "2" });
+       
             tabelaNaglowkowa.Rows.Add(new Object[] { "7", "pozostało spraw starych (wszystkie kategorie spraw)", "9", "2" });
+               tabelaNaglowkowa.Rows.Add(new Object[] { "7", "stan spraw zawieszonych (wszystkie kategorie spraw)", "3", "2" });
             tabelaNaglowkowa.Rows.Add(new Object[] { "7", "liczba sporządzonych uzasadnień (wszystkie kategorie spraw)", "12", "2" });
             tabelaNaglowkowa.Rows.Add(new Object[] { "7", "uzasadnienia wygłoszone *", "2", "3" });
             tabelaNaglowkowa.Rows.Add(new Object[] { "7", "Liczba spraw, w których projekt uzasadnienia orzeczenia sporządził asystent", "2", "5" });

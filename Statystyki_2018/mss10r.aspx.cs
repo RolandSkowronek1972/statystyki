@@ -59,6 +59,9 @@ namespace stat2018
                     Server.Transfer("default.aspx");
                 }
             }
+            if (Date1.Text.Length == 0) Date1.Date = DateTime.Parse(datyMSS.DataPoczatkowa());
+            if (Date2.Text.Length == 0) Date2.Date = DateTime.Parse(datyMSS.DataKoncowa());
+
             odswiez();
             makeLabels();
         }// end of Page_Load

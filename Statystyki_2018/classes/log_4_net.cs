@@ -11,6 +11,14 @@ namespace stat2018
     {
         public log4net.ILog logx = log4net.LogManager.GetLogger(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
 
+        public void Info(string Message,bool debug)
+        {
+            if (debug)
+            {
+                logx.Info(Message);
+
+            }
+        }
         public void Info(string Message)
         {
             try

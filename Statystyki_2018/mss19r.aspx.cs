@@ -52,6 +52,9 @@ namespace stat2018
                 Date2.Date = DateTime.Parse(datyMSS.DataKoncowa());
                 Session["ustawDate19r"] = "X";
             }
+            if (Date1.Text.Length == 0) Date1.Date = DateTime.Parse(datyMSS.DataPoczatkowa());
+            if (Date2.Text.Length == 0) Date2.Date = DateTime.Parse(datyMSS.DataKoncowa());
+
             Session["data_1"] = Date1.Date.ToShortDateString();
             Session["data_2"] = Date1.Date.ToShortDateString();
             odswierz();

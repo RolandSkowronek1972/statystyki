@@ -375,7 +375,7 @@ namespace stat2018
             }
             catch
             { }
-            for (int i = 1; i < e.Row.Cells.Count - 1; i++)
+            for (int i = 1; i < e.Row.Cells.Count ; i++)
             {
                 try
                 {
@@ -986,18 +986,20 @@ namespace stat2018
             {
                 for (int j = startowaKolumna; j < iloscKolumn; j++)
                 {
-                    Arkusz.Cells[i + przesuniecieY, przesunięcieX + j].Style.ShrinkToFit = true;
-                    Arkusz.Cells[i + przesuniecieY, przesunięcieX + j].Style.Border.BorderAround(OfficeOpenXml.Style.ExcelBorderStyle.Thin, System.Drawing.Color.Black);
-                    try
+                       try
                     {
+                        Arkusz.Cells[i + przesuniecieY, przesunięcieX + j].Style.ShrinkToFit = true;
+                        Arkusz.Cells[i + przesuniecieY, przesunięcieX + j].Style.Border.BorderAround(OfficeOpenXml.Style.ExcelBorderStyle.Thin, System.Drawing.Color.Black);
+
                         string value = daneDoArkusza.Rows[i][j].ToString().Trim();
                         cm.log.Info("wiersz: " + i.ToString() + " kolumna" + j.ToString() + " wartosc  " + value);
                         Arkusz.Cells[i + przesuniecieY, przesunięcieX + j].Value = value;
                     }
                     catch (Exception ex)
                     {
-                        Arkusz.Cells[i + przesuniecieY, przesunięcieX + j].Value = "";
                         cm.log.Error("tworzArkuszwExcleBezSedziow " + ex.Message);
+                        //Arkusz.Cells[i + przesuniecieY, przesunięcieX + j].Value = "";
+                       
                     }
                 }
             }

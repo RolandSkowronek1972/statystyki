@@ -300,6 +300,10 @@ namespace stat2018
             }
             return false;
         }
-      
+
+        internal DataTable PodajListeKwerend(int v1, int id_tabeli, int v2, string tenPlik)
+        {
+            throw new NotImplementedException();
+        }
     } // end of common
 }

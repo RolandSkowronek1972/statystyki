@@ -3,7 +3,6 @@ using System;
 using System.Data;
 using System.Globalization;
 using System.IO;
-using System.Web.UI;
 using System.Web.UI.WebControls;
 
 namespace stat2018
@@ -26,6 +25,7 @@ namespace stat2018
             }
             else
             {
+                Server.Transfer("default.aspx");
                 return;
             }
             CultureInfo newCulture = (CultureInfo)CultureInfo.CurrentCulture.Clone();
@@ -74,7 +74,6 @@ namespace stat2018
             }
             catch
             {
-                Server.Transfer("default.aspx");
             }
         }// end of Page_Load
 
@@ -94,7 +93,8 @@ namespace stat2018
             {
                 //cm.log.Info(tenPlik + ": rozpoczęcie tworzenia tabeli 1");
 
-                Session["tabelka001"] = dr.tworzTabele(int.Parse(dzial), 5, Date1.Date, Date2.Date, 120, GridView1, tenPlik);
+                Session["tabelka001"] = dr.tworzTabele(int.Parse(dzial), 5, Date1.Date, Date2.Date, 130, GridView1, tenPlik);
+                GridView1.DataBind();
             }
             catch (Exception ex)
             {
@@ -1394,12 +1394,6 @@ namespace stat2018
             }
         }
 
-        protected void Button1_Click(object sender, EventArgs e)
-        {
-            ScriptManager.RegisterStartupScript(this.Page, Page.GetType(), "print2", "JavaScript: window.print();", true);
-            // ScriptManager.RegisterStartupScript(this.Page, Page.GetType(), "print", "window.open('raport_01_print.aspx', '')", true);
-        }
-
         protected void Button3_Click(object sender, EventArgs e)
         {
             //  excell();
@@ -1423,7 +1417,6 @@ namespace stat2018
             {
                 try
                 {
-                    ExcelWorksheet MyWorksheet = MyExcel.Workbook.Worksheets[1];
                     ExcelWorksheet MyWorksheet1 = MyExcel.Workbook.Worksheets[1];
 
                     DataTable table = (DataTable)Session["tabelka001"];
@@ -1457,29 +1450,13 @@ namespace stat2018
             odswiez();
         }
 
-        protected void LinkButton55_Click(object sender, EventArgs e)
-        {
-            makeLabels();
-            ScriptManager.RegisterStartupScript(this.Page, Page.GetType(), "print2", "JavaScript: window.print();", true);
-            makeLabels();
-        }
-
         protected void GridView1_RowDataBound(object sender, GridViewRowEventArgs e)
         {
             if (e.Row.RowType == DataControlRowType.Footer)
 
             {
                 DataTable table = (DataTable)Session["tabelka001"];
-                object sumObject;
-                e.Row.Cells[3].Text = "Razem";
-                for (int i = 1; i < 105; i++)
-                {
-                    string txt = "d_";
-                    string digit = i.ToString("D2");
-                    txt = txt + digit;
-                    sumObject = table.Compute("Sum(" + txt + ")", "");
-                    e.Row.Cells[3 + i].Text = sumObject.ToString();
-                }
+                tb.makeSumRow(table, e, 4, 4);
             }
         }
     }

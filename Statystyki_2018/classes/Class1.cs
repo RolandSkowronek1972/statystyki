@@ -29,7 +29,7 @@ namespace stat2018
         public Font plFont2 = new Font(NewFont, 10f, Font.NORMAL, BaseColor.BLACK);
         public Font plFontBIG = new Font(NewFont, 15, Font.NORMAL, BaseColor.BLACK);
         public Font plFont3 = new Font(NewFont, 15, Font.NORMAL, BaseColor.BLACK);
-
+        public log_4_net log = new log_4_net();
         public common Common = new common();
 
         public string con_str = ConfigurationManager.ConnectionStrings["wap"].ConnectionString;
@@ -186,6 +186,13 @@ namespace stat2018
             return Common.getQuerryValue("SELECT distinct cs FROM wydzialy where ident=@id_dzialu", con_str, parametry);
         }
 
+        private DataTable PodajListeKwerend(int idWydzial, int idTabeli, int typ,string tenPlik)
+        {
+            string kwerenda = "SELECT  id_kolumny, id_wiersza, kwerenda, podglad, opis FROM kwerendy WHERE (id_tabeli = @id_tabeli) and id_wydzial=@id_wydzial";            DataTable parametry = Common.makeParameterTable();
+            parametry.Rows.Add("@id_wydzial", idWydzial);
+            parametry.Rows.Add("@id_tabeli", idTabeli);
+            return Common.getDataTable(kwerenda, con_str, parametry, tenPlik);
+        }
         public string podajKwerende(int id_dzialu, int id_wiersza, int id_kolumny, int id_tabeli)
         {
             DataTable parametry = Common.makeParameterTable();
@@ -265,6 +272,20 @@ namespace stat2018
             }
             return result;
         }
+        public string wyciagnijDane(string kw, int id_dzialu, DateTime poczatek, DateTime koniec,string tenplik)
+        {
+            string result = string.Empty;
+            string cs = podajConnectionString(id_dzialu);
+
+            if ((!string.IsNullOrEmpty(cs)) && (!string.IsNullOrEmpty(kw)))
+            {
+                DataTable parametry = Common.makeParameterTable();
+                parametry.Rows.Add("@data_1", KonwertujDate(poczatek));
+                parametry.Rows.Add("@data_2", KonwertujDate(koniec));
+                result = Common.getQuerryValue(kw, cs, parametry, tenplik);
+            }
+            return result;
+        }
         public void tworzWiersz(int id, string opis, int id_dzialu, int id_tabeli, string tenplik)
         {
             DataTable parametry = Common.makeParameterTable();
@@ -301,9 +322,9 @@ namespace stat2018
             try
             {
                 // int ilosc_wierszy = PodajIloscWierszy(int.ps(id_dzialu), id_tabeli);
-                for (int i = 1; i <= 15; i++) //po wierszach
+                for (int i = 1; i <= 30; i++) //po wierszach
                 {
-                    for (int j = 0; j <= 15; j++)
+                    for (int j = 0; j <= 30; j++)
                     {
                         try
                         {
@@ -336,10 +357,10 @@ namespace stat2018
             return "1";
         }// end of generuj_dane_do_tabeli
 
-        public DataTable generuj_dane_do_tabeli_wierszy_przestawnych1(DateTime poczatek, DateTime koniec, string id_dzialu, int id_tabeli, int id_pozycji)
+        public DataTable generuj_dane_do_tabeli_wierszy_przestawnych1(DateTime poczatek, DateTime koniec, string id_dzialu, int id_tabeli, int id_pozycji,string tenPlik)
         {
-            string kwerenda = string.Empty;
-            DataSet dsMenu = new DataSet();
+          
+           // DataSet dsMenu = new DataSet();
             string opis = string.Empty;
             DataTable tab_1000 = new DataTable();
             tab_1000.Columns.Add("id_", typeof(String));
@@ -355,16 +376,35 @@ namespace stat2018
 
             try
             {
+                DataTable listaKwerend = PodajListeKwerend(int.Parse(id_dzialu), id_tabeli, 0, tenPlik);
+                  log.Info("generuj_dane_do_tabeli_wierszy_przestawnych1 ilosc kwerend " + listaKwerend.Rows.Count.ToString ());
+                if (listaKwerend==null)
+                {
+                    return null;
+                }
+         
                 // int ilosc_wierszy = PodajIloscWierszy(int.ps(id_dzialu), id_tabeli);
                 for (int i = 1; i <= 15; i++) //po wierszach
                 {
                     DataRow dR = tab_1000.NewRow();
+                    
                     for (int j = 0; j <= 7; j++)
                     {
                         try
                         {
+                            string querryString = "id_wiersza=" + i.ToString().Trim() + " and id_kolumny=" + j.ToString();
+                          //  log.Info("generuj_dane_do_tabeli_wierszy_przestawnych1 querry string " + querryString);
+                            DataRow[] results = listaKwerend.Select(querryString);
+                            if (results.Length==0)
+                            {
+                                continue;
+                            }
+                            DataRow wiersz = results[0];
+                            string kwerenda = wiersz[2].ToString ();
+                           
+                          //  log.Info("generuj_dane_do_tabeli_wierszy_przestawnych1 kwerenda " + kwerenda);
                             dR[0] = i.ToString();
-                            string dana = wyciagnijDane(int.Parse(id_dzialu), i, j, poczatek, koniec, id_tabeli, "");
+                            string dana = wyciagnijDane(kwerenda, int.Parse(id_dzialu),  poczatek, koniec,  tenPlik);
 
                             if (j != 0)
                             {
@@ -372,14 +412,18 @@ namespace stat2018
                                 {
                                     dana = "0";
                                 }
+                                else
+                                {
+                                    dR[j + 1] = dana;
+                                }
                             }
-                            if (!string.IsNullOrEmpty(dana))
-                            {
-                                dR[j + 1] = dana;
-                            }
+                           
                         }
-                        catch
-                        { } // end of try
+                        catch (Exception ex)
+                        {
+
+                            log.Error("tabele przestawne "+ ex.Message );
+                        } // end of try
                         dR["id_tabeli"] = id_tabeli;
                     }
                     if (!string.IsNullOrEmpty(dR[1].ToString().Trim()))
@@ -388,8 +432,11 @@ namespace stat2018
                     }
                 }
             }
-            catch
-            { }
+            catch (Exception ex)
+            {
+
+                log.Error("tabele przestawne ostatni " + ex.Message);
+            } // end of try
 
             return tab_1000;
         }// end of generuj_dane_do_tabeli
@@ -416,11 +463,9 @@ namespace stat2018
             status = status + "pompowanie danch do tabeli: " + id_tabeli.ToString() + "<br>";
             var conn = new SqlConnection(con_str);
             string kwerenda = string.Empty;
-            DataTable parameters = new DataTable();
-            parameters.Columns.Add("name", typeof(String));
-            parameters.Columns.Add("value", typeof(String));
-
-            DataRow parametrRow = parameters.NewRow();
+            DataTable parameters = Common.makeParameterTable();
+          
+          
             parameters.Rows.Add("@id_dzialu", id_dzialu);
             parameters.Rows.Add("@id_tabeli", id_tabeli);
 
@@ -453,9 +498,8 @@ namespace stat2018
 
                         ////############################################  ladowanie danych tabela 2 ##############################
                         // odczyt sedziów
-                        parameters = new DataTable();
-                        parameters.Columns.Add("name", typeof(String));
-                        parameters.Columns.Add("value", typeof(String));
+                        parameters = Common.makeParameterTable();
+
 
                         parameters.Rows.Add("@id_dzialu", id_dzialu);
                         parameters.Rows.Add("@id_tabeli", id_tabeli);
@@ -476,13 +520,12 @@ namespace stat2018
 
                                         dRN[1] = dR[1].ToString().Trim() + " " + dR[2].ToString().Trim();
                                         dRN[0] = dR[0].ToString().Trim();
-                                        dRN[2] = 0;
-                                        dRN[3] = 0;
-                                        dRN[4] = 0;
-                                        dRN[5] = 0;
-                                        dRN[6] = 0;
-                                        dRN[7] = 0;
-                                        dRN[8] = 0;
+                                        for (int i = 2; i < 10; i++)
+                                        {
+                                            dRN[i] = 0;
+                                        }
+                                      
+                                       
                                         dRN[9] = id_tabeli;
                                         tab_1000.Rows.Add(dRN);
                                         // załadowanie danych do pierwszych kolumn
@@ -530,15 +573,7 @@ namespace stat2018
 
             return tab_1000;
         }// end of generuj_dane_do_tabeli_3
-        /*
-        public string uzupelnij_statusy_Xl()
-        {
-            Common.runQuerry("update tbl_statystyki_tbl_x5 set funkcja=(SELECT     rtrim([nazwa]) FROM [funkcje]  where [rodzaj]=1 and ident=tbl_statystyki_tbl_x5.funkcja)", con_str, null);
-            Common.runQuerry("update tbl_statystyki_tbl_x5 set stanowisko=(SELECT  rtrim([nazwa]) FROM funkcje    where [rodzaj]=2 and ident=tbl_statystyki_tbl_x5.stanowisko)", con_str, null);
-
-            return "1";
-        }
-        */
+      
         public string uzupelnij_statusy()
         {
             Common.runQuerry("update tbl_statystyki_tbl_02 set funkcja = (SELECT   rtrim([nazwa]) FROM[funkcje]  where[rodzaj] = 1 and ident = tbl_statystyki_tbl_02.funkcja)", con_str, null);
@@ -559,13 +594,7 @@ namespace stat2018
 
             return status;
         }// end of clear_maim_db
-
-        public string clear_maim_db_xl()
-        {
-            Common.runQuerry("delete from  tbl_statystyki_tbl_x5", con_str, null);
-            return "";
-        }// end of clear_maim_db
-
+      
         public bool debug(int wydzial)
         {
             DataTable parametry = Common.makeParameterTable();
@@ -687,6 +716,7 @@ namespace stat2018
 
             return status;
         }// end of generuj_dane_do_tabeli_3
+        /*
         public string generuj_dane_do_tabeli_XXL(int id_dzialu, int id_tabeli, DateTime poczatek, DateTime koniec, string tenPlik)
         {
             string status = string.Empty;
@@ -807,7 +837,7 @@ namespace stat2018
 
             return status;
         }// end of generuj_dane_do_tabeli_5
-
+        */
         //================================================================================================
 
         public DataTable generuj_dane_do_tabeli_mss2(int id_dzialu, DateTime poczatek, DateTime koniec, int il_kolumn, string tenPlik)

@@ -137,6 +137,7 @@
     <Content Include="aopg.aspx" />
     <Content Include="mk.aspx" />
     <Content Include="mss10e.aspx" />
+    <Content Include="onsu.aspx" />
     <Content Include="oopp.aspx" />
     <Content Include="oopg.aspx" />
     <Content Include="aopc.aspx" />
@@ -237,7 +238,7 @@
     <Content Include="onsk.aspx" />
     <Content Include="onsp.aspx" />
     <Content Include="onsr.aspx" />
-    <Content Include="onsu.aspx" />
+    <Content Include="onsuOLD.aspx" />
     <Content Include="oopc.aspx" />
     <Content Include="oopk.aspx" />
     <Content Include="oopr.aspx" />
@@ -264,6 +265,9 @@
     <Content Include="wyszukiwarkaspraw.aspx" />
     <Content Include="msstabele\mss5r.xlsx" />
     <Content Include="Template\aopc2.xlsx" />
+    <Content Include="XMLHeaders\onsu4.xml" />
+    <Content Include="XMLHeaders\onsu3.xml" />
+    <Content Include="XMLHeaders\onsu2.xml" />
     <Content Include="XMLHeaders\akrp2.xml" />
     <Content Include="XMLHeaders\mss.xml" />
     <Content Include="XMLHeaders\test.xml" />
@@ -366,6 +370,8 @@
     <Content Include="Template\oopg.xlsx" />
     <Content Include="Template\okrc.xlsx" />
     <Content Include="Template\mk.xlsx" />
+    <Content Include="Template\onsu.xlsx" />
+    <Content Include="Template\onsr.xlsx" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -465,6 +471,13 @@
     </Compile>
     <Compile Include="mss10e.aspx.designer.cs">
       <DependentUpon>mss10e.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="onsu.aspx.cs">
+      <DependentUpon>onsu.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="onsu.aspx.designer.cs">
+      <DependentUpon>onsu.aspx</DependentUpon>
     </Compile>
     <Compile Include="oopp.aspx.cs">
       <DependentUpon>oopp.aspx</DependentUpon>
@@ -1010,12 +1023,12 @@
     <Compile Include="onsr.aspx.designer.cs">
       <DependentUpon>onsr.aspx</DependentUpon>
     </Compile>
-    <Compile Include="onsu.aspx.cs">
-      <DependentUpon>onsu.aspx</DependentUpon>
+    <Compile Include="onsuOLD.aspx.cs">
+      <DependentUpon>onsuOLD.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="onsu.aspx.designer.cs">
-      <DependentUpon>onsu.aspx</DependentUpon>
+    <Compile Include="onsuOLD.aspx.designer.cs">
+      <DependentUpon>onsuOLD.aspx</DependentUpon>
     </Compile>
     <Compile Include="oopc.aspx.cs">
       <DependentUpon>oopc.aspx</DependentUpon>

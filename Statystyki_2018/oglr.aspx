@@ -31,8 +31,8 @@
 
     <script src="Scripts/rls.js"></script>
 
-    <div class="noprint">
-        <div id="menu" style="background-color: #f7f7f7; z-index: 9999">
+    
+        <div id="menu" class="noprint" style="background-color: #f7f7f7; z-index: 9999">
             <div class="manu_back" style="height: 40px; margin: 0 auto 0 auto; position: relative; width: 1050px; left: 0px;">
                 <table>
                     <tr>
@@ -62,7 +62,7 @@
                 </table>
             </div>
         </div>
-    </div>
+   
 
     <div style="width: 1150px; margin: 0 auto 0 auto; position: relative; top: 60px;">
 
