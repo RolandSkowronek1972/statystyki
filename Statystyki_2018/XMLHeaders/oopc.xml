@@ -417,7 +417,7 @@
     <colSpan>1</colSpan>
     <rowSpan>1</rowSpan>
     <hv>h</hv>
-    <text>15-30 dni</text>
+    <text>pow. 1 do 3 mies.</text>
   </komorka>
   <komorka>
     <wiersz>3</wiersz>
@@ -425,7 +425,7 @@
     <colSpan>1</colSpan>
     <rowSpan>1</rowSpan>
     <hv>h</hv>
-    <text>pow. 1 do 3 mieś.</text>
+    <text>w tym nieusprawiedliwione</text>
   </komorka>
 
 
@@ -443,7 +443,7 @@
     <colSpan>1</colSpan>
     <rowSpan>1</rowSpan>
     <hv>h</hv>
-    <text>pow. 1 do 3 mieś.</text>
+    <text>w tym nieusprawiedliwione</text>
   </komorka>
 
 
@@ -1164,7 +1164,7 @@
     <colSpan>1</colSpan>
     <rowSpan>2</rowSpan>
     <hv>h</hv>
-    <text>w terminie ustawowym 14 dni</text>
+    <text>razem po terminie ustawowym</text>
   </komorka>
 
   <komorka>

@@ -270,6 +270,7 @@
     <Content Include="XMLHeaders\onsu2.xml" />
     <Content Include="XMLHeaders\akrp2.xml" />
     <Content Include="XMLHeaders\mss.xml" />
+    <Content Include="XMLHeaders\MSS1o.xml" />
     <Content Include="XMLHeaders\test.xml" />
     <Content Include="XMLHeaders\ansa.xml" />
     <Content Include="XMLHeaders\wizk_1_25.xml" />

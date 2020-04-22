@@ -28,6 +28,7 @@ namespace stat2018
             }
             else
             {
+                Server.Transfer("default.aspx");
                 return;
             }
             if (!IsPostBack)
@@ -82,6 +83,7 @@ namespace stat2018
                 Label tblControl = new Label { ID = "kod01" };
                 tblControl.Width = 1150;
                 StringBuilder tabelaGlowna = new StringBuilder();
+
                 tabelaGlowna.AppendLine(ms.tworztabeleMSS("1", naglowekTabeliDzialu_1(), tabelaBocznaDzialu_1(), tabelaDanych, 1, 1, 1, 4, idWydzialuNumerycznie, false, "Ewidencja spraw z zakresu prawa pracy i ubezpieczeń społecznych – ogółem I i II instancja", tenPlik));
                 tabelaGlowna.AppendLine(ms.tworztabeleMSS("1.1.1.1", naglowekTabeliDzialu_1_1_1_1(), tabelaBocznaDzialu_1_1_1_1(), tabelaDanych, 4, 42, 4, 16, idWydzialuNumerycznie, true, "Ewidencja spraw z zakresu ubezpieczeń społecznych – ogółem oraz I instancja", tenPlik));
                 tabelaGlowna.AppendLine(ms.tworztabeleMSS("1.1.1.2", naglowekTabeliDzialu_1_1_1_2(), tabelaBocznaDzialu_1_1_1_2(), tabelaDanych, 4, 19, 2, 15, idWydzialuNumerycznie, true, "Ewidencja spraw z zakresu ubezpieczeń społecznych – II instancja", tenPlik));

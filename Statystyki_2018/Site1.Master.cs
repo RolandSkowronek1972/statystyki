@@ -18,6 +18,7 @@ namespace stat2018
                 {
                     //cm.log.Info("Site1.Master: Przypisanie identyfikatora uzytkownika");
                     IdentyfikatorUzytkownika = (string)Session["identyfikatorUzytkownika"];
+
                     int userDigitalId = 0;
                     try
                     {
@@ -39,7 +40,8 @@ namespace stat2018
                 {
                     if (!string.IsNullOrEmpty(IdentyfikatorUzytkownika.Trim()))
                     {
-                        if ((string.Equals((string)Session["poprzedniUzytkownik"], IdentyfikatorUzytkownika)) && (Session["manu1"] != null))
+                        string poprzedniUzytkownik = (string)Session["poprzedniUzytkownik"];
+                        if ((string.Equals(poprzedniUzytkownik, IdentyfikatorUzytkownika)) && (Session["manu1"] != null))
                         {
                             cm.log.Info("start tworzenia menu   " + DateTime.Now.ToLongTimeString());
                             wypelnijMenu();
@@ -74,7 +76,7 @@ namespace stat2018
             }
         }
 
-        protected void wypelnijMenu()
+        private void wypelnijMenu()
         {
             ASPxPopupMenu1.Items.Clear();
             ASPxPopupMenu1.RootItem.Items.Add((DevExpress.Web.MenuItem)Session["manu1"]);
@@ -84,6 +86,7 @@ namespace stat2018
             try
             {
                 string identyfikatorUzytkownika = (string)Session["identyfikatorUzytkownika"];
+
                 try
                 {
                     string admin = string.Empty;
@@ -91,7 +94,7 @@ namespace stat2018
                     parametry.Rows.Add("@identyfikatorUzytkownika", identyfikatorUzytkownika);
                     //log.Info("Header: Sprawdz czy użytkownik " + identyfikatorUzytkownika + " ma parawa administratora" );
                     admin = "0";
-                    admin = cm.getQuerryValue("select admin from uzytkownik where ident =@identyfikatorUzytkownika", cm.con_str, parametry,"SiteMAster");
+                    admin = cm.getQuerryValue("select admin from uzytkownik where ident =@identyfikatorUzytkownika", cm.con_str, parametry, "SiteMAster");
                     //log.Info("Header: Użytkownik ma prawa administracyjne");
                     if (admin != "0")
                     {

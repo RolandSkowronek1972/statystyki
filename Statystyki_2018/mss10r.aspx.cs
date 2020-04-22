@@ -31,6 +31,7 @@ namespace stat2018
             }
             else
             {
+                Server.Transfer("default.aspx");
                 return;
             }
             CultureInfo newCulture = (CultureInfo)CultureInfo.CurrentCulture.Clone();

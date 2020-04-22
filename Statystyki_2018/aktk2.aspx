@@ -599,7 +599,7 @@
                         <td class="borderAll col_90 gray">Razem</td>
                     </tr>
                     <tr>
-                        <td class="col_50H borderAll" rowspan="7">Zaległości</td>
+                        <td class="col_80_fest borderAll" rowspan="7">Zaległości</td>
                         <td class="wciecie borderAll">Pow.3 – 6 m-cy</td>
                         <td class="borderAll col_90">
                             <a href="javascript: openPopup('popup.aspx?sesja=1!4!1!3')">

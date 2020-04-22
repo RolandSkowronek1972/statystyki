@@ -1,6 +1,6 @@
 ﻿/*
 Last Update:
-    - version 1.190121
+    - version 1.200409
 Creation date: 2019-01-21
 
 */
@@ -128,7 +128,7 @@ namespace stat2018
             using (ExcelPackage MyExcel = new ExcelPackage(existingFile))
             {
                 ExcelWorksheet MyWorksheet1 = MyExcel.Workbook.Worksheets[1];
-                MyWorksheet1 = tb.tworzArkuszwExcle(MyExcel.Workbook.Worksheets[1], (DataTable)Session["tabelka001"], 99, 0, 8, true, true, false, false, false);
+                MyWorksheet1 = tb.tworzArkuszwExcle(MyExcel.Workbook.Worksheets[1], (DataTable)Session["tabelka001"], 99, 0, 7, true, true, false, false, false);
 
                 try
                 {
@@ -249,11 +249,7 @@ namespace stat2018
             tabelaNaglowkowa.Rows.Add(new Object[] { "3", "Wykaz S", "1", "3" });
             tabelaNaglowkowa.Rows.Add(new Object[] { "3", "WSNc ", "1", "3" });
 
-            /*     tabelaNaglowkowa.Rows.Add(new Object[] { "3", "z terminem", "1", "3" });
-                 tabelaNaglowkowa.Rows.Add(new Object[] { "3", "bez wyznaczonego terminu", "1", "3" });
-                 tabelaNaglowkowa.Rows.Add(new Object[] { "3", "OGÓŁEM (wraz z publikacją orzeczeń)", "1", "3" });
-
-               */
+          
             tabelaNaglowkowa.Rows.Add(new Object[] { "3", "Ogółem", "1", "3" });
             tabelaNaglowkowa.Rows.Add(new Object[] { "3", "do 3 m-cy", "1", "3" });
             tabelaNaglowkowa.Rows.Add(new Object[] { "3", "pow. 3 do 6 m-cy", "1", "3" });
@@ -296,8 +292,7 @@ namespace stat2018
             tabelaNaglowkowa.Rows.Add(new Object[] { "5", "Załatwiono", "16", "2" });
             tabelaNaglowkowa.Rows.Add(new Object[] { "5", "ZAŁATWIENIA", "8", "2" });
             tabelaNaglowkowa.Rows.Add(new Object[] { "5", "sesje odbyte przez sędziego", "3", "1" });
-            //     tabelaNaglowkowa.Rows.Add(new Object[] { "5", "Liczba odroczonych publikacji orzeczeń", "1", "5" });
-            //      tabelaNaglowkowa.Rows.Add(new Object[] { "5", "Liczba odroczonych spraw", "3", "2" });
+       
             tabelaNaglowkowa.Rows.Add(new Object[] { "5", "POZOSTAŁOŚĆ na następny m-c", "8", "2" });
 
             tabelaNaglowkowa.Rows.Add(new Object[] { "5", "pozostało spraw starych - wszystkie kategorie spraw <br/>(bez czasu trwania mediacji, zgodnie z dz. 2.1.1.1 MS-S1o)", "9", "2" });

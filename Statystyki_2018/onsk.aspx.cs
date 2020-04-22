@@ -406,21 +406,10 @@ namespace stat2018
                 txt = txt + cl.generuj_dane_do_tabeli_wierszy(Date1.Date, Date2.Date, yyx, 1, tenPlik);
                 txt = txt + cl.generuj_dane_do_tabeli_wierszy(Date1.Date, Date2.Date, yyx, 10, tenPlik);
 
-                DataTable dt_all = new DataTable();
-                dt_all.Columns.Add("id_sedziego", typeof(String));
-                dt_all.Columns.Add("opis", typeof(String));
-                dt_all.Columns.Add("d_01", typeof(int));
-                dt_all.Columns.Add("d_02", typeof(int));
-                dt_all.Columns.Add("d_03", typeof(int));
-                dt_all.Columns.Add("d_04", typeof(int));
-                dt_all.Columns.Add("d_05", typeof(int));
-                dt_all.Columns.Add("d_06", typeof(int));
-                dt_all.Columns.Add("d_07", typeof(int));
-
                 try
                 {
                     DataTable dt01 = cl.generuj_dane_do_tabeli_wierszy_przestawnych1(Date1.Date, Date2.Date, yyx, 1000, 1, tenPlik);
-                    cm.log.Error(tenPlik + " generuj_dane_do_tabeli_przestawnych 1000 il wierszy" + dt01.Rows.Count.ToString ());
+                    cm.log.Error(tenPlik + " generuj_dane_do_tabeli_przestawnych 1000 il wierszy" + dt01.Rows.Count.ToString());
 
                     GridView13.DataSource = null;
                     GridView13.ShowHeader = false;
@@ -453,7 +442,8 @@ namespace stat2018
                 //====================================================
                 try
                 {
-                    DataTable dt01 = dr.tworzTabele(int.Parse((string)Session["id_dzialu"]), 1001, Date1.Date, Date2.Date, 30, GridView14, tenPlik);
+                    DataTable dt01 = cl.generuj_dane_do_tabeli_przestawnych(int.Parse((string)Session["id_dzialu"]), 1001, Date1.Date, Date2.Date, tenPlik);
+                    // DataTable dt01 = dr.tworzTabele(int.Parse((string)Session["id_dzialu"]), 1001, Date1.Date, Date2.Date, 30, GridView14, tenPlik);
                     GridView14.DataSource = null;
                     GridView14.ShowHeader = false;
                     GridView14.DataSourceID = null;
@@ -481,23 +471,7 @@ namespace stat2018
                     cm.log.Error(tenPlik + " generuj_dane_do_tabeli_przestawnych 1003 " + ex.Message);
                 }
 
-                // druga tabela przestawna
-
-                dt_all = new DataTable();
-                dt_all.Columns.Add("id_sedziego", typeof(String));
-                dt_all.Columns.Add("opis", typeof(String));
-                dt_all.Columns.Add("d_01", typeof(int));
-                dt_all.Columns.Add("d_02", typeof(int));
-                dt_all.Columns.Add("d_03", typeof(int));
-                dt_all.Columns.Add("d_04", typeof(int));
-                dt_all.Columns.Add("d_05", typeof(int));
-                dt_all.Columns.Add("d_06", typeof(int));
-
                 DataTable dt1 = cl.generuj_dane_do_tabeli_wierszy_przestawnych1(Date1.Date, Date2.Date, yyx, 2000, 1, tenPlik);
-
-                DataTable dt2 = cl.generuj_dane_do_tabeli_przestawnych(int.Parse((string)Session["id_dzialu"]), 2001, Date1.Date, Date2.Date, tenPlik);
-                DataTable dt3 = cl.generuj_dane_do_tabeli_wierszy_przestawnych1(Date1.Date, Date2.Date, yyx, 2002, 1, tenPlik);
-                DataTable dt4 = cl.generuj_dane_do_tabeli_przestawnych(int.Parse((string)Session["id_dzialu"]), 2003, Date1.Date, Date2.Date, tenPlik);
 
                 GridView17.DataSource = null;
                 GridView17.ShowHeader = false;
@@ -506,6 +480,8 @@ namespace stat2018
                 GridView17.DataSource = dt1;
                 GridView17.DataBind();
 
+                DataTable dt2 = cl.generuj_dane_do_tabeli_przestawnych(int.Parse((string)Session["id_dzialu"]), 2001, Date1.Date, Date2.Date, tenPlik);
+
                 GridView18.DataSource = null;
                 GridView18.ShowHeader = false;
                 GridView18.DataSourceID = null;
@@ -513,12 +489,16 @@ namespace stat2018
                 GridView18.DataSource = dt2;
                 GridView18.DataBind();
 
+                DataTable dt3 = cl.generuj_dane_do_tabeli_wierszy_przestawnych1(Date1.Date, Date2.Date, yyx, 2002, 1, tenPlik);
+
                 GridView19.DataSource = null;
                 GridView19.ShowHeader = false;
                 GridView19.DataSourceID = null;
                 GridView19.AutoGenerateColumns = false;
                 GridView19.DataSource = dt3;
                 GridView19.DataBind();
+
+                DataTable dt4 = cl.generuj_dane_do_tabeli_przestawnych(int.Parse((string)Session["id_dzialu"]), 2003, Date1.Date, Date2.Date, tenPlik);
 
                 GridView20.DataSource = null;
                 GridView20.ShowHeader = false;

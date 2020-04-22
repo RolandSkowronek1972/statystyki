@@ -25,6 +25,7 @@ namespace stat2018
             }
             else
             {
+                Server.Transfer("default.aspx");
                 return;
             }
             if (Session["ustawDate5r"] == null)

@@ -22,6 +22,8 @@ namespace stat2018
                     Session["userIdNum"] = null;
                     Session["ustawDate15o"] = null;
                     Session.Abandon();
+                    Response.Redirect("default.aspx");
+                    
                 }
             }
             string errorMessage = Request.QueryString["info"];

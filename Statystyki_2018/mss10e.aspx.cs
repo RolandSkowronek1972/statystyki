@@ -28,6 +28,7 @@ namespace stat2018
             }
             else
             {
+                Server.Transfer("default.aspx");
                 return;
             }
             if (!IsPostBack)
@@ -76,6 +77,7 @@ namespace stat2018
                 Label tblControl = new Label { ID = "kod01" };
                 tblControl.Width = 1150;
                 StringBuilder tabelaGlowna = new StringBuilder();
+
                 tabelaGlowna.AppendLine(ms.tworztabeleMSS10e("5.1", naglowekTabeliDzialu_5_1(), tabelaBocznaDzialu_5_1(), tabelaDanych, 4, 2, 1, 15, idWydzialuNumerycznie, false, "Wnioski o udzielenie zezwolenia na odbycie przez skazanego kary pozbawienia wolności w systemie dozoru elektronicznego", 1, tenPlik));
                 tabelaGlowna.AppendLine(ms.tworztabeleMSS10e("5.2", naglowekTabeliDzialu_5_2(), tabelaBocznaDzialu_5_2(), tabelaDanych, 1, 1, 1, 6, idWydzialuNumerycznie, true, "Podmioty, które złożyły wnioski o udzielenie zezwolenia na odbycie przez skazanego kary pozbawienia wolności w systemie dozoru elektronicznego", 2, tenPlik));
                 tabelaGlowna.AppendLine(ms.tworztabeleMSS10e("5.3", naglowekTabeliDzialu_5_3(), tabelaBocznaDzialu_5_3(), tabelaDanych, 2, 2, 2, 3, idWydzialuNumerycznie, true, "Liczba osób odbywających karę pozbawienia wolności w systemie dozoru elektronicznego", 3, tenPlik));

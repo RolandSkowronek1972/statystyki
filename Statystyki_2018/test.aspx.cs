@@ -75,87 +75,9 @@ namespace stat2018
                     GridView1.DataSource = przykladowedane;
                     GridView1.DataBind();*/
             //mss5r
-        } /*
+        } 
 
-        protected void generujTabele(string nazwaPliku, string nazwatabeli)
-        {
-            string excelFilename = string.Empty;
-
-            // czytaj z excela
-            var package = new ExcelPackage(new FileInfo(nazwaPliku));
-            string nazwaTabeliDanych = nazwatabeli + "_dane";
-
-            using (package)
-            {
-                var worksheet = package.Workbook.Worksheets[nazwatabeli];
-
-                int rows = worksheet.Dimension.End.Row;
-                for (int i = 2; i < rows; i++)
-                {
-                    string info = worksheet.Cells[i, 1].Text;
-                    if (string.IsNullOrEmpty(info.Trim()))
-                    {
-                        return;
-                    }
-                    // jezeli dane sa to
-                    DataRow wierszDanych = teksty.NewRow();
-
-                    wierszDanych["wiersz"] = int.Parse(worksheet.Cells[i, wiersz].Text.Trim());
-                    wierszDanych["kolumna"] = int.Parse(worksheet.Cells[i, kolumna].Text.Trim());
-                    wierszDanych["text"] = worksheet.Cells[i, tekst].Text.Trim();
-                    wierszDanych["rowspan"] = int.Parse(worksheet.Cells[i, rowspan].Text.Trim());
-                    wierszDanych["colspan"] = int.Parse(worksheet.Cells[i, colspan].Text.Trim());
-                    wierszDanych["style"] = worksheet.Cells[i, style].Text.Trim();
-                    teksty.Rows.Add(wierszDanych);
-                }
-            }
-            // znalezienie największego numeru wiersza
-
-            int maxwiersz =int.Parse ( teksty.Compute("Max(wiersz)", string.Empty).ToString ());
-            //dane do tabeli z liczbami
-            DataTable tabela2 = ms.generuj_dane_do_tabeli_mss2(1, DateTime.Now.Date, DateTime.Now.Date, 21);
-            for (int i = 1; i < maxwiersz; i++)
-            {
-                //zmniejsz tabele do danych tlko z wiersza
-                string kwerenda = "wiersz="+i.ToString();
-                DataRow[] znalezione = teksty.Select(kwerenda);
-                if (znalezione.Length>0)
-                {
-                    DataTable jedenWiersz = znalezione.CopyToDataTable();
-                    GridView1.Controls[0].Controls.AddAt(i, wierszTabeli(jedenWiersz, null, 5, i, nazwatabeli, "normal", "BorderAll"));
-                }
-            }
-        }
-
-        public GridViewRow wierszTabeli(DataTable daneWiersza, DataTable dane, int iloscKolumn, int idWiersza, string idtabeli,  string CssStyleDlaTekstu, string cssStyleDlaTabeli)
-        {
-            GridViewRow NewTotalRow = new GridViewRow(0, 0, DataControlRowType.DataRow, DataControlRowState.Insert);
-            // wpisanie tekstów
-            foreach (DataRow komorka in daneWiersza.Rows)
-            {
-                int wiersz = int.Parse (komorka["wiersz"].ToString().Trim());
-                int kolumna = int.Parse(komorka["kolumna"].ToString().Trim());
-                string tekst = komorka["text"].ToString().Trim();
-                int rowSpan = int.Parse(komorka["rowspan"].ToString().Trim());
-                int colspan = int.Parse(komorka["colspan"].ToString().Trim());
-
-                NewTotalRow.Cells.Add(cela (tekst, rowSpan, colspan,"borderAll"));
-            }
-            // kolumna wyliczeniowa
-            NewTotalRow.Cells.Add(cela(idWiersza.ToString() , 1, 1, "col_36"));
-            if (dane!=null)
-            {
-                for (int i = 1; i < iloscKolumn; i++)
-                {
-                    //NewTotalRow.Cells.Add(cela("<a class='normal' href=\"javascript: openPopup('popup.aspx?sesja=" + idWiersza.ToString().Trim() + "!" + idtabeli.ToString().Trim() + "!" + i.ToString().Trim() + "!3')\">" + dane.Rows[idWiersza - 1][i].ToString().Trim() + "</a>", 1, 1, cssStyleDlaTabeli));
-                    NewTotalRow.Cells.Add(cela("<a class='normal' href=\"javascript: openPopup('popup.aspx?sesja=" + idWiersza.ToString().Trim() + "!" + idtabeli.ToString().Trim() + "!" + i.ToString().Trim() + "!3')\">" + i.ToString().Trim() + "</a>", 1, 1, cssStyleDlaTabeli));
-                }
-            }
-
-            return NewTotalRow;
-        }// end of
-*/
-
+       
         public TableCell cela(string text, int rowSpan, int colSpan, string cssClass)
         {
             TableCell HeaderCell = new TableCell();
@@ -375,7 +297,7 @@ namespace stat2018
 
         protected void Button3_Click(object sender, EventArgs e)
         {
-            odczytXML("mss.xml", 12);
+            odczyt2();
         }
 
         private DataTable schematTabeli()
@@ -399,12 +321,25 @@ namespace stat2018
             lp = 3,
 
             //===============
-            naglowek = 2,
+            informacjeOtabeli = 0,
 
-            tabelaBoczna = 3,
+            naglowek = 1,
+            tabelaBoczna = 2,
 
             //nr noda z komorkami
             nodZkomorkami = 4
+        }
+
+        private void odczyt2()
+        {
+            string path = Server.MapPath("XMLHeaders") + "\\" + "MSS1o.xml";
+
+            Label tblControl = new Label { ID = "kod01" };
+            tblControl.Text = (ms.odczytXML(path, 12,"1.1.2", ""));
+
+            tblControl.Width = 1150;
+
+            tablePlaceHolder.Controls.Add(tblControl);
         }
 
         private void odczytXML(string sciezka, int idDzialu)
@@ -417,8 +352,21 @@ namespace stat2018
                 return;
             }
             XmlDocument doc = new XmlDocument();
+            doc.Load(path);
+            int ChildNodesCount = 0;
+            try
+            {
+                ChildNodesCount = doc.DocumentElement.ChildNodes.Count;
+            }
+            catch
+            {
+            }
+            if (ChildNodesCount == 0)
+            {
+                TextBox1.Text = "błąd ChildNodes=0 ";
+                return;
+            }
 
-            int i = doc.DocumentElement.ChildNodes.Count;
             StringBuilder st = new StringBuilder();
             string tekstNadTabela = string.Empty;
             int iloscWierszy = 0;
@@ -437,40 +385,37 @@ namespace stat2018
                 DataTable komorkiNaglowka = new DataTable();
                 DataTable komorkiboczne = new DataTable();
 
+                XmlNode informacjeOtabeli = node.ChildNodes[(int)pola.informacjeOtabeli];
+                if (informacjeOtabeli == null)
+                {
+                    continue;
+                }
                 idTabeli = node.Attributes[0].Value.ToString();
                 st.AppendLine(" ####################################################    ");
                 st.AppendLine(" id Tabeli " + idTabeli);
-                iloscWierszy = int.Parse(node.ChildNodes[0].InnerText);
-                tekstNadTabela = node.ChildNodes[1].InnerText;
-                naglowek = obslugaTabel(node.ChildNodes[(int)pola.naglowek]);
+                iloscWierszy = int.Parse(informacjeOtabeli.ChildNodes[0].InnerText);
+                st.AppendLine(" iloscWierszy " + iloscWierszy.ToString());
+                tekstNadTabela = informacjeOtabeli.ChildNodes[1].InnerText;
+                st.AppendLine(" tekstNadTabela " + tekstNadTabela.ToString());
+                //informacjeOtabeli
+                iloscWieszyNaglowka = int.Parse(informacjeOtabeli.ChildNodes[2].InnerText);
+                //iloscWieszyNaglowka = int.Parse(informacjeOtabeli[]);
+                ilosckolunPrzedIteracja = int.Parse(informacjeOtabeli.ChildNodes[3].InnerText);
+                st.AppendLine(" ilosckolunPrzedIteracja " + ilosckolunPrzedIteracja.ToString());
 
-                if (naglowek != null)
-                {
-                    iloscWieszyNaglowka = int.Parse(naglowek.Rows[0][(int)pola.iloscWieszyNaglowka].ToString());
-                    ilosckolunPrzedIteracja = int.Parse(naglowek.Rows[0][(int)pola.ilosckolunPrzedIteracja].ToString());
-                    ilosckolunPoIteracji = int.Parse(naglowek.Rows[0][(int)pola.ilosckolunPoIteracji].ToString());
-                    Lp = int.Parse(naglowek.Rows[0][(int)pola.lp].ToString());
-                    lp = (Lp == 0);
-                    komorkiNaglowka = (DataTable)naglowek.Rows[0][(int)pola.nodZkomorkami];
+                ilosckolunPoIteracji = int.Parse(informacjeOtabeli.ChildNodes[4].InnerText);
+                st.AppendLine(" ilosc kolun Po Iteracji " + ilosckolunPoIteracji.ToString());
 
-                    st.AppendLine(" ilosc wierszy [" + iloscWieszyNaglowka.ToString() + "] ilosc kolumn przed iterają [" + ilosckolunPrzedIteracja.ToString() + "] ilosć kolumn po iteracji [" + ilosckolunPoIteracji.ToString() + "] lp " + Lp.ToString());
-                    st.AppendLine("Ilosc komorek " + komorkiNaglowka.Rows.Count.ToString());
-                }
-                else
-                {
-                    st.AppendLine(" bład przy generowaniu nagłówka    ");
-                }
-                tabelaBoczna = (obslugaTabel(node.ChildNodes[(int)pola.tabelaBoczna]));
+                Lp = int.Parse(informacjeOtabeli.ChildNodes[5].InnerText);
+                //  lp = (Lp == 0);
+                naglowek = wygenerujTabele(node.ChildNodes[(int)pola.naglowek]);
 
-                if (tabelaBoczna != null)
-                {
-                    komorkiboczne = (DataTable)tabelaBoczna.Rows[0][(int)pola.nodZkomorkami];
-                }
+                tabelaBoczna = wygenerujTabele(node.ChildNodes[(int)pola.tabelaBoczna]);
 
                 Label tblControl = new Label { ID = "kod01" };
                 tblControl.Width = 1150;
                 StringBuilder tabelaGlowna = new StringBuilder();
-                tabelaGlowna.AppendLine(ms.tworztabeleMSS(idTabeli, komorkiNaglowka, komorkiboczne, tabelaDanych, iloscWieszyNaglowka, iloscWierszy, ilosckolunPrzedIteracja, ilosckolunPoIteracji, idDzialu, lp, tekstNadTabela, "test"));
+                tabelaGlowna.AppendLine(ms.tworztabeleMSS(idTabeli, naglowek, tabelaBoczna, tabelaDanych, iloscWieszyNaglowka, iloscWierszy, ilosckolunPrzedIteracja, ilosckolunPoIteracji, idDzialu, lp, tekstNadTabela, "test"));
                 tblControl.Text = tabelaGlowna.ToString();
                 tablePlaceHolder.Controls.Add(tblControl);
             }
@@ -516,7 +461,7 @@ namespace stat2018
                 }
                 */
 
-        private DataTable obslugaTabel(XmlNode nod)
+        /*private DataTable obslugaTabel(XmlNode nod)
         {
             if (nod == null)
             {
@@ -533,7 +478,7 @@ namespace stat2018
                 ilosckolunPoIteracji = int.Parse(nod.ChildNodes[2].InnerText);
                 lp = int.Parse(nod.ChildNodes[3].InnerText);
             }
-            catch (Exception ex)
+            catch
             {
             }
 
@@ -555,27 +500,38 @@ namespace stat2018
             }
             else
             {
-                wierszZnaglowkiem["tabela"] = null;
+                //  wierszZnaglowkiem["tabela"] = wygenerujTabele(nod.ChildNodes[5]);
             }
             naglowek.Rows.Add(wierszZnaglowkiem);
 
             return naglowek;
-        }
+        }*/
 
         private DataTable wygenerujTabele(XmlNode schemat)
         {
             DataTable tabelaWyjsciowa = schematTabeli();
-            foreach (XmlNode komorka in schemat.ChildNodes)
+            if (schemat == null)
             {
-                int wiersz = int.Parse(komorka.ChildNodes[0].InnerText.Trim());
-                int kolumna = int.Parse(komorka.ChildNodes[1].InnerText.Trim());
-                int rowspan = int.Parse(komorka.ChildNodes[2].InnerText.Trim());
-                int colspan = int.Parse(komorka.ChildNodes[3].InnerText.Trim());
-                string style = komorka.ChildNodes[4].InnerText.Trim();
-                string tekst = komorka.ChildNodes[5].InnerText.Trim();
-                //                         W  K  CS RS   style"    text"
-                tabelaWyjsciowa.Rows.Add(new Object[] { wiersz, kolumna, rowspan, colspan, style, tekst });
+                return tabelaWyjsciowa;
             }
+            try
+            {
+                foreach (XmlNode komorka in schemat.ChildNodes)
+                {
+                    int wiersz = int.Parse(komorka.ChildNodes[0].InnerText.Trim());
+                    int kolumna = int.Parse(komorka.ChildNodes[1].InnerText.Trim());
+                    int rowspan = int.Parse(komorka.ChildNodes[2].InnerText.Trim());
+                    int colspan = int.Parse(komorka.ChildNodes[3].InnerText.Trim());
+                    string style = komorka.ChildNodes[4].InnerText.Trim();
+                    string tekst = komorka.ChildNodes[5].InnerText.Trim();
+                    //                         W  K  CS RS   style"    text"
+                    tabelaWyjsciowa.Rows.Add(new Object[] { wiersz, kolumna, rowspan, colspan, style, tekst });
+                }
+            }
+            catch
+            {
+            }
+
             return tabelaWyjsciowa;
         }
     }

@@ -3,6 +3,7 @@ using System.Data;
 using System.Globalization;
 using System.Linq;
 using System.Text;
+using System.Web.UI.WebControls;
 
 namespace stat2018
 {
@@ -24,6 +25,7 @@ namespace stat2018
             }
             else
             {
+                Server.Transfer("default.aspx");
                 return;
             }
             if (!IsPostBack)
@@ -69,7 +71,16 @@ namespace stat2018
 
                 DataTable tabela2 = ms.generuj_dane_do_tabeli_mss2(int.Parse((string)Session["id_dzialu"]), Date1.Date, Date2.Date, 40);
                 //wypełnianie lebeli
+                string path = Server.MapPath("XMLHeaders") + "\\" + "MSS1o.xml";
+                Label tblControl = new Label { ID = "kod01" };
+                tblControl.Width = 1150;
+                StringBuilder tabelaGlowna = new StringBuilder();
+                tabelaGlowna.AppendLine(ms.odczytXML(path, int.Parse((string)Session["id_dzialu"]), "1.1.1", tabela2, tenPlik));
+                tabelaGlowna.AppendLine(ms.odczytXML(path, int.Parse((string)Session["id_dzialu"]), "1.1.1.a", tabela2, tenPlik));
 
+                tabelaGlowna.AppendLine ( ms.odczytXML(path, int.Parse((string)Session["id_dzialu"]),"1.1.2",tabela2, tenPlik));
+                tblControl.Text = tabelaGlowna.ToString();
+                tablePlaceHolder.Controls.Add(tblControl);
                 tab_1_1_1_1_w01_c01.Text = wyciagnijWartosc(tabela2, "idWydzial=" + idWydzialu + " and idTabeli='1.1.1.1' and idWiersza ='1' and idkolumny='1'");
 
                 tab_1_1_1_2_w01_c01.Text = wyciagnijWartosc(tabela2, "idWydzial=" + idWydzialu + " and idTabeli='1.1.1.2' and idWiersza ='1' and idkolumny='1'");
@@ -6745,6 +6756,11 @@ namespace stat2018
         private string wyciagnijWartosc(DataTable ddT, string selectString)
         {
             string result = "0";
+
+            if (ddT==null)
+            {
+                return result;
+            }
             try
             {
                 DataRow[] foundRows;
