@@ -491,23 +491,7 @@
     <text>w tym zatwierdzono ugodę</text>
   </komorka>
 
-  <komorka>
-    <wiersz>3</wiersz>
-    <kolumna>108</kolumna>
-    <colSpan>1</colSpan>
-    <rowSpan>1</rowSpan>
-    <hv>h</hv>
-    <text>na rozprawę</text>
-  </komorka>
-
-  <komorka>
-    <wiersz>3</wiersz>
-    <kolumna>109</kolumna>
-    <colSpan>1</colSpan>
-    <rowSpan>1</rowSpan>
-    <hv>h</hv>
-    <text>na posiedzenie</text>
-  </komorka>
+ 
 
 
 
@@ -868,23 +852,7 @@
 
     <text>Cz</text>
   </komorka>
-  <komorka>
-    <wiersz>2</wiersz>
-    <kolumna>50</kolumna>
-    <colSpan>1</colSpan>
-    <rowSpan>2</rowSpan>
-    <hv>h</hv>
-    <text>ogółem</text>
-  </komorka>
   
-  <komorka>
-    <wiersz>2</wiersz>
-    <kolumna>51</kolumna>
-    <colSpan>2</colSpan>
-    <rowSpan>1</rowSpan>
-    <hv>h</hv>
-    <text>z tego</text>
-  </komorka>
 
 
   <komorka>
@@ -905,58 +873,7 @@
     <text>z tego</text>
   </komorka>
 
-  <komorka>
-    <wiersz>2</wiersz>
-    <kolumna>56</kolumna>
-    <colSpan>1</colSpan>
-    <rowSpan>2</rowSpan>
-    <hv>h</hv>
-    <text>ogółem (wszystkie kategorie spraw)</text>
-  </komorka>
-  <komorka>
-    <wiersz>2</wiersz>
-    <kolumna>57</kolumna>
-    <colSpan>1</colSpan>
-    <rowSpan>2</rowSpan>
-    <hv>h</hv>
-    <text>C</text>
-  </komorka>
-  <komorka>
-    <wiersz>2</wiersz>
-    <kolumna>58</kolumna>
-    <colSpan>1</colSpan>
-    <rowSpan>2</rowSpan>
-    <hv>h</hv>
-    <text>Ns</text>
-  </komorka>
-
-
-  <komorka>
-    <wiersz>2</wiersz>
-    <kolumna>59</kolumna>
-    <colSpan>1</colSpan>
-    <rowSpan>2</rowSpan>
-    <hv>h</hv>
-    <text>z terminem</text>
-  </komorka>
-
-  <komorka>
-    <wiersz>2</wiersz>
-    <kolumna>60</kolumna>
-    <colSpan>1</colSpan>
-    <rowSpan>2</rowSpan>
-    <hv>h</hv>
-    <text>bez wyznaczonego terminu</text>
-  </komorka>
-
-  <komorka>
-    <wiersz>2</wiersz>
-    <kolumna>61</kolumna>
-    <colSpan>1</colSpan>
-    <rowSpan>2</rowSpan>
-    <hv>h</hv>
-    <text>OGÓŁEM (wraz z publikacją orzeczeń)</text>
-  </komorka>
+ 
 
 
   <komorka>
@@ -1139,7 +1056,30 @@
     <hv>h</hv>
     <text>powyżej 8 lat</text>
   </komorka>
-
+ <komorka>
+    <wiersz>2</wiersz>
+    <kolumna>80</kolumna>
+    <colSpan>1</colSpan>
+    <rowSpan>2</rowSpan>
+    <hv>h</hv>
+    <text>ogółem</text>
+  </komorka>
+   <komorka>
+    <wiersz>2</wiersz>
+    <kolumna>80</kolumna>
+    <colSpan>1</colSpan>
+    <rowSpan>2</rowSpan>
+    <hv>h</hv>
+    <text>zakreślonych</text>
+  </komorka>
+   <komorka>
+    <wiersz>2</wiersz>
+    <kolumna>80</kolumna>
+    <colSpan>1</colSpan>
+    <rowSpan>2</rowSpan>
+    <hv>h</hv>
+    <text>niezakreślonych</text>
+  </komorka>
   <komorka>
     <wiersz>2</wiersz>
     <kolumna>81</kolumna>
@@ -1149,6 +1089,9 @@
     <text>łacznie</text>
   </komorka>
 
+  
+    
+    
   <komorka>
     <wiersz>2</wiersz>
     <kolumna>82</kolumna>
@@ -1256,32 +1199,7 @@
     <text>ROZSTRZYGNIĘCIE</text>
   </komorka>
 
-  <komorka>
-    <wiersz>2</wiersz>
-    <kolumna>104</kolumna>
-    <colSpan>1</colSpan>
-    <rowSpan>2</rowSpan>
-    <hv>h</hv>
-    <text>ogółem</text>
-  </komorka>
-
-  <komorka>
-    <wiersz>2</wiersz>
-    <kolumna>105</kolumna>
-    <colSpan>1</colSpan>
-    <rowSpan>2</rowSpan>
-    <hv>h</hv>
-    <text>zakreślonych</text>
-  </komorka>
-
- <komorka>
-    <wiersz>2</wiersz>
-    <kolumna>106</kolumna>
-    <colSpan>1</colSpan>
-    <rowSpan>2</rowSpan>
-    <hv>h</hv>
-    <text>niezakreślonych</text>
-  </komorka>
+ 
   <komorka>
     <wiersz>2</wiersz>
     <kolumna>108</kolumna>
@@ -1371,29 +1289,13 @@
   <komorka>
     <wiersz>1</wiersz>
     <kolumna>50</kolumna>
-    <colSpan>6</colSpan>
+    <colSpan>3</colSpan>
     <rowSpan>1</rowSpan>
     <hv>h</hv>
     <text>sesje odbyte przez sędziego </text>
   </komorka>
 
-  <komorka>
-    <wiersz>1</wiersz>
-    <kolumna>56</kolumna>
-    <colSpan>3</colSpan>
-    <rowSpan>1</rowSpan>
-    <hv>h</hv>
-    <text>Liczba odroczonych publikacji orzeczeń</text>
-  </komorka>
-
-  <komorka>
-    <wiersz>1</wiersz>
-    <kolumna>59</kolumna>
-    <colSpan>3</colSpan>
-    <rowSpan>1</rowSpan>
-    <hv>h</hv>
-    <text>Liczba odroczonych spraw</text>
-  </komorka>
+ 
 
   <komorka>
     <wiersz>1</wiersz>
@@ -1410,9 +1312,16 @@
     <colSpan>9</colSpan>
     <rowSpan>1</rowSpan>
     <hv>h</hv>
-    <text>pozostało spraw starych (wszystkie kategorie spraw)</text>
+    <text>pozostało spraw starych - wszystkie kategorie spraw (bez czasu trwania mediacji, zgodnie z dz. 2.1.1.1 MS-S1r)</text>
   </komorka>
-
+ <komorka>
+    <wiersz>1</wiersz>
+    <kolumna>777</kolumna>
+    <colSpan>3</colSpan>
+    <rowSpan>1</rowSpan>
+    <hv>h</hv>
+    <text>stan spraw zawieszonych (wszystkie kategorie spraw, bez czasu trwania mediacji, zgodnie z MS-S1r)</text>
+  </komorka>
   <komorka>
     <wiersz>1</wiersz>
     <kolumna>81</kolumna>
@@ -1440,15 +1349,7 @@
     <text>mediacje</text>
   </komorka>
 
-  <komorka>
-    <wiersz>1</wiersz>
-    <kolumna>104</kolumna>
-    <colSpan>3</colSpan>
-    <rowSpan>1</rowSpan>
-    <hv>h</hv>
-    <text>stan spraw zawieszonych (wszystkie kategorie spraw) </text>
-  </komorka>
-
+ 
   <komorka>
     <wiersz>1</wiersz>
     <kolumna>107</kolumna>

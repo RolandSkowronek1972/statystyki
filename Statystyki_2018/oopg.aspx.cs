@@ -144,8 +144,8 @@ namespace stat2018
             {
                 ExcelWorksheet MyWorksheet1 = MyExcel.Workbook.Worksheets[1];
 
-                MyWorksheet1 = tb.tworzArkuszwExcle(MyExcel.Workbook.Worksheets[1], tabela, 100, 0, 7, true, true, false, false, false);
-                tb.tworzArkuszwExcleBezSedziow(MyExcel.Workbook.Worksheets[2], (DataTable)Session["tabelka002"], 12, 100, 1, 7, false);
+                MyWorksheet1 = tb.tworzArkuszwExcle(MyExcel.Workbook.Worksheets[1], tabela, 110, 0, 8, true, true, false, false, false);
+                tb.tworzArkuszwExcleBezSedziow(MyExcel.Workbook.Worksheets[2], (DataTable)Session["tabelka002"], 12, 117, 0, 8, false);
 
                 try
                 {
@@ -191,50 +191,59 @@ namespace stat2018
          //   GridViewBandColumn kolumna_SprawyZakresuUbezpieczenSpolecznych = DevExpressXXL.GetBoundColumn("Sprawy z zakresu ubezpieczeń społecznych ");
             ASPxGridView1.Columns.Add(DevExpressXXL.kolumnaDoTabeli("zaległość poprzedniego roku", "d_01", idTabeli, "", false, szerokoscKolumny));
 
-            string[] teksty00 = new string[] { "Ogółem", "GU", "GUp", "Gzd", "GUu", "GUu ''of''", "GUz", "GUk", "GNs", "GR", "GRz", "GRp", "GRu", "GRs", "GReu", "GRez", "GRk", "GRo", "WSC", "WNSc" };
+            string[] teksty00 = new string[] { "Ogółem", "GC", "GNs", "GNc", "GCo", "GCps", "WSC", "WSNc", "Gz" };
 
             ASPxGridView1.Columns.Add(DevExpressXXL.podKolumna(teksty00, 2, idTabeli, false, szerokoscKolumny, "WPŁYW"));
-            ASPxGridView1.Columns.Add(DevExpressXXL.podKolumna(teksty00, 22, idTabeli, false, szerokoscKolumny, "ZAŁATWIENIA"));
-
+            ASPxGridView1.Columns.Add(DevExpressXXL.SekcjaDwiePodKolumny(teksty00, "WYZNACZONO", 11, idTabeli, szerokoscKolumny));
+            ASPxGridView1.Columns.Add(DevExpressXXL.SekcjaDwiePodKolumny(teksty00, "ZAŁATWIONO", 29, idTabeli, szerokoscKolumny));
+            ASPxGridView1.Columns.Add(DevExpressXXL.podKolumna(teksty00, 47, idTabeli, false, szerokoscKolumny, "ZAŁATWIENIA"));
             #region sesje odbyte przez sędziego
 
             GridViewBandColumn sesjeSedziego = DevExpressXXL.GetBoundColumn("sesje odbyte przez sędziego ");
 
             GridViewBandColumn wszystkieSesjeSedziego = DevExpressXXL.GetBoundColumn("na potrzeby MS-S");
-            wszystkieSesjeSedziego.Columns.Add(DevExpressXXL.kolumnaDoTabeli("ogółem", "d_42", idTabeli, "", false, szerokoscKolumny));
-            wszystkieSesjeSedziego.Columns.Add(DevExpressXXL.podKolumna(new string[2] { "rozprawy", "posiedzenia" }, 43, idTabeli, false, szerokoscKolumny, "z tego "));
+            wszystkieSesjeSedziego.Columns.Add(DevExpressXXL.kolumnaDoTabeli("ogółem", "d_56", idTabeli, "", false, szerokoscKolumny));
+            wszystkieSesjeSedziego.Columns.Add(DevExpressXXL.podKolumna(new string[2] { "rozprawy", "posiedzenia" }, 57, idTabeli, false, szerokoscKolumny, "z tego "));
             sesjeSedziego.Columns.Add(wszystkieSesjeSedziego);
             ASPxGridView1.Columns.Add(sesjeSedziego);
 
             #endregion sesje odbyte przez sędziego
 
-            ASPxGridView1.Columns.Add(DevExpressXXL.podKolumna(teksty00, 45, idTabeli, false, szerokoscKolumny, "POZOSTAŁOŚĆ na następny miesiąc"));
 
-            ASPxGridView1.Columns.Add(DevExpressXXL.podKolumna(new string[] { "Ogółem", "do 1 miesiąca", "pow. 1 do 3 m-cy", "pow. 3 do 6 m - cy", "pow. 6 do 12 m-cy", "pow. 12 m-cy do 2 lat", "pow. 2 do 3 lat", "pow. 3 do 5 lat", "pow. 5 do 8 lat", "pow. 8 lat" }, 65, idTabeli, false, szerokoscKolumny, "pozostało spraw starych "));
-            ASPxGridView1.Columns.Add(DevExpressXXL.podKolumna(new string[] { "Ogółem", "zakreś- lonych", "nie zakreś- lonych" }, 75, idTabeli, false, szerokoscKolumny, "stan spraw zawieszonych (wszystkie kategorie spraw)"));
+            ASPxGridView1.Columns.Add(DevExpressXXL.podKolumna(teksty00, 59, idTabeli, false, szerokoscKolumny, "POZOSTAŁOŚĆ na następny miesiąc"));
 
-            GridViewBandColumn liczbaSporzadzonychUzasadnien = DevExpressXXL.podKolumna(new string[] { "Łącznie", "w terminie ustawowym 14 dni", "razem po terminie ustawowym", "nie- usprawied- liwione" }, 78, idTabeli, false, szerokoscKolumny, "liczba sporządzonych uzasadnień (wszystkie kategorie spraw)**");
+            ASPxGridView1.Columns.Add(DevExpressXXL.podKolumna(new string[] { "Ogółem",  " do 3 m-cy", "pow. 3 do 6 m - cy", "pow. 6 do 12 m-cy", "pow. 12 m-cy do 2 lat", "pow. 2 do 3 lat", "pow. 3 do 5 lat", "pow. 5 do 8 lat", "pow. 8 lat" }, 68, idTabeli, false, szerokoscKolumny, "pozostało spraw starych "));
+            ASPxGridView1.Columns.Add(DevExpressXXL.podKolumna(new string[] { "Ogółem", "zakreś- lonych", "nie zakreś- lonych" }, 77, idTabeli, false, szerokoscKolumny, "stan spraw zawieszonych (wszystkie kategorie spraw)"));
 
-            GridViewBandColumn PoUplywie = (DevExpressXXL.podKolumna(new string[] { "1-14 dni", "w tym nieuspra -wiedliwione", "15-30 dni", "w tym nieuspra -wiedliwione", "powyżej 1 do 3 mies", "w tym nieuspra -wiedliwione", "ponad 3 mies", "w tym nieuspra -wiedliwione" }, 82, idTabeli, false, szerokoscKolumny, "po upływie terminiu ustawowego"));
+
+            GridViewBandColumn liczbaSporzadzonychUzasadnien = DevExpressXXL.podKolumna(new string[] { "Łącznie", "w terminie ustawowym 14 dni", "razem po terminie ustawowym", "nie- usprawied- liwione" }, 80, idTabeli, false, szerokoscKolumny, "liczba sporządzonych uzasadnień (wszystkie kategorie spraw)**");
+
+            GridViewBandColumn PoUplywie = (DevExpressXXL.podKolumna(new string[] { "1-14 dni", "w tym nieuspra -wiedliwione", "15-30 dni", "w tym nieuspra -wiedliwione", "powyżej 1 do 3 mies", "w tym nieuspra -wiedliwione", "ponad 3 mies", "w tym nieuspra -wiedliwione" }, 84, idTabeli, false, szerokoscKolumny, "po upływie terminiu ustawowego"));
             liczbaSporzadzonychUzasadnien.Columns.Add(PoUplywie);
+            liczbaSporzadzonychUzasadnien.Columns.Add(DevExpressXXL.kolumnaDoTabeli("uzasadnienia wygłoszone *", "d_92", idTabeli, "", false, szerokoscKolumny));
+            liczbaSporzadzonychUzasadnien.Columns.Add(DevExpressXXL.kolumnaDoTabeli("Liczba spraw, do których wpłynął wniosek o transkrypcje uzasadnień wygłoszonych", "d_93", idTabeli, "", false, szerokoscKolumny));
+            liczbaSporzadzonychUzasadnien.Columns.Add(DevExpressXXL.podKolumna(new string[] { "razem", "w tym, w których projekt został zaakceptowany przez sędziego" }, 94, idTabeli, false, szerokoscKolumny, "Liczba spraw, w których projekt uzasadnienia orzeczenia sporządził asystent**"));
             ASPxGridView1.Columns.Add(liczbaSporzadzonychUzasadnien);
 
-            ASPxGridView1.Columns.Add(DevExpressXXL.kolumnaDoTabeli("uzasadnienia wygłoszone *", "d_90", idTabeli, "", false, szerokoscKolumny));
-            ASPxGridView1.Columns.Add(DevExpressXXL.kolumnaDoTabeli("Liczba spraw do których wpłynął wniosek o transkrypcje uzasadnień wygłoszonych", "d_91", idTabeli, "", false, szerokoscKolumny));
-            ASPxGridView1.Columns.Add(DevExpressXXL.podKolumna(new string[] { "razem", "w tym, w których projekt został zaakceptowany przez sędziego" }, 92, idTabeli, false, szerokoscKolumny, "Liczba spraw, w których projekt uzasadnienia orzeczenia sporządził asystent**"));
-
             GridViewBandColumn zalatwiono01skargiNaPrzewleklosc = DevExpressXXL.GetBoundColumn("skargi na przewlekłość");
-            zalatwiono01skargiNaPrzewleklosc.Columns.Add(DevExpressXXL.kolumnaDoTabeli("wpływ", "d_94", idTabeli, "", false, szerokoscKolumny));
+            zalatwiono01skargiNaPrzewleklosc.Columns.Add(DevExpressXXL.kolumnaDoTabeli("wpływ", "d_96", idTabeli, "", false, szerokoscKolumny));
 
-            zalatwiono01skargiNaPrzewleklosc.Columns.Add(DevExpressXXL.podKolumna(new string[] { "ogółem", "uwzględniono" }, 95, idTabeli, false, szerokoscKolumny, "załatwiono"));
-            zalatwiono01skargiNaPrzewleklosc.Columns.Add(DevExpressXXL.kolumnaDoTabeli("pozostałość", "d_97", idTabeli, "", false, szerokoscKolumny));
+            zalatwiono01skargiNaPrzewleklosc.Columns.Add(DevExpressXXL.podKolumna(new string[] { "ogółem", "uwzględniono" }, 97, idTabeli, false, szerokoscKolumny, "załatwiono"));
+            zalatwiono01skargiNaPrzewleklosc.Columns.Add(DevExpressXXL.kolumnaDoTabeli("pozostałość", "d_99", idTabeli, "", false, szerokoscKolumny));
             ASPxGridView1.Columns.Add(zalatwiono01skargiNaPrzewleklosc);
-            ASPxGridView1.Columns.Add(DevExpressXXL.kolumnaDoTabeli("UWAGI", "d_98", idTabeli, "", false, szerokoscKolumny));
 
-      
+            GridViewBandColumn mediacje = DevExpressXXL.GetBoundColumn("mediacje");
+            mediacje.Columns.Add(DevExpressXXL.kolumnaDoTabeli("WPŁYW  liczba spraw, w których strony skierowano do mediacji      ", "d_100", idTabeli, "", false, szerokoscKolumny));
+            mediacje.Columns.Add(DevExpressXXL.podKolumna(new string[] { "liczba ugód zawartych przed mediatorem", "w tym zatwierdzono ugodę" }, 101, idTabeli, false, szerokoscKolumny, "rozstrzygnięcie"));
+            ASPxGridView1.Columns.Add(mediacje);
+            ASPxGridView1.Columns.Add(DevExpressXXL.kolumnaDoTabeli("Uwagi", "d_102", idTabeli, "", false, szerokoscKolumny));
+
+            ASPxGridView1.Columns.Add(DevExpressXXL.podKolumna(new string[] { "na rozprawie", "na posiedzeniu" }, 103, idTabeli, false, szerokoscKolumny, "suma kontrolna"));
+
+
             ASPxGridView1.TotalSummary.Clear();
             ASPxGridView1.TotalSummary.Add(DevExpressXXL.komorkaSumujaca("Ogółem"));
-            for (int i = 1; i < 100; i++)
+            for (int i = 1; i < 106; i++)
             {
                 ASPxGridView1.TotalSummary.Add(DevExpressXXL.komorkaSumujaca(i));
             }
@@ -248,7 +257,7 @@ namespace stat2018
             {
                 cm.log.Info(tenPlik + ": rozpoczęcie tworzenia tabeli 2");
             }
-            DataTable tabelka01 = dr.konwertujNaPrzecinek(dr.generuj_dane_do_tabeli_z_miesiacami(Date1.Date, Date2.Date, idDzialu, 2, 104, tenPlik));
+            DataTable tabelka01 = dr.konwertujNaPrzecinek(dr.generuj_dane_do_tabeli_z_miesiacami(Date1.Date, Date2.Date, idDzialu, 2, 120, tenPlik));
             Session["tabelka002"] = tabelka01;
             ASPxGridView2.DataSource = null;
             ASPxGridView2.DataSourceID = null;
@@ -262,19 +271,79 @@ namespace stat2018
             ASPxGridView2.Columns.Add(DevExpressXXL.kolumnaDoTabeliMiesiecznej("L.p.", "id", idTabeli, "", true, 36));
             ASPxGridView2.Columns.Add(DevExpressXXL.kolumnaDoTabeliMiesiecznej("Miesiąc", "miesiac", idTabeli, "", true, 250));
 
-            string[] teksty00 = new string[] { "Ogółem", "GU", "GUp", "Gzd", "GUu", "GUu ''of''", "GUz", "GUk", "GNs", "GR", "GRz", "GRp", "GRu", "GRs", "GReu", "GRez", "GRk", "GRo", "WSC", "WNSc" };
+            string[] teksty00 = new string[] { "Ogółem", "GC", "GNs", "GNc", "GCo", "GCps", "WSC", "WSNc", "Gz" };
+            string[] teksty01 = new string[] { "Ogółem", "GC", "GNs", "GNc", "GCo", "GCps", "WSC",  };
+            //  ASPxGridView2.Columns.Add(DevExpressXXL.podKolumnaMiesieczna(teksty00,  1, idTabeli, false, szerokoscKolumny, "Wpływ"));
+            //  ASPxGridView2.Columns.Add(DevExpressXXL.SekcjaDwiePodKolumnyMiesieczne(teksty00, "WYZNACZONO", 41, idTabeli, szerokoscKolumny));
 
-            ASPxGridView2.Columns.Add(DevExpressXXL.SekcjaDwiePodKolumnyMiesieczne(teksty00, "Wyznaczono", 1, idTabeli, szerokoscKolumny));
-            ASPxGridView2.Columns.Add(DevExpressXXL.SekcjaDwiePodKolumnyMiesieczne(teksty00, "Załatwiono", 41, idTabeli, szerokoscKolumny));
+            // ASPxGridView2.Columns.Add(DevExpressXXL.podKolumnaMiesieczna(new string[] { "na rozprawie", "na posiedzeniu" }, 81, idTabeli, false, szerokoscKolumny, "Kolumna kontrolna (wyznaczenia >=załatwienia)"));
 
-            ASPxGridView2.Columns.Add(DevExpressXXL.podKolumnaMiesieczna(new string[] { "na rozprawie", "na posiedzeniu" }, 81, idTabeli, false, szerokoscKolumny, "Kolumna kontrolna (wyznaczenia >=załatwienia)"));
+            //------------------------------------------------------
 
-         
+            ASPxGridView2.Columns.Add(DevExpressXXL.podKolumnaMiesieczna(teksty00, 1, idTabeli, false, szerokoscKolumny, "WPŁYW"));
+            ASPxGridView2.Columns.Add(DevExpressXXL.SekcjaDwiePodKolumnyMiesieczne(teksty00, "WYZNACZONO", 10, idTabeli, szerokoscKolumny));
+            ASPxGridView2.Columns.Add(DevExpressXXL.SekcjaDwiePodKolumnyMiesieczne(teksty00, "ZAŁATWIONO", 28, idTabeli, szerokoscKolumny));
+            ASPxGridView2.Columns.Add(DevExpressXXL.podKolumnaMiesieczna(teksty00, 46, idTabeli, false, szerokoscKolumny, "ZAŁATWIENIA"));
+            #region sesje odbyte przez sędziego
+
+            GridViewBandColumn sesjeSedziego = DevExpressXXL.GetBoundColumn("sesje odbyte przez sędziego ");
+
+            GridViewBandColumn wszystkieSesjeSedziego = DevExpressXXL.GetBoundColumn("na potrzeby MS-S");
+            wszystkieSesjeSedziego.Columns.Add(DevExpressXXL.kolumnaDoTabeliMiesiecznej("ogółem", "d_55", idTabeli, "", false, szerokoscKolumny));
+            wszystkieSesjeSedziego.Columns.Add(DevExpressXXL.podKolumnaMiesieczna(new string[2] { "rozprawy", "posiedzenia" }, 56, idTabeli, false, szerokoscKolumny, "z tego "));
+            sesjeSedziego.Columns.Add(wszystkieSesjeSedziego);
+            ASPxGridView2.Columns.Add(sesjeSedziego);
+
+            #endregion sesje odbyte przez sędziego
+
+
+            ASPxGridView2.Columns.Add(DevExpressXXL.podKolumnaMiesieczna(teksty00, 58, idTabeli, false, szerokoscKolumny, "pozostało spraw starych - wszystkie kategorie spraw (bez czasu trwania mediacji, zgodnie z dz. 2.1.1.1 MS - S19r)"));
+
+            ASPxGridView2.Columns.Add(DevExpressXXL.podKolumnaMiesieczna(new string[] { "Ogółem", " do 3 m-cy", "pow. 3 do 6 m - cy", "pow. 6 do 12 m-cy", "pow. 12 m-cy do 2 lat", "pow. 2 do 3 lat", "pow. 3 do 5 lat", "pow. 5 do 8 lat", "pow. 8 lat" }, 67, idTabeli, false, szerokoscKolumny, "pozostało spraw starych "));
+            ASPxGridView2.Columns.Add(DevExpressXXL.podKolumnaMiesieczna(new string[] { "Ogółem", "zakreś- lonych", "nie zakreś- lonych" }, 76, idTabeli, false, szerokoscKolumny, "stan spraw zawieszonych (wszystkie kategorie spraw)"));
+
+
+            GridViewBandColumn liczbaSporzadzonychUzasadnien = DevExpressXXL.podKolumnaMiesieczna(new string[] { "Łącznie", "w terminie ustawowym 14 dni", "razem po terminie ustawowym", "nie- usprawied- liwione" }, 79, idTabeli, false, szerokoscKolumny, "liczba sporządzonych uzasadnień (wszystkie kategorie spraw)**");
+
+            GridViewBandColumn PoUplywie = (DevExpressXXL.podKolumnaMiesieczna(new string[] { "1-14 dni", "w tym nieuspra -wiedliwione", "15-30 dni", "w tym nieuspra -wiedliwione", "powyżej 1 do 3 mies", "w tym nieuspra -wiedliwione", "ponad 3 mies", "w tym nieuspra -wiedliwione" }, 83, idTabeli, false, szerokoscKolumny, "po upływie terminiu ustawowego"));
+            liczbaSporzadzonychUzasadnien.Columns.Add(PoUplywie);
+            liczbaSporzadzonychUzasadnien.Columns.Add(DevExpressXXL.kolumnaDoTabeliMiesiecznej("uzasadnienia wygłoszone *", "d_91", idTabeli, "", false, szerokoscKolumny));
+            liczbaSporzadzonychUzasadnien.Columns.Add(DevExpressXXL.kolumnaDoTabeliMiesiecznej("Liczba spraw, do których wpłynął wniosek o transkrypcje uzasadnień wygłoszonych", "d_92", idTabeli, "", false, szerokoscKolumny));
+            liczbaSporzadzonychUzasadnien.Columns.Add(DevExpressXXL.podKolumnaMiesieczna(new string[] { "razem", "w tym, w których projekt został zaakceptowany przez sędziego" }, 93, idTabeli, false, szerokoscKolumny, "Liczba spraw, w których projekt uzasadnienia orzeczenia sporządził asystent**"));
+            ASPxGridView2.Columns.Add(liczbaSporzadzonychUzasadnien);
+
+            GridViewBandColumn zalatwiono01skargiNaPrzewleklosc = DevExpressXXL.GetBoundColumn("skargi na przewlekłość");
+            zalatwiono01skargiNaPrzewleklosc.Columns.Add(DevExpressXXL.kolumnaDoTabeliMiesiecznej("wpływ", "d_95", idTabeli, "", false, szerokoscKolumny));
+
+            zalatwiono01skargiNaPrzewleklosc.Columns.Add(DevExpressXXL.podKolumnaMiesieczna(new string[] { "ogółem", "uwzględniono" }, 96, idTabeli, false, szerokoscKolumny, "załatwiono"));
+            zalatwiono01skargiNaPrzewleklosc.Columns.Add(DevExpressXXL.kolumnaDoTabeliMiesiecznej("pozostałość", "d_98", idTabeli, "", false, szerokoscKolumny));
+            ASPxGridView2.Columns.Add(zalatwiono01skargiNaPrzewleklosc);
+
+            GridViewBandColumn mediacje = DevExpressXXL.GetBoundColumn("mediacje");
+            mediacje.Columns.Add(DevExpressXXL.kolumnaDoTabeliMiesiecznej("WPŁYW  liczba spraw, w których strony skierowano do mediacji      ", "d_99", idTabeli, "", false, szerokoscKolumny));
+            mediacje.Columns.Add(DevExpressXXL.podKolumnaMiesieczna(new string[] { "liczba ugód zawartych przed mediatorem", "w tym zatwierdzono ugodę" }, 100, idTabeli, false, szerokoscKolumny, "rozstrzygnięcie"));
+            ASPxGridView2.Columns.Add(mediacje);
+
+            GridViewBandColumn wskaznikOpanowaniaWplywu = DevExpressXXL.GetBoundColumn("wskaźnik opanowania wpływu (%)");
+           
+
+            wskaznikOpanowaniaWplywu.Columns.Add(DevExpressXXL.podKolumnaMiesieczna(teksty01, 102, idTabeli, false,szerokoscKolumny, "z tego kategorie spraw"));
+            
+            ASPxGridView2.Columns.Add(wskaznikOpanowaniaWplywu);
+            GridViewBandColumn wskaznikPozostalosci = DevExpressXXL.GetBoundColumn("wskaźnik pozostałości");
+
+
+            wskaznikPozostalosci.Columns.Add(DevExpressXXL.podKolumnaMiesieczna(teksty01, 109, idTabeli, false, szerokoscKolumny, "z tego kategorie spraw"));
+
+            ASPxGridView2.Columns.Add(wskaznikPozostalosci);
+
+
+            //------------------------------------------------------
             ASPxGridView2.TotalSummary.Clear();
 
             ASPxGridView2.TotalSummary.Add(DevExpressXXL.komorkaSumujaca("Ogółem", "miesiac"));
 
-            for (int i = 1; i < 104; i++)
+            for (int i = 1; i < 116; i++)
             {
                 ASPxGridView2.TotalSummary.Add(DevExpressXXL.komorkaSumujaca(i));
             }

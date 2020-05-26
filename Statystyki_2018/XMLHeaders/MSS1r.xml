@@ -1,0 +1,852 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<komorki xmlns="urn:tabeleMSS">
+
+  <tabela id="1">
+    <daneTabeli>
+
+      <iloscWierszy>1</iloscWierszy>
+      <tekstNadTabela>Ewidencja spraw – ogółem </tekstNadTabela>
+      <iloscWierszyNaglowka>1</iloscWierszyNaglowka>
+      <iloscKolumnPrzedIteracja>1</iloscKolumnPrzedIteracja>
+      <iloscKolumnPoIteracji>4</iloscKolumnPoIteracji>
+      <lp>1</lp>
+      <identyfikatorTabeli>1</identyfikatorTabeli>
+    </daneTabeli>
+    <naglowek>
+
+      <komorka>
+        <wiersz>1</wiersz>
+        <kolumna>1</kolumna>
+        <colSpan>1</colSpan>
+        <rowspan>0</rowspan>
+        <style>center col_250</style>
+        <text> Wyszczególnienie</text>
+      </komorka>
+      <komorka>
+        <wiersz>1</wiersz>
+        <kolumna>2</kolumna>
+        <colSpan>0</colSpan>
+        <rowspan>0</rowspan>
+        <style>center col_120</style>
+        <text>pozostało z ubiegłego roku</text>
+      </komorka>
+      <komorka>
+        <wiersz>1</wiersz>
+        <kolumna>3</kolumna>
+        <colSpan>0</colSpan>
+        <rowspan>0</rowspan>
+        <style>center col_120</style>
+        <text>WPŁYNĘŁO </text>
+      </komorka>
+      <komorka>
+        <wiersz>1</wiersz>
+        <kolumna>4</kolumna>
+        <colSpan>0</colSpan>
+        <rowspan>0</rowspan>
+        <style>center col_120</style>
+        <text>ZAŁATWIONO</text>
+      </komorka>
+      <komorka>
+        <wiersz>1</wiersz>
+        <kolumna>5</kolumna>
+        <colSpan>0</colSpan>
+        <rowspan>0</rowspan>
+        <style>center col_120</style>
+        <text>Pozostało na okres następny</text>
+      </komorka>
+    </naglowek>
+    <tablaBoczna>
+      <komorka>
+        <wiersz>1</wiersz>
+        <kolumna>1</kolumna>
+        <colSpan>0</colSpan>
+        <rowspan>0</rowspan>
+        <style> wciecie </style>
+        <text>Ogółem  (dz. 1.1. w. 01 + dz. 1.2. w. 01)    </text>
+      </komorka>
+    </tablaBoczna>
+  </tabela>
+
+  <tabela id="1.2">
+    <daneTabeli>
+
+      <iloscWierszy>1</iloscWierszy>
+      <tekstNadTabela>Ewidencja spraw zażaleniowych </tekstNadTabela>
+      <iloscWierszyNaglowka>3</iloscWierszyNaglowka>
+      <iloscKolumnPrzedIteracja>1</iloscKolumnPrzedIteracja>
+      <iloscKolumnPoIteracji>11</iloscKolumnPoIteracji>
+      <lp>1</lp>
+      <identyfikatorTabeli>1</identyfikatorTabeli>
+    </daneTabeli>
+    <naglowek>
+
+      <komorka>
+        <wiersz>1</wiersz>
+        <kolumna>1</kolumna>
+        <colSpan>1</colSpan>
+        <rowspan>3</rowspan>
+        <style>center col_250</style>
+        <text> SPRAWY wg repertoriów lub wykazów</text>
+      </komorka>
+      <komorka>
+        <wiersz>1</wiersz>
+        <kolumna>2</kolumna>
+        <colSpan>0</colSpan>
+        <rowspan>3</rowspan>
+        <style>center col_120</style>
+        <text>pozostało z ubiegłego roku</text>
+      </komorka>
+      <komorka>
+        <wiersz>1</wiersz>
+        <kolumna>3</kolumna>
+        <colSpan>0</colSpan>
+        <rowspan>3</rowspan>
+        <style>center col_120</style>
+        <text>WPŁYNĘŁO razem</text>
+      </komorka>
+      <komorka>
+        <wiersz>1</wiersz>
+        <kolumna>4</kolumna>
+        <colSpan>7</colSpan>
+        <rowspan>0</rowspan>
+        <style>center col_120</style>
+        <text>ZAŁATWIONO</text>
+      </komorka>
+      <komorka>
+        <wiersz>1</wiersz>
+        <kolumna>5</kolumna>
+        <colSpan>0</colSpan>
+        <rowspan>3</rowspan>
+        <style>center col_120</style>
+        <text>Odroczono</text>
+      </komorka>
+      <komorka>
+        <wiersz>1</wiersz>
+        <kolumna>6</kolumna>
+        <colSpan>0</colSpan>
+        <rowspan>3</rowspan>
+        <style>center col_120</style>
+        <text>Pozostało na okres następny</text>
+      </komorka>
+      <komorka>
+        <wiersz>2</wiersz>
+        <kolumna>1</kolumna>
+        <colSpan>0</colSpan>
+        <rowspan>2</rowspan>
+        <style>center col_120</style>
+        <text>Pozostało na okres następny</text>
+      </komorka>
+      <komorka>
+        <wiersz>2</wiersz>
+        <kolumna>2</kolumna>
+        <colSpan>6</colSpan>
+        <rowspan>0</rowspan>
+        <style>center </style>
+        <text>z tego</text>
+      </komorka>
+      <komorka>
+        <wiersz>3</wiersz>
+        <kolumna>1</kolumna>
+        <colSpan>0</colSpan>
+        <rowspan>0</rowspan>
+        <style>center col_120</style>
+        <text>oddalono</text>
+      </komorka>
+      <komorka>
+        <wiersz>3</wiersz>
+        <kolumna>2</kolumna>
+        <colSpan>0</colSpan>
+        <rowspan>0</rowspan>
+        <style>center col_120</style>
+        <text>zmieniono w całości lub części</text>
+      </komorka>
+      <komorka>
+        <wiersz>3</wiersz>
+        <kolumna>3</kolumna>
+        <colSpan>0</colSpan>
+        <rowspan>0</rowspan>
+        <style>center col_120</style>
+        <text>uchylono</text>
+      </komorka>
+
+      <komorka>
+        <wiersz>3</wiersz>
+        <kolumna>4</kolumna>
+        <colSpan>0</colSpan>
+        <rowspan>0</rowspan>
+        <style>center col_120</style>
+        <text>odrzucono</text>
+      </komorka>
+
+      <komorka>
+        <wiersz>3</wiersz>
+        <kolumna>5</kolumna>
+        <colSpan>0</colSpan>
+        <rowspan>0</rowspan>
+        <style>center col_120</style>
+        <text>umorzono</text>
+      </komorka>
+      <komorka>
+        <wiersz>3</wiersz>
+        <kolumna>6</kolumna>
+        <colSpan>0</colSpan>
+        <rowspan>0</rowspan>
+        <style>center col_120</style>
+        <text>inne załatwienia</text>
+      </komorka>
+    </naglowek>
+    <tablaBoczna>
+      <komorka>
+        <wiersz>1</wiersz>
+        <kolumna>1</kolumna>
+        <colSpan>0</colSpan>
+        <rowspan>0</rowspan>
+        <style> wciecie </style>
+        <text>Cz   </text>
+      </komorka>
+    </tablaBoczna>
+  </tabela>
+
+  <tabela id="1.1.b">
+    <daneTabeli>
+
+      <iloscWierszy>3</iloscWierszy>
+      <tekstNadTabela>.  w tym w postępowaniu uproszczonym        </tekstNadTabela>
+      <iloscWierszyNaglowka>1</iloscWierszyNaglowka>
+      <iloscKolumnPrzedIteracja>1</iloscKolumnPrzedIteracja>
+      <iloscKolumnPoIteracji>1</iloscKolumnPoIteracji>
+      <lp>1</lp>
+      <identyfikatorTabeli>1</identyfikatorTabeli>
+    </daneTabeli>
+    <naglowek>
+
+      <komorka>
+        <wiersz>1</wiersz>
+        <kolumna>1</kolumna>
+        <colSpan>1</colSpan>
+        <rowspan>0</rowspan>
+        <style>center col_250</style>
+        <text> Wyszczególnienie</text>
+      </komorka>
+      <komorka>
+        <wiersz>1</wiersz>
+        <kolumna>2</kolumna>
+        <colSpan>0</colSpan>
+        <rowspan>0</rowspan>
+        <style>center col_120</style>
+        <text>Liczby spraw</text>
+      </komorka>
+    </naglowek>
+    <tablaBoczna>
+      <komorka>
+        <wiersz>1</wiersz>
+        <kolumna>1</kolumna>
+        <colSpan>0</colSpan>
+        <rowspan>0</rowspan>
+        <style> wciecie </style>
+        <text>Wpłynęło   </text>
+      </komorka>
+
+      <komorka>
+        <wiersz>2</wiersz>
+        <kolumna>1</kolumna>
+        <colSpan>0</colSpan>
+        <rowspan>0</rowspan>
+        <style> wciecie </style>
+        <text>Załatwiono   </text>
+      </komorka>
+
+      <komorka>
+        <wiersz>3</wiersz>
+        <kolumna>1</kolumna>
+        <colSpan>0</colSpan>
+        <rowspan>0</rowspan>
+        <style> wciecie </style>
+        <text>Pozostało na okres następny   </text>
+      </komorka>
+    </tablaBoczna>
+  </tabela>
+  <tabela id="1.1.c">
+    <daneTabeli>
+
+      <iloscWierszy>3</iloscWierszy>
+      <tekstNadTabela>.  w tym w postępowaniu uproszczonym        </tekstNadTabela>
+      <iloscWierszyNaglowka>2</iloscWierszyNaglowka>
+      <iloscKolumnPrzedIteracja>2</iloscKolumnPrzedIteracja>
+      <iloscKolumnPoIteracji>2</iloscKolumnPoIteracji>
+      <lp>1</lp>
+      <identyfikatorTabeli>1.1.c</identyfikatorTabeli>
+    </daneTabeli>
+    <naglowek>
+
+      <komorka>
+        <wiersz>1</wiersz>
+        <kolumna>1</kolumna>
+        <colSpan>2</colSpan>
+        <rowspan>2</rowspan>
+        <style>center col_250</style>
+        <text> Wyszczególnienie</text>
+      </komorka>
+      <komorka>
+        <wiersz>1</wiersz>
+        <kolumna>2</kolumna>
+        <colSpan>2</colSpan>
+        <rowspan>0</rowspan>
+        <style>center col_120</style>
+        <text>Liczby spraw</text>
+      </komorka>
+      <komorka>
+        <wiersz>2</wiersz>
+        <kolumna>1</kolumna>
+        <colSpan>0</colSpan>
+        <rowspan>0</rowspan>
+        <style>center col_120</style>
+        <text>C</text>
+      </komorka>
+      <komorka>
+        <wiersz>2</wiersz>
+        <kolumna>2</kolumna>
+        <colSpan>0</colSpan>
+        <rowspan>0</rowspan>
+        <style>center col_120</style>
+        <text>Nc</text>
+      </komorka>
+    </naglowek>
+    <tablaBoczna>
+      <komorka>
+        <wiersz>1</wiersz>
+        <kolumna>1</kolumna>
+        <colSpan>0</colSpan>
+        <rowspan>3</rowspan>
+        <style> wciecie </style>
+        <text>Wydano nakaz zapłaty   </text>
+      </komorka>
+      <komorka>
+        <wiersz>1</wiersz>
+        <kolumna>2</kolumna>
+        <colSpan>0</colSpan>
+        <rowspan>0</rowspan>
+        <style> wciecie </style>
+        <text>w postępowaniu nakazowym   </text>
+      </komorka>
+
+      <komorka>
+        <wiersz>2</wiersz>
+        <kolumna>1</kolumna>
+        <colSpan>0</colSpan>
+        <rowspan>0</rowspan>
+        <style> wciecie </style>
+        <text>w postępowaniu upominawczym   </text>
+      </komorka>
+
+      <komorka>
+        <wiersz>3</wiersz>
+        <kolumna>1</kolumna>
+        <colSpan>0</colSpan>
+        <rowspan>0</rowspan>
+        <style> wciecie </style>
+        <text>w europejskim postępowaniu nakazowym </text>
+      </komorka>
+    </tablaBoczna>
+  </tabela>
+
+  <tabela id="1.1.d">
+    <daneTabeli>
+
+      <iloscWierszy>7</iloscWierszy>
+      <tekstNadTabela>.  w tym: (skarga o stwierdzenie niezgodności z prawem) (dział 1.1 wiersz 233 kolumna 3 lit. d)   </tekstNadTabela>
+      <iloscWierszyNaglowka>1</iloscWierszyNaglowka>
+      <iloscKolumnPrzedIteracja>2</iloscKolumnPrzedIteracja>
+      <iloscKolumnPoIteracji>1</iloscKolumnPoIteracji>
+      <lp>1</lp>
+      <identyfikatorTabeli>1.1.d</identyfikatorTabeli>
+    </daneTabeli>
+    <naglowek>
+
+      <komorka>
+        <wiersz>1</wiersz>
+        <kolumna>1</kolumna>
+        <colSpan>2</colSpan>
+        <rowspan>1</rowspan>
+        <style>center col_250</style>
+        <text> Wyszczególnienie</text>
+      </komorka>
+      <komorka>
+        <wiersz>1</wiersz>
+        <kolumna>2</kolumna>
+        <colSpan>2</colSpan>
+        <rowspan>0</rowspan>
+        <style>center col_120</style>
+        <text>Liczby spraw</text>
+      </komorka>
+    </naglowek>
+    <tablaBoczna>
+      <komorka>
+        <wiersz>1</wiersz>
+        <kolumna>1</kolumna>
+        <colSpan>2</colSpan>
+        <rowspan>0</rowspan>
+        <style> wciecie </style>
+        <text>Przekazanych Sądowi Najwyższemu ze skargą o stwierdzenie niezgodności z prawem prawomocnego orzeczenia</text>
+      </komorka>
+      <komorka>
+        <wiersz>2</wiersz>
+        <kolumna>2</kolumna>
+        <colSpan>2</colSpan>
+        <rowspan>0</rowspan>
+        <style> wciecie </style>
+        <text>Przesłanych z Sądu Najwyższego w okresie sprawozdawczym (w.02 =w. 03 do 07)</text>
+      </komorka>
+
+      <komorka>
+        <wiersz>3</wiersz>
+        <kolumna>1</kolumna>
+        <colSpan>0</colSpan>
+        <rowspan>5</rowspan>
+        <style> wciecie </style>
+        <text>w których Sąd Najwyższy</text>
+      </komorka>
+
+      <komorka>
+        <wiersz>3</wiersz>
+        <kolumna>2</kolumna>
+        <colSpan>0</colSpan>
+        <rowspan>0</rowspan>
+        <style> wciecie </style>
+        <text>odmówił przyjęcia skargi do rozpoznania (art.424<![CDATA[<sup>9</sup>]]> kpc)</text>
+      </komorka>
+      <komorka>
+        <wiersz>4</wiersz>
+        <kolumna>2</kolumna>
+        <colSpan>0</colSpan>
+        <rowspan>0</rowspan>
+        <style> wciecie </style>
+        <text>odrzucił skargę (art.424<![CDATA[<sup>8</sup>]]> kpc) </text>
+      </komorka>
+      <komorka>
+        <wiersz>5</wiersz>
+        <kolumna>2</kolumna>
+        <colSpan>0</colSpan>
+        <rowspan>0</rowspan>
+        <style> wciecie </style>
+        <text>oddalił skargę  (art.424<![CDATA[<sup>11</sup>]]> §1 kpc)</text>
+      </komorka>
+      <komorka>
+        <wiersz>6</wiersz>
+        <kolumna>2</kolumna>
+        <colSpan>0</colSpan>
+        <rowspan>0</rowspan>
+        <style> wciecie </style>
+        <text>uwzględnił skargę (art.424<![CDATA[<sup>11</sup>]]> §2 kpc)</text>
+      </komorka>
+      <komorka>
+        <wiersz>7</wiersz>
+        <kolumna>2</kolumna>
+        <colSpan>0</colSpan>
+        <rowspan>0</rowspan>
+        <style> wciecie </style>
+        <text>załatwił w inny sposób</text>
+      </komorka>
+    </tablaBoczna>
+  </tabela>
+
+  <tabela id="1.1.e">
+    <daneTabeli>
+
+      <iloscWierszy>2</iloscWierszy>
+      <tekstNadTabela>Ustanowienie pełnomocnika z urzędu  </tekstNadTabela>
+      <iloscWierszyNaglowka>1</iloscWierszyNaglowka>
+      <iloscKolumnPrzedIteracja>1</iloscKolumnPrzedIteracja>
+      <iloscKolumnPoIteracji>3</iloscKolumnPoIteracji>
+      <lp>1</lp>
+      <identyfikatorTabeli>1.1.e</identyfikatorTabeli>
+    </daneTabeli>
+    <naglowek>
+
+      <komorka>
+        <wiersz>1</wiersz>
+        <kolumna>1</kolumna>
+        <colSpan>1</colSpan>
+        <rowspan>1</rowspan>
+        <style>center col_250</style>
+        <text> Repertorium lub wykaz</text>
+      </komorka>
+      <komorka>
+        <wiersz>1</wiersz>
+        <kolumna>2</kolumna>
+        <colSpan>0</colSpan>
+        <rowspan>0</rowspan>
+        <style>center col_120</style>
+        <text>Liczba spraw w których doszło do ustanowienia pełnomocnika z urzędu (radca prawny, adwokat)</text>
+      </komorka>
+      <komorka>
+        <wiersz>1</wiersz>
+        <kolumna>3</kolumna>
+        <colSpan>0</colSpan>
+        <rowspan>0</rowspan>
+        <style>center col_120</style>
+        <text>Liczba ustanowionych pełnomocników z urzędu (radca prawny, adwokat)</text>
+      </komorka>
+      <komorka>
+        <wiersz>1</wiersz>
+        <kolumna>4</kolumna>
+        <colSpan>0</colSpan>
+        <rowspan>0</rowspan>
+        <style>center col_120</style>
+        <text>W tym liczba wyznaczonych pełnomocników w wyniku zwolnienia poprzedniego pełnomocnika</text>
+      </komorka>
+    </naglowek>
+    <tablaBoczna>
+      <komorka>
+        <wiersz>1</wiersz>
+        <kolumna>1</kolumna>
+        <colSpan>0</colSpan>
+        <rowspan>0</rowspan>
+        <style> wciecie </style>
+        <text>C</text>
+      </komorka>
+      <komorka>
+        <wiersz>2</wiersz>
+        <kolumna>1</kolumna>
+        <colSpan>0</colSpan>
+        <rowspan>0</rowspan>
+        <style> wciecie </style>
+        <text>Ns</text>
+      </komorka>
+    </tablaBoczna>
+  </tabela>
+
+  <tabela id="1.1.i">
+    <daneTabeli>
+
+      <iloscWierszy>16</iloscWierszy>
+      <tekstNadTabela> (dział 1.1 wiersz 38,39, 177 i 178 lit. i) Liczba postępowań sądowych, których stronami są konsumenci (w rozumieniu art. 221 ustawy kodeks cywilny)1 będący kredytobiorcami kredytów hipotecznych waloryzowanych/denominowanych/indeksowanych do walut obcych, oraz banki  </tekstNadTabela>
+      <iloscWierszyNaglowka>1</iloscWierszyNaglowka>
+      <iloscKolumnPrzedIteracja>3</iloscKolumnPrzedIteracja>
+      <iloscKolumnPoIteracji>1</iloscKolumnPoIteracji>
+      <lp>1</lp>
+      <identyfikatorTabeli>1.1.i</identyfikatorTabeli>
+    </daneTabeli>
+    <naglowek>
+
+      <komorka>
+        <wiersz>1</wiersz>
+        <kolumna>1</kolumna>
+        <colSpan>3</colSpan>
+        <rowspan>1</rowspan>
+        <style>center col_250</style>
+        <text> Wyszczególnienie </text>
+      </komorka>
+      <komorka>
+        <wiersz>1</wiersz>
+        <kolumna>2</kolumna>
+        <colSpan>0</colSpan>
+        <rowspan>0</rowspan>
+        <style>center col_250</style>
+        <text>Liczba spraw</text>
+      </komorka>
+    </naglowek>
+    <tablaBoczna>
+      <komorka>
+        <wiersz>1</wiersz>
+        <kolumna>1</kolumna>
+        <colSpan>3</colSpan>
+        <rowspan>0</rowspan>
+        <style> wciecie </style>
+        <text>Ogółem</text>
+      </komorka>
+      <komorka>
+        <wiersz>2</wiersz>
+        <kolumna>1</kolumna>
+        <colSpan>3</colSpan>
+        <rowspan>0</rowspan>
+        <style> wciecie </style>
+        <text>w tym do franka szwajcarskiego (CHF)</text>
+      </komorka>
+
+      <komorka>
+        <wiersz>3</wiersz>
+        <kolumna>1</kolumna>
+        <colSpan>0</colSpan>
+        <rowspan>8</rowspan>
+        <style> wciecie </style>
+        <text>z tego</text>
+      </komorka>
+      <komorka>
+        <wiersz>3</wiersz>
+        <kolumna>2</kolumna>
+        <colSpan>0</colSpan>
+        <rowspan>8</rowspan>
+        <style> wciecie </style>
+        <text>przedmiot postępowania o</text>
+      </komorka>
+      <komorka>
+        <wiersz>3</wiersz>
+        <kolumna>3</kolumna>
+        <colSpan>0</colSpan>
+        <rowspan>0</rowspan>
+        <style> wciecie </style>
+        <text>zapłatę</text>
+      </komorka>
+
+      <komorka>
+        <wiersz>4</wiersz>
+        <kolumna>1</kolumna>
+        <colSpan>0</colSpan>
+        <rowspan>0</rowspan>
+        <style> wciecie </style>
+        <text>    w tym do (CHF)</text>
+      </komorka>
+
+      <komorka>
+        <wiersz>5</wiersz>
+        <kolumna>1</kolumna>
+        <colSpan>0</colSpan>
+        <rowspan>0</rowspan>
+        <style> wciecie </style>
+        <text>ustalenie treści stosunku wiążącego strony</text>
+      </komorka>
+
+      <komorka>
+        <wiersz>6</wiersz>
+        <kolumna>1</kolumna>
+        <colSpan>0</colSpan>
+        <rowspan>0</rowspan>
+        <style> wciecie </style>
+        <text>    w tym do (CHF)</text>
+      </komorka>
+
+      <komorka>
+        <wiersz>7</wiersz>
+        <kolumna>1</kolumna>
+        <colSpan>0</colSpan>
+        <rowspan>0</rowspan>
+        <style> wciecie </style>
+        <text>unieważnienie bankowego tytułu egzekucyjnego</text>
+      </komorka>
+
+      <komorka>
+        <wiersz>8</wiersz>
+        <kolumna>1</kolumna>
+        <colSpan>0</colSpan>
+        <rowspan>0</rowspan>
+        <style> wciecie </style>
+        <text>    w tym do (CHF)</text>
+      </komorka>
+
+      <komorka>
+        <wiersz>9</wiersz>
+        <kolumna>1</kolumna>
+        <colSpan>0</colSpan>
+        <rowspan>0</rowspan>
+        <style> wciecie </style>
+        <text>inne</text>
+      </komorka>
+
+      <komorka>
+        <wiersz>10</wiersz>
+        <kolumna>1</kolumna>
+        <colSpan>0</colSpan>
+        <rowspan>0</rowspan>
+        <style> wciecie </style>
+        <text>    w tym do (CHF)</text>
+      </komorka>
+
+      <komorka>
+        <wiersz>11</wiersz>
+        <kolumna>1</kolumna>
+        <colSpan>2</colSpan>
+        <rowspan>4</rowspan>
+        <style> wciecie </style>
+        <text>z tego (z w. 01) kredytobiorca jest</text>
+      </komorka>
+
+      <komorka>
+        <wiersz>11</wiersz>
+        <kolumna>2</kolumna>
+        <colSpan>0</colSpan>
+        <rowspan>0</rowspan>
+        <style> wciecie </style>
+        <text>pozwanym</text>
+      </komorka>
+      <komorka>
+        <wiersz>12</wiersz>
+        <kolumna>1</kolumna>
+        <colSpan>0</colSpan>
+        <rowspan>0</rowspan>
+        <style> wciecie </style>
+        <text>    w tym kredyt w  (CHF)</text>
+      </komorka>
+      <komorka>
+        <wiersz>13</wiersz>
+        <kolumna>1</kolumna>
+        <colSpan>0</colSpan>
+        <rowspan>0</rowspan>
+        <style> wciecie </style>
+        <text>powodem</text>
+      </komorka>
+      <komorka>
+        <wiersz>14</wiersz>
+        <kolumna>2</kolumna>
+        <colSpan>0</colSpan>
+        <rowspan>0</rowspan>
+        <style> wciecie </style>
+        <text>    w tym kredyt w  (CHF)</text>
+      </komorka>
+      <komorka>
+        <wiersz>15</wiersz>
+        <kolumna>1</kolumna>
+        <colSpan>0</colSpan>
+        <rowspan>2</rowspan>
+        <style> wciecie </style>
+        <text>W tym (z w. 01)</text>
+      </komorka>
+      <komorka>
+        <wiersz>15</wiersz>
+        <kolumna>2</kolumna>
+        <colSpan>2</colSpan>
+        <rowspan>0</rowspan>
+        <style> wciecie </style>
+        <text>pozwy złożone przez większą grupę osób (co najmniej 10)</text>
+      </komorka>
+      <komorka>
+        <wiersz>16</wiersz>
+        <kolumna>1</kolumna>
+        <colSpan>2</colSpan>
+        <rowspan>0</rowspan>
+        <style> wciecie </style>
+        <text>    w tym kredyt w  (CHF)</text>
+      </komorka>
+    </tablaBoczna>
+  </tabela>
+
+ <tabela id="1.1.j">
+    <daneTabeli>
+
+      <iloscWierszy>8</iloscWierszy>
+      <tekstNadTabela> (dział 1.1 wiersz 234 kolumna 3 lit. j) w tym </tekstNadTabela>
+      <iloscWierszyNaglowka>1</iloscWierszyNaglowka>
+      <iloscKolumnPrzedIteracja>4</iloscKolumnPrzedIteracja>
+      <iloscKolumnPoIteracji>1</iloscKolumnPoIteracji>
+      <lp>1</lp>
+      <identyfikatorTabeli>1.1.i</identyfikatorTabeli>
+    </daneTabeli>
+    <naglowek>
+
+      <komorka>
+        <wiersz>1</wiersz>
+        <kolumna>1</kolumna>
+        <colSpan>4</colSpan>
+        <rowspan>1</rowspan>
+        <style>center col_250</style>
+        <text> Sprawy </text>
+      </komorka>
+      <komorka>
+        <wiersz>1</wiersz>
+        <kolumna>2</kolumna>
+        <colSpan>0</colSpan>
+        <rowspan>0</rowspan>
+        <style>center col_250</style>
+        <text>Liczba spraw</text>
+      </komorka>
+    </naglowek>
+    <tablaBoczna>
+      <komorka>
+        <wiersz>1</wiersz>
+        <kolumna>1</kolumna>
+        <colSpan>4</colSpan>
+        <rowspan>0</rowspan>
+        <style> wciecie </style>
+        <text>przekazane Sądowi Najwyższemu ze skargą nadzwyczajną</text>
+      </komorka>
+      <komorka>
+        <wiersz>2</wiersz>
+        <kolumna>1</kolumna>
+        <colSpan>4</colSpan>
+        <rowspan>0</rowspan>
+        <style> wciecie </style>
+        <text>przesłane z Sądu Najwyższego w okresie sprawozdawczym (w. 02 = w. 03 do 08)</text>
+      </komorka>
+ <komorka>
+        <wiersz>3</wiersz>
+        <kolumna>1</kolumna>
+        <colSpan>0</colSpan>
+        <rowspan>6</rowspan>
+        <style> wciecie </style>
+        <text>w których Sąd Najwyższy</text>
+      </komorka>
+      <komorka>
+        <wiersz>3</wiersz>
+        <kolumna>2</kolumna>
+        <colSpan>3</colSpan>
+        <rowspan>0</rowspan>
+        <style> wciecie </style>
+        <text>odrzucił skargę</text>
+      </komorka>
+      <komorka>
+        <wiersz>4</wiersz>
+        <kolumna>1</kolumna>
+        <colSpan>3</colSpan>
+        <rowspan>0</rowspan>
+        <style> wciecie </style>
+        <text>oddalił skargę  </text>
+      </komorka>
+     
+
+      <komorka>
+        <wiersz>5</wiersz>
+        <kolumna>1</kolumna>
+        <colSpan>0</colSpan>
+        <rowspan>3</rowspan>
+        <style> wciecie </style>
+        <text>    uwzględnił skargę przez</text>
+      </komorka>
+
+       <komorka>
+        <wiersz>5</wiersz>
+        <kolumna>2</kolumna>
+        <colSpan>0</colSpan>
+        <rowspan>2</rowspan>
+        <style> wciecie </style>
+        <text>    uchylenie zaskarżonego orzeczenia i</text>
+      </komorka>
+          <komorka>
+        <wiersz>5</wiersz>
+        <kolumna>3</kolumna>
+        <colSpan>0</colSpan>
+        <rowspan>0</rowspan>
+        <style> wciecie </style>
+        <text>    rozstrzygnięcie co do istoty sprawy</text>
+      </komorka>
+      
+      <komorka>
+        <wiersz>6</wiersz>
+        <kolumna>1</kolumna>
+        <colSpan>0</colSpan>
+        <rowspan>0</rowspan>
+        <style> wciecie </style>
+        <text>przekazanie sprawy właściwemu sądowi do    ponownego rozpoznania</text>
+      </komorka>
+
+      <komorka>
+        <wiersz>7</wiersz>
+        <kolumna>1</kolumna>
+        <colSpan>2</colSpan>
+        <rowspan>0</rowspan>
+        <style> wciecie </style>
+        <text>umorzenie postępowania</text>
+      </komorka>
+
+      <komorka>
+        <wiersz>8</wiersz>
+        <kolumna>1</kolumna>
+        <colSpan>3</colSpan>
+        <rowspan>0</rowspan>
+        <style> wciecie </style>
+        <text>załatwił w inny sposób</text>
+      </komorka>
+
+    
+    </tablaBoczna>
+  </tabela>
+</komorki>

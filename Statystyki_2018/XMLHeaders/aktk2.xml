@@ -8,10 +8,10 @@
     <rowSpan>1</rowSpan>
     <hv>h</hv>
     <style>gray</style>
-   
+
     <text>Ogółem</text>
   </komorka>
-  
+
   <komorka>
     <wiersz>3</wiersz>
     <kolumna>2</kolumna>
@@ -20,19 +20,18 @@
     <hv>h</hv>
     <text>pow.      3 lat</text>
   </komorka>
-  
-  
-    <komorka>
+
+  <komorka>
     <wiersz>3</wiersz>
     <kolumna>1</kolumna>
     <colSpan>1</colSpan>
     <rowSpan>1</rowSpan>
-      <hv>h</hv>
-      <style>gray</style>
-  
+    <hv>h</hv>
+    <style>gray</style>
+
     <text>Ogółem</text>
   </komorka>
-  
+
   <komorka>
     <wiersz>3</wiersz>
     <kolumna>2</kolumna>
@@ -48,10 +47,10 @@
     <rowSpan>1</rowSpan>
     <hv>h</hv>
     <style>gray</style>
- 
+
     <text>Ogółem</text>
   </komorka>
-  
+
   <komorka>
     <wiersz>3</wiersz>
     <kolumna>2</kolumna>
@@ -67,10 +66,10 @@
     <rowSpan>1</rowSpan>
     <hv>h</hv>
     <style>gray</style>
- 
+
     <text>Ogółem</text>
   </komorka>
-  
+
   <komorka>
     <wiersz>3</wiersz>
     <kolumna>2</kolumna>
@@ -86,10 +85,10 @@
     <rowSpan>1</rowSpan>
     <hv>h</hv>
     <style>gray</style>
- 
+
     <text>Ogółem</text>
   </komorka>
-  
+
   <komorka>
     <wiersz>3</wiersz>
     <kolumna>2</kolumna>
@@ -98,8 +97,8 @@
     <hv>h</hv>
     <text>pow.      3 lat</text>
   </komorka>
-  
-    <komorka>
+
+  <komorka>
     <wiersz>3</wiersz>
     <kolumna>3</kolumna>
     <colSpan>1</colSpan>
@@ -116,10 +115,7 @@
     <hv>h</hv>
     <text>w tym po terminia</text>
   </komorka>
-    
-    
-    
-  
+
   <komorka>
     <wiersz>2</wiersz>
     <kolumna>1</kolumna>
@@ -155,7 +151,7 @@
     <hv>h</hv>
     <text>Kop</text>
   </komorka>
-  
+
   <komorka>
     <wiersz>2</wiersz>
     <kolumna>5</kolumna>
@@ -165,12 +161,7 @@
     <style>gray</style>
     <text>Razem</text>
   </komorka>
-  
-    
-    
-    
-    
-    
+
   <komorka>
     <wiersz>1</wiersz>
     <kolumna>1</kolumna>

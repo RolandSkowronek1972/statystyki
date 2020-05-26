@@ -22,8 +22,10 @@
         <br />
         <asp:TextBox ID="TextBox1" runat="server" Height="160px" TextMode="MultiLine" Width="1012px"></asp:TextBox>
         <br />
-               <asp:Label ID="kod011" runat="server"></asp:Label>
-       <asp:PlaceHolder runat="server" ID="tablePlaceHolder"></asp:PlaceHolder>
+        <asp:Label ID="kod011" runat="server"></asp:Label>
+        <asp:PlaceHolder runat="server" ID="tablePlaceHolder"></asp:PlaceHolder>
         <br />
-</div>
-</asp:Content>
+    </div>
+    
+   
+   </asp:Content>

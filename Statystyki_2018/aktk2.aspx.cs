@@ -95,9 +95,9 @@ namespace stat2018
             //tabela 3
             try
             {
-                DataTable Tabela2 = dr.generuj_dane_do_tabeli_wierszy2018(Date1.Date, Date2.Date, id_dzialu, 3, 4, 8, tenPlik);
+                DataTable Tabela2 = dr.generuj_dane_do_tabeli_wierszy2018(Date1.Date, Date2.Date, id_dzialu, 3, 4, 9, tenPlik);
                 Session["tabelka003"] = Tabela2;
-                pisz("tab_3_", 4, 8, Tabela2);
+                pisz("tab_3_", 4, 9, Tabela2);
             }
             catch (Exception ex)
             {

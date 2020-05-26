@@ -15,6 +15,8 @@ namespace stat2018
         public common cm = new common();
         public dataReaders dr = new dataReaders();
         public datyDoMSS datyMSS = new datyDoMSS();
+        private DateTime dataPoczatkuOkresu = DateTime.Parse("1900-01-01");
+        private DateTime dataKoncaOkresu = DateTime.Parse("1900-01-01");
 
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -31,7 +33,7 @@ namespace stat2018
             }
             if (Session["ustawDate15o"] == null)
             {
-                Session["ustawDate5r"] = null;
+                Session["ustawDate5o"] = null;
                 Date1.Date = DateTime.Parse(datyMSS.DataPoczatkowa());
                 Date2.Date = DateTime.Parse(datyMSS.DataKoncowa());
                 Session["ustawDate15o"] = "X";
@@ -57,7 +59,7 @@ namespace stat2018
             System.Threading.Thread.CurrentThread.CurrentCulture = newCulture;
             System.Threading.Thread.CurrentThread.CurrentUICulture = newCulture;
             if (Date1.Text.Length == 0) Date1.Date = DateTime.Parse(datyMSS.DataPoczatkowa());
-            if (Date2.Text.Length == 0) Date2.Date = DateTime.Parse(datyMSS.DataKoncowa ());
+            if (Date2.Text.Length == 0) Date2.Date = DateTime.Parse(datyMSS.DataKoncowa());
 
             Session["data_1"] = Date1.Date.ToShortDateString();
             Session["data_2"] = Date2.Date.ToShortDateString();
@@ -67,12 +69,16 @@ namespace stat2018
 
         protected void pisz(string Template, int iloscWierszy, int iloscKolumn, DataTable dane, string idTabeli, string idWydzialu)
         {
+            if (dane == null)
+            {
+                cm.log.Error("MSSo brak danych do wyświetlenia");
+            }
             for (int wiersz = 1; wiersz <= iloscWierszy; wiersz++)
             {
                 for (int kolumna = 1; kolumna <= iloscKolumn; kolumna++)
                 {
                     string controlName = Template + "w" + wiersz.ToString("D2") + "_c" + kolumna.ToString("D2");
-                       var cos = this.Master.FindControl("ContentPlaceHolder1");
+                   
                     Label tb = (Label)this.Master.FindControl("ContentPlaceHolder1").FindControl(controlName);
                     if (tb != null)
                     {
@@ -85,30 +91,56 @@ namespace stat2018
 
         protected void odswiez()
         {
-          
             string idWydzialu = "'" + (string)Session["id_dzialu"] + "'";
             id_dzialu.Text = (string)Session["txt_dzialu"];
-            string txt = string.Empty; //
+            string txt = string.Empty;
 
             try
+
             {
                 string idTabeli = string.Empty;
                 string idWiersza = string.Empty;
 
                 DataTable tabelaDanych = ms.generuj_dane_do_tabeli_mss2(int.Parse((string)Session["id_dzialu"]), Date1.Date, Date2.Date, 21);
                 //wypełnianie lebeli
+                try
+                {
+                    string path = Server.MapPath("XMLHeaders") + "\\" + "MSS5o.xml";
+                    Label tblControl = new Label { ID = "kod01" };
+                    tblControl.Width = 1150;
+                    Label tblControl2 = new Label { ID = "kod02" };
+                    tblControl2.Width = 1150;
+                    Label tblControl3 = new Label { ID = "kod03" };
+                    tblControl3.Width = 1150;
+                    StringBuilder tabelaGlowna = new StringBuilder();
+                    tabelaGlowna.AppendLine(ms.odczytXML(path, int.Parse((string)Session["id_dzialu"]), "1.1", tabelaDanych, tenPlik));
+                    tabelaGlowna.AppendLine(ms.odczytXML(path, int.Parse((string)Session["id_dzialu"]), "1.1.a", tabelaDanych, tenPlik, false));
+                    tabelaGlowna.AppendLine(ms.odczytXML(path, int.Parse((string)Session["id_dzialu"]), "1.1.b", tabelaDanych, tenPlik));
+                    tblControl.Text = tabelaGlowna.ToString();
+                    tablePlaceHolder.Controls.Clear();
+                    tablePlaceHolder.Controls.Add(tblControl);
 
-                #region "1.1.a";
+                    tabelaGlowna.Clear();
+                    tabelaGlowna.AppendLine(ms.odczytXML(path, int.Parse((string)Session["id_dzialu"]), "15.3", tabelaDanych, tenPlik));
+                    tblControl2.Text = tabelaGlowna.ToString();
+                    tablePlaceHolder2.Controls.Clear();
+                    tablePlaceHolder2.Controls.Add(tblControl2);
+                    tabelaGlowna.Clear();
 
-                pisz("tab_1_1_a_", 2, 1, tabelaDanych, "'1.1.a'", idWydzialu);
+                    
 
-                #endregion "1.1.a";
+                    tablePlaceHolder6.Controls.Add(new Label { Text = ms.odczytXML(path, int.Parse((string)Session["id_dzialu"]), "1.1.1.a", tabelaDanych, tenPlik), Width = 1150, ID = "extraCode01" });
 
-                #region "1.1.b";
+                    TablePlaceHolder7.Controls.Add(new Label { Text = ms.odczytXML(path, int.Parse((string)Session["id_dzialu"]), "13.1", tabelaDanych, tenPlik), Width = 1150, ID = "extraCode1" });
 
-                pisz("tab_11b_", 7, 4, tabelaDanych, "'1.1.b'", idWydzialu);
+                    TablePlaceHolder8.Controls.Add(new Label { Text = ms.odczytXML(path, int.Parse((string)Session["id_dzialu"]), "13.2", tabelaDanych, tenPlik), Width = 1150, ID = "extraCode2" });
+                    TablePlaceHolder9.Controls.Add(new Label { Text = ms.odczytXML(path, int.Parse((string)Session["id_dzialu"]), "14.2", tabelaDanych, tenPlik) + ms.odczytXML(path, int.Parse((string)Session["id_dzialu"]), "15.1", tabelaDanych, tenPlik), Width = 1150, ID = "extraCode3" });
+                }
+                catch (Exception ex)
 
-                #endregion "1.1.b";
+                {
+                    cm.log.Error("MSS5o bład w wyświetlaniu tabel generowanych dynamicznie " + ex.Message);
+                }
 
                 #region "1.1.1";
 
@@ -188,7 +220,7 @@ namespace stat2018
 
                 #endregion "1.1.2.i";
 
-               #region "1.1.4";
+                #region "1.1.4";
 
                 pisz("tab_114_", 5, 1, tabelaDanych, "'1.1.4'", idWydzialu);
 
@@ -206,9 +238,6 @@ namespace stat2018
 
                 #endregion "1.2.2";
 
-
-
-
                 #region "1.3.1";
 
                 pisz("tab_131_", 17, 40, tabelaDanych, "'1.3.1'", idWydzialu);
@@ -217,7 +246,7 @@ namespace stat2018
 
                 #region "1.3.2";
 
-                pisz("tab_132_", 17, 40, tabelaDanych, "'1.3.2'", idWydzialu);
+                pisz("tab_132_", 45, 50, tabelaDanych, "'1.3.2'", idWydzialu);
 
                 #endregion "1.3.2";
 
@@ -268,11 +297,13 @@ namespace stat2018
                 pisz("tab_31a_", 3, 6, tabelaDanych, "'3.1.a'", idWydzialu);
 
                 #endregion "3.1.a";
+
                 #region "3.1.b";
 
-                pisz("tab_31b_",5, 6, tabelaDanych, "'3.1.b'", idWydzialu);
+                pisz("tab_31b_", 5, 6, tabelaDanych, "'3.1.b'", idWydzialu);
 
-                #endregion "3.1.a";
+                #endregion "3.1.b";
+
                 #region "3.2";
 
                 pisz("tab_32_", 7, 6, tabelaDanych, "'3.2'", idWydzialu);
@@ -358,65 +389,80 @@ namespace stat2018
                 #endregion "11.a";
 
                 #region "12";
+
                 pisz("tab_12_", 25, 1, tabelaDanych, "'12'", idWydzialu);
-                #endregion ;
 
-                #region "13.1";
-                pisz("tab_13_1_", 14, 18, tabelaDanych, "'13.1'", idWydzialu);
-                #endregion ;
+                #endregion "12";
+
                 #region "13.1.a";
-                pisz("tab_13_1_a", 1, 1, tabelaDanych, "'13.1.a'", idWydzialu);
-                #endregion ;
+
+                pisz("tab_13_1_a_", 2, 2, tabelaDanych, "'13.1.a'", idWydzialu);
+
+                #endregion "13.1.a";
+
                 #region "13.1.b";
-                pisz("tab_13_1_b", 1, 1, tabelaDanych, "'13.1.b'", idWydzialu);
-                #endregion ;
+
+                pisz("tab_13_1_b_", 2, 2, tabelaDanych, "'13.1.b'", idWydzialu);
+
+                #endregion "13.1.b";
+
                 #region "13.1.c";
-                pisz("tab_13_1_c", 1, 1, tabelaDanych, "'13.1.c'", idWydzialu);
-                #endregion ;
 
+                pisz("tab_13_1_c_", 1, 1, tabelaDanych, "'13.1.c'", idWydzialu);
 
-
-                #region "13.1.a";
-                pisz("tab_13_1_a", 1, 1, tabelaDanych, "'13.1.a'", idWydzialu);
-                #endregion ;
-                #region "13.2";
-                pisz("tab_13_2_", 8, 9, tabelaDanych, "'13.2'", idWydzialu);
-                #endregion ;
+                #endregion "13.1.c";
 
                 #region "14.1";
+
                 pisz("tab_14_1_", 4, 38, tabelaDanych, "'14.1'", idWydzialu);
-                #endregion ;
-                #region "14.2";
-                pisz("tab_14_2_", 4, 24, tabelaDanych, "'14.2'", idWydzialu);
-                #endregion ;
+
+                #endregion "14.1";
+
                 #region "15.1";
+
                 pisz("tab_15_1_", 4, 4, tabelaDanych, "'15.1'", idWydzialu);
-                #endregion ;
+
+                #endregion "15.1";
+
                 #region "15.2";
-                pisz("tab_15_2_", 4, 8, tabelaDanych, "'15.2'", idWydzialu);
-                #endregion ;
+
+                pisz("tab_15_2_", 4, 13, tabelaDanych, "'15.2'", idWydzialu);
+
+                #endregion "15.2";
+
                 #region "15.3";
-                pisz("tab_15_3_", 4, 8, tabelaDanych, "'15.3'", idWydzialu);
-                #endregion ;
+
+                pisz("tab_15_3_", 4, 13, tabelaDanych, "'15.3'", idWydzialu);
+
+                #endregion "15.3";
 
                 #region "16.1";
+
                 pisz("tab_16_1_", 1, 1, tabelaDanych, "'16.1'", idWydzialu);
-                #endregion ;
+
+                #endregion "16.1";
 
                 #region "16.2";
-                pisz("tab_162_", 1, 8, tabelaDanych, "'16.2'", idWydzialu);
-                #endregion ;
+
+                pisz("tab_162_", 1, 13, tabelaDanych, "'16.2'", idWydzialu);
+
+                #endregion "16.2";
 
                 #region "16.3";
-                pisz("tab_163_", 1, 8, tabelaDanych, "'16.3'", idWydzialu);
-                #endregion ;
-                #region "17";
-                pisz("tab_17_", 2, 1, tabelaDanych, "'17'", idWydzialu);
-                #endregion ;
 
+                pisz("tab_163_", 1, 13, tabelaDanych, "'16.3'", idWydzialu);
+
+                #endregion "16.3";
+
+                #region "17";
+
+                pisz("tab_17_", 2, 1, tabelaDanych, "'17'", idWydzialu);
+
+                #endregion "17";
             }
-            catch
+            catch (Exception ex)
             {
+                cm.log.Error("MSS5o bład w całej procedurze wyświetlania " + ex.Message);
             }
 
             // dopasowanie opisów
@@ -511,7 +557,7 @@ namespace stat2018
                 }
                 if (!string.IsNullOrEmpty(idWydzialu))
                 {
-                    DataTable tabela2 = cl.generuj_dane_do_tabeli_mss2(int.Parse((string)Session["id_dzialu"]), Date1.Date, Date2.Date, 21,tenPlik); //dane
+                    DataTable tabela2 = cl.generuj_dane_do_tabeli_mss2(int.Parse((string)Session["id_dzialu"]), Date1.Date, Date2.Date, 21, tenPlik); //dane
                     var distinctRows = (from DataRow dRow in tabela2.Rows select dRow["idTabeli"]).Distinct(); //lista tabelek
                     DataTable listaTabelek = new DataTable();
                     listaTabelek.Columns.Add("tabela", typeof(string));

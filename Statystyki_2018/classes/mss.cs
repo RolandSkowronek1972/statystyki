@@ -832,7 +832,7 @@ namespace stat2018
             StringBuilder kodStony = new StringBuilder();
             string ciagWyjsciowy = string.Empty;
             kodStony.AppendLine("<div class='page-break'>");
-            kodStony.AppendLine("<P><b>" + idTabeli + "</b> " + tekstNadTabela + " </P>");
+            kodStony.AppendLine("<P><b>Dział " + idTabeli + "</b> " + tekstNadTabela + " </P>");
             kodStony.AppendLine("<table style='width:100%'>");
             //naglowek
             //   DataTable header = naglowek;
@@ -849,8 +849,16 @@ namespace stat2018
                     {
                         int colspan = int.Parse(wiersz["colspan"].ToString().Trim());
                         string style = wiersz["style"].ToString().Trim();
-                        string tekst = wiersz["text"].ToString().Trim();
+                        string tekst = "";
+                        try
+                        {
+                            tekst = wiersz["text"].ToString().Trim();
+                        }
+                        catch (Exception)
+                        {
 
+                            
+                        }
                         string sekcjaColspan = string.Empty;
                         string sekcjaStyle = string.Empty;
                         if (colspan > 0)
@@ -889,7 +897,17 @@ namespace stat2018
                             int rowspan = int.Parse(wiersz["rowspan"].ToString().Trim());
 
                             string style = wiersz["style"].ToString().Trim();
-                            string tekst = wiersz["text"].ToString().Trim();
+                            string tekst = "";
+                            try
+                            {
+                                 tekst = wiersz["text"].ToString().Trim();
+                            }
+                            catch 
+                            {
+
+                                
+                            }
+                           
                             string sekcjaRowspan = string.Empty;
                             string sekcjaColspan = string.Empty;
                             string sekcjaStyle = string.Empty;
@@ -992,6 +1010,56 @@ namespace stat2018
             return kodStony.ToString();
         }
 
+        public string tworztabeleMSS(string idTabeli, DataTable tabelaPrzedIteracja, DataTable dane, int iloscWierszyTabeli, int idWydzialu, string tekstNadTabela, string tenPlik)
+        {
+            StringBuilder kodStony = new StringBuilder();
+            string ciagWyjsciowy = string.Empty;
+            kodStony.AppendLine("<div class='page-break'>");
+            kodStony.AppendLine("<P><b>Dział " + idTabeli + "</b> " + tekstNadTabela + " </P>");
+            kodStony.AppendLine("<table style='width:100%'>");
+            //naglowek
+            //   DataTable header = naglowek;
+
+            kodStony.AppendLine("<tr>");
+
+            //tabela główna
+            for (int i = 1; i < iloscWierszyTabeli + 1; i++)
+            {
+                kodStony.AppendLine("<tr>");
+
+                try
+                {
+                    DataRow wiersz = wyciagnijWartosc(tabelaPrzedIteracja, " nrWiersza ='" + i.ToString() + "' and nrKolumny='1'", tenPlik);
+                    if (wiersz != null)
+                    {
+                        string style = wiersz["style"].ToString().Trim();
+                        string tekst = wiersz["text"].ToString().Trim();
+
+                        string sekcjaStyle = string.Empty;
+
+                        kodStony.AppendLine("<td  class ='  " + style + "'>" + tekst + "</td>");
+                    }
+                }
+                catch (Exception ex)
+                {
+                    cm.log.Error(tenPlik + " MSS  : " + ex.Message);
+                }
+
+                {
+                    string txt = dr.wyciagnijWartosc(dane, "idWydzial=" + idWydzialu + " and idTabeli='" + idTabeli + "' and idWiersza ='" + i.ToString() + "' and idkolumny='1'", tenPlik);
+                    string txt2 = "<a Class=\"normal\" href=\"javascript: openPopup('popup.aspx?sesja=" + i.ToString().ToString() + "!" + idTabeli + "!1!4')\">" + txt + " </a>";
+                    kodStony.AppendLine("<td class='center borderAll col_90'>" + txt2 + "</td>");
+                }
+                kodStony.AppendLine("</tr>");
+            }
+            kodStony.AppendLine("</tr>");
+
+            kodStony.AppendLine("</table>");
+            kodStony.AppendLine("</div>");
+            kodStony.AppendLine("<br/>");
+            return kodStony.ToString();
+        }
+
         public string tworztabeleMSS(string idTabeli, string napis, DataTable dane, int idWydzialu, string tenPlik)
         {
             StringBuilder kodStony = new StringBuilder();
@@ -1013,68 +1081,6 @@ namespace stat2018
             kodStony.AppendLine("</div>");
             kodStony.AppendLine("<br/>");
             return kodStony.ToString();
-        }
-
-        public string odczytXML(string path, int idDzialu, string tenPlik)
-        {
-            // string path = Server.MapPath("XMLHeaders") + "\\" + sciezka;
-
-            if (!File.Exists(path))
-            {
-                cm.log.Error(tenPlik + " bład odczytu pliku: " + path);
-
-                return "";
-            }
-            XmlDocument doc = new XmlDocument();
-            doc.Load(path);
-            StringBuilder st = new StringBuilder();
-            string tekstNadTabela = string.Empty;
-            int iloscWierszy = 0;
-            string idTabeli = string.Empty;
-            int iloscWieszyNaglowka = 0;
-            int ilosckolunPrzedIteracja = 0;
-            int ilosckolunPoIteracji = 0;
-            int Lp = 0;
-            bool lp = false;
-            DataTable tabelaDanych = generuj_dane_do_tabeli_mss2(idDzialu, DateTime.Now, DateTime.Now, 60);
-            StringBuilder tabelaGlowna = new StringBuilder();
-            foreach (XmlNode node in doc.DocumentElement.ChildNodes)
-            {
-                DataTable naglowek = new DataTable();
-                DataTable tabelaBoczna = new DataTable();
-                DataTable komorkiNaglowka = new DataTable();
-                DataTable komorkiboczne = new DataTable();
-
-                XmlNode informacjeOtabeli = node.ChildNodes[(int)pola.informacjeOtabeli];
-                if (informacjeOtabeli == null)
-                {
-                    continue;
-                }
-                idTabeli = node.Attributes[0].Value.ToString();
-                st.AppendLine(" ####################################################    ");
-                st.AppendLine(" id Tabeli " + idTabeli);
-                iloscWierszy = int.Parse(informacjeOtabeli.ChildNodes[0].InnerText);
-                st.AppendLine(" iloscWierszy " + iloscWierszy.ToString());
-                tekstNadTabela = informacjeOtabeli.ChildNodes[1].InnerText;
-                st.AppendLine(" tekstNadTabela " + tekstNadTabela.ToString());
-                //informacjeOtabeli
-                iloscWieszyNaglowka = int.Parse(informacjeOtabeli.ChildNodes[2].InnerText);
-                //iloscWieszyNaglowka = int.Parse(informacjeOtabeli[]);
-                ilosckolunPrzedIteracja = int.Parse(informacjeOtabeli.ChildNodes[3].InnerText);
-                st.AppendLine(" ilosckolunPrzedIteracja " + ilosckolunPrzedIteracja.ToString());
-
-                ilosckolunPoIteracji = int.Parse(informacjeOtabeli.ChildNodes[4].InnerText);
-                st.AppendLine(" ilosc kolun Po Iteracji " + ilosckolunPoIteracji.ToString());
-
-                Lp = int.Parse(informacjeOtabeli.ChildNodes[5].InnerText);
-                //  lp = (Lp == 0);
-                naglowek = wygenerujTabele(node.ChildNodes[(int)pola.naglowek]);
-
-                tabelaBoczna = wygenerujTabele(node.ChildNodes[(int)pola.tabelaBoczna]);
-
-                tabelaGlowna.AppendLine(tworztabeleMSS(idTabeli, naglowek, tabelaBoczna, tabelaDanych, iloscWieszyNaglowka, iloscWierszy, ilosckolunPrzedIteracja, ilosckolunPoIteracji, idDzialu, lp, tekstNadTabela, "test"));
-            }
-            return tabelaGlowna.ToString();
         }
 
         public string odczytXML(string path, int idDzialu, string tabela, string tenPlik)
@@ -1223,6 +1229,87 @@ namespace stat2018
                     tabelaBoczna = wygenerujTabele(node.ChildNodes[(int)pola.tabelaBoczna]);
 
                     tabelaGlowna.AppendLine(tworztabeleMSS(idTabeli, naglowek, tabelaBoczna, tabelaDanych, iloscWieszyNaglowka, iloscWierszy, ilosckolunPrzedIteracja, ilosckolunPoIteracji, idDzialu, lp, tekstNadTabela, "test"));
+                }
+            }
+            catch (Exception ex)
+            {
+                tabelaGlowna.AppendLine(ex.Message);
+            }
+
+            return tabelaGlowna.ToString();
+        }
+
+        public string odczytXML(string path, int idDzialu, string tabela, DataTable tabelaDanych, string tenPlik, bool bezNaglowka)
+        {
+            // string path = Server.MapPath("XMLHeaders") + "\\" + sciezka;
+
+            if (!File.Exists(path))
+            {
+                cm.log.Error(tenPlik + " bład odczytu pliku: " + path);
+
+                return "";
+            }
+            if (tabelaDanych == null)
+            {
+                cm.log.Error(tenPlik + " brak danych dla tabeli MSS dla działu : " + idDzialu.ToString());
+
+                return "";
+            }
+            XmlDocument doc = new XmlDocument();
+            doc.Load(path);
+           // StringBuilder st = new StringBuilder();
+            string tekstNadTabela = string.Empty;
+            int iloscWierszy = 0;
+            string idTabeli = string.Empty;
+            int iloscWieszyNaglowka = 0;
+            int ilosckolunPrzedIteracja = 0;
+            int ilosckolunPoIteracji = 0;
+            int Lp = 0;
+            bool lp = false;
+
+            StringBuilder tabelaGlowna = new StringBuilder();
+            try
+            {
+                foreach (XmlNode node in doc.DocumentElement.ChildNodes)
+                {
+                    DataTable naglowek = new DataTable();
+                    DataTable tabelaBoczna = new DataTable();
+                    DataTable komorkiNaglowka = new DataTable();
+                    DataTable komorkiboczne = new DataTable();
+
+                    XmlNode informacjeOtabeli = node.ChildNodes[(int)pola.informacjeOtabeli];
+                    if (informacjeOtabeli == null)
+                    {
+                        continue;
+                    }
+                    idTabeli = node.Attributes[0].Value.ToString();
+                    if (idTabeli != tabela)
+                    {
+                        continue;
+                    }
+
+                  //  st.AppendLine(" ####################################################    ");
+                 //   st.AppendLine(" id Tabeli " + idTabeli);
+                    iloscWierszy = int.Parse(informacjeOtabeli.ChildNodes[0].InnerText);
+                  //  st.AppendLine(" iloscWierszy " + iloscWierszy.ToString());
+                    tekstNadTabela = informacjeOtabeli.ChildNodes[1].InnerText;
+                  //  st.AppendLine(" tekstNadTabela " + tekstNadTabela.ToString());
+                    //informacjeOtabeli
+                    iloscWieszyNaglowka = int.Parse(informacjeOtabeli.ChildNodes[2].InnerText);
+                    //iloscWieszyNaglowka = int.Parse(informacjeOtabeli[]);
+                    ilosckolunPrzedIteracja = int.Parse(informacjeOtabeli.ChildNodes[3].InnerText);
+                  //  st.AppendLine(" ilosckolunPrzedIteracja " + ilosckolunPrzedIteracja.ToString());
+
+                    ilosckolunPoIteracji = int.Parse(informacjeOtabeli.ChildNodes[4].InnerText);
+                  //  st.AppendLine(" ilosc kolun Po Iteracji " + ilosckolunPoIteracji.ToString());
+
+                    Lp = int.Parse(informacjeOtabeli.ChildNodes[5].InnerText);
+                    //  lp = (Lp == 0);
+                    //  naglowek = wygenerujTabele(node.ChildNodes[(int)pola.naglowek]);
+
+                    tabelaBoczna = wygenerujTabele(node.ChildNodes[(int)pola.tabelaBoczna]);
+
+                    tabelaGlowna.AppendLine(tworztabeleMSS(idTabeli, tabelaBoczna, tabelaDanych, iloscWierszy, idDzialu, "", tenPlik));
                 }
             }
             catch (Exception ex)

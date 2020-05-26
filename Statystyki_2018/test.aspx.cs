@@ -332,10 +332,11 @@ namespace stat2018
 
         private void odczyt2()
         {
-            string path = Server.MapPath("XMLHeaders") + "\\" + "MSS1o.xml";
+            string path = Server.MapPath("XMLHeaders") + "\\" + "MSS1r.xml";
 
             Label tblControl = new Label { ID = "kod01" };
-            tblControl.Text = (ms.odczytXML(path, 12,"1.1.2", ""));
+            //(string path, int idDzialu, string tabela, DataTable tabelaDanych, string tenPlik, bool bezNaglowka)
+            tblControl.Text = (ms.odczytXML(path, 12, "1.1.j", ""));
 
             tblControl.Width = 1150;
 

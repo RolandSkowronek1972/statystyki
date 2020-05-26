@@ -51,6 +51,8 @@
     <WarningLevel>4</WarningLevel>
     <PlatformTarget>AnyCPU</PlatformTarget>
     <FilesToIncludeForPublish>AllFilesInTheProject</FilesToIncludeForPublish>
+    <RunCodeAnalysis>false</RunCodeAnalysis>
+    <CodeAnalysisIgnoreGeneratedCode>false</CodeAnalysisIgnoreGeneratedCode>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="AjaxControlToolkit, Version=4.1.7.1213, Culture=neutral, PublicKeyToken=28f01b0e84b6d53e, processorArchitecture=MSIL">
@@ -137,6 +139,7 @@
     <Content Include="aopg.aspx" />
     <Content Include="mk.aspx" />
     <Content Include="mss10e.aspx" />
+    <Content Include="XMLHeaders\MSS1r.xml" />
     <Content Include="onsu.aspx" />
     <Content Include="oopp.aspx" />
     <Content Include="oopg.aspx" />
@@ -265,12 +268,13 @@
     <Content Include="wyszukiwarkaspraw.aspx" />
     <Content Include="msstabele\mss5r.xlsx" />
     <Content Include="Template\aopc2.xlsx" />
+    <Content Include="XMLHeaders\MSS1o.xml" />
     <Content Include="XMLHeaders\onsu4.xml" />
     <Content Include="XMLHeaders\onsu3.xml" />
     <Content Include="XMLHeaders\onsu2.xml" />
     <Content Include="XMLHeaders\akrp2.xml" />
     <Content Include="XMLHeaders\mss.xml" />
-    <Content Include="XMLHeaders\MSS1o.xml" />
+    <Content Include="XMLHeaders\MSS5o.xml" />
     <Content Include="XMLHeaders\test.xml" />
     <Content Include="XMLHeaders\ansa.xml" />
     <Content Include="XMLHeaders\wizk_1_25.xml" />
@@ -1224,9 +1228,9 @@
           <AutoAssignPort>True</AutoAssignPort>
           <DevelopmentServerPort>49192</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
-          <IISUrl>http://localhost:49192/</IISUrl>
+          <IISUrl>http://localhost:49193/</IISUrl>
           <OverrideIISAppRootUrl>True</OverrideIISAppRootUrl>
-          <IISAppRootUrl>http://localhost:49192/</IISAppRootUrl>
+          <IISAppRootUrl>http://localhost:49193/</IISAppRootUrl>
           <NTLMAuthentication>False</NTLMAuthentication>
           <UseCustomServer>False</UseCustomServer>
           <CustomServerUrl>
