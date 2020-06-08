@@ -26,6 +26,7 @@ namespace stat2018
             }
             else
             {
+                Server.Transfer("default.aspx");
                 return;
             }
             CultureInfo newCulture = (CultureInfo)CultureInfo.CurrentCulture.Clone();
@@ -115,12 +116,12 @@ namespace stat2018
 
             dT_01.Clear();
 
-            for (int i = 1; i < 126; i++)
+            for (int i = 1; i < 115; i++)
             {
                 dT_01.Rows.Add(new Object[] { "1", i.ToString(), "1", "1", "h" });
             }
 
-            for (int i = 0; i < 20; i++)
+            for (int i = 0; i < 18; i++)
             {
                 dT_01.Rows.Add(new Object[] { "2", "na rozp-<br/>rawie", "1", "1", "h" });
                 dT_01.Rows.Add(new Object[] { "2", "na posie-<br/>dzenie", "1", "1", "h" });
@@ -198,20 +199,20 @@ namespace stat2018
             dT_01.Rows.Add(new Object[] { "4", "ogółem", "1", "3", "h" });
             dT_01.Rows.Add(new Object[] { "4", "z tego", "2", "1", "h" });
 
-            dT_01.Rows.Add(new Object[] { "4", "ogółem (k. 01 w.01)", "1", "3", "h" });
-            dT_01.Rows.Add(new Object[] { "4", "z tego", "2", "1", "h" });
+         //   dT_01.Rows.Add(new Object[] { "4", "ogółem (k. 01 w.01)", "1", "3", "h" });
+         //   dT_01.Rows.Add(new Object[] { "4", "z tego", "2", "1", "h" });
 
             //69
-            dT_01.Rows.Add(new Object[] { "3", "ogółem (wszystkie kategorie spraw) ", "1", "3", "h" });
+         /*   dT_01.Rows.Add(new Object[] { "3", "ogółem (wszystkie kategorie spraw) ", "1", "3", "h" });
             dT_01.Rows.Add(new Object[] { "3", "RC ", "1", "3", "h" });
             dT_01.Rows.Add(new Object[] { "3", "RNs", "1", "3", "h" });
             dT_01.Rows.Add(new Object[] { "3", "Nsm", "1", "3", "h" });
             dT_01.Rows.Add(new Object[] { "3", "Kkd", "1", "3", "h" });
-
+           
             dT_01.Rows.Add(new Object[] { "3", "z terminem", "1", "3", "h" });
 
             dT_01.Rows.Add(new Object[] { "3", "bez wyznaczonego terminu", "1", "3", "h" });
-            dT_01.Rows.Add(new Object[] { "3", "OGÓŁEM (wraz z publikacją orzeczeń)", "1", "3", "h" });
+            dT_01.Rows.Add(new Object[] { "3", "OGÓŁEM (wraz z publikacją orzeczeń)", "1", "3", "h" }); */
             // dT_01.Rows.Add(new Object[] { "3", "Ogółem (Dz. 1.1.1. k.18,w.01 + Dz. 1.1.2 k.06,w.01)", "1", "3", "h" });
             dT_01.Rows.Add(new Object[] { "3", "Ogółem ", "1", "3", "h" });
             dT_01.Rows.Add(new Object[] { "3", "RC", "1", "3", "h" });
@@ -257,7 +258,7 @@ namespace stat2018
             dT_01.Rows.Add(new Object[] { "3", "na posiedzieniu ", "1", "3", "h" });
 
             dT_01.Rows.Add(new Object[] { "5", "wszystkie sesje sędziego w wydziale", "3", "1", "h" });
-            dT_01.Rows.Add(new Object[] { "5", "na potrzeby MS-S (Dz. 1.2.2.)", "3", "1", "h" });
+         //   dT_01.Rows.Add(new Object[] { "5", "na potrzeby MS-S (Dz. 1.2.2.)", "3", "1", "h" });
 
             dT_01.Rows.Add(new Object[] { "6", "L.p", "1", "6", "h" });
             dT_01.Rows.Add(new Object[] { "6", " Imię i nazwisko sędziego", "1", "6", "h" });
@@ -266,11 +267,11 @@ namespace stat2018
             dT_01.Rows.Add(new Object[] { "6", "Wyznaczono ", "20", "2", "h" });
             dT_01.Rows.Add(new Object[] { "6", "Załatwiono ", "20", "2", "h" });
             dT_01.Rows.Add(new Object[] { "6", "ZAŁATWIENIA ", "10", "2", "h" });
-            dT_01.Rows.Add(new Object[] { "6", "sesje odbyte przez sędziego  ", "6", "1", "h" });
+            dT_01.Rows.Add(new Object[] { "6", "sesje odbyte przez sędziego  ", "3", "1", "h" });
             dT_01.Rows.Add(new Object[] { "6", "Liczba dni, w których odbyły się sesje wyjazdowe (podajemy niezależnie - dla potrzeb informacyjnych)", "1", "5", "h" });
             dT_01.Rows.Add(new Object[] { "6", "Liczba wokand wykonawczych (wykazywana  Dz. 1.1.9)", "1", "5", "h" });
-            dT_01.Rows.Add(new Object[] { "6", "Liczba odroczonych publikacji wyroków/postanowień (Dz. 1.1.1. k.17)", "5", "2", "h" });
-            dT_01.Rows.Add(new Object[] { "6", "Liczba odroczonych spraw", "3", "2", "h" });
+          //  dT_01.Rows.Add(new Object[] { "6", "Liczba odroczonych publikacji wyroków/postanowień (Dz. 1.1.1. k.17)", "5", "2", "h" });
+          //  dT_01.Rows.Add(new Object[] { "6", "Liczba odroczonych spraw", "3", "2", "h" });
             dT_01.Rows.Add(new Object[] { "6", "POZOSTAŁOŚĆ na następny m-c", "10", "2", "h" });
             dT_01.Rows.Add(new Object[] { "6", "pozostało spraw starych", "9", "2", "h" });
             dT_01.Rows.Add(new Object[] { "6", "stan spraw zawieszonych", "3", "2", "h" });
@@ -340,11 +341,7 @@ namespace stat2018
             }
         }
 
-        protected void Button1_Click(object sender, EventArgs e)
-        {
-            ScriptManager.RegisterStartupScript(this.Page, Page.GetType(), "print2", "JavaScript: window.print();", true);
-            // ScriptManager.RegisterStartupScript(this.Page, Page.GetType(), "print", "window.open('raport_01_print.aspx', '')", true);
-        }
+      
 
         protected void Button3_Click(object sender, EventArgs e)
         {
@@ -357,7 +354,7 @@ namespace stat2018
             using (ExcelPackage MyExcel = new ExcelPackage(existingFile))
             {
                 ExcelWorksheet MyWorksheet = MyExcel.Workbook.Worksheets[1];
-                tb.tworzArkuszwExcle(MyWorksheet, (DataTable)Session["tabelka001"], 113, 0, 8, true, true, false, false, true);
+                tb.tworzArkuszwExcle(MyWorksheet, (DataTable)Session["tabelka001"], 115, 0, 8, true, true, false, false, true);
 
                 try
                 {

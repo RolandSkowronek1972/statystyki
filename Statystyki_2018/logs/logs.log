@@ -1,419 +1,75 @@
-2020-05-26 08:27:59,640  INFO stat2018.log_4_net - uruchomienie logowania
-2020-05-26 08:27:59,712  INFO stat2018.log_4_net - rozpoczecie logowania 08:27:59
-2020-05-26 08:28:05,522  INFO stat2018.log_4_net - blad logowania domenowego  08:28:05
-2020-05-26 08:28:05,533  INFO stat2018.log_4_net - próba logowania z bazy  08:28:05
-2020-05-26 08:28:08,909  INFO stat2018.log_4_net - Logowanie: identyfikator uzytkownika: test to 6
-2020-05-26 08:28:08,909  INFO stat2018.log_4_net - logowania z bazy poprawne  08:28:08
-2020-05-26 08:28:08,967  INFO stat2018.log_4_net - uruchomienie  redirector.aspx 08:28:08
-2020-05-26 08:28:09,375  INFO stat2018.log_4_net - start redirektora  08:28:09
-2020-05-26 08:28:09,386  INFO stat2018.log_4_net - start tworzenia Ste1   08:28:09
-2020-05-26 08:28:09,396  INFO stat2018.log_4_net - start tworzenia menu  daneDoManuMiesieczne  08:28:09
-2020-05-26 08:28:09,452  INFO stat2018.log_4_net -  getDataTable - parametetr name= @identyfikatorUzytkownika wartosc: 6
-2020-05-26 08:28:09,722  INFO stat2018.log_4_net - start tworzenia menu  daneDoManuKontrolek 08:28:09
-2020-05-26 08:28:09,743  INFO stat2018.log_4_net - naglowek getDataTable - parametetr name= @identyfikatorUzytkownika wartosc: 6
-2020-05-26 08:28:09,747  INFO stat2018.log_4_net - start tworzenia menu  daneDoManuMSS 08:28:09
-2020-05-26 08:28:09,761  INFO stat2018.log_4_net - Naglowki getDataTable - parametetr name= @identyfikatorUzytkownika wartosc: 6
-2020-05-26 08:28:09,766  INFO stat2018.log_4_net - start tworzenia menu daneDoManuInne  08:28:09
-2020-05-26 08:28:09,786  INFO stat2018.log_4_net - start tworzenia menu wyloguj  08:28:09
-2020-05-26 08:28:09,790  INFO stat2018.log_4_net - Header: Rozpoczecie procedury tworzenia elementów menu wyloguj
-2020-05-26 08:28:09,855  INFO stat2018.log_4_net - koniec tworzenia manu   08:28:09
-2020-05-26 08:28:26,289  INFO stat2018.log_4_net -  getDataTable - parametetr name= @id_dzialu wartosc: 1
-2020-05-26 08:28:29,155  INFO stat2018.log_4_net - tabela : 1.1 nrWiersza ='1' and nrKolumny='1'
-2020-05-26 08:28:29,166  INFO stat2018.log_4_net -  nrWiersza ='1' and nrKolumny='2'
-2020-05-26 08:28:29,183  INFO stat2018.log_4_net -  nrWiersza ='1' and nrKolumny='3'
-2020-05-26 08:28:29,184  INFO stat2018.log_4_net -  nrWiersza ='1' and nrKolumny='4'
-2020-05-26 08:28:29,184  INFO stat2018.log_4_net -  nrWiersza ='1' and nrKolumny='5'
-2020-05-26 08:28:29,184  INFO stat2018.log_4_net -  nrWiersza ='1' and nrKolumny='6'
-2020-05-26 08:28:29,186  INFO stat2018.log_4_net - MSS 11o LinqError: wiersz=null
-2020-05-26 08:28:29,186  INFO stat2018.log_4_net -  nrWiersza ='1' and nrKolumny='7'
-2020-05-26 08:28:29,186  INFO stat2018.log_4_net - MSS 11o LinqError: wiersz=null
-2020-05-26 08:28:29,187  INFO stat2018.log_4_net -  nrWiersza ='1' and nrKolumny='8'
-2020-05-26 08:28:29,187  INFO stat2018.log_4_net - MSS 11o LinqError: wiersz=null
-2020-05-26 08:28:29,187  INFO stat2018.log_4_net -  nrWiersza ='1' and nrKolumny='9'
-2020-05-26 08:28:29,187  INFO stat2018.log_4_net - MSS 11o LinqError: wiersz=null
-2020-05-26 08:28:29,401  INFO stat2018.log_4_net - tabela : 1.1.b nrWiersza ='1' and nrKolumny='1'
-2020-05-26 08:28:29,402  INFO stat2018.log_4_net -  nrWiersza ='1' and nrKolumny='2'
-2020-05-26 08:28:29,403  INFO stat2018.log_4_net -  nrWiersza ='1' and nrKolumny='3'
-2020-05-26 08:28:29,403  INFO stat2018.log_4_net -  nrWiersza ='1' and nrKolumny='4'
-2020-05-26 08:28:29,403  INFO stat2018.log_4_net -  nrWiersza ='1' and nrKolumny='5'
-2020-05-26 08:28:29,403  INFO stat2018.log_4_net -  nrWiersza ='1' and nrKolumny='6'
-2020-05-26 08:28:29,403  INFO stat2018.log_4_net - MSS 11o LinqError: wiersz=null
-2020-05-26 08:28:29,404  INFO stat2018.log_4_net -  nrWiersza ='1' and nrKolumny='7'
-2020-05-26 08:28:29,404  INFO stat2018.log_4_net - MSS 11o LinqError: wiersz=null
-2020-05-26 08:28:29,418  INFO stat2018.log_4_net - tabela : 15.3 nrWiersza ='1' and nrKolumny='1'
-2020-05-26 08:28:29,419  INFO stat2018.log_4_net -  nrWiersza ='1' and nrKolumny='2'
-2020-05-26 08:28:29,419  INFO stat2018.log_4_net -  nrWiersza ='1' and nrKolumny='3'
-2020-05-26 08:28:29,419  INFO stat2018.log_4_net -  nrWiersza ='1' and nrKolumny='4'
-2020-05-26 08:28:29,420  INFO stat2018.log_4_net - MSS 11o LinqError: wiersz=null
-2020-05-26 08:28:29,420  INFO stat2018.log_4_net -  nrWiersza ='1' and nrKolumny='5'
-2020-05-26 08:28:29,420  INFO stat2018.log_4_net - MSS 11o LinqError: wiersz=null
-2020-05-26 08:28:29,420  INFO stat2018.log_4_net -  nrWiersza ='1' and nrKolumny='6'
-2020-05-26 08:28:29,420  INFO stat2018.log_4_net - MSS 11o LinqError: wiersz=null
-2020-05-26 08:28:29,420  INFO stat2018.log_4_net -  nrWiersza ='1' and nrKolumny='7'
-2020-05-26 08:28:29,421  INFO stat2018.log_4_net - MSS 11o LinqError: wiersz=null
-2020-05-26 08:28:29,421  INFO stat2018.log_4_net -  nrWiersza ='1' and nrKolumny='8'
-2020-05-26 08:28:29,421  INFO stat2018.log_4_net - MSS 11o LinqError: wiersz=null
-2020-05-26 08:28:29,421  INFO stat2018.log_4_net -  nrWiersza ='1' and nrKolumny='9'
-2020-05-26 08:28:29,421  INFO stat2018.log_4_net - MSS 11o LinqError: wiersz=null
-2020-05-26 08:28:29,421  INFO stat2018.log_4_net -  nrWiersza ='1' and nrKolumny='10'
-2020-05-26 08:28:29,422  INFO stat2018.log_4_net - MSS 11o LinqError: wiersz=null
-2020-05-26 08:28:29,422  INFO stat2018.log_4_net -  nrWiersza ='1' and nrKolumny='11'
-2020-05-26 08:28:29,422  INFO stat2018.log_4_net - MSS 11o LinqError: wiersz=null
-2020-05-26 08:28:29,422  INFO stat2018.log_4_net -  nrWiersza ='1' and nrKolumny='12'
-2020-05-26 08:28:29,422  INFO stat2018.log_4_net - MSS 11o LinqError: wiersz=null
-2020-05-26 08:28:29,422  INFO stat2018.log_4_net -  nrWiersza ='1' and nrKolumny='13'
-2020-05-26 08:28:29,423  INFO stat2018.log_4_net - MSS 11o LinqError: wiersz=null
-2020-05-26 08:28:29,423  INFO stat2018.log_4_net -  nrWiersza ='1' and nrKolumny='14'
-2020-05-26 08:28:29,423  INFO stat2018.log_4_net - MSS 11o LinqError: wiersz=null
-2020-05-26 08:28:29,423  INFO stat2018.log_4_net - tabela : 15.3 nrWiersza ='2' and nrKolumny='1'
-2020-05-26 08:28:29,423  INFO stat2018.log_4_net -  nrWiersza ='2' and nrKolumny='2'
-2020-05-26 08:28:29,424  INFO stat2018.log_4_net -  nrWiersza ='2' and nrKolumny='3'
-2020-05-26 08:28:29,424  INFO stat2018.log_4_net -  nrWiersza ='2' and nrKolumny='4'
-2020-05-26 08:28:29,424  INFO stat2018.log_4_net -  nrWiersza ='2' and nrKolumny='5'
-2020-05-26 08:28:29,424  INFO stat2018.log_4_net -  nrWiersza ='2' and nrKolumny='6'
-2020-05-26 08:28:29,425  INFO stat2018.log_4_net -  nrWiersza ='2' and nrKolumny='7'
-2020-05-26 08:28:29,425  INFO stat2018.log_4_net -  nrWiersza ='2' and nrKolumny='8'
-2020-05-26 08:28:29,425  INFO stat2018.log_4_net -  nrWiersza ='2' and nrKolumny='9'
-2020-05-26 08:28:29,425  INFO stat2018.log_4_net -  nrWiersza ='2' and nrKolumny='10'
-2020-05-26 08:28:29,425  INFO stat2018.log_4_net -  nrWiersza ='2' and nrKolumny='11'
-2020-05-26 08:28:29,426  INFO stat2018.log_4_net -  nrWiersza ='2' and nrKolumny='12'
-2020-05-26 08:28:29,427  INFO stat2018.log_4_net -  nrWiersza ='2' and nrKolumny='13'
-2020-05-26 08:28:29,427  INFO stat2018.log_4_net - MSS 11o LinqError: wiersz=null
-2020-05-26 08:28:29,427  INFO stat2018.log_4_net -  nrWiersza ='2' and nrKolumny='14'
-2020-05-26 08:28:29,428  INFO stat2018.log_4_net - MSS 11o LinqError: wiersz=null
-2020-05-26 08:28:29,441  INFO stat2018.log_4_net - tabela : 1.1.1.a nrWiersza ='1' and nrKolumny='1'
-2020-05-26 08:28:29,442  INFO stat2018.log_4_net -  nrWiersza ='1' and nrKolumny='2'
-2020-05-26 08:28:29,442  INFO stat2018.log_4_net -  nrWiersza ='1' and nrKolumny='3'
-2020-05-26 08:28:29,442  INFO stat2018.log_4_net - MSS 11o LinqError: wiersz=null
-2020-05-26 08:28:29,451  INFO stat2018.log_4_net - tabela : 13.1 nrWiersza ='1' and nrKolumny='1'
-2020-05-26 08:28:29,451  INFO stat2018.log_4_net -  nrWiersza ='1' and nrKolumny='2'
-2020-05-26 08:28:29,451  INFO stat2018.log_4_net -  nrWiersza ='1' and nrKolumny='3'
-2020-05-26 08:28:29,452  INFO stat2018.log_4_net - MSS 11o LinqError: wiersz=null
-2020-05-26 08:28:29,452  INFO stat2018.log_4_net -  nrWiersza ='1' and nrKolumny='4'
-2020-05-26 08:28:29,452  INFO stat2018.log_4_net - MSS 11o LinqError: wiersz=null
-2020-05-26 08:28:29,452  INFO stat2018.log_4_net -  nrWiersza ='1' and nrKolumny='5'
-2020-05-26 08:28:29,453  INFO stat2018.log_4_net - MSS 11o LinqError: wiersz=null
-2020-05-26 08:28:29,453  INFO stat2018.log_4_net -  nrWiersza ='1' and nrKolumny='6'
-2020-05-26 08:28:29,453  INFO stat2018.log_4_net - MSS 11o LinqError: wiersz=null
-2020-05-26 08:28:29,453  INFO stat2018.log_4_net -  nrWiersza ='1' and nrKolumny='7'
-2020-05-26 08:28:29,453  INFO stat2018.log_4_net - MSS 11o LinqError: wiersz=null
-2020-05-26 08:28:29,453  INFO stat2018.log_4_net -  nrWiersza ='1' and nrKolumny='8'
-2020-05-26 08:28:29,454  INFO stat2018.log_4_net - MSS 11o LinqError: wiersz=null
-2020-05-26 08:28:29,454  INFO stat2018.log_4_net -  nrWiersza ='1' and nrKolumny='9'
-2020-05-26 08:28:29,454  INFO stat2018.log_4_net - MSS 11o LinqError: wiersz=null
-2020-05-26 08:28:29,454  INFO stat2018.log_4_net -  nrWiersza ='1' and nrKolumny='10'
-2020-05-26 08:28:29,454  INFO stat2018.log_4_net - MSS 11o LinqError: wiersz=null
-2020-05-26 08:28:29,454  INFO stat2018.log_4_net -  nrWiersza ='1' and nrKolumny='11'
-2020-05-26 08:28:29,455  INFO stat2018.log_4_net - MSS 11o LinqError: wiersz=null
-2020-05-26 08:28:29,455  INFO stat2018.log_4_net -  nrWiersza ='1' and nrKolumny='12'
-2020-05-26 08:28:29,455  INFO stat2018.log_4_net - MSS 11o LinqError: wiersz=null
-2020-05-26 08:28:29,455  INFO stat2018.log_4_net -  nrWiersza ='1' and nrKolumny='13'
-2020-05-26 08:28:29,455  INFO stat2018.log_4_net - MSS 11o LinqError: wiersz=null
-2020-05-26 08:28:29,455  INFO stat2018.log_4_net -  nrWiersza ='1' and nrKolumny='14'
-2020-05-26 08:28:29,456  INFO stat2018.log_4_net - MSS 11o LinqError: wiersz=null
-2020-05-26 08:28:29,456  INFO stat2018.log_4_net -  nrWiersza ='1' and nrKolumny='15'
-2020-05-26 08:28:29,456  INFO stat2018.log_4_net - MSS 11o LinqError: wiersz=null
-2020-05-26 08:28:29,456  INFO stat2018.log_4_net -  nrWiersza ='1' and nrKolumny='16'
-2020-05-26 08:28:29,456  INFO stat2018.log_4_net - MSS 11o LinqError: wiersz=null
-2020-05-26 08:28:29,456  INFO stat2018.log_4_net -  nrWiersza ='1' and nrKolumny='17'
-2020-05-26 08:28:29,456  INFO stat2018.log_4_net - MSS 11o LinqError: wiersz=null
-2020-05-26 08:28:29,457  INFO stat2018.log_4_net -  nrWiersza ='1' and nrKolumny='18'
-2020-05-26 08:28:29,457  INFO stat2018.log_4_net - MSS 11o LinqError: wiersz=null
-2020-05-26 08:28:29,457  INFO stat2018.log_4_net -  nrWiersza ='1' and nrKolumny='19'
-2020-05-26 08:28:29,457  INFO stat2018.log_4_net - MSS 11o LinqError: wiersz=null
-2020-05-26 08:28:29,457  INFO stat2018.log_4_net -  nrWiersza ='1' and nrKolumny='20'
-2020-05-26 08:28:29,457  INFO stat2018.log_4_net - MSS 11o LinqError: wiersz=null
-2020-05-26 08:28:29,457  INFO stat2018.log_4_net -  nrWiersza ='1' and nrKolumny='21'
-2020-05-26 08:28:29,458  INFO stat2018.log_4_net - MSS 11o LinqError: wiersz=null
-2020-05-26 08:28:29,458  INFO stat2018.log_4_net -  nrWiersza ='1' and nrKolumny='22'
-2020-05-26 08:28:29,458  INFO stat2018.log_4_net - MSS 11o LinqError: wiersz=null
-2020-05-26 08:28:29,458  INFO stat2018.log_4_net -  nrWiersza ='1' and nrKolumny='23'
-2020-05-26 08:28:29,458  INFO stat2018.log_4_net - MSS 11o LinqError: wiersz=null
-2020-05-26 08:28:29,458  INFO stat2018.log_4_net -  nrWiersza ='1' and nrKolumny='24'
-2020-05-26 08:28:29,459  INFO stat2018.log_4_net - MSS 11o LinqError: wiersz=null
-2020-05-26 08:28:29,459  INFO stat2018.log_4_net -  nrWiersza ='1' and nrKolumny='25'
-2020-05-26 08:28:29,459  INFO stat2018.log_4_net - MSS 11o LinqError: wiersz=null
-2020-05-26 08:28:29,459  INFO stat2018.log_4_net - tabela : 13.1 nrWiersza ='2' and nrKolumny='1'
-2020-05-26 08:28:29,459  INFO stat2018.log_4_net -  nrWiersza ='2' and nrKolumny='2'
-2020-05-26 08:28:29,459  INFO stat2018.log_4_net -  nrWiersza ='2' and nrKolumny='3'
-2020-05-26 08:28:29,460  INFO stat2018.log_4_net -  nrWiersza ='2' and nrKolumny='4'
-2020-05-26 08:28:29,460  INFO stat2018.log_4_net -  nrWiersza ='2' and nrKolumny='5'
-2020-05-26 08:28:29,460  INFO stat2018.log_4_net -  nrWiersza ='2' and nrKolumny='6'
-2020-05-26 08:28:29,461  INFO stat2018.log_4_net -  nrWiersza ='2' and nrKolumny='7'
-2020-05-26 08:28:29,461  INFO stat2018.log_4_net -  nrWiersza ='2' and nrKolumny='8'
-2020-05-26 08:28:29,461  INFO stat2018.log_4_net -  nrWiersza ='2' and nrKolumny='9'
-2020-05-26 08:28:29,462  INFO stat2018.log_4_net -  nrWiersza ='2' and nrKolumny='10'
-2020-05-26 08:28:29,462  INFO stat2018.log_4_net - MSS 11o LinqError: wiersz=null
-2020-05-26 08:28:29,462  INFO stat2018.log_4_net -  nrWiersza ='2' and nrKolumny='11'
-2020-05-26 08:28:29,462  INFO stat2018.log_4_net -  nrWiersza ='2' and nrKolumny='12'
-2020-05-26 08:28:29,463  INFO stat2018.log_4_net -  nrWiersza ='2' and nrKolumny='13'
-2020-05-26 08:28:29,467  INFO stat2018.log_4_net - MSS 11o LinqError: wiersz=null
-2020-05-26 08:28:29,467  INFO stat2018.log_4_net -  nrWiersza ='2' and nrKolumny='14'
-2020-05-26 08:28:29,467  INFO stat2018.log_4_net - MSS 11o LinqError: wiersz=null
-2020-05-26 08:28:29,467  INFO stat2018.log_4_net -  nrWiersza ='2' and nrKolumny='15'
-2020-05-26 08:28:29,467  INFO stat2018.log_4_net - MSS 11o LinqError: wiersz=null
-2020-05-26 08:28:29,468  INFO stat2018.log_4_net -  nrWiersza ='2' and nrKolumny='16'
-2020-05-26 08:28:29,468  INFO stat2018.log_4_net - MSS 11o LinqError: wiersz=null
-2020-05-26 08:28:29,468  INFO stat2018.log_4_net -  nrWiersza ='2' and nrKolumny='17'
-2020-05-26 08:28:29,468  INFO stat2018.log_4_net - MSS 11o LinqError: wiersz=null
-2020-05-26 08:28:29,468  INFO stat2018.log_4_net -  nrWiersza ='2' and nrKolumny='18'
-2020-05-26 08:28:29,468  INFO stat2018.log_4_net - MSS 11o LinqError: wiersz=null
-2020-05-26 08:28:29,468  INFO stat2018.log_4_net -  nrWiersza ='2' and nrKolumny='19'
-2020-05-26 08:28:29,469  INFO stat2018.log_4_net - MSS 11o LinqError: wiersz=null
-2020-05-26 08:28:29,469  INFO stat2018.log_4_net -  nrWiersza ='2' and nrKolumny='20'
-2020-05-26 08:28:29,469  INFO stat2018.log_4_net - MSS 11o LinqError: wiersz=null
-2020-05-26 08:28:29,469  INFO stat2018.log_4_net -  nrWiersza ='2' and nrKolumny='21'
-2020-05-26 08:28:29,469  INFO stat2018.log_4_net - MSS 11o LinqError: wiersz=null
-2020-05-26 08:28:29,469  INFO stat2018.log_4_net -  nrWiersza ='2' and nrKolumny='22'
-2020-05-26 08:28:29,469  INFO stat2018.log_4_net - MSS 11o LinqError: wiersz=null
-2020-05-26 08:28:29,469  INFO stat2018.log_4_net -  nrWiersza ='2' and nrKolumny='23'
-2020-05-26 08:28:29,470  INFO stat2018.log_4_net - MSS 11o LinqError: wiersz=null
-2020-05-26 08:28:29,470  INFO stat2018.log_4_net -  nrWiersza ='2' and nrKolumny='24'
-2020-05-26 08:28:29,470  INFO stat2018.log_4_net - MSS 11o LinqError: wiersz=null
-2020-05-26 08:28:29,470  INFO stat2018.log_4_net -  nrWiersza ='2' and nrKolumny='25'
-2020-05-26 08:28:29,470  INFO stat2018.log_4_net - MSS 11o LinqError: wiersz=null
-2020-05-26 08:28:29,472  INFO stat2018.log_4_net - tabela : 13.1 nrWiersza ='3' and nrKolumny='1'
-2020-05-26 08:28:29,472  INFO stat2018.log_4_net -  nrWiersza ='3' and nrKolumny='2'
-2020-05-26 08:28:29,472  INFO stat2018.log_4_net -  nrWiersza ='3' and nrKolumny='3'
-2020-05-26 08:28:29,473  INFO stat2018.log_4_net -  nrWiersza ='3' and nrKolumny='4'
-2020-05-26 08:28:29,473  INFO stat2018.log_4_net -  nrWiersza ='3' and nrKolumny='5'
-2020-05-26 08:28:29,473  INFO stat2018.log_4_net -  nrWiersza ='3' and nrKolumny='6'
-2020-05-26 08:28:29,473  INFO stat2018.log_4_net -  nrWiersza ='3' and nrKolumny='7'
-2020-05-26 08:28:29,473  INFO stat2018.log_4_net -  nrWiersza ='3' and nrKolumny='8'
-2020-05-26 08:28:29,474  INFO stat2018.log_4_net -  nrWiersza ='3' and nrKolumny='9'
-2020-05-26 08:28:29,474  INFO stat2018.log_4_net -  nrWiersza ='3' and nrKolumny='10'
-2020-05-26 08:28:29,474  INFO stat2018.log_4_net -  nrWiersza ='3' and nrKolumny='11'
-2020-05-26 08:28:29,474  INFO stat2018.log_4_net -  nrWiersza ='3' and nrKolumny='12'
-2020-05-26 08:28:29,474  INFO stat2018.log_4_net -  nrWiersza ='3' and nrKolumny='13'
-2020-05-26 08:28:29,475  INFO stat2018.log_4_net -  nrWiersza ='3' and nrKolumny='14'
-2020-05-26 08:28:29,475  INFO stat2018.log_4_net -  nrWiersza ='3' and nrKolumny='15'
-2020-05-26 08:28:29,475  INFO stat2018.log_4_net -  nrWiersza ='3' and nrKolumny='16'
-2020-05-26 08:28:29,475  INFO stat2018.log_4_net -  nrWiersza ='3' and nrKolumny='17'
-2020-05-26 08:28:29,476  INFO stat2018.log_4_net -  nrWiersza ='3' and nrKolumny='18'
-2020-05-26 08:28:29,476  INFO stat2018.log_4_net -  nrWiersza ='3' and nrKolumny='19'
-2020-05-26 08:28:29,476  INFO stat2018.log_4_net -  nrWiersza ='3' and nrKolumny='20'
-2020-05-26 08:28:29,476  INFO stat2018.log_4_net -  nrWiersza ='3' and nrKolumny='21'
-2020-05-26 08:28:29,476  INFO stat2018.log_4_net -  nrWiersza ='3' and nrKolumny='22'
-2020-05-26 08:28:29,477  INFO stat2018.log_4_net -  nrWiersza ='3' and nrKolumny='23'
-2020-05-26 08:28:29,477  INFO stat2018.log_4_net - MSS 11o LinqError: wiersz=null
-2020-05-26 08:28:29,477  INFO stat2018.log_4_net -  nrWiersza ='3' and nrKolumny='24'
-2020-05-26 08:28:29,477  INFO stat2018.log_4_net - MSS 11o LinqError: wiersz=null
-2020-05-26 08:28:29,477  INFO stat2018.log_4_net -  nrWiersza ='3' and nrKolumny='25'
-2020-05-26 08:28:29,478  INFO stat2018.log_4_net - MSS 11o LinqError: wiersz=null
-2020-05-26 08:28:29,559  INFO stat2018.log_4_net - tabela : 13.2 nrWiersza ='1' and nrKolumny='1'
-2020-05-26 08:28:29,559  INFO stat2018.log_4_net -  nrWiersza ='1' and nrKolumny='2'
-2020-05-26 08:28:29,559  INFO stat2018.log_4_net -  nrWiersza ='1' and nrKolumny='3'
-2020-05-26 08:28:29,560  INFO stat2018.log_4_net - MSS 11o LinqError: wiersz=null
-2020-05-26 08:28:29,560  INFO stat2018.log_4_net -  nrWiersza ='1' and nrKolumny='4'
-2020-05-26 08:28:29,561  INFO stat2018.log_4_net - MSS 11o LinqError: wiersz=null
-2020-05-26 08:28:29,561  INFO stat2018.log_4_net -  nrWiersza ='1' and nrKolumny='5'
-2020-05-26 08:28:29,561  INFO stat2018.log_4_net - MSS 11o LinqError: wiersz=null
-2020-05-26 08:28:29,561  INFO stat2018.log_4_net -  nrWiersza ='1' and nrKolumny='6'
-2020-05-26 08:28:29,561  INFO stat2018.log_4_net - MSS 11o LinqError: wiersz=null
-2020-05-26 08:28:29,561  INFO stat2018.log_4_net -  nrWiersza ='1' and nrKolumny='7'
-2020-05-26 08:28:29,562  INFO stat2018.log_4_net - MSS 11o LinqError: wiersz=null
-2020-05-26 08:28:29,562  INFO stat2018.log_4_net -  nrWiersza ='1' and nrKolumny='8'
-2020-05-26 08:28:29,562  INFO stat2018.log_4_net - MSS 11o LinqError: wiersz=null
-2020-05-26 08:28:29,562  INFO stat2018.log_4_net -  nrWiersza ='1' and nrKolumny='9'
-2020-05-26 08:28:29,562  INFO stat2018.log_4_net - MSS 11o LinqError: wiersz=null
-2020-05-26 08:28:29,562  INFO stat2018.log_4_net -  nrWiersza ='1' and nrKolumny='10'
-2020-05-26 08:28:29,564  INFO stat2018.log_4_net - MSS 11o LinqError: wiersz=null
-2020-05-26 08:28:29,564  INFO stat2018.log_4_net -  nrWiersza ='1' and nrKolumny='11'
-2020-05-26 08:28:29,564  INFO stat2018.log_4_net - MSS 11o LinqError: wiersz=null
-2020-05-26 08:28:29,565  INFO stat2018.log_4_net -  nrWiersza ='1' and nrKolumny='12'
-2020-05-26 08:28:29,565  INFO stat2018.log_4_net - MSS 11o LinqError: wiersz=null
-2020-05-26 08:28:29,565  INFO stat2018.log_4_net -  nrWiersza ='1' and nrKolumny='13'
-2020-05-26 08:28:29,566  INFO stat2018.log_4_net - MSS 11o LinqError: wiersz=null
-2020-05-26 08:28:29,566  INFO stat2018.log_4_net -  nrWiersza ='1' and nrKolumny='14'
-2020-05-26 08:28:29,566  INFO stat2018.log_4_net - MSS 11o LinqError: wiersz=null
-2020-05-26 08:28:29,568  INFO stat2018.log_4_net - tabela : 13.2 nrWiersza ='2' and nrKolumny='1'
-2020-05-26 08:28:29,575  INFO stat2018.log_4_net -  nrWiersza ='2' and nrKolumny='2'
-2020-05-26 08:28:29,576  INFO stat2018.log_4_net -  nrWiersza ='2' and nrKolumny='3'
-2020-05-26 08:28:29,576  INFO stat2018.log_4_net -  nrWiersza ='2' and nrKolumny='4'
-2020-05-26 08:28:29,576  INFO stat2018.log_4_net -  nrWiersza ='2' and nrKolumny='5'
-2020-05-26 08:28:29,576  INFO stat2018.log_4_net -  nrWiersza ='2' and nrKolumny='6'
-2020-05-26 08:28:29,576  INFO stat2018.log_4_net -  nrWiersza ='2' and nrKolumny='7'
-2020-05-26 08:28:29,577  INFO stat2018.log_4_net -  nrWiersza ='2' and nrKolumny='8'
-2020-05-26 08:28:29,577  INFO stat2018.log_4_net -  nrWiersza ='2' and nrKolumny='9'
-2020-05-26 08:28:29,578  INFO stat2018.log_4_net -  nrWiersza ='2' and nrKolumny='10'
-2020-05-26 08:28:29,578  INFO stat2018.log_4_net -  nrWiersza ='2' and nrKolumny='11'
-2020-05-26 08:28:29,578  INFO stat2018.log_4_net -  nrWiersza ='2' and nrKolumny='12'
-2020-05-26 08:28:29,578  INFO stat2018.log_4_net - MSS 11o LinqError: wiersz=null
-2020-05-26 08:28:29,578  INFO stat2018.log_4_net -  nrWiersza ='2' and nrKolumny='13'
-2020-05-26 08:28:29,579  INFO stat2018.log_4_net - MSS 11o LinqError: wiersz=null
-2020-05-26 08:28:29,579  INFO stat2018.log_4_net -  nrWiersza ='2' and nrKolumny='14'
-2020-05-26 08:28:29,579  INFO stat2018.log_4_net - MSS 11o LinqError: wiersz=null
-2020-05-26 08:28:29,579  INFO stat2018.log_4_net - tabela : 13.2 nrWiersza ='3' and nrKolumny='1'
-2020-05-26 08:28:29,579  INFO stat2018.log_4_net -  nrWiersza ='3' and nrKolumny='2'
-2020-05-26 08:28:29,579  INFO stat2018.log_4_net - MSS 11o LinqError: wiersz=null
-2020-05-26 08:28:29,580  INFO stat2018.log_4_net -  nrWiersza ='3' and nrKolumny='3'
-2020-05-26 08:28:29,580  INFO stat2018.log_4_net - MSS 11o LinqError: wiersz=null
-2020-05-26 08:28:29,583  INFO stat2018.log_4_net -  nrWiersza ='3' and nrKolumny='4'
-2020-05-26 08:28:29,593  INFO stat2018.log_4_net - MSS 11o LinqError: wiersz=null
-2020-05-26 08:28:29,593  INFO stat2018.log_4_net -  nrWiersza ='3' and nrKolumny='5'
-2020-05-26 08:28:29,594  INFO stat2018.log_4_net - MSS 11o LinqError: wiersz=null
-2020-05-26 08:28:29,595  INFO stat2018.log_4_net -  nrWiersza ='3' and nrKolumny='6'
-2020-05-26 08:28:29,595  INFO stat2018.log_4_net - MSS 11o LinqError: wiersz=null
-2020-05-26 08:28:29,595  INFO stat2018.log_4_net -  nrWiersza ='3' and nrKolumny='7'
-2020-05-26 08:28:29,596  INFO stat2018.log_4_net - MSS 11o LinqError: wiersz=null
-2020-05-26 08:28:29,596  INFO stat2018.log_4_net -  nrWiersza ='3' and nrKolumny='8'
-2020-05-26 08:28:29,596  INFO stat2018.log_4_net - MSS 11o LinqError: wiersz=null
-2020-05-26 08:28:29,596  INFO stat2018.log_4_net -  nrWiersza ='3' and nrKolumny='9'
-2020-05-26 08:28:29,596  INFO stat2018.log_4_net - MSS 11o LinqError: wiersz=null
-2020-05-26 08:28:29,596  INFO stat2018.log_4_net -  nrWiersza ='3' and nrKolumny='10'
-2020-05-26 08:28:29,597  INFO stat2018.log_4_net - MSS 11o LinqError: wiersz=null
-2020-05-26 08:28:29,597  INFO stat2018.log_4_net -  nrWiersza ='3' and nrKolumny='11'
-2020-05-26 08:28:29,597  INFO stat2018.log_4_net - MSS 11o LinqError: wiersz=null
-2020-05-26 08:28:29,597  INFO stat2018.log_4_net -  nrWiersza ='3' and nrKolumny='12'
-2020-05-26 08:28:29,598  INFO stat2018.log_4_net - MSS 11o LinqError: wiersz=null
-2020-05-26 08:28:29,598  INFO stat2018.log_4_net -  nrWiersza ='3' and nrKolumny='13'
-2020-05-26 08:28:29,598  INFO stat2018.log_4_net - MSS 11o LinqError: wiersz=null
-2020-05-26 08:28:29,598  INFO stat2018.log_4_net -  nrWiersza ='3' and nrKolumny='14'
-2020-05-26 08:28:29,598  INFO stat2018.log_4_net - MSS 11o LinqError: wiersz=null
-2020-05-26 08:28:29,660  INFO stat2018.log_4_net - tabela : 14.2 nrWiersza ='1' and nrKolumny='1'
-2020-05-26 08:28:29,672  INFO stat2018.log_4_net -  nrWiersza ='1' and nrKolumny='2'
-2020-05-26 08:28:29,684  INFO stat2018.log_4_net -  nrWiersza ='1' and nrKolumny='3'
-2020-05-26 08:28:29,686  INFO stat2018.log_4_net -  nrWiersza ='1' and nrKolumny='4'
-2020-05-26 08:28:29,688  INFO stat2018.log_4_net -  nrWiersza ='1' and nrKolumny='5'
-2020-05-26 08:28:29,690  INFO stat2018.log_4_net -  nrWiersza ='1' and nrKolumny='6'
-2020-05-26 08:28:29,690  INFO stat2018.log_4_net -  nrWiersza ='1' and nrKolumny='7'
-2020-05-26 08:28:29,691  INFO stat2018.log_4_net -  nrWiersza ='1' and nrKolumny='8'
-2020-05-26 08:28:29,691  INFO stat2018.log_4_net -  nrWiersza ='1' and nrKolumny='9'
-2020-05-26 08:28:29,691  INFO stat2018.log_4_net - MSS 11o LinqError: wiersz=null
-2020-05-26 08:28:29,691  INFO stat2018.log_4_net -  nrWiersza ='1' and nrKolumny='10'
-2020-05-26 08:28:29,691  INFO stat2018.log_4_net - MSS 11o LinqError: wiersz=null
-2020-05-26 08:28:29,692  INFO stat2018.log_4_net -  nrWiersza ='1' and nrKolumny='11'
-2020-05-26 08:28:29,692  INFO stat2018.log_4_net - MSS 11o LinqError: wiersz=null
-2020-05-26 08:28:29,692  INFO stat2018.log_4_net -  nrWiersza ='1' and nrKolumny='12'
-2020-05-26 08:28:29,692  INFO stat2018.log_4_net - MSS 11o LinqError: wiersz=null
-2020-05-26 08:28:29,692  INFO stat2018.log_4_net -  nrWiersza ='1' and nrKolumny='13'
-2020-05-26 08:28:29,693  INFO stat2018.log_4_net - MSS 11o LinqError: wiersz=null
-2020-05-26 08:28:29,693  INFO stat2018.log_4_net -  nrWiersza ='1' and nrKolumny='14'
-2020-05-26 08:28:29,693  INFO stat2018.log_4_net - MSS 11o LinqError: wiersz=null
-2020-05-26 08:28:29,694  INFO stat2018.log_4_net -  nrWiersza ='1' and nrKolumny='15'
-2020-05-26 08:28:29,694  INFO stat2018.log_4_net - MSS 11o LinqError: wiersz=null
-2020-05-26 08:28:29,694  INFO stat2018.log_4_net -  nrWiersza ='1' and nrKolumny='16'
-2020-05-26 08:28:29,694  INFO stat2018.log_4_net - MSS 11o LinqError: wiersz=null
-2020-05-26 08:28:29,694  INFO stat2018.log_4_net -  nrWiersza ='1' and nrKolumny='17'
-2020-05-26 08:28:29,695  INFO stat2018.log_4_net - MSS 11o LinqError: wiersz=null
-2020-05-26 08:28:29,695  INFO stat2018.log_4_net -  nrWiersza ='1' and nrKolumny='18'
-2020-05-26 08:28:29,695  INFO stat2018.log_4_net - MSS 11o LinqError: wiersz=null
-2020-05-26 08:28:29,695  INFO stat2018.log_4_net -  nrWiersza ='1' and nrKolumny='19'
-2020-05-26 08:28:29,695  INFO stat2018.log_4_net - MSS 11o LinqError: wiersz=null
-2020-05-26 08:28:29,696  INFO stat2018.log_4_net -  nrWiersza ='1' and nrKolumny='20'
-2020-05-26 08:28:29,696  INFO stat2018.log_4_net - MSS 11o LinqError: wiersz=null
-2020-05-26 08:28:29,696  INFO stat2018.log_4_net -  nrWiersza ='1' and nrKolumny='21'
-2020-05-26 08:28:29,696  INFO stat2018.log_4_net - MSS 11o LinqError: wiersz=null
-2020-05-26 08:28:29,696  INFO stat2018.log_4_net -  nrWiersza ='1' and nrKolumny='22'
-2020-05-26 08:28:29,696  INFO stat2018.log_4_net - MSS 11o LinqError: wiersz=null
-2020-05-26 08:28:29,697  INFO stat2018.log_4_net -  nrWiersza ='1' and nrKolumny='23'
-2020-05-26 08:28:29,697  INFO stat2018.log_4_net - MSS 11o LinqError: wiersz=null
-2020-05-26 08:28:29,697  INFO stat2018.log_4_net -  nrWiersza ='1' and nrKolumny='24'
-2020-05-26 08:28:29,697  INFO stat2018.log_4_net - MSS 11o LinqError: wiersz=null
-2020-05-26 08:28:29,697  INFO stat2018.log_4_net -  nrWiersza ='1' and nrKolumny='25'
-2020-05-26 08:28:29,697  INFO stat2018.log_4_net - MSS 11o LinqError: wiersz=null
-2020-05-26 08:28:29,697  INFO stat2018.log_4_net -  nrWiersza ='1' and nrKolumny='26'
-2020-05-26 08:28:29,698  INFO stat2018.log_4_net - MSS 11o LinqError: wiersz=null
-2020-05-26 08:28:29,703  INFO stat2018.log_4_net -  nrWiersza ='1' and nrKolumny='27'
-2020-05-26 08:28:29,704  INFO stat2018.log_4_net - MSS 11o LinqError: wiersz=null
-2020-05-26 08:28:29,704  INFO stat2018.log_4_net -  nrWiersza ='1' and nrKolumny='28'
-2020-05-26 08:28:29,705  INFO stat2018.log_4_net - MSS 11o LinqError: wiersz=null
-2020-05-26 08:28:29,705  INFO stat2018.log_4_net -  nrWiersza ='1' and nrKolumny='29'
-2020-05-26 08:28:29,705  INFO stat2018.log_4_net - MSS 11o LinqError: wiersz=null
-2020-05-26 08:28:29,705  INFO stat2018.log_4_net -  nrWiersza ='1' and nrKolumny='30'
-2020-05-26 08:28:29,706  INFO stat2018.log_4_net - MSS 11o LinqError: wiersz=null
-2020-05-26 08:28:29,706  INFO stat2018.log_4_net -  nrWiersza ='1' and nrKolumny='31'
-2020-05-26 08:28:29,706  INFO stat2018.log_4_net - MSS 11o LinqError: wiersz=null
-2020-05-26 08:28:29,706  INFO stat2018.log_4_net - tabela : 14.2 nrWiersza ='2' and nrKolumny='1'
-2020-05-26 08:28:29,706  INFO stat2018.log_4_net -  nrWiersza ='2' and nrKolumny='2'
-2020-05-26 08:28:29,707  INFO stat2018.log_4_net -  nrWiersza ='2' and nrKolumny='3'
-2020-05-26 08:28:29,707  INFO stat2018.log_4_net -  nrWiersza ='2' and nrKolumny='4'
-2020-05-26 08:28:29,707  INFO stat2018.log_4_net -  nrWiersza ='2' and nrKolumny='5'
-2020-05-26 08:28:29,708  INFO stat2018.log_4_net -  nrWiersza ='2' and nrKolumny='6'
-2020-05-26 08:28:29,708  INFO stat2018.log_4_net -  nrWiersza ='2' and nrKolumny='7'
-2020-05-26 08:28:29,709  INFO stat2018.log_4_net -  nrWiersza ='2' and nrKolumny='8'
-2020-05-26 08:28:29,709  INFO stat2018.log_4_net -  nrWiersza ='2' and nrKolumny='9'
-2020-05-26 08:28:29,712  INFO stat2018.log_4_net -  nrWiersza ='2' and nrKolumny='10'
-2020-05-26 08:28:29,712  INFO stat2018.log_4_net -  nrWiersza ='2' and nrKolumny='11'
-2020-05-26 08:28:29,713  INFO stat2018.log_4_net -  nrWiersza ='2' and nrKolumny='12'
-2020-05-26 08:28:29,713  INFO stat2018.log_4_net -  nrWiersza ='2' and nrKolumny='13'
-2020-05-26 08:28:29,713  INFO stat2018.log_4_net -  nrWiersza ='2' and nrKolumny='14'
-2020-05-26 08:28:29,713  INFO stat2018.log_4_net -  nrWiersza ='2' and nrKolumny='15'
-2020-05-26 08:28:29,714  INFO stat2018.log_4_net -  nrWiersza ='2' and nrKolumny='16'
-2020-05-26 08:28:29,714  INFO stat2018.log_4_net -  nrWiersza ='2' and nrKolumny='17'
-2020-05-26 08:28:29,714  INFO stat2018.log_4_net -  nrWiersza ='2' and nrKolumny='18'
-2020-05-26 08:28:29,714  INFO stat2018.log_4_net -  nrWiersza ='2' and nrKolumny='19'
-2020-05-26 08:28:29,715  INFO stat2018.log_4_net -  nrWiersza ='2' and nrKolumny='20'
-2020-05-26 08:28:29,715  INFO stat2018.log_4_net -  nrWiersza ='2' and nrKolumny='21'
-2020-05-26 08:28:29,715  INFO stat2018.log_4_net -  nrWiersza ='2' and nrKolumny='22'
-2020-05-26 08:28:29,716  INFO stat2018.log_4_net -  nrWiersza ='2' and nrKolumny='23'
-2020-05-26 08:28:29,716  INFO stat2018.log_4_net -  nrWiersza ='2' and nrKolumny='24'
-2020-05-26 08:28:29,717  INFO stat2018.log_4_net -  nrWiersza ='2' and nrKolumny='25'
-2020-05-26 08:28:29,718  INFO stat2018.log_4_net -  nrWiersza ='2' and nrKolumny='26'
-2020-05-26 08:28:29,718  INFO stat2018.log_4_net -  nrWiersza ='2' and nrKolumny='27'
-2020-05-26 08:28:29,719  INFO stat2018.log_4_net -  nrWiersza ='2' and nrKolumny='28'
-2020-05-26 08:28:29,719  INFO stat2018.log_4_net -  nrWiersza ='2' and nrKolumny='29'
-2020-05-26 08:28:29,720  INFO stat2018.log_4_net - MSS 11o LinqError: wiersz=null
-2020-05-26 08:28:29,720  INFO stat2018.log_4_net -  nrWiersza ='2' and nrKolumny='30'
-2020-05-26 08:28:29,720  INFO stat2018.log_4_net - MSS 11o LinqError: wiersz=null
-2020-05-26 08:28:29,720  INFO stat2018.log_4_net -  nrWiersza ='2' and nrKolumny='31'
-2020-05-26 08:28:29,720  INFO stat2018.log_4_net - MSS 11o LinqError: wiersz=null
-2020-05-26 08:28:29,761  INFO stat2018.log_4_net - tabela : 15.1 nrWiersza ='1' and nrKolumny='1'
-2020-05-26 08:28:29,762  INFO stat2018.log_4_net -  nrWiersza ='1' and nrKolumny='2'
-2020-05-26 08:28:29,762  INFO stat2018.log_4_net -  nrWiersza ='1' and nrKolumny='3'
-2020-05-26 08:28:29,762  INFO stat2018.log_4_net - MSS 11o LinqError: wiersz=null
-2020-05-26 08:28:29,762  INFO stat2018.log_4_net -  nrWiersza ='1' and nrKolumny='4'
-2020-05-26 08:28:29,763  INFO stat2018.log_4_net - MSS 11o LinqError: wiersz=null
-2020-05-26 08:28:29,763  INFO stat2018.log_4_net -  nrWiersza ='1' and nrKolumny='5'
-2020-05-26 08:28:29,763  INFO stat2018.log_4_net - MSS 11o LinqError: wiersz=null
-2020-05-26 08:28:29,763  INFO stat2018.log_4_net -  nrWiersza ='1' and nrKolumny='6'
-2020-05-26 08:28:29,763  INFO stat2018.log_4_net - MSS 11o LinqError: wiersz=null
-2020-05-26 08:28:29,764  INFO stat2018.log_4_net - tabela : 15.1 nrWiersza ='2' and nrKolumny='1'
-2020-05-26 08:28:29,764  INFO stat2018.log_4_net -  nrWiersza ='2' and nrKolumny='2'
-2020-05-26 08:28:29,764  INFO stat2018.log_4_net -  nrWiersza ='2' and nrKolumny='3'
-2020-05-26 08:28:29,764  INFO stat2018.log_4_net -  nrWiersza ='2' and nrKolumny='4'
-2020-05-26 08:28:29,764  INFO stat2018.log_4_net -  nrWiersza ='2' and nrKolumny='5'
-2020-05-26 08:28:29,765  INFO stat2018.log_4_net - MSS 11o LinqError: wiersz=null
-2020-05-26 08:28:29,765  INFO stat2018.log_4_net -  nrWiersza ='2' and nrKolumny='6'
-2020-05-26 08:28:29,765  INFO stat2018.log_4_net - MSS 11o LinqError: wiersz=null
-2020-05-26 08:28:30,992  INFO stat2018.log_4_net - start tworzenia Ste1   08:28:30
-2020-05-26 08:28:30,993  INFO stat2018.log_4_net - start tworzenia menu   08:28:30
-2020-05-26 08:28:31,005  INFO stat2018.log_4_net - koniec tworzenia manu   08:28:31
-2020-05-26 08:38:04,447  INFO stat2018.log_4_net - uruchomienie logowania
-2020-05-26 08:38:04,450  INFO stat2018.log_4_net - rozpoczecie logowania 08:38:04
-2020-05-26 08:38:09,436  INFO stat2018.log_4_net - blad logowania domenowego  08:38:09
-2020-05-26 08:38:09,439  INFO stat2018.log_4_net - próba logowania z bazy  08:38:09
-2020-05-26 08:38:09,503  INFO stat2018.log_4_net - Logowanie: identyfikator uzytkownika: test to 6
-2020-05-26 08:38:09,504  INFO stat2018.log_4_net - logowania z bazy poprawne  08:38:09
-2020-05-26 08:38:09,506  INFO stat2018.log_4_net - uruchomienie  redirector.aspx 08:38:09
-2020-05-26 08:38:09,517  INFO stat2018.log_4_net - start redirektora  08:38:09
-2020-05-26 08:38:09,518  INFO stat2018.log_4_net - start tworzenia Ste1   08:38:09
-2020-05-26 08:38:09,519  INFO stat2018.log_4_net - start tworzenia menu  daneDoManuMiesieczne  08:38:09
-2020-05-26 08:38:09,535  INFO stat2018.log_4_net -  getDataTable - parametetr name= @identyfikatorUzytkownika wartosc: 6
-2020-05-26 08:38:09,538  INFO stat2018.log_4_net - start tworzenia menu  daneDoManuKontrolek 08:38:09
-2020-05-26 08:38:09,547  INFO stat2018.log_4_net - naglowek getDataTable - parametetr name= @identyfikatorUzytkownika wartosc: 6
-2020-05-26 08:38:09,551  INFO stat2018.log_4_net - start tworzenia menu  daneDoManuMSS 08:38:09
-2020-05-26 08:38:09,552  INFO stat2018.log_4_net - Naglowki getDataTable - parametetr name= @identyfikatorUzytkownika wartosc: 6
-2020-05-26 08:38:09,556  INFO stat2018.log_4_net - start tworzenia menu daneDoManuInne  08:38:09
-2020-05-26 08:38:09,583  INFO stat2018.log_4_net - start tworzenia menu wyloguj  08:38:09
-2020-05-26 08:38:09,592  INFO stat2018.log_4_net - Header: Rozpoczecie procedury tworzenia elementów menu wyloguj
-2020-05-26 08:38:09,627  INFO stat2018.log_4_net - koniec tworzenia manu   08:38:09
-2020-05-26 08:38:10,221  INFO stat2018.log_4_net - uruchomienie logowania
-2020-05-26 08:38:10,222  INFO stat2018.log_4_net - rozpoczecie logowania 08:38:10
-2020-05-26 08:38:10,848  INFO stat2018.log_4_net - blad logowania domenowego  08:38:10
-2020-05-26 08:38:10,850  INFO stat2018.log_4_net - próba logowania z bazy  08:38:10
-2020-05-26 08:38:10,864  INFO stat2018.log_4_net - Logowanie: identyfikator uzytkownika: test to 6
-2020-05-26 08:38:10,864  INFO stat2018.log_4_net - logowania z bazy poprawne  08:38:10
-2020-05-26 08:38:10,873  INFO stat2018.log_4_net - uruchomienie  redirector.aspx 08:38:10
-2020-05-26 08:38:10,876  INFO stat2018.log_4_net - start redirektora  08:38:10
-2020-05-26 08:38:10,877  INFO stat2018.log_4_net - start tworzenia Ste1   08:38:10
-2020-05-26 08:38:10,877  INFO stat2018.log_4_net - start tworzenia menu  daneDoManuMiesieczne  08:38:10
-2020-05-26 08:38:10,880  INFO stat2018.log_4_net -  getDataTable - parametetr name= @identyfikatorUzytkownika wartosc: 6
-2020-05-26 08:38:10,882  INFO stat2018.log_4_net - start tworzenia menu  daneDoManuKontrolek 08:38:10
-2020-05-26 08:38:10,883  INFO stat2018.log_4_net - naglowek getDataTable - parametetr name= @identyfikatorUzytkownika wartosc: 6
-2020-05-26 08:38:10,885  INFO stat2018.log_4_net - start tworzenia menu  daneDoManuMSS 08:38:10
-2020-05-26 08:38:10,891  INFO stat2018.log_4_net - Naglowki getDataTable - parametetr name= @identyfikatorUzytkownika wartosc: 6
-2020-05-26 08:38:10,894  INFO stat2018.log_4_net - start tworzenia menu daneDoManuInne  08:38:10
-2020-05-26 08:38:10,898  INFO stat2018.log_4_net - start tworzenia menu wyloguj  08:38:10
-2020-05-26 08:38:10,898  INFO stat2018.log_4_net - Header: Rozpoczecie procedury tworzenia elementów menu wyloguj
-2020-05-26 08:38:10,910  INFO stat2018.log_4_net - koniec tworzenia manu   08:38:10
+2020-06-08 12:49:16,641  INFO stat2018.log_4_net - start tworzenia Ste1   12:49:16
+2020-06-08 12:49:16,700  INFO stat2018.log_4_net - Site1.Master:Brak przeniesienia z logowania identyfikatora numerycznego Uzytkownika! 
+2020-06-08 12:49:16,700  INFO stat2018.log_4_net - Odwolanie do obiektu nie zostalo ustawione na wystapienie obiektu.
+2020-06-08 12:49:24,986  INFO stat2018.log_4_net - uruchomienie logowania
+2020-06-08 12:49:24,987  INFO stat2018.log_4_net - rozpoczecie logowania 12:49:24
+2020-06-08 12:49:25,190  INFO stat2018.log_4_net - rozpoczecie logowania domenowego 12:49:25
+2020-06-08 12:49:26,270  INFO stat2018.log_4_net - rozpoczecie logowania z bazy danych 12:49:26
+2020-06-08 12:49:26,277  INFO stat2018.log_4_net - Logowanie: identyfikator uzytkownika: test to 6
+2020-06-08 12:49:26,277  INFO stat2018.log_4_net - wynik logowania z bazy danych 12:49:26
+2020-06-08 12:49:26,277  INFO stat2018.log_4_net - uzytkownik zgodny 12:49:26
+2020-06-08 12:49:26,278  INFO stat2018.log_4_net - uruchomienie  redirector.aspx 12:49:26
+2020-06-08 12:49:26,365  INFO stat2018.log_4_net - start redirektora  12:49:26
+2020-06-08 12:49:26,366  INFO stat2018.log_4_net - start tworzenia Ste1   12:49:26
+2020-06-08 12:49:26,366  INFO stat2018.log_4_net - start tworzenia menu  daneDoManuMiesieczne  12:49:26
+2020-06-08 12:49:26,381  INFO stat2018.log_4_net -  getDataTable - parametetr name= @identyfikatorUzytkownika wartosc: 6
+2020-06-08 12:49:26,383  INFO stat2018.log_4_net - start tworzenia menu  daneDoManuKontrolek 12:49:26
+2020-06-08 12:49:26,389  INFO stat2018.log_4_net - naglowek getDataTable - parametetr name= @identyfikatorUzytkownika wartosc: 6
+2020-06-08 12:49:26,390  INFO stat2018.log_4_net - start tworzenia menu  daneDoManuMSS 12:49:26
+2020-06-08 12:49:26,413  INFO stat2018.log_4_net - Naglowki getDataTable - parametetr name= @identyfikatorUzytkownika wartosc: 6
+2020-06-08 12:49:26,416  INFO stat2018.log_4_net - start tworzenia menu daneDoManuInne  12:49:26
+2020-06-08 12:49:26,432  INFO stat2018.log_4_net - start tworzenia menu wyloguj  12:49:26
+2020-06-08 12:49:26,436  INFO stat2018.log_4_net - Header: Rozpoczecie procedury tworzenia elementów menu wyloguj
+2020-06-08 12:49:26,445  INFO stat2018.log_4_net - koniec tworzenia manu   12:49:26
+2020-06-08 12:49:26,566  INFO stat2018.log_4_net - uruchomienie logowania
+2020-06-08 12:49:26,566  INFO stat2018.log_4_net - rozpoczecie logowania 12:49:26
+2020-06-08 12:49:26,736  INFO stat2018.log_4_net - rozpoczecie logowania domenowego 12:49:26
+2020-06-08 12:49:28,335  INFO stat2018.log_4_net - rozpoczecie logowania z bazy danych 12:49:28
+2020-06-08 12:49:28,336  INFO stat2018.log_4_net - Logowanie: identyfikator uzytkownika: test to 6
+2020-06-08 12:49:28,337  INFO stat2018.log_4_net - wynik logowania z bazy danych 12:49:28
+2020-06-08 12:49:28,337  INFO stat2018.log_4_net - uzytkownik zgodny 12:49:28
+2020-06-08 12:49:28,338  INFO stat2018.log_4_net - uruchomienie  redirector.aspx 12:49:28
+2020-06-08 12:49:28,340  INFO stat2018.log_4_net - start redirektora  12:49:28
+2020-06-08 12:49:28,341  INFO stat2018.log_4_net - start tworzenia Ste1   12:49:28
+2020-06-08 12:49:28,341  INFO stat2018.log_4_net - start tworzenia menu  daneDoManuMiesieczne  12:49:28
+2020-06-08 12:49:28,342  INFO stat2018.log_4_net -  getDataTable - parametetr name= @identyfikatorUzytkownika wartosc: 6
+2020-06-08 12:49:28,343  INFO stat2018.log_4_net - start tworzenia menu  daneDoManuKontrolek 12:49:28
+2020-06-08 12:49:28,343  INFO stat2018.log_4_net - naglowek getDataTable - parametetr name= @identyfikatorUzytkownika wartosc: 6
+2020-06-08 12:49:28,344  INFO stat2018.log_4_net - start tworzenia menu  daneDoManuMSS 12:49:28
+2020-06-08 12:49:28,345  INFO stat2018.log_4_net - Naglowki getDataTable - parametetr name= @identyfikatorUzytkownika wartosc: 6
+2020-06-08 12:49:28,347  INFO stat2018.log_4_net - start tworzenia menu daneDoManuInne  12:49:28
+2020-06-08 12:49:28,349  INFO stat2018.log_4_net - start tworzenia menu wyloguj  12:49:28
+2020-06-08 12:49:28,349  INFO stat2018.log_4_net - Header: Rozpoczecie procedury tworzenia elementów menu wyloguj
+2020-06-08 12:49:28,350  INFO stat2018.log_4_net - koniec tworzenia manu   12:49:28
+2020-06-08 12:49:51,600  INFO stat2018.log_4_net - oopr.aspx: rozpoczecie tworzenia tabeli 5
+2020-06-08 12:49:51,624  INFO stat2018.log_4_net - oopr.aspx :Generowanie tabeli danych: Wyciadniecie kwerend dla tabeli :5
+2020-06-08 12:49:51,624  INFO stat2018.log_4_net - oopr.aspx getDataTable - parametetr name= @id_tabeli wartosc: 5
+2020-06-08 12:49:51,624  INFO stat2018.log_4_net - oopr.aspx getDataTable - parametetr name= @id_dzialu wartosc: 12
+2020-06-08 12:49:51,631  INFO stat2018.log_4_net - oopr.aspx :Generowanie tabeli danych: Wpisywanie danych sedziów dla tabeli : 5
+2020-06-08 12:49:51,632  INFO stat2018.log_4_net - oopr.aspx :Generowanie tabeli danych: Wpisywanie danych sedziów dla tabeli -> parametr data_1: 2020-05-01
+2020-06-08 12:49:51,632  INFO stat2018.log_4_net - oopr.aspx :Generowanie tabeli danych: Wpisywanie danych sedziów dla tabeli -> parametr data_2: 2020-05-31
+2020-06-08 12:49:51,632  INFO stat2018.log_4_net - oopr.aspx getDataTable - parametetr name= @data_1 wartosc: 2020-05-01
+2020-06-08 12:49:51,633  INFO stat2018.log_4_net - oopr.aspx getDataTable - parametetr name= @data_2 wartosc: 2020-05-31
+2020-06-08 12:49:51,656  INFO stat2018.log_4_net - oopr.aspx getDataTable - parametetr name= @data_1 wartosc: 2020-05-01
+2020-06-08 12:49:51,656  INFO stat2018.log_4_net - oopr.aspx getDataTable - parametetr name= @data_2 wartosc: 2020-05-31
+2020-06-08 12:49:51,657  INFO stat2018.log_4_net - oopr.aspx getDataTable - parametetr name= @data_1 wartosc: 2020-05-01
+2020-06-08 12:49:51,657  INFO stat2018.log_4_net - oopr.aspx getDataTable - parametetr name= @data_2 wartosc: 2020-05-31
+2020-06-08 12:49:51,659  INFO stat2018.log_4_net - oopr.aspx getDataTable - parametetr name= @data_1 wartosc: 2020-05-01
+2020-06-08 12:49:51,659  INFO stat2018.log_4_net - oopr.aspx getDataTable - parametetr name= @data_2 wartosc: 2020-05-31
+2020-06-08 12:49:51,661  INFO stat2018.log_4_net - oopr.aspx getDataTable - parametetr name= @data_1 wartosc: 2020-05-01
+2020-06-08 12:49:51,661  INFO stat2018.log_4_net - oopr.aspx getDataTable - parametetr name= @data_2 wartosc: 2020-05-31
+2020-06-08 12:49:51,663  INFO stat2018.log_4_net - oopr.aspx getDataTable - parametetr name= @data_1 wartosc: 2020-05-01
+2020-06-08 12:49:51,663  INFO stat2018.log_4_net - oopr.aspx getDataTable - parametetr name= @data_2 wartosc: 2020-05-31
+2020-06-08 12:49:51,666  INFO stat2018.log_4_net - oopr.aspx getDataTable - parametetr name= @data_1 wartosc: 2020-05-01
+2020-06-08 12:49:51,666  INFO stat2018.log_4_net - oopr.aspx getDataTable - parametetr name= @data_2 wartosc: 2020-05-31
+2020-06-08 12:49:51,667  INFO stat2018.log_4_net - oopr.aspx getDataTable - parametetr name= @data_1 wartosc: 2020-05-01
+2020-06-08 12:49:51,667  INFO stat2018.log_4_net - oopr.aspx getDataTable - parametetr name= @data_2 wartosc: 2020-05-31
+2020-06-08 12:49:51,672  INFO stat2018.log_4_net - oopr.aspx getDataTable - parametetr name= @data_1 wartosc: 2020-05-01
+2020-06-08 12:49:51,672  INFO stat2018.log_4_net - oopr.aspx getDataTable - parametetr name= @data_2 wartosc: 2020-05-31
+2020-06-08 12:49:51,673  INFO stat2018.log_4_net - oopr.aspx getDataTable - parametetr name= @data_1 wartosc: 2020-05-01
+2020-06-08 12:49:51,673  INFO stat2018.log_4_net - oopr.aspx getDataTable - parametetr name= @data_2 wartosc: 2020-05-31
+2020-06-08 12:49:52,181  INFO stat2018.log_4_net - sumowanie w stopce : Okreslony argument jest spoza zakresu prawidlowych wartosci.
+Nazwa parametru: index
+2020-06-08 12:49:52,194  INFO stat2018.log_4_net - start tworzenia Ste1   12:49:52
+2020-06-08 12:49:52,194  INFO stat2018.log_4_net - start tworzenia menu   12:49:52
+2020-06-08 12:49:52,195  INFO stat2018.log_4_net - koniec tworzenia manu   12:49:52

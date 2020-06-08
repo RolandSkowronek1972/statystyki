@@ -617,7 +617,7 @@
             &nbsp;<asp:Label ID="Label15" runat="server"></asp:Label>
             &nbsp;
     &nbsp;<asp:Label ID="infoLabel5" runat="server" Text="Tabela 4 \/" Visible="False"></asp:Label>
-            <asp:GridView ID="GridView4" runat="server" AutoGenerateColumns="False" OnRowCreated="GridView5_RowCreated" Width="100%" ShowHeader="False" OnRowDataBound="GridView5_RowDataBound" ShowFooter="True" OnSelectedIndexChanged="GridView4_SelectedIndexChanged">
+            <asp:GridView ID="GridView4" runat="server" AutoGenerateColumns="False" OnRowCreated="GridView5_RowCreated" Width="100%" ShowHeader="False" OnRowDataBound="GridView5_RowDataBound" ShowFooter="True">
                 <Columns>
                     <asp:BoundField DataField="id" HeaderText="L.p." SortExpression="id">
                         <ItemStyle Width="15px" />

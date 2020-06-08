@@ -600,21 +600,15 @@ namespace stat2018
             odswiez();
         }
 
-        protected void LinkButton55_Click(object sender, EventArgs e)
-        {
-            makeLabels();
-            odswiez();
-            ScriptManager.RegisterStartupScript(this.Page, Page.GetType(), "print2", "JavaScript: window.print();", true);
-            makeLabels();
-        }
+     
 
         protected void GridView1_RowCreated(object sender, GridViewRowEventArgs e)
         {
             if (e.Row.RowType == DataControlRowType.Header)
             {
-                System.Web.UI.WebControls.GridView sn = new System.Web.UI.WebControls.GridView();
+              
                 DataTable dT = (DataTable)Session["header_02"];
-                tabela.makeHeader(sn, dT, GridView1);
+                tabela.makeHeader(dT, GridView1);
             }
             else
             {
@@ -758,8 +752,6 @@ namespace stat2018
             GridView1.Controls[0].Controls.AddAt(e.Row.RowIndex + rowIndex, wierszTabeli3(idWiersza, idtabeli, "Powyżej 60 miesięcy (powyżej 5 lat) "));
         }
 
-        protected void GridView4_SelectedIndexChanged(object sender, EventArgs e)
-        {
-        }
+       
     }
 }
