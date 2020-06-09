@@ -1,75 +1,19 @@
-2020-06-08 12:49:16,641  INFO stat2018.log_4_net - start tworzenia Ste1   12:49:16
-2020-06-08 12:49:16,700  INFO stat2018.log_4_net - Site1.Master:Brak przeniesienia z logowania identyfikatora numerycznego Uzytkownika! 
-2020-06-08 12:49:16,700  INFO stat2018.log_4_net - Odwolanie do obiektu nie zostalo ustawione na wystapienie obiektu.
-2020-06-08 12:49:24,986  INFO stat2018.log_4_net - uruchomienie logowania
-2020-06-08 12:49:24,987  INFO stat2018.log_4_net - rozpoczecie logowania 12:49:24
-2020-06-08 12:49:25,190  INFO stat2018.log_4_net - rozpoczecie logowania domenowego 12:49:25
-2020-06-08 12:49:26,270  INFO stat2018.log_4_net - rozpoczecie logowania z bazy danych 12:49:26
-2020-06-08 12:49:26,277  INFO stat2018.log_4_net - Logowanie: identyfikator uzytkownika: test to 6
-2020-06-08 12:49:26,277  INFO stat2018.log_4_net - wynik logowania z bazy danych 12:49:26
-2020-06-08 12:49:26,277  INFO stat2018.log_4_net - uzytkownik zgodny 12:49:26
-2020-06-08 12:49:26,278  INFO stat2018.log_4_net - uruchomienie  redirector.aspx 12:49:26
-2020-06-08 12:49:26,365  INFO stat2018.log_4_net - start redirektora  12:49:26
-2020-06-08 12:49:26,366  INFO stat2018.log_4_net - start tworzenia Ste1   12:49:26
-2020-06-08 12:49:26,366  INFO stat2018.log_4_net - start tworzenia menu  daneDoManuMiesieczne  12:49:26
-2020-06-08 12:49:26,381  INFO stat2018.log_4_net -  getDataTable - parametetr name= @identyfikatorUzytkownika wartosc: 6
-2020-06-08 12:49:26,383  INFO stat2018.log_4_net - start tworzenia menu  daneDoManuKontrolek 12:49:26
-2020-06-08 12:49:26,389  INFO stat2018.log_4_net - naglowek getDataTable - parametetr name= @identyfikatorUzytkownika wartosc: 6
-2020-06-08 12:49:26,390  INFO stat2018.log_4_net - start tworzenia menu  daneDoManuMSS 12:49:26
-2020-06-08 12:49:26,413  INFO stat2018.log_4_net - Naglowki getDataTable - parametetr name= @identyfikatorUzytkownika wartosc: 6
-2020-06-08 12:49:26,416  INFO stat2018.log_4_net - start tworzenia menu daneDoManuInne  12:49:26
-2020-06-08 12:49:26,432  INFO stat2018.log_4_net - start tworzenia menu wyloguj  12:49:26
-2020-06-08 12:49:26,436  INFO stat2018.log_4_net - Header: Rozpoczecie procedury tworzenia elementów menu wyloguj
-2020-06-08 12:49:26,445  INFO stat2018.log_4_net - koniec tworzenia manu   12:49:26
-2020-06-08 12:49:26,566  INFO stat2018.log_4_net - uruchomienie logowania
-2020-06-08 12:49:26,566  INFO stat2018.log_4_net - rozpoczecie logowania 12:49:26
-2020-06-08 12:49:26,736  INFO stat2018.log_4_net - rozpoczecie logowania domenowego 12:49:26
-2020-06-08 12:49:28,335  INFO stat2018.log_4_net - rozpoczecie logowania z bazy danych 12:49:28
-2020-06-08 12:49:28,336  INFO stat2018.log_4_net - Logowanie: identyfikator uzytkownika: test to 6
-2020-06-08 12:49:28,337  INFO stat2018.log_4_net - wynik logowania z bazy danych 12:49:28
-2020-06-08 12:49:28,337  INFO stat2018.log_4_net - uzytkownik zgodny 12:49:28
-2020-06-08 12:49:28,338  INFO stat2018.log_4_net - uruchomienie  redirector.aspx 12:49:28
-2020-06-08 12:49:28,340  INFO stat2018.log_4_net - start redirektora  12:49:28
-2020-06-08 12:49:28,341  INFO stat2018.log_4_net - start tworzenia Ste1   12:49:28
-2020-06-08 12:49:28,341  INFO stat2018.log_4_net - start tworzenia menu  daneDoManuMiesieczne  12:49:28
-2020-06-08 12:49:28,342  INFO stat2018.log_4_net -  getDataTable - parametetr name= @identyfikatorUzytkownika wartosc: 6
-2020-06-08 12:49:28,343  INFO stat2018.log_4_net - start tworzenia menu  daneDoManuKontrolek 12:49:28
-2020-06-08 12:49:28,343  INFO stat2018.log_4_net - naglowek getDataTable - parametetr name= @identyfikatorUzytkownika wartosc: 6
-2020-06-08 12:49:28,344  INFO stat2018.log_4_net - start tworzenia menu  daneDoManuMSS 12:49:28
-2020-06-08 12:49:28,345  INFO stat2018.log_4_net - Naglowki getDataTable - parametetr name= @identyfikatorUzytkownika wartosc: 6
-2020-06-08 12:49:28,347  INFO stat2018.log_4_net - start tworzenia menu daneDoManuInne  12:49:28
-2020-06-08 12:49:28,349  INFO stat2018.log_4_net - start tworzenia menu wyloguj  12:49:28
-2020-06-08 12:49:28,349  INFO stat2018.log_4_net - Header: Rozpoczecie procedury tworzenia elementów menu wyloguj
-2020-06-08 12:49:28,350  INFO stat2018.log_4_net - koniec tworzenia manu   12:49:28
-2020-06-08 12:49:51,600  INFO stat2018.log_4_net - oopr.aspx: rozpoczecie tworzenia tabeli 5
-2020-06-08 12:49:51,624  INFO stat2018.log_4_net - oopr.aspx :Generowanie tabeli danych: Wyciadniecie kwerend dla tabeli :5
-2020-06-08 12:49:51,624  INFO stat2018.log_4_net - oopr.aspx getDataTable - parametetr name= @id_tabeli wartosc: 5
-2020-06-08 12:49:51,624  INFO stat2018.log_4_net - oopr.aspx getDataTable - parametetr name= @id_dzialu wartosc: 12
-2020-06-08 12:49:51,631  INFO stat2018.log_4_net - oopr.aspx :Generowanie tabeli danych: Wpisywanie danych sedziów dla tabeli : 5
-2020-06-08 12:49:51,632  INFO stat2018.log_4_net - oopr.aspx :Generowanie tabeli danych: Wpisywanie danych sedziów dla tabeli -> parametr data_1: 2020-05-01
-2020-06-08 12:49:51,632  INFO stat2018.log_4_net - oopr.aspx :Generowanie tabeli danych: Wpisywanie danych sedziów dla tabeli -> parametr data_2: 2020-05-31
-2020-06-08 12:49:51,632  INFO stat2018.log_4_net - oopr.aspx getDataTable - parametetr name= @data_1 wartosc: 2020-05-01
-2020-06-08 12:49:51,633  INFO stat2018.log_4_net - oopr.aspx getDataTable - parametetr name= @data_2 wartosc: 2020-05-31
-2020-06-08 12:49:51,656  INFO stat2018.log_4_net - oopr.aspx getDataTable - parametetr name= @data_1 wartosc: 2020-05-01
-2020-06-08 12:49:51,656  INFO stat2018.log_4_net - oopr.aspx getDataTable - parametetr name= @data_2 wartosc: 2020-05-31
-2020-06-08 12:49:51,657  INFO stat2018.log_4_net - oopr.aspx getDataTable - parametetr name= @data_1 wartosc: 2020-05-01
-2020-06-08 12:49:51,657  INFO stat2018.log_4_net - oopr.aspx getDataTable - parametetr name= @data_2 wartosc: 2020-05-31
-2020-06-08 12:49:51,659  INFO stat2018.log_4_net - oopr.aspx getDataTable - parametetr name= @data_1 wartosc: 2020-05-01
-2020-06-08 12:49:51,659  INFO stat2018.log_4_net - oopr.aspx getDataTable - parametetr name= @data_2 wartosc: 2020-05-31
-2020-06-08 12:49:51,661  INFO stat2018.log_4_net - oopr.aspx getDataTable - parametetr name= @data_1 wartosc: 2020-05-01
-2020-06-08 12:49:51,661  INFO stat2018.log_4_net - oopr.aspx getDataTable - parametetr name= @data_2 wartosc: 2020-05-31
-2020-06-08 12:49:51,663  INFO stat2018.log_4_net - oopr.aspx getDataTable - parametetr name= @data_1 wartosc: 2020-05-01
-2020-06-08 12:49:51,663  INFO stat2018.log_4_net - oopr.aspx getDataTable - parametetr name= @data_2 wartosc: 2020-05-31
-2020-06-08 12:49:51,666  INFO stat2018.log_4_net - oopr.aspx getDataTable - parametetr name= @data_1 wartosc: 2020-05-01
-2020-06-08 12:49:51,666  INFO stat2018.log_4_net - oopr.aspx getDataTable - parametetr name= @data_2 wartosc: 2020-05-31
-2020-06-08 12:49:51,667  INFO stat2018.log_4_net - oopr.aspx getDataTable - parametetr name= @data_1 wartosc: 2020-05-01
-2020-06-08 12:49:51,667  INFO stat2018.log_4_net - oopr.aspx getDataTable - parametetr name= @data_2 wartosc: 2020-05-31
-2020-06-08 12:49:51,672  INFO stat2018.log_4_net - oopr.aspx getDataTable - parametetr name= @data_1 wartosc: 2020-05-01
-2020-06-08 12:49:51,672  INFO stat2018.log_4_net - oopr.aspx getDataTable - parametetr name= @data_2 wartosc: 2020-05-31
-2020-06-08 12:49:51,673  INFO stat2018.log_4_net - oopr.aspx getDataTable - parametetr name= @data_1 wartosc: 2020-05-01
-2020-06-08 12:49:51,673  INFO stat2018.log_4_net - oopr.aspx getDataTable - parametetr name= @data_2 wartosc: 2020-05-31
-2020-06-08 12:49:52,181  INFO stat2018.log_4_net - sumowanie w stopce : Okreslony argument jest spoza zakresu prawidlowych wartosci.
-Nazwa parametru: index
-2020-06-08 12:49:52,194  INFO stat2018.log_4_net - start tworzenia Ste1   12:49:52
-2020-06-08 12:49:52,194  INFO stat2018.log_4_net - start tworzenia menu   12:49:52
-2020-06-08 12:49:52,195  INFO stat2018.log_4_net - koniec tworzenia manu   12:49:52
+2020-06-08 18:35:47,825  INFO stat2018.log_4_net - uruchomienie logowania
+2020-06-08 18:35:47,884  INFO stat2018.log_4_net - rozpoczecie logowania 18:35:47
+2020-06-08 18:35:52,558  INFO stat2018.log_4_net - blad logowania domenowego  18:35:52
+2020-06-08 18:35:52,558  INFO stat2018.log_4_net - próba logowania z bazy  18:35:52
+2020-06-08 18:35:52,606  INFO stat2018.log_4_net - Logowanie: identyfikator uzytkownika: test to 6
+2020-06-08 18:35:52,606  INFO stat2018.log_4_net - logowania z bazy poprawne  18:35:52
+2020-06-08 18:35:52,609  INFO stat2018.log_4_net - uruchomienie  redirector.aspx 18:35:52
+2020-06-08 18:35:52,769  INFO stat2018.log_4_net - start redirektora  18:35:52
+2020-06-08 18:35:52,778  INFO stat2018.log_4_net - start tworzenia Ste1   18:35:52
+2020-06-08 18:35:52,778  INFO stat2018.log_4_net - start tworzenia menu  daneDoManuMiesieczne  18:35:52
+2020-06-08 18:35:52,793  INFO stat2018.log_4_net -  getDataTable - parametetr name= @identyfikatorUzytkownika wartosc: 6
+2020-06-08 18:35:52,796  INFO stat2018.log_4_net - start tworzenia menu  daneDoManuKontrolek 18:35:52
+2020-06-08 18:35:52,804  INFO stat2018.log_4_net - naglowek getDataTable - parametetr name= @identyfikatorUzytkownika wartosc: 6
+2020-06-08 18:35:52,806  INFO stat2018.log_4_net - start tworzenia menu  daneDoManuMSS 18:35:52
+2020-06-08 18:35:52,816  INFO stat2018.log_4_net - Naglowki getDataTable - parametetr name= @identyfikatorUzytkownika wartosc: 6
+2020-06-08 18:35:52,818  INFO stat2018.log_4_net - start tworzenia menu daneDoManuInne  18:35:52
+2020-06-08 18:35:52,831  INFO stat2018.log_4_net - start tworzenia menu wyloguj  18:35:52
+2020-06-08 18:35:52,836  INFO stat2018.log_4_net - Header: Rozpoczecie procedury tworzenia elementów menu wyloguj
+2020-06-08 18:35:52,849  INFO stat2018.log_4_net - koniec tworzenia manu   18:35:52
