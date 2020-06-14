@@ -324,14 +324,6 @@ namespace stat2018
             { }
         }
 
-        /*
-        protected void Button1_Click(object sender, EventArgs e)
-        {
-            odswiez();
-            ScriptManager.RegisterStartupScript(this.Page, Page.GetType(), "print2", "JavaScript: window.print();", true);
-            // ScriptManager.RegisterStartupScript(this.Page, Page.GetType(), "print", "window.open('raport_01_print.aspx', '')", true);
-        }*/
-
         protected void Button3_Click(object sender, EventArgs e)
         {
             string path = Server.MapPath("Template") + "\\oglc.xlsx";
@@ -365,7 +357,7 @@ namespace stat2018
                         MyWorksheet1.Cells[row2 + 7, i].Style.Border.BorderAround(OfficeOpenXml.Style.ExcelBorderStyle.Thin, System.Drawing.Color.Black);
                         try
                         {
-                            MyWorksheet1.Cells[row2 + 7, i].Value = table2x.Rows[row2-3][i-1].ToString();
+                            MyWorksheet1.Cells[row2 + 7, i].Value = table2x.Rows[row2-5][i-2].ToString();
 
                         }
                         catch 

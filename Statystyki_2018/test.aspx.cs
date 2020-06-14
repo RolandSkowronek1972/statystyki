@@ -336,7 +336,7 @@ namespace stat2018
 
             Label tblControl = new Label { ID = "kod01" };
             //(string path, int idDzialu, string tabela, DataTable tabelaDanych, string tenPlik, bool bezNaglowka)
-            tblControl.Text = (ms.odczytXML(path, 12, "2.1.1", ""));
+            tblControl.Text = (ms.odczytXML(path, 12, "3", ""));
 
             tblControl.Width = 1150;
 

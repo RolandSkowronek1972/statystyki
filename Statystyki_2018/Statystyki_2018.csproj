@@ -377,6 +377,7 @@
     <Content Include="Template\mk.xlsx" />
     <Content Include="Template\onsu.xlsx" />
     <Content Include="Template\onsr.xlsx" />
+    <Content Include="Template\otrkr.xlsx" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

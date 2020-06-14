@@ -16,31 +16,6 @@
 }
 
 
-            .auto-style1 {
-        color: Black;
-        text-decoration: none;
-        list-style-type: none;
-        position: relative;
-        overflow: hidden;
-        display: block;
-        opacity: 1;
-        background-color: rgba(255, 255, 255, 0.00);
-        padding: 8px 10px 0px 10px;
-        background-repeat: no-repeat;
-        background-position: 50% 50%;
-        background-size: auto 1.11111em;
-        outline-offset: -0.22222em;
-        -webkit-tap-highlight-color: transparent;
-        -webkit-transition: opacity .2s cubic-bezier(0.645,0.045,0.355,1);
-        -moz-transition: opacity .2s cubic-bezier(0.645,0.045,0.355,1);
-        transition: opacity .2s cubic-bezier(0.645,0.045,0.355,1);
-        transition: opacity .2s cubic-bezier(0.645,0.045,0.355,1);
-        font: 16px/18px "Lucida Grande", "Lucida Sans Unicode", Helvetica, Arial, Verdana, sans-serif;
-        top: 0px;
-        height: 24px;
-        left: 1px;
-    }
-
 
             </style>
       <script src="Scripts/jquery-1.8.3.js"></script>
@@ -71,9 +46,9 @@
             <td style="width:auto;padding-left:5px;" >
                 <asp:LinkButton ID="LinkButton54" runat="server" class="ax_box" OnClick="LinkButton54_Click">  Odśwież</asp:LinkButton>
             </td>
-            <td style="width:auto;padding-left:5px;">
-                  <asp:LinkButton ID="LinkButton55" runat="server"  class="ax_box" OnClick="LinkButton55_Click" CssClass="auto-style1"> Drukuj </asp:LinkButton>
-            </td>
+            <td style="width: auto; padding-left: 5px;">
+                            <input id="Button1" class="ax_box" style="border-style: none; padding: 0px" type="button" onclick="JavaScript: window.print();" value="Drukuj" /></td>
+
             <td style="width:auto;padding-left:5px;">
                 
                 &nbsp;</td>
@@ -187,6 +162,12 @@
 <asp:TemplateField HeaderText = "d_11" SortExpression = "d_01" > 
                 <ItemTemplate >
           <a href = "javascript:openPopup('popup.aspx?sesja=<%# Eval("id_sedziego")+ "!"+Eval("id_tabeli") +"!11!2"%>')" ><asp:Label ID = "Label_Tabela1111" runat = "server" Text = '<%# Eval("d_11")%>' CssClass = "normal" ></asp:Label> </a>
+                                   </ItemTemplate>
+                   <ItemStyle  CssClass = "col_30"/>
+                </asp:TemplateField>
+<asp:TemplateField HeaderText = "d_11" SortExpression = "d_01" > 
+                <ItemTemplate >
+          <a href = "javascript:openPopup('popup.aspx?sesja=<%# Eval("id_sedziego")+ "!"+Eval("id_tabeli") +"!12!2"%>')" ><asp:Label ID = "Label_Tabela1112" runat = "server" Text = '<%# Eval("d_12")%>' CssClass = "normal" ></asp:Label> </a>
                                    </ItemTemplate>
                    <ItemStyle  CssClass = "col_30"/>
                 </asp:TemplateField>
