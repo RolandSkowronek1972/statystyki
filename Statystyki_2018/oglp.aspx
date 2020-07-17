@@ -288,7 +288,7 @@
             &nbsp;&nbsp;&nbsp;
            <asp:Label ID="infoLabel4" runat="server" Text="tabela 4" Visible="False"></asp:Label>
             <br />
-            <div id="TABELA5" class="page -break">
+            <div id="TABELA5" class="page-break">
                 <table style="width: 100%;">
                     <tr>
                         <td class="borderAll center">&nbsp;</td>
@@ -561,7 +561,7 @@
                 <asp:Label ID="Label9" runat="server" Text="Sprawy zawieszone "></asp:Label>
                 &nbsp;&nbsp;&nbsp;&nbsp;<asp:Label ID="infoLabel8" runat="server" Text="tabela 8  \/\/\/" Visible="False"></asp:Label>
                 &nbsp;<br />
-                <div id="TABELA5" class="page -break">
+                <div id="TABELA5" class="page-break">
                     <table style="width: 100%;">
                         <tr>
                             <td class="borderAll  center">&nbsp;</td>
@@ -683,7 +683,7 @@
                     <asp:Label ID="Label8" runat="server" Text="Terminowość sporządzania uzasadnień sędziów w Wydziale IV Pracy"></asp:Label>
                     &nbsp;&nbsp;&nbsp;&nbsp;<asp:Label ID="infoLabel9" runat="server" Text="tabela 9  \/\/\/" Visible="False"></asp:Label>
                     &nbsp;<br />
-                    <div id="TABELA5" class="page -break">
+                    <div id="TABELA5" class="page-break">
                         <table style="width: 100%;">
                             <tr>
                                 <td class="borderAll center" colspan="11">Postępowanie międzyinstancyjne w zakresie spraw P</td>

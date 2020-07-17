@@ -20,11 +20,11 @@ namespace stat2018
             string idWydzial = Request.QueryString["w"];
             if (idWydzial != null)
             {
-                Session["id_dzialu"] = idWydzial;
-                //    //cm.log.Info(tenPlik + ": id wydzialu=" + idWydzial);
+                Session["id_dzialu"] = idWydzial;            
             }
             else
             {
+                Server.Transfer("default.aspx");
                 return;
             }
             CultureInfo newCulture = (CultureInfo)CultureInfo.CurrentCulture.Clone();
@@ -39,7 +39,7 @@ namespace stat2018
             Session["data_1"] = Date1.Date.ToShortDateString();
             Session["data_2"] = Date2.Date.ToShortDateString();
             clearHedersSession();
-            makeHeader();
+     //       makeHeader();
             try
             {
                 string user = (string)Session["userIdNum"];
@@ -80,7 +80,7 @@ namespace stat2018
 
         protected void odswiez()
         {
-            Session["sesja"] = "s3030";
+          
             try
             {
                 DateTime dTime = DateTime.Now;
@@ -126,7 +126,35 @@ namespace stat2018
         }
 
         #region "nagłowki tabel"
+        /*
+        DataTable schematTabeliNaglowkowej()
+        {
+            DataTable dT_01 = new DataTable();
+            dT_01.Columns.Clear();
+            dT_01.Columns.Add("Column1", typeof(string));
+            dT_01.Columns.Add("Column2", typeof(string));
+            dT_01.Columns.Add("Column3", typeof(string));
+            dT_01.Columns.Add("Column4", typeof(string));
+            return dT_01;
+        }
+        DataTable naglowekTabeli01()
+        {
+            DataTable dT_01 = schematTabeliNaglowkowej();
+            dT_01.Clear();
+            dT_01.Rows.Add(new Object[] { "1", "C", "1", "1" });
+            dT_01.Rows.Add(new Object[] { "1", "Ns", "1", "1" });
+            dT_01.Rows.Add(new Object[] { "1", "Nsm", "1", "1" });
+            dT_01.Rows.Add(new Object[] { "1", "Co", "1", "1" });
+            dT_01.Rows.Add(new Object[] { "1", "Nmo", "1", "1" });
+            dT_01.Rows.Add(new Object[] { "1", "Cps", "1", "1" });
+            dT_01.Rows.Add(new Object[] { "1", "Nkd", "1", "1" });
+            dT_01.Rows.Add(new Object[] { "1", "Łącznie", "1", "1" });
+            dT_01.Rows.Add(new Object[] { "2", "Ruch spraw", "1", "2" });
+            dT_01.Rows.Add(new Object[] { "2", "sprawy wg. repertoriów lub wykazów", "8", "1" });
+            return dT_01;
+            Session["header_01"] = dT_01;
 
+        }
         protected void makeHeader()
         {
             System.Web.UI.WebControls.GridView sn = new System.Web.UI.WebControls.GridView();
@@ -423,7 +451,7 @@ namespace stat2018
 
             #endregion tabela  8 ()
         }
-
+        */
         protected void grvMergeHeader_RowCreated(object sender, GridViewRowEventArgs e)
         {
             if (e.Row.RowType == DataControlRowType.Header)
@@ -856,27 +884,38 @@ namespace stat2018
             // excell
             string path = Server.MapPath("Template") + "\\otrkr.xlsx";
             FileInfo existingFile = new FileInfo(path);
-
             string download = Server.MapPath("Template") + @"\otrkr";
-
             FileInfo fNewFile = new FileInfo(download + "_.xlsx");
 
-            // pierwsza tabelka
+            id_dzialu.Text = (string)Session["txt_dzialu"];
+
+            string linia01 = string.Empty;
+            string linia02 = string.Empty;
+            string linia03 = string.Empty;
+
+            string strMonthName = CultureInfo.CurrentCulture.DateTimeFormat.GetMonthName(DateTime.Parse(Date2.Text).Month);
+            int last_day = DateTime.DaysInMonth(DateTime.Parse(Date2.Text).Year, DateTime.Parse(Date2.Text).Month);
+            if ((DateTime.Parse(Date1.Text).Day == 1) && (DateTime.Parse(Date2.Text).Day == last_day) && (DateTime.Parse(Date1.Text).Month == DateTime.Parse(Date2.Text).Month))
+            {
+                // cały miesiąc
+                linia01 = "Obciążenia kuratorów wywiadami zleconymi za miesiąc " + strMonthName + " " + DateTime.Parse(Date2.Text).Year.ToString() + " roku.  (Obliczenia wg daty wpływu)";
+                linia02 = "Obciążenia kuratorów zawodowych wg. standardów. Stan na dzień :" + DateTime.Parse(Date2.Text).ToLongDateString();
+                linia03 = "Obciążenia kuratorów wywiadami zleconymi za miesiąc " + strMonthName + " " + DateTime.Parse(Date2.Text).Year.ToString() + " roku.  (Obliczenia wg daty zamknięcia)";
+            }
+            else
+            {
+                linia01 = "Obciążenia kuratorów wywiadami zleconymi za okres od " + Date1.Text + " do  " + Date2.Text + " roku.  (Obliczenia wg daty wpływu)";
+                linia02 = "Obciążenia kuratorów zawodowych wg. standardów. Stan na dzień :" + DateTime.Parse(Date2.Text).ToLongDateString();
+                linia03 = "Obciążenia kuratorów wywiadami zleconymi za okres od " + Date1.Text + " do  " + Date2.Text + " roku.  (Obliczenia wg daty zamknięcia)";
+            }
 
             using (ExcelPackage MyExcel = new ExcelPackage(existingFile))
             {
-                // pierwsza
+                tabela.tworzArkuszwExcle(MyExcel.Workbook.Worksheets[1], (DataTable)Session["tabelka001"], 19, 0, 7, true, true, false, false, false, false, cl.nazwaSadu((string)Session["id_dzialu"]), (string)Session["txt_dzialu"], linia02);
 
-                DataTable table = (DataTable)Session["tabelka001"];
-                tabela.tworzArkuszwExcle(MyExcel.Workbook.Worksheets[1], table, 19, 0, 5, true, true, false, false, false, false);
+                tabela.tworzArkuszwExcle(MyExcel.Workbook.Worksheets[2], (DataTable)Session["tabelka002"], 7, 0, 8, true, true, false, false, false, false, cl.nazwaSadu((string)Session["id_dzialu"]), (string)Session["txt_dzialu"], linia01);
 
-                // druga
-                DataTable table2 = (DataTable)Session["tabelka002"];
-                tabela.tworzArkuszwExcle(MyExcel.Workbook.Worksheets[2], table2, 7, 0, 5, true, true, false, false, false, false);
-
-                // trzecia
-                DataTable table3 = (DataTable)Session["tabelka003"];
-                tabela.tworzArkuszwExcle(MyExcel.Workbook.Worksheets[3], table3, 7, 0, 5, true, true, false, false, false, false);
+                tabela.tworzArkuszwExcle(MyExcel.Workbook.Worksheets[3], (DataTable)Session["tabelka003"], 7, 0, 8, true, true, false, false, false, false, cl.nazwaSadu((string)Session["id_dzialu"]), (string)Session["txt_dzialu"], linia03);
 
                 try
                 {

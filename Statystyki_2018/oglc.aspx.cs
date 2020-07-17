@@ -271,7 +271,7 @@ namespace stat2018
         {
             if (e.Row.RowType == DataControlRowType.Header)
             {
-                tb.makeHeader(SchematTabeliNaglowka(), gwTabela4);
+                tb.makeHeader(NaglowekTabeli_4(), gwTabela4);
             }
         }
 

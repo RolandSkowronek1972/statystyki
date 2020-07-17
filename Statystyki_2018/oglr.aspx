@@ -303,6 +303,22 @@
                         </ItemTemplate>
                         <ItemStyle CssClass="col_30" BackColor="#cccccc" />
                     </asp:TemplateField>
+                        <asp:TemplateField HeaderText="d_07" SortExpression="d_07">
+                        <ItemTemplate>
+                            <a href="javascript:openPopup('popup.aspx?sesja=<%# Eval("id_sedziego")+ "!"+Eval("id_tabeli") +"!24!7"%>')">
+                                <asp:Label ID="Label224" runat="server" Text='<%# Eval("d_24")%>' CssClass="normal"></asp:Label>
+                            </a>
+                        </ItemTemplate>
+                        <ItemStyle CssClass="col_30" BackColor="#cccccc" />
+                    </asp:TemplateField>
+                        <asp:TemplateField HeaderText="d_07" SortExpression="d_07">
+                        <ItemTemplate>
+                            <a href="javascript:openPopup('popup.aspx?sesja=<%# Eval("id_sedziego")+ "!"+Eval("id_tabeli") +"!25!7"%>')">
+                                <asp:Label ID="Label225" runat="server" Text='<%# Eval("d_25")%>' CssClass="normal"></asp:Label>
+                            </a>
+                        </ItemTemplate>
+                        <ItemStyle CssClass="col_30" BackColor="#cccccc" />
+                    </asp:TemplateField>
                 </Columns>
                 <FooterStyle Font-Bold="True" HorizontalAlign="Center" Wrap="False" />
                 <HeaderStyle Wrap="False" />

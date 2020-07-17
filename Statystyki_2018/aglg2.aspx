@@ -1539,7 +1539,7 @@
             Terminowość przyznawania wynagrodzeń i wypłaty biegłym i tłumaczom <asp:Label ID="Label22" runat="server" Text="tabela 18  \/\/\/" Visible="False"></asp:Label>
             <br />
 
-                <div id="TABELA5"  class="page -break" > 
+                <div id="TABELA5"  class="page-break" > 
  <table style="width: 100%; "> 
    <tr> 
   <td class="borderAll center col_80" rowspan="3"> 

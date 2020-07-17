@@ -121,688 +121,274 @@ namespace stat2018 {
         protected global::System.Web.UI.WebControls.Label id_dzialu;
         
         /// <summary>
-        /// tabela1Label control.
+        /// tablePlaceHolder01 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label tabela1Label;
+        protected global::System.Web.UI.WebControls.PlaceHolder tablePlaceHolder01;
         
         /// <summary>
-        /// tab_01_w01_c01 control.
+        /// tab_11a_w01_c01 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label tab_01_w01_c01;
+        protected global::System.Web.UI.WebControls.Label tab_11a_w01_c01;
         
         /// <summary>
-        /// tab_01_w02_c01 control.
+        /// tab_11a_w02_c01 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label tab_01_w02_c01;
+        protected global::System.Web.UI.WebControls.Label tab_11a_w02_c01;
         
         /// <summary>
-        /// tab_01_w03_c01 control.
+        /// tab_11a_w03_c01 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label tab_01_w03_c01;
+        protected global::System.Web.UI.WebControls.Label tab_11a_w03_c01;
         
         /// <summary>
-        /// tab_01_w04_c01 control.
+        /// tab_11a_w04_c01 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label tab_01_w04_c01;
+        protected global::System.Web.UI.WebControls.Label tab_11a_w04_c01;
         
         /// <summary>
-        /// tab_01_w05_c01 control.
+        /// tablePlaceHolder02 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label tab_01_w05_c01;
+        protected global::System.Web.UI.WebControls.PlaceHolder tablePlaceHolder02;
         
         /// <summary>
-        /// tabela2Label control.
+        /// tab_11f_w01_c01 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label tabela2Label;
+        protected global::System.Web.UI.WebControls.Label tab_11f_w01_c01;
         
         /// <summary>
-        /// tab_02_w01_c01 control.
+        /// tab_11g_w01_c01 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label tab_02_w01_c01;
+        protected global::System.Web.UI.WebControls.Label tab_11g_w01_c01;
         
         /// <summary>
-        /// tab_02_w01_c02 control.
+        /// tab_11g_w01_c02 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label tab_02_w01_c02;
+        protected global::System.Web.UI.WebControls.Label tab_11g_w01_c02;
         
         /// <summary>
-        /// tab_02_w01_c03 control.
+        /// tablePlaceHolder03 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label tab_02_w01_c03;
+        protected global::System.Web.UI.WebControls.PlaceHolder tablePlaceHolder03;
         
         /// <summary>
-        /// tab_02_w01_c04 control.
+        /// tab_111_w01_c01 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label tab_02_w01_c04;
+        protected global::System.Web.UI.WebControls.Label tab_111_w01_c01;
         
         /// <summary>
-        /// tab_02_w01_c05 control.
+        /// tab_111_w14_c01 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label tab_02_w01_c05;
+        protected global::System.Web.UI.WebControls.Label tab_111_w14_c01;
         
         /// <summary>
-        /// tab_02_w01_c06 control.
+        /// tab_111_w02_c01 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label tab_02_w01_c06;
+        protected global::System.Web.UI.WebControls.Label tab_111_w02_c01;
         
         /// <summary>
-        /// tab_02_w01_c07 control.
+        /// tab_111_w15_c01 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label tab_02_w01_c07;
+        protected global::System.Web.UI.WebControls.Label tab_111_w15_c01;
         
         /// <summary>
-        /// tab_02_w01_c08 control.
+        /// tab_111_w03_c01 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label tab_02_w01_c08;
+        protected global::System.Web.UI.WebControls.Label tab_111_w03_c01;
         
         /// <summary>
-        /// tab_02_w01_c09 control.
+        /// tab_111_w04_c01 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label tab_02_w01_c09;
+        protected global::System.Web.UI.WebControls.Label tab_111_w04_c01;
         
         /// <summary>
-        /// tab_02_w02_c01 control.
+        /// tab_111_w05_c01 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label tab_02_w02_c01;
+        protected global::System.Web.UI.WebControls.Label tab_111_w05_c01;
         
         /// <summary>
-        /// tab_02_w02_c02 control.
+        /// tab_111_w06_c01 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label tab_02_w02_c02;
+        protected global::System.Web.UI.WebControls.Label tab_111_w06_c01;
         
         /// <summary>
-        /// tab_02_w02_c03 control.
+        /// tab_111_w07_c01 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label tab_02_w02_c03;
+        protected global::System.Web.UI.WebControls.Label tab_111_w07_c01;
         
         /// <summary>
-        /// tab_02_w02_c04 control.
+        /// tab_111_w08_c01 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label tab_02_w02_c04;
+        protected global::System.Web.UI.WebControls.Label tab_111_w08_c01;
         
         /// <summary>
-        /// tab_02_w02_c05 control.
+        /// tab_111_w09_c01 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label tab_02_w02_c05;
+        protected global::System.Web.UI.WebControls.Label tab_111_w09_c01;
         
         /// <summary>
-        /// tab_02_w02_c06 control.
+        /// tab_111_w16_c01 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label tab_02_w02_c06;
+        protected global::System.Web.UI.WebControls.Label tab_111_w16_c01;
         
         /// <summary>
-        /// tab_02_w02_c07 control.
+        /// tab_111_w10_c01 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label tab_02_w02_c07;
+        protected global::System.Web.UI.WebControls.Label tab_111_w10_c01;
         
         /// <summary>
-        /// tab_02_w02_c08 control.
+        /// tab_111_w17_c01 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label tab_02_w02_c08;
+        protected global::System.Web.UI.WebControls.Label tab_111_w17_c01;
         
         /// <summary>
-        /// tab_02_w02_c09 control.
+        /// tab_111_w11_c01 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label tab_02_w02_c09;
+        protected global::System.Web.UI.WebControls.Label tab_111_w11_c01;
         
         /// <summary>
-        /// tab_02_w03_c01 control.
+        /// tab_111_w18_c01 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label tab_02_w03_c01;
+        protected global::System.Web.UI.WebControls.Label tab_111_w18_c01;
         
         /// <summary>
-        /// tab_02_w03_c02 control.
+        /// tab_111_w12_c01 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label tab_02_w03_c02;
+        protected global::System.Web.UI.WebControls.Label tab_111_w12_c01;
         
         /// <summary>
-        /// tab_02_w03_c03 control.
+        /// tab_111_w13_c01 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label tab_02_w03_c03;
+        protected global::System.Web.UI.WebControls.Label tab_111_w13_c01;
         
         /// <summary>
-        /// tab_02_w03_c04 control.
+        /// tablePlaceHolder04 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label tab_02_w03_c04;
+        protected global::System.Web.UI.WebControls.PlaceHolder tablePlaceHolder04;
         
         /// <summary>
-        /// tab_02_w03_c05 control.
+        /// tablePlaceHolder05 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label tab_02_w03_c05;
-        
-        /// <summary>
-        /// tab_02_w03_c06 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label tab_02_w03_c06;
-        
-        /// <summary>
-        /// tab_02_w03_c07 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label tab_02_w03_c07;
-        
-        /// <summary>
-        /// tab_02_w03_c08 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label tab_02_w03_c08;
-        
-        /// <summary>
-        /// tab_02_w03_c09 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label tab_02_w03_c09;
-        
-        /// <summary>
-        /// tab_02_w04_c01 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label tab_02_w04_c01;
-        
-        /// <summary>
-        /// tab_02_w04_c02 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label tab_02_w04_c02;
-        
-        /// <summary>
-        /// tab_02_w04_c03 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label tab_02_w04_c03;
-        
-        /// <summary>
-        /// tab_02_w04_c04 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label tab_02_w04_c04;
-        
-        /// <summary>
-        /// tab_02_w04_c05 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label tab_02_w04_c05;
-        
-        /// <summary>
-        /// tab_02_w04_c06 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label tab_02_w04_c06;
-        
-        /// <summary>
-        /// tab_02_w04_c07 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label tab_02_w04_c07;
-        
-        /// <summary>
-        /// tab_02_w04_c08 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label tab_02_w04_c08;
-        
-        /// <summary>
-        /// tab_02_w04_c09 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label tab_02_w04_c09;
-        
-        /// <summary>
-        /// tab_02_w05_c01 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label tab_02_w05_c01;
-        
-        /// <summary>
-        /// tab_02_w05_c02 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label tab_02_w05_c02;
-        
-        /// <summary>
-        /// tab_02_w05_c03 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label tab_02_w05_c03;
-        
-        /// <summary>
-        /// tab_02_w05_c04 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label tab_02_w05_c04;
-        
-        /// <summary>
-        /// tab_02_w05_c05 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label tab_02_w05_c05;
-        
-        /// <summary>
-        /// tab_02_w05_c06 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label tab_02_w05_c06;
-        
-        /// <summary>
-        /// tab_02_w05_c07 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label tab_02_w05_c07;
-        
-        /// <summary>
-        /// tab_02_w05_c08 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label tab_02_w05_c08;
-        
-        /// <summary>
-        /// tab_02_w05_c09 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label tab_02_w05_c09;
-        
-        /// <summary>
-        /// tab_02_w06_c01 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label tab_02_w06_c01;
-        
-        /// <summary>
-        /// tab_02_w06_c02 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label tab_02_w06_c02;
-        
-        /// <summary>
-        /// tab_02_w06_c03 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label tab_02_w06_c03;
-        
-        /// <summary>
-        /// tab_02_w06_c04 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label tab_02_w06_c04;
-        
-        /// <summary>
-        /// tab_02_w06_c05 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label tab_02_w06_c05;
-        
-        /// <summary>
-        /// tab_02_w06_c06 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label tab_02_w06_c06;
-        
-        /// <summary>
-        /// tab_02_w06_c07 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label tab_02_w06_c07;
-        
-        /// <summary>
-        /// tab_02_w06_c08 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label tab_02_w06_c08;
-        
-        /// <summary>
-        /// tab_02_w06_c09 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label tab_02_w06_c09;
-        
-        /// <summary>
-        /// tabela3Label control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label tabela3Label;
-        
-        /// <summary>
-        /// tab_03_w01_c01 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label tab_03_w01_c01;
-        
-        /// <summary>
-        /// tab_03_w01_c02 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label tab_03_w01_c02;
-        
-        /// <summary>
-        /// tab_03_w01_c03 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label tab_03_w01_c03;
-        
-        /// <summary>
-        /// tab_03_w01_c04 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label tab_03_w01_c04;
-        
-        /// <summary>
-        /// tab_03_w01_c05 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label tab_03_w01_c05;
-        
-        /// <summary>
-        /// tab_03_w01_c06 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label tab_03_w01_c06;
-        
-        /// <summary>
-        /// tab_03_w01_c07 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label tab_03_w01_c07;
-        
-        /// <summary>
-        /// tab_03_w02_c01 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label tab_03_w02_c01;
-        
-        /// <summary>
-        /// tab_03_w02_c02 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label tab_03_w02_c02;
-        
-        /// <summary>
-        /// tab_03_w02_c03 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label tab_03_w02_c03;
-        
-        /// <summary>
-        /// tab_03_w02_c04 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label tab_03_w02_c04;
-        
-        /// <summary>
-        /// tab_03_w02_c05 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label tab_03_w02_c05;
-        
-        /// <summary>
-        /// tab_03_w02_c06 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label tab_03_w02_c06;
-        
-        /// <summary>
-        /// tab_03_w02_c07 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label tab_03_w02_c07;
+        protected global::System.Web.UI.WebControls.PlaceHolder tablePlaceHolder05;
         
         /// <summary>
         /// tabela4Label control.
@@ -1255,301 +841,13 @@ namespace stat2018 {
         protected global::System.Web.UI.WebControls.Label tab_05_w04_c08;
         
         /// <summary>
-        /// tabela6Label control.
+        /// tablePlaceHolder06 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label tabela6Label;
-        
-        /// <summary>
-        /// tab_06_w01_c01 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label tab_06_w01_c01;
-        
-        /// <summary>
-        /// tab_06_w01_c02 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label tab_06_w01_c02;
-        
-        /// <summary>
-        /// tab_06_w01_c03 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label tab_06_w01_c03;
-        
-        /// <summary>
-        /// tab_06_w01_c04 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label tab_06_w01_c04;
-        
-        /// <summary>
-        /// tab_06_w01_c05 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label tab_06_w01_c05;
-        
-        /// <summary>
-        /// tab_06_w01_c06 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label tab_06_w01_c06;
-        
-        /// <summary>
-        /// tab_06_w01_c07 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label tab_06_w01_c07;
-        
-        /// <summary>
-        /// tab_06_w01_c08 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label tab_06_w01_c08;
-        
-        /// <summary>
-        /// tab_06_w02_c01 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label tab_06_w02_c01;
-        
-        /// <summary>
-        /// tab_06_w02_c02 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label tab_06_w02_c02;
-        
-        /// <summary>
-        /// tab_06_w02_c03 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label tab_06_w02_c03;
-        
-        /// <summary>
-        /// tab_06_w02_c04 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label tab_06_w02_c04;
-        
-        /// <summary>
-        /// tab_06_w02_c05 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label tab_06_w02_c05;
-        
-        /// <summary>
-        /// tab_06_w02_c06 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label tab_06_w02_c06;
-        
-        /// <summary>
-        /// tab_06_w02_c07 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label tab_06_w02_c07;
-        
-        /// <summary>
-        /// tab_06_w02_c08 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label tab_06_w02_c08;
-        
-        /// <summary>
-        /// tab_06_w03_c01 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label tab_06_w03_c01;
-        
-        /// <summary>
-        /// tab_06_w03_c02 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label tab_06_w03_c02;
-        
-        /// <summary>
-        /// tab_06_w03_c03 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label tab_06_w03_c03;
-        
-        /// <summary>
-        /// tab_06_w03_c04 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label tab_06_w03_c04;
-        
-        /// <summary>
-        /// tab_06_w03_c05 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label tab_06_w03_c05;
-        
-        /// <summary>
-        /// tab_06_w03_c06 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label tab_06_w03_c06;
-        
-        /// <summary>
-        /// tab_06_w03_c07 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label tab_06_w03_c07;
-        
-        /// <summary>
-        /// tab_06_w03_c08 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label tab_06_w03_c08;
-        
-        /// <summary>
-        /// tab_06_w04_c01 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label tab_06_w04_c01;
-        
-        /// <summary>
-        /// tab_06_w04_c02 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label tab_06_w04_c02;
-        
-        /// <summary>
-        /// tab_06_w04_c03 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label tab_06_w04_c03;
-        
-        /// <summary>
-        /// tab_06_w04_c04 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label tab_06_w04_c04;
-        
-        /// <summary>
-        /// tab_06_w04_c05 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label tab_06_w04_c05;
-        
-        /// <summary>
-        /// tab_06_w04_c06 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label tab_06_w04_c06;
-        
-        /// <summary>
-        /// tab_06_w04_c07 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label tab_06_w04_c07;
-        
-        /// <summary>
-        /// tab_06_w04_c08 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label tab_06_w04_c08;
+        protected global::System.Web.UI.WebControls.PlaceHolder tablePlaceHolder06;
         
         /// <summary>
         /// tab_81_w01_c01 control.
@@ -1721,6 +1019,42 @@ namespace stat2018 {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label tab_08_w01_c08;
+        
+        /// <summary>
+        /// tab_08_w01_c09 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label tab_08_w01_c09;
+        
+        /// <summary>
+        /// tab_08_w01_c10 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label tab_08_w01_c10;
+        
+        /// <summary>
+        /// tab_08_w01_c11 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label tab_08_w01_c11;
+        
+        /// <summary>
+        /// tab_08_w01_c12 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label tab_08_w01_c12;
         
         /// <summary>
         /// Label27 control.

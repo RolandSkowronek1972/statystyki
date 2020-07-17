@@ -18,7 +18,7 @@ namespace stat2018
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            string idWydzial =  Request.QueryString["w"];
+            string idWydzial = Request.QueryString["w"];
             try
             {
                 if (idWydzial == null)
@@ -175,24 +175,18 @@ namespace stat2018
                 {
                     ExcelWorksheet MyWorksheet1 = tb.tworzArkuszwExcle(MyExcel.Workbook.Worksheets[1], (DataTable)Session["tabelka001"], 115, 0, 7, true, true, false, false, false);
 
-                    try
-                    {
-                        //==========================
-                        MyExcel.SaveAs(fNewFile);
+                    MyExcel.SaveAs(fNewFile);
 
-                        this.Response.Clear();
-                        this.Response.ContentType = "application/vnd.ms-excel";
-                        this.Response.AddHeader("Content-Disposition", "attachment;filename=" + fNewFile.Name);
-                        this.Response.WriteFile(fNewFile.FullName);
-                        this.Response.End();
-                    }
-                    catch (Exception ex)
-                    {
-                        Label31.Text = Label31.Text + "Save Error massage " + ex.Message + "<br/>";
-                    }
+                    this.Response.Clear();
+                    this.Response.ContentType = "application/vnd.ms-excel";
+                    this.Response.AddHeader("Content-Disposition", "attachment;filename=" + fNewFile.Name);
+                    this.Response.WriteFile(fNewFile.FullName);
+                    this.Response.End();
                 }
-                catch
-                { }
+                catch (Exception ex)
+                {
+                    Label31.Text = Label31.Text + "Save Error massage " + ex.Message + "<br/>";
+                }
             }
         }
 
@@ -205,9 +199,8 @@ namespace stat2018
         {
             if (e.Row.RowType == DataControlRowType.Footer)
             {
-               // tb.PodsumowanieTabeli((DataTable)Session["tabelka001"], 110, "gray");
+              
                 tb.makeSumRow((DataTable)Session["tabelka001"], e, 1, "Razem");
-
             }
         }
     }

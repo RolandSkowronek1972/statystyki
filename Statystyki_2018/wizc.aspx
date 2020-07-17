@@ -872,7 +872,7 @@
             <strong>Dział IV.2.3</strong> Ruch spraw i obciążenie sędziów w Wydziale
         <asp:Label ID="infoLabel12" runat="server" Text="tabela 12  \/\/\/" Visible="False"></asp:Label>
             <br />
-            <div id="TABELA5" class="page -break">
+            <div id="TABELA5" class="page-break">
                 <table style="width: 100%;">
                     <tr>
                         <td class="borderAll center" rowspan="7">Ogólem</td>
@@ -1265,7 +1265,7 @@
                 </tr>
             </table>
         </div>
-        <div id="TABELA5" class="page -break">
+        <div id="TABELA5" class="page-break">
             <br />
             Dział IV. 4.1. Czas trwania postępowania sądowego od dnia pierwszej rejestracji do dnia zakończenia sprawy w danej instancji w wydziale (liczba spraw – ogółem)<table style="width: 100%;">
                 <tr>
@@ -2470,7 +2470,7 @@
             <br />
             <br />
         </div>
-        <div id="TABELA24" class="page -break">
+        <div id="TABELA24" class="page-break">
             IV. 7.1..Struktura pozostałości (wydział ogółem – liczba spraw)
  <table style="width: 100%;">
      <tr>
@@ -2818,7 +2818,7 @@
  </table>
         </div>
 
-          <div id="TABELA25" class="page -break">
+          <div id="TABELA25" class="page-break">
             IV. 7.2.Struktura pozostałości (wydział ogółem – %)
  <table style="width: 100%;">
      <tr>
@@ -3203,7 +3203,7 @@
             </table>
             <br />
         </div>
-     <div id="TABELA31"  class="page -break" > 
+     <div id="TABELA31"  class="page-break" > 
          <br />
          V.1. Liczba i sposób rozpoznania skarg wniesionych na podstawie ustawy z dnia 17 czerwca 2004 r. o skardze na naruszenie prawa strony do rozpoznania sprawy w postępowaniu przygotowawczym prowadzonym lub nadzorowanym przez prokuratora i postępowaniu sądowym bez nieuzasadnionej zwłoki (Dz. U. Nr 179, poz. 1843, z późn. zm.) bez postępowań nadzorowanych przez prokuratora<br />
  <table style="width: 100%; "> 

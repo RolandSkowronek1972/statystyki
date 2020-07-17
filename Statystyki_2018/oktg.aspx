@@ -361,6 +361,14 @@
                                 <asp:Label ID="Label_Gridview3106" runat="server" Text='<%# Eval("d_06")%>' CssClass="normal"></asp:Label>
                             </a>
                         </ItemTemplate>
+                        <ItemStyle CssClass="col_90 " />
+                    </asp:TemplateField>
+                     <asp:TemplateField HeaderText="d_04" SortExpression="d_01">
+                        <ItemTemplate>
+                            <a href="javascript:openPopup('popup.aspx?sesja=<%# Eval("id_sedziego")+ "!"+Eval("id_tabeli") +"!7!7"%>')">
+                                <asp:Label ID="Label_Gridview3107" runat="server" Text='<%# Eval("d_07")%>' CssClass="normal"></asp:Label>
+                            </a>
+                        </ItemTemplate>
                         <ItemStyle CssClass="col_90 gray" />
                     </asp:TemplateField>
                 </Columns>

@@ -388,15 +388,18 @@ namespace stat2018
                             dTable.Rows.Add(daneSedziego);
                             i++;
                         }
-                        catch
-                        { }
+                        catch (Exception ex)
+                        {
+                            string exx = ex.Message;
+                            Common.log.Error(tenPlik + " :Generowanie tabeli danych: Wpisywanie danych dla tabeli : " + id_tabeli + " " + ex.Message);
+                        }
                     }
                 }
             }
             catch (Exception ex)
             {
                 string exx = ex.Message;
-                Common.log.Error(tenPlik + " :Generowanie tabeli danych: Wpisywanie danych sedziów dla tabeli : " + id_tabeli + " " + ex.Message);
+                Common.log.Error(tenPlik + " :Generowanie tabeli danych: Wpisywanie danych dla tabeli : " + id_tabeli + " " + ex.Message);
             }
             // wpisywanie danych dla sedziów
             try
@@ -449,6 +452,31 @@ namespace stat2018
             // uzupelnienie funkcji
 
             return dTable;
+        }// end of generuj_dane_do_tabeli_5
+        public DataTable generuj_naglowki_do_tabeli_sedziowskiej_2019(int id_dzialu, int id_tabeli, DateTime poczatek, DateTime koniec, int il_kolumn, string tenPlik)
+        {
+            string status = string.Empty;
+            //Common.log.Info(tenPlik + " :Generowanie tabeli danych: Rozpoczęcie");
+
+            DataTable dTable = new DataTable();
+            //Common.log.Info(tenPlik + " :Generowanie tabeli danych: Pobieranie connectionstringa");
+
+            string cs = cl.podajConnectionString(id_dzialu);
+
+            DataTable parameters = Common.makeParameterTable();
+            parameters.Rows.Add("@id_tabeli", id_tabeli);
+            parameters.Rows.Add("@id_dzialu", id_dzialu);
+            Common.log.Info(tenPlik + " :Generowanie tabeli danych: Wyciądnięcie kwerend dla tabeli :" + id_tabeli);
+            DataTable dT1 = Common.getDataTable("SELECT id_kolumny,kwerenda FROM kwerendy where id_wiersza<0 and id_tabeli=@id_tabeli and id_wydzial=@id_dzialu order by id_kolumny", con_str, parameters, tenPlik);
+            if (dT1.Rows.Count == 0)
+            {
+                Common.log.Info(tenPlik + " :Generowanie tabeli danych: Brak kwerend dla tabeli : " + id_tabeli);
+                return null;
+            }
+
+          
+
+            return dT1;
         }// end of generuj_dane_do_tabeli_5
 
         public string wyciagnijWartosc(DataTable ddT, string selectString, string tenPlik)
@@ -533,7 +561,25 @@ namespace stat2018
             }
             return foundRows;
         }
+        private DataTable tabelaZnaglowkami(int il_kolumn)
+        {
+            DataTable dTable = new DataTable();
+            dTable.Columns.Add("id", typeof(int));
+        
 
+            for (int i = 1; i <= il_kolumn; i++)
+            {
+                DataColumn column = new DataColumn
+                {
+                    DataType = typeof(string),
+                    AllowDBNull = false,
+                    ColumnName = getColumnName(i),
+                    DefaultValue = "0"
+                };
+                dTable.Columns.Add(column);
+            }
+            return dTable;
+        }
         private DataTable tabelaSedziowska(int il_kolumn)
         {
             DataTable dTable = new DataTable();

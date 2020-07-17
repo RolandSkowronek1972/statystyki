@@ -594,7 +594,7 @@
                 <br />
             </div>
 
-            <div id="TABELA4" class="page -break">
+            <div id="TABELA4" class="page-break">
                 <asp:Label ID="lbTabela4" runat="server">Ruch spraw</asp:Label>
                 &nbsp;<asp:Label ID="infoLabel4" runat="server" Text="Tabela 4 \/" Visible="False"></asp:Label>
                 <br />

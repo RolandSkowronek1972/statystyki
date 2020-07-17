@@ -60,7 +60,7 @@ namespace stat2018
                         var fileContents = System.IO.File.ReadAllText(Server.MapPath(@"~//version.txt"));    // file read with version
                         this.Title = "Statystyki " + fileContents.ToString().Trim();
                         clearHedersSession();
-                        makeHeader();
+                 //       makeHeader();
                         odswiez();
                         makeLabels();
                     }
@@ -117,7 +117,7 @@ namespace stat2018
 
             try
             {
-                //cm.log.Info(tenPlik+": wczytywanie danych do tabeli 3");
+                cm.log.Info(tenPlik+": wczytywanie danych do tabeli 3");
                 tabelkaGW3 = dr.generuj_dane_do_tabeli_sedziowskiej_2019(int.Parse((string)Session["id_dzialu"]), 3, Date1.Date, Date2.Date, 30, tenPlik);
                 Session["tabelkaGW003"] = tabelkaGW3;
                 Gridview3.DataSource = null;
@@ -149,124 +149,7 @@ namespace stat2018
         }
 
         #region "nagłowki tabel"
-
-        protected void makeHeader()
-        {
-            System.Web.UI.WebControls.GridView sn = new System.Web.UI.WebControls.GridView();
-
-            #region tabela  1 (wierszowa)
-
-            DataTable dT_01 = new DataTable();
-            dT_01.Columns.Clear();
-            dT_01.Columns.Add("Column1", typeof(string));
-            dT_01.Columns.Add("Column2", typeof(string));
-            dT_01.Columns.Add("Column3", typeof(string));
-            dT_01.Columns.Add("Column4", typeof(string));
-            dT_01.Columns.Add("Column5", typeof(string));
-            dT_01.Columns.Add("Column6", typeof(string));
-
-            DataTable dT_02 = new DataTable();
-            dT_02.Columns.Clear();
-            dT_02.Columns.Add("Column1", typeof(string));
-            dT_02.Columns.Add("Column2", typeof(string));
-            dT_02.Columns.Add("Column3", typeof(string));
-            dT_02.Columns.Add("Column4", typeof(string));
-            dT_02.Columns.Add("Column5", typeof(string));
-            dT_02.Columns.Add("Column6", typeof(string));
-            DataTable dT_03 = new DataTable();
-            dT_03.Columns.Clear();
-            dT_03.Columns.Add("Column1", typeof(string));
-            dT_03.Columns.Add("Column2", typeof(string));
-            dT_03.Columns.Add("Column3", typeof(string));
-            dT_03.Columns.Add("Column4", typeof(string));
-            dT_03.Columns.Add("Column5", typeof(string));
-            dT_03.Columns.Add("Column6", typeof(string));
-            DataTable dT_04 = new DataTable();
-            dT_04.Columns.Clear();
-            dT_04.Columns.Add("Column1", typeof(string));
-            dT_04.Columns.Add("Column2", typeof(string));
-            dT_04.Columns.Add("Column3", typeof(string));
-            dT_04.Columns.Add("Column4", typeof(string));
-            dT_04.Columns.Add("Column5", typeof(string));
-            dT_04.Columns.Add("Column6", typeof(string));
-
-            DataTable dT_05 = new DataTable();
-            dT_05.Columns.Clear();
-            dT_05.Columns.Add("Column1", typeof(string));
-            dT_05.Columns.Add("Column2", typeof(string));
-            dT_05.Columns.Add("Column3", typeof(string));
-            dT_05.Columns.Add("Column4", typeof(string));
-            dT_05.Columns.Add("Column5", typeof(string));
-            dT_05.Columns.Add("Column6", typeof(string));
-
-            DataTable dT_07 = new DataTable();
-            dT_07.Columns.Clear();
-            dT_07.Columns.Add("Column1", typeof(string));
-            dT_07.Columns.Add("Column2", typeof(string));
-            dT_07.Columns.Add("Column3", typeof(string));
-            dT_07.Columns.Add("Column4", typeof(string));
-            dT_07.Columns.Add("Column5", typeof(string));
-            dT_07.Columns.Add("Column6", typeof(string));
-
-            DataTable dT_08 = new DataTable();
-            dT_08.Columns.Clear();
-            dT_08.Columns.Add("Column1", typeof(string));
-            dT_08.Columns.Add("Column2", typeof(string));
-            dT_08.Columns.Add("Column3", typeof(string));
-            dT_08.Columns.Add("Column4", typeof(string));
-            dT_08.Columns.Add("Column5", typeof(string));
-            dT_08.Columns.Add("Column6", typeof(string));
-
-            #endregion tabela  1 (wierszowa)
-
-            #region tabela  2 ()
-
-            dT_02.Clear();
-
-            dT_02.Rows.Add(new Object[] { "1", "za bieżący miesiąc", "1", "1" });
-
-            dT_02.Rows.Add(new Object[] { "1", "Od 1 stycznia do końca bieżącego miesiąca", "1", "1" });
-
-            dT_02.Rows.Add(new Object[] { "2", "GC", "1", "2" });
-            dT_02.Rows.Add(new Object[] { "2", "GC upr", "1", "2" });
-            dT_02.Rows.Add(new Object[] { "2", "GC Razem", "1", "2" });
-            dT_02.Rows.Add(new Object[] { "2", "GNS", "1", "2" });
-            dT_02.Rows.Add(new Object[] { "2", "GNC", "1", "2" });
-
-            dT_02.Rows.Add(new Object[] { "2", "GCO", "1", "2" });
-            dT_02.Rows.Add(new Object[] { "2", "GCPS", "1", "2" });
-
-            dT_02.Rows.Add(new Object[] { "2", "WSC", "1", "2" });
-            dT_02.Rows.Add(new Object[] { "2", "Łącznie", "2", "1" });
-
-            dT_02.Rows.Add(new Object[] { "3", "L.p.", "1", "3", "h", "60" });//
-            dT_02.Rows.Add(new Object[] { "3", "Nazwisko i imie sędziego ", "1", "3", "h", "60" });//
-            dT_02.Rows.Add(new Object[] { "3", "Wpływ", "10", "1", "h", });//
-
-            Session["header_02"] = dT_02;
-
-            #endregion tabela  2 ()
-
-            #region tabela  3 ()
-
-            dT_03.Clear();
-
-            dT_03.Rows.Add(new Object[] { "1", "L.p.", "1", "1", "h", "60" });//
-            dT_03.Rows.Add(new Object[] { "1", "Nazwisko i imie sędziego ", "1", "1", "h", "60" });//
-            dT_03.Rows.Add(new Object[] { "1", "RC", "1", "1", "h", });//
-            dT_03.Rows.Add(new Object[] { "1", "RNs", "1", "1", "h", });//
-            dT_03.Rows.Add(new Object[] { "1", "Nsm", "1", "1", "h", });//
-            dT_03.Rows.Add(new Object[] { "1", "Nkd", "1", "1", "h", });//
-            dT_03.Rows.Add(new Object[] { "1", "Nmo", "1", "1", "h", });//
-            dT_03.Rows.Add(new Object[] { "1", "RCo", "1", "1", "h", });//
-            dT_03.Rows.Add(new Object[] { "1", "Cps", "1", "1", "h", });//
-            dT_03.Rows.Add(new Object[] { "1", "Razem", "1", "1", "h", });//
-
-            Session["header_03"] = dT_03;
-
-            #endregion tabela  3 ()
-        }
-
+       
         private DataTable NaglowekTabeli01()
         {
             DataTable dT_01 = new DataTable();
@@ -288,9 +171,11 @@ namespace stat2018
             dT_01.Rows.Add(new Object[] { "1", "Co", "1", "1" });
             dT_01.Rows.Add(new Object[] { "1", "Cps", "1", "1" });
             dT_01.Rows.Add(new Object[] { "1", "razem", "1", "1" });
-            dT_01.Rows.Add(new Object[] { "1", "RZc", "1", "1" });
+            dT_01.Rows.Add(new Object[] { "1", "RCz", "1", "1" });
             dT_01.Rows.Add(new Object[] { "2", "sprawy rodzinne - nieletnich", "3", "1" });
             dT_01.Rows.Add(new Object[] { "2", "sprawy cywilne – małoletnich", "3", "1" });
+            dT_01.Rows.Add(new Object[] { "2", "", "3", "1" });
+            dT_01.Rows.Add(new Object[] { "2", "Zaż. poz.", "3", "1" });
 
             dT_01.Rows.Add(new Object[] { "3", "L.p.", "1", "3" });
 

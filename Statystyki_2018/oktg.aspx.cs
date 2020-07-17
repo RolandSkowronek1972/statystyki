@@ -112,7 +112,7 @@ namespace stat2018
             try
             {
                 //cm.log.Info(tenPlik+": wczytywanie danych do tabeli 3");
-                tabelkaGW3 = dr.generuj_dane_do_tabeli_sedziowskiej_2019(int.Parse((string)Session["id_dzialu"]), 3, Date1.Date, Date2.Date, 30, tenPlik);
+                tabelkaGW3 = dr.generuj_dane_do_tabeli_sedziowskiej_2019(int.Parse((string)Session["id_dzialu"]), 3, Date1.Date, Date2.Date, 10, tenPlik);
                 Session["tabelkaGW003"] = tabelkaGW3;
                 Gridview3.DataSource = null;
                 Gridview3.DataSourceID = null;
@@ -162,8 +162,9 @@ namespace stat2018
             for (int i = 0; i < 3; i++)
             {
                 dataTable.Rows.Add(new Object[] { "1", "GC", "1", "1" });
-                dataTable.Rows.Add(new Object[] { "1", "GNs", "1", "1" });
                 dataTable.Rows.Add(new Object[] { "1", "Gz", "1", "1" });
+                dataTable.Rows.Add(new Object[] { "1", "GNs", "1", "1" });
+            
                 dataTable.Rows.Add(new Object[] { "1", "GNc", "1", "1" });
                 dataTable.Rows.Add(new Object[] { "1", "Gco", "1", "1" });
                 dataTable.Rows.Add(new Object[] { "1", "GCps", "1", "1" });
@@ -198,11 +199,12 @@ namespace stat2018
             dataTable.Rows.Add(new Object[] { "1", "GNc", "1", "1" });
             dataTable.Rows.Add(new Object[] { "1", "Gco", "1", "1" });
             dataTable.Rows.Add(new Object[] { "1", "GCps", "1", "1" });
+            dataTable.Rows.Add(new Object[] { "1", "Gz", "1", "1" });
             dataTable.Rows.Add(new Object[] { "1", "Razem", "1", "1" });
 
             dataTable.Rows.Add(new Object[] { "2", "L.p.", "1", "2", "h", "60" });//
             dataTable.Rows.Add(new Object[] { "2", "Nazwisko i imie sędziego ", "1", "2", "h", "60" });//
-            dataTable.Rows.Add(new Object[] { "2", "Zaległości", "6", "1", "h", });//
+            dataTable.Rows.Add(new Object[] { "2", "Zaległości", "7", "1", "h", });//
 
             return dataTable;
         }
@@ -345,24 +347,7 @@ namespace stat2018
                 storid = Convert.ToInt32(DataBinder.Eval(e.Row.DataItem, "id").ToString());
             }
         }
-        /*
-        protected void Gridview1_RowCreated1(object sender, GridViewRowEventArgs e)
-        {
-            if (e.Row.RowType == DataControlRowType.Header)
-            {
-               
-                tabela.makeHeader(Naglowektabeli01(), Tabela1);
-            }
-            else
-            {
-                if ((storid > 0) && (DataBinder.Eval(e.Row.DataItem, "id") == null))
-                {
-                    rowIndex = 0;
-                    AddNewRow(sender, e);
-                }
-            }
-        }
-        */
+     
         protected void Gridview1_RowDataBound1(object sender, GridViewRowEventArgs e)
         {
             if (e.Row.RowType == DataControlRowType.DataRow)

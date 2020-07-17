@@ -237,6 +237,18 @@ namespace stat2018
                 string idWiersza = string.Empty;
 
                 DataTable tabela2 = ms.generuj_dane_do_tabeli_mss2(int.Parse((string)Session["id_dzialu"]), Date1.Date, Date2.Date, 21);
+
+                string path = Server.MapPath("XMLHeaders") + "\\" + "MSS16r.xml";
+                string[] numeryTabel00 = new string[] { "1", "1.1.1" };
+                string[] numeryTabel01 = new string[] { "1.1.b", "1.1.c", "1.1.d", "1.1.e" };
+                string[] numeryTabel02 = new string[] { "1.1.h", "1.1.i", "1.1.j" };
+                string[] numeryTabel03 = new string[] { "1.1.2.a", "1.1.2.b", "1.2.1", "1.2.2", "1.3.1", "1.4", "2.1.1", "2.1.1.1", "2.1.1.a", "2.1.1.a.1", "2.1.2", "2.1.2.1", "2.2", "2.2.a", "2.2.1", "2.2.1.a", "2.3", "2.3.1", "3", "4.1", "4.2", "5", "5.1", "5.2", "6" };
+                string[] numeryTabel05 = new string[] { "7.3" };
+                //tablePlaceHolder01.Controls.Add(new Label { Text = ms.odczytXML(path, int.Parse((string)Session["id_dzialu"]), "1", tabelaDanych, tenPlik), Width = 1150, ID = "extraCode01" });
+              ms.  TworzTabelizListy(numeryTabel00, tablePlaceHolder01, path, tabela2, idWydzialuNumerycznie,tenPlik);
+              //  TworzTabelizListy(numeryTabel01, tablePlaceHolder02, path, tabelaDanych);
+              //  TworzTabelizListy(numeryTabel02, tablePlaceHolder03, path, tabelaDanych);
+             //   TworzTabelizListy(numeryTabel03, tablePlaceHolder04, path, tabelaDanych);
                 //wypełnianie lebeli
                 if (tabela2==null)
                 {

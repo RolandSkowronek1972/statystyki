@@ -65,7 +65,7 @@
         <div id="tabela1">
             <br />
 
-            <div id="TABELA5" class="page -break">
+            <div id="TABELA5" class="page-break">
                 <table style="width: 100%;">
                     <tr>
                         <td class="col_180 borderAll" rowspan="2">Opis</td>

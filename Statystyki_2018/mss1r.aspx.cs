@@ -3,6 +3,7 @@ using System.Data;
 using System.Globalization;
 using System.Linq;
 using System.Text;
+using System.Web.UI.WebControls;
 
 namespace stat2018
 {
@@ -16,11 +17,10 @@ namespace stat2018
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            string idWydzial = Request.QueryString["w"];
+            string idWydzial = "1";// Request.QueryString["w"];
             if (idWydzial != null)
             {
                 Session["id_dzialu"] = idWydzial;
-                //cm.log.Info(tenPlik + ": id wydzialu=" + idWydzial);
             }
             else
             {
@@ -29,16 +29,15 @@ namespace stat2018
             }
             if (!IsPostBack)
             {
-                //cm.log.Debug("otwarcie formularza: " + tenPlik);
+                cm.log.Info("otwarcie formularza: " + tenPlik);
                 try
                 {
                     // file read with version
                     var fileContents = System.IO.File.ReadAllText(Server.MapPath(@"~//version.txt"));
                     this.Title = "Statystyki " + fileContents.ToString().Trim();
                 }
-#pragma warning disable CS0168 // The variable 'ex' is declared but never used
-                catch (Exception ex)
-#pragma warning restore CS0168 // The variable 'ex' is declared but never used
+                catch
+
                 {
                     Session["ustawDate1r"] = null;
                     Server.Transfer("default.aspx");
@@ -63,271 +62,149 @@ namespace stat2018
             makeLabels();
         }// end of Page_Load
 
+        protected void TworzTabelizListy(string[] listaTabel, PlaceHolder placeHolder, string path, DataTable tabelaDanych)
+        {
+            int i = 1;
+            foreach (var item in listaTabel)
+            {
+                string kontrolka = i.ToString();
+
+                try
+                {
+                    placeHolder.Controls.Add(new Label { Text = ms.odczytXML(path, int.Parse((string)Session["id_dzialu"]), item, tabelaDanych, tenPlik), Width = 1150, ID = kontrolka });
+                }
+                catch (Exception ex)
+                {
+                    cm.log.Error(tenPlik + " bład generowania tabli " + item + " : " + ex.Message);
+                }
+                i++;
+            }
+        }
+
         protected void odswiez()
         {
-        
             string yyx = (string)Session["id_dzialu"];
             id_dzialu.Text = (string)Session["txt_dzialu"];
             string txt = string.Empty; //
 
             try
             {
-                DataTable tabela2 = ms.generuj_dane_do_tabeli_mss2(int.Parse((string)Session["id_dzialu"]), Date1.Date, Date2.Date, 10);
+                DataTable tabelaDanych = ms.generuj_dane_do_tabeli_mss2(int.Parse((string)Session["id_dzialu"]), Date1.Date, Date2.Date, 10);
                 //wypełnianie lebeli
                 //   string selectString = "id_wiersza=" + i + " and " + "id_kolumny=" + j;
+                string path = Server.MapPath("XMLHeaders") + "\\" + "MSS1r.xml";
+                string[] numeryTabel00 = new string[] { "1", "1.2" };
+                string[] numeryTabel01 = new string[] { "1.1.b", "1.1.c", "1.1.d", "1.1.e" };
+                string[] numeryTabel02 = new string[] { "1.1.h", "1.1.i", "1.1.j" };
+                string[] numeryTabel03 = new string[] { "1.1.2.a", "1.1.2.b", "1.2.1", "1.2.2", "1.3.1", "1.4", "2.1.1", "2.1.1.1", "2.1.1.a", "2.1.1.a.1", "2.1.2", "2.1.2.1", "2.2", "2.2.a", "2.2.1", "2.2.1.a", "2.3", "2.3.1", "3", "4.1", "4.2", "5", "5.1", "5.2", "6" };
+                string[] numeryTabel05 = new string[] { "7.3" };
+                //tablePlaceHolder01.Controls.Add(new Label { Text = ms.odczytXML(path, int.Parse((string)Session["id_dzialu"]), "1", tabelaDanych, tenPlik), Width = 1150, ID = "extraCode01" });
+                TworzTabelizListy(numeryTabel00, tablePlaceHolder01, path, tabelaDanych);
+                TworzTabelizListy(numeryTabel01, tablePlaceHolder02, path, tabelaDanych);
+                TworzTabelizListy(numeryTabel02, tablePlaceHolder03, path, tabelaDanych);
+                TworzTabelizListy(numeryTabel03, tablePlaceHolder04, path, tabelaDanych);
+                //  TworzTabelizListy(numeryTabel04, tablePlaceHolder05, path, tabelaDanych);
+                TworzTabelizListy(numeryTabel05, tablePlaceHolder06, path, tabelaDanych);
 
-                #region "tabela 1 - 1.1.h"
-
-                tab_01_w01_c01.Text = wyciagnijWartosc(tabela2, "idWydzial=" + yyx + " and idTabeli='1.1.h' and idWiersza ='1' and idkolumny='1'");
-                tab_01_w02_c01.Text = wyciagnijWartosc(tabela2, "idWydzial=" + yyx + " and idTabeli='1.1.h' and idWiersza ='2' and idkolumny='1'");
-                tab_01_w03_c01.Text = wyciagnijWartosc(tabela2, "idWydzial=" + yyx + " and idTabeli='1.1.h' and idWiersza ='3' and idkolumny='1'");
-                tab_01_w04_c01.Text = wyciagnijWartosc(tabela2, "idWydzial=" + yyx + " and idTabeli='1.1.h' and idWiersza ='4' and idkolumny='1'");
-                tab_01_w05_c01.Text = wyciagnijWartosc(tabela2, "idWydzial=" + yyx + " and idTabeli='1.1.h' and idWiersza ='5' and idkolumny='1'");
-
-                #endregion "tabela 1 - 1.1.h"
-
-                #region "tabela 1 - 2.2.a"
-
-                //wiersz 1
-                tab_02_w01_c01.Text = wyciagnijWartosc(tabela2, "idWydzial=" + yyx + " and idTabeli='2.2.a' and idWiersza ='1' and idkolumny='1'");
-                tab_02_w01_c02.Text = wyciagnijWartosc(tabela2, "idWydzial=" + yyx + " and idTabeli='2.2.a' and idWiersza ='1' and idkolumny='2'");
-                tab_02_w01_c03.Text = wyciagnijWartosc(tabela2, "idWydzial=" + yyx + " and idTabeli='2.2.a' and idWiersza ='1' and idkolumny='3'");
-                tab_02_w01_c04.Text = wyciagnijWartosc(tabela2, "idWydzial=" + yyx + " and idTabeli='2.2.a' and idWiersza ='1' and idkolumny='4'");
-                tab_02_w01_c05.Text = wyciagnijWartosc(tabela2, "idWydzial=" + yyx + " and idTabeli='2.2.a' and idWiersza ='1' and idkolumny='5'");
-                tab_02_w01_c06.Text = wyciagnijWartosc(tabela2, "idWydzial=" + yyx + " and idTabeli='2.2.a' and idWiersza ='1' and idkolumny='6'");
-                tab_02_w01_c07.Text = wyciagnijWartosc(tabela2, "idWydzial=" + yyx + " and idTabeli='2.2.a' and idWiersza ='1' and idkolumny='7'");
-                tab_02_w01_c08.Text = wyciagnijWartosc(tabela2, "idWydzial=" + yyx + " and idTabeli='2.2.a' and idWiersza ='1' and idkolumny='8'");
-                tab_02_w01_c09.Text = wyciagnijWartosc(tabela2, "idWydzial=" + yyx + " and idTabeli='2.2.a' and idWiersza ='1' and idkolumny='9'");
+                #region "tabel 4 - 7.1"
 
                 //wiersz 1
-                tab_02_w02_c01.Text = wyciagnijWartosc(tabela2, "idWydzial=" + yyx + " and idTabeli='2.2.a' and idWiersza ='2' and idkolumny='1'");
-                tab_02_w02_c02.Text = wyciagnijWartosc(tabela2, "idWydzial=" + yyx + " and idTabeli='2.2.a' and idWiersza ='2' and idkolumny='2'");
-                tab_02_w02_c03.Text = wyciagnijWartosc(tabela2, "idWydzial=" + yyx + " and idTabeli='2.2.a' and idWiersza ='2' and idkolumny='3'");
-                tab_02_w02_c04.Text = wyciagnijWartosc(tabela2, "idWydzial=" + yyx + " and idTabeli='2.2.a' and idWiersza ='2' and idkolumny='4'");
-                tab_02_w02_c05.Text = wyciagnijWartosc(tabela2, "idWydzial=" + yyx + " and idTabeli='2.2.a' and idWiersza ='2' and idkolumny='5'");
-                tab_02_w02_c06.Text = wyciagnijWartosc(tabela2, "idWydzial=" + yyx + " and idTabeli='2.2.a' and idWiersza ='2' and idkolumny='6'");
-                tab_02_w02_c07.Text = wyciagnijWartosc(tabela2, "idWydzial=" + yyx + " and idTabeli='2.2.a' and idWiersza ='2' and idkolumny='7'");
-                tab_02_w02_c08.Text = wyciagnijWartosc(tabela2, "idWydzial=" + yyx + " and idTabeli='2.2.a' and idWiersza ='2' and idkolumny='8'");
-                tab_02_w02_c09.Text = wyciagnijWartosc(tabela2, "idWydzial=" + yyx + " and idTabeli='2.2.a' and idWiersza ='2' and idkolumny='9'");
-
-                //wiersz 3
-                tab_02_w03_c01.Text = wyciagnijWartosc(tabela2, "idWydzial=" + yyx + " and idTabeli='2.2.a' and idWiersza ='3' and idkolumny='1'");
-                tab_02_w03_c02.Text = wyciagnijWartosc(tabela2, "idWydzial=" + yyx + " and idTabeli='2.2.a' and idWiersza ='3' and idkolumny='2'");
-                tab_02_w03_c03.Text = wyciagnijWartosc(tabela2, "idWydzial=" + yyx + " and idTabeli='2.2.a' and idWiersza ='3' and idkolumny='3'");
-                tab_02_w03_c04.Text = wyciagnijWartosc(tabela2, "idWydzial=" + yyx + " and idTabeli='2.2.a' and idWiersza ='3' and idkolumny='4'");
-                tab_02_w03_c05.Text = wyciagnijWartosc(tabela2, "idWydzial=" + yyx + " and idTabeli='2.2.a' and idWiersza ='3' and idkolumny='5'");
-                tab_02_w03_c06.Text = wyciagnijWartosc(tabela2, "idWydzial=" + yyx + " and idTabeli='2.2.a' and idWiersza ='3' and idkolumny='6'");
-                tab_02_w03_c07.Text = wyciagnijWartosc(tabela2, "idWydzial=" + yyx + " and idTabeli='2.2.a' and idWiersza ='3' and idkolumny='7'");
-                tab_02_w03_c08.Text = wyciagnijWartosc(tabela2, "idWydzial=" + yyx + " and idTabeli='2.2.a' and idWiersza ='3' and idkolumny='8'");
-                tab_02_w03_c09.Text = wyciagnijWartosc(tabela2, "idWydzial=" + yyx + " and idTabeli='2.2.a' and idWiersza ='3' and idkolumny='9'");
-
-                //wiersz 4
-                tab_02_w04_c01.Text = wyciagnijWartosc(tabela2, "idWydzial=" + yyx + " and idTabeli='2.2.a' and idWiersza ='4' and idkolumny='1'");
-                tab_02_w04_c02.Text = wyciagnijWartosc(tabela2, "idWydzial=" + yyx + " and idTabeli='2.2.a' and idWiersza ='4' and idkolumny='2'");
-                tab_02_w04_c03.Text = wyciagnijWartosc(tabela2, "idWydzial=" + yyx + " and idTabeli='2.2.a' and idWiersza ='4' and idkolumny='3'");
-                tab_02_w04_c04.Text = wyciagnijWartosc(tabela2, "idWydzial=" + yyx + " and idTabeli='2.2.a' and idWiersza ='4' and idkolumny='4'");
-                tab_02_w04_c05.Text = wyciagnijWartosc(tabela2, "idWydzial=" + yyx + " and idTabeli='2.2.a' and idWiersza ='4' and idkolumny='5'");
-                tab_02_w04_c06.Text = wyciagnijWartosc(tabela2, "idWydzial=" + yyx + " and idTabeli='2.2.a' and idWiersza ='4' and idkolumny='6'");
-                tab_02_w04_c07.Text = wyciagnijWartosc(tabela2, "idWydzial=" + yyx + " and idTabeli='2.2.a' and idWiersza ='4' and idkolumny='7'");
-                tab_02_w04_c08.Text = wyciagnijWartosc(tabela2, "idWydzial=" + yyx + " and idTabeli='2.2.a' and idWiersza ='4' and idkolumny='8'");
-                tab_02_w04_c09.Text = wyciagnijWartosc(tabela2, "idWydzial=" + yyx + " and idTabeli='2.2.a' and idWiersza ='4' and idkolumny='9'");
-
-                //wiersz 5
-                tab_02_w05_c01.Text = wyciagnijWartosc(tabela2, "idWydzial=" + yyx + " and idTabeli='2.2.a' and idWiersza ='5' and idkolumny='1'");
-                tab_02_w05_c02.Text = wyciagnijWartosc(tabela2, "idWydzial=" + yyx + " and idTabeli='2.2.a' and idWiersza ='5' and idkolumny='2'");
-                tab_02_w05_c03.Text = wyciagnijWartosc(tabela2, "idWydzial=" + yyx + " and idTabeli='2.2.a' and idWiersza ='5' and idkolumny='3'");
-                tab_02_w05_c04.Text = wyciagnijWartosc(tabela2, "idWydzial=" + yyx + " and idTabeli='2.2.a' and idWiersza ='5' and idkolumny='4'");
-                tab_02_w05_c05.Text = wyciagnijWartosc(tabela2, "idWydzial=" + yyx + " and idTabeli='2.2.a' and idWiersza ='5' and idkolumny='5'");
-                tab_02_w05_c06.Text = wyciagnijWartosc(tabela2, "idWydzial=" + yyx + " and idTabeli='2.2.a' and idWiersza ='5' and idkolumny='6'");
-                tab_02_w05_c07.Text = wyciagnijWartosc(tabela2, "idWydzial=" + yyx + " and idTabeli='2.2.a' and idWiersza ='5' and idkolumny='7'");
-                tab_02_w05_c08.Text = wyciagnijWartosc(tabela2, "idWydzial=" + yyx + " and idTabeli='2.2.a' and idWiersza ='5' and idkolumny='8'");
-                tab_02_w05_c09.Text = wyciagnijWartosc(tabela2, "idWydzial=" + yyx + " and idTabeli='2.2.a' and idWiersza ='5' and idkolumny='9'");
-
-                //wiersz 6
-                tab_02_w06_c01.Text = wyciagnijWartosc(tabela2, "idWydzial=" + yyx + " and idTabeli='2.2.a' and idWiersza ='6' and idkolumny='1'");
-                tab_02_w06_c02.Text = wyciagnijWartosc(tabela2, "idWydzial=" + yyx + " and idTabeli='2.2.a' and idWiersza ='6' and idkolumny='2'");
-                tab_02_w06_c03.Text = wyciagnijWartosc(tabela2, "idWydzial=" + yyx + " and idTabeli='2.2.a' and idWiersza ='6' and idkolumny='3'");
-                tab_02_w06_c04.Text = wyciagnijWartosc(tabela2, "idWydzial=" + yyx + " and idTabeli='2.2.a' and idWiersza ='6' and idkolumny='4'");
-                tab_02_w06_c05.Text = wyciagnijWartosc(tabela2, "idWydzial=" + yyx + " and idTabeli='2.2.a' and idWiersza ='6' and idkolumny='5'");
-                tab_02_w06_c06.Text = wyciagnijWartosc(tabela2, "idWydzial=" + yyx + " and idTabeli='2.2.a' and idWiersza ='6' and idkolumny='6'");
-                tab_02_w06_c07.Text = wyciagnijWartosc(tabela2, "idWydzial=" + yyx + " and idTabeli='2.2.a' and idWiersza ='6' and idkolumny='7'");
-                tab_02_w06_c08.Text = wyciagnijWartosc(tabela2, "idWydzial=" + yyx + " and idTabeli='2.2.a' and idWiersza ='6' and idkolumny='8'");
-                tab_02_w06_c09.Text = wyciagnijWartosc(tabela2, "idWydzial=" + yyx + " and idTabeli='2.2.a' and idWiersza ='6' and idkolumny='9'");
-
-                #endregion "tabela 1 - 2.2.a"
-
-                #region "tabel 3 - 4.1"
-
-                //wiersz 1
-                string idTabeli = "'4.1'";
+                string idTabeli = "'7.1'";
                 string idWiersza = "'1'";
-                tab_03_w01_c01.Text = wyciagnijWartosc(tabela2, "idWydzial=" + yyx + " and idTabeli=" + idTabeli + " and idWiersza =" + idWiersza + " and idkolumny='1'");
-                tab_03_w01_c02.Text = wyciagnijWartosc(tabela2, "idWydzial=" + yyx + " and idTabeli=" + idTabeli + " and idWiersza =" + idWiersza + " and idkolumny='2'");
-                tab_03_w01_c03.Text = wyciagnijWartosc(tabela2, "idWydzial=" + yyx + " and idTabeli=" + idTabeli + " and idWiersza =" + idWiersza + " and idkolumny='3'");
-                tab_03_w01_c04.Text = wyciagnijWartosc(tabela2, "idWydzial=" + yyx + " and idTabeli=" + idTabeli + " and idWiersza =" + idWiersza + " and idkolumny='4'");
-                tab_03_w01_c05.Text = wyciagnijWartosc(tabela2, "idWydzial=" + yyx + " and idTabeli=" + idTabeli + " and idWiersza =" + idWiersza + " and idkolumny='5'");
-                tab_03_w01_c06.Text = wyciagnijWartosc(tabela2, "idWydzial=" + yyx + " and idTabeli=" + idTabeli + " and idWiersza =" + idWiersza + " and idkolumny='6'");
-                tab_03_w01_c07.Text = wyciagnijWartosc(tabela2, "idWydzial=" + yyx + " and idTabeli=" + idTabeli + " and idWiersza =" + idWiersza + " and idkolumny='7'");
-                //wiersz 2
-                idWiersza = "'2'";
-                tab_03_w02_c01.Text = wyciagnijWartosc(tabela2, "idWydzial=" + yyx + " and idTabeli=" + idTabeli + " and idWiersza =" + idWiersza + " and idkolumny='1'");
-                tab_03_w02_c02.Text = wyciagnijWartosc(tabela2, "idWydzial=" + yyx + " and idTabeli=" + idTabeli + " and idWiersza =" + idWiersza + " and idkolumny='2'");
-                tab_03_w02_c03.Text = wyciagnijWartosc(tabela2, "idWydzial=" + yyx + " and idTabeli=" + idTabeli + " and idWiersza =" + idWiersza + " and idkolumny='3'");
-                tab_03_w02_c04.Text = wyciagnijWartosc(tabela2, "idWydzial=" + yyx + " and idTabeli=" + idTabeli + " and idWiersza =" + idWiersza + " and idkolumny='4'");
-                tab_03_w02_c05.Text = wyciagnijWartosc(tabela2, "idWydzial=" + yyx + " and idTabeli=" + idTabeli + " and idWiersza =" + idWiersza + " and idkolumny='5'");
-                tab_03_w02_c06.Text = wyciagnijWartosc(tabela2, "idWydzial=" + yyx + " and idTabeli=" + idTabeli + " and idWiersza =" + idWiersza + " and idkolumny='6'");
-                tab_03_w02_c07.Text = wyciagnijWartosc(tabela2, "idWydzial=" + yyx + " and idTabeli=" + idTabeli + " and idWiersza =" + idWiersza + " and idkolumny='7'");
-
-                #endregion "tabel 3 - 4.1"
-
-                #region "tabel 4 - 4.1"
-
-                //wiersz 1
-                idTabeli = "'7.1'";
-                idWiersza = "'1'";
-                tab_04_w01_c01.Text = wyciagnijWartosc(tabela2, "idWydzial=" + yyx + " and idTabeli=" + idTabeli + " and idWiersza =" + idWiersza + " and idkolumny='1'");
-                tab_04_w01_c02.Text = wyciagnijWartosc(tabela2, "idWydzial=" + yyx + " and idTabeli=" + idTabeli + " and idWiersza =" + idWiersza + " and idkolumny='2'");
-                tab_04_w01_c03.Text = wyciagnijWartosc(tabela2, "idWydzial=" + yyx + " and idTabeli=" + idTabeli + " and idWiersza =" + idWiersza + " and idkolumny='3'");
-                tab_04_w01_c04.Text = wyciagnijWartosc(tabela2, "idWydzial=" + yyx + " and idTabeli=" + idTabeli + " and idWiersza =" + idWiersza + " and idkolumny='4'");
+                tab_04_w01_c01.Text = wyciagnijWartosc(tabelaDanych, "idWydzial=" + yyx + " and idTabeli=" + idTabeli + " and idWiersza =" + idWiersza + " and idkolumny='1'");
+                tab_04_w01_c02.Text = wyciagnijWartosc(tabelaDanych, "idWydzial=" + yyx + " and idTabeli=" + idTabeli + " and idWiersza =" + idWiersza + " and idkolumny='2'");
+                tab_04_w01_c03.Text = wyciagnijWartosc(tabelaDanych, "idWydzial=" + yyx + " and idTabeli=" + idTabeli + " and idWiersza =" + idWiersza + " and idkolumny='3'");
+                tab_04_w01_c04.Text = wyciagnijWartosc(tabelaDanych, "idWydzial=" + yyx + " and idTabeli=" + idTabeli + " and idWiersza =" + idWiersza + " and idkolumny='4'");
 
                 //wiersz 2
                 idWiersza = "'2'";
-                tab_04_w02_c01.Text = wyciagnijWartosc(tabela2, "idWydzial=" + yyx + " and idTabeli=" + idTabeli + " and idWiersza =" + idWiersza + " and idkolumny='1'");
-                tab_04_w02_c02.Text = wyciagnijWartosc(tabela2, "idWydzial=" + yyx + " and idTabeli=" + idTabeli + " and idWiersza =" + idWiersza + " and idkolumny='2'");
-                tab_04_w02_c03.Text = wyciagnijWartosc(tabela2, "idWydzial=" + yyx + " and idTabeli=" + idTabeli + " and idWiersza =" + idWiersza + " and idkolumny='3'");
-                tab_04_w02_c04.Text = wyciagnijWartosc(tabela2, "idWydzial=" + yyx + " and idTabeli=" + idTabeli + " and idWiersza =" + idWiersza + " and idkolumny='4'");
+                tab_04_w02_c01.Text = wyciagnijWartosc(tabelaDanych, "idWydzial=" + yyx + " and idTabeli=" + idTabeli + " and idWiersza =" + idWiersza + " and idkolumny='1'");
+                tab_04_w02_c02.Text = wyciagnijWartosc(tabelaDanych, "idWydzial=" + yyx + " and idTabeli=" + idTabeli + " and idWiersza =" + idWiersza + " and idkolumny='2'");
+                tab_04_w02_c03.Text = wyciagnijWartosc(tabelaDanych, "idWydzial=" + yyx + " and idTabeli=" + idTabeli + " and idWiersza =" + idWiersza + " and idkolumny='3'");
+                tab_04_w02_c04.Text = wyciagnijWartosc(tabelaDanych, "idWydzial=" + yyx + " and idTabeli=" + idTabeli + " and idWiersza =" + idWiersza + " and idkolumny='4'");
 
                 //wiersz 3
                 idWiersza = "'3'";
-                tab_04_w03_c01.Text = wyciagnijWartosc(tabela2, "idWydzial=" + yyx + " and idTabeli=" + idTabeli + " and idWiersza =" + idWiersza + " and idkolumny='1'");
-                tab_04_w03_c02.Text = wyciagnijWartosc(tabela2, "idWydzial=" + yyx + " and idTabeli=" + idTabeli + " and idWiersza =" + idWiersza + " and idkolumny='2'");
-                tab_04_w03_c03.Text = wyciagnijWartosc(tabela2, "idWydzial=" + yyx + " and idTabeli=" + idTabeli + " and idWiersza =" + idWiersza + " and idkolumny='3'");
-                tab_04_w03_c04.Text = wyciagnijWartosc(tabela2, "idWydzial=" + yyx + " and idTabeli=" + idTabeli + " and idWiersza =" + idWiersza + " and idkolumny='4'");
+                tab_04_w03_c01.Text = wyciagnijWartosc(tabelaDanych, "idWydzial=" + yyx + " and idTabeli=" + idTabeli + " and idWiersza =" + idWiersza + " and idkolumny='1'");
+                tab_04_w03_c02.Text = wyciagnijWartosc(tabelaDanych, "idWydzial=" + yyx + " and idTabeli=" + idTabeli + " and idWiersza =" + idWiersza + " and idkolumny='2'");
+                tab_04_w03_c03.Text = wyciagnijWartosc(tabelaDanych, "idWydzial=" + yyx + " and idTabeli=" + idTabeli + " and idWiersza =" + idWiersza + " and idkolumny='3'");
+                tab_04_w03_c04.Text = wyciagnijWartosc(tabelaDanych, "idWydzial=" + yyx + " and idTabeli=" + idTabeli + " and idWiersza =" + idWiersza + " and idkolumny='4'");
 
                 //wiersz 4
                 idWiersza = "'4'";
-                tab_04_w04_c01.Text = wyciagnijWartosc(tabela2, "idWydzial=" + yyx + " and idTabeli=" + idTabeli + " and idWiersza =" + idWiersza + " and idkolumny='1'");
-                tab_04_w04_c02.Text = wyciagnijWartosc(tabela2, "idWydzial=" + yyx + " and idTabeli=" + idTabeli + " and idWiersza =" + idWiersza + " and idkolumny='2'");
-                tab_04_w04_c03.Text = wyciagnijWartosc(tabela2, "idWydzial=" + yyx + " and idTabeli=" + idTabeli + " and idWiersza =" + idWiersza + " and idkolumny='3'");
-                tab_04_w04_c04.Text = wyciagnijWartosc(tabela2, "idWydzial=" + yyx + " and idTabeli=" + idTabeli + " and idWiersza =" + idWiersza + " and idkolumny='4'");
+                tab_04_w04_c01.Text = wyciagnijWartosc(tabelaDanych, "idWydzial=" + yyx + " and idTabeli=" + idTabeli + " and idWiersza =" + idWiersza + " and idkolumny='1'");
+                tab_04_w04_c02.Text = wyciagnijWartosc(tabelaDanych, "idWydzial=" + yyx + " and idTabeli=" + idTabeli + " and idWiersza =" + idWiersza + " and idkolumny='2'");
+                tab_04_w04_c03.Text = wyciagnijWartosc(tabelaDanych, "idWydzial=" + yyx + " and idTabeli=" + idTabeli + " and idWiersza =" + idWiersza + " and idkolumny='3'");
+                tab_04_w04_c04.Text = wyciagnijWartosc(tabelaDanych, "idWydzial=" + yyx + " and idTabeli=" + idTabeli + " and idWiersza =" + idWiersza + " and idkolumny='4'");
 
-                #endregion "tabel 4 - 4.1"
+                #endregion "tabel 4 - 7.1"
 
                 #region "tabel 5 - 7.1"
 
                 //wiersz 1
                 idTabeli = "'7.2'";
                 idWiersza = "'1'";
-                tab_05_w01_c01.Text = wyciagnijWartosc(tabela2, "idWydzial=" + yyx + " and idTabeli=" + idTabeli + " and idWiersza =" + idWiersza + " and idkolumny='1'");
-                tab_05_w01_c02.Text = wyciagnijWartosc(tabela2, "idWydzial=" + yyx + " and idTabeli=" + idTabeli + " and idWiersza =" + idWiersza + " and idkolumny='2'");
-                tab_05_w01_c03.Text = wyciagnijWartosc(tabela2, "idWydzial=" + yyx + " and idTabeli=" + idTabeli + " and idWiersza =" + idWiersza + " and idkolumny='3'");
-                tab_05_w01_c04.Text = wyciagnijWartosc(tabela2, "idWydzial=" + yyx + " and idTabeli=" + idTabeli + " and idWiersza =" + idWiersza + " and idkolumny='4'");
-                tab_05_w01_c05.Text = wyciagnijWartosc(tabela2, "idWydzial=" + yyx + " and idTabeli=" + idTabeli + " and idWiersza =" + idWiersza + " and idkolumny='5'");
-                tab_05_w01_c06.Text = wyciagnijWartosc(tabela2, "idWydzial=" + yyx + " and idTabeli=" + idTabeli + " and idWiersza =" + idWiersza + " and idkolumny='6'");
-                tab_05_w01_c07.Text = wyciagnijWartosc(tabela2, "idWydzial=" + yyx + " and idTabeli=" + idTabeli + " and idWiersza =" + idWiersza + " and idkolumny='7'");
-                tab_05_w01_c08.Text = wyciagnijWartosc(tabela2, "idWydzial=" + yyx + " and idTabeli=" + idTabeli + " and idWiersza =" + idWiersza + " and idkolumny='8'");
+                tab_05_w01_c01.Text = wyciagnijWartosc(tabelaDanych, "idWydzial=" + yyx + " and idTabeli=" + idTabeli + " and idWiersza =" + idWiersza + " and idkolumny='1'");
+                tab_05_w01_c02.Text = wyciagnijWartosc(tabelaDanych, "idWydzial=" + yyx + " and idTabeli=" + idTabeli + " and idWiersza =" + idWiersza + " and idkolumny='2'");
+                tab_05_w01_c03.Text = wyciagnijWartosc(tabelaDanych, "idWydzial=" + yyx + " and idTabeli=" + idTabeli + " and idWiersza =" + idWiersza + " and idkolumny='3'");
+                tab_05_w01_c04.Text = wyciagnijWartosc(tabelaDanych, "idWydzial=" + yyx + " and idTabeli=" + idTabeli + " and idWiersza =" + idWiersza + " and idkolumny='4'");
+                tab_05_w01_c05.Text = wyciagnijWartosc(tabelaDanych, "idWydzial=" + yyx + " and idTabeli=" + idTabeli + " and idWiersza =" + idWiersza + " and idkolumny='5'");
+                tab_05_w01_c06.Text = wyciagnijWartosc(tabelaDanych, "idWydzial=" + yyx + " and idTabeli=" + idTabeli + " and idWiersza =" + idWiersza + " and idkolumny='6'");
+                tab_05_w01_c07.Text = wyciagnijWartosc(tabelaDanych, "idWydzial=" + yyx + " and idTabeli=" + idTabeli + " and idWiersza =" + idWiersza + " and idkolumny='7'");
+                tab_05_w01_c08.Text = wyciagnijWartosc(tabelaDanych, "idWydzial=" + yyx + " and idTabeli=" + idTabeli + " and idWiersza =" + idWiersza + " and idkolumny='8'");
 
                 //wiersz 2
                 idWiersza = "'2'";
-                tab_05_w02_c01.Text = wyciagnijWartosc(tabela2, "idWydzial=" + yyx + " and idTabeli=" + idTabeli + " and idWiersza =" + idWiersza + " and idkolumny='1'");
-                tab_05_w02_c02.Text = wyciagnijWartosc(tabela2, "idWydzial=" + yyx + " and idTabeli=" + idTabeli + " and idWiersza =" + idWiersza + " and idkolumny='2'");
-                tab_05_w02_c03.Text = wyciagnijWartosc(tabela2, "idWydzial=" + yyx + " and idTabeli=" + idTabeli + " and idWiersza =" + idWiersza + " and idkolumny='3'");
-                tab_05_w02_c04.Text = wyciagnijWartosc(tabela2, "idWydzial=" + yyx + " and idTabeli=" + idTabeli + " and idWiersza =" + idWiersza + " and idkolumny='4'");
-                tab_05_w02_c05.Text = wyciagnijWartosc(tabela2, "idWydzial=" + yyx + " and idTabeli=" + idTabeli + " and idWiersza =" + idWiersza + " and idkolumny='5'");
-                tab_05_w02_c06.Text = wyciagnijWartosc(tabela2, "idWydzial=" + yyx + " and idTabeli=" + idTabeli + " and idWiersza =" + idWiersza + " and idkolumny='6'");
-                tab_05_w02_c07.Text = wyciagnijWartosc(tabela2, "idWydzial=" + yyx + " and idTabeli=" + idTabeli + " and idWiersza =" + idWiersza + " and idkolumny='7'");
-                tab_05_w02_c08.Text = wyciagnijWartosc(tabela2, "idWydzial=" + yyx + " and idTabeli=" + idTabeli + " and idWiersza =" + idWiersza + " and idkolumny='8'");
+                tab_05_w02_c01.Text = wyciagnijWartosc(tabelaDanych, "idWydzial=" + yyx + " and idTabeli=" + idTabeli + " and idWiersza =" + idWiersza + " and idkolumny='1'");
+                tab_05_w02_c02.Text = wyciagnijWartosc(tabelaDanych, "idWydzial=" + yyx + " and idTabeli=" + idTabeli + " and idWiersza =" + idWiersza + " and idkolumny='2'");
+                tab_05_w02_c03.Text = wyciagnijWartosc(tabelaDanych, "idWydzial=" + yyx + " and idTabeli=" + idTabeli + " and idWiersza =" + idWiersza + " and idkolumny='3'");
+                tab_05_w02_c04.Text = wyciagnijWartosc(tabelaDanych, "idWydzial=" + yyx + " and idTabeli=" + idTabeli + " and idWiersza =" + idWiersza + " and idkolumny='4'");
+                tab_05_w02_c05.Text = wyciagnijWartosc(tabelaDanych, "idWydzial=" + yyx + " and idTabeli=" + idTabeli + " and idWiersza =" + idWiersza + " and idkolumny='5'");
+                tab_05_w02_c06.Text = wyciagnijWartosc(tabelaDanych, "idWydzial=" + yyx + " and idTabeli=" + idTabeli + " and idWiersza =" + idWiersza + " and idkolumny='6'");
+                tab_05_w02_c07.Text = wyciagnijWartosc(tabelaDanych, "idWydzial=" + yyx + " and idTabeli=" + idTabeli + " and idWiersza =" + idWiersza + " and idkolumny='7'");
+                tab_05_w02_c08.Text = wyciagnijWartosc(tabelaDanych, "idWydzial=" + yyx + " and idTabeli=" + idTabeli + " and idWiersza =" + idWiersza + " and idkolumny='8'");
 
                 //wiersz 3
                 idWiersza = "'3'";
-                tab_05_w03_c01.Text = wyciagnijWartosc(tabela2, "idWydzial=" + yyx + " and idTabeli=" + idTabeli + " and idWiersza =" + idWiersza + " and idkolumny='1'");
-                tab_05_w03_c02.Text = wyciagnijWartosc(tabela2, "idWydzial=" + yyx + " and idTabeli=" + idTabeli + " and idWiersza =" + idWiersza + " and idkolumny='2'");
-                tab_05_w03_c03.Text = wyciagnijWartosc(tabela2, "idWydzial=" + yyx + " and idTabeli=" + idTabeli + " and idWiersza =" + idWiersza + " and idkolumny='3'");
-                tab_05_w03_c04.Text = wyciagnijWartosc(tabela2, "idWydzial=" + yyx + " and idTabeli=" + idTabeli + " and idWiersza =" + idWiersza + " and idkolumny='4'");
-                tab_05_w03_c05.Text = wyciagnijWartosc(tabela2, "idWydzial=" + yyx + " and idTabeli=" + idTabeli + " and idWiersza =" + idWiersza + " and idkolumny='5'");
-                tab_05_w03_c06.Text = wyciagnijWartosc(tabela2, "idWydzial=" + yyx + " and idTabeli=" + idTabeli + " and idWiersza =" + idWiersza + " and idkolumny='6'");
-                tab_05_w03_c07.Text = wyciagnijWartosc(tabela2, "idWydzial=" + yyx + " and idTabeli=" + idTabeli + " and idWiersza =" + idWiersza + " and idkolumny='7'");
-                tab_05_w03_c08.Text = wyciagnijWartosc(tabela2, "idWydzial=" + yyx + " and idTabeli=" + idTabeli + " and idWiersza =" + idWiersza + " and idkolumny='8'");
+                tab_05_w03_c01.Text = wyciagnijWartosc(tabelaDanych, "idWydzial=" + yyx + " and idTabeli=" + idTabeli + " and idWiersza =" + idWiersza + " and idkolumny='1'");
+                tab_05_w03_c02.Text = wyciagnijWartosc(tabelaDanych, "idWydzial=" + yyx + " and idTabeli=" + idTabeli + " and idWiersza =" + idWiersza + " and idkolumny='2'");
+                tab_05_w03_c03.Text = wyciagnijWartosc(tabelaDanych, "idWydzial=" + yyx + " and idTabeli=" + idTabeli + " and idWiersza =" + idWiersza + " and idkolumny='3'");
+                tab_05_w03_c04.Text = wyciagnijWartosc(tabelaDanych, "idWydzial=" + yyx + " and idTabeli=" + idTabeli + " and idWiersza =" + idWiersza + " and idkolumny='4'");
+                tab_05_w03_c05.Text = wyciagnijWartosc(tabelaDanych, "idWydzial=" + yyx + " and idTabeli=" + idTabeli + " and idWiersza =" + idWiersza + " and idkolumny='5'");
+                tab_05_w03_c06.Text = wyciagnijWartosc(tabelaDanych, "idWydzial=" + yyx + " and idTabeli=" + idTabeli + " and idWiersza =" + idWiersza + " and idkolumny='6'");
+                tab_05_w03_c07.Text = wyciagnijWartosc(tabelaDanych, "idWydzial=" + yyx + " and idTabeli=" + idTabeli + " and idWiersza =" + idWiersza + " and idkolumny='7'");
+                tab_05_w03_c08.Text = wyciagnijWartosc(tabelaDanych, "idWydzial=" + yyx + " and idTabeli=" + idTabeli + " and idWiersza =" + idWiersza + " and idkolumny='8'");
 
                 //wiersz 4
                 idWiersza = "'4'";
-                tab_05_w04_c01.Text = wyciagnijWartosc(tabela2, "idWydzial=" + yyx + " and idTabeli=" + idTabeli + " and idWiersza =" + idWiersza + " and idkolumny='1'");
-                tab_05_w04_c02.Text = wyciagnijWartosc(tabela2, "idWydzial=" + yyx + " and idTabeli=" + idTabeli + " and idWiersza =" + idWiersza + " and idkolumny='2'");
-                tab_05_w04_c03.Text = wyciagnijWartosc(tabela2, "idWydzial=" + yyx + " and idTabeli=" + idTabeli + " and idWiersza =" + idWiersza + " and idkolumny='3'");
-                tab_05_w04_c04.Text = wyciagnijWartosc(tabela2, "idWydzial=" + yyx + " and idTabeli=" + idTabeli + " and idWiersza =" + idWiersza + " and idkolumny='4'");
-                tab_05_w04_c05.Text = wyciagnijWartosc(tabela2, "idWydzial=" + yyx + " and idTabeli=" + idTabeli + " and idWiersza =" + idWiersza + " and idkolumny='5'");
-                tab_05_w04_c06.Text = wyciagnijWartosc(tabela2, "idWydzial=" + yyx + " and idTabeli=" + idTabeli + " and idWiersza =" + idWiersza + " and idkolumny='6'");
-                tab_05_w04_c07.Text = wyciagnijWartosc(tabela2, "idWydzial=" + yyx + " and idTabeli=" + idTabeli + " and idWiersza =" + idWiersza + " and idkolumny='7'");
-                tab_05_w04_c08.Text = wyciagnijWartosc(tabela2, "idWydzial=" + yyx + " and idTabeli=" + idTabeli + " and idWiersza =" + idWiersza + " and idkolumny='8'");
+                tab_05_w04_c01.Text = wyciagnijWartosc(tabelaDanych, "idWydzial=" + yyx + " and idTabeli=" + idTabeli + " and idWiersza =" + idWiersza + " and idkolumny='1'");
+                tab_05_w04_c02.Text = wyciagnijWartosc(tabelaDanych, "idWydzial=" + yyx + " and idTabeli=" + idTabeli + " and idWiersza =" + idWiersza + " and idkolumny='2'");
+                tab_05_w04_c03.Text = wyciagnijWartosc(tabelaDanych, "idWydzial=" + yyx + " and idTabeli=" + idTabeli + " and idWiersza =" + idWiersza + " and idkolumny='3'");
+                tab_05_w04_c04.Text = wyciagnijWartosc(tabelaDanych, "idWydzial=" + yyx + " and idTabeli=" + idTabeli + " and idWiersza =" + idWiersza + " and idkolumny='4'");
+                tab_05_w04_c05.Text = wyciagnijWartosc(tabelaDanych, "idWydzial=" + yyx + " and idTabeli=" + idTabeli + " and idWiersza =" + idWiersza + " and idkolumny='5'");
+                tab_05_w04_c06.Text = wyciagnijWartosc(tabelaDanych, "idWydzial=" + yyx + " and idTabeli=" + idTabeli + " and idWiersza =" + idWiersza + " and idkolumny='6'");
+                tab_05_w04_c07.Text = wyciagnijWartosc(tabelaDanych, "idWydzial=" + yyx + " and idTabeli=" + idTabeli + " and idWiersza =" + idWiersza + " and idkolumny='7'");
+                tab_05_w04_c08.Text = wyciagnijWartosc(tabelaDanych, "idWydzial=" + yyx + " and idTabeli=" + idTabeli + " and idWiersza =" + idWiersza + " and idkolumny='8'");
 
                 #endregion "tabel 5 - 7.1"
-
-                #region "tabel 6 - X.1"
-
-                //wiersz 1
-                idTabeli = "'7.3'";
-                idWiersza = "'1'";
-                tab_06_w01_c01.Text = wyciagnijWartosc(tabela2, "idWydzial=" + yyx + " and idTabeli=" + idTabeli + " and idWiersza =" + idWiersza + " and idkolumny='1'");
-                tab_06_w01_c02.Text = wyciagnijWartosc(tabela2, "idWydzial=" + yyx + " and idTabeli=" + idTabeli + " and idWiersza =" + idWiersza + " and idkolumny='2'");
-                tab_06_w01_c03.Text = wyciagnijWartosc(tabela2, "idWydzial=" + yyx + " and idTabeli=" + idTabeli + " and idWiersza =" + idWiersza + " and idkolumny='3'");
-                tab_06_w01_c04.Text = wyciagnijWartosc(tabela2, "idWydzial=" + yyx + " and idTabeli=" + idTabeli + " and idWiersza =" + idWiersza + " and idkolumny='4'");
-                tab_06_w01_c05.Text = wyciagnijWartosc(tabela2, "idWydzial=" + yyx + " and idTabeli=" + idTabeli + " and idWiersza =" + idWiersza + " and idkolumny='5'");
-                tab_06_w01_c06.Text = wyciagnijWartosc(tabela2, "idWydzial=" + yyx + " and idTabeli=" + idTabeli + " and idWiersza =" + idWiersza + " and idkolumny='6'");
-                tab_06_w01_c07.Text = wyciagnijWartosc(tabela2, "idWydzial=" + yyx + " and idTabeli=" + idTabeli + " and idWiersza =" + idWiersza + " and idkolumny='7'");
-                tab_06_w01_c08.Text = wyciagnijWartosc(tabela2, "idWydzial=" + yyx + " and idTabeli=" + idTabeli + " and idWiersza =" + idWiersza + " and idkolumny='8'");
-
-                //wiersz 2
-                idWiersza = "'2'";
-                tab_06_w02_c01.Text = wyciagnijWartosc(tabela2, "idWydzial=" + yyx + " and idTabeli=" + idTabeli + " and idWiersza =" + idWiersza + " and idkolumny='1'");
-                tab_06_w02_c02.Text = wyciagnijWartosc(tabela2, "idWydzial=" + yyx + " and idTabeli=" + idTabeli + " and idWiersza =" + idWiersza + " and idkolumny='2'");
-                tab_06_w02_c03.Text = wyciagnijWartosc(tabela2, "idWydzial=" + yyx + " and idTabeli=" + idTabeli + " and idWiersza =" + idWiersza + " and idkolumny='3'");
-                tab_06_w02_c04.Text = wyciagnijWartosc(tabela2, "idWydzial=" + yyx + " and idTabeli=" + idTabeli + " and idWiersza =" + idWiersza + " and idkolumny='4'");
-                tab_06_w02_c05.Text = wyciagnijWartosc(tabela2, "idWydzial=" + yyx + " and idTabeli=" + idTabeli + " and idWiersza =" + idWiersza + " and idkolumny='5'");
-                tab_06_w02_c06.Text = wyciagnijWartosc(tabela2, "idWydzial=" + yyx + " and idTabeli=" + idTabeli + " and idWiersza =" + idWiersza + " and idkolumny='6'");
-                tab_06_w02_c07.Text = wyciagnijWartosc(tabela2, "idWydzial=" + yyx + " and idTabeli=" + idTabeli + " and idWiersza =" + idWiersza + " and idkolumny='7'");
-                tab_06_w02_c08.Text = wyciagnijWartosc(tabela2, "idWydzial=" + yyx + " and idTabeli=" + idTabeli + " and idWiersza =" + idWiersza + " and idkolumny='8'");
-
-                //wiersz 3
-                idWiersza = "'3'";
-                tab_06_w03_c01.Text = wyciagnijWartosc(tabela2, "idWydzial=" + yyx + " and idTabeli=" + idTabeli + " and idWiersza =" + idWiersza + " and idkolumny='1'");
-                tab_06_w03_c02.Text = wyciagnijWartosc(tabela2, "idWydzial=" + yyx + " and idTabeli=" + idTabeli + " and idWiersza =" + idWiersza + " and idkolumny='2'");
-                tab_06_w03_c03.Text = wyciagnijWartosc(tabela2, "idWydzial=" + yyx + " and idTabeli=" + idTabeli + " and idWiersza =" + idWiersza + " and idkolumny='3'");
-                tab_06_w03_c04.Text = wyciagnijWartosc(tabela2, "idWydzial=" + yyx + " and idTabeli=" + idTabeli + " and idWiersza =" + idWiersza + " and idkolumny='4'");
-                tab_06_w03_c05.Text = wyciagnijWartosc(tabela2, "idWydzial=" + yyx + " and idTabeli=" + idTabeli + " and idWiersza =" + idWiersza + " and idkolumny='5'");
-                tab_06_w03_c06.Text = wyciagnijWartosc(tabela2, "idWydzial=" + yyx + " and idTabeli=" + idTabeli + " and idWiersza =" + idWiersza + " and idkolumny='6'");
-                tab_06_w03_c07.Text = wyciagnijWartosc(tabela2, "idWydzial=" + yyx + " and idTabeli=" + idTabeli + " and idWiersza =" + idWiersza + " and idkolumny='7'");
-                tab_06_w03_c08.Text = wyciagnijWartosc(tabela2, "idWydzial=" + yyx + " and idTabeli=" + idTabeli + " and idWiersza =" + idWiersza + " and idkolumny='8'");
-
-                //wiersz 4
-                idWiersza = "'4'";
-                tab_06_w04_c01.Text = wyciagnijWartosc(tabela2, "idWydzial=" + yyx + " and idTabeli=" + idTabeli + " and idWiersza =" + idWiersza + " and idkolumny='1'");
-                tab_06_w04_c02.Text = wyciagnijWartosc(tabela2, "idWydzial=" + yyx + " and idTabeli=" + idTabeli + " and idWiersza =" + idWiersza + " and idkolumny='2'");
-                tab_06_w04_c03.Text = wyciagnijWartosc(tabela2, "idWydzial=" + yyx + " and idTabeli=" + idTabeli + " and idWiersza =" + idWiersza + " and idkolumny='3'");
-                tab_06_w04_c04.Text = wyciagnijWartosc(tabela2, "idWydzial=" + yyx + " and idTabeli=" + idTabeli + " and idWiersza =" + idWiersza + " and idkolumny='4'");
-                tab_06_w04_c05.Text = wyciagnijWartosc(tabela2, "idWydzial=" + yyx + " and idTabeli=" + idTabeli + " and idWiersza =" + idWiersza + " and idkolumny='5'");
-                tab_06_w04_c06.Text = wyciagnijWartosc(tabela2, "idWydzial=" + yyx + " and idTabeli=" + idTabeli + " and idWiersza =" + idWiersza + " and idkolumny='6'");
-                tab_06_w04_c07.Text = wyciagnijWartosc(tabela2, "idWydzial=" + yyx + " and idTabeli=" + idTabeli + " and idWiersza =" + idWiersza + " and idkolumny='7'");
-                tab_06_w04_c08.Text = wyciagnijWartosc(tabela2, "idWydzial=" + yyx + " and idTabeli=" + idTabeli + " and idWiersza =" + idWiersza + " and idkolumny='8'");
-
-                #endregion "tabel 6 - X.1"
 
                 #region "tabel 7 - "
 
                 idTabeli = "'8.1'";
                 idWiersza = "'1'";
 
-                tab_81_w01_c01.Text = wyciagnijWartosc(tabela2, "idWydzial=" + yyx + " and idTabeli=" + idTabeli + " and idWiersza =" + idWiersza + " and idkolumny='1'");
+                tab_81_w01_c01.Text = wyciagnijWartosc(tabelaDanych, "idWydzial=" + yyx + " and idTabeli=" + idTabeli + " and idWiersza =" + idWiersza + " and idkolumny='1'");
                 //wiersz 1
                 idTabeli = "'8.2'";
                 idWiersza = "'1'";
-                tab_07_w01_c01.Text = wyciagnijWartosc(tabela2, "idWydzial=" + yyx + " and idTabeli=" + idTabeli + " and idWiersza =" + idWiersza + " and idkolumny='1'");
-                tab_07_w01_c02.Text = wyciagnijWartosc(tabela2, "idWydzial=" + yyx + " and idTabeli=" + idTabeli + " and idWiersza =" + idWiersza + " and idkolumny='2'");
-                tab_07_w01_c03.Text = wyciagnijWartosc(tabela2, "idWydzial=" + yyx + " and idTabeli=" + idTabeli + " and idWiersza =" + idWiersza + " and idkolumny='3'");
-                tab_07_w01_c04.Text = wyciagnijWartosc(tabela2, "idWydzial=" + yyx + " and idTabeli=" + idTabeli + " and idWiersza =" + idWiersza + " and idkolumny='4'");
-                tab_07_w01_c05.Text = wyciagnijWartosc(tabela2, "idWydzial=" + yyx + " and idTabeli=" + idTabeli + " and idWiersza =" + idWiersza + " and idkolumny='5'");
-                tab_07_w01_c06.Text = wyciagnijWartosc(tabela2, "idWydzial=" + yyx + " and idTabeli=" + idTabeli + " and idWiersza =" + idWiersza + " and idkolumny='6'");
-                tab_07_w01_c07.Text = wyciagnijWartosc(tabela2, "idWydzial=" + yyx + " and idTabeli=" + idTabeli + " and idWiersza =" + idWiersza + " and idkolumny='7'");
-                tab_07_w01_c08.Text = wyciagnijWartosc(tabela2, "idWydzial=" + yyx + " and idTabeli=" + idTabeli + " and idWiersza =" + idWiersza + " and idkolumny='8'");
+                tab_07_w01_c01.Text = wyciagnijWartosc(tabelaDanych, "idWydzial=" + yyx + " and idTabeli=" + idTabeli + " and idWiersza =" + idWiersza + " and idkolumny='1'");
+                tab_07_w01_c02.Text = wyciagnijWartosc(tabelaDanych, "idWydzial=" + yyx + " and idTabeli=" + idTabeli + " and idWiersza =" + idWiersza + " and idkolumny='2'");
+                tab_07_w01_c03.Text = wyciagnijWartosc(tabelaDanych, "idWydzial=" + yyx + " and idTabeli=" + idTabeli + " and idWiersza =" + idWiersza + " and idkolumny='3'");
+                tab_07_w01_c04.Text = wyciagnijWartosc(tabelaDanych, "idWydzial=" + yyx + " and idTabeli=" + idTabeli + " and idWiersza =" + idWiersza + " and idkolumny='4'");
+                tab_07_w01_c05.Text = wyciagnijWartosc(tabelaDanych, "idWydzial=" + yyx + " and idTabeli=" + idTabeli + " and idWiersza =" + idWiersza + " and idkolumny='5'");
+                tab_07_w01_c06.Text = wyciagnijWartosc(tabelaDanych, "idWydzial=" + yyx + " and idTabeli=" + idTabeli + " and idWiersza =" + idWiersza + " and idkolumny='6'");
+                tab_07_w01_c07.Text = wyciagnijWartosc(tabelaDanych, "idWydzial=" + yyx + " and idTabeli=" + idTabeli + " and idWiersza =" + idWiersza + " and idkolumny='7'");
+                tab_07_w01_c08.Text = wyciagnijWartosc(tabelaDanych, "idWydzial=" + yyx + " and idTabeli=" + idTabeli + " and idWiersza =" + idWiersza + " and idkolumny='8'");
 
                 #endregion "tabel 7 - "
 
@@ -336,14 +213,18 @@ namespace stat2018
                 //wiersz 1
                 idTabeli = "'8.3'";
                 idWiersza = "'1'";
-                tab_08_w01_c01.Text = wyciagnijWartosc(tabela2, "idWydzial=" + yyx + " and idTabeli=" + idTabeli + " and idWiersza =" + idWiersza + " and idkolumny='1'");
-                tab_08_w01_c02.Text = wyciagnijWartosc(tabela2, "idWydzial=" + yyx + " and idTabeli=" + idTabeli + " and idWiersza =" + idWiersza + " and idkolumny='2'");
-                tab_08_w01_c03.Text = wyciagnijWartosc(tabela2, "idWydzial=" + yyx + " and idTabeli=" + idTabeli + " and idWiersza =" + idWiersza + " and idkolumny='3'");
-                tab_08_w01_c04.Text = wyciagnijWartosc(tabela2, "idWydzial=" + yyx + " and idTabeli=" + idTabeli + " and idWiersza =" + idWiersza + " and idkolumny='4'");
-                tab_08_w01_c05.Text = wyciagnijWartosc(tabela2, "idWydzial=" + yyx + " and idTabeli=" + idTabeli + " and idWiersza =" + idWiersza + " and idkolumny='5'");
-                tab_08_w01_c06.Text = wyciagnijWartosc(tabela2, "idWydzial=" + yyx + " and idTabeli=" + idTabeli + " and idWiersza =" + idWiersza + " and idkolumny='6'");
-                tab_08_w01_c07.Text = wyciagnijWartosc(tabela2, "idWydzial=" + yyx + " and idTabeli=" + idTabeli + " and idWiersza =" + idWiersza + " and idkolumny='7'");
-                tab_08_w01_c08.Text = wyciagnijWartosc(tabela2, "idWydzial=" + yyx + " and idTabeli=" + idTabeli + " and idWiersza =" + idWiersza + " and idkolumny='8'");
+                tab_08_w01_c01.Text = wyciagnijWartosc(tabelaDanych, "idWydzial=" + yyx + " and idTabeli=" + idTabeli + " and idWiersza =" + idWiersza + " and idkolumny='1'");
+                tab_08_w01_c02.Text = wyciagnijWartosc(tabelaDanych, "idWydzial=" + yyx + " and idTabeli=" + idTabeli + " and idWiersza =" + idWiersza + " and idkolumny='2'");
+                tab_08_w01_c03.Text = wyciagnijWartosc(tabelaDanych, "idWydzial=" + yyx + " and idTabeli=" + idTabeli + " and idWiersza =" + idWiersza + " and idkolumny='3'");
+                tab_08_w01_c04.Text = wyciagnijWartosc(tabelaDanych, "idWydzial=" + yyx + " and idTabeli=" + idTabeli + " and idWiersza =" + idWiersza + " and idkolumny='4'");
+                tab_08_w01_c05.Text = wyciagnijWartosc(tabelaDanych, "idWydzial=" + yyx + " and idTabeli=" + idTabeli + " and idWiersza =" + idWiersza + " and idkolumny='5'");
+                tab_08_w01_c06.Text = wyciagnijWartosc(tabelaDanych, "idWydzial=" + yyx + " and idTabeli=" + idTabeli + " and idWiersza =" + idWiersza + " and idkolumny='6'");
+                tab_08_w01_c07.Text = wyciagnijWartosc(tabelaDanych, "idWydzial=" + yyx + " and idTabeli=" + idTabeli + " and idWiersza =" + idWiersza + " and idkolumny='7'");
+                tab_08_w01_c08.Text = wyciagnijWartosc(tabelaDanych, "idWydzial=" + yyx + " and idTabeli=" + idTabeli + " and idWiersza =" + idWiersza + " and idkolumny='8'");
+                tab_08_w01_c09.Text = wyciagnijWartosc(tabelaDanych, "idWydzial=" + yyx + " and idTabeli=" + idTabeli + " and idWiersza =" + idWiersza + " and idkolumny='9'");
+                tab_08_w01_c10.Text = wyciagnijWartosc(tabelaDanych, "idWydzial=" + yyx + " and idTabeli=" + idTabeli + " and idWiersza =" + idWiersza + " and idkolumny='10'");
+                tab_08_w01_c11.Text = wyciagnijWartosc(tabelaDanych, "idWydzial=" + yyx + " and idTabeli=" + idTabeli + " and idWiersza =" + idWiersza + " and idkolumny='11'");
+                tab_08_w01_c12.Text = wyciagnijWartosc(tabelaDanych, "idWydzial=" + yyx + " and idTabeli=" + idTabeli + " and idWiersza =" + idWiersza + " and idkolumny='12'");
 
                 #endregion "tabel 8.3 "
             }
@@ -397,31 +278,17 @@ namespace stat2018
                 if (((Date1.Date.Day == 1) && (Date2.Date.Day == last_day)) && ((Date1.Date.Month == Date2.Date.Month)))
                 {
                     // cały miesiąc
-                    tabela1Label.Text = "Dział 1.1.h. w tym w wyniku sprzeciwu od nakazu wydanego w elektronicznym postępowaniu upominawczym za miesiąc:  " + strMonthName + " " + Date2.Date.Year.ToString() + " roku.";
-                    tabela2Label.Text = "Dział 2.2.a. Czas trwania postępowania sądowego od dnia pierwszej rejestracji do dnia uprawomocnienia się sprawy merytorycznie zakończonej (wyrokiem, orzeczeniem) w I instancji (łącznie z czasem trwania mediacji) za miesiąc " + strMonthName + " " + Date2.Date.Year.ToString() + " roku.";
-                    tabela3Label.Text = "Dział 4.1. Terminowość postępowania międzyinstancyjnego w pierwszej instancji za miesiąc " + strMonthName + " " + Date2.Date.Year.ToString() + " roku.";
-                    tabela4Label.Text = "Dział 7.1. Liczba biegłych/podmiotów wydających opinie w sprawach  (z wył. tłumaczy przysięgłych) za miesiąc " + strMonthName + " " + Date2.Date.Year.ToString() + " roku.";
-
-                    tabela5Label.Text = "Dział 7.2. Terminowość sporządzania opinii pisemnych (z wył. tłumaczy przysięgłych) za miesiąc " + strMonthName + " " + Date2.Date.Year.ToString() + " roku.";
-                    tabela6Label.Text = "Dział 7.3.Terminowość przyznawania wynagrodzeń za sporządzenie opinii pisemnych i ustnych oraz za stawiennictwo za miesiąc " + strMonthName + " " + Date2.Date.Year.ToString() + " roku.";
-                    tabela7Label.Text = "Dział 8.2 Terminowość sporządzania tłumaczeń pisemnych za miesiąc " + strMonthName + " " + Date2.Date.Year.ToString() + " roku.";
-                    tabela8Label.Text = "Dział 8.3 Terminowość przyznawania wynagrodzeń za sporządzenie tłumaczeń pisemnych i ustnych oraz za stawiennictwo za miesiąc " + strMonthName + " " + Date2.Date.Year.ToString() + " roku.";
-                    //Informacje o ruchu sprawa za miesiąc: 
-
-                    //Pozostało z ubieglego miesiąca
+                    tabela4Label.Text = "<b>Dział 7.1.</b> Liczba biegłych/podmiotów wydających opinie w sprawach  (z wył. tłumaczy przysięgłych) za miesiąc " + strMonthName + " " + Date2.Date.Year.ToString() + " roku.";
+                    tabela5Label.Text = "<b>Dział 7.2.</b> Terminowość sporządzania opinii pisemnych (z wył. tłumaczy przysięgłych) za miesiąc " + strMonthName + " " + Date2.Date.Year.ToString() + " roku.";
+                    tabela7Label.Text = "<b>Dział 8.2</b> Terminowość sporządzania tłumaczeń pisemnych za miesiąc " + strMonthName + " " + Date2.Date.Year.ToString() + " roku.";
+                    tabela8Label.Text = "<b>Dział 8.3</b> Terminowość przyznawania wynagrodzeń za sporządzenie tłumaczeń pisemnych i ustnych oraz za stawiennictwo za miesiąc " + strMonthName + " " + Date2.Date.Year.ToString() + " roku.";
                 }
                 else
                 {
-                    tabela1Label.Text = "Dział 1.1.h. w tym w wyniku sprzeciwu od nakazu wydanego w elektronicznym postępowaniu upominawczym za okres od:  " + Date1.Text + " do  " + Date2.Text;
-                    tabela2Label.Text = "Dział 2.2.a. Czas trwania postępowania sądowego od dnia pierwszej rejestracji do dnia uprawomocnienia się sprawy merytorycznie zakończonej (wyrokiem, orzeczeniem) w I instancji (łącznie z czasem trwania mediacji) za okres od " + Date1.Text + " do  " + Date2.Text;
-                    tabela3Label.Text = "Dział 4.1. Terminowość postępowania międzyinstancyjnego w pierwszej instancji za okres od" + Date1.Text + " do  " + Date2.Text;
-
-                    tabela4Label.Text = "Dział 7.1. Liczba biegłych/podmiotów wydających opinie w sprawach  (z wył. tłumaczy przysięgłych) za okres od " + Date1.Text + " do  " + Date2.Text;
-
-                    tabela5Label.Text = "Dział 7.2. Terminowość sporządzania opinii pisemnych (z wył. tłumaczy przysięgłych) za okres od " + Date1.Text + " do  " + Date2.Text;
-                    tabela6Label.Text = "Dział 7.3.Terminowość przyznawania wynagrodzeń za sporządzenie opinii pisemnych i ustnych oraz za stawiennictwo za okres od " + Date1.Text + " do  " + Date2.Text;
-                    tabela7Label.Text = "Dział 8.2 Terminowość sporządzania tłumaczeń pisemnych za okres od " + Date1.Text + " do  " + Date2.Text;
-                    tabela8Label.Text = "Dział 8.3 Terminowość przyznawania wynagrodzeń za sporządzenie tłumaczeń pisemnych i ustnych oraz za stawiennictwo za okres od  " + Date1.Text + " do " + Date2.Text;
+                    tabela4Label.Text = "<b>Dział 7.1.</b> Liczba biegłych/podmiotów wydających opinie w sprawach  (z wył. tłumaczy przysięgłych) za okres od " + Date1.Text + " do  " + Date2.Text;
+                    tabela5Label.Text = "<b>Dział 7.2.</b> Terminowość sporządzania opinii pisemnych (z wył. tłumaczy przysięgłych) za okres od " + Date1.Text + " do  " + Date2.Text;
+                    tabela7Label.Text = "<b>Dział 8.2</b> Terminowość sporządzania tłumaczeń pisemnych za okres od " + Date1.Text + " do  " + Date2.Text;
+                    tabela8Label.Text = "<b>Dział 8.3</b> Terminowość przyznawania wynagrodzeń za sporządzenie tłumaczeń pisemnych i ustnych oraz za stawiennictwo za okres od  " + Date1.Text + " do " + Date2.Text;
                 }
             }
             catch
@@ -469,8 +336,8 @@ namespace stat2018
                 }
                 if (!string.IsNullOrEmpty(idWydzialu))
                 {
-                    DataTable tabela2 = ms.generuj_dane_do_tabeli_mss2(int.Parse((string)Session["id_dzialu"]), Date1.Date, Date2.Date, 21); //dane
-                    var distinctRows = (from DataRow dRow in tabela2.Rows select dRow["idTabeli"]).Distinct(); //lista tabelek
+                    DataTable tabelaDanych = ms.generuj_dane_do_tabeli_mss2(int.Parse((string)Session["id_dzialu"]), Date1.Date, Date2.Date, 21); //dane
+                    var distinctRows = (from DataRow dRow in tabelaDanych.Rows select dRow["idTabeli"]).Distinct(); //lista tabelek
                     DataTable listaTabelek = new DataTable();
                     listaTabelek.Columns.Add("tabela", typeof(string));
                     DataRow rowik = listaTabelek.NewRow();
@@ -484,7 +351,7 @@ namespace stat2018
                     var output = new StringBuilder();
                     //  output.AppendLine("Id formularza;Okres;Sąd;Wydział ;Dział;Wiersz;Kolumna;Liczba");
 
-                    output = ms.raportTXT(listaTabelek, tabela2, idRaportu.Text.Trim(), idSad.Text);
+                    output = ms.raportTXT(listaTabelek, tabelaDanych, idRaportu.Text.Trim(), idSad.Text);
 
                     Response.Clear();
                     Response.Buffer = true;

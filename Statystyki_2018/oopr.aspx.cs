@@ -121,13 +121,12 @@ namespace stat2018
                 dT_01.Rows.Add(new Object[] { "1", i.ToString(), "1", "1", "h" });
             }
 
-            for (int i = 0; i < 18; i++)
+            for (int i = 0; i < 20; i++)
             {
                 dT_01.Rows.Add(new Object[] { "2", "na rozp-<br/>rawie", "1", "1", "h" });
                 dT_01.Rows.Add(new Object[] { "2", "na posie-<br/>dzenie", "1", "1", "h" });
             }
-            dT_01.Rows.Add(new Object[] { "2", "rozp-<br/>rawy", "1", "1", "h" });
-            dT_01.Rows.Add(new Object[] { "2", "posie-<br/>dzenia", "1", "1", "h" });
+          
             dT_01.Rows.Add(new Object[] { "2", "rozp-<br/>rawy", "1", "1", "h" });
             dT_01.Rows.Add(new Object[] { "2", "posie-<br/>dzenia", "1", "1", "h" });
 

@@ -360,23 +360,7 @@
   </komorka>
 
 
-  <komorka>
-    <wiersz>3</wiersz>
-    <kolumna>68</kolumna>
-    <colSpan>1</colSpan>
-    <rowSpan>1</rowSpan>
-    <hv>h</hv>
-    <text>106</text>
-  </komorka>
-  <komorka>
-    <wiersz>3</wiersz>
-    <kolumna>69</kolumna>
-    <colSpan>1</colSpan>
-    <rowSpan>1</rowSpan>
-    <hv>h</hv>
-    <text>118</text>
-  </komorka>
-
+ 
 
   <komorka>
     <wiersz>3</wiersz>
@@ -446,6 +430,22 @@
     <text>w tym nieusprawiedliwione</text>
   </komorka>
 
+ <komorka>
+    <wiersz>3</wiersz>
+    <kolumna>93</kolumna>
+    <colSpan>1</colSpan>
+    <rowSpan>1</rowSpan>
+    <hv>h</hv>
+    <text>razem </text>
+  </komorka>
+  <komorka>
+    <wiersz>3</wiersz>
+    <kolumna>94</kolumna>
+    <colSpan>1</colSpan>
+    <rowSpan>1</rowSpan>
+    <hv>h</hv>
+    <text>w tym, w których projekt został zaakceptowany przez sędziego</text>
+  </komorka>
 
   <komorka>
     <wiersz>3</wiersz>

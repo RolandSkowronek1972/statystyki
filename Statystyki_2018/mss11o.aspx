@@ -245,7 +245,7 @@
     <table style="width: 100%;">
         <tr>
             <td class="center borderAll" colspan="4">Postanowienia o przyznaniu wynagrodzenia wg czasu od złożenia rachunku</td>
-            <td class="center borderAll" colspan="4">Skierowanie rachunku do oddziału finansowego wg czasu od postanowienia o przyznaniu wynagrodzenia</td>
+            <td class="center borderAll" colspan="8">Skierowanie rachunku do oddziału finansowego wg czasu od postanowienia o przyznaniu wynagrodzenia</td>
         </tr>
         <tr>
             <td class="center borderAll">razem (kol.2-4)</td>
@@ -255,7 +255,11 @@
             <td class="center borderAll">razem (kol. 6-8)</td>
             <td class="center borderAll">do 14 dni</td>
             <td class="center borderAll">pow.14 do 30 dni</td>
-            <td class="center borderAll">powyżej miesiąca </td>
+            <td class="center borderAll">razem powyżej miesiąca (kol. 9-12)</td>
+            <td class="center borderAll">pow. 1 do 2 miesięcy </td>
+            <td class="center borderAll">pow. 2 do 3 miesięcy</td>
+            <td class="center borderAll">pow. 3 do 6 miesięcy</td>
+            <td class="center borderAll">pow. 6 miesięcy</td>
         </tr>
         <tr>
             <td class="center borderAll">1</td>
@@ -266,6 +270,10 @@
             <td class="center borderAll">6</td>
             <td class="center borderAll">7</td>
             <td class="center borderAll">8</td>
+            <td class="center borderAll">9</td>
+            <td class="center borderAll">10</td>
+            <td class="center borderAll">11</td>
+            <td class="center borderAll">12</td>
         </tr>
         <tr>
             <td class="col_120 center borderAll "><a href="javascript:openPopup('popup.aspx?sesja=1!10.3!1!4')">
@@ -284,6 +292,14 @@
                 <asp:Label CssClass="normal" ID="tab_103_w01_c07" runat="server" Text="0"></asp:Label></a></td>
             <td class="col_120 center borderAll "><a href="javascript:openPopup('popup.aspx?sesja=1!10.3!8!4')">
                 <asp:Label CssClass="normal" ID="tab_103_w01_c08" runat="server" Text="0"></asp:Label></a></td>
+            <td class="col_120 center borderAll "><a href="javascript:openPopup('popup.aspx?sesja=1!10.3!9!4')">
+                <asp:Label CssClass="normal" ID="tab_103_w01_c09" runat="server" Text="0"></asp:Label></a></td>
+            <td class="col_120 center borderAll "><a href="javascript:openPopup('popup.aspx?sesja=1!10.3!10!4')">
+                <asp:Label CssClass="normal" ID="tab_103_w01_c10" runat="server" Text="0"></asp:Label></a></td>
+            <td class="col_120 center borderAll "><a href="javascript:openPopup('popup.aspx?sesja=1!10.3!11!4')">
+                <asp:Label CssClass="normal" ID="tab_103_w01_c11" runat="server" Text="0"></asp:Label></a></td>
+            <td class="col_120 center borderAll "><a href="javascript:openPopup('popup.aspx?sesja=1!10.3!12!4')">
+                <asp:Label CssClass="normal" ID="tab_103_w01_c12" runat="server" Text="0"></asp:Label></a></td>
         </tr>
     </table>
             </div>

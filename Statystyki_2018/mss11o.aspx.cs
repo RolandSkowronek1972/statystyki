@@ -24,7 +24,6 @@ namespace stat2018
             if (idWydzial != null)
             {
                 Session["id_dzialu"] = idWydzial;
-                //cm.log.Info(tenPlik + ": id wydzialu=" + idWydzial);
             }
             else
             {
@@ -84,62 +83,72 @@ namespace stat2018
                 tblControl.Width = 1150;
                 StringBuilder tabelaGlowna = new StringBuilder();
 
-                tabelaGlowna.AppendLine(ms.tworztabeleMSS("1", naglowekTabeliDzialu_1(), tabelaBocznaDzialu_1(), tabelaDanych, 1, 1, 1, 4, idWydzialuNumerycznie, false, "Ewidencja spraw z zakresu prawa pracy i ubezpieczeń społecznych – ogółem I i II instancja", tenPlik));
-                tabelaGlowna.AppendLine(ms.tworztabeleMSS("1.1.1.1", naglowekTabeliDzialu_1_1_1_1(), tabelaBocznaDzialu_1_1_1_1(), tabelaDanych, 4, 42, 4, 16, idWydzialuNumerycznie, true, "Ewidencja spraw z zakresu ubezpieczeń społecznych – ogółem oraz I instancja", tenPlik));
-                tabelaGlowna.AppendLine(ms.tworztabeleMSS("1.1.1.2", naglowekTabeliDzialu_1_1_1_2(), tabelaBocznaDzialu_1_1_1_2(), tabelaDanych, 4, 19, 2, 15, idWydzialuNumerycznie, true, "Ewidencja spraw z zakresu ubezpieczeń społecznych – II instancja", tenPlik));
+                tabelaGlowna.AppendLine(ms.tworztabeleMSS("1", naglowekTabeliDzialu_1(), tabelaBocznaDzialu_1(), tabelaDanych, 1, 3, 1, 4, idWydzialuNumerycznie, false, "Ewidencja spraw z zakresu prawa pracy i ubezpieczeń społecznych – ogółem I i II instancja", tenPlik));
+                tabelaGlowna.AppendLine(ms.tworztabeleMSS("1.1.1.1", naglowekTabeliDzialu_1_1_1_1(), tabelaBocznaDzialu_1_1_1_1(), tabelaDanych, 4, 43, 4, 16, idWydzialuNumerycznie, true, "Ewidencja spraw z zakresu ubezpieczeń społecznych – ogółem I instancja", tenPlik));
+                tabelaGlowna.AppendLine(ms.tworztabeleMSS("1.1.1.1.a", naglowekTabeliDzialu_1_1_1_1_a(), tabelaBocznaDzialu_1_1_1_1_a(), tabelaDanych, 3, 1, 1, 11, idWydzialuNumerycznie, true, "Ewidencja spraw z zakresu ubezpieczeń społecznych I instancja – zażaleniowe", tenPlik));
+                tabelaGlowna.AppendLine(ms.tworztabeleMSS("1.1.1.2", naglowekTabeliDzialu_1_1_1_2(), tabelaBocznaDzialu_1_1_1_2(), tabelaDanych, 4, 22, 2, 15, idWydzialuNumerycznie, true, "Ewidencja spraw z zakresu ubezpieczeń społecznych – II instancja", tenPlik));
                 tabelaGlowna.AppendLine(ms.tworztabeleMSS("1.1.a", naglowekTabeliDzialu_1_1_a(), tabelaBocznaDzialu_1_1_a(), tabelaDanych, 1, 7, 2, 1, idWydzialuNumerycznie, false, "Ewidencja spraw z zakresu ubezpieczeń społecznych – II instancja", tenPlik));
                 tabelaGlowna.AppendLine(ms.tworztabeleMSS("1.1.b", naglowekTabeliDzialu_1_1_b(), tabelaBocznaDzialu_1_1_b(), tabelaDanych, 1, 3, 1, 4, idWydzialuNumerycznie, false, "Zażalenia w ramach właściwości poziomej (dotyczy dz. 1.1.1.2, w. 2 i 15 lit. b)", tenPlik));
                 tabelaGlowna.AppendLine(ms.tworztabeleMSS("1.1.c", naglowekTabeliDzialu_1_1_c(), tabelaBocznaDzialu_1_1_c(), tabelaDanych, 1, 9, 2, 1, idWydzialuNumerycznie, false, "W tym: (skarga kasacyjna) (dział 1.1.1.2. wiersz 17 kol. 3 lit. c)", tenPlik));
-                tabelaGlowna.AppendLine(ms.tworztabeleMSS("1.1.d", naglowekTabeliDzialu_1_1_d(), tabelaBocznaDzialu_1_1_d(), tabelaDanych, 4, 10, 1, 15, idWydzialuNumerycznie, false, "Ewidencja spraw z zakresu ubezpieczeń społecznych – wg podmiotów", tenPlik));
-                tabelaGlowna.AppendLine(ms.tworztabeleMSS("1.1.2.1", naglowekTabeliDzialu_1_1_2_1(), tabelaBocznaDzialu_1_1_2_1(), tabelaDanych, 5, 85, 4, 15, idWydzialuNumerycznie, true, "Ewidencja spraw z zakresu prawa pracy –ogółem oraz I instancja", tenPlik));
-                tabelaGlowna.AppendLine(ms.tworztabeleMSS("1.1.2.2", naglowekTabeliDzialu_1_1_2_2(), tabelaBocznaDzialu_1_1_2_2(), tabelaDanych, 5, 97, 7, 15, idWydzialuNumerycznie, true, "Ewidencja spraw z zakresu prawa pracy – II instancja", tenPlik));
-                tabelaGlowna.AppendLine(ms.tworztabeleMSS("1.1.3.a", "Dział 1.1.3.a. Wpływ spraw (liczba), w których z roszczeniem wystąpiła większa grupa pracowników (co najmniej 10 pracowników) (Dział 1.1.2.1. wiersz 03 kol. 2 lit. a)", tabelaDanych, idWydzialuNumerycznie, tenPlik));
-                tabelaGlowna.AppendLine(ms.tworztabeleMSS("1.1.3.b", "Dział 1.1.3.b. Załatwiono spraw (liczba), w których z roszczeniem wystąpiła większa grupa pracowników (co najmniej 10 pracowników) (dział 1.1.2.1. wiersz 03 kol. 3 lit. b)", tabelaDanych, idWydzialuNumerycznie, tenPlik));
+                tabelaGlowna.AppendLine(ms.tworztabeleMSS("1.1.d", naglowekTabeliDzialu_1_1_d(), tabelaBocznaDzialu_1_1_d(), tabelaDanych, 1, 8, 4, 1, idWydzialuNumerycznie, false, "(łącznie I i II instancja) - (Dział 1.1.1.1. wiersz 43 + Dział 1.1.1.2. wiersz 21 kolumna 3 lit. d) w tym", tenPlik));
+                tabelaGlowna.AppendLine(ms.tworztabeleMSS("1.1.e", naglowekTabeliDzialu_1_1_e(), tabelaBocznaDzialu_1_1_e(), tabelaDanych, 4, 10, 1, 15, idWydzialuNumerycznie, false, "Ewidencja spraw z zakresu ubezpieczeń społecznych – wg podmiotów", tenPlik));
+                tabelaGlowna.AppendLine(ms.tworztabeleMSS("1.1.2.1", naglowekTabeliDzialu_1_1_2_1(), tabelaBocznaDzialu_1_1_2_1(), tabelaDanych, 5, 86, 4, 15, idWydzialuNumerycznie, true, "Ewidencja spraw z zakresu prawa pracy – ogółem I instancja", tenPlik));
+                tabelaGlowna.AppendLine(ms.tworztabeleMSS("1.1.2.1.a", naglowekTabeliDzialu_1_1_2_1_a(), tabelaBocznaDzialu_1_1_2_1_a(), tabelaDanych, 3, 1, 1, 11, idWydzialuNumerycznie, true, "Ewidencja spraw z zakresu prawa pracy I instancja – zażaleniowe", tenPlik));
+
+                tabelaGlowna.AppendLine(ms.tworztabeleMSS("1.1.2.2", naglowekTabeliDzialu_1_1_2_2(), tabelaBocznaDzialu_1_1_2_2(), tabelaDanych, 5, 100, 7, 15, idWydzialuNumerycznie, true, "Ewidencja spraw z zakresu prawa pracy – II instancja", tenPlik));
+
+                tabelaGlowna.AppendLine(ms.tworztabeleMSS("1.1.3.a", "<b>Dział 1.1.3.a</b> Wpływ spraw (liczba), w których z roszczeniem wystąpiła większa grupa pracowników (co najmniej 10 pracowników) (Dział 1.1.2.1. wiersz 03 kol. 2 lit. a)", tabelaDanych, idWydzialuNumerycznie, tenPlik));
+                tabelaGlowna.AppendLine(ms.tworztabeleMSS("1.1.3.b", "<b>Dział 1.1.3.b</b> Załatwiono spraw (liczba), w których z roszczeniem wystąpiła większa grupa pracowników (co najmniej 10 pracowników) (dział 1.1.2.1. wiersz 03 kol. 3 lit. b)", tabelaDanych, idWydzialuNumerycznie, tenPlik));
                 tabelaGlowna.AppendLine(ms.tworztabeleMSS("1.1.3.c", naglowekTabeliDzialu_1_1_3_c(), tabelaBocznaDzialu_1_1_3_c(), tabelaDanych, 2, 3, 2, 2, idWydzialuNumerycznie, true, "Ewidencja spraw z zakresu prawa pracy –ogółem oraz I instancja", tenPlik));
                 tabelaGlowna.AppendLine(ms.tworztabeleMSS("1.1.3.d", naglowekTabeliDzialu_1_1_3_d(), tabelaBocznaDzialu_1_1_3_d(), tabelaDanych, 1, 7, 2, 1, idWydzialuNumerycznie, true, "Dział 1.1.3.d. W tym: (skargi o stwierdzenie niezgodności z prawem łącznie I i II instancja) (dział 1.1.2.1 w. 85 kol. 3 + dział 1.1.2.2 w. 96 kol. 3 lit. d)    ", tenPlik));
                 tabelaGlowna.AppendLine(ms.tworztabeleMSS("1.1.3.e", naglowekTabeliDzialu_1_1_3_e(), tabelaBocznaDzialu_1_1_3_e(), tabelaDanych, 1, 3, 1, 4, idWydzialuNumerycznie, true, "W tym: (skargi o stwierdzenie niezgodności z prawem łącznie I i II instancja) (dział 1.1.2.1 w. 85 kol. 3 + dział 1.1.2.2 w. 96 kol. 3 lit. d)    ", tenPlik));
-                tabelaGlowna.AppendLine(ms.tworztabeleMSS("1.1.3.f", naglowekTabeliDzialu_1_1_3_f(), tabelaBocznaDzialu_1_1_3_f(), tabelaDanych, 1, 9, 2, 1, idWydzialuNumerycznie, true, "W tym: (skargi kasacyjne)  (dział 1.1.2.2. wiersz 95 kol. 3 lit. f)", tenPlik));
-                tabelaGlowna.AppendLine(ms.tworztabeleMSS("1.1.3.g", naglowekTabeliDzialu_1_1_3_g(), tabelaBocznaDzialu_1_1_3_g(), tabelaDanych, 2, 18, 4, 3, idWydzialuNumerycznie, true, "W tym: (skargi kasacyjne)  (dział 1.1.2.2. wiersz 95 kol. 3 lit. f)", tenPlik));
+                tabelaGlowna.AppendLine(ms.tworztabeleMSS("1.1.3.f", naglowekTabeliDzialu_1_1_3_f(), tabelaBocznaDzialu_1_1_3_f(), tabelaDanych, 1, 9, 2, 1, idWydzialuNumerycznie, true, "W tym: (skargi kasacyjne)  (dział 1.1.2.2. wiersz 97 kol. 3 lit. f)", tenPlik));
+                tabelaGlowna.AppendLine(ms.tworztabeleMSS("1.1.3.g", naglowekTabeliDzialu_1_1_3_g(), tabelaBocznaDzialu_1_1_3_g(), tabelaDanych, 2, 18, 4, 3, idWydzialuNumerycznie, true, "Sprawy mediacyjne", tenPlik));
                 tabelaGlowna.AppendLine(ms.tworztabeleMSS("1.1.3.h", naglowekTabeliDzialu_1_1_3_h(), tabelaBocznaDzialu_1_1_3_h(), tabelaDanych, 3, 1, 1, 5, idWydzialuNumerycznie, true, "W tym: (skargi kasacyjne)  (dział 1.1.2.2. wiersz 95 kol. 3 lit. f)", tenPlik));
-                tabelaGlowna.AppendLine(ms.tworztabeleMSS("1.1.3.i", "Dział 1.1.3.i.  Liczba wyznaczonych ławników (osoby)", tabelaDanych, idWydzialuNumerycznie, tenPlik));
+                tabelaGlowna.AppendLine(ms.tworztabeleMSS("1.1.3.i", "<b>Dział 1.1.3.i</b> Liczba wyznaczonych ławników (osoby)", tabelaDanych, idWydzialuNumerycznie, tenPlik));
+                tabelaGlowna.AppendLine(ms.tworztabeleMSS("1.1.3.k", naglowekTabeliDzialu_1_1_3_k(), tabelaBocznaDzialu_1_1_3_k(), tabelaDanych, 1, 8, 4, 1, idWydzialuNumerycznie, true, "(łącznie I i II instancja) - (Dział 1.1.2.1. wiersz 86 + Dział 1.1.2.2. wiersz 99 kolumna 3 lit. k) w tym", tenPlik));
+
                 tabelaGlowna.AppendLine(ms.tworztabeleMSS("1.1.3.j", naglowekTabeliDzialu_1_1_3_j(), tabelaBocznaDzialu_1_1_3_j(), tabelaDanych, 1, 5, 2, 1, idWydzialuNumerycznie, true, "W tym: (skargi kasacyjne)  (dział 1.1.2.2. wiersz 95 kol. 3 lit. f)", tenPlik));
                 tabelaGlowna.AppendLine(ms.tworztabeleMSS("1.1.4", naglowekTabeliDzialu_1_1_4(), tabelaBocznaDzialu_1_1_4(), tabelaDanych, 1, 4, 1, 3, idWydzialuNumerycznie, true, "Ustanowienie pełnomocnika z urzędu  ", tenPlik));
-                tabelaGlowna.AppendLine(ms.tworztabeleMSS("1.1.5.a", naglowekTabeliDzialu_1_1_5_a(), tabelaBocznaDzialu_1_1_5_a(), tabelaDanych, 3, 29, 3, 16, idWydzialuNumerycznie, true, "Struktura wpływu spraw", tenPlik));
-                tabelaGlowna.AppendLine(ms.tworztabeleMSS("1.1.5.b", naglowekTabeliDzialu_1_1_5_b(), tabelaBocznaDzialu_1_1_5_b(), tabelaDanych, 3, 31, 3, 16, idWydzialuNumerycznie, true, "Struktura załatwień spraw", tenPlik));
-                tabelaGlowna.AppendLine(ms.tworztabeleMSS("1.2.1", naglowekTabeliDzialu_1_2_1(), tabelaBocznaDzialu_1_2_1(), tabelaDanych, 4, 18, 1, 40, idWydzialuNumerycznie, true, "Struktura załatwień spraw", tenPlik));
-                tabelaGlowna.AppendLine(ms.tworztabeleMSS("1.2.2", naglowekTabeliDzialu_1_2_2(), tabelaBocznaDzialu_1_2_2(), tabelaDanych, 4, 56, 3, 40, idWydzialuNumerycznie, true, "Liczba sesji odbytych i załatwionych spraw ", tenPlik));
-                tabelaGlowna.AppendLine(ms.tworztabeleMSS("1.3", naglowekTabeliDzialu_1_3(), tabelaBocznaDzialu_1_3(), tabelaDanych, 2, 5, 1, 10, idWydzialuNumerycznie, true, "Załatwienie spraw przez referendarzy", tenPlik));
-                tabelaGlowna.AppendLine(ms.tworztabeleMSS("1.4", naglowekTabeliDzialu_1_4(), tabelaBocznaDzialu_1_4(), tabelaDanych, 3, 21, 3, 14, idWydzialuNumerycznie, true, "Terminowość sporządzania uzasadnień", tenPlik));
-                tabelaGlowna.AppendLine(ms.tworztabeleMSS("2.1.1", naglowekTabeliDzialu_2_1_1(), tabelaBocznaDzialu_2_1_1(), tabelaDanych, 2, 9, 2, 11, idWydzialuNumerycznie, true, "Sprawy od dnia pierwotnego wpisu do repertorium  (łącznie z czasem trwania mediacji)", tenPlik));
-                tabelaGlowna.AppendLine(ms.tworztabeleMSS("2.1.1.1", naglowekTabeliDzialu_2_1_1_1(), tabelaBocznaDzialu_2_1_1_1(), tabelaDanych, 2, 9, 2, 11, idWydzialuNumerycznie, true, "Sprawy od dnia pierwotnego wpisu do repertorium  (łącznie z czasem trwania mediacji)", tenPlik));
-                tabelaGlowna.AppendLine(ms.tworztabeleMSS("2.1.1.a", naglowekTabeliDzialu_2_1_1_1_a(), tabelaBocznaDzialu_2_1_1_1_a(), tabelaDanych, 2, 9, 2, 11, idWydzialuNumerycznie, true, "Sprawy zawieszone nie zakreślone od dnia pierwotnego wpisu do repertorium (wykazane w dziale 2.1.1.) (łącznie z czasem trwania mediacji)", tenPlik));
-                tabelaGlowna.AppendLine(ms.tworztabeleMSS("2.1.1.a.1", naglowekTabeliDzialu_2_1_1_1_a_1(), tabelaBocznaDzialu_2_1_1_1_a_1(), tabelaDanych, 2, 9, 2, 11, idWydzialuNumerycznie, true, "Sprawy zawieszone nie zakreślone od dnia pierwotnego wpisu do repertorium (wykazane w dziale 2.1.1.) (bez czasu trwania mediacji w sprawach wszczętych po 1 stycznia 2016r.)", tenPlik));
-                tabelaGlowna.AppendLine(ms.tworztabeleMSS("2.1.2", naglowekTabeliDzialu_2_1_2(), tabelaBocznaDzialu_2_1_2(), tabelaDanych, 2, 9, 2, 11, idWydzialuNumerycznie, true, "Liczba spraw zakreślonych w urządzeniu ewidencyjnym w wyniku zawieszenia postępowania(łącznie z czasem trwania mediacji)", tenPlik));
+                tabelaGlowna.AppendLine(ms.tworztabeleMSS("1.1.5.a", naglowekTabeliDzialu_1_1_5_a(), tabelaBocznaDzialu_1_1_5_a(), tabelaDanych, 3, 29, 3, 18, idWydzialuNumerycznie, true, "Struktura wpływu spraw", tenPlik));
+                tabelaGlowna.AppendLine(ms.tworztabeleMSS("1.1.5.b", naglowekTabeliDzialu_1_1_5_b(), tabelaBocznaDzialu_1_1_5_b(), tabelaDanych, 3, 32, 3, 18, idWydzialuNumerycznie, true, "Struktura załatwień spraw", tenPlik));
+
+                tabelaGlowna.AppendLine(ms.tworztabeleMSS("1.2.1", naglowekTabeliDzialu_1_2_1(), tabelaBocznaDzialu_1_2_1(), tabelaDanych, 4, 22, 1, 40, idWydzialuNumerycznie, true, "Struktura załatwień spraw", tenPlik));
+
+                tabelaGlowna.AppendLine(ms.tworztabeleMSS("1.2.2", naglowekTabeliDzialu_1_2_2(), tabelaBocznaDzialu_1_2_2(), tabelaDanych, 4, 64, 3, 40, idWydzialuNumerycznie, true, "Liczba sesji odbytych i załatwionych spraw ", tenPlik));
+
+                tabelaGlowna.AppendLine(ms.tworztabeleMSS("1.3", naglowekTabeliDzialu_1_3(), tabelaBocznaDzialu_1_3(), tabelaDanych, 2, 6, 1, 10, idWydzialuNumerycznie, true, "Załatwienie spraw przez referendarzy", tenPlik));
+                tabelaGlowna.AppendLine(ms.tworztabeleMSS("1.4", naglowekTabeliDzialu_1_4(), tabelaBocznaDzialu_1_4(), tabelaDanych, 3, 27, 3, 14, idWydzialuNumerycznie, true, "Terminowość sporządzania uzasadnień", tenPlik));
+                tabelaGlowna.AppendLine(ms.tworztabeleMSS("2.1.1", naglowekTabeliDzialu_2_1_1(), tabelaBocznaDzialu_2_1_1(), tabelaDanych, 2, 15, 3, 11, idWydzialuNumerycznie, true, "Sprawy od dnia pierwotnego wpisu do repertorium  (łącznie z czasem trwania mediacji)", tenPlik));
+                tabelaGlowna.AppendLine(ms.tworztabeleMSS("2.1.1.1", naglowekTabeliDzialu_2_1_1_1(), tabelaBocznaDzialu_2_1_1_1(), tabelaDanych, 2, 15, 3, 11, idWydzialuNumerycznie, true, "Sprawy od dnia pierwotnego wpisu do repertorium  (łącznie z czasem trwania mediacji)", tenPlik));
+                tabelaGlowna.AppendLine(ms.tworztabeleMSS("2.1.1.a", naglowekTabeliDzialu_2_1_1_1_a(), tabelaBocznaDzialu_2_1_1_1_a(), tabelaDanych, 2, 15, 3, 11, idWydzialuNumerycznie, true, "Sprawy zawieszone nie zakreślone od dnia pierwotnego wpisu do repertorium (wykazane w dziale 2.1.1.) (łącznie z czasem trwania mediacji)", tenPlik));
+                tabelaGlowna.AppendLine(ms.tworztabeleMSS("2.1.1.a.1", naglowekTabeliDzialu_2_1_1_1_a_1(), tabelaBocznaDzialu_2_1_1_1_a_1(), tabelaDanych, 2, 15, 3, 11, idWydzialuNumerycznie, true, "Sprawy zawieszone nie zakreślone od dnia pierwotnego wpisu do repertorium (wykazane w dziale 2.1.1.) (bez czasu trwania mediacji w sprawach wszczętych po 1 stycznia 2016r.)", tenPlik));
+                tabelaGlowna.AppendLine(ms.tworztabeleMSS("2.1.2", naglowekTabeliDzialu_2_1_2(), tabelaBocznaDzialu_2_1_2(), tabelaDanych, 2, 15, 3, 11, idWydzialuNumerycznie, true, "Liczba spraw zakreślonych w urządzeniu ewidencyjnym w wyniku zawieszenia postępowania(łącznie z czasem trwania mediacji)", tenPlik));
 
                 tabelaGlowna.AppendLine(ms.tworztabeleMSS("2.1.2.1", naglowekTabeliDzialu_2_1_2_1(), tabelaBocznaDzialu_2_1_2_1(), tabelaDanych, 2, 9, 2, 11, idWydzialuNumerycznie, true, "Liczba spraw zakreślonych w urządzeniu ewidencyjnym w wyniku zawieszenia postępowania (bez czasu trwania mediacji w sprawach wszczętych po 1 stycznia 2016r.)", tenPlik));
 
-                tabelaGlowna.AppendLine(ms.tworztabeleMSS("2.2", naglowekTabeliDzialu_2_2(), tabelaBocznaDzialu_2_2(), tabelaDanych, 1, 13, 2, 9, idWydzialuNumerycznie, true, "Czas trwania postępowania sądowego (w sądzie okręgowym I instancji - od dnia pierwszej rejestracji w sądzie I instancji do uprawomocnienia się sprawy w I instancji a w sądzie okręgowym II instancji od dnia pierwszej rejestracji w sądzie rejonowym (I instancji) do dnia wydania orzeczenia w sądzie okręgowym II instancji lub od dnia wpływu sprawy do sądu okręgowego (II instancji do dnia wydania orzeczenia w II instancji)) (łącznie z czasem trwania mediacji)", tenPlik));
+                tabelaGlowna.AppendLine(ms.tworztabeleMSS("2.2", naglowekTabeliDzialu_2_2(), tabelaBocznaDzialu_2_2(), tabelaDanych, 1, 19, 2, 9, idWydzialuNumerycznie, true, "Czas trwania postępowania sądowego (w sądzie okręgowym I instancji - od dnia pierwszej rejestracji w sądzie I instancji do uprawomocnienia się sprawy w I instancji a w sądzie okręgowym II instancji od dnia pierwszej rejestracji w sądzie rejonowym (I instancji) do dnia wydania orzeczenia w sądzie okręgowym II instancji lub od dnia wpływu sprawy do sądu okręgowego (II instancji do dnia wydania orzeczenia w II instancji)) (łącznie z czasem trwania mediacji)", tenPlik));
                 tabelaGlowna.AppendLine(ms.tworztabeleMSS("2.2.a", naglowekTabeliDzialu_2_2_a(), tabelaBocznaDzialu_2_2_a(), tabelaDanych, 1, 13, 2, 9, idWydzialuNumerycznie, true, "Czas trwania postępowania sądowego (w sądzie okręgowym I instancji - od dnia pierwszej rejestracji w sądzie I instancji do uprawomocnienia się sprawy merytorycznie zakończonej (wyrokiem, orzeczeniem) w I instancji a w sądzie okręgowym II instancji od dnia pierwszej rejestracji w sądzie rejonowym (I instancji) do dnia wydania orzeczenia merytorycznie kończącego sprawę (wyrokiem, orzeczeniem) w sądzie okręgowym II instancji lub od dnia wpływu sprawy do sądu okręgowego (II instancji do dnia wydania orzeczenia w II instancji)) (łącznie z czasem trwania mediacji)", tenPlik));
                 tabelaGlowna.AppendLine(ms.tworztabeleMSS("2.2.1", naglowekTabeliDzialu_2_2_1(), tabelaBocznaDzialu_2_2_1(), tabelaDanych, 1, 13, 2, 9, idWydzialuNumerycznie, true, "Czas trwania postępowania sądowego (w sądzie okręgowym I instancji - od dnia pierwszej rejestracji w sądzie I instancji do uprawomocnienia się sprawy w I instancji a w sądzie okręgowym II instancji od dnia pierwszej rejestracji w sądzie rejonowym (I instancji) do dnia wydania orzeczenia w sądzie okręgowym II instancji lub od dnia wpływu sprawy do sądu okręgowego (II instancji do dnia wydania orzeczenia w II instancji)) (dok.) (bez czasu trwania mediacji w sprawach wszczętych po 1 stycznia 2016r.)", tenPlik));
                 tabelaGlowna.AppendLine(ms.tworztabeleMSS("2.2.1.a", naglowekTabeliDzialu_2_2_1_a(), tabelaBocznaDzialu_2_2_1_a(), tabelaDanych, 1, 13, 2, 9, idWydzialuNumerycznie, true, "Czas trwania postępowania sądowego (w sądzie okręgowym I instancji - od dnia pierwszej rejestracji w sądzie I instancji do uprawomocnienia się sprawy merytorycznie zakończonej (wyrokiem, orzeczeniem) w I instancji a w sądzie okręgowym II instancji od dnia pierwszej rejestracji w sądzie rejonowym (I instancji) do dnia wydania orzeczenia merytorycznie kończącego sprawę (wyrokiem, orzeczeniem) w sądzie okręgowym II instancji lub od dnia wpływu sprawy do sądu okręgowego (II instancji do dnia wydania orzeczenia w II instancji)) (bez czasu trwania mediacji w sprawach wszczętych po 1 stycznia 2016r.)", tenPlik));
                 tabelaGlowna.AppendLine(ms.tworztabeleMSS("2.3", naglowekTabeliDzialu_2_3(), tabelaBocznaDzialu_2_3(), tabelaDanych, 1, 3, 2, 7, idWydzialuNumerycznie, true, "Czas trwania wszystkich mediacji w sprawie od dnia wydania postanowienia o skierowaniu stron do mediacji do dnia zakończenia mediacji ", tenPlik));
                 tabelaGlowna.AppendLine(ms.tworztabeleMSS("2.3.1", naglowekTabeliDzialu_2_3_1(), tabelaBocznaDzialu_2_3_1(), tabelaDanych, 1, 3, 2, 7, idWydzialuNumerycznie, true, "Czas trwania mediacji niezakończonych w sprawie od dnia wydania postanowienia o skierowaniu stron do mediacji do ostatniego dnia okresu sprawozdawczego", tenPlik));
 
-                tabelaGlowna.AppendLine(ms.tworztabeleMSS("3", naglowekTabeliDzialu_3(), tabelaBocznaDzialu_3(), tabelaDanych, 2, 8, 2, 8, idWydzialuNumerycznie, true, "Wyznaczenie pierwszej rozprawy/posiedzenia spraw (od dnia wpływu/wpisu sprawy, wraz ze sprawami zawieszonymi poprzednio zakreślonymi, do dnia, w którym odbyła się pierwsza rozprawa/posiedzenie) ", tenPlik));
+                tabelaGlowna.AppendLine(ms.tworztabeleMSS("3", naglowekTabeliDzialu_3(), tabelaBocznaDzialu_3(), tabelaDanych, 2, 10, 2, 8, idWydzialuNumerycznie, true, "Wyznaczenie pierwszej rozprawy/posiedzenia spraw (od dnia wpływu/wpisu sprawy, wraz ze sprawami zawieszonymi poprzednio zakreślonymi, do dnia, w którym odbyła się pierwsza rozprawa/posiedzenie) ", tenPlik));
                 tabelaGlowna.AppendLine(ms.tworztabeleMSS("3.1.a", naglowekTabeliDzialu_3_1_a(), tabelaBocznaDzialu_3_1_a(), tabelaDanych, 2, 2, 1, 7, idWydzialuNumerycznie, true, "Terminowość postępowania międzyinstancyjnego  w pierwszej instancji", tenPlik));
                 tabelaGlowna.AppendLine(ms.tworztabeleMSS("3.1.b", naglowekTabeliDzialu_3_1_b(), tabelaBocznaDzialu_3_1_b(), tabelaDanych, 2, 4, 1, 7, idWydzialuNumerycznie, true, "Terminowość obiegu międzyinstancyjnego spraw odwoławczych (Ua, Uz, Pa,Pz)", tenPlik));
                 tabelaGlowna.AppendLine(ms.tworztabeleMSS("3.2", naglowekTabeliDzialu_3_2(), tabelaBocznaDzialu_3_2(), tabelaDanych, 2, 4, 1, 7, idWydzialuNumerycznie, true, "Liczba spraw, w których po wydaniu orzeczenia sądu odwoławczego akta zwrócono sądowi I instancji", tenPlik));
                 tabelaGlowna.AppendLine(ms.tworztabeleMSS("4.1", naglowekTabeliDzialu_4_1(), tabelaBocznaDzialu_4_1(), tabelaDanych, 4, 24, 3, 13, idWydzialuNumerycznie, true, "Szczegółowe rozliczenie skargi (Wykaz S)", tenPlik));
                 tabelaGlowna.AppendLine(ms.tworztabeleMSS("4.2", naglowekTabeliDzialu_4_2(), tabelaBocznaDzialu_4_2(), tabelaDanych, 2, 2, 1, 7, idWydzialuNumerycznie, true, "Szczegółowe rozliczenie skargi (Wykaz S)", tenPlik));
-                tabelaGlowna.AppendLine(ms.tworztabeleMSS("5", naglowekTabeliDzialu_5(), tabelaBocznaDzialu_5(), tabelaDanych, 4, 22, 5, 10, idWydzialuNumerycznie, true, "Szczegółowe rozliczenie skargi (Wykaz S)", tenPlik));
+                tabelaGlowna.AppendLine(ms.tworztabeleMSS("5", naglowekTabeliDzialu_5(), tabelaBocznaDzialu_5(), tabelaDanych, 4, 22, 5, 10, idWydzialuNumerycznie, true, "Prawomocnie zasądzone odszkodowania i zadośćuczynienia (w okresie sprawozdawczym)", tenPlik));
                 tabelaGlowna.AppendLine(ms.tworztabeleMSS("6", naglowekTabeliDzialu_6(), tabelaBocznaDzialu_6(), tabelaDanych, 2, 24, 3, 7, idWydzialuNumerycznie, true, "Szczegółowe rozliczenie skargi (Wykaz S)", tenPlik));
-                tabelaGlowna.AppendLine(ms.tworztabeleMSS("7.1", naglowekTabeliDzialu_7_1(), tabelaBocznaDzialu_7_1(), tabelaDanych, 1, 4, 1, 38, idWydzialuNumerycznie, true, "Szczegółowe rozliczenie skargi (Wykaz S)", tenPlik));
+                tabelaGlowna.AppendLine(ms.tworztabeleMSS("7.1", naglowekTabeliDzialu_7_1(), tabelaBocznaDzialu_7_1(), tabelaDanych, 1, 4, 1, 38, idWydzialuNumerycznie, true, "Obsada Sądu (Wydziału) ", tenPlik));
                 tabelaGlowna.AppendLine(ms.tworztabeleMSS("7.2", naglowekTabeliDzialu_7_2(), tabelaBocznaDzialu_7_2(), tabelaDanych, 1, 13, 3, 6, idWydzialuNumerycznie, true, "Obsada Sądu (Wydziału)", tenPlik));
                 tabelaGlowna.AppendLine(ms.tworztabeleMSS("8.a", naglowekTabeliDzialu_8_a(), tabelaBocznaDzialu_8_a(), tabelaDanych, 3, 28, 2, 5, idWydzialuNumerycznie, true, "Dyskryminacja w zatrudnieniu (dane dotyczą osób poszkodowanych) 1) ", tenPlik));
                 tabelaGlowna.AppendLine(ms.tworztabeleMSS("9.1", naglowekTabeliDzialu_9_1(), tabelaBocznaDzialu_9_1(), tabelaDanych, 2, 7, 2, 4, idWydzialuNumerycznie, true, "Liczba biegłych/podmiotów wydających opinie w sprawach  (z wył. tłumaczy przysięgłych) ", tenPlik));
                 tabelaGlowna.AppendLine(ms.tworztabeleMSS("9.2", naglowekTabeliDzialu_9_2(), tabelaBocznaDzialu_9_2(), tabelaDanych, 3, 7, 2, 8, idWydzialuNumerycznie, true, "Terminowość sporządzania opinii pisemnych (z wył. tłumaczy przysięgłych)", tenPlik));
-                tabelaGlowna.AppendLine(ms.tworztabeleMSS("9.3", naglowekTabeliDzialu_9_3(), tabelaBocznaDzialu_9_3(), tabelaDanych, 2, 7, 2, 8, idWydzialuNumerycznie, true, "Terminowość przyznawania wynagrodzeń za sporządzenie opinii pisemnych i ustnych oraz za stawiennictwo (z wył. tłumaczy przysięgłych)", tenPlik));
-                tabelaGlowna.AppendLine(ms.tworztabeleMSS("10.1", "Dział 10.1 Liczba powołań tłumaczy  ", tabelaDanych, idWydzialuNumerycznie, tenPlik));
+                tabelaGlowna.AppendLine(ms.tworztabeleMSS("9.3", naglowekTabeliDzialu_9_3(), tabelaBocznaDzialu_9_3(), tabelaDanych, 2, 7, 2, 12, idWydzialuNumerycznie, true, "Terminowość przyznawania wynagrodzeń za sporządzenie opinii pisemnych i ustnych oraz za stawiennictwo (z wył. tłumaczy przysięgłych)", tenPlik));
+                tabelaGlowna.AppendLine(ms.tworztabeleMSS("10.1", "<b>Dział 10.1</b> Liczba powołań tłumaczy  ", tabelaDanych, idWydzialuNumerycznie, tenPlik));
 
                 #region "10.2";
 
@@ -185,7 +194,7 @@ namespace stat2018
                 }
                 if (!string.IsNullOrEmpty(idWydzialu))
                 {
-                    DataTable tabela2 = cl.generuj_dane_do_tabeli_mss2(int.Parse((string)Session["id_dzialu"]), Date1.Date, Date2.Date, 21,tenPlik); //dane
+                    DataTable tabela2 = cl.generuj_dane_do_tabeli_mss2(int.Parse((string)Session["id_dzialu"]), Date1.Date, Date2.Date, 21, tenPlik); //dane
                     var distinctRows = (from DataRow dRow in tabela2.Rows select dRow["idTabeli"]).Distinct(); //lista tabelek
                     DataTable listaTabelek = new DataTable();
                     listaTabelek.Columns.Add("tabela", typeof(string));
@@ -250,11 +259,7 @@ namespace stat2018
             }
             catch (Exception)
             {
-
-               
             }
-               
-           
         }
 
         #region dane do tabeli
@@ -295,7 +300,9 @@ namespace stat2018
             DataTable dT = schematTabeli();
             dT.Clear();
             //                         W  K  CS RS   style"    text"
-            dT.Rows.Add(new Object[] { 1, 1, 1, 1, "wciecie borderAll", "Ogółem I i II instancja (dz. 1.1.1.1 w. 01 + dz. 1.1.2.1 w. 01)" });
+            dT.Rows.Add(new Object[] { 1, 1, 1, 1, "wciecie borderAll", "Ogółem I i II instancja (w.02 +03)" });
+            dT.Rows.Add(new Object[] { 2, 1, 1, 1, "wciecie borderAll", "Ogółem I i II instancja z zakresu ubezpieczeń społecznych  (dz. 1.1.1.1 w. 01 + dz. 1.1.1.2 w.01)" });
+            dT.Rows.Add(new Object[] { 3, 1, 1, 1, "wciecie borderAll", "Ogółem I i II instancja z zakresu prawa pracy (dz. 1.1.2.1 w.01 + dz. 1.1.2.2 w.01)" });
             return dT;
         }
 
@@ -346,10 +353,10 @@ namespace stat2018
             DataTable dT = schematTabeli();
             dT.Clear();
             //                         W  K  CS RS   style"    text"
-            dT.Rows.Add(new Object[] { 1, 1, 4, 1, "wciecie borderAll", "Ogółem I i II instancja (w.2 + dz.1.1.1.2. w. 1) kolumny odpowiednio (np. I inst. kol 4, II inst kol..3)" });
-            dT.Rows.Add(new Object[] { 2, 1, 3, 1, "wciecie borderAll", "Ogółem I instancja (w. 03, 32, 42)" });
+            dT.Rows.Add(new Object[] { 1, 1, 4, 1, "wciecie borderAll", "Ogółem I instancja (w.2 + dz.1.1.1.1.a w. 1)" });
+            dT.Rows.Add(new Object[] { 2, 1, 3, 1, "wciecie borderAll", "Ogółem I instancja z wyłączeniem zażaleniowych(w. 03, 32, 42, 43)" });
             dT.Rows.Add(new Object[] { 2, 4, 1, 1, "wciecie borderAll", "" });
-            dT.Rows.Add(new Object[] { 3, 1, 3, 1, "wciecie borderAll", "U razem (w. 04 do 31 =dz. 1.1.d w.01)" });
+            dT.Rows.Add(new Object[] { 3, 1, 3, 1, "wciecie borderAll", "U razem(w. 04 do 31 = dz. 1.1.e w.01)" });
             dT.Rows.Add(new Object[] { 3, 4, 1, 1, "wciecie borderAll", "-" });
 
             dT.Rows.Add(new Object[] { 4, 1, 1, 3, "wciecie borderAll", " prawo do" });
@@ -466,11 +473,51 @@ namespace stat2018
             dT.Rows.Add(new Object[] { 41, 4, 1, 1, "wciecie borderAll", "-" });
             dT.Rows.Add(new Object[] { 42, 1, 3, 1, "wciecie borderAll", "WSC (skarga o stwierdze-nie niezgodności z pra-wem) – I instancja" });
             dT.Rows.Add(new Object[] { 42, 4, 1, 1, "wciecie borderAll", "-" });
-
+            dT.Rows.Add(new Object[] { 43, 1, 3, 1, "wciecie borderAll", "WSNc (skarga nadzwyczajna) – I instancja" });
+            dT.Rows.Add(new Object[] { 43, 4, 1, 1, "wciecie borderAll", "-" });
             return dT;
         }
 
         #endregion dzial 1.1.1.1
+
+        #region dzial 1.1.1.1.a
+
+        private DataTable naglowekTabeliDzialu_1_1_1_1_a()
+        {
+            DataTable dT = schematTabeli();
+            dT.Clear();
+            //                         W  K  CS RS   style"    text"
+            dT.Rows.Add(new Object[] { 1, 1, 1, 3, "center", "SPRAWY WG REPERTORIÓW LUB WYKAZÓW  " });
+            dT.Rows.Add(new Object[] { 1, 2, 1, 3, "center", "Pozostało z ubiegłego roku   " });
+            dT.Rows.Add(new Object[] { 1, 3, 1, 3, "center", "WPŁYNĘŁO razem" });
+            dT.Rows.Add(new Object[] { 1, 4, 7, 1, "center", "Załatwiono" });
+            dT.Rows.Add(new Object[] { 1, 12, 1, 3, "center", "ODROCZONO" });
+            dT.Rows.Add(new Object[] { 1, 13, 1, 3, "center", "Pozostało na okres następny " });
+            //wiersz 2
+            dT.Rows.Add(new Object[] { 2, 6, 1, 2, "center", "razem " });
+            dT.Rows.Add(new Object[] { 2, 7, 6, 1, "center", "z tego" });
+            //wiersz 3
+            dT.Rows.Add(new Object[] { 3, 7, 1, 1, "center", "oddalono" });
+            dT.Rows.Add(new Object[] { 3, 8, 1, 1, "center", "zmieniono w całości lub części " });
+            dT.Rows.Add(new Object[] { 3, 9, 1, 1, "center", "uchylono " });
+            dT.Rows.Add(new Object[] { 3, 10, 1, 1, "center", "odrzucono " });
+            dT.Rows.Add(new Object[] { 3, 11, 1, 1, "center", "umorzono " });
+            dT.Rows.Add(new Object[] { 3, 12, 1, 1, "center", "inne załatwienia " });
+
+            return dT;
+        }
+
+        private DataTable tabelaBocznaDzialu_1_1_1_1_a()
+        {
+            DataTable dT = schematTabeli();
+            dT.Clear();
+            //                         W  K  CS RS   style"    text"
+            dT.Rows.Add(new Object[] { 1, 1, 1, 1, "wciecie borderAll", "Uz" });
+
+            return dT;
+        }
+
+        #endregion dzial 1.1.1.1.a
 
         #region dzial 1.1.1.2
 
@@ -490,7 +537,7 @@ namespace stat2018
             dT.Rows.Add(new Object[] { 2, 7, 9, 1, "center", "w tym" });
             //wiersz 3
             dT.Rows.Add(new Object[] { 3, 4, 1, 2, "center", "oddalono" });
-            dT.Rows.Add(new Object[] { 3, 5, 1, 2, "center", "zmieniono" });
+            dT.Rows.Add(new Object[] { 3, 5, 1, 2, "center", "zmieniono w całości lub części" });
             dT.Rows.Add(new Object[] { 3, 6, 1, 2, "center", "uchylono lub uchylono i przekazano do sądu I instancji" });
             dT.Rows.Add(new Object[] { 3, 7, 1, 2, "center", "uchylono w trybie 477 14a kpc " });
             dT.Rows.Add(new Object[] { 3, 8, 1, 2, "center", "zwrócono " });
@@ -512,7 +559,7 @@ namespace stat2018
             DataTable dT = schematTabeli();
             dT.Clear();
             //                         W  K  CS RS   style"    text"
-            dT.Rows.Add(new Object[] { 1, 1, 2, 1, "wciecie borderAll", "Ogółem II instancja (w. 02, 15 do 19)" });
+            dT.Rows.Add(new Object[] { 1, 1, 2, 1, "wciecie borderAll", "Ogółem II instancja (w. 02, 15, 18 do 22)" });
             dT.Rows.Add(new Object[] { 1, 3, 1, 1, "center borderAll", "-" });
 
             dT.Rows.Add(new Object[] { 2, 1, 2, 1, "wciecie borderAll", "Ua (apelacyjne) b) razem (w. 03 do 14)" });
@@ -548,16 +595,24 @@ namespace stat2018
             dT.Rows.Add(new Object[] { 13, 4, 1, 1, "center borderAll", "576" });
             dT.Rows.Add(new Object[] { 14, 1, 2, 1, "wciecie borderAll", "Inne bez symbolu i o symbolach niewymienionych " });
             dT.Rows.Add(new Object[] { 14, 4, 1, 1, "center borderAll", "-" });
-            dT.Rows.Add(new Object[] { 15, 1, 2, 1, "wciecie borderAll", "Uz (zażaleniowe) <sup>b)</sup>" });
+            dT.Rows.Add(new Object[] { 15, 1, 2, 1, "wciecie borderAll", "Uz (zażaleniowe)  (w. 16+17)" });
             dT.Rows.Add(new Object[] { 15, 4, 1, 1, "center borderAll", "-" });
-            dT.Rows.Add(new Object[] { 16, 1, 2, 1, "wciecie borderAll", "Uo II instancja" });
+            dT.Rows.Add(new Object[] { 16, 1, 1, 2, "wciecie borderAll", "z tego" });
+
+            dT.Rows.Add(new Object[] { 16, 2, 1, 1, "wciecie borderAll", "zażalenia z  art. 394 § 1 i 3941a§<sub>3</sub> kpc" });
             dT.Rows.Add(new Object[] { 16, 4, 1, 1, "center borderAll", "-" });
-            dT.Rows.Add(new Object[] { 17, 1, 2, 1, "wciecie borderAll", "WSC (skarga kasacyjna)" });
+            dT.Rows.Add(new Object[] { 17, 1, 1, 1, "wciecie borderAll", "zażalenia z  art. 3942 § 1 i 11 kpc" });
             dT.Rows.Add(new Object[] { 17, 4, 1, 1, "center borderAll", "-" });
-            dT.Rows.Add(new Object[] { 18, 1, 2, 1, "wciecie borderAll", "WSC (skarga o stwierdzenie niezgodności z prawem) – II instancja" });
+            dT.Rows.Add(new Object[] { 18, 1, 2, 1, "wciecie borderAll", "Uo II instancja" });
             dT.Rows.Add(new Object[] { 18, 4, 1, 1, "center borderAll", "-" });
-            dT.Rows.Add(new Object[] { 19, 1, 2, 1, "wciecie borderAll", "Skarga na postępowanie sądowe  Wykaz S" });
+            dT.Rows.Add(new Object[] { 19, 1, 2, 1, "wciecie borderAll", "WSC (skarga kasacyjna" });
             dT.Rows.Add(new Object[] { 19, 4, 1, 1, "center borderAll", "-" });
+            dT.Rows.Add(new Object[] { 20, 1, 2, 1, "wciecie borderAll", "WSC (skarga o stwierdzenie niezgodności z prawem) – II instancja" });
+            dT.Rows.Add(new Object[] { 20, 4, 1, 1, "center borderAll", "-" });
+            dT.Rows.Add(new Object[] { 21, 1, 2, 1, "wciecie borderAll", "WSNc (skarga nadzwyczajna) II instancja" });
+            dT.Rows.Add(new Object[] { 21, 4, 1, 1, "center borderAll", "-" });
+            dT.Rows.Add(new Object[] { 22, 1, 2, 1, "wciecie borderAll", "Skarga na postępowanie sądowe  Wykaz S" });
+            dT.Rows.Add(new Object[] { 22, 4, 1, 1, "center borderAll", "-" });
             return dT;
         }
 
@@ -583,7 +638,7 @@ namespace stat2018
 
             dT.Rows.Add(new Object[] { 3, 8, 1, 3, "center col_100", "uwzględniono w całości lub w części" });
             dT.Rows.Add(new Object[] { 3, 9, 1, 3, "center col_100", "oddalono" });
-            dT.Rows.Add(new Object[] { 3, 10, 1, 3, "center col_100", "zwrócono" });
+            dT.Rows.Add(new Object[] { 3, 10, 1, 3, "center col_100", "zmieniono w całości lub części" });
             dT.Rows.Add(new Object[] { 3, 11, 1, 3, "center col_100", "odrzucono" });
             dT.Rows.Add(new Object[] { 3, 12, 4, 1, "center col_100", "umorzono" });
             dT.Rows.Add(new Object[] { 3, 16, 1, 3, "center col_100", "Inne załatwienia" });
@@ -606,7 +661,7 @@ namespace stat2018
             DataTable dT = schematTabeli();
             dT.Clear();
             //                         W  K  CS RS   style"    text"
-            dT.Rows.Add(new Object[] { 1, 1, 6, 1, "wciecie borderAll", "Ogółem II instancja (wiersze 02+93 do 97)" });
+            dT.Rows.Add(new Object[] { 1, 1, 6, 1, "wciecie borderAll", "Ogółem II instancja (wiersze 02+93, 96 do 100)" });
             dT.Rows.Add(new Object[] { 1, 7, 1, 1, " center", "-" });
             dT.Rows.Add(new Object[] { 2, 1, 6, 1, "wciecie borderAll", "Rep. Pa (apelacyjne) (wiersz 03 ) <sup>e)</sup>" });
             dT.Rows.Add(new Object[] { 2, 7, 1, 1, " center", "-" });
@@ -862,14 +917,22 @@ namespace stat2018
             dT.Rows.Add(new Object[] { 92, 7, 1, 1, " center", "-" });
             dT.Rows.Add(new Object[] { 93, 1, 6, 1, "wciecie borderAll", "Rep. Pz (zażaleniowe) " });
             dT.Rows.Add(new Object[] { 93, 7, 1, 1, " center", "-" });
-            dT.Rows.Add(new Object[] { 94, 1, 6, 1, "wciecie borderAll", "Rep. Po – II instancja" });
+            dT.Rows.Add(new Object[] { 94, 1, 1, 2, "wciecie borderAll", "z tego" });
+
+            dT.Rows.Add(new Object[] { 94, 2, 5, 1, "wciecie borderAll", "zażalenia z  art. 394 § 1 i 394<sub>1a</sub>§3 kpc" });
             dT.Rows.Add(new Object[] { 94, 7, 1, 1, " center", "-" });
-            dT.Rows.Add(new Object[] { 95, 1, 6, 1, "wciecie borderAll", "WSC  skarga kasacyjna" });
+            dT.Rows.Add(new Object[] { 95, 1, 5, 1, "wciecie borderAll", "zażalenia z  art. 3942 § 1 i 11 kpc" });
             dT.Rows.Add(new Object[] { 95, 7, 1, 1, " center", "-" });
-            dT.Rows.Add(new Object[] { 96, 1, 6, 1, "wciecie borderAll", "WSC skarga o stwierdzenie niezgodności z prawem – II inst." });
+            dT.Rows.Add(new Object[] { 96, 1, 6, 1, "wciecie borderAll", "Po – II instancja" });
             dT.Rows.Add(new Object[] { 96, 7, 1, 1, " center", "-" });
-            dT.Rows.Add(new Object[] { 97, 1, 6, 1, "wciecie borderAll", "Skargi na postępowanie sądowe Wykaz S <sup>*)<sup>" });
+            dT.Rows.Add(new Object[] { 97, 1, 6, 1, "wciecie borderAll", "WSC  skarga kasacyjna" });
             dT.Rows.Add(new Object[] { 97, 7, 1, 1, " center", "-" });
+            dT.Rows.Add(new Object[] { 98, 1, 6, 1, "wciecie borderAll", "WSC skarga o stwierdzenie niezgodności z prawem – II inst." });
+            dT.Rows.Add(new Object[] { 98, 7, 1, 1, " center", "-" });
+            dT.Rows.Add(new Object[] { 99, 1, 6, 1, "wciecie borderAll", "Skargi na postępowanie sądowe Wykaz S <sup>*)<sup>" });
+            dT.Rows.Add(new Object[] { 99, 7, 1, 1, " center", "-" });
+            dT.Rows.Add(new Object[] { 100, 1, 6, 1, "wciecie borderAll", "WSNc (skarga nadzwyczajna) - II instancja" });
+            dT.Rows.Add(new Object[] { 100, 7, 1, 1, " center", "-" });
 
             return dT;
         }
@@ -976,6 +1039,78 @@ namespace stat2018
             DataTable dT = schematTabeli();
             dT.Clear();
             //                         W  K  CS RS   style"    text"
+            dT.Rows.Add(new Object[] { 1, 1, 4, 1, "center", "SPRAWY " });
+            dT.Rows.Add(new Object[] { 1, 5, 1, 1, "center ", "Liczby" });
+
+            return dT;
+        }
+
+        private DataTable tabelaBocznaDzialu_1_1_d()
+        {
+            DataTable dT = schematTabeli();
+            dT.Clear();
+            //                         W  K  CS RS   style"    text"
+            dT.Rows.Add(new Object[] { 1, 1, 4, 1, "wciecie borderAll", "przekazane Sądowi Najwyższemu ze skargą nadzwyczajną" });
+            dT.Rows.Add(new Object[] { 2, 1, 4, 1, "wciecie borderAll", "przesłane z Sądu Najwyższego w okresie sprawozdawczym (w. 02 = w. 03 do 08)" });
+            dT.Rows.Add(new Object[] { 3, 1, 1, 6, "wciecie borderAll", "w których Sąd Najwyższy" });
+            dT.Rows.Add(new Object[] { 3, 2, 3, 1, "wciecie borderAll", "odrzucił skargę" });
+            dT.Rows.Add(new Object[] { 4, 1, 3, 1, "wciecie borderAll", "oddalił skargę " });
+            dT.Rows.Add(new Object[] { 5, 1, 1, 3, "wciecie borderAll", "uwzględnił skargę przez" });
+            dT.Rows.Add(new Object[] { 5, 2, 1, 2, "wciecie borderAll", "uchylenie zaskarżonego orzeczenia i" });
+            dT.Rows.Add(new Object[] { 5, 3, 1, 1, "wciecie borderAll", "rozstrzygnięcie co do istoty sprawy" });
+
+            dT.Rows.Add(new Object[] { 6, 1, 1, 1, "wciecie borderAll", "przekazanie sprawy właściwemu sądowi do    ponownego rozpoznania" });
+            dT.Rows.Add(new Object[] { 7, 1, 2, 1, "wciecie borderAll", "umorzenie postępowania" });
+            dT.Rows.Add(new Object[] { 8, 1, 3, 1, "wciecie borderAll", "załatwił w inny sposób" });
+
+            return dT;
+        }
+
+        #endregion dzial 1.1.d
+
+        #region dzial 1.1.3.k
+
+        private DataTable naglowekTabeliDzialu_1_1_3_k()
+        {
+            DataTable dT = schematTabeli();
+            dT.Clear();
+            //                         W  K  CS RS   style"    text"
+            dT.Rows.Add(new Object[] { 1, 1, 4, 1, "center", "SPRAWY " });
+            dT.Rows.Add(new Object[] { 1, 5, 1, 1, "center ", "Liczby" });
+
+            return dT;
+        }
+
+        private DataTable tabelaBocznaDzialu_1_1_3_k()
+        {
+            DataTable dT = schematTabeli();
+            dT.Clear();
+            //                         W  K  CS RS   style"    text"
+            dT.Rows.Add(new Object[] { 1, 1, 4, 1, "wciecie borderAll", "przekazane Sądowi Najwyższemu ze skargą nadzwyczajną" });
+            dT.Rows.Add(new Object[] { 2, 1, 4, 1, "wciecie borderAll", "przesłane z Sądu Najwyższego w okresie sprawozdawczym (w. 02 = w. 03 do 08)" });
+            dT.Rows.Add(new Object[] { 3, 1, 1, 6, "wciecie borderAll", "w których Sąd Najwyższy" });
+            dT.Rows.Add(new Object[] { 3, 2, 3, 1, "wciecie borderAll", "odrzucił skargę" });
+            dT.Rows.Add(new Object[] { 4, 1, 3, 1, "wciecie borderAll", "oddalił skargę " });
+            dT.Rows.Add(new Object[] { 5, 1, 1, 3, "wciecie borderAll", "uwzględnił skargę przez" });
+            dT.Rows.Add(new Object[] { 5, 2, 1, 2, "wciecie borderAll", "uchylenie zaskarżonego orzeczenia i" });
+            dT.Rows.Add(new Object[] { 5, 3, 1, 1, "wciecie borderAll", "rozstrzygnięcie co do istoty sprawy" });
+
+            dT.Rows.Add(new Object[] { 6, 1, 1, 1, "wciecie borderAll", "przekazanie sprawy właściwemu sądowi do    ponownego rozpoznania" });
+            dT.Rows.Add(new Object[] { 7, 1, 2, 1, "wciecie borderAll", "umorzenie postępowania" });
+            dT.Rows.Add(new Object[] { 8, 1, 3, 1, "wciecie borderAll", "załatwił w inny sposób" });
+
+            return dT;
+        }
+
+        #endregion dzial 1.1.3.k
+
+        #region dzial 1.1.e
+
+        private DataTable naglowekTabeliDzialu_1_1_e()
+        {
+            DataTable dT = schematTabeli();
+            dT.Clear();
+            //                         W  K  CS RS   style"    text"
             dT.Rows.Add(new Object[] { 1, 1, 1, 4, "center", "SPRAWY Z REPERTORIUM" });
             dT.Rows.Add(new Object[] { 1, 3, 1, 4, "center col_100", "Pozostało z ubiegłego roku" });
             dT.Rows.Add(new Object[] { 1, 4, 2, 1, "center", "Wpłynęło" });
@@ -1003,7 +1138,7 @@ namespace stat2018
             return dT;
         }
 
-        private DataTable tabelaBocznaDzialu_1_1_d()
+        private DataTable tabelaBocznaDzialu_1_1_e()
         {
             DataTable dT = schematTabeli();
             dT.Clear();
@@ -1022,7 +1157,7 @@ namespace stat2018
             return dT;
         }
 
-        #endregion dzial 1.1.d
+        #endregion dzial 1.1.e
 
         #region dzial 1.1.2.1
 
@@ -1067,9 +1202,9 @@ namespace stat2018
             DataTable dT = schematTabeli();
             dT.Clear();
             //                         W  K  CS RS   style"    text"
-            dT.Rows.Add(new Object[] { 1, 1, 3, 1, "wciecie borderAll", "OGÓŁEM  I i II instancja (wiersze 02+dz. 1.1.2.2. w. 01)" });
+            dT.Rows.Add(new Object[] { 1, 1, 3, 1, "wciecie borderAll", "Ogółem I instancja (w.2 + dz.1.1.2.1.a w. 1)" });
             dT.Rows.Add(new Object[] { 1, 4, 1, 1, " center", "-" });
-            dT.Rows.Add(new Object[] { 2, 1, 3, 1, "wciecie borderAll", "Ogółem I instancja( w. 02=w. 03+69+70+84+85)" });
+            dT.Rows.Add(new Object[] { 2, 1, 3, 1, "wciecie borderAll", "Ogółem I instancja z wyłączeniem zażaleniowych (w. 02=w. 03+69+70+84 do 86)" });
             dT.Rows.Add(new Object[] { 2, 4, 1, 1, " center", "-" });
             dT.Rows.Add(new Object[] { 3, 1, 3, 1, "wciecie borderAll", "rep. P – razem (wiersze 04 do 15, 18 do 68)" });
             dT.Rows.Add(new Object[] { 3, 4, 1, 1, " center", "-" });
@@ -1274,11 +1409,51 @@ namespace stat2018
             dT.Rows.Add(new Object[] { 84, 4, 1, 1, " center", "-" });
             dT.Rows.Add(new Object[] { 85, 1, 3, 1, "wciecie borderAll", "WSC skarga o stwierdzenie niezgodności z prawem – I inst." });
             dT.Rows.Add(new Object[] { 85, 4, 1, 1, " center", "-" });
-
+            dT.Rows.Add(new Object[] { 86, 1, 3, 1, "wciecie borderAll", "WSNc (skarga nadzwyczajna) - I instancja" });
+            dT.Rows.Add(new Object[] { 86, 4, 1, 1, " center", "-" });
             return dT;
         }
 
         #endregion dzial 1.1.2.1
+
+        #region dzial 1.1.2.1.a
+
+        private DataTable naglowekTabeliDzialu_1_1_2_1_a()
+        {
+            DataTable dT = schematTabeli();
+            dT.Clear();
+            //                         W  K  CS RS   style"    text"
+            dT.Rows.Add(new Object[] { 1, 1, 1, 3, "center", "SPRAWY WG REPERTORIÓW LUB WYKAZÓW  " });
+            dT.Rows.Add(new Object[] { 1, 2, 1, 3, "center", "Pozostało z ubiegłego roku   " });
+            dT.Rows.Add(new Object[] { 1, 3, 1, 3, "center", "WPŁYNĘŁO razem" });
+            dT.Rows.Add(new Object[] { 1, 4, 7, 1, "center", "Załatwiono" });
+            dT.Rows.Add(new Object[] { 1, 12, 1, 3, "center", "ODROCZONO" });
+            dT.Rows.Add(new Object[] { 1, 13, 1, 3, "center", "Pozostało na okres następny " });
+            //wiersz 2
+            dT.Rows.Add(new Object[] { 2, 6, 1, 2, "center", "razem " });
+            dT.Rows.Add(new Object[] { 2, 7, 6, 1, "center", "z tego" });
+            //wiersz 3
+            dT.Rows.Add(new Object[] { 3, 7, 1, 1, "center", "oddalono" });
+            dT.Rows.Add(new Object[] { 3, 8, 1, 1, "center", "zmieniono w całości lub części " });
+            dT.Rows.Add(new Object[] { 3, 9, 1, 1, "center", "uchylono " });
+            dT.Rows.Add(new Object[] { 3, 10, 1, 1, "center", "odrzucono " });
+            dT.Rows.Add(new Object[] { 3, 11, 1, 1, "center", "umorzono " });
+            dT.Rows.Add(new Object[] { 3, 12, 1, 1, "center", "inne załatwienia " });
+
+            return dT;
+        }
+
+        private DataTable tabelaBocznaDzialu_1_1_2_1_a()
+        {
+            DataTable dT = schematTabeli();
+            dT.Clear();
+            //                         W  K  CS RS   style"    text"
+            dT.Rows.Add(new Object[] { 1, 1, 1, 1, "wciecie borderAll", "Pz" });
+
+            return dT;
+        }
+
+        #endregion dzial 1.1.2.1.a
 
         #region dzial 1.1.3.c
 
@@ -1556,23 +1731,24 @@ namespace stat2018
             dT.Clear();
             //                         W  K  CS RS   style"    text"
             dT.Rows.Add(new Object[] { 1, 1, 3, 3, "center", "Wyszczególnienie" });
-            dT.Rows.Add(new Object[] { 1, 4, 1, 3, "center col_120", "Ogółem (kol. .2 + 9)" });
-            dT.Rows.Add(new Object[] { 1, 7, 7, 1, "center ", "Sprawy ubezpieczeniowe" });
-            dT.Rows.Add(new Object[] { 1, 11, 8, 1, "center ", "Sprawy pracownicze" });
+            dT.Rows.Add(new Object[] { 1, 4, 1, 3, "center col_120", "Ogółem (kol. .2 + 10)" });
+            dT.Rows.Add(new Object[] { 1, 7, 8, 1, "center ", "Sprawy ubezpieczeniowe" });
+            dT.Rows.Add(new Object[] { 1, 11, 9, 1, "center ", "Sprawy pracownicze" });
 
             dT.Rows.Add(new Object[] { 2, 4, 1, 2, "center col_120", "ogółem I i II instancja" });
             dT.Rows.Add(new Object[] { 2, 5, 1, 2, "center col_120", "ogółem I instancja" });
-            dT.Rows.Add(new Object[] { 2, 6, 2, 1, "center ", "w tym" });
+            dT.Rows.Add(new Object[] { 2, 6, 3, 1, "center ", "w tym" });
             dT.Rows.Add(new Object[] { 2, 8, 1, 2, "center col_120", "ogółem II instancja" });
-            dT.Rows.Add(new Object[] { 2, 9, 2, 1, "center ", "w tym" });
+            dT.Rows.Add(new Object[] { 2, 9, 3, 1, "center ", "w tym" });
             dT.Rows.Add(new Object[] { 2, 11, 1, 2, "center col_120", "ogółem I instancja" });
             dT.Rows.Add(new Object[] { 2, 12, 1, 2, "center col_120", "ogółem II instancja" });
             dT.Rows.Add(new Object[] { 2, 13, 3, 1, "center ", "w tym" });
             dT.Rows.Add(new Object[] { 2, 16, 1, 2, "center col_120", "ogółem II instancja" });
-            dT.Rows.Add(new Object[] { 2, 17, 2, 1, "center ", "w tym" });
+            dT.Rows.Add(new Object[] { 2, 17, 3, 1, "center ", "w tym" });
 
             dT.Rows.Add(new Object[] { 3, 6, 1, 1, "center col_120", "U" });
             dT.Rows.Add(new Object[] { 3, 7, 1, 1, "center col_120", "Uo" });
+            dT.Rows.Add(new Object[] { 3, 8, 1, 1, "center col_120", "Uz" });
 
             dT.Rows.Add(new Object[] { 3, 9, 1, 1, "center col_120", "Ua" });
             dT.Rows.Add(new Object[] { 3, 10, 1, 1, "center col_120", "Uz" });
@@ -1580,6 +1756,7 @@ namespace stat2018
             dT.Rows.Add(new Object[] { 3, 13, 1, 1, "center col_120", "P" });
             dT.Rows.Add(new Object[] { 3, 14, 1, 1, "center col_120", "Np" });
             dT.Rows.Add(new Object[] { 3, 15, 1, 1, "center col_120", "Po" });
+            dT.Rows.Add(new Object[] { 3, 16, 1, 1, "center col_120", "Pz" });
 
             dT.Rows.Add(new Object[] { 3, 17, 1, 1, "center col_120", "P" });
             dT.Rows.Add(new Object[] { 3, 18, 1, 1, "center col_120", "Pz" });
@@ -1597,11 +1774,11 @@ namespace stat2018
             dT.Rows.Add(new Object[] { 3, 1, 1, 26, "wciecie borderAll", "W tym ponownie wpisane" });
             dT.Rows.Add(new Object[] { 3, 2, 2, 1, "wciecie borderAll", "razem (w.03 = w. od 04 do 14 i od 16 do 28)" });
             dT.Rows.Add(new Object[] { 4, 2, 2, 1, "wciecie borderAll", "zwrot pozwu/odwołania/ wniosku" });
-            dT.Rows.Add(new Object[] { 5, 2, 2, 1, "wciecie borderAll", "przekazanie z innych jednostek na podstawie art. 200§1 kpc ( z wyjątkiem zmian organizacyjnych)" });
+            dT.Rows.Add(new Object[] { 5, 2, 2, 1, "wciecie borderAll", "przekazanie z innych jednostek na podstawie art. 200 kpc (z wyjątkiem zmian organizacyjnych)" });
             dT.Rows.Add(new Object[] { 6, 2, 2, 1, "wciecie borderAll", "wyłączenie sprawy do odrębnego rozpoznania – poprzednio połączonej na podstawie art. 219 kpc" });
             dT.Rows.Add(new Object[] { 7, 2, 2, 1, "wciecie borderAll", "wyłączenie roszczenia do odrębnego rozpoznania" });
             dT.Rows.Add(new Object[] { 8, 2, 2, 1, "wciecie borderAll", "sprawy zawieszone zakreślone, które podjęto" });
-            dT.Rows.Add(new Object[] { 9, 2, 2, 1, "wciecie borderAll", "wpisane na podstawie art. 486 kpc i art. 498§2 kpc" });
+            dT.Rows.Add(new Object[] { 9, 2, 2, 1, "wciecie borderAll", "wpisane na podstawie art. 480<sup>1</sup>§2 kpc" });
             dT.Rows.Add(new Object[] { 10, 2, 2, 1, "wciecie borderAll", "wpisane na podstawie art. 495§1 kpc" });
             dT.Rows.Add(new Object[] { 11, 2, 2, 1, "wciecie borderAll", "wpisane na podstawie art. 505§1 kpc" });
             dT.Rows.Add(new Object[] { 12, 2, 2, 1, "wciecie borderAll", "przekazano sprawy w ramach sądu pomiędzy wydziałami tego samego pionu" });
@@ -1648,47 +1825,48 @@ namespace stat2018
             DataTable dT = schematTabeli();
             dT.Clear();
             //                         W  K  CS RS   style"    text"
-            dT.Rows.Add(new Object[] { 1, 1, 3, 1, "wciecie borderAll", "Załatwiono ogółem (w.01 = dz.1.1.1.1 kol.4 i dz. 1.1.2.1. kol. 3 odpowiednie wiersze = w.02+30)" });
+            dT.Rows.Add(new Object[] { 1, 1, 3, 1, "wciecie borderAll", "Załatwiono ogółem (w.01 = dz.1.1.1.1 kol.4 i dz. 1.1.2.1. kol. 3 odpowiednie wiersze = w.02+31)" });
             dT.Rows.Add(new Object[] { 2, 1, 1, 28, "wciecie borderAll", "W tym szczególne rodzaje załatwień" });
-            dT.Rows.Add(new Object[] { 2, 2, 2, 1, "wciecie borderAll", "razem (w.02 = w.03 do 29)" });
+            dT.Rows.Add(new Object[] { 2, 2, 2, 1, "wciecie borderAll", "razem (w.02 = w.03 do 30)" });
             dT.Rows.Add(new Object[] { 3, 2, 2, 1, "wciecie borderAll", "zwrot pozwu/odwołania/ wniosku/akt" });
             dT.Rows.Add(new Object[] { 4, 2, 2, 1, "wciecie borderAll", "przekazanie do innych jednostek na podstawie art. 200§1,461 kpc (z wyjątkiem zmian organizacyjnych)" });
-            dT.Rows.Add(new Object[] { 5, 2, 2, 1, "wciecie borderAll", "zakończono w trybie art. 339 kpc" });
-            dT.Rows.Add(new Object[] { 6, 2, 2, 1, "wciecie borderAll", "zakończono w trybie art. 341 kpc" });
-            dT.Rows.Add(new Object[] { 7, 2, 2, 1, "wciecie borderAll", "zakreślono na podstawie art. 486  kpc" });
-            dT.Rows.Add(new Object[] { 8, 2, 2, 1, "wciecie borderAll", "zakreślono na podstawie art. 498 §2 kpc" });
-            dT.Rows.Add(new Object[] { 9, 2, 2, 1, "wciecie borderAll", "w wyniku zmian zarządzenia MS o biurowości" });
-            dT.Rows.Add(new Object[] { 10, 2, 2, 1, "wciecie borderAll", "w wyniku przekazania sprawy w ramach sądu pomiędzy wydziałami tego samego pionu" });
-            dT.Rows.Add(new Object[] { 11, 2, 2, 1, "wciecie borderAll", "w wyniku przekazania sprawy w ramach sądu pomiędzy wydziałami różnych pionów" });
+            dT.Rows.Add(new Object[] { 5, 2, 2, 1, "wciecie borderAll", "zakończono w trybie art. 200 kpc" });
+            dT.Rows.Add(new Object[] { 6, 2, 2, 1, "wciecie borderAll", "zakończono w trybie art. 339 i 341 kpc" });
+            dT.Rows.Add(new Object[] { 7, 2, 2, 1, "wciecie borderAll", "zakreślono na podstawie art. 480<sup>1</sup>§2 kpc" });
+            dT.Rows.Add(new Object[] { 8, 2, 2, 1, "wciecie borderAll", "zakreślono na podstawie art. 186<sup>1</sup>   kpc" });
+            dT.Rows.Add(new Object[] { 9, 2, 2, 1, "wciecie borderAll", "zakreślono na podstawie art. 191<sup>1</sup>   kpc" });
+            dT.Rows.Add(new Object[] { 10, 2, 2, 1, "wciecie borderAll", "w wyniku zmian zarządzenia MS o biurowości" });
+            dT.Rows.Add(new Object[] { 11, 2, 2, 1, "wciecie borderAll", "w wyniku przekazania sprawy w ramach sądu pomiędzy wydziałami tego samego pionu" });
+            dT.Rows.Add(new Object[] { 12, 2, 2, 1, "wciecie borderAll", "w wyniku przekazania sprawy w ramach sądu pomiędzy wydziałami różnych pionów" });
 
-            dT.Rows.Add(new Object[] { 12, 2, 1, 2, "wciecie borderAll", "zmiany organizacyjne związane z utworzeniem lub likwidacją" });
-            dT.Rows.Add(new Object[] { 12, 3, 1, 1, "wciecie borderAll", "wydziału (ów) / sekcji" });
-            dT.Rows.Add(new Object[] { 13, 3, 1, 1, "wciecie borderAll", "sądu (ów)" });
+            dT.Rows.Add(new Object[] { 13, 2, 1, 2, "wciecie borderAll", "zmiany organizacyjne związane z utworzeniem lub likwidacją" });
+            dT.Rows.Add(new Object[] { 13, 3, 1, 1, "wciecie borderAll", "wydziału (ów) / sekcji" });
+            dT.Rows.Add(new Object[] { 14, 3, 1, 1, "wciecie borderAll", "sądu (ów)" });
 
-            dT.Rows.Add(new Object[] { 14, 2, 1, 2, "wciecie borderAll", "w związku ze zmianą obszaru właściwości miejscowej" });
-            dT.Rows.Add(new Object[] { 14, 3, 1, 1, "wciecie borderAll", "wydziału (ów) / sekcji" });
-            dT.Rows.Add(new Object[] { 15, 3, 1, 1, "wciecie borderAll", "sądu (ów)" });
-            dT.Rows.Add(new Object[] { 16, 2, 2, 1, "wciecie borderAll", "połączono do wspólnego rozpoznania na podstawie art. 219 kpc" });
-            dT.Rows.Add(new Object[] { 17, 2, 2, 1, "wciecie borderAll", "zakreślone w wyniku zmiany trybu lub rodzaju postępowania (art. 201 § 1 i 2 kpc)" });
-            dT.Rows.Add(new Object[] { 18, 2, 1, 2, "wciecie borderAll", "zakreślono na podstawie art. 174 §1" });
-            dT.Rows.Add(new Object[] { 18, 3, 1, 1, "wciecie borderAll", "pkt 1 kpc" });
-            dT.Rows.Add(new Object[] { 19, 3, 1, 1, "wciecie borderAll", "pkt 4 kpc" });
-            dT.Rows.Add(new Object[] { 20, 2, 2, 1, "wciecie borderAll", "zakreślenie omyłkowych wpisów" });
-            dT.Rows.Add(new Object[] { 21, 2, 2, 1, "wciecie borderAll", "odrzucono pozew / wniosek / skargę /apelację / zażalenie" });
-            dT.Rows.Add(new Object[] { 22, 2, 2, 1, "wciecie borderAll", "umorzenie na skutek cofnięcia pozwu, wniosku (wykazujemy I i II instancję), środka odwoławczego lub, skargi przed sądem  II instancji" });
+            dT.Rows.Add(new Object[] { 15, 2, 1, 2, "wciecie borderAll", "w związku ze zmianą obszaru właściwości miejscowej" });
+            dT.Rows.Add(new Object[] { 15, 3, 1, 1, "wciecie borderAll", "wydziału (ów) / sekcji" });
+            dT.Rows.Add(new Object[] { 16, 3, 1, 1, "wciecie borderAll", "sądu (ów)" });
+            dT.Rows.Add(new Object[] { 17, 2, 2, 1, "wciecie borderAll", "połączono do wspólnego rozpoznania na podstawie art. 219 kpc" });
+            dT.Rows.Add(new Object[] { 18, 2, 2, 1, "wciecie borderAll", "zakreślone w wyniku zmiany trybu lub rodzaju postępowania (art. 201 § 1 i 2 kpc)" });
+            dT.Rows.Add(new Object[] { 19, 2, 1, 2, "wciecie borderAll", "zakreślono na podstawie art. 174 §1" });
+            dT.Rows.Add(new Object[] { 19, 3, 1, 1, "wciecie borderAll", "pkt 1 kpc" });
+            dT.Rows.Add(new Object[] { 20, 3, 1, 1, "wciecie borderAll", "pkt 4 kpc" });
+            dT.Rows.Add(new Object[] { 21, 2, 2, 1, "wciecie borderAll", "zakreślenie omyłkowych wpisów" });
+            dT.Rows.Add(new Object[] { 22, 2, 2, 1, "wciecie borderAll", "odrzucono pozew / wniosek / skargę /apelację / zażalenie" });
+            dT.Rows.Add(new Object[] { 23, 2, 2, 1, "wciecie borderAll", "umorzenie na skutek cofnięcia pozwu, wniosku (wykazujemy I i II instancję), środka odwoławczego lub, skargi przed sądem  II instancji" });
 
-            dT.Rows.Add(new Object[] { 23, 2, 2, 1, "wciecie borderAll", "w trybie § 110 ust. 3 zarządzenia Ministra Sprawiedliwości z dnia 12 grudnia 2003 r. w sprawie organizacji i zakresu działania sekretariatów sądowych oraz innych działów administracji sądowej (Dz. Urz. Min. Sprawiedl. Nr 5 poz. 22, z późn. zm.)" });
-            dT.Rows.Add(new Object[] { 24, 2, 2, 1, "wciecie borderAll", "umorzenie na podstawie art. 505<sup>37</sup> §1 kpc" });
-            dT.Rows.Add(new Object[] { 25, 2, 2, 1, "wciecie borderAll", "zakończono w trybie art.148<sup>1</sup> §1 kpc" });
-            dT.Rows.Add(new Object[] { 26, 2, 2, 1, "wciecie borderAll", "wydano nakaz zapłaty" });
+            dT.Rows.Add(new Object[] { 24, 2, 2, 1, "wciecie borderAll", "w trybie § 109 ust. 3 Zarządzenia Ministra Sprawiedliwości z dnia z dnia 19 czerwca 2019 r. w sprawie organizacji i zakresu działania sekretariatów sądowych oraz innych działów administracji sądowej (Dz. Urz. MS. Z 2019, poz. 138)" });
+            dT.Rows.Add(new Object[] { 25, 2, 2, 1, "wciecie borderAll", "umorzenie na podstawie art. 505<sup>37</sup> §1 kpc" });
+            dT.Rows.Add(new Object[] { 26, 2, 2, 1, "wciecie borderAll", "zakończono w trybie art.148<sup>1</sup> §1 kpc" });
+            dT.Rows.Add(new Object[] { 27, 2, 2, 1, "wciecie borderAll", "wydano nakaz zapłaty" });
 
-            dT.Rows.Add(new Object[] { 27, 2, 1, 2, "wciecie borderAll", "zakreślenie spraw" });
-            dT.Rows.Add(new Object[] { 27, 3, 1, 1, "wciecie borderAll", "w związku z funkcjonowaniem § 43 Regulaminu" });
-            dT.Rows.Add(new Object[] { 28, 3, 1, 1, "wciecie borderAll", "w związku ze wspólnym wpływem §54 ust.2 Regulaminu" });
-            dT.Rows.Add(new Object[] { 29, 2, 2, 1, "wciecie borderAll", "inne" });
+            dT.Rows.Add(new Object[] { 28, 2, 1, 2, "wciecie borderAll", "zakreślenie spraw" });
+            dT.Rows.Add(new Object[] { 28, 3, 1, 1, "wciecie borderAll", "w związku z funkcjonowaniem § 43 Regulaminu" });
+            dT.Rows.Add(new Object[] { 29, 3, 1, 1, "wciecie borderAll", "w związku ze wspólnym wpływem §54 ust.2 Regulaminu" });
+            dT.Rows.Add(new Object[] { 30, 2, 2, 1, "wciecie borderAll", "inne" });
 
-            dT.Rows.Add(new Object[] { 30, 1, 3, 1, "wciecie borderAll", "Załatwienie pozostałych spraw" });
-            dT.Rows.Add(new Object[] { 31, 1, 3, 1, "wciecie borderAll", "Pozostało na okres następny (w.31 = dz.1.1.1.1 kol.16 i dz. 1.1.2.1. kol. 15 odpowiednie wiersze)" });
+            dT.Rows.Add(new Object[] { 31, 1, 3, 1, "wciecie borderAll", "Załatwienie pozostałych spraw" });
+            dT.Rows.Add(new Object[] { 32, 1, 3, 1, "wciecie borderAll", "Pozostało na okres następny (w.32 = dz.1.1.1.1 kol.16 i dz. 1.1.2.1. kol. 15 odpowiednie wiersze)" });
 
             return dT;
         }
@@ -1765,24 +1943,29 @@ namespace stat2018
             DataTable dT = schematTabeli();
             dT.Clear();
             //                         W  K  CS RS   style"    text"
-            dT.Rows.Add(new Object[] { 1, 1, 1, 1, "wciecie borderAll", "Ogółem sprawy z zakresu ubezpieczeń społecznych (wiersze 02 do 08)" });
+            dT.Rows.Add(new Object[] { 1, 1, 1, 1, "wciecie borderAll", "Ogółem sprawy z zakresu ubezpieczeń społecznych (wiersze 02 do 10)" });
             dT.Rows.Add(new Object[] { 2, 1, 1, 1, "wciecie borderAll", "U" });
             dT.Rows.Add(new Object[] { 3, 1, 1, 1, "wciecie borderAll", "Ua" });
-            dT.Rows.Add(new Object[] { 4, 1, 1, 1, "wciecie borderAll", "Uz" });
-            dT.Rows.Add(new Object[] { 5, 1, 1, 1, "wciecie borderAll", "Uo" });
-            dT.Rows.Add(new Object[] { 6, 1, 1, 1, "wciecie borderAll", "WSC (skarga kasacyjna)" });
-            dT.Rows.Add(new Object[] { 7, 1, 1, 1, "wciecie borderAll", "WSC (skarga o stwierdzenie niezgodności z prawem)" });
-            dT.Rows.Add(new Object[] { 8, 1, 1, 1, "wciecie borderAll", "Skarga na postępowanie sądowe Wykaz S*)" });
-            dT.Rows.Add(new Object[] { 9, 1, 1, 1, "wciecie borderAll", "Ogółem sprawy z zakresu prawa pracy (w. 10 do 18)" });
-            dT.Rows.Add(new Object[] { 10, 1, 1, 1, "wciecie borderAll", "P" });
-            dT.Rows.Add(new Object[] { 11, 1, 1, 1, "wciecie borderAll", "Nb" });
-            dT.Rows.Add(new Object[] { 12, 1, 1, 1, "wciecie borderAll", "Po" });
-            dT.Rows.Add(new Object[] { 13, 1, 1, 1, "wciecie borderAll", "Pa apelacyjne" });
-            dT.Rows.Add(new Object[] { 14, 1, 1, 1, "wciecie borderAll", "Pz zażaleniowe" });
-            dT.Rows.Add(new Object[] { 15, 1, 1, 1, "wciecie borderAll", "WSC skarga kasacyjna" });
-            dT.Rows.Add(new Object[] { 16, 1, 1, 1, "wciecie borderAll", "Wykaz Kas-z wnioski o rozstrzygnięcie sporu zakładowego przez kolegium arbitrażu społecznego" });
-            dT.Rows.Add(new Object[] { 17, 1, 1, 1, "wciecie borderAll", "WSC skarga o stwierdzenie niezgodności z prawem" });
-            dT.Rows.Add(new Object[] { 18, 1, 1, 1, "wciecie borderAll", "Skargi na postępowanie sądowe (wykaz S) *)" });
+            dT.Rows.Add(new Object[] { 4, 1, 1, 1, "wciecie borderAll", "Uz I instancja" });
+            dT.Rows.Add(new Object[] { 5, 1, 1, 1, "wciecie borderAll", "Uz II instancja" });
+            dT.Rows.Add(new Object[] { 6, 1, 1, 1, "wciecie borderAll", "Uo" });
+            dT.Rows.Add(new Object[] { 7, 1, 1, 1, "wciecie borderAll", "WSC (skarga kasacyjna)" });
+            dT.Rows.Add(new Object[] { 8, 1, 1, 1, "wciecie borderAll", "WSC (skarga o stwierdzenie niezgodności z prawem)" });
+            dT.Rows.Add(new Object[] { 9, 1, 1, 1, "wciecie borderAll", "WSC (skarga nadzwyczajna)" });
+            dT.Rows.Add(new Object[] { 10, 1, 1, 1, "wciecie borderAll", "Skarga na postępowanie sądowe Wykaz S*)" });
+            dT.Rows.Add(new Object[] { 11, 1, 1, 1, "wciecie borderAll", "Ogółem sprawy z zakresu prawa pracy (w. 12 do 22)" });
+            dT.Rows.Add(new Object[] { 12, 1, 1, 1, "wciecie borderAll", "P" });
+            dT.Rows.Add(new Object[] { 13, 1, 1, 1, "wciecie borderAll", "Nb" });
+            dT.Rows.Add(new Object[] { 14, 1, 1, 1, "wciecie borderAll", "Po" });
+            dT.Rows.Add(new Object[] { 15, 1, 1, 1, "wciecie borderAll", "Pa apelacyjne" });
+            dT.Rows.Add(new Object[] { 16, 1, 1, 1, "wciecie borderAll", "Pz I instancja " });
+            dT.Rows.Add(new Object[] { 17, 1, 1, 1, "wciecie borderAll", "Pz II instancja " });
+
+            dT.Rows.Add(new Object[] { 18, 1, 1, 1, "wciecie borderAll", "WSC skarga kasacyjna" });
+            dT.Rows.Add(new Object[] { 19, 1, 1, 1, "wciecie borderAll", "Wykaz Kas-z wnioski o rozstrzygnięcie sporu zakładowego przez kolegium arbitrażu społecznego" });
+            dT.Rows.Add(new Object[] { 20, 1, 1, 1, "wciecie borderAll", "WSC skarga o stwierdzenie niezgodności z prawem" });
+            dT.Rows.Add(new Object[] { 21, 1, 1, 1, "wciecie borderAll", "WSNc (skarga nadzwyczajna)" });
+            dT.Rows.Add(new Object[] { 22, 1, 1, 1, "wciecie borderAll", "Skargi na postępowanie sądowe (wykaz S) *)" });
 
             return dT;
         }
@@ -1834,7 +2017,7 @@ namespace stat2018
             dT.Rows.Add(new Object[] { 3, 37, 1, 2, "center col_120", "sędziów SR delegowanych w trybie art. 77 §1 usp" });
             dT.Rows.Add(new Object[] { 3, 38, 1, 2, "center col_120", "sędziów SR delegowanych w trybie art. 77 §1 usp " });
             dT.Rows.Add(new Object[] { 3, 39, 1, 2, "center col_120", "na czas nieokreślony lub na czas określony, orzekających w niepełnym wymiarze" });
-        
+
             dT.Rows.Add(new Object[] { 4, 9, 1, 1, "center col_120", "prezesa" });
             dT.Rows.Add(new Object[] { 4, 10, 1, 1, "center col_120", "wiceprezesa" });
             dT.Rows.Add(new Object[] { 4, 11, 1, 1, "center col_120", "przewod-niczącego wydziału" });
@@ -1860,7 +2043,7 @@ namespace stat2018
             DataTable dT = schematTabeli();
             dT.Clear();
             //                         W  K  CS RS   style"    text"
-            dT.Rows.Add(new Object[] { 1, 1, 3, 1, "wciecie borderAll", "Ogółem sprawy z zakresu ubezpieczeń społecznych (wiersze 02, 21 do 26)" });
+            dT.Rows.Add(new Object[] { 1, 1, 3, 1, "wciecie borderAll", "Ogółem sprawy z zakresu ubezpieczeń społecznych (wiersze 02, 21 do 29)" });
             dT.Rows.Add(new Object[] { 2, 1, 3, 1, "wciecie borderAll", "U" });
             dT.Rows.Add(new Object[] { 3, 1, 1, 18, "wciecie borderAll", "w tym" });
             dT.Rows.Add(new Object[] { 3, 2, 2, 1, "wciecie borderAll", "Zwrot pozwu" });
@@ -1886,47 +2069,66 @@ namespace stat2018
             dT.Rows.Add(new Object[] { 18, 2, 2, 1, "wciecie borderAll", "odrzucono pozew" });
             dT.Rows.Add(new Object[] { 19, 2, 2, 1, "wciecie borderAll", "umorzono na podstawie art. 50537§1 kpc" });
             dT.Rows.Add(new Object[] { 20, 2, 2, 1, "wciecie borderAll", "inne" });
-            dT.Rows.Add(new Object[] { 21, 1, 3, 1, "wciecie borderAll", "Ua" });
-            dT.Rows.Add(new Object[] { 22, 1, 3, 1, "wciecie borderAll", "Uz" });
-            dT.Rows.Add(new Object[] { 23, 1, 3, 1, "wciecie borderAll", "Uo" });
-            dT.Rows.Add(new Object[] { 24, 1, 3, 1, "wciecie borderAll", "WSC (skarga kasacyjna)" });
+            dT.Rows.Add(new Object[] { 21, 1, 1, 2, "wciecie borderAll", "Ua" });
+            dT.Rows.Add(new Object[] { 21, 2, 2, 1, "wciecie borderAll", "Ogółem" });
+            dT.Rows.Add(new Object[] { 22, 1, 2, 1, "wciecie borderAll", "w tym w związku ze zmianami organizacyjnymi ( zniesienie/likwidacja/ zmiany obszaru właściwości sądu, wydziału, sekcji oraz zmiany instrukcji sądowej" });
 
-            dT.Rows.Add(new Object[] { 25, 1, 3, 1, "wciecie borderAll", "WSC (skarga o stwierdzenie niezgodności z prawem)" });
-            dT.Rows.Add(new Object[] { 26, 1, 3, 1, "wciecie borderAll", "Skarga na postępowanie sądowe (Wykaz S)*)" });
-            dT.Rows.Add(new Object[] { 27, 1, 3, 1, "wciecie borderAll", "Ogółem sprawy z zakresu prawa pracy (suma wierszy 28, 49 do 56)" });
-            dT.Rows.Add(new Object[] { 28, 1, 3, 1, "wciecie borderAll", "P" });
-            dT.Rows.Add(new Object[] { 29, 1, 1, 20, "wciecie borderAll", " " });
-            dT.Rows.Add(new Object[] { 29, 2, 2, 1, "wciecie borderAll", "zwrot pozwu" });
-            dT.Rows.Add(new Object[] { 30, 1, 2, 1, "wciecie borderAll", "przekazane do innych jednostek na podstawie art. 200§1 kpc (z wyjątkiem zmian organizacyjnych)" });
-            dT.Rows.Add(new Object[] { 31, 1, 2, 1, "wciecie borderAll", "zakończono w trybie art. 339 kpc" });
-            dT.Rows.Add(new Object[] { 32, 1, 2, 1, "wciecie borderAll", "zakończono w trybie art. 341 kpc" });
-            dT.Rows.Add(new Object[] { 33, 1, 2, 1, "wciecie borderAll", "w wyniku zmian zarządzenia MS o biurowości" });
-            dT.Rows.Add(new Object[] { 34, 1, 2, 1, "wciecie borderAll", "w wyniku przekazania sprawy w ramach sądu pomiędzy wydziałami tego samego pionu" });
-            dT.Rows.Add(new Object[] { 35, 1, 2, 1, "wciecie borderAll", "w wyniku przekazania sprawy w ramach sądu pomiędzy wydziałami różnych pionów" });
-            dT.Rows.Add(new Object[] { 36, 2, 1, 2, "wciecie borderAll", "zmiany organizacyjne związane z utworzeniem lub likwidacją" });
-            dT.Rows.Add(new Object[] { 36, 3, 1, 1, "wciecie borderAll", "wydziału(łów)/ sekcji" });
-            dT.Rows.Add(new Object[] { 37, 3, 1, 1, "wciecie borderAll", "sądu (dów)" });
-            dT.Rows.Add(new Object[] { 38, 2, 1, 2, "wciecie borderAll", "w wyniku zmiany obszaru właściwości miejscowej" });
-            dT.Rows.Add(new Object[] { 38, 3, 1, 1, "wciecie borderAll", "wydziału(łów)/ sekcji" });
-            dT.Rows.Add(new Object[] { 39, 3, 1, 1, "wciecie borderAll", "sądu (dów)" });
-            dT.Rows.Add(new Object[] { 40, 1, 2, 1, "wciecie borderAll", "połączono do wspólnego rozpoznania na podstawie art. 219 kpc" });
-            dT.Rows.Add(new Object[] { 41, 1, 2, 1, "wciecie borderAll", "zakreślone w wyniku zmiany trybu lub rodzaju postępowania (art. 201 § 1 i 2 kpc)" });
-            dT.Rows.Add(new Object[] { 42, 2, 1, 2, "wciecie borderAll", "zakreślono na podstawie art. 174 §1" });
-            dT.Rows.Add(new Object[] { 42, 3, 1, 1, "wciecie borderAll", "pkt 1 kpc" });
-            dT.Rows.Add(new Object[] { 43, 3, 1, 1, "wciecie borderAll", "pkt 4 kpc)" });
-            dT.Rows.Add(new Object[] { 44, 1, 2, 1, "wciecie borderAll", "zakreślenie omyłkowych wpisów" });
-            dT.Rows.Add(new Object[] { 45, 1, 2, 1, "wciecie borderAll", "odrzucono pozew" });
-            dT.Rows.Add(new Object[] { 46, 1, 2, 1, "wciecie borderAll", "umorzono na podstawie art. 505<sup>37</sup>§1 kpc" });
-            dT.Rows.Add(new Object[] { 47, 1, 2, 1, "wciecie borderAll", "wydano nakaz zapłaty" });
-            dT.Rows.Add(new Object[] { 48, 1, 2, 1, "wciecie borderAll", "inne" });
-            dT.Rows.Add(new Object[] { 49, 1, 3, 1, "wciecie borderAll", "Np" });
-            dT.Rows.Add(new Object[] { 50, 1, 3, 1, "wciecie borderAll", "Po" });
-            dT.Rows.Add(new Object[] { 51, 1, 3, 1, "wciecie borderAll", "Pa apelacyjne" });
-            dT.Rows.Add(new Object[] { 52, 1, 3, 1, "wciecie borderAll", "Pz zażaleniowe" });
-            dT.Rows.Add(new Object[] { 53, 1, 3, 1, "wciecie borderAll", "WSC skarga kasacyjna" });
-            dT.Rows.Add(new Object[] { 54, 1, 3, 1, "wciecie borderAll", "Wykaz Kas-z wnioski o rozstrzygnięcie sporu zakładowego przez kolegium arbitrażu społecznego" });
-            dT.Rows.Add(new Object[] { 55, 1, 3, 1, "wciecie borderAll", "WSC skarga o stwierdzenie niezgodności z prawem" });
-            dT.Rows.Add(new Object[] { 56, 1, 3, 1, "wciecie borderAll", "Skargi na postępowanie sądowe (Wykaz S)*)" });
+            dT.Rows.Add(new Object[] { 23, 1, 3, 1, "wciecie borderAll", "Uz I instancja" });
+
+            dT.Rows.Add(new Object[] { 24, 1, 3, 1, "wciecie borderAll", "Uz II instancja" });
+            dT.Rows.Add(new Object[] { 25, 1, 3, 1, "wciecie borderAll", "Uo" });
+            dT.Rows.Add(new Object[] { 26, 1, 3, 1, "wciecie borderAll", "WSC (skarga kasacyjna)" });
+
+            dT.Rows.Add(new Object[] { 27, 1, 3, 1, "wciecie borderAll", "WSC (skarga o stwierdzenie niezgodności z prawem)" });
+            dT.Rows.Add(new Object[] { 28, 1, 3, 1, "wciecie borderAll", "Skarga na postępowanie sądowe (Wykaz S)*)" });
+            dT.Rows.Add(new Object[] { 29, 1, 3, 1, "wciecie borderAll", "Ogółem sprawy z zakresu prawa pracy (suma wierszy 28, 49 do 56)" });
+            dT.Rows.Add(new Object[] { 30, 1, 3, 1, "wciecie borderAll", "Ogółem sprawy z zakresu prawa pracy (suma wierszy 31,52 - 54,56,58, 60 - 64)" });
+
+            dT.Rows.Add(new Object[] { 31, 1, 3, 1, "wciecie borderAll", "P" });
+            dT.Rows.Add(new Object[] { 32, 1, 1, 20, "wciecie borderAll", " " });
+            dT.Rows.Add(new Object[] { 32, 2, 2, 1, "wciecie borderAll", "zwrot pozwu" });
+            dT.Rows.Add(new Object[] { 33, 1, 2, 1, "wciecie borderAll", "przekazane do innych jednostek na podstawie art. 200§1 kpc (z wyjątkiem zmian organizacyjnych)" });
+            dT.Rows.Add(new Object[] { 34, 1, 2, 1, "wciecie borderAll", "zakończono w trybie art. 339 kpc" });
+            dT.Rows.Add(new Object[] { 35, 1, 2, 1, "wciecie borderAll", "zakończono w trybie art. 341 kpc" });
+            dT.Rows.Add(new Object[] { 36, 1, 2, 1, "wciecie borderAll", "w wyniku zmian zarządzenia MS o biurowości" });
+            dT.Rows.Add(new Object[] { 37, 1, 2, 1, "wciecie borderAll", "w wyniku przekazania sprawy w ramach sądu pomiędzy wydziałami tego samego pionu" });
+            dT.Rows.Add(new Object[] { 38, 1, 2, 1, "wciecie borderAll", "w wyniku przekazania sprawy w ramach sądu pomiędzy wydziałami różnych pionów" });
+            dT.Rows.Add(new Object[] { 39, 2, 1, 2, "wciecie borderAll", "zmiany organizacyjne związane z utworzeniem lub likwidacją" });
+            dT.Rows.Add(new Object[] { 39, 3, 1, 1, "wciecie borderAll", "wydziału(łów)/ sekcji" });
+            dT.Rows.Add(new Object[] { 40, 3, 1, 1, "wciecie borderAll", "sądu (dów)" });
+            dT.Rows.Add(new Object[] { 41, 2, 1, 2, "wciecie borderAll", "w wyniku zmiany obszaru właściwości miejscowej" });
+            dT.Rows.Add(new Object[] { 41, 3, 1, 1, "wciecie borderAll", "wydziału(łów)/ sekcji" });
+            dT.Rows.Add(new Object[] { 42, 3, 1, 1, "wciecie borderAll", "sądu (dów)" });
+            dT.Rows.Add(new Object[] { 43, 1, 2, 1, "wciecie borderAll", "połączono do wspólnego rozpoznania na podstawie art. 219 kpc" });
+            dT.Rows.Add(new Object[] { 44, 1, 2, 1, "wciecie borderAll", "zakreślone w wyniku zmiany trybu lub rodzaju postępowania (art. 201 § 1 i 2 kpc)" });
+            dT.Rows.Add(new Object[] { 45, 2, 1, 2, "wciecie borderAll", "zakreślono na podstawie art. 174 §1" });
+            dT.Rows.Add(new Object[] { 45, 3, 1, 1, "wciecie borderAll", "pkt 1 kpc" });
+            dT.Rows.Add(new Object[] { 46, 3, 1, 1, "wciecie borderAll", "pkt 4 kpc)" });
+            dT.Rows.Add(new Object[] { 47, 1, 2, 1, "wciecie borderAll", "zakreślenie omyłkowych wpisów" });
+            dT.Rows.Add(new Object[] { 48, 1, 2, 1, "wciecie borderAll", "odrzucono pozew" });
+            dT.Rows.Add(new Object[] { 49, 1, 2, 1, "wciecie borderAll", "umorzono na podstawie art. 505<sup>37</sup>§1 kpc" });
+            dT.Rows.Add(new Object[] { 50, 1, 2, 1, "wciecie borderAll", "wydano nakaz zapłaty" });
+            dT.Rows.Add(new Object[] { 51, 1, 2, 1, "wciecie borderAll", "inne" });
+            dT.Rows.Add(new Object[] { 52, 1, 3, 1, "wciecie borderAll", "Np" });
+            dT.Rows.Add(new Object[] { 53, 1, 3, 1, "wciecie borderAll", "Po" });
+            dT.Rows.Add(new Object[] { 54, 1, 1, 2, "wciecie borderAll", "Pa apelacyjne" });
+            dT.Rows.Add(new Object[] { 54, 2, 2, 1, "wciecie borderAll", "Ogółem" });
+            dT.Rows.Add(new Object[] { 55, 2, 2, 1, "wciecie borderAll", "w tym w związku ze zmianami organizacyjnymi ( zniesienie/likwidacja/ zmiany obszaru właściwości sądu, wydziału, sekcji oraz zmiany instrukcji sądowej" });
+
+            dT.Rows.Add(new Object[] { 56, 1, 1, 2, "wciecie borderAll", "Pz I instancja" });
+            dT.Rows.Add(new Object[] { 56, 2, 2, 1, "wciecie borderAll", "Ogółem" });
+            dT.Rows.Add(new Object[] { 57, 2, 2, 1, "wciecie borderAll", "w tym w związku ze zmianami organizacyjnymi ( zniesienie/likwidacja/ zmiany obszaru właściwości sądu, wydziału, sekcji oraz zmiany instrukcji sądowej" });
+
+            dT.Rows.Add(new Object[] { 58, 1, 1, 2, "wciecie borderAll", "Pz II instancja" });
+            dT.Rows.Add(new Object[] { 58, 2, 2, 1, "wciecie borderAll", "Ogółem" });
+            dT.Rows.Add(new Object[] { 59, 2, 2, 1, "wciecie borderAll", "w tym w związku ze zmianami organizacyjnymi ( zniesienie/likwidacja/ zmiany obszaru właściwości sądu, wydziału, sekcji oraz zmiany instrukcji sądowej" });
+
+            dT.Rows.Add(new Object[] { 60, 1, 3, 1, "wciecie borderAll", "WSC skarga kasacyjna" });
+            dT.Rows.Add(new Object[] { 61, 1, 3, 1, "wciecie borderAll", "Wykaz Kas-z wnioski o rozstrzygnięcie sporu zakładowego przez kolegium arbitrażu społecznego" });
+            dT.Rows.Add(new Object[] { 62, 1, 3, 1, "wciecie borderAll", "WSC skarga o stwierdzenie niezgodności z prawem" });
+            dT.Rows.Add(new Object[] { 63, 1, 3, 1, "wciecie borderAll", "WSNc (skarga nadzwyczajna)" });
+
+            dT.Rows.Add(new Object[] { 64, 1, 3, 1, "wciecie borderAll", "Skargi na postępowanie sądowe (Wykaz S)*)" });
             return dT;
         }
 
@@ -1964,8 +2166,9 @@ namespace stat2018
             dT.Rows.Add(new Object[] { 1, 1, 1, 1, "wciecie borderAll", "W przedmiocie zwolnienia od kosztów sądowych i/lub ustanowienia adwokata lub radcy prawnego" });
             dT.Rows.Add(new Object[] { 2, 1, 1, 1, "wciecie borderAll", "Zwrot pism po bezskutecznym upływie terminu do ich uzupełnienia i opłacenia " });
             dT.Rows.Add(new Object[] { 3, 1, 1, 1, "wciecie borderAll", "Wydawanie nakazów zapłaty w postępowaniu upominawczym" });
-            dT.Rows.Add(new Object[] { 4, 1, 1, 1, "wciecie borderAll", "O nadanie klauzuli wykonalności" });
-            dT.Rows.Add(new Object[] { 5, 1, 1, 1, "wciecie borderAll", "Inne" });
+            dT.Rows.Add(new Object[] { 4, 1, 1, 1, "wciecie borderAll", "Wydawanie nakazów zapłaty w postępowaniu nakazowym " });
+            dT.Rows.Add(new Object[] { 5, 1, 1, 1, "wciecie borderAll", "O nadanie klauzuli wykonalności" });
+            dT.Rows.Add(new Object[] { 6, 1, 1, 1, "wciecie borderAll", "Inne" });
             return dT;
         }
 
@@ -2007,38 +2210,45 @@ namespace stat2018
             DataTable dT = schematTabeli();
             dT.Clear();
             //                         W  K  CS RS   style"    text"
-            dT.Rows.Add(new Object[] { 1, 1, 3, 1, "wciecie borderAll", "OGÓŁEM (w. od 02 do 07 = w.08+15)" });
-            dT.Rows.Add(new Object[] { 2, 1, 2, 2, "wciecie borderAll", "I instancja" });
-            dT.Rows.Add(new Object[] { 2, 3, 1, 1, "wciecie borderAll", "U  (w.09+16)" });
-            dT.Rows.Add(new Object[] { 3, 3, 1, 1, "wciecie borderAll", "P  (w.10+17)" });
+            dT.Rows.Add(new Object[] { 1, 1, 3, 1, "wciecie borderAll", "OGÓŁEM (w. 02 do 09 = w. 15+19)" });
+            dT.Rows.Add(new Object[] { 2, 1, 2, 4, "wciecie borderAll", "I instancja" });
+            dT.Rows.Add(new Object[] { 2, 3, 1, 1, "wciecie borderAll", "U  (w.11+20)" });
+            dT.Rows.Add(new Object[] { 3, 3, 1, 1, "wciecie borderAll", "Uz (w.12+21)" });
+            dT.Rows.Add(new Object[] { 4, 3, 1, 1, "wciecie borderAll", "P  (w.13+22)" });
+            dT.Rows.Add(new Object[] { 5, 3, 1, 1, "wciecie borderAll", "Pz (w.14+23)" });
 
-            dT.Rows.Add(new Object[] { 4, 1, 2, 4, "wciecie borderAll", "II instancja" });
-            dT.Rows.Add(new Object[] { 4, 3, 1, 1, "wciecie borderAll", "Ua   (w.11+18)" });
-            dT.Rows.Add(new Object[] { 5, 3, 1, 1, "wciecie borderAll", "Uz   (w.12+19)" });
-            dT.Rows.Add(new Object[] { 6, 3, 1, 1, "wciecie borderAll", "Pa   (w.13+20)" });
-            dT.Rows.Add(new Object[] { 7, 3, 1, 1, "wciecie borderAll", "Pz   (w.14+21)" });
-            dT.Rows.Add(new Object[] { 8, 1, 1, 7, "wciecie borderAll", "Sędziowie SO" });
-            dT.Rows.Add(new Object[] { 8, 2, 2, 1, "wciecie borderAll", "ogółem (w. od 9 do 14)" });
-            dT.Rows.Add(new Object[] { 9, 2, 1, 2, "wciecie borderAll", "I instancja" });
-            dT.Rows.Add(new Object[] { 9, 3, 1, 1, "wciecie borderAll", "U" });
-            dT.Rows.Add(new Object[] { 10, 3, 1, 1, "wciecie borderAll", "p" });
+            dT.Rows.Add(new Object[] { 6, 1, 2, 4, "wciecie borderAll", "II instancja" });
+            dT.Rows.Add(new Object[] { 6, 3, 1, 1, "wciecie borderAll", "Ua   (w.15+24)" });
+            dT.Rows.Add(new Object[] { 7, 3, 1, 1, "wciecie borderAll", "Uz   (w.16+25)" });
+            dT.Rows.Add(new Object[] { 8, 3, 1, 1, "wciecie borderAll", "Pa   (w.17+26)" });
+            dT.Rows.Add(new Object[] { 9, 3, 1, 1, "wciecie borderAll", "Pz   (w.18+27)" });
+
+            dT.Rows.Add(new Object[] { 10, 1, 1, 9, "wciecie borderAll", "Sędziowie SO" });
+            dT.Rows.Add(new Object[] { 10, 2, 2, 1, "wciecie borderAll", "ogółem (w. od 9 do 14)" });
             dT.Rows.Add(new Object[] { 11, 2, 1, 4, "wciecie borderAll", "I instancja" });
-            dT.Rows.Add(new Object[] { 11, 3, 1, 1, "wciecie borderAll", "Ua" });
+            dT.Rows.Add(new Object[] { 11, 3, 1, 1, "wciecie borderAll", "U" });
             dT.Rows.Add(new Object[] { 12, 3, 1, 1, "wciecie borderAll", "Uz" });
-            dT.Rows.Add(new Object[] { 13, 3, 1, 1, "wciecie borderAll", "Pa" });
+            dT.Rows.Add(new Object[] { 13, 3, 1, 1, "wciecie borderAll", "P" });
             dT.Rows.Add(new Object[] { 14, 3, 1, 1, "wciecie borderAll", "Pz" });
-            dT.Rows.Add(new Object[] { 15, 1, 1, 7, "wciecie borderAll", "Sędziowie SR delegowani do SO" });
-            dT.Rows.Add(new Object[] { 15, 2, 2, 1, "wciecie borderAll", "ogółem (w. od 16 do 21)" });
-            dT.Rows.Add(new Object[] { 16, 2, 1, 2, "wciecie borderAll", "I instancja" });
-            dT.Rows.Add(new Object[] { 16, 3, 1, 1, "wciecie borderAll", "U" });
-            dT.Rows.Add(new Object[] { 17, 3, 1, 1, "wciecie borderAll", "p" });
-            dT.Rows.Add(new Object[] { 18, 2, 1, 4, "wciecie borderAll", "II instancja" });
-            dT.Rows.Add(new Object[] { 18, 3, 1, 1, "wciecie borderAll", "Ua" });
-            dT.Rows.Add(new Object[] { 19, 3, 1, 1, "wciecie borderAll", "Uz" });
-            dT.Rows.Add(new Object[] { 20, 3, 1, 1, "wciecie borderAll", "Pa" });
-            dT.Rows.Add(new Object[] { 21, 3, 1, 1, "wciecie borderAll", "Pz" });
+            dT.Rows.Add(new Object[] { 15, 2, 1, 4, "wciecie borderAll", "II instancja" });
+            dT.Rows.Add(new Object[] { 15, 3, 1, 1, "wciecie borderAll", "Ua" });
+            dT.Rows.Add(new Object[] { 16, 3, 1, 1, "wciecie borderAll", "Uz" });
+            dT.Rows.Add(new Object[] { 17, 3, 1, 1, "wciecie borderAll", "Pa" });
+            dT.Rows.Add(new Object[] { 18, 3, 1, 1, "wciecie borderAll", "Pz" });
 
-            dT.Rows.Add(new Object[] { 4, 1, 1, 1, "wciecie borderAll", "Inne" });
+            dT.Rows.Add(new Object[] { 19, 1, 1, 9, "wciecie borderAll", "Sędziowie SR delegowani do SO" });
+            dT.Rows.Add(new Object[] { 19, 2, 2, 1, "wciecie borderAll", "ogółem (w. od 20 do 27)" });
+            dT.Rows.Add(new Object[] { 20, 2, 1, 4, "wciecie borderAll", "I instancja" });
+            dT.Rows.Add(new Object[] { 20, 3, 1, 1, "wciecie borderAll", "U" });
+            dT.Rows.Add(new Object[] { 21, 3, 1, 1, "wciecie borderAll", "Uz" });
+            dT.Rows.Add(new Object[] { 22, 3, 1, 1, "wciecie borderAll", "P" });
+            dT.Rows.Add(new Object[] { 23, 3, 1, 1, "wciecie borderAll", "Pz" });
+            dT.Rows.Add(new Object[] { 24, 2, 1, 4, "wciecie borderAll", "II instancja" });
+            dT.Rows.Add(new Object[] { 24, 3, 1, 1, "wciecie borderAll", "Ua" });
+            dT.Rows.Add(new Object[] { 25, 3, 1, 1, "wciecie borderAll", "Uz" });
+            dT.Rows.Add(new Object[] { 26, 3, 1, 1, "wciecie borderAll", "Pa" });
+            dT.Rows.Add(new Object[] { 27, 3, 1, 1, "wciecie borderAll", "Pz" });
+
             return dT;
         }
 
@@ -2051,7 +2261,7 @@ namespace stat2018
             DataTable dT = schematTabeli();
             dT.Clear();
             //                         W  K  CS RS   style"    text"
-            dT.Rows.Add(new Object[] { 1, 1, 2, 2, "center", "SPRAWY wg repertoriów / wykazów" });
+            dT.Rows.Add(new Object[] { 1, 1, 3, 2, "center col_250", "SPRAWY wg repertoriów / wykazów" });
             dT.Rows.Add(new Object[] { 1, 5, 11, 1, "center ", "Liczba spraw niezałatwionych pozostających od daty pierwszego wpływu do sądu" });
 
             dT.Rows.Add(new Object[] { 2, 3, 1, 1, "center col_120", "razem (kol.2+3)" });
@@ -2074,16 +2284,28 @@ namespace stat2018
             DataTable dT = schematTabeli();
             dT.Clear();
             //                         W  K  CS RS   style"    text"
-            dT.Rows.Add(new Object[] { 1, 1, 2, 1, "wciecie borderAll", "OGÓŁEM " });
-            dT.Rows.Add(new Object[] { 2, 1, 1, 8, "wciecie borderAll", "w tym" });
-            dT.Rows.Add(new Object[] { 2, 2, 1, 1, "wciecie borderAll", "U  " });
-            dT.Rows.Add(new Object[] { 3, 2, 1, 1, "wciecie borderAll", "U apelacyjne" });
-            dT.Rows.Add(new Object[] { 4, 2, 1, 1, "wciecie borderAll", "Uz (zażaleniowe)" });
-            dT.Rows.Add(new Object[] { 5, 2, 1, 1, "wciecie borderAll", "Uo" });
-            dT.Rows.Add(new Object[] { 6, 2, 1, 1, "wciecie borderAll", "P" });
-            dT.Rows.Add(new Object[] { 7, 2, 1, 1, "wciecie borderAll", "Np" });
-            dT.Rows.Add(new Object[] { 8, 2, 1, 1, "wciecie borderAll", "Pa (apelacyjne)" });
-            dT.Rows.Add(new Object[] { 9, 2, 1, 1, "wciecie borderAll", "Pz (zażaleniowe)" });
+            dT.Rows.Add(new Object[] { 1, 1, 3, 1, "wciecie borderAll", "OGÓŁEM " });
+            dT.Rows.Add(new Object[] { 2, 1, 1, 14, "wciecie borderAll", "w tym" });
+            dT.Rows.Add(new Object[] { 2, 2, 2, 1, "wciecie borderAll", "U  " });
+            dT.Rows.Add(new Object[] { 3, 2, 2, 1, "wciecie borderAll", "U apelacyjne" });
+            dT.Rows.Add(new Object[] { 4, 2, 2, 1, "wciecie borderAll", "Uz I instancja" });
+            dT.Rows.Add(new Object[] { 5, 1, 2, 1, "wciecie borderAll", "Uz II instancja" });
+            dT.Rows.Add(new Object[] { 6, 1, 1, 2, "wciecie borderAll", "z tego" });
+
+            dT.Rows.Add(new Object[] { 6, 2, 1, 1, "wciecie borderAll", "zażalenia art. 394 § 1 i 394<sup>1a</sup>§3 kpc" });
+            dT.Rows.Add(new Object[] { 7, 1, 1, 1, "wciecie borderAll", "zażalenia z  art. 394<sup>2</sup> § 1 i 1<sup>1</sup> kpc" });
+
+            dT.Rows.Add(new Object[] { 8, 1, 2, 1, "wciecie borderAll", "Uo" });
+            dT.Rows.Add(new Object[] { 9, 1, 2, 1, "wciecie borderAll", "P" });
+
+            dT.Rows.Add(new Object[] { 10, 2, 2, 1, "wciecie borderAll", "Np" });
+            dT.Rows.Add(new Object[] { 11, 2, 2, 1, "wciecie borderAll", "Pa (apelacyjne)" });
+            dT.Rows.Add(new Object[] { 12, 2, 2, 1, "wciecie borderAll", "Pz I instancja" });
+            dT.Rows.Add(new Object[] { 13, 2, 2, 1, "wciecie borderAll", "Pz II instancja" });
+            dT.Rows.Add(new Object[] { 14, 1, 1, 2, "wciecie borderAll", "z tego" });
+            dT.Rows.Add(new Object[] { 14, 2, 1, 1, "wciecie borderAll", "zażalenia art. 394 § 1 i 394<sup>1a</sup>§3 kpc" });
+            dT.Rows.Add(new Object[] { 15, 1, 1, 1, "wciecie borderAll", "zażalenia z  art. 394<sup>2</sup> § 1 i 1<sup>1</sup> kpc" });
+
             return dT;
         }
 
@@ -2126,7 +2348,25 @@ namespace stat2018
 
         private DataTable tabelaBocznaDzialu_2_1_1_1_a_1()
         {
-            return tabelaBocznaDzialu_2_1_1();
+            DataTable dT = schematTabeli();
+            dT.Clear();
+            //                         W  K  CS RS   style"    text"
+            dT.Rows.Add(new Object[] { 1, 1, 3, 1, "wciecie borderAll", "OGÓŁEM " });
+            dT.Rows.Add(new Object[] { 2, 1, 1, 10, "wciecie borderAll", "w tym" });
+            dT.Rows.Add(new Object[] { 2, 2, 2, 1, "wciecie borderAll", "U  " });
+            dT.Rows.Add(new Object[] { 3, 2, 2, 1, "wciecie borderAll", "U apelacyjne" });
+            dT.Rows.Add(new Object[] { 4, 2, 2, 1, "wciecie borderAll", "Uz I instancja" });
+            dT.Rows.Add(new Object[] { 5, 1, 2, 1, "wciecie borderAll", "Uz II instancja" });
+
+            dT.Rows.Add(new Object[] { 6, 1, 2, 1, "wciecie borderAll", "Uo" });
+            dT.Rows.Add(new Object[] { 7, 1, 2, 1, "wciecie borderAll", "P" });
+
+            dT.Rows.Add(new Object[] { 8, 2, 2, 1, "wciecie borderAll", "Np" });
+            dT.Rows.Add(new Object[] { 9, 2, 2, 1, "wciecie borderAll", "Pa (apelacyjne)" });
+            dT.Rows.Add(new Object[] { 12, 2, 2, 1, "wciecie borderAll", "Pz I instancja" });
+            dT.Rows.Add(new Object[] { 13, 2, 2, 1, "wciecie borderAll", "Pz II instancja" });
+
+            return dT;
         }
 
         #endregion dzial 2.1.1.a.1
@@ -2140,7 +2380,7 @@ namespace stat2018
 
         private DataTable tabelaBocznaDzialu_2_1_2()
         {
-            return tabelaBocznaDzialu_2_1_1();
+            return naglowekTabeliDzialu_2_1_1_1_a_1();
         }
 
         #endregion dzial 2.1.2
@@ -2154,7 +2394,7 @@ namespace stat2018
 
         private DataTable tabelaBocznaDzialu_2_1_2_1()
         {
-            return tabelaBocznaDzialu_2_1_1();
+            return naglowekTabeliDzialu_2_1_1_1_a_1();
         }
 
         #endregion dzial 2.1.2.1
@@ -2185,21 +2425,36 @@ namespace stat2018
             dT.Clear();
             //                         W  K  CS RS   style"    text"
             dT.Rows.Add(new Object[] { 1, 1, 1, 4, "wciecie borderAll", "SO I instancja" });
-            dT.Rows.Add(new Object[] { 1, 2, 1, 1, "wciecie borderAll", "U" });
-            dT.Rows.Add(new Object[] { 2, 2, 1, 1, "wciecie borderAll", "P" });
-            dT.Rows.Add(new Object[] { 3, 2, 1, 1, "wciecie borderAll", "Np" });
-            dT.Rows.Add(new Object[] { 4, 2, 1, 1, "wciecie borderAll", "Po" });
+            dT.Rows.Add(new Object[] { 1, 2, 2, 1, "wciecie borderAll", "U" });
+            dT.Rows.Add(new Object[] { 2, 2, 2, 1, "wciecie borderAll", "Uz" });
+            dT.Rows.Add(new Object[] { 3, 2, 2, 1, "wciecie borderAll", "P" });
+            dT.Rows.Add(new Object[] { 4, 2, 2, 1, "wciecie borderAll", "Np" });
+            dT.Rows.Add(new Object[] { 5, 2, 2, 1, "wciecie borderAll", "Po" });
+            dT.Rows.Add(new Object[] { 6, 2, 2, 1, "wciecie borderAll", "Pz" });
 
-            dT.Rows.Add(new Object[] { 5, 1, 1, 9, "wciecie borderAll", "SO II instancja" });
-            dT.Rows.Add(new Object[] { 5, 2, 1, 1, "wciecie borderAll", "U  " });
-            dT.Rows.Add(new Object[] { 6, 2, 1, 1, "wciecie borderAll", "Ua" });
-            dT.Rows.Add(new Object[] { 7, 2, 1, 1, "wciecie borderAll", "Uz ogółem" });
-            dT.Rows.Add(new Object[] { 8, 2, 1, 1, "wciecie borderAll", "w tym Uz (sprawy kończące postępowanie w I instancji)" });
-            dT.Rows.Add(new Object[] { 9, 2, 1, 1, "wciecie borderAll", "P" });
-            dT.Rows.Add(new Object[] { 10, 2, 1, 1, "wciecie borderAll", "Po" });
-            dT.Rows.Add(new Object[] { 11, 2, 1, 1, "wciecie borderAll", "Pa apelacyjne" });
-            dT.Rows.Add(new Object[] { 12, 2, 1, 1, "wciecie borderAll", "Pz zażaleniowe ogółem" });
-            dT.Rows.Add(new Object[] { 13, 2, 1, 1, "wciecie borderAll", "w tym Pz (sprawy kończące postępowanie w I instancji)" });
+            dT.Rows.Add(new Object[] { 7, 1, 1, 9, "wciecie borderAll", "SO II instancja" });
+            dT.Rows.Add(new Object[] { 7, 2, 2, 1, "wciecie borderAll", "U  " });
+            dT.Rows.Add(new Object[] { 8, 2, 2, 1, "wciecie borderAll", "Ua" });
+            dT.Rows.Add(new Object[] { 9, 2, 2, 1, "wciecie borderAll", "Uz razem (w. 10+12)" });
+            dT.Rows.Add(new Object[] { 10, 2, 1, 3, "wciecie borderAll", "z tego" });
+            dT.Rows.Add(new Object[] { 10, 3, 1, 1, "wciecie borderAll", "zażalenia z  art. 394 § 1 i 3941a§3 kpc" });
+
+            dT.Rows.Add(new Object[] { 11, 3, 1, 1, "wciecie borderAll", "w tym Uz (sprawy kończące postępowanie w I instancji)" });
+
+            dT.Rows.Add(new Object[] { 12, 3, 1, 1, "wciecie borderAll", "zażalenia z  art. 3942 § 1 i 11 kpc" });
+            dT.Rows.Add(new Object[] { 13, 2, 2, 1, "wciecie borderAll", "Po" });
+
+            dT.Rows.Add(new Object[] { 14, 2, 2, 1, "wciecie borderAll", "Po" });
+            dT.Rows.Add(new Object[] { 15, 2, 2, 1, "wciecie borderAll", "Pa apelacyjne" });
+
+            dT.Rows.Add(new Object[] { 16, 2, 2, 1, "wciecie borderAll", "Pz Pz razem (w. 17+19)" });
+
+            dT.Rows.Add(new Object[] { 17, 2, 1, 3, "wciecie borderAll", "z tego" });
+            dT.Rows.Add(new Object[] { 17, 3, 1, 1, "wciecie borderAll", "zażalenia z  art. 394 § 1 i 3941a§3 kpc" });
+
+            dT.Rows.Add(new Object[] { 18, 3, 1, 1, "wciecie borderAll", "w tym Uz (sprawy kończące postępowanie w I instancji)" });
+
+            dT.Rows.Add(new Object[] { 19, 3, 1, 1, "wciecie borderAll", "zażalenia z  art. 3942 § 1 i 11 kpc" });
 
             return dT;
         }
@@ -2325,17 +2580,19 @@ namespace stat2018
             DataTable dT = schematTabeli();
             dT.Clear();
             //                         W  K  CS RS   style"    text"
-            dT.Rows.Add(new Object[] { 1, 1, 1, 4, "wciecie borderAll", "SO I instancja" });
+            dT.Rows.Add(new Object[] { 1, 1, 1, 6, "wciecie borderAll", "SO I instancja" });
             dT.Rows.Add(new Object[] { 1, 2, 1, 1, "wciecie borderAll", "U" });
-            dT.Rows.Add(new Object[] { 2, 2, 1, 1, "wciecie borderAll", "P" });
-            dT.Rows.Add(new Object[] { 3, 2, 1, 1, "wciecie borderAll", "Np" });
-            dT.Rows.Add(new Object[] { 4, 2, 1, 1, "wciecie borderAll", "Po" });
+            dT.Rows.Add(new Object[] { 2, 2, 1, 1, "wciecie borderAll", "Uz" });
+            dT.Rows.Add(new Object[] { 3, 2, 1, 1, "wciecie borderAll", "P" });
+            dT.Rows.Add(new Object[] { 4, 2, 1, 1, "wciecie borderAll", "Np" });
+            dT.Rows.Add(new Object[] { 5, 2, 1, 1, "wciecie borderAll", "Po" });
+            dT.Rows.Add(new Object[] { 6, 2, 1, 1, "wciecie borderAll", "Pz" });
 
-            dT.Rows.Add(new Object[] { 5, 1, 1, 4, "wciecie borderAll", "SO II instancja" });
-            dT.Rows.Add(new Object[] { 5, 2, 1, 1, "wciecie borderAll", "Ua" });
-            dT.Rows.Add(new Object[] { 6, 2, 1, 1, "wciecie borderAll", "Uz " });
-            dT.Rows.Add(new Object[] { 7, 2, 1, 1, "wciecie borderAll", "Pa apelacyjne" });
-            dT.Rows.Add(new Object[] { 8, 2, 1, 1, "wciecie borderAll", "Pa zażaleniowe" });
+            dT.Rows.Add(new Object[] { 7, 1, 1, 4, "wciecie borderAll", "SO II instancja" });
+            dT.Rows.Add(new Object[] { 7, 2, 1, 1, "wciecie borderAll", "Ua" });
+            dT.Rows.Add(new Object[] { 8, 2, 1, 1, "wciecie borderAll", "Uz " });
+            dT.Rows.Add(new Object[] { 9, 2, 1, 1, "wciecie borderAll", "Pa apelacyjne" });
+            dT.Rows.Add(new Object[] { 10, 2, 1, 1, "wciecie borderAll", "Pa zażaleniowe" });
 
             return dT;
         }
@@ -2998,7 +3255,7 @@ namespace stat2018
             //                         W  K  CS RS   style"    text"
             dT.Rows.Add(new Object[] { 1, 1, 2, 2, "center", "Sprawy wg repertoriów" });
             dT.Rows.Add(new Object[] { 1, 3, 4, 1, "center ", "Postanowienia o przyznaniu wynagrodzenia wg czasu od złożenia rachunku" });
-            dT.Rows.Add(new Object[] { 1, 8, 4, 1, "center ", "Skierowanie rachunku do oddziału finansowego wg czasu od postanowienia o przyznaniu wynagrodzenia" });
+            dT.Rows.Add(new Object[] { 1, 8, 8, 1, "center ", "Skierowanie rachunku do oddziału finansowego wg czasu od postanowienia o przyznaniu wynagrodzenia" });
 
             dT.Rows.Add(new Object[] { 2, 3, 1, 1, "center col_120", "razem (kol.2-4)" });
             dT.Rows.Add(new Object[] { 2, 4, 1, 1, "center col_120", "do 14 dni" });
@@ -3008,8 +3265,12 @@ namespace stat2018
             dT.Rows.Add(new Object[] { 2, 7, 1, 1, "center col_120", "razem (kol.6-8)" });
             dT.Rows.Add(new Object[] { 2, 8, 1, 1, "center col_120", "do 14 dni" });
             dT.Rows.Add(new Object[] { 2, 9, 1, 1, "center col_120 ", "pow. 14 do 30 dni" });
-            dT.Rows.Add(new Object[] { 2, 10, 1, 1, "center col_120", "powyżej miesiąca" });
 
+            dT.Rows.Add(new Object[] { 2, 10, 1, 1, "center col_120", "razem powyżej miesiąca (kol. 9-12)" });
+            dT.Rows.Add(new Object[] { 2, 11, 1, 1, "center col_120", "pow. 1 do 2 miesięcy" });
+            dT.Rows.Add(new Object[] { 2, 12, 1, 1, "center col_120 ", "pow. 2 do 3 miesięcy" });
+            dT.Rows.Add(new Object[] { 2, 13, 1, 1, "center col_120", "pow. 3 do 6 miesięcy" });
+            dT.Rows.Add(new Object[] { 2, 14, 1, 1, "center col_120", "pow. 3 do 6 miesięcy" });
             return dT;
         }
 
@@ -3021,7 +3282,5 @@ namespace stat2018
         #endregion dzial 9.3
 
         #endregion dane do tabeli
-
-       
     }
 }

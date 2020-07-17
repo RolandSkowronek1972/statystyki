@@ -4,8 +4,8 @@
   <tabela id="1">
     <daneTabeli>
 
-      <iloscWierszy>1</iloscWierszy>
-      <tekstNadTabela>Ewidencja spraw – ogółem </tekstNadTabela>
+      <iloscWierszy>2</iloscWierszy>
+      <tekstNadTabela>Ewidencja spraw rodzinnych i nieletnich – ogółem</tekstNadTabela>
       <iloscWierszyNaglowka>1</iloscWierszyNaglowka>
       <iloscKolumnPrzedIteracja>1</iloscKolumnPrzedIteracja>
       <iloscKolumnPoIteracji>4</iloscKolumnPoIteracji>
@@ -62,19 +62,27 @@
         <colSpan>0</colSpan>
         <rowspan>0</rowspan>
         <style> wciecie </style>
-        <text>Ogółem  (dz. 1.1. w. 01 + dz. 1.2. w. 01)    </text>
+        <text>Ogółem (w. 02 + dz. 1.1.2 w. 01) </text>
+      </komorka>
+      <komorka>
+        <wiersz>2</wiersz>
+        <kolumna>1</kolumna>
+        <colSpan>0</colSpan>
+        <rowspan>0</rowspan>
+        <style> wciecie </style>
+        <text>Ewidencja spraw rodzinnych ogółem (dz.1.1.1 w. 01+ dz.1.1.1.1 w.01) </text>
       </komorka>
     </tablaBoczna>
   </tabela>
 
-  <tabela id="1.2">
+  <tabela id="1.1.1">
     <daneTabeli>
 
       <iloscWierszy>1</iloscWierszy>
       <tekstNadTabela>Ewidencja spraw zażaleniowych </tekstNadTabela>
-      <iloscWierszyNaglowka>3</iloscWierszyNaglowka>
-      <iloscKolumnPrzedIteracja>1</iloscKolumnPrzedIteracja>
-      <iloscKolumnPoIteracji>11</iloscKolumnPoIteracji>
+      <iloscWierszyNaglowka>4</iloscWierszyNaglowka>
+      <iloscKolumnPrzedIteracja>3</iloscKolumnPrzedIteracja>
+      <iloscKolumnPoIteracji>16</iloscKolumnPoIteracji>
       <lp>1</lp>
       <identyfikatorTabeli>1</identyfikatorTabeli>
     </daneTabeli>
@@ -83,8 +91,8 @@
       <komorka>
         <wiersz>1</wiersz>
         <kolumna>1</kolumna>
-        <colSpan>1</colSpan>
-        <rowspan>3</rowspan>
+        <colSpan>4</colSpan>
+        <rowspan>4</rowspan>
         <style>center col_250</style>
         <text> SPRAWY wg repertoriów lub wykazów</text>
       </komorka>
@@ -92,7 +100,7 @@
         <wiersz>1</wiersz>
         <kolumna>2</kolumna>
         <colSpan>0</colSpan>
-        <rowspan>3</rowspan>
+        <rowspan>4</rowspan>
         <style>center col_120</style>
         <text>pozostało z ubiegłego roku</text>
       </komorka>
@@ -100,14 +108,14 @@
         <wiersz>1</wiersz>
         <kolumna>3</kolumna>
         <colSpan>0</colSpan>
-        <rowspan>3</rowspan>
+        <rowspan>4</rowspan>
         <style>center col_120</style>
         <text>WPŁYNĘŁO razem</text>
       </komorka>
       <komorka>
         <wiersz>1</wiersz>
         <kolumna>4</kolumna>
-        <colSpan>7</colSpan>
+        <colSpan>13</colSpan>
         <rowspan>0</rowspan>
         <style>center col_120</style>
         <text>ZAŁATWIONO</text>
@@ -116,7 +124,7 @@
         <wiersz>1</wiersz>
         <kolumna>5</kolumna>
         <colSpan>0</colSpan>
-        <rowspan>3</rowspan>
+        <rowspan>4</rowspan>
         <style>center col_120</style>
         <text>Odroczono</text>
       </komorka>
@@ -124,7 +132,7 @@
         <wiersz>1</wiersz>
         <kolumna>6</kolumna>
         <colSpan>0</colSpan>
-        <rowspan>3</rowspan>
+        <rowspan>4</rowspan>
         <style>center col_120</style>
         <text>Pozostało na okres następny</text>
       </komorka>
@@ -132,14 +140,14 @@
         <wiersz>2</wiersz>
         <kolumna>1</kolumna>
         <colSpan>0</colSpan>
-        <rowspan>2</rowspan>
+        <rowspan>3</rowspan>
         <style>center col_120</style>
-        <text>Pozostało na okres następny</text>
+        <text>razem</text>
       </komorka>
       <komorka>
         <wiersz>2</wiersz>
         <kolumna>2</kolumna>
-        <colSpan>6</colSpan>
+        <colSpan>12</colSpan>
         <rowspan>0</rowspan>
         <style>center </style>
         <text>z tego</text>
@@ -148,52 +156,127 @@
         <wiersz>3</wiersz>
         <kolumna>1</kolumna>
         <colSpan>0</colSpan>
-        <rowspan>0</rowspan>
+        <rowspan>2</rowspan>
         <style>center col_120</style>
-        <text>oddalono</text>
+        <text>uwzględniono w całości lub  części</text>
       </komorka>
       <komorka>
         <wiersz>3</wiersz>
         <kolumna>2</kolumna>
-        <colSpan>0</colSpan>
+        <colSpan>2</colSpan>
         <rowspan>0</rowspan>
         <style>center col_120</style>
-        <text>zmieniono w całości lub części</text>
+        <text>orzeczono</text>
       </komorka>
       <komorka>
         <wiersz>3</wiersz>
         <kolumna>3</kolumna>
         <colSpan>0</colSpan>
-        <rowspan>0</rowspan>
+        <rowspan>2</rowspan>
         <style>center col_120</style>
-        <text>uchylono</text>
+        <text>oddalono</text>
       </komorka>
 
       <komorka>
         <wiersz>3</wiersz>
         <kolumna>4</kolumna>
         <colSpan>0</colSpan>
-        <rowspan>0</rowspan>
+        <rowspan>2</rowspan>
         <style>center col_120</style>
-        <text>odrzucono</text>
+        <text>zwrócono</text>
       </komorka>
 
       <komorka>
         <wiersz>3</wiersz>
         <kolumna>5</kolumna>
         <colSpan>0</colSpan>
+        <rowspan>2</rowspan>
+        <style>center col_120</style>
+        <text>odrzucono</text>
+      </komorka>
+      <komorka>
+        <wiersz>3</wiersz>
+        <kolumna>6</kolumna>
+        <colSpan>4</colSpan>
         <rowspan>0</rowspan>
         <style>center col_120</style>
         <text>umorzono</text>
       </komorka>
       <komorka>
         <wiersz>3</wiersz>
-        <kolumna>6</kolumna>
+        <kolumna>7</kolumna>
+        <colSpan>0</colSpan>
+        <rowspan>2</rowspan>
+        <style>center col_120</style>
+        <text>w wyniku braku przesłanek merytorycznych</text>
+      </komorka>
+      <komorka>
+        <wiersz>3</wiersz>
+        <kolumna>8</kolumna>
+        <colSpan>0</colSpan>
+        <rowspan>2</rowspan>
+        <style>center col_120</style>
+        <text>Inne załatwienia</text>
+      </komorka>
+      <komorka>
+        <wiersz>3</wiersz>
+        <kolumna>9</kolumna>
+        <colSpan>0</colSpan>
+        <rowspan>2</rowspan>
+        <style>center col_120</style>
+        <text>ogółem</text>
+      </komorka>
+      <komorka>
+        <wiersz>3</wiersz>
+        <kolumna>10</kolumna>
+        <colSpan>0</colSpan>
+        <rowspan>2</rowspan>
+        <style>center col_120</style>
+        <text>ogółem</text>
+      </komorka>
+
+      <komorka>
+        <wiersz>4</wiersz>
+        <kolumna>1</kolumna>
         <colSpan>0</colSpan>
         <rowspan>0</rowspan>
         <style>center col_120</style>
-        <text>inne załatwienia</text>
+        <text>liczba spraw</text>
       </komorka>
+      <komorka>
+        <wiersz>4</wiersz>
+        <kolumna>2</kolumna>
+        <colSpan>0</colSpan>
+        <rowspan>0</rowspan>
+        <style>center col_120</style>
+        <text>liczba małoletnich, których sprawa dotyczy</text>
+      </komorka>
+     
+      <komorka>
+        <wiersz>4</wiersz>
+        <kolumna>3</kolumna>
+        <colSpan>0</colSpan>
+        <rowspan>0</rowspan>
+        <style>center col_120</style>
+        <text>zawarcia ugody przed sądem</text>
+      </komorka>
+      <komorka>
+        <wiersz>4</wiersz>
+        <kolumna>4</kolumna>
+        <colSpan>0</colSpan>
+        <rowspan>0</rowspan>
+        <style>center col_120</style>
+        <text>cofnięcia pozwu/ wniosku/ skargi </text>
+      </komorka>
+      <komorka>
+        <wiersz>4</wiersz>
+        <kolumna>5</kolumna>
+        <colSpan>0</colSpan>
+        <rowspan>0</rowspan>
+        <style>center col_120</style>
+        <text>mediacji</text>
+      </komorka>
+
     </naglowek>
     <tablaBoczna>
       <komorka>

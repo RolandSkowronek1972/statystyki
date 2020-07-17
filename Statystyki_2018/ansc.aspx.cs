@@ -483,7 +483,7 @@ namespace stat2018
 
         private void generate_my_data()
         {
-            ISheet sheet0 = hssfworkbook.CreateSheet("Ruch spraw");//*
+            ISheet sheet0 = hssfworkbook.CreateSheet("Ruch spraw");
 
             DataView view = (DataView)dane_do_tabeli_1.Select(DataSourceSelectArguments.Empty);
             DataTable table = view.ToTable();

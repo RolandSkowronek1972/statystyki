@@ -94,6 +94,15 @@ namespace stat2018 {
         protected global::System.Web.UI.WebControls.Label id_dzialu;
         
         /// <summary>
+        /// tablePlaceHolder01 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.PlaceHolder tablePlaceHolder01;
+        
+        /// <summary>
         /// tab_111a_w01_c01 control.
         /// </summary>
         /// <remarks>

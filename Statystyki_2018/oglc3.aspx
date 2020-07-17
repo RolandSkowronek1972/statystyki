@@ -57,7 +57,7 @@
             &nbsp;&nbsp;&nbsp;
            <asp:Label ID="infoLabel1" runat="server" Text="tabela  1" Visible="False"></asp:Label>
             <br />
-            <div id="TABELA1" class="page -break">
+            <div id="TABELA1" class="page-break">
                 <table style="width: 100%;">
                     <tr>
                         <td class="borderAll center" rowspan="3">okres statystyczny</td>
@@ -364,7 +364,7 @@
               
                    
 
-                    <div id="TABELA3" class="page -break">
+                    <div id="TABELA3" class="page-break">
  &nbsp;<asp:Label ID="Label6" runat="server" Text="Ruch spraw"></asp:Label>
                     &nbsp;&nbsp;&nbsp;
            <asp:Label ID="infoLabel3" runat="server" Text="tabela 3" Visible="False"></asp:Label>
@@ -590,7 +590,7 @@
                    
                       
 
-                        <div id="TABELA4" class="page -break">
+                        <div id="TABELA4" class="page-break">
   &nbsp;<asp:Label ID="Label10" runat="server" Text="Stabilność i skargi"></asp:Label>
                         &nbsp;&nbsp;&nbsp;&nbsp;<asp:Label ID="infoLabel4" runat="server" Text="tabela 4  \/\/\/" Visible="False"></asp:Label>
                         &nbsp;<br />
@@ -865,7 +865,7 @@
                         </div>
                             
 
-                            <div id="TABELA5" class="page -break">
+                            <div id="TABELA5" class="page-break">
                         &nbsp;<asp:Label ID="Label3" runat="server">Gminy</asp:Label>
                             &nbsp;&nbsp;&nbsp;
            <asp:Label ID="infoLabel5" runat="server" Text="tabela 5  \/\/\/" Visible="False"></asp:Label>
@@ -970,7 +970,7 @@
 
                          
                             
-                                <div id="TABELA6" class="page -break">
+                                <div id="TABELA6" class="page-break">
                                        &nbsp;<asp:Label ID="Label9" runat="server">Skargi na czynność komornika, rep. I Co, symbol 106</asp:Label>
                                 &nbsp;<asp:Label ID="infoLabel6" runat="server" Text="tabela 6  \/\/\/" Visible="False"></asp:Label>
                                 <br />
@@ -2058,7 +2058,7 @@
 
                                     <br />
                                 </div>
-                                <div id="TABELA14" class="page -break">
+                                <div id="TABELA14" class="page-break">
                                     &nbsp;<asp:Label ID="Label39" runat="server">Ilość wszystkich spraw zawieszonych</asp:Label>
                                     &nbsp;<asp:Label ID="infoLabel14" runat="server" Text="tabela 14  \/\/\/" Visible="False"></asp:Label>
 

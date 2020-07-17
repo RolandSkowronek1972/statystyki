@@ -49,8 +49,7 @@
             <br />
             <asp:Label ID="Label406" runat="server"></asp:Label>
             <br />
-            &nbsp;Uwaga: standardy wg Rozporządzenia MS z dnia 9 czerwca 2003r ( Dz. U. Nr 116 poz. 1100)<asp:GridView ID="GridView3" runat="server" AutoGenerateColumns="False"
-                DataSourceID="tabela_3" OnRowCreated="GridView3_RowCreated" Width="100%" ShowHeader="False" ShowFooter="True" OnRowDataBound="GridView3_RowDataBound">
+            &nbsp;Uwaga: standardy wg Rozporządzenia MS z dnia 9 czerwca 2003r ( Dz. U. Nr 116 poz. 1100)<asp:GridView ID="GridView3" runat="server" AutoGenerateColumns="False" OnRowCreated="GridView3_RowCreated" Width="100%" ShowHeader="False" ShowFooter="True" OnRowDataBound="GridView3_RowDataBound">
                 <Columns>
                     <asp:BoundField DataField="id" HeaderText="L.p." SortExpression="id">
                         <ItemStyle Width="15px" HorizontalAlign="Center" />
@@ -196,13 +195,6 @@
                 <FooterStyle BackColor="Silver" HorizontalAlign="Center" />
                 <RowStyle Height="25px" />
             </asp:GridView>
-            <asp:SqlDataSource ID="tabela_3" runat="server"
-                ConnectionString="<%$ ConnectionStrings:wap %>"
-                SelectCommand="SELECT ROW_NUMBER() OVER( ORDER BY ident ) AS id,  ident, imie, nazwisko,  d_01, d_02, d_03, d_04, d_05, d_06, d_07, d_08, d_09, d_10, d_11, d_12, d_13, d_14, d_15, d_16, d_17, d_18, d_19, d_20, d_21, d_22, sesja, id_sedziego, id_dzialu, id_tabeli FROM tbl_statystyki_tbl_02 WHERE (id_tabeli =2) AND (id_dzialu = @id_dzialu) ORDER BY id">
-                <SelectParameters>
-                    <asp:SessionParameter Name="id_dzialu" SessionField="id_dzialu" />
-                </SelectParameters>
-            </asp:SqlDataSource>
             <br />
         </div>
         <div id="zalatwienia1" class="page-break">
@@ -281,13 +273,6 @@
                 </Columns>
                 <FooterStyle BackColor="Silver" HorizontalAlign="Center" />
             </asp:GridView>
-            <asp:SqlDataSource ID="statystyki" runat="server"
-                ConnectionString="<%$ ConnectionStrings:wap %>"
-                SelectCommand="SELECT ROW_NUMBER() OVER( ORDER BY ident ) AS id, ident, imie, nazwisko,  d_01, d_02, d_03, d_04, d_05, d_06, d_07, d_08, d_09, d_10, d_11, d_12, d_13, d_14, d_15, d_16, d_17, d_18, d_19, d_20, d_21, d_22, sesja, id_sedziego, id_dzialu, id_tabeli FROM tbl_statystyki_tbl_02 WHERE (id_tabeli = 3) AND (id_dzialu = @id_dzialu) ORDER BY id">
-                <SelectParameters>
-                    <asp:SessionParameter Name="id_dzialu" SessionField="id_dzialu" />
-                </SelectParameters>
-            </asp:SqlDataSource>
             <br />
         </div>
         <div id="zalatwienia" class="page-break">
@@ -299,8 +284,7 @@
             <asp:Label ID="Label2" runat="server"></asp:Label>
             <br />
             &nbsp;Uwaga: standardy wg Rozporządzenia MS z dnia 9 czerwca 2003r ( Dz. U. Nr 116 poz. 1100)<br />
-            <asp:GridView ID="GridView2" runat="server" AutoGenerateColumns="False"
-                DataSourceID="tabela_4" OnRowCreated="grvMergeHeader_RowCreated2"
+            <asp:GridView ID="GridView2" runat="server" AutoGenerateColumns="False" OnRowCreated="grvMergeHeader_RowCreated2"
                 Width="100%" ShowHeader="False" OnRowDataBound="makeFooter2" ShowFooter="True">
                 <Columns>
                     <asp:BoundField DataField="id" HeaderText="L.p." SortExpression="id">
@@ -367,13 +351,6 @@
                 <FooterStyle BackColor="Silver" HorizontalAlign="Center" />
             </asp:GridView>
             <br />
-            <asp:SqlDataSource ID="tabela_4" runat="server"
-                ConnectionString="<%$ ConnectionStrings:wap %>"
-                SelectCommand="SELECT ROW_NUMBER() OVER( ORDER BY ident ) AS id, ident, imie, nazwisko,  d_01, d_02, d_03, d_04, d_05, d_06, d_07, d_08, d_09, d_10, d_11, d_12, d_13, d_14, d_15, d_16, d_17, d_18, d_19, d_20, d_21, d_22, sesja, id_sedziego, id_dzialu, id_tabeli FROM tbl_statystyki_tbl_02 WHERE (id_tabeli = 4) AND (id_dzialu = @id_dzialu) ORDER BY id">
-                <SelectParameters>
-                    <asp:SessionParameter Name="id_dzialu" SessionField="id_dzialu" />
-                </SelectParameters>
-            </asp:SqlDataSource>
             <br />
             <strong>Ku.Wiz.3/06 – DWOiP-III-531-1/06 z dn.10.01.2006r.
                 <br />

@@ -5,6 +5,7 @@ using System.Data.SqlClient;
 using System.IO;
 using System.Linq;
 using System.Text;
+using System.Web.UI.WebControls;
 using System.Xml;
 
 namespace stat2018
@@ -856,8 +857,6 @@ namespace stat2018
                         }
                         catch (Exception)
                         {
-
-                            
                         }
                         string sekcjaColspan = string.Empty;
                         string sekcjaStyle = string.Empty;
@@ -900,14 +899,12 @@ namespace stat2018
                             string tekst = "";
                             try
                             {
-                                 tekst = wiersz["text"].ToString().Trim();
+                                tekst = wiersz["text"].ToString().Trim();
                             }
-                            catch 
+                            catch
                             {
-
-                                
                             }
-                           
+
                             string sekcjaRowspan = string.Empty;
                             string sekcjaColspan = string.Empty;
                             string sekcjaStyle = string.Empty;
@@ -1160,8 +1157,6 @@ namespace stat2018
 
         public string odczytXML(string path, int idDzialu, string tabela, DataTable tabelaDanych, string tenPlik)
         {
-            // string path = Server.MapPath("XMLHeaders") + "\\" + sciezka;
-
             if (!File.Exists(path))
             {
                 cm.log.Error(tenPlik + " bład odczytu pliku: " + path);
@@ -1207,25 +1202,13 @@ namespace stat2018
                         continue;
                     }
 
-                    st.AppendLine(" ####################################################    ");
-                    st.AppendLine(" id Tabeli " + idTabeli);
                     iloscWierszy = int.Parse(informacjeOtabeli.ChildNodes[0].InnerText);
-                    st.AppendLine(" iloscWierszy " + iloscWierszy.ToString());
                     tekstNadTabela = informacjeOtabeli.ChildNodes[1].InnerText;
-                    st.AppendLine(" tekstNadTabela " + tekstNadTabela.ToString());
-                    //informacjeOtabeli
                     iloscWieszyNaglowka = int.Parse(informacjeOtabeli.ChildNodes[2].InnerText);
-                    //iloscWieszyNaglowka = int.Parse(informacjeOtabeli[]);
                     ilosckolunPrzedIteracja = int.Parse(informacjeOtabeli.ChildNodes[3].InnerText);
-                    st.AppendLine(" ilosckolunPrzedIteracja " + ilosckolunPrzedIteracja.ToString());
-
                     ilosckolunPoIteracji = int.Parse(informacjeOtabeli.ChildNodes[4].InnerText);
-                    st.AppendLine(" ilosc kolun Po Iteracji " + ilosckolunPoIteracji.ToString());
-
                     Lp = int.Parse(informacjeOtabeli.ChildNodes[5].InnerText);
-                    //  lp = (Lp == 0);
                     naglowek = wygenerujTabele(node.ChildNodes[(int)pola.naglowek]);
-
                     tabelaBoczna = wygenerujTabele(node.ChildNodes[(int)pola.tabelaBoczna]);
 
                     tabelaGlowna.AppendLine(tworztabeleMSS(idTabeli, naglowek, tabelaBoczna, tabelaDanych, iloscWieszyNaglowka, iloscWierszy, ilosckolunPrzedIteracja, ilosckolunPoIteracji, idDzialu, lp, tekstNadTabela, "test"));
@@ -1233,7 +1216,7 @@ namespace stat2018
             }
             catch (Exception ex)
             {
-                tabelaGlowna.AppendLine(ex.Message);
+                cm.log.Error(tenPlik + " bład generowania tabli z XML : " + ex.Message);
             }
 
             return tabelaGlowna.ToString();
@@ -1257,7 +1240,7 @@ namespace stat2018
             }
             XmlDocument doc = new XmlDocument();
             doc.Load(path);
-           // StringBuilder st = new StringBuilder();
+            // StringBuilder st = new StringBuilder();
             string tekstNadTabela = string.Empty;
             int iloscWierszy = 0;
             string idTabeli = string.Empty;
@@ -1265,7 +1248,6 @@ namespace stat2018
             int ilosckolunPrzedIteracja = 0;
             int ilosckolunPoIteracji = 0;
             int Lp = 0;
-            bool lp = false;
 
             StringBuilder tabelaGlowna = new StringBuilder();
             try
@@ -1288,20 +1270,20 @@ namespace stat2018
                         continue;
                     }
 
-                  //  st.AppendLine(" ####################################################    ");
-                 //   st.AppendLine(" id Tabeli " + idTabeli);
+                    //  st.AppendLine(" ####################################################    ");
+                    //   st.AppendLine(" id Tabeli " + idTabeli);
                     iloscWierszy = int.Parse(informacjeOtabeli.ChildNodes[0].InnerText);
-                  //  st.AppendLine(" iloscWierszy " + iloscWierszy.ToString());
+                    //  st.AppendLine(" iloscWierszy " + iloscWierszy.ToString());
                     tekstNadTabela = informacjeOtabeli.ChildNodes[1].InnerText;
-                  //  st.AppendLine(" tekstNadTabela " + tekstNadTabela.ToString());
+                    //  st.AppendLine(" tekstNadTabela " + tekstNadTabela.ToString());
                     //informacjeOtabeli
                     iloscWieszyNaglowka = int.Parse(informacjeOtabeli.ChildNodes[2].InnerText);
                     //iloscWieszyNaglowka = int.Parse(informacjeOtabeli[]);
                     ilosckolunPrzedIteracja = int.Parse(informacjeOtabeli.ChildNodes[3].InnerText);
-                  //  st.AppendLine(" ilosckolunPrzedIteracja " + ilosckolunPrzedIteracja.ToString());
+                    //  st.AppendLine(" ilosckolunPrzedIteracja " + ilosckolunPrzedIteracja.ToString());
 
                     ilosckolunPoIteracji = int.Parse(informacjeOtabeli.ChildNodes[4].InnerText);
-                  //  st.AppendLine(" ilosc kolun Po Iteracji " + ilosckolunPoIteracji.ToString());
+                    //  st.AppendLine(" ilosc kolun Po Iteracji " + ilosckolunPoIteracji.ToString());
 
                     Lp = int.Parse(informacjeOtabeli.ChildNodes[5].InnerText);
                     //  lp = (Lp == 0);
@@ -1314,10 +1296,29 @@ namespace stat2018
             }
             catch (Exception ex)
             {
-                tabelaGlowna.AppendLine(ex.Message);
+                cm.log.Error(tenPlik + " bład generowania tabeli z xml : " + ex.Message);
             }
 
             return tabelaGlowna.ToString();
+        }
+
+        public void TworzTabelizListy(string[] listaTabel, PlaceHolder placeHolder, string path, DataTable tabelaDanych, int id_dzialu, string tenPlik)
+        {
+            int i = 1;
+            foreach (var item in listaTabel)
+            {
+                string kontrolka = i.ToString();
+
+                try
+                {
+                    placeHolder.Controls.Add(new Label { Text = odczytXML(path, id_dzialu, item, tabelaDanych, tenPlik), Width = 1150, ID = kontrolka });
+                }
+                catch (Exception ex)
+                {
+                    cm.log.Error(tenPlik + " bład generowania tabli " + item + " : " + ex.Message);
+                }
+                i++;
+            }
         }
 
         private DataTable wygenerujTabele(XmlNode schemat)
@@ -1341,8 +1342,9 @@ namespace stat2018
                     tabelaWyjsciowa.Rows.Add(new Object[] { wiersz, kolumna, rowspan, colspan, style, tekst });
                 }
             }
-            catch
+            catch (Exception ex)
             {
+                cm.log.Error(" bład generowania tabeli MSS : " + ex.Message);
             }
 
             return tabelaWyjsciowa;

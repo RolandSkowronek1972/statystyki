@@ -172,29 +172,30 @@ namespace stat2018
 
             string idWydzialu = "'" + (string)Session["id_dzialu"] + "'";
             id_dzialu.Text = (string)Session["txt_dzialu"];
-            string txt = string.Empty; //
-
+            string txt = string.Empty; 
+            string path = Server.MapPath("XMLHeaders") + "\\" + "MSS19r.xml";
             try
             {
                 DataTable tabelaDanych = ms.generuj_dane_do_tabeli_mss2(int.Parse((string)Session["id_dzialu"]), Date1.Date, Date2.Date, 21);
                 //wypełnianie lebeli
+                tablePlaceHolder01.Controls.Add(new Label { Text = ms.odczytXML(path, int.Parse((string)Session["id_dzialu"]), "1", tabelaDanych, tenPlik), Width = 1150, ID = "extraCode01" });
+                tablePlaceHolder01.Controls.Add(new Label { Text = ms.odczytXML(path, int.Parse((string)Session["id_dzialu"]), "1.1", tabelaDanych, tenPlik), Width = 1150, ID = "extraCode02" });
+             //   tablePlaceHolder01.Controls.Add(new Label { Text = ms.odczytXML(path, int.Parse((string)Session["id_dzialu"]), "1.1.1.a", tabelaDanych, tenPlik), Width = 1150, ID = "extraCode03" });
+                tablePlaceHolder01.Controls.Add(new Label { Text = ms.odczytXML(path, int.Parse((string)Session["id_dzialu"]), "1.1.2", tabelaDanych, tenPlik), Width = 1150, ID = "extraCode04" });
+
+
 
                 Label tblControl = new Label { ID = "kod01" };
                 tblControl.Width = 1150;
                 int idWydzialuNumerycznie = int.Parse((string)Session["id_dzialu"]) ;
                 StringBuilder tabelaGlowna = new StringBuilder();
-                tabelaGlowna.Clear();
-                tabelaGlowna.AppendLine(ms.tworztabeleMSS("1.1.a", naglowekTabeliDzialu_1_1_a(), tabelaBocznaDzialu_1_1_a(), tabelaDanych, 2, 3, 2, 2, idWydzialuNumerycznie, true, "Szczegółowe rozliczenie skargi (Wykaz S)", tenPlik));
+               tabelaGlowna.Clear();
                 tabelaGlowna.AppendLine(ms.tworztabeleMSS("1.1.b", naglowekTabeliDzialu_1_1_b(), tabelaBocznaDzialu_1_1_b(), tabelaDanych, 1, 3, 1, 1, idWydzialuNumerycznie, true, "w tym w postępowaniu uproszczonym", tenPlik));
                 tabelaGlowna.AppendLine(ms.tworztabeleMSS("1.1.c", naglowekTabeliDzialu_1_1_c(), tabelaBocznaDzialu_1_1_c(), tabelaDanych, 1, 7, 2, 1, idWydzialuNumerycznie, true, "(dział 1.1 wiersz 106 kolumna 3 lit. c) skarga o stwierdzenie niezgodności z prawem", tenPlik));
                 tabelaGlowna.AppendLine(ms.tworztabeleMSS("1.1.d", naglowekTabeliDzialu_1_1_d(), tabelaBocznaDzialu_1_1_d(), tabelaDanych, 1, 2, 1, 3, idWydzialuNumerycznie, true, "Ustanowienie pełnomocnika z urzędu", tenPlik));
                 tabelaGlowna.AppendLine(ms.tworztabeleMSS("1.1.e", naglowekTabeliDzialu_1_1_e(), tabelaBocznaDzialu_1_1_e(), tabelaDanych, 1, 5, 2, 1, idWydzialuNumerycznie, true, "w tym w wyniku sprzeciwu od nakazu wydanego w elektronicznym postępowaniu upominawczym", tenPlik));
 
-                #region "1.1.1";
-
-                        pisz("tab_111_", 19, 1, tabelaDanych, "'1.1.1'", idWydzialu);
-
-                #endregion "1.1.1";
+              
 
                 tblControl.Text = tabelaGlowna.ToString();
                 tablePlaceHolder.Controls.Add(tblControl);
@@ -203,7 +204,7 @@ namespace stat2018
                 tabelaGlowna.Clear();
                 tabelaGlowna.AppendLine(ms.tworztabeleMSS("1.1.2.a", naglowekTabeliDzialu_1_1_2_a(), tabelaBocznaDzialu_1_1_2_a(), tabelaDanych, 3, 29, 3, 7, idWydzialuNumerycznie, true, "Struktura wpływu spraw", tenPlik));
                 tabelaGlowna.AppendLine(ms.tworztabeleMSS("1.1.2.b", naglowekTabeliDzialu_1_1_2_b(), tabelaBocznaDzialu_1_1_2_b(), tabelaDanych, 3, 31, 3, 7, idWydzialuNumerycznie, true, "Struktura załatwień spraw", tenPlik));
-                tabelaGlowna.AppendLine(ms.tworztabeleMSS("1.2.1", naglowekTabeliDzialu_1_2_1(), tabelaBocznaDzialu_1_2_1(), tabelaDanych, 3, 7, 1, 28, idWydzialuNumerycznie, true, "Liczba sesji i wyznaczonych spraw ", tenPlik));
+             /*    tabelaGlowna.AppendLine(ms.tworztabeleMSS("1.2.1", naglowekTabeliDzialu_1_2_1(), tabelaBocznaDzialu_1_2_1(), tabelaDanych, 3, 7, 1, 28, idWydzialuNumerycznie, true, "Liczba sesji i wyznaczonych spraw ", tenPlik));
                 tabelaGlowna.AppendLine(ms.tworztabeleMSS("1.2.2", naglowekTabeliDzialu_1_2_2(), tabelaBocznaDzialu_1_2_2(), tabelaDanych, 3, 29, 3, 28, idWydzialuNumerycznie, true, "Liczba odbytych sesji i załatwionych spraw", tenPlik));
                 tabelaGlowna.AppendLine(ms.tworztabeleMSS("1.3.1", naglowekTabeliDzialu_1_3_1(), tabelaBocznaDzialu_1_3_1(), tabelaDanych, 2, 9, 1, 6, idWydzialuNumerycznie, true, "Załatwienie spraw i przez referendarzy", tenPlik));
                 tabelaGlowna.AppendLine(ms.tworztabeleMSS("1.4", naglowekTabeliDzialu_1_4(), tabelaBocznaDzialu_1_4(), tabelaDanych, 3, 3, 1, 14, idWydzialuNumerycznie, true, "Terminowość sporządzania uzasadnień", tenPlik));
@@ -241,7 +242,7 @@ namespace stat2018
                 #region "7.3";
                 pisz("tab_7_3_", 1, 8, tabelaDanych, "'7.3'", idWydzialu);
                 #endregion ;
-
+                */
                 Label tblControl1 = new Label { ID = "kod02" };
                 tblControl1.Text = tabelaGlowna.ToString();
                 tablePlaceHolder1.Controls.Add(tblControl1);

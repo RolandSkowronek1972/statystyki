@@ -68,7 +68,7 @@
             &nbsp;&nbsp;&nbsp;
            <asp:Label ID="infoLabel1" runat="server" Text="tabela  1" Visible="False"></asp:Label>
             <br />
-            <div id="TABELA5" class="page -break">
+            <div id="TABELA5" class="page-break">
                 <table style="width: 100%;">
                     <tr>
                         <td class="wciecie borderAll" rowspan="3">Ruch spraw</td>

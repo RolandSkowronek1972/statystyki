@@ -31,7 +31,7 @@
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
-    <Optimize>true</Optimize>
+    <Optimize>false</Optimize>
     <OutputPath>bin\</OutputPath>
     <DefineConstants>TRACE;CODE_ANALYSIS;DEBUG</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
@@ -40,6 +40,7 @@
     <IncludeIisSettings>true</IncludeIisSettings>
     <CodeAnalysisIgnoreGeneratedCode>false</CodeAnalysisIgnoreGeneratedCode>
     <RunCodeAnalysis>false</RunCodeAnalysis>
+    <PlatformTarget>x64</PlatformTarget>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
@@ -136,9 +137,14 @@
     <Content Include="akrg.aspx" />
     <Content Include="akrp.aspx" />
     <Content Include="akrk.aspx" />
+    <Content Include="mp.aspx" />
     <Content Include="aopg.aspx" />
     <Content Include="mk.aspx" />
     <Content Include="mss10e.aspx" />
+    <Content Include="XMLHeaders\MSS19o.xml" />
+    <Content Include="XMLHeaders\MSS19r.xml" />
+    <Content Include="XMLHeaders\MSS16r.xml" />
+    <Content Include="XMLHeaders\oglr_01.xml" />
     <Content Include="XMLHeaders\MSS1r.xml" />
     <Content Include="onsu.aspx" />
     <Content Include="oopp.aspx" />
@@ -378,6 +384,7 @@
     <Content Include="Template\onsu.xlsx" />
     <Content Include="Template\onsr.xlsx" />
     <Content Include="Template\otrkr.xlsx" />
+    <Content Include="Template\otrkd.xlsx" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -456,6 +463,13 @@
     </Compile>
     <Compile Include="akrk.aspx.designer.cs">
       <DependentUpon>akrk.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="mp.aspx.cs">
+      <DependentUpon>mp.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="mp.aspx.designer.cs">
+      <DependentUpon>mp.aspx</DependentUpon>
     </Compile>
     <Compile Include="aopg.aspx.cs">
       <DependentUpon>aopg.aspx</DependentUpon>
