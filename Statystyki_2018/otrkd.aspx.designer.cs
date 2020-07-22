@@ -76,13 +76,13 @@ namespace stat2018 {
         protected global::System.Web.UI.WebControls.Label id_dzialu;
         
         /// <summary>
-        /// Label406 control.
+        /// tab1Label control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label406;
+        protected global::System.Web.UI.WebControls.Label tab1Label;
         
         /// <summary>
         /// GridView3 control.
@@ -94,22 +94,13 @@ namespace stat2018 {
         protected global::System.Web.UI.WebControls.GridView GridView3;
         
         /// <summary>
-        /// Label3x control.
+        /// tab2Label control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label3x;
-        
-        /// <summary>
-        /// Label19 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label19;
+        protected global::System.Web.UI.WebControls.Label tab2Label;
         
         /// <summary>
         /// GridView1 control.

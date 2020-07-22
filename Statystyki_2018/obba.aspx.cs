@@ -27,6 +27,7 @@ namespace stat2018
             }
             else
             {
+                Server.Transfer("default.aspx");
                 return;
             }
             DateTime dTime = DateTime.Now;
@@ -88,22 +89,19 @@ namespace stat2018
             catch
             { }
             string yyx = (string)Session["id_dzialu"];
-            string txt = string.Empty; //
 
             try
             {
-                DataTable tabelka01 = dr.generuj_dane_do_tabeli_wierszy2018(Date1.Date, Date2.Date, (string)Session["id_dzialu"], 1, 30, 9, tenPlik);
+                DataTable tabelka01 = dr.generuj_dane_do_tabeli_wierszy2018(Date1.Date, Date2.Date, (string)Session["id_dzialu"], 1, 30, 12, tenPlik);
                 Session["tabelka001"] = tabelka01;
-                pisz("tab_1_", 30, 7, tabelka01);
-                //row 1
+                pisz("tab_1_", 30, 12, tabelka01);
+              
             }
             catch (Exception ex)
             {
                 cm.log.Error(tenPlik + " wypełnianie danymi " + ex);
             }
 
-            Label11.Visible = false;
-            Label11.Text = txt;
             Label3.Text = cl.nazwaSadu((string)Session["id_dzialu"]);
         }
 
@@ -121,55 +119,52 @@ namespace stat2018
             {
                 // pierwsza
 
-              ExcelWorksheet MyWorksheet1 = MyExcel.Workbook.Worksheets[1];
-                    DataTable tabelka001 = (DataTable)Session["tabelka001"];
+                ExcelWorksheet MyWorksheet1 = MyExcel.Workbook.Worksheets[1];
+                DataTable tabelka001 = (DataTable)Session["tabelka001"];
                 try
                 {
-
-
-                    for (int i = 0; i <= 6; i++)
+                    for (int i = 0; i <= 7; i++)
                     {
+                        int ii = i + 3;
                         cm.log.Info("Generowanie excell obba i= " + i.ToString());
-                        tb.komorkaExcela(MyWorksheet1, i+3, 2, tabelka001.Rows[i][1].ToString().Trim(), false, 0, 0);
-                        tb.komorkaExcela(MyWorksheet1, i+3, 4, tabelka001.Rows[i][2].ToString().Trim(), false, 0, 0);
-                        tb.komorkaExcela(MyWorksheet1, i+3, 5, tabelka001.Rows[i][3].ToString().Trim(), false, 0, 0);
-                        tb.komorkaExcela(MyWorksheet1, i+3, 6, tabelka001.Rows[i][4].ToString().Trim(), false, 0, 0);
-                        tb.komorkaExcela(MyWorksheet1, i+3, 7, tabelka001.Rows[i][5].ToString().Trim(), false, 0, 0);
-                        tb.komorkaExcela(MyWorksheet1, i+3, 9, tabelka001.Rows[i][6].ToString().Trim(), false, 0, 0);
-                        tb.komorkaExcela(MyWorksheet1, i+3, 10, tabelka001.Rows[i][7].ToString().Trim(), false, 0, 0);
-                        
+                        tb.komorkaExcela(MyWorksheet1, ii, 2, tabelka001.Rows[i][1].ToString().Trim(), false, 0, 0);
+                        tb.komorkaExcela(MyWorksheet1, ii, 4, tabelka001.Rows[i][2].ToString().Trim(), false, 0, 0);
+                        tb.komorkaExcela(MyWorksheet1, ii, 5, tabelka001.Rows[i][3].ToString().Trim(), false, 0, 0);
+                        tb.komorkaExcela(MyWorksheet1, ii, 6, tabelka001.Rows[i][4].ToString().Trim(), false, 0, 0);
+                        tb.komorkaExcela(MyWorksheet1, ii, 7, tabelka001.Rows[i][5].ToString().Trim(), false, 0, 0);
+                        tb.komorkaExcela(MyWorksheet1, ii, 9, tabelka001.Rows[i][6].ToString().Trim(), false, 0, 0);
+                        tb.komorkaExcela(MyWorksheet1, ii, 10, tabelka001.Rows[i][7].ToString().Trim(), false, 0, 0);
                     }
                 }
                 catch (Exception ex)
                 {
                     cm.log.Error(tenPlik + " Generowanie pliku Excell 1 " + ex.Message);
                 }
-
+               
                 try
                 {
-
-                    for (int i = 8; i <= 10; i++)
+                    for (int i = 8; i < 10; i++)
                     {
-                        tb.komorkaExcela(MyWorksheet1, i+2, 2, tabelka001.Rows[i][1].ToString().Trim(), false, 0, 0);
-                        tb.komorkaExcela(MyWorksheet1, i+2, 9, tabelka001.Rows[i][7].ToString().Trim(), false, 0, 0);
-                        tb.komorkaExcela(MyWorksheet1, i+2, 10, tabelka001.Rows[i][8].ToString().Trim(), false, 0, 0);
+                        int ii = i + 3;
+                        tb.komorkaExcela(MyWorksheet1, ii, 2, tabelka001.Rows[i][1].ToString().Trim(), false, 0, 0);
+                        tb.komorkaExcela(MyWorksheet1, ii, 9, tabelka001.Rows[i][6].ToString().Trim(), false, 0, 0);
+                        tb.komorkaExcela(MyWorksheet1, ii, 10, tabelka001.Rows[i][7].ToString().Trim(), false, 0, 0);
                     }
-                
-                }
-                catch (Exception ex)
-            {
-                cm.log.Error(tenPlik + " Generowanie pliku Excell 2 " + ex.Message);
-            }
-                try
-                {
-                    tb.komorkaExcela(MyWorksheet1, 12, 9, tabelka001.Rows[10][7].ToString().Trim(), false, 0, 0);
-                    tb.komorkaExcela(MyWorksheet1, 12, 10, tabelka001.Rows[10][8].ToString().Trim(), false, 0, 0);
                 }
                 catch (Exception ex)
                 {
-                    cm.log.Error(tenPlik + " Generowanie pliku Excell 3 " + ex.Message);
+                    cm.log.Error(tenPlik + " Generowanie pliku Excell 2 " + ex.Message);
                 }
-                try
+                try             //ogółem
+                {
+                    tb.komorkaExcela(MyWorksheet1, 14, 9, tabelka001.Rows[11][6].ToString().Trim(), false, 0, 0);
+                    tb.komorkaExcela(MyWorksheet1, 14, 10, tabelka001.Rows[11][7].ToString().Trim(), false, 0, 0);
+                }
+                catch (Exception)
+                {
+                    throw;
+                }
+                try    //pierwsza podtabela
                 {
                     for (int i = 11; i <= 18; i++)
                     {
@@ -177,10 +172,24 @@ namespace stat2018
                         tb.komorkaExcela(MyWorksheet1, i + 5, 5, tabelka001.Rows[i][3].ToString().Trim(), false, 0, 0);
                         tb.komorkaExcela(MyWorksheet1, i + 5, 6, tabelka001.Rows[i][4].ToString().Trim(), false, 0, 0);
                         tb.komorkaExcela(MyWorksheet1, i + 5, 7, tabelka001.Rows[i][5].ToString().Trim(), false, 0, 0);
-                        // tb.komorkaExcela(MyWorksheet1, i, 7, tabelka001.Rows[i][6].ToString().Trim(), false, 0, 0);
-                        tb.komorkaExcela(MyWorksheet1, i + 5, 9, tabelka001.Rows[i][7].ToString().Trim(), false, 0, 0);
-                        tb.komorkaExcela(MyWorksheet1, i + 5, 10, tabelka001.Rows[i][8].ToString().Trim(), false, 0, 0);
+                        tb.komorkaExcela(MyWorksheet1, i + 5, 9, tabelka001.Rows[i][6].ToString().Trim(), false, 0, 0);
+                        tb.komorkaExcela(MyWorksheet1, i + 5, 10, tabelka001.Rows[i][7].ToString().Trim(), false, 0, 0);
                     }
+                }
+                catch (Exception ex)
+                {
+                    cm.log.Error(tenPlik + " Generowanie pliku Excell 4 " + ex.Message);
+                }
+
+                try    //pierwsza podtabela
+                {
+                    for (int i = 19; i <= 26; i++)
+                    {
+                        tb.komorkaExcela(MyWorksheet1, i + 8, 4, tabelka001.Rows[i][2].ToString().Trim(), false, 0, 0);
+                        tb.komorkaExcela(MyWorksheet1, i + 8, 5, tabelka001.Rows[i][3].ToString().Trim(), false, 0, 0);
+                    }
+                    tb.komorkaExcela(MyWorksheet1, 38, 3, tabelka001.Rows[27][2].ToString().Trim(), false, 0, 0);
+                    tb.komorkaExcela(MyWorksheet1, 38, 4, tabelka001.Rows[27][3].ToString().Trim(), false, 0, 0);
                 }
                 catch (Exception ex)
                 {
@@ -199,11 +208,9 @@ namespace stat2018
                 }
                 catch (Exception ex)
                 {
-                    cm.log.Error(tenPlik + " Generowanie pliku Excell " + ex.Message);
+                    cm.log.Error(tenPlik + " Generowanie pliku Excell 5" + ex.Message);
                 }
             }//end of using
-
-            odswiez();
         }
 
         protected void LinkButton54_Click(object sender, EventArgs e)

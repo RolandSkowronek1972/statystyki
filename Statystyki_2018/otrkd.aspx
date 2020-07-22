@@ -47,7 +47,7 @@
 
             <asp:Label runat="server" ID="id_dzialu" Visible="False"></asp:Label>
             <br />
-            <asp:Label ID="Label406" runat="server"></asp:Label>
+            <asp:Label ID="tab1Label" runat="server"></asp:Label>
             <br />
             &nbsp;Uwaga: standardy wg Rozporządzenia MS z dnia 9 czerwca 2003r ( Dz. U. Nr 116 poz. 1100)<asp:GridView ID="GridView3" runat="server" AutoGenerateColumns="False" OnRowCreated="GridView3_RowCreated" Width="100%" ShowHeader="False" ShowFooter="True" OnRowDataBound="GridView3_RowDataBound">
                 <Columns>
@@ -200,10 +200,9 @@
         <div id="zalatwienia1" class="page-break">
             <br />
 
-            <asp:Label ID="Label3x" runat="server" Text="Sąd " Style="font-weight: 700"></asp:Label>
-            <br />
+          
 
-            <asp:Label ID="Label19" runat="server"></asp:Label>
+            <asp:Label ID="tab2Label" runat="server"></asp:Label>
             <br />
             &nbsp;Uwaga: standardy wg Rozporządzenia MS z dnia 9 czerwca 2003r ( Dz. U. Nr 116 poz. 1100)<br />
             <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False"

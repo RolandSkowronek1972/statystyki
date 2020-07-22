@@ -269,7 +269,7 @@ namespace stat2018
                 }
                 catch
                 { }
-                Label3x.Text = cl.nazwaSadu((string)Session["id_dzialu"]);
+             
                 Label5.Text = cl.nazwaSadu((string)Session["id_dzialu"]);
                 Label3.Text = cl.nazwaSadu((string)Session["id_dzialu"]);
                 id_dzialu.Text = (string)Session["txt_dzialu"];
@@ -279,15 +279,15 @@ namespace stat2018
                 if (((DateTime.Parse(Date1.Text).Day == 1) && (DateTime.Parse(Date2.Text).Day == last_day)) && ((DateTime.Parse(Date1.Text).Month == DateTime.Parse(Date2.Text).Month)))
                 {
                     // cały miesiąc
-                    Label19.Text = "stan za miesiąc " + strMonthName + " " + DateTime.Parse(Date2.Text).Year.ToString() + " roku.";
+                    tab2Label.Text = "Obciążenia kuratorów wywiadami zleconymi stan za miesiąc " + strMonthName + " " + DateTime.Parse(Date2.Text).Year.ToString() + " roku. (Obliczenia wg daty wpływu)";
                     Label2.Text = "stan za miesiąc  " + strMonthName + " " + DateTime.Parse(Date2.Text).Year.ToString() + " roku. ";
-                    Label406.Text = "stan za miesiąc " + strMonthName + " " + DateTime.Parse(Date2.Text).Year.ToString() + " roku. ";
+                    tab1Label.Text = "Obciążenia kuratorów zawodowych wg. standardów. Stan za miesiąc " + strMonthName + " " + DateTime.Parse(Date2.Text).Year.ToString() + " roku. ";
                 }
                 else
                 {
-                    Label19.Text = "stan  za okres od " + Date1.Date.ToShortDateString() + " do  " + Date2.Date.ToShortDateString();
+                    tab2Label.Text = "Obciążenia kuratorów wywiadami zleconymi stan  za okres od " + Date1.Date.ToShortDateString() + " do  " + Date2.Date.ToShortDateString()+ " (Obliczenia wg daty wpływu)";
                     Label2.Text = "stan za okres od" + Date1.Date.ToShortDateString() + " do  " + Date2.Date.ToShortDateString();
-                    Label406.Text = "stan za okres od" + Date1.Date.ToShortDateString() + " do  " + Date2.Date.ToShortDateString();
+                    tab1Label.Text = "Obciążenia kuratorów zawodowych wg. standardów. Stan za okres od" + Date1.Date.ToShortDateString() + " do  " + Date2.Date.ToShortDateString();
                 }
             }
             catch
@@ -318,15 +318,15 @@ namespace stat2018
                 if (((DateTime.Parse(Date1.Text).Day == 1) && (DateTime.Parse(Date2.Text).Day == last_day)) && ((DateTime.Parse(Date1.Text).Month == DateTime.Parse(Date2.Text).Month)))
                 {
                     // cały miesiąc
-                    linia01 = "stan za miesiąc " + strMonthName + " " + DateTime.Parse(Date2.Text).Year.ToString() + " roku.";
-                    linia02 = "stan za miesiąc  " + strMonthName + " " + DateTime.Parse(Date2.Text).Year.ToString() + " roku. ";
-                    linia03 = "stan za miesiąc " + strMonthName + " " + DateTime.Parse(Date2.Text).Year.ToString() + " roku. ";
+                    linia01 = "Obciążenia kuratorów zawodowych wg. standardów. Stan za miesiąc " + strMonthName + " " + DateTime.Parse(Date2.Text).Year.ToString() + " roku.";
+                    linia02 = "Obciążenia kuratorów wywiadami zleconymi za miesiąc  " + strMonthName + " " + DateTime.Parse(Date2.Text).Year.ToString() + " roku. (Obliczenia wg daty wpływu) ";
+                    linia03 = "Obciążenia kuratorów wywiadami zleconymi za miesiąc " + strMonthName + " " + DateTime.Parse(Date2.Text).Year.ToString() + " roku. (Obliczenia wg daty zamknięcia) ";
                 }
                 else
                 {
-                    linia01 = "stan  za okres od " + Date1.Date.ToShortDateString() + " do  " + Date2.Date.ToShortDateString();
-                    linia02 = "stan za okres od" + Date1.Date.ToShortDateString() + " do  " + Date2.Date.ToShortDateString();
-                    linia03 = "stan za okres od" + Date1.Date.ToShortDateString() + " do  " + Date2.Date.ToShortDateString();
+                    linia01 = "Obciążenia kuratorów zawodowych wg. standardów. Stan  za okres od " + Date1.Date.ToShortDateString() + " do  " + Date2.Date.ToShortDateString();
+                    linia02 = "Obciążenia kuratorów wywiadami zleconymi za okres od" + Date1.Date.ToShortDateString() + " do  " + Date2.Date.ToShortDateString()+ " (Obliczenia wg daty wpływu)";
+                    linia03 = "Obciążenia kuratorów wywiadami zleconymi za okres od" + Date1.Date.ToShortDateString() + " do  " + Date2.Date.ToShortDateString()+ " (Obliczenia wg daty zamknięcia)";
                 }
                 try
                 {

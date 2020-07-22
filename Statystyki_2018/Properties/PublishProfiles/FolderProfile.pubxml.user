@@ -838,10 +838,10 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>01/08/2019 12:40:59</publishTime>
     </File>
     <File Include="bin/stat2018.dll">
-      <publishTime>07/18/2020 00:47:39</publishTime>
+      <publishTime>07/22/2020 09:42:59</publishTime>
     </File>
     <File Include="bin/stat2018.pdb">
-      <publishTime>07/18/2020 00:47:39</publishTime>
+      <publishTime>07/22/2020 09:42:59</publishTime>
     </File>
     <File Include="classes/Class1.cs">
       <publishTime>04/10/2020 14:35:48</publishTime>
@@ -874,7 +874,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>04/06/2020 17:07:41</publishTime>
     </File>
     <File Include="classes/mss.cs">
-      <publishTime>07/18/2020 00:28:50</publishTime>
+      <publishTime>07/20/2020 21:20:39</publishTime>
     </File>
     <File Include="classes/pdfTables.cs">
       <publishTime>05/07/2019 19:04:06</publishTime>
@@ -1072,13 +1072,13 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>06/14/2020 17:30:21</publishTime>
     </File>
     <File Include="mss16r.aspx">
-      <publishTime>07/18/2020 00:28:43</publishTime>
+      <publishTime>07/20/2020 23:42:51</publishTime>
     </File>
     <File Include="mss16r.aspx.cs">
-      <publishTime>07/18/2020 00:38:38</publishTime>
+      <publishTime>07/21/2020 10:38:16</publishTime>
     </File>
     <File Include="mss16r.aspx.designer.cs">
-      <publishTime>07/18/2020 00:28:50</publishTime>
+      <publishTime>07/20/2020 23:41:42</publishTime>
     </File>
     <File Include="mss19o.aspx">
       <publishTime>07/16/2020 15:00:54</publishTime>
@@ -1114,7 +1114,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>07/17/2020 23:58:42</publishTime>
     </File>
     <File Include="mss1r.aspx.cs">
-      <publishTime>07/18/2020 00:13:45</publishTime>
+      <publishTime>07/21/2020 00:30:42</publishTime>
     </File>
     <File Include="mss1r.aspx.designer.cs">
       <publishTime>07/17/2020 23:57:24</publishTime>
@@ -1138,13 +1138,13 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>05/14/2020 19:03:20</publishTime>
     </File>
     <File Include="mss5r.aspx">
-      <publishTime>04/16/2019 21:53:03</publishTime>
+      <publishTime>07/22/2020 09:37:53</publishTime>
     </File>
     <File Include="mss5r.aspx.cs">
-      <publishTime>04/09/2020 14:42:57</publishTime>
+      <publishTime>07/22/2020 09:37:16</publishTime>
     </File>
     <File Include="mss5r.aspx.designer.cs">
-      <publishTime>06/13/2018 16:16:21</publishTime>
+      <publishTime>07/22/2020 09:34:21</publishTime>
     </File>
     <File Include="msstabele/aopp.xlsx">
       <publishTime>01/20/2019 12:36:17</publishTime>
@@ -1162,10 +1162,10 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>03/06/2019 22:23:20</publishTime>
     </File>
     <File Include="obba.aspx">
-      <publishTime>09/07/2019 14:52:39</publishTime>
+      <publishTime>07/19/2020 12:18:25</publishTime>
     </File>
     <File Include="obba.aspx.cs">
-      <publishTime>10/14/2019 20:37:01</publishTime>
+      <publishTime>07/19/2020 21:53:09</publishTime>
     </File>
     <File Include="obba.aspx.designer.cs">
       <publishTime>06/27/2019 09:07:57</publishTime>
@@ -1600,13 +1600,13 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>02/09/2020 18:34:14</publishTime>
     </File>
     <File Include="otrkd.aspx">
-      <publishTime>07/02/2020 15:41:32</publishTime>
+      <publishTime>07/21/2020 08:16:05</publishTime>
     </File>
     <File Include="otrkd.aspx.cs">
-      <publishTime>07/12/2020 16:14:43</publishTime>
+      <publishTime>07/21/2020 08:16:06</publishTime>
     </File>
     <File Include="otrkd.aspx.designer.cs">
-      <publishTime>07/02/2020 15:40:59</publishTime>
+      <publishTime>07/21/2020 08:12:30</publishTime>
     </File>
     <File Include="otrkr.aspx">
       <publishTime>04/07/2020 14:33:15</publishTime>
@@ -1777,10 +1777,10 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>01/11/2018 22:25:28</publishTime>
     </File>
     <File Include="Statystyki_2018.csproj">
-      <publishTime>07/18/2020 00:28:51</publishTime>
+      <publishTime>07/21/2020 00:30:42</publishTime>
     </File>
     <File Include="Statystyki_2018.csproj.user">
-      <publishTime>07/18/2020 00:47:01</publishTime>
+      <publishTime>07/22/2020 09:42:27</publishTime>
     </File>
     <File Include="style/login.css">
       <publishTime>12/18/2018 20:51:16</publishTime>
@@ -2089,7 +2089,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>09/19/2019 18:44:09</publishTime>
     </File>
     <File Include="version.txt">
-      <publishTime>07/18/2020 00:47:01</publishTime>
+      <publishTime>07/22/2020 09:37:16</publishTime>
     </File>
     <File Include="wab.aspx">
       <publishTime>09/07/2019 14:52:42</publishTime>
@@ -2182,10 +2182,10 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>04/14/2020 11:50:51</publishTime>
     </File>
     <File Include="XMLHeaders/MSS16r.xml">
-      <publishTime>07/18/2020 00:47:01</publishTime>
+      <publishTime>07/20/2020 23:25:54</publishTime>
     </File>
     <File Include="XMLHeaders/MSS19o.xml">
-      <publishTime>07/16/2020 18:30:08</publishTime>
+      <publishTime>07/20/2020 21:39:33</publishTime>
     </File>
     <File Include="XMLHeaders/MSS19r.xml">
       <publishTime>07/08/2020 18:29:49</publishTime>
@@ -2194,10 +2194,13 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>05/13/2020 22:01:39</publishTime>
     </File>
     <File Include="XMLHeaders/MSS1r.xml">
-      <publishTime>07/18/2020 00:10:48</publishTime>
+      <publishTime>07/20/2020 21:39:33</publishTime>
     </File>
     <File Include="XMLHeaders/MSS5o.xml">
       <publishTime>05/14/2020 19:01:28</publishTime>
+    </File>
+    <File Include="XMLHeaders/MSS5r.xml">
+      <publishTime>07/22/2020 09:42:27</publishTime>
     </File>
     <File Include="XMLHeaders/oglr_01.xml">
       <publishTime>06/30/2020 22:53:58</publishTime>

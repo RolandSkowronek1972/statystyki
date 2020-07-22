@@ -845,7 +845,7 @@ namespace stat2018
                 try
                 {
                     DataRow wiersz = wyciagnijWartosc(naglowek, " nrWiersza ='" + i.ToString() + "' and nrKolumny='1'", tenPlik);
-                    cm.log.Info("tabela : " + idTabeli + " nrWiersza ='" + i.ToString() + "' and nrKolumny='1'");
+                    cm.log.Info(tenPlik+ " tabela : " + idTabeli + " nrWiersza ='" + i.ToString() + "' and nrKolumny='1'");
                     if (wiersz != null)
                     {
                         int colspan = int.Parse(wiersz["colspan"].ToString().Trim());
@@ -888,7 +888,7 @@ namespace stat2018
                 {
                     try
                     {
-                        cm.log.Info(" nrWiersza ='" + i.ToString() + "' and nrKolumny='" + j.ToString() + "'");
+                        cm.log.Info(tenPlik + " nrWiersza ='" + i.ToString() + "' and nrKolumny='" + j.ToString() + "'");
                         DataRow wiersz = wyciagnijWartosc(naglowek, " nrWiersza ='" + i.ToString() + "' and nrKolumny='" + j.ToString() + "'", tenPlik);
                         if (wiersz != null)
                         {
@@ -926,12 +926,12 @@ namespace stat2018
                         }
                         else
                         {
-                            cm.log.Error("MSS 11o LinqError: wiersz=null");
+                            cm.log.Error(tenPlik + " MSS  LinqError: wiersz=null");
                         }
                     }
                     catch (Exception ex)
                     {
-                        cm.log.Error("MSS 11o LinqError: " + ex.Message);
+                        cm.log.Error(tenPlik+ " MSS  LinqError: " + ex.Message);
                     }
                 }
                 kodStony.AppendLine("</tr>");
@@ -1216,7 +1216,7 @@ namespace stat2018
             }
             catch (Exception ex)
             {
-                cm.log.Error(tenPlik + " bład generowania tabli z XML : " + ex.Message);
+                cm.log.Error(tenPlik +" tabela: "+ idTabeli + " bład generowania tabli z XML : " + ex.Message);
             }
 
             return tabelaGlowna.ToString();

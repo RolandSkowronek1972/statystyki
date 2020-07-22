@@ -100,7 +100,7 @@
   <td class="col_60 borderAll"> 
       Załatwiono</td>
   <td class="col_60 borderAll"> 
-      Pozyostało</td>
+      Pozostało</td>
   <td> 
   </td > 
   <td> 
