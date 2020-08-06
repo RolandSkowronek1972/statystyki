@@ -1063,10 +1063,11 @@ namespace stat2018
                     cm.log.Error("komorkaExcela  " + ex.Message);
                 }
             }
+            Arkusz.Cells[wiersz, kolumna].Value = tekst;
             Arkusz.Cells[wiersz, kolumna].Style.ShrinkToFit = true;
             Arkusz.Cells[wiersz, kolumna].Style.Border.BorderAround(OfficeOpenXml.Style.ExcelBorderStyle.Thin, System.Drawing.Color.Black);
             Arkusz.Cells[wiersz, kolumna, wiersz + rowSpan, kolumna + colSpan].Style.HorizontalAlignment = ExcelHorizontalAlignment.Center;
-            Arkusz.Cells[wiersz, kolumna].Value = tekst;
+          
         }
 
         public void komorkaExcela(ExcelWorksheet Arkusz, int wiersz, int kolumna, string tekst, bool zlaczenie, int rowSpan, int colSpan, bool wycentrowanie, bool wyszarzenie)

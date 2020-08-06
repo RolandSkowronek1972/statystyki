@@ -437,7 +437,7 @@
     </tablaBoczna>
   </tabela>
 
-  <tabela id="1.1.1.2">
+  <tabela id="1.1.1.a">
     <daneTabeli>
 
       <iloscWierszy>2</iloscWierszy>
@@ -775,7 +775,7 @@
     <daneTabeli>
 
       <iloscWierszy>36</iloscWierszy>
-      <tekstNadTabela>aaaaLiczba sesji i wyznaczonych spraw  </tekstNadTabela>
+      <tekstNadTabela>Liczba sesji i wyznaczonych spraw  </tekstNadTabela>
       <iloscWierszyNaglowka>3</iloscWierszyNaglowka>
       <iloscKolumnPrzedIteracja>3</iloscKolumnPrzedIteracja>
       <iloscKolumnPoIteracji>28</iloscKolumnPoIteracji>
@@ -1426,7 +1426,7 @@
     <daneTabeli>
 
       <iloscWierszy>12</iloscWierszy>
-      <tekstNadTabela>AAAASprawy od dnia pierwotnego wpisu do repertorium (łącznie z czasem trwania mediacji)</tekstNadTabela>
+      <tekstNadTabela>Sprawy od dnia pierwotnego wpisu do repertorium (łącznie z czasem trwania mediacji)</tekstNadTabela>
       <iloscWierszyNaglowka>2</iloscWierszyNaglowka>
       <iloscKolumnPrzedIteracja>4</iloscKolumnPrzedIteracja>
       <iloscKolumnPoIteracji>11</iloscKolumnPoIteracji>
@@ -3711,8 +3711,8 @@
       </komorka>
 
       <komorka>
-        <wiersz>1</wiersz>
-        <kolumna>2</kolumna>
+        <wiersz>2</wiersz>
+        <kolumna>1</kolumna>
         <colSpan>0</colSpan>
         <rowspan>0</rowspan>
         <style> wciecie </style>

@@ -845,7 +845,7 @@ namespace stat2018
                 try
                 {
                     DataRow wiersz = wyciagnijWartosc(naglowek, " nrWiersza ='" + i.ToString() + "' and nrKolumny='1'", tenPlik);
-                    cm.log.Info(tenPlik+ " tabela : " + idTabeli + " nrWiersza ='" + i.ToString() + "' and nrKolumny='1'");
+                    cm.log.Info(tenPlik + " tabela : " + idTabeli + " nrWiersza ='" + i.ToString() + "' and nrKolumny='1'");
                     if (wiersz != null)
                     {
                         int colspan = int.Parse(wiersz["colspan"].ToString().Trim());
@@ -931,7 +931,7 @@ namespace stat2018
                     }
                     catch (Exception ex)
                     {
-                        cm.log.Error(tenPlik+ " MSS  LinqError: " + ex.Message);
+                        cm.log.Error(tenPlik + " MSS  LinqError: " + ex.Message);
                     }
                 }
                 kodStony.AppendLine("</tr>");
@@ -959,6 +959,7 @@ namespace stat2018
                     try
                     {
                         DataRow wiersz = wyciagnijWartosc(tabelaPrzedIteracja, " nrWiersza ='" + i.ToString() + "' and nrKolumny='" + j.ToString() + "'", tenPlik);
+
                         if (wiersz != null)
                         {
                             int colspan = int.Parse(wiersz["colspan"].ToString().Trim());
@@ -1015,7 +1016,6 @@ namespace stat2018
             kodStony.AppendLine("<P><b>Dział " + idTabeli + "</b> " + tekstNadTabela + " </P>");
             kodStony.AppendLine("<table style='width:100%'>");
             //naglowek
-            //   DataTable header = naglowek;
 
             kodStony.AppendLine("<tr>");
 
@@ -1167,7 +1167,7 @@ namespace stat2018
             {
                 cm.log.Error(tenPlik + " brak danych dla tabeli MSS dla działu : " + idDzialu.ToString());
 
-                return "";
+              //  return "";
             }
             XmlDocument doc = new XmlDocument();
             doc.Load(path);
@@ -1216,7 +1216,7 @@ namespace stat2018
             }
             catch (Exception ex)
             {
-                cm.log.Error(tenPlik +" tabela: "+ idTabeli + " bład generowania tabli z XML : " + ex.Message);
+                cm.log.Error(tenPlik + " tabela: " + idTabeli + " bład generowania tabli z XML : " + ex.Message);
             }
 
             return tabelaGlowna.ToString();
@@ -1236,7 +1236,7 @@ namespace stat2018
             {
                 cm.log.Error(tenPlik + " brak danych dla tabeli MSS dla działu : " + idDzialu.ToString());
 
-                return "";
+               // return "";
             }
             XmlDocument doc = new XmlDocument();
             doc.Load(path);
@@ -1311,6 +1311,7 @@ namespace stat2018
 
                 try
                 {
+                    cm.log.Info(tenPlik + " Start generowania tabeli: " + item);
                     placeHolder.Controls.Add(new Label { Text = odczytXML(path, id_dzialu, item, tabelaDanych, tenPlik), Width = 1150, ID = kontrolka });
                 }
                 catch (Exception ex)
@@ -1338,8 +1339,17 @@ namespace stat2018
                     int colspan = int.Parse(komorka.ChildNodes[3].InnerText.Trim());
                     string style = komorka.ChildNodes[4].InnerText.Trim();
                     string tekst = komorka.ChildNodes[5].InnerText.Trim();
+                    string pustak = string.Empty;
+                    try
+                    {
+                   //     pustak = komorka.ChildNodes[6].InnerText.Trim();
+                    }
+                    catch
+                    {
+                    }
+
                     //                         W  K  CS RS   style"    text"
-                    tabelaWyjsciowa.Rows.Add(new Object[] { wiersz, kolumna, rowspan, colspan, style, tekst });
+                    tabelaWyjsciowa.Rows.Add(new Object[] { wiersz, kolumna, rowspan, colspan, style, tekst, pustak });
                 }
             }
             catch (Exception ex)
@@ -1360,8 +1370,8 @@ namespace stat2018
             dT.Columns.Add("rowspan", typeof(int));
             dT.Columns.Add("style", typeof(string));
             dT.Columns.Add("text", typeof(string));
+            dT.Columns.Add("pustak", typeof(string));
 
-            //   var List<tabeleDoMSS> lista = new List <tabeleDoMSS>;
             return dT;
         }
 

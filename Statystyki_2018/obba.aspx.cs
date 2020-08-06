@@ -95,7 +95,6 @@ namespace stat2018
                 DataTable tabelka01 = dr.generuj_dane_do_tabeli_wierszy2018(Date1.Date, Date2.Date, (string)Session["id_dzialu"], 1, 30, 12, tenPlik);
                 Session["tabelka001"] = tabelka01;
                 pisz("tab_1_", 30, 12, tabelka01);
-              
             }
             catch (Exception ex)
             {
@@ -140,7 +139,7 @@ namespace stat2018
                 {
                     cm.log.Error(tenPlik + " Generowanie pliku Excell 1 " + ex.Message);
                 }
-               
+
                 try
                 {
                     for (int i = 8; i < 10; i++)
@@ -157,12 +156,12 @@ namespace stat2018
                 }
                 try             //ogółem
                 {
-                    tb.komorkaExcela(MyWorksheet1, 14, 9, tabelka001.Rows[11][6].ToString().Trim(), false, 0, 0);
-                    tb.komorkaExcela(MyWorksheet1, 14, 10, tabelka001.Rows[11][7].ToString().Trim(), false, 0, 0);
+                    tb.komorkaExcela(MyWorksheet1, 13, 9, tabelka001.Rows[10][6].ToString().Trim(), false, 0, 0);
+                    tb.komorkaExcela(MyWorksheet1, 13, 10, tabelka001.Rows[10][7].ToString().Trim(), false, 0, 0);
                 }
-                catch (Exception)
+                catch (Exception ex)
                 {
-                    throw;
+                    cm.log.Error(tenPlik + " Generowanie pliku Excell 3 " + ex.Message);
                 }
                 try    //pierwsza podtabela
                 {
@@ -193,7 +192,7 @@ namespace stat2018
                 }
                 catch (Exception ex)
                 {
-                    cm.log.Error(tenPlik + " Generowanie pliku Excell 4 " + ex.Message);
+                    cm.log.Error(tenPlik + " Generowanie pliku Excell 5 " + ex.Message);
                 }
 
                 try
@@ -208,7 +207,7 @@ namespace stat2018
                 }
                 catch (Exception ex)
                 {
-                    cm.log.Error(tenPlik + " Generowanie pliku Excell 5" + ex.Message);
+                    cm.log.Error(tenPlik + " Generowanie pliku Excell 6" + ex.Message);
                 }
             }//end of using
         }

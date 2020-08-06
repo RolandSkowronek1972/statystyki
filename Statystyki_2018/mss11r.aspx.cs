@@ -3,6 +3,7 @@ using System.Data;
 using System.Globalization;
 using System.Linq;
 using System.Text;
+using System.Web.UI.WebControls;
 
 namespace stat2018
 {
@@ -17,15 +18,14 @@ namespace stat2018
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            string idWydzial = Request.QueryString["w"];
+            string idWydzial = "1";// Request.QueryString["w"];
             if (idWydzial != null)
             {
                 Session["id_dzialu"] = idWydzial;
-                //cm.log.Info(tenPlik + ": id wydzialu=" + idWydzial);
             }
             else
             {
-                Server.Transfer("default.aspx");
+                //Server.Transfer("default.aspx");
                 return;
             }
             if (!IsPostBack)
@@ -35,15 +35,13 @@ namespace stat2018
                 {
                     string ccc = (string)Session["user_id"];
 
-                    // file read with version
                     var fileContents = System.IO.File.ReadAllText(Server.MapPath(@"~//version.txt"));
                     this.Title = "Statystyki " + fileContents.ToString().Trim();
                 }
-#pragma warning disable CS0168 // The variable 'ex' is declared but never used
-                catch (Exception ex)
-#pragma warning restore CS0168 // The variable 'ex' is declared but never used
+                catch
+
                 {
-                    Server.Transfer("default.aspx");
+                    //  Server.Transfer("default.aspx");
                 }
             }
             CultureInfo newCulture = (CultureInfo)CultureInfo.CurrentCulture.Clone();
@@ -65,12 +63,30 @@ namespace stat2018
             makeLabels();
         }// end of Page_Load
 
+        protected void TworzTabelizListy(string[] listaTabel, PlaceHolder placeHolder, string path, DataTable tabelaDanych)
+        {
+            int i = 1;
+            foreach (var item in listaTabel)
+            {
+                string kontrolka = i.ToString();
+
+                try
+                {
+                    placeHolder.Controls.Add(new Label { Text = ms.odczytXML(path, int.Parse((string)Session["id_dzialu"]), item, tabelaDanych, tenPlik), Width = 1150, ID = kontrolka });
+                }
+                catch (Exception ex)
+                {
+                    cm.log.Error(tenPlik + " bład generowania tabli " + item + " : " + ex.Message);
+                }
+                i++;
+            }
+        }
+
         protected void odswiez()
         {
-           
             string yyx = (string)Session["id_dzialu"];
             id_dzialu.Text = (string)Session["txt_dzialu"];
-            string txt = string.Empty; //
+            int idWydzialuNumerycznie = int.Parse((string)Session["id_dzialu"]);
 
             try
             {
@@ -79,6 +95,24 @@ namespace stat2018
 
                 DataTable tabela2 = ms.generuj_dane_do_tabeli_mss2(int.Parse((string)Session["id_dzialu"]), Date1.Date, Date2.Date, 21);
                 //wypełnianie lebeli
+
+                string path = Server.MapPath("XMLHeaders") + "\\" + "MSS11r.xml";
+                string[] numeryTabel00 = new string[] { "1", "1.1.1" };
+                string[] numeryTabel01 = new string[] { "1.1.i", "1.1.j" };
+                string[] numeryTabel02 = new string[] { "1.1.p" };
+                string[] numeryTabel03 = new string[] { "1.2.2" };
+                string[] numeryTabel04 = new string[] { "2.1.1", "2.1.1.a", "2.1.2", "2.2", "2.2.a" };
+                string[] numeryTabel05 = new string[] { "8" };
+                string[] numeryTabel06 = new string[] { "9.1", "9.2" };
+                string[] numeryTabel07 = new string[] { "11.3" };
+                //    string[] numeryTabel05 = new string[] { "7.3" };
+                ms.TworzTabelizListy(numeryTabel00, tablePlaceHolder01, path, tabela2, idWydzialuNumerycznie, tenPlik);
+                //   ms.TworzTabelizListy(numeryTabel01, tablePlaceHolder02, path, tabela2, idWydzialuNumerycznie, tenPlik);
+                //   ms.TworzTabelizListy(numeryTabel02, tablePlaceHolder03, path, tabela2, idWydzialuNumerycznie, tenPlik);
+                //    ms.TworzTabelizListy(numeryTabel03, tablePlaceHolder04, path, tabela2, idWydzialuNumerycznie, tenPlik);
+                //    ms.TworzTabelizListy(numeryTabel04, tablePlaceHolder05, path, tabela2, idWydzialuNumerycznie, tenPlik);
+                //   ms.TworzTabelizListy(numeryTabel06, tablePlaceHolder07, path, tabela2, idWydzialuNumerycznie, tenPlik);
+                //   ms.TworzTabelizListy(numeryTabel07, tablePlaceHolder08, path, tabela2, idWydzialuNumerycznie, tenPlik);
 
                 #region "tabela 1 - 1.1.1.a"
 
@@ -3840,7 +3874,7 @@ namespace stat2018
 
                 #endregion "tabela 10.3"
             }
-            catch 
+            catch
             {
             }
 
@@ -3856,7 +3890,6 @@ namespace stat2018
                 Label11.Visible = false;
             }
 
-            Label11.Text = txt;
             Label3.Text = ms.nazwaSadu((string)Session["id_dzialu"]);
         }
 
@@ -3934,7 +3967,7 @@ namespace stat2018
                     result = dr[4].ToString();
                 }
             }
-            catch 
+            catch
             { }
             return result;
         }//end of wyciagnijWartosc
@@ -3957,7 +3990,7 @@ namespace stat2018
                 }
                 if (!string.IsNullOrEmpty(idWydzialu))
                 {
-                    DataTable tabela2 = cl.generuj_dane_do_tabeli_mss2(int.Parse((string)Session["id_dzialu"]), Date1.Date, Date2.Date, 21,tenPlik); //dane
+                    DataTable tabela2 = cl.generuj_dane_do_tabeli_mss2(int.Parse((string)Session["id_dzialu"]), Date1.Date, Date2.Date, 21, tenPlik); //dane
                     var distinctRows = (from DataRow dRow in tabela2.Rows select dRow["idTabeli"]).Distinct(); //lista tabelek
                     DataTable listaTabelek = new DataTable();
                     listaTabelek.Columns.Add("tabela", typeof(string));

@@ -176,25 +176,24 @@
             <br />
 
             <asp:Label ID="kod011" runat="server"></asp:Label>
-            <br />AAAA
-              <asp:PlaceHolder runat="server" ID="tablePlaceHolder01"></asp:PlaceHolder>
-            <br />XXXX
+            <br />&nbsp;<asp:PlaceHolder runat="server" ID="tablePlaceHolder01"></asp:PlaceHolder>
+            <br />&nbsp;<asp:PlaceHolder runat="server" ID="tablePlaceHolder"></asp:PlaceHolder>
 
-            <asp:PlaceHolder runat="server" ID="tablePlaceHolder"></asp:PlaceHolder>
-
-            <br />
+          
         
 
             <br />
-
+            aa
             <asp:PlaceHolder runat="server" ID="tablePlaceHolder1"></asp:PlaceHolder>
 
             <br />
+            xx
         </div>
         <br />
 
         <div id='Terminowość sporządzania tłumaczeń pisemnych' class="page-break">
             <asp:PlaceHolder runat="server" ID="PlaceHolder1"></asp:PlaceHolder>
+
 
             <br />
             <strong>Dział 7.2</strong> Terminowość sporządzania tłumaczeń pisemnych&nbsp;

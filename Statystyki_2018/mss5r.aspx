@@ -1,36 +1,31 @@
 ﻿<%@ Page Title="" Language="C#" UICulture="pl" Culture="pl-PL" MasterPageFile="~/Site1.Master" AutoEventWireup="true" CodeBehind="mss5r.aspx.cs" Inherits="stat2018.mss5r" %>
 
-
 <%@ Register Assembly="DevExpress.Web.v17.1, Version=17.1.15.0,  Culture=neutral,  PublicKeyToken=b88d1754d700e49a" Namespace="DevExpress.Web" TagPrefix="dx" %>
-
 
 <asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <style>
-  
-#menu {
-    position:relative;
-}
-#menu.scrolling {
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-}
+        #menu {
+            position: relative;
+        }
 
+            #menu.scrolling {
+                position: fixed;
+                top: 0;
+                left: 0;
+                right: 0;
+            }
 
         .auto-style1 {
             width: 320px;
         }
+    </style>
 
-
-        </style>
-     
        <script src="Scripts/rls.js"></script>
 
-    <div class="noprint" >
+    <div class="noprint">
        <div id="menu" style="background-color: #f7f7f7;z-index:9999">
-        <div class="manu_back" style="height: 43px; margin: 0 auto 0 auto; position:relative;  width: 1150px;    left: 0px;">         
-                  
+        <div class="manu_back" style="height: 43px; margin: 0 auto 0 auto; position:relative;  width: 1150px;    left: 0px;">
+
          <table class="tbl_manu">
 
         <tr>
@@ -38,55 +33,51 @@
                 <asp:Label ID="Label4" runat="server" Text="Zakres:"></asp:Label>
                   </td>
               <td style="width:80px;">
-              
+
                      <dx:aspxdateedit ID="Date1" runat="server" Theme="Moderno" Height="20px">
                 </dx:aspxdateedit>
                 </td>
               <td style="width:80px;">
                 <dx:aspxdateedit ID="Date2" runat="server" Theme="Moderno" AutoResizeWithContainer="True" Height="20px">
                 </dx:aspxdateedit>
-              
             </td>
-            <td style="width: 100px" >
+            <td style="width: 100px">
                 <asp:LinkButton ID="LinkButton54" runat="server" class="ax_box" OnClick="LinkButton54_Click">  Odśwież</asp:LinkButton>
             </td>
-           
+
             <td>
-                
+
                 Id. raportu</td>
             <td>
-                
+
                 <asp:TextBox ID="idRaportu" runat="server" ></asp:TextBox>
             </td>
             <td>
-                
+
                 Id. Sądu</td>
             <td>
-                
+
                 <asp:TextBox ID="idSad" runat="server" ></asp:TextBox>
             </td>
             <td>
                  <asp:Button ID="Button1" runat="server" CssClass="ax_box" Text="Twórz plik csv" OnClick="makeCSVFile" />
             </td>
         </tr>
-    
     </table>
     </div>
            </div>
-      </div>  
-   
-   <div style="width:1150px; margin: 0 auto 0 auto; position:relative; left: 0px; display:block" >
+      </div>
 
-    <div id="tabela1"  style="z-index:10; visibility:hidden;"> 
-  <div style="margin-left:auto;margin-right:auto;text-align: center; width:auto; "> 
+   <div style="width:1150px; margin: 0 auto 0 auto; position:relative; left: 0px; display:block">
+
+    <div id="tabela1"  style="z-index:10; visibility:hidden;">
+  <div style="margin-left:auto;margin-right:auto;text-align: center; width:auto; ">
 <asp:Label ID="Label6" runat="server" Text="Sąd " style="font-weight: 700"></asp:Label>
-    
-   </div> 
-  
-  &nbsp;<asp:SqlDataSource ID="SqlDataSource2" runat="server" 
-  ConnectionString="<%$ ConnectionStrings:wap %>" 
-  
-  
+   </div>
+
+  &nbsp;<asp:SqlDataSource ID="SqlDataSource2" runat="server"
+  ConnectionString="<%$ ConnectionStrings:wap %>"
+
   SelectCommand="SELECT DISTINCT id_, opis, d_01, d_02, d_03, d_04, d_05, d_06, d_07, d_08, d_09, d_10, d_11, d_12, d_13, d_14, d_15,id_tabeli FROM tbl_statystyki_tbl_01 WHERE (id_dzialu = @id_dzialu) AND (id_tabeli = 1) ORDER BY id_">
   <SelectParameters>
 <asp:SessionParameter Name="id_dzialu" SessionField="id_dzialu" />
@@ -94,14 +85,10 @@
  </asp:SqlDataSource>
      </div>
 
+     <div id="Div2"  style="z-index:10; ">
+   <div style="margin-left:auto;margin-right:auto;text-align: center; width:auto; ">
+ <asp:label runat="server" ID="id_dzialu" Visible="False"></asp:label></div>
 
-
-     <div id="Div2"  style="z-index:10; "> 
-   <div style="margin-left:auto;margin-right:auto;text-align: center; width:auto; "> 
- <asp:label runat="server" ID="id_dzialu" Visible="False"></asp:label></div> 
-  
-
-  
    <TABLE WIDTH="100%" BORDER=1 BORDERCOLOR="#000000" CELLPADDING=5 CELLSPACING=0 STYLE="page-break-before: always">
 	<COL WIDTH=209>
 	<COL WIDTH=191>
@@ -110,7 +97,7 @@
 	<TR>
 		<TD COLSPAN=4 WIDTH=1057 VALIGN=TOP>
 			<P ><FONT SIZE=2 STYLE="font-size: 11pt">Ministerstwo
-			Sprawiedliwości, Al. Ujazdowskie 11, 00-950 Warszawa 
+			Sprawiedliwości, Al. Ujazdowskie 11, 00-950 Warszawa
 			</P>
 		</TD>
 	</TR>
@@ -120,12 +107,11 @@
 			1. Rejonowy*<SUP><FONT SIZE=2 STYLE="font-size: 9pt">)</SUP>
 			<P >   <FONT FACE="Times New Roman, serif"><FONT SIZE=3><FONT SIZE=2 STYLE="font-size: 9pt">2.
 			Okręgowy*<SUP><FONT SIZE=2 STYLE="font-size: 9pt">)</SUP>
-			
 			</P>
 			<P ><FONT SIZE=2 STYLE="font-size: 9pt">w
 			.......................................................
 		</TD>
-		<TD ROWSPAN=3 WIDTH=290 class="center" >
+		<TD ROWSPAN=3 WIDTH=290 class="center">
 			<H2 >MS-S5</H2>
 <H2><FONT SIZE=3 face="Arial, sans-serif"><B>SPRAWOZDANIE</B></FONT></H2>
 			<P  ALIGN=CENTER><FONT SIZE=3><B>w sprawach karnych i wykroczeniowych</B><FONT SIZE=3 face="Arial, sans-serif"></FONT>
@@ -147,21 +133,19 @@
 	<TR>
 		<TD COLSPAN=2 WIDTH=410 HEIGHT=2 VALIGN=TOP>
 			<P ><FONT SIZE=2 STYLE="font-size: 9pt">Okręg
-			Sądu   
+			Sądu
 			</P>
 		</TD>
 	</TR>
 	<TR VALIGN=TOP>
 		<TD ROWSPAN=2 WIDTH=209 HEIGHT=14>
 			<P ><FONT SIZE=2 STYLE="font-size: 9pt">Okręgowego
-			
 			</P>
 			<P ><FONT SIZE=2 STYLE="font-size: 9pt">w
 			.................................
 		</TD>
 		<TD ROWSPAN=2 WIDTH=191>
 			<P ><FONT SIZE=2 STYLE="font-size: 9pt">Apelacyjnego
-			
 			</P>
 			<P ><FONT SIZE=2 STYLE="font-size: 9pt">w
 			.....................................
@@ -169,23 +153,22 @@
 		<TD ROWSPAN=3 WIDTH=338>
 			<P  STYLE="margin-left: 0.15cm; margin-right: 0.15cm; margin-top: 0.01cm; margin-bottom: 0.01cm">
 			  <FONT FACE="Times New Roman, serif"><FONT SIZE=3><FONT SIZE=2 STYLE="font-size: 9pt">Termin
-			przekazania: 
+			przekazania:
 			</P>
 			<P  STYLE="margin-left: 0.42cm; margin-top: 0.07cm">
 			<FONT SIZE=2 STYLE="font-size: 9pt">zgodnie
 			z PBSSP 2017 r.
 		</TD>
 	</TR>
-
 </TABLE>
 
    <br />
-  
-
      </div>
 
-        <div id='1.1' >
-    <table >
+        <div id='1.1'>
+            <strong>Dział 1.1.</strong>&nbsp; Ewidencja spraw
+           
+    <table>
   <tr>
     <td  class="borderAll center" colspan="4">SPRAWY wg repertoriów lub wykazów</td>
     <td  class="col_100 center borderAll ">Pozostało z ubiegłego roku </td>
@@ -227,7 +210,7 @@
   </tr>
   <tr>
     <td  class="col_100 borderAll " rowspan="3">z oskarżenia </td>
-    <td  class="auto-style1">publicznego </td>
+    <td  class="borderAll wciecie" style="wciecie borderAll">publicznego </td>
   <td  class="borderAll col_36">4</td>
     <td  class="col_100 center borderAll "><a href="javascript:openPopup('popup.aspx?sesja=4!1.1!1!4')"><asp:Label CssClass="normal" ID="tab_11_w04_c01" runat="server" Text="0"></asp:Label></a></td>
     <td  class="col_100 center borderAll "><a href="javascript:openPopup('popup.aspx?sesja=4!1.1!2!4')"><asp:Label CssClass="normal" ID="tab_11_w04_c02" runat="server" Text="0"></asp:Label></a></td>
@@ -235,7 +218,7 @@
     <td  class="col_100 center borderAll "><a href="javascript:openPopup('popup.aspx?sesja=4!1.1!4!4')"><asp:Label CssClass="normal" ID="tab_11_w04_c04" runat="server" Text="0"></asp:Label></a></td>
   </tr>
   <tr>
-    <td  class="auto-style1">prywatnego</td>
+    <td  class="borderAll wciecie" style="wciecie borderAll">prywatnego</td>
   <td  class="borderAll col_36">5</td>
     <td  class="col_100 center borderAll "><a href="javascript:openPopup('popup.aspx?sesja=5!1.1!1!4')"><asp:Label CssClass="normal" ID="tab_11_w05_c01" runat="server" Text="0"></asp:Label></a></td>
     <td  class="col_100 center borderAll "><a href="javascript:openPopup('popup.aspx?sesja=5!1.1!2!4')"><asp:Label CssClass="normal" ID="tab_11_w05_c02" runat="server" Text="0"></asp:Label></a></td>
@@ -243,7 +226,7 @@
     <td  class="col_100 center borderAll "><a href="javascript:openPopup('popup.aspx?sesja=5!1.1!4!4')"><asp:Label CssClass="normal" ID="tab_11_w05_c04" runat="server" Text="0"></asp:Label></a></td>
   </tr>
   <tr>
-<td  class="auto-style1">tryb art. 55 § 1 kpk </td>
+<td  class="borderAll wciecie" style="wciecie borderAll">tryb art. 55 § 1 kpk </td>
     <td  class="borderAll col_36">6</td>
     <td  class="col_100 center borderAll "><a href="javascript:openPopup('popup.aspx?sesja=6!1.1!1!4')"><asp:Label CssClass="normal" ID="tab_11_w06_c01" runat="server" Text="0"></asp:Label></a></td>
     <td  class="col_100 center borderAll "><a href="javascript:openPopup('popup.aspx?sesja=6!1.1!2!4')"><asp:Label CssClass="normal" ID="tab_11_w06_c02" runat="server" Text="0"></asp:Label></a></td>
@@ -284,7 +267,7 @@
   </tr>
   <tr>
     <td  class="borderAll wciecie" colspan="2" rowspan="2">Tymczasowe aresztowanie w toku śledztwa lub dochodzenia (art. 250 kpk)</td>
-    <td  class="auto-style1">zastosowanie</td>
+    <td  class="borderAll wciecie" style="wciecie borderAll">zastosowanie</td>
   <td  class="borderAll col_36">11</td>
     <td  class="col_100 center borderAll "><a href="javascript:openPopup('popup.aspx?sesja=11!1.1!1!4')"><asp:Label CssClass="normal" ID="tab_11_w11_c01" runat="server" Text="0"></asp:Label></a></td>
     <td  class="col_100 center borderAll "><a href="javascript:openPopup('popup.aspx?sesja=11!1.1!2!4')"><asp:Label CssClass="normal" ID="tab_11_w11_c02" runat="server" Text="0"></asp:Label></a></td>
@@ -292,7 +275,7 @@
     <td  class="col_100 center borderAll "><a href="javascript:openPopup('popup.aspx?sesja=11!1.1!4!4')"><asp:Label CssClass="normal" ID="tab_11_w11_c04" runat="server" Text="0"></asp:Label></a></td>
   </tr>
   <tr>
-    <td  class="auto-style1">przedłużenie</td>
+    <td  class="borderAll wciecie" style="wciecie borderAll">przedłużenie</td>
   <td  class="borderAll col_36">12</td>
     <td  class="col_100 center borderAll "><a href="javascript:openPopup('popup.aspx?sesja=12!1.1!1!4')"><asp:Label CssClass="normal" ID="tab_11_w12_c01" runat="server" Text="0"></asp:Label></a></td>
     <td  class="col_100 center borderAll "><a href="javascript:openPopup('popup.aspx?sesja=12!1.1!2!4')"><asp:Label CssClass="normal" ID="tab_11_w12_c02" runat="server" Text="0"></asp:Label></a></td>
@@ -712,7 +695,7 @@
   </tr>
   <tr>
 <td  class="borderAll wciecie" colspan="3">Udzielenie pomocy sądowej </td>
-    
+
     <td  class="borderAll col_36">64</td>
     <td  class="col_100 center borderAll "><a href="javascript:openPopup('popup.aspx?sesja=64!1.1!1!4')"><asp:Label CssClass="normal" ID="tab_11_w64_c01" runat="server" Text="0"></asp:Label></a></td>
     <td  class="col_100 center borderAll "><a href="javascript:openPopup('popup.aspx?sesja=64!1.1!2!4')"><asp:Label CssClass="normal" ID="tab_11_w64_c02" runat="server" Text="0"></asp:Label></a></td>
@@ -977,11 +960,11 @@
   &nbsp;<asp:PlaceHolder runat="server" ID="tablePlaceHolder01"></asp:PlaceHolder>
     <br />
 
-        <div id='1.1.2' >
+        <div id='1.1.2'>
             <br />
 <strong>Dział 1.1.2.</strong>&nbsp;Struktura załatwień spraw
             <br />
-    <table >
+    <table>
   <tr>
     <td  class="center borderAll" colspan="5" rowspan="2">Wyszczególnienie </td>
     <td  class="center borderAll" rowspan="2">Ogółem</td>
@@ -1231,16 +1214,11 @@
     </table>
  </div>
 
-
-
-   <div id="zalatwienia"  class="page-break"> 
+   <div id="zalatwienia"  class="page-break">
        <br />
     <br />
-    
-
 
    <asp:Label ID="tabela1Label" runat="server"></asp:Label>
-  
 
  <br />
  <table cellpadding="0" cellspacing="0" style="width:100%;">
@@ -1325,7 +1303,7 @@
  </strong>&nbsp;(w.4= w.2+3) </td>
    <td  style="border-style: solid; border-width: thin 0px thin thin; border-color: #666666; " class="col_29">04</td>
  <td  style="border-style: solid; border-width: thin; border-color: #666666; " class="col_90 center borderAll"><a href="javascript:openPopup('popup.aspx?sesja=4!1.1.b!1!4')">  <asp:Label ID="tab_11b_w04_c01" runat="server" CssClass="normal" Text="0"></asp:Label></a></td>
-  </tr>    
+  </tr>
      </table>
  <br />
  <p class="auto-style4" style="mso-line-height-rule: exactly">
@@ -1333,14 +1311,13 @@
  </p>
     <br />
  </div>
-    <div id="wyznaczenia"  class="page-break"> 
+    <div id="wyznaczenia"  class="page-break">
   <br />
 <strong>Dział 1.1.c.</strong> Wyroki nakazowe w okresie sprawozdawczym
   <br />
   <table style="width:100%;">
 <tr>
     <td  class="col_29">
-    
     </td>
     <td colspan="2" > Wydano wyroków nakazowych</td>
     <td valign="bottom" align="right">
@@ -1354,52 +1331,46 @@
   Liczba sprzeciwów w sprawach nakazowych z rep. K - ogółem</td>
     <td valign="bottom" align="right">
     <a href="javascript:openPopup('popup.aspx?sesja=2!1.1.d!1!4')"> <asp:TextBox ID="tab_11c_w02_c01" runat="server" ReadOnly="True" CssClass="col_155"></asp:TextBox></a>
-    
     </td>
 </tr>
 <tr>
     <td  class="col_29">
         &nbsp;</td>
-    <td class="col_36" >
+    <td class="col_36">
         &nbsp;</td>
-    <td >
+    <td>
   w tym przez oskarżyciela</td>
     <td valign="bottom" align="right">
  <a href="javascript:openPopup('popup.aspx?sesja=3!1.1.d!1!4')"> <asp:TextBox ID="tab_11c_w03_c01" runat="server" ReadOnly="True" CssClass="col_155"></asp:TextBox></a>
     </td>
 </tr>
 <tr>
-    <td >
+    <td>
   </td>
-    <td  colspan="2" >
+    <td  colspan="2">
   Liczba spraw w których wniesiono sprzeciwy</td>
     <td valign="bottom" align="right" class=" col_50">
 <a href="javascript:openPopup('popup.aspx?sesja=4!1.1.d!1!4')"> <asp:TextBox ID="tab_11c_w04_c01" runat="server" ReadOnly="True" CssClass="col_155"></asp:TextBox></a>
-
     </td>
 </tr>
 <tr>
     <td  class="col_29">
         &nbsp;</td>
-    <td colspan="2" >
+    <td colspan="2">
   Z załatwień w dz. 1.1. (w.04 k.3) liczba prawomocnych wyroków nakazowych (w okresie sprawozdawczym)</td>
     <td valign="bottom" align="right">
 <a href="javascript:openPopup('popup.aspx?sesja=4!1.1.d!1!4')"> <asp:TextBox ID="tab_11c_w05_c01" runat="server" ReadOnly="True" CssClass="col_155"></asp:TextBox></a>
- 
     </td>
 </tr>
   </table>
   <br />
   </div>
-  
-    <br />
-    <div id="Div11"  class="page-break"> 
-    
 
+    <br />
+    <div id="Div11"  class="page-break">
 
 <strong>Dział 1.1.d.</strong>&nbsp; Liczba spraw z rep. K załatwionych w związku z postępowaniem mediacyjnym (proszę podać liczbę spraw, w których postępowanie zakończyło się ugodą lub w inny sposób)
 
-    
   <table cellpadding="0" cellspacing="0" style="width:100%;">
 <tr>
     <td align="center" colspan="2" style="border-style: solid; border-width: thin 0px 0px thin; border-color: #666666;" class="col_155">Wyszczególnienie</td>
@@ -1459,9 +1430,9 @@
     <td align="center" class="borderAll center col_150"><a href="javascript:openPopup('popup.aspx?sesja=5!1.1.d!4!4')"><asp:Label CssClass="normal" ID="tab_11d_w05_col04" runat="server" Text="0"></asp:Label></a></td>
 </tr>
   </table>
-    
+
         Uwaga: Liczba spraw wpisanych do Wykazu Med oraz liczba zakończonych postępowań mediacyjnych dotyczy wszystkich spraw z okresu statystycznego a nie tylko spraw z rep. K załatwionych w związku z postępowaniem mediacyjnym.
-    
+
   <br />
   <br />
 
@@ -1522,9 +1493,8 @@
 <br />
   </div>
 
- 
- <div id="Div11e"  class="page-break"> 
-  
+ <div id="Div11e"  class="page-break">
+
 &nbsp;<table cellpadding="0" cellspacing="0" style="border-width: thin; border-color: #999999">
    <tr>
  <td class="col_100 " style="border-width: thin; border-color: #999999">
@@ -1541,14 +1511,11 @@
  <td class="col_200" style="border: thin solid #000000;"><a href="javascript:openPopup('popup.aspx?sesja=2!1.1.e!1!4')"><asp:Label CssClass="normal" ID="tab_11e_w02_c01" runat="server" Text="0"></asp:Label></a></td>
    </tr>
      </table>
-    
-
-
 
 <br />
 </div>
 
- <div id="Div11f"  class="page-break"> 
+ <div id="Div11f"  class="page-break">
   <table cellpadding="0" cellspacing="0" style="border-width: thin; border-color: #999999">
    <tr>
  <td class="col_100" style="border-width: thin; border-color: #999999">
@@ -1587,21 +1554,18 @@
  <td class="borderAll col_90" style="border: thin solid #000000;"><a href="javascript:openPopup('popup.aspx?sesja=4!1.1.f!2!4')"><asp:Label CssClass="normal" ID="tab_11f_w04_c02" runat="server" Text="0"></asp:Label></a></td>
    </tr>
      </table>
-    
-
-
 
 <br />
 </div>
-    <div id="wyznaczenia"  class="page-break"> 
+    <div id="wyznaczenia"  class="page-break">
   <br />
- 
+
   <table style="width:100%;">
 <tr>
-    <td > 
+    <td>
 <strong>Dział 1.1.g.</strong> Prawomocne wyroki nakazowe w sprawach z rep.W</td>
-    <td >
-    
+    <td>
+
         &nbsp;</td>
     <td valign="bottom" align="right">
 <a href="javascript:openPopup('popup.aspx?sesja=1!1.1.g!1!4')"> <asp:TextBox ID="tab_11g_w01_c01" runat="server" ReadOnly="True" CssClass="col_155"></asp:TextBox></a>
@@ -1611,15 +1575,13 @@
   <br />
   </div>
    &nbsp;<asp:PlaceHolder runat="server" ID="tablePlaceHolder02"></asp:PlaceHolder>
-     
 
+ <div id="Div11k"  class="page-break">
 
- <div id="Div11k"  class="page-break"> 
-  
      <table style="width:100%;">
    <tr>
- <td class="col_115"> 
-  
+ <td class="col_115">
+
      <strong>Dział 1.1.k.</strong></td>
  <td colspan="6">Wpływ spraw, w których postępowanie przygotowawcze zostało zakończone w formie</td>
    </tr>
@@ -1648,15 +1610,6 @@
    </tr>
      </table>
      <br />
-     
-    
-
-
-
-    
-
-
-
 
 <br />
      <table style="width:100%;">
@@ -1722,39 +1675,31 @@
      <br />
 </div>
    &nbsp;<asp:PlaceHolder runat="server" ID="tablePlaceHolder03"></asp:PlaceHolder>
-       
-       <div id="Div11p"  class="page-break"> 
-  
- 
-    <br />
 
-    
+       <div id="Div11p"  class="page-break">
+
+    <br />
 </div>
 
+     <div id="Div115"  class="page-break">
 
-     <div id="Div115"  class="page-break"> 
-  
      <strong>Dział 1.1.5 Wpływ i załatwienie spraw w postępowaniu przyspieszonym (Rep. K)  </strong>
-     
+
    <br />
    <table style="width:100%;" cellpadding="0" cellspacing="0">
  <tr>
      <td class="col_140 borderTopLeft" align="center" rowspan="5">Wpływ - liczba spraw</td>
      <td align="center" class="col_140 borderTopLeft" rowspan="5">Liczba oskarżonych objętych wnioskami (ogółem)</td>
-     
-   
+
      <td colspan="6" align="center" class="borderTopLeftRight">Liczba spraw zakończonych</td>
  </tr>
-  
-    
+
  <tr>
      <td align="center" class="col_140 borderTopLeft" rowspan="4">ogółem</td>
-     
-    
+
      <td colspan="5" align="center" class="borderTopLeftRight">w tym</td>
  </tr>
-  
-     
+
  <tr>
      <td align="center" class="col_140 borderTopLeft" rowspan="3" >wyrokiem</td>
      <td  colspan="4" align="center" class="borderTopLeftRight">postanowieniem</td>
@@ -1790,14 +1735,10 @@
  </tr>
    </table>
    <br />
-    
+
    <br />
-
-
-
-
    </div>
-   <div id="Div116"  class="page-break"> 
+   <div id="Div116"  class="page-break">
  <strong> Dział 1.1.6 Postanowienie o zabezpieczeniu roszczeń w postępowaniu sądowym</strong>
 
  <br />
@@ -1823,15 +1764,10 @@
  </table>
  <br />
  <br />
-
-
-
-
  </div>
-     <div id="Div117a"  class="page-break"> 
+     <div id="Div117a"  class="page-break">
  <strong> Dział 1.1.7.a. Przesłuchanie małoletnich świadków i pokrzywdzonych świadków (liczba osób) </strong>
  <br />
-
 
    <br />
    <br />
@@ -1960,22 +1896,17 @@
      <td align="center" class="borderAll"><a href="javascript:openPopup('popup.aspx?sesja=6!1.1.7.a!10!4')">  <asp:Label CssClass="normal" ID="tab_117a_w06_c10" runat="server" Text="0"></asp:Label>  </a></td>
      <td align="center" class="borderAll"><a href="javascript:openPopup('popup.aspx?sesja=6!1.1.7.a!11!4')">  <asp:Label CssClass="normal" ID="tab_117a_w06_c11" runat="server" Text="0"></asp:Label>  </a></td>
  </tr>
- 
    </table>
    <br />
-   
-
    </div>
- <div id="Div117b"  class="page-break"> 
+ <div id="Div117b"  class="page-break">
    <table style="width:100%;">
 <tr>
     <td  class="col_29">
-    
     </td>
-    <td >  
+    <td>
 
-<strong>   Dział 1.1.7.b. Liczba przyjaznych pokoi przesłuchań*) w sądzie </strong>   
-
+<strong>   Dział 1.1.7.b. Liczba przyjaznych pokoi przesłuchań*) w sądzie </strong>
     </td>
     <td valign="bottom" align="right">
 <a href="javascript:openPopup('popup.aspx?sesja=1!1.1.7.b!1!4')"> <asp:TextBox ID="tab_117b_w01_c2" runat="server" ReadOnly="True" CssClass="col_155"></asp:TextBox></a>
@@ -1992,9 +1923,8 @@
 </table>
  </div>
 
-
- <div id="Div118"  class="page-break"> 
-     <strong>   Dział 1.1.8 Liczba zapytań do operatorów telekomunikacyjnych</strong>   - w sprawie danych, o których mowa w art. 180c i 180d ust. z dn. 16 lipca 2004 r. – Prawo telekomunikacyjne (Dz. U. z 2014 r., poz. 243)  
+ <div id="Div118"  class="page-break">
+     <strong>   Dział 1.1.8 Liczba zapytań do operatorów telekomunikacyjnych</strong>   - w sprawie danych, o których mowa w art. 180c i 180d ust. z dn. 16 lipca 2004 r. – Prawo telekomunikacyjne (Dz. U. z 2014 r., poz. 243)
      <br />
      <table style="width:100%;" cellpadding="0" cellspacing="0">
    <tr>
@@ -2035,24 +1965,18 @@
      <br />
  </div>
 
-   
- 
     <br />
-
   </div>
- 
 
        <div style="width: 1150px; margin: 0 auto 0 auto; position: relative; ">
-<div id="Div121"   class="page-break"> 
-   <strong> 
-   
-   
+<div id="Div121"   class="page-break">
+   <strong>
+
     <br />
     Dział 1.2.1. Liczba sesji i wyznaczonych spraw  </strong>
 
-  
     <br />
-   
+
     <table style="width:100%;" cellpadding="0" cellspacing="0">
   <tr>
 <td rowspan="3" class="borderTopLeft">SPRAWY według repertoriów i wykazów</td>
@@ -2062,13 +1986,8 @@
 <td rowspan="3" class="borderTopLeft col_100" align="center">Suma wyzna-czonych spraw </td>
 <td rowspan="3" class="borderTopLeft" align="center">Łączna liczba dni na które wyznaczono sesje -wokandy</td>
 
-
-
-
-
-
 <td colspan="11" class="borderTopLeft" align="center">Liczba wyznaczonych spraw na rozprawę, dotyczy:</td>
-    
+
 <td colspan="12" class="borderTopLeftRight" align="center">Liczba wyznaczonych spraw na posiedzenia, dotyczy: </td>
   </tr>
   <tr>
@@ -2190,7 +2109,6 @@
 <td class="borderTopLeftRight" align="center"><a href="javascript:openPopup('popup.aspx?sesja=2!1.2.1!24!4')">  <asp:Label CssClass="normal" ID="tab_121_w02_c24" runat="server" Text="0"></asp:Label>  </a></td>
 <td class="borderTopLeft" align="center"><a href="javascript:openPopup('popup.aspx?sesja=2!1.2.1!25!4')">  <asp:Label CssClass="normal" ID="tab_121_w02_c25" runat="server" Text="0"></asp:Label>  </a></td>
 <td class="borderTopLeftRight col_100" align="center"><a href="javascript:openPopup('popup.aspx?sesja=2!1.2.1!26!4')">  <asp:Label CssClass="normal" ID="tab_121_w02_c26" runat="server" Text="0"></asp:Label>  </a></td>
-
   </tr>
   <tr>
 <td class="borderTopLeft">w tym - o wyrok łaczny</td>
@@ -2221,7 +2139,6 @@
 <td class="borderTopLeftRight" align="center"><a href="javascript:openPopup('popup.aspx?sesja=3!1.2.1!24!4')">  <asp:Label CssClass="normal" ID="tab_121_w03_c24" runat="server" Text="0"></asp:Label>  </a></td>
 <td class="borderTopLeft" align="center"><a href="javascript:openPopup('popup.aspx?sesja=3!1.2.1!25!4')">  <asp:Label CssClass="normal" ID="tab_121_w03_c25" runat="server" Text="0"></asp:Label>  </a></td>
 <td class="borderTopLeftRight col_100" align="center"><a href="javascript:openPopup('popup.aspx?sesja=3!1.2.1!26!4')">  <asp:Label CssClass="normal" ID="tab_121_w03_c26" runat="server" Text="0"></asp:Label>  </a></td>
-
   </tr>
   <tr>
 <td class="borderTopLeft">Kp</td>
@@ -2252,7 +2169,6 @@
 <td class="borderTopLeftRight" align="center"><a href="javascript:openPopup('popup.aspx?sesja=4!1.2.1!24!4')">  <asp:Label CssClass="normal" ID="tab_121_w04_c24" runat="server" Text="0"></asp:Label>  </a></td>
 <td class="borderTopLeft" align="center"><a href="javascript:openPopup('popup.aspx?sesja=4!1.2.1!25!4')">  <asp:Label CssClass="normal" ID="tab_121_w04_c25" runat="server" Text="0"></asp:Label>  </a></td>
 <td class="borderTopLeftRight col_100" align="center"><a href="javascript:openPopup('popup.aspx?sesja=4!1.2.1!26!4')">  <asp:Label CssClass="normal" ID="tab_121_w04_c26" runat="server" Text="0"></asp:Label>  </a></td>
-
   </tr>
   <tr>
 <td class="borderTopLeft">Ko</td>
@@ -2283,7 +2199,6 @@
 <td class="borderTopLeftRight" align="center"><a href="javascript:openPopup('popup.aspx?sesja=5!1.2.1!24!4')">  <asp:Label CssClass="normal" ID="tab_121_w05_c24" runat="server" Text="0"></asp:Label>  </a></td>
 <td class="borderTopLeft" align="center"><a href="javascript:openPopup('popup.aspx?sesja=5!1.2.1!25!4')">  <asp:Label CssClass="normal" ID="tab_121_w05_c25" runat="server" Text="0"></asp:Label>  </a></td>
 <td class="borderTopLeftRight col_100" align="center"><a href="javascript:openPopup('popup.aspx?sesja=5!1.2.1!26!4')">  <asp:Label CssClass="normal" ID="tab_121_w05_c26" runat="server" Text="0"></asp:Label>  </a></td>
-
   </tr>
   <tr>
 <td class="borderTopLeft">W</td>
@@ -2314,7 +2229,6 @@
 <td class="borderTopLeftRight" align="center"><a href="javascript:openPopup('popup.aspx?sesja=6!1.2.1!24!4')">  <asp:Label CssClass="normal" ID="tab_121_w06_c24" runat="server" Text="0"></asp:Label>  </a></td>
 <td class="borderTopLeft" align="center"><a href="javascript:openPopup('popup.aspx?sesja=6!1.2.1!25!4')">  <asp:Label CssClass="normal" ID="tab_121_w06_c25" runat="server" Text="0"></asp:Label>  </a></td>
 <td class="borderTopLeftRight col_100" align="center"><a href="javascript:openPopup('popup.aspx?sesja=6!1.2.1!26!4')">  <asp:Label CssClass="normal" ID="tab_121_w06_c26" runat="server" Text="0"></asp:Label>  </a></td>
-
   </tr>
   <tr>
 <td class="borderTopLeftBottom">Kop</td>
@@ -2346,13 +2260,10 @@
 <td class="borderTopLeftBottom" align="center"><a href="javascript:openPopup('popup.aspx?sesja=7!1.2.1!25!4')">  <asp:Label CssClass="normal" ID="tab_121_w07_c25" runat="server" Text="0"></asp:Label>  </a></td>
 <td class="borderAll" align="center"><a href="javascript:openPopup('popup.aspx?sesja=7!1.2.1!26!4')">  <asp:Label CssClass="normal" ID="tab_121_w07_c26" runat="server" Text="0"></asp:Label>  </a></td>
   </tr>
-        
     </table>
     </div>
 
-
              &nbsp;<asp:PlaceHolder runat="server" ID="tablePlaceHolder04"></asp:PlaceHolder>
-        
 
        <div id="tab1_3">
 
@@ -2421,7 +2332,6 @@
   <td class="borderTopLeft col_76"><a href="javascript:openPopup('popup.aspx?sesja=1!1.3!12!4')">  <asp:Label CssClass="normal" ID="tab_13_w01_c12" runat="server" Text="0"></asp:Label>  </a></td>
   <td class="borderTopLeft col_76"><a href="javascript:openPopup('popup.aspx?sesja=1!1.3!13!4')">  <asp:Label CssClass="normal" ID="tab_13_w01_c13" runat="server" Text="0"></asp:Label>  </a></td>
   <td class="borderTopLeftRight col_76"><a href="javascript:openPopup('popup.aspx?sesja=1!1.3!14!4')">  <asp:Label CssClass="normal" ID="tab_13_w01_c14" runat="server" Text="0"></asp:Label>  </a></td>
-                  
                </tr>
                <tr>
                    <td class="borderTopLeft col_45 wciecie">K</td>
@@ -2514,15 +2424,9 @@
   <td class="borderAll col_76"><a href="javascript:openPopup('popup.aspx?sesja=6!1.3!14!4')">  <asp:Label CssClass="normal" ID="tab_13_w06_c14" runat="server" Text="0"></asp:Label>  </a></td>
                </tr>
            </table>
-
        </div>
             &nbsp;<asp:PlaceHolder runat="server" ID="tablePlaceHolder05"></asp:PlaceHolder>
     <br />
-
-      
-
-
-
 
        <div id="tab3">
          <b>  Dział 3. </b> Terminowość obiegu międzyinstancyjnego spraw odwoławczych w pierwszej instancji
@@ -2602,7 +2506,6 @@
                    <td class="borderAll col_125" align="center"><a href="javascript:openPopup('popup.aspx?sesja=4!3!8!4')">  <asp:Label CssClass="normal" ID="tab_3_w04_c08" runat="server" Text="0"></asp:Label>  </a></td>
                </tr>
                </table>
-
        </div>
 
        <div id="tab31">
@@ -2653,7 +2556,6 @@
                    <td class="borderTopLeft col_166" align="center"><a href="javascript:openPopup('popup.aspx?sesja=2!3.1!4!4')">  <asp:Label CssClass="normal" ID="tab_31_w02_c04" runat="server" Text="0"></asp:Label>  </a></td>
                    <td class="borderTopLeft col_166" align="center"><a href="javascript:openPopup('popup.aspx?sesja=2!3.1!5!4')">  <asp:Label CssClass="normal" ID="tab_31_w02_c05" runat="server" Text="0"></asp:Label>  </a></td>
                    <td class="borderTopLeftRight" align="center"><a href="javascript:openPopup('popup.aspx?sesja=2!3.1!6!4')">  <asp:Label CssClass="normal" ID="tab_31_w02_c06" runat="server" Text="0"></asp:Label>  </a></td>
-                
                </tr>
                <tr>
                    <td class="borderTopLeft" align="center" colspan="2">wykroczenia</td>
@@ -2687,7 +2589,6 @@
                    <td class="borderAll col_166" align="center"><a href="javascript:openPopup('popup.aspx?sesja=5!3.1!6!4')">  <asp:Label CssClass="normal" ID="tab_31_w05_c06" runat="server" Text="0"></asp:Label>  </a></td>
                </tr>
                </table>
-
        </div>
 
 <div id="tab41">
@@ -2724,7 +2625,6 @@
                    <td class="borderAll col_125"><a href="javascript:openPopup('popup.aspx?sesja=4!4.1!1!4')">  <asp:Label CssClass="normal" ID="tab_41_w04_c01" runat="server" Text="0"></asp:Label>  </a></td>
                </tr>
                </table>
-
        </div>
        <div id="tab42">
 
@@ -2801,7 +2701,6 @@
                    <td class="borderAll col_125"><a href="javascript:openPopup('popup.aspx?sesja=2!4.3!1!4')">  <asp:Label CssClass="normal" ID="tab_43_w02_c01" runat="server" Text="0"></asp:Label>  </a></td>
                </tr>
                </table>
-
        </div>
        <div id="tab5">
 
@@ -2823,7 +2722,6 @@
                    <td class="borderTopLeft" align="center">Czynności sądu w sprawach wniosków Ministra Sprawiedliwości o przejęcie obywatela polskiego skazanego przez sąd państwa obcego, w celu wykonania kary pozbawienia wolności w Rzeczypospolitej Polskiej (art. 608 kpk), </td>
                    <td class="borderTopLeft col_36" align="center">01</td>
                             <td class="borderTopLeftRight col_125" align="center"><a href="javascript:openPopup('popup.aspx?sesja=1!5!1!4')">  <asp:Label CssClass="normal" ID="tab_5_w01_c01" runat="server" Text="0"></asp:Label>  </a></td>
-          
                </tr>
                <tr>
                    <td class="borderTopLeft" align="center">Czynności sądu w sprawach wniosków Ministra Sprawiedliwości o przejęcie skazanego przez sąd polski cudzoziemca przez państwo, którego jest on obywatelem, w celu odbycia kary pozbawienia wolności (art. 610 kpk).</td>
@@ -2841,7 +2739,6 @@
                    <td class="borderAll col_125" align="center"><a href="javascript:openPopup('popup.aspx?sesja=4!5!1!4')">  <asp:Label CssClass="normal" ID="tab_5_w04_c01" runat="server" Text="0"></asp:Label>  </a></td>
                </tr>
                </table>
-
        </div>
        <div id="tab6">
 
@@ -2985,7 +2882,6 @@
                    <td class="borderTopLeft wciecie">w tym przedłużenie nakazu zastosowanego przez prokuratora lub sąd na dalsze okresy (art. 275a §4 kpk)</td>
                    <td class="borderTopLeft col_36">23</td>
                    <td class="borderTopLeftRight col_125"><a href="javascript:openPopup('popup.aspx?sesja=23!6!1!4')">  <asp:Label CssClass="normal" ID="tab_6_w23_c01" runat="server" Text="0"></asp:Label>  </a></td>
-    
                </tr>
                <tr>
                    <td class="borderTopLeft wciecie" colspan="2" rowspan="2">Zakaz opuszczania kraju</td>
@@ -3058,9 +2954,8 @@
                    <td class="borderAll col_140"><a href="javascript:openPopup('popup.aspx?sesja=1!7.1!7!4')">  <asp:Label CssClass="normal" ID="tab_7_w01_c07" runat="server" Text="0"></asp:Label>  </a></td>
                </tr>
                </table>
-
        </div>
-      
+
          &nbsp;<asp:PlaceHolder runat="server" ID="tablePlaceHolder06"></asp:PlaceHolder>
     <br />
 
@@ -3083,17 +2978,14 @@
             <br />
             <br />
            <br />
-         
        </div>
              &nbsp;<asp:PlaceHolder runat="server" ID="tablePlaceHolder07"></asp:PlaceHolder>
        <div id="tab92">
 
             <br />
-        
        </div>
           <div id="tab10">
 
-          
             <br />
          <b>  Dział 10. </b>Wyznaczenie pierwszej rozprawy / posiedzenia (od dnia wpływu/wpisu sprawy do dnia, w którym odbyła się pierwsza rozprawa/posiedzenie)
 
@@ -3131,7 +3023,6 @@
                    <td class="borderTopLeft wciecie" colspan="2">pozostawiono bez dalszego biegu (art. 564 § 1 i 3 kpk)</td>
                    <td class="borderTopLeft col_36">05</td>
                      <td class="borderTopLeftRight col_125"><a href="javascript:openPopup('popup.aspx?sesja=5!10!1!4')">  <asp:Label CssClass="normal" ID="tab_10_w05_c01" runat="server" Text="0"></asp:Label>  </a></td>
-       
                </tr>
                <tr>
                    <td class="borderTopLeft wciecie" colspan="2">przesłano akta Prokuratorowi Generalnemu (art. 564 § 1 i 3 kpk) (wiersze 7 do 9)</td>
@@ -3185,14 +3076,12 @@
                    <td class="borderTopLeftBottom col_36">15</td>
                    <td class="borderAll col_125"><a href="javascript:openPopup('popup.aspx?sesja=15!10!1!4')">  <asp:Label CssClass="normal" ID="tab_10_w15_c01" runat="server" Text="0"></asp:Label>  </a></td>
                </tr>
-                         
            </table>
 
               <br />
               W poniższych działach odnoszących się do biegłych i tłumaczy wykazujemy dane dotyczące opinii i tłumaczeń zleconych po 1 stycznia 2017r.</div>
        <div id="tab111">
 
-         
             <br />
          <b>  Dział 11.1. </b>Liczba biegłych/podmiotów wydających opinie w sprawach (z wył. tłumaczy przysięgłych)<table style="width: 100%;" cellpadding="0" cellspacing="0">
                <tr>
@@ -3244,14 +3133,11 @@
                    <td class="borderTopLeftBottom col_250"><a href="javascript:openPopup('popup.aspx?sesja=4!11.1!3!4')">  <asp:Label CssClass="normal" ID="tab_11_1_w04_c03" runat="server" Text="0"></asp:Label>  </a></td>
                    <td class="borderAll col_250"><a href="javascript:openPopup('popup.aspx?sesja=4!11.1!4!4')">  <asp:Label CssClass="normal" ID="tab_11_1_w04_c04" runat="server" Text="0"></asp:Label>  </a></td>
                </tr>
-                         
            </table>
-
        </div>
-     
+
          <div id="tab112">
 
-           
             <br />
          <b>  Dział 11.2. </b>Terminowość sporządzania opinii pisemnych(z wył. tłumaczy przysięgłych) <table style="width: 100%;" cellpadding="0" cellspacing="0">
                <tr>
@@ -3331,7 +3217,6 @@
                    <td class="borderTopLeftBottom col_125"><a href="javascript:openPopup('popup.aspx?sesja=4!11.2!7!4')">  <asp:Label CssClass="normal" ID="tab_11_2_w04_c07" runat="server" Text="0"></asp:Label>  </a></td>
                    <td class="borderAll col_125"><a href="javascript:openPopup('popup.aspx?sesja=4!11.2!8!4')">  <asp:Label CssClass="normal" ID="tab_11_2_w04_c08" runat="server" Text="0"></asp:Label>  </a></td>
                </tr>
-                         
            </table>
 
              <br />
@@ -3351,9 +3236,8 @@
                 </tr>
             </table>
             <br />
-
        </div>
-          
+
        <div id="tab122">
 
             <br />
@@ -3366,19 +3250,18 @@
                    <td class="borderTopLeft" rowspan="2" align="center">razem (kol.1= 2 do 5 = 6 do 8 )</td>
                    <td class="borderTopLeft col_140" rowspan="2">w ustalonym terminie</td>
                    <td class="borderTopLeft" colspan="3" align="center">po ustalonym terminie</td>
-                   <td class="borderTopLeftRight" colspan="7" align="center">wg czasu wydania tłumaczenia</td>
+                   <td class="borderTopLeftRight" colspan="3" align="center">wg czasu wydania tłumaczenia</td>
                </tr>
                <tr>
+               
                    <td class="borderTopLeft" align="center">do 30 dni</td>
-                   <td class="borderTopLeft" align="center">pow. 14 do 30 dni</td>
-                   <td class="borderTopLeft" align="center">powyżej miesiąca</td>
+                   <td class="borderTopLeft" align="center">pow. 1 do 3 miesięcy</td>
+                   <td class="borderTopLeftRight" align="center">pow. 3 miesięcy</td>
+               
                    <td class="borderTopLeft" align="center">do 30 dni</td>
-                   <td class="borderTopLeft" align="center">pow. 14 do 30 dni</td>
-                   <td class="borderTopLeftRight" align="center">razem powyżej miesiąca (kol. 9-12) </td>
-                   <td class="borderTopLeftRight" align="center">pow. 1 do 2 miesięcy</td>
-                   <td class="borderTopLeftRight" align="center">pow. 2 do 3 miesięcy</td>
-                   <td class="borderTopLeftRight" align="center">pow. 3 do 6 miesięcy</td>
-                   <td class="borderTopLeftRight" align="center">pow. 6 miesięcy</td>
+                   <td class="borderTopLeft" align="center">pow. 1 do 3 miesięcy</td>
+                   <td class="borderTopLeftRight" align="center">pow. 3 miesięcy</td>
+                  
                </tr>
                <tr>
                    <td class="borderTopLeft col_140">1</td>
@@ -3389,10 +3272,7 @@
                    <td class="borderTopLeft col_140">6</td>
                    <td class="borderTopLeft col_140">7</td>
                    <td class="borderTopLeftRight col_140">8</td>
-                   <td class="borderTopLeftRight col_140">9</td>
-                   <td class="borderTopLeftRight col_140">10</td>
-                   <td class="borderTopLeftRight col_140">11</td>
-                   <td class="borderTopLeftRight col_140">12</td>
+                 
                </tr>
                <tr>
                    <td class="borderTopLeftBottom col_140"><a href="javascript:openPopup('popup.aspx?sesja=1!12.2!1!4')">  <asp:Label CssClass="normal" ID="tab_12_2_w01_c01" runat="server" Text="0"></asp:Label>  </a></td>
@@ -3403,19 +3283,13 @@
                    <td class="borderTopLeftBottom col_140"><a href="javascript:openPopup('popup.aspx?sesja=1!12.2!6!4')">  <asp:Label CssClass="normal" ID="tab_12_2_w01_c06" runat="server" Text="0"></asp:Label>  </a></td>
                    <td class="borderTopLeftBottom col_140"><a href="javascript:openPopup('popup.aspx?sesja=1!12.2!7!4')">  <asp:Label CssClass="normal" ID="tab_12_2_w01_c07" runat="server" Text="0"></asp:Label>  </a></td>
                    <td class="borderAll col_140"><a href="javascript:openPopup('popup.aspx?sesja=1!12.2!8!4')">  <asp:Label CssClass="normal" ID="tab_12_2_w01_c08" runat="server" Text="0"></asp:Label>  </a></td>
-                   <td class="borderAll col_140"><a href="javascript:openPopup('popup.aspx?sesja=1!12.2!9!4')">  <asp:Label CssClass="normal" ID="tab_12_2_w01_c09" runat="server" Text="0"></asp:Label>  </a></td>
-                   <td class="borderAll col_140"><a href="javascript:openPopup('popup.aspx?sesja=1!12.2!10!4')">  <asp:Label CssClass="normal" ID="tab_12_2_w01_c10" runat="server" Text="0"></asp:Label>  </a></td>
-                   <td class="borderAll col_140"><a href="javascript:openPopup('popup.aspx?sesja=1!12.2!11!4')">  <asp:Label CssClass="normal" ID="tab_12_2_w01_c11" runat="server" Text="0"></asp:Label>  </a></td>
-                   <td class="borderAll col_140"><a href="javascript:openPopup('popup.aspx?sesja=1!12.2!12!4')">  <asp:Label CssClass="normal" ID="tab_12_2_w01_c12" runat="server" Text="0"></asp:Label>  </a></td>
-                </tr>
-                         
+              </tr>
            </table>
-
        </div>
        <div id="tab123">
 
             <br />
-         
+
             <br />
             <br />
             <strong>Dział 12.3 </strong>Terminowość przyznawania wynagrodzeń za sporządzenie tłumaczeń pisemnych i ustnych oraz za stawiennictwo
@@ -3448,15 +3322,13 @@
                    <td class="borderTopLeftBottom col_140"><a href="javascript:openPopup('popup.aspx?sesja=1!12.3!7!4')">  <asp:Label CssClass="normal" ID="tab_12_3_w01_c07" runat="server" Text="0"></asp:Label>  </a></td>
                    <td class="borderAll col_140"><a href="javascript:openPopup('popup.aspx?sesja=1!12.3!8!4')">  <asp:Label CssClass="normal" ID="tab_12_3_w01_c08" runat="server" Text="0"></asp:Label>  </a></td>
                     <td class="borderAll col_140"><a href="javascript:openPopup('popup.aspx?sesja=1!12.3!9!4')">  <asp:Label CssClass="normal" ID="tab_12_3_w01_c09" runat="server" Text="0"></asp:Label>  </a></td>
-               
+
                       <td class="borderAll col_140"><a href="javascript:openPopup('popup.aspx?sesja=1!12.3!10!4')">  <asp:Label CssClass="normal" ID="tab_12_3_w01_c10" runat="server" Text="0"></asp:Label>  </a></td>
-               
+
                      <td class="borderAll col_140"><a href="javascript:openPopup('popup.aspx?sesja=1!12.3!11!4')">  <asp:Label CssClass="normal" ID="tab_12_3_w01_c11" runat="server" Text="0"></asp:Label>  </a></td>
-               
+
                       <td class="borderAll col_140"><a href="javascript:openPopup('popup.aspx?sesja=1!12.3!12!4')">  <asp:Label CssClass="normal" ID="tab_12_3_w01_c12" runat="server" Text="0"></asp:Label>  </a></td>
-               
                 </tr>
-                                        
            </table>
             <br />
             <br /><b>Dział 13. </b>Obciążenia administracyjne respondentów<br />Proszę podać czas (w minutach) przeznaczony na:<br />
@@ -3481,14 +3353,11 @@
                 &nbsp;</p>
             <br />
             </P>
-
        </div>
-       <div id="debag" >
-     
-  
-     
+       <div id="debag">
+
      <br />
-  Raport statystyczny 
+  Raport statystyczny
   <asp:Label ID="Label27" runat="server"></asp:Label>
     &nbsp;Sporzadzone dn.
 <asp:Label ID="Label29" runat="server"></asp:Label>&nbsp;przez&nbsp;
@@ -3498,11 +3367,6 @@
   <br />
 
   <asp:Label ID="Label11" runat="server"></asp:Label>
-   
   </div>
            </div>
-
-
 </asp:Content>
-
-

@@ -27,6 +27,7 @@ namespace stat2018
             {
                 if (idWydzial == null)
                 {
+                    Server.Transfer("default.aspx");
                     return;
                 }
                 bool dost = cm.dostep(idWydzial, (string)Session["identyfikatorUzytkownika"]);
@@ -163,8 +164,7 @@ namespace stat2018
             {
                 dataTable.Rows.Add(new Object[] { "1", "GC", "1", "1" });
                 dataTable.Rows.Add(new Object[] { "1", "Gz", "1", "1" });
-                dataTable.Rows.Add(new Object[] { "1", "GNs", "1", "1" });
-            
+                dataTable.Rows.Add(new Object[] { "1", "GNs", "1", "1" });           
                 dataTable.Rows.Add(new Object[] { "1", "GNc", "1", "1" });
                 dataTable.Rows.Add(new Object[] { "1", "Gco", "1", "1" });
                 dataTable.Rows.Add(new Object[] { "1", "GCps", "1", "1" });
@@ -191,20 +191,17 @@ namespace stat2018
         {
             DataTable dataTable = schenatTabeliNaglowkowej();
             dataTable.Clear();
-
+            //GC Gz GNs GNc Gco GCps
             dataTable.Rows.Add(new Object[] { "1", "GC", "1", "1" });
-
             dataTable.Rows.Add(new Object[] { "1", "GNs", "1", "1" });
-
             dataTable.Rows.Add(new Object[] { "1", "GNc", "1", "1" });
-            dataTable.Rows.Add(new Object[] { "1", "Gco", "1", "1" });
+            dataTable.Rows.Add(new Object[] { "1", "GCo", "1", "1" });
             dataTable.Rows.Add(new Object[] { "1", "GCps", "1", "1" });
-            dataTable.Rows.Add(new Object[] { "1", "Gz", "1", "1" });
             dataTable.Rows.Add(new Object[] { "1", "Razem", "1", "1" });
 
-            dataTable.Rows.Add(new Object[] { "2", "L.p.", "1", "2", "h", "60" });//
-            dataTable.Rows.Add(new Object[] { "2", "Nazwisko i imie sędziego ", "1", "2", "h", "60" });//
-            dataTable.Rows.Add(new Object[] { "2", "Zaległości", "7", "1", "h", });//
+            dataTable.Rows.Add(new Object[] { "2", "L.p.", "1", "2", "h", "60" });
+            dataTable.Rows.Add(new Object[] { "2", "Nazwisko i imię sędziego wg funkcji w wydziale", "1", "2", "h", "60" });
+            dataTable.Rows.Add(new Object[] { "2", "Zaległości", "6", "1", "h", });
 
             return dataTable;
         }
@@ -267,7 +264,7 @@ namespace stat2018
 
             FileInfo fNewFile = new FileInfo(download + "_.xlsx");
 
-            // pierwsza tabelka
+           
 
             using (ExcelPackage MyExcel = new ExcelPackage(existingFile))
             {
@@ -276,7 +273,7 @@ namespace stat2018
                 ExcelWorksheet MyWorksheet1 = MyExcel.Workbook.Worksheets[1];
                 DataTable table = (DataTable)Session["tabelkaGW001"];
 
-                MyWorksheet1 = tabela.tworzArkuszwExcle(MyExcel.Workbook.Worksheets[1], table, 25, 0, 6, true, true, false, false, false, true);
+                MyWorksheet1 = tabela.tworzArkuszwExcle(MyExcel.Workbook.Worksheets[1], table, 24, 0, 6, true, true, false, false, false, true);
 
                 int iloscWierszy = table.Rows.Count;
                 tabela.komorkaExcela(MyExcel.Workbook.Worksheets[1], iloscWierszy + 7, 1, "Pozostało z okresu poprzedniego", true, 0, 3);
@@ -295,7 +292,7 @@ namespace stat2018
                 {
                     for (int i = 0; i < 9; i++)
                     {
-                        for (int j = 0; j < 6; j++)
+                        for (int j = 0; j < 7; j++)
                         {
                             string value = table2.Rows[i][j + 1].ToString();
                             tabela.komorkaExcela(MyExcel.Workbook.Worksheets[1], iloscWierszy + 7 + i, j + 5, value, false, 0, 0);
@@ -304,12 +301,12 @@ namespace stat2018
                 }
                 catch (Exception)
                 {
-                    throw;
+                  
                 }
                 ExcelWorksheet MyWorksheet2 = MyExcel.Workbook.Worksheets[2];
                 table = (DataTable)Session["tabelkaGW003"];
 
-                MyWorksheet2 = tabela.tworzArkuszwExcle(MyExcel.Workbook.Worksheets[2], table, 8, 0, 5, true, false, false, false, false, false);
+                MyWorksheet2 = tabela.tworzArkuszwExcle(MyExcel.Workbook.Worksheets[2], table, 7, 0, 5, true, false, false, false, false, false);
 
                 try
                 {

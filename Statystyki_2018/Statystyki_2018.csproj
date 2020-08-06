@@ -141,6 +141,8 @@
     <Content Include="aopg.aspx" />
     <Content Include="mk.aspx" />
     <Content Include="mss10e.aspx" />
+    <Content Include="XMLHeaders\MSS10r.xml" />
+    <Content Include="XMLHeaders\MSS11r.xml" />
     <Content Include="XMLHeaders\MSS5r.xml" />
     <Content Include="XMLHeaders\MSS19o.xml" />
     <Content Include="XMLHeaders\MSS19r.xml" />

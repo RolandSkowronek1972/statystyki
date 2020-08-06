@@ -280,13 +280,13 @@ namespace stat2018
                 {
                     // cały miesiąc
                     tab2Label.Text = "Obciążenia kuratorów wywiadami zleconymi stan za miesiąc " + strMonthName + " " + DateTime.Parse(Date2.Text).Year.ToString() + " roku. (Obliczenia wg daty wpływu)";
-                    Label2.Text = "stan za miesiąc  " + strMonthName + " " + DateTime.Parse(Date2.Text).Year.ToString() + " roku. ";
+                    Label2.Text = "Obciążenia kuratorów wywiadami zleconymi za miesiąc  " + strMonthName + " " + DateTime.Parse(Date2.Text).Year.ToString() + " roku. (Obliczenia wg daty zamknięcia)";
                     tab1Label.Text = "Obciążenia kuratorów zawodowych wg. standardów. Stan za miesiąc " + strMonthName + " " + DateTime.Parse(Date2.Text).Year.ToString() + " roku. ";
                 }
                 else
                 {
                     tab2Label.Text = "Obciążenia kuratorów wywiadami zleconymi stan  za okres od " + Date1.Date.ToShortDateString() + " do  " + Date2.Date.ToShortDateString()+ " (Obliczenia wg daty wpływu)";
-                    Label2.Text = "stan za okres od" + Date1.Date.ToShortDateString() + " do  " + Date2.Date.ToShortDateString();
+                    Label2.Text = "Obciążenia kuratorów wywiadami zleconymi za okres od" + Date1.Date.ToShortDateString() + " do  " + Date2.Date.ToShortDateString()+ " (Obliczenia wg daty zamknięcia)";
                     tab1Label.Text = "Obciążenia kuratorów zawodowych wg. standardów. Stan za okres od" + Date1.Date.ToShortDateString() + " do  " + Date2.Date.ToShortDateString();
                 }
             }

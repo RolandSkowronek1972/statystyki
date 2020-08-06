@@ -171,11 +171,11 @@
         </div>
 
         <div id="tab1.1.1.a">
+            <asp:PlaceHolder ID="tablePlaceHolder01" runat="server"></asp:PlaceHolder>
             <br />
             <b>Dział 1.1.1.a.</b> w tym: skarga o stwierdzenie niezgodności z prawem (dział 1.1.1. wiersz 23 rubryka 4 lit. a)
           <br />
             <table width="50%">
-                <tr>
                 <tr>
                     <td class="borderTopLeft center" colspan="3">Wyszczególnienie</td>
                     <td class="borderTopLeftRight col_90 center">Liczby spraw</td>

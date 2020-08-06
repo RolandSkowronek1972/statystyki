@@ -9751,42 +9751,6 @@ namespace stat2018 {
         protected global::System.Web.UI.WebControls.Label tab_12_2_w01_c08;
         
         /// <summary>
-        /// tab_12_2_w01_c09 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label tab_12_2_w01_c09;
-        
-        /// <summary>
-        /// tab_12_2_w01_c10 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label tab_12_2_w01_c10;
-        
-        /// <summary>
-        /// tab_12_2_w01_c11 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label tab_12_2_w01_c11;
-        
-        /// <summary>
-        /// tab_12_2_w01_c12 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label tab_12_2_w01_c12;
-        
-        /// <summary>
         /// tab_12_3_w01_c01 control.
         /// </summary>
         /// <remarks>

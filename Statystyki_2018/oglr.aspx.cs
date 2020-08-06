@@ -350,14 +350,15 @@ namespace stat2018
                 // pod tabela z tebeli nr 2
                 // obwodnia
 
-                for (int row2 = rowik; row2 < rowik + 11; row2++)
+           /*     for (int row2 = rowik; row2 < rowik + 11; row2++)
                 {
                     for (int i = 1; i < 25; i++)
                     {
-                        MyWorksheet1.Cells[row2 + 6, i + 2].Style.ShrinkToFit = true;
-                        MyWorksheet1.Cells[row2 + 6, i + 2].Style.Border.BorderAround(OfficeOpenXml.Style.ExcelBorderStyle.Thin, System.Drawing.Color.Black);
+                       
+                       /* MyWorksheet1.Cells[row2 + 6, i + 2].Style.ShrinkToFit = true;
+                        MyWorksheet1.Cells[row2 + 6, i + 2].Style.Border.BorderAround(OfficeOpenXml.Style.ExcelBorderStyle.Thin, System.Drawing.Color.Black);   
                     }
-                }
+                }       */
                 //------------
 
                 MyWorksheet1.Cells[rowik + 6, 3, rowik + 6, 4].Merge = true;
@@ -397,14 +398,16 @@ namespace stat2018
                         {
                             try
                             {
-                                MyWorksheet1.Cells[rowik + 6, i + 3].Value = double.Parse(dR[i - 1].ToString().Trim());
+                                string value = (dR[i - 1].ToString().Trim());
+                                tabela.komorkaExcela(MyExcel.Workbook.Worksheets[1], rowik + 6, i + 3, value, false, 0, 0);
+                               // MyWorksheet1.Cells[rowik + 6, i + 3].Value = double.Parse(dR[i - 1].ToString().Trim());
                             }
                             catch
                             {
-                                MyWorksheet1.Cells[rowik + 6, i + 3].Value = dR[i - 1].ToString().Trim();
+                             //   MyWorksheet1.Cells[rowik + 6, i + 3].Value = dR[i - 1].ToString().Trim();
                             }
-                            MyWorksheet1.Cells[rowik + 6, i + 3].Style.ShrinkToFit = true;
-                            MyWorksheet1.Cells[rowik + 6, i + 3].Style.Border.BorderAround(OfficeOpenXml.Style.ExcelBorderStyle.Thin, System.Drawing.Color.Black);
+                         //   MyWorksheet1.Cells[rowik + 6, i + 3].Style.ShrinkToFit = true;
+                          //  MyWorksheet1.Cells[rowik + 6, i + 3].Style.Border.BorderAround(OfficeOpenXml.Style.ExcelBorderStyle.Thin, System.Drawing.Color.Black);
                         }
                         rowik++;
                         j++;

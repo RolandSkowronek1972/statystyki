@@ -78,7 +78,7 @@ namespace stat2018
                 //wypełnianie lebeli
 
                 string path = Server.MapPath("XMLHeaders") + "\\" + "MSS5r.xml";
-                string[] numeryTabel00 = new string[] { "1.1.1", "1.1.1.2" };
+                string[] numeryTabel00 = new string[] { "1.1.1", "1.1.1.a" };
                 string[] numeryTabel01 = new string[] { "1.1.i", "1.1.j" };
                 string[] numeryTabel02 = new string[] { "1.1.p" };
                 string[] numeryTabel03 = new string[] { "1.2.2" };

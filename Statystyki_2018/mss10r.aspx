@@ -356,522 +356,11 @@ razem </td>
              <br />
               <br />
              </div>
+        
+            
 
-        <div class="page-break">
 
-           <strong>
-           <br />
-           Dział 2.2. </strong>Wykonywanie środków karnych, środków kompensacyjnych, obowiązków oraz przepadku w okresie warunkowego umorzenia postępowania<br />
-              <br />
-&nbsp;
-                 <table cellpadding="0" cellspacing="0" style="width:100%;">
-                  <tr>
-                      <td align="center" class="borderTopLeft" colspan="4">Środki karne, obowiązki orzeczone przy warunkowym umorzeniu postępowania (sprawy z wykazu Wu)</td>
-                      <td class="borderTopLeft col_100">Wpływ (w okresie sprawozdawczym)</td>
-                      <td class="borderTopLeftRight col_100">Wykonywane (stan w ostatnim dniu okresu sprawozdawczego) </td>
-                  </tr>
-                  <tr>
-                      <td align="center" class="borderTopLeft" colspan="4">0</td>
-                      <td class="borderTopLeft col_100">1</td>
-                      <td class="borderTopLeftRight col_100">2</td>
-                  </tr>
-                  <tr>
-                      <td class="borderTopLeft wciecie" colspan="3">Ogółem liczba środków karnych (w.01 = w.02 do 04)</td>
-                      <td class="borderTopLeft col_36">01</td>
-                      <td class="borderTopLeft col_100"><a href="javascript:openPopup('popup.aspx?sesja=1!2.2!1!4')">  <asp:Label CssClass="normal" ID="tab_22_w01_c01" runat="server" Text="0"></asp:Label>  </a></td>
-                      <td class="borderTopLeftRight col_100"><a href="javascript:openPopup('popup.aspx?sesja=1!2.2!2!4')">  <asp:Label CssClass="normal" ID="tab_22_w01_c02" runat="server" Text="0"></asp:Label>  </a></td>
-                  </tr>
-                  <tr>
-                      <td class="borderTopLeft wciecie col_70" rowspan="3">Orzeczone środki karne w art.</td>
-                      <td class="borderTopLeft wciecie">39 pkt 3 kk </td>
-                      <td class="borderTopLeft wciecie">zakaz prowadzenia pojazdów </td>
-                      <td class="borderTopLeft col_36">02</td>
-                      <td class="borderTopLeft col_100"><a href="javascript:openPopup('popup.aspx?sesja=2!2.2!1!4')">  <asp:Label CssClass="normal" ID="tab_22_w02_c01" runat="server" Text="0"></asp:Label>  </a></td>
-                      <td class="borderTopLeftRight col_100"><a href="javascript:openPopup('popup.aspx?sesja=2!2.2!2!4')">  <asp:Label CssClass="normal" ID="tab_22_w02_c02" runat="server" Text="0"></asp:Label>  </a></td>
-                  </tr>
-                  <tr>
-                      <td class="borderTopLeft wciecie">39 pkt 6 kk </td>
-                      <td class="borderTopLeft wciecie">nawiązka </td>
-                      <td class="borderTopLeft col_36">03</td>
-                     <td class="borderTopLeft col_100"><a href="javascript:openPopup('popup.aspx?sesja=3!2.2!1!4')">  <asp:Label CssClass="normal" ID="tab_22_w03_c01" runat="server" Text="0"></asp:Label>  </a></td>
-                      <td class="borderTopLeftRight col_100"><a href="javascript:openPopup('popup.aspx?sesja=3!2.2!2!4')">  <asp:Label CssClass="normal" ID="tab_22_w03_c02" runat="server" Text="0"></asp:Label>  </a></td>
-                  </tr>
-                  <tr>
-                      <td class="borderTopLeft wciecie">39 pkt 7 kk </td>
-                      <td class="borderTopLeft wciecie">świadczenie pieniężne </td>
-                      <td class="borderTopLeft col_36">04</td>
-                     <td class="borderTopLeft col_100"><a href="javascript:openPopup('popup.aspx?sesja=4!2.2!1!4')">  <asp:Label CssClass="normal" ID="tab_22_w04_c01" runat="server" Text="0"></asp:Label>  </a></td>
-                      <td class="borderTopLeftRight col_100"><a href="javascript:openPopup('popup.aspx?sesja=4!2.2!2!4')">  <asp:Label CssClass="normal" ID="tab_22_w04_c02" runat="server" Text="0"></asp:Label>  </a></td>
-                  </tr>
-                  <tr>
-                      <td class="borderTopLeft wciecie" colspan="3">Ogółem liczba obowiązków (w.05 = w.06 do 12+16 do19+22 do 24) </td>
-                      <td class="borderTopLeft col_36">05</td>
-                     <td class="borderTopLeft col_100"><a href="javascript:openPopup('popup.aspx?sesja=5!2.2!1!4')">  <asp:Label CssClass="normal" ID="tab_22_w05_c01" runat="server" Text="0"></asp:Label>  </a></td>
-                      <td class="borderTopLeftRight col_100"><a href="javascript:openPopup('popup.aspx?sesja=5!2.2!2!4')">  <asp:Label CssClass="normal" ID="tab_22_w05_c02" runat="server" Text="0"></asp:Label>  </a></td>
-                  </tr>
-                  <tr>
-                      <td class="borderTopLeftBottom  wciecie col_68" rowspan="19">Orzeczone obowiązki w art.</td>
-                      <td class="borderTopLeft wciecie" rowspan="2">67 § 3 kk</td>
-                      <td class="borderTopLeft wciecie">naprawienie szkody lub zadośćuczynienie</td>
-                      <td class="borderTopLeft col_36">06</td>
-                     <td class="borderTopLeft col_100"><a href="javascript:openPopup('popup.aspx?sesja=6!2.2!1!4')">  <asp:Label CssClass="normal" ID="tab_22_w06_c01" runat="server" Text="0"></asp:Label>  </a></td>
-                      <td class="borderTopLeftRight col_100"><a href="javascript:openPopup('popup.aspx?sesja=6!2.2!2!4')">  <asp:Label CssClass="normal" ID="tab_22_w06_c02" runat="server" Text="0"></asp:Label>  </a></td>
-                  </tr>
-                  <tr>
-                      <td class="borderTopLeft wciecie">nawiązka</td>
-                      <td class="borderTopLeft col_36">07</td>
-                     <td class="borderTopLeft col_100"><a href="javascript:openPopup('popup.aspx?sesja=7!2.2!1!4')">  <asp:Label CssClass="normal" ID="tab_22_w07_c01" runat="server" Text="0"></asp:Label>  </a></td>
-                      <td class="borderTopLeftRight col_100"><a href="javascript:openPopup('popup.aspx?sesja=7!2.2!2!4')">  <asp:Label CssClass="normal" ID="tab_22_w07_c02" runat="server" Text="0"></asp:Label>  </a></td>
-                  </tr>
-                  <tr>
-                      <td class="borderTopLeft wciecie">72 § 1 pkt 1 kk </td>
-                      <td class="borderTopLeft wciecie">informowania sądu lub kuratora o przebiegu okresu próby </td>
-                      <td class="borderTopLeft col_36">08</td>
-                     <td class="borderTopLeft col_100"><a href="javascript:openPopup('popup.aspx?sesja=8!2.2!1!4')">  <asp:Label CssClass="normal" ID="tab_22_w08_c01" runat="server" Text="0"></asp:Label>  </a></td>
-                      <td class="borderTopLeftRight col_100"><a href="javascript:openPopup('popup.aspx?sesja=8!2.2!2!4')">  <asp:Label CssClass="normal" ID="tab_22_w08_c02" runat="server" Text="0"></asp:Label>  </a></td>
-                  </tr>
-                  <tr>
-                      <td class="borderTopLeft wciecie">72 § 1 pkt 2 kk </td>
-                      <td class="borderTopLeft wciecie">przeproszenia pokrzywdzonego </td>
-                      <td class="borderTopLeft col_36">09</td>
-                     <td class="borderTopLeft col_100"><a href="javascript:openPopup('popup.aspx?sesja=9!2.2!1!4')">  <asp:Label CssClass="normal" ID="tab_22_w09_c01" runat="server" Text="0"></asp:Label>  </a></td>
-                      <td class="borderTopLeftRight col_100"><a href="javascript:openPopup('popup.aspx?sesja=9!2.2!2!4')">  <asp:Label CssClass="normal" ID="tab_22_w09_c02" runat="server" Text="0"></asp:Label>  </a></td>
-                  </tr>
-                  <tr>
-                      <td class="borderTopLeft wciecie">72 § 1 pkt 3 kk </td>
-                      <td class="borderTopLeft wciecie">wykonywania ciążącego na nim obowiązku łożenia na utrzymanie innej osoby </td>
-                      <td class="borderTopLeft col_36">10</td>
-                     <td class="borderTopLeft col_100"><a href="javascript:openPopup('popup.aspx?sesja=10!2.2!1!4')">  <asp:Label CssClass="normal" ID="tab_22_w10_c01" runat="server" Text="0"></asp:Label>  </a></td>
-                      <td class="borderTopLeftRight col_100"><a href="javascript:openPopup('popup.aspx?sesja=10!2.2!2!4')">  <asp:Label CssClass="normal" ID="tab_22_w10_c02" runat="server" Text="0"></asp:Label>  </a></td>
-                  </tr>
-                  <tr>
-                      <td class="borderTopLeft wciecie">72 § 1 pkt 5 kk </td>
-                      <td class="borderTopLeft wciecie">powstrzymania się od nadużywania alkoholu lub używania innych środków odurzających </td>
-                      <td class="borderTopLeft col_36">11</td>
-                     <td class="borderTopLeft col_100"><a href="javascript:openPopup('popup.aspx?sesja=11!2.2!1!4')">  <asp:Label CssClass="normal" ID="tab_22_w11_c01" runat="server" Text="0"></asp:Label>  </a></td>
-                      <td class="borderTopLeftRight col_100"><a href="javascript:openPopup('popup.aspx?sesja=11!2.2!2!4')">  <asp:Label CssClass="normal" ID="tab_22_w11_c02" runat="server" Text="0"></asp:Label>  </a></td>
-                  </tr>
-                  <tr>
-                      <td class="borderTopLeft wciecie" rowspan="4">72 § 1 pkt 6 kk </td>
-                      <td class="borderTopLeft wciecie">ogółem (w.12 = 13 do 15) </td>
-                      <td class="borderTopLeft col_36">12</td>
-                     <td class="borderTopLeft col_100"><a href="javascript:openPopup('popup.aspx?sesja=12!2.2!1!4')">  <asp:Label CssClass="normal" ID="tab_22_w12_c01" runat="server" Text="0"></asp:Label>  </a></td>
-                      <td class="borderTopLeftRight col_100"><a href="javascript:openPopup('popup.aspx?sesja=12!2.2!2!4')">  <asp:Label CssClass="normal" ID="tab_22_w12_c02" runat="server" Text="0"></asp:Label>  </a></td>
-                  </tr>
-                  <tr>
-                      <td class="borderTopLeft wciecie">leczenie odwykowe (terapia uzależnień)– alkohol </td>
-                      <td class="borderTopLeft col_36">13</td>
-                     <td class="borderTopLeft col_100"><a href="javascript:openPopup('popup.aspx?sesja=13!2.2!1!4')">  <asp:Label CssClass="normal" ID="tab_22_w13_c01" runat="server" Text="0"></asp:Label>  </a></td>
-                      <td class="borderTopLeftRight col_100"><a href="javascript:openPopup('popup.aspx?sesja=13!2.2!2!4')">  <asp:Label CssClass="normal" ID="tab_22_w13_c02" runat="server" Text="0"></asp:Label>  </a></td>
-                  </tr>
-                  <tr>
-                      <td class="borderTopLeft wciecie">leczenie odwykowe (terapia uzależnień) – środki odurzające </td>
-                      <td class="borderTopLeft col_36">14</td>
-                     <td class="borderTopLeft col_100"><a href="javascript:openPopup('popup.aspx?sesja=14!2.2!1!4')">  <asp:Label CssClass="normal" ID="tab_22_w14_c01" runat="server" Text="0"></asp:Label>  </a></td>
-                      <td class="borderTopLeftRight col_100"><a href="javascript:openPopup('popup.aspx?sesja=14!2.2!2!4')">  <asp:Label CssClass="normal" ID="tab_22_w14_c02" runat="server" Text="0"></asp:Label>  </a></td>
-                  </tr>
-                  <tr>
-                      <td class="borderTopLeft wciecie">leczenie rehabilitacyjne, oddziaływania terapeutyczne </td>
-                      <td class="borderTopLeft col_36">15</td>
-                     <td class="borderTopLeft col_100"><a href="javascript:openPopup('popup.aspx?sesja=15!2.2!1!4')">  <asp:Label CssClass="normal" ID="tab_22_w15_c01" runat="server" Text="0"></asp:Label>  </a></td>
-                      <td class="borderTopLeftRight col_100"><a href="javascript:openPopup('popup.aspx?sesja=15!2.2!2!4')">  <asp:Label CssClass="normal" ID="tab_22_w15_c02" runat="server" Text="0"></asp:Label>  </a></td>
-                  </tr>
-                  <tr>
-                      <td class="borderTopLeft wciecie" rowspan="2">72 § 1 pkt 6a kk</td>
-                      <td class="borderTopLeft wciecie">uczestnictwo w oddziaływaniach korekcyjno-edukacyjnych </td>
-                      <td class="borderTopLeft col_36">16</td>
-                     <td class="borderTopLeft col_100"><a href="javascript:openPopup('popup.aspx?sesja=16!2.2!1!4')">  <asp:Label CssClass="normal" ID="tab_22_w16_c01" runat="server" Text="0"></asp:Label>  </a></td>
-                      <td class="borderTopLeftRight col_100"><a href="javascript:openPopup('popup.aspx?sesja=16!2.2!2!4')">  <asp:Label CssClass="normal" ID="tab_22_w16_c02" runat="server" Text="0"></asp:Label>  </a></td>
-                  </tr>
-                  <tr>
-                      <td class="borderTopLeft wciecie">terapia </td>
-                      <td class="borderTopLeft col_36">17</td>
-                     <td class="borderTopLeft col_100"><a href="javascript:openPopup('popup.aspx?sesja=17!2.2!1!4')">  <asp:Label CssClass="normal" ID="tab_22_w17_c01" runat="server" Text="0"></asp:Label>  </a></td>
-                      <td class="borderTopLeftRight col_100"><a href="javascript:openPopup('popup.aspx?sesja=17!2.2!2!4')">  <asp:Label CssClass="normal" ID="tab_22_w17_c02" runat="server" Text="0"></asp:Label>  </a></td>
-                  </tr>
-                  <tr>
-                      <td class="borderTopLeft wciecie">72 § 1 pkt 6b kk</td>
-                      <td class="borderTopLeft wciecie">uczestnictwa w oddziaływaniach korekcyjno-edukacyjnych</td>
-                      <td class="borderTopLeft col_36">18</td>
-                     <td class="borderTopLeft col_100"><a href="javascript:openPopup('popup.aspx?sesja=18!2.2!1!4')">  <asp:Label CssClass="normal" ID="tab_22_w18_c01" runat="server" Text="0"></asp:Label>  </a></td>
-                      <td class="borderTopLeftRight col_100"><a href="javascript:openPopup('popup.aspx?sesja=18!2.2!2!4')">  <asp:Label CssClass="normal" ID="tab_22_w18_c02" runat="server" Text="0"></asp:Label>  </a></td>
-                  </tr>
-                  <tr>
-                      <td class="borderTopLeft wciecie" rowspan="3">72 § 1 pkt 7a kk</td>
-                      <td class="borderTopLeft wciecie">ogółem (w.19 = 20+21) </td>
-                      <td class="borderTopLeft col_36">19</td>
-                     <td class="borderTopLeft col_100"><a href="javascript:openPopup('popup.aspx?sesja=19!2.2!1!4')">  <asp:Label CssClass="normal" ID="tab_22_w19_c01" runat="server" Text="0"></asp:Label>  </a></td>
-                      <td class="borderTopLeftRight col_100"><a href="javascript:openPopup('popup.aspx?sesja=19!2.2!2!4')">  <asp:Label CssClass="normal" ID="tab_22_w19_c02" runat="server" Text="0"></asp:Label>  </a></td>
-                  </tr>
-                  <tr>
-                      <td class="borderTopLeft wciecie">powstrzymania się od kontaktowania się z pokrzywdzonym lub innymi osobami w określony sposób </td>
-                      <td class="borderTopLeft col_36">20</td>
-                     <td class="borderTopLeft col_100"><a href="javascript:openPopup('popup.aspx?sesja=22!2.2!1!4')">  <asp:Label CssClass="normal" ID="tab_22_w20_c01" runat="server" Text="0"></asp:Label>  </a></td>
-                      <td class="borderTopLeftRight col_100"><a href="javascript:openPopup('popup.aspx?sesja=22!2.2!2!4')">  <asp:Label CssClass="normal" ID="tab_22_w20_c02" runat="server" Text="0"></asp:Label>  </a></td>
-                  </tr>
-                  <tr>
-                      <td class="borderTopLeft wciecie">powstrzymywania się od zbliżania się do pokrzywdzonego lub innych osób </td>
-                      <td class="borderTopLeft col_36">21</td>
-                     <td class="borderTopLeft col_100"><a href="javascript:openPopup('popup.aspx?sesja=21!2.2!1!4')">  <asp:Label CssClass="normal" ID="tab_22_w21_c01" runat="server" Text="0"></asp:Label>  </a></td>
-                      <td class="borderTopLeftRight col_100"><a href="javascript:openPopup('popup.aspx?sesja=21!2.2!2!4')">  <asp:Label CssClass="normal" ID="tab_22_w21_c02" runat="server" Text="0"></asp:Label>  </a></td>
-                  </tr>
-                  <tr>
-                      <td class="borderTopLeft wciecie">72 § 1 pkt 7b kk</td>
-                      <td class="borderTopLeft wciecie">opuszczenia lokalu zajmowanego wspólnie z pokrzywdzonym </td>
-                      <td class="borderTopLeft col_36">22</td>
-                     <td class="borderTopLeft col_100"><a href="javascript:openPopup('popup.aspx?sesja=22!2.2!1!4')">  <asp:Label CssClass="normal" ID="tab_22_w22_c01" runat="server" Text="0"></asp:Label>  </a></td>
-                      <td class="borderTopLeftRight col_100"><a href="javascript:openPopup('popup.aspx?sesja=22!2.2!2!4')">  <asp:Label CssClass="normal" ID="tab_22_w22_c02" runat="server" Text="0"></asp:Label>  </a></td>
-                  </tr>
-                  <tr>
-                      <td class="borderTopLeft wciecie">45a kk</td>
-                      <td class="borderTopLeft wciecie">przepadek</td>
-                      <td class="borderTopLeft col_36">23</td>
-                     <td class="borderTopLeft col_100"><a href="javascript:openPopup('popup.aspx?sesja=23!2.2!1!4')">  <asp:Label CssClass="normal" ID="tab_22_w23_c01" runat="server" Text="0"></asp:Label>  </a></td>
-                      <td class="borderTopLeftRight col_100"><a href="javascript:openPopup('popup.aspx?sesja=23!2.2!2!4')">  <asp:Label CssClass="normal" ID="tab_22_w23_c02" runat="server" Text="0"></asp:Label>  </a></td>
-                  </tr>
-                  <tr>
-                      <td class="borderTopLeftBottom wciecie" colspan="2">z innych ustaw</td>
-                      <td class="borderTopLeftBottom col_36">24</td>
-                      <td class="borderTopLeftBottom col_100"><a href="javascript:openPopup('popup.aspx?sesja=24!2.2!1!4')">  <asp:Label CssClass="normal" ID="tab_22_w24_c01" runat="server" Text="0"></asp:Label>  </a></td>
-                      <td class="borderAll col_100"><a href="javascript:openPopup('popup.aspx?sesja=24!2.2!2!4')">  <asp:Label CssClass="normal" ID="tab_22_w24_c02" runat="server" Text="0"></asp:Label>  </a></td>
-                  </tr>
-              </table>
-		     <br />
-		      <br />
-              </div>
-
-        <div class="page-break">
-
-           <strong>
-           <br />
-           Dział 2.3. </strong>Dozór w okresie warunkowego umorzenia postępowania
-		      <br />
-		      <br />
-
-		<table cellpadding="0" cellspacing="0" style="width:100%;">
-                 <tr>
-                     <td align="center" class="borderTopLeft" colspan="4" rowspan="2">Orzeczone dozory przy warunkowym umorzeniu postępowania (wykaz D)</td>
-                     <td align="center" class="borderTopLeft" rowspan="2">Sprawy (= k. 02+03)</td>
-                     <td align="center" class="borderTopLeft" colspan="2">z tego dozory sprawowane przez </td>
-                     <td align="center" class="borderTopLeftRight" rowspan="2">Osoby</td>
-                 </tr>
-                 <tr>
-                     <td align="center" class="borderTopLeft">kuratorów</td>
-                     <td align="center" class="borderTopLeft">Inne podmioty</td>
-                 </tr>
-                 <tr>
-                     <td align="center" class="borderTopLeft" colspan="4">0</td>
-                     <td align="center" class="borderTopLeft col_100">1</td>
-                     <td align="center" class="borderTopLeft col_100">2</td>
-                     <td align="center" class="borderTopLeft col_100">3</td>
-                     <td align="center" class="borderTopLeftRight col_100">4</td>
-                 </tr>
-                 <tr>
-                     <td class="borderTopLeft wciecie" colspan="3">Wpływ (w.01=03+04=05+06)</td>
-                     <td class="borderTopLeft col_36">01</td>
-                     <td class="borderTopLeft col_100"><a href="javascript:openPopup('popup.aspx?sesja=1!2.3!1!4')">  <asp:Label CssClass="normal" ID="tab_23_w01_c01" runat="server" Text="0"></asp:Label>  </a></td>
-                     <td class="borderTopLeft col_100"><a href="javascript:openPopup('popup.aspx?sesja=1!2.3!2!4')">  <asp:Label CssClass="normal" ID="tab_23_w01_c02" runat="server" Text="0"></asp:Label>  </a></td>
-                     <td class="borderTopLeft col_100"><a href="javascript:openPopup('popup.aspx?sesja=1!2.3!3!4')">  <asp:Label CssClass="normal" ID="tab_23_w01_c03" runat="server" Text="0"></asp:Label>  </a></td>
-                     <td class="borderTopLeftRight col_100"><a href="javascript:openPopup('popup.aspx?sesja=1!2.3!4!4')">  <asp:Label CssClass="normal" ID="tab_23_w01_c04" runat="server" Text="0"></asp:Label>  </a></td>
-                 </tr>
-                 <tr>
-                     <td class="borderTopLeft wciecie" colspan="3">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; w tym przekazane z innych sądów </td>
-                     <td class="borderTopLeft col_36">02</td>
-                     <td class="borderTopLeft col_100"><a href="javascript:openPopup('popup.aspx?sesja=2!2.3!1!4')">  <asp:Label CssClass="normal" ID="tab_23_w02_c01" runat="server" Text="0"></asp:Label>  </a></td>
-                     <td class="borderTopLeft col_100"><a href="javascript:openPopup('popup.aspx?sesja=2!2.3!2!4')">  <asp:Label CssClass="normal" ID="tab_23_w02_c02" runat="server" Text="0"></asp:Label>  </a></td>
-                     <td class="borderTopLeft col_100"><a href="javascript:openPopup('popup.aspx?sesja=2!2.3!3!4')">  <asp:Label CssClass="normal" ID="tab_23_w02_c03" runat="server" Text="0"></asp:Label>  </a></td>
-                     <td class="borderTopLeftRight col_100"><a href="javascript:openPopup('popup.aspx?sesja=2!2.3!4!4')">  <asp:Label CssClass="normal" ID="tab_23_w02_c04" runat="server" Text="0"></asp:Label>  </a></td>
-                 </tr>
-                 <tr>
-                     <td class="borderTopLeft wciecie col_68" rowspan="2">Z tego dozory orzeczono (z w.01)</td>
-                     <td class="borderTopLeft wciecie" colspan="2">w wyroku </td>
-                     <td class="borderTopLeft col_36">03</td>
-                     <td class="borderTopLeft col_100"><a href="javascript:openPopup('popup.aspx?sesja=3!2.3!1!4')">  <asp:Label CssClass="normal" ID="tab_23_w03_c01" runat="server" Text="0"></asp:Label>  </a></td>
-                     <td class="borderTopLeft col_100"><a href="javascript:openPopup('popup.aspx?sesja=3!2.3!2!4')">  <asp:Label CssClass="normal" ID="tab_23_w03_c02" runat="server" Text="0"></asp:Label>  </a></td>
-                     <td class="borderTopLeft col_100"><a href="javascript:openPopup('popup.aspx?sesja=3!2.3!3!4')">  <asp:Label CssClass="normal" ID="tab_23_w03_c03" runat="server" Text="0"></asp:Label>  </a></td>
-                     <td class="borderTopLeftRight col_100"><a href="javascript:openPopup('popup.aspx?sesja=3!2.3!4!4')">  <asp:Label CssClass="normal" ID="tab_23_w03_c04" runat="server" Text="0"></asp:Label>  </a></td>
-                 </tr>
-                 <tr>
-                     <td class="borderTopLeft wciecie" colspan="2">w okresie próby (art. 67 § 4 kk w zw. z art. 74 § 2 kk) </td>
-                     <td class="borderTopLeft col_36">04</td>
-                     <td class="borderTopLeft col_100"><a href="javascript:openPopup('popup.aspx?sesja=4!2.3!1!4')">  <asp:Label CssClass="normal" ID="tab_23_w04_c01" runat="server" Text="0"></asp:Label>  </a></td>
-                     <td class="borderTopLeft col_100"><a href="javascript:openPopup('popup.aspx?sesja=4!2.3!2!4')">  <asp:Label CssClass="normal" ID="tab_23_w04_c02" runat="server" Text="0"></asp:Label>  </a></td>
-                     <td class="borderTopLeft col_100"><a href="javascript:openPopup('popup.aspx?sesja=4!2.3!3!4')">  <asp:Label CssClass="normal" ID="tab_23_w04_c03" runat="server" Text="0"></asp:Label>  </a></td>
-                     <td class="borderTopLeftRight col_100"><a href="javascript:openPopup('popup.aspx?sesja=4!2.3!4!4')">  <asp:Label CssClass="normal" ID="tab_23_w04_c04" runat="server" Text="0"></asp:Label>  </a></td>
-                 </tr>
-                 <tr>
-                     <td class="borderTopLeft wciecie col_68" rowspan="2"><a href="javascript:openPopup('popup.aspx?sesja=1!2.3!1!4')"></a>Z tego dozory orzeczono (z w.01)</td>
-                     <td class="borderTopLeft wciecie" colspan="2">z orzeczonymi obowiązkami probacyjnymi </td>
-                     <td class="borderTopLeft col_36">05</td>
-                     <td class="borderTopLeft col_100"><a href="javascript:openPopup('popup.aspx?sesja=5!2.3!1!4')">  <asp:Label CssClass="normal" ID="tab_23_w05_c01" runat="server" Text="0"></asp:Label>  </a></td>
-                     <td class="borderTopLeft col_100"><a href="javascript:openPopup('popup.aspx?sesja=5!2.3!2!4')">  <asp:Label CssClass="normal" ID="tab_23_w05_c02" runat="server" Text="0"></asp:Label>  </a></td>
-                     <td class="borderTopLeft col_100"><a href="javascript:openPopup('popup.aspx?sesja=5!2.3!3!4')">  <asp:Label CssClass="normal" ID="tab_23_w05_c03" runat="server" Text="0"></asp:Label>  </a></td>
-                     <td class="borderTopLeftRight col_100"><a href="javascript:openPopup('popup.aspx?sesja=5!2.3!4!4')">  <asp:Label CssClass="normal" ID="tab_23_w05_c04" runat="server" Text="0"></asp:Label>  </a></td>
-                 </tr>
-                 <tr>
-                     <td class="borderTopLeft wciecie" colspan="2">bez obowiązków probacyjnych </td>
-                     <td class="borderTopLeft col_36">06</td>
-                     <td class="borderTopLeft col_100"><a href="javascript:openPopup('popup.aspx?sesja=6!2.3!1!4')">  <asp:Label CssClass="normal" ID="tab_23_w06_c01" runat="server" Text="0"></asp:Label>  </a></td>
-                     <td class="borderTopLeft col_100"><a href="javascript:openPopup('popup.aspx?sesja=6!2.3!2!4')">  <asp:Label CssClass="normal" ID="tab_23_w06_c02" runat="server" Text="0"></asp:Label>  </a></td>
-                     <td class="borderTopLeft col_100"><a href="javascript:openPopup('popup.aspx?sesja=6!2.3!3!4')">  <asp:Label CssClass="normal" ID="tab_23_w06_c03" runat="server" Text="0"></asp:Label>  </a></td>
-                     <td class="borderTopLeftRight col_100"><a href="javascript:openPopup('popup.aspx?sesja=6!2.3!4!4')">  <asp:Label CssClass="normal" ID="tab_23_w06_c04" runat="server" Text="0"></asp:Label>  </a></td>
-                 </tr>
-                 <tr>
-                     <td class="borderTopLeft wciecie" colspan="3">Zakończono (w okresie sprawozdawczym) (w. 07 = w. 08) </td>
-                     <td class="borderTopLeft col_36">07</td>
-                     <td class="borderTopLeft col_100"><a href="javascript:openPopup('popup.aspx?sesja=7!2.3!1!4')">  <asp:Label CssClass="normal" ID="tab_23_w07_c01" runat="server" Text="0"></asp:Label>  </a></td>
-                     <td class="borderTopLeft col_100"><a href="javascript:openPopup('popup.aspx?sesja=7!2.3!2!4')">  <asp:Label CssClass="normal" ID="tab_23_w07_c02" runat="server" Text="0"></asp:Label>  </a></td>
-                     <td class="borderTopLeft col_100"><a href="javascript:openPopup('popup.aspx?sesja=7!2.3!3!4')">  <asp:Label CssClass="normal" ID="tab_23_w07_c03" runat="server" Text="0"></asp:Label>  </a></td>
-                     <td class="borderTopLeftRight col_100"><a href="javascript:openPopup('popup.aspx?sesja=7!2.3!4!4')">  <asp:Label CssClass="normal" ID="tab_23_w07_c04" runat="server" Text="0"></asp:Label>  </a></td>
-                 </tr>
-                 <tr>
-                     <td class="borderTopLeft wciecie" colspan="3">Przyczyny zakończenia dozorów - razem (w.08 = w.09 do 12+21) </td>
-                     <td class="borderTopLeft col_36">08</td>
-                     <td class="borderTopLeft col_100"><a href="javascript:openPopup('popup.aspx?sesja=8!2.3!1!4')">  <asp:Label CssClass="normal" ID="tab_23_w08_c01" runat="server" Text="0"></asp:Label>  </a></td>
-                     <td class="borderTopLeft col_100"><a href="javascript:openPopup('popup.aspx?sesja=8!2.3!2!4')">  <asp:Label CssClass="normal" ID="tab_23_w08_c02" runat="server" Text="0"></asp:Label>  </a></td>
-                     <td class="borderTopLeft col_100"><a href="javascript:openPopup('popup.aspx?sesja=8!2.3!3!4')">  <asp:Label CssClass="normal" ID="tab_23_w08_c03" runat="server" Text="0"></asp:Label>  </a></td>
-                     <td class="borderTopLeftRight col_100"><a href="javascript:openPopup('popup.aspx?sesja=8!2.3!4!4')">  <asp:Label CssClass="normal" ID="tab_23_w08_c04" runat="server" Text="0"></asp:Label>  </a></td>
-                 </tr>
-                 <tr>
-                     <td class="borderTopLeft wciecie" rowspan="13">na skutek</td>
-                     <td class="borderTopLeft wciecie" colspan="2">upływu okresu próby </td>
-                     <td class="borderTopLeft col_36">09</td>
-                     <td class="borderTopLeft col_100"><a href="javascript:openPopup('popup.aspx?sesja=9!2.3!1!4')">  <asp:Label CssClass="normal" ID="tab_23_w09_c01" runat="server" Text="0"></asp:Label>  </a></td>
-                     <td class="borderTopLeft col_100"><a href="javascript:openPopup('popup.aspx?sesja=9!2.3!2!4')">  <asp:Label CssClass="normal" ID="tab_23_w09_c02" runat="server" Text="0"></asp:Label>  </a></td>
-                     <td class="borderTopLeft col_100"><a href="javascript:openPopup('popup.aspx?sesja=9!2.3!3!4')">  <asp:Label CssClass="normal" ID="tab_23_w09_c03" runat="server" Text="0"></asp:Label>  </a></td>
-                     <td class="borderTopLeftRight col_100"><a href="javascript:openPopup('popup.aspx?sesja=9!2.3!4!4')">  <asp:Label CssClass="normal" ID="tab_23_w09_c04" runat="server" Text="0"></asp:Label>  </a></td>
-                 </tr>
-                 <tr>
-                     <td class="borderTopLeft wciecie" colspan="2">zwolnienia od dozoru (art. 67 § 4 kk w zw. 74 § 2 kk) </td>
-                     <td class="borderTopLeft col_36">10</td>
-                     <td class="borderTopLeft col_100"><a href="javascript:openPopup('popup.aspx?sesja=10!2.3!1!4')">  <asp:Label CssClass="normal" ID="tab_23_w10_c01" runat="server" Text="0"></asp:Label>  </a></td>
-                     <td class="borderTopLeft col_100"><a href="javascript:openPopup('popup.aspx?sesja=10!2.3!2!4')">  <asp:Label CssClass="normal" ID="tab_23_w10_c02" runat="server" Text="0"></asp:Label>  </a></td>
-                     <td class="borderTopLeft col_100"><a href="javascript:openPopup('popup.aspx?sesja=10!2.3!3!4')">  <asp:Label CssClass="normal" ID="tab_23_w10_c03" runat="server" Text="0"></asp:Label>  </a></td>
-                     <td class="borderTopLeftRight col_100"><a href="javascript:openPopup('popup.aspx?sesja=10!2.3!4!4')">  <asp:Label CssClass="normal" ID="tab_23_w10_c04" runat="server" Text="0"></asp:Label>  </a></td>
-                 </tr>
-                 <tr>
-                     <td class="borderTopLeft wciecie" colspan="2">przekazania innym sądom </td>
-                     <td class="borderTopLeft col_36">11</td>
-                     <td class="borderTopLeft col_100"><a href="javascript:openPopup('popup.aspx?sesja=11!2.3!1!4')">  <asp:Label CssClass="normal" ID="tab_23_w11_c01" runat="server" Text="0"></asp:Label>  </a></td>
-                     <td class="borderTopLeft col_100"><a href="javascript:openPopup('popup.aspx?sesja=11!2.3!2!4')">  <asp:Label CssClass="normal" ID="tab_23_w11_c02" runat="server" Text="0"></asp:Label>  </a></td>
-                     <td class="borderTopLeft col_100"><a href="javascript:openPopup('popup.aspx?sesja=11!2.3!3!4')">  <asp:Label CssClass="normal" ID="tab_23_w11_c03" runat="server" Text="0"></asp:Label>  </a></td>
-                     <td class="borderTopLeftRight col_100"><a href="javascript:openPopup('popup.aspx?sesja=11!2.3!4!4')">  <asp:Label CssClass="normal" ID="tab_23_w11_c04" runat="server" Text="0"></asp:Label>  </a></td>
-                 </tr>
-                 <tr>
-                     <td class="borderTopLeft wciecie" colspan="2">podjęcia warunkowo umorzonego postępowania - ogółem (w.12&lt;=w.14) </td>
-                     <td class="borderTopLeft col_36">12</td>
-                     <td class="borderTopLeft col_100"><a href="javascript:openPopup('popup.aspx?sesja=12!2.3!1!4')">  <asp:Label CssClass="normal" ID="tab_23_w12_c01" runat="server" Text="0"></asp:Label>  </a></td>
-                     <td class="borderTopLeft col_100"><a href="javascript:openPopup('popup.aspx?sesja=12!2.3!2!4')">  <asp:Label CssClass="normal" ID="tab_23_w12_c02" runat="server" Text="0"></asp:Label>  </a></td>
-                     <td class="borderTopLeft col_100"><a href="javascript:openPopup('popup.aspx?sesja=12!2.3!3!4')">  <asp:Label CssClass="normal" ID="tab_23_w12_c03" runat="server" Text="0"></asp:Label>  </a></td>
-                     <td class="borderTopLeftRight col_100"><a href="javascript:openPopup('popup.aspx?sesja=12!2.3!4!4')">  <asp:Label CssClass="normal" ID="tab_23_w12_c04" runat="server" Text="0"></asp:Label>  </a></td>
-                 </tr>
-                 <tr>
-                     <td class="borderTopLeft wciecie" colspan="2">z w.12 po pisemnym upomnieniu sądowego kuratora zawodowego (art.&nbsp;68 § 2a kk) </td>
-                     <td class="borderTopLeft col_36">13</td>
-                     <td class="borderTopLeft col_100"><a href="javascript:openPopup('popup.aspx?sesja=13!2.3!1!4')">  <asp:Label CssClass="normal" ID="tab_23_w13_c01" runat="server" Text="0"></asp:Label>  </a></td>
-                     <td class="borderTopLeft col_100"><a href="javascript:openPopup('popup.aspx?sesja=13!2.3!2!4')">  <asp:Label CssClass="normal" ID="tab_23_w13_c02" runat="server" Text="0"></asp:Label>  </a></td>
-                     <td class="borderTopLeft col_100"><a href="javascript:openPopup('popup.aspx?sesja=13!2.3!3!4')">  <asp:Label CssClass="normal" ID="tab_23_w13_c03" runat="server" Text="0"></asp:Label>  </a></td>
-                     <td class="borderTopLeftRight col_100"><a href="javascript:openPopup('popup.aspx?sesja=13!2.3!4!4')">  <asp:Label CssClass="normal" ID="tab_23_w13_c04" runat="server" Text="0"></asp:Label>  </a></td>
-                 </tr>
-                 <tr>
-                     <td class="borderTopLeft wciecie" rowspan="7">na skutek</td>
-                     <td class="borderTopLeft wciecie">razem (w.15 do 20) </td>
-                     <td class="borderTopLeft col_36">14</td>
-                     <td class="borderTopLeft col_100"><a href="javascript:openPopup('popup.aspx?sesja=14!2.3!1!4')">  <asp:Label CssClass="normal" ID="tab_23_w14_c01" runat="server" Text="0"></asp:Label>  </a></td>
-                     <td class="borderTopLeft col_100"><a href="javascript:openPopup('popup.aspx?sesja=14!2.3!2!4')">  <asp:Label CssClass="normal" ID="tab_23_w14_c02" runat="server" Text="0"></asp:Label>  </a></td>
-                     <td class="borderTopLeft col_100"><a href="javascript:openPopup('popup.aspx?sesja=14!2.3!3!4')">  <asp:Label CssClass="normal" ID="tab_23_w14_c03" runat="server" Text="0"></asp:Label>  </a></td>
-                     <td class="borderTopLeftRight col_100"><a href="javascript:openPopup('popup.aspx?sesja=14!2.3!4!4')">  <asp:Label CssClass="normal" ID="tab_23_w14_c04" runat="server" Text="0"></asp:Label>  </a></td>
-                 </tr>
-                 <tr>
-                     <td class="borderTopLeft wciecie">popełnienia w okresie próby przestępstwa umyślnego, za które sprawca został prawomocnie skazany (art. 68 § 1 kk) </td>
-                     <td class="borderTopLeft col_36">15</td>
-                     <td class="borderTopLeft col_100"><a href="javascript:openPopup('popup.aspx?sesja=15!2.3!1!4')">  <asp:Label CssClass="normal" ID="tab_23_w15_c01" runat="server" Text="0"></asp:Label>  </a></td>
-                     <td class="borderTopLeft col_100"><a href="javascript:openPopup('popup.aspx?sesja=15!2.3!2!4')">  <asp:Label CssClass="normal" ID="tab_23_w15_c02" runat="server" Text="0"></asp:Label>  </a></td>
-                     <td class="borderTopLeft col_100"><a href="javascript:openPopup('popup.aspx?sesja=15!2.3!3!4')">  <asp:Label CssClass="normal" ID="tab_23_w15_c03" runat="server" Text="0"></asp:Label>  </a></td>
-                     <td class="borderTopLeftRight col_100"><a href="javascript:openPopup('popup.aspx?sesja=15!2.3!4!4')">  <asp:Label CssClass="normal" ID="tab_23_w15_c04" runat="server" Text="0"></asp:Label>  </a></td>
-                 </tr>
-                 <tr>
-                     <td class="borderTopLeft wciecie">popełnienia przestępstwa innego niż w art. 68 § 1 kk (art. 68 § 2 kk) </td>
-                     <td class="borderTopLeft col_36">16</td>
-                     <td class="borderTopLeft col_100"><a href="javascript:openPopup('popup.aspx?sesja=1!2.3!1!4')">  <asp:Label CssClass="normal" ID="tab_23_w16_c01" runat="server" Text="0"></asp:Label>  </a></td>
-                     <td class="borderTopLeft col_100"><a href="javascript:openPopup('popup.aspx?sesja=1!2.3!2!4')">  <asp:Label CssClass="normal" ID="tab_23_w16_c02" runat="server" Text="0"></asp:Label>  </a></td>
-                     <td class="borderTopLeft col_100"><a href="javascript:openPopup('popup.aspx?sesja=1!2.3!3!4')">  <asp:Label CssClass="normal" ID="tab_23_w16_c03" runat="server" Text="0"></asp:Label>  </a></td>
-                     <td class="borderTopLeftRight col_100"><a href="javascript:openPopup('popup.aspx?sesja=1!2.3!4!4')">  <asp:Label CssClass="normal" ID="tab_23_w16_c04" runat="server" Text="0"></asp:Label>  </a></td>
-                 </tr>
-                 <tr>
-                     <td class="borderTopLeft wciecie">rażącego naruszenia porządku prawnego w inny sposób (art.&nbsp;68 § 2 kk) </td>
-                     <td class="borderTopLeft col_36">17</td>
-                     <td class="borderTopLeft col_100"><a href="javascript:openPopup('popup.aspx?sesja=17!2.3!1!4')">  <asp:Label CssClass="normal" ID="tab_23_w17_c01" runat="server" Text="0"></asp:Label>  </a></td>
-                     <td class="borderTopLeft col_100"><a href="javascript:openPopup('popup.aspx?sesja=17!2.3!2!4')">  <asp:Label CssClass="normal" ID="tab_23_w17_c02" runat="server" Text="0"></asp:Label>  </a></td>
-                     <td class="borderTopLeft col_100"><a href="javascript:openPopup('popup.aspx?sesja=17!2.3!3!4')">  <asp:Label CssClass="normal" ID="tab_23_w17_c03" runat="server" Text="0"></asp:Label>  </a></td>
-                     <td class="borderTopLeftRight col_100"><a href="javascript:openPopup('popup.aspx?sesja=17!2.3!4!4')">  <asp:Label CssClass="normal" ID="tab_23_w17_c04" runat="server" Text="0"></asp:Label>  </a></td>
-                 </tr>
-                 <tr>
-                     <td class="borderTopLeft wciecie">uchylania się od dozoru (art. 68 § 2 kk) </td>
-                     <td class="borderTopLeft col_36">18</td>
-                     <td class="borderTopLeft col_100"><a href="javascript:openPopup('popup.aspx?sesja=18!2.3!1!4')">  <asp:Label CssClass="normal" ID="tab_23_w18_c01" runat="server" Text="0"></asp:Label>  </a></td>
-                     <td class="borderTopLeft col_100"><a href="javascript:openPopup('popup.aspx?sesja=18!2.3!2!4')">  <asp:Label CssClass="normal" ID="tab_23_w18_c02" runat="server" Text="0"></asp:Label>  </a></td>
-                     <td class="borderTopLeft col_100"><a href="javascript:openPopup('popup.aspx?sesja=18!2.3!3!4')">  <asp:Label CssClass="normal" ID="tab_23_w18_c03" runat="server" Text="0"></asp:Label>  </a></td>
-                     <td class="borderTopLeftRight col_100"><a href="javascript:openPopup('popup.aspx?sesja=18!2.3!4!4')">  <asp:Label CssClass="normal" ID="tab_23_w18_c04" runat="server" Text="0"></asp:Label>  </a></td>
-                 </tr>
-                 <tr>
-                     <td class="borderTopLeft wciecie">uchylania się od wykonywania nałożonego obowiązku, środka karnego, środ­ka kompensacyjnego, przepadku lub niewykonywania ugody (art. 68 § 2 kk) </td>
-                     <td class="borderTopLeft col_36">19</td>
-                     <td class="borderTopLeft col_100"><a href="javascript:openPopup('popup.aspx?sesja=19!2.3!1!4')">  <asp:Label CssClass="normal" ID="tab_23_w19_c01" runat="server" Text="0"></asp:Label>  </a></td>
-                     <td class="borderTopLeft col_100"><a href="javascript:openPopup('popup.aspx?sesja=19!2.3!2!4')">  <asp:Label CssClass="normal" ID="tab_23_w19_c02" runat="server" Text="0"></asp:Label>  </a></td>
-                     <td class="borderTopLeft col_100"><a href="javascript:openPopup('popup.aspx?sesja=19!2.3!4!4')">  <asp:Label CssClass="normal" ID="tab_23_w19_c03" runat="server" Text="0"></asp:Label>  </a></td>
-                     <td class="borderTopLeftRight col_100"><a href="javascript:openPopup('popup.aspx?sesja=19!2.3!4!4')">  <asp:Label CssClass="normal" ID="tab_23_w19_c04" runat="server" Text="0"></asp:Label>  </a></td>
-                 </tr>
-                 <tr>
-                     <td class="borderTopLeft wciecie">określonego w art. 68 § 3 kk </td>
-                     <td class="borderTopLeft col_36">20</td>
-                     <td class="borderTopLeft col_100"><a href="javascript:openPopup('popup.aspx?sesja=20!2.3!1!4')">  <asp:Label CssClass="normal" ID="tab_23_w20_c01" runat="server" Text="0"></asp:Label>  </a></td>
-                     <td class="borderTopLeft col_100"><a href="javascript:openPopup('popup.aspx?sesja=20!2.3!2!4')">  <asp:Label CssClass="normal" ID="tab_23_w20_c02" runat="server" Text="0"></asp:Label>  </a></td>
-                     <td class="borderTopLeft col_100"><a href="javascript:openPopup('popup.aspx?sesja=20!2.3!3!4')">  <asp:Label CssClass="normal" ID="tab_23_w20_c03" runat="server" Text="0"></asp:Label>  </a></td>
-                     <td class="borderTopLeftRight col_100"><a href="javascript:openPopup('popup.aspx?sesja=20!2.3!4!4')">  <asp:Label CssClass="normal" ID="tab_23_w20_c04" runat="server" Text="0"></asp:Label>  </a></td>
-                 </tr>
-                 <tr>
-                     <td class="borderTopLeft wciecie" colspan="2">innego</td>
-                     <td class="borderTopLeft col_36">21</td>
-                     <td class="borderTopLeft col_100"><a href="javascript:openPopup('popup.aspx?sesja=21!2.3!1!4')">  <asp:Label CssClass="normal" ID="tab_23_w21_c01" runat="server" Text="0"></asp:Label>  </a></td>
-                     <td class="borderTopLeft col_100"><a href="javascript:openPopup('popup.aspx?sesja=21!2.3!2!4')">  <asp:Label CssClass="normal" ID="tab_23_w21_c02" runat="server" Text="0"></asp:Label>  </a></td>
-                     <td class="borderTopLeft col_100"><a href="javascript:openPopup('popup.aspx?sesja=21!2.3!3!4')">  <asp:Label CssClass="normal" ID="tab_23_w21_c03" runat="server" Text="0"></asp:Label>  </a></td>
-                     <td class="borderTopLeftRight col_100"><a href="javascript:openPopup('popup.aspx?sesja=21!2.3!4!4')">  <asp:Label CssClass="normal" ID="tab_23_w21_c04" runat="server" Text="0"></asp:Label>  </a></td>
-                 </tr>
-                 <tr>
-                     <td class="borderTopLeftBottom wciecie" colspan="3">Pozostało (dozory, wykonywane wg stanu w ostatnim dniu okresu sprawozdawczego)</td>
-                     <td class="borderTopLeftBottom col_36">22</td>
-                     <td class="borderTopLeftBottom col_100"><a href="javascript:openPopup('popup.aspx?sesja=22!2.3!1!4')">  <asp:Label CssClass="normal" ID="tab_23_w22_c01" runat="server" Text="0"></asp:Label>  </a></td>
-                     <td class="borderTopLeftBottom col_100"><a href="javascript:openPopup('popup.aspx?sesja=22!2.3!2!4')">  <asp:Label CssClass="normal" ID="tab_23_w22_c02" runat="server" Text="0"></asp:Label>  </a></td>
-                     <td class="borderTopLeftBottom col_100"><a href="javascript:openPopup('popup.aspx?sesja=22!2.3!3!4')">  <asp:Label CssClass="normal" ID="tab_23_w22_c03" runat="server" Text="0"></asp:Label>  </a></td>
-                     <td class="borderAll col_100"><a href="javascript:openPopup('popup.aspx?sesja=22!2.3!4!4')">  <asp:Label CssClass="normal" ID="tab_23_w22_c04" runat="server" Text="0"></asp:Label>  </a></td>
-                 </tr>
-            </table>
-
-             <br />
-              <br />
-             </div>
-        <div class="page-break">
-
-           <strong>
-           <br />
-           Dział 2.4. </strong>Podjęcie warunkowego umorzenia postępowania (w okresie sprawozdawczym)<br />
-		      <br />
-            <table cellpadding="0" cellspacing="0" style="width:100%;">
-                <tr>
-                    <td align="center" class="borderTopLeft" colspan="3" rowspan="2">Podjęcia warunkowo umorzonego postępowania (wykaz Wu)</td>
-                    <td class="borderTopLeftRight" colspan="3">Działanie sądu z urzędu/wnioski w przedmiocie podjęcia warunkowo umorzonego postępowania</td>
-                </tr>
-                <tr>
-                    <td class="borderTopLeft col_100">razem (rubryka 2+3)</td>
-                    <td class="borderTopLeft col_100">uwzględnione</td>
-                    <td class="borderTopLeftRight col_100">nieuwzględnione</td>
-                </tr>
-                <tr>
-                    <td align="center" class="borderTopLeft" colspan="3">0</td>
-                    <td class="borderTopLeft col_100">1</td>
-                    <td class="borderTopLeft col_100">2</td>
-                    <td class="borderTopLeftRight col_100">3</td>
-                </tr>
-                <tr>
-                    <td class="borderTopLeft wciecie" colspan="2">Ogółem sprawy (w.01=02 do 05)</td>
-                    <td class="borderTopLeft col_36">01</td>
-                    <td class="borderTopLeft col_100"><a href="javascript:openPopup('popup.aspx?sesja=1!2.4!1!4')">  <asp:Label CssClass="normal" ID="tab_24_w01_c01" runat="server" Text="0"></asp:Label>  </a></td>
-                    <td class="borderTopLeft col_100"><a href="javascript:openPopup('popup.aspx?sesja=1!2.4!2!4')">  <asp:Label CssClass="normal" ID="tab_24_w01_c02" runat="server" Text="0"></asp:Label>  </a></td>
-                    <td class="borderTopLeftRight col_100"><a href="javascript:openPopup('popup.aspx?sesja=1!2.4!3!4')">  <asp:Label CssClass="normal" ID="tab_24_w01_c03" runat="server" Text="0"></asp:Label>  </a></td>
-                </tr>
-                <tr>
-                    <td class="borderTopLeft wciecie" colspan="2">Działania sądu z urzędu</td>
-                    <td class="borderTopLeft col_36">02</td>
-                    <td class="borderTopLeft col_100"><a href="javascript:openPopup('popup.aspx?sesja=2!2.4!1!4')">  <asp:Label CssClass="normal" ID="tab_24_w02_c01" runat="server" Text="0"></asp:Label>  </a></td>
-                    <td class="borderTopLeft col_100"><a href="javascript:openPopup('popup.aspx?sesja=2!2.4!2!4')">  <asp:Label CssClass="normal" ID="tab_24_w02_c02" runat="server" Text="0"></asp:Label>  </a></td>
-                    <td class="borderTopLeftRight col_100"><a href="javascript:openPopup('popup.aspx?sesja=2!2.4!3!4')">  <asp:Label CssClass="normal" ID="tab_24_w02_c03" runat="server" Text="0"></asp:Label>  </a></td>                </tr>
-                <tr>
-                    <td class="borderTopLeft wciecie" rowspan="3">Wnioski złożone przez:</td>
-                    <td class="borderTopLeft wciecie">kuratora </td>
-                    <td class="borderTopLeft col_36">03</td>
-                    <td class="borderTopLeft col_100"><a href="javascript:openPopup('popup.aspx?sesja=3!2.4!1!4')">  <asp:Label CssClass="normal" ID="tab_24_w03_c01" runat="server" Text="0"></asp:Label>  </a></td>
-                    <td class="borderTopLeft col_100"><a href="javascript:openPopup('popup.aspx?sesja=3!2.4!2!4')">  <asp:Label CssClass="normal" ID="tab_24_w03_c02" runat="server" Text="0"></asp:Label>  </a></td>
-                    <td class="borderTopLeftRight col_100"><a href="javascript:openPopup('popup.aspx?sesja=3!2.4!3!4')">  <asp:Label CssClass="normal" ID="tab_24_w03_c03" runat="server" Text="0"></asp:Label>  </a></td>                </tr>
-                <tr>
-                    <td class="borderTopLeft wciecie">inny uprawniony podmiot sprawujący dozór </td>
-                    <td class="borderTopLeft col_36">04</td>
-                    <td class="borderTopLeft col_100"><a href="javascript:openPopup('popup.aspx?sesja=4!2.4!1!4')">  <asp:Label CssClass="normal" ID="tab_24_w04_c01" runat="server" Text="0"></asp:Label>  </a></td>
-                    <td class="borderTopLeft col_100"><a href="javascript:openPopup('popup.aspx?sesja=4!2.4!2!4')">  <asp:Label CssClass="normal" ID="tab_24_w04_c02" runat="server" Text="0"></asp:Label>  </a></td>
-                    <td class="borderTopLeftRight col_100"><a href="javascript:openPopup('popup.aspx?sesja=4!2.4!3!4')">  <asp:Label CssClass="normal" ID="tab_24_w04_c03" runat="server" Text="0"></asp:Label>  </a></td>                </tr>
-                <tr>
-                    <td class="borderTopLeft wciecie">prokuratora </td>
-                    <td class="borderTopLeft col_36">05</td>
-                    <td class="borderTopLeft col_100"><a href="javascript:openPopup('popup.aspx?sesja=5!2.4!1!4')">  <asp:Label CssClass="normal" ID="tab_24_w05_c01" runat="server" Text="0"></asp:Label>  </a></td>
-                    <td class="borderTopLeft col_100"><a href="javascript:openPopup('popup.aspx?sesja=5!2.4!2!4')">  <asp:Label CssClass="normal" ID="tab_24_w05_c02" runat="server" Text="0"></asp:Label>  </a></td>
-                    <td class="borderTopLeftRight col_100"><a href="javascript:openPopup('popup.aspx?sesja=5!2.4!3!4')">  <asp:Label CssClass="normal" ID="tab_24_w05_c03" runat="server" Text="0"></asp:Label>  </a></td>                </tr>
-                <tr>
-                    <td class="borderTopLeft wciecie" rowspan="8">z przyczyn</td>
-                    <td class="borderTopLeft wciecie">razem (w.06 = w.07 do 13) </td>
-                    <td class="borderTopLeft col_36">06</td>
-                    <td class="borderTopLeft col_100"><a href="javascript:openPopup('popup.aspx?sesja=6!2.4!1!4')">  <asp:Label CssClass="normal" ID="tab_24_w06_c01" runat="server" Text="0"></asp:Label>  </a></td>
-                    <td class="borderTopLeft col_100"><a href="javascript:openPopup('popup.aspx?sesja=6!2.4!2!4')">  <asp:Label CssClass="normal" ID="tab_24_w06_c02" runat="server" Text="0"></asp:Label>  </a></td>
-                    <td class="borderTopLeftRight col_100"><a href="javascript:openPopup('popup.aspx?sesja=6!2.4!3!4')">  <asp:Label CssClass="normal" ID="tab_24_w06_c03" runat="server" Text="0"></asp:Label>  </a></td>                </tr>
-                <tr>
-                    <td class="borderTopLeft wciecie">popełnienia w okresie próby przestępstwa umyślnego, za które sprawca został prawomocnie skazany (art. 68 § 1 kk) </td>
-                    <td class="borderTopLeft col_36">07</td>
-                    <td class="borderTopLeft col_100"><a href="javascript:openPopup('popup.aspx?sesja=7!2.4!1!4')">  <asp:Label CssClass="normal" ID="tab_24_w07_c01" runat="server" Text="0"></asp:Label>  </a></td>
-                    <td class="borderTopLeft col_100"><a href="javascript:openPopup('popup.aspx?sesja=7!2.4!2!4')">  <asp:Label CssClass="normal" ID="tab_24_w07_c02" runat="server" Text="0"></asp:Label>  </a></td>
-                    <td class="borderTopLeftRight col_100"><a href="javascript:openPopup('popup.aspx?sesja=7!2.4!3!4')">  <asp:Label CssClass="normal" ID="tab_24_w07_c03" runat="server" Text="0"></asp:Label>  </a></td>                </tr>
-                <tr>
-                    <td class="borderTopLeft wciecie">popełnienia przestępstwa innego niż w art. 68 § 1 kk (art. 68 § 2kk) </td>
-                    <td class="borderTopLeft col_36">08</td>
-                    <td class="borderTopLeft col_100"><a href="javascript:openPopup('popup.aspx?sesja=8!2.4!1!4')">  <asp:Label CssClass="normal" ID="tab_24_w08_c01" runat="server" Text="0"></asp:Label>  </a></td>
-                    <td class="borderTopLeft col_100"><a href="javascript:openPopup('popup.aspx?sesja=8!2.4!2!4')">  <asp:Label CssClass="normal" ID="tab_24_w08_c02" runat="server" Text="0"></asp:Label>  </a></td>
-                    <td class="borderTopLeftRight col_100"><a href="javascript:openPopup('popup.aspx?sesja=8!2.4!3!4')">  <asp:Label CssClass="normal" ID="tab_24_w08_c03" runat="server" Text="0"></asp:Label>  </a></td>                </tr>
-                <tr>
-                    <td class="borderTopLeft wciecie">rażącego naruszenia porządku prawnego w inny sposób niż popełnienie przestępstwa (art.&nbsp;68 § 2 kk) </td>
-                    <td class="borderTopLeft col_36">09</td>
-                    <td class="borderTopLeft col_100"><a href="javascript:openPopup('popup.aspx?sesja=9!2.4!1!4')">  <asp:Label CssClass="normal" ID="tab_24_w09_c01" runat="server" Text="0"></asp:Label>  </a></td>
-                    <td class="borderTopLeft col_100"><a href="javascript:openPopup('popup.aspx?sesja=9!2.4!2!4')">  <asp:Label CssClass="normal" ID="tab_24_w09_c02" runat="server" Text="0"></asp:Label>  </a></td>
-                    <td class="borderTopLeftRight col_100"><a href="javascript:openPopup('popup.aspx?sesja=9!2.4!3!4')">  <asp:Label CssClass="normal" ID="tab_24_w09_c03" runat="server" Text="0"></asp:Label>  </a></td>                </tr>
-                <tr>
-                    <td class="borderTopLeft wciecie">uchylania się od dozoru (art.&nbsp;68 § 2 kk) </td>
-                    <td class="borderTopLeft col_36">10</td>
-                    <td class="borderTopLeft col_100"><a href="javascript:openPopup('popup.aspx?sesja=10!2.4!1!4')">  <asp:Label CssClass="normal" ID="tab_24_w10_c01" runat="server" Text="0"></asp:Label>  </a></td>
-                    <td class="borderTopLeft col_100"><a href="javascript:openPopup('popup.aspx?sesja=10!2.4!2!4')">  <asp:Label CssClass="normal" ID="tab_24_w10_c02" runat="server" Text="0"></asp:Label>  </a></td>
-                    <td class="borderTopLeftRight col_100"><a href="javascript:openPopup('popup.aspx?sesja=10!2.4!3!4')">  <asp:Label CssClass="normal" ID="tab_24_w10_c03" runat="server" Text="0"></asp:Label>  </a></td>                </tr>
-                <tr>
-                    <td class="borderTopLeft wciecie">uchylania się od wykonywania nałożonego obowiązku, środka karnego, środ­ka kompensacyjnego, przepadku lub niewykonywania ugody (art. 68 § 2 kk) </td>
-                    <td class="borderTopLeft col_36">11</td>
-                    <td class="borderTopLeft col_100"><a href="javascript:openPopup('popup.aspx?sesja=11!2.4!1!4')">  <asp:Label CssClass="normal" ID="tab_24_w11_c01" runat="server" Text="0"></asp:Label>  </a></td>
-                    <td class="borderTopLeft col_100"><a href="javascript:openPopup('popup.aspx?sesja=11!2.4!2!4')">  <asp:Label CssClass="normal" ID="tab_24_w11_c02" runat="server" Text="0"></asp:Label>  </a></td>
-                    <td class="borderTopLeftRight col_100"><a href="javascript:openPopup('popup.aspx?sesja=11!2.4!3!4')">  <asp:Label CssClass="normal" ID="tab_24_w11_c03" runat="server" Text="0"></asp:Label>  </a></td>                </tr>
-                <tr>
-                    <td class="borderTopLeft wciecie">określonych w art. 68 § 3 kk </td>
-                    <td class="borderTopLeft col_36">12</td>
-                    <td class="borderTopLeft col_100"><a href="javascript:openPopup('popup.aspx?sesja=12!2.4!1!4')">  <asp:Label CssClass="normal" ID="tab_24_w12_c01" runat="server" Text="0"></asp:Label>  </a></td>
-                    <td class="borderTopLeft col_100"><a href="javascript:openPopup('popup.aspx?sesja=12!2.4!2!4')">  <asp:Label CssClass="normal" ID="tab_24_w12_c02" runat="server" Text="0"></asp:Label>  </a></td>
-                    <td class="borderTopLeftRight col_100"><a href="javascript:openPopup('popup.aspx?sesja=12!2.4!3!4')">  <asp:Label CssClass="normal" ID="tab_24_w12_c03" runat="server" Text="0"></asp:Label>  </a></td>                </tr>
-                <tr>
-                    <td class="borderTopLeft wciecie">innych</td>
-                    <td class="borderTopLeft col_36">13</td>
-                    <td class="borderTopLeft col_100"><a href="javascript:openPopup('popup.aspx?sesja=13!2.4!1!4')">  <asp:Label CssClass="normal" ID="tab_24_w13_c01" runat="server" Text="0"></asp:Label>  </a></td>
-                    <td class="borderTopLeft col_100"><a href="javascript:openPopup('popup.aspx?sesja=13!2.4!2!4')">  <asp:Label CssClass="normal" ID="tab_24_w13_c02" runat="server" Text="0"></asp:Label>  </a></td>
-                    <td class="borderTopLeftRight col_100"><a href="javascript:openPopup('popup.aspx?sesja=13!2.4!3!4')">  <asp:Label CssClass="normal" ID="tab_24_w13_c03" runat="server" Text="0"></asp:Label>  </a></td>                </tr>
-                <tr>
-                    <td class="borderTopLeft wciecie" colspan="2">Z liczby ogółem (z w.01) po pisemnym upomnieniu sądowego kuratora zawodowego (art. 68 § 2a kk)</td>
-                    <td class="borderTopLeft col_36">14</td>
-                    <td class="borderTopLeft col_100"><a href="javascript:openPopup('popup.aspx?sesja=14!2.4!1!4')">  <asp:Label CssClass="normal" ID="tab_24_w14_c01" runat="server" Text="0"></asp:Label>  </a></td>
-                    <td class="borderTopLeft col_100"><a href="javascript:openPopup('popup.aspx?sesja=14!2.4!2!4')">  <asp:Label CssClass="normal" ID="tab_24_w14_c02" runat="server" Text="0"></asp:Label>  </a></td>
-                    <td class="borderTopLeftRight col_100"><a href="javascript:openPopup('popup.aspx?sesja=14!2.4!3!4')">  <asp:Label CssClass="normal" ID="tab_24_w14_c03" runat="server" Text="0"></asp:Label>  </a></td>                </tr>
-                <tr>
-                    <td class="borderTopLeftBottom wciecie" colspan="2">Ogółem liczba osób, wobec których podjęto warunkowo umorzone postępowanie (w.15 &lt;= k. 02 w. 01)</td>
-                    <td class="borderTopLeftBottom col_36">15</td>
-                    <td class="borderTopLeftBottom col_100"><a href="javascript:openPopup('popup.aspx?sesja=15!2.4!1!4')">  <asp:Label CssClass="normal" ID="tab_24_w15_c01" runat="server" Text="0"></asp:Label>  </a></td>
-                    <td class="borderTopLeftBottom col_100"><a href="javascript:openPopup('popup.aspx?sesja=15!2.4!2!4')">  <asp:Label CssClass="normal" ID="tab_24_w15_c02" runat="server" Text="0"></asp:Label>  </a></td>
-                    <td class="borderAll col_100"><a href="javascript:openPopup('popup.aspx?sesja=15!2.4!3!4')">  <asp:Label CssClass="normal" ID="tab_24_w15_c03" runat="server" Text="0"></asp:Label>  </a></td>
-                </tr>
-            </table>
-            <br />
-            <br />
-             </div>
-
+ <asp:PlaceHolder runat="server" ID="tablePlaceHolder01"></asp:PlaceHolder>
         <div class="page-break">
 
            <strong>
@@ -979,7 +468,7 @@ razem </td>
 
             <table style="width:100%;">
                 <tr>
-                    <td>Dział. 3.1.a. Wykonywanie kary grzywny orzeczonej przy zastosowaniu przepisów przejściowych ustawy z dn. 20 lutego 2015 r. (Dz. U. poz. 396) - art. 16 ust. 1 pkt 1 </td>
+                    <td> <strong>Dział. 3.1.a.</strong> Wykonywanie kary grzywny orzeczonej przy zastosowaniu przepisów przejściowych ustawy z dn. 20 lutego 2015 r. (Dz. U. poz. 396) - art. 16 ust. 1 pkt 1 </td>
                     <td class="col_115"><a href="javascript:openPopup('popup.aspx?sesja=1!3.1.a!1!4')">
                         <asp:TextBox ID="tab_31a_w01_c01" runat="server" ReadOnly="True"></asp:TextBox></a>
                     </td>
@@ -2001,562 +1490,12 @@ razem </td>
                  <strong>
                        Dział 6.      </strong>Wykonywanie warunkowego zawieszenia wykonania kary
 
-                 <br />
+                 <br />  &nbsp;<asp:PlaceHolder runat="server" ID="tablePlaceHolder02"></asp:PlaceHolder>
+    <br />
 
-                 <br />
-
-	 <strong>
-                       Dział 6.1      </strong>	Warunkowe zawieszenie wykonania kary
-
-                 <br />
-
-                 <br />
-            <table style="width: 100%;" cellpadding="0" cellspacing="0">
-                <tr>
-                    <td align="center" class="borderTopLeft" colspan="4">Orzeczone kary z warunkowym zawieszeniem wykonania (wykaz Wzaw)</td>
-                    <td align="center" class="borderTopLeft">Sprawy Wzaw </td>
-                    <td align="center" class="borderTopLeft">Osoby</td>
-                </tr>
-                <tr>
-                    <td align="center" class="borderTopLeft" colspan="4">0</td>
-                    <td class="borderTopLeft col_150">1</td>
-                    <td class="borderTopLeftRight col_150">2</td>
-                </tr>
-                <tr>
-                    <td class="borderTopLeft wciecie" colspan="3">Wpływ (k. 01 w. 01= dz.1 k.02 w.06 ) </td>
-                    <td class="borderTopLeft col_36">01</td>
-                    <td class="borderTopLeft col_150"><a href="javascript:openPopup('popup.aspx?sesja=1!6.1!1!4')">  <asp:Label CssClass="normal" ID="tab_61_w01_c01" runat="server" Text="0"></asp:Label>  </a></td>
-                    <td class="borderAll col_150"><a href="javascript:openPopup('popup.aspx?sesja=1!6.1!2!4')">  <asp:Label CssClass="normal" ID="tab_61_w01_c02" runat="server" Text="0"></asp:Label>  </a></td>
-                </tr>
-                <tr>
-                    <td class="borderTopLeft wciecie" colspan="3">w tym przekazane z innego sądu </td>
-                    <td class="borderTopLeft col_36">02</td>
-                    <td class="borderTopLeftRight col_150"><a href="javascript:openPopup('popup.aspx?sesja=2!6.1!1!4')">  <asp:Label CssClass="normal" ID="tab_61_w02_c01" runat="server" Text="0"></asp:Label>  </a></td>
-                    <td>&nbsp;</td>
-                </tr>
-                <tr>
-                    <td class="borderTopLeft wciecie" rowspan="9">Sprawy z w. 01, w których orzeczono karę </td>
-                    <td class="borderTopLeft wciecie" colspan="2">pozbawienia wolności (w.03=04+05)</td>
-                    <td class="borderTopLeft col_36">03</td>
-                    <td class="borderTopLeft col_150"><a href="javascript:openPopup('popup.aspx?sesja=3!6.1!1!4')">  <asp:Label CssClass="normal" ID="tab_61_w03_c01" runat="server" Text="0"></asp:Label>  </a></td>
-                    <td class="borderAll col_150"><a href="javascript:openPopup('popup.aspx?sesja=3!6.1!2!4')">  <asp:Label CssClass="normal" ID="tab_61_w03_c02" runat="server" Text="0"></asp:Label>  </a></td>
-                </tr>
-                <tr>
-                    <td class="borderTopLeft wciecie" rowspan="2">z tego</td>
-                    <td class="borderTopLeft wciecie">z nałożonymi obowiązkami, środkami karnymi, środkami kompensacyjnymi lub przepadkiem </td>
-                    <td class="borderTopLeft col_36">04</td>
-                    <td class="borderTopLeftRight col_150"><a href="javascript:openPopup('popup.aspx?sesja=4!6.1!1!4')">  <asp:Label CssClass="normal" ID="tab_61_w04_c01" runat="server" Text="0"></asp:Label>  </a></td>
-                    <td class="borderTopLeft col_150">
-                        <br />
-                    </td>
-                </tr>
-                <tr>
-                    <td class="borderTopLeft wciecie">bez nałożonych obowiązków, środków karnych, środków kompensacyjnych lub przepadku </td>
-                    <td class="borderTopLeft col_36">05</td>
-                    <td class="borderTopLeftRight col_150"><a href="javascript:openPopup('popup.aspx?sesja=5!6.1!1!4')">  <asp:Label CssClass="normal" ID="tab_61_w05_c01" runat="server" Text="0"></asp:Label>  </a></td>
-                    <td>&nbsp;</td>
-                </tr>
-                <tr>
-                    <td class="borderTopLeft wciecie" colspan="2">ograniczenia wolności (w.06=07+08)</td>
-                    <td class="borderTopLeft col_36">06</td>
-                    <td class="borderTopLeft col_150"><a href="javascript:openPopup('popup.aspx?sesja=6!6.1!1!4')">  <asp:Label CssClass="normal" ID="tab_61_w06_c01" runat="server" Text="0"></asp:Label>  </a></td>
-                    <td class="borderAll col_150"><a href="javascript:openPopup('popup.aspx?sesja=6!6.1!2!4')">  <asp:Label CssClass="normal" ID="tab_61_w06_c02" runat="server" Text="0"></asp:Label>  </a></td>
-                </tr>
-                <tr>
-                    <td class="borderTopLeft wciecie" rowspan="2">z tego</td>
-                    <td class="borderTopLeft wciecie">z nałożonymi obowiązkami lub środkami karnymi</td>
-                    <td class="borderTopLeft col_36">07</td>
-                    <td class="borderTopLeftRight col_150"><a href="javascript:openPopup('popup.aspx?sesja=7!6.1!1!4')">  <asp:Label CssClass="normal" ID="tab_61_w07_c01" runat="server" Text="0"></asp:Label>  </a></td>
-                    <td>&nbsp;</td>
-                </tr>
-                <tr>
-                    <td class="borderTopLeft wciecie">bez nałożonych obowiązków lub środków karnych </td>
-                    <td class="borderTopLeft col_36">08</td>
-                    <td class="borderTopLeftRight col_150"><a href="javascript:openPopup('popup.aspx?sesja=8!6.1!1!4')">  <asp:Label CssClass="normal" ID="tab_61_w08_c01" runat="server" Text="0"></asp:Label>  </a></td>
-                    <td>&nbsp;</td>
-                </tr>
-                <tr>
-                    <td class="borderTopLeft wciecie" colspan="2">grzywny (w.09=20+11) </td>
-                    <td class="borderTopLeft col_36">09</td>
-                    <td class="borderTopLeft col_150"><a href="javascript:openPopup('popup.aspx?sesja=9!6.1!1!4')">  <asp:Label CssClass="normal" ID="tab_61_w09_c01" runat="server" Text="0"></asp:Label>  </a></td>
-                    <td class="borderAll col_150"><a href="javascript:openPopup('popup.aspx?sesja=9!6.1!2!4')">  <asp:Label CssClass="normal" ID="tab_61_w09_c02" runat="server" Text="0"></asp:Label>  </a></td>
-                </tr>
-                <tr>
-                    <td class="borderTopLeft wciecie" rowspan="2">z tego</td>
-                    <td class="borderTopLeft wciecie">z nałożonymi obowiązkami lub środkami karnymi</td>
-                    <td class="borderTopLeft col_36">10</td>
-                    <td class="borderTopLeftRight col_150"><a href="javascript:openPopup('popup.aspx?sesja=10!6.1!1!4')">  <asp:Label CssClass="normal" ID="tab_61_w10_c01" runat="server" Text="0"></asp:Label>  </a></td>
-                    <td>&nbsp;</td>
-                </tr>
-                <tr>
-                    <td class="borderTopLeft wciecie">bez nałożonych obowiązków lub środków karnych </td>
-                    <td class="borderTopLeft col_36">11</td>
-                    <td class="borderTopLeftRight col_150"><a href="javascript:openPopup('popup.aspx?sesja=11!6.1!1!4')">  <asp:Label CssClass="normal" ID="tab_61_w11_c01" runat="server" Text="0"></asp:Label>  </a></td>
-                    <td>&nbsp;</td>
-                </tr>
-                <tr>
-                    <td class="borderTopLeft wciecie" rowspan="2">z tego z w.01</td>
-                    <td class="borderTopLeft wciecie" colspan="2">osoby wcześniej nie karane za przestępstwa</td>
-                    <td class="borderTopLeft col_36">12</td>
-                    <td class="borderTopLeftRight col_150"><a href="javascript:openPopup('popup.aspx?sesja=12!6.1!1!4')">  <asp:Label CssClass="normal" ID="tab_61_w12_c01" runat="server" Text="0"></asp:Label>  </a></td>
-                    <td>&nbsp;</td>
-                </tr>
-                <tr>
-                    <td class="borderTopLeft wciecie" colspan="2">osoby uprzednio karane za przestępstwa </td>
-                    <td class="borderTopLeft col_36">13</td>
-                    <td class="borderTopLeftRight col_150"><a href="javascript:openPopup('popup.aspx?sesja=13!6.1!1!4')">  <asp:Label CssClass="normal" ID="tab_61_w13_c01" runat="server" Text="0"></asp:Label>  </a></td>
-                    <td>&nbsp;</td>
-                </tr>
-                <tr>
-                    <td class="borderTopLeft wciecie" colspan="3">Zakończono wykonywanie orzeczeń (k.01 w.14=w.15 do w.22 = dz.1 k.03 w.06)</td>
-                    <td class="borderTopLeft col_36">14</td>
-                    <td class="borderTopLeft col_150"><a href="javascript:openPopup('popup.aspx?sesja=14!6.1!1!4')">  <asp:Label CssClass="normal" ID="tab_61_w14_c01" runat="server" Text="0"></asp:Label>  </a></td>
-                    <td class="borderAll col_150"><a href="javascript:openPopup('popup.aspx?sesja=14!6.1!2!4')">  <asp:Label CssClass="normal" ID="tab_61_w14_c02" runat="server" Text="0"></asp:Label>  </a></td>
-                </tr>
-                <tr>
-                    <td class="borderTopLeft wciecie" rowspan="8">Na skutek</td>
-                    <td class="borderTopLeft wciecie" colspan="2">upływu okresu próby</td>
-                    <td class="borderTopLeft col_36">15</td>
-                    <td class="borderTopLeftRight col_150"><a href="javascript:openPopup('popup.aspx?sesja=15!6.1!1!4')">  <asp:Label CssClass="normal" ID="tab_61_w15_c01" runat="server" Text="0"></asp:Label>  </a></td>
-                    <td>&nbsp;</td>
-                </tr>
-                <tr>
-                    <td class="borderTopLeft wciecie" colspan="2">zarządzenia wykonania kary</td>
-                    <td class="borderTopLeft col_36">16</td>
-                    <td class="borderTopLeftRight col_150"><a href="javascript:openPopup('popup.aspx?sesja=16!6.1!1!4')">  <asp:Label CssClass="normal" ID="tab_61_w16_c01" runat="server" Text="0"></asp:Label>  </a></td>
-                    <td>&nbsp;</td>
-                </tr>
-                <tr>
-                    <td class="borderTopLeft wciecie" colspan="2">zamiany na karę ograniczenia wolności albo grzywnę w trybie art. 75a § 1 kk</td>
-                    <td class="borderTopLeft col_36">17</td>
-                    <td class="borderTopLeftRight col_150"><a href="javascript:openPopup('popup.aspx?sesja=17!6.1!1!4')">  <asp:Label CssClass="normal" ID="tab_61_w17_c01" runat="server" Text="0"></asp:Label>  </a></td>
-                    <td>&nbsp;</td>
-                </tr>
-                <tr>
-                    <td class="borderTopLeft wciecie" rowspan="2">zamiany w trybie art. 16 ust.1 ustawy z dn. 20 lutego 2015 r. (Dz. U. poz. 396)</td>
-                    <td class="borderTopLeft wciecie">na grzywnę</td>
-                    <td class="borderTopLeft col_36">18</td>
-                    <td class="borderTopLeftRight col_150"><a href="javascript:openPopup('popup.aspx?sesja=18!6.1!1!4')">  <asp:Label CssClass="normal" ID="tab_61_w18_c01" runat="server" Text="0"></asp:Label>  </a></td>
-                    <td>&nbsp;</td>
-                </tr>
-                <tr>
-                    <td class="borderTopLeft wciecie">na karę ograniczenia wolności</td>
-                    <td class="borderTopLeft col_36">19</td>
-                    <td class="borderTopLeftRight col_150"><a href="javascript:openPopup('popup.aspx?sesja=19!6.1!1!4')">  <asp:Label CssClass="normal" ID="tab_61_w19_c01" runat="server" Text="0"></asp:Label>  </a></td>
-                    <td>&nbsp;</td>
-                </tr>
-                <tr>
-                    <td class="borderTopLeft wciecie" colspan="2">umorzenia postępowania wykonawczego</td>
-                    <td class="borderTopLeft col_36">20</td>
-                    <td class="borderTopLeftRight col_150"><a href="javascript:openPopup('popup.aspx?sesja=20!6.1!1!4')">  <asp:Label CssClass="normal" ID="tab_61_w20_c01" runat="server" Text="0"></asp:Label>  </a></td>
-                    <td>&nbsp;</td>
-                </tr>
-                <tr>
-                    <td class="borderTopLeft wciecie" colspan="2">przekazania innemu sądowi</td>
-                    <td class="borderTopLeft col_36">21</td>
-                    <td class="borderTopLeftRight col_150"><a href="javascript:openPopup('popup.aspx?sesja=21!6.1!1!4')">  <asp:Label CssClass="normal" ID="tab_61_w21_c01" runat="server" Text="0"></asp:Label>  </a></td>
-                    <td>&nbsp;</td>
-                </tr>
-                <tr>
-                    <td class="borderTopLeft wciecie" colspan="2">przekazania innemu sądowi</td>
-                    <td class="borderTopLeft col_36">22</td>
-                    <td class="borderTopLeftRight col_150"><a href="javascript:openPopup('popup.aspx?sesja=22!6.1!1!4')">  <asp:Label CssClass="normal" ID="tab_61_w22_c01" runat="server" Text="0"></asp:Label>  </a></td>
-                    <td>&nbsp;</td>
-                </tr>
-                <tr>
-                    <td class="borderTopLeft wciecie" colspan="3">Pozostało (stan w ostatnim dniu okresu statystycznego) (k.01=dz.1 k.04 w. 06 )</td>
-                    <td class="borderTopLeft col_36">23</td>
-                    <td class="borderTopLeft col_150"><a href="javascript:openPopup('popup.aspx?sesja=23!6.1!1!4')">  <asp:Label CssClass="normal" ID="tab_61_w23_c01" runat="server" Text="0"></asp:Label>  </a></td>
-                    <td class="borderAll col_150"><a href="javascript:openPopup('popup.aspx?sesja=23!6.1!2!4')">  <asp:Label CssClass="normal" ID="tab_61_w23_c02" runat="server" Text="0"></asp:Label>  </a></td>
-                </tr>
-                <tr>
-                    <td class="borderTopLeft wciecie" colspan="3">w tym przekazane z innego sądu</td>
-                    <td class="borderTopLeft col_36">24</td>
-                    <td class="borderTopLeftRight col_150"><a href="javascript:openPopup('popup.aspx?sesja=7!6.1!1!4')">  <asp:Label CssClass="normal" ID="tab_61_w24_c01" runat="server" Text="0"></asp:Label>  </a></td>
-                    <td>&nbsp;</td>
-                </tr>
-                <tr>
-                    <td class="borderTopLeft wciecie" rowspan="9">Sprawy z w. 23 kol. 01, w których orzeczono karę </td>
-                    <td class="borderTopLeft wciecie" colspan="2">pozbawienia wolności (=w.26+27)</td>
-                    <td class="borderTopLeft col_36">25</td>
-                    <td class="borderTopLeft col_150"><a href="javascript:openPopup('popup.aspx?sesja=25!6.1!1!4')">  <asp:Label CssClass="normal" ID="tab_61_w25_c01" runat="server" Text="0"></asp:Label>  </a></td>
-                    <td class="borderTopLeft col_150"><a href="javascript:openPopup('popup.aspx?sesja=25!6.1!2!4')">  <asp:Label CssClass="normal" ID="tab_61_w25_c02" runat="server" Text="0"></asp:Label>  </a></td>
-                </tr>
-                <tr>
-                    <td class="borderTopLeft wciecie" rowspan="2">z tego</td>
-                    <td class="borderTopLeft wciecie">z nałożonymi obowiązkami, środkami karnymi, środkami kompensacyjnymi lub przepadkiem</td>
-                    <td class="borderTopLeft col_36">26</td>
-                    <td class="borderTopLeft col_150"><a href="javascript:openPopup('popup.aspx?sesja=26!6.1!1!4')">  <asp:Label CssClass="normal" ID="tab_61_w26_c01" runat="server" Text="0"></asp:Label>  </a></td>
-                    <td class="borderTopLeft col_150"><a href="javascript:openPopup('popup.aspx?sesja=26!6.1!2!4')">  <asp:Label CssClass="normal" ID="tab_61_w26_c02" runat="server" Text="0"></asp:Label>  </a></td>
-                </tr>
-                <tr>
-                    <td class="borderTopLeft wciecie">bez nałożonych obowiązków, środków karnych, środków kompensacyjnych lub przepadku</td>
-                    <td class="borderTopLeft col_36">27</td>
-                    <td class="borderTopLeft col_150"><a href="javascript:openPopup('popup.aspx?sesja=27!6.1!1!4')">  <asp:Label CssClass="normal" ID="tab_61_w27_c01" runat="server" Text="0"></asp:Label>  </a></td>
-                    <td class="borderTopLeft col_150"><a href="javascript:openPopup('popup.aspx?sesja=27!6.1!1!4')">  <asp:Label CssClass="normal" ID="tab_61_w27_c02" runat="server" Text="0"></asp:Label>  </a></td>
-                </tr>
-                <tr>
-                    <td class="borderTopLeft wciecie" colspan="2">ograniczenia wolności (=w.29+30)</td>
-                    <td class="borderTopLeft col_36">28</td>
-                    <td class="borderTopLeft col_150"><a href="javascript:openPopup('popup.aspx?sesja=28!6.1!1!4')">  <asp:Label CssClass="normal" ID="tab_61_w28_c01" runat="server" Text="0"></asp:Label>  </a></td>
-                    <td class="borderAll col_150"><a href="javascript:openPopup('popup.aspx?sesja=28!6.1!2!4')">  <asp:Label CssClass="normal" ID="tab_61_w28_c02" runat="server" Text="0"></asp:Label>  </a></td>
-                </tr>
-                <tr>
-                    <td class="borderTopLeft wciecie" rowspan="2">z tego</td>
-                    <td class="borderTopLeft wciecie">z nałożonymi obowiązkami lub środkami karnymi</td>
-                    <td class="borderTopLeft col_36">29</td>
-                    <td class="borderTopLeftRight col_150"><a href="javascript:openPopup('popup.aspx?sesja=29!6.1!1!4')">  <asp:Label CssClass="normal" ID="tab_61_w29_c01" runat="server" Text="0"></asp:Label>  </a></td>
-                </tr>
-                <tr>
-                    <td class="borderTopLeft wciecie">bez nałożonych obowiązków lub środków karnych</td>
-                    <td class="borderTopLeft col_36">30</td>
-                    <td class="borderTopLeftRight col_150"><a href="javascript:openPopup('popup.aspx?sesja=30!6.1!1!4')">  <asp:Label CssClass="normal" ID="tab_61_w30_c01" runat="server" Text="0"></asp:Label>  </a></td>
-                </tr>
-                <tr>
-                    <td class="borderTopLeft wciecie" colspan="2">grzywny (=w.32+33) </td>
-                    <td class="borderTopLeft col_36">31</td>
-                    <td class="borderTopLeft col_150"><a href="javascript:openPopup('popup.aspx?sesja=31!6.1!1!4')">  <asp:Label CssClass="normal" ID="tab_61_w31_c01" runat="server" Text="0"></asp:Label>  </a></td>
-                    <td class="borderAll col_150"><a href="javascript:openPopup('popup.aspx?sesja=31!6.1!2!4')">  <asp:Label CssClass="normal" ID="tab_61_w31_c02" runat="server" Text="0"></asp:Label>  </a></td>
-                </tr>
-                <tr>
-                    <td class="borderTopLeft wciecie" rowspan="2">z tego</td>
-                    <td class="borderTopLeft wciecie">z nałożonymi obowiązkami lub środkami karnymi</td>
-                    <td class="borderTopLeft col_36">32</td>
-                    <td class="borderTopLeftRight col_150"><a href="javascript:openPopup('popup.aspx?sesja=32!6.1!1!4')">  <asp:Label CssClass="normal" ID="tab_61_w32_c01" runat="server" Text="0"></asp:Label>  </a></td>
-                </tr>
-                <tr>
-                    <td class="borderTopLeft wciecie">bez nałożonych obowiązków lub środków karnych</td>
-                    <td class="borderTopLeft col_36">33</td>
-                    <td class="borderTopLeftRight col_150"><a href="javascript:openPopup('popup.aspx?sesja=33!6.1!1!4')">  <asp:Label CssClass="normal" ID="tab_61_w33_c01" runat="server" Text="0"></asp:Label>  </a></td>
-                </tr>
-                <tr>
-                    <td class="borderTopLeftBottom  wciecie" rowspan="2">z tego w.23</td>
-                    <td class="borderTopLeft wciecie" colspan="2">osoby wcześniej nie karane za przestępstwa</td>
-                    <td class="borderTopLeft col_36">34</td>
-                    <td class="borderTopLeftRight col_150"><a href="javascript:openPopup('popup.aspx?sesja=34!6.1!1!4')">  <asp:Label CssClass="normal" ID="tab_61_w34_c01" runat="server" Text="0"></asp:Label>  </a></td>
-                </tr>
-                <tr>
-                    <td class="borderTopLeftBottom wciecie" colspan="2">
-                        osoby uprzednio karane za przestępstwa<
-                    </td>
-                    <td class="borderTopLeftBottom col_36">35</td>
-                    <td class="borderAll col_150"><a href="javascript:openPopup('popup.aspx?sesja=35!6.1!1!4')">  <asp:Label CssClass="normal" ID="tab_61_w35_c01" runat="server" Text="0"></asp:Label>  </a></td>
-                </tr>
-            </table>
              </div>
 
-        <div class="page-break">
-
-           <strong>
-           <br />
-           Dział 6.2. </strong>Wykonywanie środków karnych, obowiązków, środków kompensacyjnych lub przepadku w okresie warunkowego zawieszenia kary <br />
-              <br />
-&nbsp;
-                 <table cellpadding="0" cellspacing="0" style="width:100%;">
-                  <tr>
-                      <td align="center" class="borderTopLeft" colspan="4">Środki karne, obowiązki, środki kompensacyjne lub przepadek orzeczone przy warunkowym zawieszeniu kary (dotyczy spraw Wzaw) (k.01 w.01+22 &gt;= dz.01 k.02 w.06) </td>
-                      <td class="borderTopLeft col_150">Wpływ (w okresie sprawozdawczym) </td>
-                      <td class="borderTopLeftRight col_150">Wykonywane (stan w ostatnim dniu okresu sprawozdawczego) </td>
-                  </tr>
-                  <tr>
-                      <td align="center" class="borderTopLeft" colspan="4">0</td>
-                      <td class="borderTopLeft col_150">1</td>
-                      <td class="borderTopLeftRight col_150">2</td>
-                  </tr>
-                  <tr>
-                      <td class="borderTopLeft wciecie" colspan="3">Ogółem liczba środków karnych (w.01 = w.02 do 05+10 do 21)</td>
-                      <td class="borderTopLeft col_36">01</td>
-                      <td class="borderTopLeft col_150"><a href="javascript:openPopup('popup.aspx?sesja=1!6.2!1!4')">  <asp:Label CssClass="normal" ID="tab_62_w01_c01" runat="server" Text="0"></asp:Label>  </a></td>
-                      <td class="borderTopLeftRight col_150"><a href="javascript:openPopup('popup.aspx?sesja=1!6.2!2!4')">  <asp:Label CssClass="normal" ID="tab_62_w01_c02" runat="server" Text="0"></asp:Label>  </a></td>
-                  </tr>
-                  <tr>
-                      <td class="borderTopLeft wciecie col_50" rowspan="17">Orzeczone środki karne w art.</td>
-                      <td class="borderTopLeft wciecie">39 pkt 1 kk </td>
-                      <td class="borderTopLeft wciecie">pozbawienie praw publicznych </td>
-                      <td class="borderTopLeft col_36">02</td>
-                      <td class="borderTopLeft col_150"><a href="javascript:openPopup('popup.aspx?sesja=2!6.2!1!4')">  <asp:Label CssClass="normal" ID="tab_62_w02_c01" runat="server" Text="0"></asp:Label>  </a></td>
-                      <td class="borderTopLeftRight col_150"><a href="javascript:openPopup('popup.aspx?sesja=2!6.2!2!4')">  <asp:Label CssClass="normal" ID="tab_62_w02_c02" runat="server" Text="0"></asp:Label>  </a></td>
-                  </tr>
-                  <tr>
-                      <td class="borderTopLeft wciecie" colspan="2">zakaz zajmowania określonego stanowiska, wykonywania określonego zawodu lub prowadzenia określonej działalności gospodarczej</td>
-                      <td class="borderTopLeft col_36">03</td>
-                     <td class="borderTopLeft col_150"><a href="javascript:openPopup('popup.aspx?sesja=3!6.2!1!4')">  <asp:Label CssClass="normal" ID="tab_62_w03_c01" runat="server" Text="0"></asp:Label>  </a></td>
-                      <td class="borderTopLeftRight col_150"><a href="javascript:openPopup('popup.aspx?sesja=3!6.2!2!4')">  <asp:Label CssClass="normal" ID="tab_62_w03_c02" runat="server" Text="0"></asp:Label>  </a></td>
-                  </tr>
-                  <tr>
-                      <td class="borderTopLeft wciecie">39 pkt 2a kk</td>
-                      <td class="borderTopLeft wciecie">zakaz prowadzenia działalności związanej z wychowaniem, leczeniem, edukacją małoletnich lub z opieką nad nimi, </td>
-                      <td class="borderTopLeft col_36">04</td>
-                     <td class="borderTopLeft col_150"><a href="javascript:openPopup('popup.aspx?sesja=4!6.2!1!4')">  <asp:Label CssClass="normal" ID="tab_62_w04_c01" runat="server" Text="0"></asp:Label>  </a></td>
-                      <td class="borderTopLeftRight col_150"><a href="javascript:openPopup('popup.aspx?sesja=4!6.2!2!4')">  <asp:Label CssClass="normal" ID="tab_62_w04_c02" runat="server" Text="0"></asp:Label>  </a></td>
-                  </tr>
-                  <tr>
-                      <td class="borderTopLeft wciecie" rowspan="5">39 pkt 2b kk</td>
-                      <td class="borderTopLeft wciecie">ogółem (w.05 = 06 do 09) </td>
-                      <td class="borderTopLeft col_36">05</td>
-                     <td class="borderTopLeft col_150"><a href="javascript:openPopup('popup.aspx?sesja=5!6.2!1!4')">  <asp:Label CssClass="normal" ID="tab_62_w05_c01" runat="server" Text="0"></asp:Label>  </a></td>
-                      <td class="borderTopLeftRight col_150"><a href="javascript:openPopup('popup.aspx?sesja=5!6.2!2!4')">  <asp:Label CssClass="normal" ID="tab_62_w05_c02" runat="server" Text="0"></asp:Label>  </a></td>
-                  </tr>
-                  <tr>
-                      <td class="borderTopLeft wciecie">obowiązek powstrzymania się (lub zakaz) od przebywania w określonych środowiskach lub miejscach </td>
-                      <td class="borderTopLeft col_36">06</td>
-                     <td class="borderTopLeft col_150"><a href="javascript:openPopup('popup.aspx?sesja=6!6.2!1!4')">  <asp:Label CssClass="normal" ID="tab_62_w06_c01" runat="server" Text="0"></asp:Label>  </a></td>
-                      <td class="borderTopLeftRight col_150"><a href="javascript:openPopup('popup.aspx?sesja=6!6.2!2!4')">  <asp:Label CssClass="normal" ID="tab_62_w06_c02" runat="server" Text="0"></asp:Label>  </a></td>
-                  </tr>
-                  <tr>
-                      <td class="borderTopLeft wciecie">zakaz kontaktowania się z określonymi osobami </td>
-                      <td class="borderTopLeft col_36">07</td>
-                     <td class="borderTopLeft col_150"><a href="javascript:openPopup('popup.aspx?sesja=7!6.2!1!4')">  <asp:Label CssClass="normal" ID="tab_62_w07_c01" runat="server" Text="0"></asp:Label>  </a></td>
-                      <td class="borderTopLeftRight col_150"><a href="javascript:openPopup('popup.aspx?sesja=7!6.2!2!4')">  <asp:Label CssClass="normal" ID="tab_62_w07_c02" runat="server" Text="0"></asp:Label>  </a></td>
-                  </tr>
-                  <tr>
-                      <td class="borderTopLeft wciecie">zakaz zbliżania się do określonych osób </td>
-                      <td class="borderTopLeft col_36">08</td>
-                     <td class="borderTopLeft col_150"><a href="javascript:openPopup('popup.aspx?sesja=8!6.2!1!4')">  <asp:Label CssClass="normal" ID="tab_62_w08_c01" runat="server" Text="0"></asp:Label>  </a></td>
-                      <td class="borderTopLeftRight col_150"><a href="javascript:openPopup('popup.aspx?sesja=8!6.2!2!4')">  <asp:Label CssClass="normal" ID="tab_62_w08_c02" runat="server" Text="0"></asp:Label>  </a></td>
-                  </tr>
-                  <tr>
-                      <td class="borderTopLeft wciecie">zakaz opuszczania określonego miejsca pobytu bez zgody sądu </td>
-                      <td class="borderTopLeft col_36">09</td>
-                     <td class="borderTopLeft col_150"><a href="javascript:openPopup('popup.aspx?sesja=9!6.2!1!4')">  <asp:Label CssClass="normal" ID="tab_62_w09_c01" runat="server" Text="0"></asp:Label>  </a></td>
-                      <td class="borderTopLeftRight col_150"><a href="javascript:openPopup('popup.aspx?sesja=9!6.2!2!4')">  <asp:Label CssClass="normal" ID="tab_62_w09_c02" runat="server" Text="0"></asp:Label>  </a></td>
-                  </tr>
-                  <tr>
-                      <td class="borderTopLeft wciecie">39 pkt 2c kk </td>
-                      <td class="borderTopLeft wciecie">zakaz wstępu na imprezę masową </td>
-                      <td class="borderTopLeft col_36">10</td>
-                     <td class="borderTopLeft col_150"><a href="javascript:openPopup('popup.aspx?sesja=10!6.2!1!4')">  <asp:Label CssClass="normal" ID="tab_62_w10_c01" runat="server" Text="0"></asp:Label>  </a></td>
-                      <td class="borderTopLeftRight col_150"><a href="javascript:openPopup('popup.aspx?sesja=10!6.2!2!4')">  <asp:Label CssClass="normal" ID="tab_62_w10_c02" runat="server" Text="0"></asp:Label>  </a></td>
-                  </tr>
-                  <tr>
-                      <td class="borderTopLeft wciecie">39 pkt 2d kk </td>
-                      <td class="borderTopLeft wciecie">zakaz wstępu do ośrodków gier i uczestnictwa w grach hazardowych </td>
-                      <td class="borderTopLeft col_36">11</td>
-                     <td class="borderTopLeft col_150"><a href="javascript:openPopup('popup.aspx?sesja=11!6.2!1!4')">  <asp:Label CssClass="normal" ID="tab_62_w11_c01" runat="server" Text="0"></asp:Label>  </a></td>
-                      <td class="borderTopLeftRight col_150"><a href="javascript:openPopup('popup.aspx?sesja=11!6.2!2!4')">  <asp:Label CssClass="normal" ID="tab_62_w11_c02" runat="server" Text="0"></asp:Label>  </a></td>
-                  </tr>
-                  <tr>
-                      <td class="borderTopLeft wciecie">39 pkt 2e kk </td>
-                      <td class="borderTopLeft wciecie">nakaz (okresowego) opuszczenia lokalu zajmowanego wspólnie z&nbsp;pokrzywdzonym </td>
-                      <td class="borderTopLeft col_36">12</td>
-                     <td class="borderTopLeft col_150"><a href="javascript:openPopup('popup.aspx?sesja=12!6.2!1!4')">  <asp:Label CssClass="normal" ID="tab_62_w12_c01" runat="server" Text="0"></asp:Label>  </a></td>
-                      <td class="borderTopLeftRight col_150"><a href="javascript:openPopup('popup.aspx?sesja=12!6.2!2!4')">  <asp:Label CssClass="normal" ID="tab_62_w12_c02" runat="server" Text="0"></asp:Label>  </a></td>
-                  </tr>
-                  <tr>
-                      <td class="borderTopLeft wciecie">39 pkt 3 kk </td>
-                      <td class="borderTopLeft wciecie">zakaz prowadzenia pojazdów </td>
-                      <td class="borderTopLeft col_36">13</td>
-                     <td class="borderTopLeft col_150"><a href="javascript:openPopup('popup.aspx?sesja=13!6.2!1!4')">  <asp:Label CssClass="normal" ID="tab_62_w13_c01" runat="server" Text="0"></asp:Label>  </a></td>
-                      <td class="borderTopLeftRight col_150"><a href="javascript:openPopup('popup.aspx?sesja=13!6.2!2!4')">  <asp:Label CssClass="normal" ID="tab_62_w13_c02" runat="server" Text="0"></asp:Label>  </a></td>
-                  </tr>
-                  <tr>
-                      <td class="borderTopLeft wciecie">39 pkt 4 kk </td>
-                      <td class="borderTopLeft wciecie">przepadek </td>
-                      <td class="borderTopLeft col_36">14</td>
-                     <td class="borderTopLeft col_150"><a href="javascript:openPopup('popup.aspx?sesja=14!6.2!1!4')">  <asp:Label CssClass="normal" ID="tab_62_w14_c01" runat="server" Text="0"></asp:Label>  </a></td>
-                      <td class="borderTopLeftRight col_150"><a href="javascript:openPopup('popup.aspx?sesja=14!6.2!2!4')">  <asp:Label CssClass="normal" ID="tab_62_w14_c02" runat="server" Text="0"></asp:Label>  </a></td>
-                  </tr>
-                  <tr>
-                      <td class="borderTopLeft wciecie">39 pkt 5 kk </td>
-                      <td class="borderTopLeft wciecie">obowiązek naprawienia szkody lub zadośćuczynienia za&nbsp;doznaną krzywdę </td>
-                      <td class="borderTopLeft col_36">15</td>
-                     <td class="borderTopLeft col_150"><a href="javascript:openPopup('popup.aspx?sesja=15!6.2!1!4')">  <asp:Label CssClass="normal" ID="tab_62_w15_c01" runat="server" Text="0"></asp:Label>  </a></td>
-                      <td class="borderTopLeftRight col_150"><a href="javascript:openPopup('popup.aspx?sesja=15!6.2!2!4')">  <asp:Label CssClass="normal" ID="tab_62_w15_c02" runat="server" Text="0"></asp:Label>  </a></td>
-                  </tr>
-                  <tr>
-                      <td class="borderTopLeft wciecie">39 pkt 6 kk </td>
-                      <td class="borderTopLeft wciecie">nawiązka </td>
-                      <td class="borderTopLeft col_36">16</td>
-                     <td class="borderTopLeft col_150"><a href="javascript:openPopup('popup.aspx?sesja=16!6.2!1!4')">  <asp:Label CssClass="normal" ID="tab_62_w16_c01" runat="server" Text="0"></asp:Label>  </a></td>
-                      <td class="borderTopLeftRight col_150"><a href="javascript:openPopup('popup.aspx?sesja=16!6.2!2!4')">  <asp:Label CssClass="normal" ID="tab_62_w16_c02" runat="server" Text="0"></asp:Label>  </a></td>
-                  </tr>
-                  <tr>
-                      <td class="borderTopLeft wciecie">39 pkt 7 kk </td>
-                      <td class="borderTopLeft wciecie">świadczenie pieniężne </td>
-                      <td class="borderTopLeft col_36">17</td>
-                     <td class="borderTopLeft col_150"><a href="javascript:openPopup('popup.aspx?sesja=17!6.2!1!4')">  <asp:Label CssClass="normal" ID="tab_62_w17_c01" runat="server" Text="0"></asp:Label>  </a></td>
-                      <td class="borderTopLeftRight col_150"><a href="javascript:openPopup('popup.aspx?sesja=17!6.2!2!4')">  <asp:Label CssClass="normal" ID="tab_62_w17_c02" runat="server" Text="0"></asp:Label>  </a></td>
-                  </tr>
-                  <tr>
-                      <td class="borderTopLeft wciecie">39 pkt 8 kk </td>
-                      <td class="borderTopLeft wciecie">podanie wyroku do publicznej wiadomości </td>
-                      <td class="borderTopLeft col_36">18</td>
-                     <td class="borderTopLeft col_150"><a href="javascript:openPopup('popup.aspx?sesja=18!6.2!1!4')">  <asp:Label CssClass="normal" ID="tab_62_w18_c01" runat="server" Text="0"></asp:Label>  </a></td>
-                      <td class="borderTopLeftRight col_150"><a href="javascript:openPopup('popup.aspx?sesja=18!6.2!2!4')">  <asp:Label CssClass="normal" ID="tab_62_w18_c02" runat="server" Text="0"></asp:Label>  </a></td>
-                  </tr>
-                  <tr>
-                      <td class="borderTopLeft wciecie" colspan="3">Przepadek (art. 44 kk z wył. 39 pkt 4 kk) </td>
-                      <td class="borderTopLeft col_36">19</td>
-                     <td class="borderTopLeft col_150"><a href="javascript:openPopup('popup.aspx?sesja=19!6.2!1!4')">  <asp:Label CssClass="normal" ID="tab_62_w19_c01" runat="server" Text="0"></asp:Label>  </a></td>
-                      <td class="borderTopLeftRight col_150"><a href="javascript:openPopup('popup.aspx?sesja=19!6.2!2!4')">  <asp:Label CssClass="normal" ID="tab_62_w19_c02" runat="server" Text="0"></asp:Label>  </a></td>
-                  </tr>
-                  <tr>
-                      <td class="borderTopLeft  wciecie col_50" rowspan="2">Środki kompensacyjne</td>
-                      <td class="borderTopLeft wciecie" colspan="2">obowiązek naprawienia szkody lub zadośćuczynienia za doznaną krzywdę (art. 46 § 1 kk) </td>
-                      <td class="borderTopLeft col_36">20</td>
-                     <td class="borderTopLeft col_150"><a href="javascript:openPopup('popup.aspx?sesja=20!6.2!1!4')">  <asp:Label CssClass="normal" ID="tab_62_w20_c01" runat="server" Text="0"></asp:Label>  </a></td>
-                      <td class="borderTopLeftRight col_150"><a href="javascript:openPopup('popup.aspx?sesja=20!6.2!2!4')">  <asp:Label CssClass="normal" ID="tab_62_w20_c02" runat="server" Text="0"></asp:Label>  </a></td>
-                  </tr>
-                  <tr>
-                      <td class="borderTopLeft wciecie" colspan="2">nawiązka (art. 46 § 2 i 47 § 1 lub 2 kk) </td>
-                      <td class="borderTopLeft col_36">21</td>
-                     <td class="borderTopLeft col_150"><a href="javascript:openPopup('popup.aspx?sesja=21!6.2!1!4')">  <asp:Label CssClass="normal" ID="tab_62_w21_c01" runat="server" Text="0"></asp:Label>  </a></td>
-                      <td class="borderTopLeftRight col_150"><a href="javascript:openPopup('popup.aspx?sesja=21!6.2!2!4')">  <asp:Label CssClass="normal" ID="tab_62_w21_c02" runat="server" Text="0"></asp:Label>  </a></td>
-                  </tr>
-                  <tr>
-                      <td class="borderTopLeft wciecie" colspan="3">Ogółem liczba obowiązków (w.22 = w.23 do 28+32 do 36+39 do 43)</td>
-                      <td class="borderTopLeft col_36">22</td>
-                     <td class="borderTopLeft col_150"><a href="javascript:openPopup('popup.aspx?sesja=22!6.2!1!4')">  <asp:Label CssClass="normal" ID="tab_62_w22_c01" runat="server" Text="0"></asp:Label>  </a></td>
-                      <td class="borderTopLeftRight col_150"><a href="javascript:openPopup('popup.aspx?sesja=22!6.2!2!4')">  <asp:Label CssClass="normal" ID="tab_62_w22_c02" runat="server" Text="0"></asp:Label>  </a></td>
-                  </tr>
-                  <tr>
-                      <td class="borderTopLeftBottom  wciecie col_50" rowspan="21">Orzeczone obowiązki w&nbsp;art.</td>
-                      <td class="borderTopLeft wciecie col_90">72 § 1 pkt 1 kk </td>
-                      <td class="borderTopLeft wciecie">informowania sądu lub kuratora o przebiegu okresu próby </td>
-                      <td class="borderTopLeft col_36">23</td>
-                     <td class="borderTopLeft col_150"><a href="javascript:openPopup('popup.aspx?sesja=23!6.2!1!4')">  <asp:Label CssClass="normal" ID="tab_62_w23_c01" runat="server" Text="0"></asp:Label>  </a></td>
-                      <td class="borderTopLeftRight col_150"><a href="javascript:openPopup('popup.aspx?sesja=23!6.2!2!4')">  <asp:Label CssClass="normal" ID="tab_62_w23_c02" runat="server" Text="0"></asp:Label>  </a></td>
-                  </tr>
-                  <tr>
-                      <td class="borderTopLeft wciecie">72 § 1 pkt 2 kk </td>
-                      <td class="borderTopLeft wciecie">przeproszenia pokrzywdzonego </td>
-                      <td class="borderTopLeft col_36">24</td>
-                      <td class="borderTopLeft col_150"><a href="javascript:openPopup('popup.aspx?sesja=24!6.2!1!4')">  <asp:Label CssClass="normal" ID="tab_62_w24_c01" runat="server" Text="0"></asp:Label>  </a></td>
-                      <td class="borderTopLeftRight col_150"><a href="javascript:openPopup('popup.aspx?sesja=24!6.2!2!4')">  <asp:Label CssClass="normal" ID="tab_62_w24_c02" runat="server" Text="0"></asp:Label>  </a></td>
-                  </tr>
-                  <tr>
-                      <td class="borderTopLeft wciecie">72 § 1 pkt 3 kk </td>
-                          <td class="borderTopLeft wciecie">wykonywania ciążącego na nim obowiązku łożenia na utrzymanie innej osoby </td>
-                      <td class="borderTopLeft col_36">25</td>
-                      <td class="borderTopLeft col_150"><a href="javascript:openPopup('popup.aspx?sesja=25!6.2!1!4')">  <asp:Label CssClass="normal" ID="tab_62_w25_c01" runat="server" Text="0"></asp:Label>  </a></td>
-                      <td class="borderTopLeftRight col_150"><a href="javascript:openPopup('popup.aspx?sesja=25!6.2!2!4')">  <asp:Label CssClass="normal" ID="tab_62_w25_c02" runat="server" Text="0"></asp:Label>  </a></td>
-                  </tr>
-                     <tr>
-                      <td class="borderTopLeft wciecie">72 § 1 pkt 4 kk </td>
-                          <td class="borderTopLeft wciecie">wykonywania pracy zarobkowej, do nauki lub przygotowania się do zawodu </td>
-                      <td class="borderTopLeft col_36">26</td>
-                      <td class="borderTopLeft col_150"><a href="javascript:openPopup('popup.aspx?sesja=26!6.2!1!4')">  <asp:Label CssClass="normal" ID="tab_62_w26_c01" runat="server" Text="0"></asp:Label>  </a></td>
-                      <td class="borderTopLeftRight col_150"><a href="javascript:openPopup('popup.aspx?sesja=26!6.2!2!4')">  <asp:Label CssClass="normal" ID="tab_62_w26_c02" runat="server" Text="0"></asp:Label>  </a></td>
-                  </tr>
-                     <tr>
-                      <td class="borderTopLeft wciecie">72 § 1 pkt 5 kk </td>
-                          <td class="borderTopLeft wciecie">powstrzymania się od nadużywania alkoholu lub używania innych środków odurzających </td>
-                      <td class="borderTopLeft col_36">27</td>
-                      <td class="borderTopLeft col_150"><a href="javascript:openPopup('popup.aspx?sesja=27!6.2!1!4')">  <asp:Label CssClass="normal" ID="tab_62_w27_c01" runat="server" Text="0"></asp:Label>  </a></td>
-                      <td class="borderTopLeftRight col_150"><a href="javascript:openPopup('popup.aspx?sesja=27!6.2!2!4')">  <asp:Label CssClass="normal" ID="tab_62_w27_c02" runat="server" Text="0"></asp:Label>  </a></td>
-                  </tr>
-                     <tr>
-                      <td class="borderTopLeft wciecie" rowspan="4">72 § 1 pkt 6 kk</td>
-                          <td class="borderTopLeft wciecie">ogółem (w.28 = 29 do 31) </td>
-                      <td class="borderTopLeft col_36">28</td>
-                      <td class="borderTopLeft col_150"><a href="javascript:openPopup('popup.aspx?sesja=28!6.2!1!4')">  <asp:Label CssClass="normal" ID="tab_62_w28_c01" runat="server" Text="0"></asp:Label>  </a></td>
-                      <td class="borderTopLeftRight col_150"><a href="javascript:openPopup('popup.aspx?sesja=28!6.2!2!4')">  <asp:Label CssClass="normal" ID="tab_62_w28_c02" runat="server" Text="0"></asp:Label>  </a></td>
-                  </tr>
-                      <tr>
-                          <td class="borderTopLeft wciecie">leczenie odwykowe (terapia uzależnień) – alkohol </td>
-                      <td class="borderTopLeft col_36">29</td>
-                      <td class="borderTopLeft col_150"><a href="javascript:openPopup('popup.aspx?sesja=29!6.2!1!4')">  <asp:Label CssClass="normal" ID="tab_62_w29_c01" runat="server" Text="0"></asp:Label>  </a></td>
-                      <td class="borderTopLeftRight col_150"><a href="javascript:openPopup('popup.aspx?sesja=29!6.2!2!4')">  <asp:Label CssClass="normal" ID="tab_62_w29_c02" runat="server" Text="0"></asp:Label>  </a></td>
-                  </tr>
-                  <tr>
-                      <td class="borderTopLeft wciecie">leczenie odwykowe (terapia uzależnień) – środki odurzające </td>
-                      <td class="borderTopLeft col_36">30</td>
-                     <td class="borderTopLeft col_150"><a href="javascript:openPopup('popup.aspx?sesja=30!6.2!1!4')">  <asp:Label CssClass="normal" ID="tab_62_w30_c01" runat="server" Text="0"></asp:Label>  </a></td>
-                      <td class="borderTopLeftRight col_150"><a href="javascript:openPopup('popup.aspx?sesja=30!6.2!2!4')">  <asp:Label CssClass="normal" ID="tab_62_w30_c02" runat="server" Text="0"></asp:Label>  </a></td>
-                  </tr>
-                  <tr>
-                      <td class="borderTopLeft wciecie">leczenie rehabilitacyjne, oddziaływania terapeutyczne </td>
-                      <td class="borderTopLeft col_36">31</td>
-                     <td class="borderTopLeft col_150"><a href="javascript:openPopup('popup.aspx?sesja=31!6.2!1!4')">  <asp:Label CssClass="normal" ID="tab_62_w31_c01" runat="server" Text="0"></asp:Label>  </a></td>
-                      <td class="borderTopLeftRight col_150"><a href="javascript:openPopup('popup.aspx?sesja=31!6.2!2!4')">  <asp:Label CssClass="normal" ID="tab_62_w31_c02" runat="server" Text="0"></asp:Label>  </a></td>
-                  </tr>
-                  <tr>
-                      <td class="borderTopLeft wciecie" rowspan="2">72 § 1 pkt 6a kk</td>
-                      <td class="borderTopLeft wciecie">uczestnictwo w programach korekcyjno-edukacyjnych </td>
-                      <td class="borderTopLeft col_36">32</td>
-                     <td class="borderTopLeft col_150"><a href="javascript:openPopup('popup.aspx?sesja=32!6.2!1!4')">  <asp:Label CssClass="normal" ID="tab_62_w32_c01" runat="server" Text="0"></asp:Label>  </a></td>
-                      <td class="borderTopLeftRight col_150"><a href="javascript:openPopup('popup.aspx?sesja=32!6.2!2!4')">  <asp:Label CssClass="normal" ID="tab_62_w32_c02" runat="server" Text="0"></asp:Label>  </a></td>
-                  </tr>
-                  <tr>
-                      <td class="borderTopLeft wciecie">terapia </td>
-                      <td class="borderTopLeft col_36">33</td>
-                     <td class="borderTopLeft col_150"><a href="javascript:openPopup('popup.aspx?sesja=33!6.2!1!4')">  <asp:Label CssClass="normal" ID="tab_62_w33_c01" runat="server" Text="0"></asp:Label>  </a></td>
-                      <td class="borderTopLeftRight col_150"><a href="javascript:openPopup('popup.aspx?sesja=33!6.2!2!4')">  <asp:Label CssClass="normal" ID="tab_62_w33_c02" runat="server" Text="0"></asp:Label>  </a></td>
-                  </tr>
-                  <tr>
-                      <td class="borderTopLeft wciecie">72 § 1 pkt 6b kk </td>
-                      <td class="borderTopLeft wciecie">uczestnictwa w oddziaływaniach korekcyjno-edukacyjnych </td>
-                      <td class="borderTopLeft col_36">34</td>
-                      <td class="borderTopLeft col_150"><a href="javascript:openPopup('popup.aspx?sesja=34!6.2!1!4')">  <asp:Label CssClass="normal" ID="tab_62_w34_c01" runat="server" Text="0"></asp:Label>  </a></td>
-                      <td class="borderTopLeftRight col_150"><a href="javascript:openPopup('popup.aspx?sesja=34!6.2!2!4')">  <asp:Label CssClass="normal" ID="tab_62_w34_c02" runat="server" Text="0"></asp:Label>  </a></td>
-                  </tr>
-                  <tr>
-                      <td class="borderTopLeft wciecie">72 § 1 pkt 7 kk </td>
-                          <td class="borderTopLeft wciecie">powstrzymania się od przebywania w określonych środowiskach lub miejscach </td>
-                      <td class="borderTopLeft col_36">35</td>
-                      <td class="borderTopLeft col_150"><a href="javascript:openPopup('popup.aspx?sesja=35!6.2!1!4')">  <asp:Label CssClass="normal" ID="tab_62_w35_c01" runat="server" Text="0"></asp:Label>  </a></td>
-                      <td class="borderTopLeftRight col_150"><a href="javascript:openPopup('popup.aspx?sesja=35!6.2!2!4')">  <asp:Label CssClass="normal" ID="tab_62_w35_c02" runat="server" Text="0"></asp:Label>  </a></td>
-                  </tr>
-                     <tr>
-                      <td class="borderTopLeft wciecie" rowspan="3">72 § 1 pkt 7a kk </td>
-                          <td class="borderTopLeft wciecie">ogółem (w.36 = 37+38) </td>
-                      <td class="borderTopLeft col_36">36</td>
-                      <td class="borderTopLeft col_150"><a href="javascript:openPopup('popup.aspx?sesja=36!6.2!1!4')">  <asp:Label CssClass="normal" ID="tab_62_w36_c01" runat="server" Text="0"></asp:Label>  </a></td>
-                      <td class="borderTopLeftRight col_150"><a href="javascript:openPopup('popup.aspx?sesja=36!6.2!2!4')">  <asp:Label CssClass="normal" ID="tab_62_w36_c02" runat="server" Text="0"></asp:Label>  </a></td>
-                  </tr>
-                     <tr>
-                          <td class="borderTopLeft wciecie">powstrzymania się od kontaktowania się z pokrzywdzonym lub innymi osobami w określony sposób </td>
-                      <td class="borderTopLeft col_36">37</td>
-                      <td class="borderTopLeft col_150"><a href="javascript:openPopup('popup.aspx?sesja=37!6.2!1!4')">  <asp:Label CssClass="normal" ID="tab_62_w37_c01" runat="server" Text="0"></asp:Label>  </a></td>
-                      <td class="borderTopLeftRight col_150"><a href="javascript:openPopup('popup.aspx?sesja=37!6.2!2!4')">  <asp:Label CssClass="normal" ID="tab_62_w37_c02" runat="server" Text="0"></asp:Label>  </a></td>
-                  </tr>
-                     <tr>
-                          <td class="borderTopLeft wciecie">powstrzymywania się od zbliżania się do pokrzywdzonego lub innych osób </td>
-                      <td class="borderTopLeft col_36">38</td>
-                      <td class="borderTopLeft col_150"><a href="javascript:openPopup('popup.aspx?sesja=38!6.2!1!4')">  <asp:Label CssClass="normal" ID="tab_62_w38_c01" runat="server" Text="0"></asp:Label>  </a></td>
-                      <td class="borderTopLeftRight col_150"><a href="javascript:openPopup('popup.aspx?sesja=38!6.2!2!4')">  <asp:Label CssClass="normal" ID="tab_62_w38_c02" runat="server" Text="0"></asp:Label>  </a></td>
-                  </tr>
-                      <tr>
-                      <td class="borderTopLeft wciecie">
-                          <p style="margin-right: -0.11cm; margin-bottom: 0cm">
-                              <font face="Arial, sans-serif"><font size="1" style="font-size: 8pt">72 § 1 pkt 7b kk</font></font></p>
-                          </td>
-                          <td class="borderTopLeft wciecie">opuszczenia lokalu zajmowanego wspólnie z pokrzywdzonym</td>
-                      <td class="borderTopLeft col_36">39</td>
-                      <td class="borderTopLeft col_150"><a href="javascript:openPopup('popup.aspx?sesja=39!6.2!1!4')">  <asp:Label CssClass="normal" ID="tab_62_w39_c01" runat="server" Text="0"></asp:Label>  </a></td>
-                      <td class="borderTopLeftRight col_150"><a href="javascript:openPopup('popup.aspx?sesja=39!6.2!2!4')">  <asp:Label CssClass="normal" ID="tab_62_w39_c02" runat="server" Text="0"></asp:Label>  </a></td>
-                  </tr>
-                                         <tr>
-                      <td class="borderTopLeft wciecie">72 § 1 pkt 8 kk </td>
-                      <td class="borderTopLeft wciecie">innego stosownego postępowania w okresie próby </td>
-                      <td class="borderTopLeft col_36">40</td>
-                     <td class="borderTopLeft col_150"><a href="javascript:openPopup('popup.aspx?sesja=40!6.2!1!4')">  <asp:Label CssClass="normal" ID="tab_62_w40_c01" runat="server" Text="0"></asp:Label>  </a></td>
-                      <td class="borderTopLeftRight col_150"><a href="javascript:openPopup('popup.aspx?sesja=40!6.2!2!4')">  <asp:Label CssClass="normal" ID="tab_62_w40_c02" runat="server" Text="0"></asp:Label>  </a></td>
-                  </tr>
-                  <tr>
-                      <td class="borderTopLeft wciecie">72 § 1a kk </td>
-                      <td class="borderTopLeft wciecie">określenie przez sąd sposób kontaktu skazanego z pokrzywdzonym w razie orzeczenia obowiązku z § 1 pkt 7b </td>
-                      <td class="borderTopLeft col_36">41</td>
-                     <td class="borderTopLeft col_150"><a href="javascript:openPopup('popup.aspx?sesja=41!6.2!1!4')">  <asp:Label CssClass="normal" ID="tab_62_w41_c01" runat="server" Text="0"></asp:Label>  </a></td>
-                      <td class="borderTopLeftRight col_150"><a href="javascript:openPopup('popup.aspx?sesja=41!6.2!2!4')">  <asp:Label CssClass="normal" ID="tab_62_w41_c02" runat="server" Text="0"></asp:Label>  </a></td>
-                  </tr>
-                  <tr>
-                      <td class="borderTopLeft wciecie">72 § 2 kk </td>
-                      <td class="borderTopLeft wciecie">naprawienia szkody w całości lub w części albo uiszczenia świadczenia wymienionego w art. 39 pkt 7 kk </td>
-                      <td class="borderTopLeft col_36">42</td>
-                     <td class="borderTopLeft col_150"><a href="javascript:openPopup('popup.aspx?sesja=42!6.2!1!4')">  <asp:Label CssClass="normal" ID="tab_62_w42_c01" runat="server" Text="0"></asp:Label>  </a></td>
-                      <td class="borderTopLeftRight col_150"><a href="javascript:openPopup('popup.aspx?sesja=42!6.2!2!4')">  <asp:Label CssClass="normal" ID="tab_62_w42_c02" runat="server" Text="0"></asp:Label>  </a></td>
-                  </tr>
-                  <tr>
-                      <td class="borderTopLeftBottom wciecie" colspan="2">71 ust. 1 ustawy z dnia 29 lipca 2005 r. o przeciwdziałaniu narkomanii - leczenie lub rehabilitacja w podmiocie leczniczym (Dz. U. z 2012 r., poz. 124, z późn. zm.)</td>
-                      <td class="borderTopLeftBottom col_36">43</td>
-                     <td class="borderTopLeftBottom col_150"><a href="javascript:openPopup('popup.aspx?sesja=43!6.2!1!4')">  <asp:Label CssClass="normal" ID="tab_62_w43_c01" runat="server" Text="0"></asp:Label>  </a></td>
-                      <td class="borderAll col_150"><a href="javascript:openPopup('popup.aspx?sesja=43!6.2!2!4')">  <asp:Label CssClass="normal" ID="tab_62_w43_c02" runat="server" Text="0"></asp:Label>  </a></td>
-                  </tr>
-              </table>
-		     <br />
-		      <br />
-      </div>
+  
 
         <div class="page-break">
 
@@ -2853,15 +1792,15 @@ razem </td>
 					<td class="borderTopLeft col_100"><a href="javascript:openPopup('popup.aspx?sesja=1!6.4!1!4')">  <asp:Label CssClass="normal" ID="tab_64_w01_c01" runat="server" Text="0"></asp:Label>  </a></td>
 					<td class="borderTopLeft col_100"><a href="javascript:openPopup('popup.aspx?sesja=1!6.4!2!4')">  <asp:Label CssClass="normal" ID="tab_64_w01_c02" runat="server" Text="0"></asp:Label>  </a></td>
 					<td class="borderTopLeft col_100"><a href="javascript:openPopup('popup.aspx?sesja=1!6.4!3!4')">  <asp:Label CssClass="normal" ID="tab_64_w01_c03" runat="server" Text="0"></asp:Label>  </a></td>
-					<td class="col_100 borderTopLeftRight"><a href="javascript:openPopup('popup.aspx?sesja=1!6.4!4!4')">  <asp:Label CssClass="normal" ID="tab_64_w01_c04" runat="server" Text="0"></asp:Label>  </a></td>
+					<td class="col_100 borderAll"><a href="javascript:openPopup('popup.aspx?sesja=1!6.4!4!4')">  <asp:Label CssClass="normal" ID="tab_64_w01_c04" runat="server" Text="0"></asp:Label>  </a></td>
                   </tr>
                   <tr>
                       <td class="wciecie borderTopLeft" colspan="3">w tym przekazane z innych sądów </td>
                       <td align="center" class="borderTopLeft col_36">02</td>
         			<td class="borderTopLeft col_100"><a href="javascript:openPopup('popup.aspx?sesja=2!6.4!1!4')">  <asp:Label CssClass="normal" ID="tab_64_w02_c01" runat="server" Text="0"></asp:Label>  </a></td>
 					<td class="borderTopLeft col_100"><a href="javascript:openPopup('popup.aspx?sesja=2!6.4!2!4')">  <asp:Label CssClass="normal" ID="tab_64_w02_c02" runat="server" Text="0"></asp:Label>  </a></td>
-					<td class="borderTopLeft col_100"><a href="javascript:openPopup('popup.aspx?sesja=2!6.4!3!4')">  <asp:Label CssClass="normal" ID="tab_64_w02_c03" runat="server" Text="0"></asp:Label>  </a></td>
-					<td class="col_100 borderTopLeftRight"><a href="javascript:openPopup('popup.aspx?sesja=2!6.4!4!4')">  <asp:Label CssClass="normal" ID="tab_64_w02_c04" runat="server" Text="0"></asp:Label>  </a></td>
+					<td class="borderAll col_100"><a href="javascript:openPopup('popup.aspx?sesja=2!6.4!3!4')">  <asp:Label CssClass="normal" ID="tab_64_w02_c03" runat="server" Text="0"></asp:Label>  </a></td>
+					<td class="col_100" rowspan="5">&nbsp;</td>
                   </tr>
                   <tr>
                       <td class="wciecie borderTopLeft" rowspan="2">Z tego dozory orzeczono (z w.01) </td>
@@ -2869,16 +1808,14 @@ razem </td>
                       <td align="center" class="borderTopLeft col_36">03</td>
         			<td class="borderTopLeft col_100"><a href="javascript:openPopup('popup.aspx?sesja=3!6.4!1!4')">  <asp:Label CssClass="normal" ID="tab_64_w03_c01" runat="server" Text="0"></asp:Label>  </a></td>
 					<td class="borderTopLeft col_100"><a href="javascript:openPopup('popup.aspx?sesja=3!6.4!2!4')">  <asp:Label CssClass="normal" ID="tab_64_w03_c02" runat="server" Text="0"></asp:Label>  </a></td>
-					<td class="borderTopLeft col_100"><a href="javascript:openPopup('popup.aspx?sesja=3!6.4!3!4')">  <asp:Label CssClass="normal" ID="tab_64_w03_c03" runat="server" Text="0"></asp:Label>  </a></td>
-					<td class="col_100 borderTopLeftRight"><a href="javascript:openPopup('popup.aspx?sesja=3!6.4!4!4')">  <asp:Label CssClass="normal" ID="tab_64_w03_c04" runat="server" Text="0"></asp:Label>  </a></td>
+					<td class="borderAll col_100"><a href="javascript:openPopup('popup.aspx?sesja=3!6.4!3!4')">  <asp:Label CssClass="normal" ID="tab_64_w03_c03" runat="server" Text="0"></asp:Label>  </a></td>
                   </tr>
                   <tr>
                       <td class="borderTopLeft wciecie" colspan="2">w okresie próby (art. 74 § 2 kk) </td>
                       <td align="center" class="borderTopLeft col_36">04</td>
         			<td class="borderTopLeft col_100"><a href="javascript:openPopup('popup.aspx?sesja=4!6.4!1!4')">  <asp:Label CssClass="normal" ID="tab_64_w04_c01" runat="server" Text="0"></asp:Label>  </a></td>
 					<td class="borderTopLeft col_100"><a href="javascript:openPopup('popup.aspx?sesja=4!6.4!2!4')">  <asp:Label CssClass="normal" ID="tab_64_w04_c02" runat="server" Text="0"></asp:Label>  </a></td>
-					<td class="borderTopLeft col_100"><a href="javascript:openPopup('popup.aspx?sesja=4!6.4!3!4')">  <asp:Label CssClass="normal" ID="tab_64_w04_c03" runat="server" Text="0"></asp:Label>  </a></td>
-					<td class="col_100 borderTopLeftRight"><a href="javascript:openPopup('popup.aspx?sesja=4!6.4!4!4')">  <asp:Label CssClass="normal" ID="tab_64_w04_c04" runat="server" Text="0"></asp:Label>  </a></td>
+					<td class="borderAll col_100"><a href="javascript:openPopup('popup.aspx?sesja=4!6.4!3!4')">  <asp:Label CssClass="normal" ID="tab_64_w04_c03" runat="server" Text="0"></asp:Label>  </a></td>
                   </tr>
                   <tr>
                       <td class="borderTopLeft wciecie" rowspan="2">Z tego dozory orzeczono (z w.01) </td>
@@ -2886,40 +1823,37 @@ razem </td>
                       <td align="center" class="borderTopLeft col_36">05</td>
         			<td class="borderTopLeft col_100"><a href="javascript:openPopup('popup.aspx?sesja=5!6.4!1!4')">  <asp:Label CssClass="normal" ID="tab_64_w05_c01" runat="server" Text="0"></asp:Label>  </a></td>
 					<td class="borderTopLeft col_100"><a href="javascript:openPopup('popup.aspx?sesja=5!6.4!2!4')">  <asp:Label CssClass="normal" ID="tab_64_w05_c02" runat="server" Text="0"></asp:Label>  </a></td>
-					<td class="borderTopLeft col_100"><a href="javascript:openPopup('popup.aspx?sesja=5!6.4!3!4')">  <asp:Label CssClass="normal" ID="tab_64_w05_c03" runat="server" Text="0"></asp:Label>  </a></td>
-					<td class="col_100 borderTopLeftRight"><a href="javascript:openPopup('popup.aspx?sesja=5!6.4!4!4')">  <asp:Label CssClass="normal" ID="tab_64_w05_c04" runat="server" Text="0"></asp:Label>  </a></td>
+					<td class="borderAll col_100"><a href="javascript:openPopup('popup.aspx?sesja=5!6.4!3!4')">  <asp:Label CssClass="normal" ID="tab_64_w05_c03" runat="server" Text="0"></asp:Label>  </a></td>
                   </tr>
                   <tr>
                       <td class="borderTopLeft wciecie" colspan="2">bez obowiązków probacyjnych </td>
                       <td align="center" class="borderTopLeft col_36">06</td>
         			<td class="borderTopLeft col_100"><a href="javascript:openPopup('popup.aspx?sesja=6!6.4!1!4')">  <asp:Label CssClass="normal" ID="tab_64_w06_c01" runat="server" Text="0"></asp:Label>  </a></td>
 					<td class="borderTopLeft col_100"><a href="javascript:openPopup('popup.aspx?sesja=6!6.4!2!4')">  <asp:Label CssClass="normal" ID="tab_64_w06_c02" runat="server" Text="0"></asp:Label>  </a></td>
-					<td class="borderTopLeft col_100"><a href="javascript:openPopup('popup.aspx?sesja=6!6.4!3!4')">  <asp:Label CssClass="normal" ID="tab_64_w06_c03" runat="server" Text="0"></asp:Label>  </a></td>
-					<td class="col_100 borderTopLeftRight"><a href="javascript:openPopup('popup.aspx?sesja=6!6.4!4!4')">  <asp:Label CssClass="normal" ID="tab_64_w06_c04" runat="server" Text="0"></asp:Label>  </a></td>
+					<td class="borderAll col_100"><a href="javascript:openPopup('popup.aspx?sesja=6!6.4!3!4')">  <asp:Label CssClass="normal" ID="tab_64_w06_c03" runat="server" Text="0"></asp:Label>  </a></td>
                   </tr>
                   <tr>
                       <td class="borderTopLeft wciecie" colspan="3">Zakończono (w okresie sprawozdawczym) (w. 07 = w. 09) </td>
                       <td align="center" class="borderTopLeft col_36">07</td>
         			<td class="borderTopLeft col_100"><a href="javascript:openPopup('popup.aspx?sesja=7!6.4!1!4')">  <asp:Label CssClass="normal" ID="tab_64_w07_c01" runat="server" Text="0"></asp:Label>  </a></td>
 					<td class="borderTopLeft col_100"><a href="javascript:openPopup('popup.aspx?sesja=7!6.4!2!4')">  <asp:Label CssClass="normal" ID="tab_64_w07_c02" runat="server" Text="0"></asp:Label>  </a></td>
-					<td class="borderTopLeft col_100"><a href="javascript:openPopup('popup.aspx?sesja=7!6.4!3!4')">  <asp:Label CssClass="normal" ID="tab_64_w07_c03" runat="server" Text="0"></asp:Label>  </a></td>
-					<td class="col_100 borderTopLeftRight"><a href="javascript:openPopup('popup.aspx?sesja=7!6.4!4!4')">  <asp:Label CssClass="normal" ID="tab_64_w07_c04" runat="server" Text="0"></asp:Label>  </a></td>
+					<td class="col_100 borderAll"><a href="javascript:openPopup('popup.aspx?sesja=7!6.4!3!4')">  <asp:Label CssClass="normal" ID="tab_64_w07_c03" runat="server" Text="0"></asp:Label>  </a></td>
+					<td class="col_100 borderAll"><a href="javascript:openPopup('popup.aspx?sesja=7!6.4!4!4')">  <asp:Label CssClass="normal" ID="tab_64_w07_c04" runat="server" Text="0"></asp:Label>  </a></td>
                   </tr>
                   <tr>
                       <td class="borderTopLeft wciecie" colspan="3">Z w.07 po pisemnym upomnieniu sądowego kuratora zawodowego (art.&nbsp;75&nbsp;&nbsp;§ 2a kk) </td>
                       <td align="center" class="borderTopLeft col_36">08</td>
         			<td class="borderTopLeft col_100"><a href="javascript:openPopup('popup.aspx?sesja=8!6.4!1!4')">  <asp:Label CssClass="normal" ID="tab_64_w08_c01" runat="server" Text="0"></asp:Label>  </a></td>
 					<td class="borderTopLeft col_100"><a href="javascript:openPopup('popup.aspx?sesja=8!6.4!2!4')">  <asp:Label CssClass="normal" ID="tab_64_w08_c02" runat="server" Text="0"></asp:Label>  </a></td>
-					<td class="borderTopLeft col_100"><a href="javascript:openPopup('popup.aspx?sesja=8!6.4!3!4')">  <asp:Label CssClass="normal" ID="tab_64_w08_c03" runat="server" Text="0"></asp:Label>  </a></td>
-					<td class="col_100 borderTopLeftRight"><a href="javascript:openPopup('popup.aspx?sesja=8!6.4!4!4')">  <asp:Label CssClass="normal" ID="tab_64_w08_c04" runat="server" Text="0"></asp:Label>  </a></td>
+					<td class="col_100 borderAll"><a href="javascript:openPopup('popup.aspx?sesja=8!6.4!3!4')">  <asp:Label CssClass="normal" ID="tab_64_w08_c03" runat="server" Text="0"></asp:Label>  </a></td>
+					<td rowspan="17">&nbsp;</td>
                   </tr>
                   <tr>
                       <td class="borderTopLeft wciecie" colspan="3">Przyczyny zakończenia dozorów - razem (w.09 = w.10 do 13+22 do 24) </td>
                       <td align="center" class="borderTopLeft col_36">09</td>
         			<td class="borderTopLeft col_100"><a href="javascript:openPopup('popup.aspx?sesja=9!6.4!1!4')">  <asp:Label CssClass="normal" ID="tab_64_w09_c01" runat="server" Text="0"></asp:Label>  </a></td>
 					<td class="borderTopLeft col_100"><a href="javascript:openPopup('popup.aspx?sesja=9!6.4!2!4')">  <asp:Label CssClass="normal" ID="tab_64_w09_c02" runat="server" Text="0"></asp:Label>  </a></td>
-					<td class="borderTopLeft col_100"><a href="javascript:openPopup('popup.aspx?sesja=9!6.4!3!4')">  <asp:Label CssClass="normal" ID="tab_64_w09_c03" runat="server" Text="0"></asp:Label>  </a></td>
-					<td class="col_100 borderTopLeftRight"><a href="javascript:openPopup('popup.aspx?sesja=9!6.4!4!4')">  <asp:Label CssClass="normal" ID="tab_64_w09_c04" runat="server" Text="0"></asp:Label>  </a></td>
+					<td class="col_100 borderAll"><a href="javascript:openPopup('popup.aspx?sesja=9!6.4!3!4')">  <asp:Label CssClass="normal" ID="tab_64_w09_c03" runat="server" Text="0"></asp:Label>  </a></td>
                   </tr>
                   <tr>
                       <td class="borderTopLeft  wciecie" rowspan="15">na skutek</td>
@@ -2927,8 +1861,7 @@ razem </td>
                       <td align="center" class="borderTopLeft col_36">10</td>
         			<td class="borderTopLeft col_100"><a href="javascript:openPopup('popup.aspx?sesja=10!6.4!1!4')">  <asp:Label CssClass="normal" ID="tab_64_w10_c01" runat="server" Text="0"></asp:Label>  </a></td>
 					<td class="borderTopLeft col_100"><a href="javascript:openPopup('popup.aspx?sesja=10!6.4!2!4')">  <asp:Label CssClass="normal" ID="tab_64_w10_c02" runat="server" Text="0"></asp:Label>  </a></td>
-					<td class="borderTopLeft col_100"><a href="javascript:openPopup('popup.aspx?sesja=10!6.4!3!4')">  <asp:Label CssClass="normal" ID="tab_64_w10_c03" runat="server" Text="0"></asp:Label>  </a></td>
-					<td class="col_100 borderTopLeftRight"><a href="javascript:openPopup('popup.aspx?sesja=10!6.4!4!4')">  <asp:Label CssClass="normal" ID="tab_64_w10_c04" runat="server" Text="0"></asp:Label>  </a></td>
+					<td class="col_100 borderAll"><a href="javascript:openPopup('popup.aspx?sesja=10!6.4!3!4')">  <asp:Label CssClass="normal" ID="tab_64_w10_c03" runat="server" Text="0"></asp:Label>  </a></td>
                   </tr>
 
                   <tr>
@@ -2936,24 +1869,21 @@ razem </td>
                       <td align="center" class="borderTopLeft col_36">11</td>
 					<td class="borderTopLeft col_100"><a href="javascript:openPopup('popup.aspx?sesja=11!6.4!1!4')">  <asp:Label CssClass="normal" ID="tab_64_w11_c01" runat="server" Text="0"></asp:Label>  </a></td>
 					<td class="borderTopLeft col_100"><a href="javascript:openPopup('popup.aspx?sesja=11!6.4!2!4')">  <asp:Label CssClass="normal" ID="tab_64_w11_c02" runat="server" Text="0"></asp:Label>  </a></td>
-					<td class="borderTopLeft col_100"><a href="javascript:openPopup('popup.aspx?sesja=11!6.4!3!4')">  <asp:Label CssClass="normal" ID="tab_64_w11_c03" runat="server" Text="0"></asp:Label>  </a></td>
-					<td class="col_100 borderTopLeftRight"><a href="javascript:openPopup('popup.aspx?sesja=11!6.4!4!4')">  <asp:Label CssClass="normal" ID="tab_64_w11_c04" runat="server" Text="0"></asp:Label>  </a></td>
+					<td class="col_100 borderAll"><a href="javascript:openPopup('popup.aspx?sesja=11!6.4!3!4')">  <asp:Label CssClass="normal" ID="tab_64_w11_c03" runat="server" Text="0"></asp:Label>  </a></td>
                   </tr>
                   <tr>
                       <td class="wciecie borderTopLeft" colspan="2">przekazania innym sądom </td>
                       <td align="center" class="borderTopLeft col_36">12</td>
         			<td class="borderTopLeft col_100"><a href="javascript:openPopup('popup.aspx?sesja=12!6.4!1!4')">  <asp:Label CssClass="normal" ID="tab_64_w12_c01" runat="server" Text="0"></asp:Label>  </a></td>
 					<td class="borderTopLeft col_100"><a href="javascript:openPopup('popup.aspx?sesja=12!6.4!2!4')">  <asp:Label CssClass="normal" ID="tab_64_w12_c02" runat="server" Text="0"></asp:Label>  </a></td>
-					<td class="borderTopLeft col_100"><a href="javascript:openPopup('popup.aspx?sesja=12!6.4!3!4')">  <asp:Label CssClass="normal" ID="tab_64_w12_c03" runat="server" Text="0"></asp:Label>  </a></td>
-					<td class="col_100 borderTopLeftRight"><a href="javascript:openPopup('popup.aspx?sesja=12!6.4!4!4')">  <asp:Label CssClass="normal" ID="tab_64_w12_c04" runat="server" Text="0"></asp:Label>  </a></td>
+					<td class="col_100 borderAll"><a href="javascript:openPopup('popup.aspx?sesja=12!6.4!3!4')">  <asp:Label CssClass="normal" ID="tab_64_w12_c03" runat="server" Text="0"></asp:Label>  </a></td>
                   </tr>
                   <tr>
                       <td class="wciecie borderTopLeft" colspan="2">zarządzenia wykonania kary (w.13&lt;=w.14) </td>
                       <td align="center" class="borderTopLeft col_36">13</td>
         			<td class="borderTopLeft col_100"><a href="javascript:openPopup('popup.aspx?sesja=13!6.4!1!4')">  <asp:Label CssClass="normal" ID="tab_64_w13_c01" runat="server" Text="0"></asp:Label>  </a></td>
 					<td class="borderTopLeft col_100"><a href="javascript:openPopup('popup.aspx?sesja=13!6.4!2!4')">  <asp:Label CssClass="normal" ID="tab_64_w13_c02" runat="server" Text="0"></asp:Label>  </a></td>
-					<td class="borderTopLeft col_100"><a href="javascript:openPopup('popup.aspx?sesja=13!6.4!3!4')">  <asp:Label CssClass="normal" ID="tab_64_w13_c03" runat="server" Text="0"></asp:Label>  </a></td>
-					<td class="col_100 borderTopLeftRight"><a href="javascript:openPopup('popup.aspx?sesja=13!6.4!4!4')">  <asp:Label CssClass="normal" ID="tab_64_w13_c04" runat="server" Text="0"></asp:Label>  </a></td>
+					<td class="col_100 borderAll"><a href="javascript:openPopup('popup.aspx?sesja=13!6.4!3!4')">  <asp:Label CssClass="normal" ID="tab_64_w13_c03" runat="server" Text="0"></asp:Label>  </a></td>
                   </tr>
                   <tr>
                       <td class="borderTopLeft wciecie" rowspan="8">na skutek</td>
@@ -2961,56 +1891,49 @@ razem </td>
                       <td align="center" class="borderTopLeft col_36">14</td>
         			<td class="borderTopLeft col_100"><a href="javascript:openPopup('popup.aspx?sesja=14!6.4!1!4')">  <asp:Label CssClass="normal" ID="tab_64_w14_c01" runat="server" Text="0"></asp:Label>  </a></td>
 					<td class="borderTopLeft col_100"><a href="javascript:openPopup('popup.aspx?sesja=14!6.4!2!4')">  <asp:Label CssClass="normal" ID="tab_64_w14_c02" runat="server" Text="0"></asp:Label>  </a></td>
-					<td class="borderTopLeft col_100"><a href="javascript:openPopup('popup.aspx?sesja=14!6.4!3!4')">  <asp:Label CssClass="normal" ID="tab_64_w14_c03" runat="server" Text="0"></asp:Label>  </a></td>
-					<td class="col_100 borderTopLeftRight"><a href="javascript:openPopup('popup.aspx?sesja=14!6.4!4!4')">  <asp:Label CssClass="normal" ID="tab_64_w14_c04" runat="server" Text="0"></asp:Label>  </a></td>
+					<td class="col_100 borderAll"><a href="javascript:openPopup('popup.aspx?sesja=14!6.4!3!4')">  <asp:Label CssClass="normal" ID="tab_64_w14_c03" runat="server" Text="0"></asp:Label>  </a></td>
                   </tr>
                   <tr>
                       <td class="borderTopLeft wciecie">popełnienia w okresie próby podobnego przestępstwa umyślnego, za które orzeczono prawomocnie karę pozbawienia wolności (art. 75 § 1 kk) </td>
                       <td align="center" class="borderTopLeft col_36">15</td>
         			<td class="borderTopLeft col_100"><a href="javascript:openPopup('popup.aspx?sesja=15!6.4!1!4')">  <asp:Label CssClass="normal" ID="tab_64_w15_c01" runat="server" Text="0"></asp:Label>  </a></td>
 					<td class="borderTopLeft col_100"><a href="javascript:openPopup('popup.aspx?sesja=15!6.4!2!4')">  <asp:Label CssClass="normal" ID="tab_64_w15_c02" runat="server" Text="0"></asp:Label>  </a></td>
-					<td class="borderTopLeft col_100"><a href="javascript:openPopup('popup.aspx?sesja=15!6.4!3!4')">  <asp:Label CssClass="normal" ID="tab_64_w15_c03" runat="server" Text="0"></asp:Label>  </a></td>
-					<td class="col_100 borderTopLeftRight"><a href="javascript:openPopup('popup.aspx?sesja=15!6.4!4!4')">  <asp:Label CssClass="normal" ID="tab_64_w15_c04" runat="server" Text="0"></asp:Label>  </a></td>
+					<td class="col_100 borderAll"><a href="javascript:openPopup('popup.aspx?sesja=15!6.4!3!4')">  <asp:Label CssClass="normal" ID="tab_64_w15_c03" runat="server" Text="0"></asp:Label>  </a></td>
                   </tr>
                   <tr>
                       <td class="borderTopLeft wciecie">rażącego naruszenia porządku prawnego poprzez ponowne używanie przemocy lub groźby bezprawnej wobec osoby najbliższej lub innej osoby małoletniej zamieszkujących wspólnie ze sprawcą (art. 75 § 1a kk) </td>
                       <td align="center" class="borderTopLeft col_36">16</td>
         			<td class="borderTopLeft col_100"><a href="javascript:openPopup('popup.aspx?sesja=16!6.4!1!4')">  <asp:Label CssClass="normal" ID="tab_64_w16_c01" runat="server" Text="0"></asp:Label>  </a></td>
 					<td class="borderTopLeft col_100"><a href="javascript:openPopup('popup.aspx?sesja=16!6.4!2!4')">  <asp:Label CssClass="normal" ID="tab_64_w16_c02" runat="server" Text="0"></asp:Label>  </a></td>
-					<td class="borderTopLeft col_100"><a href="javascript:openPopup('popup.aspx?sesja=16!6.4!3!4')">  <asp:Label CssClass="normal" ID="tab_64_w16_c03" runat="server" Text="0"></asp:Label>  </a></td>
-					<td class="col_100 borderTopLeftRight"><a href="javascript:openPopup('popup.aspx?sesja=16!6.4!4!4')">  <asp:Label CssClass="normal" ID="tab_64_w16_c04" runat="server" Text="0"></asp:Label>  </a></td>
+					<td class="col_100 borderAll"><a href="javascript:openPopup('popup.aspx?sesja=16!6.4!3!4')">  <asp:Label CssClass="normal" ID="tab_64_w16_c03" runat="server" Text="0"></asp:Label>  </a></td>
                   </tr>
                   <tr>
                       <td class="borderTopLeft wciecie">popełnienie innego rodzaju przestępstwa niż określonego w&nbsp;art. 75 § 1 kk (art. 75 § 2 kk) </td>
                       <td align="center" class="borderTopLeft col_36">17</td>
         			<td class="borderTopLeft col_100"><a href="javascript:openPopup('popup.aspx?sesja=17!6.4!1!4')">  <asp:Label CssClass="normal" ID="tab_64_w17_c01" runat="server" Text="0"></asp:Label>  </a></td>
 					<td class="borderTopLeft col_100"><a href="javascript:openPopup('popup.aspx?sesja=17!6.4!2!4')">  <asp:Label CssClass="normal" ID="tab_64_w17_c02" runat="server" Text="0"></asp:Label>  </a></td>
-					<td class="borderTopLeft col_100"><a href="javascript:openPopup('popup.aspx?sesja=17!6.4!3!4')">  <asp:Label CssClass="normal" ID="tab_64_w17_c03" runat="server" Text="0"></asp:Label>  </a></td>
-					<td class="col_100 borderTopLeftRight"><a href="javascript:openPopup('popup.aspx?sesja=17!6.4!4!4')">  <asp:Label CssClass="normal" ID="tab_64_w17_c04" runat="server" Text="0"></asp:Label>  </a></td>
+					<td class="col_100 borderAll"><a href="javascript:openPopup('popup.aspx?sesja=17!6.4!3!4')">  <asp:Label CssClass="normal" ID="tab_64_w17_c03" runat="server" Text="0"></asp:Label>  </a></td>
                   </tr>
                   <tr>
                       <td class="borderTopLeft wciecie">rażącego naruszenia porządku prawnego w inny sposób (art. 75 § 2 kk) </td>
                       <td align="center" class="borderTopLeft col_36">18</td>
         			<td class="borderTopLeft col_100"><a href="javascript:openPopup('popup.aspx?sesja=18!6.4!1!4')">  <asp:Label CssClass="normal" ID="tab_64_w18_c01" runat="server" Text="0"></asp:Label>  </a></td>
 					<td class="borderTopLeft col_100"><a href="javascript:openPopup('popup.aspx?sesja=18!6.4!2!4')">  <asp:Label CssClass="normal" ID="tab_64_w18_c02" runat="server" Text="0"></asp:Label>  </a></td>
-					<td class="borderTopLeft col_100"><a href="javascript:openPopup('popup.aspx?sesja=18!6.4!3!4')">  <asp:Label CssClass="normal" ID="tab_64_w18_c03" runat="server" Text="0"></asp:Label>  </a></td>
-					<td class="col_100 borderTopLeftRight"><a href="javascript:openPopup('popup.aspx?sesja=18!6.4!4!4')">  <asp:Label CssClass="normal" ID="tab_64_w18_c04" runat="server" Text="0"></asp:Label>  </a></td>
+					<td class="col_100 borderAll"><a href="javascript:openPopup('popup.aspx?sesja=18!6.4!3!4')">  <asp:Label CssClass="normal" ID="tab_64_w18_c03" runat="server" Text="0"></asp:Label>  </a></td>
                   </tr>
                   <tr>
                       <td class="borderTopLeft wciecie">uchylania się od dozoru (art. 75 § 2 kk) </td>
                       <td align="center" class="borderTopLeft col_36">19</td>
         			<td class="borderTopLeft col_100"><a href="javascript:openPopup('popup.aspx?sesja=19!6.4!1!4')">  <asp:Label CssClass="normal" ID="tab_64_w19_c01" runat="server" Text="0"></asp:Label>  </a></td>
 					<td class="borderTopLeft col_100"><a href="javascript:openPopup('popup.aspx?sesja=19!6.4!2!4')">  <asp:Label CssClass="normal" ID="tab_64_w19_c02" runat="server" Text="0"></asp:Label>  </a></td>
-					<td class="borderTopLeft col_100"><a href="javascript:openPopup('popup.aspx?sesja=19!6.4!3!4')">  <asp:Label CssClass="normal" ID="tab_64_w19_c03" runat="server" Text="0"></asp:Label>  </a></td>
-					<td class="col_100 borderTopLeftRight"><a href="javascript:openPopup('popup.aspx?sesja=19!6.4!4!4')">  <asp:Label CssClass="normal" ID="tab_64_w19_c04" runat="server" Text="0"></asp:Label>  </a></td>
+					<td class="col_100 borderAll"><a href="javascript:openPopup('popup.aspx?sesja=19!6.4!3!4')">  <asp:Label CssClass="normal" ID="tab_64_w19_c03" runat="server" Text="0"></asp:Label>  </a></td>
                   </tr>
                   <tr>
                       <td class="borderTopLeft wciecie">uchylania się od wykonywania nałożonych obowiązków, środków karnych, środków kompensacyjnych lub przepadku (art. 75 § 2 kk) </td>
                       <td align="center" class="borderTopLeft col_36">20</td>
         			<td class="borderTopLeft col_100"><a href="javascript:openPopup('popup.aspx?sesja=20!6.4!1!4')">  <asp:Label CssClass="normal" ID="tab_64_w20_c01" runat="server" Text="0"></asp:Label>  </a></td>
 					<td class="borderTopLeft col_100"><a href="javascript:openPopup('popup.aspx?sesja=20!6.4!2!4')">  <asp:Label CssClass="normal" ID="tab_64_w20_c02" runat="server" Text="0"></asp:Label>  </a></td>
-					<td class="borderTopLeft col_100"><a href="javascript:openPopup('popup.aspx?sesja=20!6.4!3!4')">  <asp:Label CssClass="normal" ID="tab_64_w20_c03" runat="server" Text="0"></asp:Label>  </a></td>
-					<td class="col_100 borderTopLeftRight"><a href="javascript:openPopup('popup.aspx?sesja=20!6.4!4!4')">  <asp:Label CssClass="normal" ID="tab_64_w20_c04" runat="server" Text="0"></asp:Label>  </a></td>
+					<td class="col_100 borderAll"><a href="javascript:openPopup('popup.aspx?sesja=20!6.4!3!4')">  <asp:Label CssClass="normal" ID="tab_64_w20_c03" runat="server" Text="0"></asp:Label>  </a></td>
                   </tr>
 
                   <tr>
@@ -3018,32 +1941,28 @@ razem </td>
                       <td align="center" class="borderTopLeft col_36">21</td>
 					<td class="borderTopLeft col_100"><a href="javascript:openPopup('popup.aspx?sesja=21!6.4!1!4')">  <asp:Label CssClass="normal" ID="tab_64_w21_c01" runat="server" Text="0"></asp:Label>  </a></td>
 					<td class="borderTopLeft col_100"><a href="javascript:openPopup('popup.aspx?sesja=21!6.4!2!4')">  <asp:Label CssClass="normal" ID="tab_64_w21_c02" runat="server" Text="0"></asp:Label>  </a></td>
-					<td class="borderTopLeft col_100"><a href="javascript:openPopup('popup.aspx?sesja=21!6.4!3!4')">  <asp:Label CssClass="normal" ID="tab_64_w21_c03" runat="server" Text="0"></asp:Label>  </a></td>
-					<td class="col_100 borderTopLeftRight"><a href="javascript:openPopup('popup.aspx?sesja=21!6.4!4!4')">  <asp:Label CssClass="normal" ID="tab_64_w21_c04" runat="server" Text="0"></asp:Label>  </a></td>
+					<td class="col_100 borderAll"><a href="javascript:openPopup('popup.aspx?sesja=21!6.4!3!4')">  <asp:Label CssClass="normal" ID="tab_64_w21_c03" runat="server" Text="0"></asp:Label>  </a></td>
                   </tr>
                   <tr>
                       <td class="wciecie borderTopLeft" colspan="2">zamiany na karę ograniczenia wolności albo grzywnę w trybie art. 75a § 1 kk </td>
                       <td align="center" class="borderTopLeft col_36">22</td>
         			<td class="borderTopLeft col_100"><a href="javascript:openPopup('popup.aspx?sesja=22!6.4!1!4')">  <asp:Label CssClass="normal" ID="tab_64_w22_c01" runat="server" Text="0"></asp:Label>  </a></td>
 					<td class="borderTopLeft col_100"><a href="javascript:openPopup('popup.aspx?sesja=22!6.4!2!4')">  <asp:Label CssClass="normal" ID="tab_64_w22_c02" runat="server" Text="0"></asp:Label>  </a></td>
-					<td class="borderTopLeft col_100"><a href="javascript:openPopup('popup.aspx?sesja=22!6.4!3!4')">  <asp:Label CssClass="normal" ID="tab_64_w22_c03" runat="server" Text="0"></asp:Label>  </a></td>
-					<td class="col_100 borderTopLeftRight"><a href="javascript:openPopup('popup.aspx?sesja=22!6.4!4!4')">  <asp:Label CssClass="normal" ID="tab_64_w22_c04" runat="server" Text="0"></asp:Label>  </a></td>
+					<td class="col_100 borderAll"><a href="javascript:openPopup('popup.aspx?sesja=22!6.4!3!4')">  <asp:Label CssClass="normal" ID="tab_64_w22_c03" runat="server" Text="0"></asp:Label>  </a></td>
                   </tr>
                   <tr>
                       <td class="wciecie borderTopLeft" colspan="2">zamiany na karę ograniczenia wolności albo grzywnę w trybie art. 16 ust.1 ustawy z dn. 20 lutego 2015 r. (Dz. U. poz. 396) </td>
                       <td align="center" class="borderTopLeft col_36">23</td>
         			<td class="borderTopLeft col_100"><a href="javascript:openPopup('popup.aspx?sesja=23!6.4!1!4')">  <asp:Label CssClass="normal" ID="tab_64_w23_c01" runat="server" Text="0"></asp:Label>  </a></td>
 					<td class="borderTopLeft col_100"><a href="javascript:openPopup('popup.aspx?sesja=23!6.4!2!4')">  <asp:Label CssClass="normal" ID="tab_64_w23_c02" runat="server" Text="0"></asp:Label>  </a></td>
-					<td class="borderTopLeft col_100"><a href="javascript:openPopup('popup.aspx?sesja=23!6.4!3!4')">  <asp:Label CssClass="normal" ID="tab_64_w23_c03" runat="server" Text="0"></asp:Label>  </a></td>
-					<td class="col_100 borderTopLeftRight"><a href="javascript:openPopup('popup.aspx?sesja=23!6.4!4!4')">  <asp:Label CssClass="normal" ID="tab_64_w23_c04" runat="server" Text="0"></asp:Label>  </a></td>
+					<td class="col_100 borderAll"><a href="javascript:openPopup('popup.aspx?sesja=23!6.4!3!4')">  <asp:Label CssClass="normal" ID="tab_64_w23_c03" runat="server" Text="0"></asp:Label>  </a></td>
                   </tr>
                   <tr>
                       <td class="borderTopLeft wciecie" colspan="2">innego </td>
                       <td align="center" class="borderTopLeft col_36">24</td>
         			<td class="borderTopLeft col_100"><a href="javascript:openPopup('popup.aspx?sesja=24!6.4!1!4')">  <asp:Label CssClass="normal" ID="tab_64_w24_c01" runat="server" Text="0"></asp:Label>  </a></td>
 					<td class="borderTopLeft col_100"><a href="javascript:openPopup('popup.aspx?sesja=24!6.4!2!4')">  <asp:Label CssClass="normal" ID="tab_64_w24_c02" runat="server" Text="0"></asp:Label>  </a></td>
-					<td class="borderTopLeft col_100"><a href="javascript:openPopup('popup.aspx?sesja=24!6.4!3!4')">  <asp:Label CssClass="normal" ID="tab_64_w24_c03" runat="server" Text="0"></asp:Label>  </a></td>
-					<td class="col_100 borderTopLeftRight"><a href="javascript:openPopup('popup.aspx?sesja=24!6.4!4!4')">  <asp:Label CssClass="normal" ID="tab_64_w24_c04" runat="server" Text="0"></asp:Label>  </a></td>
+					<td class="col_100 borderAll"><a href="javascript:openPopup('popup.aspx?sesja=24!6.4!3!4')">  <asp:Label CssClass="normal" ID="tab_64_w24_c03" runat="server" Text="0"></asp:Label>  </a></td>
                   </tr>
                   <tr>
                       <td class="borderTopLeftBottom wciecie" colspan="3">Pozostało (dozory, wykonywane wg stanu w ostatnim dniu okresu sprawozdawczego)</td>
@@ -3430,7 +2349,7 @@ razem </td>
               <td class="borderTopLeft col_68"><a href="javascript:openPopup('popup.aspx?sesja=1!7.3!3!4')">  <asp:Label CssClass="normal" ID="tab_73_w01_c03" runat="server" Text="0"></asp:Label>  </a></td>
               <td class="borderTopLeft col_68"><a href="javascript:openPopup('popup.aspx?sesja=1!7.3!4!4')">  <asp:Label CssClass="normal" ID="tab_73_w01_c04" runat="server" Text="0"></asp:Label>  </a></td>
               <td class="borderTopLeft col_68"><a href="javascript:openPopup('popup.aspx?sesja=1!7.3!5!4')">  <asp:Label CssClass="normal" ID="tab_73_w01_c05" runat="server" Text="0"></asp:Label>  </a></td>
-              <td class="borderTopLeftRight col_68"><a href="javascript:openPopup('popup.aspx?sesja=1!7.3!1!4')">  <asp:Label CssClass="normal" ID="tab_73_w01_c06" runat="server" Text="0"></asp:Label>  </a></td>
+              <td class="borderTopLeftRight col_68"><a href="javascript:openPopup('popup.aspx?sesja=1!7.3!6!4')">  <asp:Label CssClass="normal" ID="tab_73_w01_c06" runat="server" Text="0"></asp:Label>  </a></td>
                            </tr>
                <tr>
                    <td class="wciecie borderTopLeft " align="center" rowspan="5">sprawcy (art. 93c kk)</td>
@@ -3441,7 +2360,7 @@ razem </td>
                   <td class="borderTopLeft col_68"><a href="javascript:openPopup('popup.aspx?sesja=2!7.3!3!4')">  <asp:Label CssClass="normal" ID="tab_73_w02_c03" runat="server" Text="0"></asp:Label>  </a></td>
                   <td class="borderTopLeft col_68"><a href="javascript:openPopup('popup.aspx?sesja=2!7.3!4!4')">  <asp:Label CssClass="normal" ID="tab_73_w02_c04" runat="server" Text="0"></asp:Label>  </a></td>
                   <td class="borderTopLeft col_68"><a href="javascript:openPopup('popup.aspx?sesja=2!7.3!5!4')">  <asp:Label CssClass="normal" ID="tab_73_w02_c05" runat="server" Text="0"></asp:Label>  </a></td>
-                  <td class="borderTopLeftRight col_68"><a href="javascript:openPopup('popup.aspx?sesja=2!7.3!1!4')">  <asp:Label CssClass="normal" ID="tab_73_w02_c06" runat="server" Text="0"></asp:Label>  </a></td>
+                  <td class="borderTopLeftRight col_68"><a href="javascript:openPopup('popup.aspx?sesja=2!7.3!6!4')">  <asp:Label CssClass="normal" ID="tab_73_w02_c06" runat="server" Text="0"></asp:Label>  </a></td>
                 </tr>
                <tr>
                    <td class="wciecie borderTopLeft " align="center">skazani za przestępstwo popełnione w stanie ograniczonej poczytalności określonej w art. 31 § 2 kk </td>
@@ -3451,7 +2370,7 @@ razem </td>
               <td class="borderTopLeft col_68"><a href="javascript:openPopup('popup.aspx?sesja=3!7.3!3!4')">  <asp:Label CssClass="normal" ID="tab_73_w03_c03" runat="server" Text="0"></asp:Label>  </a></td>
               <td class="borderTopLeft col_68"><a href="javascript:openPopup('popup.aspx?sesja=3!7.3!4!4')">  <asp:Label CssClass="normal" ID="tab_73_w03_c04" runat="server" Text="0"></asp:Label>  </a></td>
               <td class="borderTopLeft col_68"><a href="javascript:openPopup('popup.aspx?sesja=3!7.3!5!4')">  <asp:Label CssClass="normal" ID="tab_73_w03_c05" runat="server" Text="0"></asp:Label>  </a></td>
-              <td class="borderTopLeftRight col_68"><a href="javascript:openPopup('popup.aspx?sesja=3!7.3!1!4')">  <asp:Label CssClass="normal" ID="tab_73_w03_c06" runat="server" Text="0"></asp:Label>  </a></td>
+              <td class="borderTopLeftRight col_68"><a href="javascript:openPopup('popup.aspx?sesja=3!7.3!6!4')">  <asp:Label CssClass="normal" ID="tab_73_w03_c06" runat="server" Text="0"></asp:Label>  </a></td>
                </tr>
 
 			      <tr>
@@ -3462,7 +2381,7 @@ razem </td>
               <td class="borderTopLeft col_68"><a href="javascript:openPopup('popup.aspx?sesja=4!7.3!3!4')">  <asp:Label CssClass="normal" ID="tab_73_w04_c03" runat="server" Text="0"></asp:Label>  </a></td>
               <td class="borderTopLeft col_68"><a href="javascript:openPopup('popup.aspx?sesja=4!7.3!4!4')">  <asp:Label CssClass="normal" ID="tab_73_w04_c04" runat="server" Text="0"></asp:Label>  </a></td>
               <td class="borderTopLeft col_68"><a href="javascript:openPopup('popup.aspx?sesja=4!7.3!5!4')">  <asp:Label CssClass="normal" ID="tab_73_w04_c05" runat="server" Text="0"></asp:Label>  </a></td>
-              <td class="borderTopLeftRight col_68"><a href="javascript:openPopup('popup.aspx?sesja=4!7.3!1!4')">  <asp:Label CssClass="normal" ID="tab_73_w04_c06" runat="server" Text="0"></asp:Label>  </a></td>
+              <td class="borderTopLeftRight col_68"><a href="javascript:openPopup('popup.aspx?sesja=4!7.3!6!4')">  <asp:Label CssClass="normal" ID="tab_73_w04_c06" runat="server" Text="0"></asp:Label>  </a></td>
                </tr>
 
 			  <tr>
@@ -3473,7 +2392,7 @@ razem </td>
               <td class="borderTopLeft col_68"><a href="javascript:openPopup('popup.aspx?sesja=5!7.3!3!4')">  <asp:Label CssClass="normal" ID="tab_73_w05_c03" runat="server" Text="0"></asp:Label>  </a></td>
               <td class="borderTopLeft col_68"><a href="javascript:openPopup('popup.aspx?sesja=5!7.3!4!4')">  <asp:Label CssClass="normal" ID="tab_73_w05_c04" runat="server" Text="0"></asp:Label>  </a></td>
               <td class="borderTopLeft col_68"><a href="javascript:openPopup('popup.aspx?sesja=5!7.3!5!4')">  <asp:Label CssClass="normal" ID="tab_73_w05_c05" runat="server" Text="0"></asp:Label>  </a></td>
-              <td class="borderTopLeftRight col_68"><a href="javascript:openPopup('popup.aspx?sesja=5!7.3!1!4')">  <asp:Label CssClass="normal" ID="tab_73_w05_c06" runat="server" Text="0"></asp:Label>  </a></td>
+              <td class="borderTopLeftRight col_68"><a href="javascript:openPopup('popup.aspx?sesja=5!7.3!6!4')">  <asp:Label CssClass="normal" ID="tab_73_w05_c06" runat="server" Text="0"></asp:Label>  </a></td>
                </tr>
              <tr>
                    <td class="wciecie borderTopLeft" align="center">skazani za przestępstwo popełnione w związku z uzależnieniem od alkoholu, środka odurzającego lub innego podobnie działającego środka </td>
@@ -3483,7 +2402,7 @@ razem </td>
               <td class="borderTopLeft col_68"><a href="javascript:openPopup('popup.aspx?sesja=6!7.3!3!4')">  <asp:Label CssClass="normal" ID="tab_73_w06_c03" runat="server" Text="0"></asp:Label>  </a></td>
               <td class="borderTopLeft col_68"><a href="javascript:openPopup('popup.aspx?sesja=6!7.3!4!4')">  <asp:Label CssClass="normal" ID="tab_73_w06_c04" runat="server" Text="0"></asp:Label>  </a></td>
               <td class="borderTopLeft col_68"><a href="javascript:openPopup('popup.aspx?sesja=6!7.3!5!4')">  <asp:Label CssClass="normal" ID="tab_73_w06_c05" runat="server" Text="0"></asp:Label>  </a></td>
-              <td class="borderTopLeftRight col_68"><a href="javascript:openPopup('popup.aspx?sesja=6!7.3!1!4')">  <asp:Label CssClass="normal" ID="tab_73_w06_c06" runat="server" Text="0"></asp:Label>  </a></td>
+              <td class="borderTopLeftRight col_68"><a href="javascript:openPopup('popup.aspx?sesja=6!7.3!6!4')">  <asp:Label CssClass="normal" ID="tab_73_w06_c06" runat="server" Text="0"></asp:Label>  </a></td>
                </tr>
                 <tr>
                    <td class="wciecie borderTopLeft" align="center" colspan="2">Liczba sprawców w stosunku do których środki podlegają wykonaniu (stan w ostatnim dniu okresu sprawozdawczego) (w.07 &lt;= w. 08 do 12)</td>
@@ -3493,7 +2412,7 @@ razem </td>
               <td class="borderTopLeft col_68"><a href="javascript:openPopup('popup.aspx?sesja=7!7.3!3!4')">  <asp:Label CssClass="normal" ID="tab_73_w07_c03" runat="server" Text="0"></asp:Label>  </a></td>
               <td class="borderTopLeft col_68"><a href="javascript:openPopup('popup.aspx?sesja=7!7.3!4!4')">  <asp:Label CssClass="normal" ID="tab_73_w07_c04" runat="server" Text="0"></asp:Label>  </a></td>
               <td class="borderTopLeft col_68"><a href="javascript:openPopup('popup.aspx?sesja=7!7.3!5!4')">  <asp:Label CssClass="normal" ID="tab_73_w07_c05" runat="server" Text="0"></asp:Label>  </a></td>
-              <td class="borderTopLeftRight col_68"><a href="javascript:openPopup('popup.aspx?sesja=7!7.3!1!4')">  <asp:Label CssClass="normal" ID="tab_73_w07_c06" runat="server" Text="0"></asp:Label>  </a></td>
+              <td class="borderTopLeftRight col_68"><a href="javascript:openPopup('popup.aspx?sesja=7!7.3!6!4')">  <asp:Label CssClass="normal" ID="tab_73_w07_c06" runat="server" Text="0"></asp:Label>  </a></td>
                </tr>
                 <tr>
                    <td class="wciecie borderTopLeft" align="center" rowspan="5">sprawcy (art. 93c kk)</td>
@@ -3504,7 +2423,7 @@ razem </td>
               <td class="borderTopLeft col_68"><a href="javascript:openPopup('popup.aspx?sesja=8!7.3!3!4')">  <asp:Label CssClass="normal" ID="tab_73_w08_c03" runat="server" Text="0"></asp:Label>  </a></td>
               <td class="borderTopLeft col_68"><a href="javascript:openPopup('popup.aspx?sesja=8!7.3!4!4')">  <asp:Label CssClass="normal" ID="tab_73_w08_c04" runat="server" Text="0"></asp:Label>  </a></td>
               <td class="borderTopLeft col_68"><a href="javascript:openPopup('popup.aspx?sesja=8!7.3!5!4')">  <asp:Label CssClass="normal" ID="tab_73_w08_c05" runat="server" Text="0"></asp:Label>  </a></td>
-              <td class="borderTopLeftRight col_68"><a href="javascript:openPopup('popup.aspx?sesja=8!7.3!1!4')">  <asp:Label CssClass="normal" ID="tab_73_w08_c06" runat="server" Text="0"></asp:Label>  </a></td>
+              <td class="borderTopLeftRight col_68"><a href="javascript:openPopup('popup.aspx?sesja=8!7.3!6!4')">  <asp:Label CssClass="normal" ID="tab_73_w08_c06" runat="server" Text="0"></asp:Label>  </a></td>
                </tr>
 
 			    <tr>
@@ -3515,7 +2434,7 @@ razem </td>
               <td class="borderTopLeft col_68"><a href="javascript:openPopup('popup.aspx?sesja=9!7.3!3!4')">  <asp:Label CssClass="normal" ID="tab_73_w09_c03" runat="server" Text="0"></asp:Label>  </a></td>
               <td class="borderTopLeft col_68"><a href="javascript:openPopup('popup.aspx?sesja=9!7.3!4!4')">  <asp:Label CssClass="normal" ID="tab_73_w09_c04" runat="server" Text="0"></asp:Label>  </a></td>
               <td class="borderTopLeft col_68"><a href="javascript:openPopup('popup.aspx?sesja=9!7.3!5!4')">  <asp:Label CssClass="normal" ID="tab_73_w09_c05" runat="server" Text="0"></asp:Label>  </a></td>
-              <td class="borderTopLeftRight col_68"><a href="javascript:openPopup('popup.aspx?sesja=9!7.3!1!4')">  <asp:Label CssClass="normal" ID="tab_73_w09_c06" runat="server" Text="0"></asp:Label>  </a></td>
+              <td class="borderTopLeftRight col_68"><a href="javascript:openPopup('popup.aspx?sesja=9!7.3!6!4')">  <asp:Label CssClass="normal" ID="tab_73_w09_c06" runat="server" Text="0"></asp:Label>  </a></td>
                </tr>
 			    <tr>
                    <td class="wciecie borderTopLeft" align="center">skazani za przestępstwo określone w art. 148 kk, art. 156 kk, art. 197 kk, art. 198 kk, art. 199 § 2 kk lub art. 200 § 1 kk, popełnione w związku z zaburzeniem preferencji seksualnych </td>
@@ -3525,7 +2444,7 @@ razem </td>
               <td class="borderTopLeft col_68"><a href="javascript:openPopup('popup.aspx?sesja=10!7.3!3!4')">  <asp:Label CssClass="normal" ID="tab_73_w10_c03" runat="server" Text="0"></asp:Label>  </a></td>
               <td class="borderTopLeft col_68"><a href="javascript:openPopup('popup.aspx?sesja=10!7.3!4!4')">  <asp:Label CssClass="normal" ID="tab_73_w10_c04" runat="server" Text="0"></asp:Label>  </a></td>
               <td class="borderTopLeft col_68"><a href="javascript:openPopup('popup.aspx?sesja=10!7.3!5!4')">  <asp:Label CssClass="normal" ID="tab_73_w10_c05" runat="server" Text="0"></asp:Label>  </a></td>
-              <td class="borderTopLeftRight col_68"><a href="javascript:openPopup('popup.aspx?sesja=10!7.3!1!4')">  <asp:Label CssClass="normal" ID="tab_73_w10_c06" runat="server" Text="0"></asp:Label>  </a></td>
+              <td class="borderTopLeftRight col_68"><a href="javascript:openPopup('popup.aspx?sesja=10!7.3!6!4')">  <asp:Label CssClass="normal" ID="tab_73_w10_c06" runat="server" Text="0"></asp:Label>  </a></td>
                </tr>
                    <tr>
                    <td class="wciecie borderTopLeft" align="center">skazani na karę pozbawienia wolności bez warunkowego jej zawieszenia za umyślne przestępstwo określone w rozdziale XIX, XXIII, XXV lub XXVI kk, popełnione w związku z zaburzeniem osobowości o takim charakterze lub nasileniu, że zachodzi co najmniej wysokie prawdopodobieństwo popełnienia czynu zabronionego z użyciem przemocy lub groźbą jej użycia </td>
@@ -3535,7 +2454,7 @@ razem </td>
               <td class="borderTopLeft col_68"><a href="javascript:openPopup('popup.aspx?sesja=11!7.3!3!4')">  <asp:Label CssClass="normal" ID="tab_73_w11_c03" runat="server" Text="0"></asp:Label>  </a></td>
               <td class="borderTopLeft col_68"><a href="javascript:openPopup('popup.aspx?sesja=11!7.3!4!4')">  <asp:Label CssClass="normal" ID="tab_73_w11_c04" runat="server" Text="0"></asp:Label>  </a></td>
               <td class="borderTopLeft col_68"><a href="javascript:openPopup('popup.aspx?sesja=11!7.3!5!4')">  <asp:Label CssClass="normal" ID="tab_73_w11_c05" runat="server" Text="0"></asp:Label>  </a></td>
-              <td class="borderTopLeftRight col_68"><a href="javascript:openPopup('popup.aspx?sesja=11!7.3!1!4')">  <asp:Label CssClass="normal" ID="tab_73_w11_c06" runat="server" Text="0"></asp:Label>  </a></td>
+              <td class="borderTopLeftRight col_68"><a href="javascript:openPopup('popup.aspx?sesja=11!7.3!6!4')">  <asp:Label CssClass="normal" ID="tab_73_w11_c06" runat="server" Text="0"></asp:Label>  </a></td>
                            </tr>
                <tr>
                    <td class="wciecie borderTopLeft" align="center">skazani za przestępstwo popełnione w związku z uzależnieniem od alkoholu, środka odurzającego lub innego podobnie działającego środka </td>
@@ -3545,7 +2464,7 @@ razem </td>
                   <td class="borderTopLeft col_68"><a href="javascript:openPopup('popup.aspx?sesja=12!7.3!3!4')">  <asp:Label CssClass="normal" ID="tab_73_w12_c03" runat="server" Text="0"></asp:Label>  </a></td>
                   <td class="borderTopLeft col_68"><a href="javascript:openPopup('popup.aspx?sesja=12!7.3!4!4')">  <asp:Label CssClass="normal" ID="tab_73_w12_c04" runat="server" Text="0"></asp:Label>  </a></td>
                   <td class="borderTopLeft col_68"><a href="javascript:openPopup('popup.aspx?sesja=12!7.3!5!4')">  <asp:Label CssClass="normal" ID="tab_73_w12_c05" runat="server" Text="0"></asp:Label>  </a></td>
-                  <td class="borderTopLeftRight col_68"><a href="javascript:openPopup('popup.aspx?sesja=12!7.3!1!4')">  <asp:Label CssClass="normal" ID="tab_73_w12_c06" runat="server" Text="0"></asp:Label>  </a></td>
+                  <td class="borderTopLeftRight col_68"><a href="javascript:openPopup('popup.aspx?sesja=12!7.3!6!4')">  <asp:Label CssClass="normal" ID="tab_73_w12_c06" runat="server" Text="0"></asp:Label>  </a></td>
                 </tr>
                <tr>
                    <td class="wciecie borderTopLeft " align="center" colspan="2">w tym, wobec których środki nie są wykonywane (stan w ostatnim dniu okresu sprawozdawczego) (w.13 &lt;= w. 14 do 18) </td>
@@ -3555,7 +2474,7 @@ razem </td>
               <td class="borderTopLeft col_68"><a href="javascript:openPopup('popup.aspx?sesja=13!7.3!3!4')">  <asp:Label CssClass="normal" ID="tab_73_w13_c03" runat="server" Text="0"></asp:Label>  </a></td>
               <td class="borderTopLeft col_68"><a href="javascript:openPopup('popup.aspx?sesja=13!7.3!4!4')">  <asp:Label CssClass="normal" ID="tab_73_w13_c04" runat="server" Text="0"></asp:Label>  </a></td>
               <td class="borderTopLeft col_68"><a href="javascript:openPopup('popup.aspx?sesja=13!7.3!5!4')">  <asp:Label CssClass="normal" ID="tab_73_w13_c05" runat="server" Text="0"></asp:Label>  </a></td>
-              <td class="borderTopLeftRight col_68"><a href="javascript:openPopup('popup.aspx?sesja=13!7.3!1!4')">  <asp:Label CssClass="normal" ID="tab_73_w13_c06" runat="server" Text="0"></asp:Label>  </a></td>
+              <td class="borderTopLeftRight col_68"><a href="javascript:openPopup('popup.aspx?sesja=13!7.3!6!4')">  <asp:Label CssClass="normal" ID="tab_73_w13_c06" runat="server" Text="0"></asp:Label>  </a></td>
                </tr>
 
 			      <tr>
@@ -3567,7 +2486,7 @@ razem </td>
               <td class="borderTopLeft col_68"><a href="javascript:openPopup('popup.aspx?sesja=14!7.3!3!4')">  <asp:Label CssClass="normal" ID="tab_73_w14_c03" runat="server" Text="0"></asp:Label>  </a></td>
               <td class="borderTopLeft col_68"><a href="javascript:openPopup('popup.aspx?sesja=14!7.3!4!4')">  <asp:Label CssClass="normal" ID="tab_73_w14_c04" runat="server" Text="0"></asp:Label>  </a></td>
               <td class="borderTopLeft col_68"><a href="javascript:openPopup('popup.aspx?sesja=14!7.3!5!4')">  <asp:Label CssClass="normal" ID="tab_73_w14_c05" runat="server" Text="0"></asp:Label>  </a></td>
-              <td class="borderTopLeftRight col_68"><a href="javascript:openPopup('popup.aspx?sesja=14!7.3!1!4')">  <asp:Label CssClass="normal" ID="tab_73_w14_c06" runat="server" Text="0"></asp:Label>  </a></td>
+              <td class="borderTopLeftRight col_68"><a href="javascript:openPopup('popup.aspx?sesja=14!7.3!6!4')">  <asp:Label CssClass="normal" ID="tab_73_w14_c06" runat="server" Text="0"></asp:Label>  </a></td>
                </tr>
 
 			  <tr>
@@ -3578,7 +2497,7 @@ razem </td>
               <td class="borderTopLeft col_68"><a href="javascript:openPopup('popup.aspx?sesja=15!7.3!3!4')">  <asp:Label CssClass="normal" ID="tab_73_w15_c03" runat="server" Text="0"></asp:Label>  </a></td>
               <td class="borderTopLeft col_68"><a href="javascript:openPopup('popup.aspx?sesja=15!7.3!4!4')">  <asp:Label CssClass="normal" ID="tab_73_w15_c04" runat="server" Text="0"></asp:Label>  </a></td>
               <td class="borderTopLeft col_68"><a href="javascript:openPopup('popup.aspx?sesja=15!7.3!5!4')">  <asp:Label CssClass="normal" ID="tab_73_w15_c05" runat="server" Text="0"></asp:Label>  </a></td>
-              <td class="borderTopLeftRight col_68"><a href="javascript:openPopup('popup.aspx?sesja=15!7.3!1!4')">  <asp:Label CssClass="normal" ID="tab_73_w15_c06" runat="server" Text="0"></asp:Label>  </a></td>
+              <td class="borderTopLeftRight col_68"><a href="javascript:openPopup('popup.aspx?sesja=15!7.3!6!4')">  <asp:Label CssClass="normal" ID="tab_73_w15_c06" runat="server" Text="0"></asp:Label>  </a></td>
                </tr>
              <tr>
                    <td class="wciecie borderTopLeft" align="center">skazani za przestępstwo określone w art. 148 kk, art. 156 kk, art. 197 kk, art. 198 kk, art. 199 § 2 kk lub art. 200 § 1 kk, popełnione w związku z zaburzeniem preferencji seksualnych </td>
@@ -3588,7 +2507,7 @@ razem </td>
               <td class="borderTopLeft col_68"><a href="javascript:openPopup('popup.aspx?sesja=16!7.3!3!4')">  <asp:Label CssClass="normal" ID="tab_73_w16_c03" runat="server" Text="0"></asp:Label>  </a></td>
               <td class="borderTopLeft col_68"><a href="javascript:openPopup('popup.aspx?sesja=16!7.3!4!4')">  <asp:Label CssClass="normal" ID="tab_73_w16_c04" runat="server" Text="0"></asp:Label>  </a></td>
               <td class="borderTopLeft col_68"><a href="javascript:openPopup('popup.aspx?sesja=16!7.3!5!4')">  <asp:Label CssClass="normal" ID="tab_73_w16_c05" runat="server" Text="0"></asp:Label>  </a></td>
-              <td class="borderTopLeftRight col_68"><a href="javascript:openPopup('popup.aspx?sesja=16!7.3!1!4')">  <asp:Label CssClass="normal" ID="tab_73_w16_c06" runat="server" Text="0"></asp:Label>  </a></td>
+              <td class="borderTopLeftRight col_68"><a href="javascript:openPopup('popup.aspx?sesja=16!7.3!6!4')">  <asp:Label CssClass="normal" ID="tab_73_w16_c06" runat="server" Text="0"></asp:Label>  </a></td>
                </tr>
                 <tr>
                    <td class="wciecie borderTopLeft" align="center">skazani na karę pozbawienia wolności bez warunkowego jej zawieszenia za umyślne przestępstwo określone w rozdziale XIX, XXIII, XXV lub XXVI kk, popełnione w związku z zaburzeniem osobowości o takim charakterze lub nasileniu, że zachodzi co najmniej wysokie prawdopodobieństwo popełnienia czynu zabronionego z użyciem przemocy lub groźbą jej użycia </td>
@@ -3598,7 +2517,7 @@ razem </td>
               <td class="borderTopLeft col_68"><a href="javascript:openPopup('popup.aspx?sesja=17!7.3!3!4')">  <asp:Label CssClass="normal" ID="tab_73_w17_c03" runat="server" Text="0"></asp:Label>  </a></td>
               <td class="borderTopLeft col_68"><a href="javascript:openPopup('popup.aspx?sesja=17!7.3!4!4')">  <asp:Label CssClass="normal" ID="tab_73_w17_c04" runat="server" Text="0"></asp:Label>  </a></td>
               <td class="borderTopLeft col_68"><a href="javascript:openPopup('popup.aspx?sesja=17!7.3!5!4')">  <asp:Label CssClass="normal" ID="tab_73_w17_c05" runat="server" Text="0"></asp:Label>  </a></td>
-              <td class="borderTopLeftRight col_68"><a href="javascript:openPopup('popup.aspx?sesja=17!7.3!1!4')">  <asp:Label CssClass="normal" ID="tab_73_w17_c06" runat="server" Text="0"></asp:Label>  </a></td>
+              <td class="borderTopLeftRight col_68"><a href="javascript:openPopup('popup.aspx?sesja=17!7.3!6!4')">  <asp:Label CssClass="normal" ID="tab_73_w17_c06" runat="server" Text="0"></asp:Label>  </a></td>
                </tr>
                 <tr>
                    <td class="wciecie borderTopLeftBottom" align="center">skazani za przestępstwo popełnione w związku z uzależnieniem od alkoholu, środka odurzającego lub innego podobnie działającego środka </td>
@@ -3608,7 +2527,7 @@ razem </td>
               <td class="borderTopLeftBottom col_68"><a href="javascript:openPopup('popup.aspx?sesja=18!7.3!3!4')">  <asp:Label CssClass="normal" ID="tab_73_w18_c03" runat="server" Text="0"></asp:Label>  </a></td>
               <td class="borderTopLeftBottom col_68"><a href="javascript:openPopup('popup.aspx?sesja=18!7.3!4!4')">  <asp:Label CssClass="normal" ID="tab_73_w18_c04" runat="server" Text="0"></asp:Label>  </a></td>
               <td class="borderTopLeftBottom col_68"><a href="javascript:openPopup('popup.aspx?sesja=18!7.3!5!4')">  <asp:Label CssClass="normal" ID="tab_73_w18_c05" runat="server" Text="0"></asp:Label>  </a></td>
-              <td class="borderAll col_68"><a href="javascript:openPopup('popup.aspx?sesja=18!7.3!1!4')">  <asp:Label CssClass="normal" ID="tab_73_w18_c06" runat="server" Text="0"></asp:Label>  </a></td>
+              <td class="borderAll col_68"><a href="javascript:openPopup('popup.aspx?sesja=18!7.3!6!4')">  <asp:Label CssClass="normal" ID="tab_73_w18_c06" runat="server" Text="0"></asp:Label>  </a></td>
                </tr>
                </table>
        </div>
@@ -3825,30 +2744,10 @@ razem </td>
          <br />
             <br />
              </div>
-        <div>
+          &nbsp;<asp:PlaceHolder runat="server" ID="tablePlaceHolder03"></asp:PlaceHolder>
+    <br />
 
-            <table style="width:100%;">
-                <tr>
-                    <td colspan="3"><strong>Dział 12.</strong> Obciążenia administracyjne respondentów</td>
-                </tr>
-                <tr>
-                    <td class="col_36">&nbsp;</td>
-                    <td>przygotowanie danych dla potrzeb wypełnianego formularza </td>
-                    <td class="borderAll col_150">
-                        <asp:TextBox ID="TextBox1" runat="server" Width="100%"></asp:TextBox>
-                    </td>
-                </tr>
-                <tr>
-                    <td>&nbsp;</td>
-                    <td>wypełnienie formularza </td>
-                    <td class="borderAll col_150">
-                        <asp:TextBox ID="TextBox2" runat="server" Width="100%"></asp:TextBox>
-                    </td>
-                </tr>
-            </table>
-            <br />
-        </div>
-
+      
         <div>
 
      <br />
